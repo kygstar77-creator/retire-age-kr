@@ -2377,10 +2377,12 @@
   {
    "at": "2026-10-22 19:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "h1forest1022",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) · yt_pair: h1s_forest(19:20 쇼츠, lEMhSLaZ3lI) — 질문 하나 | firemap-meeting 2026-10-21 21:4x: 쇼츠 짝 — yt_pair: h1s_forest(19:20, H-1) 질문 하나만 · 부동산③"
+   "gates_ok": "2026-10-22 20:02",
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) · yt_pair: h1s_forest(19:20 쇼츠, lEMhSLaZ3lI) — 질문 하나 | firemap-meeting 2026-10-21 21:4x: 쇼츠 짝 — yt_pair: h1s_forest(19:20, H-1) 질문 하나만 · 부동산③ | firemap-write-b 20:02: h1forest1022 '올림픽파크포레온 전세 갱신과 새 계약 얼마나 다를까?'(h1s_forest hkFie-WAr5I 짝, 부동산③) 관문 통과 20:02 — 국토부 전월세 실거래 10/22 다시 받아 1년 79건 갱신 41건 가운데 9억 9,750만원·신규 38건 14억, 갱신요구권 36건 5% 초과 0(경쟁 9편 0편), 헬리오시티 차이 1억 5천, 레드팀 숫자0·표현7 반영, 이해 시험 2차 6명 통과, readcheck 0·aitell 1.5·selfcheck 사실0, editgate auto",
+   "item_pkg": "work/research/h1forest1022/pkg",
+   "published": "https://cafe.naver.com/firemap/366 20:05 verify OK 1388자"
   },
   {
    "at": "2026-10-22 21:10",

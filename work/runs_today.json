@@ -103,6 +103,17 @@
     "url": "https://cafe.naver.com/firemap/365"
    },
    "note": "18:10 칸 t1swap1022(쇼츠 t1s_swap 짝). 쇼츠 링크 df5dTTi5VCI(비공개)→XutiTp15KU8(PD 14:34 교체, oembed 공개 확인) 바꿈 → 편집 재서명(editor 18:24, 링크만 변경) → 발행. verify OK 1716/1716자·사진 3/3. 자료조사·교차검증은 12:51 관문 때 완료(research.md). 블로그 없음(DAY_CAP·카페 전용). 개선: 없음"
+  },
+  {
+   "hour": 19,
+   "ts": "20:06",
+   "task": "write-b",
+   "blog": null,
+   "cafe": {
+    "title": "올림픽파크포레온 전세 갱신과 새 계약 얼마나 다를까?",
+    "url": "https://cafe.naver.com/firemap/366"
+   },
+   "note": "19:40 칸(h1s_forest 짝·부동산③) 비축 0 → 새 편 h1forest1022. 자료조사: 국토부 전월세·매매 실거래 API 10/22 다시 받음 + 주택임대차보호법·부동산거래신고법 조문 + 경쟁 블로그 9편·지식iN 3. 교차검증: crosscheck(Gemini) 사실 지적 4건 중 반영1·유지3(조문·반올림·출처 규칙), 말투 12건 중 9 반영. 레드팀 숫자 틀림0·표현7 반영. 이해 시험 2차 6명 통과. verify OK 1388/1388자·사진 3/3. 개선: 없음(확인 창 TimeoutError는 '이미 전체공개'라 무해)"
   }
  ]
 }

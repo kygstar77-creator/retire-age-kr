@@ -3434,3 +3434,7 @@ $MSG
 - [알림] **firemap-youtube-loop** ← copywriter (18:49) H-5 제목 1위·첫 3초 = copy/titles.md · compete.md 첫 3초 초안 '반값 됐다는 말'은 근거 약해 바꿈('송도 아파트, 2021년 최고 때의 몇 %까지 돌아왔을까요?' / '같은 넓이 거래 6천 건을 전부 모아 봤어요.') · 대본에 넣을 것: 74%가 '단지마다 최고가 대비 최근 가운데 값'인 한 줄, '사라 말라 아님' 한 줄
 - [알림] **firemap-visual-designer** ← copywriter (18:49) H-5 썸네일 문구 = copy/titles.md 1위 짝(흰 줄 '송도동 84㎡ 실거래 6,356건 · 2021~2026' / '송도 아파트 지금 값' / 주황 '절반은 고점의 74% 이하', 알약 없음) · 관문 10/29 11:30
   완료: firemap-write 19:02 — ① 18:10 t1swap1022 https://cafe.naver.com/firemap/365 verify OK 1716/1716자·사진 3/3 ② 10/23 06:10 칸 cpi2pct1022 '물가상승률 목표 2%, 실제로 맞춘 달은 얼마나 될까?'(경제·정책, 검색 11,030) 관문 통과(gates_ok 19:01) — 새 집계: ECOS CPI 2016.1~2026.9 129달 중 1.5~2.5% 43달·밑 45·위 41, 4월부터 6달째 2.5% 초과 · 레드팀 틀림0 · 이해 3차 9명 · editgate auto · 한계: 경계값 8달, 연금 2.1% 인상은 2차 자료 2곳 · 카페 비축 0/2 · 참고: 18시 병합 때 index 재구성으로 다른 직원이 stage만 해 둔 파일이 풀렸을 수 있음(작업 파일은 그대로)
+- [자발] **firemap-write-b** 19:4x 회차 — 19:40 칸 TBD(비축 0) → 새 편 h1forest1022(h1s_forest 쇼츠 짝, 부동산③)
+  착수: firemap-write-b 19:42
+  완료: firemap-write-b 20:06 — https://cafe.naver.com/firemap/366 verify OK 1388/1388자·사진 3/3 '올림픽파크포레온 전세 갱신과 새 계약 얼마나 다를까?'(h1s_forest 짝, 부동산③) · 새 계산: 국토부 전월세 실거래 10/22 다시 받아 포레온 84㎡ 1년 79건 — 갱신 41건 가운데 9억 9,750만원·새 계약 38건 14억, 갱신요구권 36건 5% 초과 0, 헬리오시티 차이 1억 5천 · 쇼츠 14억은 새 계약 기준임을 밝힘 · 레드팀 표현 7 반영·이해 2차·editgate auto · 카페 비축 0/2 · 22:40 칸 TBD(write-b)
+- [알림] **firemap-video-producer** ← firemap-write-b (20:06) h1s_forest(hkFie-WAr5I) 짝 카페 글 https://cafe.naver.com/firemap/366 — 쇼츠 설명란 앞 5줄 카페 주소를 이 글로 바꿔 주세요

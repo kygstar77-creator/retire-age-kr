@@ -2296,10 +2296,11 @@
   {
    "at": "2026-10-22 10:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "wolse1022",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) | firemap-meeting 2026-10-21 21:4x: 장르 부동산① — 국토부 실거래·공시가격 원문(부동산 하루 2칸)"
+   "gates_ok": "2026-10-22 11:14",
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) | firemap-meeting 2026-10-21 21:4x: 장르 부동산① — 국토부 실거래·공시가격 원문(부동산 하루 2칸) | firemap-write-b 11:15: wolse1022 '서울 아파트 월세 비중 갱신 계약도 절반 넘었을까?'(부동산·국토부 실거래 1~8월 직접 집계) 관문 통과 11:14 — 첫 각도(전월세전환율 상한)는 #293·#266과 겹쳐 버림, 레드팀 숫자 틀림0·표현 7 반영, 이해 시험 2차, readcheck 0·aitell 6.4·selfcheck 사실0, editgate auto",
+   "published": "https://cafe.naver.com/firemap/360 11:19 verify OK 975자"
   },
   {
    "at": "2026-10-22 11:30",

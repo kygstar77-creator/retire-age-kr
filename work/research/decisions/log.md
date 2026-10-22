@@ -2835,3 +2835,5 @@
 2026-10-22 10:46 · firemap-video-producer · H-3 11:30 관문 기한 못 지킴, 공개 10/23 11:30은 유지 · 이유: 화면 글자 재서명(firemap-editor)이 렌더 관문, 요청 today.md(시한 15:00)
 2026-10-22 10:46 · firemap-video-producer · D-ETF-1 녹음 105줄(Chirp Charon 1.1)·티커 읽기 say.json(9개)·붙음/끊김 22줄+음높이 5줄 다시 받기 → check 통과 · 이유: 10/22 안 관문 지시, editor 대본 서명 07:08 뒤
 2026-10-22 11:06 · firemap-video-producer · D-ETF-1 둘째 받아쓰기는 다음 회차 로컬 Whisper turbo로 · 이유: 3.5-flash 오늘 무료 한도(105줄 빈칸), 회차 60분 상한 안에 turbo 1시간은 못 끝냄 · 회차 48분, get_usage 확인 안 함
+2026-10-22 11:15 · firemap-write-b · 10:40 카페 칸(TBD·비축 0)을 새 편 wolse1022(서울 아파트 월세 비중, 새 계약·갱신 나눠 국토부 실거래 직접 집계)로 채움 · 처음 잡은 전월세전환율 상한 각도는 selfcheck 중복 검사로 #293(10/16)·#266(10/11)과 겹치는 걸 확인해 버림
+2026-10-22 11:20 · firemap-write-b · wolse1022 발행 https://cafe.naver.com/firemap/360 verify OK 975자·사진 3 · 10:40 칸 40분 늦음(주제 바꾸느라)

@@ -1,0 +1,7 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 전월세 실거래(RTMSDataSvcAptRent) 서울 25개 구 2025·2026년 1~8월 계약 직접 집계(calc2.py) — mkimg.py로 그린 묶은 막대",
+ "made_at": "2026-10-22",
+ "by": "research/wolse1022/mkimg.py",
+ "out": "img/00.png"
+}

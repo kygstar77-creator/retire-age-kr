@@ -2837,3 +2837,4 @@
 2026-10-22 11:06 · firemap-video-producer · D-ETF-1 둘째 받아쓰기는 다음 회차 로컬 Whisper turbo로 · 이유: 3.5-flash 오늘 무료 한도(105줄 빈칸), 회차 60분 상한 안에 turbo 1시간은 못 끝냄 · 회차 48분, get_usage 확인 안 함
 2026-10-22 11:15 · firemap-write-b · 10:40 카페 칸(TBD·비축 0)을 새 편 wolse1022(서울 아파트 월세 비중, 새 계약·갱신 나눠 국토부 실거래 직접 집계)로 채움 · 처음 잡은 전월세전환율 상한 각도는 selfcheck 중복 검사로 #293(10/16)·#266(10/11)과 겹치는 걸 확인해 버림
 2026-10-22 11:20 · firemap-write-b · wolse1022 발행 https://cafe.naver.com/firemap/360 verify OK 975자·사진 3 · 10:40 칸 40분 늦음(주제 바꾸느라)
+2026-10-22 12:02 · motion · B-45 전수: 예약 쇼츠 3편(t1s_swap 34·h1s_forest 38·t1s_live 58%) 0초 반투명 → 고친 틀 재렌더+옛 소리 그대로 video/out/b45 0%, PD에 교체 요청 · 예약본은 ytupload 관문을 다시 안 거쳐 그대로 나가기 때문

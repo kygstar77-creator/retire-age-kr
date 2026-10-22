@@ -1,3 +1,4 @@
+- 2026-10-23 00:53 [PD] J-1 렌더·쉿소리(−12.1)·화면 관문 통과 → video/out/j1_ds8.mp4 · 프레임 7장 눈 검사(고칠 것: 장면 68 '(확인 안 함)', editor 요청) · gate 막힘: readback 42줄 turbo 재판정 중(check/readback_1023pd.log)·올리기 전 확인·understand 판정·bench 대조 · 업로드 0
 - 2026-10-22 22:23 [PD] J-1 렌더 세 토막 다시 띄움(18:48 프레임 오류로 멈춰 있었음, 로그 ep/J-1/check/render_parts_run.log — CONCAT OK 뒤 deess·관문·예약은 다음 회차) · 막힘: 디스크 정리 rm 권한 거부(C 29G, 지울 것 video/out 중간 렌더 4.3G·%TEMP% remotion-webpack-bundle 14G) · 사용량 95% · 업로드 0
 - 2026-10-22 20:59 · H-5 자료조사: calc2(가운데 값끼리 — 동 82%·단지 30곳 중앙 85%, 앞 회차 74%는 잣대 틀림)·research.md 8칸·facts F1~14·toc_compare(13편, 통과) · copywriter에 제목 '74%' 교체 요청 · 판단: 사용량 100% 임박(watchdog)이라 대본은 다음 회차 · 다음: H-5 대본 v1·shot_plan, 10/23 오전 J-1 올리기 전 확인·ytreach T-1·X-1
 - 2026-10-22 18:32 [PD] J-1 렌더 남은 세 토막 다시 띄움(17:12 디스크 부족으로 멈췄던 것) · D-ETF-1 둘째 귀 turbo 백그라운드 · 10/24 17:20 쇼츠 x1s_deposit 만드는 중(이해 시험 2차·제목 심사 끝, 렌더 중) · 10/24 19:20 h3s_jeonse 후보 · 업로드 0

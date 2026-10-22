@@ -2887,3 +2887,5 @@
 - 2026-10-22 23:06 · firemap-write-b · 22:40 칸 penlimit1022 새로 써서 발행(연금수령한도·연차 두 가지) · 비축 0, 장르 연금 계좌 — 해지(#230)·IRP 인출(#217)·1,500만원(#322)은 이미 나가 연금수령한도(검색 230, 우리 첫 글)로
 2026-10-22 23:10 · firemap-dispatcher · 23시 회차 투입 0 · get_usage 주간 95%·5시간 3% (J-1은 PD 렌더 진행·write-b #348 회차 running)
 - 2026-10-22 23:12 · firemap-write-b · 완료: penlimit1022 https://cafe.naver.com/firemap/368 verify OK · 표지 주황 줄을 '2배'에서 사실 문장으로 바꿈(이해 시험 1·2차 6명 '늦게=이득' 오독)
+2026-10-23 00:52 · firemap-youtube-loop · J-1 올리기 전 확인 통과, 바뀐 숫자 없어 다시 녹음·렌더 안 함 · 대조 출처 10곳 다시 받아 값·국회 처리 상태(의결 전) 그대로 확인
+2026-10-23 00:53 · firemap-video-producer · J-1 렌더 끝·쉿소리 --chirp-short(−12.1dB, --chirp −11.8 미달)·화면 관문 통과, j1_ds8.mp4로 meta 바꿈 · 받아쓰기 걸린 42줄 turbo 재판정 띄움 · 장면 68 '(확인 안 함)' 화면 글자 editor 요청 · 업로드 안 함(gate 막힘 4: readback·올리기 전 확인·이해 시험·bench) · 이유: J-1 10/24 칸 정지 전 1순위 · 사용량 95%

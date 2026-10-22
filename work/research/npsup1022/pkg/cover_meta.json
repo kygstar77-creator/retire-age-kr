@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-22 09:36",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "월급 실수령액/내년 국민연금",
+ "num": "300만원이면 1년 7만5천원 줄어요",
+ "sub": "9만원 더 내고 연말정산에서 1만5천원 돌려받아",
+ "label": "국민연금법 부칙으로 직접 계산",
+ "src": "",
+ "icon": "wallet",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 141,
+ "num_px": 54,
+ "sub_px": 41,
+ "board": [
+  "g1asymcafe1022",
+  "rettax1022",
+  "ktb3y1021",
+  "cc200vol1021",
+  "p1step1021",
+  "sevmonth1021",
+  "firsthome1021",
+  "sidecar1021",
+  "cdrate1021",
+  "t1cafe1021"
+ ]
+}

@@ -13,3 +13,4 @@
 - 2026-10-19: openArticle False 글을 public 하기 전에 회원 자료(cafe_members.txt)인지 본다 — #315 사고.
 - 2026-10-20: 애드센스 u/2/sites 주소가 u/0 '액세스 거부'로 튕기면 `adsense.google.com/adsense/u/2/pub-3225798545626010/sites`(pub 주소)로 연다 — 읽힘. 카페 유입 경로는 `py -3.12 work/cafeinflow.py --append`(PYTHONPATH=work), 발행 회차(naverpost cafe)가 브라우저 쥐고 있으면 끝날 때까지(무작위 대기 ~30분) 다른 일 먼저.
 - 2026-10-21: 수익 화면은 앱 브라우저 로그인이 풀릴 수 있다 — 화면 못 읽으면 '확인 불가'로 적고 얼어붙은 지표 판정을 미룬다(같다고 치지 않는다). 계기판 지표는 문자열 포함 검사 대신 접두어로 센다.
+- 10/22: 글당 N일 조회는 work/read_snaps.json(textloop readCount 스냅샷, 글당 최근 80점)을 발행+48h로 보간하면 된다. 앞뒤 점 간격 12h 넘으면 뺀다. 편수는 카페 글 API 작성일로 대조. 유입은 cafeinflow.fetch(22)로 22일치 한 번에 읽힘.

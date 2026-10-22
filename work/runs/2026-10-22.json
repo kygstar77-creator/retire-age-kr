@@ -1,0 +1,49 @@
+{
+ "date": "2026-10-22",
+ "runs": [
+  {
+   "hour": 6,
+   "ts": "06:37",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "퇴직소득세, 중간정산 퇴직금 합치면 80만원 덜 낼까?",
+    "url": "https://cafe.naver.com/firemap/357"
+   },
+   "note": "firemap-write 06:2x · 06:10 칸 rettax1022 발행 06:36(jitter 13분) · verify OK 1927/1927자·사진 3/3 · 관문은 10/21 18:52 통과분(교차검증·selfcheck 사실0·레드팀·이해 2차) · 블로그 없음(새벽 2~7시 카페만·블로그 한도) · 다음: 12:10 X-1 짝 글 x1cafe1022 준비 중"
+  },
+  {
+   "hour": 7,
+   "ts": "08:03",
+   "blog": null,
+   "cafe": {
+    "title": "금값 1월 고점에 샀다면 본전까지 몇 % 남았나",
+    "url": "https://cafe.naver.com/firemap/358"
+   },
+   "note": "write-b 07:40 칸 · g1s_asym 짝 · 출처: KRX 종가 420일(네이버 증권), 조특법 126조의7·부가세법 30조(lawtext 10/22), KB 고시 페이지, 경쟁 6편+카페 9곳 주간 인기 · 교차검증: Gemini 사실 6건 중 반영1·유지5(근거 facts 추가), 말투 8건 중 반영7 · 레드팀 고쳐서4 반영 · 이해 2차 · verify OK 1208/1208·사진 3/3 · 개선: playbook에 m_blog curl 대체 경로 기록"
+  },
+  {
+   "hour": 9,
+   "ts": "09:38",
+   "blog": null,
+   "cafe": {
+    "title": "ISA 중개형 비과세 200만원, 해마다 새로 생길까?",
+    "url": "https://cafe.naver.com/firemap/359"
+   },
+   "note": "09:10 칸 isa1022 발행(무작위 대기 15분) · verify OK 1493/1493자·사진 3/3 · 15:10 칸 npsup1022 '월급 실수령액, 내년 국민연금 오르면 실제로 얼마 줄까?' 관문 통과(자료조사 WebSearch 5건+법제처 DRF 7조문, 교차검증 Gemini 사실 3건 중 반영 2·유지 1(우리 계산기 주소), 말투 15건 반영 15, 레드팀 틀림2·오해7 반영, 이해 시험 2차 통과) · 블로그 없음(DAY_CAP·카페 전용 운영) · 개선: 없음(toprank 블로그탭 0개 → 통합검색 모바일 curl로 대체, 메모리 naver-scrape-limits와 같음) · 일감표 selfloop 생략(사용량 대비)"
+  },
+  {
+   "hour": 10,
+   "ts": "11:20",
+   "who": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "서울 아파트 월세 비중 갱신 계약도 절반 넘었을까?",
+    "url": "https://cafe.naver.com/firemap/360"
+   },
+   "note": "10:40 칸(TBD·비축0) 새 편 wolse1022 · 국토부 실거래 서울 25개 구 2025·2026 1~8월 직접 집계 · 출처 원문 6(실거래·ECOS·법령2·보도2) · 교차검증(Gemini) 사실 4 중 반영3·유지1, 말투 반영4 · 레드팀 숫자 틀림0·표현 7 반영 · 이해 시험 2차 6명 · verify OK 975/975자 사진 3/3 · 개선: 첫 각도(전월세전환율) 중복을 늦게 발견 → playbook에 원고 전 본문 grep 추가"
+  }
+ ]
+}

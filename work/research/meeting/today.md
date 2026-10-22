@@ -28,6 +28,8 @@
 - [자발] **firemap-write** 10/22 09시 회차 — 09:10 발행 · 15:10 칸 원고
   완료: firemap-write 09:38 — ① 09:10 isa1022 https://cafe.naver.com/firemap/359 verify OK 1493/1493자·사진 3/3 ② 15:10 돈 관리 칸 npsup1022 '월급 실수령액, 내년 국민연금 오르면 실제로 얼마 줄까?' 관문 통과·slots 기입 — 국민연금법 부칙 제4조(2027 본인 5%)·소득세법 제51조의3 전액 소득공제로 연말정산 돌아오는 몫(경쟁 3편 0편), 건보 7.19% 동결·장기요양 2027 미발표(10/22 검색), 레드팀 틀림2·오해7 반영, 이해 시험 2차 통과, calc/salary 링크 · 카페 비축 0/2 그대로 · 18:10 t1s_swap 짝 칸은 18시 회차
 - [지시] **firemap-report** (10/22 12:30) 카페 글당 조회 중앙값 주간표: 날짜별 편수 vs 글당 2일 조회 중앙값·홈판·카페검색(10/1~) — 판정은 하지 말고 표만(빈도는 사장님 결정, 회의가 표를 보고 올림) · 수익 화면 로그인 풀린 것은 '결정 필요' 줄로
+  착수: firemap-report 12:34 — 카페 글당 조회 중앙값 주간표(10/1~) · 수익 화면 로그인
+$L
 - [지시] **firemap-watchdog** (10/22 09:45) get_usage로 재고 '예상 100% 시각' 한 줄 · 'Weekly · Fable 0%' 칸이 모든 모델 한도와 별개인지 확인(별개면 옮길 수 있는 일 표)
   착수: firemap-watchdog 09:52 — 100% 시각·Fable 칸 확인
   완료: firemap-watchdog 09:54 — get_usage 09:53 주간(all models) 82%·5시간 5%·추가 사용 꺼짐, 초기화 10/25 21:00 · 24시간 속도(어제 09:53 68%→82% = +14%p/일)면 **100% 10/23 17시경**, 최근 12시간 속도(21:54 78%→82% = +4%p, 새벽 쉼 포함)면 10/24 16시경 · 'Weekly · Fable 0%'는 카드에 all models와 따로 뜨지만 Fable을 쓰면 all models에도 같이 쌓이는지는 **확인 안 함**(공식 문서 못 찾음, 제3자 글끼리 엇갈림) → 별개라는 근거가 없어 옮길 일 표는 만들지 않음 · 확인 방법: 한 회차를 Fable로 돌리고 회차 전후 get_usage 두 칸 비교(순돌이 몫)
@@ -3371,3 +3373,7 @@ $MSG
   착수: firemap-motion-designer 11:32
   완료: firemap-motion-designer 12:02 — 10/22 17:20~10/24 쇼츠 6칸(전부 예약됨)+비축 d1s_dep 렌더본 fade0 전수: **걸림 3편** t1s_swap 34%(오늘 17:20 df5dTTi5VCI)·h1s_forest 38%(오늘 19:20 lEMhSLaZ3lI)·t1s_live 58%(10/23 19:20 2vo0fcUJFxw) · 통과 n1s_top10·n1s_rank·d1s_dep 0%(c1clip 판)·x1s_hedge 0%(A51 뒤 렌더) · 걸린 3편 고친 틀로 다시 렌더 → 옛 _ds 소리 그대로 붙임(-c copy, 새 녹음·새 deess 0) **video/out/b45/<편>_b45_ds.mp4** 셋 다 0% · 0.5초 뒤 화면 옛 렌더와 같음(차이 0~0.4%, 0초만 다름) · 첫 프레임 눈 확인 cardshorts/<편>/frame0_b45.png · 예약된 영상은 ytupload 관문을 다시 안 거치니 그대로 두면 0초 반투명으로 나감 → 아래 PD 요청
 - [요청] **firemap-video-producer** ← motion (12:02, 기한: t1s_swap 오늘 16:50·h1s_forest 18:50·t1s_live 10/23 18:50) 예약 쇼츠 3편 0초 글자 고친 판으로 바꿔 올리기 — 파일 video/out/b45/t1s_swap_b45_ds.mp4·h1s_forest_b45_ds.mp4·t1s_live_b45_ds.mp4(소리=올린 _ds 그대로, 0초 프레임만 다름) · 바꾸는 법은 10/16 h1s_forest 교체 때처럼(옛 예약 풀고 비공개, 삭제 안 함) · 사용량 82%라 못 하면 그대로 나가도 칸은 안 빔(B-45는 새 업로드만 막음)
+- [자발] **firemap-write** 12:2x 회차 — 12:10 칸 x1cafe1022(X-1 짝 글) 발행 + 다음 write 칸 준비
+  착수: firemap-write 12:22
+  완료(1/2): firemap-write 12:27 — 12:10 x1cafe1022 https://cafe.naver.com/firemap/361 verify OK 2130/2130자·사진 4/4 (발행기 단정표현 검사 '손실 없' → c01 한 문장 고침·editor 재확인 12:24)
+- [알림] **firemap-video-producer** ← firemap-write (12:27) X-1 짝 카페 글 https://cafe.naver.com/firemap/361 공개(verify OK) — 설명란 {CAFE}·고정 댓글을 이 주소로 바꿔 주세요

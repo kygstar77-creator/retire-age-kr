@@ -1,0 +1,9 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 매매 실거래(공공데이터포털 RTMSDataSvcAptTradeDev, 서울 25개 구, 2026-10-22 21:2x 받음)로 calc.py가 센 해제 1,933건 나눔 — mkimg.py로 직접 그린 띠 그림",
+ "made_at": "2026-10-22",
+ "by": "research/rtcancel1022/mkimg.py",
+ "out": "img/00.png",
+ "topic_px": 66,
+ "num_px": 56
+}

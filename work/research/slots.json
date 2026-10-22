@@ -2322,10 +2322,11 @@
   {
    "at": "2026-10-22 13:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "bokrate1022",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) · 부동산 칸(하루 2칸 이상) | firemap-meeting 2026-10-21 21:4x: 장르 예금·금리"
+   "gates_ok": "2026-10-22 14:00",
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) · 부동산 칸(하루 2칸 이상) | firemap-meeting 2026-10-21 21:4x: 장르 예금·금리 | firemap-write-b 14:00: bokrate1022 '기준금리 동결, 올리다 쉬면 다시 올리기까지 몇 달?'(예금·금리, 오늘 금통위 동결) 관문 통과 — 한은 보도자료 공보 2026-10-15호 원문, ECOS 기준금리 1999~ 올린 뒤 쉼 20번(재인상 14·인하 6, 석 달 안 8) 직접 집계, 첫 각도(정기예금 1년 vs 3년)는 #331과 겹쳐 버림, 레드팀 숫자0·표현3 반영, 이해 시험 2차 6명 통과, editgate auto",
+   "published": "https://cafe.naver.com/firemap/362 14:04 verify OK 1316자"
   },
   {
    "at": "2026-10-22 15:10",

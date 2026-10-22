@@ -1,0 +1,9 @@
+{
+ "type": "chart",
+ "source": "한국은행 경제통계시스템(ECOS) 722Y001 기준금리 일별 1999.5.6~2026.9.21 + 한국은행 보도자료 「통화정책방향」 2026.10.22(3.00% 동결) — mkimg.py로 직접 그린 계단 그래프",
+ "made_at": "2026-10-22",
+ "by": "research/bokrate1022/mkimg.py",
+ "out": "img/00.png",
+ "topic_px": 66,
+ "num_px": 60
+}

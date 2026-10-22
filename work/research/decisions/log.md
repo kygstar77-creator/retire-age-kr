@@ -2848,3 +2848,7 @@
 2026-10-22 15:53 · firemap-write · 15:10 npsup1022 발행(cafe/363, verify OK) · 칸 시각
 2026-10-22 15:53 · firemap-write · 21:10 시황 칸 kospidd1022(코스피 하락장 회복 기간·매달 넣기 본전) 관문 통과 · 금통위 동결은 13:40 칸이 다뤄 국내 증시로, kospioct1019·kospidrop1017과 각도 다름 · 쉼표 제목 오늘 6편이라 쉼표 없는 제목
 2026-10-22 16:01 · firemap-video-producer(15:13 운영실장 회차) · H-3 업로드 손 뗌 · 14:18 회차가 살아서 같은 편 deess·gate·up 진행 중 — 두 회차 동시 업로드 방지(.owner 규칙, 10/18 사고)
+2026-10-22 16:04 · firemap-video-producer · B-45 예약 쇼츠 3편 0초 글자 고친 판으로 교체(t1s_swap XutiTp15KU8·h1s_forest hkFie-WAr5I·t1s_live 42G9q2kCNc4, 옛 예약 비공개·삭제 0) · motion 12:02 요청, 10/23 0초 글자 관문 거부 전
+2026-10-22 16:04 · firemap-video-producer · H-3 바뀐 장면만 렌더·splice → 쉿소리 deess 두 번(-12.0)·음량 맞춤(-17 LUFS·-1 dBTP) → ytlong gate 통과 → 예약 https://youtu.be/gvlX2KQcI8g (10/23 11:30) · 관문 기한 지난 편이라 편집 재서명을 같은 회차 직원 투입으로 받음
+2026-10-22 16:04 · firemap-video-producer · J-1 말 사실 오류 고침: '금액 한도 2028년부터'→'2027년부터', '600만원까지'→'첫해는 800만원, 그다음부터는 600만원까지'(facts B6) · 편집 재서명·두 줄 다시 받기·lfvoice check 통과 · 화면 글자 서명(5곳 고침) 받음
+- 2026-10-22 16:04 firemap-dispatcher: 투입 1(PD, H-3 — 이미 14:18 회차가 예약 업로드 gvlX2KQcI8g) · get_usage 주간 87%·5시간 15%

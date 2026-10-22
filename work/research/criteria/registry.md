@@ -1,6 +1,6 @@
 # 기준표 (registry)
 
-기준 하나에 한 줄. 갈래 보고: A-script · B-screen · C-thumb · D-cafe · E-ops (README.md)
+기준 하나에 한 줄. 갈래 보고: A-script · B-screen · C-thumb · D-cafe · E-ops · F-format(../strategy/format-check-1022.md, 10/22) (README.md)
 
 | ID | 기준 | 지금 값 | 코드·문서 위치 | 근거 종류 | 근거 주소·날짜 | 판정 | 새 값 |
 |---|---|---|---|---|---|---|---|
@@ -191,6 +191,18 @@
 | B-43 | 말 밑 음악 유무 | 롱폼 덕킹 음·쇼츠 없음 | human.tsx · 쇼츠 틀 | ②(약함) | 제미나이 듣기: 음악 있음 쇼츠 9/25·롱폼 11/14 | 유지 | 그대로(쇼츠 빈 소리는 B-31로) |
 | B-44 | AI 표시 켬 | 켬 | ytlong.py·cardshorts/*clips_up.py containsSyntheticMedia | ① | 유튜브 answer/14328491 — 표시는 노출·수익에 영향 없음 | 유지 | 켬 |
 | B-45 | 쇼츠 0초 글자 다 보임 | 없음(빈 곳 40%만, 반투명 글자 통과) | emptyscan.fade0·gate_fade0 → ytupload 세로 | ②+사내 실측 | 벤치마크 10/21 thumb-gap-1021 ③·editor A51(g1s_asym·h1s_forest 0초 답 글 흐림) · 실측 2026-10-21: 옛 렌더 6편 32~58%(g1s_asym 32·47, h1s_forest 38·46, t1s_live 58, p1s_step 49) vs 고친 틀 4편 0% — 문턱 10%는 두 무리 사이 · 경쟁 0초 반투명 비율은 안 잼 | 새로 넣음(motion 11:40) | 0.2초 뒤 흰 글자(235↑) 중 0초에 7×7 둘레 흰 점(215↑) 없는 비율 ≤10% · 10/23부터 거부, 그 전 경고 · 틀 C2P·C1S·M1S live 0초 장면 페이드 뺌 |
+| F-01 | 틀 A(퇴직금·같은 돈으로 ○○하면 남는 돈) 장 순서 | A-1 대본 순서(두 숫자→구조→비교→떨어진 해→세금→원금→은퇴 계산) | ep/A-1/script.md | ② | strategy/format-check-1022.md 3·5-1절 — 경쟁 12편 장면표(10/22). 정산 장(매출에서 한 줄씩 빼기) 이야기형 상위 4편 전부(ydVAKqIiRos·1HRUFrOiNes·Q94kgkPSp2I·TjF_me927zs) | 제안(10/22, 일정·SKILL 안 바꿈) | 결과 숫자→솔깃한 이유→들어가는 돈→하루 실제→정산(빼기)→시간당→같은 돈 다른 길→해도 되는 사람 3가지→두 갈래 댓글 |
+| F-02 | 틀 A 첫 30초 | 결과 숫자 두 개 + 질문(A-1) | ep/A-1/script.md [0] | ② | ydVAKqIiRos 0:00~0:44(553만→243만, '택시를 산 걸까 비싼 일자리를 산 걸까') · TjF_me927zs 0:30 · 인물 없는 조건 말투 4편(7k40jQD-avw·VUr_hnlbXYs·QtciAE40DlU·Hx6ifDveuQ4) | 유지+보탬 | 결과 숫자 두 개 + 30초 안 두 갈래 질문 하나, 인물 대신 '퇴직금 ○억으로 ○○을 하면' 조건 |
+| F-03 | 틀 A 화면 종류 | 차트 판 100%(A-1) | 롱폼 화면 계획(shot_plan) | ②+④ | 경쟁 이야기형 7/7 그림 인물 85%(제미나이·스토리보드) → B-27·사장님 10/21 가상 인물 금지로 안 따름. 차트만 쓴 경쟁 2편(97zLvnO3BnY 23,731·Hx6ifDveuQ4 9,017)은 이야기형보다 조회 한 자리 작음. 표 캡처+칠: zwbPgDs11OM·TeSwO_lPvgE·ydVAKqIiRos 3:36 | 제안 | 장소 실사 + 공식 표 캡처(칠) + 영수증·명세서 꼴 계산 화면 + 큰 숫자 카드. 차트 판만으로 끝까지 가지 않음 |
+| F-04 | 틀 A 길이 | 8분 바닥(A-15), A-1 15:02 | ytlong.gate | ② | 12편 중앙 16.5분(이야기형 21.6·계산형 13.2), 배수 1·2위 ydVAKqIiRos 16:54·TjF_me927zs 16:04 | 제안 | 15~17분 |
+| F-05 | 틀 A 끝 | 운용사 경고문·계산기 안내(A-1) | ep/A-1/script.md 끝 | ② | 두 갈래 댓글 질문 5/12(ydVAKqIiRos·TjF_me927zs·97zLvnO3BnY·Hx6ifDveuQ4·QtciAE40DlU), 다음 편 예고 2/12(1HRUFrOiNes·TjF_me927zs) | 제안 | 두 갈래 댓글 질문(한다/안 한다) + 다음 편 예고 + 구독 |
+| F-06 | 틀 B(○○이면 상위 몇 %) 장 순서 | N-1 순서(빈칸→줄→평균 vs 가운데→금액 몇 개→1%→세금→순자산→문턱) | ep/N-1/script.md | ② | strategy/format-check-1022.md 4·5-2절 — 경쟁 12편. 평균의 함정 5편(C94230lZDQQ·EGF6neqw3hs·i_mkrokDWgg·SVfRPKmIiYI·zwbPgDs11OM), 아래 칸부터 오르기 4편(76GaqpIWtaU·EGF6neqw3hs·i_mkrokDWgg·SVfRPKmIiYI) | 제안 | 질문+답→끝까지 볼 이유→기준 하나→평균의 함정→아래 칸부터 한 칸씩(금액 카드 같은 자리)→꼭대기 칸→넉넉하지 않은 이유→한 칸 올라가는 법(공식 제도)→정리 3줄→칸 번호 댓글 |
+| F-07 | 틀 B 첫 30초 | 빈칸 카드→0:10 답(N-1) | ep/N-1/script.md 첫 줄 | ② | vr5qMqpwPZM 0:02 · i_mkrokDWgg 0:15 · SVfRPKmIiYI 0:00 · zwbPgDs11OM · TeSwO_lPvgE — N-1과 같은 꼴 | 유지 | 그대로 + '끝까지 보면 내 칸을 찾는다' 한 줄(i_mkrokDWgg·EGF6neqw3hs) |
+| F-08 | 틀 B 화면 종류 | 차트 판 100%(N-1) | 롱폼 화면 계획 | ②+④ | 실제 사람 7/12(얼굴·인터뷰 — 우리는 없음), 그림·AI 사람 5/12(금지), 차트만 0/12. 공식 보고서 캡처+칠 4편(zwbPgDs11OM·TeSwO_lPvgE·HiWkdp35UbQ·C94230lZDQQ), 칸 금액 카드 고정(i_mkrokDWgg·76GaqpIWtaU) | 제안 | 보고서 캡처+칠 + 칸 금액 카드 같은 자리 + 막대·100명 점 + 스톡 실사 |
+| F-09 | 틀 B 길이 | N-1 6:16 | — | ② | 12편 중앙 15.5분(8:05~27:33), N-1보다 짧은 경쟁 0편. 76GaqpIWtaU 12:33·vr5qMqpwPZM 15:12·zwbPgDs11OM 15:47 | 제안(위험: 시청 비율 하락 확인 안 함) | 12~16분 |
+| F-10 | 틀 B 끝 | 계산기 안내·다음 편(N-1) | ep/N-1/script.md 끝 | ② | i_mkrokDWgg '나는 몇 번째 칸'·'부모님께 보내드려도', EGF6neqw3hs '대략 얼마인지 한 줄로' | 제안 | 칸 번호 댓글 + 공유 한 줄 + 다음 편 |
+| F-11 | 롱폼 틀 성과 판정 지표 | 48시간 조회(proven-formats.md, 롱폼 기준선 452×1.5) | longform/loop/proven-formats.md·RULES 174행 | ②(사내 실측) | strategy/format-check-1022.md 1절 — 공개 롱폼 23편: 터진 4편 조회의 94~99%가 탐색(홈), 첫 2일 노출에서 갈림(1,659·1,030 대 같은 주 10~28), 조회≠노출×클릭률(A-1 약 472 대 2,337) | 제안 | 틀(영상 짜임)은 평균 시청 비율·앞 10% 남은 비율(비슷한 길이 대비)로, 주제·포장은 첫 2일 노출·클릭률(reach)로 따로 판정 |
+| F-12 | A-1·N-1 성과를 틀 근거로 씀 | A-1·N-1 = 잘된 틀 | 틀 설계 문서(A-1 analysis.md·n-series-1017.md) | 근거 없음 | 같은 짜임 뒤 편 G1oI47miUuo 551·eTjVs1vDTwg 25·xBTZtRp5lMs 3·SGx7UD-6RNE 74, kXnAKjC-84Q 78. A-1 평균 시청 비율 21.7%(조회 100+ 9편 중 둘째로 낮음) | 뺌(제안) | 틀 근거는 경쟁 장면 실측(F-01~F-10)으로. A-1·N-1은 '주제가 홈에서 통한 예'로만 |
 
 ## 적용 기록 (A·D·E, 2026-10-19 순돌이 지시 — 코드 1f9701d, SKILL 7곳·RULES.md)
 - 새 값은 소급하지 않는다: 롱폼 publishAt 2026-10-23 이상(research_gate.RENEW_FROM = TOC_FROM), 카페 order.txt 2026-10-20 0시 뒤(CAFE_RENEW_FROM), 카페 틀 조이는 것 10/20 칸부터(aitell.D_FROM). 푸는 것(D-07·D-18·D-20·D-21·D-22·A-03·A-06·A-42)은 바로.

@@ -2881,3 +2881,4 @@
 2026-10-22 21:05 · firemap-audit · 완료: 노출/조회 구분 지시 — 노출은 reach CSV만, viewCount는 조회로 적음(audit.md·RULES 관찰 기록)
 2026-10-22 21:28 · firemap-write · 21:10 칸 kospidd1022 제목 교체 뒤 발행(cafe/367) · 같은 날 끝말 '몇' 3칸 막힘, 쉼표 제목도 이미 6칸이라 쉼표 없이 '오래 걸렸을까'로
 2026-10-22 21:28 · firemap-write · editgate stamp에 같은 날 끝말 검사 추가 · 15:48 auto 서명 때 못 잡고 발행 때서야 걸림
+2026-10-22 21:53 · firemap-watchdog · R2 사용량 get_usage 주간 93%·5시간 10%·Fable 0%, 100% 예상 10/23 05~06시 · 감시: 카페 25분 전 발행·대기 카페 2(시각 대기)·블로그 정지(STOP_blog) · naverpost check 로그인됨 · 멈춘 회차 없음(write 32분 도는 중) · 메우기 없음 · 사용량 아끼려 묶음 제작 안 함(회의 10/22 원칙)

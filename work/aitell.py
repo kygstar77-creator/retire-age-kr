@@ -6,6 +6,7 @@
 #   py -3.12 work/aitell.py scan <묶음 폴더 여러 개>         → 기준 조정용 분포
 #   py -3.12 work/aitell.py sameday 2026-10-05               → 그 날 카페 칸끼리 숫자 핵심값 겹침(≥3, 같은 예시)·제목 끝말 같은 칸 ≥3 검사. 걸리면 종료코드 5. gate는 숫자 겹침만 막고 끝말은 경고(10/5부터)
 #   py -3.12 work/aitell.py frame <묶음>                     → 카페 틀 점검(기준 리뉴얼 10/19 D갈래: 소제목 0~6 경고·'한눈에 정리' 필수·쉼표 제목 하루 절반 이하·제목 30자 경고, 물음·'왜' 제목 규칙은 뺌). 어기면 종료코드 5
+#   py -3.12 work/aitell.py cafe3 <묶음 …>                   → 카페 원고 세 가지(10/22): D-17 본문 1,500자 넘음(경고)·상대 날짜 날짜 없이·A53 근거 없는 남들 반응(막음, gate는 10/23 칸부터). 걸리면 종료코드 5
 #   py -3.12 work/aitell.py aibrief <묶음>                   → AI 브리핑 인용 구조 3줄(10/5 ai-lab): 첫 문단 2~3문장 안 숫자 답·질문형 소제목 ≥2·표 1개. 어기면 종료코드 5. gate에는 안 넣음(모든 글 같은 틀 금지 — 칸 1편씩 고른 글만)
 #   py -3.12 work/aitell.py commaday 2026-10-04               → 그 날 카페 쉼표 제목 수(D-22 10/19: 하루 칸의 절반 이하, 넘으면 frame이 쉼표 제목을 막는다)
 #   py -3.12 work/aitell.py script <편 폴더|voice.json|자막 .json3|대본 텍스트>  → 롱폼 대본 실측 기준 2개(10/4 speechcompare 경쟁 자막 12편 vs 우리 4편): 숫자 1,000단어당 ≤92(경쟁 최대 91.4) · 숫자 2개 이상 문장 ≤20%. 넘으면 종료코드 6
@@ -459,6 +460,43 @@ def repeat_check(pkg):
     return out
 
 
+# 10/22 editor(지시, 근거 growth/cafe-gap-1022.md ②1~3위 · registry D-17 · style-guide A53·10/20 상대 날짜 줄) — 카페 원고 세 가지.
+#   D-17 본문 1,500자 넘으면 경고(naverpost verify와 같은 셈: 공백·소제목 표시 뺀 글자). 제목에 총정리·백테스트면 뺀다(registry D-17 '총정리·백테스트형은 길어도 됨').
+#   상대 날짜: '오늘·어제·내일·이번 주…'를 같은 문장에 날짜(10월 21일·10/21·2026.10.21) 없이 쓰면 막음 — 발행 다음 날부터 틀린 말이 된다(351·355·356).
+#   A53: '댓글이 자주 보입니다·카페마다 올라와요·가장 많이 묻는' 꼴은 실제 질문 주소(남의 카페·지식iN·유튜브 댓글 lc=·뉴스)가 글에 없으면 막음(349·339·354·356, 우리 카페 댓글 0/69).
+# 막는 것은 slot 날짜 CAFE3_FROM 칸부터(이미 관문 지난 10/22 칸은 경고만). 공개 글은 고치지 않는다(소급 금지).
+CAFE3_FROM = '2026-10-23'
+LEN_WARN = 1500
+REL_DATE = re.compile(r'(?<![가-힣])(오늘|어제|내일|그제|그저께|모레|이번\s*주|지난\s*주|다음\s*주)')
+ABS_DATE = re.compile(r'\d{1,2}\s*월\s*\d{1,2}\s*일|(?<![\d.])\d{1,2}/\d{1,2}(?![\d/])|\d{4}[.\-]\s*\d{1,2}[.\-]\s*\d{1,2}')
+A53_RE = re.compile(r'(댓글|글|질문|뉴스|기사|얘기|이야기|말)[이가은도]?\s*(?:요즘\s*|올해\s*|부쩍\s*|자주\s*|많이\s*|종종\s*)+(보|올라|나오|들리|눈에)'
+                    r'|카페마다|(?:가장|제일|자주|많이)\s*묻는|(?:묻는|궁금해하는|아는|헷갈리는|모르는|걱정하는)\s*분[들이]*\s*(?:이\s*)?(?:많|적지)')
+A53_SRC = re.compile(r'https?://(?:m\.)?(?:cafe\.naver\.com/(?!firemap)|kin\.naver\.com|(?:n\.)?news\.naver\.com|[^\s)]*youtube\.com/[^\s)]*lc=)')
+
+
+def cafe3_check(pkg):
+    """카페 원고 세 가지 → (막을 것, 경고). 10/22 editor."""
+    text, files = pkg_text(pkg)
+    body = '\n'.join(open(f, encoding='utf-8').read() for f in files)
+    block, warn = [], []
+    tp = os.path.join(pkg, 'title.txt')
+    title = open(tp, encoding='utf-8').read() if os.path.exists(tp) else ''
+    n = len(re.sub(r'\s+', '', re.sub(r'(?m)^\s*(#{1,6}\s+|■)', '', body)))
+    if n > LEN_WARN and not re.search(r'총정리|백테스트', title):
+        warn.append(f'D-17 본문 {n}자 > {LEN_WARN}자 — 상위 정보글 중앙 982자·조회 3천+ 1,019자(registry D-17). 되풀이·풀이 문장부터 덜기')
+    for ln in (title + '\n' + body).splitlines():
+        if ln.lstrip().startswith(('http', '|', '출처')): continue
+        for s in re.split(r'(?<=[.?!])\s+', ln):
+            m = REL_DATE.search(s)
+            if m and not ABS_DATE.search(s):
+                block.append(f"상대 날짜 '{m.group(0)}' 날짜 없이: \"{s.strip()[:50]}\" — 10월 N일로(발행 다음 날 틀림)")
+    if not A53_SRC.search(body):
+        for s in sentences(body):
+            m = A53_RE.search(s)
+            if m: block.append(f"A53 근거 없는 남들 반응 '{m.group(0)}': \"{s.strip()[:50]}\" — 실제 질문 주소가 없으면 지우고 사실 한 줄로")
+    return block, warn
+
+
 def gate_pkg(pkg):
     """발행기용. (올려도 되나, 한 줄 사유, 걸린 곳)."""
     text, files = pkg_text(pkg)
@@ -482,6 +520,10 @@ def gate_pkg(pkg):
         if day0 < OPEN_FROM:
             for e in opening_check(pkg): print('[경고]', e)
         for e in repeat_check(pkg): print('[경고·되풀이]', e)
+        c3b, c3w = cafe3_check(pkg)
+        for e in c3w: print('[경고]', e)
+        if c3b and day0 >= CAFE3_FROM: return False, '카페 원고 — ' + '; '.join(c3b[:3]), c3b
+        for e in c3b: print('[경고·10/23 칸부터 막음]', e)
         fb = frame_check(pkg)
         if fb:
             sp = os.path.join(pkg, 'slot.txt')
@@ -764,6 +806,14 @@ def main(a):
         bad = frame_check(a[1])
         if not bad: print('카페 틀 v2 통과', a[1]); return 0
         print('카페 틀 v2 어김', a[1]); [print('  ', b) for b in bad]; return 5
+    if a[0] == 'cafe3':   # 10/22: D-17 글자 수(경고)·상대 날짜·A53(막음) — 날짜 상관없이 다 보인다
+        tot = 0
+        for p in a[1:]:
+            b, w = cafe3_check(p); tot += len(b)
+            print(f'{p} — 막을 것 {len(b)} · 경고 {len(w)}')
+            for x in b: print('   [막음]', x)
+            for x in w: print('   [경고]', x)
+        return 5 if tot else 0
     if a[0] == 'scope':
         sc, why = scope_check(a[1])
         print(f'카페 주제 범위: {sc}', a[1]); why and print('  ', why)

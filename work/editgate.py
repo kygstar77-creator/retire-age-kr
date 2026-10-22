@@ -51,9 +51,38 @@ def check(pkg):
 
 
 COVER2_FROM = datetime.datetime(2026, 10, 17, 10, 0)
+# V2·V4(벤치마크 cafe-gap-1022, visual 10/22): 차트·캡처 표지도 주제어 줄 > 숫자 줄, 본문 표 그림 3장 연달아·7열 표 금지 — 이 시각 뒤 order.txt 묶음만
+COVER3_FROM = datetime.datetime(2026, 10, 22, 12, 0)
 
 
-def cover_check(pkg):
+def v2v4_check(pkg, m):
+    """V2: 342(주제어 46 < 숫자 56)·354(66 = 66)는 차트 표지(D-04)라 cafecover.py 크기 검사를 건너뛰었다(위 StopIteration).
+    차트·캡처 표지도 cover_meta.json에 topic_px·num_px(그 그림을 그린 코드의 글자 크기 — 같은 단위)를 적고 topic_px > num_px.
+    V4: 349 본문 그림 4장 중 #1~#3이 표, #3은 7열. 본문 그림(00 뺌)에서 표 그림 3장 연달아 금지, 7열 이상 표는 blogimg.split_cols()로 나눈다."""
+    bad = []
+    ty = (m or {}).get('type', 'card')
+    if ty in ('capture', 'chart'):
+        tp, npx = (m or {}).get('topic_px'), (m or {}).get('num_px')
+        if not tp or npx is None:
+            bad.append(f"표지 {ty} — cover_meta.json에 topic_px·num_px(주제어 줄·숫자 줄 글자 크기, 숫자 줄 없으면 num_px 0) 없음(V2: 342·354가 이 틈으로 숫자 줄이 더 컸다)")
+        elif npx and not tp > npx:
+            bad.append(f"표지 주제어 줄 {tp} ≤ 숫자 줄 {npx} — 주제어 줄을 가장 크게(V2)")
+    tp = os.path.join(pkg, 'tables.json')
+    tabs = json.load(open(tp, encoding='utf-8')) if os.path.exists(tp) else {}
+    order = os.path.join(pkg, 'order.txt')
+    imgs = [os.path.basename(l.strip()) for l in open(order, encoding='utf-8') if l.strip().startswith('img/')][1:]
+    run = 0
+    for n in imgs:
+        run = run + 1 if n in tabs else 0
+        if run >= 3: bad.append(f'본문 표 그림 3장 연달아({n}까지) — 사이에 표 아닌 그림을 넣거나 표를 합친다(V4: 349 #1~#3)'); break
+    for n in imgs:
+        t = tabs.get(n) or {}
+        nc = len(t.get('cols') or (t.get('rows') or [[]])[0])
+        if nc >= 7: bad.append(f'{n} 표 {nc}열 — blogimg.split_cols()로 나눈다(V4: 349 #3 7열)')
+    return bad
+
+
+def cover_check(pkg, v3=None):
     """카페 표지 관문(visual 10/17, 벤치마크 cafe-gap-1016 ①~③). 문제 목록, 비면 통과.
     10/17 10:00 이후 만든 묶음(order.txt 시각 — understand_block과 같은 방식)만 본다. 그 전 묶음은 그대로 나간다.
     ① 표지는 work/cafecover.py로 만든다(cover_meta.json: 주제 사물 그림 1개·주제어 줄 > 숫자 줄)
@@ -91,6 +120,11 @@ def cover_check(pkg):
             pass
         except Exception as e:
             bad.append(f'cover_meta.json 못 읽음: {e}')
+    if v3 if v3 is not None else datetime.datetime.fromtimestamp(os.path.getmtime(order)) >= COVER3_FROM:
+        try:
+            bad += v2v4_check(pkg, json.load(open(mp, encoding='utf-8')) if os.path.exists(mp) else {})
+        except Exception as e:
+            bad.append(f'V2·V4 검사 못 함: {e}')
     cr = os.path.join(pkg, 'cover_review.md')
     t = open(cr, encoding='utf-8', errors='ignore').read() if os.path.exists(cr) else ''
     for key in ('100px 읽힘', '최근 10장 옆 구별'):

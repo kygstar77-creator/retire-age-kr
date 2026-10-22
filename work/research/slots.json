@@ -2396,10 +2396,11 @@
   {
    "at": "2026-10-22 22:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "penlimit1022",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) | firemap-meeting 2026-10-21 21:4x: 장르 연금 계좌·노후"
+   "gates_ok": "2026-10-22 23:05",
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) | firemap-meeting 2026-10-21 21:4x: 장르 연금 계좌·노후 | firemap-write-b 23:05: penlimit1022 '연금수령한도 늦게 시작하면 1년에 더 꺼낼 수 있을까?'(연금 계좌) 관문 통과 — 시행령 40조의2·187조의3 원문(한도용 연차는 안 받아도 늚 vs 퇴직금 감면 연차는 받은 해만), 3억 계좌 매년 한도만큼 10년·6년차 시작 5년 직접 계산(경쟁 0편), 레드팀 숫자0·표현4·오해2 반영, 이해 시험 3차 9명 통과, readcheck 0·aitell 5.4·selfcheck 사실0, editgate auto",
+   "published": "https://cafe.naver.com/firemap/368 23:11 verify OK 1981자"
   },
   {
    "at": "2026-10-23 06:10",

@@ -1,0 +1,10 @@
+{
+ "type": "chart",
+ "source": "소득세법 시행령 제40조의2 ③3 연금수령한도 식(국가법령정보센터)으로 3억원 계좌 1년차·6년차 첫해 한도를 직접 계산(calc.py), mkimg.py로 그린 막대",
+ "made_at": "2026-10-22",
+ "by": "research/penlimit1022/mkimg.py",
+ "out": "img/00.png",
+ "topic_px": 84,
+ "num_px": 56,
+ "note": "주황 줄은 숫자 아닌 사실 문장(이해 시험 2차 반영)"
+}

@@ -1,1 +1,1 @@
-{"by": "firemap-editor", "at": "2026-10-22 14:49", "sha": "5847b0faab0f9909fbc546107db3b7abaf05d768fd6c9d0ebfb618b66726148a", "sha_of": "screen_text.txt bytes", "note": "scenes.94 자막 두 줄 = 14:46 서명한 대본 금액 한도 2027 고침과 같은 글자, 나머지 0 변경"}
+{"by": "firemap-editor", "at": "2026-10-23 03:02", "sha": "83b072bacc906c1d138b00f2a878d900077d547783953ffcfd7694685bcc0036", "sha_of": "screen_text.txt bytes", "note": "10/23 재서명: bak_rt1023 대비 diff 9줄뿐 — 대본 4낱말 자막(57·108·125·139) + 57 제목 '2027년 한 해' + 125 표 칸 '사는 집 비율만큼' + 68 출처 줄 작업 메모 '(확인 안 함)' 삭제 · aitell 4.2 통과(전과 같음) · 나머지 0 변경"}

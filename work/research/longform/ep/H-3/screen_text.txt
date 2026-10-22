@@ -72,7 +72,7 @@
 [scenes.12.data.c] ink
 [scenes.12.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
 [scenes.13.lines.0.text] 이번에도 직접 다니는 대신 신고 자료로, 국토교통부에 신고된 최근 1년 치 거래만 셌습니다.
-[scenes.13.lines.0.cap] 매매 압구정동 157건 · 신천동 311건 · 목동 675건 · 신정동 925건 · 2026년 10월 거래는 신고 기한이 30일이라 덜 들어옴
+[scenes.13.lines.0.cap] 매매 압구정동 160건 · 신천동 311건 · 목동 679건 · 신정동 934건 · 2026년 10월 거래는 신고 기한이 30일이라 덜 들어옴
 [scenes.13.data.n] 1장
 [scenes.13.data.q] 어떻게 셌나, 그리고 이 1년의 조건
 [scenes.13.data.from] 국토교통부 아파트 매매 실거래 · 2025.11~2026.10 계약 · 해제·공공기관 매수 제외
@@ -300,13 +300,13 @@
 [scenes.45.lines.0.text] 20억 안팎으로, 목동신시가지만이 아니라 목동이라는 동네 전체를 다 보면요.
 [scenes.45.lines.1.text] 85㎡ 정도였어요.
 [scenes.45.lines.2.text] 신정동에선 71㎡ 정도였고요.
-[scenes.45.lines.2.cap] 18~22억 거래 · 목동(법정동 전체) 105건 전용 중앙 85㎡(목동청구한신 32·목동신시가지4 25·7 13) · 신정동 164건 71㎡(래미안목동아델리체 29·신시가지11 25·8 24) · 압구정동 0건 · 신천동 6건
+[scenes.45.lines.2.cap] 18~22억 거래 · 목동(법정동 전체) 105건 전용 중앙 85㎡(목동청구한신 32·목동신시가지4 25·7 13) · 신정동 165건 71㎡(래미안목동아델리체 29·신시가지11 25·8 24) · 압구정동 0건 · 신천동 6건
 [scenes.45.data.title] 20억 안팎 · 전용 중앙
 [scenes.45.data.v1] 85㎡
 [scenes.45.data.s1] 목동 전체 · 105건
 [scenes.45.data.c1] accent
 [scenes.45.data.v2] 71㎡
-[scenes.45.data.s2] 신정동 · 164건
+[scenes.45.data.s2] 신정동 · 165건
 [scenes.45.data.c2] ink
 [scenes.45.data.icon] Scale
 [scenes.45.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
@@ -314,23 +314,23 @@
 [scenes.46.data.license] Pexels 29303349 무료(성창 남)
 [scenes.46.data.say] 열네 단지, 큰 동네
 [scenes.46.data.side] left
-[scenes.47.lines.0.text] 그런데 팔린 집은 429채였습니다.
+[scenes.47.lines.0.text] 그런데 팔린 집은 431채였습니다.
 [scenes.47.lines.1.text] 백 집에 두 집이 안 되는 거죠.
-[scenes.47.lines.1.cap] 건축물대장 총괄표제부 세대수 합 26,635(2026.10.17 조회) · 1년 매매 429건 · 1.6%
+[scenes.47.lines.1.cap] 건축물대장 총괄표제부 세대수 합 26,635(2026.10.17 조회) · 1년 매매 431건 · 1.6%
 [scenes.47.data.title] 목동신시가지 14단지 · 1년
-[scenes.47.data.v] 429채
+[scenes.47.data.v] 431채
 [scenes.47.data.s] 26,635세대 중 · 1.6%
 [scenes.47.data.icon] Building
 [scenes.47.data.c] accent
 [scenes.47.data.source] 국토교통부 실거래 · 건축물대장 총괄표제부 세대수(2026.10.17 조회) · 파이어맵 계산
 [scenes.48.lines.0.text] 앞 번호 단지들은 백 집에 두 집, 뒤 번호 단지들은 한 집 조금 넘었어요.
-[scenes.48.lines.0.cap] 1~7단지 12,258세대 250건(2.0%) · 8~14단지 14,377세대 179건(1.2%) · 가장 적은 곳 6단지·10단지 0.6% · 가장 많은 곳 7단지 3.1%
+[scenes.48.lines.0.cap] 1~7단지 12,258세대 250건(2.0%) · 8~14단지 14,377세대 181건(1.3%) · 가장 적은 곳 6단지·10단지 0.6% · 가장 많은 곳 7단지 3.1%
 [scenes.48.data.title] 1년에 팔린 비율
 [scenes.48.data.v1] 2.0%
 [scenes.48.data.s1] 1~7단지 · 250건
 [scenes.48.data.c1] accent
-[scenes.48.data.v2] 1.2%
-[scenes.48.data.s2] 8~14단지 · 179건
+[scenes.48.data.v2] 1.3%
+[scenes.48.data.s2] 8~14단지 · 181건
 [scenes.48.data.c2] ink
 [scenes.48.data.icon] Scale
 [scenes.48.data.source] 국토교통부 실거래 · 건축물대장 총괄표제부 세대수(2026.10.17 조회) · 파이어맵 계산
@@ -461,10 +461,10 @@
 [scenes.65.lines.1.text] 계약했다가 나중에 취소 신고된 거래가, 열세 건 중에 한 건꼴이었습니다.
 [scenes.65.lines.2.text] 다른 두 동네는 서른다섯 건에 한 건꼴이었고요.
 [scenes.65.lines.3.text] 압구정에서 취소가 훨씬 잦았던 거죠.
-[scenes.65.lines.3.cap] 해제 신고 비율 · 압구정동 13/170건 7.6% · 신천동 9/320건 2.8% · 목동 19/694건 2.7% · 신정동 28/953건 2.9%
+[scenes.65.lines.3.cap] 해제 신고 비율 · 압구정동 13/173건 7.5% · 신천동 9/320건 2.8% · 목동 19/698건 2.7% · 신정동 28/962건 2.9%
 [scenes.65.data.title] 해제 신고 비율
 [scenes.65.data.bars.0.0] 압구정동
-[scenes.65.data.bars.0.2] 7.6%
+[scenes.65.data.bars.0.2] 7.5%
 [scenes.65.data.bars.0.3] rise
 [scenes.65.data.bars.1.0] 신천동
 [scenes.65.data.bars.1.2] 2.8%
@@ -510,9 +510,9 @@
 [scenes.70.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
 [scenes.71.lines.0.text] 신천동과 목동·신정동에서 크기별 거래가 넉넉한 단지를 전부 봤더니, 열에 아홉 정도 이랬습니다.
 [scenes.71.lines.1.text] 거꾸로인 곳은 두 곳뿐이었고요.
-[scenes.71.lines.1.cap] 신천·목동·신정동에서 거래 5건 이상 면적이 둘 이상인 단지 26곳 · 가장 작은 면적이 평당 더 높음 24곳 · 거꾸로 2곳(학마을1단지(신정동) −5.2% · 한신잠실코아 −1.7%) · 압구정동은 기준을 넘는 단지가 신현대12차 1곳뿐이고 거꾸로(−9.1%)
-[scenes.71.data.title] 크기별 거래 넉넉한 단지 26곳
-[scenes.71.data.v] 24곳
+[scenes.71.lines.1.cap] 신천·목동·신정동에서 거래 5건 이상 면적이 둘 이상인 단지 27곳 · 가장 작은 면적이 평당 더 높음 25곳 · 거꾸로 2곳(학마을1단지(신정동) −8.6% · 한신잠실코아 −1.7%) · 압구정동은 기준을 넘는 단지가 신현대12차 1곳뿐이고 거꾸로(−9.1%)
+[scenes.71.data.title] 크기별 거래 넉넉한 단지 27곳
+[scenes.71.data.v] 25곳
 [scenes.71.data.s] 가장 작은 집이 평당 더 비쌈 · 거꾸로 2곳
 [scenes.71.data.icon] ListChecks
 [scenes.71.data.c] accent
@@ -734,13 +734,13 @@
 [scenes.104.data.side] left
 [scenes.105.lines.0.text] 파크리오 국민평형은 새로 맺은 전세가 11억 정도였습니다.
 [scenes.105.lines.1.text] 살던 사람이 다시 맺은 계약은 5천만원 정도 낮았고요.
-[scenes.105.lines.1.cap] 파크리오 84~85㎡ 월세 없는 전세 · 신규 158건 중앙 11.00억 · 갱신 157건 중앙 10.50억 · 매매 95건 29.20억 · 신규 전세 ÷ 매매 38%
+[scenes.105.lines.1.cap] 파크리오 84~85㎡ 월세 없는 전세 · 신규 160건 중앙 11.00억 · 갱신 163건 중앙 10.50억 · 매매 95건 29.20억 · 신규 전세 ÷ 매매 38%
 [scenes.105.data.title] 파크리오 84~85㎡ 전세 중간값
 [scenes.105.data.v1] 11.00억
-[scenes.105.data.s1] 새로 맺은 전세 · 158건
+[scenes.105.data.s1] 새로 맺은 전세 · 160건
 [scenes.105.data.c1] accent
 [scenes.105.data.v2] 10.50억
-[scenes.105.data.s2] 다시 맺은 전세 · 157건
+[scenes.105.data.s2] 다시 맺은 전세 · 163건
 [scenes.105.data.c2] ink
 [scenes.105.data.icon] Home
 [scenes.105.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산

@@ -90,6 +90,19 @@
     "url": "https://cafe.naver.com/firemap/364"
    },
    "note": "16:40 칸 TBD·비축 0 → 새 편 etfdistday1022. 자료조사 원문 8곳(운용사 규약 2·KRX 2·소득세법·휴장일·네이버 원 시세·야후) · 검증 경로 crosscheck(gemini): 사실 6건 중 반영 2·유지 4(영상 공개 확인·해석·조특법/소득세법 facts 보강·URL), 말투 10 반영 · 레드팀 숫자0·표현1·오해3·위험2 반영 · 이해 시험 2차 6명 통과 · verify OK 1876/1876자·사진 3/3 · 개선: 수정주가(siseJson)로는 분배락 하락이 지워짐을 잡아 원 시세 API로 바꾸고 playbook에 기록"
+  },
+  {
+   "hour": 18,
+   "ts": "18:43",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "일시적 2주택 비과세 기한, 내 집도 줄어들었을까?",
+    "url": "https://cafe.naver.com/firemap/365"
+   },
+   "note": "18:10 칸 t1swap1022(쇼츠 t1s_swap 짝). 쇼츠 링크 df5dTTi5VCI(비공개)→XutiTp15KU8(PD 14:34 교체, oembed 공개 확인) 바꿈 → 편집 재서명(editor 18:24, 링크만 변경) → 발행. verify OK 1716/1716자·사진 3/3. 자료조사·교차검증은 12:51 관문 때 완료(research.md). 블로그 없음(DAY_CAP·카페 전용). 개선: 없음"
   }
  ]
 }

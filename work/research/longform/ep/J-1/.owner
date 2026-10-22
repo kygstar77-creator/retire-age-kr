@@ -14,3 +14,4 @@
 2026-10-22 16:05 | firemap-video-producer 정기 14:1x 회차 | 렌더 네 토막 띄움(check/render_parts.sh, 로그 check/render_parts_run.log) — 끝나기 전 다른 회차는 렌더 건드리지 말 것
 2026-10-22 18:18 | firemap-video-producer 정기 18:1x 회차 | J-1 렌더 남은 세 토막 다시 띄움(17:12 ENOSPC로 멈춤, 끝 토막 24000- 있음)
 2026-10-22 18:32 | firemap-video-producer 정기 18:1x 회차 | 손 뗌 — 렌더 세 토막 백그라운드로 도는 중(끝나기 전 다른 회차는 렌더 건드리지 말 것, CONCAT OK 뒤 deess·관문은 다음 회차)
+2026-10-22 22:22 | firemap-video-producer 정기 22:1x 회차 | J-1 렌더 남은 세 토막 다시 띄움(18:48 0-7999 6459프레임 'No frame found' — 디스크 부족 때 자산 복사 잘림 추정)

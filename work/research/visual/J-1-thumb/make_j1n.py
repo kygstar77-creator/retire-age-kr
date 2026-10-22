@@ -44,5 +44,10 @@ def make(out, pic, ya, top, pill, top_size=88, pill_size=100, band=235, ls=1.14)
 
 
 T, P = '종부세 정부안 · 국회 심사 중', '2028년 기준'
-make('j1n_a.png', 'apartment_building_evening_seoul_1_31414676.jpg', 0.0, T, P, top_size=120, pill_size=120)
-make('j1n_b.png', 'korean_apartment_complex_3_38249703.jpg', 0.3, T, P, top_size=120, pill_size=120)
+if len(sys.argv) == 1: make('j1n_a.png', 'apartment_building_evening_seoul_1_31414676.jpg', 0.0, T, P, top_size=120, pill_size=120)
+if len(sys.argv) == 1: make('j1n_b.png', 'korean_apartment_complex_3_38249703.jpg', 0.3, T, P, top_size=120, pill_size=120)
+
+# 2차(visual 10/22 17시) — copywriter 10/21 18:54 문구 2차 1위 그대로, 사진은 1차 추천 b와 같은 것
+if len(sys.argv) > 1 and sys.argv[1] == 'c':
+    BIG[:] = ['공시가격 20억 보유세', '거주 안 하면 140만원 늘어']
+    make('j1n_c.png', 'korean_apartment_complex_3_38249703.jpg', 0.3, '종부세 정부안 · 국회 심사 중 · 집 한 채', '2028년 한 해', top_size=120, pill_size=120)

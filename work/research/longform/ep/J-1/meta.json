@@ -10,8 +10,8 @@
  "thumb_text_top": "종부세 정부안 · 국회 심사 중 · 집 한 채",
  "thumb_text": "공시가격 20억 보유세 / 거주 안 하면 140만원 늘어",
  "thumb_text_small": "2028년 한 해",
- "thumb": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\J-1\\thumb_j1n_b.png",
- "thumb_status": "10/22 PD: visual 17:23 thumb_j1n_b(1차 시험 통과·문구 2차 남음) — copywriter 10/21 18:54 문구 2차 1위('거주 안 하면 140만원 늘어')로 새판·1초 시험·짝 비교 뒤 교체",
+ "thumb": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\J-1\\thumb_j1n_c.png",
+ "thumb_status": "10/22 17:10 visual: thumb_j1n_c(copywriter 2차 1위 문구) — 짝 비교 b vs c 2번 다 c 승(gemini-3.1-flash-lite)·이해 2차 40·50·60 주제 3/3·AI 티 0/3, 남은 헷갈림 '1년치' 2/3·공시가격=시세 2/3 → understand_test.md 썸네일 줄은 youtube-loop/PD 판단 · 근거 visual/J-1-thumb/judges.md",
  "desc_first2": [
   "국회 심사 중인 정부 종합부동산세법 개정안(2026.9.3 제출, 국회 통과 전) 기준으로, 공시가격 20억 집 한 채를 가진 55세·보유 10년의 2028년 한 해 보유세(재산세+종부세)를 계산했습니다. 그 집에 살면 618.9만원 → 596.4만원, 살지 않으면 759.8만원으로 늘어납니다.",
   "올해 12월 고지서는 지금 법 그대로이고, 정부안대로 통과되면 바뀐 계산은 2027년 고지서부터입니다(재정경제부 2026 세제개편안 상세본 · 파이어맵 계산 · 세무 상담 아님)."
@@ -103,5 +103,6 @@
  "made_by": "firemap-video-producer",
  "made_at": "2026-10-22",
  "video": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\video\\out\\j1.mp4",
- "missing": 0
+ "missing": 0,
+ "thumb_alt": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\J-1\\thumb_j1n_b.png"
 }

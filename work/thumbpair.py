@@ -21,10 +21,17 @@ def key():
 
 def ask(text, imgs=()):
     parts = [{'text': text}] + [{'inline_data': {'mime_type': 'image/png', 'data': base64.b64encode(open(p, 'rb').read()).decode()}} for p in imgs]
-    r = json.load(urllib.request.urlopen(urllib.request.Request(
-        f'https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={key()}',
-        data=json.dumps({'contents': [{'parts': parts}]}).encode(), headers={'Content-Type': 'application/json'}), timeout=240))
-    return r['candidates'][0]['content']['parts'][0]['text']
+    # 503·500·429는 잠깐 몰림이라 같은 모델로 기다렸다 다시(C-23 모델 고정 유지) — 10/21·10/22 '503 두 번'에 회차가 통째로 멈춘 일
+    import time, urllib.error
+    for i in range(6):
+        try:
+            r = json.load(urllib.request.urlopen(urllib.request.Request(
+                f'https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={key()}',
+                data=json.dumps({'contents': [{'parts': parts}]}).encode(), headers={'Content-Type': 'application/json'}), timeout=240))
+            return r['candidates'][0]['content']['parts'][0]['text']
+        except urllib.error.HTTPError as e:
+            if e.code not in (429, 500, 503) or i == 5: raise
+            time.sleep(10 * (i + 1))
 
 
 def board(first, second, comps, W, path):

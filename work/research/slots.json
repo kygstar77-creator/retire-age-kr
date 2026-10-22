@@ -2552,18 +2552,18 @@
   {
    "at": "2026-10-24 17:20",
    "kind": "shorts",
-   "item": "TBD(c1clip 아닌 틀)",
+   "item": "x1s_deposit",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-10-19 21:35: 쇼츠 셋째 칸(사장님 10/19 하루 3편) 뼈대 — 같은 날 다른 두 편과 다른 롱폼·다른 질문, 관문 기한 12시간 전"
+   "note": "firemap-meeting 2026-10-19 21:35: 쇼츠 셋째 칸(사장님 10/19 하루 3편) 뼈대 — 같은 날 다른 두 편과 다른 롱폼·다른 질문, 관문 기한 12시간 전 | 2026-10-22 18:26 PD: x1s_deposit(X-1 4장 달러 예금, cardshorts/x1s_deposit) — 같은 날 07:20 n1s_rank(N-1)·19:20 H-3 클립과 다른 롱폼·질문, X-1 연속 2편째(10/23 17:20 x1s_hedge) · 렌더 1차 중, 관문 기한 10/24 05:20"
   },
   {
    "at": "2026-10-24 19:20",
    "kind": "shorts",
-   "item": "TBD(c1clip 아닌 틀)",
+   "item": "h3s_jeonse(후보)",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "2026-10-18 12:21 PD: 비축 d1s_dep는 10/15 c1clip 판 — 안전 영역 관문(10/16) 전이라 v3redo 뒤 예약 | 10/18 12:29 PD: d1s_dep v3 재렌더 관문(안전 영역·디자인·눈) 통과했으나 w1g1clips_up 꼴 ⓓ(최근 10편 c1clip 6편 60%>50%)에 막힘 → 이 칸은 M1S·c2person 틀 새 클립으로. d1s_dep는 c1clip 비율 내려간 뒤(비축 유지)"
+   "note": "2026-10-18 12:21 PD: 비축 d1s_dep는 10/15 c1clip 판 — 안전 영역 관문(10/16) 전이라 v3redo 뒤 예약 | 10/18 12:29 PD: d1s_dep v3 재렌더 관문(안전 영역·디자인·눈) 통과했으나 w1g1clips_up 꼴 ⓓ(최근 10편 c1clip 6편 60%>50%)에 막힘 → 이 칸은 M1S·c2person 틀 새 클립으로. d1s_dep는 c1clip 비율 내려간 뒤(비축 유지) | 2026-10-22 18:26 PD: H-3 클립(h3_specs.md h3s_jeonse 전세가율, H-3 10/23 11:30 공개 뒤) — 10/22 실거래 다시 받은 숫자로 spec 대조 먼저, 관문 기한 10/24 07:20"
   },
   {
    "at": "2026-10-25 11:30",

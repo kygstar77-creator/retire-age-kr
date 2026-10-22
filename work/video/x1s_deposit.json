@@ -1,0 +1,294 @@
+{
+ "fps": 30,
+ "name": "x1s_deposit",
+ "v": 2,
+ "look": "live",
+ "question": [
+  "달러 예금 이자 3%",
+  "원화로는 마이너스 될까?"
+ ],
+ "hot": "마이너스",
+ "answer": {
+  "label": "달러 1년 예금, 세후 이자 3%쯤",
+  "items": [
+   "1년 뒤 환율이 3%쯤 내리면",
+   "이자가 사라진다"
+  ],
+  "arrow": false,
+  "note": "환율 3%쯤"
+ },
+ "base": "KB국민은행 외화예금 금리(조회 2026.10.16) · 한국은행 환율 · 예금보험공사 · 파이어맵 계산",
+ "long": "WcBOePkyOOQ",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "마이너스?",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "1년 뒤 환율이 3%쯤 내리면",
+      "이자가 사라진다",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "이자는",
+      "달러로 붙고",
+      "",
+      104,
+      "ink"
+     ],
+     [
+      "원화로 바꾸는 날",
+      "그날 환율",
+      "",
+      180,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "원화로 따지면, 네. 마이너스가 될 수 있습니다.",
+     "audio": "audio/x-1/736b808a73898dfb.wav",
+     "frames": 104
+    },
+    {
+     "n": 2,
+     "text": "달러 상품은 이자가 달러로 붙고, 원화로 바꾸는 날 그날 환율이 적용되니까요.",
+     "audio": "audio/x-1/980b23060615b885.wav",
+     "frames": 158
+    }
+   ],
+   "frames": 262
+  },
+  {
+   "kind": "vs",
+   "label": "달러 1년 예금",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "KB국민은행 달러 1년",
+      "연 3.6%대",
+      "",
+      80,
+      "ink"
+     ],
+     [
+      "이자 세금 15.4% 떼면",
+      "손에 남는 이자 3%쯤",
+      "",
+      264,
+      "ink"
+     ]
+    ],
+    "side": [
+     "조회기준일 2026.10.16",
+     80,
+     "KB 금리"
+    ]
+   },
+   "lines": [
+    {
+     "n": 3,
+     "text": "은행 달러 예금으로 계산해 볼게요.",
+     "audio": "audio/x-1/b4af2c0f5cef30bb.wav",
+     "frames": 80
+    },
+    {
+     "n": 4,
+     "text": "KB국민은행 고시를 보면, 달러 1년 정기예금 금리가 연 3.6%를 조금 넘습니다.",
+     "audio": "audio/x-1/898118b0719e81a2.wav",
+     "frames": 184
+    },
+    {
+     "n": 5,
+     "text": "이자에는 세금 15.4%가 붙으니, 손에 남는 건 3%쯤이에요.",
+     "audio": "audio/x-1/ee249d036d351ca5.wav",
+     "frames": 139
+    }
+   ],
+   "frames": 403
+  },
+  {
+   "kind": "vs",
+   "label": "1년 뒤 환율",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "지금 = 2026년 10월 15일 환율",
+      "1,338.6원",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "1년 뒤 환율",
+      "1,298원 아래면 마이너스",
+      "",
+      236,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "지금 1억 원을 달러로 바꿔 1년 맡긴다고 해 보죠.",
+     "audio": "audio/x-1/e66dada1bce44c30.wav",
+     "frames": 104
+    },
+    {
+     "n": 7,
+     "text": "1년 뒤 환율이 지금보다 3%쯤만 내려도, 받은 이자가 다 사라집니다.",
+     "audio": "audio/x-1/ea9686538a2a06e2.wav",
+     "frames": 132
+    },
+    {
+     "n": 8,
+     "text": "1,298원 아래로 내려가면 그때부터는 이자보다 환율 손실이 더 커요.",
+     "audio": "audio/x-1/b6187f3f670fd458.wav",
+     "frames": 137
+    }
+   ],
+   "frames": 373
+  },
+  {
+   "kind": "vs",
+   "label": "예금자보호",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "은행이 문을 닫을 때만",
+      "돌려주는 돈의 한도",
+      "",
+      103,
+      "ink"
+     ],
+     [
+      "예금보험공사 안내",
+      "외화예금도 1억원까지",
+      "",
+      224,
+      "ink"
+     ],
+     [
+      "원화로 바꿔 계산",
+      "예금과 이자 합쳐 1억원",
+      "",
+      366,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 9,
+     "text": "은행 달러 예금이라면 예금자보호부터 확인하세요.",
+     "audio": "audio/x-1/88e61df7daa4cd2d.wav",
+     "frames": 103
+    },
+    {
+     "n": 10,
+     "text": "은행이 문을 닫아도 나라 기관이 대신 돌려주는 돈의 한도예요.",
+     "audio": "audio/x-1/34150e160d719750.wav",
+     "frames": 121
+    },
+    {
+     "n": 11,
+     "text": "예금보험공사는 외화예금도 1억원까지 보호된다고 안내합니다.",
+     "audio": "audio/x-1/b28d137499ae410c.wav",
+     "frames": 142
+    },
+    {
+     "n": 12,
+     "text": "다만 원화로 바꿔서 계산하고, 한 은행에 든 예금과 이자를 모두 합쳐 1억원까지예요.",
+     "audio": "audio/x-1/e105bf639b173d94.wav",
+     "frames": 176
+    }
+   ],
+   "frames": 578
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/x1/5466769.mp4",
+   "from": 0,
+   "frames": 104,
+   "start": 0
+  },
+  {
+   "src": "bg/x1/6963836.mp4",
+   "from": 104,
+   "frames": 158,
+   "start": 1
+  },
+  {
+   "src": "bg/x1/7735915.mp4",
+   "from": 262,
+   "frames": 80,
+   "start": 1
+  },
+  {
+   "src": "bg/x1/34596756.mp4",
+   "from": 342,
+   "frames": 184,
+   "start": 2
+  },
+  {
+   "src": "bg/x1/8661806.mp4",
+   "from": 526,
+   "frames": 139,
+   "start": 2
+  },
+  {
+   "src": "bg/x1/5466779.mp4",
+   "from": 665,
+   "frames": 104,
+   "start": 1
+  },
+  {
+   "src": "bg/x1/9806390.mp4",
+   "from": 769,
+   "frames": 132,
+   "start": 4
+  },
+  {
+   "src": "bg/x1/7829075.mp4",
+   "from": 901,
+   "frames": 137,
+   "start": 0
+  },
+  {
+   "src": "bg/x1/6326929.mp4",
+   "from": 1038,
+   "frames": 103,
+   "start": 2
+  },
+  {
+   "src": "bg/x1/8439245.mp4",
+   "from": 1141,
+   "frames": 121,
+   "start": 0
+  },
+  {
+   "src": "bg/x1/35054136.mp4",
+   "from": 1262,
+   "frames": 142,
+   "start": 1
+  },
+  {
+   "src": "bg/x1/34596756.mp4",
+   "from": 1404,
+   "frames": 212,
+   "start": 12
+  }
+ ],
+ "credits": "34596756 Jakub Zerdzicki · 35054136 Jakub Zerdzicki · 5466769 olia danilevich · 5466779 olia danilevich · 6326929 https://kaboompics.com/ · 6963836 cottonbro studio · 7735915 Mikhail Nilov · 7829075 Mikhail Nilov · 8439245 Kampus Production · 8661806 Adrian Frentescu · 9806390 Nadezhda Moryak (Pexels License)"
+}

@@ -2,3 +2,5 @@
 2026-10-19 15:29 | 목차 대조 담당(순돌이 투입) | 끝 — toc_compare.md·plan.md '목차 대조 반영 권장 장 순서' 절만 (손 뗌)
 2026-10-22 10:30 | firemap-video-producer 정기 10:1x 회차 | 녹음(make)→check→readback
 2026-10-22 11:06 | firemap-video-producer 정기 10:1x 회차 | 끝 — 녹음 105줄 check 통과·첫 귀 105/105, 둘째 귀 3.5-flash 한도로 빈칸 → 다음: readback --resume --whisper turbo (손 뗌)
+2026-10-22 18:18 | firemap-video-producer 정기 18:1x 회차 | 둘째 귀 readback --resume --whisper turbo (백그라운드, 로그 check/readback_1022pd18.log)
+2026-10-22 18:32 | firemap-video-producer 정기 18:1x 회차 | 손 뗌 — readback --whisper turbo 백그라운드 도는 중(로그 check/readback_1022pd18.log)

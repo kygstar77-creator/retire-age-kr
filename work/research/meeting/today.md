@@ -27,6 +27,8 @@
 - [지시] **firemap-write-b** (10/22 첫 회차) psfund1021(#348) 끝에 '특정 상품을 사거나 팔라는 뜻이 아닙니다' 한 줄(cdrate·cc200vol에는 있음) — 고칠 수 없으면 다음 상품 비교 글부터 editgate 막음 요청을 improve 몫으로 남기지 말고 write 교본에 적기 · 10/22 13:40 예금·금리 칸은 #244(정기예금 세후 이자, 2,150회) 같은 축 후속
 - [자발] **firemap-write** 10/22 09시 회차 — 09:10 발행 · 15:10 칸 원고
   완료: firemap-write 09:38 — ① 09:10 isa1022 https://cafe.naver.com/firemap/359 verify OK 1493/1493자·사진 3/3 ② 15:10 돈 관리 칸 npsup1022 '월급 실수령액, 내년 국민연금 오르면 실제로 얼마 줄까?' 관문 통과·slots 기입 — 국민연금법 부칙 제4조(2027 본인 5%)·소득세법 제51조의3 전액 소득공제로 연말정산 돌아오는 몫(경쟁 3편 0편), 건보 7.19% 동결·장기요양 2027 미발표(10/22 검색), 레드팀 틀림2·오해7 반영, 이해 시험 2차 통과, calc/salary 링크 · 카페 비축 0/2 그대로 · 18:10 t1s_swap 짝 칸은 18시 회차
+- [자발] **firemap-write** 10/22 15시 회차 — 15:10 발행 · 21:10 칸 원고
+  완료: firemap-write 15:53 — ① 15:10 npsup1022 https://cafe.naver.com/firemap/363 verify OK 1960/1960자·사진 3/3 ② 21:10 시황 칸 kospidd1022 '코스피 하락장 예전엔 본전 찾는 데 몇 년 걸렸을까?' 관문 통과·slots 기입 — 10/22 15:30 종가 5,533.77(6/22 고점 대비 39.3%, 고점 뒤 최저), 1997년 이후 30% 넘게 빠진 다섯 번 지수 회복 1.9~5.5년·매달 넣기 본전 처음 1.4~2.3년/다시 안 내려간 날 1.4~3.9년 직접 계산(경쟁 6편 0편) · 레드팀 틀림2 반영 · 이해 시험 2차 뜻 틀림0 · editgate auto · 카페 비축 0/2 그대로 · 막힘: git pull/merge가 인덱스 intent-to-add 항목(outputs/·b10cafe1002 등 수천 개)으로 'not uptodate' → 별도 worktree로 병합·푸시
 - [지시] **firemap-report** (10/22 12:30) 카페 글당 조회 중앙값 주간표: 날짜별 편수 vs 글당 2일 조회 중앙값·홈판·카페검색(10/1~) — 판정은 하지 말고 표만(빈도는 사장님 결정, 회의가 표를 보고 올림) · 수익 화면 로그인 풀린 것은 '결정 필요' 줄로
   착수: firemap-report 12:34 — 카페 글당 조회 중앙값 주간표(10/1~) · 수익 화면 로그인
 $L
@@ -3348,6 +3350,7 @@ $MSG
   착수: firemap-copywriter 07:50
   완료: firemap-copywriter 07:51 — H-3 bench_check.md 끝 줄 **'대조: 통과'** · 최종 h3_ds_v2.mp4 프레임 6장 직접 봄(0:11 85/96/0건 = 썸네일·제목 값, 1:15 지도 OSM 출처 안 잘림, 오타·겹침 0) · 남은 경미 1: 말 자막 낱말 중간 끊김('흔히'·'한') — 다음 편 자막 나눔 · PD 10:05 회차 gate→up 가능(남은 막힘 = research '올리기 전 확인' youtube-loop)
 - [요청] **firemap-video-producer**(다음 회차 06:05·10:05) ← 18:17 회차: 위 둘 끝나면 바로 py -3.12 work/ytlong.py gate→up work/research/longform/ep/H-3 (publishAt 10/23 11:30, thumb_h3v_b) → videos.list 확인 → uploads.jsonl · .owner 끝 줄 있음
+  착수: firemap-video-producer 15:13 (운영실장) — H-3 splice→gate→up(publishAt 10/23 11:30), 관문 기한 10/22 11:30 지남 · editor 14:18 화면 재서명 통과
   착수: firemap-video-producer 06:18
   진행: firemap-video-producer 07:25 — 렌더본 눈 검사에서 지도 6장면 끝 OSM 출처 잘림 발견 → 그 장면만 다시 렌더해 덮음 → **최종 파일 work/video/out/h3_ds_v2.mp4**(meta.json video 바꿈, 관문 전부 통과) · bench_check '자막·화면' 칸 갱신(bgcheck·쉿소리·출처 맞춤) · **남은 막힘 2: research '올리기 전 확인'(youtube-loop 10:00)·bench_check '대조:' 줄(copywriter 09:00)** — 둘 다 들어오면 다음 PD 회차(10:05)가 gate→up
 - [자발] **firemap-write** 06:2x 회차 — 06:10 칸 rettax1022 발행 + 12:10 X-1 짝 글(관문 기한 06:10 지남) 준비

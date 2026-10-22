@@ -1,0 +1,26 @@
+overlap 2990 maxdiff 18.31006835937478
+last (datetime.date(2026, 10, 22), 5533.77)
+1997-06-17 792.29 index_rec 1999-04-27 dca_rec (datetime.date(1997, 8, 11), 3, 3.021)
+2000-01-04 1059.04 index_rec 2005-07-14 dca_rec (datetime.date(2001, 11, 23), 23, 23.393)
+2007-10-31 2064.85 index_rec 2011-01-03 dca_rec (datetime.date(2008, 5, 2), 8, 8.082)
+2018-01-29 2598.19 index_rec 2020-11-23 dca_rec (datetime.date(2018, 4, 30), 4, 4.024)
+2021-07-06 3305.21 index_rec 2025-09-10 dca_rec (datetime.date(2023, 6, 9), 24, 24.093)
+2026-06-22 9114.55 index_rec None dca_rec None
+july low (datetime.date(2026, 7, 30), 5593.56) today (datetime.date(2026, 10, 22), 5533.77) prev (datetime.date(2026, 10, 21), 5735.66) chg -3.52 from peak -39.29
+--- DCA recovery after trough (monthly 1 unit from peak month)
+1997-06-17 peak 792.29 trough 1998-06-16 280.00 dd -64.7% | index rec 1999-04-27 (1.9y from peak, 0.9y from trough) | dca rec 1998-11-20 (1.4y from peak, months 18)
+2000-01-04 peak 1059.04 trough 2001-09-17 468.76 dd -55.7% | index rec 2005-07-14 (5.5y from peak, 3.8y from trough) | dca rec 2001-11-23 (1.9y from peak, months 23)
+2007-10-31 peak 2064.85 trough 2008-10-24 938.75 dd -54.5% | index rec 2011-01-03 (3.2y from peak, 2.2y from trough) | dca rec 2009-07-20 (1.7y from peak, months 22)
+2018-01-29 peak 2598.19 trough 2020-03-19 1457.64 dd -43.9% | index rec 2020-11-23 (2.8y from peak, 0.7y from trough) | dca rec 2020-06-05 (2.3y from peak, months 30)
+2021-07-06 peak 3305.21 trough 2022-09-30 2155.49 dd -34.8% | index rec 2025-09-10 (4.2y from peak, 2.9y from trough) | dca rec 2023-06-09 (1.9y from peak, months 24)
+--- 2026: 100만원씩 매달 첫 거래일 (6/22 고점에 첫 번째)
+[('2026-06-22', 9114.55), ('2026-07-01', 8303.41), ('2026-08-03', 6257.45), ('2026-09-01', 6835.8), ('2026-10-01', 6971.35)] invested 500 value 376.1 pct -24.8 avgcost 7356.3
+lump 1000 at peak -> 607.1
+need from today to peak 64.7 need to dca avg 32.9
+--- 매달 넣기: 저점 뒤 처음 본전 / 그 뒤 다시 안 깨진 날(지수 회복일까지 넣기 계속)
+1997-06-17 first 1998-11-20 1.4 stay 1998-11-20 1.4
+2000-01-04 first 2001-11-23 1.9 stay 2003-06-17 3.4
+2007-10-31 first 2009-07-20 1.7 stay 2009-07-20 1.7
+2018-01-29 first 2020-06-05 2.3 stay 2020-07-13 2.5
+2021-07-06 first 2023-06-09 1.9 stay 2025-05-26 3.9
+post-peak lowest before today (datetime.date(2026, 10, 20), 5552.74)

@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-22 15:46",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "코스피 하락장/고점 되찾기까지",
+ "num": "1.9~5.5년",
+ "sub": "1997년 이후 30% 넘게 빠진 다섯 번",
+ "label": "",
+ "src": "",
+ "icon": "trending-down",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 120,
+ "num_px": 96,
+ "sub_px": 48,
+ "board": [
+  "bokrate1022",
+  "x1cafe1022",
+  "wolse1022",
+  "isa1022",
+  "g1asymcafe1022",
+  "rettax1022",
+  "ktb3y1021",
+  "cc200vol1021",
+  "p1step1021",
+  "sevmonth1021"
+ ]
+}

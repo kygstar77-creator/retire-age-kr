@@ -52,7 +52,7 @@
    {
     "item": "R-1",
     "ep": "longform/ep/R-1",
-    "status": "10/5 PD: 대본 편집 통과(06:30)·첫 장면 줌아웃 넣음·153문장 녹음했으나 목소리 관문 막힘(f0 밖 81) — 10/6 16:01 재녹음 · 화면 글자 editor stamp 대기 | 10/6 04:47 youtube-loop: 16:01 TTS는 M-1에 씀 — R-1은 Chirp 3 HD 결재(목소리 도구 교체) 뒤 녹음 | 10/6 12:46 youtube-loop: 순돌이 11:2x 지시로 R-1 v7 94줄(7.6분, 한 창 녹음 가능) — 녹음·렌더·19:30 예약은 firemap-r1-record-1006(16:10) · 화면 글자 editor 재서명 필요 | 10/6 16:29 r1-record: v7 94줄 한 창 녹음 끝(같은 모델·Charon, 6장 묶음 1회 재녹음했으나 더 나빠 첫 녹음 유지) — 목소리 관문 막힘: 앞뒤 차 +4.8%(통과)·IQR 0.18(기준 0.16)·편 전체 5.12음절/초(기준 5.5)·튀는 줄 9 → 렌더·업로드 안 함. 원인: 요청(묶음)마다 음높이 122~156Hz. 대본 재심사 5.97도 미달. gates_ok 없음",
+    "status": "firemap-meeting 2026-10-25 21:44: 비축 아님 — 10/14 11:30 공개됨(G1oI47miUuo). 비축 롱폼 0 | 10/5 PD: 대본 편집 통과(06:30)·첫 장면 줌아웃 넣음·153문장 녹음했으나 목소리 관문 막힘(f0 밖 81) — 10/6 16:01 재녹음 · 화면 글자 editor stamp 대기 | 10/6 04:47 youtube-loop: 16:01 TTS는 M-1",
     "by": "firemap-youtube-loop",
     "at": "2026-10-06 16:29"
    }
@@ -2409,7 +2409,8 @@
    "owner": "firemap-write",
    "gates_ok": "2026-10-22 19:01",
    "note": "firemap-meeting 2026-10-21 21:4x: 카페 하루 12칸 뼈대(36시간 앞) · 장르 경제·정책 · 사용량 100% 오면 이 칸은 비축·순연(아래 today 회의 절) | firemap-write 19:01: cpi2pct1022 '물가상승률 목표 2%, 실제로 맞춘 달은 얼마나 될까?'(경제·정책) 관문 통과 — ECOS 901Y009 소비자물가지수로 2016.1~2026.9 129달 직접 계산(1.5~2.5% 43달·연평균 2.23%, 경쟁 0편), 한은 결정문·물가안정목표제 안내·국민연금법 51조·금감원 예금 공시, 레드팀 숫자0·표현3·오해2 반영, 이해 시험 3차 9명 통과, readcheck 0·aitell 1.4·selfcheck 사실0, editgate auto",
-   "item_pkg": "work/research/cpi2pct1022/pkg"
+   "item_pkg": "work/research/cpi2pct1022/pkg",
+   "published": "https://cafe.naver.com/firemap/369 21:37 verify OK 1621자"
   },
   {
    "at": "2026-10-23 07:20",
@@ -2554,7 +2555,7 @@
    "item": "J-1",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "순돌이 10/16: 10/23 칸을 손품 H-3에 주고 하루 뒤로 | firemap-meeting 2026-10-13 21:32: 1주택 종부세 개편 전·후(재경부 원문, calc.py 정부 사례 8/9). 카페 회원 자료 2호와 같은 주제로 묶음. 대본 youtube-loop 10/17. 축: 정책·부동산 | 레드팀: 정부안 국회 통과 전·9/1 수정됨·올해 11월 고지는 현행 기준 → 제목·말에 \"정부안 기준, 통과 전\" 명시, 정부 확정안 사례로 다시 대조 | youtube-loop 2026-10-14 08:49: H-2와 칸 바꿈 → 10/22(T-1 양도세 10/21과 이틀 연속 부동산 세금 피함, J-1은 기획안만 있어 대본 기한 10/20·관문 10/21 11:30) | youtube-loop 2026-10-14 17:2x: 08:49 판단 바로잡음 — 10/22로 옮겨도 T-1(10/21)과 이틀 연속 부동산 세금이라 **10/23으로**, 10/22엔 X-1 환율(경제 축, 심사 7.87·편집 통과). J-1 대본 v3 심사 중(제미나이 8.4), 관문 기한 10/22 11:30·녹음 10/21 창"
+   "note": "firemap-meeting 2026-10-25 21:44: 사용량 100% 정지로 빔(공개 0) — 편은 10/26·10/27로 옮김 | 순돌이 10/16: 10/23 칸을 손품 H-3에 주고 하루 뒤로 | firemap-meeting 2026-10-13 21:32: 1주택 종부세 개편 전·후(재경부 원문, calc.py 정부 사례 8/9). 카페 회원 자료 2호와 같은 주제로 묶음. 대본 youtube-loop 10/17. 축: 정책·부동산 | 레드팀: 정부안 국회 통과 전·9/1 수정됨·"
   },
   {
    "at": "2026-10-24 17:20",
@@ -2578,23 +2579,175 @@
    "item": "D-ETF-1(배당 ETF 16종 섹터 히트맵·분배율·분배 성장률·총수익)",
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
-   "note": "롱폼 기획·자료조사 담당 2026-10-19 12:5x: 사장님 10/19 12시 \"배당 ETF들 섹터별로 히트맵, 섹터 분석, 배당률, 성장률 … 클릭할 만한 영상은 언제 만드는 거야?\" → 비움(C1) 칸을 D-ETF-1로(C1 관문 버그 10/19 고침). 근거: 네이버 SCHD 54,300·JEPQ 29,230·TIGER미국배당다우존스 26,060(kwvol 10/19) · 유튜브 30일 '배당 ETF' 상위 25편 조회 중앙 112,468, 'SCHD 하락·위기' 26만·24만(10월) · 30일 6개 검색 상위 101편 제목에 섹터·업종·히트맵 0편 · 자료 ep/D-ETF-1/research.md(research_gate 통과)·facts.txt·calc_out.txt·fig/heatmap_draft.png · A-1·M-1에 없던 새 것 3(히트맵·10년 분배 성장·총수익/2022 낙폭) plan.md 맨 위. 대본 youtube-loop 10/21 21:00 · 화면 서명 editor 10/23 12:00 · 썸네일 visual·제목 copywriter 10/23 12:00 · 녹음·렌더·예약 PD 10/24 11:30(관문 기한). 주의: 다음 날 10/26 W-3(고배당주)와 배당 축 이틀 연속 — 각도 다름(ETF 묶음·섹터 vs 개별 종목·분리과세), 회의 확인 | 이전: firemap-meeting 2026-10-17 21:42: C1 앞뒤 7일 7편 — 10/19 19:50 C-2 때문에 10/25·10/26 중 하루는 빈다(검증 참모 직접 계산). 10/26 W 3화를 살리려고 이 칸 비움 — 실패 아님(회의 결정). P-2는 11/4 후보"
+   "note": "firemap-meeting 2026-10-25 21:44: 사용량 100% 정지로 빔(공개 0) — 편은 10/26·10/27로 옮김 | 롱폼 기획·자료조사 담당 2026-10-19 12:5x: 사장님 10/19 12시 \"배당 ETF들 섹터별로 히트맵, 섹터 분석, 배당률, 성장률 … 클릭할 만한 영상은 언제 만드는 거야?\" → 비움(C1) 칸을 D-ETF-1로(C1 관문 버그 10/19 고침). 근거: 네이버 SCHD 54,300·JEPQ 29,230·TIGER미국배당다우존스 26,060("
+  },
+  {
+   "at": "2026-10-26 06:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 카페 12칸 뼈대 · 장르 경제·정책 · 검색형(검색어 수요 확인) 우선 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
+  },
+  {
+   "at": "2026-10-26 07:20",
+   "kind": "shorts",
+   "item": "d1s_dep",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-16 07:32",
+   "note": "firemap-meeting 2026-10-25 21:44: 쇼츠 칸 · 비축 d1s_dep(D-1 GMc2Rd1-JYA 클립, 관문 10/16) — 올리기 전 확인(건보 피부양자 기준 그대로인지) 뒤 예약 · c1clip 비율 막히면 다른 틀 클립 · 사용량 상한 아래에선 쇼츠 칸이 카페 write-b 칸보다 먼저(레드팀 10/25: 공개 2~3일 600~1,350회 vs 롱폼 8~133회)"
+  },
+  {
+   "at": "2026-10-26 07:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 카페 12칸 뼈대 · 쇼츠 짝 — yt_pair: d1s_dep(07:20, D-1) 질문 하나만 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
+  },
+  {
+   "at": "2026-10-26 09:10",
+   "kind": "cafe",
+   "item": "rtcancel1022",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 카페 12칸 뼈대 · 부동산① — 관문 통과분 rtcancel1022(10/22 작성) 올리기 전 확인 1일 안 다시·기준일 줄·권유 아님 줄 더함 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
+  },
+  {
+   "at": "2026-10-26 10:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 카페 12칸 뼈대 · 장르 예금·금리 · 검색형 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
   },
   {
    "at": "2026-10-26 11:30",
    "kind": "long",
-   "item": "W-3(섹터 묶음 ① 고배당주, 내 돈 기준)",
-   "owner": "firemap-youtube-loop",
+   "item": "J-1",
+   "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:42: 순돌이 10/17 00:2x W 코너 섹터 묶음 첫 편·배당 주 1칸(today 1998·2117). 축: 배당. 관문 10/25 11:30"
+   "note": "firemap-meeting 2026-10-25 21:44: 사용량 정지(10/23 05시~10/25 21시)로 10/24 J-1·10/25 D-ETF-1 칸 빔 → 완성에 가까운 순으로 당김(J-1 렌더 끝 10/23 05:58, D-ETF-1 녹음 끝) · 관문 기한 지남 — 넘는 즉시 예약, 못 넘으면 칸 빔 기록(비축 롱폼 0: R-1은 10/14 공개됨) | firemap-meeting 2026-10-17 21:42: 순돌이 10/17 00:2x W 코너 섹터 묶음 첫 편·배당 주 1칸(today 1998·2117). 축: 배당. 관문 10/25 11:30"
+  },
+  {
+   "at": "2026-10-26 12:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 카페 12칸 뼈대 · 롱폼 짝 — yt_pair: J-1(10/26 11:30) 공시 12~40억×거주/비거주×나이 전체 표(ep/J-1/calc.py), 영상 공개 확인 뒤 · 못 나가면 정책 일반 글 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
+  },
+  {
+   "at": "2026-10-26 13:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 카페 12칸 뼈대 · 장르 주식(ETF·배당) · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
+  },
+  {
+   "at": "2026-10-26 15:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 카페 12칸 뼈대 · 장르 돈 관리 — 계산기 주제 우선 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
+  },
+  {
+   "at": "2026-10-26 16:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 카페 12칸 뼈대 · 장르 연금·세금 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
+  },
+  {
+   "at": "2026-10-26 17:20",
+   "kind": "shorts",
+   "item": "TBD",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 쇼츠 칸 · x1s_deposit(X-1, 10/23 렌더 3차·이해 시험 통과) 우선 · 관문 기한 10/26 05:20 · 사용량 상한 아래에선 쇼츠 칸이 카페 write-b 칸보다 먼저(레드팀 10/25: 공개 2~3일 600~1,350회 vs 롱폼 8~133회)"
+  },
+  {
+   "at": "2026-10-26 18:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 카페 12칸 뼈대 · 쇼츠 짝 — yt_pair: 17:20 쇼츠 질문 하나만 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
+  },
+  {
+   "at": "2026-10-26 19:20",
+   "kind": "shorts",
+   "item": "TBD",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 쇼츠 칸 · h3s_jeonse(H-3 gvlX2KQcI8g 10/23 공개분) 후보 · 같은 날 셋은 다른 롱폼·다른 질문 · 사용량 상한 아래에선 쇼츠 칸이 카페 write-b 칸보다 먼저(레드팀 10/25: 공개 2~3일 600~1,350회 vs 롱폼 8~133회)"
+  },
+  {
+   "at": "2026-10-26 19:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 카페 12칸 뼈대 · 부동산② — 쇼츠 짝 yt_pair: 19:20 쇼츠(H-3 클립이면) 또는 실거래 원문 글 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
+  },
+  {
+   "at": "2026-10-26 21:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 카페 12칸 뼈대 · 장르 시리즈·시황(종가 기준 표기) · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
+  },
+  {
+   "at": "2026-10-26 22:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 카페 12칸 뼈대 · 장르 노후·건보료 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
+  },
+  {
+   "at": "2026-10-27 06:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 카페 뼈대(36시간 앞) · 장르 경제·정책 · 검색형 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
+  },
+  {
+   "at": "2026-10-27 07:20",
+   "kind": "shorts",
+   "item": "TBD",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 쇼츠 칸 · 다른 롱폼 클립(N-1·R-1·H-3 중 이번 주 안 쓴 것) · 사용량 상한 아래에선 쇼츠 칸이 카페 write-b 칸보다 먼저(레드팀 10/25: 공개 2~3일 600~1,350회 vs 롱폼 8~133회)"
+  },
+  {
+   "at": "2026-10-27 07:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 카페 뼈대(36시간 앞) · 쇼츠 짝 — yt_pair: 10/27 07:20 쇼츠 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
+  },
+  {
+   "at": "2026-10-27 09:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 카페 뼈대(36시간 앞) · 장르 부동산① 원문 자료 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
   },
   {
    "at": "2026-10-27 11:30",
    "kind": "long",
-   "item": "H-4(광명 철산·하안·광명동 손품)",
+   "item": "D-ETF-1(배당 ETF 16종 섹터 히트맵·분배율·분배 성장률·총수익)",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:42: youtube-loop 20:57 요청 받아들임(손품 화·금). 대본 10/23 21:00·관문 10/26 11:30"
+   "note": "firemap-meeting 2026-10-25 21:44: 사용량 정지(10/23 05시~10/25 21시)로 10/24 J-1·10/25 D-ETF-1 칸 빔 → 완성에 가까운 순으로 당김(J-1 렌더 끝 10/23 05:58, D-ETF-1 녹음 끝) · 관문 기한 지남 — 넘는 즉시 예약, 못 넘으면 칸 빔 기록(비축 롱폼 0: R-1은 10/14 공개됨) | firemap-meeting 2026-10-17 21:42: youtube-loop 20:57 요청 받아들임(손품 화·금). 대본 10/23 21:00·관문 10/26 11:30"
   },
   {
    "at": "2026-10-28 11:30",
@@ -2635,6 +2788,22 @@
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
    "note": "N 시리즈 기획 담당 2026-10-17 01:0x: N-3 '연봉 3천~1억, 통장엔 월 얼마·100명 중 몇 등'(국세청 근로소득 천분위 N-1 nts_pct + 간이세액표 실수령) — 근거: N 주기 격주 일요일(N-1 10/4 일·N-2 10/18 일), 다음 빈 11:30 일요일 10/25는 N-2 7일 지표 전이라 11/1. 검색 연봉실수령액 67,900·연봉1억실수령액 10,850·연봉5천실수령액 1,760·세후300연봉 1,400(kwvol 10/17) · 경쟁 송현영 42.4만(세후 300 몇 등)·뱅크몰 86만·터보뉴스 118만 · 우리만: 칸마다 정확한 세후 통장 금액·경계값만. 형식 규칙 longform/n-series-1017.md §6(8~10분, 사다리+내 숫자 넣기). 대본 youtube-loop 10/28 21:00·녹음 10/30 16:01 창·관문 기한 10/31 11:30 · ytlong C1 주 7편 창 확인 필요"
+  },
+  {
+   "at": "2026-11-02 11:30",
+   "kind": "long",
+   "item": "H-4(광명 철산·하안·광명동 손품)",
+   "owner": "firemap-youtube-loop",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 10/26·27에서 밀려옴(정지) · 축 순서 J-1 정책 → D-ETF-1 주식 → K-1 경제 → P-3 정책 → H-5 부동산 → S-1 주식 → N-3 → H-4 부동산 → W-3 주식 · youtube-loop가 바꿔도 됨(겹침만 금지)"
+  },
+  {
+   "at": "2026-11-03 11:30",
+   "kind": "long",
+   "item": "W-3(섹터 묶음 ① 고배당주, 내 돈 기준)",
+   "owner": "firemap-youtube-loop",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-25 21:44: 10/26·27에서 밀려옴(정지) · 축 순서 J-1 정책 → D-ETF-1 주식 → K-1 경제 → P-3 정책 → H-5 부동산 → S-1 주식 → N-3 → H-4 부동산 → W-3 주식 · youtube-loop가 바꿔도 됨(겹침만 금지)"
   },
   {
    "at": "2026-11-04 11:30",

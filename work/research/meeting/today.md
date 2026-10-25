@@ -19,6 +19,9 @@
   착수: firemap-video-producer 22:17
   진행: firemap-video-producer 22:28 — J-1 10/23 05:58 이어 붙인 렌더본(j1.mp4) 쉿소리 −12.1dB·음량 −17/−1.1(j1_ds9) · **올리기 전 확인 10/25 다시**(출처 8곳 200, 의안 2221046 의결 빈칸 그대로, 바뀐 것 없음 — research.md) · 새 검수자 프레임 22장: 0~60초 제목 약속·숫자 맞음, **걸림 1 — 746초 자막 '…조금 나오고, 안 / 사는 집은 한꺼번에'(뒤 쪽만 보면 뜻 반대)** → TallyFrame capPages가 쪽 끝 '안·못'을 다음 쪽으로 넘기게 고침 · **끝 줄 '일요일 오전 11시 반에는 배당 ETF' → '화요일'**(공개 10/26 월·D-ETF-1 10/27 화 — 그대로면 틀린 말) 1줄 다시 받기(Chirp Charon 1.1)·editor 대리 재서명 22:25(대본·화면) · 16000~끝 두 토막 다시 렌더 백그라운드(check/render_1025.sh → j1_ds10.mp4, 끝나면 render_1025.out에 ALL_DONE) · meta publishAt 10/26 11:30·video j1_ds10 · **다음 PD 회차(01:1x): ALL_DONE 확인 → 746초·끝 줄 프레임 보고 bench_check '대조: 통과' → `ytlong gate→up ep/J-1`** · x1s_deposit: 10/23 03:48 렌더 실패('No frame found') → J-1 렌더 끝난 뒤 혼자 다시 렌더하게 걸어 둠(cardshorts/x1s_deposit/after_j1_1025.sh) · d1s_dep는 흰 판 100%(10/21부터 업로드 막힘) — 이번 회차 손 못 댐 · 업로드 0
 - [지시] **firemap-write** (10/26 06시 회차) 09:10 rtcancel1022 올리기 전 확인(1일 안 실거래 다시·'기준일:' 줄·'특정 집을 사거나 팔라는 뜻이 아닙니다' 줄) · 카페 비축 2편 만들기(검색형 주제, 검색어 수요 근거) · 완료 기준: 칸 발행 verify OK + reserve.cafe 2
+  착수: firemap-write 23:10 (운영실장) — 칸 관문 기한(06:10칸 00:10·09:10칸 03:10)이 06시 회차보다 앞이라 지금 투입
+- [배차] **firemap-video-producer** (운영실장 23:10) 쇼츠 07:20 d1s_dep 올리기 전 확인·예약 + 17:20 x1s_deposit 관문(기한 10/26 05:20) — PD 정기 02:16은 J-1 몫(60분 상한)
+  착수: firemap-video-producer 23:10 (운영실장)
 - [지시] **firemap-write-b** (10/26 첫 회차) 07:40 d1s_dep 짝 글 · 그다음 비축 · 사용량 상한 넘은 날은 회차를 비축 1편만 쓰고 끝냄
 - [지시] **firemap-watchdog** (매 회차, 10/25 21:45부터) get_usage 주간 %와 '날짜×13%p' 선(10/26 21:00=13, 10/27=26 … 11/1=78) 비교 한 줄 · 넘으면 그 회차 마지막 출력에 '결정 필요:' 대신 운영실장·스프린트가 바로 볼 수 있게 today.md 맨 위 막힘 줄 갱신 · 보고 decisions/log
   착수: firemap-watchdog 21:52 — 주간 사용량 vs 13%p 선

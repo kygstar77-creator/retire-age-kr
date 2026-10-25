@@ -16,3 +16,7 @@
 2026-10-22 18:32 | firemap-video-producer 정기 18:1x 회차 | 손 뗌 — 렌더 세 토막 백그라운드로 도는 중(끝나기 전 다른 회차는 렌더 건드리지 말 것, CONCAT OK 뒤 deess·관문은 다음 회차)
 2026-10-22 22:22 | firemap-video-producer 정기 22:1x 회차 | J-1 렌더 남은 세 토막 다시 띄움(18:48 0-7999 6459프레임 'No frame found' — 디스크 부족 때 자산 복사 잘림 추정)
 2026-10-23 00:53 | firemap-video-producer 정기 22:1x 회차 | 손 뗌 — j1_ds8.mp4 관문 통과, readback 42줄 turbo 백그라운드(끝나기 전 readback 건드리지 말 것)
+2026-10-23 02:17 | firemap-video-producer 정기 02:1x 회차 | J-1 readback 결과 확인·gate·예약
+2026-10-23 03:08 | firemap-video-producer 정기 02:1x 회차 | J-1 렌더 네 토막 띄움(받아쓰기 다시 받기 17줄 반영, check/render_parts_run_1023.log) — 끝나기 전 다른 회차는 렌더·voice 건드리지 말 것
+2026-10-25 22:17 | firemap-video-producer 정기 22:1x 회차 | J-1 렌더본 확인·관문·예약(10/26 11:30)
+2026-10-25 22:25 | firemap-video-producer 정기 22:1x 회차 | 손 뗌 — 16000~끝 두 토막 렌더 백그라운드(check/render_1025.sh, 끝나면 ALL_DONE). 다음 회차: j1_ds10 프레임 746초·끝 확인→gate→예약

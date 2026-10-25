@@ -74,7 +74,17 @@ export const srcSize = (src: string) => { const u = [...('출처 ' + src)].reduc
 const CAP_MAX = 18, CAP_TAIL = 5;
 const nsp = (t: string) => t.replace(/\s/g, '').length;
 export const capPages = (text: string): CaptionPage[] => {
-  const pages = paginate(text.split(/\s+/).filter(Boolean), CAP_MAX);
+  const words = text.split(/\s+/).filter(Boolean);
+  const pages = paginate(words, CAP_MAX);
+  // 10/25 J-1 746초: '…조금 나오고, 안 / 사는 집은 한꺼번에' — 쪽 끝 부정 부사(안·못)는 다음 쪽으로 넘긴다(뒤 쪽만 보면 뜻이 뒤집힘)
+  for (let k = 0; k < pages.length - 1; k++) {
+    const p = pages[k];
+    if (p.last > p.first && /^(안|못)$/.test(words[p.last])) {
+      const n = pages[k + 1];
+      pages[k] = {first: p.first, last: p.last - 1, text: words.slice(p.first, p.last).join(' ')};
+      pages[k + 1] = {first: p.last, last: n.last, text: words.slice(p.last, n.last + 1).join(' ')};
+    }
+  }
   if (pages.length > 1 && nsp(pages[pages.length - 1].text) <= CAP_TAIL) { const b = pages.pop() as CaptionPage; const a = pages.pop() as CaptionPage; pages.push({first: a.first, last: b.last, text: a.text + ' ' + b.text}); }
   return pages;
 };

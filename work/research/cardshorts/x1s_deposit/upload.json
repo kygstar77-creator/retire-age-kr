@@ -1,0 +1,33 @@
+{
+ "name": "x1s_deposit",
+ "ep": "X-1",
+ "from_long": "WcBOePkyOOQ",
+ "mp4": "work/video/out/x1s_deposit_ds.mp4",
+ "publishAt": "2026-10-26T17:20:00+09:00",
+ "publish_plan": "2026-10-26 17:20 (회의 10/25 21:44 배정 · 같은 날 07:20 d1s_dep=D-1·19:20 h3s_jeonse(후보)=H-3·11:30 롱폼 J-1과 다른 롱폼·다른 질문) | 옛 계획 10/24 17:20(렌더 실패로 못 냄)",
+ "title": "달러 예금 이자 3%, 환율 몇 % 내리면 마이너스일까 #shorts",
+ "description": "전체 계산: https://youtu.be/WcBOePkyOOQ\n\n달러 예금은 이자가 달러로 붙고, 원화 결과는 원화로 바꾸는 날의 환율로 정해져요.\nKB국민은행 거주자 달러 정기예금 12개월 금리는 연 3.64833%(조회기준일 2026년 10월 16일)이고, 이자에 붙는 세금 15.4%를 떼면 손에 남는 이자는 3%쯤이에요.\n2026년 10월 15일 환율 1,338.6원에 1억 원을 달러로 바꿔 1년 맡겼다면, 1년 뒤 환율이 1,298.5원보다 낮을 때(지금보다 3%쯤 아래) 원화로는 마이너스가 됩니다. 환전 수수료는 넣지 않은 계산이에요.\n예금보험공사는 외화예금도 1억 원까지 보호한다고 안내해요. 원화로 바꿔 계산하고, 한 은행에 든 예금과 이자를 합친 금액이에요. 은행이 문을 닫을 때 돌려주는 한도이고, 환율 손실까지 막아 주는 건 아닙니다.\n지나간 값이고, 특정 상품을 사거나 팔라는 뜻이 아닙니다.\n\n출처: KB국민은행 외화예금 금리안내(조회기준일 2026-10-16) · 한국은행 경제통계시스템 원/달러 매매기준율 · 예금보험공사 예금자보호제도 FAQ · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — 34596756 Jakub Zerdzicki · 35054136 Jakub Zerdzicki · 5466769 olia danilevich · 6186015 K · 6326929 https://kaboompics.com/ · 7829075 Mikhail Nilov · 8439245 Kampus Production · 8661806 Adrian Frentescu · 9806390 Nadezhda Moryak\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #달러예금 #환율",
+ "tags": "달러 예금,외화예금,달러 정기예금 금리,환율,예금자보호",
+ "layout": "m1clip",
+ "look": "live",
+ "title_review": {
+  "gemini": {
+   "model": "gemini-3.8-flash",
+   "file": "title_gemini.json",
+   "best": "A 9.5",
+   "fix": "달러 예금 이자 3%, 환율 몇 % 떨어지면 마이너스일까"
+  },
+  "understand": "understand.md 2차: '0원'이 원금 0으로 읽힘(3/3) → '마이너스'로 바꿈"
+ },
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "L6Z41ducfwQ",
+ "uploaded_at": "2026-10-25 23:38:59",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-26T08:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

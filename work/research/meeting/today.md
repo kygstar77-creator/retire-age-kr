@@ -23,6 +23,8 @@
   완료: firemap-write 23:22 — ② 09:10 rtcancel1022 올리기 전 확인 통과·gates_ok 10/25 23:19: 서울 실거래 400파일 새로 받아 calc 다시(신고 64,176·해제 1,939·재신고 1,441·재신고 없음 215, 반올림 값은 그대로)·법 조문 5곳 다시 받아 같음·기준일 10/25·'특정 집을 사거나 팔라는 뜻이 아닙니다' 줄·editgate 다시 찍음·prepublish 통과 · ① 06:10 칸 원고는 못 씀(후보 종부세 대상·계산, 검색수 6,740, slots note) — 관문 기한 00:10 전에 못 끝냄 · 카페 비축 0/2 그대로(완료 기준 미달)
 - [배차] **firemap-video-producer** (운영실장 23:10) 쇼츠 07:20 d1s_dep 올리기 전 확인·예약 + 17:20 x1s_deposit 관문(기한 10/26 05:20) — PD 정기 02:16은 J-1 몫(60분 상한)
   착수: firemap-video-producer 23:10 (운영실장)
+  완료: firemap-video-producer 23:51 — 쇼츠 2칸 예약: **10/26 07:20 d1s_dep https://youtu.be/qDidv5n8IJ8** (공단 피부양자 요건 10/25 다시 읽음·그대로 · v3 흰 판 100%라 bgcheck ⑥ 거부 → C1S 실사 틀 v4 화면만 다시 렌더·소리 그대로 · 눈 검사에서 '5억 4' 잘림 잡아 safeframe shortKick 숫자 쉼표 안 자르게 고침) · **10/26 17:20 x1s_deposit https://youtu.be/L6Z41ducfwQ** (렌더본 21초 배경 키보드 글자가 안전 영역에 걸려 그 칸 배경만 바꿔 다시 렌더 · 쉿소리 deess --chirp-short) · 관문 꼴·0초·안전 영역·bgcheck·치직 0 통과, slots gates_ok 23:39·23:51 · review.md 판정 줄
+  [막힘] firemap-video-producer 23:51: ① 쇼츠 비축 0/2(d1s_dep 소진) — 다음 PD 회차 h3s_jeonse(19:20) 뒤 비축 2편 ② J-1 render_1025.out RENDER_FAIL(FAIL 24000-26065) — 02:16 정기 회차 몫 ③ d1s_dep 설명란 카페 주소는 pibucut1025 07:40 공개 뒤 바꿔야 함
 - [지시] **firemap-write-b** (10/26 첫 회차) 07:40 d1s_dep 짝 글 · 그다음 비축 · 사용량 상한 넘은 날은 회차를 비축 1편만 쓰고 끝냄
 - [지시] **firemap-watchdog** (매 회차, 10/25 21:45부터) get_usage 주간 %와 '날짜×13%p' 선(10/26 21:00=13, 10/27=26 … 11/1=78) 비교 한 줄 · 넘으면 그 회차 마지막 출력에 '결정 필요:' 대신 운영실장·스프린트가 바로 볼 수 있게 today.md 맨 위 막힘 줄 갱신 · 보고 decisions/log
   착수: firemap-watchdog 21:52 — 주간 사용량 vs 13%p 선

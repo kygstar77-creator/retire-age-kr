@@ -268,7 +268,8 @@ export const FitBoard: React.FC<{bw: number; bh: number; frames: number; top: nu
 //   · 칸 이름·설명 줄은 화면에서 뺀다(말로 한다). 숫자 위 한마디(kicker)는 12자 안, 60px — 작은 글씨 아님. 출처는 끝 3초에 한 줄만 작게.
 //   · 그래프는 막대 몇 개만, 실사를 어둡게 깐 위에 굵게(LiveBars). 모든 글자 가운데 맞춤(CX).
 export type Beat = {at: number; kicker: string; value: string; hot: boolean};
-const shortKick = (t?: any) => { if (!t || typeof t !== 'string') return ''; let k = t.replace(/\s*\([^)]*\)\s*/g, ' ').replace(/\s+/g, ' ').trim(); if (k.length > 12) k = k.split(/[·,]/)[0].trim(); return k.length > 12 ? '' : k; };
+// 10/25 PD: 숫자 안 쉼표(4,000)에서 자르면 '5억 4'처럼 뜻이 깨짐 → 숫자 쉼표는 안 자름
+const shortKick = (t?: any) => { if (!t || typeof t !== 'string') return ''; let k = t.replace(/\s*\([^)]*\)\s*/g, ' ').replace(/\s+/g, ' ').trim(); if (k.length > 12) k = k.split(/·|,(?!\d)/)[0].trim(); return k.length > 12 ? '' : k; };
 const hasNum = (v: any) => typeof v === 'string' && /\d/.test(v);
 export const beatsOf = (s: {kind: string; data: any; lines: {frames: number; text?: string}[]}): Beat[] => {
   const d = s.data || {}; const off = d.full ? 90 : 0; const st: number[] = []; let a = 0; for (const l of s.lines) { st.push(a); a += l.frames; }

@@ -41,7 +41,7 @@
     "item": "d1s_dep",
     "ep": "work/research/cardshorts/d1s_dep",
     "layout": "c1clip",
-    "status": "10/18 12:29 v3 재렌더 통과(d1s_dep_v3_ds.mp4) · 꼴 ⓓ c1clip 비율 때문에 대기 — 관문 통과(compete 6·숫자 대조 58개 0·꼴 ⓐ~ⓓ(c1clip 3/10)·치직 0·쉿소리 −14.8dB·빈 곳 최대 35%·45.7초·제목 8.5·aitell 0.0·58세 이해 시험 3차 뜻 틀림 0) · 미업로드 — D-1 롱폼(GMc2Rd1-JYA) '퇴직 후 건보료 0원, 피부양자 조건 딱 2가지', 새 녹음 0 · d1s_pension(10/20 19:20)과 이틀 이상 띄워 10/23 19:20 이후 칸 · 근거 cardshorts/d1s_dep/review.md",
+    "status": "2026-10-25 23:51 소진 — 10/26 07:20 칸으로 예약(qDidv5n8IJ8). 10/18 12:29 v3 재렌더 통과(d1s_dep_v3_ds.mp4) · 꼴 ⓓ c1clip 비율 때문에 대기 — 관문 통과(compete 6·숫자 대조 58개 0·꼴 ⓐ~ⓓ(c1clip 3/10)·치직 0·쉿소리 −14.8dB·빈 곳 최대 35%·45.7초·제목 8.5·aitell 0.0·58세 이해 시험 3차 뜻 틀림 0) · 미업로드 — D-1 롱폼(GMc2Rd1-JYA) '퇴직 후 건보료 0원, 피부양자 조건 딱 2가지', 새 녹음 0 · d1s_pension(10/20 19:20)과 이틀 이상 띄워 10/23 19:20 이후 칸 · 근거 cardshorts/d1s_dep/review.md",
     "by": "firemap-video-producer",
     "at": "2026-10-16 07:32",
     "gates_ok": "2026-10-16 07:32"
@@ -2594,8 +2594,8 @@
    "kind": "shorts",
    "item": "d1s_dep",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-16 07:32",
-   "note": "firemap-meeting 2026-10-25 21:44: 쇼츠 칸 · 비축 d1s_dep(D-1 GMc2Rd1-JYA 클립, 관문 10/16) — 올리기 전 확인(건보 피부양자 기준 그대로인지) 뒤 예약 · c1clip 비율 막히면 다른 틀 클립 · 사용량 상한 아래에선 쇼츠 칸이 카페 write-b 칸보다 먼저(레드팀 10/25: 공개 2~3일 600~1,350회 vs 롱폼 8~133회)"
+   "gates_ok": "2026-10-25 23:51",
+   "note": "firemap-meeting 2026-10-25 21:44: 쇼츠 칸 · 비축 d1s_dep(D-1 GMc2Rd1-JYA 클립, 관문 10/16) — 올리기 전 확인(건보 피부양자 기준 그대로인지) 뒤 예약 · c1clip 비율 막히면 다른 틀 클립 · 사용량 상한 아래에선 쇼츠 칸이 카페 write-b 칸보다 먼저(레드팀 10/25: 공개 2~3일 600~1,350회 vs 롱폼 8~133회) | PD 2026-10-25 23:51: 올리기 전 확인(공단 피부양자 요건 그대로) · 흰 판→실사 틀 v4 다시 렌더·관문 통과 · 예약 https://youtu.be/qDidv5n8IJ8 (publishAt 07:20) · 카페 짝 pibucut1025 공개 뒤 설명란 주소 바꿀 것"
   },
   {
    "at": "2026-10-26 07:40",
@@ -2664,10 +2664,10 @@
   {
    "at": "2026-10-26 17:20",
    "kind": "shorts",
-   "item": "TBD",
+   "item": "x1s_deposit",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-25 21:44: 쇼츠 칸 · x1s_deposit(X-1, 10/23 렌더 3차·이해 시험 통과) 우선 · 관문 기한 10/26 05:20 · 사용량 상한 아래에선 쇼츠 칸이 카페 write-b 칸보다 먼저(레드팀 10/25: 공개 2~3일 600~1,350회 vs 롱폼 8~133회)"
+   "gates_ok": "2026-10-25 23:39",
+   "note": "firemap-meeting 2026-10-25 21:44: 쇼츠 칸 · x1s_deposit(X-1, 10/23 렌더 3차·이해 시험 통과) 우선 · 관문 기한 10/26 05:20 · 사용량 상한 아래에선 쇼츠 칸이 카페 write-b 칸보다 먼저(레드팀 10/25: 공개 2~3일 600~1,350회 vs 롱폼 8~133회) | PD 2026-10-25 23:39: 관문 통과·예약 https://youtu.be/L6Z41ducfwQ (publishAt 17:20, 21초 배경 바꿔 다시 렌더 — cardshorts/x1s_deposit/review.md)"
   },
   {
    "at": "2026-10-26 18:10",

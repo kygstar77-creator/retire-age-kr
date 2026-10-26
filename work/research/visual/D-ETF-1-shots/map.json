@@ -1,0 +1,701 @@
+{
+"r01": {
+"scene": 0,
+"line": 0,
+"kind": "brand",
+"src": null,
+"data": {
+"line": "오늘은 배당 ETF 이야기",
+"sub": "배당 ETF 16종 · 같은 잣대로"
+}
+},
+"r02": {
+"scene": 2,
+"line": 0,
+"kind": "broll",
+"src": "bg/detf/stock/7578628.mp4",
+"data": {
+"src": "bg/detf/stock/7578628.mp4",
+"license": "Pexels 7578628 무료(Tima Miroshnichenko)",
+"say": "요즘 왜 이러냐는 말",
+"side": "left",
+"from": 0
+}
+},
+"r03": {
+"scene": 3,
+"line": 0,
+"kind": "big",
+"src": null,
+"data": {
+"title": "SCHD 돈이 간 곳 · 세 업종 합",
+"v": "55%",
+"s": "필수소비재 · 헬스케어 · 에너지",
+"c": "accent",
+"source": "운용사 보유 종목·섹터 표(2026-09-30~10-16) · 네이버 증권 · 파이어맵 합산",
+"rv": 8
+}
+},
+"r04": {
+"scene": 4,
+"line": 0,
+"kind": "broll",
+"src": "bg/detf/stock/8661806.mp4",
+"data": {
+"src": "bg/detf/stock/8661806.mp4",
+"license": "Pexels 8661806 무료(Adrian Frentescu)",
+"say": "한 주당 배당은 지난 십 년 꾸준히 늘었다",
+"side": "left",
+"flip": true,
+"dim": 0.75,
+"from": 0
+}
+},
+"r05": {
+"scene": 6,
+"line": 0,
+"kind": "ask",
+"src": null,
+"data": {
+"n": "오늘",
+"q": "배당 ETF 열여섯 개, 같은 잣대로 다섯 가지",
+"from": "미국 상장 9 · 국내 미국배당다우존스 4 · 국내 고배당 3 · 기준선 S&P500"
+},
+"extra": 7
+},
+"r06": {
+"scene": 8,
+"line": 0,
+"kind": "pic",
+"src": null,
+"data": {
+"pic": "bg/detf/fig/two_people.png",
+"license": "Pexels 8164676(Kindel Media)·6964247(Mikhail Nilov) 무료",
+"baked": true,
+"zoom": [
+1.0,
+1.04
+],
+"cx": 50,
+"cy": 40
+}
+},
+"r07": {
+"scene": 9,
+"line": 0,
+"kind": "rows",
+"src": null,
+"data": {
+"title": "말 세 개만",
+"rows": [
+[
+"ETF",
+"여러 회사 주식을 한 바구니에",
+null,
+0
+],
+[
+"분배금",
+"모은 배당을 나눠 주는 돈",
+null,
+1
+],
+[
+"분배율",
+"1년 분배금 ÷ 지금 가격",
+null,
+2
+]
+],
+"source": "파이어맵"
+}
+},
+"r08": {
+"scene": 11,
+"line": 0,
+"kind": "ask",
+"src": null,
+"data": {
+"n": "1장",
+"q": "제일 많이 주는 ETF는?",
+"from": "지난 12개월 나눠 준 돈 ÷ 지금 값"
+},
+"extra": 12
+},
+"r09": {
+"scene": 12,
+"line": 0,
+"kind": "bars",
+"src": null,
+"data": {
+"title": "분배율 · 최근 12개월",
+"bars": [
+[
+"JEPQ",
+11.71,
+"11.71%",
+"g",
+0
+],
+[
+"JEPI",
+8.0,
+"8.00%",
+"g",
+1
+],
+[
+"DIVO",
+6.31,
+"6.31%",
+"g",
+2
+],
+[
+"PLUS 고배당주",
+4.53,
+"4.53%",
+"g",
+2
+],
+[
+"SPYD",
+4.36,
+"4.36%",
+"g",
+2
+],
+[
+"TIGER 은행",
+4.26,
+"4.26%",
+"g",
+2
+],
+[
+"SCHD",
+3.07,
+"3.07%",
+"accent",
+2
+]
+],
+"max": 12,
+"dir": "h",
+"source": "야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산"
+}
+},
+"r10": {
+"scene": 15,
+"line": 0,
+"kind": "ask",
+"src": null,
+"data": {
+"n": "왜?",
+"q": "JEPI와 JEPQ는 왜 이렇게 많이 줄까?"
+},
+"extra": 16
+},
+"r11": {
+"scene": 18,
+"line": 0,
+"kind": "pair",
+"src": null,
+"data": {
+"title": "'기타' 칸 · 어느 업종에도 안 들어가는 비중",
+"v1": "16%",
+"s1": "JEPI",
+"c1": "ink",
+"v2": "17%",
+"s2": "JEPQ",
+"c2": "accent",
+"source": "JP모건 섹터 표(2026-10-16)",
+"at2": 1
+}
+},
+"r12": {
+"scene": 19,
+"line": 0,
+"kind": "ask",
+"src": null,
+"data": {
+"n": "조심",
+"q": "DIVO는 한 달이 유난히 튀었다"
+},
+"extra": 20
+},
+"r13": {
+"scene": 23,
+"line": 0,
+"kind": "ask",
+"src": null,
+"data": {
+"n": "2장",
+"q": "배당이 매년 느나?",
+"from": "오래 모을수록 더 중요한 질문"
+},
+"extra": 24
+},
+"r14": {
+"scene": 24,
+"line": 0,
+"kind": "pic",
+"src": null,
+"data": {
+"pic": "bg/detf/fig/map_paper.png",
+"license": "파이어맵 자체 제작(운용사·야후 자료)",
+"baked": true,
+"inset": 0.8,
+"dark": true,
+"zoom": [
+1.0,
+1.03
+],
+"cx": 50,
+"cy": 45
+}
+},
+"r15": {
+"scene": 27,
+"line": 0,
+"kind": "bars",
+"src": null,
+"data": {
+"title": "SCHD 한 주당 배당 · 전년보다",
+"bars": [
+[
+"2021",
+17.9,
+"+17.9%",
+"g",
+0
+],
+[
+"2022",
+11.1,
+"+11.1%",
+"g",
+0
+],
+[
+"2023",
+5.7,
+"+5.7%",
+"g",
+0
+],
+[
+"2024",
+11.9,
+"+11.9%",
+"g",
+1
+],
+[
+"2025",
+5.8,
+"+5.8%",
+"g",
+1
+],
+[
+"2026",
+2.0,
+"+2.0%",
+"accent",
+2
+]
+],
+"max": 20,
+"dir": "v",
+"source": "야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산"
+}
+},
+"r16": {
+"scene": 29,
+"line": 0,
+"kind": "rows",
+"src": null,
+"data": {
+"title": "SCHD 배당 증가 · 매년 평균",
+"rows": [
+[
+"10년",
+"10.8%"
+],
+[
+"5년",
+"7.2%"
+],
+[
+"3년",
+"6.5%"
+],
+[
+"1년",
+"2.0%"
+]
+],
+"source": "야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산"
+}
+},
+"r17": {
+"scene": 31,
+"line": 0,
+"kind": "pair",
+"src": null,
+"data": {
+"title": "HDV 분배 횟수",
+"v1": "석 달에 한 번",
+"s1": "2026년 6월까지",
+"c1": "ink",
+"v2": "매달",
+"s2": "7월부터",
+"c2": "accent",
+"source": "아이셰어즈(2026-10-15) · 야후 파이낸스",
+"at2": 0
+}
+},
+"r18": {
+"scene": 32,
+"line": 0,
+"kind": "ask",
+"src": null,
+"data": {
+"n": "3장",
+"q": "한 업종에 몰렸나?",
+"from": "오늘 가장 보여 드리고 싶었던 그림"
+},
+"extra": 33
+},
+"r19": {
+"scene": 33,
+"line": 0,
+"kind": "pic",
+"src": null,
+"data": {
+"pic": "bg/detf/fig/heatmap_paper.png",
+"license": "파이어맵 자체 제작(운용사·야후 자료)",
+"baked": true,
+"inset": 0.8,
+"dark": true,
+"zoom": [
+1.0,
+1.04
+],
+"cx": 50,
+"cy": 45
+}
+},
+"r20": {
+"scene": 34,
+"line": 0,
+"kind": "pic",
+"src": null,
+"data": {
+"pic": "bg/detf/fig/heatmap_paper_schd.png",
+"license": "파이어맵 자체 제작(운용사·야후 자료)",
+"baked": true,
+"inset": 0.8,
+"dark": true,
+"zoom": [
+1.0,
+1.06
+],
+"cx": 50,
+"cy": 18
+}
+},
+"r21": {
+"scene": 35,
+"line": 0,
+"kind": "pair",
+"src": null,
+"data": {
+"title": "두 업종·한 업종에 몰린 곳",
+"v1": "51.8%",
+"s1": "HDV · 필수소비재+에너지",
+"c1": "ink",
+"v2": "24.4%",
+"s2": "SPYD · 부동산",
+"c2": "accent",
+"source": "운용사 보유 종목·섹터 표(2026-09-30~10-16) · 네이버 증권 · 파이어맵 합산",
+"at2": 1
+}
+},
+"r22": {
+"scene": 35,
+"line": 1,
+"kind": "pair",
+"src": null,
+"data": {
+"title": "두 업종·한 업종에 몰린 곳",
+"v1": "51.8%",
+"s1": "HDV · 필수소비재+에너지",
+"c1": "ink",
+"v2": "24.4%",
+"s2": "SPYD · 부동산",
+"c2": "accent",
+"source": "운용사 보유 종목·섹터 표(2026-09-30~10-16) · 네이버 증권 · 파이어맵 합산",
+"at2": 1
+}
+},
+"r23": {
+"scene": 36,
+"line": 0,
+"kind": "pic",
+"src": null,
+"data": {
+"pic": "bg/detf/fig/heatmap_paper_bank.png",
+"license": "파이어맵 자체 제작(운용사·야후 자료)",
+"baked": true,
+"inset": 0.8,
+"dark": true,
+"zoom": [
+1.0,
+1.04
+],
+"cx": 30,
+"cy": 40
+}
+},
+"r24": {
+"scene": 37,
+"line": 0,
+"kind": "rows",
+"src": null,
+"data": {
+"title": "PLUS 고배당주 많이 담은 종목",
+"rows": [
+[
+"DB손해보험",
+"6.54%"
+],
+[
+"기업은행",
+"5.44%"
+],
+[
+"우리금융지주",
+"5.43%"
+]
+],
+"source": "네이버 증권 ETF 분석(10/16)"
+}
+},
+"r25": {
+"scene": 39,
+"line": 0,
+"kind": "rows",
+"src": null,
+"data": {
+"title": "진한 칸이 다른 곳",
+"rows": [
+[
+"VIG",
+"정보기술 26.8%"
+],
+[
+"DGRO",
+"금융 19.3%"
+],
+[
+"VYM",
+"금융 20.9%"
+]
+],
+"source": "운용사 보유 종목·섹터 표(2026-09-30~10-16) · 네이버 증권 · 파이어맵 합산"
+}
+},
+"r26": {
+"scene": 41,
+"line": 0,
+"kind": "broll",
+"src": "bg/detf/stock/6343634.mp4",
+"data": {
+"src": "bg/detf/stock/6343634.mp4",
+"license": "Pexels 6343634 무료(KATRIN  BOLOVTSOVA)",
+"say": "두 개를 담는다면, 큰 칸이 겹치는지",
+"side": "left",
+"dim": 0.8,
+"from": 0
+},
+"extra": 42
+},
+"r27": {
+"scene": 44,
+"line": 0,
+"kind": "ask",
+"src": null,
+"data": {
+"n": "4장",
+"q": "주가까지 합치면?",
+"from": "배당만 보면 반쪽"
+}
+},
+"r28": {
+"scene": 45,
+"line": 0,
+"kind": "broll",
+"src": "bg/detf/stock/7490451.mp4",
+"data": {
+"src": "bg/detf/stock/7490451.mp4",
+"license": "Pexels 7490451 무료(RDNE Stock project)",
+"say": "받은 배당을 다시 넣었다고 치고",
+"side": "left",
+"from": 0
+},
+"extra": 48
+},
+"r29": {
+"scene": 51,
+"line": 0,
+"kind": "ask",
+"src": null,
+"data": {
+"n": "떨어질 때는?",
+"q": "주가가 크게 빠졌던 2022년"
+}
+},
+"r30": {
+"scene": 55,
+"line": 0,
+"kind": "ask",
+"src": null,
+"data": {
+"n": "5장",
+"q": "1억 넣으면 1년에 얼마?",
+"from": "최근 12개월 분배가 앞으로 같다고 놓은 계산 · 가격·환율 변동 뺌"
+},
+"extra": 59
+},
+"r31": {
+"scene": 56,
+"line": 0,
+"kind": "pair",
+"src": null,
+"data": {
+"title": "세금 떼는 곳",
+"v1": "미국에서 15%",
+"s1": "미국 상장",
+"c1": "ink",
+"v2": "많아야 15.4%",
+"s2": "국내 상장 · 국내에서 더",
+"c2": "accent",
+"source": "소득세법 §129",
+"at2": 2
+}
+},
+"r32": {
+"scene": 59,
+"line": 0,
+"kind": "rows",
+"src": null,
+"data": {
+"title": "1억 → 1년 통장 · 세금 뗀 뒤",
+"rows": [
+[
+"SCHD",
+"260만원 · 월 22만원",
+null,
+0
+],
+[
+"JEPI",
+"680만원 · 월 57만원",
+null,
+2
+]
+],
+"source": "소득세법 §129 · 국민건강보험법 시행규칙 §44 · 파이어맵 계산"
+}
+},
+"r33": {
+"scene": 61,
+"line": 0,
+"kind": "ask",
+"src": null,
+"data": {
+"n": "함정",
+"q": "금융소득 1년 1,000만원 넘으면, 전부 건보료 계산에 들어간다",
+"from": "지역가입자 · 국민건강보험법 시행규칙 제44조①"
+},
+"extra": 62
+},
+"r34": {
+"scene": 68,
+"line": 0,
+"kind": "pair",
+"src": null,
+"data": {
+"title": "원·달러 매매기준율",
+"v1": "1,424원",
+"s1": "2025-10-16",
+"c1": "ink",
+"v2": "1,349원",
+"s2": "2026-10-16",
+"c2": "accent",
+"source": "한국은행 ECOS",
+"at2": 0
+}
+},
+"r35": {
+"scene": 73,
+"line": 0,
+"kind": "ask",
+"src": null,
+"data": {
+"n": "6장",
+"q": "고르는 순서",
+"from": "통장에 남는 돈까지 다섯 가지를 봤으니"
+}
+},
+"r36": {
+"scene": 74,
+"line": 0,
+"kind": "list5",
+"src": null,
+"data": {
+"title": "고르는 순서",
+"items": [
+"얼마 주나 · 12개월 다 더해서",
+"매년 느나 · 10년과 최근 3년",
+"한 업종에 몰렸나 · 겹치나",
+"떨어질 때 · 2022년·2020년"
+],
+"source": "파이어맵"
+}
+},
+"r37": {
+"scene": 77,
+"line": 0,
+"kind": "pic",
+"src": null,
+"data": {
+"pic": "bg/detf/fig/heatmap_paper.png",
+"license": "파이어맵 자체 제작(운용사·야후 자료)",
+"baked": true,
+"inset": 0.8,
+"dark": true,
+"zoom": [
+1.0,
+1.02
+],
+"cx": 50,
+"cy": 45
+}
+},
+"r38": {
+"scene": 78,
+"line": 0,
+"kind": "broll",
+"src": "bg/detf/stock/7592927.mp4",
+"data": {
+"src": "bg/detf/stock/7592927.mp4",
+"license": "Pexels 7592927 무료(ROMAN ODINTSOV)",
+"say": "돈이 가 있는 곳은 저마다 달랐다",
+"side": "left",
+"from": 0
+}
+}
+}

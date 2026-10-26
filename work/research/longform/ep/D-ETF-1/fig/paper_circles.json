@@ -6,16 +6,16 @@
  "note": "cy=왼쪽 아래 0, cy_top=Remotion(위 0). HandCircle({cx, cy:cy_top, rx, ry, p})",
  "heatmap": {
   "schd": {
-   "cx": 773.2,
+   "cx": 823.6,
    "cy": 864.6,
-   "rx": 203.6,
+   "rx": 196.4,
    "ry": 32.8,
    "cy_top": 215.4
   },
   "bank": {
-   "cx": 512.4,
+   "cx": 572.4,
    "cy": 102.0,
-   "rx": 77.2,
+   "rx": 74.8,
    "ry": 35.8,
    "cy_top": 978.0
   }

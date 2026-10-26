@@ -22,6 +22,8 @@ export type TallyBrollProps = {
   blur?: BrollBlur[];
   side?: 'left' | 'right';
   x?: number;             // objectPosition 가로 %(기본 50)
+  dim?: number;           // 10/27 visual: 큰 글 쪽 그라데이션 진하기(기본 0.55) — 밝은 실사 위 흰 글 대비
+  flip?: boolean;         // 10/27 visual: 좌우 뒤집기(동전 탑이 오른쪽으로 높아지게 등)
 };
 
 const out = Easing.out(Easing.cubic);
@@ -36,7 +38,7 @@ export const TallyBroll: React.FC<TallyBrollProps> = (p) => {
   const gT = interpolate(f, [6, 24], [0, 1], {...CL, easing: out});
   const left = (p.side ?? 'left') === 'left';
   const vid = /\.(mp4|webm|mov)$/i.test(p.src);
-  const st: React.CSSProperties = {width: '100%', height: '100%', objectFit: 'cover', objectPosition: `${p.x ?? 50}% 50%`};
+  const st: React.CSSProperties = {width: '100%', height: '100%', objectFit: 'cover', objectPosition: `${p.x ?? 50}% 50%`, transform: p.flip ? 'scaleX(-1)' : undefined};
   return (
     <AbsoluteFill style={{background: T.dbg, overflow: 'hidden'}}>
       <style>{FONT_CSS}</style>
@@ -47,7 +49,7 @@ export const TallyBroll: React.FC<TallyBrollProps> = (p) => {
         ))}
       </AbsoluteFill>
       <AbsoluteFill style={{background: 'linear-gradient(0deg, rgba(10,11,14,0.62) 0%, rgba(10,11,14,0) 34%)'}} />
-      {p.say ? <AbsoluteFill style={{background: `linear-gradient(${left ? 90 : 270}deg, rgba(10,11,14,0.55) 0%, rgba(10,11,14,0) 45%)`}} /> : null}
+      {p.say ? <AbsoluteFill style={{background: `linear-gradient(${left ? 90 : 270}deg, rgba(10,11,14,${p.dim ?? 0.55}) 0%, rgba(10,11,14,0) ${p.dim ? 60 : 45}%)`}} /> : null}
       <div style={{position: 'absolute', left: SAFE.left, top: 18, display: 'flex', alignItems: 'center', gap: 10}}>
         <Flame size={20} /><span style={{...F, fontWeight: 700, fontSize: 22, color: '#fff', textShadow: '0 1px 8px rgba(0,0,0,0.6)'}}>파이어맵</span>
         {p.chapter ? <div style={{...F, fontWeight: 700, fontSize: 22, color: '#fff', marginLeft: 10, textShadow: '0 1px 8px rgba(0,0,0,0.6)'}}>{p.chapter}</div> : null}

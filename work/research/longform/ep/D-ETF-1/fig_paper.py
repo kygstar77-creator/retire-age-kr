@@ -51,21 +51,22 @@ ROWS = [('SCHD', 'SCHD'), ('TIGER 미국배당다우존스', '국내 미국배�
         ('HDV', 'HDV'), ('SPYD', 'SPYD'), ('DIVO', 'DIVO'), ('JEPI', 'JEPI'), ('JEPQ', 'JEPQ'),
         ('PLUS 고배당주', 'PLUS 고배당주'), ('SOL 코리아고배당', 'SOL 코리아고배당'), ('TIGER 은행고배당플러스TOP10', 'TIGER 은행고배당+TOP10')]
 # 연필 음영: 투명 → 짙은 먹(종이 결이 비치게 alpha로)
-pencil = LinearSegmentedColormap.from_list('pencil', [(0.12, 0.10, 0.08, 0.0), (0.12, 0.10, 0.08, 0.16), (0.12, 0.10, 0.08, 0.42), (0.10, 0.08, 0.06, 0.78)])
+# 10/27 visual: 연필 회색 → 파란 잉크(대본 '업종마다 색을 칠한 표'와 맞춤, 새 심사관 3차 못함). 주황은 여전히 손 동그라미 답에만
+pencil = LinearSegmentedColormap.from_list('pencil', [(0.13, 0.33, 0.58, 0.0), (0.13, 0.33, 0.58, 0.22), (0.12, 0.30, 0.55, 0.55), (0.09, 0.24, 0.47, 0.92)])
 M = [[S[k][s] for s in SEC] for k, _ in ROWS]
 
 
 def heatmap(mark=None):
     fig = new_fig()
-    ax = fig.add_axes([0.165, 0.065, 0.815, 0.765]); ax.patch.set_alpha(0)
+    ax = fig.add_axes([0.2, 0.065, 0.785, 0.765]); ax.patch.set_alpha(0)   # 10/27: 글자 키운 만큼 왼쪽 자리
     ax.imshow(M, cmap=pencil, vmin=0, vmax=60, aspect='auto', interpolation='nearest')
     for i, row in enumerate(M):
         for j, v in enumerate(row):
             if v < 0.5: ax.text(j, i, '·', ha='center', va='center', color='#9C9183', fontsize=16); continue
-            ax.text(j, i, f'{v:.0f}', ha='center', va='center', fontsize=19 if v >= 20 else 16,
-                    color='white' if v >= 40 else INK, fontweight='bold')
-    ax.set_xticks(range(len(SEC)), SEC, fontsize=17, color=INK); ax.xaxis.tick_top()
-    ax.set_yticks(range(len(ROWS)), [r[1] for r in ROWS], fontsize=17, color=INK)
+            ax.text(j, i, f'{v:.0f}', ha='center', va='center', fontsize=24 if v >= 20 else 20,
+                    color='white' if v >= 30 else INK, fontweight='bold')
+    ax.set_xticks(range(len(SEC)), SEC, fontsize=21, color=INK); ax.xaxis.tick_top()   # 10/27: 17→21·23, 칸 숫자 19·16→24·20(휴대폰에서 안 읽힘)
+    ax.set_yticks(range(len(ROWS)), [r[1] for r in ROWS], fontsize=23, color=INK)
     ax.set_xticks([x - .5 for x in range(1, len(SEC))], minor=True); ax.set_yticks([y - .5 for y in range(1, len(ROWS))], minor=True)
     ax.grid(which='minor', color=(0.35, 0.3, 0.25, 0.18), linewidth=1); ax.tick_params(which='both', length=0)
     for s in ax.spines.values(): s.set_visible(False)

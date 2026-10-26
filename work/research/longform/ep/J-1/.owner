@@ -20,3 +20,7 @@
 2026-10-23 03:08 | firemap-video-producer 정기 02:1x 회차 | J-1 렌더 네 토막 띄움(받아쓰기 다시 받기 17줄 반영, check/render_parts_run_1023.log) — 끝나기 전 다른 회차는 렌더·voice 건드리지 말 것
 2026-10-25 22:17 | firemap-video-producer 정기 22:1x 회차 | J-1 렌더본 확인·관문·예약(10/26 11:30)
 2026-10-25 22:25 | firemap-video-producer 정기 22:1x 회차 | 손 뗌 — 16000~끝 두 토막 렌더 백그라운드(check/render_1025.sh, 끝나면 ALL_DONE). 다음 회차: j1_ds10 프레임 746초·끝 확인→gate→예약
+2026-10-26 02:17 | firemap-video-producer 정기 02:1x 회차 | J-1 렌더 실패(목소리 한결같음 18줄) 원인 확인·다시 받기·렌더·gate·예약(10/26 11:30)
+2026-10-26 03:04 | firemap-video-producer 정기 02:1x 회차 | 렌더 네 토막 띄움(check/render_1026.sh → j1_ds10, 끝나면 ALL_DONE) — 끝나기 전 다른 회차는 voice·렌더 건드리지 말 것
+2026-10-26 15:12 | firemap-video-producer 정기 02:1x 회차 | 03:04 렌더가 24프레임에서 12시간 멈춘 뒤 합성기 오류(15:10) → 다시 띄움
+2026-10-26 23:52 | firemap-video-producer 정기 02:1x 회차 | 끝 — 렌더 취소(비축으로 돌림), 다음 맡는 회차는 today.md 23:52 알림대로

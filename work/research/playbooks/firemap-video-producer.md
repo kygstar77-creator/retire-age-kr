@@ -199,3 +199,4 @@
 - 10/23 03시: 렌더를 멈추면(Stop-Process) Remotion 임시 묶음(%TEMP%\remotion-webpack-bundle-*·assets*, 하나에 public 4GB 넘게 복사)이 그대로 남는다 — 멈춘 뒤 바로 그 묶음을 지운다. 디스크가 15GB 아래면 자산 사본이 잘려 'No frame found'로 끝 쪽 프레임에서 죽는다.
 
 - 2026-10-25: 공개 날이 밀리면 끝 줄 '{요일} 오전 11시 반' 이 틀린 말이 된다 — 칸이 바뀌면 렌더 전에 say·script·props 요일부터 본다. 자막 쪽 끝 '안·못'은 뒤 쪽만 보면 뜻이 뒤집힌다(capPages가 넘김, 10/25).
+- 10/26 PD: 렌더를 띄운 뒤 PC 절전(03:2x~15:09·16:0x~23:3x)이면 렌더가 멈췄다 오류로 끝난다 — 공개 칸 직전 렌더는 Monitor로 10분마다 진행을 보고, 멈추면 바로 today.md 막힘. 렌더마다 public 6.3GB가 Temp로 복사돼 동시 렌더 몇 개면 디스크가 찬다(No frame found·ENOSPC·임시 폴더 사라짐은 같은 뿌리).

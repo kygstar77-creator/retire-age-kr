@@ -732,18 +732,18 @@
     {
      "text": "여기에 60%를 곱하면 세금이 붙는 금액, 과세표준이 나오는데, 5억이 조금 안 되는 금액이에요.",
      "audio": "audio/j-1/2d490dad0a361bf5.wav",
-     "frames": 171,
+     "frames": 161,
      "cap": "① 20억 − 12억 = 8억 · ② × 공정시장가액비율 60% = 4.8억"
     }
    ],
-   "frames": 171,
+   "frames": 161,
    "data": {
     "title": "② 비율 곱하기 = 과세표준",
     "v": "4.8억",
     "s": "8억 × 60%",
     "c": "accent",
     "source": "종합부동산세법(법제처 2026.10.19)",
-    "rv": 106
+    "rv": 100
    }
   },
   {
@@ -1281,11 +1281,11 @@
     {
      "text": "살고 있는 집은 어디서부터 늘까요?",
      "audio": "audio/j-1/295f77e9d9cee210.wav",
-     "frames": 61,
+     "frames": 67,
      "cap": null
     }
    ],
-   "frames": 61,
+   "frames": 67,
    "data": {
     "src": "bg/t1/36820284.mp4",
     "license": "Pexels 36820284 무료(Kartik Malviya)",
@@ -1353,12 +1353,12 @@
     },
     {
      "text": "정부안은 그 기준을 '갖고 있던 해'에서 '그 집에 산 해'로 바꿉니다.",
-     "audio": "audio/j-1/45708f902b4a4424.wav",
-     "frames": 122,
+     "audio": "audio/j-1/8d36c08e563c658e.wav",
+     "frames": 111,
      "cap": null
     }
    ],
-   "frames": 277,
+   "frames": 266,
    "data": {
     "title": "할인 기준",
     "v1": "갖고 있던 해",
@@ -1377,11 +1377,11 @@
     {
      "text": "2027년 한 해는 중간 단계예요. 갖고 있던 햇수로 받던 할인은 절반만 쳐 주고, 산 햇수 할인과 비교해서 큰 쪽을 줍니다.",
      "audio": "audio/j-1/981d1849f581bdf7.wav",
-     "frames": 234,
+     "frames": 243,
      "cap": null
     }
    ],
-   "frames": 234,
+   "frames": 243,
    "data": {
     "title": "2027년 한 해",
     "v": "큰 쪽으로",
@@ -1473,11 +1473,11 @@
     {
      "text": "비어 있거나 세를 준 집에는 기준선이 하나 더 있는데, 빼 주는 금액은 12억이에요.",
      "audio": "audio/j-1/0a5b1221725200dc.wav",
-     "frames": 159,
+     "frames": 136,
      "cap": null
     }
    ],
-   "frames": 159,
+   "frames": 136,
    "data": {
     "n": "4장",
     "q": "안 사는 집에만 있는 기준선"
@@ -2138,11 +2138,11 @@
     {
      "text": "그해 9월 신청 기간이 바뀐 규칙으로 고를 수 있는 첫 번째 때예요.",
      "audio": "audio/j-1/62ade9033e94ee48.wav",
-     "frames": 115,
+     "frames": 102,
      "cap": null
     }
    ],
-   "frames": 274,
+   "frames": 261,
    "data": {
     "title": "바뀐 규칙 첫 해",
     "v1": "2027년 9월",
@@ -2313,17 +2313,17 @@
     {
      "text": "할인에 금액 한도도 새로 생깁니다. 2027년부터예요.",
      "audio": "audio/j-1/eb3a3503e01ac987.wav",
-     "frames": 105,
+     "frames": 102,
      "cap": null
     },
     {
      "text": "깎아 주는 세금이 첫해는 800만원, 그다음부터는 600만원까지입니다.",
      "audio": "audio/j-1/1662bc6232ea3271.wav",
-     "frames": 152,
+     "frames": 134,
      "cap": "연령+거주 공제율 합계 80% 한도는 그대로 · 금액 한도 신설"
     }
    ],
-   "frames": 257,
+   "frames": 236,
    "data": {
     "title": "세액공제 금액 한도(새로)",
     "v1": "800만원",
@@ -2630,11 +2630,11 @@
     {
      "text": "전근처럼 어쩔 수 없이 집을 떠나는 경우도 있죠.",
      "audio": "audio/j-1/1c144aadd82183ef.wav",
-     "frames": 77,
+     "frames": 89,
      "cap": null
     }
    ],
-   "frames": 77,
+   "frames": 89,
    "data": {
     "n": "7장",
     "q": "집을 떠나야 하는 사람, 당장 낼 돈이 없는 사람"
@@ -2646,11 +2646,11 @@
     {
      "text": "정부가 낸 세법 개정 설명 자료에는 이런 경우를 위한 예외가 적혀 있습니다.",
      "audio": "audio/j-1/c9c41d0b4e07c224.wav",
-     "frames": 129,
+     "frames": 140,
      "cap": null
     }
    ],
-   "frames": 129,
+   "frames": 140,
    "data": {
     "src": "bg/j1/stock/6036730.mp4",
     "license": "Pexels 6036730 무료(Gustavo Fring)",
@@ -2837,11 +2837,11 @@
     {
      "text": "미룬 만큼 이자가 연 3.1% 붙는다는 점은 같이 봐야 해요.",
      "audio": "audio/j-1/69d75b93dbb57cb1.wav",
-     "frames": 121,
+     "frames": 113,
      "cap": null
     }
    ],
-   "frames": 121,
+   "frames": 113,
    "data": {
     "title": "미룬 만큼",
     "v": "연 3.1% 이자",
@@ -3076,11 +3076,11 @@
     {
      "text": "여기에 가진 집값 중 사는 집이 차지하는 비율만큼, 최대 5억을 더 빼 주고요.",
      "audio": "audio/j-1/ffa880c65da323a2.wav",
-     "frames": 134,
+     "frames": 127,
      "cap": "4억 + 5억 × (거주주택 공시가격 ÷ 주택 공시가격 합계)"
     }
    ],
-   "frames": 199,
+   "frames": 192,
    "data": {
     "title": "두 채 이상 · 빼 주는 금액",
     "rows": [
@@ -3219,11 +3219,11 @@
     {
      "text": "부부가 반씩 가진 집은 올해도 정부안도 18억까지는 안 나옵니다.",
      "audio": "audio/j-1/3f79863f801ca431.wav",
-     "frames": 135,
+     "frames": 131,
      "cap": null
     }
    ],
-   "frames": 135,
+   "frames": 131,
    "data": {
     "src": "bg/t1/34740733.mp4",
     "license": "Pexels 34740733 무료(Dishant Babariya)",
@@ -3538,7 +3538,7 @@
     {
      "text": "화요일 오전 11시 반에는 배당 ETF 이야기입니다. 그때 뵙겠습니다.",
      "audio": "audio/j-1/ddb0d718f9c06df8.wav",
-     "frames": 164,
+     "frames": 126,
      "cap": null
     },
     {
@@ -3548,7 +3548,7 @@
      "cap": null
     }
    ],
-   "frames": 929,
+   "frames": 891,
    "data": {
     "src": "bg/t1/5562942.mp4",
     "license": "Pexels 5562942 무료(Daniel Qura)",

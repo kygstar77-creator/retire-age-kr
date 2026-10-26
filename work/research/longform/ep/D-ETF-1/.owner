@@ -4,3 +4,5 @@
 2026-10-22 11:06 | firemap-video-producer 정기 10:1x 회차 | 끝 — 녹음 105줄 check 통과·첫 귀 105/105, 둘째 귀 3.5-flash 한도로 빈칸 → 다음: readback --resume --whisper turbo (손 뗌)
 2026-10-22 18:18 | firemap-video-producer 정기 18:1x 회차 | 둘째 귀 readback --resume --whisper turbo (백그라운드, 로그 check/readback_1022pd18.log)
 2026-10-22 18:32 | firemap-video-producer 정기 18:1x 회차 | 손 뗌 — readback --whisper turbo 백그라운드 도는 중(로그 check/readback_1022pd18.log)
+2026-10-26 15:38 | firemap-video-producer 정기 15:3x 회차 | 관문 점검→화면 만들기(10/27 11:30 칸)
+2026-10-27 00:04 | firemap-video-producer 정기 00:0x 회차 | 이어받음(15:38 회차 23:29 DNS 실패로 멈춤) — 끝 줄 다시 받기→check→렌더→gate→예약 10/27 11:30

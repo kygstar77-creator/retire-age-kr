@@ -41,5 +41,5 @@
 | firemap-ai-lab | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 
 | firemap-bizdev | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-report | ① 내일 12:30 cafeinflow로 10/22~26 유입·홈판·카페검색 칸 채우기(오늘 브라우저 사용 중이라 못 함) ② 수익 화면 재로그인 되면 10/26 쿠팡·애드센스 값 첫 줄 · 그 전엔 firemap_events coupang_view/click 매일 줄 ③ perf.py가 블로그 발행 멈춤(10/26 0/1)·검색 막힘이면 색인 경보를 '판단 안 함'으로만 찍게 고치기 |
+| firemap-report | ① 10/26 첫 발행 재개 뒤 홈판이 앞 7일 평균(137)으로 돌아오는지 10/27·28 cafeinflow 줄 ② 수익 화면 재로그인 되면 10/26 쿠팡·애드센스 값 첫 줄 · 그 전엔 firemap_events coupang_view/click 매일 줄 ③ perf.py가 블로그 발행 멈춤(10/26 0/1)·검색 막힘이면 색인 경보를 '판단 안 함'으로만 찍게 고치기 |
 | firemap-finishline-check | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

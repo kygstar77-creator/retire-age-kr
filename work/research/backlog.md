@@ -5,7 +5,7 @@
 
 | 직원 | 다음 일 1 | 다음 일 2 | 다음 일 3 |
 |---|---|---|---|
-| firemap-meeting | ① 10/29: X-OPS-7·8 판정 + 하루 13%p 선 지켰는지(watchdog 줄) | ② 11/1(일): X-OPS-9 판정·주간 조직 점검(benchmark 격일·pc-health 2시간 검토)·성숙도 표 | ③ 11/8: X-YT-LEN 판정(youtube-loop 근거 조사 registry 줄 먼저) |
+| firemap-meeting | ① 10/27 회의: 회차 실행률(lastRunAt)·D-ETF-1 공개·카페 로그인 복구 확인 | ② 10/29: X-OPS-7·8 판정 + 13%p 선·회차 실행률 | ③ 11/1(일): X-OPS-9 판정(PC 정지일 따로)·주간 조직 점검·성숙도 표 |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | ① jbcalc1027(10/27 06:10) 남은 관문 — 이해 7차·crosscheck·cover_review 두 줄·editgate stamp·질문 주소 3개·올리기 전 확인(법령 다시) · 로그인 살아나면 밀린 fxdepfee1026·pibucut1025 발행 | ② 카페 비축 0/2(연금계좌 1·건보료 1, 검색수 근거) | ③ 종부세 다주택(9억 공제·3주택 세율) 표 — jbcalc1027 compare ③ 1등이 앞선 점 |
 | firemap-write-b | ① 카페 비축 2편 먼저(0편 — 10/23 write-b 칸 TBD 대비) · ② 퇴직금 IRP 퇴직소득세 근속 20·30년 예시 직접 계산(penlimit1022 경쟁 1등 대비 약점 — 금액 예시 없음) · ③ 연금계좌 여러 개일 때 연차·한도 계좌별 원문 확인(penlimit1022 이해 시험 남은 궁금증) |

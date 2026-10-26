@@ -1,0 +1,9 @@
+# 경쟁 댓글 질문 (vidiq_video_comments 2026-10-26 23:4x — 유튜브 API 토큰은 댓글 권한 없음 403 insufficientPermissions)
+Q1 [8] https://www.youtube.com/watch?v=qh3a_fsRgzU&lc=UgygbxVkGxxx1Siu_-p4AaABAg | 퇴직연금으로 받으면 되죠? 일시금으로 안받으면 되는거죠?
+Q2 [6] https://www.youtube.com/watch?v=qh3a_fsRgzU&lc=Ugyl42nR-FdOQe785mp4AaABAg | 금액이 커서 IRP에서 1500이상 인출해서 분류과세 16.5% 내거나 종소세 내면 일반계좌보다 손해 아닌가요?
+Q3 [5] https://www.youtube.com/watch?v=qh3a_fsRgzU&lc=UgxA5qyklpXEK1Os2j54AaABAg | 일년 1500 넘게 받으면 건강 보험료도 올라가는 건가?
+Q4 [3] https://www.youtube.com/watch?v=qh3a_fsRgzU&lc=Ugwz7n5Xt9VrX95ISf14AaABAg | 퇴직금 전액을 연금저축계좌에 입금 가능한가요? IRP로 받아서 이전 가능한지? 입금한도가 있는지?
+Q5 [23 글의 답글] https://www.youtube.com/watch?v=_VfNUd_uF6E&lc=UgxfjMp68aE9q4fdbWt4AaABAg | (답글) 1만원씩 인출하는 이유는 뭔가요?
+Q6 [8] https://www.youtube.com/watch?v=_VfNUd_uF6E&lc=Ugw-_5HKSpETMX_XmXl4AaABAg | 뭐가 이리 복잡한지... 머리 아파서 뭘 어떻게 해야 하는지
+Q7 [6] https://www.youtube.com/watch?v=qh3a_fsRgzU&lc=UgxRe8YloQUQZvyPd-d4AaABAg | 퇴직수당을 일반계좌로 받았는데 60일 이내에 연금저축·IRP 어디로 받아야 할지
+흔한 오해(답글) https://www.youtube.com/watch?v=qh3a_fsRgzU&lc=UgxkDa7Pwq1IYmNpie54AaABAg | 'IRP에서 1억을 찾으면 1000만원이 세금으로' — 근속·금액에 따라 다름(calc: 1억·25년 일시금 74만 8천원)

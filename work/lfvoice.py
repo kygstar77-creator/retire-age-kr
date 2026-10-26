@@ -606,6 +606,8 @@ def readback_num(t, words=False):
         t = re.sub(r'(?<![가-힣0-9])([일이삼사오육칠팔구]?[십백천](?:[일이삼사오육칠팔구]?[십백천])*[일이삼사오육칠팔구]?)(?=\s?(?:만|억|조|원|배|%|퍼센트|분기|달|년|월|일|주))',
                    lambda m: str(_sino(m.group(1))), t)
         # 10/18 23:5x PD: 한 자리 달 이름('일 월'·'유월'·'시월')은 위 줄이 십·백·천을 요구해 못 바꿨다 — C-2 5:24 귀 셋 다 '일 월'로 맞게 듣고도 숫자 틀림
+        # 10/23 PD: '0원'은 [영 원] — 두 귀가 '영원'으로 맞게 듣고도 숫자 틀림(J-1 6:23 '거의 0원이고요', 귀 넷 모두 '영원')
+        t = re.sub(r'(?<![가-힣0-9])영\s?(?=원(?!히)|%|퍼센트|명|건)', '0', t)
         t = re.sub(r'(?<![가-힣0-9])(십이|십일|일|이|삼|사|오|유|육|칠|팔|구|시)\s?(?=월)',
                    lambda m: str({'십이': 12, '십일': 11, '일': 1, '이': 2, '삼': 3, '사': 4, '오': 5, '유': 6, '육': 6, '칠': 7, '팔': 8, '구': 9, '시': 10}[m.group(1)]), t)
     t = re.sub(r'(\d+)\s?천\s?(\d+)\s?백', lambda m: str(int(m.group(1)) * 1000 + int(m.group(2)) * 100), t)
@@ -684,6 +686,7 @@ def _same_sound(t):
     t = t.replace('KODEX', '코덱스')   # 10/20 PD: 상품 이름 KODEX는 [코덱스] — 한글만 남기면 빠져 두 귀의 '코덱스'가 합의오독으로 걸림(X-1 2:6)
     t = t.replace('㎡', '제곱미터')   # 10/21 PD: 대본 '㎡'는 [제곱미터](H-3 say.json) — 두 귀가 '제곱미터'로 맞게 적어도 기호와 안 맞아 합의오독으로 걸림(H-3 1:10 등 9줄)
     t = t.replace('예요', '에요').replace('들이고', '드리고')   # 10/21 PD: '넓이예요'·'들이고'는 [넓이에요]·[드리고](연음, 표준 발음법 제13항) — 두 귀가 매번 소리 나는 대로 적음(H-3 5:9·7:1 다시 받기 3번 같음)
+    for _k in ('제피큐', '제피', '슈드', '타이거', '디보'): t = t.replace(_k, '')   # 10/26 PD: 영문 종목 이름(JEPQ·JEPI·SCHD·TIGER·DIVO)을 두 귀가 한글로 적음 — 대본 쪽은 한글만 남기면 빠지니 받아쓰기 쪽 한글 읽기도 뺀다(D-ETF-1 합의오독 20여 줄)
     t = re.sub(r'iN', '인', t)   # 10/20 PD: '지식iN'은 [지식인] — 한글만 남기면 'iN'이 빠져 두 귀의 '인'이 합의오독으로 걸림(X-1 0:6)
     t = re.sub(r'(?<=[가-힣])의', '에', t)
     def f(c):
@@ -700,19 +703,55 @@ def _same_sound(t):
     t = re.sub(r'[가-힣](?=[마-밓])', lambda m: chr(ord(m.group()) + 12) if (ord(m.group()) - 0xAC00) % 28 == 4 else m.group(), t)
     # ⑤ 10/20 PD: 받침 ㅅ + 다음 글자 초성 ㅅ(띄어쓰기 없이) → 받침 없앰. 사이시옷 '햇수'는 표준 발음법 제30항 1에 따라 [해쑤]·[핻쑤] 둘 다 표준 —
     #   T-1 0:2 '햇수예요'를 다시 받기 3번 모두 두 귀가 '해수'·'횟수'로 적음(readback 1020). 모음이 달리 들린 '횟수'는 이 규칙으로도 그대로 잡힌다.
-    return re.sub(r'[가-힣](?=\s*[사-싷])', lambda m: chr(ord(m.group()) - 19) if (ord(m.group()) - 0xAC00) % 28 == 19 else m.group(), t)
+    t = re.sub(r'[가-힣](?=\s*[사-싷])', lambda m: chr(ord(m.group()) - 19) if (ord(m.group()) - 0xAC00) % 28 == 19 else m.group(), t)
+    return t
+# ⑥ 10/23 PD: 연음(표준 발음법 제13·14항 — 받침 뒤 모음으로 시작하는 조사·어미는 받침을 뒤 음절 첫소리로 옮겨 발음)·ㅎ 탈락(제12항 4)·
+#   구개음화(제17항)·비음화(제18항). 두 귀가 소리 나는 대로 적은 J-1 '예순은→예수는'·'할인이→하리니'·'부부는/부분은' 같은 줄이
+#   글자 경계만 달라 합의오독으로 걸림(readback_1023pd·pd2 17줄, 두 귀 모델을 바꿔도 같음). 두 쪽을 한글만 남긴 뒤 연음을 적용해 한 번 더 비교하고, 연음 전·후 두 비교에 모두 남은 자리만 오독으로 본다
+#   (연음은 글자 수를 안 바꿔 자리가 맞음 — 숫자로 적힌 '70이면'처럼 한쪽만 연음이 걸려 새로 생기는 차이는 연음 전 비교에 없어 빠진다).
+_LI_ONE = {1: 0, 2: 1, 4: 2, 7: 3, 8: 5, 16: 6, 17: 7, 19: 9, 20: 10, 22: 12, 23: 14, 24: 15, 25: 16, 26: 17}
+_LI_TWO = {3: (1, 9), 5: (4, 12), 6: (4, None), 9: (8, 0), 10: (8, 6), 11: (8, 7), 12: (8, 9), 13: (8, 16), 14: (8, 17), 15: (8, None), 18: (17, 9)}
+def _liaison(t):
+    c = list(t)
+    for i in range(len(c) - 1):
+        a, b = ord(c[i]) - 0xAC00, ord(c[i + 1]) - 0xAC00
+        if not (0 <= a < 11172 and 0 <= b < 11172): continue
+        fin, ini2 = a % 28, b // 588
+        if ini2 == 11 and fin not in (0, 21):   # 뒤 음절 첫소리 ㅇ — ㅇ 받침은 옮기지 않음
+            if fin == 27: keep, mv = 0, None   # ㅎ 탈락
+            elif fin in _LI_TWO: keep, mv = _LI_TWO[fin]
+            else: keep, mv = 0, _LI_ONE.get(fin)
+            if mv is None and fin != 27 and fin not in _LI_TWO: continue
+            c[i] = chr(0xAC00 + a - fin + keep)
+            if mv is not None:
+                med2 = (b % 588) // 28
+                if med2 == 20 and mv in (3, 16): mv = 12 if mv == 3 else 14   # 구개음화 ㄷ·ㅌ+이 → 지·치
+                c[i + 1] = chr(0xAC00 + mv * 588 + b % 588)
+        elif ini2 in (2, 6):   # 비음화: 뒤 첫소리 ㄴ·ㅁ
+            to = 21 if fin in (1, 2, 3, 9, 24) else 4 if fin in (7, 19, 20, 22, 23, 25, 27) else 16 if fin in (11, 14, 17, 18, 26) else 0
+            if to: c[i] = chr(0xAC00 + a - fin + to)
+    return ''.join(c)
 def _spots(script, heard):
     # 대본(한글만) 기준으로 받아쓰기가 바꾼 자리 [i1,i2) 목록. 빠진 글자(delete)와 숫자 말↔숫자 표기 차이는 뺀다
     #   (대본 '열네 해'를 '14해'로 쓰면 '열네'가 빠진 것으로 보인다 — 오독이 아니다).
     import difflib
-    a, b = re.sub(r'[^가-힣]', '', _same_sound(script)), re.sub(r'[^가-힣]', '', _same_sound(heard or ''))
-    out = []
-    for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
-        if op in ('equal', 'delete'): continue
-        seg = a[i1:i2] + b[j1:j2]
-        if seg and set(seg) <= _NUMCH: continue
-        out.append((i1, i2, a[i1:i2], b[j1:j2]))
-    return out
+    # ⑦ 10/27 PD: 대본의 영문 이름(SCHD·JEPQ·PLUS·DB·S&P 등)은 '#' 한 칸으로 남긴다 — 예전엔 한글만 남겨 빠졌고, 두 귀가 그 자리에 적은 한글 읽기
+    #   (슈더·슈도·쇼도·제피크·재피·플러스·디비)가 매번 합의오독으로 걸림(D-ETF-1 10/22 녹음 17줄, 이름마다 철자를 늘어놓던 10/26 방식은 끝이 없음).
+    #   '#' 자리를 바꾼 것·'#' 바로 옆에 끼어든 것만 뺀다. 이름 밖에서 다르게 들린 자리는 그대로 잡는다.
+    a = re.sub(r'[^가-힣#]', '', _same_sound(re.sub(r'[A-Za-z][A-Za-z0-9&]*', '#', script)))
+    b = re.sub(r'[^가-힣]', '', _same_sound(heard or ''))
+    def ops(a, b):
+        out = []
+        for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
+            if op in ('equal', 'delete'): continue
+            if '#' in a[i1:i2] and not a[i1:i2].replace('#', ''): continue
+            if op == 'insert' and '#' in a[max(0, i1 - 1):i1 + 1]: continue
+            seg = a[i1:i2] + b[j1:j2]
+            if seg and set(seg) <= _NUMCH | {'첨', '함'}: continue   # ⑦ '천만·한마' 등 숫자 말에 ④(ㄴ+ㅁ→ㅁ)가 걸려 생긴 '첨·함'(D-ETF-1 5:11 '천만 원'→'첨만')
+            out.append((i1, i2, a[i1:i2], b[j1:j2]))
+        return out
+    lia = ops(_liaison(a), _liaison(b))   # ⑥ 10/23 연음 뒤 비교 — 두 비교 모두에 있는 자리만
+    return [(i1, i2, sa.replace('#', ''), sb) for i1, i2, sa, sb in ops(a, b) if any(i1 <= y[1] and y[0] <= i2 for y in lia)]
 def consensus(script, h1, h2, win=2):
     # 10/18 합의오독(국소): 두 모델이 대본의 같은 자리(앞뒤 2글자 안)를 둘 다 다르게 들었으면 사람 귀에도 그렇게 들린다.
     #   문장 전체 일치율로는 '안이었거든요'→'아니었거든요'(C-2 4:5, 0.81~0.84) 같은 한 낱말 뒤집힘이 안 잡힌다.

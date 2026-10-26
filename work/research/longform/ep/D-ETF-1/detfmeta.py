@@ -67,7 +67,7 @@ m.update({
     'experiment': {},
     'endscreen': {'how': 'Studio 최종 화면 — 업로드 뒤 할 일(다음 편 K-1 또는 W-1)', 'status': '미정'},
     'made_by': 'firemap-video-producer', 'made_at': old.get('made_at') or '2026-10-26',
-    'video': os.path.join(VID, 'out', 'detf1.mp4'), 'missing': 0,
+    'video': os.path.join(VID, 'out', 'detf1_ds.mp4'), 'missing': 0,
 })
 json.dump(m, open(MP, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print('meta.json · 제목', len(TITLE), '자 · 챕터', len(chapters), '· 설명', len(m['desc']), '자 · 실사 출처', len(credits))

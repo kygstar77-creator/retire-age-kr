@@ -405,3 +405,5 @@
 - 2026-10-22 firemap-video-producer: 렌더 토막이 'Failed to fetch … disk space is low'·'remotion-audio-mixing\0.wav No such file'로 죽으면 디스크(렌더마다 %TEMP%에 public 5GB 복사, 다른 직원 still도 같이) — 10/22 02:3x C: 7.7GB. 끝난 시험 mp4·옛 토막·1시간 지난 remotion-* 지우고 19.8GB. render_parts 스크립트는 h3.mp4 없으면 FAIL로 멈추게 고침(전에는 'part 0-8999' 찍고 넘어가 이어 붙이기에서야 알았다).
 - 2026-10-25 firemap-write: 회차가 사흘 안 돈 것처럼 보이면 먼저 list_task_runs의 error 칸을 본다 — 10/23~25는 '주간 사용량 한도(10/25 21시 초기화)'로 모든 예약 회차가 5초 만에 실패했다. 맥박·커밋이 없어 계기판에는 '안 돈 회차'로만 잡힌다. 풀린 뒤 첫 회차는 지난 칸을 메우려 하지 말고 관문 통과분의 '올리기 전 확인'부터 다시 한다(1일 넘으면 naverpost가 막음).
 - (2026-10-26 motion) 쇼츠 밝기를 칸 전체 중앙으로만 비교하면 경쟁이 실제보다 어둡게 나온다 — 25편 중 다수가 위아래 검은 띠(레터박스)라 Y 0~30인데 가운데 그림은 196~238. 밝기 기준은 가운데 띠(높이 30~70%)를 같이 잰다(B-46, bright.py Ymid).
+- 2026-10-27 visual-designer: 긴 백그라운드 작업(AI 생성·캡처)을 띄운 채 PC가 잠들면 작업이 조용히 죽는다 — 10/26 16:11~23:28 잠듦(Kernel-Power 42)으로 K-1 장면 시한 21:00을 넘김. 로그가 멈추면 먼저 `Get-WinEvent System Id 42,1`로 잠듦을 보고, 다시 띄울 땐 이미 나온 파일은 건너뛰게(skip existing) 짠다.
+- 2026-10-27 visual-designer: shot_check는 품질 판정 칸에서 '못함|떨어'를 낱말로만 찾는다 — 심사관 이유에 '동떨어진'이 들어가면 '나음'이어도 막힌다(K-1 r32). 판정 칸을 채운 뒤 꼭 research_gate.shot_check를 직접 돌려 본다.

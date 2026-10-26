@@ -1,0 +1,231 @@
+# D-ETF-1 화면 재료 — script.md(편집 서명) + voice.json(Chirp 3 HD Charon 1.1) + calc_out·facts → work/video/de1.json (Remotion 'DE1' = J1 부품 그대로)
+#   py -3.12 work/research/longform/ep/D-ETF-1/de1props.py
+# 10/26 PD(15:3x 회차): j1props.py 틀을 그대로 빌림 — 판(big·pair·rows·bars·list5) ↔ 꽉 찬 실사(broll, Pexels bg/detf) ↔ 장 카드(ask) ↔ 종이 그림(pic: 히트맵·점 그림 fig/).
+# 가상 인물 없음(10/21) — '지금 생활비가 필요한 분'·'오래 모을 직장인' 조건으로만. 줄은 말 글자 앞부분으로 찾는다(대본이 바뀌면 assert).
+# 숫자: props 안 숫자 글자는 전부 calc_out·facts·script.md에 있는 글자만 — 맨 아래 numcheck가 막는다.
+import json, os, re, sys
+sys.stdout.reconfigure(encoding='utf-8')
+EP = os.path.dirname(os.path.abspath(__file__))
+WORK = os.path.normpath(os.path.join(EP, '..', '..', '..', '..'))
+VID = os.path.join(WORK, 'video')
+FPS, TAIL = 30, 75
+END_PAD = 23 * 30   # 맺는 말 뒤 숨 3초 + 최종 화면 자리 20초(answer/6388789)
+CALC = ''.join(open(os.path.join(EP, f), encoding='utf-8').read() for f in ('calc_out.txt', 'facts.txt'))
+SCRIPT = open(os.path.join(EP, 'script.md'), encoding='utf-8').read()
+V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
+ALL = [l for s in V['sections'] for l in s['lines']]
+assert len(ALL) == 105, len(ALL)
+assert abs(V.get('speakingRate', 0) - 1.1) < 1e-9 and V['voice'] == 'ko-KR-Chirp3-HD-Charon'
+USED = set()
+
+CR = {c['id']: c for c in json.load(open(os.path.join(VID, 'public', 'bg', 'detf', 'stock', 'credits.json'), encoding='utf-8'))}
+CR[5562942] = {'id': 5562942, 'author': 'Daniel Qura', 'sec': 40, 'file': '../../t1/5562942.mp4', 'desc_line': '영상 일부: Daniel Qura / Pexels (https://www.pexels.com/video/time-lapse-video-of-the-sky-5562942/)'}
+
+def L(t, cap=None):
+    hit = [i for i, l in enumerate(ALL) if l['text'].startswith(t)]; assert len(hit) == 1, (t, hit)
+    i = hit[0]; assert i not in USED, ('두 번 씀', t); USED.add(i)
+    l = ALL[i]; assert l.get('audio') and os.path.exists(os.path.join(VID, 'public', l['audio'])), t
+    assert cap is None or len(cap) <= 60, ('cap 길다', len(cap), cap)
+    return {'text': l['text'], 'audio': l['audio'], 'frames': l['frames'], 'cap': cap, 'i': i}
+
+def S(kind, lines, rvl=None, **data):
+    ls = [L(*t) if isinstance(t, tuple) else L(t) for t in lines]
+    if rvl is not None: data['rv'] = sum(l['frames'] for l in ls[:rvl]) + 8
+    return {'kind': kind, 'lines': ls, 'frames': sum(l['frames'] for l in ls), 'data': data}
+
+SRC_Y = '야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산'
+SRC_S = '운용사 보유 종목·섹터 표(2026-09-30~10-16) · 네이버 증권 · 파이어맵 합산'
+SRC_T = '소득세법 §129 · 국민건강보험법 시행규칙 §44 · 파이어맵 계산'
+A = 'accent'; K = 'ink'; B = 'fall'; R = 'rise'; G = 'g'
+def big(title, v, s, lines, c=A, src=SRC_Y, **d): return S('big', lines, title=title, v=v, s=s, c=c, source=src, **d)
+def pair(title, a, b, lines, src=SRC_Y, **d): return S('pair', lines, title=title, v1=a[0], s1=a[1], c1=a[2], v2=b[0], s2=b[1], c2=b[2], source=src, **d)
+def rows(title, rs, lines, src=SRC_Y, **d): return S('rows', lines, title=title, rows=rs, source=src, **d)
+def bars(title, bs, lines, mx, dir='h', src=SRC_Y, **d): return S('bars', lines, title=title, bars=bs, max=mx, dir=dir, source=src, **d)
+def ask(n, q, frm, lines): return S('ask', lines, n=n, q=q, **({'from': frm} if frm else {}))
+def list5(title, items, lines, src='파이어맵'): return S('list5', lines, title=title, items=items, source=src)
+def pic(f, lines, z=(1.0, 1.05), cx=50, cy=45): return S('pic', lines, pic=f'bg/detf/fig/{f}.png', license='파이어맵 자체 제작(운용사·야후 자료)', baked=True, inset=0.80, dark=True, zoom=list(z), cx=cx, cy=cy)
+USEDBG = {}
+def broll(cid, lines, say, side='left'):
+    c = CR[cid]; k = USEDBG.get(cid, 0); USEDBG[cid] = k + 1; have = (c.get('sec') or 0) - 0.5
+    s = S('broll', lines, src='bg/detf/stock/' + c.get('file', f'{cid}.mp4') if cid != 5562942 else 'bg/t1/5562942.mp4', license=f"Pexels {cid} 무료({c['author']})", say=say, side=side)
+    sec = s['frames'] / FPS; frm = 0 if k == 0 else int(min(max(0, have - sec), k * 6))
+    s['data']['from_'] = frm * FPS; s['data']['_need'] = round(sec + frm, 1); s['data']['_have'] = have
+    return s
+
+# 실사 뜻 표(bg/detf, 10/26 PD 눈 검사 — 얼굴·상표 없는 것만, 38667523은 tradingview 주소가 보여 뺌): 휴대폰 증권 화면 39494572·7578628 · 찻잔 둘 6343634 · 동전 손 7118320
+#   책장 넘기기 27791953 · 비 창 5366344·4786522 · 계산기+손 6964247·7490451 · 노트 손 5546876·5480588 · 지폐 손 5981346 · 노을 빈 의자 7592927 · 하늘(T-1 빌림) 5562942
+scenes = []
+# ── 0. 예고 ──
+scenes += [
+    S('brand', ['안녕하세요, 파이어맵입니다.'], line='오늘은 배당 ETF 이야기', sub='배당 ETF 16종 · 같은 잣대로'),
+    broll(39494572, ['우리나라에서 많이 찾아보는'], 'SCHD에 넣은 돈은 어느 업종에'),
+    broll(7578628, ['10월 들어 SCHD'], '요즘 왜 이러냐는 말'),
+    big('SCHD 돈이 간 곳 · 세 업종 합', '55%', '필수소비재 · 헬스케어 · 에너지',
+        [('답부터 말하면, SCHD 돈의', '슈왑 2026-10-15 · 필수소비재 20.1% · 헬스케어 19.0% · 에너지 15.9%')], rvl=0, src=SRC_S),
+    broll(27791953, ['하나 더 있습니다. SCHD'], '한 주당 배당은 지난 십 년 꾸준히 늘었다'),
+    pair('SCHD 한 주당 배당, 매년 늘어난 비율', ['11%', '10년 평균', K], ['2%', '최근 12개월', A],
+         ['매년 평균 11%', ('그런데 가장 최근 열두 달은', '10년 10.8% · 최근 1년 2.0%(1.034→1.055달러)')], at2=1),
+    ask('오늘', '배당 ETF 열여섯 개, 같은 잣대로 다섯 가지', '미국 상장 9 · 국내 미국배당다우존스 4 · 국내 고배당 3 · 기준선 S&P500', ['오늘은 사람들이 많이 담는']),
+    list5('같은 잣대, 다섯 가지', ['얼마나 주나', '매년 느나', '한 업종에 몰렸나', '떨어질 땐 어땠나', '1억이면 매년 통장에 얼마'], ['많이 주나, 매년 느나']),
+    broll(6343634, ['이 숫자를 두 사람에게', '둘 다 넣을 돈은'], '두 경우, 같은 돈'),
+    rows('말 세 개만', [['ETF', '여러 회사 주식을 한 바구니에', None, 0], ['분배금', '모은 배당을 나눠 주는 돈', None, 1], ['분배율', '1년 분배금 ÷ 지금 가격', None, 2]],
+         ['시작 전에 말 하나만', '배당 ETF는 그 회사들이', ('그리고 1년 동안 받은', '분배율 = 최근 12개월 1주당 분배금 합 ÷ 지금 1주 가격')], src='파이어맵'),
+    broll(7118320, ['다만 은행 이자와 달리'], '정해진 값이 아니라 해마다 바뀐다'),
+]
+# ── 1. 제일 많이 주는 ETF ──
+scenes += [
+    ask('1장', '제일 많이 주는 ETF는?', '지난 12개월 나눠 준 돈 ÷ 지금 값', ['먼저 얼마나 주는지부터요']),
+    bars('분배율 · 최근 12개월', [['JEPQ', 11.71, '11.71%', G, 0], ['JEPI', 8.00, '8.00%', G, 1], ['DIVO', 6.31, '6.31%', G, 2], ['PLUS 고배당주', 4.53, '4.53%', G, 2],
+         ['SPYD', 4.36, '4.36%', G, 2], ['TIGER 은행', 4.26, '4.26%', G, 2], ['SCHD', 3.07, '3.07%', A, 2]],
+         ['맨 위는 JEPQ로', '그다음이 JEPI로', ('SCHD는 3% 정도로', '10/16 종가 기준 · 국내는 10/19')], 12),
+    bars('분배율 · 아래쪽', [['국내 미국배당', 3.02, '2.98~3.06%', G, 1], ['HDV', 2.84, '2.84%', G, 0], ['VYM', 2.29, '2.29%', G, 0], ['DGRO', 1.89, '1.89%', G, 0],
+         ['VIG', 1.51, '1.51%', A, 0], ['S&P500', 0.99, '0.99%', G, 0]], ['VIG는 1.5%로', ('국내에 상장된 미국배당다우존스 네', 'TIGER·SOL·ACE·KODEX — SCHD와 같은 지수 계열')], 12),
+    broll(5981346, ['국내 고배당 ETF 둘은'], '국내 고배당 — 은행·보험 같은 금융주'),
+    ask('왜?', 'JEPI와 JEPQ는 왜 이렇게 많이 줄까?', None, ['그럼 JEPI와 JEPQ는']),
+    rows('커버드콜의 짜임', [['주식을 그대로 들고'], ['일정 선 위로 오른 몫은 남에게'], ['그 대가를 미리 받아 분배금에']], ['이 둘은 주식을 들고 있으면서'], src='JP모건 상품 설명 · 파이어맵 정리', hot=False),
+    broll(7578628, ['그래서 많이 오르는 해에는'], '많이 오르는 해엔 오른 몫을 다 못 가져간다'),
+    pair("'기타' 칸 · 어느 업종에도 안 들어가는 몫", ['16%', 'JEPI', K], ['17%', 'JEPQ', A],
+         [('이 약속 거래는 어느 업종에도', "JP모건 섹터 표(2026-10-16) '기타' = 옵션 연계 채권·현금"), ('JEPQ는 17% 정도', 'JEPI 15.6% · JEPQ 17.5%')], src='JP모건 섹터 표(2026-10-16)', at2=1),
+    ask('조심', 'DIVO는 한 달이 유난히 튀었다', None, ['조심할 것도 하나 있어요']),
+    big('DIVO · 2025년 12월 한 번', '0.953달러', '다른 달은 0.17~0.21달러', [('작년 12월에 평소 달의', 'DIVO 2025-12-30 분배 0.953달러')], c=K),
+    pair('DIVO 분배율', ['6.31%', '12개월 그대로', K], ['4.32%', '그 한 번 빼면', A],
+         [('그 한 번을 빼면 4% 정도', '빼면 12개월 2.064달러 · 분배 성격(19a-1) 확인 안 함')], rvl=0, at2=0),
+    broll(6964247, ['그래서 분배율은 1년 치를'], '열두 달 치를 다 더하고, 튀는 달을 본다'),
+]
+# ── 2. 배당이 해마다 느나 ──
+scenes += [
+    ask('2장', '배당이 해마다 느나?', '오래 모을수록 더 중요한 질문', ['많이 주는 것만큼 중요한 게']),
+    pic('map_paper', ['가로는 지금 주는 비율'], z=(1.0, 1.03)),
+    pic('map_paper_jepi', ['오른쪽 아래, 많이 주는데', '5년 전과 지금, 한 주당'], z=(1.0, 1.06), cx=62, cy=80),
+    pic('map_paper', ['왼쪽 위, 조금 주는데'], z=(1.0, 1.06), cx=20, cy=45),
+    bars('SCHD 한 주당 배당 · 전년보다', [['2021', 17.9, '+17.9%', G, 0], ['2022', 11.1, '+11.1%', G, 0], ['2023', 5.7, '+5.7%', G, 0], ['2024', 11.9, '+11.9%', G, 1],
+         ['2025', 5.8, '+5.8%', G, 1], ['2026', 2.0, '+2.0%', A, 2]],
+         ['그럼 SCHD는 정말 멈췄을까요', '아까 말한 11%는 평균', ('그리고 최근 열두 달은 2%', '1주당 12개월 분배 · 10/16에 끝나는 12개월')], 20, dir='v'),
+    broll(27791953, ['왜 꺾였는지는'], '왜 꺾였는지는 자료에 없었다'),
+    rows('SCHD 배당 증가 · 매년 평균', [['10년', '10.8%'], ['5년', '7.2%'], ['3년', '6.5%'], ['1년', '2.0%']], ['그래서 볼 때는 긴 평균']),
+    broll(5546876, ['이름에 배당 성장이 들어가도'], '이름보다 숫자로 먼저 확인'),
+    pair('HDV 분배 횟수', ['석 달에 한 번', '2026년 6월까지', K], ['매달', '7월부터', A],
+         [('하나 더, 주는 달이 바뀐', "7/15·8/19·9/16 · 아이셰어즈 'Monthly'"), '매달 받는다고 매년'], src='아이셰어즈(2026-10-15) · 야후 파이낸스', at2=0),
+]
+# ── 3. 한 업종에 몰렸나 ──
+scenes += [
+    ask('3장', '한 업종에 몰렸나?', '오늘 가장 보여 드리고 싶었던 그림', ['이제 오늘 가장 보여 드리고']),
+    pic('heatmap_paper', ['각 ETF가 지금 가진 종목을', '진한 칸일수록'], z=(1.0, 1.04)),
+    pic('heatmap_paper_schd', ['SCHD는 아까 본 대로', 'SCHD는 재무가 튼튼하고'], z=(1.0, 1.06), cx=50, cy=18),
+    pair('두 업종·한 업종에 몰린 곳', ['51.8%', 'HDV · 필수소비재+에너지', K], ['24.4%', 'SPYD · 부동산', A],
+         [('HDV는 생활용품과 석유', 'HDV 필수소비재 27.0% · 에너지 24.8%'), ('SPYD는 부동산이 24%로', 'SPYD 부동산 24.4% · 필수소비재 14.1%')], src=SRC_S, at2=1),
+    pic('heatmap_paper_bank', ['국내 고배당 ETF는 더 한쪽으로'], z=(1.0, 1.06), cx=30, cy=90),
+    rows('PLUS 고배당주 많이 담은 종목', [['DB손해보험', '6.54%'], ['기업은행', '5.44%'], ['우리금융지주', '5.43%']], ['PLUS 고배당주에 많이 담긴'], src='네이버 증권 ETF 분석(10/16)'),
+    ask('지식iN 질문', '국내 배당 ETF 중에 은행만 있는 거 말고는?', '네이버 지식iN · 2026-10-19 확인', ['지식인에도 국내 배당 ETF']),
+    rows('진한 칸이 다른 곳', [['VIG', '정보기술 26.8%'], ['DGRO', '금융 19.3%'], ['VYM', '금융 20.9%']], ['VIG, DGRO, VYM은'], src=SRC_S),
+    big('JEPQ · 정보기술', '48%', '배당 ETF라는 이름이어도', [('JEPQ는 펀드 돈의 48%', 'JEPQ 정보기술 47.7%(표 합을 100으로 맞추면 48.0%)')], rvl=0, src='JP모건 섹터 표(2026-10-16)'),
+    broll(6343634, ['그래서 두 개를 같이 담을'], '두 개를 담는다면, 큰 칸이 겹치는지'),
+    pair('SCHD ↔ 국내 미국배당다우존스', ['같은 지수', 'Dow Jones U.S. Dividend 100', K], ['0.2%p', '업종마다 비율 차이 · 그 안', A],
+         [('예를 들어 SCHD와 국내', 'TIGER·SOL·ACE·KODEX 업종 비중 = SCHD 합산과 0.2%p 안')], src=SRC_S, at2=0),
+    big('이미 은행주를 가졌다면', '금융 칸이 더 쌓임', '국내 고배당 ETF를 더 담을 때', ['조심할 곳도 있어요. 이미'], c=K, src=SRC_S),
+]
+# ── 4. 주가까지 합치면 ──
+scenes += [
+    ask('4장', '주가까지 합치면?', '배당만 보면 반쪽', ['배당만 보면 반쪽이에요']),
+    broll(7490451, ['받은 배당을 다시 넣었다고'], '받은 배당을 다시 넣었다고 치고'),
+    ask('흔한 말', '많이 주는 ETF가 결국 많이 번다?', None, ['많이들 이렇게 생각하시죠']),
+    pair('JEPI', ['8%', '지금 분배율', K], ['7.5%', '5년 총수익 · 매년', A], ['JEPI는 지금 8%를', ('그런데 배당을 다시 넣어도', '분배 재투자 총수익 연평균 5년(달러)')], at2=1),
+    bars('5년 총수익 · 매년 평균(배당 다시 넣음)', [['JEPI', 7.5, '7.5%', G, 0], ['SCHD', 9.8, '9.8%', A, 1], ['VIG', 10.6, '10.6%', G, 0], ['DGRO', 11.2, '11.2%', G, 0],
+         ['S&P500', 12.8, '12.8%', G, 0], ['HDV', 13.1, '13.1%', G, 0]], ['미국 큰 회사들을 담은', ('SCHD는 10% 정도로', '기간 2021-10~2026-10 · 달러')], 14),
+    broll(39494572, ['그렇다고 배당 ETF가 다'], '시장만큼 불어난 배당 ETF도 있었다'),
+    rows('10년으로 늘리면 · 매년 평균', [['SCHD', '13.2%'], ['S&P500', '15.4%']], ['기간을 어디서 자르느냐에']),
+    ask('떨어질 때는?', '주가가 크게 빠졌던 2022년', None, ['그럼 떨어질 때는 어땠을까요']),
+    bars('2022년 가장 많이 빠졌을 때', [['S&P500', 24.5, '-24.5%', G, 0], ['VIG', 20.4, '-20.4%', G, 0], ['DGRO', 19.3, '-19.3%', G, 0], ['SCHD', 16.8, '-16.8%', A, 0],
+         ['HDV', 15.4, '-15.4%', G, 0], ['JEPI', 13.7, '-13.7%', G, 0]], [('S&P500은 25% 가까이', '2022년 한 해 안 최대 낙폭(분배 재투자)')], 26),
+    rows('2020년 코로나 때 가장 많이 빠졌을 때', [['SPYD', '-46.4%'], ['S&P500', '-33.7%'], ['SCHD', '-33.4%']], [('그런데 늘 덜 빠지는 건', '2020년 이후 최대 낙폭 · SCHD·S&P500 둘 다 2020-03-23')]),
+    broll(5366344, ['코로나 때 SPYD는'], '고른 ETF가 실제로 어땠는지를 본다'),
+]
+# ── 5. 1억 넣으면 1년에 얼마 ──
+scenes += [
+    ask('5장', '1억 넣으면 1년에 얼마?', '최근 12개월 분배가 앞으로 같다고 놓은 계산 · 가격·환율 변동 뺌', ['이제 1억을 넣었을 때']),
+    pair('세금 떼는 곳', ['미국에서 15%', '미국 상장', K], ['많아야 15.4%', '국내 상장 · 국내에서 더', A],
+         ['세금은 어디에 상장됐느냐', ('미국에 상장된 ETF는', '미국 원천징수 15%(한미 조세조약) · 국내 추가 0'), ('국내에 상장된 미국배당다우존스도', '실제 세액은 분배마다 운용사 과세표준 공시')], src='소득세법 §129', at2=2),
+    broll(5480588, ['그러니까 업종은 SCHD와 같아도'], '업종은 같아도, 세금 떼는 곳은 다르다'),
+    ask('지식iN 질문', 'TIGER 미국배당다우존스 배당금, 세금 떼고 받나요?', '네 — 계좌에 찍히는 건 세금 뗀 뒤 돈 · 네이버 지식iN', ['지식인에 TIGER 미국배당다우존스']),
+    rows('1억 → 1년 통장 · 세금 뗀 뒤', [['SCHD', '260만원 · 월 22만원', None, 0], ['JEPI', '680만원 · 월 57만원', None, 2]],
+         [('세금을 뗀 결과를 보면 SCHD', 'SCHD 2,609,500원 · JEPI 6,800,000원'), '한 달로 치면 22만원', 'JEPI는 680만원', '한 달로 57만원'], src=SRC_T),
+    big('JEPQ · 세금 떼기 전', '1,170만원', '건보료 선은 세금 떼기 전 금액으로', [('그리고 JEPQ는 세금 떼기 전에', 'JEPQ 세전 11,710,000원')], rvl=0, src=SRC_T),
+    ask('함정', '금융소득이 1년 1,000만원을 넘으면, 전부 건보료 계산에', '지역가입자 · 국민건강보험법 시행규칙 제44조①', ['지역가입자는 예금 이자와']),
+    pair('1,000만원 선', ['1,170만원', 'JEPQ · 넘음', A], ['선 아래', '나머지 ETF', K], ['다른 이자가 없다면, 1억으로'], src=SRC_T, at2=0),
+    rows('JEPQ 1억 · 지역가입자 · 1년', [['세금 떼기 전', '11,710,000원'], ['세금 15%', '−1,756,500원'], ['건보료 더 냄', '−952,585원'], ['손에 남는 돈', '9,000,915원', None, 2]],
+         ['지역가입자로 놓고 계산하면', '건보료도 95만원', ('그래서 손에 남는 건 900만원', '월 750,076원 · 건보 7.19% + 장기요양 = 8.1348%')], src=SRC_T),
+    ask('직장가입자는', '월급 말고 다른 소득이 2,000만원을 넘으면, 넘는 만큼', None, ['직장가입자는 월급 말고']),
+    big('피부양자', '2,000만원', '다른 소득까지 합쳐 넘으면 자격을 잃는다', ['피부양자는 연금 같은'], c=K, src=SRC_T),
+    broll(7118320, ['1억 기준으로는, 배당만으로'], '배당만으로 넘는 ETF는 없었다'),
+    big('JEPQ + 국민연금', '2,000만원', '합계가 넘을 수 있다', ['그런데 JEPQ에 국민연금까지'], c=A, src=SRC_T),
+    pair('원·달러 매매기준율', ['1,424원', '2025-10-16', K], ['1,349원', '2026-10-16', A], [('환율도 따져 봐야 합니다', '1,424.4원 → 1,348.5원 · ECOS 731Y001')], src='한국은행 ECOS', at2=0),
+    broll(5981346, ['그래서 같은 달러를 원화로'], '같은 달러, 원화로는 덜 받는다'),
+    pair('SCHD 1년 총수익(배당까지)', ['34%', '달러로', K], ['27%', '원화로', A], [('요즘 주춤했어도 열두 달 전에', '달러 33.8% · 원화 26.7%'), '원화로는 그보다 적은'], at2=1),
+    broll(39494572, ['국내에 상장된 TIGER 미국배당다우존스도'], '원화로 사고팔아도 안에 든 건 달러 자산'),
+    ask('댓글', '슈드 내리는건 문제가 안됨 문제는 환율이죠', '유튜브 댓글 · 좋아요 96 · 2026-10-19 수집', ['댓글에서 공감을 많이']),
+]
+# ── 6. 고르는 순서 ──
+scenes += [
+    ask('6장', '고르는 순서', '통장에 남는 돈까지 다섯 가지를 봤으니', ['통장에 남는 돈까지']),
+    list5('고르는 순서', ['얼마 주나 · 12개월 다 더해서', '매년 느나 · 10년과 최근 3년', '한 업종에 몰렸나 · 겹치나', '떨어질 때 · 2022년·2020년'], ['먼저 얼마 주나, 다음은']),
+    big('지금 생활비가 필요하면', '얼마 주나 · 떨어질 때', '그리고 1,000만원 선', ['지금 생활비가 필요한 분이라면'], c=K, src='파이어맵'),
+    pic('map_paper', [('오래 모을 직장인이라면', '분배 연평균 증가 5년 · JEPI 0.2% · DGRO·VIG 7.4%')], z=(1.0, 1.06), cx=30, cy=60),
+    pic('heatmap_paper', ['오늘 히트맵은 한 장으로'], z=(1.0, 1.02)),
+    broll(7592927, ['같은 배당이라는 이름 아래'], '돈이 가 있는 곳은 저마다 달랐다'),
+    broll(5562942, [ALL[-1]['text'][:8]], '다음 편'),
+]
+scenes[-1]['frames'] += END_PAD; scenes[-1]['data']['_need'] += END_PAD / FPS
+scenes[-1]['lines'].append({'text': '', 'audio': None, 'frames': END_PAD, 'cap': None, 'i': None})
+
+for s in scenes: assert s['kind'] != 'broll' or not re.search(r'\d', s['data']['say'] or ''), ('실사 say 숫자', s['data']['say'])
+for s in scenes: assert s['kind'] not in ('broll', 'ask', 'brand', 'pic') or not any(l['cap'] for l in s['lines']) or s['kind'] == 'pic', ('실사·카드에 cap', s['lines'][0]['text'][:20])
+short = []
+for s in scenes:
+    d = s['data']
+    if 'from_' in d:
+        d['from'] = d.pop('from_')
+        if d['_need'] > d['_have'] + 0.5: short.append((d['src'], d['_need'], d['_have']))
+        d.pop('_need'); d.pop('_have')
+assert not short, ('실사 클립이 말보다 짧다', short)
+assert len(USED) == len(ALL), ('안 쓴 줄', [ALL[i]['text'][:24] for i in range(len(ALL)) if i not in USED])
+order = [l['i'] for s in scenes for l in s['lines'] if l['i'] is not None]; assert order == sorted(order), '줄 순서'
+scenes[-1]['frames'] += TAIL
+for s in scenes:
+    for l in s['lines']: l.pop('i')
+
+live = brk = 0; tot = sum(s['frames'] for s in scenes)
+RUNS = []; run = 0; grp = []; mx = 0
+for s in scenes:
+    if s['kind'] in ('broll', 'pic'): live += s['frames']
+    if s['kind'] in ('broll', 'ask', 'brand', 'pic'):
+        brk += 1
+        if run / FPS > 19.5: RUNS.append((round(run / FPS, 1), grp))
+        run = 0; grp = []
+    else: run += s['frames']; mx = max(mx, run); grp.append(s['data'].get('title'))
+if run / FPS > 19.5: RUNS.append((round(run / FPS, 1), grp))
+assert not RUNS, RUNS
+
+SKIP = {'pre', 'seed', 'audio', 'src', 'license', 'kind', 'icon', 'c', 'c1', 'c2', 'from', 'x', 'side', 'dir', 'max', 'at', 'at2', 'lit', 'done', 'step', 'mode', 'chapter', 'rv', 'hot', 'pic', 'inset', 'zoom', 'cx', 'cy'}
+def strings(x):
+    if isinstance(x, dict):
+        for k, v in x.items():
+            if k in SKIP: continue
+            yield from strings(v)
+    elif isinstance(x, list):
+        for v in x:
+            if not isinstance(v, (int, float)): yield from strings(v)
+    elif isinstance(x, str): yield x
+SRCDOC = CALC + SCRIPT
+bad = []; nnum = 0
+for s in scenes:
+    for st in list(strings(s['data'])) + [l['cap'] for l in s['lines'] if l['cap']]:
+        for d in re.findall(r'\d[\d,.]*', st):
+            d = d.rstrip('.,'); nnum += 1
+            if d not in SRCDOC: bad.append((st[:40], d))
+assert not bad, bad
+
+p = {'fps': FPS, 'scenes': scenes, 'badge': ''}
+json.dump(p, open(os.path.join(VID, 'detf1.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+json.dump([{'id': c, 'used': USEDBG[c], 'desc_line': CR[c]['desc_line']} for c in sorted(USEDBG)], open(os.path.join(EP, 'bg_used.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+print(f'D-ETF-1 de1.json: {tot} 프레임 = {tot / FPS:.1f}초 · 장면 {len(scenes)} · 줄 {len(ALL)} · 종류 {len(set(s["kind"] for s in scenes))}'
+      f' · 실사·그림 {live / tot * 100:.1f}%({live / FPS:.0f}초, 클립 {len(USEDBG)}개) · 바뀜 장면 {brk}(분당 {brk / (tot / FPS / 60):.1f}) · 판 이어짐 최장 {mx / FPS:.1f}초 · numcheck {nnum}덩이 불일치 0')

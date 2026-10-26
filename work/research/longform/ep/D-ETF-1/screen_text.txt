@@ -1,0 +1,588 @@
+# 화면 글자 — D-ETF-1 (lfrender.py text가 만듦. 여기를 고치지 말고 대본·props·tsx를 고친 뒤 다시 뽑는다)
+# 그래프 제목·부제·출처·자막(lines.text)·막대 이름·코드에 박힌 글자. 썸네일 문구는 그림이라 안 들어간다.
+
+## props: video/detf1.json
+[scenes.0.lines.0.text] 안녕하세요, 파이어맵입니다. 오늘은 배당 ETF 이야기입니다.
+[scenes.0.data.line] 오늘은 배당 ETF 이야기
+[scenes.0.data.sub] 배당 ETF 16종 · 같은 잣대로
+[scenes.1.lines.0.text] 우리나라에서 많이 찾아보는 미국 배당 ETF, SCHD. 여기에 넣은 돈은 지금 어느 업종에 가 있을까요?
+[scenes.1.data.license] Pexels 39494572 무료(Hamim Rony)
+[scenes.1.data.say] SCHD에 넣은 돈은 어느 업종에
+[scenes.1.data.side] left
+[scenes.2.lines.0.text] 10월 들어 SCHD 요즘 왜 이러냐는 말이 많았죠.
+[scenes.2.data.license] Pexels 7578628 무료(Tima Miroshnichenko)
+[scenes.2.data.say] 요즘 왜 이러냐는 말
+[scenes.2.data.side] left
+[scenes.3.lines.0.text] 답부터 말하면, SCHD 돈의 55%가 세 업종에 몰려 있었어요. 필수소비재, 헬스케어, 에너지예요. 생활용품과 제약, 석유 회사들이죠.
+[scenes.3.lines.0.cap] 슈왑 2026-10-15 · 필수소비재 20.1% · 헬스케어 19.0% · 에너지 15.9%
+[scenes.3.data.title] SCHD 돈이 간 곳 · 세 업종 합
+[scenes.3.data.v] 55%
+[scenes.3.data.s] 필수소비재 · 헬스케어 · 에너지
+[scenes.3.data.c] accent
+[scenes.3.data.source] 운용사 보유 종목·섹터 표(2026-09-30~10-16) · 네이버 증권 · 파이어맵 합산
+[scenes.4.lines.0.text] 하나 더 있습니다. SCHD 한 주당 받는 배당 금액은 지난 10년 동안 꾸준히 늘었어요.
+[scenes.4.data.license] Pexels 27791953 무료(Pedro Augspach)
+[scenes.4.data.say] 한 주당 배당은 지난 십 년 꾸준히 늘었다
+[scenes.4.data.side] left
+[scenes.5.lines.0.text] 매년 평균 11%씩이에요.
+[scenes.5.lines.1.text] 그런데 가장 최근 열두 달은 2% 느는 데 그쳤어요.
+[scenes.5.lines.1.cap] 10년 10.8% · 최근 1년 2.0%(1.034→1.055달러)
+[scenes.5.data.title] SCHD 한 주당 배당, 매년 늘어난 비율
+[scenes.5.data.v1] 11%
+[scenes.5.data.s1] 10년 평균
+[scenes.5.data.c1] ink
+[scenes.5.data.v2] 2%
+[scenes.5.data.s2] 최근 12개월
+[scenes.5.data.c2] accent
+[scenes.5.data.source] 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산
+[scenes.6.lines.0.text] 오늘은 사람들이 많이 담는 배당 ETF 열여섯 개를 같은 잣대로 놓고, 다섯 가지를 물어볼게요.
+[scenes.6.data.n] 오늘
+[scenes.6.data.q] 배당 ETF 열여섯 개, 같은 잣대로 다섯 가지
+[scenes.6.data.from] 미국 상장 9 · 국내 미국배당다우존스 4 · 국내 고배당 3 · 기준선 S&P500
+[scenes.7.lines.0.text] 많이 주나, 매년 느나, 한 업종에 몰렸나, 떨어질 땐 어땠나, 그리고 1억을 넣으면 매년 통장에 얼마가 들어오나요.
+[scenes.7.data.title] 같은 잣대, 다섯 가지
+[scenes.7.data.items.0] 얼마나 주나
+[scenes.7.data.items.1] 매년 느나
+[scenes.7.data.items.2] 한 업종에 몰렸나
+[scenes.7.data.items.3] 떨어질 땐 어땠나
+[scenes.7.data.items.4] 1억이면 매년 통장에 얼마
+[scenes.7.data.source] 파이어맵
+[scenes.8.lines.0.text] 이 숫자를 두 사람에게 대 볼 거예요. 은퇴해서 지금 생활비가 필요한 분, 그리고 앞으로 오래 모을 직장인입니다.
+[scenes.8.lines.1.text] 둘 다 넣을 돈은 1억으로 놓고 계산할게요.
+[scenes.8.data.license] Pexels 6343634 무료(KATRIN BOLOVTSOVA)
+[scenes.8.data.say] 두 경우, 같은 돈
+[scenes.8.data.side] left
+[scenes.9.lines.0.text] 시작 전에 말 하나만 정리할게요. ETF는 여러 회사 주식을 한 바구니에 담아서, 주식처럼 사고파는 상품이에요.
+[scenes.9.lines.1.text] 배당 ETF는 그 회사들이 준 배당을 모아서 우리한테 나눠 줍니다. 이 돈을 분배금이라고 불러요.
+[scenes.9.lines.2.text] 그리고 1년 동안 받은 분배금이 지금 가격의 몇 %인지가 분배율이에요.
+[scenes.9.lines.2.cap] 분배율 = 최근 12개월 1주당 분배금 합 ÷ 지금 1주 가격
+[scenes.9.data.title] 말 세 개만
+[scenes.9.data.rows.0.0] ETF
+[scenes.9.data.rows.0.1] 여러 회사 주식을 한 바구니에
+[scenes.9.data.rows.1.0] 분배금
+[scenes.9.data.rows.1.1] 모은 배당을 나눠 주는 돈
+[scenes.9.data.rows.2.0] 분배율
+[scenes.9.data.rows.2.1] 1년 분배금 ÷ 지금 가격
+[scenes.9.data.source] 파이어맵
+[scenes.10.lines.0.text] 다만 은행 이자와 달리, 이 숫자는 정해져 있지 않아요. 회사들이 배당을 줄이면 같이 줄어듭니다.
+[scenes.10.data.license] Pexels 7118320 무료(cottonbro studio)
+[scenes.10.data.say] 정해진 값이 아니라 해마다 바뀐다
+[scenes.10.data.side] left
+[scenes.11.lines.0.text] 먼저 얼마나 주는지부터요. 지난 12개월 동안 나눠 준 돈을 지금 값으로 나눠서 셌습니다.
+[scenes.11.data.n] 1장
+[scenes.11.data.q] 제일 많이 주는 ETF는?
+[scenes.11.data.from] 지난 12개월 나눠 준 돈 ÷ 지금 값
+[scenes.12.lines.0.text] 맨 위는 JEPQ로 12% 가까이였어요.
+[scenes.12.lines.1.text] 그다음이 JEPI로 8%였어요.
+[scenes.12.lines.2.text] SCHD는 3% 정도로 중간쯤이에요.
+[scenes.12.lines.2.cap] 10/16 종가 기준 · 국내는 10/19
+[scenes.12.data.title] 분배율 · 최근 12개월
+[scenes.12.data.bars.0.0] JEPQ
+[scenes.12.data.bars.0.2] 11.71%
+[scenes.12.data.bars.0.3] g
+[scenes.12.data.bars.1.0] JEPI
+[scenes.12.data.bars.1.2] 8.00%
+[scenes.12.data.bars.1.3] g
+[scenes.12.data.bars.2.0] DIVO
+[scenes.12.data.bars.2.2] 6.31%
+[scenes.12.data.bars.2.3] g
+[scenes.12.data.bars.3.0] PLUS 고배당주
+[scenes.12.data.bars.3.2] 4.53%
+[scenes.12.data.bars.3.3] g
+[scenes.12.data.bars.4.0] SPYD
+[scenes.12.data.bars.4.2] 4.36%
+[scenes.12.data.bars.4.3] g
+[scenes.12.data.bars.5.0] TIGER 은행
+[scenes.12.data.bars.5.2] 4.26%
+[scenes.12.data.bars.5.3] g
+[scenes.12.data.bars.6.0] SCHD
+[scenes.12.data.bars.6.2] 3.07%
+[scenes.12.data.bars.6.3] accent
+[scenes.12.data.dir] h
+[scenes.12.data.source] 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산
+[scenes.13.lines.0.text] VIG는 1.5%로 아래쪽입니다.
+[scenes.13.lines.1.text] 국내에 상장된 미국배당다우존스 네 개는 SCHD와 거의 같았어요. 같은 지수를 따라가니까요.
+[scenes.13.lines.1.cap] TIGER·SOL·ACE·KODEX — SCHD와 같은 지수 계열
+[scenes.13.data.title] 분배율 · 아래쪽
+[scenes.13.data.bars.0.0] 국내 미국배당
+[scenes.13.data.bars.0.2] 2.98~3.06%
+[scenes.13.data.bars.0.3] g
+[scenes.13.data.bars.1.0] HDV
+[scenes.13.data.bars.1.2] 2.84%
+[scenes.13.data.bars.1.3] g
+[scenes.13.data.bars.2.0] VYM
+[scenes.13.data.bars.2.2] 2.29%
+[scenes.13.data.bars.2.3] g
+[scenes.13.data.bars.3.0] DGRO
+[scenes.13.data.bars.3.2] 1.89%
+[scenes.13.data.bars.3.3] g
+[scenes.13.data.bars.4.0] VIG
+[scenes.13.data.bars.4.2] 1.51%
+[scenes.13.data.bars.4.3] accent
+[scenes.13.data.bars.5.0] S&P500
+[scenes.13.data.bars.5.2] 0.99%
+[scenes.13.data.bars.5.3] g
+[scenes.13.data.dir] h
+[scenes.13.data.source] 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산
+[scenes.14.lines.0.text] 국내 고배당 ETF 둘은 4%대였어요. 은행·보험 같은 국내 금융주가 많이 들어 있어서예요.
+[scenes.14.data.license] Pexels 5981346 무료(https://kaboompics.com/)
+[scenes.14.data.say] 국내 고배당 — 은행·보험 같은 금융주
+[scenes.14.data.side] left
+[scenes.15.lines.0.text] 그럼 JEPI와 JEPQ는 왜 이렇게 많이 줄까요?
+[scenes.15.data.n] 왜?
+[scenes.15.data.q] JEPI와 JEPQ는 왜 이렇게 많이 줄까?
+[scenes.16.lines.0.text] 이 둘은 주식을 들고 있으면서, 주가가 일정 선 위로 오르면 그 위로 오른 건 남에게 주기로 약속하고, 그 대가를 미리 받아요. 그 대가를 분배금에 얹어 주는 겁니다.
+[scenes.16.data.title] 커버드콜의 짜임
+[scenes.16.data.rows.0.0] 주식을 그대로 들고
+[scenes.16.data.rows.1.0] 일정 선 위로 오른 몫은 남에게
+[scenes.16.data.rows.2.0] 그 대가를 미리 받아 분배금에
+[scenes.16.data.source] JP모건 상품 설명 · 파이어맵 정리
+[scenes.17.lines.0.text] 그래서 많이 오르는 해에는 오른 몫을 다 가져가지 못해요. 커버드콜이라는 이름이 붙은 ETF들이 대개 이런 식입니다.
+[scenes.17.data.license] Pexels 7578628 무료(Tima Miroshnichenko)
+[scenes.17.data.say] 많이 오르는 해엔 오른 몫을 다 못 가져간다
+[scenes.17.data.side] left
+[scenes.18.lines.0.text] 이 약속 거래는 어느 업종에도 안 들어가요. 그래서 펀드 돈 가운데 '기타'로 잡히는 몫이 JEPI는 16%예요.
+[scenes.18.lines.0.cap] JP모건 섹터 표(2026-10-16) '기타' = 옵션 연계 채권·현금
+[scenes.18.lines.1.text] JEPQ는 17% 정도입니다.
+[scenes.18.lines.1.cap] JEPI 15.6% · JEPQ 17.5%
+[scenes.18.data.title] '기타' 칸 · 어느 업종에도 안 들어가는 비중
+[scenes.18.data.v1] 16%
+[scenes.18.data.s1] JEPI
+[scenes.18.data.c1] ink
+[scenes.18.data.v2] 17%
+[scenes.18.data.s2] JEPQ
+[scenes.18.data.c2] accent
+[scenes.18.data.source] JP모건 섹터 표(2026-10-16)
+[scenes.19.lines.0.text] 조심할 것도 하나 있어요. DIVO는 6%로 보이지만, 한 달이 유난히 튀었어요.
+[scenes.19.data.n] 조심
+[scenes.19.data.q] DIVO는 한 달이 유난히 튀었다
+[scenes.20.lines.0.text] 작년 12월에 평소 달의 다섯 배 정도를 한 번에 줬습니다.
+[scenes.20.lines.0.cap] DIVO 2025-12-30 분배 0.953달러
+[scenes.20.data.title] DIVO · 2025년 12월 한 번
+[scenes.20.data.v] 0.953달러
+[scenes.20.data.s] 다른 달은 0.17~0.21달러
+[scenes.20.data.c] ink
+[scenes.20.data.source] 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산
+[scenes.21.lines.0.text] 그 한 번을 빼면 4% 정도거든요. 그 한 번이 배당에서 나온 돈인지, 주식을 팔아 생긴 이익을 나눈 건지는 운용사 공시로 확인해야 합니다. 팔아 생긴 이익이면 해마다 나온다는 보장이 없거든요.
+[scenes.21.lines.0.cap] 빼면 12개월 2.064달러 · 분배 성격(19a-1) 확인 안 함
+[scenes.21.data.title] DIVO 분배율
+[scenes.21.data.v1] 6.31%
+[scenes.21.data.s1] 12개월 그대로
+[scenes.21.data.c1] ink
+[scenes.21.data.v2] 4.32%
+[scenes.21.data.s2] 그 한 번 빼면
+[scenes.21.data.c2] accent
+[scenes.21.data.source] 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산
+[scenes.22.lines.0.text] 그래서 분배율은 1년 치를 다 더해서 보고, 유난히 튀는 달이 있는지 같이 봐야 해요.
+[scenes.22.data.license] Pexels 6964247 무료(Mikhail Nilov)
+[scenes.22.data.say] 열두 달 치를 다 더하고, 튀는 달을 본다
+[scenes.22.data.side] left
+[scenes.23.lines.0.text] 많이 주는 것만큼 중요한 게, 그 돈이 매년 느는지예요. 오래 모을 직장인에게는 더 그렇습니다.
+[scenes.23.data.n] 2장
+[scenes.23.data.q] 배당이 매년 느나?
+[scenes.23.data.from] 오래 모을수록 더 중요한 질문
+[scenes.24.lines.0.text] 가로는 지금 주는 비율, 세로는 5년 동안 배당이 해마다 늘어난 비율이에요.
+[scenes.24.data.license] 파이어맵 자체 제작(운용사·야후 자료)
+[scenes.25.lines.0.text] 오른쪽 아래, 많이 주는데 거의 안 는 자리에 JEPI가 있습니다. 한 주당 받는 돈이 매년 0.2%씩 늘었을 뿐이에요.
+[scenes.25.lines.1.text] 5년 전과 지금, 한 주당 받는 돈이 거의 같다는 뜻이에요.
+[scenes.25.data.license] 파이어맵 자체 제작(운용사·야후 자료)
+[scenes.26.lines.0.text] 왼쪽 위, 조금 주는데 잘 느는 자리엔 DGRO와 VIG가 있습니다. 둘 다 매년 7% 이상 늘었어요.
+[scenes.26.data.license] 파이어맵 자체 제작(운용사·야후 자료)
+[scenes.27.lines.0.text] 그럼 SCHD는 정말 멈췄을까요? 한 해씩 늘어난 비율을 보면 이래요.
+[scenes.27.lines.1.text] 아까 말한 11%는 평균이에요. 해마다 보면 늘어난 폭이 크게 오르내렸어요.
+[scenes.27.lines.2.text] 그리고 최근 열두 달은 2%였습니다. 줄지는 않았지만, 느는 속도가 확 꺾였어요.
+[scenes.27.lines.2.cap] 1주당 12개월 분배 · 10/16에 끝나는 12개월
+[scenes.27.data.title] SCHD 한 주당 배당 · 전년보다
+[scenes.27.data.bars.0.2] +17.9%
+[scenes.27.data.bars.0.3] g
+[scenes.27.data.bars.1.2] +11.1%
+[scenes.27.data.bars.1.3] g
+[scenes.27.data.bars.2.2] +5.7%
+[scenes.27.data.bars.2.3] g
+[scenes.27.data.bars.3.2] +11.9%
+[scenes.27.data.bars.3.3] g
+[scenes.27.data.bars.4.2] +5.8%
+[scenes.27.data.bars.4.3] g
+[scenes.27.data.bars.5.2] +2.0%
+[scenes.27.data.bars.5.3] accent
+[scenes.27.data.dir] v
+[scenes.27.data.source] 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산
+[scenes.28.lines.0.text] 왜 꺾였는지는 이번에 찾은 자료로는 알 수 없었어요.
+[scenes.28.data.license] Pexels 27791953 무료(Pedro Augspach)
+[scenes.28.data.say] 왜 꺾였는지는 자료에 없었다
+[scenes.28.data.side] left
+[scenes.29.lines.0.text] 그래서 볼 때는 긴 평균 하나만 보지 말고, 최근 몇 년을 같이 봐야 해요.
+[scenes.29.data.title] SCHD 배당 증가 · 매년 평균
+[scenes.29.data.rows.0.0] 10년
+[scenes.29.data.rows.0.1] 10.8%
+[scenes.29.data.rows.1.0] 5년
+[scenes.29.data.rows.1.1] 7.2%
+[scenes.29.data.rows.2.0] 3년
+[scenes.29.data.rows.2.1] 6.5%
+[scenes.29.data.rows.3.0] 1년
+[scenes.29.data.rows.3.1] 2.0%
+[scenes.29.data.source] 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산
+[scenes.30.lines.0.text] 이름에 배당 성장이 들어가도 마찬가지예요. 숫자로 한 번 확인하는 게 먼저입니다.
+[scenes.30.data.license] Pexels 5546876 무료(Polina ⠀)
+[scenes.30.data.say] 이름보다 숫자로 먼저 확인
+[scenes.30.data.side] left
+[scenes.31.lines.0.text] 하나 더, 주는 달이 바뀐 ETF도 있어요. HDV는 석 달에 한 번 주다가, 올해 7월부터 매달 주고 있습니다.
+[scenes.31.lines.0.cap] 7/15·8/19·9/16 · 아이셰어즈 'Monthly'
+[scenes.31.lines.1.text] 매달 받는다고 매년 받는 돈이 늘어나는 건 아니에요. 나눠 받는 횟수만 바뀐 거라, 열두 달 치를 더해서 봐야 합니다.
+[scenes.31.data.title] HDV 분배 횟수
+[scenes.31.data.v1] 석 달에 한 번
+[scenes.31.data.s1] 2026년 6월까지
+[scenes.31.data.c1] ink
+[scenes.31.data.v2] 매달
+[scenes.31.data.s2] 7월부터
+[scenes.31.data.c2] accent
+[scenes.31.data.source] 아이셰어즈(2026-10-15) · 야후 파이낸스
+[scenes.32.lines.0.text] 이제 오늘 가장 보여 드리고 싶었던 그림이에요. 업종마다 색을 칠한 표, 히트맵입니다.
+[scenes.32.data.n] 3장
+[scenes.32.data.q] 한 업종에 몰렸나?
+[scenes.32.data.from] 오늘 가장 보여 드리고 싶었던 그림
+[scenes.33.lines.0.text] 각 ETF가 지금 가진 종목을 운용사 자료에서 하나하나 받아서, 업종별로 우리가 직접 더했습니다. 운용사 홈페이지 업종 표는 석 달 전 기준일 때가 있거든요.
+[scenes.33.lines.1.text] 진한 칸일수록 그 업종에 돈이 많이 가 있다는 뜻이죠.
+[scenes.33.data.license] 파이어맵 자체 제작(운용사·야후 자료)
+[scenes.34.lines.0.text] SCHD는 아까 본 대로 생활용품, 병원과 약, 석유 세 업종에 55%가 들어 있어요.
+[scenes.34.lines.1.text] SCHD는 재무가 튼튼하고 배당을 꾸준히 준 미국 기업 100개를 고르는 지수를 따라가요. 그렇게 고른 회사들이 이 세 업종에 많았던 거예요.
+[scenes.34.data.license] 파이어맵 자체 제작(운용사·야후 자료)
+[scenes.35.lines.0.text] HDV는 생활용품과 석유, 두 업종에만 절반 넘게 들어 있어요.
+[scenes.35.lines.0.cap] HDV 필수소비재 27.0% · 에너지 24.8%
+[scenes.35.lines.1.text] SPYD는 부동산이 24%로 가장 큽니다. 다른 ETF에선 거의 없는 칸이에요.
+[scenes.35.lines.1.cap] SPYD 부동산 24.4% · 필수소비재 14.1%
+[scenes.35.data.title] 두 업종·한 업종에 몰린 곳
+[scenes.35.data.v1] 51.8%
+[scenes.35.data.s1] HDV · 필수소비재+에너지
+[scenes.35.data.c1] ink
+[scenes.35.data.v2] 24.4%
+[scenes.35.data.s2] SPYD · 부동산
+[scenes.35.data.c2] accent
+[scenes.35.data.source] 운용사 보유 종목·섹터 표(2026-09-30~10-16) · 네이버 증권 · 파이어맵 합산
+[scenes.36.lines.0.text] 국내 고배당 ETF는 더 한쪽으로 쏠려 있어요. PLUS 고배당주는 금융이 절반을 넘고, TIGER 은행고배당플러스는 거의 100%가 금융입니다.
+[scenes.36.data.license] 파이어맵 자체 제작(운용사·야후 자료)
+[scenes.37.lines.0.text] PLUS 고배당주에 많이 담긴 종목을 보면 바로 이해가 돼요. 맨 위 세 종목이 DB손해보험, 기업은행, 우리금융지주예요.
+[scenes.37.data.title] PLUS 고배당주 많이 담은 종목
+[scenes.37.data.rows.0.0] DB손해보험
+[scenes.37.data.rows.0.1] 6.54%
+[scenes.37.data.rows.1.0] 기업은행
+[scenes.37.data.rows.1.1] 5.44%
+[scenes.37.data.rows.2.0] 우리금융지주
+[scenes.37.data.rows.2.1] 5.43%
+[scenes.37.data.source] 네이버 증권 ETF 분석(10/16)
+[scenes.38.lines.0.text] 지식인에도 국내 배당 ETF 중에 은행만 있는 거 말고는 없냐는 질문이 있었는데, 이 그림이 그 답이에요. 국내 고배당은 이름이 달라도 금융이 중심이었습니다.
+[scenes.38.data.n] 지식iN 질문
+[scenes.38.data.q] 국내 배당 ETF 중에 은행만 있는 거 말고는?
+[scenes.38.data.from] 네이버 지식iN · 2026-10-19 확인
+[scenes.39.lines.0.text] VIG, DGRO, VYM은 진한 칸이 다른 곳에 있어요. 정보기술과 금융이죠. VIG는 정보기술이 27%로 가장 큽니다.
+[scenes.39.data.title] 진한 칸이 다른 곳
+[scenes.39.data.rows.0.0] VIG
+[scenes.39.data.rows.0.1] 정보기술 26.8%
+[scenes.39.data.rows.1.0] DGRO
+[scenes.39.data.rows.1.1] 금융 19.3%
+[scenes.39.data.rows.2.0] VYM
+[scenes.39.data.rows.2.1] 금융 20.9%
+[scenes.39.data.source] 운용사 보유 종목·섹터 표(2026-09-30~10-16) · 네이버 증권 · 파이어맵 합산
+[scenes.40.lines.0.text] JEPQ는 펀드 돈의 48%가 정보기술이에요. 배당 ETF라는 이름이어도 절반 가까이가 기술주예요.
+[scenes.40.lines.0.cap] JEPQ 정보기술 47.7%(표 합을 100으로 맞추면 48.0%)
+[scenes.40.data.title] JEPQ · 정보기술
+[scenes.40.data.v] 48%
+[scenes.40.data.s] 배당 ETF라는 이름이어도
+[scenes.40.data.c] accent
+[scenes.40.data.source] JP모건 섹터 표(2026-10-16)
+[scenes.41.lines.0.text] 그래서 두 개를 같이 담을 생각이라면, 큰 칸이 겹치는지부터 보세요.
+[scenes.41.data.license] Pexels 6343634 무료(KATRIN BOLOVTSOVA)
+[scenes.41.data.say] 두 개를 담는다면, 큰 칸이 겹치는지
+[scenes.41.data.side] left
+[scenes.42.lines.0.text] 예를 들어 SCHD와 국내 미국배당다우존스를 같이 담으면, 업종마다 비율이 거의 똑같거든요. 이름만 둘이지 한 바구니인 셈이죠.
+[scenes.42.lines.0.cap] TIGER·SOL·ACE·KODEX 업종 비중 = SCHD 합산과 0.2%p 안
+[scenes.42.data.title] SCHD ↔ 국내 미국배당다우존스
+[scenes.42.data.v1] 같은 지수
+[scenes.42.data.s1] Dow Jones U.S. Dividend 100
+[scenes.42.data.c1] ink
+[scenes.42.data.v2] 0.2%p
+[scenes.42.data.s2] 업종마다 비율 차이 · 그 안
+[scenes.42.data.c2] accent
+[scenes.42.data.source] 운용사 보유 종목·섹터 표(2026-09-30~10-16) · 네이버 증권 · 파이어맵 합산
+[scenes.43.lines.0.text] 조심할 곳도 있어요. 이미 은행주를 가진 분이 국내 고배당 ETF를 더 담으면, 금융 칸이 더 쌓입니다.
+[scenes.43.data.title] 이미 은행주를 가졌다면
+[scenes.43.data.v] 금융 칸이 더 쌓임
+[scenes.43.data.s] 국내 고배당 ETF를 더 담을 때
+[scenes.43.data.c] ink
+[scenes.43.data.source] 운용사 보유 종목·섹터 표(2026-09-30~10-16) · 네이버 증권 · 파이어맵 합산
+[scenes.44.lines.0.text] 배당만 보면 반쪽이에요. 주가가 오르내린 것까지 합쳐야 내 돈이 실제로 얼마나 불었는지 나옵니다.
+[scenes.44.data.n] 4장
+[scenes.44.data.q] 주가까지 합치면?
+[scenes.44.data.from] 배당만 보면 반쪽
+[scenes.45.lines.0.text] 받은 배당을 다시 넣었다고 치고, 5년 동안 매년 얼마씩 불었는지 셌어요. 배당을 생활비로 꺼내 쓰면 이보다 덜 불어납니다.
+[scenes.45.data.license] Pexels 7490451 무료(RDNE Stock project)
+[scenes.45.data.say] 받은 배당을 다시 넣었다고 치고
+[scenes.45.data.side] left
+[scenes.46.lines.0.text] 많이들 이렇게 생각하시죠. 많이 주는 ETF가 결국 많이 번다고요.
+[scenes.46.data.n] 흔한 말
+[scenes.46.data.q] 많이 주는 ETF가 결국 많이 번다?
+[scenes.47.lines.0.text] JEPI는 지금 8%를 줘요.
+[scenes.47.lines.1.text] 그런데 배당을 다시 넣어도 매년 7.5%씩 불었어요. 주는 돈에 비해 주가는 거의 오르지 않았다는 뜻이에요.
+[scenes.47.lines.1.cap] 분배 재투자 총수익 연평균 5년(달러)
+[scenes.47.data.title] JEPI
+[scenes.47.data.v1] 8%
+[scenes.47.data.s1] 지금 분배율
+[scenes.47.data.c1] ink
+[scenes.47.data.v2] 7.5%
+[scenes.47.data.s2] 5년 총수익 · 매년
+[scenes.47.data.c2] accent
+[scenes.47.data.source] 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산
+[scenes.48.lines.0.text] 미국 큰 회사들을 담은 S&P500은 13% 정도였습니다.
+[scenes.48.lines.1.text] SCHD는 10% 정도로, S&P500보다 낮았어요. 기간을 10년으로 늘려도 차이는 남습니다.
+[scenes.48.lines.1.cap] 기간 2021-10~2026-10 · 달러
+[scenes.48.data.title] 5년 총수익 · 매년 평균(배당 다시 넣음)
+[scenes.48.data.bars.0.0] JEPI
+[scenes.48.data.bars.0.2] 7.5%
+[scenes.48.data.bars.0.3] g
+[scenes.48.data.bars.1.0] SCHD
+[scenes.48.data.bars.1.2] 9.8%
+[scenes.48.data.bars.1.3] accent
+[scenes.48.data.bars.2.0] VIG
+[scenes.48.data.bars.2.2] 10.6%
+[scenes.48.data.bars.2.3] g
+[scenes.48.data.bars.3.0] DGRO
+[scenes.48.data.bars.3.2] 11.2%
+[scenes.48.data.bars.3.3] g
+[scenes.48.data.bars.4.0] S&P500
+[scenes.48.data.bars.4.2] 12.8%
+[scenes.48.data.bars.4.3] g
+[scenes.48.data.bars.5.0] HDV
+[scenes.48.data.bars.5.2] 13.1%
+[scenes.48.data.bars.5.3] g
+[scenes.48.data.dir] h
+[scenes.48.data.source] 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산
+[scenes.49.lines.0.text] 그렇다고 배당 ETF가 다 뒤처진 건 아니었어요. HDV는 5년 동안 S&P500과 거의 같거나 조금 더 불었습니다.
+[scenes.49.data.license] Pexels 39494572 무료(Hamim Rony)
+[scenes.49.data.say] 시장만큼 불어난 배당 ETF도 있었다
+[scenes.49.data.side] left
+[scenes.50.lines.0.text] 기간을 어디서 자르느냐에 따라 순서가 바뀌니까, 두 기간을 같이 보는 게 좋아요.
+[scenes.50.data.title] 10년으로 늘리면 · 매년 평균
+[scenes.50.data.rows.0.0] SCHD
+[scenes.50.data.rows.0.1] 13.2%
+[scenes.50.data.rows.1.0] S&P500
+[scenes.50.data.rows.1.1] 15.4%
+[scenes.50.data.source] 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산
+[scenes.51.lines.0.text] 그럼 떨어질 때는 어땠을까요? 주가가 크게 빠졌던 2022년을 보면요.
+[scenes.51.data.n] 떨어질 때는?
+[scenes.51.data.q] 주가가 크게 빠졌던 2022년
+[scenes.52.lines.0.text] S&P500은 25% 가까이 빠졌는데, SCHD는 17% 정도였어요. JEPI는 그보다 덜 빠졌고요.
+[scenes.52.lines.0.cap] 2022년 한 해 안 최대 낙폭(분배 재투자)
+[scenes.52.data.title] 2022년 가장 많이 빠졌을 때
+[scenes.52.data.bars.0.0] S&P500
+[scenes.52.data.bars.0.2] -24.5%
+[scenes.52.data.bars.0.3] g
+[scenes.52.data.bars.1.0] VIG
+[scenes.52.data.bars.1.2] -20.4%
+[scenes.52.data.bars.1.3] g
+[scenes.52.data.bars.2.0] DGRO
+[scenes.52.data.bars.2.2] -19.3%
+[scenes.52.data.bars.2.3] g
+[scenes.52.data.bars.3.0] SCHD
+[scenes.52.data.bars.3.2] -16.8%
+[scenes.52.data.bars.3.3] accent
+[scenes.52.data.bars.4.0] HDV
+[scenes.52.data.bars.4.2] -15.4%
+[scenes.52.data.bars.4.3] g
+[scenes.52.data.bars.5.0] JEPI
+[scenes.52.data.bars.5.2] -13.7%
+[scenes.52.data.bars.5.3] g
+[scenes.52.data.dir] h
+[scenes.52.data.source] 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산
+[scenes.53.lines.0.text] 그런데 늘 덜 빠지는 건 아니에요. 코로나로 시장이 무너졌을 땐 SCHD도 S&P500만큼 빠졌습니다.
+[scenes.53.lines.0.cap] 2020년 이후 최대 낙폭 · SCHD·S&P500 둘 다 2020-03-23
+[scenes.53.data.title] 2020년 코로나 때 가장 많이 빠졌을 때
+[scenes.53.data.rows.0.0] SPYD
+[scenes.53.data.rows.0.1] -46.4%
+[scenes.53.data.rows.1.0] S&P500
+[scenes.53.data.rows.1.1] -33.7%
+[scenes.53.data.rows.2.0] SCHD
+[scenes.53.data.rows.2.1] -33.4%
+[scenes.53.data.source] 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산
+[scenes.54.lines.0.text] 코로나 때 SPYD는 S&P500보다 더 많이 빠졌고요. 그러니 배당이라서 덜 빠진다고 믿기보다, 고른 ETF가 실제로 어땠는지를 봐야 합니다.
+[scenes.54.data.license] Pexels 5366344 무료(Zuzanna Musial)
+[scenes.54.data.say] 고른 ETF가 실제로 어땠는지를 본다
+[scenes.54.data.side] left
+[scenes.55.lines.0.text] 이제 1억을 넣었을 때 통장에 남는 돈이에요. 지난 열두 달만큼 계속 준다고 놓은 계산입니다.
+[scenes.55.data.n] 5장
+[scenes.55.data.q] 1억 넣으면 1년에 얼마?
+[scenes.55.data.from] 최근 12개월 분배가 앞으로 같다고 놓은 계산 · 가격·환율 변동 뺌
+[scenes.56.lines.0.text] 세금은 어디에 상장됐느냐에 따라 떼는 방식이 달라요.
+[scenes.56.lines.1.text] 미국에 상장된 ETF는 미국에서 15%를 먼저 떼고, 한국에서 더 떼지는 않습니다.
+[scenes.56.lines.1.cap] 미국 원천징수 15%(한미 조세조약) · 국내 추가 0
+[scenes.56.lines.2.text] 국내에 상장된 미국배당다우존스도 펀드 안에서 미국 세금을 먼저 떼요. 그다음 한국에서 조금 더 떼는데, 그 금액은 분배 때마다 운용사 공시로 나옵니다.
+[scenes.56.lines.2.cap] 실제 세액은 분배마다 운용사 과세표준 공시
+[scenes.56.data.title] 세금 떼는 곳
+[scenes.56.data.v1] 미국에서 15%
+[scenes.56.data.s1] 미국 상장
+[scenes.56.data.c1] ink
+[scenes.56.data.v2] 많아야 15.4%
+[scenes.56.data.s2] 국내 상장 · 국내에서 더
+[scenes.56.data.c2] accent
+[scenes.56.data.source] 소득세법 §129
+[scenes.57.lines.0.text] 그러니까 업종은 SCHD와 같아도, 세금을 떼는 곳과 방식이 다른 거예요.
+[scenes.57.data.license] Pexels 5480588 무료(Dziana Hasanbekava)
+[scenes.57.data.say] 업종은 같아도, 세금 떼는 곳은 다르다
+[scenes.57.data.side] left
+[scenes.58.lines.0.text] 지식인에 TIGER 미국배당다우존스 배당금은 세금 떼고 받냐는 질문이 있었는데요. 네, 떼고 들어옵니다. 계좌에 찍히는 건 세금 뗀 뒤 돈이에요.
+[scenes.58.data.n] 지식iN 질문
+[scenes.58.data.q] TIGER 미국배당다우존스 배당금, 세금 떼고 받나요?
+[scenes.58.data.from] 네 — 계좌에 찍히는 건 세금 뗀 뒤 돈 · 네이버 지식iN
+[scenes.59.lines.0.text] 세금을 뗀 결과를 보면 SCHD는 매년 260만원이에요.
+[scenes.59.lines.0.cap] SCHD 2,609,500원 · JEPI 6,800,000원
+[scenes.59.lines.1.text] 한 달로 치면 22만원 정도예요.
+[scenes.59.lines.2.text] JEPI는 680만원이에요.
+[scenes.59.lines.3.text] 한 달로 57만원 정도입니다.
+[scenes.59.data.title] 1억 → 1년 통장 · 세금 뗀 뒤
+[scenes.59.data.rows.0.0] SCHD
+[scenes.59.data.rows.0.1] 260만원 · 월 22만원
+[scenes.59.data.rows.1.0] JEPI
+[scenes.59.data.rows.1.1] 680만원 · 월 57만원
+[scenes.59.data.source] 소득세법 §129 · 국민건강보험법 시행규칙 §44 · 파이어맵 계산
+[scenes.60.lines.0.text] 그리고 JEPQ는 세금 떼기 전에 1,170만원쯤 나와요. 건보료 선은 이 세금 떼기 전 금액으로 따지는데, 여기서 함정이 하나 있습니다.
+[scenes.60.lines.0.cap] JEPQ 세전 11,710,000원
+[scenes.60.data.title] JEPQ · 세금 떼기 전
+[scenes.60.data.v] 1,170만원
+[scenes.60.data.s] 건보료 선은 세금 떼기 전 금액으로
+[scenes.60.data.c] accent
+[scenes.60.data.source] 소득세법 §129 · 국민건강보험법 시행규칙 §44 · 파이어맵 계산
+[scenes.61.lines.0.text] 지역가입자는 예금 이자와 배당을 다 더한 금융소득이 매년 1,000만원을 넘으면, 그 전부가 건보료 계산에 들어가요.
+[scenes.61.data.n] 함정
+[scenes.61.data.q] 금융소득이 1년 1,000만원을 넘으면, 전부 건보료 계산에
+[scenes.61.data.from] 지역가입자 · 국민건강보험법 시행규칙 제44조①
+[scenes.62.lines.0.text] 다른 이자가 없다면, 1억으로 이 선을 넘는 건 JEPQ 하나뿐이었어요. 예금 이자가 있으면 그만큼 선이 가까워집니다.
+[scenes.62.data.title] 1,000만원 선
+[scenes.62.data.v1] 1,170만원
+[scenes.62.data.s1] JEPQ · 넘음
+[scenes.62.data.c1] accent
+[scenes.62.data.v2] 선 아래
+[scenes.62.data.s2] 나머지 ETF
+[scenes.62.data.c2] ink
+[scenes.62.data.source] 소득세법 §129 · 국민건강보험법 시행규칙 §44 · 파이어맵 계산
+[scenes.63.lines.0.text] 지역가입자로 놓고 계산하면, JEPQ는 세금 15%를 먼저 떼요.
+[scenes.63.lines.1.text] 건보료도 95만원 정도 더 내요.
+[scenes.63.lines.2.text] 그래서 손에 남는 건 900만원이었습니다.
+[scenes.63.lines.2.cap] 월 750,076원 · 건보 7.19% + 장기요양 = 8.1348%
+[scenes.63.data.title] JEPQ 1억 · 지역가입자 · 1년
+[scenes.63.data.rows.0.0] 세금 떼기 전
+[scenes.63.data.rows.0.1] 11,710,000원
+[scenes.63.data.rows.1.0] 세금 15%
+[scenes.63.data.rows.1.1] −1,756,500원
+[scenes.63.data.rows.2.0] 건보료 더 냄
+[scenes.63.data.rows.2.1] −952,585원
+[scenes.63.data.rows.3.0] 손에 남는 돈
+[scenes.63.data.rows.3.1] 9,000,915원
+[scenes.63.data.source] 소득세법 §129 · 국민건강보험법 시행규칙 §44 · 파이어맵 계산
+[scenes.64.lines.0.text] 직장가입자는 월급 말고 다른 소득이 2,000만원을 넘으면, 넘는 만큼 건보료가 더 붙어요.
+[scenes.64.data.n] 직장가입자는
+[scenes.64.data.q] 월급 말고 다른 소득이 2,000만원을 넘으면, 넘는 만큼
+[scenes.65.lines.0.text] 피부양자는 연금 같은 다른 소득까지 합쳐 2,000만원을 넘으면 자격을 잃습니다.
+[scenes.65.data.title] 피부양자
+[scenes.65.data.v] 2,000만원
+[scenes.65.data.s] 다른 소득까지 합쳐 넘으면 자격을 잃는다
+[scenes.65.data.c] ink
+[scenes.65.data.source] 소득세법 §129 · 국민건강보험법 시행규칙 §44 · 파이어맵 계산
+[scenes.66.lines.0.text] 1억 기준으로는, 배당만으로 이 선을 넘는 ETF가 없었어요.
+[scenes.66.data.license] Pexels 7118320 무료(cottonbro studio)
+[scenes.66.data.say] 배당만으로 넘는 ETF는 없었다
+[scenes.66.data.side] left
+[scenes.67.lines.0.text] 그런데 JEPQ에 국민연금까지 받는 분이라면, 합계가 2,000만원을 넘을 수 있어요.
+[scenes.67.data.title] JEPQ + 국민연금
+[scenes.67.data.v] 2,000만원
+[scenes.67.data.s] 합계가 넘을 수 있다
+[scenes.67.data.c] accent
+[scenes.67.data.source] 소득세법 §129 · 국민건강보험법 시행규칙 §44 · 파이어맵 계산
+[scenes.68.lines.0.text] 환율도 따져 봐야 합니다. 달러 값이 열두 달 전 1,424원에서 지금 1,349원으로 내렸어요.
+[scenes.68.lines.0.cap] 1,424.4원 → 1,348.5원 · ECOS 731Y001
+[scenes.68.data.title] 원·달러 매매기준율
+[scenes.68.data.v1] 1,424원
+[scenes.68.data.c1] ink
+[scenes.68.data.v2] 1,349원
+[scenes.68.data.c2] accent
+[scenes.68.data.source] 한국은행 ECOS
+[scenes.69.lines.0.text] 그래서 같은 달러를 원화로 바꾸면 덜 받습니다.
+[scenes.69.data.license] Pexels 5981346 무료(https://kaboompics.com/)
+[scenes.69.data.say] 같은 달러, 원화로는 덜 받는다
+[scenes.69.data.side] left
+[scenes.70.lines.0.text] 요즘 주춤했어도 열두 달 전에 산 분이라면, SCHD는 배당까지 합쳐 달러로 34% 불었어요.
+[scenes.70.lines.0.cap] 달러 33.8% · 원화 26.7%
+[scenes.70.lines.1.text] 원화로는 그보다 적은 27% 정도였어요.
+[scenes.70.data.title] SCHD 1년 총수익(배당까지)
+[scenes.70.data.v1] 34%
+[scenes.70.data.s1] 달러로
+[scenes.70.data.c1] ink
+[scenes.70.data.v2] 27%
+[scenes.70.data.s2] 원화로
+[scenes.70.data.c2] accent
+[scenes.70.data.source] 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산
+[scenes.71.lines.0.text] 국내에 상장된 TIGER 미국배당다우존스도 원화로 25%였어요. 원화로 사고팔아도, 안에 든 건 달러 자산이라 환율을 똑같이 탑니다.
+[scenes.71.data.license] Pexels 39494572 무료(Hamim Rony)
+[scenes.71.data.say] 원화로 사고팔아도 안에 든 건 달러 자산
+[scenes.71.data.side] left
+[scenes.72.lines.0.text] 댓글에서 공감을 많이 받은 말도 이거였어요. 주가보다 환율이 문제라는 거죠. 미국 배당 ETF를 원화로 쓰실 거라면, 환율도 같이 움직인다는 걸 계산에 넣어야 합니다.
+[scenes.72.data.n] 댓글
+[scenes.72.data.q] 슈드 내리는건 문제가 안됨 문제는 환율이죠
+[scenes.72.data.from] 유튜브 댓글 · 좋아요 96 · 2026-10-19 수집
+[scenes.73.lines.0.text] 통장에 남는 돈까지 다섯 가지를 봤는데, 고르는 순서로는 앞의 네 가지예요.
+[scenes.73.data.n] 6장
+[scenes.73.data.q] 고르는 순서
+[scenes.73.data.from] 통장에 남는 돈까지 다섯 가지를 봤으니
+[scenes.74.lines.0.text] 먼저 얼마 주나, 다음은 매년 느나, 그다음 한 업종에 몰렸나, 마지막으로 떨어질 때 어땠나예요.
+[scenes.74.data.title] 고르는 순서
+[scenes.74.data.items.0] 얼마 주나 · 12개월 다 더해서
+[scenes.74.data.items.1] 매년 느나 · 10년과 최근 3년
+[scenes.74.data.items.2] 한 업종에 몰렸나 · 겹치나
+[scenes.74.data.items.3] 떨어질 때 · 2022년·2020년
+[scenes.74.data.source] 파이어맵
+[scenes.75.lines.0.text] 지금 생활비가 필요한 분이라면 얼마 주나와 떨어질 때를 먼저 보게 되겠죠. 그때 1,000만원 선도 같이 봐야 합니다.
+[scenes.75.data.title] 지금 생활비가 필요하면
+[scenes.75.data.v] 얼마 주나 · 떨어질 때
+[scenes.75.data.s] 그리고 1,000만원 선
+[scenes.75.data.c] ink
+[scenes.75.data.source] 파이어맵
+[scenes.76.lines.0.text] 오래 모을 직장인이라면 느나와 몰렸나가 더 오래 남아요. 배당이 매년 0.2% 느는 것과 7% 느는 것의 차이는, 오래 갈수록 커집니다.
+[scenes.76.lines.0.cap] 분배 연평균 증가 5년 · JEPI 0.2% · DGRO·VIG 7.4%
+[scenes.76.data.license] 파이어맵 자체 제작(운용사·야후 자료)
+[scenes.77.lines.0.text] 오늘 히트맵은 한 장으로 다시 띄워 둘게요. 가진 ETF 줄을 찾아서, 진한 칸이 어디 몰려 있는지 한 번 보세요.
+[scenes.77.data.license] 파이어맵 자체 제작(운용사·야후 자료)
+[scenes.78.lines.0.text] 같은 배당이라는 이름 아래에서도, 돈이 가 있는 곳은 저마다 달랐습니다.
+[scenes.78.data.license] Pexels 7592927 무료(ROMAN ODINTSOV)
+[scenes.78.data.say] 돈이 가 있는 곳은 저마다 달랐다
+[scenes.78.data.side] left
+[scenes.79.lines.0.text] 수요일 오전 11시 반에는 미국 국채금리 이야기입니다. 그때 뵙겠습니다.
+[scenes.79.data.license] Pexels 5562942 무료(Daniel Qura)
+[scenes.79.data.say] 다음 편
+[scenes.79.data.side] left
+
+## 화면 코드: video/src/DETF1.tsx
+[DETF1.tsx] 달러로
+[DETF1.tsx] 1달러 값
+[DETF1.tsx] 원화로
+[DETF1.tsx] live: license 칸 비었음
+[DETF1.tsx] live: say에 숫자 금지
+[DETF1.tsx] 파이어맵
+[DETF1.tsx] 파이어맵
+[DETF1.tsx] 파이어맵
+[DETF1.tsx] pic: license 칸 비었음
+[DETF1.tsx] 파이어맵
+[DETF1.tsx] PD 글꼴
+
+## 화면 코드: video/src/parts/human.tsx
+
+## 화면 코드: video/src/parts/fm.tsx
+[fm.tsx] ${e}억 ${r.toLocaleString()}만원
+[fm.tsx] ${e}억원
+[fm.tsx] ${r.toLocaleString()}만원
+[fm.tsx] 1년 뒤 남은 돈
+[fm.tsx] 원금
+[fm.tsx] 떨어진 해
+[fm.tsx] 세금·건보료
+[fm.tsx] 월 100만원 원금
+[fm.tsx] 파이어맵
+[fm.tsx] 파이어맵
+
+## 화면 코드: video/src/parts/t1kit.tsx

@@ -48,3 +48,7 @@ make('k1n_a.png', 'bank_counter_hands_money_1_18804128.jpg', 0.0, T, None, top_s
 make('k1n_b.png', 'savings_account_book_3_36021649.jpg', 0.2, T, None, top_size=96)
 # 10/22 2차: 1차 40·50·60세 3/3 '168px에서 흰 줄 안 읽힘' → 같은 낱말을 두 줄로 나눠 키움(새 말 없음)
 make('k1n_c.png', 'bank_counter_hands_money_1_18804128.jpg', 0.0, '1년 정기예금 · 세금 뗀 이자|작년 8월 vs 올해 8월', None, top_size=124)
+# 10/27 3차: copywriter 2차 문구(ep/K-1/copy/titles.md '썸네일 문구 2차') — 큰 주황만 '작년보다 올해 74만원 더'(40세 방향 오독 고침), '미국'은 안 넣음(인과 오독 3/3)
+BIG[1] = '작년보다 올해 74만원 더'
+make('k1n_d.png', 'bank_counter_hands_money_1_18804128.jpg', 0.0, '1년 정기예금 · 세금 뗀 이자|작년 8월 vs 올해 8월', None, top_size=124)
+make('k1n_e.png', 'bank_counter_hands_money_1_18804128.jpg', 0.0, T, None, top_size=96)

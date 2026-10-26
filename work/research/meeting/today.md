@@ -8,6 +8,10 @@
 - 막힘·법 [순돌이 채팅 몫] ← firemap-audit (21:09) 공개 롱폼 3편 설명란 쿠팡 링크 아직 그대로(기한 10/20 09:00 넘김, 감사가 videos.list로 직접 확인) — 한 줄: `py -3.12 work/research/longform/loop/coupang1019/strip.py GMc2Rd1-JYA SCOI0DP-l-s scV67BQvC4Q` · PD는 12:17 force-ssl 토큰으로 H-2 설명란을 고쳤으니 같은 길로 PD 회차에서도 가능할 수 있음 · STOP 아님
   닫음: firemap-meeting 21:33 — 10/20 21:09 옛 줄, 10/21 21:07 감사가 3편 공개 화면·API 쿠팡 0 확인
 
+- [자발] **firemap-write** 10/26 21시 회차(23:31 늦게 시작) — 밀린 18:10 fxdepfee1026 발행 · 10/27 06:10 칸 원고
+  착수: firemap-write 23:31
+  완료: firemap-write 00:01 — ① fxdepfee1026 발행 실패: 23:32 naverpost '로그인 안 됨'(23:31 check는 로그인됨 — 사이에 풀림) → **사장님 `py -3.12 work/naverpost.py login` 필요**, 발행 0 · ② 10/27 06:10 칸 jbcalc1027 종부세 1주택 공시가격별 금액(2026 법·시행규칙 서식 식, 15억 약 75만원) 원고·그림 3·레드팀·이해 6차(2/3) — 관문 미통과(이해 7차·crosscheck·cover_review·stamp·질문 주소 남음, slots note) · 카페 비축 0/2 그대로
+- 막힘(firemap-write 00:01): 네이버 로그인 만료 — 발행 전부 멈춤(대기: fxdepfee1026 18:10·pibucut1025 07:40 밀린 칸)
 ## ★ 회의 10/25(일) 21:28~21:5x — 정지 64시간 뒤 재가동 원칙 (근거 meeting/2026-10-25-decisions.md·verify.md·_전략·_사용자·_법)
 - 막힘(운영실장 23:52): 10/26 06:10 카페 칸 TBD 관문 기한 00:10 못 넘김(write 투입 회차가 09:10 확인만 끝냄, 후보 종부세는 slots note) → firemap-write 06:10 정기 회차가 원고·관문, 못 하면 칸 비움을 decisions/log에 · 비축 카페 0/2·쇼츠 0/2 · 19:20 쇼츠 관문 기한 07:20 → PD 02:16(J-1 먼저)·06:16
 - 막힘: ① 수익 화면 로그인 풀림 5일째(쿠팡·애드센스, 사장님 손) ② 비축 롱폼 0(R-1은 10/14 공개 — reserve 줄이 틀렸음)·카페 비축 0(rtcancel1022 1편은 10/26 09:10 칸)·쇼츠 비축 1(d1s_dep) ③ J-1 관문 기한 지남(렌더 끝, 렌더본 대조·bgcheck·예약 남음) ④ 10/23~25 카페 0편(정지)
@@ -157,6 +161,8 @@ $L
   완료: firemap-youtube-loop 15:41 — slots.json 10/27 07:20~11/1 19:20 쇼츠 18칸 모두 topic 칸(새 칸 17개, item TBD·담당 PD): 하루 연금·건보·은퇴 1·뉴스 숫자 1·자유 1, 시각은 날마다 돌림(E-07 보류 중 시각·주제 교란 막음) · 칸 note에 후보 재료(P-1·D-1 안 쓴 장·P-3 / 10/22 금통위·K-1 국채금리)
 - [지시] **firemap-visual-designer + firemap-motion-designer** (기한 10/27) c2person·실사 틀 배경 밝기 다시 재기 — 스토리보드 밝기 우리 hkFie 55·PYni 53 vs 남 4편 중앙 94 · 경쟁 25편(B-screen-1019) 밝기를 재서 registry B에 한 줄, '바꿈'이면 다음 렌더부터 · 완료 기준: registry 한 줄·다시 잰 sheet 1장
   착수: firemap-motion-designer 16:07 — c2person·실사 틀 배경 밝기 경쟁 25편 대비 다시 재기
+  완료: firemap-motion-designer 00:01 — **바꿈** registry B-46 · 경쟁 25편 칸 밝기 중앙 85·가운데 띠 158 vs 우리 공개 12편 50·64(10/12편 경쟁 아래 25% 밑) — 스토리보드 4편 94보다 표본 큼, 레터박스 편은 가운데 띠로 봄 · 시트 criteria/B-samples/sheets/bright_1026.png · 근거 bright-1026.md · 고침(다음 렌더부터): C2P 위·아래 덮개 0.82→0.5·0.48, 흐린 바탕 0.5→0.9 / safeframe ShortScrim 화면 전체 0.12 뺌 → h1s_forest 다시 렌더 Y 35→69·가운데 띠 49→77(눈: 자막·숫자 읽힘, criteria/B-samples/sheets/bright_1026_c2p_ba.png), x1s_deposit +13~17 · 원본 C2P.tsx.pre1026br·safeframe.tsx.pre1026br · 경쟁 중앙(가운데 띠 158)까지는 원본 그림 밝기가 천장(h1s_forest 원본 113~129)
+  [알림] **firemap-visual-designer·firemap-video-producer** ← motion (00:01): 쇼츠 실사·c2person 원본은 밝은 것(낮·실내·얼굴, 원본 밝기 중앙 140↑)으로 · 재기 `py -3.12 work/research/criteria/B-samples/bright.py <mp4>`(Ymid 112↑ 권장, 관문 아님) · 바탕이 밝아져 흰 자막이 흰 바탕 위에 오는 장면(x1s_deposit 6초 '받은 이자가' 거품 위)은 렌더 뒤 눈 검사에서 테두리 확인
 - [지시] **firemap-editor** style-guide A59·A60 쇼츠 검수에 더함(A60은 review.md '4~15초 줄' 칸과 대조)
 - [결정 필요·이월] 순돌이→사장님: '오해 ✕→○' 카드 쇼츠 시범 1편 — 남 시니어뉴스 E8-dCO41H9M(8초 카드 기초연금) 13.7만·×22.1 · 승인 전 안 만듦
 

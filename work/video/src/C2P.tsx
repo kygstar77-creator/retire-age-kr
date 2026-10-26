@@ -32,10 +32,10 @@ const Picture: React.FC<{s: PScene; first?: boolean}> = ({s, first}) => {
   return (
     <>
       <div style={{position: 'absolute', left: 0, top: 0, width: W, height: 1920, overflow: 'hidden', background: '#000'}}>
-        <Img src={staticFile(s.pic)} style={{position: 'absolute', left: Math.min(0, Math.max(W - bw, W / 2 - s.cx * bs)), top: -0.025 * 1920, width: bw, height: 1080 * bs, opacity: o, filter: `blur(28px) brightness(0.5)${s.gray || s.blur ? ' grayscale(1)' : ''}`}} />
+        <Img src={staticFile(s.pic)} style={{position: 'absolute', left: Math.min(0, Math.max(W - bw, W / 2 - s.cx * bs)), top: -0.025 * 1920, width: bw, height: 1080 * bs, opacity: o, filter: `blur(28px) brightness(0.9)${s.gray || s.blur ? ' grayscale(1)' : ''}`}} />
       </div>
       <div style={{position: 'absolute', left: 0, top: 0, width: W, height: PH, overflow: 'hidden', WebkitMaskImage: 'linear-gradient(#000 82%, rgba(0,0,0,0))', maskImage: 'linear-gradient(#000 82%, rgba(0,0,0,0))'}}>
-        <Img src={staticFile(s.pic)} style={{position: 'absolute', left: x, top: y, width: iw, height: ih, opacity: o, filter: s.blur ? 'grayscale(1) blur(22px) brightness(0.4)' : s.gray ? 'grayscale(1) brightness(0.55)' : undefined}} />
+        <Img src={staticFile(s.pic)} style={{position: 'absolute', left: x, top: y, width: iw, height: ih, opacity: o, filter: s.blur ? 'grayscale(1) blur(22px) brightness(0.6)' : s.gray ? 'grayscale(1) brightness(0.78)' : undefined}} />
       </div>
     </>
   );
@@ -105,8 +105,8 @@ const Scene: React.FC<{s: PScene; from: number; total: number; p: C2PProps}> = (
   return (
     <AbsoluteFill>
       <Picture s={s} first={first} />
-      <div style={{position: 'absolute', left: 0, top: 0, width: W, height: 640, background: 'linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.6) 70%, rgba(0,0,0,0))'}} />
-      <div style={{position: 'absolute', left: 0, top: CAP3_TOP - 520, width: W, height: 1920 - (CAP3_TOP - 520), background: 'linear-gradient(rgba(16,17,20,0), rgba(16,17,20,0.82) 40%, rgba(16,17,20,0.7) 75%, rgba(16,17,20,0.45))'}} />
+      <div style={{position: 'absolute', left: 0, top: 0, width: W, height: 640, background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3) 60%, rgba(0,0,0,0))'}} />   {/* 10/26 B-46 밝기: 0.82·0.6 → 0.5·0.3 */}
+      <div style={{position: 'absolute', left: 0, top: CAP3_TOP - 240, width: W, height: 1920 - (CAP3_TOP - 240), background: 'linear-gradient(rgba(16,17,20,0), rgba(16,17,20,0.48) 35%, rgba(16,17,20,0.45) 75%, rgba(16,17,20,0.35))'}} />   {/* 10/26 B-46: 자막 뒤만 — 시작 −520→−240, 짙기 0.82→0.48(흰 글자는 검은 테두리 outline(5)가 받침) */}
       {s.year ? <div style={{position: 'absolute', left: TX0 + PAD, width: IW, textAlign: 'center', top: Q_END + 14, opacity: yo}}>
         <span style={{...F, fontWeight: 800, fontSize: fit(s.year, IW - 40, 52, 30), color: '#FFD000', whiteSpace: 'nowrap', textShadow: outline(5)}}>{s.year}</span></div> : null}
       <NumCard s={s} first={first} />

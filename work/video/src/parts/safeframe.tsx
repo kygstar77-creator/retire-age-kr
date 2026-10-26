@@ -42,8 +42,8 @@ export const BgLayer: React.FC<{bg: BgSeg[]; W?: number; H?: number}> = ({bg, W 
 // 쇼츠용 어둡게 덮기: 위(제목·답)와 아래(유튜브 제목 자리)는 진하게, 가운데는 사진이 보이게
 export const ShortScrim: React.FC<{hdrEnd: number}> = ({hdrEnd}) => (
   <>
-    <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1920, background: 'rgba(0,0,0,0.12)'}} />
-    <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: hdrEnd + 120, background: `linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.5) ${Math.round((hdrEnd / (hdrEnd + 120)) * 100)}%, rgba(0,0,0,0))`}} />
+    {/* 10/26 B-46 밝기: 화면 전체 0.12 덮개 뺌(우리 가운데 띠 중앙 64 vs 경쟁 158) */}
+    <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: hdrEnd + 120, background: `linear-gradient(rgba(0,0,0,0.56), rgba(0,0,0,0.42) ${Math.round((hdrEnd / (hdrEnd + 120)) * 100)}%, rgba(0,0,0,0))`}} />
     <div style={{position: 'absolute', left: 0, top: DS.capCy - 160, width: 1080, height: 1920 - DS.capCy + 160, background: 'linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.35) 30%, rgba(0,0,0,0.5))'}} />
   </>
 );

@@ -24,6 +24,7 @@
   완료: firemap-write 23:22 — ② 09:10 rtcancel1022 올리기 전 확인 통과·gates_ok 10/25 23:19: 서울 실거래 400파일 새로 받아 calc 다시(신고 64,176·해제 1,939·재신고 1,441·재신고 없음 215, 반올림 값은 그대로)·법 조문 5곳 다시 받아 같음·기준일 10/25·'특정 집을 사거나 팔라는 뜻이 아닙니다' 줄·editgate 다시 찍음·prepublish 통과 · ① 06:10 칸 원고는 못 씀(후보 종부세 대상·계산, 검색수 6,740, slots note) — 관문 기한 00:10 전에 못 끝냄 · 카페 비축 0/2 그대로(완료 기준 미달)
 - [자발] **firemap-write** 10/26 15시 회차 — 06·09·12시 회차가 안 돌아 밀린 09:10 rtcancel1022 발행·verify, 그다음 18:10 x1s_deposit 짝 칸
   착수: firemap-write 15:16
+  완료: firemap-write 15:50 — ① 밀린 09:10 칸 rtcancel1022 https://cafe.naver.com/firemap/370 15:35 발행 verify OK 2016/2016자·사진 3/3(06·09·12시 회차 기록 없음 — 06:10·12:10·15:10 write 칸은 빔) ② 18:10 칸 fxdepfee1026 '달러예금 환전수수료 넣으면 환율 몇 원부터 손해일까?'(x1s_deposit 짝) 관문 통과·slots gates_ok — KB 10/26 고시·12개월 3.60740%로 우대 0·50·90% 본전 환율 1,310·1,297·1,287원 직접 계산, 레드팀 금리 칸 정정(3.55→3.61)·이해 3차 9명·editgate auto · 18시 회차가 쇼츠 공개 확인 뒤 발행 · 카페 비축 0/2 그대로
 - [배차] **firemap-video-producer** (운영실장 23:10) 쇼츠 07:20 d1s_dep 올리기 전 확인·예약 + 17:20 x1s_deposit 관문(기한 10/26 05:20) — PD 정기 02:16은 J-1 몫(60분 상한)
   착수: firemap-video-producer 23:10 (운영실장)
   완료: firemap-video-producer 23:51 — 쇼츠 2칸 예약: **10/26 07:20 d1s_dep https://youtu.be/qDidv5n8IJ8** (공단 피부양자 요건 10/25 다시 읽음·그대로 · v3 흰 판 100%라 bgcheck ⑥ 거부 → C1S 실사 틀 v4 화면만 다시 렌더·소리 그대로 · 눈 검사에서 '5억 4' 잘림 잡아 safeframe shortKick 숫자 쉼표 안 자르게 고침) · **10/26 17:20 x1s_deposit https://youtu.be/L6Z41ducfwQ** (렌더본 21초 배경 키보드 글자가 안전 영역에 걸려 그 칸 배경만 바꿔 다시 렌더 · 쉿소리 deess --chirp-short) · 관문 꼴·0초·안전 영역·bgcheck·치직 0 통과, slots gates_ok 23:39·23:51 · review.md 판정 줄
@@ -3453,8 +3454,10 @@ $MSG
 - [자발] **firemap-youtube-loop** 08:53 회차 — W-3(10/26) A-23 말 숫자 줄·review 판정 줄(16:55 [발견] 순서 2번째, D-ETF-1은 10/21 20:50 끝)
   완료: firemap-youtube-loop 08:54 — W-3 A-23 3줄→0(숫자 0 변경, *.orig1022a23) · aitell script 통과·구어 0 · review.md '판정: 통과 — 평균 7.33' 줄 · 남은 W-3 관문: 편집 재서명·shot_plan·이해 시험 40·50·60세·meta.json(PD)
 - [편집 검수 요청] W-3 say_v1.txt·script.md A-23 고친 3곳(diff *.orig1022a23 → 현재) 트랙:C · 담당 firemap-editor · 시한 10/24 21:00 · 금지: 숫자 바꾸기 · 요청 firemap-youtube-loop 08:54
+  착수: firemap-editor 15:50 (정기 15:50)
   완료(덧): firemap-youtube-loop 08:55 — **H-4(10/27)** A-23 14줄→0·구어 아닌 말 5줄 고침(숫자 0 변경, *.orig1022a23) · aitell 통과 · review.md '판정: 통과 — 평균 7.33' · 남은 [발견] 순서: P-3(18줄, 관문 10/28 11:30) 다음 회차
 - [편집 검수 요청] H-4 say_v2.txt·script.md A-23 고친 14곳+구어 5곳(diff *.orig1022a23 → 현재) 트랙:C · 담당 firemap-editor · 시한 10/24 21:00 · 금지: 숫자 바꾸기 · 요청 firemap-youtube-loop 08:55
+  착수: firemap-editor 15:50 (정기 15:50)
 - [자발] **firemap-write-b** 10:4x 회차 — 10:40 칸 TBD(비축 0) → 새 편(장르 부동산①)
   착수: firemap-write-b 10:44
   완료: firemap-write-b 11:20 — https://cafe.naver.com/firemap/360 verify OK 975/975자·사진 3/3 '서울 아파트 월세 비중 갱신 계약도 절반 넘었을까?'(부동산①) · 새 집계: 국토부 실거래 1~8월 월세 50.7%(작년 43.7%)·새 계약 56.5%·갱신 44.5%, 갱신 100건 중 월세 44건 = 원래 월세 40 + 전세→월세 4, 구별(종로 65.3%~양천 41.9%, 금천만 하락) · 첫 각도(전월세전환율 상한)는 #293·#266과 겹쳐 버림 · 레드팀 반영·이해 2차·editgate auto · 카페 비축 0/2 · 13:40 칸 TBD(write-b)
@@ -3472,6 +3475,7 @@ $MSG
   완료: firemap-youtube-loop 12:57 — ① **D-ETF-1 shot_plan.md** 경쟁 장면 25개(4편 — 10/22 새로 쪼갠 yRDpbgaZahc·hR_EdnnEeIE·y-cIp2qsOBQ + 9C7_sKVcPiQ)·장면 계획 38줄(대본 화면 줄 전부, 따라 한 # · 도구 · 파일 경로) · shot_check 남은 막힘 = 만들 파일 33·비교 그림·판정 38(만들 차례) ② **P-3** A-23 18줄→0·구어 아닌 말 14줄→0(숫자 값 0 변경, *.orig1022a23) · 레드팀 새로 받음 6.80(막는 문제 없음, 고칠 점 1~3 반영) → review.md '판정: 통과 — 평균 7.37'
 - [지시] D-ETF-1 장면 만들기 33개 + 비교 그림·품질 판정 38줄 트랙:C · 담당 firemap-visual-designer(판·그래프 = Remotion TallyFrame, 실사 = Pexels 얼굴 없음) · 시한 **10/23 21:00**(관문 10/24 11:30, PD 렌더 전) · 근거 ep/D-ETF-1/shot_plan.md '장면 계획' — 파일 칸 경로대로 만들고 shotcmp/rNN.jpg(경쟁 &t= 화면 | 우리 장면) + 새 심사관 '같음·나음'(K-1·H-3 방식) · 히트맵 3장(fig/heatmap_paper*.png)은 있음, 비교·판정만 · 요청 firemap-youtube-loop 12:57
 - [편집 검수 요청] P-3 say_v1.txt·script.md A-23 쪼갠 줄+구어 14줄+레드팀 반영 6줄(diff *.orig1022a23 → 현재) 트랙:C · 담당 firemap-editor · 시한 10/26 21:00(관문 10/28 11:30) · 금지: 숫자 값 바꾸기 · 참고: 레드팀 고칠 점 5(끝 행동 하나로, 78~81줄)는 편집 판단 · 요청 firemap-youtube-loop 12:57
+  착수: firemap-editor 15:50 (정기 15:50)
 - [자발] **firemap-write-b** 13:4x 회차 — 13:40 칸 TBD(비축 0) → 새 편 bokrate1022(오늘 금통위 결정 뒤 예금금리, 예금·금리 칸)
   착수: firemap-write-b 13:43
   완료: firemap-write-b 14:04 — https://cafe.naver.com/firemap/362 verify OK 1316/1316자·사진 3/3 '기준금리 동결, 올리다 쉬면 다시 올리기까지 몇 달?'(예금·금리) · 새 집계: ECOS 기준금리 1999~ 올린 뒤 쉼 20번 중 재인상 14·인하 6(석 달 안 8), 한은 결정문 원문(공보 2026-10-15호) · 첫 각도(1년 vs 3년 예금)는 #331과 겹쳐 버림 · 레드팀 반영·이해 2차·editgate auto · 카페 비축 0/2 · 16:40 칸 TBD(write-b)
@@ -3529,6 +3533,7 @@ $MSG
 - [자발] **firemap-youtube-loop** 00:58 회차 — H-5(10/30 송도) 대본 v1(backlog 2순위, 기한 10/26 21:00)
   완료: firemap-youtube-loop 01:10 — **H-5 대본 v1.3 심사 통과 8.03**(제미나이 7.8·Claude 3차 새 심사관 7.8·레드팀 2차 8.5) · ep/H-5/script.md·say_v1.txt 170줄 4,854자(약 9분) · 목차 7장 그대로 · A-23 0·구어 0·aitell 5.9·scriptnum 88개 사실표 밖 0 · **레드팀이 잡은 잣대 오류 calc4로 확인·고침**: '반값'·직거래는 단지 30곳(4,104건, 동 전체 5,477건) 안 · 뺀 단지 37곳 중 프라임뷰20BL·SK뷰센트럴은 지금이 2021~22 최고보다 높음 · 같은 30곳 최고 한 건 기준 73%(앞 74%는 37곳) · 가상 인물 0 · 근거 ep/H-5/review.md
 - [편집 검수 요청] H-5 script.md·say_v1.txt 전건(새 대본, 목소리 전) 트랙:C · 담당 firemap-editor · 시한 10/26 21:00 · 금지: 숫자 값·'서른 곳' 한정어·브랜드 첫·끝 줄 바꾸기 · 요청 firemap-youtube-loop 01:10
+  착수: firemap-editor 15:50 (정기 15:50)
 - [요청·급함] **firemap-copywriter** H-5 제목·썸네일 '74%' 바꾸기 재촉(10/22 20:49 요청 그대로, 시한 10/25 12:00) — 레드팀 v2: 1위 제목 '단지 37곳…고점의 74%'는 대본 3장이 '오해 부르는 잣대'로 짚은 숫자라 **그대로면 공개 전 보류** · 대본 기준 숫자: 동 전체 82% · 단지 30곳 중간 85%(71~97%) · 같은 30곳 최고 한 건 기준 73% · 근거 ep/H-5/review.md·calc4_out.txt · 요청 firemap-youtube-loop 01:10
 - [지시] **firemap-youtube-loop·firemap-copywriter** ← 순돌이 (02:54) 사장님 '사람들은 집 크기에 관심 없다니까? 제대로 조사하고 만드는 거 맞아?' — H-3 '같은 돈 몇 ㎡' 각도는 경쟁 빈칸만 보고 정했고 수요(검색량) 확인 없었음(네이버: 목동아파트평수 10·압구정30평 10 vs 압구정현대아파트 33,160·토지거래허가구역 14,680·목동재건축 11,380). H-3는 따로 담당이 11:30 전 제목·썸네일·첫 30초 바꿈. **J-1(10/24)·D-ETF-1(10/25)·W-3(10/26)·H-4(10/27) 제목 앞말·썸네일·첫 30초 각도를 kwvol 검색량·실제 댓글 질문으로 다시 확인**하고 수요 없는 각도(크기·평당 줄 세우기 등)면 바꿀 것 — 각 편 기한: 공개 전날 12:00. 규칙: '빈칸(경쟁 0편)은 수요 근거가 아니다'
   착수: firemap-youtube-loop 04:44 — J-1(기한 오늘 12:00)부터 제목 앞말·썸네일·첫 30초 각도 kwvol·댓글 질문 확인

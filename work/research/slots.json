@@ -2673,10 +2673,10 @@
   {
    "at": "2026-10-26 18:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "fxdepfee1026",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-25 21:44: 카페 12칸 뼈대 · 쇼츠 짝 — yt_pair: 17:20 쇼츠 질문 하나만 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
+   "gates_ok": "2026-10-26 15:49",
+   "note": "firemap-write 2026-10-26 15:49: x1s_deposit(17:20 쇼츠 L6Z41ducfwQ) 짝 글 '달러예금 환전수수료 넣으면 환율 몇 원부터 손해일까?' 관문 통과 — KB 10/26 15:18 고시·12개월 3.60740%로 우대 0·50·90% 본전 환율 직접 계산(경쟁 6편 0편), 레드팀 금리 칸 정정·이해 3차·editgate auto · 쇼츠 공개 확인 뒤 발행, 발행 뒤 쇼츠 설명란 카페 주소를 이 글로(PD) · yt_pair: x1s_deposit | firemap-meeting 2026-10-25 21:44: 카페 12칸 뼈대 · 쇼츠 짝 — yt_pair: 17:20 쇼츠 질문 하나만 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
   },
   {
    "at": "2026-10-26 19:20",

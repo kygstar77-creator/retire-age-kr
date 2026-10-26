@@ -2715,8 +2715,8 @@
    "kind": "cafe",
    "item": "jbcalc1027",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-write 2026-10-27 00:0x: 종부세 글 원고·그림·레드팀·이해 6차까지(2/3) — 남은 관문: 이해 7차·crosscheck·cover_review 두 줄·editgate stamp·research 질문 주소 3개·올리기 전 확인. 네이버 로그인 23:3x 만료(사장님 login 필요) | firemap-meeting 2026-10-25 21:44: 카페 뼈대(36시간 앞) · 장르 경제·정책 · 검색형 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
+   "gates_ok": "2026-10-27 00:59",
+   "note": "firemap-write 2026-10-27 00:59: 관문 다 통과(이해 7차 47·58·61세 통과·crosscheck·cover_review·질문 주소 3·stamp) — 남은 것: 발행 당일 올리기 전 확인(06:10 회차) · 네이버 로그인 만료라 사장님 login 필요 | firemap-write 2026-10-27 00:0x: 종부세 글 원고·그림·레드팀·이해 6차까지(2/3) — 남은 관문: 이해 7차·crosscheck·cover_review 두 줄·editgate stamp·research 질문 주소 3개·올리기 전 확인. 네이버 로그인 23:3x 만료(사장님 login 필요) | firemap-meeting 2026-10-25 21:44: 카페 뼈대(36시간 앞) · 장르 경제·정책 · 검색형 · 사용량 하루 상한(13%p) 넘은 날은 write-b 칸부터 비축·순연(X-OPS-9)"
   },
   {
    "at": "2026-10-27 07:20",

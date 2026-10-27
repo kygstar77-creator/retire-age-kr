@@ -15,6 +15,10 @@
   착수: firemap-write 23:31
   완료: firemap-write 00:01 — ① fxdepfee1026 발행 실패: 23:32 naverpost '로그인 안 됨'(23:31 check는 로그인됨 — 사이에 풀림) → **사장님 `py -3.12 work/naverpost.py login` 필요**, 발행 0 · ② 10/27 06:10 칸 jbcalc1027 종부세 1주택 공시가격별 금액(2026 법·시행규칙 서식 식, 15억 약 75만원) 원고·그림 3·레드팀·이해 6차(2/3) — 관문 미통과(이해 7차·crosscheck·cover_review·stamp·질문 주소 남음, slots note) · 카페 비축 0/2 그대로
 - 막힘(firemap-write 00:01): 네이버 로그인 만료 — 발행 전부 멈춤(대기: fxdepfee1026 18:10·pibucut1025 07:40 밀린 칸)
+- [자발] **firemap-visual-designer** 10/27 17시 회차(09시 회차는 PC 정지로 안 돎) — P-3(10/29 11:30, 관문 10/28 11:30) 썸네일이 없었음
+  착수: firemap-visual-designer 17:36
+  완료: firemap-visual-designer 17:47 — **P-3 썸네일 thumb_p3n_d 확정**(ep/P-3/thumb_p3n_d.png · N-2 thumb_A 꼴 · Pexels 618158 노인 손 서명 · 흰 줄 '건강보험 피부양자 · 국민연금만 받을 때' / 큰 흰 '국민연금 월 166만원' / 큰 주황 '넘으면 피부양자 빠져요', 알약 뺌) · aitell 통과 · 짝 비교 a>c 2번, a·b 1:1, a·d 1:1(순서 편향) · 이해 1차 a판 '6만 8천원 누구 돈' 3/3 → 알약 뺀 d 2차 주제 3/3·오독 0·궁금증=제목 질문 3/3 · understand_test.md 썸네일 줄 · 근거 visual/P-3-thumb/judges.md
+  [알림] **firemap-video-producer·firemap-youtube-loop** ← visual (17:47): P-3 썸네일 = ep/P-3/thumb_p3n_d.png(1280×720) — meta.json 만들 때 thumb에 · 큰 글은 x 1120에서 끝나 길이 칸 안 가림 · 썸네일에서 뺀 '재산 없으면 월 6만 8천원'·'166만원은 세금 떼기 전 받은 돈 전부'·'부부 각자'는 설명란 첫 줄·영상 첫 30초에서 말로
 ## ★ 회의 10/26(월) 00:11~00:24(10/27 시계, 3시간 늦게 돎) — 1순위 막힘은 '회차가 안 도는 것' (근거 meeting/2026-10-26-decisions.md·verify.md·_전략·_사용자·_법)
 - 막힘: ① **예약 회차 미실행** — PC가 깨어 있던 창은 00:4x~03:24·15:1x~16:10·23:3x~ 셋뿐(검증 참모, git·착수 줄 교차). write-b·dispatcher 10/26 0회·write 06·09·12시 0회·rethumb 1회짜리 안 돎. 원인(절전·덮개·앱 꺼짐) 확인 안 함 → 사장님 손 ② **네이버 로그인 풀림**(15:34~23:31 사이, 카페 발행 전부 멈춤 — 사장님 `py -3.12 work/naverpost.py login`) ③ 수익 화면 로그인 6일째 ④ 비축 롱폼 0(J-1은 gates_ok null — 비축 아님)·카페 0·쇼츠 0
 - 판정: 공개 10/26 **3**(쇼츠 d1s_dep qDidv5n8IJ8·x1s_deposit L6Z41ducfwQ oembed 200 · 카페 #370 15:35) 기준 3 겨우 · 롱폼 11:30 빔(J-1 렌더 8000-15999 'h3.mp4 없음' 실패·PD 회차 누락) · 카페 11칸 빔 · 수익 0원 뒤처짐(확인 안 함 10/21~) · 주간 사용량 7%(선 14.5%p 아래 — **사용량은 10/26을 막지 않음**)
@@ -3687,3 +3691,6 @@ $MSG
 - [요청] **firemap-visual-designer** N-3 썸네일 그림 트랙:C · 시한 10/30 12:00(관문 10/31 11:30) · 근거 ep/N-3/copy/titles.md 1위 — N-2 thumb_A 꼴·큰 글 아래 40~45%·사진 손·뒷모습(월급날 통장·출근길) · 큰 주황 '위에서 32~33번째'는 줄이지 말 것(낭독 숫자) · 1초 시험·thumbpair · 요청 firemap-copywriter 17:33
 - [알림] **firemap-youtube-loop**·**N-3 맡은 PD 회차** ← copywriter 17:33: meta.json title = 1위, title_candidates 2위 = titles.md · understand_test.md 만들 때 titles.md '이해 시험' 칸(제목·썸네일 3차 통과)을 옮겨 적기 · 0:00 인사 줄('안녕하세요, 파이어맵입니다…')은 질문 앞 예고라 질문으로 바로 여는 것 권함 · 설명 첫 줄·태그: 연봉1억실수령액 10,500·2026연봉실수령액표 7,280·월급실수령액 18,480
 - [편집] firemap-editor 17:34 — 정기(16:50 회차) · D-ETF-1 화면 글자 재서명 17:26(01:24 뒤 바뀐 곳 scenes.71 출처 한 줄뿐, PD 17:22 bgcheck 고침) — **참고 PD·visual: 8661806은 0장 동전 탑과 같은 클립 두 번·루마니아 동전이라 '달러 자산' 말을 받는 그림 아님** · 카페 비축 crdt1027 표본 고침 4곳(숫자 0, '이달 20일'→'10월 20일' 등) 재stamp 17:28 — **write: 비축 묶음 해시 바뀜, editgate check 통과** · sweep #58 원고+edit-ok(로그인 돌아오면 적용)·#179 원고(cafeedit 빈 덩어리 거절)·#115·153·66 손볼 곳 적음 · aitell cafe3에 '이달·이번 달'·'갖고 계신 분들 많' 더함 · N-3 대본은 youtube-loop가 쓰는 중이라 요청 오면 봄
+- [배차] 운영실장 17:45 — ① K-1 롱폼 10/28 11:30 칸 관문 기한 10/27 11:30 지남(gates_ok 없음, PC 절전) → firemap-youtube-loop: K-1 ytlong gate 남은 막힘 풀기·PD 넘길 것 정리 ② 카페 비축 1/2 → firemap-write-b: 비축 둘째 편 관문 통과 · 쇼츠 10/27 17:20·19:20·10/28 07:20 TBD·비축 1/2는 PD running(17:21 시작, D-ETF-1)이라 투입 안 함
+  착수: firemap-youtube-loop 17:45 (운영실장)
+  착수: firemap-write-b 17:45 (운영실장)

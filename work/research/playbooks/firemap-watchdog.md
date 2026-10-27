@@ -64,3 +64,5 @@
 - 10/26: watchdog.py가 다른 직원 발행 중에 출력 없이 10분 넘게 멈출 수 있다 — timeout 걸고 돌리고, 걸리면 faulthandler(dump_traceback_later)로 다시 돌려 어디서 멈추는지 본다. 이번엔 재실행이 1분 안에 끝나 원인은 못 봄
 
 - 2026-10-26 23:40: 15:36엔 "로그인됨"이었는데 8시간 뒤 풀림(쿠키 318시간). 로그인은 회차마다 실제로 check — 직전 회차 결과를 믿지 않는다. write 발행과 겹쳐도 check 결과는 화면(nid 로그인 페이지)으로 확인.
+
+- 10/27: 밀린 예약 회차는 list_scheduled_tasks lastRunAt과 cron 비교로 잰다 — 마지막 실행이 한 시간대(00~02시)에 몰리고 다음 실행이 같은 시각(17:04)에 몰리면 회차 고장이 아니라 PC 정지다. 쿠키 나이는 naver_profile/storage_state.json 수정 시각.

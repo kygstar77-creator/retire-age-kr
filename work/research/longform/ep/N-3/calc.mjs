@@ -30,3 +30,18 @@ for (let i = 1; i < LADDER.length; i++) {
 }
 console.log('\n# D. 국세청 줄 기준점(2024년 귀속, 구간 평균 총급여 만원): 전체 평균', won(Math.round(NT.G_eok * 1e8 / NT.N / 1e4)), '· 인원', won(NT.N));
 for (const p of [1, 10, 20, 30, 40, 50]) { const b = pct.find(x => x.p === p); console.log(`상위 ${p}% 구간 평균 ${won(b.avg)}만`); }
+// 10/27 youtube-loop: 댓글 질문(kEXcudKBf8A '5000이 355라구요? 훨씬 적을 텐데' → 답글 '비과세 아예 없는 기준 348')에 답하려고 비과세 0 칸을 더함
+console.log('\n# E. 비과세(식대) 없는 회사라면 — 같은 연봉, 1인');
+for (const m of LADDER) {
+  const a = salaryNet({ annual: m * 10000 }), z = salaryNet({ annual: m * 10000, nontaxMonthly: 0 });
+  console.log(`연봉 ${won(m)}만 | 식대 비과세 20만 ${won(a.net)} | 비과세 0 ${won(z.net)} | 차 ${won(a.net - z.net)}`);
+}
+// 댓글 '난 왜 상위25%인데' → 상위 25% 구간 평균 총급여의 연봉(+240만)이 통장에 얼마
+console.log('\n# F. 국세청 구간 평균 총급여를 연봉(+비과세 240만)으로 놓으면 통장 월(1인)');
+for (const p of [10, 25, 50]) { const b = pct.find(x => x.p === p); const r = salaryNet({ annual: (b.avg + 240) * 10000 }); console.log(`상위 ${p}% 구간 평균 총급여 ${won(b.avg)}만 → 연봉 ${won(b.avg + 240)}만 → 통장 월 ${won(r.net)}`); }
+// 10/27 youtube-loop: 간이세액 80·100·120% 선택(소득세법 시행령 제194조①) — 미리 떼는 몫만 바뀜
+console.log('\n# G. 간이세액 80%·120%를 고르면 통장 월(1인)');
+for (const m of [5000, 10000]) { const [a, b, c] = [80, 100, 120].map(ratio => salaryNet({ annual: m * 10000, ratio })); console.log(`연봉 ${won(m)}만 | 80% ${won(a.net)} | 100% ${won(b.net)} | 120% ${won(c.net)} | 80%와 100% 차 ${won(a.net - b.net)}`); }
+// 3천과 1억, 공제 중 소득세+지방 몫
+console.log('\n# H. 공제 중 소득세+지방소득세가 차지하는 몫(1인)');
+for (const m of [3000, 10000]) { const r = salaryNet({ annual: m * 10000 }); console.log(`연봉 ${won(m)}만 | 공제 ${won(r.deductions)} 중 소득세+지방 ${won(r.incomeTax + r.localTax)} (${((r.incomeTax + r.localTax) / r.deductions * 100).toFixed(1)}%) · 4대보험 ${won(r.deductions - r.incomeTax - r.localTax)}`); }

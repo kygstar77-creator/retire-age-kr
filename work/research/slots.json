@@ -47,7 +47,14 @@
     "gates_ok": "2026-10-16 07:32"
    }
   ],
-  "cafe": [],
+  "cafe": [
+   {
+    "item": "crdt1027",
+    "pkg": "work/research/crdt1027/pkg",
+    "status": "2026-10-27 17:19 관문 통과(editgate auto·이해 4차·레드팀 필수 3·crosscheck·cover_review·research.md·bench.md) — 비어 있는 카페 칸 대타, 발행 날 '올리기 전 확인' 다시 채울 것",
+    "by": "firemap-write"
+   }
+  ],
   "long": [
    {
     "item": "R-1",

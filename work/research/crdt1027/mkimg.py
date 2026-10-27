@@ -44,7 +44,7 @@ fig.subplots_adjust(top=0.84, bottom=0.1, left=0.05, right=0.97)
 fig.savefig('pkg/img/01.png', dpi=100); plt.close(fig)
 # 02 군 복무 크레딧
 fig, ax = plt.subplots(figsize=(9, 6.6), dpi=100)
-rows = [('2025년까지 전역', '6개월', 6), ('2026년 이후 전역', '복무기간, 최대 12개월', 12), ('2027년 1월 이후 전역', '복무기간 전부', 18)]
+rows = [('2025년까지 마침', '6개월', 6), ('2026년에 마침', '복무기간, 최대 12개월', 12), ('2027년 1월 이후 마침', '복무기간 전부', 18)]
 for i, (lab, t, n) in enumerate(rows):
     y = len(rows) - 1 - i
     ax.barh(y, n, color=ORG if i == 2 else GR, height=0.55)
@@ -52,7 +52,7 @@ for i, (lab, t, n) in enumerate(rows):
 ax.set_yticks(range(len(rows))); ax.set_yticklabels([r[0] for r in rows][::-1], fontsize=15)
 ax.set_xticks([]); ax.set_xlim(0, 36)
 for s in ('top', 'right', 'bottom'): ax.spines[s].set_visible(False)
-fig.text(0.05, 0.92, '군 복무 크레딧, 인정되는 기간', fontproperties=Bs(22), color=INK)
+fig.text(0.05, 0.92, '군 복무 크레딧, 복무를 마친 해별', fontproperties=Bs(22), color=INK)
 fig.text(0.05, 0.865, '막대 길이는 보기 위한 예시(복무 18개월일 때)', fontsize=14, color=SUB)
 fig.text(0.05, 0.02, '국민연금법 제18조 세 시기 판', fontsize=12, color='#6B7280')
 fig.subplots_adjust(top=0.82, bottom=0.08, left=0.27)

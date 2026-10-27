@@ -352,16 +352,20 @@ def up(ep, replace=None):
         open(UPL, 'w', encoding='utf-8').write(''.join(json.dumps(u, ensure_ascii=False) + '\n' for u in ls))
     open(UPL, 'a', encoding='utf-8').write(json.dumps(rec, ensure_ascii=False) + '\n')
     print(json.dumps({'videoId': vid, 'status': v, 'notes': notes}, ensure_ascii=False))
+    try: preview(ep, vid, p('thumb'))
+    except (Exception, SystemExit) as e: print('app_preview 실패', str(e)[:120])
 
-def preview(ep, vid):
+def preview(ep, vid, local=None):
     # 10/16 감사 경미 ②(썸네일 규칙 3): 공개 뒤 실제 걸린 썸네일을 앱 목록 크기(412px·168px)로 줄이고 길이 표시 자리(오른쪽 아래 검은 칸)를 얹어
     #   ep/<편>/app_preview.png로 남긴다 — 감사가 대신 만든 P-1 app_preview_1016_audit.png와 같은 꼴. 큰 줄이 168px에서 읽히는지·길이 칸이 글자를 가리는지 눈으로 본다.
+    # 10/27 감사 경미 ②(T-1·X-1·H-3 3편 연속 없음): up()이 올린 직후 부른다 — 예약(비공개) 영상은 i.ytimg가 안 열릴 수 있어 그땐 올린 파일(local)로 만든다
     import io, urllib.request
     from PIL import Image, ImageDraw
     img = None
     for q in ('maxresdefault', 'sddefault', 'hqdefault'):
         try: img = Image.open(io.BytesIO(urllib.request.urlopen(f'https://i.ytimg.com/vi/{vid}/{q}.jpg', timeout=20).read())).convert('RGB'); break
         except Exception: continue
+    if img is None and local: img = Image.open(local).convert('RGB')
     if img is None: sys.exit('썸네일 못 받음 ' + vid)
     W, H = 900, 420; out = Image.new('RGB', (W, H), (15, 15, 15)); x = 20
     for w in (412, 168):

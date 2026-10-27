@@ -518,7 +518,7 @@
 [scenes.70.data.c2] accent
 [scenes.70.data.source] 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산
 [scenes.71.lines.0.text] 국내에 상장된 TIGER 미국배당다우존스도 원화로 25%였어요. 원화로 사고팔아도, 안에 든 건 달러 자산이라 환율을 똑같이 탑니다.
-[scenes.71.data.license] Pexels 39494572 무료(Hamim Rony)
+[scenes.71.data.license] Pexels 8661806 무료(Adrian Frentescu)
 [scenes.71.data.say] 원화로 사고팔아도 안에 든 건 달러 자산
 [scenes.71.data.side] left
 [scenes.72.lines.0.text] 댓글에서 공감을 많이 받은 말도 이거였어요. 주가보다 환율이 문제라는 거죠. 미국 배당 ETF를 원화로 쓰실 거라면, 환율도 같이 움직인다는 걸 계산에 넣어야 합니다.

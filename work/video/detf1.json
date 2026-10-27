@@ -1895,11 +1895,12 @@
    ],
    "frames": 292,
    "data": {
-    "src": "bg/detf/stock/39494572.mp4",
-    "license": "Pexels 39494572 무료(Hamim Rony)",
+    "src": "bg/detf/stock/8661806.mp4",
+    "license": "Pexels 8661806 무료(Adrian Frentescu)",
     "say": "원화로 사고팔아도 안에 든 건 달러 자산",
     "side": "left",
-    "from": 360
+    "dim": 0.75,
+    "from": 180
    }
   },
   {

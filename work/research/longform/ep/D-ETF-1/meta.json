@@ -9,8 +9,8 @@
  ],
  "thumb_text_top": "SCHD 한 주당 받는 배당금 · 10년 평균 vs 최근 1년",
  "thumb_text": "11%씩 늘던 배당금 / 최근엔 2%만 늘었다",
- "thumb": "thumb_detf_e.png",
- "thumb_status": "10/27 00:38 visual: thumb_detf_e(copywriter 2차 1위 문구 그대로, 새 사진 Pexels 9648153 동전 탑·얼굴 없음) — 짝 비교 gemini-3.1-flash-lite 경쟁 5와 나란히 b→e 2번 다 e 승·d→e 2번 다 e 승(research/visual/D-ETF-1-thumb/pair1027·pair1027d) · 1초 시험 412·168 순서 바꿔 2번 심사 3명 주제 3/3(제미나이 3-flash-preview·새 Agent 심사관(GPT 웹 대체, 스꾸 공유 계정이라 안 씀)·레드팀 Agent 통과) · 남은 약점: 168px에서 작은 흰 줄 안 읽힘→11%·2%를 배당률로 볼 여지(제미나이 2/2·심사관 1) · 40·50·60세 그림 시험은 PD 몫",
+ "thumb": "thumb_detf_g.png",
+ "thumb_status": "10/27 17:28 PD: thumb_detf_g = e와 같은 문구·사진, 큰 글 덩어리만 80px(1080 기준) 위로 — 앱 미리보기(app_preview.png)에서 e는 길이 칸이 주황 줄 끝 '다'를 가림(감사 10/27 경미 ①). 짝 비교는 문구·사진·크기 같아 다시 안 함 · 이전: 10/27 00:38 visual: thumb_detf_e(copywriter 2차 1위 문구 그대로, 새 사진 Pexels 9648153 동전 탑·얼굴 없음) — 짝 비교 gemini-3.1-flash-lite 경쟁 5와 나란히 b→e 2번 다 e 승·d→e 2번 다 e 승(research/visual/D-ETF-1-thumb/pair1027·pair1027d) · 1초 시험 412·168 순서 바꿔 2번 심사 3명 주제 3/3(제미나이 3-flash-preview·새 Agent 심사관(GPT 웹 대체, 스꾸 공유 계정이라 안 씀)·레드팀 Agent 통과) · 남은 약점: 168px에서 작은 흰 줄 안 읽힘→11%·2%를 배당률로 볼 여지(제미나이 2/2·심사관 1) · 40·50·60세 그림 시험은 PD 몫",
  "desc_first2": [
   "SCHD 한 주당 배당금은 10년 평균 매년 10.8% 늘다 최근 12개월은 2.0% 느는 데 그쳤습니다. 많이 주는 JEPI는 지금 분배율 8%지만 배당을 다시 넣은 5년 총수익은 매년 7.5%로 S&P500(12.8%)보다 낮았고, HDV는 13.1%였습니다.",
   "SCHD·JEPQ·JEPI 등 배당 ETF 16개를 같은 잣대로 비교했습니다. SCHD 돈의 55%는 필수소비재·헬스케어·에너지 세 업종에 있었습니다(2026-10-15 보유 종목 합산)."
@@ -54,7 +54,7 @@
   "JEPQ",
   "미국배당다우존스"
  ],
- "publishAt": "2026-10-27T11:30:00+09:00",
+ "publishAt": "2026-10-27T19:30:00+09:00",
  "privacy": "private",
  "privacy_note": "예약 공개(private+publishAt) — 정해진 시각에 공개로 바뀜",
  "paid": false,

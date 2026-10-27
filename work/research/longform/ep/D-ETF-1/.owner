@@ -6,3 +6,6 @@
 2026-10-22 18:32 | firemap-video-producer 정기 18:1x 회차 | 손 뗌 — readback --whisper turbo 백그라운드 도는 중(로그 check/readback_1022pd18.log)
 2026-10-26 15:38 | firemap-video-producer 정기 15:3x 회차 | 관문 점검→화면 만들기(10/27 11:30 칸)
 2026-10-27 00:04 | firemap-video-producer 정기 00:0x 회차 | 이어받음(15:38 회차 23:29 DNS 실패로 멈춤) — 끝 줄 다시 받기→check→렌더→gate→예약 10/27 11:30
+2026-10-27 01:27 | firemap-video-producer 정기 00:0x 회차 | 렌더 네 토막 띄움(check/render_1027.sh, 혼자) — 끝나기 전 다른 회차는 voice·화면·렌더 건드리지 말 것
+2026-10-27 17:22 | firemap-video-producer 정기 17:2x 회차 | 이어받음 — bgcheck 같은 판 24초(8:50~) 고치기→부분 렌더→gate→예약 10/27 21:00 전 칸
+2026-10-27 18:45 | firemap-video-producer 정기 17:2x 회차 | 끝 — 렌더본 detf1_ds.mp4(장면71 바꿈) 남김, B-31 쉼 고치기는 다음 회차

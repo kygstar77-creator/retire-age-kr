@@ -12,11 +12,11 @@ g = {'__file__': spec.origin}; exec(compile(src, spec.origin, 'exec'), g)
 g['TOP'] = 'SCHD 한 주당 받는 배당금 · 10년 평균 vs 최근 1년'
 g['BIG'] = ['11%씩 늘던 배당금', '최근엔 2%만 늘었다']
 from PIL import ImageDraw
-def make3(name, pic, y_anchor, zoom=1.0, dark=0.85, schd=190, rest=60):
+def make3(name, pic, y_anchor, zoom=1.0, dark=0.85, schd=190, rest=60, lift=0):   # lift: 10/27 PD 감사 경미 ① — 큰 글 덩어리를 올려 길이 칸(오른쪽 아래) 밖에서 끝냄
     f, fit, shade, photo = g['f'], g['fit'], g['shade'], g['photo']; W, HH, X0, LS = g['W'], g['HH'], g['X0'], g['LS']
     im = photo(pic, y_anchor=y_anchor, zoom=zoom, dark=dark); d0 = ImageDraw.Draw(im)
     bs = min(fit(d0, t, 230, 'black') for t in g['BIG'])
-    hb = len(g['BIG']) * int(bs * LS); y = HH - 40 - hb
+    hb = len(g['BIG']) * int(bs * LS); y = HH - 40 - lift - hb
     im = shade(im, max(0, y - 160), HH, 225); im = shade(im, 0, 330, 210, top=True)
     d = ImageDraw.Draw(im); INK = g['INK']
     a, b = 'SCHD', g['TOP'].replace('SCHD ', '')
@@ -31,6 +31,7 @@ def make3(name, pic, y_anchor, zoom=1.0, dark=0.85, schd=190, rest=60):
     out = os.path.join(g['EP'], name); im.resize((1280, 720), g['Image'].LANCZOS).save(out)
     print(out, f'SCHD {schd}px · 윗줄 {b_}px · 큰 글 {bs}px · 덩어리 {hb / HH:.0%}')
 make3('thumb_detf_e.png', 'detf_e_9648153.jpg', y_anchor=0.2)
+make3('thumb_detf_g.png', 'detf_e_9648153.jpg', y_anchor=0.2, lift=80)   # e와 같은 문구·사진, 덩어리만 80px 위로
 make3('thumb_detf_f.png', 'detf_e_12920771.jpg', y_anchor=0.25)
 P = os.path.join(g['PH'], 'sources.json'); s = json.load(open(P, encoding='utf-8'))
 s['detf_e_12920771.jpg'] = {'site': 'Pexels', 'id': 12920771, 'by': 'crazy motions', 'url': 'https://www.pexels.com/photo/close-up-photo-of-dollar-coins-12920771/', 'alt': 'Detailed image of stacked silver US quarter coins', 'license': 'Pexels License(무료·상업 이용 가능·출처 표기 의무 없음)', 'face': '없음(사람 없음)'}

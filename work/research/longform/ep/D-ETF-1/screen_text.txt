@@ -551,7 +551,7 @@
 [scenes.78.data.license] Pexels 7592927 무료(ROMAN ODINTSOV)
 [scenes.78.data.say] 돈이 가 있는 곳은 저마다 달랐다
 [scenes.78.data.side] left
-[scenes.79.lines.0.text] 수요일 오전 11시 반에는 미국 국채금리 이야기입니다. 그때 뵙겠습니다.
+[scenes.79.lines.0.text] 금요일 오전 11시 반에 다시 뵙겠습니다.
 [scenes.79.data.license] Pexels 5562942 무료(Daniel Qura)
 [scenes.79.data.say] 다음 편
 [scenes.79.data.side] left

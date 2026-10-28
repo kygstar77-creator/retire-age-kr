@@ -59,6 +59,12 @@
     "pkg": "work/research/wolsegong1027/pkg",
     "status": "2026-10-27 18:38 관문 통과(editgate auto·이해 9차 새 심사관 27명·사실 대조 Agent 틀림3·근거없음3 반영·제미나이 말투 9건 반영·cover_review·research.md 8칸·bench.md) — 빈 카페 칸 대타, 발행 날 '올리기 전 확인'(정부안 국회 통과 여부) 다시 채울 것",
     "by": "firemap-write"
+   },
+   {
+    "item": "hfheir1028",
+    "pkg": "work/research/hfheir1028/pkg",
+    "status": "2026-10-28 18:04 관문 통과(editgate stamp·이해 2차 새 심사관 6명 전원 맞게 이해·레드팀 숫자 틀림 0·필수 4 반영·교차검증(Gemini 사실·말투) 반영·cover_review·research.md 8칸·bench.md 9편) — 부동산 축(비축에 부동산 0편이었음), 빈 카페 칸 대타, 발행 날 '올리기 전 확인'(CD금리 다시 받고 숫자 바뀌면 calc.py 재실행) 다시 채울 것",
+    "by": "firemap-write-b"
    }
   ],
   "long": [

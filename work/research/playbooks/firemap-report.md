@@ -16,3 +16,4 @@
 - 10/22: 글당 N일 조회는 work/read_snaps.json(textloop readCount 스냅샷, 글당 최근 80점)을 발행+48h로 보간하면 된다. 앞뒤 점 간격 12h 넘으면 뺀다. 편수는 카페 글 API 작성일로 대조. 유입은 cafeinflow.fetch(22)로 22일치 한 번에 읽힘.
 - 2026-10-26: 12:30 회차가 15:16에 돌면 발행 회차(write)와 브라우저 프로필이 겹친다 — naverpost check·cafeinflow는 잠금 대기로 멈추니 timeout 걸고, 화면 대신 firemap_events(SQL)·read_snaps.json처럼 브라우저 없는 길로 숫자를 먼저 채운다.
 - 2026-10-27: 회차 실행률은 스케줄 도구 없이 ~/.claude/projects/C--Users-----Documents-Codex/*.jsonl 첫 줄(enqueue timestamp UTC + scheduled-task name)로 센다 — find -newermt로 최근 파일만, ls *.jsonl 전체는 2분 넘게 걸린다. 예상 회차 수는 정상일(10/25) 간격으로 추정했음을 같이 적는다.
+- 10/28: 회차 실행률은 projects/*/*.jsonl 첫 줄 scheduled-task 이름+timestamp(UTC+9)로 셈 — 사흘 연속 17:04에 깨어남(PC를 켜는 시각으로 보임)

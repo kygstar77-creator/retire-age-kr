@@ -1,0 +1,18 @@
+{
+ "date": "2026-10-28",
+ "runs": [
+  {
+   "hour": 17,
+   "ts": "17:08",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "네이버 로그인 만료 — 사장님이 py -3.12 work/naverpost.py login 실행 필요(approvals.md 17:07 요청 올림). 발행 0. 카페 비축 2/2(crdt1027·wolsegong1027) editgate check 둘 다 통과(해시 일치). 10/28·29 카페 칸 장부 없음(회의 미실행). 개선: 없음(로그인 결재 요청만)"
+  }
+ ]
+}

@@ -753,6 +753,13 @@ def thumb_check(lines):
     return bad
 
 
+def thumb_warn(lines):
+    """A65(10/27 thumb-gap-1027): 윗줄 가운뎃점 나열 — 우리 롱폼 6/7, 경쟁 상위 0/16. 경고만(막지 않음)."""
+    if lines and len(re.findall(r'\s[·ㆍ・]\s|[·ㆍ・]', lines[0])) >= 2:
+        return [f'A65 윗줄 가운뎃점 나열: {lines[0]} — 문장 한 줄이나 꼬리표 하나로(남 상위 0/16)']
+    return []
+
+
 def main(a):
     global SKIP
     SKIP = '--skip-list' in a
@@ -762,6 +769,7 @@ def main(a):
         val, hits, n = score(' '.join(a[1:]), SKIP); print(f'AI 티 {val} ({n}자)'); [print('  ', h) for h in hits]; return 0
     if a[0] == 'thumb':
         bad = thumb_check(a[1:])
+        for w in thumb_warn(a[1:]): print('  [경고]', w)
         if not bad: print('썸네일 글자 A30·A31·A33·A52 통과 (A32 그리다 만 화면은 눈으로)'); return 0
         print('썸네일 글자 AI 티'); [print('  ', b) for b in bad]; return 5
     if a[0] == 'script':

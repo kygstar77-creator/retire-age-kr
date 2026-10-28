@@ -33,7 +33,7 @@
 | firemap-youtube-loop | **P-3 썸네일 2차(copywriter 00:41 끝)·편집 서명 확인 → understand_test '판정: 통과'·올리기 전 확인(10/28, 관문 10/28 11:30)** | **E-07 17:20 4편 판정(10/28 19시 뒤 L6Z41ducfwQ 48시간)** | 11/5 주식·11/6 부동산 롱폼 칸 주제 검증(kwvol·경쟁 아웃라이어·재탕 확인, 대본 11/1·11/2 21:00) |
 | firemap-improve | refactorcands.py 재측정(10/12~): #126·#81 rewrite·#56 제목(edittitle 적용 뒤) 7일 조회·카페탭 비교 | 카페 제목 금액 규칙(10/9) 재측정(10/23): 규칙 뒤 금액 제목 비율·하루당 조회 vs 규칙 전, 형식(계산형) 섞임 떼고 | 예금·이자 규칙(10/22)·배당ETF 제목 %→금액 규칙(10/24) 재측정: 규칙 뒤 해당 편 하루당 조회 vs 그 외 |
 | firemap-admin | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-watchdog | 다음 회차(10/27 21:45): 로그인 복구 check → 됐으면 대기 pibucut1025·fxdepfee1026 칸 시각대로(몰아 올리지 않음)·write 결과 확인 | 밀린 예약 회차 수를 매 회차 재서 X-OPS-9 회차 실행률에 넘기기(PC 정지 창 시각 같이) | 쿠키 나이 300h 경보를 watchdog.py 코드로 넣기(storage_state mtime, 지금은 손으로 잼 — 10/13 로그인 뒤 318h에 풀림) |
+| firemap-watchdog | 다음 회차(10/28 21:45): 로그인 복구 check → 됐으면 대기 카페 칸 시각대로(몰아 올리지 않음) | 절전 감지를 watchdog.py 코드로: 마지막 Kernel-Power 42(사유)·깨어난 시각을 출력에 넣어 정지 창을 자동 기록(10/28 손으로 잼) | 쿠키 나이 300h 경보를 watchdog.py 코드로 넣기(storage_state mtime) |
 | firemap-audit | 다음 롱폼 공개 뒤 30분 app_preview가 자동으로 남았는지·길이 칸 가림 없는지 확인(없으면 ytlong 코드 직접 대조) | T-1·X-1 노출 0 원인 — 같은 주 H-2·H-3(노출 수백)과 제목·첫 30초·태그·공개 시각 나란히 비교해 youtube-loop에 근거 넘김 | 카페 cover_review '평균' 줄 빠진 3편이 editgate stamp를 어떻게 통과했는지 코드 대조(관문 구멍이면 [요청]) |
 | firemap-soondol-deputy | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-loop | 쇼츠 utm 실유입 10/7 재측정(work/sql/yt_inflow.sql) — 14일 진짜 12기기(10/5 21:5x), 도착지 /calc/* vs 첫 화면 나눠 세기 | 카페 '예금·이자·금리' 묶음 10/9 재측정 — write가 비축 칸에 넣은 편이 하루당 조회 1.31(묶음 중앙값)을 넘는지, read_snaps 24시간 값이 왜 4편만 맞는지(30분 간격 찍기가 회차 사이에 안 돎?) | 롱폼 420b 10→224 원인 — YouTube Analytics 트래픽 소스(검색·추천)로 확인, 다른 롱폼 10~54와 비교 |

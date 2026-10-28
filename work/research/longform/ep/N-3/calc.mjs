@@ -45,3 +45,31 @@ for (const m of [5000, 10000]) { const [a, b, c] = [80, 100, 120].map(ratio => s
 // 3천과 1억, 공제 중 소득세+지방 몫
 console.log('\n# H. 공제 중 소득세+지방소득세가 차지하는 몫(1인)');
 for (const m of [3000, 10000]) { const r = salaryNet({ annual: m * 10000 }); console.log(`연봉 ${won(m)}만 | 공제 ${won(r.deductions)} 중 소득세+지방 ${won(r.incomeTax + r.localTax)} (${((r.incomeTax + r.localTax) / r.deductions * 100).toFixed(1)}%) · 4대보험 ${won(r.deductions - r.incomeTax - r.localTax)}`); }
+// 10/28 youtube-loop: 8분 바닥 보강 — 거꾸로 묻는 검색(세후300연봉 1,420·세후400연봉 1,210·실수령300연봉 930·실수령500연봉 800, kwvol 10/28)
+//   통장 월 목표 → 같은 함수로 연봉을 10만원 단위로 올려 처음 넘는 값(1인·식대 20만·간이세액 100%)
+console.log('\n# I. 거꾸로 — 통장 월 300·400·500·600만원이 되려면 연봉 얼마(1인, 10만원 단위로 처음 넘는 연봉)');
+for (const goal of [3000000, 4000000, 5000000, 6000000]) {
+  let m = 2000; while (salaryNet({ annual: m * 10000 }).net < goal) m += 10;
+  const r = salaryNet({ annual: m * 10000 }); const gross = m - 240;
+  let hi = null, lo = null; for (const b of pct) { if (b.avg >= gross) hi = b; else { lo = b; break; } }
+  console.log(`통장 월 ${won(goal)} → 연봉 ${won(m)}만 (통장 ${won(r.net)}, 세전 월 ${won(r.monthly)}, 세전의 ${(r.net / r.monthly * 100).toFixed(1)}%) · 국세청 총급여 ${won(gross)}만 → 상위 ${hi?.p}%~${lo?.p}% 구간 평균 사이`);
+}
+// 1억 위 두 칸(연봉1억2천실수령액 790·연봉1억5천실수령액 1,060, kwvol 10/28)
+console.log('\n# J. 1억 위 — 1억 2천·1억 5천(1인)과 1억에서 오를 때');
+let prev = salaryNet({ annual: 100000000 });
+for (const m of [12000, 15000]) {
+  const r = salaryNet({ annual: m * 10000 }); const gross = m - 240;
+  let hi = null, lo = null; for (const b of pct) { if (b.avg >= gross) hi = b; else { lo = b; break; } }
+  const dm = r.monthly - prev.monthly, dn = r.net - prev.net;
+  console.log(`연봉 ${won(m)}만 | 월 세전 ${won(r.monthly)} | 통장 ${won(r.net)} (${(r.net / r.monthly * 100).toFixed(1)}%) | 연금 ${won(r.pension)}·소득세 ${won(r.incomeTax)} | 앞 칸에서 세전 월 +${won(dm)} → 통장 +${won(dn)} (${(dn / dm * 100).toFixed(1)}%) | 총급여 ${won(gross)}만 → 상위 ${hi?.p}%~${lo?.p}% 구간 평균 사이`);
+  prev = r;
+}
+// 10/28 youtube-loop: 거꾸로 칸의 '누구라면' — 같은 통장 목표에 식대 비과세 없음·4인(자녀 2)이면 필요한 연봉
+console.log('\n# K. 거꾸로 — 조건이 다르면 필요한 연봉(10만원 단위로 처음 넘는 값)');
+for (const goal of [3000000, 4000000, 5000000]) {
+  const need = opt => { let m = 2000; while (salaryNet({ annual: m * 10000, ...opt }).net < goal) m += 10; return m; };
+  const a = need({}), z = need({ nontaxMonthly: 0 }), f = need({ family: 4, kids: 2 });
+  console.log(`통장 월 ${won(goal)} | 1인·식대 20만 ${won(a)}만 | 식대 비과세 0 ${won(z)}만 (+${won(z - a)}만) | 4인·자녀2 ${won(f)}만 (${won(f - a)}만)`);
+}
+// 연봉 두 배(5천→1억)일 때 통장 배수
+{ const a = salaryNet({ annual: 50000000 }), b = salaryNet({ annual: 100000000 }); console.log(`\n# L. 연봉 5천→1억(2배) | 세전 월 ${(b.monthly / a.monthly).toFixed(3)}배 | 통장 ${won(a.net)} → ${won(b.net)} = ${(b.net / a.net).toFixed(3)}배 (+${won(b.net - a.net)})`); }

@@ -3714,3 +3714,7 @@ $MSG
   착수: firemap-write 18:13
   완료: firemap-write 18:38 — 카페 비축 둘째 wolsegong1027 '월세 세액공제 한도 1200만원 되면 월세 얼마부터 공제 더 받을까?' 관문 통과(editgate auto, slots reserve.cafe) · 이해 3~9차 새 심사관 21명(제목 '월세 더 받을까'를 집주인 얘기로 읽은 것 3/3 → '공제 더 받을까', 세대주 괄호·소득 두 기준·부부 한도는 숫자 예시로) · 사실 대조: crosscheck Gemini 연결 끊김 → Agent 대조 틀림 3(84만원 '넘게'→'이상'·주택 관련 공제·17%에 종합소득 4,500만원) 반영 · cover_board 최근 10장판 다시 만듦 · 카페 비축 2/2 · 남은 것: 발행 날 '올리기 전 확인'(국회 통과 여부)
   [막힘·사장님] 네이버 로그인 만료 계속 — py -3.12 work/naverpost.py login
+- [자발] **firemap-write** 10/28 17:0x 회차 — 로그인 풀림(발행 불가)
+  착수: firemap-write 17:04
+  완료: firemap-write 17:08 — check '로그인 안 됨' · 발행 0 · 카페 비축 2/2 editgate 해시 일치 확인 · approvals.md에 로그인 결재 요청(PC에서만) · 10/28·29 카페 칸 장부 없음 → 회의 배정 필요
+  [막힘·사장님] 네이버 로그인 만료 — py -3.12 work/naverpost.py login

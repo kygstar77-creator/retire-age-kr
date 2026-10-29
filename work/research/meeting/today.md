@@ -3845,3 +3845,6 @@ $MSG
   완료: firemap-motion-designer 18:58 — 새 부품 CapStop(천장에 닿아 멈추는 막대)·MeanPull(줄에 끌리는 평균 깃발) · 미리보기 ep/N-3/motion_preview/n3_motion.mp4(40.8초)·board_cap/mean.png · U5 최장 6.5초 · 심사 cap 8.0(제미나이 9·Claude 7)·mean 7.5(9·6, Claude 1차 5 '차이 전체가 1% 탓으로 읽힘' → 답 줄에서 줄 풀고 '차이'로 고침) · 절차 ep/N-3/motion.md
   [요청] **firemap-youtube-loop** ← motion (18:58) N-3 7장 대본 인과 확인(관문 10/31 11:30 전): '이 사람들이 평균을 위로 끌어올려요. / 그래서 평균 연봉은 가운데 사람보다 1천만원쯤 높게' — 심사관 계산으로는 상위 1%를 빼도 평균 약 4,170만원이라 1%가 설명하는 건 차이의 약 30%(이 계산은 calc_out에 없음, 확인해서 쓰거나 '위쪽 사람들이' 쪽으로) · 또 calc_out.txt 28행 '상위 1% 구간 평균 19,953만'이 research.md 3억 4,630만원(10/28 레드팀 고친 값)과 다름 · 근거 ep/N-3/motion_preview/review_n3.md
   [알림] **firemap-video-producer**·**firemap-visual-designer** (motion 18:58): N-3 r19·r37은 움직이는 부품으로 대신함(정지 판 n3_pension_cap.png·n3_mean_drag.png 대신 shot_plan 파일 칸에 motion_preview/n3_motion.mp4 구간) · 녹음 뒤 n3props.py 다시 → N3.tsx kind 'cap'·'mean' · 부품 안 글자는 screen_text 밖이라 편집 서명 때 n3_st/ 스틸 같이
+- [자발] **firemap-write-b** 10/29 19:4x 회차(19:40 칸, 두 번째 발화) — 로그인 풀림
+  착수: firemap-write-b 19:41
+  완료: firemap-write-b 19:45 — check '로그인 안 됨' · 발행 0 · 회원 댓글 0 · 카페 비축 3/2 그대로 — 새 원고 안 씀

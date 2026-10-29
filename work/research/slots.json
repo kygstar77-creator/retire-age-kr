@@ -2873,7 +2873,7 @@
    "item": "P-3(건보 피부양자 연 2천만원 문턱·11월 전년도 자료 갱신) ← 10/29에서 옮김",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-10-28 17:34: 10/29 칸을 PD가 D-ETF-1로 바꿈(17:23) → P-3를 여기로. 관문 기한 10/29 11:30. 남은 것(검증 참모 10/28 17:32): 녹음 voice.json·정지 판 24장(public/bg/p3 없음, visual)·조립·렌더(D-ETF-1 렌더 끝난 뒤)·meta.json(synthetic 칸 실제대로)·gate. 설명란·고정 댓글에 사이트 피부양자 계산기 줄. 손품 H-5는 다음 화·금 칸으로(youtube-loop) · 이전 note: firemap-meeting 2026-10-17 21:42: 손품 화·금 고정(순돌이 10/16). 관문 10/29 11:30"
+   "note": "firemap-meeting 2026-10-29 18:14: D-ETF-1(P-3 아님) — 남은 일: 목소리 한결같음 거부 15줄 재녹음(render_part_13467-17956.log:4)·끝 줄 요일 빼기('다음 영상에서 다시 뵙겠습니다', screen_text·voice.json·detf1.json까지)·editor 재서명·렌더·meta publishAt 2026-10-30T11:30 · 렌더 끝나면 그 회차에서 바로 예약 | firemap-meeting 2026-10-28 17:34: 10/29 칸을 PD가 D-ETF-1로 바꿈(17:23) → P-3를 여기로. 관문 기한 10/29 11:30. 남은 것(검증 참모 10/28 17:32): 녹음 voice.json·정지 판 24장(public/bg/p3 없음, visual)·조립·렌더(D-ETF-1 렌더 끝난 뒤)·meta.json(synthetic 칸 실제대로)·gate. 설명란·고정 댓글에 사이트 피부양자 계산기 줄. 손품 H-5는 다음 화·금 칸으로(youtube-loop) · 이전 note: firemap-meeting 2026-10-17 21:42: 손품 화·금 고정(순돌이 10/16). 관문 10/29 11:30"
   },
   {
    "at": "2026-10-30 17:20",
@@ -2906,9 +2906,9 @@
    "at": "2026-10-31 11:30",
    "kind": "long",
    "item": "S-1(삼성 사상 최대 이익 9번 중 그날 오른 건 1번)",
-   "owner": "firemap-youtube-loop",
+   "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:42: youtube-loop 08:47 요청: 10/24 이전 빈 칸 없음(10/19 11:30은 C-2 같은 날) → 삼성 3분기 확정 실적 발표 뒤 첫 줄을 그 발표 날 반응으로 다시 셈(발표 날짜 DART로 확인 먼저). 축: 주식. 관문 10/30 11:30"
+   "note": "firemap-meeting 2026-10-29 18:14: P-3(건보 피부양자 2천만원 문턱) — S-1은 녹음·shot_plan·meta 없어 11/8 11:30으로 · 주식(10/30)→정책(10/31)→N-3(11/1) 연속 없음 · 관문 기한 10/30 11:30 못 넘으면 칸 빔(미달 공개 금지), 끝 줄 요일 빼기 | firemap-meeting 2026-10-17 21:42: youtube-loop 08:47 요청: 10/24 이전 빈 칸 없음(10/19 11:30은 C-2 같은 날) → 삼성 3분기 확정 실적 발표 뒤 첫 줄을 그 발표 날 반응으로 다시 셈(발표 날짜 DART로 확인 먼저). 축: 주식. 관문 10/30 11:30"
   },
   {
    "at": "2026-10-31 17:20",
@@ -3010,6 +3010,13 @@
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
    "note": "youtube-loop 2026-10-23 04:5x: 벤치마크 10/23 03시 [지시] 11/2 주 정책 1칸. 검증 국민연금수령나이 53,670(kwvol 10/23) · KBS fIyFbw6AcKA 193만 · P-1 짧은 판 재게시 금지, 새 것 ①연기연금 ②2025 개혁 ③피부양자·연금소득세(ep/P-4/plan.md) · 대본 11/3 21:00 · 관문 11/6 11:30 · 제작 PD"
+  },
+  {
+   "at": "2026-11-08 11:30",
+   "owner": "firemap-youtube-loop",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-10-29 18:14: S-1(10/31에서 옮김, 10/17 대본 뒤 진척 없음) — 녹음·shot_plan·meta부터"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외"

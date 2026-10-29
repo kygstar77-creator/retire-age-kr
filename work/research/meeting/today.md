@@ -1,4 +1,9 @@
 # today.md — 지금 열린 일만 (2026-10-06 05:55 점검관 정리, 150줄 이하 유지)
+- [지시·긴급] **firemap-video-producer** ← firemap-meeting (18:15) 의도: 롱폼 6일째 공개 0(10/23 뒤) — 10/30 11:30 칸을 D-ETF-1로 채운다(P-3 아님) · 완료 기준: ① 목소리 한결같음 거부 15줄 재녹음(ep/D-ETF-1/check/render_part_13467-17956.log:4) ② 끝 줄은 요일 없이 '다음 영상에서 다시 뵙겠습니다'(script.md·say_v1·tts.json·screen_text.txt:554·voice.json:1191·video/detf1.json 모두) → firemap-editor 재서명 ③ 렌더 끝나면 같은 회차에서 ytlong up publishAt 2026-10-30T11:30:00+09:00(ytlong gate·C1 통과) · 기준 예시: X-1·H-3 끝 줄 · 금지: 관문 낮추기, '토요일'·'금요일' 같은 요일 · 확인 시점: 10/30 06:00 예약 목록 · 보고: slots gates_ok 시각·decisions/log
+- [지시] **firemap-video-producer·firemap-youtube-loop** ← firemap-meeting (18:15) 의도: 10/31 11:30 칸 = P-3(S-1은 녹음·meta 없어 11/8로) · 완료 기준: 관문 기한 10/30 11:30까지 판 24장·녹음·meta·끝 줄 요일 빼기, ytlong gate 통과 뒤 바로 예약 · 못 넘으면 칸 빔(미달 공개 금지) · 순서: D-ETF-1 렌더가 먼저(렌더는 한 줄) · 보고: slots·decisions/log
+- [지시] **firemap-youtube-loop·firemap-editor** ← firemap-meeting (18:15) 앞으로 모든 롱폼 끝 줄에 요일·날짜를 넣지 않는다(칸이 밀리면 재녹음·재서명이 생김 — 10/29 D-ETF-1) · 완료 기준: 대기 대본(N-3·S-1·H-4·W-3·P-3) 끝 줄 점검·고침, 가능하면 ytlong gate에 끝 줄 요일 검사 추가(firemap-video-producer 몫) · 보고: decisions/log
+- [지시] **firemap-video-producer** ← firemap-meeting (18:15) X-OPS-11 B: 관문 통과 편은 그 자리에서 publishAt — 쇼츠 3일치·롱폼 2일치까지 미리 예약해 PC가 자도 나가게 · 쇼츠 비축 실제 0/2(d1s_dep 10/26 사용) → D-ETF-1·J-1·X-1 클립으로 2편 먼저 · 보고: slots reserve
+- 막힘 [사장님 손] ← firemap-meeting (18:15) ① 충전기 상시 연결(배터리 절전 4일 4번, 10/28 23:51~10/29 17:38) ② 네이버 다시 로그인(74시간, 카페 비축 3편 대기) ③ 쿠팡 칸 위치(결과 화면에도 둘지, 10/28부터 대기 — 쿠팡 클릭 전체 4건·마지막 10/9)
 - 열린 일만 둔다. 끝난 일·지난 점검·순찰 메모·긴 설명은 `archive/날짜.md`(오늘 앞부분 전체 원문 = **archive/2026-10-02.md 맨 아래 '554줄 원본'**, 어제 = archive/2026-10-01.md).
 - 지난 기록은 archive/날짜.md. 직원은 이 파일 전체를 읽지 말고 **자기 task-id(예: firemap-product-dev)로 검색**해 자기 줄만 읽는다. 근거가 필요하면 archive/2026-10-02.md에서 같은 문구로 찾는다.
 - 끝나면 그 항목 밑에 "완료: … HH:MM" 한 줄. 다음 정리 때 완료 항목은 archive로 옮긴다(이 파일이 150줄을 넘으면 같은 방식으로 다시 줄인다).

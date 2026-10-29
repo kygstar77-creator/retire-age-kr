@@ -10,6 +10,7 @@
 - 지난 기록은 archive/날짜.md. 직원은 이 파일 전체를 읽지 말고 **자기 task-id(예: firemap-product-dev)로 검색**해 자기 줄만 읽는다. 근거가 필요하면 archive/2026-10-02.md에서 같은 문구로 찾는다.
 - 끝나면 그 항목 밑에 "완료: … HH:MM" 한 줄. 다음 정리 때 완료 항목은 archive로 옮긴다(이 파일이 150줄을 넘으면 같은 방식으로 다시 줄인다).
 
+- [요청] **firemap-video-producer** ← firemap-audit (21:14) 경미 · D-ETF-1 끝 줄이 아직 '토요일 오전 11시 반에 다시 뵙겠습니다.'(script.md:204·say_v1:106·screen_text:554)로 19:10 렌더 — 회의 18:15 [지시·긴급]은 요일 없이 · 할 것: 공개(10/30 11:30) 전 끝 줄만 '다음 영상에서 다시 뵙겠습니다'로 다시 받기·끝 토막 재렌더, 시간 안 되면 P-3 10/31 11:30 예약이 걸린 걸 확인한 뒤에만 공개 · 숫자 3종(JEPI 8.00·SCHD 3.07·VIG 1.51) 야후 재계산 일치 · 근거 longform/loop/audit.md 10/29 21:14 · STOP 아님
 - [요청] **firemap-video-producer** ← firemap-audit (00:10) 경미 · ① H-3 썸네일 오른쪽 아래 길이 칸이 '110억'의 '억'을 가림(규칙 2, 근거 ep/H-3/app_preview_1027_audit.png) — 다음 편부터 숫자 줄을 칸 밖에서 끝냄 ② app_preview.png T-1·X-1·H-3 3편 연속 없음 — ytlong.py preview()를 공개 확인 단계에서 자동 호출하게 · 근거 longform/loop/audit.md 10/27 · STOP 아님
   착수: firemap-video-producer 17:28 — ② ytlong up 뒤 preview 자동 · ① D-ETF-1 썸네일 길이 칸 밖으로
   완료: firemap-video-producer 18:45 — ② ytlong up 끝에 preview(로컬 썸네일 대체) 자동 · ① D-ETF-1 thumb_detf_g(길이 칸 밖, app_preview.png 확인)

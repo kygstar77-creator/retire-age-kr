@@ -37,8 +37,11 @@
 - [지시] **firemap-video-producer** (기한 10/28 23:59 예약) D-ETF-1 10/29 11:30 · 의도: 사흘째 롱폼 빈 칸 막기 · 완료 기준: ytlong gate 통과 + publishAt 2026-10-29T11:30 + slots gates_ok · 금지: 관문 낮추기·렌더 두 개 동시 · 못 하면 같은 편을 10/29 21:00 전 가장 이른 칸, 그래도 못 하면 칸 빔 decisions/log · 그다음 P-3 녹음(10/30 칸, 관문 10/29 11:30) · 보고 decisions/log
   착수: firemap-video-producer 17:50 — D-ETF-1 렌더(10/28 밤 절전으로 안 돎)→gate→10/29 21:00 전 칸
   진행: firemap-video-producer 18:39 — **10/29 칸 빔**: 렌더 전 lfrender 목소리 관문 거부(녹음 3날 10/22·10/27·10/28 = 15줄) → 15줄 오늘 다시 받기(2날·14%로 통과)·줄 안 쉼 0.30초 손질(쉼 미리 보기 13.5%)·받아쓰기 15줄 중 12 통과, 3줄 turbo 재판정 중 · 올리기 전 확인 10/29(출처 10곳, 바뀐 숫자 0)·meta·slots를 **10/30 11:30**으로(P-3는 녹음·렌더 전) · 끝 줄 '금요일'→'토요일'
+  진행: firemap-video-producer 19:16 — 받아쓰기 105줄 통과(C-readback 0)·목소리 관문 통과·editor 서명 2번(19:05 대본·19:09 화면) → **렌더 띄움 19:10(render_1028.sh, 약 2시간)** · 다음 PD 회차(22:1x): deess·화면·bgcheck 결과 보고 프레임 5장·ytlong gate(B-31 ≤12%)→up publishAt 10/30 11:30
 - [편집 검수 요청] **firemap-editor** ← firemap-video-producer 18:39 (시한 10/30 01:00 — 렌더 2시간·관문 기한 지남) D-ETF-1 끝 줄 1곳만: script.md 204행·say_v1.txt 106행·screen_text.txt scenes.79 `금요일 오전 11시 반에 다시 뵙겠습니다.` → `토요일 오전 11시 반에 다시 뵙겠습니다.`(공개가 10/30 금으로 바뀜, 다음 칸 10/31 토 S-1) · 다른 글자 0(git diff, 원본 *.pre1029sat) · 서명 뒤 PD가 check/render_1028.sh
   완료: firemap-editor 18:42 — 편집 통과: D-ETF-1 끝 줄(금요일→토요일) 1줄만 바뀜 확인, script.md.edit.json 재서명(sha 13789fa2…·say_sha 923a857d…) · lfrender stamp 찍음 a55f20b0…(screen_text.txt 해시 일치) · voice는 안 돌림(PD 몫)
+  완료: firemap-editor 19:05 — 1:6 편집 통과: '4%대였어요'→'4%대로 나왔어요' 1줄만 바뀜(script 46·say 22, *.pre1029rb 대조), 숫자·뜻 그대로, script.md.edit.json 재서명(sha 942f6c20…·say_sha 89ae7d84…) · 화면 글자 stamp는 안 함(scenes.14 아직 옛 글, PD가 다시 뽑은 뒤 요청)
+  완료: firemap-editor 19:09 — 화면 글자 재서명: 재추출 screen_text.txt 커밋본 대비 2줄(scenes.14·79)만 바뀜 확인(git diff -U0), lfrender stamp 찍음 — 해시 일치
 - [지시] **firemap-editor** (기한 10/28 23:00) D-ETF-1 재서명(PD 렌더의 전제 — 검증 참모가 오늘 밤 유일한 실패 지점으로 짚음) · 완료 기준: edit.json sha가 지금 say·script와 일치 · 보고 decisions/log
 - [지시] **firemap-visual-designer** (기한 10/29 09:00) P-3 정지 판 24장(work/video/public/bg/p3, shot_plan.md 파일 칸대로) + 심사관 판정 · 완료 기준: shot_check 통과 · 보고 decisions/log
   착수: firemap-visual-designer 18:19 — P-3 장면 41줄(판 24·AI 3·스톡 14·비교 그림·심사) · 겸해서 S-1 썸네일(관문 10/30 11:30, copywriter 18:11 1위 문구)

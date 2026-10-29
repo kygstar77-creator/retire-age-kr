@@ -89,6 +89,20 @@
 | 건보 피부양자 소득 | 소득 합계 연 2,000만원 이하(사업·금융·연금·근로 합) — 국민건강보험법 시행규칙 별표1의2·건보공단 '피부양자 소득요건' https://www.law.go.kr/법령/국민건강보험법시행규칙 (1차, ep/D-1 facts [12] 10/1 읽음 — 올리기 전 확인 때 다시 열 것) | 소득 다 합쳐 2,000만원 넘으면 빠짐 |
 
 # 올리기 전 확인
+2026-10-29 18:39 firemap-video-producer — 공개 예정 2026-10-30(금) 11:30(10/29 칸은 PC 절전으로 지나고 렌더 전 목소리 관문 15줄로 21시 전 불가) · 대조 칸 출처 10곳 전부 다시 열어 봄
+- https://www.schwabassetmanagement.com/products/schd — curl 403 → 브라우저(Playwright) 200 · 'As of 10/28/2026' · 지수 Dow Jones U.S. Dividend 100 그대로
+- https://query1.finance.yahoo.com/v8/finance/chart/SCHD?range=12y&interval=1d&events=div — 200 · yahoo.py로 16종+SPY+KRW=X 다시 받음(raw/yh_*_20261029.json, 미국 10/28 종가·국내 10/29 종가)
+- https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-equity-premium-income-etf-etf-shares-46641q332 — curl 200
+- https://amplifyetfs.com/divo/ — curl 403 → 브라우저 200 · Net Assets $8,067,982,209 · 'Data as of 09/30/2026' 그대로
+- https://investments.miraeasset.com/tigeretf/ko/product/chart/prdct-item-list.ajax?ksdFund=KR7458730009 — curl 403·브라우저 상세 화면도 403 → 10/22 raw/tiger_458730_items_20261022.json 그대로(오늘 구성종목 확인 안 함 — 같은 지수라 'SCHD와 같다' 말은 그대로)
+- https://m.stock.naver.com/api/stock/161510/etfAnalysis — 200
+- https://www.plusetf.co.kr/upload/fund/PLUS_고배당주_20260930.pdf — 퍼센트 인코딩 주소 200, 102,763바이트(9/30 판 그대로)
+- https://ecos.bok.or.kr — 200 · 731Y001 API 다시 받음(raw/ecos_731Y001_usdkrw_20261029.json): 10/26 1,324.3 → 10/27 1,322.6 → 10/28 1,324.3 → 10/29 1,336.3원
+- https://www.law.go.kr/법령/국민건강보험법 · https://www.law.go.kr/법령/국민건강보험법시행규칙 — 법제처 API(lawtext.py)는 오늘 'IP 검증 실패'라 브라우저로 조문 읽음: 시행규칙 [시행 2026.9.28] '이자소득과 배당소득은 합산하지 않는다 <2024.5.13>' 그대로 · 법 [시행 2026.10.8] 제71조① 보수 외 소득이 대통령령 금액을 넘으면 계산식으로 산정 <개정 2024.2.6> 그대로
+기준일: 분배율·12개월 분배 = 2026-10-16 종가(대본·자막 값) / 오늘 다시 셈 = 미국 10/28 종가·국내 10/29 종가(야후) · 환율 = ECOS 2026-10-16 1,348.5원(대본 '이 자료를 받은 날') / 2026-10-29 1,336.3원(오늘) · 섹터 = 10/27 줄과 같음 · 건보 = 시행규칙 제44조(2024.5.13 개정, 10/29 조문)
+바뀐 것: 10/27 확인 뒤 새 분배 0건(10/23~10/29, 17종 전부) · 분배율 10/28 종가: SCHD 3.01%('3% 정도' 그대로)·HDV 3.17%·JEPQ 11.47%·JEPI 7.94%('8%' 그대로)·VIG 1.48%('1.5%' 그대로)·DIVO 6.29%·PLUS 고배당주 4.73%·TIGER 은행고배당 4.38%('4%대' 그대로)·국내 미국배당다우존스 4종 2.90~2.98%('SCHD와 거의 같다' 그대로) — 대본·자막 분배율은 '10/16 종가' 기준일을 밝힌 값이라 그대로 · 환율 1,324.3(10/26) → 1,336.3원(10/29) — 대본 '이 자료를 받은 날엔 1,349원'은 날짜를 밝힌 말이라 그대로 · 조사 뒤 공표: release_calendar 10/27~10/29 해당 없음 · 고칠 숫자 0(끝 줄 요일만 '금요일'→'토요일', 공개일이 금요일로 바뀌어서)
+새로 찾은 것: 슈왑 페이지 기준일 10/28로 바뀜(지수·운용 그대로) · 원·달러가 10/29 1,336원으로 다시 오름 · 법제처 API 오늘 IP 검증 실패(브라우저 원문으로 대신) · 공개 전이라 새 댓글 질문 없음
+
 2026-10-27 00:27 firemap-youtube-loop — 공개 2026-10-27(화) 11:30 · 대조 칸 출처 10곳 전부 다시 열어 봄(curl, 403 나온 곳은 브라우저 Playwright로 다시)
 - https://www.schwabassetmanagement.com/products/schd — curl 403 → 브라우저 200 · Total Net Assets $118,697,006,995.71(As of 10/23/2026, 10/16엔 $114,999,792,743.92) · 지수 Dow Jones U.S. Dividend 100 그대로 · 보유 종목 CSV는 다시 안 받음(섹터 55%는 10/15 보유 기준 그대로 씀 — 확인 안 함)
 - https://query1.finance.yahoo.com/v8/finance/chart/SCHD?range=12y&interval=1d&events=div — 200 · yahoo.py로 16종+SPY+KRW=X 다시 받음(raw/yh_*_20261027.json, 미국 10/26 종가·국내 10/23 종가까지)

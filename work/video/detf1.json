@@ -23,11 +23,11 @@
     {
      "text": "우리나라에서 많이 찾아보는 미국 배당 ETF, SCHD. 여기에 넣은 돈은 지금 어느 업종에 가 있을까요?",
      "audio": "audio/d-etf-1/9a852affec2397da.wav",
-     "frames": 171,
+     "frames": 166,
      "cap": null
     }
    ],
-   "frames": 171,
+   "frames": 166,
    "data": {
     "src": "bg/detf/stock/39494572.mp4",
     "license": "Pexels 39494572 무료(Hamim Rony)",
@@ -42,11 +42,11 @@
     {
      "text": "10월 들어서, SCHD 요즘 왜 이러냐는 말이 많았죠.",
      "audio": "audio/d-etf-1/c1bb023437b012cf.wav",
-     "frames": 110,
+     "frames": 94,
      "cap": null
     }
    ],
-   "frames": 110,
+   "frames": 94,
    "data": {
     "src": "bg/detf/stock/7578628.mp4",
     "license": "Pexels 7578628 무료(Tima Miroshnichenko)",
@@ -108,11 +108,11 @@
     {
      "text": "그런데 가장 최근 열두 달은 2% 느는 데 그쳤어요.",
      "audio": "audio/d-etf-1/b47c33eeddf31d6d.wav",
-     "frames": 117,
+     "frames": 107,
      "cap": "10년 10.8% · 최근 1년 2.0%(1.034→1.055달러)"
     }
    ],
-   "frames": 180,
+   "frames": 170,
    "data": {
     "title": "SCHD 한 주당 배당, 매년 늘어난 비율",
     "v1": "11%",
@@ -148,11 +148,11 @@
     {
      "text": "많이 주나, 매년 느나, 한 업종에 몰렸나, 떨어질 땐 어땠나, 그리고 1억을 넣으면 매년 통장에 얼마가 들어오나요.",
      "audio": "audio/d-etf-1/4f370b6028a79edd.wav",
-     "frames": 186,
+     "frames": 180,
      "cap": null
     }
    ],
-   "frames": 186,
+   "frames": 180,
    "data": {
     "title": "같은 잣대, 다섯 가지",
     "items": [
@@ -177,11 +177,11 @@
     {
      "text": "두 사람 모두 1억을 넣는다고 놓고 계산할게요.",
      "audio": "audio/d-etf-1/3c26666e87f85469.wav",
-     "frames": 78,
+     "frames": 96,
      "cap": null
     }
    ],
-   "frames": 265,
+   "frames": 283,
    "data": {
     "pic": "bg/detf/fig/two_people.png",
     "license": "Pexels 8164676(Kindel Media)·6964247(Mikhail Nilov) 무료",
@@ -431,13 +431,13 @@
    "kind": "broll",
    "lines": [
     {
-     "text": "국내 고배당 ETF 둘은 4%대였어요. 은행·보험 같은 국내 금융주가 많이 들어 있어서예요.",
-     "audio": "audio/d-etf-1/922fabd436aa9b44.wav",
-     "frames": 165,
+     "text": "국내 고배당 ETF 둘은 4%대로 나왔어요. 은행·보험 같은 국내 금융주가 많이 들어 있어서예요.",
+     "audio": "audio/d-etf-1/3f041434ddca337b.wav",
+     "frames": 170,
      "cap": null
     }
    ],
-   "frames": 165,
+   "frames": 170,
    "data": {
     "src": "bg/detf/stock/5981346.mp4",
     "license": "Pexels 5981346 무료(https://kaboompics.com/)",
@@ -688,11 +688,11 @@
     {
      "text": "왼쪽 위, 조금 주는데 잘 늘어나는 자리엔 DGRO와 VIG가 있습니다. 둘 다 매년 7% 이상 늘었어요.",
      "audio": "audio/d-etf-1/05915091284c5e37.wav",
-     "frames": 197,
+     "frames": 188,
      "cap": null
     }
    ],
-   "frames": 197,
+   "frames": 188,
    "data": {
     "pic": "bg/detf/fig/map_paper.png",
     "license": "파이어맵 자체 제작(운용사·야후 자료)",
@@ -1703,7 +1703,7 @@
     {
      "text": "건보료도 95만원 정도 더 내요.",
      "audio": "audio/d-etf-1/0c09eb9ad536251e.wav",
-     "frames": 71,
+     "frames": 66,
      "cap": null
     },
     {
@@ -1713,7 +1713,7 @@
      "cap": "월 750,076원 · 건보 7.19% + 장기요양 = 8.1348%"
     }
    ],
-   "frames": 272,
+   "frames": 267,
    "data": {
     "title": "JEPQ 1억 · 지역가입자 · 1년",
     "rows": [
@@ -1745,11 +1745,11 @@
     {
      "text": "직장가입자는 월급 말고 다른 소득이 2,000만원을 넘으면, 넘는 만큼 건보료가 더 붙어요.",
      "audio": "audio/d-etf-1/f90341685a9e5dcf.wav",
-     "frames": 168,
+     "frames": 179,
      "cap": null
     }
    ],
-   "frames": 168,
+   "frames": 179,
    "data": {
     "n": "직장가입자는",
     "q": "월급 말고 다른 소득이 2,000만원을 넘으면, 넘는 만큼"
@@ -1780,11 +1780,11 @@
     {
      "text": "1억으로 계산하면, 배당만으로 그 선을 넘는 ETF는 없었어요.",
      "audio": "audio/d-etf-1/42f6efb875909656.wav",
-     "frames": 122,
+     "frames": 128,
      "cap": null
     }
    ],
-   "frames": 122,
+   "frames": 128,
    "data": {
     "src": "bg/detf/stock/7118320.mp4",
     "license": "Pexels 7118320 무료(cottonbro studio)",
@@ -1818,11 +1818,11 @@
     {
      "text": "환율도 따져 봐야 합니다. 달러 값이 열두 달 전 1,424원이었는데, 이 자료를 받은 날엔 1,349원으로 내렸어요.",
      "audio": "audio/d-etf-1/1ec8380d15f6f6e5.wav",
-     "frames": 212,
+     "frames": 213,
      "cap": "1,424.4원 → 1,348.5원 · ECOS 731Y001"
     }
    ],
-   "frames": 212,
+   "frames": 213,
    "data": {
     "title": "원·달러 매매기준율",
     "v1": "1,424원",
@@ -1926,11 +1926,11 @@
     {
      "text": "통장에 남는 돈까지 다섯 가지를 봤는데, 고르는 순서로는 앞의 네 가지예요.",
      "audio": "audio/d-etf-1/4163b8368622dd88.wav",
-     "frames": 135,
+     "frames": 138,
      "cap": null
     }
    ],
-   "frames": 135,
+   "frames": 138,
    "data": {
     "n": "6장",
     "q": "고르는 순서",
@@ -1984,11 +1984,11 @@
     {
      "text": "오래 모을 직장인이라면 늘어나는 속도와 업종 쏠림이 더 오래 남아요. 배당이 매년 0.2% 느는 것과 7% 느는 것의 차이는, 오래 갈수록 커집니다.",
      "audio": "audio/d-etf-1/609cb3f359fb5467.wav",
-     "frames": 280,
+     "frames": 278,
      "cap": "분배 연평균 증가 5년 · JEPI 0.2% · DGRO·VIG 7.4%"
     }
    ],
-   "frames": 280,
+   "frames": 278,
    "data": {
     "pic": "bg/detf/fig/map_paper.png",
     "license": "파이어맵 자체 제작(운용사·야후 자료)",
@@ -2009,11 +2009,11 @@
     {
      "text": "오늘 히트맵은 한 장으로 다시 띄워 둘게요. 가진 ETF 줄을 찾아서, 진한 칸이 어디 몰려 있는지 한 번 보세요.",
      "audio": "audio/d-etf-1/91b08c1b8ef21b01.wav",
-     "frames": 224,
+     "frames": 197,
      "cap": null
     }
    ],
-   "frames": 224,
+   "frames": 197,
    "data": {
     "pic": "bg/detf/fig/heatmap_paper.png",
     "license": "파이어맵 자체 제작(운용사·야후 자료)",
@@ -2051,9 +2051,9 @@
    "kind": "broll",
    "lines": [
     {
-     "text": "금요일 오전 11시 반에 다시 뵙겠습니다.",
-     "audio": "audio/d-etf-1/7bf19c492ec28135.wav",
-     "frames": 87,
+     "text": "토요일 오전 11시 반에 다시 뵙겠습니다.",
+     "audio": "audio/d-etf-1/e806a9c821a60fe0.wav",
+     "frames": 75,
      "cap": null
     },
     {
@@ -2063,7 +2063,7 @@
      "cap": null
     }
    ],
-   "frames": 852,
+   "frames": 840,
    "data": {
     "src": "bg/t1/5562942.mp4",
     "license": "Pexels 5562942 무료(Daniel Qura)",

@@ -1,1 +1,1 @@
-{"by": "firemap-editor", "at": "2026-10-28 17:43", "sha": "13cb2c020d56cb09bb038f012097978f7c98fc576775f0eb0ee169ce5a46205c", "sha_of": "screen_text.txt bytes", "note": "10/28 끝 줄 1줄(screen_text 554행 장면79)만 pre1028end와 대조, 다른 글자 0 변경, 날짜·내일 없음"}
+{"by": "firemap-editor", "at": "2026-10-29 19:09", "sha": "7b2e6f7305902266fd8c143259151ce42c65d5551d5c76236c86f905ff418a33", "sha_of": "screen_text.txt bytes", "note": "10/29 19시 재추출본: 커밋본 대비 2줄만(scenes.14 '4%대였어요'→'4%대로 나왔어요' 125행, scenes.79 '금요일'→'토요일' 554행) — git diff -U0 확인, 둘 다 대본 서명(18:41·19:05)과 같은 글, 다른 글자 0 변경, 날짜·내일 없음"}

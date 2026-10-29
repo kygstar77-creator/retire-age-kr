@@ -1,0 +1,18 @@
+{
+ "date": "2026-10-29",
+ "runs": [
+  {
+   "hour": 17,
+   "ts": "17:46",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "네이버 로그인 만료(10/26 19시쯤부터 계속) — 사장님이 py -3.12 work/naverpost.py login 실행 필요(approvals.md 184행). 발행 0. 회원 답할 댓글 0. 카페 비축 3/2(crdt1027·wolsegong1027·hfheir1028) — 비축 최소를 넘어 새 원고 안 씀. 10/29 칸 장부·today.md 10/29 항목 없음(회의 미실행 추정). 개선: 없음"
+  }
+ ]
+}

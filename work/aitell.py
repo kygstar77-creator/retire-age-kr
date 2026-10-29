@@ -543,12 +543,28 @@ SCRIPT_NUM_PER_1000 = 92   # 지시는 ≤90이나 경쟁 자막 mOBsKBLWrN4가 
 SCRIPT_MULTI_NUM_PCT = 20  # 숫자 2개 이상 문장 비율: 경쟁 중앙값 11%·최대 20% / 우리 40%
 
 
+def signed_say(ep):
+    """10/29 PD(today.md 요청, H-4 옛 판 say_v1 수정이 서명까지 간 일): 녹음 원고 = script.md.edit.json say_sha와 바이트가 같은 say_v<N>.txt.
+    (경로, 문제) — 서명에 say_sha가 있는데 같은 파일이 없으면 (None, 이유). 서명·say_sha가 없는 옛 편만 번호가 가장 큰 say_v<N>.txt
+    ('say_v2.signed_1015.txt' 같은 보관본은 원고가 아님 — 옛 숫자만 뽑는 정렬은 이것을 21015번으로 골랐다)."""
+    import hashlib
+    says = [f for f in glob.glob(os.path.join(ep, 'say_v*.txt')) if re.fullmatch(r'say_v\d+\.txt', os.path.basename(f))]
+    try: want = (json.load(open(os.path.join(ep, 'script.md.edit.json'), encoding='utf-8')).get('say_sha') or '').lower()
+    except Exception: want = ''
+    if want:
+        for f in says:
+            if hashlib.sha256(open(f, 'rb').read()).hexdigest() == want: return f, ''
+        return None, f"script.md.edit.json say_sha {want[:8]}…와 같은 say_v*.txt 없음 — 서명 뒤 원고가 바뀜(편집 재서명 필요)"
+    says.sort(key=lambda x: int(re.sub(r'\D', '', os.path.basename(x))))
+    return (says[-1], '') if says else (None, 'say_v*.txt 없음')
+
+
 def script_src(p):
-    """편 폴더면 voice.json, 녹음 전 편(H-2 10/14)은 voice.json이 없으니 가장 새 say_v*.txt(말 줄만)."""
+    """편 폴더면 voice.json, 녹음 전 편(H-2 10/14)은 voice.json이 없으니 서명된 say_v*.txt(signed_say, 말 줄만)."""
     if not os.path.isdir(p): return p
     if os.path.exists(os.path.join(p, 'voice.json')): return os.path.join(p, 'voice.json')
-    says = sorted(glob.glob(os.path.join(p, 'say_v*.txt')), key=lambda x: int(re.sub(r'\D', '', os.path.basename(x)) or 0))
-    return says[-1] if says else os.path.join(p, 'voice.json')
+    f, _ = signed_say(p)
+    return f or os.path.join(p, 'voice.json')
 
 
 def script_text(p):

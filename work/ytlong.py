@@ -123,10 +123,11 @@ def gate(ep):
     # 10/19 사장님 "대본에 쓰는 단어도 AI 티를 벗어야 해" — 10/21 공개분부터 구어 아닌 말(data/not_spoken.json ban)이 남아 있으면 못 올린다.
     if (m.get('publishAt') or '') >= '2026-10-21':
         import aitell   # 10/19 고침: 여기서 'import glob'을 하면 glob이 함수 안 변수가 돼 10/21 전 편(H-2) gate가 C5에서 죽었다
-        says = sorted(glob.glob(os.path.join(ep, 'say_v*.txt')), key=os.path.getmtime)
-        if says:
-            sp, _ = aitell.spoken_check(open(says[-1], encoding='utf-8').read().splitlines())
-            if sp: bad.append(f'구어 아닌 말 {len(sp)}줄({os.path.basename(says[-1])}): ' + ', '.join(f"{w}→{t}" for w, _, _, t in sp[:5]) + ' — py -3.12 work/aitell.py script <편>')
+        sf, sprob = aitell.signed_say(ep)   # 10/29 PD: 수정 시각·가장 큰 번호가 아니라 편집 서명(say_sha)과 같은 원고만 본다(H-4 옛 판 서명 사고)
+        if sprob and 'say_sha' in sprob: bad.append('녹음 원고: ' + sprob)
+        if sf:
+            sp, _ = aitell.spoken_check(open(sf, encoding='utf-8').read().splitlines())
+            if sp: bad.append(f'구어 아닌 말 {len(sp)}줄({os.path.basename(sf)}): ' + ', '.join(f"{w}→{t}" for w, _, _, t in sp[:5]) + ' — py -3.12 work/aitell.py script <편>')
     ut = os.path.join(ep, 'understand_test.md')
     if not os.path.exists(ut): bad.append('understand_test.md 없음 — 처음 보는 사람 이해 시험(제목·썸네일·대본) 없이 못 올림')
     else:

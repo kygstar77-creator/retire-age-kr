@@ -887,8 +887,22 @@ def readback(ep, only=None, resume=False, batch=False, offline=False):
     print(f'받아쓰기 대조 {len(out)}문장 · 걸린 문장 {len(bad)}'); [print('  ' + b) for b in bad]
     return not bad
 
+def signed_ok(ep):
+    """10/29 PD(today.md 요청): 녹음은 편집 서명된 원고로만 — script.md 바이트 sha256 = script.md.edit.json sha, say_v*.txt가 있으면 say_sha와 같은 파일도 있어야."""
+    p = os.path.join(ep, 'script.md.edit.json')
+    try: d = json.load(open(p, encoding='utf-8'))
+    except Exception: return '편집 통과 표시(script.md.edit.json) 없음·못 읽음 — firemap-editor 서명 뒤 녹음'
+    if (d.get('sha') or '').lower() != hashlib.sha256(open(os.path.join(ep, 'script.md'), 'rb').read()).hexdigest():
+        return 'script.md가 편집 서명 뒤 바뀜(sha 다름) — 재서명 뒤 녹음'
+    sys.path.insert(0, HERE); import aitell
+    f, prob = aitell.signed_say(ep)
+    return prob if prob and 'say_sha' in prob else ''
+
 if __name__ == '__main__':
     cmd, ep = sys.argv[1], os.path.abspath(sys.argv[2]); mr = int(sys.argv[sys.argv.index('--maxreq') + 1]) if '--maxreq' in sys.argv else 9
+    if cmd in ('make', 'retake', 'fixcut', 'cutat') and '--dry' not in sys.argv:
+        _sg = signed_ok(ep)
+        if _sg: sys.exit('녹음 안 함 — ' + _sg)
     cap = int(sys.argv[sys.argv.index('--cap') + 1]) if '--cap' in sys.argv else 0
     if cmd == 'readback': sys.exit(0 if readback(ep, sys.argv[3].split(',') if len(sys.argv) > 3 and not sys.argv[3].startswith('--') else None, resume='--resume' in sys.argv, batch='--batch' in sys.argv, offline='--offline' in sys.argv) else 1)
     elif cmd == 'fixcut': fixcut(ep, int(sys.argv[3]), mr, dry='--dry' in sys.argv, cap=cap)

@@ -20,6 +20,8 @@ import {EqStack, EqStackProps} from '../EqStack';
 import {LoanSteps, LoanStepsProps} from '../LoanSteps';
 import {BalancePath, BalancePathProps} from '../BalancePath';
 import {EqRow, EqRowProps} from '../EqRow';
+import {CapStop, CapStopProps} from '../CapStop';
+import {MeanPull, MeanPullProps} from '../MeanPull';
 
 type P = {scene: RScene; zoom: ZoomOutOpenProps};
 const OpenZoom: React.FC<P> = ({scene, zoom}) => (
@@ -121,6 +123,23 @@ const T1Row: React.FC<P13> = ({ratio, year, gap}) => (
   </Series>
 );
 
+// P-3 가로식 장면 셋(10/27 motion) — calc·rise·mix EqRow plain · 재료 ep/P-3/motion_preview/rowprops.py
+type P14 = {calc: V3S<Omit<EqRowProps, 'beats'>>; rise: V3S<Omit<EqRowProps, 'beats'>>; mix: V3S<Omit<EqRowProps, 'beats'>>};
+const P3Row: React.FC<P14> = ({calc, rise, mix}) => (
+  <Series>
+    {[calc, rise, mix].map((s, i) => <Series.Sequence key={i} durationInFrames={s.frames}>{v3Frame(s, <EqRow {...s.data} beats={tallyStarts(s.lines)} />)}</Series.Sequence>)}
+  </Series>
+);
+
+// N-3 움직이는 판 둘(10/29 motion) — cap CapStop(3장 연금 상한) · mean MeanPull(7장 평균 끌려감)
+type P15 = {cap: V3S<Omit<CapStopProps, 'beats'>>; mean: V3S<Omit<MeanPullProps, 'beats'>>};
+const N3Motion: React.FC<P15> = ({cap, mean}) => (
+  <Series>
+    <Series.Sequence durationInFrames={cap.frames}>{v3Frame(cap, <CapStop {...cap.data} beats={tallyStarts(cap.lines)} />)}</Series.Sequence>
+    <Series.Sequence durationInFrames={mean.frames}>{v3Frame(mean, <MeanPull {...mean.data} beats={tallyStarts(mean.lines)} />)}</Series.Sequence>
+  </Series>
+);
+
 export const PreviewRoot: React.FC = () => (
   <>
   <Composition id="OpenZoom" component={OpenZoom as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
@@ -162,5 +181,11 @@ export const PreviewRoot: React.FC = () => (
   <Composition id="T1Row" component={T1Row as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => { const q = props as unknown as P13; return {durationInFrames: q.ratio.frames + q.year.frames + q.gap.frames}; }} />
+  <Composition id="P3Row" component={P3Row as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => { const q = props as unknown as P14; return {durationInFrames: q.calc.frames + q.rise.frames + q.mix.frames}; }} />
+  <Composition id="N3Motion" component={N3Motion as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => { const q = props as unknown as P15; return {durationInFrames: q.cap.frames + q.mean.frames}; }} />
   </>
 );

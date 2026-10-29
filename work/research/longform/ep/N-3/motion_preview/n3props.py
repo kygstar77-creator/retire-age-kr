@@ -38,12 +38,12 @@ want = [3000, 4000, 5000, 6000, 7000, 8000, 10000, 12000, 15000]
 assert all(k in pen for k in want), pen
 CAP = 313020   # 659만원 × 4.75%, 10원 미만 버림(research 대조 표 313,020)
 assert 6590000 * 475 // 10000 // 10 * 10 == CAP and pen[10000] == pen[12000] == pen[15000] == CAP and pen[8000] < CAP
-has('연금은 한 달 659만원까지만 보험료를 붙입니다.', '31만원 정도에서 더 늘지 않습니다.', '기준소득월액 상한 659만원(2026.7~2027.6')
+has('세전 월급', '그러니까 중간값은', '연금은 한 달 659만원까지만 보험료를 붙입니다.', '31만원 정도에서 더 늘지 않습니다.', '기준소득월액 상한 659만원(2026.7~2027.6')
 L1 = cut('3.', '그런데 국민연금에는 끝이 있어요', '이게 다음 장에서')
 assert len(L1) == 5, [l['text'] for l in L1]   # 0 끝 · 1 659만원 · 2 높은 칸 · 3 31만원 · 4 다음 장
 name = lambda k: {10000: '1억', 12000: '1억 2천', 15000: '1억 5천'}.get(k, f'{k // 1000}천')
 low = [k for k in want if pen[k] < CAP]; top = [k for k in want if pen[k] >= CAP]
-cap = {'seed': 'N-3-cap', 'cap': CAP, 'capLabel': '한 달 659만원까지만', 'capAt': 1.15, 'stopText': '31만원에서 멈춤', 'stopAt': 3.1,
+cap = {'seed': 'N-3-cap', 'cap': CAP, 'capLabel': '연금은 월급 659만원까지만', 'capAt': 1.15, 'stopText': '31만원에서 멈춤', 'stopAt': 3.1,
   'axis': '연봉별 · 국민연금 보험료(내 몫) 한 달',
   'bars': [{'label': name(k), 'v': pen[k], 'at': 0.08 + i * 0.13} for i, k in enumerate(low)] + [{'label': name(k), 'v': pen[k], 'at': 2.1 + i * 0.22} for i, k in enumerate(top)]}
 
@@ -54,13 +54,13 @@ L2 = cut('7.', '평균도 마찬가지예요', "그래서 '평균 연봉'은")
 assert len(L2) == 7, [l['text'] for l in L2]   # 0 마찬가지 · 1 4,475 · 2 중간값 · 3 상위 1% · 4 3억 5천 · 5 끌어올려요 · 6 1천만원
 mean = {'seed': 'N-3-mean', 'xMax': 6000, 'ticks': [0, 1000, 2000, 3000, 4000, 5000, 6000], 'unit': '한 해 총급여 · 만원',
   'mean': {'v': 4475, 'label': '평균', 'text': '4,475만원', 'at': 1.25},
-  'mid': {'v': 3417, 'label': '가운데 사람', 'text': '3,417만원', 'at': 2.15, 'stay': '그대로'},   # at 2.15 = '줄 한가운데' 자리(2.45는 U5 9.0초 — 회색 깃발이 4%를 못 넘김, 10/29)
+  'mid': {'v': 3417, 'label': '중간값', 'text': '3,417만원', 'at': 2.15, 'stay': '그대로'},   # at 2.15 = '줄 한가운데' 자리(2.45는 U5 9.0초 — 회색 깃발이 4%를 못 넘김, 10/29)
   'top': {'label': '상위 1%', 'text': '평균 3억 4,630만원', 'at': 3.3, 'pull': 5.1},
-  'gap': {'text': '약 1천만원', 'at': 6.35}}
+  'gap': {'text': '약 1천만원 차이', 'at': 6.35}}
 
 out = {'fps': 30,
  'cap': scene('cap', '국민연금에는 끝이 있다', None, '3', '국민연금법 · 국민연금공단 기준소득월액 상한(2026.7~2027.6) · 파이어맵 계산', L1, cap),
- 'mean': scene('mean', '평균은 앞으로 끌려간다', None, '7', '국세청 근로소득 천분위(2024년 귀속, 2,108만 명) · 파이어맵 계산', L2, mean)}
+ 'mean': scene('mean', '평균은 위쪽으로 쏠린다', None, '7', '국세청 근로소득 천분위(2024년 귀속, 2,108만 명) · 파이어맵 계산', L2, mean)}
 json.dump(out, open(os.path.join(H, 'n3_motion.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 for k in ('cap', 'mean'):
     s = out[k]; print(k, round(s['frames'] / 30, 1), 's · 녹음 줄', sum(1 for l in s['lines'] if l['audio']), '/', len(s['lines']), '· 줄', [round(l['frames'] / 30, 1) for l in s['lines']])

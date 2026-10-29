@@ -114,3 +114,9 @@
 
 ## 가로식 계산(10/19) — EqRow (T-1 2장)
 - **EqRow — 한 줄 식(값 ÷·−·+·× 값 = ?)**: `rows[{label, parts[{t, sub?, op?, at}], ans, reveal, ansSub?}]·note·who`. `at`·`reveal` = 말 줄 번호 + 줄 안 비율(1.4 = 둘째 줄 40%). 값 조각은 계산기 키 칸(#c9d0da — 더 옅으면 U5 160×90 회색에서 안 셈), 답 '?' → 주황 + 옅은 주황 바탕 + 손 동그라미, 새 줄이 오면 지난 식은 회색 한 줄로. 판 전체 1.00→1.05 다가가기(장면 길이 맞춤). seed로 정렬(왼/가운데)·지난 줄 위/아래·'?' 밑줄 모양. 줄이 하나면 판 가운데 높이. 예: ep/T-1/motion_preview/rowprops.py.
+
+## 천장 막대 · 끌려가는 평균(10/29) — CapStop · MeanPull (N-3 3장·7장)
+- **CapStop — '어디서부터 안 는다'(연금 상한·세율 한도·공제 한도)**: `bars[{label, v, at}]·cap·capLabel·capAt·stopText·stopAt·axis`. 낮은 막대는 스프링으로 자라고, `v ≥ cap` 막대는 빨리 자라 천장에 부딪혀 살짝 눌렸다 멈춘다. 천장 점선 이름은 왼쪽(낮은 막대 쪽), 답(주황)·손 동그라미는 닿은 막대들 위. 천장이 없었다면 얼마였을지(유령 막대)는 그리지 않는다 — 사실표에 없는 숫자. 무엇의 막대인지(axis)는 왼쪽 위(아래는 출처 줄 자리 — 10/29 겹침).
+- **MeanPull — '평균이 가운데보다 높은 이유'(소수 큰 값이 평균을 끈다)**: `xMax·ticks·unit·mean{v,label,text,at}·mid{v,label,text,at,stay}·top{label,text,at,pull}·gap{text,at}`. 돈 자 위 깃발 둘 + 자 끝 너머(// 끊김) 추가 줄로 평균 깃발을 당김. **평균 깃발 자리는 옮기지 않는다**(옮기면 '1%를 뺀 평균'이 생김) — 기울기·화살표로만. N1·N2 '100명 줄'(사람 점)과 다른 꼴.
+- 회색 깃발(#8a909b)은 U5 160×90 회색에서 4%를 못 넘겨 9.0초 같은 화면이었다 → T.ink2. 새 요소가 옅은 색이면 말 줄 앞쪽(at x.15)에 둔다.
+- 예: work/research/longform/ep/N-3/motion_preview/n3props.py(calc_out·research 대조 assert) · n3render.py(렌더+줄별 스틸+motioncheck+U5).

@@ -1,3 +1,4 @@
+실측: 숫자 91.2/1,000단어 · 2개 이상 문장 12% · aitell script 통과 (editor 10/29 18:03 편집 통과 판, speechcompare 기준)
 # N-3 review (2026-10-28 youtube-loop) — 대본 v1.2
 
 ## 기계 검사 (17:37)

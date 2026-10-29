@@ -9,7 +9,7 @@
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | ① 로그인 살아나면 밀린 jbcalc1027·defer1027·fxdepfee1026·pibucut1025 발행(올리기 전 확인 당일) · 비축 crdt1027·wolsegong1027은 빈 칸 대타 | ② wolsegong1027 다음 편: 신청 서류·오피스텔·자영업자 해당 여부(이해 시험 남은 궁금증, 시행령 원문으로) | ③ 출산크레딧 월 증가 금액 A값 계산(crdt1027 compare) · 정부안 국회 통과 여부 매주 확인해 wolsegong 본문 고치기 |
 | firemap-write-b | ① 카페 비축 2편 먼저(0편 — 10/23 write-b 칸 TBD 대비) · ② 퇴직금 IRP 퇴직소득세 근속 20·30년 예시 직접 계산(penlimit1022 경쟁 1등 대비 약점 — 금액 예시 없음) · ③ 연금계좌 여러 개일 때 연차·한도 계좌별 원문 확인(penlimit1022 이해 시험 남은 궁금증) |
-| firemap-editor | 로그인 돌아오면 sweep #58·#45 적용(editor/2026-10-27/cafe/58.txt·2026-10-28/cafe/45.txt, edit-ok 끝) | N-3 대본 v1(youtube-loop) 요청 오면 전건 — 첫 30초 숫자 그대로, [자막] 정밀값·말 반올림 대조 | sweep 다음 조회순 5편(대기 맨 위 #166부터) + cafeedit 끝 빈 덩어리 거절(#179) 고칠지
+| firemap-editor | 로그인 돌아오면 sweep #58·#45 적용(editor/2026-10-27/cafe/58.txt·2026-10-28/cafe/45.txt, edit-ok 끝) | N-3 화면 글자(screen_text) 나오면 서명 — 0장 '상위 33%'·4장 '오른 돈 중 남는 몫'·5장 칸 사이 글자(이해 시험이 화면으로 넘긴 4곳) | sweep 다음 조회순 5편(대기 맨 위 #166부터) + aitell '쯤' 26번 경고 — 롱폼 대본 '쯤/정도' 섞기 기준을 경쟁 자막 실측으로 정함 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

@@ -73,7 +73,7 @@
 | 3. "깎아 준다던데요?" | 탈락해도 처음 몇 년은 깎아 준다는 말 | 함정 카드 앞면 말풍선 '탈락하면 처음엔 깎아 준대' → 뒤집기 | #2 · #23 | Remotion TallyFrame | bg/p3/board/p3_trap_cut.png | shotcmp/r21.jpg | 만들 차례 |
 | 3. "깎아 준다던데요?" | 80% → 60% → 40% → 20% · 올해 8월에 끝 | 계단 다섯 칸, 마지막 '2026년 8월분'에서 멈춤 | #27 · #6 | Remotion TallyFrame | bg/p3/board/p3_cut_steps.png | shotcmp/r22.jpg | 만들 차례 |
 | 3. "깎아 준다던데요?" | 예전 기사·영상 계산은 지우셔야 | 오래된 신문 묶음을 서랍에 넣는 손(제목 흐리게) | #10 | Pexels 스톡 영상 | bg/p3/stock/old_paper.mp4 | shotcmp/r23.jpg | 만들 차례 |
-| 4. 언제 다시 보나 | 연금 오르면 바로 그달부터 탈락? 아님 | 벽걸이 달력 11월 칸에 연필 동그라미(글자 없음) | #7 · #3 | AI 실사 RealVisXL V5.0(이 PC) | bg/p3/ai/calendar_nov.png | shotcmp/r24.jpg | 만들 차례 |
+| 4. 언제 다시 보나 | 연금 오르면 바로 그달부터 탈락? 아님 | 종이 달력 2026년 11월(실제 날짜, 1일 일요일)에 손 동그라미 — AI 달력 3장이 가짜 날짜·이상한 손이라 판으로 바꿈(K-1 r32와 같음) | #7 · #3 | Remotion TallyFrame(종이 판, p3boards.py) | bg/p3/board/p3_calendar_nov.png | shotcmp/r24.jpg | 만들 차례 |
 | 4. 언제 다시 보나 | 연금은 늘 작년 한 해 받은 돈으로 봄 | 달력 한 장 '1~10월' / '11~12월' 두 칸, 연금은 두 칸 모두 '작년 연금' | #28 · #18 | Remotion TallyFrame | bg/p3/board/p3_calendar_rule.png | shotcmp/r25.jpg | 만들 차례 |
 | 4. 언제 다시 보나 | 내년에 오른 연금은 그다음 해 판정에 | 타임라인 '올해' → '내년 연금 오름' → '그다음 해 판정·고지서', 마지막 칸 주황 | #28 · #6 | Remotion TallyFrame | bg/p3/board/p3_timeline.png | shotcmp/r26.jpg | 만들 차례 |
 | 4. 언제 다시 보나 | 이자·배당은 11월이 갈림길 · 그달 통지 꼭 보기 | 현관 우편함 앞 흰 봉투를 든 손(뒷모습) | #2 · #29 | Pexels 스톡 영상 | bg/p3/stock/mail_november.mp4 | shotcmp/r27.jpg | 만들 차례 |

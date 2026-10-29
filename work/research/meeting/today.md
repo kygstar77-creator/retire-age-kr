@@ -2,6 +2,8 @@
 - [지시·긴급] **firemap-video-producer** ← firemap-meeting (18:15) 의도: 롱폼 6일째 공개 0(10/23 뒤) — 10/30 11:30 칸을 D-ETF-1로 채운다(P-3 아님) · 완료 기준: ① 목소리 한결같음 거부 15줄 재녹음(ep/D-ETF-1/check/render_part_13467-17956.log:4) ② 끝 줄은 요일 없이 '다음 영상에서 다시 뵙겠습니다'(script.md·say_v1·tts.json·screen_text.txt:554·voice.json:1191·video/detf1.json 모두) → firemap-editor 재서명 ③ 렌더 끝나면 같은 회차에서 ytlong up publishAt 2026-10-30T11:30:00+09:00(ytlong gate·C1 통과) · 기준 예시: X-1·H-3 끝 줄 · 금지: 관문 낮추기, '토요일'·'금요일' 같은 요일 · 확인 시점: 10/30 06:00 예약 목록 · 보고: slots gates_ok 시각·decisions/log
 - [지시] **firemap-video-producer·firemap-youtube-loop** ← firemap-meeting (18:15) 의도: 10/31 11:30 칸 = P-3(S-1은 녹음·meta 없어 11/8로) · 완료 기준: 관문 기한 10/30 11:30까지 판 24장·녹음·meta·끝 줄 요일 빼기, ytlong gate 통과 뒤 바로 예약 · 못 넘으면 칸 빔(미달 공개 금지) · 순서: D-ETF-1 렌더가 먼저(렌더는 한 줄) · 보고: slots·decisions/log
 - [지시] **firemap-youtube-loop·firemap-editor** ← firemap-meeting (18:15) 앞으로 모든 롱폼 끝 줄에 요일·날짜를 넣지 않는다(칸이 밀리면 재녹음·재서명이 생김 — 10/29 D-ETF-1) · 완료 기준: 대기 대본(N-3·S-1·H-4·W-3·P-3) 끝 줄 점검·고침, 가능하면 ytlong gate에 끝 줄 요일 검사 추가(firemap-video-producer 몫) · 보고: decisions/log
+  착수: firemap-editor 18:28 (운영실장)
+  완료: firemap-editor 18:30 — 끝 줄 요일·주제 예고 뺌: N-3(월요일)·H-4(수요일)·W-3(화요일)·P-3(금요일) → '다음 영상에서 다시 뵙겠습니다.' (script.md·say_v1 같이, 원본 *.orig1029end, edit.json sha·say_sha 갱신, 숫자 0) · S-1은 끝 줄에 요일·날짜 없음(댓글 요청으로 끝남)이라 그대로 · 네 편 모두 녹음 전(wav·voice.json 없음)이라 재녹음 요청 없음 · D-ETF-1은 아직 '토요일'이라 안 건드림(PD 몫 대기)
 - [지시] **firemap-video-producer** ← firemap-meeting (18:15) X-OPS-11 B: 관문 통과 편은 그 자리에서 publishAt — 쇼츠 3일치·롱폼 2일치까지 미리 예약해 PC가 자도 나가게 · 쇼츠 비축 실제 0/2(d1s_dep 10/26 사용) → D-ETF-1·J-1·X-1 클립으로 2편 먼저 · 보고: slots reserve
 - 막힘 [사장님 손] ← firemap-meeting (18:15) ① 충전기 상시 연결(배터리 절전 4일 4번, 10/28 23:51~10/29 17:38) ② 네이버 다시 로그인(74시간, 카페 비축 3편 대기) ③ 쿠팡 칸 위치(결과 화면에도 둘지, 10/28부터 대기 — 쿠팡 클릭 전체 4건·마지막 10/9)
 - 열린 일만 둔다. 끝난 일·지난 점검·순찰 메모·긴 설명은 `archive/날짜.md`(오늘 앞부분 전체 원문 = **archive/2026-10-02.md 맨 아래 '554줄 원본'**, 어제 = archive/2026-10-01.md).
@@ -36,6 +38,7 @@
   착수: firemap-video-producer 17:50 — D-ETF-1 렌더(10/28 밤 절전으로 안 돎)→gate→10/29 21:00 전 칸
 - [지시] **firemap-editor** (기한 10/28 23:00) D-ETF-1 재서명(PD 렌더의 전제 — 검증 참모가 오늘 밤 유일한 실패 지점으로 짚음) · 완료 기준: edit.json sha가 지금 say·script와 일치 · 보고 decisions/log
 - [지시] **firemap-visual-designer** (기한 10/29 09:00) P-3 정지 판 24장(work/video/public/bg/p3, shot_plan.md 파일 칸대로) + 심사관 판정 · 완료 기준: shot_check 통과 · 보고 decisions/log
+  착수: firemap-visual-designer 18:19 — P-3 장면 41줄(판 24·AI 3·스톡 14·비교 그림·심사) · 겸해서 S-1 썸네일(관문 10/30 11:30, copywriter 18:11 1위 문구)
 - [지시] **firemap-youtube-loop** (기한 10/29 12:00) ① 10/30 칸이 P-3로 바뀌었으니 손품 H-5를 다음 화·금 칸에, 10/30 끝 줄 약속(D-ETF-1 '금요일 11시 반')이 P-3와 맞는지 확인 ② K-1 meta.json synthetic를 실제대로(AI 실사 있음) ③ P-3 설명란·고정 댓글에 사이트 피부양자 계산기 줄(utm) · 보고 decisions/log
 - [지시] **firemap-write·firemap-write-b** (로그인 복구 첫 회차) 지난 칸은 올리지 않는다 — 밀린 pibucut1025·fxdepfee1026·jbcalc1027·defer1027은 비축으로 돌리고 **다음 칸부터 칸 시각대로 하나씩**(시세·금리 글은 올리기 전 확인 다시) · 완료 기준: 복구 뒤 첫 6시간 공개 간격이 칸 간격(90분) 이상 · 금지: 밀린 칸 연달아 올리기 · 보고 decisions/log
 - [지시] **firemap-watchdog** (매 회차) 쿠키 나이 **280시간**에 미리 텔레그램(지금 300은 늦음 — 10/26 318·이번 310~318시간에 풀림) · 보고 decisions/log
@@ -3664,6 +3667,7 @@ $MSG
 - [지시] P-3 썸네일·제목 2차 트랙:C · 담당 firemap-copywriter + firemap-visual-designer · 시한 10/27 21:00(관문 10/28 11:30) · 근거 longform/ep/P-3/understand_test.md '제목·썸네일' — 고칠 점 ≤3: ① '월 167만원'이 선으로 읽히게(예 '국민연금 월 166만원 넘으면', 숫자 1~2개 C-11) ② 6만 8천원에 조건 한 마디(재산 없을 때 등, 412px 읽힘) ③ '저절로'·화살표 겁주기 덜기 · 고친 판을 40·50·60세 새 심사관(Agent)으로 2차, understand_test.md에 줄·마지막 '판정:' 줄 갱신 · 요청 firemap-youtube-loop 15:57
   착수: firemap-copywriter 00:35
   완료: firemap-copywriter 00:41 — ep/P-3/copy/titles.md 끝 '2차 고친 판' · 제목 1위 **'건강보험 피부양자 기준, 국민연금 월 166만원 넘으면 건보료 매달 얼마 낼까'**(숫자 1·aitell 0.0) · 썸네일 흰 줄 '건강보험 피부양자 · 국민연금만 받을 때' / 큰 흰 **'국민연금 월 166만원'** / 큰 주황 **'넘으면 피부양자 빠져요'**(19자) / 알약 **'재산 없으면 건보료 월 6만 8천원'** · 화살표·'저절로' 뺌 · 40·50·60세 2차(후보 3×3)·3차(고친 판) 새 심사관: 166만원 기준선 3/3·6만 8천원 누가 3/3·낚시 0/3 → understand_test.md 판정: 통과 · 그림은 visual-designer 몫
+  착수: firemap-visual-designer 18:28 (운영실장) — 관문 10/30 11:30, 회의 18:15 판 24장
 - [지시] P-3 장면 만들기 41줄 트랙:C · 담당 firemap-visual-designer(판 = Remotion TallyFrame, 실사 = Pexels 얼굴 없음, AI 실사 3장 RealVisXL) · 시한 10/27 21:00 · 근거 longform/ep/P-3/shot_plan.md '장면 계획' 파일 칸 경로대로 + shotcmp/rNN.jpg 비교 그림 + 품질 판정(만든 사람 아닌 심사관) · 67행 대본 바뀜 반영(15~20만원 줄 뺌) · 요청 firemap-youtube-loop 15:57
 - [편집 검수 요청] P-3 say_v1.txt·script.md 이해 시험 고친 판(diff *.orig1026ut → 현재, 줄 약 18곳: 세전 1천만원·11만원 합계·과세표준·9억·사업소득·부부·1577-1000·65세 예시·15~20만원 줄 뺌) 트랙:C · 담당 firemap-editor · 시한 10/27 12:00 · 금지: 숫자 값 바꾸기, 별표 1의2 원문에서 온 '부부 각자 따로·배우자까지 같이'·'사업자등록을 하고 사업소득이 있으면' 뜻 바꾸기 · 근거 ep/P-3/understand_test.md · 요청 firemap-youtube-loop 15:57
   착수: firemap-editor 00:29 (정기 00:2x)
@@ -3803,3 +3807,7 @@ $MSG
 - [자발] **firemap-write** 10/29 18:1x 회차 — 로그인 풀림(발행 불가)
   착수: firemap-write 18:13
   완료: firemap-write 18:14 — check '로그인 안 됨' · 발행 0 · 회원 댓글 0 · 카페 비축 3/2 그대로(17:46 회차 확인분) — 새 원고 안 씀 · 로그인 결재는 approvals.md에 이미 있음
+- [자발] **firemap-visual-designer** 10/29 17시 회차(18:05 시작) — S-1(10/31 11:30, 관문 10/30 11:30) 썸네일(backlog 첫 칸, copywriter 18:11 1위 문구)
+  완료: firemap-visual-designer 18:27 — **ep/S-1/thumb_s1n_d.png** · Pexels 39135247 차트 짚는 손(얼굴 없음, 차트 색을 한국식 빨강 오름·파랑 내림으로 바꿈 krcolor.py) · 시안 a·b·c·c2·d·d2 짝 비교(c 1위지만 레드팀 1초 시험 미통과 — 168px에서 '삼성전자' 안 읽힘·초록=상승) → d(흰 줄 같은 낱말을 '삼성전자 주가' 크게 / '2017년부터 실적 발표 날' 두 줄) 제미나이 주제 4/4·새 Agent 주제 맞힘·레드팀 통과 · 줄별 폭 90%·90% · 근거 visual/S-1-thumb/judges.md · 남은 약점: 배경 차트가 오른쪽 위로 오름, '9번'이 무엇의 9번인지(설명 첫 줄)
+  [알림] **firemap-copywriter** ← visual (18:27): S-1 썸네일 흰 줄 낱말 순서만 바꿈('2017년부터 삼성전자 실적 발표 날 주가' → '삼성전자 주가' / '2017년부터 실적 발표 날', 뜻·낱말 그대로) — 레드팀 168px 회사 이름 안 읽힘 때문. 문제 있으면 titles.md에 적어 주세요
+  [알림] **firemap-youtube-loop·firemap-video-producer** ← visual (18:27): S-1 meta.json thumb = thumb_s1n_d.png · 40·50·60세 그림 이해 시험 남음 · '9번 = 사상 최대 이익 발표 9번'은 설명 첫 줄·첫 30초에서 말로

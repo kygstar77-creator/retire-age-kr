@@ -33,7 +33,7 @@ def get(pid, name):
     p = api(f'https://api.pexels.com/v1/photos/{pid}')
     os.makedirs(os.path.join(H, 'photo'), exist_ok=True)
     fn = os.path.join(H, 'photo', name + '.jpg')
-    open(fn, 'wb').write(urllib.request.urlopen(urllib.request.Request(p['src']['large2x'], headers=UA), timeout=60).read())
+    open(fn, 'wb').write(urllib.request.urlopen(urllib.request.Request(p['src']['original'], headers=UA), timeout=60).read())
     sp = os.path.join(H, 'photo', 'sources.json')
     src = json.load(open(sp, encoding='utf-8')) if os.path.exists(sp) else {}
     src[name + '.jpg'] = {'site': 'Pexels', 'id': p['id'], 'by': p['photographer'], 'url': p['url'], 'alt': p.get('alt', ''),

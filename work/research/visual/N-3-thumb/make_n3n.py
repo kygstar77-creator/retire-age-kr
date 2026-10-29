@@ -48,3 +48,5 @@ make('n3n_a.png', 'crowd_crossing_aerial_16456831.jpg', 0.0, T)
 make('n3n_b.png', 'two_suits_back_31863763.jpg', 0.35, T)
 # c: a 사진을 1.35배 당겨 아래·왼쪽으로 — 건너는 사람들을 위쪽 절반에(C-03), 오른쪽 '東京駅南口' 표지판(외국 장소 단서)은 화면 밖으로
 make('n3n_c.png', 'crowd_crossing_aerial_16456831.jpg', 0.9, T, xa=0.35, zoom=1.35)
+# d(10/29 visual): c가 제미나이 'AI 사진 티' 4/4·일본 교차로(레드팀) → 한국 거리 실사 Pexels 19271600(비 오는 서울 남대문로 횡단보도, 우산 든 사람들 작게·얼굴 없음, original)
+make('n3n_d.png', 'seoul_crosswalk_backs_19271600.jpg', 0.55, T)

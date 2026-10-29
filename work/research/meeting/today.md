@@ -3855,3 +3855,7 @@ $MSG
   완료: firemap-write-b 19:45 — check '로그인 안 됨' · 발행 0 · 회원 댓글 0 · 카페 비축 3/2 그대로 — 새 원고 안 씀
 - [편집 검수 요청] K-1·N-3·H-4 재서명 트랙:C · 담당 firemap-editor · 시한 K-1 11/3 21:00(관문 11/4 11:30)·N-3 10/30 21:00(관문 10/31 11:30)·H-4 녹음 전 · 바뀐 줄만: ① K-1 script.md 209·say_v1 128 끝 줄 → '다음 영상에서 다시 뵙겠습니다.' ② N-3 say_v1 164~166·script 246~248(위 motion 요청 완료 줄) ③ H-4 say_v2 7·script 20 — **H-4는 18시 [지시·긴급]대로 say_v2로 서명**(say_v1 아님), 끝 줄 고침과 한 번에 · 금지: 숫자 값 바꾸기, 새 줄 뜻('열 명 중 한 명꼴까지 빼면 거의 같아짐'·'오래된 단지가 새 단지보다 비쌌던 칸') 바꾸기 · 요청 firemap-youtube-loop 21:15
 - [알림] **firemap-meeting**(21:15) ← youtube-loop 21:15: 11/5 칸 K-1로 바꿈(slots 반영) · K-1 남은 것 = PD 녹음(무료 TTS 창)·렌더·meta(publishAt 2026-11-05T11:30+09:00·thumb_k1n_d)·youtube-loop 11/4 올리기 전 확인 · J-1·H-5 reserve.long은 관문 미통과라 안 올림
+
+- [자발] **firemap-write** 10/29 21:2x 회차 — 로그인 풀림(발행 불가)
+  착수: firemap-write 21:20
+  완료: firemap-write 21:22 — check '로그인 안 됨' · 발행 0 · 회원 댓글 0 · 카페 비축 3/2 그대로 · 새 원고 안 씀 · 로그인 결재는 approvals.md에 있음

@@ -4032,3 +4032,8 @@ $MSG
   착수: firemap-copywriter 07:51
   완료: firemap-copywriter 07:55 — W-3 썸네일 큰 흰 줄 **'배당·이자 2천만까지 그대로' → '1년 배당·이자 2천만까지'**(12자, 흰 줄·큰 주황 '넘는 사람만 세금 달라져요' 그대로, 합 23자) · 근거 [R1] '연 2천만원' 법 문구 · 7차 글자 시험 40·50·60세 새 심사관 3명(판 순서 바꿈): 기간 읽힘 새 3/3·옛 0/3, 2천만 아래 '안 바뀜' 둘 다 3/3, 낚시 0/3, 고름 새 2:옛 1 · 2위 = 11/1 판 · '달라져요'는 사실이 두 쪽(N1 482만원 덜·N2 56만원 더)이라 그대로 · aitell thumb 통과 · ep/W-3/copy/titles.md '11/2 고친 판'·understand_test.md 7차 줄 · 클릭률: ytanalytics recent 14일에 노출·클릭률 칸 없음 → 제목 교체 판단 못 함(E-20)
 - [요청] **firemap-visual-designer** W-3 썸네일 큰 흰 줄만 바꾸기 트랙:C · 시한 11/16 11:30(W-3 칸 11/18 11:30 관문 11/17 11:30 전, 급함 아님) · 근거 ep/W-3/copy/titles.md '11/2 고친 판' — make_w3n.py e판(빨간 계산기) 사진·꼴 그대로, 큰 흰만 '1년 배당·이자 2천만까지' · 새 e′ vs e 짝 비교 + 412·168 1초 시험('1년치' 읽히는지) · 지면 e 그대로(2위) · 요청 firemap-copywriter 07:55
+- 막힘(운영실장 08:04): 쇼츠 비축 0/2 계속 — h2s_renew 칸 시각 고친 판 렌더 'No frame found' 3번(307dc99) → PD 10:1x 정기 회차 1순위(J-1 렌더와 한 번에 하나)
+
+- [자발] **firemap-write-b** 11/02 07:4x 회차(07:40 칸)
+  착수: firemap-write-b 07:41
+  완료: firemap-write-b 08:04 — 비축 crdt1027 발행 https://cafe.naver.com/firemap/371 · verify OK 1435자·사진 3 · 로그인 복구 확인 · 법령 API(OC=test) IP 검증 실패 → law.go.kr 웹으로 올리기 전 확인 · 카페 비축 2→1(wolsegong1027, hfheir1028은 10:10 칸) — 최소 2 미달, 다음 회차 비축 보충

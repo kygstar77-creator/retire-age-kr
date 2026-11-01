@@ -43,19 +43,19 @@
 | 장 | 대본 줄(요지) | 구상 | 따라 한 경쟁 장면 # | 도구 | 파일 | 비교 그림 | 품질 판정 |
 |---|---|---|---|---|---|---|---|
 | 0. 여는 말 | 안녕하세요, 파이어맵 · 연봉 실수령액 이야기 | 월급날 아침 휴대폰 은행 앱 알림을 보는 손(얼굴·화면 글자 흐림), 위 글자 '파이어맵' | #14 · #5 | Pexels 스톡 영상 | bg/n3/stock/payday_phone.mp4 | shotcmp/r01.jpg | 만들 차례 |
-| 0. 여는 말 | 연봉 5천이면 통장에 한 달 얼마? → 357만원쯤 | 큰 글자 '연봉 5,000만원 → 통장 월 ?' · 말이 닿을 때 '?'가 '357만원쯤'으로 열림(주황), 작은 줄 '1인·식대 비과세 월 20만원·2026 요율' | #4 · #7 | Remotion TallyFrame | bg/n3/board/n3_hook357.png | shotcmp/r02.jpg | 만들 차례 |
-| 0. 여는 말 | 백 명 줄 세우면 몇 번째? → 앞에서 서른세 명 안 | 사람 100명 줄(N 시리즈 같은 그림) · 33명 안쪽 자리에 주황 점 · 답 자리 '?' 두었다 열림 | #9 · #12 | Remotion TallyFrame(줄 그림 움직임) | bg/n3/board/n3_line100_33.png | shotcmp/r03.jpg | 만들 차례 |
-| 0. 여는 말 | 오늘 볼 것: 일곱 칸·덜 느는 칸·거꾸로·같은 연봉 다른 통장 | 목차 판 네 줄 체크박스, 줄마다 작은 아이콘(사다리·계단·거꾸로 화살표·저금통 둘) | #7 · #1 | Remotion TallyFrame | bg/n3/board/n3_toc.png | shotcmp/r04.jpg | 만들 차례 |
+| 0. 여는 말 | 연봉 5천이면 통장에 한 달 얼마? → 357만원쯤 | 큰 글자 '연봉 5,000만원 → 통장 월 ?' · 말이 닿을 때 '?'가 '357만원쯤'으로 열림(주황), 작은 줄 '1인·식대 비과세 월 20만원·2026 요율' | #4 · #7 | Remotion TallyFrame | bg/n3/board/n3_hook357.png | shotcmp/r02.jpg | 판 만듦 11/1(visual n3boards.py) · 비교 그림·새 심사관 판정 대기 |
+| 0. 여는 말 | 백 명 줄 세우면 몇 번째? → 앞에서 서른세 명 안 | 사람 100명 줄(N 시리즈 같은 그림) · 33명 안쪽 자리에 주황 점 · 답 자리 '?' 두었다 열림 | #9 · #12 | Remotion TallyFrame(줄 그림 움직임) | bg/n3/board/n3_line100_33.png | shotcmp/r03.jpg | 판 만듦 11/1(visual n3boards.py) · 비교 그림·새 심사관 판정 대기 |
+| 0. 여는 말 | 오늘 볼 것: 일곱 칸·덜 느는 칸·거꾸로·같은 연봉 다른 통장 | 목차 판 네 줄 체크박스, 줄마다 작은 아이콘(사다리·계단·거꾸로 화살표·저금통 둘) | #7 · #1 | Remotion TallyFrame | bg/n3/board/n3_toc.png | shotcmp/r04.jpg | 판 만듦 11/1(visual n3boards.py) · 비교 그림·새 심사관 판정 대기 |
 | 1. '연봉'은 어느 돈인가 | 처음 보시는 분 — 연봉이 어떤 돈인지 | 책상 위 급여명세서와 계산기, 펜 든 손(글자 흐림) | #5 · #2 | Pexels 스톡 영상 | bg/n3/stock/payslip_calc.mp4 | shotcmp/r05.jpg | 만들 차례 |
-| 1. '연봉'은 어느 돈인가 | 계약 연봉(세전) / 국세청 총급여 / 통장(세후) | 세 칸 화살표 흐름 — 칸이 차례로 나타남, '총급여' 칸 아래 작은 줄 '상여 넣고 식대 뺌' | #8 · #5 | Remotion TallyFrame | bg/n3/board/n3_three_money.png | shotcmp/r06.jpg | 만들 차례 |
-| 1. '연봉'은 어느 돈인가 | 식대 월 20만원 → 한 해 240만원 빠짐 → 5천은 4,760만원으로 섬 | 식 조각 쌓기 '5,000 − 240 = ?' → '4,760만원' 열림 + 원천징수영수증 '총급여' 칸 모양 그림(자체 제작, 실제 서식 캡처 아님) | #2 · #4 | Remotion TallyFrame | bg/n3/board/n3_4760.png | shotcmp/r07.jpg | 만들 차례 |
-| 1. '연봉'은 어느 돈인가 | 국세청은 1%씩 묶은 구간 평균만 → 두 구간 평균 사이로 읽음 | 줄 그림을 1% 덩어리 상자로 묶고 상자마다 평균 깃발 하나, 내 점은 두 깃발 사이 | #9 · #10 | Remotion TallyFrame | bg/n3/board/n3_percentile_box.png | shotcmp/r08.jpg | 만들 차례 |
+| 1. '연봉'은 어느 돈인가 | 계약 연봉(세전) / 국세청 총급여 / 통장(세후) | 세 칸 화살표 흐름 — 칸이 차례로 나타남, '총급여' 칸 아래 작은 줄 '상여 넣고 식대 뺌' | #8 · #5 | Remotion TallyFrame | bg/n3/board/n3_three_money.png | shotcmp/r06.jpg | 판 만듦 11/1(visual n3boards.py) · 비교 그림·새 심사관 판정 대기 |
+| 1. '연봉'은 어느 돈인가 | 식대 월 20만원 → 한 해 240만원 빠짐 → 5천은 4,760만원으로 섬 | 식 조각 쌓기 '5,000 − 240 = ?' → '4,760만원' 열림 + 원천징수영수증 '총급여' 칸 모양 그림(자체 제작, 실제 서식 캡처 아님) | #2 · #4 | Remotion TallyFrame | bg/n3/board/n3_4760.png | shotcmp/r07.jpg | 판 만듦 11/1(visual n3boards.py) · 비교 그림·새 심사관 판정 대기 |
+| 1. '연봉'은 어느 돈인가 | 국세청은 1%씩 묶은 구간 평균만 → 두 구간 평균 사이로 읽음 | 줄 그림을 1% 덩어리 상자로 묶고 상자마다 평균 깃발 하나, 내 점은 두 깃발 사이 | #9 · #10 | Remotion TallyFrame | bg/n3/board/n3_percentile_box.png | shotcmp/r08.jpg | 판 만듦 11/1(visual n3boards.py) · 비교 그림·새 심사관 판정 대기 |
 | 2. 연봉 사다리 3천~1억 | 이제 일곱 칸 | 계단을 오르는 발, 아래에서 올려다본 각도 | #11 · #6 | Pexels 스톡 영상 | bg/n3/stock/stairs_feet.mp4 | shotcmp/r09.jpg | 만들 차례 |
-| 2. 연봉 사다리 3천~1억 | 3천 224만 · 4천 294만 · 5천 · 6천 420만 | 사다리 표(연봉 / 통장 월 / 100명 중) 한 줄씩 열림, 지금 칸만 주황 + 손 동그라미 — 3천~6천 | #2 · #6 | Remotion TallyFrame(표) | bg/n3/board/n3_ladder_a.png | shotcmp/r10.jpg | 만들 차례 |
-| 2. 연봉 사다리 3천~1억 | 7천 482만 · 8천 537만 · 1억 653만 | 같은 표 이어서 7천~1억(앞 줄은 회색으로 남김) | #2 · #6 | Remotion TallyFrame(표) | bg/n3/board/n3_ladder_b.png | shotcmp/r11.jpg | 만들 차례 |
-| 2. 연봉 사다리 3천~1억 | 막대 — 세전 월급 대비 통장 몫 89.8% → 78.4% | 일곱 칸 막대: 세전(회색)·통장(주황) 나란히, 끝에 몫 % 작은 글씨, 1억 칸에 손 동그라미 | #11 · #6 | Remotion TallyFrame(막대) | bg/n3/board/n3_share_bars.png | shotcmp/r12.jpg | 만들 차례 |
+| 2. 연봉 사다리 3천~1억 | 3천 224만 · 4천 294만 · 5천 · 6천 420만 | 사다리 표(연봉 / 통장 월 / 100명 중) 한 줄씩 열림, 지금 칸만 주황 + 손 동그라미 — 3천~6천 | #2 · #6 | Remotion TallyFrame(표) | bg/n3/board/n3_ladder_a.png | shotcmp/r10.jpg | 판 만듦 11/1(visual n3boards.py) · 비교 그림·새 심사관 판정 대기 |
+| 2. 연봉 사다리 3천~1억 | 7천 482만 · 8천 537만 · 1억 653만 | 같은 표 이어서 7천~1억(앞 줄은 회색으로 남김) | #2 · #6 | Remotion TallyFrame(표) | bg/n3/board/n3_ladder_b.png | shotcmp/r11.jpg | 판 만듦 11/1(visual n3boards.py) · 비교 그림·새 심사관 판정 대기 |
+| 2. 연봉 사다리 3천~1억 | 막대 — 세전 월급 대비 통장 몫 89.8% → 78.4% | 일곱 칸 막대: 세전(회색)·통장(주황) 나란히, 끝에 몫 % 작은 글씨, 1억 칸에 손 동그라미 | #11 · #6 | Remotion TallyFrame(막대) | bg/n3/board/n3_share_bars.png | shotcmp/r12.jpg | 판 만듦 11/1(visual n3boards.py) · 비교 그림·새 심사관 판정 대기 |
 | 2. 연봉 사다리 3천~1억 | 급여명세서 '실지급액'과 비교 · 상여 달은 따로 | 명세서 맨 아래 '실지급액' 칸을 가리키는 손가락(실사, 글자 흐림) | #5 | Pexels 스톡 영상 | bg/n3/stock/payslip_point.mp4 | shotcmp/r13.jpg | 만들 차례 |
-| 2. 연봉 사다리 3천~1억 | 1억 위 두 칸 — 1억 2천 761만 · 1억 5천 902만, 몫 72% | 사다리 표 아래로 두 줄 더 열림 · 1억 5천 줄 몫 '72%'만 주황 | #6 · #4 | Remotion TallyFrame(표) | bg/n3/board/n3_ladder_c.png | shotcmp/r14.jpg | 만들 차례 |
+| 2. 연봉 사다리 3천~1억 | 1억 위 두 칸 — 1억 2천 761만 · 1억 5천 902만, 몫 72% | 사다리 표 아래로 두 줄 더 열림 · 1억 5천 줄 몫 '72%'만 주황 | #6 · #4 | Remotion TallyFrame(표) | bg/n3/board/n3_ladder_c.png | shotcmp/r14.jpg | 판 만듦 11/1(visual n3boards.py) · 비교 그림·새 심사관 판정 대기 |
 | 3. 어디서 빠지나 | 무엇이 얼마나 빠질까 | 수도꼭지 물이 여러 갈래로 나뉘어 흐르는 장면 | #8 | Pexels 스톡 영상 | bg/n3/stock/water_split.mp4 | shotcmp/r15.jpg | 만들 차례 |
 | 3. 어디서 빠지나 | 세전 416만 → 소득세·연금 19만씩 … 합계 60만 → 통장 357만 | 폭포 그림: 세전 막대에서 한 칸씩 내려감(연금·건강·장기요양·고용·소득세·지방세), 마지막 칸 통장만 주황 | #8 · #5 | Remotion TallyFrame(폭포 움직임) | bg/n3/board/n3_waterfall.png | shotcmp/r16.jpg | 만들 차례 |
 | 3. 어디서 빠지나 | 연봉 3천 빠지는 26만 중 세금 3만 / 1억 180만 중 세금 109만 | 두 도넛 나란히 — 세금 몫만 주황(12.5% / 60.2%), 숫자는 '26만원'·'180만원' 말 단위 | #11 · #10 | Remotion TallyFrame(도넛) | bg/n3/board/n3_donuts.png | shotcmp/r17.jpg | 만들 차례 |

@@ -3946,6 +3946,7 @@ $MSG
   완료: firemap-visual-designer 19:12 — N-3 장면 41줄 중 0~2장 판 10장(r02·03·04·06·07·08·10·11·12·14) bg/n3/board/ · 만든 코드 visual/N-3-shots/n3boards.py · 새 Agent 심사 7 통과·3 고칠 것(toc 체크·1% 칸 사람 수·8천 81%) 고침 · shot_plan 품질 칸 '판 만듦·비교 그림·판정 대기' · **남은 29줄**(판 17·계산기 화면 1·스톡 11, r19·r37 motion) — 비교 그림·경쟁 대비 품질 판정은 전 줄 남음
 - [지시·전체] 순돌이 (19:07) 사장님 11/1 '쇼츠는 하루 하나씩, 롱폼은 이틀에 하나씩 올리고 퀄리티를 높여줘' · '카페 글 발행하는 것도 하루 6회로 줄이고 퀄리티를 올려줘' → slots.json cadence: 쇼츠 17:20 1칸 · 롱폼 11:30 이틀에 1칸(long_every_days 2, 기준 11/2) · 카페 6칸 07:40·10:10·12:40·16:10·18:40·22:40 · naverpost DAY_CAP 카페 6(간격 120분) · shortsdaily DAY_CAP 1 · ytlong C1 롱폼 앞뒤 2일 띄움 · patrol 이틀 칸 반영. **firemap-meeting·dispatcher**: 이미 배정된 11/2 이후 칸을 새 칸에 맞게 다시 배정(롱폼은 11/2·4·6…, 남는 롱폼 편은 다음 칸으로 미루고 품질 보강에 씀 — 빼지 말고 순서만), 지워진 카페 칸 묶음은 다음 칸으로. SKILL '빈도 줄이고 품질 올리기' 절
 - 막힘(운영실장 19:14): firemap-visual-designer N-3 장면 완료 기준 미달 — 41줄 중 판 10장만, 남은 29줄(판 17·계산기 r40 1·Pexels 11)·새 심사관 2명 shotcmp 판정 전 → 다음 visual 회차·배차 1순위(사용량 문제 아님, 양 문제)
+  착수: firemap-visual-designer 23:09 (운영실장, 남은 29줄 이어서)
 - [결정 요청] **firemap-meeting**(21:15)·**순돌이** ← firemap-video-producer 11/1 19:24: 쇼츠 예약 0 — 관문 다 넘은 클립 2편(h3s_jeonse 11/2 17:20용·de1s_jepi 07:20용)이 w1g1clips_check **ⓓ '최근 10편 중 같은 틀 50% 넘음'**(m1clip 6/10)에 막힘 · ⓓ는 기준표 E-18(10/19 '횟수 상한 뺌 → 그 틀 최근 3편 중앙 < 채널 최근 20편 중앙이면 쉼')이 코드에 안 들어간 옛 값 · 그런데 E-18로 재도 m1clip 최근 3편 995·199·416(중앙 416) < 채널 최근 20편 중앙 980 → **쉼** · C1S(c1clip)로 다시 렌더하면 ⓓ는 넘지만 10/19 뒤 C1S·M1S 'live'는 같은 부품(LiveSceneBody)이라 이름표만 바꾸는 꼴 → 하지 않음 · 필요한 결정: ① 'live' 클립 틀 자체가 쉬어야 하는지(10/19 뒤 live 3편 199·416·1,025) ② 다른 꼴(c2person 사람 실사형, 최근 1,627·628·514) 클립을 만들지 ③ ⓓ를 E-18로 고칠지 · 그때까지 두 편은 비축(관문 기록 review.md, 업로드만 남음)
 - [자발] **firemap-write-b** 11/01 19:3x 회차(18:40 칸) — 로그인 풀림(발행 불가)
   착수: firemap-write-b 19:30
@@ -3958,6 +3959,8 @@ $MSG
   완료: firemap-youtube-loop 20:44 — N-3 3장 '낮은 연봉은 보험료가, 높은 연봉은 세금이 통장을 줄이는 셈이죠' → **'세금이 보험료보다 많아지는 건 연봉 8천 칸부터예요.'**(say_v1 72·script 112, 원본 *.pre1101tax) · calc_out A 손셈: 7천 세금 464,660 < 보험료 넷 547,360 · 8천 671,250 > 628,330 — motion blocks 판 3천·5천·7천·8천 칸과 같은 말 · research.md 대조 1줄 더함 · aitell 12.0 통과·research_check strict 통과·scriptnum 사실표 밖 0
 - [요청] **firemap-motion-designer** ← youtube-loop (20:44) N-3 n3props.py 69·70행 has()/cut() 시작 문구 '낮은 연봉은 보험료가' → '세금이 보험료보다 많아지는 건' (blocks lines 첫 줄 글자도) · 근거 ep/N-3/say_v1.txt 72
 - [편집 검수 요청] N-3 재서명 1줄 트랙:C · 담당 firemap-editor · 시한 N-3 녹음 전 · say_v1 72·script 112만 바뀜(위 완료 줄) · 금지: '8천 칸부터' 값 바꾸기 · 요청 firemap-youtube-loop 20:44
+  착수: firemap-editor 23:09 (운영실장, J-1 끝 줄과 묶음)
+  완료: firemap-editor 23:11 — J-1 끝 줄 1줄 재서명: say_v5 212·script 325만 바뀜 확인(diff), 숫자 0, script.md.edit.json sha·say_sha 갱신 → lfvoice.signed_ok 통과(''), aitell script 79.2/1000·6% 통과
 - [자발] **firemap-youtube-loop** RT-1 toc_compare.md(경쟁 10편+포화+끝맺음 6편·우리 목차) — backlog RT-1 남은 칸
   착수: firemap-youtube-loop 20:46 (직원 1명 투입)
   완료: firemap-youtube-loop 20:57 — **RT-1 toc_compare.md** 경쟁 16편+참고 2(조회·배수 11/1 Data API) · 포화: 11·12·13번째 새 장 0 · 기대하는 장 26줄 · 끝맺음 8편(구독 말로 부탁 0/6, 요일·날짜 0/8) · 우리 목차 8행(0~6장+정리, research 질문 Q1~Q7 전부) · **우리만 = 4장 금액×근속 격자(일시금 vs 10년 차까지·11년 차~·21년 차~)** — '한 금액 10·25년' 비교는 FVburr9huF8가 이미 함 → 격자로 넓힘 · toc_check [] · 남은 것: '55세' 연금 개시 문구 §40조의2③1 본문 대조 → 대본 · RT-1 11/4 칸은 녹음 창(11/2 16:00)이 빠듯
@@ -3970,6 +3973,8 @@ $MSG
   완료: firemap-write 21:22 — check '로그인 안 됨'(6일째) · 발행 0 · 회원 댓글 0 · 카페 비축 3/2 그대로 · 새 원고 안 씀 · 일감 1번 막힘(로그인) · 로그인 결재는 approvals.md 183행
 
 - [편집 검수 요청·긴급] **firemap-editor** ← firemap-video-producer 11/1 22:19: J-1 끝 줄 1줄 재서명(11/4 11:30 칸, 관문 기한 11/3 11:30 · 녹음 11/2 16:00 창 전에) · 바뀐 곳 say_v5.txt 212·script.md 325 '화요일 오전 11시 반에는 배당 ETF 이야기입니다. 그때 뵙겠습니다.' → '다음 영상에서 다시 뵙겠습니다.'(10/29 회의 끝 줄 규칙, N-3·H-4·W-3·P-3과 같은 문장) · 원본 *.pre1101end · 숫자 0 · 화면 글자 재서명은 녹음·props 다시 만든 뒤 따로 요청
+  착수: firemap-editor 23:09 (운영실장, N-3 재서명 1줄 20:44 요청 묶음)
+  완료: firemap-editor 23:11 — N-3 재서명: say_v1 72·script 112만 바뀜(diff), '8천 칸' 값 그대로(calc_out 8천: 소득세+지방 671,250 > 보험료 628,330 맞음), sha·say_sha 갱신 → signed_ok 통과, aitell script 90.6/1000·12% 통과(기준 ≤92)
 - [알림] **firemap-youtube-loop**(E-18 '모든 틀 쉼' 판정, 기한 11/2 12:00)·**firemap-meeting** ← firemap-video-producer 22:19: 고친 ⓓ(E-18 코드)로 지금 재면 **c1clip은 쉼 아님**(최근 3편 중앙 1,025 > 채널 최근 20편 980) — m1clip 416·c2person 628만 쉼. 판정 전에 확인 부탁 · PD는 D-ETF-1 클립을 c1clip(C1S) 틀로 다시 만들면 11/3 17:20에 낼 수 있음
 - [자발] **firemap-write-b** 11/01 22:4x 회차(22:40 칸) — 로그인 풀림(발행 불가)
   착수: firemap-write-b 22:41

@@ -27,13 +27,18 @@
   완료: firemap-video-producer 22:19 — w1g1clips_check.py ⓓ를 E-18로 바꿈(layout_rest: 공개된 쇼츠 log.jsonl·Data API 지금 조회, 틀 최근 3편 중앙 < 채널 최근 20편 중앙이면 쉼, 못 재면 쉼, 원본 .pre1101e18) · 실측 m1clip 416·c2person 628 < 채널 980 → 쉼, **c1clip 1,025 > 980 → 통과**(마지막 3편 중 qDidv5n8IJ8 d1s_dep) — '모든 틀 쉼'은 사실과 다름(youtube-loop 판정 전 확인 필요) · 클립 하루 1편: de1s_jepi 11/3·h3s_jeonse 11/4 17:20(upload.json), 둘 다 m1clip이라 지금 판으론 안 올림 → 답 5초 안·밝기 Y≥52 고친 판을 c1clip 틀로 다시 만드는 게 다음 일
   착수: firemap-video-producer 22:17 (정기 22:1x 회차)
 - [지시] **firemap-youtube-loop** ← firemap-meeting (21:35) (기한 11/2 12:00, E-07 판정과 같이) 의도: E-18 '모든 틀 쉼' 빈칸을 숫자를 짓지 않고 채움 · 완료 기준: registry E-18에 한 줄 — 근거 4종(공식 반복 콘텐츠 정의·경쟁 실측·연구·사장님 지시) 중 찾은 것만, 채널 중앙 980이 3편/일 시기 값이라는 점과 6일 공개 0 교란을 같이 적음 · 못 찾으면 '판단 못 함'으로 적고 그날 칸 빔 · 롱폼 칸 순서(11/4~11/14)는 겹침만 없으면 바꿔도 됨 · 보고 decisions/log
+  착수: firemap-youtube-loop 00:43 — E-18 빈칸 + E-07 17:20 판정 같이
+  완료: firemap-youtube-loop 00:49 — **'모든 틀 쉼'은 지금 사실 아님**: c1clip 최근 3편 중앙 1,025 > 채널 최근 20편 980 → 통과(PD 22:19 측정과 같음) · m1clip 416·c2person 628·rank 483·cards 298 쉼 · 모든 틀이 쉼일 때 = 근거 4종 중 공식 정책 문구뿐(횟수·대체 규칙 없음) → **판단 못 함·그날 칸 빔** · 채널 980이 하루 3편 시절 값·6일 공개 0 교란 같이 적음 · registry E-18 줄 · **D-ETF-1 클립은 c1clip 틀로**(slots 11/3 item)
 - [지시] **firemap-youtube-loop** ← firemap-meeting (21:35) (기한 11/3 12:00) D-ETF-1(10/30 공개) 48시간+ 평균 시청 비율·30초 유지율을 ytanalytics로 재서 STATE.md에 — J-1 첫 30초 비교 기준선 · 못 재면 '확인 안 함'과 이유
+  진행: firemap-youtube-loop 00:49 — 아직 못 잼: Analytics에 10/30분 3회만 쌓임(평균 시청 50.79%는 3회 값이라 안 씀, 곡선 빈 응답 — 2~3일 지연) · Data API 조회 400·좋아요 4·길이 9:58 · 11/3 아침 회차가 다시 잼
 - [지시] **firemap-write·firemap-write-b** ← firemap-meeting (21:35) 새 6칸(07:40·10:10·12:40·16:10·18:40·22:40, slots에 장르) · 로그인 복구 첫 회차: 지난 칸 버리고 다음 칸부터, 첫 칸은 비축 1편(올리기 전 확인 다시) · 편마다 bench.md(경쟁 3편↑)
   완료(회의 몫): firemap-meeting 21:35 — 위 PD [결정 요청](19:24) 답: ③ ⓓ→E-18로 고침(PD) · ① live 틀은 E-18대로 쉼 · ② c2person도 E-18 쉼이라 새로 만들지 않음 · 빈칸 판정은 youtube-loop
 - 결정 필요(순돌이→사장님): 주간 회의 줄 그대로(충전기·네이버 login·수익 화면 재로그인·쿠팡 칸 위치)
 
 ## ★ 벤치마크 루프 11/1 19시대 — 쇼츠 5판 (근거 research/cardshorts/shorts-gap-1101.md) · 1026 배정 7건 반영 3·일부 2·안 됨 2 · 10/26 뒤 쇼츠 공개 0(6일) · 10/20~26 14편 중앙 1,003·hkFie 1,627 첫 1,400↑
 - [지시] **firemap-youtube-loop** ← benchmark (기한 11/2 12:00) 의도: 하루 1편 남긴 쇼츠 칸 17:20이 우리 실측 최약 시각 · 완료 기준: registry E-07 판정 한 줄(17:20 5편 O6ZC·EtUd·XutiT·zRI8·L6Z4 중앙 416 vs 07:20 8편 1,021·19:20 6편 1,026 — O6ZC는 API 08:20Z=17:20, 10/26 '12:20' 바로잡음, 10/26 정한 '바꿈' 조건 충족·투자 주제 교란 같이 적음) · '바꿈'이면 시각 후보 registry 뒤 slots cadence 고침 · 11/2 쇼츠 2편(07:20 de1s_jepi·17:20 h3s_jeonse upload.json)을 하루 1편에 맞춤 · 보고 decisions/log
+  완료: firemap-youtube-loop 00:49 — **E-07 바꿈 → 쇼츠 칸 19:20** · 17:20 5편(O6ZC 08:20Z 확인) 지금 조회 중앙 416 vs 07:20 10편 1,022·19:20 9편 1,010 → 둘 다의 절반 아래 · 교란: 17:20 5편 중 4편 투자 주제(19:20 투자 편은 965~1,041이라 주제만으론 설명 안 됨)·4편 m1clip(m1clip은 다른 시각 889~1,187) · slots cadence.shorts 19:20·11/2·11/3 칸 19:20 · de1s_jepi 11/3·h3s_jeonse 11/4 upload.json 19:20(둘 다 m1clip 쉼이라 그대로는 안 올림) · registry E-07 줄
+- [알림] **firemap-video-producer·firemap-shorts·firemap-meeting** ← youtube-loop 00:49: 쇼츠 칸 **17:20 → 19:20**(E-07 판정) · publishAt은 T19:20:00+09:00 · 틀은 c1clip만 E-18 통과(m1clip·c2person 쉼) — D-ETF-1 클립은 c1clip(C1S) 틀로
 - [지시] **firemap-copywriter·firemap-video-producer** ← benchmark (기한 de1s_jepi 다음 렌더 전) 의도: A-49 답 5초 안 · 완료 기준: de1s_jepi 답 '매년 7.5%' 첫 등장 19.5초→≤5초, 1.9초 '많이들 이렇게 생각하시죠…'(A71) 빼고 12.0초 계산법·단서(A72)는 답 뒤/설명란 — 새 녹음 없이 줄 순서부터 · review.md '4~15초 줄 — 질문 안/곁가지' 칸 · 보고 decisions/log
 - [지시] **firemap-visual-designer·firemap-motion-designer** ← benchmark (기한 같은 렌더 전) 의도: B-46 고쳤는데 렌더가 여전히 어두움 — de1s_jepi Y 31.3(60 미만 칸 73%)·h3s_jeonse 59.4(교체 전 61.0) vs 경쟁 25편 85 · 완료 기준: de1s 비 창 19~25초·실루엣 34~44초·손 6~17초, h3s 14~19·22~25초 밝은 원본으로 · bright.py Y ≥52(경쟁 25%)·60 미만 칸 ≤30% · 시트 1장 · 보고 decisions/log
 - [지시] **firemap-youtube-loop** ← benchmark (상시) 뉴스 숫자 칸 주 2편(이월 0/18) — 예: 10/30 금값 급락(남 akvcdy1_7rU ×280)
@@ -57,6 +62,7 @@
 - [지시] **firemap-video-producer** (기한 11/2 23:59) 의도: 다음 정지에도 쇼츠가 나가게 · 완료 기준: D-ETF-1(mkAxQPGaDqc) 세로 클립 3편 관문 통과 → 11/2 17:20·19:20·11/3 07:20 publishAt(같은 날 서로 다른 질문) · 렌더는 J-1 렌더 끝난 뒤 · 보고 slots reserve·decisions/log
 - [지시] **firemap-editor** (J-1 끝 줄 요청 오는 대로, 늦어도 11/2 06:50 회차) J-1 끝 줄 재서명 · 완료 기준 edit.json sha = 지금 say·script
 - [지시] **firemap-youtube-loop** (기한 11/2 21:00) H-4·W-3·P-3·N-3 녹음 순서와 새 칸(11/4 뒤) 정하기 — 같은 축 연속 금지, slots 반영 · 보고 decisions/log
+  완료: firemap-youtube-loop 00:49 — 칸(slots): 11/4 J-1 정책 → 11/6 K-1 경제 → **11/8 P-3 정책 → 11/10 H-4 부동산 → 11/12 N-3 경제(소득)** → 11/14 S-1 주식 → **11/16 RT-1 정책 → 11/18 W-3 주식 → 11/20 P-4 정책**(새 칸 3개) · 같은 축 연속 0 · 준비된 대본(서명·shot_plan) 먼저, 대본 없는 RT-1·기획 전 P-4는 뒤로 · H-6(TBD-부동산)은 다음 부동산 칸 · **녹음(16:00 창 하루 1편): 11/2 J-1 → 11/3 K-1 → 11/4 P-3 → 11/5 H-4 → 11/6 N-3 → 11/7 S-1** · 남은 것: H-4 toc_compare·shot_plan·40·50·60 이해 시험(관문 11/9 11:30, 내 몫) · W-3 shot_plan(관문 11/17)
 - [지시] **firemap-write·firemap-write-b** (로그인 복구 첫 회차) 10/28 [지시] 그대로 — 지난 칸 올리지 않음, 다음 칸부터 하나씩, 시세 글은 올리기 전 확인 다시
 - 결정 필요(순돌이→사장님): ① **충전기 상시 연결**(이번 주 65시간 정지 — 칸 12 중 1만 나감) ② 네이버 login(147시간) ③ 쿠팡·애드센스 화면 재로그인(11일째 못 잼) ④ 쿠팡 칸을 은퇴 결과 화면(14일 170뷰)으로 옮길지 · 순돌이 몫: pc-health-guard에 X-OPS-12 넣기 · 사이트 SCHD 예시 문구 손보기
 

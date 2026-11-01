@@ -6,6 +6,7 @@ import React, {useLayoutEffect, useEffect, useRef, useState} from 'react';
 import {Freeze, continueRender, delayRender, Sequence, OffthreadVideo, Img, staticFile, useCurrentFrame, interpolate, spring, Easing} from 'remotion';
 import {Flame, F, T, CL, HandCircle} from './fm';
 import {capChunksCore} from './capchunks';
+import {HandUnderline} from './human';
 
 // ── 10/16 디자인 기준 v3 (근거: work/research/visual/design-spec-1016.md — 돈 분야 30일 조회 상위 쇼츠 10편 실측 중앙값) ──
 // 자막: 한 줄 · 가운데 y 61.3%(경쟁 중앙 61.6%) · 글자 높이 3.3%(경쟁 중앙 3.28%, 우리 v2 2.29%) · 흰 글자 + 검은 테두리, 상자 없음(경쟁 8/9 상자 없음)
@@ -312,7 +313,7 @@ export const LiveBeats: React.FC<{beats: Beat[]; first?: boolean}> = ({beats, fi
   const nb = beats[k + 1]; const asking = !!nb && nb.hot && f >= nb.at - 24 && f < nb.at;
   const show = asking ? {...nb, value: '?'} : b; const t0 = asking ? nb.at - 24 : b.at;
   const sp = first && k === 0 && !asking && b.at <= 0 ? 1 : spring({frame: f - t0, fps: 30, config: {damping: 13, mass: 0.6}});   // A51: 영상 0초 첫 박자는 이미 찍힌 꼴
-  const vz = fit(show.value, IW - 20, show.value === '?' ? 190 : 170, 72); const kz = fit(show.kicker, IW, 60, 40);
+  const vz = fit(show.value, IW - 20, show.value === '?' ? 190 : 170, 56); const kz = fit(show.kicker, IW, 60, 40);   // 11/1 PD: 하한 72→56 — 두 값 한 줄(HDV 10.4% · S&P500 15.4%)이 72px에서 974px로 화면 오른쪽 밖(de1s_jepi 45~49초)
   const hot = show.hot && show.value !== '?'; const circ = hot ? interpolate(f, [b.at + 8, b.at + 30], [0, 1], {...CL, easing: Easing.inOut(Easing.quad)}) : 0;
   const w = units(show.value) * vz;
   return (
@@ -320,7 +321,9 @@ export const LiveBeats: React.FC<{beats: Beat[]; first?: boolean}> = ({beats, fi
       {show.kicker ? <div style={{...F, fontWeight: 800, fontSize: kz, color: '#fff', whiteSpace: 'nowrap', textShadow: outline(5), marginBottom: 26, opacity: Math.min(1, sp * 1.5)}}>{show.kicker}</div> : null}
       <div style={{position: 'relative', ...F, fontWeight: 800, fontSize: vz, lineHeight: 1.1, letterSpacing: vz > 100 ? -4 : -2, color: hot ? ORG : '#fff', whiteSpace: 'nowrap', textShadow: outline(7),
         transform: `scale(${0.82 + 0.18 * sp})`, opacity: Math.min(1, sp * 1.6)}}>{show.value}
-        {hot ? <svg style={{position: 'absolute', left: '50%', top: '50%', width: 1, height: 1, overflow: 'visible'}}><HandCircle cx={0} cy={vz * 0.04} rx={w / 2 + vz * 0.22} ry={vz * 0.6} p={circ} color={ORG} /></svg> : null}
+        {hot && w / 2 + vz * 0.22 <= 470 ? <svg style={{position: 'absolute', left: '50%', top: '50%', width: 1, height: 1, overflow: 'visible'}}><HandCircle cx={0} cy={vz * 0.04} rx={w / 2 + vz * 0.22} ry={vz * 0.6} p={circ} color={ORG} /></svg> : null}
+        {/* 11/1 PD: 긴 답(두 값 한 줄)은 동그라미가 화면 밖(x 1032)으로 나가 안전 영역에 걸림(de1s_jepi 45~49초) → 손 밑줄로 */}
+        {hot && w / 2 + vz * 0.22 > 470 ? <HandUnderline x={0} y={vz * 1.12} w={w} p={circ} color={ORG} stroke={7} /> : null}
       </div>
     </div>
   );

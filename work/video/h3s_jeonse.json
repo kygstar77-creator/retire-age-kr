@@ -1,0 +1,303 @@
+{
+ "fps": 30,
+ "name": "h3s_jeonse",
+ "v": 2,
+ "look": "live",
+ "question": [
+  "서울 아파트 7곳 실거래",
+  "전세는 매매값의 몇 %?"
+ ],
+ "hot": "몇 %",
+ "answer": {
+  "label": "새로 맺은 전세 ÷ 매매값",
+  "items": [
+   "파크리오 38%",
+   "압구정 한양 14%"
+  ],
+  "arrow": false,
+  "note": "세 배 가까이"
+ },
+ "base": "국토교통부 아파트 매매·전월세 실거래가(계약 2025.11~2026.10, 2026-10-22 받음) · 파이어맵 계산",
+ "long": "gvlX2KQcI8g",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "전세가율",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "본 단지 7곳 중 가장 높음 · 신천동 파크리오 84㎡대",
+      "38%",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "가장 낮음 · 압구정 한양1차 가장 작은 집 49~51㎡",
+      "14%",
+      "",
+      80,
+      "ink"
+     ],
+     [
+      "전세가율 = 전세 ÷ 매매값",
+      "새로 맺은 전세 기준",
+      "",
+      154,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "파크리오가 38%로 가장 높았어요.",
+     "audio": "audio/h-3/fa24f35cd18a8f89.wav",
+     "frames": 80
+    },
+    {
+     "n": 2,
+     "text": "압구정 한양은 14%로 가장 낮았고요.",
+     "audio": "audio/h-3/35c5a12c0ee5b821.wav",
+     "frames": 74
+    },
+    {
+     "n": 3,
+     "text": "매매값 중에 전세 보증금이 차지하는 비율을 전세가율이라고 해요.",
+     "audio": "audio/h-3/ba085b77eed5bf1b.wav",
+     "frames": 108
+    }
+   ],
+   "frames": 262
+  },
+  {
+   "kind": "vs",
+   "label": "차이",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "압구정 한양 가장 작은 집",
+      "새 전세 5억 반",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "매매",
+      "40억 넘음",
+      "",
+      126,
+      "ink"
+     ],
+     [
+      "파크리오와 같은 신천동 · 장미아파트 81~83㎡",
+      "23%",
+      "",
+      221,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "압구정 한양아파트에서 가장 작은 집은 새 전세가 5억 반 정도였습니다.",
+     "audio": "audio/h-3/e1217312067e0518.wav",
+     "frames": 126
+    },
+    {
+     "n": 5,
+     "text": "매매는 40억이 넘었으니, 차이가 훨씬 더 크고요.",
+     "audio": "audio/h-3/f480c83f24b08899.wav",
+     "frames": 95
+    },
+    {
+     "n": 6,
+     "text": "같은 신천동 안에서도 장미아파트는 23%로, 파크리오보다 한참 낮았습니다.",
+     "audio": "audio/h-3/daf8b73b9e8358a3.wav",
+     "frames": 163
+    }
+   ],
+   "frames": 384
+  },
+  {
+   "kind": "vs",
+   "label": "이유",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "왜 차이가 날까",
+      "실거래 자료엔 이유 없음",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "새 단지 파크리오만",
+      "30% 넘음",
+      "",
+      118,
+      "ink"
+     ],
+     [
+      "나머지 6곳 · 1980년대까지 지음",
+      "모두 30% 아래",
+      "",
+      265,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 7,
+     "text": "왜 이렇게 차이가 날까요? 실거래 자료엔 이유가 적혀 있지 않아요.",
+     "audio": "audio/h-3/beab8b36db4bb8f1.wav",
+     "frames": 118
+    },
+    {
+     "n": 8,
+     "text": "다만 숫자로 보이는 건 하나 있어요. 새 단지인 파크리오만 30%를 넘었어요.",
+     "audio": "audio/h-3/df65f7440b9d16ec.wav",
+     "frames": 147
+    },
+    {
+     "n": 9,
+     "text": "1980년대까지 지은 단지들은 모두 그 아래였고요.",
+     "audio": "audio/h-3/63de07e1d160d138.wav",
+     "frames": 102
+    }
+   ],
+   "frames": 367
+  },
+  {
+   "kind": "vs",
+   "label": "새 계약만",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "파크리오 매매 29억대 · 새로 맺은 전세",
+      "11억 정도",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "살던 사람이 다시 맺은 계약",
+      "5천만원쯤 낮음",
+      "",
+      114,
+      "ink"
+     ],
+     [
+      "전세 시세 볼 때",
+      "새로 맺은 계약만",
+      "",
+      201,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 10,
+     "text": "파크리오 국민평형은 새로 맺은 전세가 11억 정도였습니다.",
+     "audio": "audio/h-3/5d847ac8af08918b.wav",
+     "frames": 114
+    },
+    {
+     "n": 11,
+     "text": "살던 사람이 다시 맺은 계약은 5천만원 정도 낮았고요.",
+     "audio": "audio/h-3/bb0daad61b9fcbe3.wav",
+     "frames": 87
+    },
+    {
+     "n": 12,
+     "text": "그러니 전세 시세를 볼 땐 새로 맺은 계약만 따로 보셔야 해요.",
+     "audio": "audio/h-3/450c9864d292180b.wav",
+     "frames": 119
+    }
+   ],
+   "frames": 356
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/h3/stock/37500921.mp4",
+   "from": 0,
+   "frames": 80,
+   "start": 0
+  },
+  {
+   "src": "bg/h3/stock/30975009.mp4",
+   "from": 80,
+   "frames": 74,
+   "start": 5
+  },
+  {
+   "src": "bg/h3/s2/stock/8471105.mp4",
+   "from": 154,
+   "frames": 108,
+   "start": 2
+  },
+  {
+   "src": "bg/h3/stock/12079562.mp4",
+   "from": 262,
+   "frames": 126,
+   "start": 5
+  },
+  {
+   "src": "bg/h3/stock/38259254.mp4",
+   "from": 388,
+   "frames": 95,
+   "start": 3
+  },
+  {
+   "src": "bg/h3/stock/29303349.mp4",
+   "from": 483,
+   "frames": 163,
+   "start": 10
+  },
+  {
+   "src": "bg/h3/s2/stock/38387553.mp4",
+   "from": 646,
+   "frames": 118,
+   "start": 1
+  },
+  {
+   "src": "bg/h3/stock/34630604.mp4",
+   "from": 764,
+   "frames": 147,
+   "start": 2
+  },
+  {
+   "src": "bg/h3/stock/16392935.mp4",
+   "from": 911,
+   "frames": 102,
+   "start": 2
+  },
+  {
+   "src": "bg/h3/s2/stock/4553301.mp4",
+   "from": 1013,
+   "frames": 114,
+   "start": 1
+  },
+  {
+   "src": "bg/h3/s2/stock/8478946.mp4",
+   "from": 1127,
+   "frames": 87,
+   "start": 2
+  },
+  {
+   "src": "bg/h3/s2/stock/7578842.mp4",
+   "from": 1214,
+   "frames": 155,
+   "start": 0
+  }
+ ],
+ "credits": "12079562 FREE VIDEO HAPPY · 16392935 Bảo Nghĩa · 29303349 성창 남 · 30975009 Stephen Leonardi · 34630604 Nothing Ahead · 37500921 FREE VIDEO HAPPY · 38259254 vignesh srivatsav · 38387553 Jueon Kim 김주언 · 4553301 cottonbro studio · 7578842 Kindel Media · 8471105 Thirdman · 8478946 ArtHouse Studio (Pexels License)"
+}

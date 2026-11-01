@@ -1,0 +1,29 @@
+{
+ "name": "h3s_jeonse",
+ "ep": "H-3",
+ "from_long": "gvlX2KQcI8g",
+ "mp4": "work/video/out/h3s_jeonse_ds.mp4",
+ "publishAt": "2026-11-02T17:20:00+09:00",
+ "publish_plan": "2026-11-02 17:20 (11/1 PD: 10/24 칸은 렌더 실패(ENOSPC)로 지남 → 다음 빈 칸 · 같은 날 07:20 de1s_jepi(D-ETF-1)와 다른 롱폼·다른 질문)",
+ "title": "전세가율, 파크리오 38%·압구정 한양 가장 작은 집 14% #shorts",
+ "description": "전체 영상: https://youtu.be/gvlX2KQcI8g\n\n국토교통부 실거래로 본 서울 아파트 7곳에서, 같은 집의 새로 맺은 전세 보증금 중앙값을 매매 중앙값으로 나눈 값(전세가율)을 비교했습니다. 계약 기간은 2025년 11월~2026년 10월입니다.\n송파구 신천동 파크리오 84㎡대는 새 전세 11억 원, 매매 29억 2천만 원으로 38%로 가장 높았습니다. 압구정동 한양1차 49~51㎡는 새 전세 5억 5천만 원, 매매 40억 6,700만 원으로 14%. 같은 신천동 장미아파트(장미2) 81~83㎡는 23%였습니다.\n같은 파크리오에서 살던 사람이 다시 맺은 전세는 10억 5천만 원으로, 새 계약보다 5천만 원 낮았습니다. 두 계약을 섞으면 전세 시세가 실제로 구할 때보다 싸 보여요.\n왜 단지마다 다른지는 실거래 자료에 적혀 있지 않습니다. 이 7곳 안에서는 새 단지인 파크리오만 30%를 넘었죠.\n지나간 거래 값이고, 특정 단지를 사거나 빌리라는 뜻이 아닙니다.\n\n출처: 국토교통부 아파트 매매·전월세 실거래가(계약 2025.11~2026.10, 2026-10-22 받음) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — 12079562 FREE VIDEO HAPPY · 16392935 Bảo Nghĩa · 29303349 성창 남 · 30975009 Stephen Leonardi · 34630604 Nothing Ahead · 37500921 FREE VIDEO HAPPY · 38259254 vignesh srivatsav · 38387553 Jueon Kim 김주언 · 4553301 cottonbro studio · 7578842 Kindel Media · 8471105 Thirdman · 8478946 ArtHouse Studio\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #전세가율 #아파트전세",
+ "tags": "전세가율,아파트 전세,전세 시세,파크리오 전세,압구정 한양",
+ "layout": "m1clip",
+ "look": "live",
+ "title_review": {
+  "gemini": {
+   "model": "gemini-flash-lite-latest",
+   "file": "title_gemini.json",
+   "scores": "A 7·B 6·C 9 (3.8-flash·3.1-flash-lite 503/429)"
+  },
+  "redteam": {
+   "A": 7,
+   "B": 4,
+   "C": 5,
+   "D": 8,
+   "note": "C '압구정 14%'가 압구정 전체로 읽힘·검색어 없음 → 제안 D(검색어 앞·한양 가장 작은 집 명시)"
+  },
+  "final": "D",
+  "understand": "understand.md 1·2차 6명 뜻 맞음"
+ }
+}

@@ -3930,3 +3930,4 @@ $MSG
 - [자발] **firemap-write-b** 11/01 19:3x 회차(18:40 칸) — 로그인 풀림(발행 불가)
   착수: firemap-write-b 19:30
   완료: firemap-write-b 19:32 — check '로그인 안 됨'(6일째) · 발행 0 · 회원 댓글 0 · 11/1 카페 칸 장부 없음 · 카페 비축 3/2 그대로 · 새 원고 안 씀
+  완료: firemap-video-producer 19:34 — 위 [진행]·[결정 요청] 그대로: 쇼츠 2편 관문 통과·비축(업로드는 ⓓ 결정 대기) · 롱폼 녹음 0(editor 재서명 대기) · 상황판·STATE·decisions 기록

@@ -1,0 +1,22 @@
+{
+ "name": "de1s_jepi",
+ "ep": "D-ETF-1",
+ "from_long": "mkAxQPGaDqc",
+ "mp4": "work/video/out/de1s_jepi_ds.mp4",
+ "publishAt": "2026-11-02T07:20:00+09:00",
+ "publish_plan": "2026-11-02 07:20 (11/1 PD: 10/30 17:20 칸은 PC 절전으로 지남 → 다음 빈 쇼츠 칸 · 같은 날 17:20 h3s_jeonse(H-3, 다른 롱폼·다른 질문))",
+ "title": "JEPI 분배율 8%, 5년 동안 돈은 얼마나 불었을까 #shorts",
+ "description": "전체 비교(배당 ETF 16개): https://youtu.be/mkAxQPGaDqc\n\nJEPI는 지금 분배율 8%지만, 받은 배당을 다시 넣고 주가까지 합친 5년 총수익(2021년 10월~2026년 10월, 달러 기준)은 한 해 평균 7.5%였어요.\n같은 기간 S&P500은 12.8%, SCHD는 9.8%, HDV는 13.1%였습니다.\n10년으로 늘리면 HDV 10.4%, S&P500 15.4%로 순서가 바뀌어요. JEPI는 10년 값이 없어요.\n원화로 바꿔 보면 5년 한 해 평균 JEPI 10.3%, S&P500 15.7%로 순서는 같았어요.\n배당을 생활비로 꺼내 쓰면 이보다 덜 불어납니다.\n지나간 값이고, 특정 상품을 사거나 팔라는 뜻이 아닙니다.\n\n출처: 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — 27170160 Nathan J Hilton · 34535507 Burak Bahadır  Büyükkılınç · 5981346 https://kaboompics.com/ · 6343634 KATRIN  BOLOVTSOVA · 7592927 ROMAN ODINTSOV · 8060388 Ron Lach · 8164676 Kindel Media · 8369909 RDNE Stock project · 8661806 Adrian Frentescu\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #JEPI #배당ETF",
+ "tags": "JEPI,배당 ETF,JEPI 수익률,월배당 ETF,S&P500",
+ "layout": "m1clip",
+ "look": "live",
+ "title_review": {
+  "gemini": {
+   "model": "gemini-3.8-flash",
+   "file": "title_gemini.json",
+   "best": "A 9",
+   "fix": "JEPI 분배율 8%, 5년 재투자한 최종 수익은?"
+  },
+  "understand": "understand.md 1~3차"
+ }
+}

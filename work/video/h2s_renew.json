@@ -1,0 +1,232 @@
+{
+ "fps": 30,
+ "name": "h2s_renew",
+ "v": 2,
+ "look": "live",
+ "question": [
+  "같은 아파트 같은 크기",
+  "전세 3억 차이, 왜?"
+ ],
+ "hot": "3억",
+ "answer": {
+  "label": "래미안원베일리 84㎡대 전세 가운데 값(2025.11~2026.10)",
+  "items": [
+   "새로 들어간 21억",
+   "다시 맺은 17억 8,500만원"
+  ],
+  "arrow": false,
+  "note": "갱신요구권"
+ },
+ "base": "국토교통부 아파트 전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산",
+ "long": "_fTgGr0dR0I",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "같은 단지 같은 크기",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "래미안원베일리 84㎡대 · 새로 들어간 전세",
+      "21억",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "살던 사람이 다시 맺은 전세",
+      "17억 8,500만원",
+      "",
+      124,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "래미안원베일리는 새로 들어간 전세가 약 21억이었습니다.",
+     "audio": "audio/h-2/fa5a1dc3ef06cfc3.wav",
+     "frames": 124
+    },
+    {
+     "n": 2,
+     "text": "살던 사람이 다시 맺은 전세는 약 18억이었고요.",
+     "audio": "audio/h-2/35cb0c9ffb967327.wav",
+     "frames": 104
+    },
+    {
+     "n": 3,
+     "text": "같은 단지, 같은 크기인데 3억쯤 차이가 났던 거죠.",
+     "audio": "audio/h-2/ee40a71df87e9fb9.wav",
+     "frames": 115
+    }
+   ],
+   "frames": 343
+  },
+  {
+   "kind": "vs",
+   "label": "차이는 이 권리",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "살던 세입자가 다시 계약할 때 쓰는 권리",
+      "계약갱신요구권",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "다시 맺은 원베일리 19건 중",
+      "18건이 이 권리",
+      "",
+      175,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "여기서 놓치면 손해 보는 게 계약갱신요구권입니다. 살던 세입자가 다시 계약할 때 쓰는 권리예요.",
+     "audio": "audio/h-2/e5808c65e80f7fd9.wav",
+     "frames": 175
+    },
+    {
+     "n": 5,
+     "text": "다시 맺은 원베일리 열아홉 건 중 열여덟 건이, 이 권리를 썼다고 신고됐어요.",
+     "audio": "audio/h-2/2e31416a8bfb989e.wav",
+     "frames": 163
+    }
+   ],
+   "frames": 338
+  },
+  {
+   "kind": "vs",
+   "label": "권리 쓰면 몇 %",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "잠실·대치·반포 84㎡대 · 권리 쓴 갱신",
+      "466건",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "보증금 5% 넘게 올린 계약",
+      "0건",
+      "",
+      118,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "이 권리를 썼다고 신고된 계약을 세 동네에서 모두 세어 봤습니다.",
+     "audio": "audio/h-2/1e80987a84598b5c.wav",
+     "frames": 118
+    },
+    {
+     "n": 7,
+     "text": "466건 가운데 보증금을 5% 넘게 올린 계약은 한 건도 없었습니다.",
+     "audio": "audio/h-2/c5a5aa46a7b9c9c5.wav",
+     "frames": 161
+    },
+    {
+     "n": 8,
+     "text": "권리를 안 쓰고 다시 맺은 계약 가운데는, 5% 넘게 올린 것도 있었어요.",
+     "audio": "audio/h-2/138b7e2674faaa56.wav",
+     "frames": 131
+    }
+   ],
+   "frames": 410
+  },
+  {
+   "kind": "vs",
+   "label": "그래서",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "다시 계약할 때 집주인에게",
+      "이 권리 쓴다고 말하기",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 9,
+     "text": "그래서 지금 사는 집에 더 있을 생각이라면, 다시 계약할 때 이 권리를 쓴다고 집주인에게 분명히 말하고, 계약서와 신고에 남기세요.",
+     "audio": "audio/h-2/db72883cd4cc95da.wav",
+     "frames": 236
+    }
+   ],
+   "frames": 272
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/h2/32986074.mp4",
+   "from": 0,
+   "frames": 124,
+   "start": 1
+  },
+  {
+   "src": "bg/h2/36216207.mp4",
+   "from": 124,
+   "frames": 104,
+   "start": 2
+  },
+  {
+   "src": "bg/h2/31018013.mp4",
+   "from": 228,
+   "frames": 115,
+   "start": 2
+  },
+  {
+   "src": "bg/h2/5923592.mp4",
+   "from": 343,
+   "frames": 175,
+   "start": 1
+  },
+  {
+   "src": "bg/h2/6787197.mp4",
+   "from": 518,
+   "frames": 163,
+   "start": 1
+  },
+  {
+   "src": "bg/h2/29826322.mp4",
+   "from": 681,
+   "frames": 118,
+   "start": 1
+  },
+  {
+   "src": "bg/h2/5349092.mp4",
+   "from": 799,
+   "frames": 161,
+   "start": 3
+  },
+  {
+   "src": "bg/h2/31018013.mp4",
+   "from": 960,
+   "frames": 131,
+   "start": 8
+  },
+  {
+   "src": "bg/h2/36216207.mp4",
+   "from": 1091,
+   "frames": 272,
+   "start": 8
+  }
+ ],
+ "credits": "29826322 Altaf Shah · 31018013 PUWOOK Kwak · 32986074 PUWOOK Kwak · 36216207 what doidonow · 5349092 Site Engine · 5923592 RDNE Stock project · 6787197 Artem Podrez (Pexels License)"
+}

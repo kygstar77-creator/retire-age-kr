@@ -34,7 +34,8 @@
 
 ## ★ 정기 회차 11/1 21:28~21:35 — 사장님 빈도 축소(19:07: 쇼츠 하루 1·롱폼 이틀 1·카페 6)에 칸 맞춤 (근거 meeting/2026-11-01b-decisions.md·b-verify.md·b-decisions_전략·_사용자·_법)
 - 막힘: 주간 회의 줄 그대로(① PC 전원 ② 네이버 login 147시간 ③ 수익 화면 ④ 롱폼 관문 통과 비축 0) + ⑤ **쇼츠 틀 전부 E-18 '쉼'**(m1clip 중앙 416·c2person 628 < 채널 980) — 기준표에 '모든 틀 쉼' 칸이 없음
-- 막힘(firemap-video-producer 07:03): **디스크 C: 7GB**(J-1 렌더 기준 30GB 미달) — %TEMP%emotion-* 묶음 122개 27GB가 대부분, 내가 지우는 것은 권한이 막음(자동 모드 거부) · Remotion은 렌더마다 public 5.9GB를 복사해 지금은 새 묶음도 못 만듦(소리 404) → **사장님이 %TEMP%의 remotion-webpack-bundle-*·remotion-v4*-assets* 정리 허락 또는 직접 정리 필요** · J-1 렌더(11/4 칸, 관문 11/3 11:30)도 이것과 editor 화면 재서명(10/25 서명, 11/2 02:23 화면 글자 바뀜)에 걸림
+- 막힘(firemap-video-producer 07:03): **디스크 C: 7GB**(J-1 렌더 기준 30GB 미달) — %TEMP%
+emotion-* 묶음 122개 27GB가 대부분, 내가 지우는 것은 권한이 막음(자동 모드 거부) · Remotion은 렌더마다 public 5.9GB를 복사해 지금은 새 묶음도 못 만듦(소리 404) → **사장님이 %TEMP%의 remotion-webpack-bundle-*·remotion-v4*-assets* 정리 허락 또는 직접 정리 필요** · J-1 렌더(11/4 칸, 관문 11/3 11:30)도 이것과 editor 화면 재서명(10/25 서명, 11/2 02:23 화면 글자 바뀜)에 걸림
 - 판정: 공개 11/1 **0**(기준 3 — 새 빈도로는 하루 최대 쇼츠1+카페6+롱폼 0.5) · 11월 0원/일할 19,355원 0% 뒤처짐 · 사이트 11/1 접속 24·계산 1·쿠팡 click 0
 - 칸(slots 고침): 롱폼 기준일 11/2 그대로 → **J-1 11/4**·K-1 11/6·RT-1 11/8·TBD-부동산 11/10·P-4 11/12·S-1 11/14(11/2 빔) · 쇼츠 11/2 17:20 빔 공산·11/3 17:20 D-ETF-1 클립 · 카페 11/2 6칸 배정(부동산 2칸, 07:40 비축 1편) · patrol이 S-1 칸 kind 빠짐으로 칸 검사를 통째로 건너뛰던 것 고침
 - 받아들임: 사용자 '업데이트 끊김이 가장 큰 불신'(→ 로그인·전원이 1순위 그대로) · 전략 '고퀄 기준이 지속률을 올리는지 증명했나'(→ D-ETF-1 48시간 평균 시청을 재서 J-1 비교 기준선으로) · 전략 실패 신호(11/7까지 쿠팡 click 0이면 쿠팡 칸 위치 결재를 다시 올림)
@@ -4022,6 +4023,8 @@ $MSG
   완료: firemap-editor 07:06 — **편집 통과: J-1 화면 글자** screen_text.edit.json sha 34a98c96 · pre1102(10/25 서명 sha ab670bbf와 일치)과 diff 2줄뿐(scenes.143 끝 줄 '다음 영상에서 다시 뵙겠습니다.' = script 325·say_v5 212, data.say '다음 영상') · 요일·날짜·숫자 0 · **PD: lfrender render J-1 → gate → up 11/4 11:30 진행해도 됨**
 - [배차] 운영실장 11/02 07:07 — 쇼츠 비축 c1clip 1/2(de1s_jepi 11/3 예약으로 소진, h3s·m1clip·c2person E-18 쉼) · 11/2 19:20 쇼츠 칸 빔 → firemap-video-producer: c1clip(C1S) 틀 비축 클립 1편 관문까지 · J-1 렌더는 editor 화면 글자 서명(07:06 착수) 뒤 PD 10:1x 정기 회차
   착수: firemap-video-producer 07:07 (운영실장)
+  완료: firemap-video-producer 07:59 — **미완(눈 검사 걸림)**: H-2(_fTgGr0dR0I, 클립 0편이던 편) 3장 '원베일리 신규 21억 vs 다시 맺은 약 18억·갱신요구권 466건 중 5% 초과 0건'을 c1clip(C1S live) h2s_renew로 렌더(새 녹음·새 숫자 0) · compete.md 5편·숫자 대조·이해 시험 40·50·60세 통과·제목(B 8점)·aitell 5.8·안전 영역·bgcheck·치직 0·deess 통과 · **눈 검사 걸림**: 답 '21억' 큰 글이 0.5초만, 장면3 '466건' 칸 안 열림(C1S 칸 여는 시각) · 고친 판 렌더 3번이 'No frame found'(29826322·6787197)로 실패 · 비축에 안 올림(gates_ok 없음) — 쇼츠 비축 그대로 0/2 · 고칠 것 cardshorts/h2s_renew/review.md 4줄(h2rclip.py 칸 시각만)
+- [막힘] firemap-video-producer 07:59 — Remotion 렌더 'No frame found at position'(compositor)이 같은 클립에서 됐다 안 됐다 함(06:29 묶음 재사용·디스크 21GB) — 다음 회차는 클립을 다시 싸서(libx264 -g 30) 렌더 · editor 07:11 [요청] de1s_jepi 설명란 배경 출처 줄(기한 11/3 17:00)은 이번 회차에 못 함
 - [편집] firemap-editor 07:11 — 표본 2건(지난 12시간 auto·새 판) · ① **hfheir1028(오늘 10:10 칸) 편집 통과 재서명** — 되풀이 3문장만 지움(c00 '자녀가 집을…적은 쪽만'·c01 '오래 받을수록…'·c05 86세 6개월 줄, 모두 c02·c03와 같은 말) · 숫자·출처·고지 0 변경 · 1877→1805자 · frame·cafe3·editgate check 통과 · 원본 c00/c01/c05.txt.orig1102ed — **write·write-b: 묶음 해시 바뀜(8dedb44d), 06:23 auto 서명 아님** ② **편집 반려: de1s_jepi 설명란**(LtkVbpQjWyc, 11/3 19:20 예약) — 제목·본문 말투 통과, 고칠 곳 1: '배경 영상' 줄이 옛 판 그대로 — 영상에 없는 27170160·34535507·7592927·8164676·8369909(review가 뺐다던 비트코인 동전)가 적혀 있고 실제 쓴 7118320 cottonbro studio·5546876 Polina가 빠짐(de1jclip.py BG 6개 기준)
 - [요청] **firemap-video-producer** ← editor 07:11 (기한 11/3 17:00, 공개 19:20 전) de1s_jepi 설명란 '배경 영상' 줄을 de1jclip.py credits(BG 6개: 5981346·5546876·6343634·7118320·8060388·8661806)로 바꿔 upload.json·YouTube(videos.update) 둘 다 고침 · 다른 줄은 그대로 · 출처 줄이라 editor가 직접 안 바꿈
 

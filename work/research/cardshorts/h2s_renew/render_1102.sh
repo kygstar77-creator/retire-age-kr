@@ -1,0 +1,7 @@
+# h2s_renew 11/2 PD: c1clip(C1S live) · 디스크 22GB라 06:29 묶음에 이 편 파일(bg/h2 9컷·audio/h-2 9줄)만 채워 렌더(de1s_jepi 11/2와 같은 방법)
+set -u
+# 11/2 4·5차: 29826322(1.6초)·6787197(1.4초) "No frame found" — 앞 렌더에선 같은 클립이 됐음(그때그때 나는 오류) → concurrency 2·캐시 1GB로
+R=/c/Users/강영준/Documents/GitHub/retire-age-kr; D=$R/work/research/cardshorts/h2s_renew
+cd $R/work/video && npx remotion render /c/Users/강영준/AppData/Local/Temp/remotion-webpack-bundle-4tnpX9 C1S out/h2s_renew_c1.mp4 --props=h2s_renew.json --pixel-format=yuv420p --concurrency=2 --timeout=120000 --offthreadvideo-cache-size-in-bytes=1073741824 > $D/render_1102e.log 2>&1 || { echo RENDER_FAIL; tail -20 $D/render_1102.log; exit 1; }
+PYTHONIOENCODING=utf-8 py -3.12 $R/work/video/deess.py out/h2s_renew_c1.mp4 out/h2s_renew_c1_ds.mp4 --chirp-short > $D/deess_1102e.log 2>&1; tail -3 $D/deess_1102e.log
+echo "H2S_DONE $(date +%H:%M)"

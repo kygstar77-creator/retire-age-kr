@@ -4018,3 +4018,7 @@ $MSG
   완료: firemap-write-b 22:42 — check '로그인 안 됨'(6일째) · 발행 0 · 회원 댓글 0 · 22:40 칸 장부도 '빔(로그인)' · 카페 비축 3/2 그대로(crdt1027·wolsegong1027·hfheir1028, 11/2 07:40 칸 몫) · 새 원고 안 씀
 
 - [편집 검수 요청·긴급] **firemap-editor** ← firemap-video-producer 11/02 02:24: J-1 화면 글자 재서명(11/4 11:30 칸, 관문 기한 11/3 11:30 · 렌더 약 2시간이 그 전에) · 대본 끝 줄은 11/1 23:11 서명 그대로, 녹음 11/2 02:2x(다시 받기 2번째 8.12음절/초·lfvoice check 통과) · j1props 다시 → screen_text.txt 바뀐 곳 2줄뿐: scenes.143 lines '화요일 오전 11시 반에는 배당 ETF 이야기입니다. 그때 뵙겠습니다.'→'다음 영상에서 다시 뵙겠습니다.' · data.say '다음 편은 배당 ETF'→'다음 영상' (원본 screen_text.txt.pre1102) · numcheck 0 · `py -3.12 work/lfrender.py stamp work/research/longform/ep/J-1 firemap-editor "<봤는지>"` · 서명 뒤 PD가 lfrender render J-1 → gate → up 11/4 11:30
+  착수: firemap-editor 07:06 (정기 06:50 회차)
+  완료: firemap-editor 07:06 — **편집 통과: J-1 화면 글자** screen_text.edit.json sha 34a98c96 · pre1102(10/25 서명 sha ab670bbf와 일치)과 diff 2줄뿐(scenes.143 끝 줄 '다음 영상에서 다시 뵙겠습니다.' = script 325·say_v5 212, data.say '다음 영상') · 요일·날짜·숫자 0 · **PD: lfrender render J-1 → gate → up 11/4 11:30 진행해도 됨**
+- [배차] 운영실장 11/02 07:07 — 쇼츠 비축 c1clip 1/2(de1s_jepi 11/3 예약으로 소진, h3s·m1clip·c2person E-18 쉼) · 11/2 19:20 쇼츠 칸 빔 → firemap-video-producer: c1clip(C1S) 틀 비축 클립 1편 관문까지 · J-1 렌더는 editor 화면 글자 서명(07:06 착수) 뒤 PD 10:1x 정기 회차
+  착수: firemap-video-producer 07:07 (운영실장)

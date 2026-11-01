@@ -69,12 +69,6 @@
     "pkg": "work/research/wolsegong1027/pkg",
     "status": "2026-10-27 18:38 관문 통과(editgate auto·이해 9차 새 심사관 27명·사실 대조 Agent 틀림3·근거없음3 반영·제미나이 말투 9건 반영·cover_review·research.md 8칸·bench.md) — 빈 카페 칸 대타, 발행 날 '올리기 전 확인'(정부안 국회 통과 여부) 다시 채울 것",
     "by": "firemap-write"
-   },
-   {
-    "item": "hfheir1028",
-    "pkg": "work/research/hfheir1028/pkg",
-    "status": "2026-10-28 18:04 관문 통과(editgate stamp·이해 2차 새 심사관 6명 전원 맞게 이해·레드팀 숫자 틀림 0·필수 4 반영·교차검증(Gemini 사실·말투) 반영·cover_review·research.md 8칸·bench.md 9편) — 부동산 축(비축에 부동산 0편이었음), 빈 카페 칸 대타, 발행 날 '올리기 전 확인'(CD금리 다시 받고 숫자 바뀌면 calc.py 재실행) 다시 채울 것",
-    "by": "firemap-write-b"
    }
   ],
   "long": [
@@ -3030,19 +3024,111 @@
    "published": null,
    "note": "firemap-meeting 2026-11-01 21:4x: 롱폼 이틀에 1편(사장님 11/1, long_anchor 11/2)에 맞춰 11-08→11-14 옮김(축 정책→경제→정책→부동산→정책→주식, youtube-loop가 겹침만 없으면 바꿔도 됨) · firemap-meeting 2026-10-29 18:14: S-1(10/31에서 옮김, 10/17 대본 뒤 진척 없음) — 녹음·shot_plan·meta부터 | youtube-loop 2026-11-02 00:48: 회의 11/1 [지시](녹음 순서·새 칸) — 준비된 대본 먼저, 같은 축 연속 없음: J-1 정책 11/4 → K-1 경제 11/6 → P-3 정책 11/8 → H-4 부동산 11/10 → N-3 경제(소득) 11/12 → S-1 주식 11/14 → RT-1 정책 11/16 → W-3 주식(세금) 11/18 → P-4 정책 11/20 · H-6(TBD-부동산)은 H-4 뒤 다음 부동산 칸 · 녹음(16:00 창 하루 1편): 11/2 J-1 → 11/3 K-1 → 11/4 P-3 → 11/5 H-4 → 11/6 N-3 → 11/7 S-1 → 11/9 RT-1(대본 전) → 11/11 W-3"
   },
-  {"at": "2026-11-16 11:30", "kind": "long", "item": "RT-1(퇴직금 세금 — 일시금 vs IRP 연금 수령 · research·toc 끝, 대본 남음)", "owner": "firemap-youtube-loop", "gates_ok": null, "note": "youtube-loop 2026-11-02 00:48: 이틀 주기 새 칸(회의 11/1 [지시])"},
-  {"at": "2026-11-18 11:30", "kind": "long", "item": "W-3(삼성전자·현대차 배당금 세금 — 배당소득 분리과세 · 서명·toc·썸네일 thumb_w3n_e, shot_plan 남음)", "owner": "firemap-youtube-loop", "gates_ok": null, "note": "youtube-loop 2026-11-02 00:48: 이틀 주기 새 칸(회의 11/1 [지시])"},
-  {"at": "2026-11-20 11:30", "kind": "long", "item": "P-4(국민연금 수령나이 — 당겨·늦춰 받기 · 기획 전)", "owner": "firemap-youtube-loop", "gates_ok": null, "note": "youtube-loop 2026-11-02 00:48: 이틀 주기 새 칸(회의 11/1 [지시])"},
-  {"at": "2026-11-02 07:40", "kind": "cafe", "item": "비축 1편(crdt1027·wolsegong1027·hfheir1028 중 — 올리기 전 확인 다시) · 로그인 복구 전엔 시도 안 함", "owner": "firemap-write-b", "gates_ok": null, "note": "firemap-meeting 2026-11-01 21:4x: 카페 하루 6칸(사장님 11/1) 첫 칸 · 장르 정책/돈 관리 · 지난 칸 몰아 올리지 않음(10/28 원칙)"},
-  {"at": "2026-11-02 10:10", "kind": "cafe", "item": "TBD", "owner": "firemap-write", "gates_ok": null, "note": "firemap-meeting 2026-11-01 21:4x: 장르 부동산①(국토부 실거래·공시가격·대출 규제 원문, 10/13 하루 2칸 이상 6칸 중 2) · bench.md 경쟁 3편↑"},
-  {"at": "2026-11-02 12:40", "kind": "cafe", "item": "TBD", "owner": "firemap-write-b", "gates_ok": null, "note": "firemap-meeting 2026-11-01 21:4x: 장르 주식(배당·ETF) — 시황은 '(○/○ 15:30 종가)' 줄"},
-  {"at": "2026-11-02 16:10", "kind": "cafe", "item": "TBD", "owner": "firemap-write", "gates_ok": null, "note": "firemap-meeting 2026-11-01 21:4x: 장르 경제·정책(연금/세금/보험)"},
-  {"at": "2026-11-02 18:40", "kind": "cafe", "item": "TBD", "owner": "firemap-write-b", "gates_ok": null, "note": "firemap-meeting 2026-11-01 21:4x: 장르 부동산②"},
-  {"at": "2026-11-02 22:40", "kind": "cafe", "item": "TBD", "owner": "firemap-write-b", "gates_ok": null, "note": "firemap-meeting 2026-11-01 21:4x: 장르 돈 관리 · 그날 공개 쇼츠 있으면 yt_pair 짝 글(질문 하나)로 바꿈"},
-  {"at": "2026-11-03 07:40", "kind": "cafe", "item": "TBD", "owner": "firemap-write-b", "gates_ok": null, "note": "firemap-meeting 2026-11-01 21:4x: 장르 정책 · 비축 남으면 비축부터"},
-  {"at": "2026-11-02 19:20", "kind": "shorts", "item": "빔 공산 — 비축 h3s_jeonse·de1s_jepi(m1clip)·c2person 모두 E-18 '쉼'(m1clip 중앙 416·c2person 628 < 채널 980), E-18 '모든 틀 쉼' 빈칸은 youtube-loop 11/2 12:00 근거 판정 뒤 · 그 전에 올리지 않음", "owner": "firemap-video-producer", "gates_ok": null, "note": "firemap-meeting 2026-11-01 21:4x: 쇼츠 하루 1편(사장님 11/1) · 관문 기한 11/2 05:20 · 판정이 허락하면 벤치마크 고침(답 5초 안·밝기 Y≥52) 반영본만"},
-  {"at": "2026-11-03 19:20", "kind": "shorts", "item": "D-ETF-1(mkAxQPGaDqc) 클립 1편 — 틀 c1clip(E-18 통과 1,025>980, youtube-loop 11/2 판정)", "owner": "firemap-video-producer", "gates_ok": null, "note": "firemap-meeting 2026-11-01 21:4x: 주간 회의 'D-ETF-1 클립 3일치'를 하루 1편으로 줄임(11/3·11/4·11/5 17:20) · 관문 기한 11/3 05:20 · 답 5초 안·밝기 Y≥52(벤치마크 11/1)"},
-  {"at": "2026-11-01 22:40", "kind": "cafe", "item": "빔 — 네이버 로그인 풀림(147시간, 사장님 login 필요)", "owner": "firemap-write-b", "gates_ok": null, "note": "firemap-meeting 2026-11-01 21:4x: 새 6칸 첫날 마지막 칸 · 로그인 전 발행 시도 안 함"}
+  {
+   "at": "2026-11-16 11:30",
+   "kind": "long",
+   "item": "RT-1(퇴직금 세금 — 일시금 vs IRP 연금 수령 · research·toc 끝, 대본 남음)",
+   "owner": "firemap-youtube-loop",
+   "gates_ok": null,
+   "note": "youtube-loop 2026-11-02 00:48: 이틀 주기 새 칸(회의 11/1 [지시])"
+  },
+  {
+   "at": "2026-11-18 11:30",
+   "kind": "long",
+   "item": "W-3(삼성전자·현대차 배당금 세금 — 배당소득 분리과세 · 서명·toc·썸네일 thumb_w3n_e, shot_plan 남음)",
+   "owner": "firemap-youtube-loop",
+   "gates_ok": null,
+   "note": "youtube-loop 2026-11-02 00:48: 이틀 주기 새 칸(회의 11/1 [지시])"
+  },
+  {
+   "at": "2026-11-20 11:30",
+   "kind": "long",
+   "item": "P-4(국민연금 수령나이 — 당겨·늦춰 받기 · 기획 전)",
+   "owner": "firemap-youtube-loop",
+   "gates_ok": null,
+   "note": "youtube-loop 2026-11-02 00:48: 이틀 주기 새 칸(회의 11/1 [지시])"
+  },
+  {
+   "at": "2026-11-02 07:40",
+   "kind": "cafe",
+   "item": "비축 1편(crdt1027·wolsegong1027·hfheir1028 중 — 올리기 전 확인 다시) · 로그인 복구 전엔 시도 안 함",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-01 21:4x: 카페 하루 6칸(사장님 11/1) 첫 칸 · 장르 정책/돈 관리 · 지난 칸 몰아 올리지 않음(10/28 원칙)"
+  },
+  {
+   "at": "2026-11-02 10:10",
+   "kind": "cafe",
+   "item": "hfheir1028",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-02 06:24",
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 부동산①(국토부 실거래·공시가격·대출 규제 원문, 10/13 하루 2칸 이상 6칸 중 2) · bench.md 경쟁 3편↑ | firemap-write 06:24: 비축 hfheir1028(주택연금 상속, 부동산 축) — 11/2 올리기 전 확인(CD 3.27→3.32%·calc 다시·숫자 6곳·그림 2장)·editgate auto 다시 찍음·slot.txt 10시",
+   "pkg": "work/research/hfheir1028/pkg"
+  },
+  {
+   "at": "2026-11-02 12:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 주식(배당·ETF) — 시황은 '(○/○ 15:30 종가)' 줄"
+  },
+  {
+   "at": "2026-11-02 16:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 경제·정책(연금/세금/보험)"
+  },
+  {
+   "at": "2026-11-02 18:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 부동산②"
+  },
+  {
+   "at": "2026-11-02 22:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 돈 관리 · 그날 공개 쇼츠 있으면 yt_pair 짝 글(질문 하나)로 바꿈"
+  },
+  {
+   "at": "2026-11-03 07:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 정책 · 비축 남으면 비축부터"
+  },
+  {
+   "at": "2026-11-02 19:20",
+   "kind": "shorts",
+   "item": "빔 공산 — 비축 h3s_jeonse·de1s_jepi(m1clip)·c2person 모두 E-18 '쉼'(m1clip 중앙 416·c2person 628 < 채널 980), E-18 '모든 틀 쉼' 빈칸은 youtube-loop 11/2 12:00 근거 판정 뒤 · 그 전에 올리지 않음",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-01 21:4x: 쇼츠 하루 1편(사장님 11/1) · 관문 기한 11/2 05:20 · 판정이 허락하면 벤치마크 고침(답 5초 안·밝기 Y≥52) 반영본만"
+  },
+  {
+   "at": "2026-11-03 19:20",
+   "kind": "shorts",
+   "item": "D-ETF-1(mkAxQPGaDqc) 클립 1편 — 틀 c1clip(E-18 통과 1,025>980, youtube-loop 11/2 판정)",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-01 21:4x: 주간 회의 'D-ETF-1 클립 3일치'를 하루 1편으로 줄임(11/3·11/4·11/5 17:20) · 관문 기한 11/3 05:20 · 답 5초 안·밝기 Y≥52(벤치마크 11/1)"
+  },
+  {
+   "at": "2026-11-01 22:40",
+   "kind": "cafe",
+   "item": "빔 — 네이버 로그인 풀림(147시간, 사장님 login 필요)",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-01 21:4x: 새 6칸 첫날 마지막 칸 · 로그인 전 발행 시도 안 함"
+  }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외",
  "long_every_days": 2,

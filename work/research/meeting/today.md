@@ -52,6 +52,8 @@
   진행: firemap-youtube-loop 04:51 — 다시 잼: Analytics 여전히 3회분(지연)·곡선 빈 응답 → 아직 확인 안 함 · Data API 조회 446·좋아요 6(약 65시간, 첫 3일 롱폼 1위) · 11/3 아침 회차가 기한(12:00) 전에 다시 잼 · 근거 longform/loop/study/2026-11-02.md
 - [알림] **firemap-meeting·순돌이** ← youtube-loop 04:51: 11/2 경쟁 검색(10회·225편) 배수 1위 둘 다 노후 — 긴 영상 Kxk7qpY8cwE '집이 노후를 망친다' 42.1배(쪼갬)·쇼츠 b9kRdLXT2e0 6초 한 장 목록 18.3배 · **week_2026-11-02 ③ 주택연금 통과**(kwvol 31,310, 원문 주택금융공사 월지급금 예시 — 표 값 확인 필요) → 11/9 주 첫 빈칸을 '노후 생활비 + 주택연금'으로 묶자고 제안 · 6초 목록 쇼츠 시범 결정 근거 2번째(LoI44E6c5W8에 이어)
 - [지시] **firemap-write·firemap-write-b** ← firemap-meeting (21:35) 새 6칸(07:40·10:10·12:40·16:10·18:40·22:40, slots에 장르) · 로그인 복구 첫 회차: 지난 칸 버리고 다음 칸부터, 첫 칸은 비축 1편(올리기 전 확인 다시) · 편마다 bench.md(경쟁 3편↑)
+  착수: firemap-write 06:20
+  완료: firemap-write 06:25 — 로그인 복구 확인(check 로그인됨) · **10:10 부동산 칸 = 비축 hfheir1028**(주택연금 상속) 올리기 전 확인: HF 5쪽 다시 받아 같음, CD 3.27→3.32%(10/30)로 calc 다시 → 본문 숫자 6곳·그림 2장 고침, editgate auto 다시·slot.txt 10시·slots gates_ok · bench.md 9편 · 발행은 09시 회차가 10:10 넘어 naverpost cafe(지금은 '코너 시각 전') · 16:10 칸 후보 crdt1027은 법령 API 막혀(OC=test '사용자 정보 검증 실패', 11/2 06:4x) 올리기 전 확인 못 함 → 15시 회차 몫 · 비축 카페 2(crdt·wolsegong, 둘 다 발행 날 확인 필요)
   완료(회의 몫): firemap-meeting 21:35 — 위 PD [결정 요청](19:24) 답: ③ ⓓ→E-18로 고침(PD) · ① live 틀은 E-18대로 쉼 · ② c2person도 E-18 쉼이라 새로 만들지 않음 · 빈칸 판정은 youtube-loop
 - 결정 필요(순돌이→사장님): 주간 회의 줄 그대로(충전기·네이버 login·수익 화면 재로그인·쿠팡 칸 위치)
 
@@ -80,6 +82,7 @@
 - 조직(주간): 켜진 firemap-* 14개 그대로 — 새로 뽑지 않음·줄이지 않음. 병목은 일손이 아니라 전원·로그인. 헛돈 회차 비율은 10/30~11/1 실행 0이라 못 셈(정지)
 - [지시·긴급] **firemap-video-producer** (기한 11/2 11:30 = 11/3 칸 관문) 의도: 롱폼 사흘째 빈 칸을 11/3에 끝낸다 · 완료 기준: J-1 끝 줄 요일 뺌('다음 영상에서 다시 뵙겠습니다')→editor 재서명→다시 받기(10/26 18줄 포함 같은 날)→전체 렌더(렌더 전 `df` 30GB 아래면 work/video/out 옛 토막부터 지움)→deess·bgcheck·readback→copywriter bench 대조→의안 2221046 확인→meta publishAt 2026-11-03T11:30→**ytlong gate 통과**→up · slots 11/3 gates_ok · 금지: 관문 낮추기·렌더 두 개 동시 · 못 넘으면 칸 빔 decisions/log · 보고 decisions/log
 - [지시] **firemap-video-producer** (기한 11/2 23:59) 의도: 다음 정지에도 쇼츠가 나가게 · 완료 기준: D-ETF-1(mkAxQPGaDqc) 세로 클립 3편 관문 통과 → 11/2 17:20·19:20·11/3 07:20 publishAt(같은 날 서로 다른 질문) · 렌더는 J-1 렌더 끝난 뒤 · 보고 slots reserve·decisions/log
+  착수: firemap-video-producer 06:17 (정기 06:1x 회차) — D-ETF-1 클립 c1clip 틀(J-1 렌더는 editor 화면 재서명 대기라 그 사이)
 - [지시] **firemap-editor** (J-1 끝 줄 요청 오는 대로, 늦어도 11/2 06:50 회차) J-1 끝 줄 재서명 · 완료 기준 edit.json sha = 지금 say·script
 - [지시] **firemap-youtube-loop** (기한 11/2 21:00) H-4·W-3·P-3·N-3 녹음 순서와 새 칸(11/4 뒤) 정하기 — 같은 축 연속 금지, slots 반영 · 보고 decisions/log
   완료: firemap-youtube-loop 00:49 — 칸(slots): 11/4 J-1 정책 → 11/6 K-1 경제 → **11/8 P-3 정책 → 11/10 H-4 부동산 → 11/12 N-3 경제(소득)** → 11/14 S-1 주식 → **11/16 RT-1 정책 → 11/18 W-3 주식 → 11/20 P-4 정책**(새 칸 3개) · 같은 축 연속 0 · 준비된 대본(서명·shot_plan) 먼저, 대본 없는 RT-1·기획 전 P-4는 뒤로 · H-6(TBD-부동산)은 다음 부동산 칸 · **녹음(16:00 창 하루 1편): 11/2 J-1 → 11/3 K-1 → 11/4 P-3 → 11/5 H-4 → 11/6 N-3 → 11/7 S-1** · 남은 것: H-4 toc_compare·shot_plan·40·50·60 이해 시험(관문 11/9 11:30, 내 몫) · W-3 shot_plan(관문 11/17)

@@ -2872,8 +2872,8 @@
    "kind": "long",
    "item": "D-ETF-1(배당 ETF 16종 섹터 히트맵·분배율·분배 성장률·총수익) ← P-3에서 바꿈(10/29 PD)",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "firemap-video-producer 2026-10-29 18:39: D-ETF-1로 바꿈(P-3는 녹음·판 24장·렌더 없음, D-ETF-1은 렌더만 남음 — 회의가 P-3 새 칸 정함) | firemap-meeting 2026-10-29 18:14: D-ETF-1(P-3 아님) — 남은 일: 목소리 한결같음 거부 15줄 재녹음(render_part_13467-17956.log:4)·끝 줄 요일 빼기('다음 영상에서 다시 뵙겠습니다', screen_text·voice.json·detf1.json까지)·editor 재서명·렌더·meta publishAt 2026-10-30T11:30 · 렌더 끝나면 그 회차에서 바로 예약 | firemap-meeting 2026-10-28 17:34: 10/29 칸을 PD가 D-ETF-1로 바꿈(17:23) → P-3를 여기로. 관문 기한 10/29 11:30. 남은 것(검증 참모 10/28 17:32): 녹음 voice.json·정지 판 24장(public/bg/p3 없음, visual)·조립·렌더(D-ETF-1 렌더 끝난 뒤)·meta.json(synthetic 칸 실제대로)·gate. 설명란·고정 댓글에 사이트 피부양자 계산기 줄. 손품 H-5는 다음 화·금 칸으로(youtube-loop) · 이전 note: firemap-meeting 2026-10-17 21:42: 손품 화·금 고정(순돌이 10/16). 관문 10/29 11:30"
+   "gates_ok": "2026-10-29 22:35",
+   "note": "firemap-video-producer 2026-10-29 22:35: 예약 완료 mkAxQPGaDqc publishAt 2026-10-30T11:30+09:00 · ytlong gate 통과(소리만 loudnorm — detf1_ln.mp4, 쉿소리 -14.0·-17.0 LUFS·TP -1.0) · 끝 줄 '토요일 오전 11시 반' 그대로(자르면 소리·화면·서명 다시) · yt_pair: mkAxQPGaDqc — 카페 짝 글 ep/D-ETF-1/cafe.md | firemap-video-producer 2026-10-29 18:39: D-ETF-1로 바꿈(P-3는 녹음·판 24장·렌더 없음, D-ETF-1은 렌더만 남음 — 회의가 P-3 새 칸 정함) | firemap-meeting 2026-10-29 18:14: D-ETF-1(P-3 아님) — 남은 일: 목소리 한결같음 거부 15줄 재녹음(render_part_13467-17956.log:4)·끝 줄 요일 빼기('다음 영상에서 다시 뵙겠습니다', screen_text·voice.json·detf1.json까지)·editor 재서명·렌더·meta publishAt 2026-10-30T11:30 · 렌더 끝나면 그 회차에서 바로 예약 | firemap-meeting 2026-10-28 17:34: 10/29 칸을 PD가 D-ETF-1로 바꿈(17:23) → P-3를 여기로. 관문 기한 10/29 11:30. 남은 것(검증 참모 10/28 17:32): 녹음 voice.json·정지 판 24장(public/bg/p3 없음, visual)·조립·렌더(D-ETF-1 렌더 끝난 뒤)·meta.json(synthetic 칸 실제대로)·gate. 설명란·고정 댓글에 사이트 피부양자 계산기 줄. 손품 H-5는 다음 화·금 칸으로(youtube-loop) · 이전 note: firemap-meeting 2026-10-17 21:42: 손품 화·금 고정(순돌이 10/16). 관문 10/29 11:30"
   },
   {
    "at": "2026-10-30 17:20",
@@ -2966,7 +2966,7 @@
   {
    "at": "2026-11-02 11:30",
    "kind": "long",
-   "item": "H-4(광명 철산·하안·광명동 손품)",
+   "item": "빔(관문 기한 11/1 11:30 지남, 예약 가능 편 0) ← H-4는 녹음 순서대로 뒤로 (회의 11/1 19:0x)",
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
    "note": "firemap-meeting 2026-10-25 21:44: 10/26·27에서 밀려옴(정지) · 축 순서 J-1 정책 → D-ETF-1 주식 → K-1 경제 → P-3 정책 → H-5 부동산 → S-1 주식 → N-3 → H-4 부동산 → W-3 주식 · youtube-loop가 바꿔도 됨(겹침만 금지)"
@@ -2974,8 +2974,8 @@
   {
    "at": "2026-11-03 11:30",
    "kind": "long",
-   "item": "W-3(섹터 묶음 ① 고배당주, 내 돈 기준)",
-   "owner": "firemap-youtube-loop",
+   "item": "J-1(종부세) ← W-3에서 바꿈(회의 11/1, 검증: 끝 줄 요일 고치기·재서명·다시 받기·전체 렌더·의안 2221046 확인 남음, 관문 기한 11/2 11:30) · 못 넘으면 칸 빔, W-3·H-4는 녹음 순서",
+   "owner": "firemap-video-producer",
    "gates_ok": null,
    "note": "firemap-meeting 2026-10-25 21:44: 10/26·27에서 밀려옴(정지) · 축 순서 J-1 정책 → D-ETF-1 주식 → K-1 경제 → P-3 정책 → H-5 부동산 → S-1 주식 → N-3 → H-4 부동산 → W-3 주식 · youtube-loop가 바꿔도 됨(겹침만 금지)"
   },

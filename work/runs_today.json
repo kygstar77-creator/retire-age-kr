@@ -11,6 +11,17 @@
     "url": null
    },
    "note": "발행 0(06시대 내 칸 없음 — 6칸 07:40·10:10·12:40·16:10·18:40·22:40) · 로그인됨 · 회원 댓글 0 · 10:10 부동산 칸에 비축 hfheir1028 '주택연금 상속, 돌아가신 뒤 자녀에게 얼마 남을까?' 올리기 전 확인: HF 5쪽 다시(같음)·ECOS CD 3.32%(10/30)로 calc 다시, 숫자 6곳·그림 2장 고침, selfcheck 사실 0·aitell spoken 통과·cafe3 막을 것 0(경고 D-17 1877자), editgate auto 다시 찍음, pending '코너 시각 전'만 남음 · 개선: 법령 API OC=test 막힘 발견 → tools-wanted(사람 손)"
+  },
+  {
+   "hour": 7,
+   "ts": "08:04",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "출산크레딧 2027년부터 둘째는 몇 개월 더 인정될까?",
+    "url": "https://cafe.naver.com/firemap/371"
+   },
+   "note": "07:40 칸 비축 crdt1027 · 올리기 전 확인: 법령 API(OC=test) IP 검증 실패라 law.go.kr 웹 원문으로 S1~S6·부칙 제1~3조 다시 엶, 바뀐 것 없음, 기준일 10/27→11/2 한 줄만 고침 · readcheck 0·aitell 2.9·spoken 통과·editgate auto 재서명 · verify OK 1435/1435자·사진 3/3 · 회원 댓글 0 · 개선: 없음(lawtext.py API 막힘은 기록만)"
   }
  ]
 }

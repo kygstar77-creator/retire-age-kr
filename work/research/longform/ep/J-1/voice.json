@@ -2401,22 +2401,22 @@
      "f0": 126.0
     },
     {
-     "text": "화요일 오전 11시 반에는 배당 ETF 이야기입니다. 그때 뵙겠습니다.",
-     "say": "화요일 오전 열한시 반에는 배당 이티에프 이야기입니다. [pause short] 그때 뵙겠습니다.",
-     "audio": "audio/j-1/ddb0d718f9c06df8.wav",
-     "sec": 4.0,
-     "frames": 126,
-     "rate": 7.69,
+     "text": "다음 영상에서 다시 뵙겠습니다.",
+     "say": "다음 영상에서 다시 뵙겠습니다.",
+     "audio": "audio/j-1/c2bffcda9bf2cf50.wav",
+     "sec": 1.7,
+     "frames": 57,
+     "rate": 8.12,
      "tempo": 1.0,
-     "rec": "2026-10-26",
-     "f0": 107.1
+     "rec": "2026-11-02",
+     "f0": 112.1
     }
    ],
-   "frames": 409
+   "frames": 340
   }
  ],
  "done": 212,
  "missing": 0,
- "seconds": 847.9,
- "rate_total": 6.45
+ "seconds": 845.6,
+ "rate_total": 6.44
 }

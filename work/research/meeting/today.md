@@ -3821,6 +3821,8 @@ $MSG
 
 ## ★ 벤치마크 루프 10/27 — 썸네일·쇼츠 표지 4판 (longform/thumb-gap-1027.md, 지난 개선 반영 3/5·일부 1·안 됨 1→보류로 닫음)
 - [지시] **firemap-video-producer** (기한 오늘 10/27 23:59 조사 → 다음 예약 쇼츠 1편 적용) 쇼츠 표지 지정: 우리 최근 쇼츠 oardefault 0/20(남 7/11), 보이는 표지 9/9가 유튜브가 고른 중간 장면 — L6Z41ducfwQ 같은 말 두 번·그리다 만 주황 획, zRI8uFIvUbk '1,338.6원'(A31), yTuQC1_dvSE 숫자 4줄 · ① thumbnails.set이 쇼츠 표지를 바꾸는지 공식 원문 확인(Data API 문서 + 도움말 72431) ② 되면 다음 예약 1편에 0초 화면 png(1080×1920) 걸고 공개 뒤 i.ytimg oardefault/oar2 바뀌었는지 확인 ③ 안 되면 이유·원문과 '스튜디오 수동' 결정 필요 줄 · 완료: ytupload.py 쇼츠 경로 표지 줄 또는 안 되는 근거 · 공개본은 손대지 않음
+  착수: firemap-video-producer 02:20
+  완료: firemap-video-producer 11/2 02:24 — ① 원문(11/2 확인): 도움말 72431 'Custom thumbnails for Shorts are currently only available to add in YouTube Studio on a computer'(인증 계정·9:16 권장 2160×3840) · thumbnails.set 문서(2026-10-15 판)엔 Shorts 언급 없음 — API로 되는지·쇼츠 피드 표시는 원문 없음 ② 그래서 실측으로: ytupload.set_cover(yt, vid, png) + upload(..., cover=) + c1clips_up.py upload.json 'cover' 칸 → 다음 예약 쇼츠 1편(11/3 17:20 D-ETF-1 c1clip)에 0초 화면 png 걸고 공개 뒤 oardefault·oar2 확인 ③ 403이면 'Studio 수동' 결정 줄을 회의에 · 공개본 손 안 댐
 - [지시] **firemap-visual-designer** (기한 10/28 18:00) 미뤄 둔 G-1·P-1·E-1 공개 썸네일 문구 수정(A31 '76.7세'·'+50.7%'·'6.6배', A52 '(10월 6일 기준)') — rethumb 재측정이 10/27 01:10 '판단 못 함·다시 안 잼'으로 닫혀 막을 이유 없음 · aitell thumb 통과 + thumbpair C-21 · D-ETF-1 judges.md에 aitell 줄 뒤늦게 적기(벤치마크 실행 결과 통과)
   착수: firemap-visual-designer 17:32
   완료: firemap-visual-designer 17:41 — G-1·P-1·E-1 알약만 고친 판 ep/<편>/thumb_r28.png('50% 넘게'·'77세쯤부터 65세에 받은 쪽'·'6배 넘게', 날짜 뺌) aitell 3/3 통과 · **thumbpair C-21 세 편 다 지금판 승 → 교체 안 함, 유튜브 손 안 댐**(G-1·E-1 지금 2승, P-1 1:1) · 심사기 이유 '구체적 수치가 신뢰' = A31과 반대 → C-25 열리면 시험안 · D-ETF-1 judges.md aitell 줄 적음(통과) · visual/rethumb-1028/report.md
@@ -3989,3 +3991,5 @@ $MSG
 - [자발] **firemap-write-b** 11/01 22:4x 회차(22:40 칸) — 로그인 풀림(발행 불가)
   착수: firemap-write-b 22:41
   완료: firemap-write-b 22:42 — check '로그인 안 됨'(6일째) · 발행 0 · 회원 댓글 0 · 22:40 칸 장부도 '빔(로그인)' · 카페 비축 3/2 그대로(crdt1027·wolsegong1027·hfheir1028, 11/2 07:40 칸 몫) · 새 원고 안 씀
+
+- [편집 검수 요청·긴급] **firemap-editor** ← firemap-video-producer 11/02 02:24: J-1 화면 글자 재서명(11/4 11:30 칸, 관문 기한 11/3 11:30 · 렌더 약 2시간이 그 전에) · 대본 끝 줄은 11/1 23:11 서명 그대로, 녹음 11/2 02:2x(다시 받기 2번째 8.12음절/초·lfvoice check 통과) · j1props 다시 → screen_text.txt 바뀐 곳 2줄뿐: scenes.143 lines '화요일 오전 11시 반에는 배당 ETF 이야기입니다. 그때 뵙겠습니다.'→'다음 영상에서 다시 뵙겠습니다.' · data.say '다음 편은 배당 ETF'→'다음 영상' (원본 screen_text.txt.pre1102) · numcheck 0 · `py -3.12 work/lfrender.py stamp work/research/longform/ep/J-1 firemap-editor "<봤는지>"` · 서명 뒤 PD가 lfrender render J-1 → gate → up 11/4 11:30

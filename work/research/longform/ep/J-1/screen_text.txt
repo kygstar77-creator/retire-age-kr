@@ -997,9 +997,9 @@
 [scenes.142.data.n] 댓글로 알려 주세요
 [scenes.142.data.q] 내 공시가격과, 그 집에 사는지
 [scenes.142.data.from] 정부안 기준·국회 통과 전 · 공개 자료 계산(세무 상담 아님) · 전체 표는 고정 댓글 주소(카페)
-[scenes.143.lines.0.text] 화요일 오전 11시 반에는 배당 ETF 이야기입니다. 그때 뵙겠습니다.
+[scenes.143.lines.0.text] 다음 영상에서 다시 뵙겠습니다.
 [scenes.143.data.license] Pexels 5562942 무료(Daniel Qura)
-[scenes.143.data.say] 다음 편은 배당 ETF
+[scenes.143.data.say] 다음 영상
 [scenes.143.data.side] left
 
 ## 화면 코드: video/src/J1.tsx

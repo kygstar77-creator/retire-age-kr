@@ -3536,9 +3536,9 @@
    "kind": "broll",
    "lines": [
     {
-     "text": "화요일 오전 11시 반에는 배당 ETF 이야기입니다. 그때 뵙겠습니다.",
-     "audio": "audio/j-1/ddb0d718f9c06df8.wav",
-     "frames": 126,
+     "text": "다음 영상에서 다시 뵙겠습니다.",
+     "audio": "audio/j-1/c2bffcda9bf2cf50.wav",
+     "frames": 57,
      "cap": null
     },
     {
@@ -3548,11 +3548,11 @@
      "cap": null
     }
    ],
-   "frames": 891,
+   "frames": 822,
    "data": {
     "src": "bg/t1/5562942.mp4",
     "license": "Pexels 5562942 무료(Daniel Qura)",
-    "say": "다음 편은 배당 ETF",
+    "say": "다음 영상",
     "side": "left",
     "from": 0
    }

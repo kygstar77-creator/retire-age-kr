@@ -28,7 +28,7 @@ def service():
 
 COUPANG_NOTE = '이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.'
 
-def upload(path, title, desc, privacy='private', tags='', paid=False):
+def upload(path, title, desc, privacy='private', tags='', paid=False, cover=None):
     # 유튜브는 제목·설명의 < > 를 받지 않는다(400 invalidDescription, 2026-09-28 나이키 숏폼). 전각으로 바꾼다.
     title, desc = [x.replace('<', '＜').replace('>', '＞') for x in (title, desc)]
     # 쿠팡 파트너스 관문(2026-09-30, work/research/coupang-policy.md 체크리스트 9·10):
@@ -87,7 +87,21 @@ def upload(path, title, desc, privacy='private', tags='', paid=False):
         if status: print(f'업로드 {int(status.progress() * 100)}%', flush=True)
     print('완료 https://youtu.be/' + res['id'])
     fill_videoid(yt, res['id'], body['snippet'])
+    if cover: set_cover(yt, res['id'], cover)
     return res['id']
+
+def set_cover(yt, vid, png):
+    """쇼츠 표지(11/2 PD, today 10/27 [지시]): thumbnails.set으로 0초 화면 png(1080×1920)를 건다.
+    근거(11/2 확인): 도움말 72431 'Custom thumbnails for Shorts are currently only available ... in YouTube Studio on a computer'(인증 계정, 9:16 권장) ·
+    thumbnails.set 문서(2026-10-15 판)는 Shorts를 말하지 않음 — API로 되는지·쇼츠 피드에 보이는지는 원문 없음 → 첫 편에서 실측(공개 뒤 i.ytimg oardefault·oar2 비교).
+    실패해도 업로드는 그대로 두고 이유만 찍는다(403이면 'Studio 수동' 결정 필요)."""
+    from googleapiclient.http import MediaFileUpload
+    try:
+        r = yt.thumbnails().set(videoId=vid, media_body=MediaFileUpload(png, mimetype='image/png')).execute()
+        print('표지 걸음', vid, (r.get('items') or [{}])[0].get('default', {}).get('url', ''))
+        return True
+    except Exception as e:
+        print('표지 실패 —', str(e)[:200]); return False
 
 def fill_videoid(yt, vid, snippet):
     """설명란 VIDEOID를 올린 뒤 실제 ID로(10/5). 설명 수정은 youtube.force-ssl 토큰(f2_coupang)."""

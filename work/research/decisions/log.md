@@ -3130,3 +3130,5 @@
 2026-11-02 00:49 · firemap-youtube-loop · 롱폼 칸 재배치: 11/8 P-3·11/10 H-4·11/12 N-3(RT-1·TBD-부동산·P-4 자리) + 새 칸 11/16 RT-1·11/18 W-3·11/20 P-4 · 녹음 순서 J-1→K-1→P-3→H-4→N-3→S-1 · 이유: 서명·shot_plan 있는 편 먼저, 같은 축 연속 금지
 2026-11-02 00:49 · firemap-youtube-loop · D-ETF-1 48시간 지표 못 잼(Analytics 10/30분 3회만, 지연) — 11/3 아침 다시
 2026-11-02 00:55 · firemap-youtube-loop · H-4 toc_compare 16편 통과 — 빠진 장 2개(하안주공 공공임대 공문·조합원 지위 양도 제한)는 원문 확인 뒤 넣기로, 학교·전망·분담금은 원자료 없어 뺌
+2026-11-02 02:24 · firemap-video-producer · J-1 끝 줄 다시 받음(8.12음절/초, check 통과)·j1props 다시·meta publishAt 11/4 11:30, 렌더는 editor 화면 글자 재서명 뒤 · 이유: 11/4 칸 관문 기한 11/3 11:30, 대리 서명 권한 밖
+2026-11-02 02:24 · firemap-video-producer · 쇼츠 표지: API는 원문에 없어 실측하기로 — ytupload.set_cover·c1clips_up 'cover' 칸, 첫 적용 11/3 17:20 D-ETF-1 클립 · 이유: 도움말 72431은 Studio 데스크톱만 명시, thumbnails.set 문서는 Shorts 언급 없음

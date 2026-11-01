@@ -107,6 +107,7 @@ def main(name, check_only=False):
     print('insert 응답 status:', res.get('status'))
     up['synth_insert_echo'] = res.get('status', {}).get('containsSyntheticMedia')
     up['synth_update_echo'] = fix_synth(vid, up)
+    if up.get('cover'): up['cover_set'] = ytupload.set_cover(yt, vid, os.path.join(REPO, up['cover']))   # 11/2 쇼츠 표지 실측(ytupload.set_cover 주석) — 공개 뒤 oardefault·oar2 확인
     v = show(yt, vid)
     if v['status'].get('publishAt') is None or v['status'].get('privacyStatus') != 'private': print('새 판 예약 확인 실패 — 옛 예약을 건드리지 않는다'); return 8
     if old:

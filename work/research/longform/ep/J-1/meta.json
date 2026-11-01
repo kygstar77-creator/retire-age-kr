@@ -79,7 +79,7 @@
   "공동명의 종부세",
   "보유세"
  ],
- "publishAt": "2026-10-26T11:30:00+09:00",
+ "publishAt": "2026-11-04T11:30:00+09:00",
  "privacy": "private",
  "privacy_note": "예약 공개(private+publishAt) — 정해진 시각에 공개로 바뀜",
  "paid": false,
@@ -87,7 +87,7 @@
  "synthetic": true,
  "veo": false,
  "synthetic_note": "AI 생성 그림 5장(RealVisXL V5.0 — 우편함·거실·창구·물컵·찻잔, 얼굴·상표·글자 없음, 화면에 \"AI 생성 그림\" 표시) + AI 음성 → containsSyntheticMedia True",
- "voice": "Chirp 3 HD Charon 1.1 · 214줄 · 2026-10-21 녹음(say_v5, editor 10/21 17:09 서명) · 10/22 다시 받기 3줄(say.json 쉼표) · 10/25 끝 줄 요일 다시 받기 1줄(일요일→화요일, 공개 10/26)",
+ "voice": "Chirp 3 HD Charon 1.1 · 214줄 · 2026-10-21 녹음(say_v5, editor 10/21 17:09 서명) · 10/22 다시 받기 3줄(say.json 쉼표) · 10/25 끝 줄 요일 다시 받기 1줄(일요일→화요일, 공개 10/26) · 11/2 끝 줄 1줄 다시 받음(다음 영상에서 다시 뵙겠습니다, 8.12음절/초, check 통과)",
  "answers": {
   "q1_바꿔끼우기": "아니오 — T-1(양도세 장특공)과 같은 정부 세법 개편이지만 세금·질문이 다르다(보유세·'그 집에 사나'·공동명의 특례). 공시가격별 산다/안 산다 갈림길(23억대·24억), 안 사는 집 14억 기준선의 54만원 계단, 공동명의 18억 계단 161.8만원은 우리 계산기로만 나온 숫자다.",
   "q2_연달아보기": "아니오 — 앞 편 H-3(부동산 실거래, 10/23)·다음 편 D-ETF-1(배당 ETF, 10/25)과 축이 다르다(정책·세금). T-1(10/21)과 사흘 간격.",
@@ -104,5 +104,6 @@
  "made_at": "2026-10-22",
  "video": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\video\\out\\j1_ds10.mp4",
  "missing": 0,
- "thumb_alt": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\J-1\\thumb_j1n_b.png"
+ "thumb_alt": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\J-1\\thumb_j1n_b.png",
+ "publishAt_prev": "2026-10-26T11:30:00+09:00"
 }

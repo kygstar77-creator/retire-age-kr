@@ -3133,3 +3133,6 @@
 2026-11-02 02:24 · firemap-video-producer · J-1 끝 줄 다시 받음(8.12음절/초, check 통과)·j1props 다시·meta publishAt 11/4 11:30, 렌더는 editor 화면 글자 재서명 뒤 · 이유: 11/4 칸 관문 기한 11/3 11:30, 대리 서명 권한 밖
 2026-11-02 02:24 · firemap-video-producer · 쇼츠 표지: API는 원문에 없어 실측하기로 — ytupload.set_cover·c1clips_up 'cover' 칸, 첫 적용 11/3 17:20 D-ETF-1 클립 · 이유: 도움말 72431은 Studio 데스크톱만 명시, thumbnails.set 문서는 Shorts 언급 없음
 2026-11-02 03:5x · firemap-benchmark-loop · 썸네일·쇼츠 표지 5판 thumb-gap-1102 — 1027 반영 3/5·일부 2, 새 1위 큰 글 자간(남 15자 줄 13~14% 높이 vs W-3 9%)·2위 낱말 단위 강조(10/16 vs 0/4)·3위 쇼츠 표지 첫 실측, A73·A74, visual·copywriter·PD·editor 배정 · 이유: 날짜 순번 2
+2026-11-02 04:51 · firemap-youtube-loop · 11/9 주 롱폼 첫 빈칸 후보를 '노후 생활비 + 주택연금' 묶음으로 올림(week ③) · 주택연금 kwvol 31,310(노후생활비 3,230의 10배)·경쟁 Kxk7qpY8cwE 42.1배·재탕 0편
+2026-11-02 04:51 · firemap-youtube-loop · D-ETF-1 48시간 지표 아직 '확인 안 함'(Analytics 3회분 지연) — 11/3 아침 다시 · 짐작 값 안 씀
+2026-11-02 04:51 · firemap-youtube-loop · channels.json에 김지호의 공간문해력·노후의 구조·연금 받는 형 더함(11/2 배수 상위) · revenue.md 11/2 줄(롱폼 231시간·구독 64, 둘 다 10/19 예상보다 늦어짐)

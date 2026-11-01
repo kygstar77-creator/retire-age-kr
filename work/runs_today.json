@@ -13,6 +13,20 @@
     "url": null
    },
    "note": "네이버 로그인 만료(10/26 19시쯤부터, 6일째) — 사장님이 py -3.12 work/naverpost.py login 실행 필요(approvals.md 184행). 발행 0. 회원 답할 댓글 0. 카페 비축 3/2 그대로(crdt1027·wolsegong1027·hfheir1028), 새 원고 안 씀(발행 당일 올리기 전 확인 필요). 10/30~11/1 회차 기록 없음(PC 꺼짐 추정). 개선: 없음"
+  },
+  {
+   "hour": 19,
+   "ts": "19:32",
+   "task": "firemap-write-b",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "write-b 19:3x 회차(18:40 칸, 11/1 카페 6칸 개편 뒤 첫 write-b) — 네이버 로그인 만료(6일째) · 발행 0 · 회원 답할 댓글 0 · slots.json에 11/1 카페 칸 장부 없음 · 카페 비축 3/2 그대로(crdt1027·wolsegong1027·hfheir1028, 셋 다 발행 당일 올리기 전 확인 필요) — 새 원고 안 씀 · 로그인 결재 approvals.md 184행 · 개선: 없음"
   }
  ]
 }

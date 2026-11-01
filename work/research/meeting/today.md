@@ -14,6 +14,20 @@
 - 지난 기록은 archive/날짜.md. 직원은 이 파일 전체를 읽지 말고 **자기 task-id(예: firemap-product-dev)로 검색**해 자기 줄만 읽는다. 근거가 필요하면 archive/2026-10-02.md에서 같은 문구로 찾는다.
 - 끝나면 그 항목 밑에 "완료: … HH:MM" 한 줄. 다음 정리 때 완료 항목은 archive로 옮긴다(이 파일이 150줄을 넘으면 같은 방식으로 다시 줄인다).
 
+## ★ 정기 회차 11/1 21:28~21:35 — 사장님 빈도 축소(19:07: 쇼츠 하루 1·롱폼 이틀 1·카페 6)에 칸 맞춤 (근거 meeting/2026-11-01b-decisions.md·b-verify.md·b-decisions_전략·_사용자·_법)
+- 막힘: 주간 회의 줄 그대로(① PC 전원 ② 네이버 login 147시간 ③ 수익 화면 ④ 롱폼 관문 통과 비축 0) + ⑤ **쇼츠 틀 전부 E-18 '쉼'**(m1clip 중앙 416·c2person 628 < 채널 980) — 기준표에 '모든 틀 쉼' 칸이 없음
+- 판정: 공개 11/1 **0**(기준 3 — 새 빈도로는 하루 최대 쇼츠1+카페6+롱폼 0.5) · 11월 0원/일할 19,355원 0% 뒤처짐 · 사이트 11/1 접속 24·계산 1·쿠팡 click 0
+- 칸(slots 고침): 롱폼 기준일 11/2 그대로 → **J-1 11/4**·K-1 11/6·RT-1 11/8·TBD-부동산 11/10·P-4 11/12·S-1 11/14(11/2 빔) · 쇼츠 11/2 17:20 빔 공산·11/3 17:20 D-ETF-1 클립 · 카페 11/2 6칸 배정(부동산 2칸, 07:40 비축 1편) · patrol이 S-1 칸 kind 빠짐으로 칸 검사를 통째로 건너뛰던 것 고침
+- 받아들임: 사용자 '업데이트 끊김이 가장 큰 불신'(→ 로그인·전원이 1순위 그대로) · 전략 '고퀄 기준이 지속률을 올리는지 증명했나'(→ D-ETF-1 48시간 평균 시청을 재서 J-1 비교 기준선으로) · 전략 실패 신호(11/7까지 쿠팡 click 0이면 쿠팡 칸 위치 결재를 다시 올림)
+- 안 받음: 관문 일시 중단·빈 칸 무조건 채우기(사장님 11/1 품질 지시) · 11/4로 늦추면 시의성 잃음(종부세 고지는 11월 하순) · 법 쿠팡 문구·면책 '높음'(이미 있음, 11/1 검증) · E-18이 '완화'라는 주장(더 막음)
+- [지시·긴급] **firemap-video-producer** ← firemap-meeting (21:35) 의도: 롱폼 11/4 칸(이틀 주기 첫 칸)을 J-1로 · 완료 기준: 주간 회의 J-1 줄 그대로(끝 줄 요일 뺌→editor 재서명→다시 받기 11/2 16:00 창→전체 렌더(디스크 30GB 확인)→deess·bgcheck·readback→의안 2221046 확인→meta publishAt **2026-11-04T11:30:00+09:00**→ytlong gate(앞뒤 2일 띄움 포함)→up) · 관문 기한 **11/3 11:30** · 금지: 관문 낮추기·렌더 두 개 동시 · 확인 시점 11/3 06:00 · 보고 slots gates_ok·decisions/log
+- [지시] **firemap-video-producer** ← firemap-meeting (21:35) 의도: 업로드 도구가 기준표와 다른 옛 값으로 거르지 않게 · 완료 기준: research/cardshorts/w1g1clips_check.py:142 ⓓ '최근 10편 50%'를 registry E-18('그 틀 최근 3편 중앙 < 채널 최근 20편 중앙이면 쉼')로 바꿈 · 모든 틀이 쉼일 때 동작은 youtube-loop 판정 줄을 따름(판정 전엔 업로드 거부 그대로) · 클립 3일치는 하루 1편(11/3·4·5 17:20)으로, 답 5초 안·밝기 Y≥52(벤치마크 11/1) 반영 · 보고 decisions/log
+- [지시] **firemap-youtube-loop** ← firemap-meeting (21:35) (기한 11/2 12:00, E-07 판정과 같이) 의도: E-18 '모든 틀 쉼' 빈칸을 숫자를 짓지 않고 채움 · 완료 기준: registry E-18에 한 줄 — 근거 4종(공식 반복 콘텐츠 정의·경쟁 실측·연구·사장님 지시) 중 찾은 것만, 채널 중앙 980이 3편/일 시기 값이라는 점과 6일 공개 0 교란을 같이 적음 · 못 찾으면 '판단 못 함'으로 적고 그날 칸 빔 · 롱폼 칸 순서(11/4~11/14)는 겹침만 없으면 바꿔도 됨 · 보고 decisions/log
+- [지시] **firemap-youtube-loop** ← firemap-meeting (21:35) (기한 11/3 12:00) D-ETF-1(10/30 공개) 48시간+ 평균 시청 비율·30초 유지율을 ytanalytics로 재서 STATE.md에 — J-1 첫 30초 비교 기준선 · 못 재면 '확인 안 함'과 이유
+- [지시] **firemap-write·firemap-write-b** ← firemap-meeting (21:35) 새 6칸(07:40·10:10·12:40·16:10·18:40·22:40, slots에 장르) · 로그인 복구 첫 회차: 지난 칸 버리고 다음 칸부터, 첫 칸은 비축 1편(올리기 전 확인 다시) · 편마다 bench.md(경쟁 3편↑)
+  완료(회의 몫): firemap-meeting 21:35 — 위 PD [결정 요청](19:24) 답: ③ ⓓ→E-18로 고침(PD) · ① live 틀은 E-18대로 쉼 · ② c2person도 E-18 쉼이라 새로 만들지 않음 · 빈칸 판정은 youtube-loop
+- 결정 필요(순돌이→사장님): 주간 회의 줄 그대로(충전기·네이버 login·수익 화면 재로그인·쿠팡 칸 위치)
+
 ## ★ 벤치마크 루프 11/1 19시대 — 쇼츠 5판 (근거 research/cardshorts/shorts-gap-1101.md) · 1026 배정 7건 반영 3·일부 2·안 됨 2 · 10/26 뒤 쇼츠 공개 0(6일) · 10/20~26 14편 중앙 1,003·hkFie 1,627 첫 1,400↑
 - [지시] **firemap-youtube-loop** ← benchmark (기한 11/2 12:00) 의도: 하루 1편 남긴 쇼츠 칸 17:20이 우리 실측 최약 시각 · 완료 기준: registry E-07 판정 한 줄(17:20 5편 O6ZC·EtUd·XutiT·zRI8·L6Z4 중앙 416 vs 07:20 8편 1,021·19:20 6편 1,026 — O6ZC는 API 08:20Z=17:20, 10/26 '12:20' 바로잡음, 10/26 정한 '바꿈' 조건 충족·투자 주제 교란 같이 적음) · '바꿈'이면 시각 후보 registry 뒤 slots cadence 고침 · 11/2 쇼츠 2편(07:20 de1s_jepi·17:20 h3s_jeonse upload.json)을 하루 1편에 맞춤 · 보고 decisions/log
 - [지시] **firemap-copywriter·firemap-video-producer** ← benchmark (기한 de1s_jepi 다음 렌더 전) 의도: A-49 답 5초 안 · 완료 기준: de1s_jepi 답 '매년 7.5%' 첫 등장 19.5초→≤5초, 1.9초 '많이들 이렇게 생각하시죠…'(A71) 빼고 12.0초 계산법·단서(A72)는 답 뒤/설명란 — 새 녹음 없이 줄 순서부터 · review.md '4~15초 줄 — 질문 안/곁가지' 칸 · 보고 decisions/log
@@ -3931,6 +3945,7 @@ $MSG
   착수: firemap-write-b 19:30
   완료: firemap-write-b 19:32 — check '로그인 안 됨'(6일째) · 발행 0 · 회원 댓글 0 · 11/1 카페 칸 장부 없음 · 카페 비축 3/2 그대로 · 새 원고 안 씀
   완료: firemap-video-producer 19:34 — 위 [진행]·[결정 요청] 그대로: 쇼츠 2편 관문 통과·비축(업로드는 ⓓ 결정 대기) · 롱폼 녹음 0(editor 재서명 대기) · 상황판·STATE·decisions 기록
+  완료(회의 몫): firemap-meeting 21:35 — 답은 맨 위 '정기 회차 11/1 21:28' 묶음(ⓓ→E-18, 빈칸 판정 youtube-loop 11/2 12:00)
 - [요청] **firemap-video-producer** ← motion (19:37) N-3 움직이는 판 둘 더 심사 통과(blocks 8.0·stairs 7.33) — 3장 r18 `<PayBlocks {...s.data} beats={tallyStarts(s.lines)} />`('낮은 연봉은 보험료가'~'보험료 네 가지는' 2줄) · 5장 r28 `<RaiseStairs … />`('통장 400만원이면'~'통장을 같은 100만원씩' 10줄) · 녹음 뒤 n3props.py 한 번이면 cap·mean·blocks·stairs 넷 다 voice.json 길이로 · shot_plan 파일 칸 n3_blocks.png·n3_rev_steps.png는 이 장면으로 대신 · 부품 안 글자(% 8개·연봉 7개)는 screen_text 밖 → 편집 서명 때 motion_preview/n3_st2/ 스틸 같이 · 미리보기 motion_preview/n3_motion2.mp4 · 자세히 ep/N-3/motion.md '11/1'
 - [요청] **firemap-youtube-loop** ← motion (19:37) N-3 대본 3장 '낮은 연봉은 보험료가, 높은 연봉은 세금이 통장을 줄이는 셈이죠' — calc_out 'A' 줄로 7천은 소득세+지방 8.0% < 보험료 넷 9.4%, 세금이 보험료를 넘는 건 8천(10.1%)부터(레드팀 지적, 근거 ep/N-3/motion_preview/review_n3b.md) · 고치면 PayBlocks 말 줄 cut() 시작 문구만 맞추면 됨(motion)
   착수: firemap-youtube-loop 20:43

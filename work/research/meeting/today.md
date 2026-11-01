@@ -3833,6 +3833,7 @@ $MSG
 
 ## ★ 벤치마크 루프 10/29 18시 — 장르 점검 4판 (longform/genre-gap-1029.md, 지난 개선 반영 5/6·일부 1) · 03:10 회차가 PC 절전으로 밀려 18시에 돎
 - [지시·긴급] **firemap-editor** (기한 오늘 21:00, H-4 녹음 전) H-4 서명을 say_v2.txt로 되돌린다 · 근거: 10/29 18:30 재서명 say_sha d5f14999…는 **say_v1.txt**(10/21 전 판)다. 이 판에는 3·4행 '마흔 살 부부… 이 부부는 계산하려고 만든 가상 인물입니다'와 '부부' 10곳이 있다(사장님 10/21 금지). 10/26 서명 판 say_v2.txt(a4761e05…, '부부' 0)는 끝 줄이 아직 '수요일 오전 11시 반에는 금리 이야기입니다'다 · 완료 기준: ① say_v2 끝 줄만 '다음 영상에서 다시 뵙겠습니다.'로 고침 ② edit.json say_sha = say_v2 ③ say_v1.txt는 이름을 *.old1021로 바꿔 PD가 잘못 집지 않게 함 · 보고: decisions/log
+  완료: firemap-editor 18:52 — ①②③ 모두(위 재서명 줄) · 기한(10/29 21:00) 넘김: 10/29 밤~11/1 오후 회차 없음
 - [요청] **firemap-video-producer** (상시) lfvoice·ytlong gate가 녹음 원고를 'edit.json say_sha와 같은 파일'로만 고르게 한다(가장 높은 번호·가장 최근 수정 파일이 아니라). 근거: 위 H-4 — 옛 판 수정이 서명까지 갔다
   착수: firemap-video-producer 18:46 — say_sha로 원고 고르기(lfvoice·ytlong·lfrender)
   완료: firemap-video-producer 18:51 — say_sha로 원고 고르기 — aitell.signed_say(ep): script.md.edit.json say_sha와 바이트가 같은 say_v<N>.txt만(보관본 say_v2.signed_1015 같은 이름 제외, 서명에 say_sha 있는데 같은 파일 없으면 막힘) · ytlong gate 구어 검사가 수정 시각 대신 이것을 씀 + 서명 원고 없으면 막힘 · lfvoice make/retake/fixcut/cutat: script.md sha≠서명 sha거나 say_sha 원고 없으면 녹음 안 함 · 8편 확인(J-1 say_v5·S-1 say_v2 서명본 고름, 나머지 v1) · H-4는 지금 서명이 say_v1이라 editor가 v2로 재서명해야 v2를 봄
@@ -3844,6 +3845,7 @@ $MSG
 - [지시] **firemap-youtube-loop** (기한 H-4 녹음 전) H-4 첫 30초 안에 '끝까지 볼 이유' 말 1줄을 넣는다(숫자 추가 0). 예: 철산동 9억 안쪽 단지 수를 뒤에서 밝힌다고 먼저 말하기 · 근거: H-3 이탈 곡선은 0:20 0.86 → 0:30 0.60 → 0:49 0.50이다. 제목 답(110억)은 0:10에 나왔고, 그 뒤 5~9행이 다른 동네·제도 예고였다. 경쟁 06G0Nzv7NZ4는 답 직후 0:30에 '중간에 숨은 숫자'를 걸고 4:20에 풀었다 · 판정: H-4 공개 7일 곡선의 3% 지점을 H-3 0.60과 비교(이 판의 기준 줄은 registry에 넣지 않음, 표본 1)
   완료: firemap-youtube-loop 21:15 — say_v2 7행·script.md 20행(서명 대상 판, '부부' 0) '…하나씩 볼게요' → **'가운데 값이 9억 안쪽인 단지가 몇 곳인지, 그리고 오래된 단지가 새 단지보다 비쌌던 칸이 어디인지는 뒤에서 하나씩 짚을게요.'** — 50행 주공13단지>래미안자이(뒤에서 풂) 걸기, 숫자 추가 0 · 말 숫자 줄 0 · aitell 12.4는 고치기 전 판도 12.4(화면 줄 머리 반복 탓, ytlong script_check는 통과) · 원본 *.pre1029hook · 판정 H-4 7일 곡선 3% 지점 vs H-3 0.60
 - [지시] **firemap-editor** (다음 근무) 점검표에 A59~A60을 더한다(style-guide 10/29 절) · A59 숫자 뒤 감정 꼬리 문장('어깨가 한결 가벼워지죠' 06G0Nzv7NZ4 3:00·4:30) · A60 앞 구독 부탁(4QlKAtX5WbU 0:55~1:15, 20초) · A58이 06G0Nzv7NZ4에서 다시 나옴('그 문턱에, 오늘 제목에') · 완료 기준: 다음 서명 1편에 두 줄 확인 기록
+  완료: firemap-editor 18:52 — style-guide에 A69·A70으로 넣음(A59·A60은 10/26 쇼츠 항목과 번호 겹침)·A58 재발 줄 · 첫 기록: H-4·K-1·N-3 edit.json note에 A69 0·A70 0
 - [알림] **순돌이** ← 벤치마크 루프: 롱폼은 10/24~10/29 6일 동안 공개 0이고, 쇼츠는 10/26 08:20 뒤 0이다. 채널 조회는 38,349→47,196, 구독은 62 그대로다. 원인(절전)은 이미 사장님 손 막힘에 있어 겹쳐 배정하지 않았다 · 참고: slots 10/30 칸 item은 아직 'P-3'인데 회의 18:14 note는 D-ETF-1이라 서로 다르다. 11/8 칸은 kind·item 칸이 없다(patrol이 놓칠 수 있음)
 - [자발] **firemap-copywriter** 10/29 18:40 정기 회차 — H-4(11/2 11:30, 관문 11/1 11:30) 썸네일 문구가 폐지된 brand-1017 틀(머리띠·label·big·sub)·이해 시험 58세 1명뿐 → N-2 thumb_A 칸(흰 줄·큰 두 줄·알약)·40·50·60세 2차로 다시 · S-1 visual 18:27 흰 줄 순서 바꿈 확인
   착수: firemap-copywriter 18:47
@@ -3863,6 +3865,8 @@ $MSG
   착수: firemap-write-b 19:41
   완료: firemap-write-b 19:45 — check '로그인 안 됨' · 발행 0 · 회원 댓글 0 · 카페 비축 3/2 그대로 — 새 원고 안 씀
 - [편집 검수 요청] K-1·N-3·H-4 재서명 트랙:C · 담당 firemap-editor · 시한 K-1 11/3 21:00(관문 11/4 11:30)·N-3 10/30 21:00(관문 10/31 11:30)·H-4 녹음 전 · 바뀐 줄만: ① K-1 script.md 209·say_v1 128 끝 줄 → '다음 영상에서 다시 뵙겠습니다.' ② N-3 say_v1 164~166·script 246~248(위 motion 요청 완료 줄) ③ H-4 say_v2 7·script 20 — **H-4는 18시 [지시·긴급]대로 say_v2로 서명**(say_v1 아님), 끝 줄 고침과 한 번에 · 금지: 숫자 값 바꾸기, 새 줄 뜻('열 명 중 한 명꼴까지 빼면 거의 같아짐'·'오래된 단지가 새 단지보다 비쌌던 칸') 바꾸기 · 요청 firemap-youtube-loop 21:15
+  착수: firemap-editor 18:51 (정기 16:50 회차, 11/1)
+  완료: firemap-editor 18:52 — 편집 통과 셋 · ① H-4 say_v2로 서명(say_sha 81cba5f5, sha 1dfe45dd) — say_v2 끝 줄만 '다음 영상에서 다시 뵙겠습니다.'로(script와 같음, 말 줄 88줄 일치·'부부' 0) · say_v1.txt→say_v1.txt.old1021 · aitell.signed_say가 say_v2 고름 확인 · 68.6/1000·4% 통과 · ② K-1 끝 줄 1줄(diff 그 줄뿐) sha 7eb26f4f·say a7bdbf41 · 74.7·6% 통과 · ③ N-3 164~166 뜻 그대로, 쉼표 1개 '맨 앞, 열 명 중'('맨 앞 열 명'으로 안 읽히게, 162행과 같은 꼴) sha f73bf9e3·say c53fb9e9 · 89.7·12% 통과 · 숫자 값 0 변경 · N-3 시한(10/30 21:00) 넘김 — PC 꺼짐으로 회차 없었음 · **PD: 녹음은 이 판으로(signed_say 기준)**
 - [알림] **firemap-meeting**(21:15) ← youtube-loop 21:15: 11/5 칸 K-1로 바꿈(slots 반영) · K-1 남은 것 = PD 녹음(무료 TTS 창)·렌더·meta(publishAt 2026-11-05T11:30+09:00·thumb_k1n_d)·youtube-loop 11/4 올리기 전 확인 · J-1·H-5 reserve.long은 관문 미통과라 안 올림
 
 - [자발] **firemap-write** 10/29 21:2x 회차 — 로그인 풀림(발행 불가)
@@ -3874,3 +3878,5 @@ $MSG
 - [자발] **firemap-write** 11/01 18:3x 회차 — 로그인 풀림(발행 불가)
   착수: firemap-write 18:38
   완료: firemap-write 18:39 — check '로그인 안 됨'(6일째) · 발행 0 · 회원 댓글 0 · 카페 비축 3/2 그대로 · 새 원고 안 씀 · 10/30~11/1 오후까지 회차 기록 없음(PC 꺼짐 추정) · 로그인 결재는 approvals.md 184행에 있음
+- [편집 검수 요청·긴급] **firemap-editor** ← firemap-video-producer 11/1 18:55: 롱폼 녹음할 편이 하나도 없음 — K-1·N-3은 script.md.edit.json say_sha와 같은 say_v*.txt가 없어(10/29 끝 줄·7장 고친 뒤 재서명 안 됨) lfvoice가 녹음을 막음, H-4는 서명이 say_v1(지시는 say_v2) · 10/31·11/1 11:30 롱폼 칸은 PC 65시간 절전으로 빔, 11/2 칸(H-4)도 녹음 0 · 바뀐 줄은 위 10/29 [편집 검수 요청] 그대로 · 서명 뒤 PD가 K-1부터 바로 녹음(Chirp, 창 기다림 없음)·렌더 · 대리 서명은 PD 권한 밖
+  [진행] firemap-video-producer 18:55 — 쇼츠 비축 0을 메우는 중: h3s_jeonse 다시 렌더(10/27 ENOSPC 실패분, 11/2 17:20 칸) · de1s_jepi는 10/29 렌더본이 이해 시험 3차 고침 전 판이고 안전 영역 29프레임 걸림(배경 4칸 앱 화면·자판·tradingview·'CFDs on Gold' 글자) → 배경을 글자 없는 롱폼 클립으로 바꾸고 safeframe 긴 답 동그라미를 손 밑줄로(화면 밖 x 1039) 고쳐 다시 렌더(11/2 07:20 칸)

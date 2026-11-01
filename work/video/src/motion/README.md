@@ -120,3 +120,9 @@
 - **MeanPull — '평균이 가운데보다 높은 이유'(소수 큰 값이 평균을 끈다)**: `xMax·ticks·unit·mean{v,label,text,at}·mid{v,label,text,at,stay}·top{label,text,at,pull}·gap{text,at}`. 돈 자 위 깃발 둘 + 자 끝 너머(// 끊김) 추가 줄로 평균 깃발을 당김. **평균 깃발 자리는 옮기지 않는다**(옮기면 '1%를 뺀 평균'이 생김) — 기울기·화살표로만. N1·N2 '100명 줄'(사람 점)과 다른 꼴.
 - 회색 깃발(#8a909b)은 U5 160×90 회색에서 4%를 못 넘겨 9.0초 같은 화면이었다 → T.ink2. 새 요소가 옅은 색이면 말 줄 앞쪽(at x.15)에 둔다.
 - 예: work/research/longform/ep/N-3/motion_preview/n3props.py(calc_out·research 대조 assert) · n3render.py(렌더+줄별 스틸+motioncheck+U5).
+
+## 오린 블록 쌓기 · 거꾸로 계단(11/1) — PayBlocks · RaiseStairs (N-3 3장·5장)
+- **PayBlocks — '무엇은 같은 비율, 무엇만 가파르게'(보험료 vs 소득세, 수수료 vs 세금)**: `cols[{label, ins[], tax}]·insLabel·taxLabel·axis·insAt·taxAt·flatAt·steepAt`. 값은 몫(0~1, 공제 ÷ 세전). 회색 블록 넷이 칸마다 떨어져 쌓이고(seed로 기울기·순서), 그 위 검은 블록 → flatAt에 회색 윗선 점선(거의 평평) → steepAt에 검은 블록만 주황 + 꼭대기 잇는 손 선 + 마지막 칸 손 동그라미. 화면 % 글자 없음. 상한에 닿는 칸은 '같은 비율'이 깨지니 props에서 뺀다(assert).
+- **RaiseStairs — '같은 걸음, 갈수록 높은 계단'(목표 금액별 필요 연봉·필요 원금)**: `steps[{goal, pay, v, at, openAt}]·gaps[{text, at}]·gapAt·unitText·unitAt·axis`. 첫 칸은 처음부터 서 있음(앞 장면에서 말한 값 — at·openAt 0). 칸이 앞 칸 높이까지 오른 뒤 차만큼 솟고, 값은 '?' → 말에서 열림. gapAt부터 솟은 부분(챌면)이 진해지고 흰 차 글자, 마지막 차는 그 말에서만 주황 + 손 동그라미. 높이 = 차 비례, 바닥 = 첫 칸 값(0원 축 아님 — 첫 칸 글자가 그 값). seed로 방향(가끔 오른→왼)·칸 폭·탄성.
+- 자리: 바닥 BASE 780~790 — 아래 출처 줄(y≈860)과 칸 이름이 겹친다(11/1 첫 렌더 눈 검사). 맨 위 값 글자는 제목(≈y 175) 아래로 — 솟는 높이 390px.
+- 예: work/research/longform/ep/N-3/motion_preview/n3props.py(blocks·stairs, calc_out assert) · n3render2.py(렌더+줄별 스틸+motioncheck+U5) · judge.py blocks stairs.

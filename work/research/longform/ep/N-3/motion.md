@@ -16,3 +16,20 @@ shot_plan '장면 계획'의 움직이는 판 중 두 개를 부품으로 만들
 1. `py -3.12 work/research/longform/ep/N-3/motion_preview/n3props.py` — voice.json이 있으면 그 길이로 n3_motion.json을 다시 만든다. 대본 줄이 바뀌면 assert로 멈춤 → cut() 시작·끝 문구만 고침.
 2. N3.tsx 장면 kind 'cap'·'mean'에 `<CapStop {...s.data} beats={tallyStarts(s.lines)} />`·`<MeanPull {...s.data} beats={tallyStarts(s.lines)} />`(TallyFrame 자식, title·source는 n3_motion.json 그대로).
 3. 렌더 뒤 그 구간 lfrender screen·overlap. 부품 안 글자는 screen_text에 안 들어감 → 편집 서명 때 n3_st/ 스틸을 같이 본다.
+
+# 11/1 motion — 움직이는 판 둘 더(r18 블록 쌓기 · r28 거꾸로 계단)
+
+| shot_plan 줄 | 장면 | 부품 | 말 줄 | 무엇이 움직이나 |
+|---|---|---|---|---|
+| r18 3장 블록 | blocks | video/src/motion/PayBlocks.tsx | 3장 '낮은 연봉은 보험료가' ~ '보험료 네 가지는' 2줄 | 연봉 3천·5천·7천·8천 칸에 회색 보험료 블록 넷이 떨어져 쌓임 → 검은 소득세(+지방) 블록 → 보험료 윗선 점선(평평) → 소득세만 주황 + 가파른 손 선 + 8천 손 동그라미 |
+| r28 5장 계단 | stairs | video/src/motion/RaiseStairs.tsx | 5장 '통장 400만원이면' ~ '통장을 같은 100만원씩' 10줄 | 통장 300(4,100만원) 칸 서 있음 → 400·500·600 칸이 말 따라 솟고 연봉 '?' → 열림 → '칸 사이' 줄에 더 솟은 부분 진하게 + 흰 '+1,580만원'·'+1,650만원' → '+1,770만원'만 주황·손 동그라미 → 끝 줄 '+100만원' 셋 |
+
+- 숫자: n3props.py가 calc_out 'A' 줄(공제 내역 원 단위 ÷ 세전)·'I' 줄(통장 목표별 연봉)·대본 자막(칸 사이 1,580·1,650·1,770)을 assert. blocks 칸은 연금 상한 아래(8천까지)만 — 1억 위는 '같은 비율'이 깨져 뺌. 화면에 % 글자 없음.
+- 정직성: 계단 바닥은 0원이 아니라 첫 칸 연봉 4,100만원(첫 칸 글자). 솟은 높이 = 연봉 차 비례.
+- 미리보기: motion_preview/n3_motion2.mp4(37.5초, 어림 길이) · 줄별 스틸 board_blocks.png·board_stairs.png(n3_st2/) · motioncheck 통과(움직임 55%·최장 정지 4.8초) · U5 최장 5.0초·8초 넘는 곳 0.
+- 첫 렌더 눈 검사로 고친 것: 칸 이름이 아래 출처 줄과 겹침(BASE 840→790·780) · 맨 위 '9,100만원'이 제목에 닿음(솟는 높이 470→390) · '칸 사이' 줄에서 답 주황이 먼저 켜짐(그 말에서만) · 손 선 시작점 주황 점.
+
+## PD 넣는 법(녹음 뒤) — cap·mean과 같음
+1. `py -3.12 work/research/longform/ep/N-3/motion_preview/n3props.py` (blocks·stairs도 같이 나옴, 줄 바뀌면 assert)
+2. N3.tsx 장면 kind 'blocks'·'stairs'에 `<PayBlocks {...s.data} beats={tallyStarts(s.lines)} />`·`<RaiseStairs {...s.data} beats={tallyStarts(s.lines)} />`(TallyFrame 자식, title·source는 n3_motion.json). shot_plan 파일 칸(bg/n3/board/n3_blocks.png·n3_rev_steps.png)은 이 장면 스틸로 대신.
+3. 렌더 뒤 그 구간 lfrender screen·overlap. 부품 안 글자는 screen_text 밖 → 편집 서명 때 n3_st2/ 스틸 같이.

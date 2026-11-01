@@ -22,6 +22,8 @@ import {BalancePath, BalancePathProps} from '../BalancePath';
 import {EqRow, EqRowProps} from '../EqRow';
 import {CapStop, CapStopProps} from '../CapStop';
 import {MeanPull, MeanPullProps} from '../MeanPull';
+import {PayBlocks, PayBlocksProps} from '../PayBlocks';
+import {RaiseStairs, RaiseStairsProps} from '../RaiseStairs';
 
 type P = {scene: RScene; zoom: ZoomOutOpenProps};
 const OpenZoom: React.FC<P> = ({scene, zoom}) => (
@@ -140,6 +142,15 @@ const N3Motion: React.FC<P15> = ({cap, mean}) => (
   </Series>
 );
 
+// N-3 움직이는 판 둘 더(11/1 motion) — blocks PayBlocks(3장 보험료·소득세 블록) · stairs RaiseStairs(5장 거꾸로 계단)
+type P16 = {blocks: V3S<Omit<PayBlocksProps, 'beats'>>; stairs: V3S<Omit<RaiseStairsProps, 'beats'>>};
+const N3Motion2: React.FC<P16> = ({blocks, stairs}) => (
+  <Series>
+    <Series.Sequence durationInFrames={blocks.frames}>{v3Frame(blocks, <PayBlocks {...blocks.data} beats={tallyStarts(blocks.lines)} />)}</Series.Sequence>
+    <Series.Sequence durationInFrames={stairs.frames}>{v3Frame(stairs, <RaiseStairs {...stairs.data} beats={tallyStarts(stairs.lines)} />)}</Series.Sequence>
+  </Series>
+);
+
 export const PreviewRoot: React.FC = () => (
   <>
   <Composition id="OpenZoom" component={OpenZoom as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
@@ -187,5 +198,8 @@ export const PreviewRoot: React.FC = () => (
   <Composition id="N3Motion" component={N3Motion as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => { const q = props as unknown as P15; return {durationInFrames: q.cap.frames + q.mean.frames}; }} />
+  <Composition id="N3Motion2" component={N3Motion2 as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => { const q = props as unknown as P16; return {durationInFrames: q.blocks.frames + q.stairs.frames}; }} />
   </>
 );

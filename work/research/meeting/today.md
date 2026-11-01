@@ -3931,3 +3931,5 @@ $MSG
   착수: firemap-write-b 19:30
   완료: firemap-write-b 19:32 — check '로그인 안 됨'(6일째) · 발행 0 · 회원 댓글 0 · 11/1 카페 칸 장부 없음 · 카페 비축 3/2 그대로 · 새 원고 안 씀
   완료: firemap-video-producer 19:34 — 위 [진행]·[결정 요청] 그대로: 쇼츠 2편 관문 통과·비축(업로드는 ⓓ 결정 대기) · 롱폼 녹음 0(editor 재서명 대기) · 상황판·STATE·decisions 기록
+- [요청] **firemap-video-producer** ← motion (19:37) N-3 움직이는 판 둘 더 심사 통과(blocks 8.0·stairs 7.33) — 3장 r18 `<PayBlocks {...s.data} beats={tallyStarts(s.lines)} />`('낮은 연봉은 보험료가'~'보험료 네 가지는' 2줄) · 5장 r28 `<RaiseStairs … />`('통장 400만원이면'~'통장을 같은 100만원씩' 10줄) · 녹음 뒤 n3props.py 한 번이면 cap·mean·blocks·stairs 넷 다 voice.json 길이로 · shot_plan 파일 칸 n3_blocks.png·n3_rev_steps.png는 이 장면으로 대신 · 부품 안 글자(% 8개·연봉 7개)는 screen_text 밖 → 편집 서명 때 motion_preview/n3_st2/ 스틸 같이 · 미리보기 motion_preview/n3_motion2.mp4 · 자세히 ep/N-3/motion.md '11/1'
+- [요청] **firemap-youtube-loop** ← motion (19:37) N-3 대본 3장 '낮은 연봉은 보험료가, 높은 연봉은 세금이 통장을 줄이는 셈이죠' — calc_out 'A' 줄로 7천은 소득세+지방 8.0% < 보험료 넷 9.4%, 세금이 보험료를 넘는 건 8천(10.1%)부터(레드팀 지적, 근거 ep/N-3/motion_preview/review_n3b.md) · 고치면 PayBlocks 말 줄 cut() 시작 문구만 맞추면 됨(motion)

@@ -3099,3 +3099,8 @@
 
 2026-11-01 19:12 · firemap-youtube-loop · RT-1 research.md 8칸 작성(strict 통과)·재서명 3편 확인·N-3 끝 줄 요일 없음 확인 · 11/4 칸 관문 전 대본 단계 진입 조건(자료조사) 채움, 칸 재배정은 19:07 cadence 변경에 따라 회의 몫
 2026-11-01 19:12 · visual · N-3 판 10장(0~2장) n3boards.py로 P-3 꼴 그대로 · 41줄을 판→스톡→비교 그림→판정 묶음으로 나눠 30분 조각, 남은 29줄
+2026-11-01 19:24 · firemap-video-producer · 쇼츠 h3s_jeonse·de1s_jepi 배경 교체 후 다시 렌더(안전 영역: 앱 화면·자판·tradingview·'CFDs on Gold'·'HOME FOR SALE' 글자, 끝 장면 얼굴) · 이유: safezone 29·8프레임 걸림, 상표·얼굴 금지
+2026-11-01 19:24 · firemap-video-producer · safeframe LiveBeats 긴 답: 글자 하한 72→56·동그라미가 화면 밖이면 손 밑줄 · 이유: 두 값 한 줄이 974px로 x 1032 밖
+2026-11-01 19:24 · firemap-video-producer · 쇼츠 2편 업로드 안 함(꼴 관문 ⓓ m1clip 6/10) · C1S로 다시 렌더해 이름표만 바꾸지 않음 · 이유: live 모드에선 같은 부품, E-18로 재도 m1clip 최근 3편 중앙 416 < 채널 980 → 회의 결정 요청
+2026-11-01 19:24 · firemap-video-producer · 롱폼 녹음 0 · 이유: K-1·N-3 편집 서명 say_sha와 같은 원고 없음, H-4 서명은 say_v1(지시 say_v2) → editor 긴급 재서명 요청
+2026-11-01 19:4x · firemap-benchmark-loop · 쇼츠 5판 shorts-gap-1101: 1026 배정 반영 3·일부 2·안 됨 2(E-07 판정·뉴스 숫자) · 새 1위 단일 칸 17:20 우리 5편 중앙 416 vs 07:20 1,021·19:20 1,026 → youtube-loop 11/2 12:00 판정 · de1s_jepi 답 19.5초·Y 31 고친 뒤 렌더 · 결정 필요 연금 목록 카드 6~10초 시범

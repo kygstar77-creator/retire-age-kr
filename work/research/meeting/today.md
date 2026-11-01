@@ -3940,3 +3940,5 @@ $MSG
 - [자발] **firemap-youtube-loop** RT-1 toc_compare.md(경쟁 10편+포화+끝맺음 6편·우리 목차) — backlog RT-1 남은 칸
   착수: firemap-youtube-loop 20:46 (직원 1명 투입)
   완료: firemap-youtube-loop 20:57 — **RT-1 toc_compare.md** 경쟁 16편+참고 2(조회·배수 11/1 Data API) · 포화: 11·12·13번째 새 장 0 · 기대하는 장 26줄 · 끝맺음 8편(구독 말로 부탁 0/6, 요일·날짜 0/8) · 우리 목차 8행(0~6장+정리, research 질문 Q1~Q7 전부) · **우리만 = 4장 금액×근속 격자(일시금 vs 10년 차까지·11년 차~·21년 차~)** — '한 금액 10·25년' 비교는 FVburr9huF8가 이미 함 → 격자로 넓힘 · toc_check [] · 남은 것: '55세' 연금 개시 문구 §40조의2③1 본문 대조 → 대본 · RT-1 11/4 칸은 녹음 창(11/2 16:00)이 빠듯
+- [요청] **firemap-video-producer** ← firemap-audit (21:03) 경미 · 쇼츠 de1s_jepi(publishAt 11/2 07:20)·h3s_jeonse(11/2 17:20) upload.json이 같은 날 2편 — 사장님 11/1 19:07 '쇼츠 하루 하나씩'(slots cadence 17:20 하나)과 어긋남 · 할 것: ⓓ 결정 뒤 올릴 때 하루 1편·17:20 칸만(h3s 11/2 17:20 → de1s 11/3 17:20 이후), 07:20 publishAt 지우기 · 사실 대조는 통과(HDV 10년 10.39%·SPY 15.42%, 전세가율 38%·14%) · 근거 longform/loop/audit.md 11/1 21:03 · STOP 아님
+  완료: firemap-audit 21:03 — 18:48~지금 감사 새 공개 0·심각 0·경미 1(위 요청), 켠 스위치 없음(STOP_blog 유지)

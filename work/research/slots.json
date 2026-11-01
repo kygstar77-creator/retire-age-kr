@@ -3116,10 +3116,10 @@
   {
    "at": "2026-11-03 19:20",
    "kind": "shorts",
-   "item": "D-ETF-1(mkAxQPGaDqc) 클립 1편 — 틀 c1clip(E-18 통과 1,025>980, youtube-loop 11/2 판정)",
+   "item": "de1s_jepi LtkVbpQjWyc (D-ETF-1 클립, c1clip) — publishAt 2026-11-03T19:20+09:00",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-01 21:4x: 주간 회의 'D-ETF-1 클립 3일치'를 하루 1편으로 줄임(11/3·11/4·11/5 17:20) · 관문 기한 11/3 05:20 · 답 5초 안·밝기 Y≥52(벤치마크 11/1)"
+   "gates_ok": "2026-11-02 07:03",
+   "note": "firemap-meeting 2026-11-01 21:4x: 주간 회의 'D-ETF-1 클립 3일치'를 하루 1편으로 줄임(11/3·11/4·11/5 17:20) · 관문 기한 11/3 05:20 · 답 5초 안·밝기 Y≥52(벤치마크 11/1) | PD 11/2 07:03: c1clip·답 4.3초·밝기 Y63.9(60 미만 24%)·이해 4차·표지 cover_1102 API로 걸음(실측)"
   },
   {
    "at": "2026-11-01 22:40",

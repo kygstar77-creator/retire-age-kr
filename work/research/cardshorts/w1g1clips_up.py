@@ -123,6 +123,7 @@ def main(name, check_only=False):
         try: up['synth_update_echo'] = fix_synth(vid, up); break
         except Exception as e:
             print('videos.update 다시 시도', k + 1, str(e)[:120]); time.sleep(30)
+    if up.get('cover'): up['cover_set'] = ytupload.set_cover(yt, vid, os.path.join(REPO, up['cover']))   # 11/2 PD 쇼츠 표지 실측(벤치마크 today 지시, ytupload.set_cover 주석) — 공개 뒤 oardefault·oar2 비교
     v = show(yt, vid)
     if v['status'].get('publishAt') is None or v['status'].get('privacyStatus') != 'private': print('새 판 예약 확인 실패 — 옛 예약을 건드리지 않는다'); return 8
     if old:

@@ -2,13 +2,13 @@
  "name": "de1s_jepi",
  "ep": "D-ETF-1",
  "from_long": "mkAxQPGaDqc",
- "mp4": "work/video/out/de1s_jepi_ds.mp4",
+ "mp4": "work/video/out/de1s_jepi_c1_ds.mp4",
  "publishAt": "2026-11-03T19:20:00+09:00",
  "publish_plan": "2026-11-03 17:20 (11/1 22시 PD: 쇼츠 하루 1편·17:20 칸만(사장님 11/1, 감사 21:03) — 07:20 지움. 지금 렌더본은 E-18 m1clip 쉼·답 5초 밖·밝기 Y31이라 이대로 안 올림) | youtube-loop 11/2 00:45: E-07 판정으로 17:20→19:20(registry E-07)",
  "title": "JEPI 분배율 8%, 5년 동안 돈은 얼마나 불었을까 #shorts",
- "description": "전체 비교(배당 ETF 16개): https://youtu.be/mkAxQPGaDqc\n\nJEPI는 지금 분배율 8%지만, 받은 배당을 다시 넣고 주가까지 합친 5년 총수익(2021년 10월~2026년 10월, 달러 기준)은 한 해 평균 7.5%였어요.\n같은 기간 S&P500은 12.8%, SCHD는 9.8%, HDV는 13.1%였습니다.\n10년으로 늘리면 HDV 10.4%, S&P500 15.4%로 순서가 바뀌어요. JEPI는 10년 값이 없어요.\n원화로 바꿔 보면 5년 한 해 평균 JEPI 10.3%, S&P500 15.7%로 순서는 같았어요.\n배당을 생활비로 꺼내 쓰면 이보다 덜 불어납니다.\n지나간 값이고, 특정 상품을 사거나 팔라는 뜻이 아닙니다.\n\n출처: 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — 27170160 Nathan J Hilton · 34535507 Burak Bahadır  Büyükkılınç · 5981346 https://kaboompics.com/ · 6343634 KATRIN  BOLOVTSOVA · 7592927 ROMAN ODINTSOV · 8060388 Ron Lach · 8164676 Kindel Media · 8369909 RDNE Stock project · 8661806 Adrian Frentescu\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #JEPI #배당ETF",
+ "description": "전체 계산: https://youtu.be/mkAxQPGaDqc (배당 ETF 16개 비교)\n\nJEPI는 지금 분배율 8%지만, 받은 배당을 다시 넣고 주가까지 합친 5년 총수익(2021년 10월~2026년 10월, 달러 기준)은 한 해 평균 7.5%였어요.\n같은 기간 S&P500은 12.8%, SCHD는 9.8%, HDV는 13.1%였습니다.\n10년으로 늘리면 HDV 10.4%, S&P500 15.4%로 순서가 바뀌어요. JEPI는 10년 값이 없어요.\n원화로 바꿔 보면 5년 한 해 평균 JEPI 10.3%, S&P500 15.7%로 순서는 같았어요.\n배당을 생활비로 꺼내 쓰면 이보다 덜 불어납니다.\n지나간 값이고, 특정 상품을 사거나 팔라는 뜻이 아닙니다.\n\n출처: 야후 파이낸스 분배·가격(2026-10-16 마감) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — 27170160 Nathan J Hilton · 34535507 Burak Bahadır  Büyükkılınç · 5981346 https://kaboompics.com/ · 6343634 KATRIN  BOLOVTSOVA · 7592927 ROMAN ODINTSOV · 8060388 Ron Lach · 8164676 Kindel Media · 8369909 RDNE Stock project · 8661806 Adrian Frentescu\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #JEPI #배당ETF",
  "tags": "JEPI,배당 ETF,JEPI 수익률,월배당 ETF,S&P500",
- "layout": "m1clip",
+ "layout": "c1clip",
  "look": "live",
  "title_review": {
   "gemini": {
@@ -19,5 +19,19 @@
   },
   "understand": "understand.md 1~3차"
  },
- "publishAt_prev": "2026-11-02T07:20:00+09:00"
+ "publishAt_prev": "2026-11-02T07:20:00+09:00",
+ "cover": "work/research/cardshorts/de1s_jepi/cover_1102.png",
+ "v1102_note": "11/2 PD: c1clip 틀(C1S live, E-18 통과)·답 7.5% 1.9초(A71 줄 뺌·A72 줄 답 뒤로, 말 새로 0)·어두운 배경 4칸→밝은 롱폼 클립 · 표지 첫 실측",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "LtkVbpQjWyc",
+ "uploaded_at": "2026-11-02 07:02:52",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-03T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
 }

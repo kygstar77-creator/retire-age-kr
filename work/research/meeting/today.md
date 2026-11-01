@@ -3900,6 +3900,7 @@ $MSG
   착수: firemap-write 18:38
   완료: firemap-write 18:39 — check '로그인 안 됨'(6일째) · 발행 0 · 회원 댓글 0 · 카페 비축 3/2 그대로 · 새 원고 안 씀 · 10/30~11/1 오후까지 회차 기록 없음(PC 꺼짐 추정) · 로그인 결재는 approvals.md 184행에 있음
 - [편집 검수 요청·긴급] **firemap-editor** ← firemap-video-producer 11/1 18:55: 롱폼 녹음할 편이 하나도 없음 — K-1·N-3은 script.md.edit.json say_sha와 같은 say_v*.txt가 없어(10/29 끝 줄·7장 고친 뒤 재서명 안 됨) lfvoice가 녹음을 막음, H-4는 서명이 say_v1(지시는 say_v2) · 10/31·11/1 11:30 롱폼 칸은 PC 65시간 절전으로 빔, 11/2 칸(H-4)도 녹음 0 · 바뀐 줄은 위 10/29 [편집 검수 요청] 그대로 · 서명 뒤 PD가 K-1부터 바로 녹음(Chirp, 창 기다림 없음)·렌더 · 대리 서명은 PD 권한 밖
+  처리(운영실장 19:06): firemap-editor 18:52 완료 줄(H-4 say_v2·K-1·N-3 재서명, 정기 회차 succeeded)과 같은 일 — PD는 지금 running(18:44~)이라 다음 일로 녹음. 운영실장은 editor 다시 안 부름
   [진행] firemap-video-producer 18:55 — 쇼츠 비축 0을 메우는 중: h3s_jeonse 다시 렌더(10/27 ENOSPC 실패분, 11/2 17:20 칸) · de1s_jepi는 10/29 렌더본이 이해 시험 3차 고침 전 판이고 안전 영역 29프레임 걸림(배경 4칸 앱 화면·자판·tradingview·'CFDs on Gold' 글자) → 배경을 글자 없는 롱폼 클립으로 바꾸고 safeframe 긴 답 동그라미를 손 밑줄로(화면 밖 x 1039) 고쳐 다시 렌더(11/2 07:20 칸)
 - [자발] **firemap-copywriter** 11/01 18:40 정기 회차 — W-3(11/3 11:30, 관문 11/2 11:30) 제목·썸네일 이해 시험 칸 비어 있음(understand_test.md 대본만 통과) → 40·50·60세 새 심사관으로 채움 · P-4(11/7) 제목 후보
   착수: firemap-copywriter 18:56
@@ -3908,3 +3909,11 @@ $MSG
 - [요청] **firemap-visual-designer** W-3 썸네일 글자 바꾸기 트랙:C · 시한 W-3 새 칸 관문 전(회의 11/1 19:0x로 11/3 칸은 J-1, W-3는 녹음 순서 — 급하지 않음) · 근거 ep/W-3/copy/titles.md '11/1 고친 판' — visual/W-3-thumb/make_w3n.py w3n_a~c의 사진·꼴은 그대로, 글자만: 흰 줄 '올해 생긴 배당소득 분리과세' / 큰 흰 '배당·이자 2천만까지 그대로' / 큰 주황 '넘는 사람만 세금 달라져요' · 옛 '배당 500만원 받는데/세금은 그대로였다'·'삼성전자 배당금 · 배당소득 분리과세'는 쓰지 않음 · 1초 시험(412·168)·thumbpair · 요청 firemap-copywriter 19:01
 - [알림] **firemap-youtube-loop**·**W-3 맡은 PD 회차** ← copywriter 19:01: W-3 meta.json 만들 때 title = '삼성전자·현대차 배당금 세금, 배당소득 분리과세로 달라지는 사람은 따로 있다', title_candidates 2위 = '삼성전자·현대차 배당금 세금, 배당소득 분리과세로 줄어드는 사람은 따로 있다' · 이해 시험 남은 궁금증 '2천만 아래면 할 일 없나·건보·신청 자동인지' 3/3 — 고정 댓글(titles.md)이 신청·2천만 답함 · 대본 첫 줄 인사('안녕하세요, 파이어맵입니다…')는 질문 앞 예고라 둘째 줄 질문으로 바로 여는 것 권함(10/20 제안 그대로)
   [알림] copywriter 19:03: 회의 19:0x로 11/3 칸이 J-1로 바뀜 확인 — 위 visual W-3 요청을 급함에서 내림 · J-1 제목·썸네일은 10/19 40·50·60세 2차·10/23 그림 시험 통과(understand_test.md 126행), 바꿀 것 없음
+
+- [배차] **firemap-youtube-loop** RT-1 research.md 8칸·toc_compare(11/4 칸, backlog 32행)
+  착수: firemap-youtube-loop 19:06 (운영실장)
+  완료: firemap-youtube-loop 19:12 — **RT-1 research.md 8칸**(원문 S1~S12 법령 9곳 11/1 화면 200 다시 열림·§14③9 가·다목 본문 다시 읽음 · 질문 7개 줄마다 주소 · 우리만: 24칸 격자 중 아낌 1천만원 넘는 칸 3칸(10년 차까지)·4칸(21년 차~) · 한계 7줄 · 대조 20줄 출처 S번호) — research_check strict 통과 · 재서명 확인: N-3·K-1(say_v1)·H-4(say_v2) edit.json 모두 firemap-editor 11/1 18:52 ✔ · N-3 끝 줄 '다음 영상에서 다시 뵙겠습니다.' — 요일 없음, 어느 칸이든 그대로 · N-3 새 칸은 19:07 이틀 1칸 cadence로 회의·dispatcher 재배정 몫(slots 안 건드림) · 남은 것: toc_compare.md(10편+포화+끝맺음 6편)·대본 — RT-1 관문 11/3 11:30·녹음 11/2 16:00 창이라 11/4 칸은 빠듯, 못 넘으면 다음 이틀 칸
+- [배차] **firemap-visual-designer** N-3 장면 41줄(backlog 29행, N-3 새 칸 전)
+  착수: firemap-visual-designer 19:06 (운영실장)
+  완료: firemap-visual-designer 19:12 — N-3 장면 41줄 중 0~2장 판 10장(r02·03·04·06·07·08·10·11·12·14) bg/n3/board/ · 만든 코드 visual/N-3-shots/n3boards.py · 새 Agent 심사 7 통과·3 고칠 것(toc 체크·1% 칸 사람 수·8천 81%) 고침 · shot_plan 품질 칸 '판 만듦·비교 그림·판정 대기' · **남은 29줄**(판 17·계산기 화면 1·스톡 11, r19·r37 motion) — 비교 그림·경쟁 대비 품질 판정은 전 줄 남음
+- [지시·전체] 순돌이 (19:07) 사장님 11/1 '쇼츠는 하루 하나씩, 롱폼은 이틀에 하나씩 올리고 퀄리티를 높여줘' · '카페 글 발행하는 것도 하루 6회로 줄이고 퀄리티를 올려줘' → slots.json cadence: 쇼츠 17:20 1칸 · 롱폼 11:30 이틀에 1칸(long_every_days 2, 기준 11/2) · 카페 6칸 07:40·10:10·12:40·16:10·18:40·22:40 · naverpost DAY_CAP 카페 6(간격 120분) · shortsdaily DAY_CAP 1 · ytlong C1 롱폼 앞뒤 2일 띄움 · patrol 이틀 칸 반영. **firemap-meeting·dispatcher**: 이미 배정된 11/2 이후 칸을 새 칸에 맞게 다시 배정(롱폼은 11/2·4·6…, 남는 롱폼 편은 다음 칸으로 미루고 품질 보강에 씀 — 빼지 말고 순서만), 지워진 카페 칸 묶음은 다음 칸으로. SKILL '빈도 줄이고 품질 올리기' 절

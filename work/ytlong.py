@@ -170,6 +170,8 @@ def gate(ep):
     d0 = pa.astimezone(KST).date()
     if sum(1 for p in prev if 0 <= (d0 - p.astimezone(KST).date()).days < 7) >= 7: bad.append('C1 롱폼 주 7편 넘음')
     if any(p.astimezone(KST).date() == pa.astimezone(KST).date() for p in prev): bad.append('C1 같은 날 롱폼 2편')
+    # 11/1 사장님 '롱폼은 이틀에 하나씩' — 앞뒤 롱폼과 하루 이상 띄움(같은 날·다음 날 공개 막음)
+    if any(abs((p.astimezone(KST).date() - pa.astimezone(KST).date()).days) < 2 for p in prev): bad.append('C1 롱폼 이틀에 1편 — 앞뒤 롱폼과 2일 이상 띄울 것')
     # 10/17 회의(체크리스트 52): 롱폼은 날짜 순서로만 — 앞 칸(slots 롱폼, 이 편보다 이른 미래 칸)이 아직 안 올라갔으면 경고
     for w in order_warn(pa, me): print('[경고] 날짜 순서:', w)
     # 10/11 10:2x 사장님: 롱폼 정규 시각 매일 11:30(전 19:30). 그날 밀린 편은 관문을 다 넘는 즉시 공개 → 한국 11~21시만 허용(새벽·밤 공개는 계속 막음)

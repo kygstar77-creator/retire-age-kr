@@ -111,6 +111,9 @@ try:
     for k, ts in cad.items():
         for d in range(0, 3):
             day = (now + datetime.timedelta(days=d)).strftime('%Y-%m-%d')
+            if k == 'long' and S.get('long_every_days', 1) > 1:   # 11/1 사장님 '롱폼은 이틀에 하나씩' — 기준일에서 N일마다만 칸
+                _a = datetime.date.fromisoformat(S.get('long_anchor', day))
+                if (datetime.date.fromisoformat(day) - _a).days % S['long_every_days']: continue
             for t in ts:
                 at = datetime.datetime.strptime(f'{day} {t}', '%Y-%m-%d %H:%M')
                 if now < at <= now + datetime.timedelta(hours=36) and (k, f'{day} {t}') not in have:

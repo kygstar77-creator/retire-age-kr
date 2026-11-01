@@ -25,7 +25,7 @@ def _cadence_gap_h(default=2):
         return max(1, min(g) // 60)
     except Exception:
         return default
-DAY_CAP, MIN_GAP_H = min(3, int(os.environ.get('SHORTS_DAY_CAP', '3'))), _cadence_gap_h()   # 10/19 사장님 '쇼츠는 하루 3편으로 늘려' — 07:20·17:20·19:20(10/19 E 갈래: 셋째 칸 17:20)   # 기본 하루 1편(10/9 X-YT-FREQ 판정: 48h 중앙 107<180·관문 미달 공개 → 되돌림, research/experiments/judge_1009.md; 10/2~10/8은 2편)   # 2026-09-30 정책 조사 뒤 3편→2편: 유튜브 "frequently sharing content that doesn't resonate ... affect your channel's overall performance", 업로드 빈도는 성장과 "not correlated" (research/longform/yt-policy-algorithm.md)
+DAY_CAP, MIN_GAP_H = min(1, int(os.environ.get('SHORTS_DAY_CAP', '1'))), _cadence_gap_h()   # 11/1 사장님 '쇼츠는 하루 하나씩'(17:20) · 이전 10/19 '쇼츠는 하루 3편으로 늘려' — 07:20·17:20·19:20(10/19 E 갈래: 셋째 칸 17:20)   # 기본 하루 1편(10/9 X-YT-FREQ 판정: 48h 중앙 107<180·관문 미달 공개 → 되돌림, research/experiments/judge_1009.md; 10/2~10/8은 2편)   # 2026-09-30 정책 조사 뒤 3편→2편: 유튜브 "frequently sharing content that doesn't resonate ... affect your channel's overall performance", 업로드 빈도는 성장과 "not correlated" (research/longform/yt-policy-algorithm.md)
 CAFE = 'https://cafe.naver.com/firemap'
 
 def log_rows():

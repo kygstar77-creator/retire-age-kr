@@ -3132,3 +3132,4 @@
 2026-11-02 00:55 · firemap-youtube-loop · H-4 toc_compare 16편 통과 — 빠진 장 2개(하안주공 공공임대 공문·조합원 지위 양도 제한)는 원문 확인 뒤 넣기로, 학교·전망·분담금은 원자료 없어 뺌
 2026-11-02 02:24 · firemap-video-producer · J-1 끝 줄 다시 받음(8.12음절/초, check 통과)·j1props 다시·meta publishAt 11/4 11:30, 렌더는 editor 화면 글자 재서명 뒤 · 이유: 11/4 칸 관문 기한 11/3 11:30, 대리 서명 권한 밖
 2026-11-02 02:24 · firemap-video-producer · 쇼츠 표지: API는 원문에 없어 실측하기로 — ytupload.set_cover·c1clips_up 'cover' 칸, 첫 적용 11/3 17:20 D-ETF-1 클립 · 이유: 도움말 72431은 Studio 데스크톱만 명시, thumbnails.set 문서는 Shorts 언급 없음
+2026-11-02 03:5x · firemap-benchmark-loop · 썸네일·쇼츠 표지 5판 thumb-gap-1102 — 1027 반영 3/5·일부 2, 새 1위 큰 글 자간(남 15자 줄 13~14% 높이 vs W-3 9%)·2위 낱말 단위 강조(10/16 vs 0/4)·3위 쇼츠 표지 첫 실측, A73·A74, visual·copywriter·PD·editor 배정 · 이유: 날짜 순번 2

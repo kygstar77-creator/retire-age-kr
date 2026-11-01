@@ -5,7 +5,7 @@ import os, re, sys, json
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.normpath(os.path.join(HERE, '..', '..'))
-_N = ([a for a in sys.argv[1:] if not a.startswith('--')] or ['w1s_div'])[0]; _E = {'w1': 'W-1', 'g1': 'G-1', 'r1': 'R-1', 'h1': 'H-1', 'd1': 'D-1', 'p1': 'P-1', 'c2': 'C-2', 'n1': 'N-1', 'n2': 'N-2', 't1': 'T-1', 'x1': 'X-1'}[_N[:2]]; _J = _E.replace('-', '').lower() + '.json'   # 10/12 22시 R-1 추가 · 10/14 C-2(c2.json) · 10/16 N-1(n1.json)
+_N = ([a for a in sys.argv[1:] if not a.startswith('--')] or ['w1s_div'])[0]; _E = {'w1': 'W-1', 'g1': 'G-1', 'r1': 'R-1', 'h1': 'H-1', 'd1': 'D-1', 'p1': 'P-1', 'c2': 'C-2', 'n1': 'N-1', 'n2': 'N-2', 't1': 'T-1', 'x1': 'X-1', 'h3': 'H-3', 'de': 'D-ETF-1'}[_N[:2]]; _J = _E.replace('-', '').lower() + '.json'   # 10/12 22시 R-1 추가 · 10/14 C-2(c2.json) · 10/16 N-1(n1.json)
 EP = os.path.join(WORK, 'research', 'longform', 'ep', _E)   # 10/12 PD: W-1·G-1 쇼츠용(한 번에 한 편)
 SRC = (open(os.path.join(EP, 'facts.txt'), encoding='utf-8').read() if os.path.exists(os.path.join(EP, 'facts.txt')) else '') + '\n' + (open(os.path.join(EP, 'calc_n1_out.txt'), encoding='utf-8').read() if os.path.exists(os.path.join(EP, 'calc_n1_out.txt')) else '') + '\n' + (open(os.path.join(EP, 'calc_out.txt'), encoding='utf-8').read() if os.path.exists(os.path.join(EP, 'calc_out.txt')) else '')   # 10/14: D-1은 calc_out 없음(계산은 facts [계산] 줄)
 # 편집 통과한 롱폼 화면 글자(video/c1.json — 자막·칩·그림 글자·눈금, calc_out 문구에서 뽑은 것)도 원문으로 본다
@@ -127,6 +127,37 @@ def layout_share(layout, n=10):
     return last.count(layout), len(last)
 
 
+def layout_rest(layout):
+    # 11/1 회의 21:35: 옛 ⓓ '최근 10편 50%'(근거 없는 숫자) → 기준표 E-18(criteria/registry.md 58행, 10/19)
+    # '그 틀 최근 3편 조회 중앙 < 채널 최근 20편 중앙이면 쉼'. 공개된(publishAt 지난) 쇼츠만, 조회는 지금 Data API 값.
+    # 반환 (쉼 여부, 틀 중앙, 채널 중앙, 설명). 못 재면 쉼으로 본다(재지 않고 올리지 않는다).
+    import datetime, statistics
+    sys.path.insert(0, WORK); import ytupload
+    now = datetime.datetime.now(datetime.timezone.utc)
+    def pub(r):
+        t = r.get('publishAt') or r.get('at')
+        try:
+            d = datetime.datetime.fromisoformat(t.replace('Z', '+00:00'))
+            return d if d.tzinfo else d.replace(tzinfo=datetime.timezone(datetime.timedelta(hours=9)))
+        except Exception: return None
+    rows = [json.loads(x) for x in open(os.path.join(HERE, 'log.jsonl'), encoding='utf-8') if x.strip()]
+    rows = [r for r in rows if r.get('id') and pub(r) and pub(r) <= now]
+    rows.sort(key=pub)
+    try:
+        yt = ytupload.service(); ids = [r['id'] for r in rows][-60:]; views = {}
+        for k in range(0, len(ids), 50):
+            for v in yt.videos().list(part='statistics', id=','.join(ids[k:k + 50])).execute()['items']:
+                views[v['id']] = int(v['statistics'].get('viewCount', 0))
+    except Exception as e:
+        return True, None, None, f'조회 못 잼({type(e).__name__}) — 쉼으로 봄'
+    rows = [r for r in rows if r['id'] in views]
+    ch = [views[r['id']] for r in rows[-20:]]; lay = [views[r['id']] for r in rows if r.get('layout') == layout][-3:]
+    if len(ch) < 20 or len(lay) < 3:
+        return False, None, None, f'표본 모자람(채널 {len(ch)}/20·{layout} {len(lay)}/3) — E-18 판정 안 함, 새 틀은 쉼 아님'
+    m_l, m_c = statistics.median(lay), statistics.median(ch)
+    return m_l < m_c, m_l, m_c, f'{layout} 최근 3편 중앙 {m_l:,.0f} vs 채널 최근 20편 중앙 {m_c:,.0f}'
+
+
 def form_check(name, layout=None, upload=False):
     p = json.load(open(os.path.join(WORK, 'video', name + '.json'), encoding='utf-8'))
     first = p['scenes'][0]['lines'][0]['text'].strip(); last = p['scenes'][-1]['lines'][-1]['text'].strip()
@@ -138,8 +169,9 @@ def form_check(name, layout=None, upload=False):
     for t in dict.fromkeys(screen_texts(p)):
         for m in WON7.finditer(t): bad.append(f'ⓒ 원 단위 7자리 이상 → 만원 반올림: {m.group(0)} | {t[:60]}')
     if upload:
-        lay = layout or 'c1clip'; c, n = layout_share(lay)
-        if c * 2 > n: bad.append(f'ⓓ 최근 {n}편 중 {c}편이 {lay} ({c * 100 // n}%) > 50% — 다른 틀로')
+        lay = layout or 'c1clip'; rest, _, _, why = layout_rest(lay)
+        if rest: bad.append(f'ⓓ E-18 쉼: {why} — 다른 틀로(모든 틀이 쉼이면 youtube-loop E-18 판정 줄을 따름)')
+        else: print(f'  ⓓ E-18 통과: {why}')
     print(f'## {name} 꼴 관문: ' + ('통과' if not bad else f'걸림 {len(bad)}'))
     for b in bad: print('  ' + b)
     return bad
@@ -157,7 +189,8 @@ if __name__ == '__main__' and '--fix-won' in sys.argv:   # props를 고쳐 쓴�
 if __name__ == '__main__' and '--form' in sys.argv:
     names = [a for a in sys.argv[1:] if not a.startswith('--')]
     hits = {n: form_check(n) for n in names}
-    lay = 'c1clip'; c, n = layout_share(lay); print(f'ⓓ 지금 log.jsonl 최근 {n}편(다음 편 c1clip 가정) 중 {lay} {c}편 → ' + ('업로드 거부' if c * 2 > n else '통과'))
+    for lay in ('m1clip', 'c1clip', 'c2person'):
+        rest, _, _, why = layout_rest(lay); print(f'ⓓ E-18 {lay}: {why} → ' + ('쉼(업로드 거부)' if rest else '통과'))
     sys.exit(2 if any(hits.values()) else 0)
 
 if __name__ == '__main__':

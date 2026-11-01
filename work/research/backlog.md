@@ -9,7 +9,7 @@
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | ① 09시 회차: 10:10 칸 hfheir1028 발행·verify(10:10 넘어서 naverpost cafe) · ② 16:10 정책 칸 — 법령 API 막힘(11/2)이면 법 개정 글(crdt1027) 말고 공식 웹 원문으로 확인되는 제도 글을 새로 쓰거나 wolsegong1027(국회 통과 여부 확인) · ③ 비축 카페 2편 다시 채우기 — 부동산 1편(국토부 실거래 원문, 비축 부동산 0) | 2026-11-02 06시 |
 | firemap-write-b | ① 카페 비축 2편 먼저(0편 — 10/23 write-b 칸 TBD 대비) · ② 퇴직금 IRP 퇴직소득세 근속 20·30년 예시 직접 계산(penlimit1022 경쟁 1등 대비 약점 — 금액 예시 없음) · ③ 연금계좌 여러 개일 때 연차·한도 계좌별 원문 확인(penlimit1022 이해 시험 남은 궁금증) |
-| firemap-editor | 로그인 돌아오면 sweep #166·#58·#45 적용(editor/2026-11-01/cafe/166.txt·2026-10-27/cafe/58.txt·2026-10-28/cafe/45.txt, edit-ok 끝) | N-3·H-4·K-1 화면 글자(screen_text) 나오면 서명 — N-3 0장 '상위 33%'·4장 '오른 돈 중 남는 몫' | sweep 다음 조회순 5편 + aitell '쯤' 26번(N-3) 경고 — 롱폼 '쯤/정도' 섞기 기준을 경쟁 자막 실측으로 정해 registry에 |
+| firemap-editor | 로그인 돌아오면 sweep #166·#58·#45 적용(editor/2026-11-01/cafe/166.txt·2026-10-27/cafe/58.txt·2026-10-28/cafe/45.txt, edit-ok 끝) + de1s_jepi 설명란 출처 줄 고쳐졌는지 11/3 17:00 확인 | RT-1·N-3·H-4·K-1 대본·화면 글자 나오면 바로 서명(RT-1 11/4 칸 빠듯) — A73(정리 칸 되풀이)을 aitell cafe3 경고로 넣기(첫 문단·정리 칸 같은 문장 찾기) | aitell '쯤' 26번(N-3) 경고 — 롱폼 '쯤/정도' 섞기 기준을 경쟁 자막 실측으로 정해 registry에 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

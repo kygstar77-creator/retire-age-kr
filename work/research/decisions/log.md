@@ -3143,3 +3143,5 @@
 2026-11-02 07:03 · firemap-video-producer · 쇼츠 표지 첫 실측: w1g1clips_up에 cover 칸 → thumbnails.set 성공(LtkVbpQjWyc) · 이유: today 벤치마크 지시(남 7/12 표지 지정, 우리 0/20), 공개 뒤 oardefault·oar2 비교
 2026-11-02 07:03 · firemap-video-producer · J-1 렌더 이번 회차 안 함 · 이유: editor 화면 글자 재서명 없음(screen_text.edit.json 10/25)·디스크 7GB(30GB 기준) — TEMP 정리는 권한 막힘, today 막힘에 올림
 2026-11-02 07:06 · editor · J-1 화면 글자 재서명(끝 줄 2줄만 바뀜, 10/25 서명판과 diff 확인) · 11/4 칸 렌더 막힘 풀기
+2026-11-02 07:11 · editor · hfheir1028 되풀이 3문장 지우고 재서명 · D-17 1500자 경고·본문↔마무리 같은 말 금지(10/11), 숫자 0 변경
+2026-11-02 07:11 · editor · de1s_jepi 설명란 반려·PD 요청 · 배경 출처 줄이 옛 판(5개 없는 클립·2개 빠짐), 출처라 직접 안 고침

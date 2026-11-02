@@ -113,6 +113,14 @@
     "by": "firemap-write-b",
     "at": "2026-11-02 14:05",
     "gates_ok": "2026-11-02 14:05"
+   },
+   {
+    "item": "renewpair1102",
+    "pkg": "work/research/renewpair1102/pkg",
+    "status": "2026-11-02 21:37 관문 통과 — h2s_renew(SkUZ_F9JbKI, 11/4 19:20 공개) 짝 글 전용: 쇼츠 공개 뒤에만(11/4 22:40 칸 권장, slot.txt 2026-11-04 22). '계약갱신요구권 쓰면 전세 보증금 몇 %까지 올릴까?' 부동산 · 국토부 전월세 11/2 다시 받아 14단지 갱신 권리 씀 485건 5% 초과 0·표시 없음 339건 중 194건(57%) 초과 · 이해 2차 6명·교차검증·editgate auto · 발행 회차는 11/4 올리기 전 확인(1일 안) 다시 적을 것",
+    "by": "firemap-write",
+    "at": "2026-11-02 21:37",
+    "gates_ok": "2026-11-02 21:37"
    }
   ],
   "long": [
@@ -3012,12 +3020,159 @@
    "note": "firemap-youtube-loop 2026-10-26 15:41: 주제 표시 연금·건보·은퇴 생활비 — 후보 재료: P-1(vsL7mojDW7w) 안 쓴 장·D-1(GMc2Rd1-JYA) 안 쓴 장·10/29부터 P-3 · 근거 shorts-gap-1026 N3(31% 지점 5편 중앙 1.03 vs 다른 8편 0.57, 조회 차이는 아직 없음) · 칸 시각과 주제를 돌려 배치(E-07 17:20 판정 보류 중이라 시각·주제 교란을 막음) · 4~15초 질문 안 줄만(A-49 10/26)"
   },
   {
+   "at": "2026-11-01 22:40",
+   "kind": "cafe",
+   "item": "빔 — 네이버 로그인 풀림(147시간, 사장님 login 필요)",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-01 21:4x: 새 6칸 첫날 마지막 칸 · 로그인 전 발행 시도 안 함"
+  },
+  {
+   "at": "2026-11-02 07:40",
+   "kind": "cafe",
+   "item": "crdt1027",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-02 07:48",
+   "note": "firemap-meeting 2026-11-01 21:4x: 카페 하루 6칸(사장님 11/1) 첫 칸 · 장르 정책/돈 관리 · 지난 칸 몰아 올리지 않음(10/28 원칙) | firemap-write-b 07:48: 비축 crdt1027(출산크레딧, 연금 축) — 11/2 올리기 전 확인(법령 API IP 막힘→law.go.kr 웹 원문 S1~S6·부칙 다시 엶, 바뀐 것 없음, 기준일 11/2)·editgate auto 다시 찍음·slot.txt 07시",
+   "pkg": "work/research/crdt1027/pkg",
+   "published": "https://cafe.naver.com/firemap/371 08:03 verify OK 1435자"
+  },
+  {
+   "at": "2026-11-02 10:10",
+   "kind": "cafe",
+   "item": "hfheir1028",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-02 06:24",
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 부동산①(국토부 실거래·공시가격·대출 규제 원문, 10/13 하루 2칸 이상 6칸 중 2) · bench.md 경쟁 3편↑ | firemap-write 06:24: 비축 hfheir1028(주택연금 상속, 부동산 축) — 11/2 올리기 전 확인(CD 3.27→3.32%·calc 다시·숫자 6곳·그림 2장)·editgate auto 다시 찍음·slot.txt 10시",
+   "pkg": "work/research/hfheir1028/pkg",
+   "published": "https://cafe.naver.com/firemap/372 10:15 verify OK 1805자"
+  },
+  {
    "at": "2026-11-02 11:30",
    "kind": "long",
    "item": "빔(관문 기한 11/1 11:30 지남, 예약 가능 편 0) ← H-4는 녹음 순서대로 뒤로 (회의 11/1 19:0x)",
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
    "note": "firemap-meeting 2026-10-25 21:44: 10/26·27에서 밀려옴(정지) · 축 순서 J-1 정책 → D-ETF-1 주식 → K-1 경제 → P-3 정책 → H-5 부동산 → S-1 주식 → N-3 → H-4 부동산 → W-3 주식 · youtube-loop가 바꿔도 됨(겹침만 금지)"
+  },
+  {
+   "at": "2026-11-02 12:40",
+   "kind": "cafe",
+   "item": "pen600_1102",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-02 10:48",
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 주식(배당·ETF) — 시황은 '(○/○ 15:30 종가)' 줄 | firemap-write-b 10:48: 비축 pen600_1102(연금저축 한도 넘긴 돈 IRP 이전, 연금계좌 — 그날 연금계좌 1칸) 배정 · 주식(배당·ETF) 비축 없고 칸 2시간 전이라 새 글 관문 못 지킴 · 올리기 전 확인 11/2 09:3x(바뀐 것 없음)·editgate auto 해시 일치 · slot.txt 12",
+   "pkg": "work/research/pen600_1102/pkg",
+   "published": "https://cafe.naver.com/firemap/373 12:34 verify OK 1126자"
+  },
+  {
+   "at": "2026-11-02 16:10",
+   "kind": "cafe",
+   "item": "wolsegong1027",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-02 09:27",
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 경제·정책(연금/세금/보험) | firemap-write 09:27: 비축 wolsegong1027(월세 세액공제, 세금) 배정 · 올리기 전 확인 11/2(법령 웹 원문·보도 4곳 다시 엶, 바뀐 것 없음, 국회 미통과) · editgate 다시 찍음 · slot.txt 16",
+   "published": "https://cafe.naver.com/firemap/374 16:27 verify OK 1725자"
+  },
+  {
+   "at": "2026-11-02 18:40",
+   "kind": "cafe",
+   "item": "jbcalc1027",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-02 10:52",
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 부동산② | firemap-write-b 10:52: 묶인 대기 jbcalc1027(종부세 공시가격 15억 한 채, 부동산 보유세 — 12월 고지철) 배정 · 올리기 전 확인 11/2(법령 12·보도 2 다시 엶, 바뀐 것 없음)·기준일 줄 11/2로·editgate auto 다시 찍음 · slot.txt 18 · 주의: 12:40·16:10·18:40 세 칸 다 세금 갈래(3칸까지 허용) — 16:10 회차가 다른 부동산 글을 쓰면 바꿔도 됨",
+   "pkg": "work/research/jbcalc1027/pkg",
+   "published": "https://cafe.naver.com/firemap/375 18:36 verify OK 1474자"
+  },
+  {
+   "at": "2026-11-02 19:20",
+   "kind": "shorts",
+   "item": "빔 공산 — 비축 h3s_jeonse·de1s_jepi(m1clip)·c2person 모두 E-18 '쉼'(m1clip 중앙 416·c2person 628 < 채널 980), E-18 '모든 틀 쉼' 빈칸은 youtube-loop 11/2 12:00 근거 판정 뒤 · 그 전에 올리지 않음",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-01 21:4x: 쇼츠 하루 1편(사장님 11/1) · 관문 기한 11/2 05:20 · 판정이 허락하면 벤치마크 고침(답 5초 안·밝기 Y≥52) 반영본만"
+  },
+  {
+   "at": "2026-11-02 22:40",
+   "kind": "cafe",
+   "item": "fxdepfee1026",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-02 10:59",
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 돈 관리 · 그날 공개 쇼츠 있으면 yt_pair 짝 글(질문 하나)로 바꿈 | firemap-write-b 10:59: 밀린 묶음 fxdepfee1026(달러예금 환전수수료, 돈 관리) 배정 · 올리기 전 확인 11/2 — KB 10:54 고시(117회차)·12개월 3.61744%로 calc·본문·그림 3장·facts 숫자 바꿈(문장 그대로, 원본 *.pre1102)·S3~S7 다시 엶·editgate auto · slot.txt 22 · 오늘 쇼츠 짝 글이 생기면 그쪽 우선(이 묶음은 비축으로)",
+   "pkg": "work/research/fxdepfee1026/pkg"
+  },
+  {
+   "at": "2026-11-03 07:40",
+   "kind": "cafe",
+   "item": "defer1027",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-02 19:48",
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 정책 · 비축 남으면 비축부터 | firemap-write-b 19:48: 비축 defer1027(연기연금 피부양자, 정책·연금/건보료) 배정 — 11/2 올리기 전 확인(법령 웹 원문 S1~S12·보도 3곳 다시 엶, 바뀐 것 없음, 현행 판 모두 10/27 전 시행)·c05 기준일 11/2·editgate auto 다시 찍음(8bb300fb)·slot.txt 11-03 07 · pibucut1025는 같은 피부양자 주제라 이번 주 뒤쪽으로",
+   "pkg": "work/research/defer1027/pkg"
+  },
+  {
+   "at": "2026-11-03 10:10",
+   "kind": "cafe",
+   "item": "비축 leasereg1102(부동산①, 임차권등기명령)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-02 21:37: 장르 부동산① · 비축 → 올리기 전 확인(판결·법원 절차 원문 다시) 뒤 발행 · 하루 부동산 2칸(10/13)"
+  },
+  {
+   "at": "2026-11-03 12:40",
+   "kind": "cafe",
+   "item": "TBD — 주식(배당·ETF)",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-02 21:37: 장르 주식 · 시황이면 '(11/3 15:30 종가)'가 아니라 12:40이라 전날 종가 '(11/2 15:30 종가)' 줄 · 편마다 bench.md 3편↑"
+  },
+  {
+   "at": "2026-11-03 16:10",
+   "kind": "cafe",
+   "item": "TBD — 경제·정책(연금/세금/보험)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-02 21:37: 장르 경제·정책 · pibucut1025는 defer1027(07:40)과 같은 피부양자라 이번 주 뒤쪽(11/5 이후)"
+  },
+  {
+   "at": "2026-11-03 18:40",
+   "kind": "cafe",
+   "item": "TBD — 부동산②",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-02 21:37: 장르 부동산② · 국토부 실거래·공시가격·대출 규제 원문만, 네이버 부동산 화면 금지"
+  },
+  {
+   "at": "2026-11-03 19:20",
+   "kind": "shorts",
+   "item": "de1s_jepi LtkVbpQjWyc (D-ETF-1 클립, c1clip) — publishAt 2026-11-03T19:20+09:00",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-11-02 07:03",
+   "note": "firemap-meeting 2026-11-01 21:4x: 주간 회의 'D-ETF-1 클립 3일치'를 하루 1편으로 줄임(11/3·11/4·11/5 17:20) · 관문 기한 11/3 05:20 · 답 5초 안·밝기 Y≥52(벤치마크 11/1) | PD 11/2 07:03: c1clip·답 4.3초·밝기 Y63.9(60 미만 24%)·이해 4차·표지 cover_1102 API로 걸음(실측)"
+  },
+  {
+   "at": "2026-11-03 22:40",
+   "kind": "cafe",
+   "item": "yt_pair 짝 글 — de1s_jepi 쇼츠(11/3 19:20 LtkVbpQjWyc)가 던진 질문 하나",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-02 21:37: yt_pair: LtkVbpQjWyc · 쇼츠 링크+원본 롱폼 D-ETF-1(mkAxQPGaDqc) 링크+그 질문의 표 · 롱폼 글과 같은 내용 반복 금지 · 쇼츠 공개 확인 뒤 발행"
+  },
+  {
+   "at": "2026-11-04 07:40",
+   "kind": "cafe",
+   "item": "TBD — 정책 또는 돈 관리",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-02 21:37: 장르 정책/돈 관리 · 비축 남으면 비축부터"
+  },
+  {
+   "at": "2026-11-04 10:10",
+   "kind": "cafe",
+   "item": "TBD — 부동산①",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-02 21:37: 장르 부동산① · J-1(종부세) 짝 긴 글과 겹치지 않는 부동산 주제"
   },
   {
    "at": "2026-11-04 11:30",
@@ -3028,12 +3183,52 @@
    "note": "firemap-meeting 2026-11-01 21:4x: 롱폼 이틀에 1편(사장님 11/1, long_anchor 11/2)에 맞춰 11-03→11-04 옮김(축 정책→경제→정책→부동산→정책→주식, youtube-loop가 겹침만 없으면 바꿔도 됨) · firemap-meeting 2026-10-25 21:44: 10/26·27에서 밀려옴(정지) · 축 순서 J-1 정책 → D-ETF-1 주식 → K-1 경제 → P-3 정책 → H-5 부동산 → S-1 주식 → N-3 → H-4 부동산 → W-3 주식 · youtube-loop가 바꿔도 됨(겹침만 금지) | youtube-loop 2026-11-02 00:48: 회의 11/1 [지시](녹음 순서·새 칸) — 준비된 대본 먼저, 같은 축 연속 없음: J-1 정책 11/4 → K-1 경제 11/6 → P-3 정책 11/8 → H-4 부동산 11/10 → N-3 경제(소득) 11/12 → S-1 주식 11/14 → RT-1 정책 11/16 → W-3 주식(세금) 11/18 → P-4 정책 11/20 · H-6(TBD-부동산)은 H-4 뒤 다음 부동산 칸 · 녹음(16:00 창 하루 1편): 11/2 J-1 → 11/3 K-1 → 11/4 P-3 → 11/5 H-4 → 11/6 N-3 → 11/7 S-1 → 11/9 RT-1(대본 전) → 11/11 W-3"
   },
   {
-   "at": "2026-11-08 11:30",
-   "kind": "long",
-   "item": "P-3(건보료 피부양자 — 국민연금만 받을 때 · shot_plan·썸네일 thumb_p3n_d 있음, 녹음 11/4 16:00 창)",
-   "owner": "firemap-youtube-loop",
+   "at": "2026-11-04 12:40",
+   "kind": "cafe",
+   "item": "yt_pair 짝 긴 글 — J-1 롱폼(11/4 11:30) 전체 표",
+   "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-11-01 21:4x: 롱폼 이틀에 1편(사장님 11/1, long_anchor 11/2)에 맞춰 11-04→11-08 옮김(축 정책→경제→정책→부동산→정책→주식, youtube-loop가 겹침만 없으면 바꿔도 됨) · youtube-loop 2026-10-23 04:5x: 벤치마크 10/23 03시 [지시] 11/2 주 돈 1칸. 검증 퇴직금세금 8,170·퇴직소득세 4,660·퇴직금IRP 4,490(kwvol 10/23) · 경쟁 FVburr9huF8 7.41배 · 근거 ep/RT-1/plan.md · 대본 10/30 21:00 · 관문 11/3 11:30 · 제작 PD | youtube-loop 2026-11-02 00:48: 회의 11/1 [지시](녹음 순서·새 칸) — 준비된 대본 먼저, 같은 축 연속 없음: J-1 정책 11/4 → K-1 경제 11/6 → P-3 정책 11/8 → H-4 부동산 11/10 → N-3 경제(소득) 11/12 → S-1 주식 11/14 → RT-1 정책 11/16 → W-3 주식(세금) 11/18 → P-4 정책 11/20 · H-6(TBD-부동산)은 H-4 뒤 다음 부동산 칸 · 녹음(16:00 창 하루 1편): 11/2 J-1 → 11/3 K-1 → 11/4 P-3 → 11/5 H-4 → 11/6 N-3 → 11/7 S-1 → 11/9 RT-1(대본 전) → 11/11 W-3"
+   "note": "firemap-meeting 2026-11-02 21:37: yt_pair: J-1 · ep/J-1/cafe.md(공시 12~40억×거주/비거주×나이 표, calc.py·facts.txt) + 영상 링크 · **J-1이 실제 공개된 경우만**(못 올라가면 이 칸은 주식 장르 다른 글) · 설명란 {CAFE}에 글 주소"
+  },
+  {
+   "at": "2026-11-04 16:10",
+   "kind": "cafe",
+   "item": "TBD — 경제·정책",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-02 21:37: 장르 경제·정책"
+  },
+  {
+   "at": "2026-11-04 18:40",
+   "kind": "cafe",
+   "item": "TBD — 부동산②",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-02 21:37: 장르 부동산②"
+  },
+  {
+   "at": "2026-11-04 19:20",
+   "kind": "shorts",
+   "item": "h2s_renew SkUZ_F9JbKI (H-2 클립, c1clip) — publishAt 2026-11-04T19:20+09:00",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-11-02 11:12",
+   "note": "11/2 11:12 PD: 칸이 slots에 없어 새로 · 관문 cardshorts/h2s_renew/review.md 11/2 10~11시 · yt_pair: SkUZ_F9JbKI → 카페 짝 글(쇼츠 질문 하나: 계약갱신요구권 쓰면 5% 넘게 못 올림, 466건 중 0건) 20:10·22:40 칸 firemap-write | firemap-write 21:37: 짝 카페 글 renewpair1102 관문 통과(reserve.cafe) — 11/4 22:40 칸에 배정 권장"
+  },
+  {
+   "at": "2026-11-04 22:40",
+   "kind": "cafe",
+   "item": "yt_pair 짝 글 — h2s_renew 쇼츠(11/4 19:20 SkUZ_F9JbKI) 질문 하나",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-02 21:37: yt_pair: SkUZ_F9JbKI · 원본 롱폼 H-2 링크 · 원베일리 갱신 건수는 468(11/2 재실행) 또는 조회일 표기(감사 11/2)"
+  },
+  {
+   "at": "2026-11-05 19:20",
+   "kind": "shorts",
+   "item": "de1s_schdgrow aW8HfeGCGgw (D-ETF-1 클립, c1clip) — publishAt 2026-11-05T19:20+09:00",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-11-02 15:00",
+   "note": "15:00 PD: 관문 cardshorts/de1s_schdgrow/review.md(compete 6·숫자 대조·꼴 ⓐ~ⓓ·이해 3차 9명·밝기 Y75.8/14%·치직 0·안전 영역·bgcheck) · yt_pair: aW8HfeGCGgw (카페 짝 글은 쇼츠 공개 뒤 20:10·22:10 칸, firemap-write)"
   },
   {
    "at": "2026-11-06 11:30",
@@ -3042,6 +3237,14 @@
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
    "note": "firemap-meeting 2026-11-01 21:4x: 롱폼 이틀에 1편(사장님 11/1, long_anchor 11/2)에 맞춰 11-05→11-06 옮김(축 정책→경제→정책→부동산→정책→주식, youtube-loop가 겹침만 없으면 바꿔도 됨) · firemap-youtube-loop 2026-10-29 21:12: 벤치마크 10/29 18시 [지시]로 TBD-주식 → K-1. 근거: 10/30~11/8 롱폼 주식 4·경제 0, 주식 롱폼 W-1·W-1-2 6일 조회 증가 0, X-1(경제) 평균 시청 비율 47.9% · K-1 대본 서명·thumb_k1n_d·제목 2차·shot_check 통과, 남은 것 녹음·렌더·meta = PD · 끝 줄 '목요일…건보료 피부양자'는 11/5(수)에 틀린 말 → '다음 영상에서 다시 뵙겠습니다.'로 고침(editor 재서명 요청) · 올리기 전 확인 다시: 11/4(1일 안, 9월분 예금·주담대 금리 한은 10월 말 공표·11/1 전후 미 국채 다시) · 관문 11/4 11:30 · 축 11/4 RT-1 정책 → 11/5 경제 → 11/6 부동산(연속 없음) | 이전 item: TBD-주식(종목·업종 심층 후보 — 11/2 주제 검증 뒤 확정) | firemap-youtube-loop 2026-10-27 00:47: today 24행 지시로 칸 새로 · 축 주식 · 대본 11/1 21:00 · 관문 11/4 11:30 · 제작 PD · 축 순서 10/28 경제 K-1 → 10/29 정책 P-3 → 10/30 부동산 H-5 → 10/31 주식 S-1 → 11/1 돈 N-3 → 11/2 부동산 H-4 → 11/3 배당 W-3 → 11/4 정책 RT-1 → 11/5 주식 → 11/6 부동산 → 11/7 정책 P-4(정책 연속 없음) · 대타 1순위 J-1(종부세, 정책) — PD가 렌더·끝 줄·editor 재서명·의안 2221046 재확인 끝내 reserve.long에 오르면 쓰되 11/4·11/7 정책 사이라 11/5·11/6엔 넣지 않음(today 24행) · 주제는 11/2(월) 회차 week_2026-11-02.md에서 kwvol·유튜브 수요·경쟁 아웃라이어·재탕 확인으로 고름(주제 검증 먼저) | youtube-loop 2026-11-02 00:48: 회의 11/1 [지시](녹음 순서·새 칸) — 준비된 대본 먼저, 같은 축 연속 없음: J-1 정책 11/4 → K-1 경제 11/6 → P-3 정책 11/8 → H-4 부동산 11/10 → N-3 경제(소득) 11/12 → S-1 주식 11/14 → RT-1 정책 11/16 → W-3 주식(세금) 11/18 → P-4 정책 11/20 · H-6(TBD-부동산)은 H-4 뒤 다음 부동산 칸 · 녹음(16:00 창 하루 1편): 11/2 J-1 → 11/3 K-1 → 11/4 P-3 → 11/5 H-4 → 11/6 N-3 → 11/7 S-1 → 11/9 RT-1(대본 전) → 11/11 W-3"
+  },
+  {
+   "at": "2026-11-08 11:30",
+   "kind": "long",
+   "item": "P-3(건보료 피부양자 — 국민연금만 받을 때 · shot_plan·썸네일 thumb_p3n_d 있음, 녹음 11/4 16:00 창)",
+   "owner": "firemap-youtube-loop",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-01 21:4x: 롱폼 이틀에 1편(사장님 11/1, long_anchor 11/2)에 맞춰 11-04→11-08 옮김(축 정책→경제→정책→부동산→정책→주식, youtube-loop가 겹침만 없으면 바꿔도 됨) · youtube-loop 2026-10-23 04:5x: 벤치마크 10/23 03시 [지시] 11/2 주 돈 1칸. 검증 퇴직금세금 8,170·퇴직소득세 4,660·퇴직금IRP 4,490(kwvol 10/23) · 경쟁 FVburr9huF8 7.41배 · 근거 ep/RT-1/plan.md · 대본 10/30 21:00 · 관문 11/3 11:30 · 제작 PD | youtube-loop 2026-11-02 00:48: 회의 11/1 [지시](녹음 순서·새 칸) — 준비된 대본 먼저, 같은 축 연속 없음: J-1 정책 11/4 → K-1 경제 11/6 → P-3 정책 11/8 → H-4 부동산 11/10 → N-3 경제(소득) 11/12 → S-1 주식 11/14 → RT-1 정책 11/16 → W-3 주식(세금) 11/18 → P-4 정책 11/20 · H-6(TBD-부동산)은 H-4 뒤 다음 부동산 칸 · 녹음(16:00 창 하루 1편): 11/2 J-1 → 11/3 K-1 → 11/4 P-3 → 11/5 H-4 → 11/6 N-3 → 11/7 S-1 → 11/9 RT-1(대본 전) → 11/11 W-3"
   },
   {
    "at": "2026-11-10 11:30",
@@ -3093,111 +3296,20 @@
    "note": "youtube-loop 2026-11-02 00:48: 이틀 주기 새 칸(회의 11/1 [지시])"
   },
   {
-   "at": "2026-11-02 07:40",
-   "kind": "cafe",
-   "item": "crdt1027",
-   "owner": "firemap-write-b",
-   "gates_ok": "2026-11-02 07:48",
-   "note": "firemap-meeting 2026-11-01 21:4x: 카페 하루 6칸(사장님 11/1) 첫 칸 · 장르 정책/돈 관리 · 지난 칸 몰아 올리지 않음(10/28 원칙) | firemap-write-b 07:48: 비축 crdt1027(출산크레딧, 연금 축) — 11/2 올리기 전 확인(법령 API IP 막힘→law.go.kr 웹 원문 S1~S6·부칙 다시 엶, 바뀐 것 없음, 기준일 11/2)·editgate auto 다시 찍음·slot.txt 07시",
-   "pkg": "work/research/crdt1027/pkg",
-   "published": "https://cafe.naver.com/firemap/371 08:03 verify OK 1435자"
-  },
-  {
-   "at": "2026-11-02 10:10",
-   "kind": "cafe",
-   "item": "hfheir1028",
-   "owner": "firemap-write",
-   "gates_ok": "2026-11-02 06:24",
-   "note": "firemap-meeting 2026-11-01 21:4x: 장르 부동산①(국토부 실거래·공시가격·대출 규제 원문, 10/13 하루 2칸 이상 6칸 중 2) · bench.md 경쟁 3편↑ | firemap-write 06:24: 비축 hfheir1028(주택연금 상속, 부동산 축) — 11/2 올리기 전 확인(CD 3.27→3.32%·calc 다시·숫자 6곳·그림 2장)·editgate auto 다시 찍음·slot.txt 10시",
-   "pkg": "work/research/hfheir1028/pkg",
-   "published": "https://cafe.naver.com/firemap/372 10:15 verify OK 1805자"
-  },
-  {
-   "at": "2026-11-02 12:40",
-   "kind": "cafe",
-   "item": "pen600_1102",
-   "owner": "firemap-write-b",
-   "gates_ok": "2026-11-02 10:48",
-   "note": "firemap-meeting 2026-11-01 21:4x: 장르 주식(배당·ETF) — 시황은 '(○/○ 15:30 종가)' 줄 | firemap-write-b 10:48: 비축 pen600_1102(연금저축 한도 넘긴 돈 IRP 이전, 연금계좌 — 그날 연금계좌 1칸) 배정 · 주식(배당·ETF) 비축 없고 칸 2시간 전이라 새 글 관문 못 지킴 · 올리기 전 확인 11/2 09:3x(바뀐 것 없음)·editgate auto 해시 일치 · slot.txt 12",
-   "pkg": "work/research/pen600_1102/pkg",
-   "published": "https://cafe.naver.com/firemap/373 12:34 verify OK 1126자"
-  },
-  {
-   "at": "2026-11-02 16:10",
-   "kind": "cafe",
-   "item": "wolsegong1027",
-   "owner": "firemap-write",
-   "gates_ok": "2026-11-02 09:27",
-   "note": "firemap-meeting 2026-11-01 21:4x: 장르 경제·정책(연금/세금/보험) | firemap-write 09:27: 비축 wolsegong1027(월세 세액공제, 세금) 배정 · 올리기 전 확인 11/2(법령 웹 원문·보도 4곳 다시 엶, 바뀐 것 없음, 국회 미통과) · editgate 다시 찍음 · slot.txt 16",
-   "published": "https://cafe.naver.com/firemap/374 16:27 verify OK 1725자"
-  },
-  {
-   "at": "2026-11-02 18:40",
-   "kind": "cafe",
-   "item": "jbcalc1027",
-   "owner": "firemap-write-b",
-   "gates_ok": "2026-11-02 10:52",
-   "note": "firemap-meeting 2026-11-01 21:4x: 장르 부동산② | firemap-write-b 10:52: 묶인 대기 jbcalc1027(종부세 공시가격 15억 한 채, 부동산 보유세 — 12월 고지철) 배정 · 올리기 전 확인 11/2(법령 12·보도 2 다시 엶, 바뀐 것 없음)·기준일 줄 11/2로·editgate auto 다시 찍음 · slot.txt 18 · 주의: 12:40·16:10·18:40 세 칸 다 세금 갈래(3칸까지 허용) — 16:10 회차가 다른 부동산 글을 쓰면 바꿔도 됨",
-   "pkg": "work/research/jbcalc1027/pkg",
-   "published": "https://cafe.naver.com/firemap/375 18:36 verify OK 1474자"
-  },
-  {
-   "at": "2026-11-02 22:40",
-   "kind": "cafe",
-   "item": "fxdepfee1026",
-   "owner": "firemap-write-b",
-   "gates_ok": "2026-11-02 10:59",
-   "note": "firemap-meeting 2026-11-01 21:4x: 장르 돈 관리 · 그날 공개 쇼츠 있으면 yt_pair 짝 글(질문 하나)로 바꿈 | firemap-write-b 10:59: 밀린 묶음 fxdepfee1026(달러예금 환전수수료, 돈 관리) 배정 · 올리기 전 확인 11/2 — KB 10:54 고시(117회차)·12개월 3.61744%로 calc·본문·그림 3장·facts 숫자 바꿈(문장 그대로, 원본 *.pre1102)·S3~S7 다시 엶·editgate auto · slot.txt 22 · 오늘 쇼츠 짝 글이 생기면 그쪽 우선(이 묶음은 비축으로)",
-   "pkg": "work/research/fxdepfee1026/pkg"
-  },
-  {
-   "at": "2026-11-03 07:40",
-   "kind": "cafe",
-   "item": "defer1027",
-   "owner": "firemap-write-b",
-   "gates_ok": "2026-11-02 19:48",
-   "note": "firemap-meeting 2026-11-01 21:4x: 장르 정책 · 비축 남으면 비축부터 | firemap-write-b 19:48: 비축 defer1027(연기연금 피부양자, 정책·연금/건보료) 배정 — 11/2 올리기 전 확인(법령 웹 원문 S1~S12·보도 3곳 다시 엶, 바뀐 것 없음, 현행 판 모두 10/27 전 시행)·c05 기준일 11/2·editgate auto 다시 찍음(8bb300fb)·slot.txt 11-03 07 · pibucut1025는 같은 피부양자 주제라 이번 주 뒤쪽으로",
-   "pkg": "work/research/defer1027/pkg"
-  },
-  {
-   "at": "2026-11-02 19:20",
-   "kind": "shorts",
-   "item": "빔 공산 — 비축 h3s_jeonse·de1s_jepi(m1clip)·c2person 모두 E-18 '쉼'(m1clip 중앙 416·c2person 628 < 채널 980), E-18 '모든 틀 쉼' 빈칸은 youtube-loop 11/2 12:00 근거 판정 뒤 · 그 전에 올리지 않음",
-   "owner": "firemap-video-producer",
+   "at": "2026-11-22 11:30",
+   "kind": "long",
+   "item": "후보 A 장기요양등급·요양원 비용(부모 요양비) — analysis 단계부터",
+   "owner": "firemap-youtube-loop",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-11-01 21:4x: 쇼츠 하루 1편(사장님 11/1) · 관문 기한 11/2 05:20 · 판정이 허락하면 벤치마크 고침(답 5초 안·밝기 Y≥52) 반영본만"
+   "note": "firemap-meeting 2026-11-02 21:37: 품질 점검 11/2 후보(kwvol 요양원 19,210·장기요양등급 18,770 · 경쟁 107배) · 축 정책/생활(11/20 P-4 연금과 다른 갈래) · 원문(건보공단 등급 기준·본인부담률) 대조 전 · 관문 기한 11/21 11:30 · 못 넘으면 칸 빔"
   },
   {
-   "at": "2026-11-03 19:20",
-   "kind": "shorts",
-   "item": "de1s_jepi LtkVbpQjWyc (D-ETF-1 클립, c1clip) — publishAt 2026-11-03T19:20+09:00",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-02 07:03",
-   "note": "firemap-meeting 2026-11-01 21:4x: 주간 회의 'D-ETF-1 클립 3일치'를 하루 1편으로 줄임(11/3·11/4·11/5 17:20) · 관문 기한 11/3 05:20 · 답 5초 안·밝기 Y≥52(벤치마크 11/1) | PD 11/2 07:03: c1clip·답 4.3초·밝기 Y63.9(60 미만 24%)·이해 4차·표지 cover_1102 API로 걸음(실측)"
-  },
-  {
-   "at": "2026-11-04 19:20",
-   "kind": "shorts",
-   "item": "h2s_renew SkUZ_F9JbKI (H-2 클립, c1clip) — publishAt 2026-11-04T19:20+09:00",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-02 11:12",
-   "note": "11/2 11:12 PD: 칸이 slots에 없어 새로 · 관문 cardshorts/h2s_renew/review.md 11/2 10~11시 · yt_pair: SkUZ_F9JbKI → 카페 짝 글(쇼츠 질문 하나: 계약갱신요구권 쓰면 5% 넘게 못 올림, 466건 중 0건) 20:10·22:40 칸 firemap-write"
-  },
-  {
-   "at": "2026-11-01 22:40",
-   "kind": "cafe",
-   "item": "빔 — 네이버 로그인 풀림(147시간, 사장님 login 필요)",
-   "owner": "firemap-write-b",
+   "at": "2026-11-24 11:30",
+   "kind": "long",
+   "item": "후보 B 상속세 면제 한도·부모 집 상속 — analysis 단계부터",
+   "owner": "firemap-youtube-loop",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-11-01 21:4x: 새 6칸 첫날 마지막 칸 · 로그인 전 발행 시도 안 함"
-  },
-  {
-   "at": "2026-11-05 19:20",
-   "kind": "shorts",
-   "item": "de1s_schdgrow aW8HfeGCGgw (D-ETF-1 클립, c1clip) — publishAt 2026-11-05T19:20+09:00",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-02 15:00",
-   "note": "15:00 PD: 관문 cardshorts/de1s_schdgrow/review.md(compete 6·숫자 대조·꼴 ⓐ~ⓓ·이해 3차 9명·밝기 Y75.8/14%·치직 0·안전 영역·bgcheck) · yt_pair: aW8HfeGCGgw (카페 짝 글은 쇼츠 공개 뒤 20:10·22:10 칸, firemap-write)"
+   "note": "firemap-meeting 2026-11-02 21:37: 품질 점검 11/2 후보(kwvol 상속세 25,370·면제한도 22,080 · 경쟁 89.9배) · 축 정책(세금) — J-1 종부세(11/4)와 20일 떨어뜨림 · 카페 hfheir1028·inhtax 재탕 확인 · 원문 상속세및증여세법 공제 조문 · 관문 기한 11/23 11:30"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외",

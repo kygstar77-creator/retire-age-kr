@@ -3,8 +3,8 @@
  "ep": "H-2",
  "from_long": "_fTgGr0dR0I",
  "mp4": "work/video/out/h2s_renew_c1_ds.mp4",
- "publishAt": null,
- "publish_plan": "비축(11/2 07시대 PD, 운영실장 배차) — 칸·publishAt은 youtube-loop E-18 판정(11/2 12:00) 뒤 회의·PD 정기 회차가 정함. 올리기 전: 국가법령정보센터 주택임대차보호법 제7조·제6조의3 원문 확인되면 설명란에 조문 한 줄(지금은 넣지 않음, understand.md)",
+ "publishAt": "2026-11-04T19:20:00+09:00",
+ "publish_plan": "11/2 11:10 PD: 11/4 19:20 칸(쇼츠 하루 1편 19:20, E-07) — 관문 다시 통과(review.md 11/2 10~11시) · 조문 줄은 원문 못 받아 그대로 뺌",
  "title": "원베일리 전세 21억 vs 18억, 차이는 이 권리 #shorts",
  "description": "전체 계산: https://youtu.be/_fTgGr0dR0I (잠실·대치·반포 84㎡대 실거래)\n\n반포 래미안원베일리 84㎡대 전세 가운데 값은 새로 들어간 계약 21억(30건), 살던 사람이 다시 맺은 계약 17억 8,500만원(19건)이었어요.\n다시 맺은 19건 중 18건이 계약갱신요구권을 썼다고 신고됐어요.\n잠실·대치·반포 84㎡대에서 이 권리를 쓴 갱신 466건 가운데 보증금을 5% 넘게 올린 계약은 0건이었어요.\n지나간 거래 값이고, 특정 집을 사거나 계약하라는 뜻이 아닙니다.\n\n출처: 국토교통부 아파트 전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — 29826322 Altaf Shah · 31018013 PUWOOK Kwak · 32986074 PUWOOK Kwak · 36216207 what doidonow · 5349092 Site Engine · 5923592 RDNE Stock project · 6787197 Artem Podrez\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #전세 #계약갱신요구권",
  "tags": "계약갱신요구권,전세 재계약,래미안원베일리,전세,갱신요구권",
@@ -19,5 +19,18 @@
   },
   "understand": "understand.md 1차"
  },
- "cover": "work/research/cardshorts/h2s_renew/cover_1102.png"
+ "cover": "work/research/cardshorts/h2s_renew/cover_1102.png",
+ "publish_plan_prev": "비축(11/2 07시대 PD, 운영실장 배차) — 칸·publishAt은 youtube-loop E-18 판정(11/2 12:00) 뒤 회의·PD 정기 회차가 정함. 올리기 전: 국가법령정보센터 주택임대차보호법 제7조·제6조의3 원문 확인되면 설명란에 조문 한 줄(지금은 넣지 않음, understand.md)",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "SkUZ_F9JbKI",
+ "uploaded_at": "2026-11-02 11:11:42",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-04T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
 }

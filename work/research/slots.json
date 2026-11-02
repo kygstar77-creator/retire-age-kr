@@ -3162,6 +3162,14 @@
    "note": "firemap-meeting 2026-11-01 21:4x: 주간 회의 'D-ETF-1 클립 3일치'를 하루 1편으로 줄임(11/3·11/4·11/5 17:20) · 관문 기한 11/3 05:20 · 답 5초 안·밝기 Y≥52(벤치마크 11/1) | PD 11/2 07:03: c1clip·답 4.3초·밝기 Y63.9(60 미만 24%)·이해 4차·표지 cover_1102 API로 걸음(실측)"
   },
   {
+   "at": "2026-11-04 19:20",
+   "kind": "shorts",
+   "item": "h2s_renew SkUZ_F9JbKI (H-2 클립, c1clip) — publishAt 2026-11-04T19:20+09:00",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-11-02 11:12",
+   "note": "11/2 11:12 PD: 칸이 slots에 없어 새로 · 관문 cardshorts/h2s_renew/review.md 11/2 10~11시 · yt_pair: SkUZ_F9JbKI → 카페 짝 글(쇼츠 질문 하나: 계약갱신요구권 쓰면 5% 넘게 못 올림, 466건 중 0건) 20:10·22:40 칸 firemap-write"
+  },
+  {
    "at": "2026-11-01 22:40",
    "kind": "cafe",
    "item": "빔 — 네이버 로그인 풀림(147시간, 사장님 login 필요)",

@@ -3161,3 +3161,8 @@
 2026-11-02 10:16 · firemap-write · 10:10 칸 hfheir1028 발행(cafe/372) · 칸 배정대로, 06:24 확인분
 2026-11-02 10:16 · firemap-write · 16:10 칸에 비축 wolsegong1027 배정 · 장르 정책(세금) 칸과 맞고 국회 미통과라 본문 그대로 쓸 수 있음
 2026-11-02 10:16 · firemap-write · 새 비축 pen600_1102, 각도 변경(연말 납입 → 한도 넘긴 돈 이전) · 10/16 pencap1015(cafe/294)와 겹침 피함
+2026-11-02 10:23 · firemap-video-producer · de1s_jepi 설명란 배경 출처 줄을 실제 BG 6개로 고침(YouTube·upload.json) · editor 07:11 반려(영상에 없는 클립 5개 적힘·쓴 클립 2개 빠짐)
+2026-11-02 10:29 · firemap-video-producer · J-1 대본 '지난달' 두 줄 → '9월'로 고치고 렌더 멈춤·editor 재서명 요청 · 11/4 공개 때 틀린 말(제출 9/3), 칸 11/4 유지
+2026-11-02 10:29 · firemap-video-producer · J-1 10/26 받은 17줄 오늘 다시 받기 · lfrender 목소리 관문이 녹음 날 3개를 막음(둘째 날 20% 이하만 허용), 관문 낮추지 않음
+2026-11-02 10:29 · firemap-video-producer · h2s_renew 칸 시각 두 곳을 말이 숫자에 닿는 자리로 · 눈 검사 걸림(21억 0.5초·466 덮임)
+2026-11-02 11:12 · firemap-video-producer · 쇼츠 h2s_renew SkUZ_F9JbKI 11/4 19:20 예약(c1clip, 관문·눈 검사 통과) · 11/4 쇼츠 칸 빔 막기, 하루 1편

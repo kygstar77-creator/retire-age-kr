@@ -1,0 +1,87 @@
+# h2s_renew — H-2 롱폼(_fTgGr0dR0I) 3장 '원베일리 신규 21억 vs 다시 맺은 18억 · 계약갱신요구권 466건 중 5% 넘게 올린 0건'을 자른 세로 쇼츠 props · c1clip(C1S look live) (firemap-video-producer 2026-11-02, de1s_jepi/de1jclip.py 복사 — 줄·장면·배경만)
+#   py -3.12 work/research/cardshorts/h2s_renew/h2rclip.py   → work/video/h2s_renew.json
+# 목소리 = H-2 voice.json 3:25~3:33 문장 wav 그대로(새 녹음 0) · 가상 인물(손품 씨) 줄 없음 · 첫 줄이 답 숫자 줄(21억, 0초)
+# 화면 숫자 = video/h2.json(편집 통과한 롱폼 화면) 3장 pair·big 값만: 21억 · 17억 8,500만원 · 30건 · 19건 · 466건 · 0건 · 5%
+import os, re, json, sys
+sys.stdout.reconfigure(encoding='utf-8')
+HERE = os.path.dirname(os.path.abspath(__file__))
+WORK = os.path.normpath(os.path.join(HERE, '..', '..', '..'))
+VID = os.path.join(WORK, 'video')
+EP = os.path.join(WORK, 'research', 'longform', 'ep', 'H-2')
+V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
+BYTEXT = {l['text']: l for s in V['sections'] for l in s['lines']}
+SRC = ''.join(open(os.path.join(EP, f), encoding='utf-8').read() for f in ('research.md', 'calc_out.txt', 'calc2_out.txt', 'facts.txt') if os.path.exists(os.path.join(EP, f)))
+SRC += json.dumps(json.load(open(os.path.join(VID, 'h2.json'), encoding='utf-8'))['scenes'], ensure_ascii=False)
+TAIL = 36
+n = 0
+
+
+def L(t):
+    global n
+    hit = [k for k in BYTEXT if k.startswith(t)]; assert len(hit) == 1, (t, hit)
+    l = BYTEXT[hit[0]]; assert l.get('audio') and os.path.exists(os.path.join(VID, 'public', l['audio'])), t
+    assert '손품' not in l['text'], '가상 인물 줄'
+    n += 1
+    return {'n': n, 'text': l['text'], 'audio': l['audio'], 'frames': l['frames']}
+
+
+def sc(label, lines, data):
+    ls = [L(t) for t in lines]
+    spoken = ' '.join(l['text'] for l in ls)
+    strs = []
+    walk = lambda x: [walk(y) for y in x] if isinstance(x, list) else ([walk(y) for y in x.values()] if isinstance(x, dict) else (strs.append(x) if isinstance(x, str) else None))
+    walk(data)
+    for d in re.findall(r'\d[\d,.]*', ' '.join(strs)):
+        d = d.rstrip('.,')
+        assert d in spoken or d in SRC, f'숫자 {d} — 말 줄·H-2 원문에 없음'
+    return {'kind': 'vs', 'label': label, 'source': None, 'data': data, 'lines': ls, 'frames': sum(l['frames'] for l in ls)}
+
+
+# 11/2 10시 PD 눈 검사 고침: ① 장면1 둘째 칸(17억 8,500만원)이 줄 2 시작(124)에 열려 '?' 묻기(24프레임)가 100부터 — 답 21억(말 닿는 78)이 0.7초만 뜸 → 줄 2에서 '18억'을 말하는 자리로 ② 장면3 '0건'(숫자 1자리라 beatsOf 말 맞춤 안 됨)이 118에 열려 466(말 맞춤 114)을 덮음 → '한 건도'를 말하는 자리로 · 말·숫자 새로 0
+scenes = [
+    sc('같은 단지 같은 크기', ['래미안원베일리는 새로 들어간', '살던 사람이 다시 맺은', '같은 단지, 같은 크기인데'],
+       {'tiles': [['래미안원베일리 84㎡대 · 새로 들어간 전세', '21억', '', 0, 'ink'], ['살던 사람이 다시 맺은 전세', '17억 8,500만원', '', 188, 'ink']]}),   # 11/2 1차 렌더: side를 0프레임에 두니 답 21억 칸 대신 출처 글이 떠 21억이 화면에 안 나옴 → side 뺌(기간·출처는 끝 3초 base)
+    sc('차이는 이 권리', ['여기서 놓치면 손해 보는 게', '다시 맺은 원베일리 열아홉'],
+       {'tiles': [['살던 세입자가 다시 계약할 때 쓰는 권리', '계약갱신요구권', '', 0, 'ink'], ['다시 맺은 원베일리 19건 중', '18건이 이 권리', '', 175, 'ink']]}),
+    sc('권리 쓰면 몇 %', ['이 권리를 썼다고 신고된', '466건 가운데', '권리를 안 쓰고'],
+       {'tiles': [['잠실·대치·반포 84㎡대 · 권리 쓴 갱신', '466건', '', 0, 'ink'], ['보증금 5% 넘게 올린 계약', '0건', '', 223, 'ink']]}),
+    sc('그래서', ['그래서 지금 사는 집에'],
+       {'tiles': [['다시 계약할 때 집주인에게', '이 권리 쓴다고 말하기', '', 0, 'ink']]}),
+]
+for s_ in scenes:
+    st = [sum(l['frames'] for l in s_['lines'][:i]) for i in range(len(s_['lines']))]
+    assert all(0 <= t[3] < s_['frames'] for t in s_['data']['tiles']), (s_['label'], st)   # 11/2 PD 눈 검사: 칸 시각은 줄 시작이 아니라 말이 그 숫자에 닿는 자리(safeframe beatsOf와 같은 셈)도 됨
+for x in ('신규 30건 중앙 21.00억 · 갱신 19건 중앙 17.85억', '갱신요구권 사용 18/19', '466'): assert x in SRC, f'원문에 없음 {x}'
+scenes[-1]['frames'] += TAIL
+# 배경: 줄마다 말을 받는 그림 하나 — (줄 번호, 클립, 시작 초) · H-2 롱폼에서 쓴 Pexels 클립만(글자·얼굴 없는 것, 11/2 PD 눈 확인 scratchpad sheet)
+# 11/2 1차 렌더 실측: 밝기 Y 57.9·60 미만 58%(B-46 기준 ≤30% 걸림 — 6963484 계산기·12079562 강·8293504 열쇠 어두움) · 안전 영역 42.0초 아래 672px 상자 1개(8293504 열쇠 꼬리표 글자) → 밝은 클립으로
+# 11/2 3·4·5차 렌더(5349092@10·32986074@6로 밝기 31%→↓ 시도): 29826322·6787197 'No frame found'로 세 번 실패(그때그때 나는 compositor 오류, concurrency 2도 같음) → 07:36 2차 렌더본(아래 BG)을 씀 — 밝기 B-46은 registry상 '관문 아님', benchmark 목표 60 미만 ≤30%에 31%(14/45)
+# (시도 기록) 29826322 1.6초 '프레임 없음'(compositor, 4318548과 같은 오류) → 32986074 뒤쪽(6초~)
+# 11/2 2차 렌더 실측: Y 69.9·60 미만 31%(14/45, 기준 ≤30%) → 4번 줄 5923592(어두운 책상) → 5349092 뒤쪽(10초~)
+BG = [(1, '32986074', 1), (2, '36216207', 2), (3, '31018013', 2), (4, '5923592', 1), (5, '6787197', 1),
+      (6, '29826322', 1), (7, '5349092', 3), (8, '31018013', 8), (9, '36216207', 8)]
+DUR = {'29826322': 8.0, '32986074': 12.0, '36216207': 19.0, '31018013': 15.0, '5923592': 10.0, '6787197': 8.0, '6963484': 16.0, '5349092': 24.0, '12079562': 35.5, '8293504': 12.0}
+LIC = {}
+def _w(x):
+    if isinstance(x, dict):
+        if 'src' in x and 'license' in x: LIC[x['src'].split('/')[-1][:-4]] = x['license']
+        [_w(v) for v in x.values()]
+    elif isinstance(x, list): [_w(v) for v in x]
+_w(json.load(open(os.path.join(VID, 'h2.json'), encoding='utf-8')))
+allines = [l for s in scenes for l in s['lines']]
+assert len(allines) == len(BG), (len(allines), len(BG))
+bg = []; at = 0
+for (k, cid, st), l in zip(BG, allines):
+    fr = l['frames'] + (TAIL if k == len(BG) else 0)
+    assert os.path.exists(os.path.join(VID, 'public', 'bg', 'h2', cid + '.mp4')), cid
+    assert DUR[cid] - st >= fr / 30 + 0.3, (cid, DUR[cid], fr / 30)
+    bg.append({'src': f'bg/h2/{cid}.mp4', 'from': at, 'frames': fr, 'start': st}); at += fr
+credits = ' · '.join(sorted({f"{c} {re.search(r'[(](.*)[)]', LIC[c]).group(1).strip()}" for _, c, _ in BG})) + ' (Pexels License)'
+p = {'fps': 30, 'name': 'h2s_renew', 'v': 2, 'look': 'live', 'question': ['같은 아파트 같은 크기', '전세 3억 차이, 왜?'], 'hot': '3억',
+     'answer': {'label': '래미안원베일리 84㎡대 전세 가운데 값(2025.11~2026.10)', 'items': ['새로 들어간 21억', '다시 맺은 17억 8,500만원'], 'arrow': False, 'note': '갱신요구권'},
+     'base': '국토교통부 아파트 전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산', 'long': '_fTgGr0dR0I',
+     'scenes': scenes, 'bg': bg, 'credits': credits}
+json.dump(p, open(os.path.join(VID, 'h2s_renew.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+fr = sum(s['frames'] for s in scenes)
+print(f'h2s_renew: {fr} 프레임 = {fr / 30:.1f}초 · 장면 {len(scenes)} · 최장 장면 {max(s["frames"] for s in scenes) / 30:.1f}초 · 배경 {len(bg)}컷(최장 {max(b["frames"] for b in bg) / 30:.1f}초)')
+print('credits:', credits)

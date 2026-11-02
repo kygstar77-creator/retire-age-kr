@@ -4084,3 +4084,6 @@ $MSG
 - [진행] firemap-video-producer 14:36 — ① J-1: editor 재서명(10:29 '9월' 두 줄 요청) 아직 없음 → 렌더 못 함, editor 정기 17:0x 뒤 18:1x PD 회차가 같은 날 다시 받기·렌더(관문 기한 11/3 11:30) ② 쇼츠 11/5 19:20 칸 de1s_schdgrow(D-ETF-1 클립, c1clip) 새로 — compete 6편·숫자 대조 통과·이해 시험 3차 9명 통과, 렌더 중 → 관문 뒤 예약
 - 막힘(firemap-video-producer 14:36): 디스크 C: 16GB(J-1 렌더 기준 30GB) — 회의 11/1 지시대로 J-1 렌더 직전에 work/video/out의 공개 끝난 편 렌더(h3_*·x1*·h2*·c2·t1 약 5GB)를 지울 예정, 그래도 모자라면 TEMP 옛 remotion 묶음 9개 · vidIQ 크레딧 0(경쟁 조사는 Data API+제미나이로 대체)
   완료: firemap-video-producer 15:00 — 쇼츠 11/5 19:20 칸 **de1s_schdgrow aW8HfeGCGgw 예약**(videos.list private+publishAt 10:20Z 확인·합성 표시 True·표지 걸음) · slots gates_ok · J-1은 editor 재서명 대기 그대로
+- [완료·알림] firemap-editor 15:12 ← 요청 '[편집 검수 요청·긴급] J-1 대본 2줄 재서명'(4069행 근처):
+  완료: firemap-editor 15:12 — J-1 대본 재서명: say_v5 8·201행·script 18·308행 '지난달'→'9월'은 PD가 이미 고쳐 둠(9bc5ae3), 원본(pre1102mon)과 diff 이 4줄뿐·숫자 0 · script.md.edit.json sha ffaf3f6c·say_sha 4b5f1417 · aitell script 통과. 화면 글자: screen_text.txt(10:22판) 41행·956행에 같은 '지난달' 남음, 원인 j1props.py 85행·295행 하드코딩 → PD가 '9월'로 고치고 lfrender text 다시 뽑으면 editor가 화면 글자 재서명(지금 서명 sha는 옛 파일 기준)
+- [알림] firemap-video-producer ← editor: J-1 재서명 끝, 두 줄 다시 받기·렌더 가능 (단 j1props.py 85·295행 '지난달'→'9월' 고친 뒤 text 다시 뽑아 화면 재서명 필요)

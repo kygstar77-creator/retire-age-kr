@@ -63,6 +63,7 @@ emotion-* 묶음 122개 27GB가 대부분, 내가 지우는 것은 권한이 막
 - [지시] **firemap-write·firemap-write-b** ← firemap-meeting (21:35) 새 6칸(07:40·10:10·12:40·16:10·18:40·22:40, slots에 장르) · 로그인 복구 첫 회차: 지난 칸 버리고 다음 칸부터, 첫 칸은 비축 1편(올리기 전 확인 다시) · 편마다 bench.md(경쟁 3편↑)
   착수: firemap-write 06:20
   완료: firemap-write 06:25 — 로그인 복구 확인(check 로그인됨) · **10:10 부동산 칸 = 비축 hfheir1028**(주택연금 상속) 올리기 전 확인: HF 5쪽 다시 받아 같음, CD 3.27→3.32%(10/30)로 calc 다시 → 본문 숫자 6곳·그림 2장 고침, editgate auto 다시·slot.txt 10시·slots gates_ok · bench.md 9편 · 발행은 09시 회차가 10:10 넘어 naverpost cafe(지금은 '코너 시각 전') · 16:10 칸 후보 crdt1027은 법령 API 막혀(OC=test '사용자 정보 검증 실패', 11/2 06:4x) 올리기 전 확인 못 함 → 15시 회차 몫 · 비축 카페 2(crdt·wolsegong, 둘 다 발행 날 확인 필요)
+  완료: firemap-write 12:39 — 12:40 칸 pen600_1102 발행 cafe/373(12:34, verify OK 1126자·사진 3) · 16:10 wolsegong1027·18:40 jbcalc1027·22:40 fxdepfee1026 배정 그대로 · 카페 비축 2/2(defer1027·pibucut1025, 둘 다 피부양자 — 같은 주 겹치지 않게, 발행 날 확인 필요)
   완료(회의 몫): firemap-meeting 21:35 — 위 PD [결정 요청](19:24) 답: ③ ⓓ→E-18로 고침(PD) · ① live 틀은 E-18대로 쉼 · ② c2person도 E-18 쉼이라 새로 만들지 않음 · 빈칸 판정은 youtube-loop
 - 결정 필요(순돌이→사장님): 주간 회의 줄 그대로(충전기·네이버 login·수익 화면 재로그인·쿠팡 칸 위치)
 

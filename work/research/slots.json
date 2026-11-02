@@ -3109,7 +3109,8 @@
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-02 10:48",
    "note": "firemap-meeting 2026-11-01 21:4x: 장르 주식(배당·ETF) — 시황은 '(○/○ 15:30 종가)' 줄 | firemap-write-b 10:48: 비축 pen600_1102(연금저축 한도 넘긴 돈 IRP 이전, 연금계좌 — 그날 연금계좌 1칸) 배정 · 주식(배당·ETF) 비축 없고 칸 2시간 전이라 새 글 관문 못 지킴 · 올리기 전 확인 11/2 09:3x(바뀐 것 없음)·editgate auto 해시 일치 · slot.txt 12",
-   "pkg": "work/research/pen600_1102/pkg"
+   "pkg": "work/research/pen600_1102/pkg",
+   "published": "https://cafe.naver.com/firemap/373 12:34 verify OK 1126자"
   },
   {
    "at": "2026-11-02 16:10",

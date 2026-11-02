@@ -205,3 +205,4 @@
 - (11/2) 비축 글은 발행 날 계산 입력(금리 등)을 다시 받으면 숫자가 바뀐다 — hfheir1028은 CD 5bp에 본문 6곳·그림 2장이 바뀜. calc.py·mkimg.py가 숫자를 하드코딩하면 둘 다 고치고 그림을 Read로 확인. 법령 API(OC=test)는 11/2부터 IP 검증으로 막힘 — 법 개정 글 비축은 발행 날 확인이 안 될 수 있다.
 
 - 11/02 법령 API(OC=test) IP 실패 때: 법령 웹 주소의 iframe src(/LSW//lsSideInfoP.do?...)를 curl로 받으면 조문·[시행일] 원문이 나온다(raw/1102/에 저장).
+- 11/02 naverpost cafe의 '확인 창 처리 실패(계속할까요 8초)'·스크린샷 OSError는 발행 실패가 아니다 — URL 줄과 verify로 판정(cafe/373 OK).

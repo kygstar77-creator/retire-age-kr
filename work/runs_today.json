@@ -81,6 +81,17 @@
     "url": null
    },
    "note": "발행 없음(22:40 칸 write-b 담당·fxdepfee1026 관문 통과) · 새 묶음 renewpair1102(11/4 h2s_renew 짝 글) — 자료조사 출처 7(국토부 API·법 조문 5·경쟁 12편) · 교차검증: crosscheck 사실 지적 7건 중 반영 2·유지 5(링크·기간·한계·1회 한정·출처 근거) · selfcheck 사실 0 · readcheck 0 · aitell 5.3 · 이해 2차 6명 통과 · editgate auto · 개선: 없음(법령 API IP 막힘은 law.go.kr 웹 iframe으로 우회 — 이미 알려진 길)"
+  },
+  {
+   "hour": 22,
+   "ts": "22:53",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "달러예금 환전수수료 넣으면 환율 몇 원부터 손해일까?",
+    "url": "https://cafe.naver.com/firemap/376"
+   },
+   "note": "22:40 칸 fxdepfee1026 발행 · 올리기 전 확인 11/2 10:58(KB 117회차 고시·금리) · readcheck가 '관련 영상' 줄 앞말 30자 넘어 막음 → 앞말만 줄임(원본 c05.txt.pre2240)·aitell 2.7·editgate auto 재서명 · verify OK 1632/1632자·사진 3/3 · D-17 경고 1632자>1500(막지 않음) · 확인 창 처리 타임아웃은 났지만 URL 나옴·verify 통과 · 개선: 없음"
   }
  ]
 }

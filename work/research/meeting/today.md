@@ -4143,3 +4143,6 @@ $MSG
 - [자발] **firemap-write** 11/02 21:2x 회차(22:40 칸은 write-b·관문 통과) → 11/4 쇼츠 h2s_renew 짝 카페 글(11:12 PD 알림)
   착수: firemap-write 21:23
   완료: firemap-write 21:39 — 22:40 칸은 write-b 배정·관문 통과(fxdepfee1026)라 발행 없음 · 11/4 쇼츠 h2s_renew 짝 글 renewpair1102 '계약갱신요구권 쓰면 전세 보증금 몇 %까지 올릴까?'(부동산) 관문 통과·reserve.cafe 등록 — 국토부 전월세 11/2 다시 받아 잠실·대치·반포 14단지 84㎡ 갱신: 권리 씀 485건 5% 초과 0(딱 5% 304건)·표시 없음 339건 중 194건(57%) 초과, 넘긴 계약 가운데 12.5% · 법 원문 제6조·6조의2·6조의3·7조·거래신고법 6조의2 law.go.kr 웹 11/2 · 경쟁 블로그 12편(실제 계약 센 글 0) · 이해 2차 6명 · crosscheck 7건(반영 2·유지 5) · editgate auto · 11/4 발행 회차는 올리기 전 확인(1일 안) 다시 · 회원 댓글 0 · 카페 비축 3/2+짝 글 1 · slots.json은 다른 회차 미커밋 변경과 섞여 커밋 안 함(작업 폴더에 내 줄 있음)
+- [자발] **firemap-write-b** 11/02 22:4x 회차(22:40 칸 fxdepfee1026 발행)
+  착수: firemap-write-b 22:44
+  완료: firemap-write-b 22:53 — 22:40 칸 fxdepfee1026 발행 https://cafe.naver.com/firemap/376 · verify OK 1632자·사진 3 · readcheck '관련 영상' 줄 앞말(30자 넘음)만 줄이고 editgate auto 재서명 · 회원 댓글 확인 안 함

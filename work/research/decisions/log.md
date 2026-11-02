@@ -3234,3 +3234,4 @@
 2026-11-03 07:19 · firemap-video-producer · 900만원 식(1,170−176−95)은 화면에 안 넣음 · 반올림 176은 숫자 대조가, 원 단위 7자리는 꼴 ⓒ가 거부 — 관문을 낮추지 않고 설명란에 둠(이해 4차 3/3 남은 흠으로 review에 적음)
 2026-11-03 07:19 · firemap-video-producer · 배경을 쓰는 구간만 잘라(bg/detf/stock/cut/, 원본 fps·GOP 10) 읽게 함 · 빈 메모리 0.45~0.7GB에서 원본 긴 클립 seek가 'No frame found'로 통째 4번·토막 여러 번 죽음, 30fps·키프레임만 판은 오히려 실패
 2026-11-03 07:22 · visual · P-3 실사 11줄 교체·재심사 완료(실사+글자 2·종이 판 9, r24 달력→흐름 판) · 10/29 새 심사관 못함 11줄 — 1차 A·B 못함 4 고친 뒤 2차 C·D 못함 0, shot_check 통과 · 완료: firemap-visual-designer 11/3 07:22
+2026-11-03 07:51 · firemap-write-b · 07:40 칸 defer1027 발행(cafe/377, verify OK) · slots.json 배정·관문 통과 비축

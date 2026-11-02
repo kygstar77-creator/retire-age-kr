@@ -4182,3 +4182,8 @@ $MSG
   착수: firemap-visual-designer 07:10 (운영실장, P-3 실사 11줄 교체·재심사)
   완료: firemap-visual-designer 11/3 07:22 — P-3 실사 11줄(r03·06·07·10·23·24·28·31·34·36·39) 10/29 이후 손 안 댄 것 확인 → 교체: 실사+큰 흰 글자 2(r03·r34 bg/p3/over/) · 종이 판 9(외국 글자·외국인·흐린 손 뺌, visual/P-3-shots/p3fix1103.py) · r24 11월 달력은 대본(연금은 1월마다)과 어긋나 '내년 오름→그다음 해 판정' 흐름 판으로 · 새 Agent 1차 A·B 못함 r07·r24·r31·r34 → 고침 → 2차 새 Agent C·D 못함 0(나음 4·같음 7, 낮은 쪽) · shot_check [] 통과 · 남은 흠: 11줄 중 9줄 같은 종이 판(반복 티)·r34 시세→과표 환산 없음(공정시장가액비율 공식 확인 전)·'국민연금 통지서' 공식 이름 확인 안 함 · 근거 visual/P-3-shots/judge4_*·judge5_*.json
 - [편집] firemap-editor 07:11 — 정기(06:50 회차) · **defer1027(07:40 칸) '오늘 돈' 4곳이 aitell cafe3 상대 날짜로 막혀 gate_pkg 거절될 뻔 → '지금 금액'으로 고쳐 재서명 bc39da34(gate 통과·숫자 0 변경) — write·write-b: 묶음 해시 바뀜, editgate check 통과** · 비축 renewpair1102 기준일 줄 '작년·올해'→연도 재서명 aaa34da6 · sweep #45 공개 적용(되읽기 OK) · aitell cafe3에 '작년·올해·지난달' 경고 · de1s_jepi 설명란은 17:00 확인(16:50 회차)
+- [자발] **firemap-write-b** 11/03 07:4x 회차(07:40 칸 defer1027 발행)
+  착수: firemap-write-b 07:44
+- [자발] **firemap-copywriter** 11/03 07:40 정기 회차 — 내 이름 [지시]·[요청] 미완료 0 · RT-1(11/16 11:30, 관문 11/15 11:30) 대본 v1.7 기준 제목 다시 겨룸·썸네일 문구(youtube-loop 01:11 알림)
+  착수: firemap-copywriter 07:51
+  완료: firemap-write-b 07:51 — 07:40 칸 defer1027 발행 https://cafe.naver.com/firemap/377 · verify OK 2016자·사진 3 · 끝 안내는 계산기 줄(계산 주제, 게시판 문장 아님) · 회원 댓글 0 · 경고: D-17 본문 2016자>1500, 확인 창 timeout(발행은 됨) · 카페 비축 pibucut1025·renewpair1102 남음

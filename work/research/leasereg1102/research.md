@@ -92,9 +92,9 @@
 | 등기 뒤 빌린 세입자 최우선변제 못 받음 | 제3조의3⑥ '제8조에 따른 우선변제' | S1 https://www.law.go.kr/법령/주택임대차보호법/제3조의3 |
 
 # 올리기 전 확인
-- 2026-11-02 13:5x 대조 칸 출처 S1~S4 전부 다시 엶(국가법령정보센터 웹·판례 본문·생활법령 curl) — 비축분이라 발행 날 다시 열어 이 칸을 다시 채운다
-- 다시 연 주소: https://www.law.go.kr/법령/지방세법/제28조 · https://www.scourt.go.kr/nm/minwon/faq/FaqViewAction.work?mode=A&seqnum=1825&gubun=13&pageIndex=1&pageIndexB=1&search_gubun=13 · https://www.law.go.kr/법령/주택임대차보호법/제3조의3 · https://www.law.go.kr/법령/민사집행법/제292조 · https://www.law.go.kr/판례/(2024다326398) · https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=84&onhunqueSeq=3023
-- 기준일: 2026년 11월 2일(법령 현행판 S1 시행 2026.1.2.·S2 시행 2026.2.1. · 비용 생활법령 2026.9.15 기준)
-- 바뀐 것: 없음(첫 조사)
-- 새로 찾은 것: 연합뉴스 11/2 다가구 '유령호실' 전세대출 사기 27억(issues.md) · 뉴시스 7/9 상반기 서울 집합건물 신청 3,754건(-25.0%, 글에는 안 씀)
+- 2026-11-03 06:3x 대조 칸 출처 S1~S6 전부 다시 엶(국가법령정보센터 웹 iframe 본문 lsSideInfoP·precInfoP, 생활법령·전자민원센터 curl)
+- 다시 연 주소: https://www.law.go.kr/법령/주택임대차보호법/제3조의3 · https://www.law.go.kr/법령/민사집행법/제292조 · https://www.law.go.kr/판례/(2024다326398) · https://www.easylaw.go.kr/CSP/OnhunqueansInfoRetrieve.laf?onhunqnaAstSeq=84&onhunqueSeq=3023 · https://www.law.go.kr/법령/지방세법/제28조 · https://www.scourt.go.kr/nm/minwon/faq/FaqViewAction.work?mode=A&seqnum=1825&gubun=13&pageIndex=1&pageIndexB=1&search_gubun=13
+- 기준일: 2026년 11월 3일(S1 시행 2026.1.2. 법률 제21065호·S2 시행 2026.2.1. 법률 제20733호·S5 시행 2026.1.1. 법률 제21308호 — 11/2와 같은 판 · S3 판결 2025.4.15. 그대로 · S4 43,400원 2026.9.15 기준 그대로 · S6 수입인지 2,000원·등기신청수수료 4,000원 그대로)
+- 바뀐 것: 없음(숫자·조문 판 모두 11/2와 같음) · 글 끝 '질문·고민 게시판' 안내 줄 뺌(11/3 지시 끝 안내 기본값 없음), 기준일 11/3으로
+- 새로 찾은 것: 없음(법·판결 글 — 11/2 이후 개정·새 판결 공지 없음, 법령 현행판 번호 그대로)
 - 조사 뒤 공표: data/release_calendar.json 해당 없음(법·판결 글)

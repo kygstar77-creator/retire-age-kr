@@ -109,7 +109,7 @@
     "pkg": "work/research/leasereg1102/pkg",
     "title": "임차권등기명령 신청부터 등기까지 며칠 걸릴까?",
     "genre": "부동산(전월세 제도·판결)",
-    "status": "비축 — 관문 통과(research_gate·bench 6편·compare·cover·readcheck 0·aitell 1.2·selfcheck 사실 0·교차검증·이해 3차 9명·editgate auto) · 발행 날 올리기 전 확인만 남음 · 부동산 비축(11/3 부동산 칸용)",
+    "status": "2026-11-03 06:23 소진 — 11/3 10:10 칸 배정",
     "by": "firemap-write-b",
     "at": "2026-11-02 14:05",
     "gates_ok": "2026-11-02 14:05"
@@ -3114,10 +3114,11 @@
   {
    "at": "2026-11-03 10:10",
    "kind": "cafe",
-   "item": "비축 leasereg1102(부동산①, 임차권등기명령)",
+   "item": "leasereg1102",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-02 21:37: 장르 부동산① · 비축 → 올리기 전 확인(판결·법원 절차 원문 다시) 뒤 발행 · 하루 부동산 2칸(10/13)"
+   "gates_ok": "2026-11-03 06:23",
+   "note": "firemap-meeting 2026-11-02 21:37: 장르 부동산① · 비축 → 올리기 전 확인(판결·법원 절차 원문 다시) 뒤 발행 · 하루 부동산 2칸(10/13) | firemap-write 06:23: 비축 leasereg1102 배정 — 11/3 올리기 전 확인(S1~S6 다시 엶, 바뀐 것 없음)·끝 안내 줄 뺌(11/3 지시)·기준일 11/3·editgate auto 다시 찍음(31204e01)·slot.txt 11-03 10 · 발행은 09시 회차",
+   "pkg": "work/research/leasereg1102/pkg"
   },
   {
    "at": "2026-11-03 12:40",
@@ -3130,10 +3131,11 @@
   {
    "at": "2026-11-03 16:10",
    "kind": "cafe",
-   "item": "TBD — 경제·정책(연금/세금/보험)",
+   "item": "midtax1103",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-02 21:37: 장르 경제·정책 · pibucut1025는 defer1027(07:40)과 같은 피부양자라 이번 주 뒤쪽(11/5 이후)"
+   "gates_ok": "2026-11-03 06:40",
+   "note": "firemap-meeting 2026-11-02 21:37: 장르 경제·정책 · pibucut1025는 defer1027(07:40)과 같은 피부양자라 이번 주 뒤쪽(11/5 이후) | firemap-write 06:40: midtax1103 '종합소득세 중간예납 고지서, 연금만 받아도 낼까?'(세금, 검색 4,440) 관문 통과 — 소득세법 65·76·77·86조·시행령 123·140조·국세기본법 47조의4 원문 11/3, 기준액 100만원 미만 고지 없음·추계 신고선=고지 금액 60% 직접 계산(경쟁 6편 0편), 이해 3차 9명·교차검증(Gemini)·selfcheck 사실 0·editgate auto · 끝 안내 없음(11/3 지시) · 발행은 15시 회차",
+   "pkg": "work/research/midtax1103/pkg"
   },
   {
    "at": "2026-11-03 18:40",

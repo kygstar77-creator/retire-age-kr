@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-03 06:29",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "종합소득세 중간예납/연금만 받아도 낼까",
+ "num": "작년 세금의 절반",
+ "sub": "연금·이자·배당만 있으면 고지 없어요",
+ "label": "소득세법 제65조",
+ "src": "법령 11/3 확인",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 116,
+ "num_px": 92,
+ "sub_px": 62,
+ "board": [
+  "fxdepfee1026",
+  "jbcalc1027",
+  "wolsegong1027",
+  "pen600_1102",
+  "hfheir1028",
+  "crdt1027",
+  "rtcancel1022",
+  "cpi2pct1022",
+  "penlimit1022",
+  "kospidd1022"
+ ]
+}

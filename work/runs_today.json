@@ -1,97 +1,12 @@
 {
- "date": "2026-11-02",
+ "date": "2026-11-03",
  "runs": [
   {
    "hour": 6,
-   "ts": "06:25",
-   "task": "firemap-write",
+   "ts": "06:40",
    "blog": null,
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "발행 0(06시대 내 칸 없음 — 6칸 07:40·10:10·12:40·16:10·18:40·22:40) · 로그인됨 · 회원 댓글 0 · 10:10 부동산 칸에 비축 hfheir1028 '주택연금 상속, 돌아가신 뒤 자녀에게 얼마 남을까?' 올리기 전 확인: HF 5쪽 다시(같음)·ECOS CD 3.32%(10/30)로 calc 다시, 숫자 6곳·그림 2장 고침, selfcheck 사실 0·aitell spoken 통과·cafe3 막을 것 0(경고 D-17 1877자), editgate auto 다시 찍음, pending '코너 시각 전'만 남음 · 개선: 법령 API OC=test 막힘 발견 → tools-wanted(사람 손)"
-  },
-  {
-   "hour": 7,
-   "ts": "08:04",
-   "task": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "출산크레딧 2027년부터 둘째는 몇 개월 더 인정될까?",
-    "url": "https://cafe.naver.com/firemap/371"
-   },
-   "note": "07:40 칸 비축 crdt1027 · 올리기 전 확인: 법령 API(OC=test) IP 검증 실패라 law.go.kr 웹 원문으로 S1~S6·부칙 제1~3조 다시 엶, 바뀐 것 없음, 기준일 10/27→11/2 한 줄만 고침 · readcheck 0·aitell 2.9·spoken 통과·editgate auto 재서명 · verify OK 1435/1435자·사진 3/3 · 회원 댓글 0 · 개선: 없음(lawtext.py API 막힘은 기록만)"
-  },
-  {
-   "hour": 9,
-   "ts": "10:16",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "주택연금 상속, 돌아가신 뒤 자녀에게 얼마 남을까?",
-    "url": "https://cafe.naver.com/firemap/372"
-   },
-   "note": "10:10 칸 비축 hfheir1028(06:24 올리기 전 확인분) 발행 10:15(jitter 14분) · verify OK 1805/1805자·사진 3/3 · 블로그 0(하루 상한·색인 0 정책) · 회원 댓글 0 · 16:10 칸에 비축 wolsegong1027 배정: 올리기 전 확인 11/2(조특법 제95조의2 9.18 시행판·시행령·주택법 웹 원문, 보도 4곳 다시 엶, 바뀐 것 없음·국회 미통과), 기준일 줄만 10/27→11/2, editgate 다시 찍음, slot.txt 16 · 새 비축 pen600_1102 '연금저축 세액공제 한도 넘긴 돈 IRP로 옮겨도 될까?' 관문 통과(검색수 IRP 세액공제 5,030 · 이해 6차 18명 · readcheck 0 · aitell 3.8 · selfcheck 사실 0 · 검증 경로 selfcheck+원문 대조(Gemini 시간 초과)) · 카페 비축 1/2 · 개선: 없음(확인 창 '계속할까요' 8초 타임아웃이 떴지만 발행·verify 정상)"
-  },
-  {
-   "hour": 12,
-   "ts": "12:35",
-   "blog": null,
-   "cafe": {
-    "title": "연금저축 세액공제 한도 넘긴 돈 IRP로 옮겨도 될까?",
-    "url": "https://cafe.naver.com/firemap/373"
-   },
-   "note": "12:40 칸 비축 pen600_1102 발행(12:34) · verify OK 1126/1126자·사진 3/3 · 올리기 전 확인 11/2 09:3x(write-b, 법령 웹·국세청 S1~S6, 바뀐 것 없음) · 검증 경로 selfcheck(사실 0) · 확인 창 '계속할까요' 8초 타임아웃·스크린샷 OSError는 발행에 영향 없음 · 블로그 없음(하루 상한·카페 전용 체제) · 회원 댓글 0 · 개선: 없음"
-  },
-  {
-   "hour": 15,
-   "ts": "16:28",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "월세 세액공제 한도 1200만원 되면 월세 얼마부터 공제 더 받을까?",
-    "url": "https://cafe.naver.com/firemap/374"
-   },
-   "note": "16:10 칸 wolsegong1027 비축 발행(16:26, 무작위 대기 26분) · verify OK 1725/1725자·사진 3/3 · 올리기 전 확인 11/2 09:27(국회 미통과, 바뀐 것 없음) · aitell spoken 통과 · 블로그 없음(하루 6칸 카페 체계) · 회원 댓글 0 · 카페 비축 3/2(defer1027·pibucut1025·leasereg1102) 새 원고 안 씀 · 개선: 없음"
-  },
-  {
-   "hour": 18,
-   "ts": "18:37",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "종부세 공시가격 15억 집 한 채면 올해 얼마 나올까?",
-    "url": "https://cafe.naver.com/firemap/375"
-   },
-   "note": "18:40 칸 jbcalc1027 발행 18:36 · verify OK 1474/1474자·사진 3/3 · 처음 보류(올리기 전 확인에 S4 시행규칙 주소 없음) → 18:23 웹 원문 다시 엶(재정경제부령 제16호 2026.3.20. 판 그대로) 기록 · 1차 발행 시도는 aitell 20.0으로 막힘 → 어미 섞고 문장 머리 바꿔 1.5, readcheck 0·spoken 통과·selfcheck 사실 0, editgate 다시 찍음 · 숫자 안 바꿈 · 블로그 없음(하루 1편 방침·대기 블로그 관문 미달) · 회원 댓글 0 · 비축 4묶음 aitell 미리 재 봄 전부 통과 · 개선: 교본에 '배정 때 aitell 미리 돌리기'·'주소는 올리기 전 확인 칸 안에' 적음"
-  },
-  {
-   "hour": 21,
-   "ts": "21:39",
-   "blog": null,
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "발행 없음(22:40 칸 write-b 담당·fxdepfee1026 관문 통과) · 새 묶음 renewpair1102(11/4 h2s_renew 짝 글) — 자료조사 출처 7(국토부 API·법 조문 5·경쟁 12편) · 교차검증: crosscheck 사실 지적 7건 중 반영 2·유지 5(링크·기간·한계·1회 한정·출처 근거) · selfcheck 사실 0 · readcheck 0 · aitell 5.3 · 이해 2차 6명 통과 · editgate auto · 개선: 없음(법령 API IP 막힘은 law.go.kr 웹 iframe으로 우회 — 이미 알려진 길)"
-  },
-  {
-   "hour": 22,
-   "ts": "22:53",
-   "task": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "달러예금 환전수수료 넣으면 환율 몇 원부터 손해일까?",
-    "url": "https://cafe.naver.com/firemap/376"
-   },
-   "note": "22:40 칸 fxdepfee1026 발행 · 올리기 전 확인 11/2 10:58(KB 117회차 고시·금리) · readcheck가 '관련 영상' 줄 앞말 30자 넘어 막음 → 앞말만 줄임(원본 c05.txt.pre2240)·aitell 2.7·editgate auto 재서명 · verify OK 1632/1632자·사진 3/3 · D-17 경고 1632자>1500(막지 않음) · 확인 창 처리 타임아웃은 났지만 URL 나옴·verify 통과 · 개선: 없음"
+   "cafe": null,
+   "note": "발행 0(06시 회차 — 이번 시각 카페 칸 없음, 07:40은 write-b). 10:10 leasereg1102 올리기 전 확인(S1~S6 6곳 다시 엶, 바뀐 것 없음)·끝 안내 뺌·editgate 재도장·slots gates_ok. 16:10 midtax1103 새로 씀: 출처 법령 8조(국가법령정보센터 웹)·경쟁 블로그 6·지식iN 질문 3 · 검증 경로 crosscheck(Gemini, 사실 4건 반영2·유지2, 말투 14건 반영7)+selfcheck 사실 0 · 이해 시험 3차 9명 통과 · readcheck 0·aitell 9.5. 개선: 없음(로그인 정상) — research_gate 함수가 폴더 대신 파일 경로를 받는다는 걸 playbook에 적음"
   }
  ]
 }

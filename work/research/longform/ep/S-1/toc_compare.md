@@ -93,6 +93,8 @@
 | 6. 10월 8일 그 뒤 | 107조 발표 뒤 며칠은? 내 100주는? · 한 달 뒤 값은 언제 나오나 | 발표 다음 날 경쟁 https://www.youtube.com/watch?v=UeYfy8Fww2w&t=509 · 수요 댓글 '영업이익 발표하면 떨어지고 다음 날 올랐는데' https://www.youtube.com/watch?v=dzMcBM-sSy4&lc=UgySrmsw18pHEOdh93Z4AaABAg · 그 뒤 10/29 확정 실적 날 하락을 다룬 편 https://www.youtube.com/watch?v=QLadzq-tb4A&t=32 · https://www.youtube.com/watch?v=Jeo-92g8a4g&t=0 (공개 전날 갱신 때 판단) |
 | 7. 정리 | 숫자 정리 두 줄 → 댓글 질문 하나 → 카페 전체 표(끝맺음 '우리:' 줄대로, 마지막 20초 최종 화면) | https://www.youtube.com/watch?v=QLadzq-tb4A&t=592 · https://www.youtube.com/watch?v=UeYfy8Fww2w&t=757 · https://www.youtube.com/watch?v=Jeo-92g8a4g&t=1019 |
 
+대본 v3(11/2 17:01 youtube-loop): 위 표에 더해 기초(잠정 실적이 뭔가 — 15/17편이 '이번 숫자'로 여는 데 처음 보는 사람용 기초) · 3-1 선반영(Q2 댓글, 빈칸) · 5장 100주 하루 vs 한 달(우리만) · 7 다음 발표 날 DART 확인 순서(research 그래서) · 8 한계 장. 경쟁의 '예상치 미달'·'정점론'·'외국인'·'대응' 장은 위 판단대로 뺀 채 그대로.
+
 # 순서
 
 경쟁이 첫 60초에 놓는 것(자막·시간표 확인):

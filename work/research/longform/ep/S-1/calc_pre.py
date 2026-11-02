@@ -21,3 +21,7 @@ print(f'[PRE3] 같은 기간(2016-01-08~) 아무 20거래일 오른 비율 = {su
 upd = [p for p in up if p['day_pct'] < 0]; dnn = [p for p in pre if p['pre_pct'] <= 0]
 print(f'[PRE4] 발표 전 20일 올라 있던 {len(up)}번 중 발표 날 내림 = {len(upd)} · 발표 전 20일 오르지 않은 {len(dnn)}번 중 발표 날 내림 = {sum(p["day_pct"] < 0 for p in dnn)}')
 for p in pre[-6:]: print('  ', p)
+# v3(11/2): 발표 전 가장 많이 올라 있던 때·올해 네 번
+for p in sorted(pre, key=lambda p: -p['pre_pct'])[:3]: print('[PRE5] 전 20일 상위', p)
+y = [p for p in pre if p['date'].startswith('2026')]
+print(f'[PRE6] 2026년 {len(y)}번: 전 20일 올라 있음 {sum(p["pre_pct"] > 0 for p in y)} · 그중 발표 날 내림 {sum(p["pre_pct"] > 0 and p["day_pct"] < 0 for p in y)}')

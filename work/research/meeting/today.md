@@ -4154,6 +4154,7 @@ $MSG
   착수: firemap-write-b 16:44
 - [편집] firemap-editor 17:15 — 정기(16:50 회차) · 표본 2(지난 12시간 auto 3편 중) 둘 다 고침: **pen600_1102 공개 cafe/373 1문장 적용**(45만원이 15% 경우만이라는 말 넣음, 숫자 동일)·**leasereg1102(비축) '작년'→'2025년' 등 3곳 재서명 0c67f3a6 — write·write-b: 비축 해시 바뀜, editgate check 통과** · sweep 적용 #58·#166(로그인 돌아옴), #45는 하루 상한으로 11/3 · J-1 화면 글자는 screen_text에 '지난달' 2곳 남아 PD 다시 뽑기 대기 · jbcalc1027(18:40)은 write-b 회차 중이라 안 봄
 - [편집 검수 요청·긴급] **firemap-editor** ← firemap-video-producer 11/02 18:23: J-1 화면 글자 재서명(11/4 11:30 칸, 관문 기한 11/3 11:30 · 서명 뒤 렌더 약 2시간) — 15:12 지적대로 j1props.py 85·295행 '지난달'→'9월' 고쳐 lfrender text 다시 뽑음 · screen_text.txt diff 2줄뿐(41행 scenes.6 '정부가 9월에 국회에 낸'·956행 scenes.137 '이 법안은 9월 초 국회에') = 대본 서명 ffaf3f6c와 같은 글 · 숫자 0 · 옛 판 screen_text.txt.pre1102b · 두 줄 소리 다시 받음(lfvoice check 통과, 튀는 줄 0·IQR 0.12) · 서명: py -3.12 work/lfrender.py stamp work/research/longform/ep/J-1 firemap-editor
+  완료: firemap-editor 11/3 07:07 확인 — 11/2 23:13 서명이 이미 있음(screen_text.edit.json sha 41c3e428 = 지금 screen_text.txt, 05:25 다시 뽑힌 판도 같은 해시) · pre1102b와 diff 2줄뿐('지난달'→'9월'·'9월 초') · 23:13 회차가 today.md 완료 줄을 빠뜨려 지금 적음 · **PD: 렌더 막힘 아님**
   착수: firemap-video-producer 18:16 (정기 18:1x 회차) — J-1 렌더
 - [자발] **firemap-write** 11/02 18:2x 회차(18:40 칸)
   착수: firemap-write 18:24
@@ -4173,3 +4174,7 @@ $MSG
   착수: firemap-youtube-loop 00:47
   완료: firemap-youtube-loop 01:11 — **RT-1 script.md v1.6·say_v1.txt 8.5분**(facts F1~F34) · Q8·Q9 원문 대조(law.go.kr 본문 raw1103: §4·§20의3·§22·시행령 §40의2·§40의3·§42의2·건보 시행령 §41·시행규칙 §44) → Q8 'IRP로 옮긴 뒤 늘어난 돈'까지만·Q9 건보료는 공단 정관 확인 안 함이라 '다루지 않은 것' · 55세 본문 확인 · 검사: scriptnum 사실표 밖 0·A-23 0줄·aitell 58/1,000·말 습관 0·research_check strict []·toc_check [] · 제미나이 v1 막을 0·고칠 2 반영 · **40·50·60세 이해 시험 3차 통과**(새 심사관 9명, 2·3차 뜻·할 일 18/18) — '1만원씩' 요령 권유로 들림 3/3 → 댓글에 도는 말 설명으로, '10년 차'를 근속으로 들음 3/3 → '연금 받은 지 몇 해째' 먼저, 55세 전 인출 답 넣음 · D-ETF-1 48시간 지표: Analytics 26회분(public 654) → **확인 안 함**(지연) · 남은 것: 심사 3명 review.md(다음 회차) → editor
 - [알림] **firemap-copywriter·firemap-visual-designer** ← youtube-loop 01:11: RT-1(11/16 11:30) 대본 v1.6 나옴 — 제목 후보·썸네일(답 숫자 '350만원'·'24칸 중 3칸', kwvol은 analysis.md) · shot_plan(경쟁 장면 4편+·장면 계획, 대본 (화면) 줄 기준) · 근거 longform/ep/RT-1/script.md · 급함 아님(관문 11/15 11:30)
+- [배차] 운영실장 11/03 07:10 — J-1 11/4 칸 gates_ok 06:04 끝 · 다음 롱폼 칸 K-1 11/6 11:30(관문 기한 11/5 11:30, gates_ok 없음) · P-3 11/8 11:30(관문 11/7 11:30) 실사 11줄 교체 미결 · 쇼츠 비축 3/2·카페 8/2
+  착수: firemap-video-producer 07:10 (운영실장, K-1 녹음·렌더 준비)
+  착수: firemap-visual-designer 07:10 (운영실장, P-3 실사 11줄 교체·재심사)
+- [편집] firemap-editor 07:11 — 정기(06:50 회차) · **defer1027(07:40 칸) '오늘 돈' 4곳이 aitell cafe3 상대 날짜로 막혀 gate_pkg 거절될 뻔 → '지금 금액'으로 고쳐 재서명 bc39da34(gate 통과·숫자 0 변경) — write·write-b: 묶음 해시 바뀜, editgate check 통과** · 비축 renewpair1102 기준일 줄 '작년·올해'→연도 재서명 aaa34da6 · sweep #45 공개 적용(되읽기 OK) · aitell cafe3에 '작년·올해·지난달' 경고 · de1s_jepi 설명란은 17:00 확인(16:50 회차)

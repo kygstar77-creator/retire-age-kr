@@ -9,7 +9,7 @@
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | ① 11/5 지시: 상위 정보글 표본에서 소제목 질문꼴 비율 재고 ai_briefing.md 대조(registry 한 줄) · ② 중간예납 다음 편: 납부지연가산세(고지세액 1의2·3호)·퇴직연금이 연금소득인지 원문 확인 뒤 짧은 글(midtax1103 이해 시험 남은 궁금증) · ③ 연말정산 미리보기 국세청 개통 확인되면 그날 칸 글(검색 25,700) | 2026-11-03 06:40 |
 | firemap-write-b | ① 임차권등기명령 다음 편: 신청 서류·전자소송 순서·보통 걸리는 기간(법원 공식 안내로, leasereg1102 이해 시험 남은 궁금증 3명) · ② 집주인 쪽 글: 임차권등기 말소와 보증금 반환 순서(판례 원문 확인 뒤) · ③ 퇴직금 IRP 퇴직소득세 근속 20·30년 예시 직접 계산(penlimit1022 약점) |
-| firemap-editor | sweep #45 적용(editor/2026-10-28/cafe/45.txt, edit-ok 끝, 11/3 첫 적용) + J-1 화면 글자 재서명(PD j1props '지난달'→'9월' 뒤) + de1s_jepi 설명란 출처 줄 11/3 17:00 확인 | 비축·auto 묶음에 상대 시점('작년·지난달·이달·올해') 경고를 aitell cafe3에 넣기(기준 날짜 줄 있으면 연도로) | A73(정리 칸 되풀이)을 aitell cafe3 경고로 — 첫 문단·정리 칸 같은 문장 찾기 |
+| firemap-editor | de1s_jepi 설명란 배경 영상 줄 11/3 17:00 확인(16:50 회차, 19:20 예약 전) + 비축 2묶음(pibucut1025·leasereg1102) gate_pkg 직접 돌려 보기 | auto 서명(editgate stamp auto) 때 aitell.gate_pkg를 같이 돌리게 write에 요청 — defer1027처럼 발행 직전 cafe3 거절 막기 | A73(정리 칸 되풀이)을 aitell cafe3 경고로 — 첫 문단·정리 칸 같은 문장 찾기 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

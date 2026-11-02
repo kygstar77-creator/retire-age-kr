@@ -390,6 +390,26 @@ def n3_partyear(im):
     T(d, (W // 2, 940), "'일 년 내내 일한 직장인 중 몇 번째'와는 조금 달라요", 48, INK, F_B)
     source(d, SRC_NTS + ' · 2,108만 명')
 
+# ── 8장 (4회차 11/2 17시) ── r40: 우리 사이트 실제 화면(visual/N-3-shots/cap_r40c.py, 412px·3배 캡처, 연봉 4천 기본 → +1000만 = 5천)
+#   화면 숫자 3,571,586원·공제 595,080원 = calc_out.txt 4행 그대로(11/2 17:2x 확인)
+@board
+def n3_calc_site(im):
+    from PIL import Image
+    shot = Image.open(os.path.join(HERE, 'cap', 'r40_5000.png')).convert('RGB').crop((0, 0, 1236, 1600))
+    k = 960 / 1600; shot = shot.resize((round(1236 * k), 960), Image.LANCZOS); ox, oy = 180, 60
+    im.paste(shot, (ox, oy)); d = ImageDraw.Draw(im)
+    def at(x, y): return (ox + x * 1.35 * k, oy + y * 1.35 * k)   # 916px 미리보기 좌표 → 판 좌표
+    hand_ellipse(d, (*at(52, 240), *at(505, 362)), seed=401)
+    a = at(840, 552); hand_arrow(d, (a[0] + 230, a[1] + 120), (a[0] + 20, a[1] + 8), INK, 7)
+    cx = 1420
+    T(d, (cx, 330), '파이어맵 월급 계산기', 56, GREY, F_B)
+    T(d, (cx, 450), '연봉 5,000만원 넣으면', 72, INK, F_X)
+    T(d, (cx, 580), '통장에 한 달', 60, INK, F_B)
+    s = '3,571,586원'; T(d, (cx, 710), s, 116, OR, F_X)
+    hand_under(d, cx - width(s, 116) / 2, cx + width(s, 116) / 2, 790, seed=402)
+    T(d, (cx, 900), '내 연봉·식대·가족 수를 넣어 보세요', 46, INK, F_B)
+    source(d, 'firemap.kr/calc/salary · ' + COND)
+
 def main(names):
     os.makedirs(OUT, exist_ok=True)
     for n in names or list(B):

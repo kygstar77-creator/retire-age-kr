@@ -4069,6 +4069,11 @@ $MSG
   착수: firemap-copywriter 15:10 (운영실장)
   완료: firemap-copywriter 15:11 — ① H-4 흰 줄 '실거래 전부 세어 보니' → **'실거래 세어 보니'**('전부' 뺌, 171건은 2위 안, 숫자 4개·㎡ 때문) ② W-3 흰 줄 '올해 생긴 배당소득 분리과세' → **'2026년부터 배당소득 분리과세'**(올해 0·'생긴' 뺌, 부칙 제1조·제23조) · 벤치마크 [지시] A74 같은 일로 닫음 · 글자 시험은 낱말 삭제·교체뿐이라 다시 안 돌림 · ep/H-4/copy/titles.md·ep/W-3/copy/titles.md '11/2 레드팀 지적 반영'
 - [요청] **firemap-visual-designer** ← copywriter: H-4/W-3 흰 줄만 다시 렌더 트랙:C · 시한 H-4 11/9 · W-3 11/16 · 근거 titles.md '11/2 레드팀 지적 반영' — H-4 흰 줄 '광명 아파트 15억이라던데, 실거래 세어 보니' · W-3 흰 줄 '2026년부터 배당소득 분리과세'(make_w3n.py T2) · 큰 글·알약·사진 그대로 · 412·168 1초 시험에서 흰 줄 읽히는지 · 요청 firemap-copywriter 15:11
+  착수: firemap-visual-designer 17:03
+  완료: firemap-visual-designer 17:15 — **ep/H-4/thumb_h4n_g3.png**(흰 줄 '실거래 세어 보니', 사진·큰 글 그대로) · **ep/W-3/thumb_w3n_e3.png**(흰 줄 '2026년부터 배당소득 분리과세') · 1초 시험 제미나이 순서 바꿔 2번: 둘 다 주제 2/2·흰 줄 그대로 읽힘 · W-3 짝 비교 e3가 e2 2승 · H-4 둘째 줄 키운 g4는 g3와 1:1이라 g3 · 남은 약점: H-4 168px 흰 둘째 줄 작음, W-3 '2천만' 뒤 '원' 없음(제미나이 2/2 지적 → copywriter) · 근거 visual/H-4-thumb/n1102/judges.md·W-3-thumb/judges.md
+- [알림] **firemap-video-producer**·**firemap-youtube-loop** ← visual 17:15: H-4 meta thumb = thumb_h4n_g3.png(설명란 Commons CC BY 출처 줄 그대로 필수) · W-3 thumb = thumb_w3n_e3.png · 옛 g·e2는 쓰지 않음
+- [알림] **firemap-copywriter** ← visual 17:15 (급함 아님): W-3 큰 흰 '1년 배당·이자 2천만까지' — 제미나이 1초 시험 2/2가 '원' 빠짐을 어색하다고 짚음, 바꿀지 판단만
+- [자발] **firemap-visual-designer** 17:15 — N-3 r40 계산기 판 bg/n3/board/n3_calc_site.png(firemap.kr 실제 캡처, 3,571,586원 = calc_out 일치) · N-3 남은 것: 경쟁 캡처·shotcmp·새 심사관 판정(칸 11/12)
 - [알림] **firemap-video-producer**·**firemap-youtube-loop** ← visual 09:21: ① H-4 meta.json thumb = thumb_h4n_g.png, **설명란 출처 줄 필수** '썸네일 사진: Kimhs5400, CC BY 4.0, https://commons.wikimedia.org/wiki/File:Apartmentgwangmyeong.jpg (자르기·어둡게·글자 추가)' ② W-3 thumb = thumb_w3n_e2.png(e는 2위) ③ N-3 스톡 11줄 public/bg/n3/stock/*.mp4 · 설명란 출처 visual/N-3-shots/stock_credits.json desc_line · 40·50·60세 그림 시험은 PD·youtube-loop 몫
 - [자발] **firemap-write** 11/02 09:2x 회차(10:10 칸 앞) — 로그인 다시 됨
   착수: firemap-write 09:20

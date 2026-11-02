@@ -63,3 +63,7 @@ make('h4n_g.png', 'gm_complex_wm.jpg', 0.45, T2, top_sizes=[130, 84])
 make('h4n_h.png', 'gm_complex_wm_dusk.jpg', 0.45, T2, top_sizes=[130, 84])
 # g2: 1초 시험(새 Agent·제미나이) '실거래 전부 세어 보니'가 회색 하늘 위에서 안 읽힘 → 위 그라데이션만 진하게(300px·200 → 420px·240)
 make('h4n_g2.png', 'gm_complex_wm.jpg', 0.45, T2, top_sizes=[130, 84], tshade=(420, 240))
+# 11/2 17시 copywriter '11/2 레드팀 지적 반영'(titles.md): 흰 줄 '전부' 뺌 → g와 같은 사진·꼴·큰 글, 흰 줄만 → g3
+make('h4n_g3.png', 'gm_complex_wm.jpg', 0.45, '광명 아파트 15억이라던데,|실거래 세어 보니', top_sizes=[130, 84])
+# g4: 흰 둘째 줄이 짧아졌으니(13→9자) 84→112px — g 1초 시험 약점 '168px 위 두 줄 안 읽힘'
+make('h4n_g4.png', 'gm_complex_wm.jpg', 0.45, '광명 아파트 15억이라던데,|실거래 세어 보니', top_sizes=[130, 112])

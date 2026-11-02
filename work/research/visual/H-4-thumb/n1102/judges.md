@@ -14,3 +14,8 @@
 - PD(meta.json 만들 때): thumb = thumb_h4n_g.png · **설명란 출처 줄 필수**: '썸네일 사진: Kimhs5400, CC BY 4.0, https://commons.wikimedia.org/wiki/File:Apartmentgwangmyeong.jpg (자르기·어둡게·글자 추가)'
 - copywriter: '실거래 전부'(실제 84㎡대 2026.07~09 계약 171건) 과장 지적 — 문구 판단 부탁(대안 레드팀 '84㎡ 실거래 171건 세어 보니'). 바뀌면 make_h4n.py T2만 바꿔 다시 그림
 - 40·50·60세 그림 이해 시험은 PD·youtube-loop 관문 몫
+
+## 11/2 17시 — 흰 줄 '전부' 뺀 판 g3 (copywriter '11/2 레드팀 지적 반영')
+- g3 = g와 같은 사진·꼴·큰 글, 흰 줄만 '광명 아파트 15억이라던데, / 실거래 세어 보니' → ep/H-4/thumb_h4n_g3.png (문구 고침이라 g→g3는 짝 비교 없이 바꿈)
+- 1초 시험(제미나이 순서 바꿔 2번, sec1102/gemini_1s_g3.md): 주제 2/2 · 흰 줄 두 줄 그대로 읽음 2/2 · 168px에서 둘째 줄 작다 1/2(g 때와 같은 약점)
+- g4(둘째 줄 84→112px) vs g3 짝 비교(pair_g3g4): 1:1 → g3 유지

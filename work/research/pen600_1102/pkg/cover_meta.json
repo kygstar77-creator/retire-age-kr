@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-02 09:44",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "연금저축 한도 넘긴 돈/IRP로 옮기면",
+ "num": "공제 0원",
+ "sub": "공제는 IRP에 새로 넣은 돈만 · 12월 31일까지",
+ "label": "소득세법 제59조의3",
+ "src": "소득세법 제59조의3①2호 · 국세청 안내(11/2 확인)",
+ "icon": "piggy-bank",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 108,
+ "num_px": 86,
+ "sub_px": 50,
+ "board": [
+  "crdt1027",
+  "rtcancel1022",
+  "cpi2pct1022",
+  "penlimit1022",
+  "kospidd1022",
+  "h1forest1022",
+  "t1swap1022",
+  "etfdistday1022",
+  "npsup1022",
+  "bokrate1022"
+ ]
+}

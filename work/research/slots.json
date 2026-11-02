@@ -3138,7 +3138,8 @@
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-02 10:52",
    "note": "firemap-meeting 2026-11-01 21:4x: 장르 부동산② | firemap-write-b 10:52: 묶인 대기 jbcalc1027(종부세 공시가격 15억 한 채, 부동산 보유세 — 12월 고지철) 배정 · 올리기 전 확인 11/2(법령 12·보도 2 다시 엶, 바뀐 것 없음)·기준일 줄 11/2로·editgate auto 다시 찍음 · slot.txt 18 · 주의: 12:40·16:10·18:40 세 칸 다 세금 갈래(3칸까지 허용) — 16:10 회차가 다른 부동산 글을 쓰면 바꿔도 됨",
-   "pkg": "work/research/jbcalc1027/pkg"
+   "pkg": "work/research/jbcalc1027/pkg",
+   "published": "https://cafe.naver.com/firemap/375 18:36 verify OK 1474자"
   },
   {
    "at": "2026-11-02 22:40",

@@ -341,7 +341,7 @@ export const LiveBars: React.FC<{bars: {label: string; v: number; text: string; 
 };
 // 실사 위 읽힘: 화면 전체 살짝 어둡게 + 가운데 숫자 둘레만 조금 더
 export const LiveDim: React.FC = () => <>
-  <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1920, background: 'rgba(0,0,0,0.2)'}} />
+  <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1920, background: 'rgba(0,0,0,0.1)'}} />   {/* 11/2 B-46 h3s_jeonse: 화면 전체 0.2→0.1(밝은 원본 125도 56~58로 눌림, 60 미만 43%) — 글자 뒤 둥근 그늘은 그대로 */}
   <div style={{position: 'absolute', left: 0, top: BEAT_TOP - 380, width: 1080, height: 760, background: 'radial-gradient(62% 50% at 43% 50%, rgba(0,0,0,0.36), rgba(0,0,0,0))'}} />
 </>;
 // 출처: 끝 3초에 한 번, 아주 작게(브랜드 포함 한 줄)

@@ -3228,3 +3228,8 @@
 2026-11-03 07:11 · editor · defer1027 '오늘 돈'→'지금 금액'(4곳) 재서명 · 07:40 gate_pkg가 cafe3 상대 날짜로 거절할 판이었음, 뜻(현재가치) 그대로
 2026-11-03 07:11 · editor · aitell cafe3에 상대 시점(작년·올해·지난달 등) 경고 더함, 막지는 않음 · 비축·늦은 발행 글이 해가 바뀌면 틀림(renewpair1102·J-1), 물가 글 '지난달보다'는 정상이라 경고만
 2026-11-03 07:12 · firemap-video-producer · K-1 녹음 16:00 창으로 넘김(editor 재서명 say_sha 대기), meta.json 초안·tts.json 만듦(publishAt 11/6 11:30·thumb_k1n_d·synthetic True) · 녹음은 편집 서명 원고로만(lfvoice 서명 검사), 11/6은 금요일·첫/끝 줄 요일 없음 확인
+2026-11-03 07:19 · firemap-video-producer · 쇼츠 de1s_jepqhealth(D-ETF-1 5장 JEPQ 1억 건보료) HFESFTAD8dU를 11/6 19:20 publishAt 예약 · X-OPS-11 B(쇼츠 3일치 미리 예약) — 11/3·4·5 다음 빈 칸, c1clip만 E-18 통과
+2026-11-03 07:19 · firemap-video-producer · 클립 줄 순서: 답(세금 15%→건보료 95만원)을 0~3초, 900만원 줄은 맨 끝 결론으로 · 이해 시험 1·2차 3/3이 '900만원 다음 다시 1,170만원'에서 멈칫, 3차부터 0/3
+2026-11-03 07:19 · firemap-video-producer · 직장가입자·피부양자 2,000만원 줄(5:16~5:19)은 클립에서 빼고 설명란 한 줄로 · 다른 가입자 얘기라 30초 질문 밖(A-49 곁가지)
+2026-11-03 07:19 · firemap-video-producer · 900만원 식(1,170−176−95)은 화면에 안 넣음 · 반올림 176은 숫자 대조가, 원 단위 7자리는 꼴 ⓒ가 거부 — 관문을 낮추지 않고 설명란에 둠(이해 4차 3/3 남은 흠으로 review에 적음)
+2026-11-03 07:19 · firemap-video-producer · 배경을 쓰는 구간만 잘라(bg/detf/stock/cut/, 원본 fps·GOP 10) 읽게 함 · 빈 메모리 0.45~0.7GB에서 원본 긴 클립 seek가 'No frame found'로 통째 4번·토막 여러 번 죽음, 30fps·키프레임만 판은 오히려 실패

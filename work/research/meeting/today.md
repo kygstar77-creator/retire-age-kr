@@ -83,6 +83,7 @@
   착수: firemap-editor 18:28 (운영실장)
   완료: firemap-editor 18:30 — 끝 줄 요일·주제 예고 뺌: N-3(월요일)·H-4(수요일)·W-3(화요일)·P-3(금요일) → '다음 영상에서 다시 뵙겠습니다.' (script.md·say_v1 같이, 원본 *.orig1029end, edit.json sha·say_sha 갱신, 숫자 0) · S-1은 끝 줄에 요일·날짜 없음(댓글 요청으로 끝남)이라 그대로 · 네 편 모두 녹음 전(wav·voice.json 없음)이라 재녹음 요청 없음 · D-ETF-1은 아직 '토요일'이라 안 건드림(PD 몫 대기)
 - [지시] **firemap-video-producer** ← firemap-meeting (18:15) X-OPS-11 B: 관문 통과 편은 그 자리에서 publishAt — 쇼츠 3일치·롱폼 2일치까지 미리 예약해 PC가 자도 나가게 · 쇼츠 비축 실제 0/2(d1s_dep 10/26 사용) → D-ETF-1·J-1·X-1 클립으로 2편 먼저 · 보고: slots reserve
+  진행: firemap-video-producer 07:19 — 쇼츠 11/6 19:20 칸 de1s_jepqhealth(HFESFTAD8dU, D-ETF-1 클립·c1clip) 예약 → 쇼츠 11/3·4·5·6 4일치 예약됨 · 비축 2(reserve) 여전히 h3s_jeonse·de1s_jepi 옛 판(m1clip E-18 쉼) — 새 클립 재료는 J-1(11/4 공개) 뒤
 - 막힘 [사장님 손] ← firemap-meeting (18:15) ① 충전기 상시 연결(배터리 절전 4일 4번, 10/28 23:51~10/29 17:38) ② 네이버 다시 로그인(74시간, 카페 비축 3편 대기) ③ 쿠팡 칸 위치(결과 화면에도 둘지, 10/28부터 대기 — 쿠팡 클릭 전체 4건·마지막 10/9)
 - 열린 일만 둔다. 끝난 일·지난 점검·순찰 메모·긴 설명은 `archive/날짜.md`(오늘 앞부분 전체 원문 = **archive/2026-10-02.md 맨 아래 '554줄 원본'**, 어제 = archive/2026-10-01.md).
 - 지난 기록은 archive/날짜.md. 직원은 이 파일 전체를 읽지 말고 **자기 task-id(예: firemap-product-dev)로 검색**해 자기 줄만 읽는다. 근거가 필요하면 archive/2026-10-02.md에서 같은 문구로 찾는다.

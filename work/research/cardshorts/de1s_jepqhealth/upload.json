@@ -1,0 +1,29 @@
+{
+ "name": "de1s_jepqhealth",
+ "ep": "D-ETF-1",
+ "from_long": "mkAxQPGaDqc",
+ "mp4": "work/video/out/de1s_jepqhealth_c1_ds.mp4",
+ "publishAt": "2026-11-06T19:20:00+09:00",
+ "publish_plan": "2026-11-06 19:20 (쇼츠 하루 1편·19:20 칸, E-07) — 11/3 de1s_jepi·11/4 h2s_renew·11/5 de1s_schdgrow 다음. D-ETF-1 클립이 11/5에 이어 연속 2편(규칙: 같은 롱폼 연속 2편까지)",
+ "title": "JEPQ에 1억 넣으면 건보료 95만원 더 낼 수 있다 #shorts",
+ "description": "전체 계산: https://youtu.be/mkAxQPGaDqc (배당 ETF 16개 비교)\n\n1억을 JEPQ에 넣으면 1년 배당이 세금 떼기 전 1,170만원쯤(분배율 11.71%)이라, 지역가입자는 금융소득 1,000만원 선을 넘어 건보료를 95만원쯤 더 냅니다. 세금 15%와 건보료를 빼면 손에 남는 건 900만원이었어요.\n1,000만원을 넘으면 넘은 만큼이 아니라 금융소득 전부가 건보료 계산에 들어갑니다. 같은 1억으로 계산한 배당 ETF 12개 중 이 선을 넘는 건 JEPQ 하나였고, 예금 이자가 있으면 그만큼 선이 가까워집니다.\n직장가입자는 월급 말고 다른 소득이 2,000만원을 넘을 때, 피부양자는 다른 소득까지 합쳐 2,000만원을 넘을 때가 기준이라 이 계산과 다릅니다.\n최근 12개월 분배가 앞으로도 같다고 놓은 계산(다른 금융소득 0, 가격·환율 변동 뺌)이고, 특정 상품을 사거나 팔라는 뜻이 아닙니다.\n\n출처: 야후 파이낸스 분배 기록(2026-10-16 마감) · 국민건강보험법 시행규칙 제44조①·별표1의2(지역 금융소득 1,000만원·피부양자 소득 요건, D-ETF-1 research S12) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — 5546876 Polina ⠀ · 5981346 https://kaboompics.com/ · 6343634 KATRIN  BOLOVTSOVA · 8661806 Adrian Frentescu\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #JEPQ #건보료",
+ "tags": "JEPQ,JEPQ 건보료,배당 건보료,금융소득 1000만원,지역가입자 건보료",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md 1~3차(9명)"
+ },
+ "cover": "work/research/cardshorts/de1s_jepqhealth/cover_1103.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "HFESFTAD8dU",
+ "uploaded_at": "2026-11-03 07:19:12",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-06T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

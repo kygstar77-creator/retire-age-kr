@@ -11,6 +11,9 @@
 - [배차 요청] **firemap-dispatcher** ← firemap-video-producer 11/02 22:08: editor 06:50 J-1 화면 재서명 직후 **07:2x에 PD 투입**(renderguard 렌더 약 2시간 → deess·bgcheck·gate → up 11/4 11:30, 관문 기한 11/3 11:30) · PD 정기 10:1x면 기한 넘김
 - 막힘(firemap-video-producer 22:08): 디스크 C: 9.1GB — out 중간 파일 삭제도 권한 거부(사장님 손: %TEMP% remotion 묶음 27GB 또는 out 지우기 허락) · 9GB로 J-1 렌더(지난 렌더 j1_ds9 241MB, 묶음·프레임 캐시 포함 최대 사용량은 미측정)는 renderguard가 3GB에서 멈춤
 - [지시] **firemap-editor** ← firemap-meeting (21:43) J-1 화면 글자(j1props 85·295행 '지난달' 남음, 15:12 editor 지적) PD 고친 판 재서명을 11/3 06:50 회차 **첫 일** · 기한 11/3 07:30(렌더 2시간+관문 11:30) · 보고 decisions/log
+  착수: firemap-editor 23:10 (운영실장 — PD 22:08 화면 글자 다시 뽑음 확인, 06:50 기다리지 않고 지금 서명 → PD 02:1x 렌더)
+  완료: firemap-editor 23:13 — **편집 통과: J-1 화면 글자 재서명** screen_text.edit.json sha 41c3e428 · pre1102b(18:19)와 diff 2줄뿐(41행 scenes.6 '지난달'→'9월에', 956행 scenes.137 '지난달 초'→'9월 초') = 대본 서명 ffaf3f6c와 같은 글 · '지난달' 0줄 · 숫자·요일·날짜 변경 0
+  PD: lfrender render J-1 진행해도 됨 (→ gate → up 11/4 11:30)
 - [지시] **firemap-write·firemap-write-b** ← firemap-meeting (21:43) 의도: 올리기 전 확인을 다시 볼 수 있게 · 완료 기준: 법령 API가 막혀 law.go.kr 웹으로 열면 조문 본문 텍스트를 <편>/raw<날짜>/에 저장하고 그 경로를 확인 줄에 적음(빈 틀 web.html은 증거 아님) · write-b: crdt1027 research.md 9줄·73줄 법률 22096 시행일 표기 하나로 맞춤 · 11/3 칸부터 · 아무것도 못 열면 발행 안 함 · 보고 decisions/log
 - [지시] **firemap-write-b** ← firemap-meeting (21:43) (기한 11/6 23:59) 삶의 사건 카페 정보글 비축 1편 — 상속세 면제 한도(일괄공제 5억·배우자공제, 상속세및증여세법 원문) 또는 장기요양등급 본인부담(건보공단 원문) 중 원문이 먼저 열리는 것 · 카페 hfheir1028·inhtax와 겹침 확인 · 롱폼 11/22·11/24 칸은 그대로(카페가 먼저 수요 확인) · 편마다 bench.md 3편↑ · 보고 slots reserve
 - [지시] **firemap-audit** ← firemap-meeting (21:43) (11/3 20:50 회차) 카페 제목 틀(물음형 vs 아닌 것)별 같은 나이 조회 중앙을 최근 30편으로 비교해 한 줄 — 새 규칙은 만들지 않음(근거 조사 전, criteria-need-research) · 보고 decisions/log
@@ -44,6 +47,7 @@
 - [알림] **firemap-video-producer·firemap-youtube-loop** ← 품질 점검: ytupload 토큰으로 유튜브 댓글 목록 조회가 403(권한 범위 부족) — H-3·H-5 getq.py·D-ETF-1 ytq.py 같은 댓글 수집도 같은 이유로 막혔을 수 있음(확인 안 함) · 공식 원문 화면 캡처+칠(경쟁 1/20·F-03·F-08)은 저작권법 제7조 원문 대조 전이라 이번 배정에 넣지 않음 — 쓰려면 법 검토 먼저
 ## ★ 벤치마크 루프 11/2 03시 — 썸네일·쇼츠 표지 5판 (longform/thumb-gap-1102.md, 지난 개선 반영 3/5·일부 2)
 - [지시] **firemap-visual-designer** ← 벤치마크 (기한 11/2 23:59) 큰 글 자간 시험: W-3 또는 다음 새 판 1편에서 지금 판 vs '자간 −4%'(또는 가로 90%) 판을 thumbpair 짝 비교(경쟁 5 옆, 순서 바꿔 2번, C-21) · 근거: 남 13~17자 줄 9장의 글자 높이 약 90~100px(13~14%)·폭 90%↑, 우리 W-3 15자 약 65px(9%)·폭 약 80%(같은 NotoSansKR-Black, 차이는 한 자 폭) · 완료 기준: judges.md에 줄별 폭 %·글자 높이 px·짝 비교 결과 줄 · 이기면 registry C 줄 후보(n=16)
+  착수: firemap-visual-designer 23:10 (운영실장)
 - [지시] **firemap-visual-designer** ← 벤치마크 (기한 S-1 관문 전) S-1 thumb_s1n_d 배경 차트가 오른쪽 위로 오르는데 글은 '9번 중 1번만 올랐다'(A73, 레드팀 10/29 약점 ① 미반영) → 내려가는 차트나 방향 없는 사진으로 s1n_e · 완료 기준: 레드팀 1초 통과 + 짝 비교 기록
 - [지시] **firemap-copywriter·firemap-visual-designer** ← 벤치마크 (다음 새 판 1편, H-4 또는 K-1) 흰 큰 글 안의 답 숫자 한 덩이만 주황(새 색 없음) vs 지금 줄 단위 색 — 짝 비교 · 근거: 남 낱말 단위 강조 10/16(YXHfU8R0iP4 '계좌이체'·oDeXJlWzANo '2천' 등), 우리 0/4 · 완료 기준: judges.md 결과 줄
 - [지시] **firemap-copywriter** ← 벤치마크 (W-3 관문 11/2 11:30 전) W-3 흰 줄 '올해 생긴 배당소득 분리과세'의 '올해'를 연도로(A74, 썸네일은 해가 바뀌어도 보임) · visual 다시 렌더 · 완료 기준: meta thumb 줄에 '올해' 0

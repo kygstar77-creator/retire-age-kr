@@ -3109,7 +3109,8 @@
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-02 19:48",
    "note": "firemap-meeting 2026-11-01 21:4x: 장르 정책 · 비축 남으면 비축부터 | firemap-write-b 19:48: 비축 defer1027(연기연금 피부양자, 정책·연금/건보료) 배정 — 11/2 올리기 전 확인(법령 웹 원문 S1~S12·보도 3곳 다시 엶, 바뀐 것 없음, 현행 판 모두 10/27 전 시행)·c05 기준일 11/2·editgate auto 다시 찍음(8bb300fb)·slot.txt 11-03 07 · pibucut1025는 같은 피부양자 주제라 이번 주 뒤쪽으로",
-   "pkg": "work/research/defer1027/pkg"
+   "pkg": "work/research/defer1027/pkg",
+   "published": "https://cafe.naver.com/firemap/377 07:51 verify OK 2016자"
   },
   {
    "at": "2026-11-03 10:10",

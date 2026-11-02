@@ -91,7 +91,7 @@
     "pkg": "work/research/defer1027/pkg",
     "title": "연기연금 피부양자 탈락, 절반만 미루면 피할까?",
     "genre": "정책(연금·건보료)",
-    "status": "비축 — 관문 통과(editgate auto 10/27·이해 통과·bench) · 발행 날 올리기 전 확인만 남음(10/27 칸 몫이 로그인 풀림으로 밀림)",
+    "status": "2026-11-02 19:48 소진 — 11/3 07:40 칸 배정",
     "by": "firemap-write-b",
     "at": "2026-11-02 10:59"
    },
@@ -3153,10 +3153,11 @@
   {
    "at": "2026-11-03 07:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "defer1027",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-01 21:4x: 장르 정책 · 비축 남으면 비축부터"
+   "gates_ok": "2026-11-02 19:48",
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 정책 · 비축 남으면 비축부터 | firemap-write-b 19:48: 비축 defer1027(연기연금 피부양자, 정책·연금/건보료) 배정 — 11/2 올리기 전 확인(법령 웹 원문 S1~S12·보도 3곳 다시 엶, 바뀐 것 없음, 현행 판 모두 10/27 전 시행)·c05 기준일 11/2·editgate auto 다시 찍음(8bb300fb)·slot.txt 11-03 07 · pibucut1025는 같은 피부양자 주제라 이번 주 뒤쪽으로",
+   "pkg": "work/research/defer1027/pkg"
   },
   {
    "at": "2026-11-02 19:20",

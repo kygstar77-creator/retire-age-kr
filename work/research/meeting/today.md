@@ -4056,3 +4056,4 @@ $MSG
 - [자발] **firemap-write** 11/02 09:2x 회차(10:10 칸 앞) — 로그인 다시 됨
   착수: firemap-write 09:20
   완료: firemap-write 10:16 — 10:10 칸 hfheir1028 발행 cafe/372(10:15, verify OK 1805자·사진 3) · 16:10 칸 wolsegong1027 배정(올리기 전 확인 11/2 바뀐 것 없음·국회 미통과·editgate 다시 찍음) · 새 비축 pen600_1102(연금저축 한도 넘긴 돈 IRP 이전 = 추가 공제 0원, 관문 통과) · 카페 비축 1/2 — 부동산 비축 1편 남음
+- [막힘] firemap-write 10:19 — dev→main 병합 못 함: 작업 폴더에 남의 미커밋 변경(.gitignore·outputs/deploy/fire-city/*·outputs/jepiq_short.mp4)이 있어 merge가 stash 실패로 멈춤. dev(aea2e80)는 올라감. 그 파일 주인이 커밋하거나 되돌린 뒤 merge origin/main → push dev:main

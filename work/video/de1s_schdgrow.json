@@ -1,0 +1,220 @@
+{
+ "fps": 30,
+ "name": "de1s_schdgrow",
+ "v": 2,
+ "look": "live",
+ "question": [
+  "미국 배당 ETF SCHD",
+  "배당금, 요즘도 매년 늘어날까"
+ ],
+ "hot": "늘어날까",
+ "answer": {
+  "label": "배당금이 1년에 늘어난 비율",
+  "items": [
+   "10년 평균 11%",
+   "최근 12개월 2%"
+  ],
+  "arrow": false,
+  "note": "최근 12개월 2%"
+ },
+ "base": "야후 파이낸스 배당 기록(2026-10-16 마감) · 파이어맵 계산",
+ "long": "mkAxQPGaDqc",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "10년 평균",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "SCHD 한 주 배당금",
+      "10년 동안 꾸준히 늘었다",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "배당금이 늘어난 비율 · 10년 평균",
+      "매년 11%",
+      "",
+      93,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "SCHD 한 주당 받는 배당 금액은 지난 10년 동안",
+     "audio": "audio/de1s_schdgrow/schd10y_a.wav",
+     "frames": 64
+    },
+    {
+     "n": 2,
+     "text": "꾸준히 늘었어요.",
+     "audio": "audio/de1s_schdgrow/schd10y_b.wav",
+     "frames": 29
+    },
+    {
+     "n": 3,
+     "text": "매년 평균 11%씩이에요.",
+     "audio": "audio/d-etf-1/5da8c9edcf14d99a.wav",
+     "frames": 63
+    }
+   ],
+   "frames": 156
+  },
+  {
+   "kind": "vs",
+   "label": "최근 12개월",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "최근 12개월 배당금",
+      "2%만 늘었다",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "그런데 가장 최근 열두 달은 2% 느는 데 그쳤어요.",
+     "audio": "audio/d-etf-1/b47c33eeddf31d6d.wav",
+     "frames": 107
+    }
+   ],
+   "frames": 107
+  },
+  {
+   "kind": "vs",
+   "label": "해마다 보면",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "10년 평균 11%는",
+      "해마다 들쭉날쭉한 값의 평균",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "최근 12개월",
+      "+2.0%",
+      "",
+      135,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 5,
+     "text": "아까 말한 11%는 평균이에요. 해마다 보면 늘어난 폭이 크게 오르내렸어요.",
+     "audio": "audio/d-etf-1/aedd5c9c78732864.wav",
+     "frames": 135
+    },
+    {
+     "n": 6,
+     "text": "그리고 최근 열두 달은 2%였습니다. 줄지는 않았지만, 느는 속도가 확 꺾였어요.",
+     "audio": "audio/d-etf-1/43508b27540d02d9.wav",
+     "frames": 165
+    }
+   ],
+   "frames": 300
+  },
+  {
+   "kind": "vs",
+   "label": "왜 꺾였나",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "왜 꺾였는지",
+      "자료로는 알 수 없음",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "긴 평균만 보지 말고",
+      "최근 몇 년도 같이",
+      "",
+      89,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 7,
+     "text": "왜 꺾였는지는 이번에 찾은 자료로는 알 수 없었어요.",
+     "audio": "audio/d-etf-1/80deedca13e6ea6c.wav",
+     "frames": 89
+    },
+    {
+     "n": 8,
+     "text": "그래서 볼 때는 긴 평균 하나만 보지 말고, 최근 몇 년을 같이 봐야 해요.",
+     "audio": "audio/d-etf-1/fb99282696eaf166.wav",
+     "frames": 141
+    }
+   ],
+   "frames": 266
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/detf/stock/7118320.mp4",
+   "from": 0,
+   "frames": 64,
+   "start": 0
+  },
+  {
+   "src": "bg/detf/stock/7118320.mp4",
+   "from": 64,
+   "frames": 29,
+   "start": 2.13
+  },
+  {
+   "src": "bg/detf/stock/8661806.mp4",
+   "from": 93,
+   "frames": 63,
+   "start": 2
+  },
+  {
+   "src": "bg/detf/stock/8661806.mp4",
+   "from": 156,
+   "frames": 107,
+   "start": 5
+  },
+  {
+   "src": "bg/detf/stock/6343634.mp4",
+   "from": 263,
+   "frames": 135,
+   "start": 2
+  },
+  {
+   "src": "bg/detf/stock/5981346.mp4",
+   "from": 398,
+   "frames": 165,
+   "start": 20
+  },
+  {
+   "src": "bg/detf/stock/5546876.mp4",
+   "from": 563,
+   "frames": 89,
+   "start": 1
+  },
+  {
+   "src": "bg/detf/stock/8661806.mp4",
+   "from": 652,
+   "frames": 177,
+   "start": 10
+  }
+ ],
+ "credits": "5546876 Polina ⠀ · 5981346 https://kaboompics.com/ · 6343634 KATRIN  BOLOVTSOVA · 7118320 cottonbro studio · 8661806 Adrian Frentescu (Pexels License)"
+}

@@ -3187,6 +3187,14 @@
    "owner": "firemap-write-b",
    "gates_ok": null,
    "note": "firemap-meeting 2026-11-01 21:4x: 새 6칸 첫날 마지막 칸 · 로그인 전 발행 시도 안 함"
+  },
+  {
+   "at": "2026-11-05 19:20",
+   "kind": "shorts",
+   "item": "de1s_schdgrow aW8HfeGCGgw (D-ETF-1 클립, c1clip) — publishAt 2026-11-05T19:20+09:00",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-11-02 15:00",
+   "note": "15:00 PD: 관문 cardshorts/de1s_schdgrow/review.md(compete 6·숫자 대조·꼴 ⓐ~ⓓ·이해 3차 9명·밝기 Y75.8/14%·치직 0·안전 영역·bgcheck) · yt_pair: aW8HfeGCGgw (카페 짝 글은 쇼츠 공개 뒤 20:10·22:10 칸, firemap-write)"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외",

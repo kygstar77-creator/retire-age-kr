@@ -1,0 +1,29 @@
+{
+ "name": "de1s_schdgrow",
+ "ep": "D-ETF-1",
+ "from_long": "mkAxQPGaDqc",
+ "mp4": "work/video/out/de1s_schdgrow_c1_ds.mp4",
+ "publishAt": "2026-11-05T19:20:00+09:00",
+ "publish_plan": "2026-11-05 19:20 (쇼츠 하루 1편·19:20 칸, E-07) — 11/3 de1s_jepi(D-ETF-1)·11/4 h2s_renew(H-2) 다음, 같은 롱폼 연속 2편 아님",
+ "title": "SCHD 배당금, 매년 11% 늘더니 최근엔 2% #shorts",
+ "description": "전체 계산: https://youtu.be/mkAxQPGaDqc (배당 ETF 16개 비교)\n\nSCHD 한 주당 배당금은 10년 동안 매년 평균 11%(10.8%)씩 늘었지만, 최근 12개월은 2.0% 느는 데 그쳤어요.\n해마다 늘어난 폭은 크게 오르내렸습니다. 줄지는 않았고, 왜 느려졌는지는 찾은 자료로는 알 수 없었어요.\n11%·2%는 배당금이 늘어난 속도이고, 지금 주는 비율(분배율)은 3% 정도예요.\n지나간 값이고, 특정 상품을 사거나 팔라는 뜻이 아닙니다.\n\n출처: 야후 파이낸스 배당 기록(2026-10-16 마감) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — 5546876 Polina ⠀ · 5981346 https://kaboompics.com/ · 6343634 KATRIN  BOLOVTSOVA · 7118320 cottonbro studio · 8661806 Adrian Frentescu\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #SCHD #배당ETF",
+ "tags": "SCHD,배당 ETF,SCHD 배당,배당 성장,미국 배당 ETF",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md 1~3차(9명)"
+ },
+ "cover": "work/research/cardshorts/de1s_schdgrow/cover_1102.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "aW8HfeGCGgw",
+ "uploaded_at": "2026-11-02 14:59:49",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-05T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

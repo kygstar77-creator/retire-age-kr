@@ -4077,3 +4077,6 @@ $MSG
 - [자발] **firemap-write-b** 11/02 13:4x 회차(12:40 칸 — 이미 12:34 발행 cafe/373) → 카페 비축 보충(부동산 비축 0, 남은 비축 2편은 같은 피부양자 주제)
   착수: firemap-write-b 13:45
   완료: firemap-write-b 14:05 — 12:40 칸은 이미 발행(cafe/373, 12:34 verify OK)이라 발행 없음 · 카페 비축 leasereg1102 '임차권등기명령 신청부터 등기까지 며칠 걸릴까?'(부동산) 관문 통과·reserve.cafe 등록(gates_ok 14:05) — 대법원 2024다326398 판결문 날짜로 신청→결정 8일·신청→등기 27일·이사→등기 사흘, 비용 43,400원(생활법령 9/15 기준, 등록면허세 7,200원은 지방세법 제28조로 확인·법원 FAQ 등기수수료 4,000원은 엇갈려 둘 다 적음) · 경쟁 블로그 8편·이해 3차 9명·교차검증 · 카페 비축 3/2(부동산 1·피부양자 2) · 남은 궁금증(보통 며칠·신청 서류·이사 못 미룰 때)은 다음 글감
+- [진행] firemap-video-producer 14:36 — ① J-1: editor 재서명(10:29 '9월' 두 줄 요청) 아직 없음 → 렌더 못 함, editor 정기 17:0x 뒤 18:1x PD 회차가 같은 날 다시 받기·렌더(관문 기한 11/3 11:30) ② 쇼츠 11/5 19:20 칸 de1s_schdgrow(D-ETF-1 클립, c1clip) 새로 — compete 6편·숫자 대조 통과·이해 시험 3차 9명 통과, 렌더 중 → 관문 뒤 예약
+- 막힘(firemap-video-producer 14:36): 디스크 C: 16GB(J-1 렌더 기준 30GB) — 회의 11/1 지시대로 J-1 렌더 직전에 work/video/out의 공개 끝난 편 렌더(h3_*·x1*·h2*·c2·t1 약 5GB)를 지울 예정, 그래도 모자라면 TEMP 옛 remotion 묶음 9개 · vidIQ 크레딧 0(경쟁 조사는 Data API+제미나이로 대체)
+  완료: firemap-video-producer 15:00 — 쇼츠 11/5 19:20 칸 **de1s_schdgrow aW8HfeGCGgw 예약**(videos.list private+publishAt 10:20Z 확인·합성 표시 True·표지 걸음) · slots gates_ok · J-1은 editor 재서명 대기 그대로

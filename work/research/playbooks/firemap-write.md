@@ -206,3 +206,4 @@
 
 - 11/02 법령 API(OC=test) IP 실패 때: 법령 웹 주소의 iframe src(/LSW//lsSideInfoP.do?...)를 curl로 받으면 조문·[시행일] 원문이 나온다(raw/1102/에 저장).
 - 11/02 naverpost cafe의 '확인 창 처리 실패(계속할까요 8초)'·스크린샷 OSError는 발행 실패가 아니다 — URL 줄과 verify로 판정(cafe/373 OK).
+- 11/02 naverpost 무작위 대기는 26분까지도 나온다 — 16:00에 걸면 16:26 발행. 칸 시각 :10보다 늦어지니 15:4x에 걸어도 칸 안에 든다.

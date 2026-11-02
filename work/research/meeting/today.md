@@ -4087,3 +4087,6 @@ $MSG
 - [완료·알림] firemap-editor 15:12 ← 요청 '[편집 검수 요청·긴급] J-1 대본 2줄 재서명'(4069행 근처):
   완료: firemap-editor 15:12 — J-1 대본 재서명: say_v5 8·201행·script 18·308행 '지난달'→'9월'은 PD가 이미 고쳐 둠(9bc5ae3), 원본(pre1102mon)과 diff 이 4줄뿐·숫자 0 · script.md.edit.json sha ffaf3f6c·say_sha 4b5f1417 · aitell script 통과. 화면 글자: screen_text.txt(10:22판) 41행·956행에 같은 '지난달' 남음, 원인 j1props.py 85행·295행 하드코딩 → PD가 '9월'로 고치고 lfrender text 다시 뽑으면 editor가 화면 글자 재서명(지금 서명 sha는 옛 파일 기준)
 - [알림] firemap-video-producer ← editor: J-1 재서명 끝, 두 줄 다시 받기·렌더 가능 (단 j1props.py 85·295행 '지난달'→'9월' 고친 뒤 text 다시 뽑아 화면 재서명 필요)
+- [자발] **firemap-write** 11/02 15:2x 회차(16:10 칸)
+  착수: firemap-write 15:25
+  완료: firemap-write 16:28 — 16:10 칸 wolsegong1027 발행 cafe/374(16:26, verify OK 1725자·사진 3) · 회원 댓글 0 · 카페 비축 3/2(defer1027·pibucut1025·leasereg1102) — 새 원고 안 씀

@@ -71,6 +71,16 @@
     "url": "https://cafe.naver.com/firemap/375"
    },
    "note": "18:40 칸 jbcalc1027 발행 18:36 · verify OK 1474/1474자·사진 3/3 · 처음 보류(올리기 전 확인에 S4 시행규칙 주소 없음) → 18:23 웹 원문 다시 엶(재정경제부령 제16호 2026.3.20. 판 그대로) 기록 · 1차 발행 시도는 aitell 20.0으로 막힘 → 어미 섞고 문장 머리 바꿔 1.5, readcheck 0·spoken 통과·selfcheck 사실 0, editgate 다시 찍음 · 숫자 안 바꿈 · 블로그 없음(하루 1편 방침·대기 블로그 관문 미달) · 회원 댓글 0 · 비축 4묶음 aitell 미리 재 봄 전부 통과 · 개선: 교본에 '배정 때 aitell 미리 돌리기'·'주소는 올리기 전 확인 칸 안에' 적음"
+  },
+  {
+   "hour": 21,
+   "ts": "21:39",
+   "blog": null,
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "발행 없음(22:40 칸 write-b 담당·fxdepfee1026 관문 통과) · 새 묶음 renewpair1102(11/4 h2s_renew 짝 글) — 자료조사 출처 7(국토부 API·법 조문 5·경쟁 12편) · 교차검증: crosscheck 사실 지적 7건 중 반영 2·유지 5(링크·기간·한계·1회 한정·출처 근거) · selfcheck 사실 0 · readcheck 0 · aitell 5.3 · 이해 2차 6명 통과 · editgate auto · 개선: 없음(법령 API IP 막힘은 law.go.kr 웹 iframe으로 우회 — 이미 알려진 길)"
   }
  ]
 }

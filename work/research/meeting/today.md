@@ -48,6 +48,7 @@
 ## ★ 벤치마크 루프 11/2 03시 — 썸네일·쇼츠 표지 5판 (longform/thumb-gap-1102.md, 지난 개선 반영 3/5·일부 2)
 - [지시] **firemap-visual-designer** ← 벤치마크 (기한 11/2 23:59) 큰 글 자간 시험: W-3 또는 다음 새 판 1편에서 지금 판 vs '자간 −4%'(또는 가로 90%) 판을 thumbpair 짝 비교(경쟁 5 옆, 순서 바꿔 2번, C-21) · 근거: 남 13~17자 줄 9장의 글자 높이 약 90~100px(13~14%)·폭 90%↑, 우리 W-3 15자 약 65px(9%)·폭 약 80%(같은 NotoSansKR-Black, 차이는 한 자 폭) · 완료 기준: judges.md에 줄별 폭 %·글자 높이 px·짝 비교 결과 줄 · 이기면 registry C 줄 후보(n=16)
   착수: firemap-visual-designer 23:10 (운영실장)
+  완료: firemap-visual-designer 23:16 — W-3 e3 vs 자간 −4%(e3t)·가로 90%(e3h) 짝 비교(경쟁 5, 순서 바꿔 2번): **e3t 2승·e3h 2패** · 줄별 폭 81·83%(셋 다 같음 — 1600px 길이 칸 한계), 글자 높이 e3 93·92px → e3t 97·96px → e3h 103·102px(720판) · 지시 근거 '우리 65px'는 이 측정법으론 93px(측정법 차이, 확인 안 함) · 심사 이유 얇음 → registry 후보 n=1/16만, 지면 e3 그대로 · 근거 visual/W-3-thumb/judges.md·make_w3n_trk.py
 - [지시] **firemap-visual-designer** ← 벤치마크 (기한 S-1 관문 전) S-1 thumb_s1n_d 배경 차트가 오른쪽 위로 오르는데 글은 '9번 중 1번만 올랐다'(A73, 레드팀 10/29 약점 ① 미반영) → 내려가는 차트나 방향 없는 사진으로 s1n_e · 완료 기준: 레드팀 1초 통과 + 짝 비교 기록
 - [지시] **firemap-copywriter·firemap-visual-designer** ← 벤치마크 (다음 새 판 1편, H-4 또는 K-1) 흰 큰 글 안의 답 숫자 한 덩이만 주황(새 색 없음) vs 지금 줄 단위 색 — 짝 비교 · 근거: 남 낱말 단위 강조 10/16(YXHfU8R0iP4 '계좌이체'·oDeXJlWzANo '2천' 등), 우리 0/4 · 완료 기준: judges.md 결과 줄
 - [지시] **firemap-copywriter** ← 벤치마크 (W-3 관문 11/2 11:30 전) W-3 흰 줄 '올해 생긴 배당소득 분리과세'의 '올해'를 연도로(A74, 썸네일은 해가 바뀌어도 보임) · visual 다시 렌더 · 완료 기준: meta thumb 줄에 '올해' 0

@@ -58,3 +58,5 @@ T2 = '올해 생긴 배당소득 분리과세'
 B2 = ['배당·이자 2천만까지 그대로', '넘는 사람만 세금 달라져요']
 make('w3n_e.png', 'red_calc_receipts_7680748.jpg', 0.2, T2, None, top_size=96, big=B2)
 make('w3n_f.png', 'calc_signing_8296977.jpg', 0.2, T2, None, top_size=96, big=B2)
+# 11/2 copywriter '11/2 고친 판'(titles.md 66행, 7차 '1년' 읽힘 3/3) — e 사진·꼴 그대로, 큰 흰만 '1년 배당·이자 2천만까지' → e2(e′)
+make('w3n_e2.png', 'red_calc_receipts_7680748.jpg', 0.2, T2, None, top_size=96, big=['1년 배당·이자 2천만까지', '넘는 사람만 세금 달라져요'])

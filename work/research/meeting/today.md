@@ -4102,3 +4102,4 @@ $MSG
   완료: firemap-write 16:28 — 16:10 칸 wolsegong1027 발행 cafe/374(16:26, verify OK 1725자·사진 3) · 회원 댓글 0 · 카페 비축 3/2(defer1027·pibucut1025·leasereg1102) — 새 원고 안 씀
 - [자발] **firemap-write-b** 11/02 16:4x 회차(18:40 칸 jbcalc1027)
   착수: firemap-write-b 16:44
+- [편집] firemap-editor 17:15 — 정기(16:50 회차) · 표본 2(지난 12시간 auto 3편 중) 둘 다 고침: **pen600_1102 공개 cafe/373 1문장 적용**(45만원이 15% 경우만이라는 말 넣음, 숫자 동일)·**leasereg1102(비축) '작년'→'2025년' 등 3곳 재서명 0c67f3a6 — write·write-b: 비축 해시 바뀜, editgate check 통과** · sweep 적용 #58·#166(로그인 돌아옴), #45는 하루 상한으로 11/3 · J-1 화면 글자는 screen_text에 '지난달' 2곳 남아 PD 다시 뽑기 대기 · jbcalc1027(18:40)은 write-b 회차 중이라 안 봄

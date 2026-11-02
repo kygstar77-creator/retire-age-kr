@@ -58,7 +58,9 @@
 - 서울(구·단지)과 값 비교 (5/16, https://www.youtube.com/watch?v=1bo4O19bpJk&t=193 · https://www.youtube.com/watch?v=kuB0GEfUuTM&t=165 · https://www.youtube.com/watch?v=2xmGwtG36Jg&t=466) → 우리 1장(서울 25개 구 옆에 세우면)·2장(그럼 '광명 15억'은 어디서 나왔을까) — 경쟁은 단지 한두 곳끼리, 우리는 25개 구 전부
 - 재건축 단계·구역 (10/16, https://www.youtube.com/watch?v=1nEq1Usy1WA&t=720 · https://www.youtube.com/watch?v=9Zrl-re0z5o&t=600) → 우리 3장(철산동 안의 사다리) — 주공12·13 '정비구역 지정' 고시 한 줄만. 하안주공 단계는 없음
 - 하안주공 공공임대·용적률 인센티브 갈등(광명시 2026-08-19 공문) (5/16, 조회 1·2·3위, https://www.youtube.com/watch?v=_URK2Fkzx3E&t=30 · https://www.youtube.com/watch?v=BPvVT4Xvr0o&t=90 · https://www.youtube.com/watch?v=Q0ge2O9luKw&t=480) → 우리 3장(철산동 안의 사다리) 하안동 칸 — 지금 대본에 없음. 추가 제안: 원문(광명시 공문) 확인 뒤 '이런 공문이 있었다' 사실 한 줄만, 분담금·일정은 원칙대로 안 함. 원문 확인 안 함
+  - 뺌: (판정 11/2 youtube-loop) 대본은 철산동 84㎡ 실거래 범위이고 하안동 단지는 대본에 한 줄도 없음(say_v2 '하안' 0회), 공문 원문은 공개 자료로 확인 못 함(규칙: 원문 확인 안 된 사실 금지·억지 끼워 넣기 금지). 하안주공 공공임대는 다음 부동산 칸 후보로
 - 조합원 지위 양도 제한(10년 보유·5년 거주 예외) (2/16, https://www.youtube.com/watch?v=q-Izf47zMig&t=1320 · https://www.youtube.com/watch?v=TS-GnCzdxps&t=480) → 우리 5장(사려면 붙는 조건) — 지금 대본에 없음. 9억 안쪽 후보에 주공 단지가 들어가므로 '재건축 단지는 사도 조합원이 못 될 수 있다'가 빠져 있음. 추가 제안: 도시정비법 원문·주공12·13 단계 확인 뒤 한 줄. 확인 안 함
+  - 뺌: (판정 11/2 youtube-loop) 앞 문장 '9억 안쪽 후보에 주공 단지가 들어간다'는 사실과 다름: 9억 이하 철산 84㎡ 7곳은 2001~2007년 준공(calc_out [7], 철산리버빌주공 2001 포함, 재건축 단지 아님), 주공12·13은 13.25억·13.85억으로 예산 밖·정비구역 지정 단계(S13). 시청자 선택지와 안 닿는 장이라 뺌
 - 대출 (3/16, https://www.youtube.com/watch?v=1nEq1Usy1WA&t=131 · https://www.youtube.com/watch?v=2xmGwtG36Jg&t=39 · https://www.youtube.com/watch?v=TS-GnCzdxps&t=521) → 우리 5장(사려면 붙는 조건) — 15억 이하 주담대 한도 6억
 - 예산으로 후보 고르기 (2/16, https://www.youtube.com/watch?v=2xmGwtG36Jg&t=161 · https://www.youtube.com/watch?v=TS-GnCzdxps&t=0) → 우리 4장(9억으로 철산동 84㎡) — 예산 9억 끝까지 같은 숫자
 - 전세 (2/16, https://www.youtube.com/watch?v=1bo4O19bpJk&t=835 · https://www.youtube.com/watch?v=Piy1Cj0WVdE&t=539) → 우리 4장(9억으로 철산동 84㎡) — 신규 전세만, 새 단지 전세 vs 옛 단지 매매

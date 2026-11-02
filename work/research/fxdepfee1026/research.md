@@ -63,28 +63,28 @@
 ## 대조
 | 항목 | 원문 값 | 글 값 | 출처 |
 |---|---|---|---|
-| KB 12개월 금리 | 12개월이상~18개월미만 연 3.60740%(조회기준일 2026.10.26) | 연 3.61%(10월 26일 조회) | S1 https://obank.kbstar.com/quics?page=C101512 |
-| 매매기준율 | 1,323.70(10/26 15:18) | 1,323.7원 | S2 https://obank.kbstar.com/quics?page=C101423 |
-| 송금 보낼 때 | 1,336.50 | 1,336.5원 | S2 https://obank.kbstar.com/quics?page=C101423 |
-| 송금 받을 때 | 1,310.90 | 1,310.9원 | S2 https://obank.kbstar.com/quics?page=C101423 |
-| 현찰 살 때·팔 때 | 1,346.86·1,300.54 | 각 약 1.75% 차이 | S2 https://obank.kbstar.com/quics?page=C101423 |
+| KB 12개월 금리 | 12개월이상~18개월미만 연 3.61744%(조회기준일 2026.11.02) | 연 3.62%(11월 2일 조회) | S1 https://obank.kbstar.com/quics?page=C101512 |
+| 매매기준율 | 1,339.80(11/2 10:54) | 1,339.8원 | S2 https://obank.kbstar.com/quics?page=C101423 |
+| 송금 보낼 때 | 1,352.70 | 1,352.7원 | S2 https://obank.kbstar.com/quics?page=C101423 |
+| 송금 받을 때 | 1,326.90 | 1,326.9원 | S2 https://obank.kbstar.com/quics?page=C101423 |
+| 현찰 살 때·팔 때 | 1,363.24·1,316.36 | 각 약 1.75% 차이 | S2 https://obank.kbstar.com/quics?page=C101423 |
 | 넣을 때 환율 | 대고객 전신환 매도율 · KB 표 '보낼때(입금)' | 송금 보낼 때(입금) 환율 | S3 https://www.citibank.co.kr/cgrp_pjt/down/kor/deposit/Manual/외화당좌예금 상품설명서(핵심설명서 포함).pdf · S4 https://image.kebhana.com/cont/download/documents/manual/0100226000201_20210325_m.pdf |
 | 찾을 때 환율 | 대고객 전신환 매입율 | 송금 받을 때 환율 | S3 https://www.citibank.co.kr/cgrp_pjt/down/kor/deposit/Manual/외화당좌예금 상품설명서(핵심설명서 포함).pdf · S4 |
 | 이자 세금 | 100분의 14 + 그 100분의 10 | 15.4% | S5 https://www.law.go.kr/법령/소득세법/제129조 · S6 https://www.law.go.kr/법령/지방세법/제103조의13 |
 | 예금자보호 | 외화예금도 원금과 소정 이자 합쳐 1억원, 지급공고일 전신환매입율로 환산 | 같은 은행 합쳐 원금과 이자 1억원(돌려줄 때 환율로 셈) | S7 https://www.kdic.or.kr/sp/dpstrprot/ProtSystFaq/selectScrn.do |
-| 세후 이자율 | 계산 | 약 3%(3.0519%) | S1·S5·S6 (calc.py) |
-| 바로 사고팔면 | 계산 | 약 192만원 줄어듦(98,084,549원) | S2 (calc.py) |
-| 본전 환율 우대 0% | 계산 | 약 1,310원(지금보다 1.1%) | S1·S2·S5 (calc.py) |
-| 본전 환율 우대 50% | 계산 | 약 1,297원(2.0%) | S1·S2·S5 (calc.py) |
-| 본전 환율 우대 90% | 계산 | 약 1,287원(2.8%) | S1·S2·S5 (calc.py) |
-| 수수료 없을 때 | 계산 | 약 1,285원(3.0%) | S1·S2·S5 (calc.py) |
-| 환율 그대로 1년 뒤 | 계산 | 우대 0% 약 108만원·50% 약 206만원·90% 약 285만원 늘어남, 수수료 없으면 약 305만원 | S1·S2·S5 (calc.py) |
+| 세후 이자율 | 계산 | 약 3%(3.0604%) | S1·S5·S6 (calc_1102.py) |
+| 바로 사고팔면 | 계산 | 약 191만원 줄어듦(98,092,703원) | S2 (calc_1102.py) |
+| 본전 환율 우대 0% | 계산 | 약 1,325원(지금보다 1.1%) | S1·S2·S5 (calc_1102.py) |
+| 본전 환율 우대 50% | 계산 | 약 1,313원(2.0%) | S1·S2·S5 (calc_1102.py) |
+| 본전 환율 우대 90% | 계산 | 약 1,303원(2.8%) | S1·S2·S5 (calc_1102.py) |
+| 수수료 없을 때 | 계산 | 약 1,300원(3.0%) | S1·S2·S5 (calc_1102.py) |
+| 환율 그대로 1년 뒤 | 계산 | 우대 0% 약 109만원·50% 약 207만원·90% 약 286만원 늘어남, 수수료 없으면 약 306만원 | S1·S2·S5 (calc_1102.py) |
 
 # 올리기 전 확인
-- 날짜: 2026-10-26 (발행 당일, 발행 2026-10-26 18:10)
-- 다시 연 주소(2026-10-26): https://obank.kbstar.com/quics?page=C101512 · https://obank.kbstar.com/quics?page=C101423 · https://www.citibank.co.kr/cgrp_pjt/down/kor/deposit/Manual/외화당좌예금 상품설명서(핵심설명서 포함).pdf · https://image.kebhana.com/cont/download/documents/manual/0100226000201_20210325_m.pdf · https://www.law.go.kr/법령/소득세법/제129조 · https://www.law.go.kr/법령/지방세법/제103조의13 · https://www.kdic.or.kr/sp/dpstrprot/ProtSystFaq/selectScrn.do · https://ecos.bok.or.kr/
-- 대조 출처 다시 연 기록: S1·S2 15:20 WebFetch+curl(raw/kb_*.html), S3·S4 15:21 curl(raw/*.pdf), S5·S6 15:3x lawtext.py, S7 15:3x curl, S8 15:19 ECOS API
-- 기준일: 2026-10-26 15:18 KB 고시(256회차)·금리 조회기준일 2026-10-26
-- 바뀐 것: KB USD 정기예금 12개월이상~18개월미만 금리 10/16 연 3.64833% → 10/26 연 3.60740%(쇼츠 설명란 값보다 0.04%p 낮음) · 원/달러 매매기준율 10/15 1,338.6원(ECOS) → 10/26 1,324.3원(ECOS)·KB 1,323.70원
-- 새로 찾은 것: 우대 없이 원화로 넣고 찾으면 왕복 약 1.9%가 수수료라 세후 이자 약 3%의 3분의 2가 사라짐 · 본전 환율이 우대율에 따라 약 25원 갈림
+- 날짜: 2026-11-02 10:58 firemap-write-b (발행 당일, 칸 11/2 22:40) — 10/26 18:10 칸 몫이 로그인 풀림으로 밀린 묶음, 금리·환율을 오늘 값으로 다시 받아 본문·그림·사실표 숫자를 바꿈(원본 *.pre1102)
+- 다시 연 주소(2026-11-02): https://obank.kbstar.com/quics?page=C101512 · https://obank.kbstar.com/quics?page=C101423 · https://www.citibank.co.kr/cgrp_pjt/down/kor/deposit/Manual/외화당좌예금 상품설명서(핵심설명서 포함).pdf · https://image.kebhana.com/cont/download/documents/manual/0100226000201_20210325_m.pdf · https://www.law.go.kr/법령/소득세법/제129조 · https://www.law.go.kr/법령/지방세법/제103조의13 · https://www.kdic.or.kr/sp/dpstrprot/ProtSystFaq/selectScrn.do
+- 대조 출처 다시 연 기록(11/2): S1·S2 curl(raw/kb_fxdep_rate_20261102.html·kb_fx_20261102.html) · S3·S4 curl(raw/pp1102/citi.pdf·hana.pdf — 10/26 파일과 바이트 같음) · S5·S6 국가법령정보센터 웹(raw/pp1102/soduk129·jibang103_13, 100분의 14·100분의 10 그대로) · S7 curl(raw/pp1102/kdic.html "외화예금도 1억원까지 보호됩니다.")
+- 기준일: 2026-11-02 10:54:16 KB 고시(117회차)·금리 조회기준일 2026-11-02
+- 바뀐 것: KB USD 정기예금 12개월이상~18개월미만 10/26 연 3.60740% → 11/2 연 3.61744%(3.61→3.62%) · 매매기준율 10/26 1,323.70 → 11/2 1,339.80원(보낼 때 1,336.50→1,352.70·받을 때 1,310.90→1,326.90) · 본전 환율 우대 0% 1,310→1,325원·90% 1,287→1,303원 · 바로 왕복 192→191만원 · 환율 그대로 1년 우대 0% 108→109만원·90% 285→286만원·없음 305→306만원 · 비율(1.1·2.0·2.8·3.0%, 3분의 2)은 그대로
+- 새로 찾은 것: 현찰 사고팔 때 차이 11/2에도 매매기준율 대비 각 1.75%(1,363.24·1,316.36) — 스프레드 비율이 고시 회차가 바뀌어도 같음
 - 조사 뒤 공표: 없음(data/release_calendar.json 해당 없음)

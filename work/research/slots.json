@@ -79,6 +79,30 @@
     "pkg": "work/research/jbcalc1027/pkg",
     "status": "2026-11-02 10:52 소진 — 11/2 18:40 칸 배정(10/27 06:10 칸 몫이 로그인 풀림으로 밀린 묶음)",
     "by": "firemap-write-b"
+   },
+   {
+    "item": "fxdepfee1026",
+    "pkg": "work/research/fxdepfee1026/pkg",
+    "status": "2026-11-02 10:59 소진 — 11/2 22:40 칸 배정",
+    "by": "firemap-write-b"
+   },
+   {
+    "item": "defer1027",
+    "pkg": "work/research/defer1027/pkg",
+    "title": "연기연금 피부양자 탈락, 절반만 미루면 피할까?",
+    "genre": "정책(연금·건보료)",
+    "status": "비축 — 관문 통과(editgate auto 10/27·이해 통과·bench) · 발행 날 올리기 전 확인만 남음(10/27 칸 몫이 로그인 풀림으로 밀림)",
+    "by": "firemap-write-b",
+    "at": "2026-11-02 10:59"
+   },
+   {
+    "item": "pibucut1025",
+    "pkg": "work/research/pibucut1025/pkg",
+    "title": "피부양자 탈락 건보료 경감 끝난 뒤 월 얼마 낼까?",
+    "genre": "정책(건보료)",
+    "status": "비축 — 관문 통과(editgate·이해 3차·bench) · 발행 날 올리기 전 확인만 남음 · defer1027과 같은 피부양자 주제라 같은 주 겹치지 않게",
+    "by": "firemap-write-b",
+    "at": "2026-11-02 10:59"
    }
   ],
   "long": [
@@ -3107,10 +3131,11 @@
   {
    "at": "2026-11-02 22:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "fxdepfee1026",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-01 21:4x: 장르 돈 관리 · 그날 공개 쇼츠 있으면 yt_pair 짝 글(질문 하나)로 바꿈"
+   "gates_ok": "2026-11-02 10:59",
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 돈 관리 · 그날 공개 쇼츠 있으면 yt_pair 짝 글(질문 하나)로 바꿈 | firemap-write-b 10:59: 밀린 묶음 fxdepfee1026(달러예금 환전수수료, 돈 관리) 배정 · 올리기 전 확인 11/2 — KB 10:54 고시(117회차)·12개월 3.61744%로 calc·본문·그림 3장·facts 숫자 바꿈(문장 그대로, 원본 *.pre1102)·S3~S7 다시 엶·editgate auto · slot.txt 22 · 오늘 쇼츠 짝 글이 생기면 그쪽 우선(이 묶음은 비축으로)",
+   "pkg": "work/research/fxdepfee1026/pkg"
   },
   {
    "at": "2026-11-03 07:40",

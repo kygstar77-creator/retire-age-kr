@@ -69,10 +69,16 @@
     "pkg": "work/research/pen600_1102/pkg",
     "title": "연금저축 세액공제 한도 넘긴 돈 IRP로 옮겨도 될까?",
     "genre": "정책(연금계좌)",
-    "status": "비축 — 관문 통과(editgate auto 977970ad·이해 6차 18명·readcheck 0·aitell 3.8·selfcheck 사실 0) · 발행 날 올리기 전 확인(지특법 제167조의2 부칙 2026.12.31·결정세액 문장 원문 확인)",
+    "status": "2026-11-02 10:48 소진 — 11/2 12:40 칸 배정",
     "by": "firemap-write",
     "at": "2026-11-02 09:55",
     "gates_ok": "2026-11-02 09:55"
+   },
+   {
+    "item": "jbcalc1027",
+    "pkg": "work/research/jbcalc1027/pkg",
+    "status": "2026-11-02 10:52 소진 — 11/2 18:40 칸 배정(10/27 06:10 칸 몫이 로그인 풀림으로 밀린 묶음)",
+    "by": "firemap-write-b"
    }
   ],
   "long": [
@@ -3075,10 +3081,11 @@
   {
    "at": "2026-11-02 12:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "pen600_1102",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-01 21:4x: 장르 주식(배당·ETF) — 시황은 '(○/○ 15:30 종가)' 줄"
+   "gates_ok": "2026-11-02 10:48",
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 주식(배당·ETF) — 시황은 '(○/○ 15:30 종가)' 줄 | firemap-write-b 10:48: 비축 pen600_1102(연금저축 한도 넘긴 돈 IRP 이전, 연금계좌 — 그날 연금계좌 1칸) 배정 · 주식(배당·ETF) 비축 없고 칸 2시간 전이라 새 글 관문 못 지킴 · 올리기 전 확인 11/2 09:3x(바뀐 것 없음)·editgate auto 해시 일치 · slot.txt 12",
+   "pkg": "work/research/pen600_1102/pkg"
   },
   {
    "at": "2026-11-02 16:10",
@@ -3091,10 +3098,11 @@
   {
    "at": "2026-11-02 18:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "jbcalc1027",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-01 21:4x: 장르 부동산②"
+   "gates_ok": "2026-11-02 10:52",
+   "note": "firemap-meeting 2026-11-01 21:4x: 장르 부동산② | firemap-write-b 10:52: 묶인 대기 jbcalc1027(종부세 공시가격 15억 한 채, 부동산 보유세 — 12월 고지철) 배정 · 올리기 전 확인 11/2(법령 12·보도 2 다시 엶, 바뀐 것 없음)·기준일 줄 11/2로·editgate auto 다시 찍음 · slot.txt 18 · 주의: 12:40·16:10·18:40 세 칸 다 세금 갈래(3칸까지 허용) — 16:10 회차가 다른 부동산 글을 쓰면 바꿔도 됨",
+   "pkg": "work/research/jbcalc1027/pkg"
   },
   {
    "at": "2026-11-02 22:40",

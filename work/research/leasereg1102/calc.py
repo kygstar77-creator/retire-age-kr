@@ -1,0 +1,11 @@
+# leasereg1102 계산 — 판결문 날짜(대법원 2024다326398) · 생활법령 비용(2026-09-15 기준)
+import datetime as D, sys
+sys.stdout.reconfigure(encoding='utf-8')
+s, k, m, r = D.date(2019,3,12), D.date(2019,3,20), D.date(2019,4,5), D.date(2019,4,8)
+print('신청→결정', (k-s).days, '일')
+print('신청→등기', (r-s).days, '일')
+print('결정→등기', (r-k).days, '일')
+print('이사→등기', (r-m).days, '일')
+print('남은 보증금', 95_000_000 - 12_723_446, '원 (판결문 82,276,554원)')
+cost = dict(수입인지=2000, 등기수입증지=3000, 송달료=5200*6, 등록면허세=7200)
+print(cost, '합계', sum(cost.values()), '원 (생활법령 43,400원)')

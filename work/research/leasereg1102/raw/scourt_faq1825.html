@@ -1,0 +1,157 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>자주묻는질문 - 민원안내 - 전자민원센터</title>
+  <link rel="stylesheet" href="/nm/css/base.css" type="text/css">
+  <link rel="stylesheet" href="/nm/css/jquery.bxslider.css" type="text/css">
+  <link rel="stylesheet" href="/nm/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/nm/css/mobile.css" type="text/css">
+
+
+  <script type="text/javascript" src="/nm/js/jquery-1.9.0.min.js"></script>
+  <script type="text/javascript" src="/nm/js/jquery.bxslider.min.js"></script>
+
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#header').load("/nm/inc/head.jsp");
+      $('#footer').load("/nm/inc/foot.jsp");
+    });
+  </script>
+  <script type="text/javascript" src="/nm/js/print.js"></script>
+  <script type="text/javascript">
+	<!--
+	
+	function goList(){
+	    document.listForm.action = "/nm/minwon/faq/FaqListAction.work";
+	    document.listForm.submit();
+	}
+	
+	function searchWord(){
+	    document.faq.action = "/nm/minwon/faq/FaqListAction.work";
+	    document.faq.gubun.value='0';
+	    document.faq.submit();
+	}
+	
+  //-->
+  </script>
+</head>
+<style>
+  .sidesub{display: block;}
+</style>
+<body>
+
+  <div id="wrap">
+    <div id="header"></div>
+    <div id="content">
+      <form name="downForm" method="get" action="">
+		<input type="hidden" name="file" value=""/>
+		<input type="hidden" name="path" value=""/>
+		<input type="hidden" name="downFile" value=""/>
+	  </form>
+	  <form name="listForm" method="post" action="">
+		<input type="hidden" name="gubun" value="13"/>
+		<input type="hidden" name="detail_gubun" value=""/>
+		<input type="hidden" name="pageIndex" value="1"/>
+		<input type="hidden" name="pageIndexB" value="1"/>
+		<input type="hidden" name="searchWord" value="" />
+	  </form>
+	  <form name="searchForm" method="post" action="">
+		<input type="hidden" name="gubun" value="" />
+	  </form>
+      <div class="locationbox">
+        <div class="container">
+          <ul class="location">
+            <li><img src="/nm/images/sub/home_i.png" alt="" class="subi"> 민원안내</li>
+            <li class="colec9"><img src="/nm/images/sub/sT_on.png" alt="" class="subi"> 자주묻는질문</li>
+            <li class="print"><a href="#print" onclick="printAreaAction(); return false;" onkeypress="this.onclick();"><img src="/nm/images/sub/sTicon.png" alt="인쇄하기"></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container both s_cont">
+        <div id="subwrap">
+           <div class="taC"><h2>민원안내</h2></div>
+            <ul class="sidelist">
+              <li class="snbli">
+                <a id="aside_4_1" href="/nm/minwon/doc/DocListAction.work">양식모음</a>
+              </li>
+              <li class="snbli snbli_on">
+                <a id="aside_4_2" href="/nm/minwon/faq/FaqListAction.work">자주묻는질문</a>
+              </li>
+              <li class="snbli ">
+                <a id="aside_4_3" href="/nm/util_1/index.html">전자민원센터안내</a>
+              </li>
+
+            </ul>
+        </div>
+        <div class="contents">
+          <h3 class="stitleh3">자주묻는질문</h3>
+          <div class="min_16_2wrap min_1_6_1">
+
+             <div class="board_search" id="board_search">
+             <form name="faq" method="post" action="FaqListAction.work" onsubmit="return searchWord();">
+             <input type="hidden" name="gubun" value="13"/>
+             <input type="hidden" name="mode" value="A" />
+               <span class="chk chk_on">
+                 <input class="search_word" name="searchWord" type="text" title="검색어 입력" size="30" maxlength="50" value=""/>
+               </span>
+               <a href="javascript:searchWord();" class="search_btn">검색</a>
+             </form>
+             </div>
+
+             
+            
+            <table class="board_viewT mT30" summary="자주묻는질문 상세보기">
+              <caption>자주묻는질문 상세보기</caption>
+              <tbody>
+                <tr>
+                  <th class="viewth bB9595 Tth01">제목 <span class="bar959">｜</span></th>
+                  
+                  <td class="bB9595">임차권등기명령절차 준비물은?(준비서류 등 : 수수료, 송달료 등)</td>
+                </tr>
+                <tr>
+                  <th class="viewth bB9595 Tth01" style="width:17%;">상세질문내용 <span class="bar959">｜</span></th>
+                  <td class="bB9595">임차권등기명령절차 준비물은?(준비서류 등 : 수수료, 송달료 등)</td>
+                </tr>
+                <tr>
+                  <th class="viewth bB9595 Tth01">답변내용 <span class="bar959">｜</span></th>
+                  <td class="bB9595">임차권등기명령신청서에는 2,000원의 수입인지를 붙여야 하고, 관할법원에 사법부전산망이 설치되어 있는 경우에는 당사자 1인당 3회분의 송달료를 납부하셔야 합니다. <br />
+<br />
+그밖에 임차권등기촉탁에 필요한 비용으로 등기신청수수료 4,000원과 등록세 및 등록세액의 20%인 교육세를 납부하셔야 합니다. <br />
+<br />
+(&rArr; 등록세액은 차임있는 임대차의 경우에는 월 차임액의 1000분의 2이고 (단 등록세액이 3,000원 미만인 경우에는 3,000원), 둘째 주택임대차보호법 제12조의 등기하지 아니한 전세계약의 경우에는 3000원입니다.) <br />
+                  </td>
+                </tr>
+
+                <tr>
+                  <th class="viewth bB9595 Tth01">첨부파일 <span class="bar959">｜</span></th>
+                  <td class="bB9595">
+
+                    &nbsp;</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="list_btn mT30"><a href="/nm/minwon/faq/FaqListAction.work?mode=A&pageIndex=1&pageIndexB=1&searchWord=&gubun=13">목록</a></div>
+            
+
+            
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div id="footer"></div>
+  </div>
+
+</body>
+</html>

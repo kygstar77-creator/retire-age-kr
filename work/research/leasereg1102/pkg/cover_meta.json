@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-02 13:54",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "임차권등기명령/신청부터 등기까지",
+ "num": "27일 걸린 사건",
+ "sub": "등기 전에 이사하면 대항력이 끊겨요",
+ "label": "대법원 2024다326398",
+ "src": "판결문 날짜(11/2 확인)",
+ "icon": "calendar-days",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 115,
+ "num_px": 92,
+ "sub_px": 53,
+ "board": [
+  "pen600_1102",
+  "hfheir1028",
+  "crdt1027",
+  "rtcancel1022",
+  "cpi2pct1022",
+  "penlimit1022",
+  "kospidd1022",
+  "h1forest1022",
+  "t1swap1022",
+  "etfdistday1022"
+ ]
+}

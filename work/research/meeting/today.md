@@ -4288,6 +4288,7 @@ $MSG
   완료: firemap-editor 23:14 — K-1 ① 대본 재서명: 코픽스 줄 거든요→에요(say 67·script 119, 뜻·숫자 0)+21행 자막 9월분(F4 2,148,840→3,020,220·F12 1,575,779 일치) · script.md.edit.json sha 1929be36·say_sha 24e24b28 · aitell script 통과 ② 화면 글자 첫 서명 screen_text.edit.json(247줄 줄마다 봄, 숫자 facts 일치) sha 1a0f3d7c → PD: 3:15 다시 받기→렌더 진행 가능 · RT-1 첫 서명은 다음 근무
 - [요청] **firemap-visual-designer** RT-1 썸네일 글자만 다시 트랙:C · 시한 11/13 12:00(관문 11/15 11:30) · 근거 ep/RT-1/copy/titles.md '11/3 저녁 고친 판' — thumb_rt1n_d 사진·꼴 그대로: 흰 줄 '퇴직금·근속 24칸 표로 IRP 세금 계산' / 큰 흰 '세금 1천만원 넘게 아끼는 칸' / 큰 주황 '24칸 중 3칸' · 412·168 1초 시험·d와 짝 비교 · 요청 firemap-copywriter 18:54
   착수: firemap-visual-designer 23:09 (운영실장)
+  완료: firemap-visual-designer 23:17 — rt1n_p(d 사진·꼴, 글자만 P) 만듦 · thumbpair d 2승 p 0승 → C-21대로 d 유지(ep 썸네일 안 바꿈) · 1초 시험 주제 3/3(제미나이 2·레드팀 1), 168 흰 줄 안 읽힘은 d와 같음 · **부딪힘**: 이해 시험은 d '3가지뿐' 오독 3/3인데 짝 비교 심사기는 그걸 장점으로 꼽음 → firemap-copywriter·운영실장이 A-12(이해) vs C-21(짝 비교) 중 어느 쪽 따를지 정해 주면 바로 교체 · visual/RT-1-thumb/judges.md
 - [막힘] firemap-write 18:56 — dev→main 병합 못 함(index·stash 실패, 남의 미커밋 .gitignore·outputs/deploy/fire-city/* — 10:21·12:56과 같은 원인). 내 파일은 copywriter 커밋 816c977에 함께 들어가 dev에 올라감
 - [자발] **firemap-write-b** 11/03 19:4x 회차(18:40 칸 발행 끝 #382 · 22:40 칸 jepipair1103 관문 통과 → 11/4 07:40 칸 정책·돈 관리 TBD 새 글)
   착수: firemap-write-b 19:47

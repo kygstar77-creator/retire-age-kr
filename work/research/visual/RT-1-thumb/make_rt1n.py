@@ -27,7 +27,8 @@ def fit(d, t, size, w, maxw=MAXW, floor=40):
     return size
 
 
-def make(out, pic, ya, top, top_size=96, band=235, ls=1.10, target=0.90, xa=0.5, zoom=1.0, top_sizes=None, hmax=0.45, tshade=(300, 200)):
+def make(out, pic, ya, top, big=None, top_size=96, band=235, ls=1.10, target=0.90, xa=0.5, zoom=1.0, top_sizes=None, hmax=0.45, tshade=(300, 200)):
+    BIG = big or globals()['BIG']
     im = photo(pic, y_anchor=ya, x_anchor=xa, zoom=zoom); d0 = ImageDraw.Draw(im)
     # C-35: 줄마다 크기 따로 — 폭 target에 맞춤. 짧은 첫 줄('서울 25개 구 중')이 커져 두 줄이 화면 45%(C-02)를 넘으면 둘을 같은 비율로 줄임
     sizes = [fit(d0, t, 320, 'black', maxw=int(W * target)) for t in BIG]
@@ -53,6 +54,8 @@ T = '광명 아파트 15억이라던데, 실거래 전부 세어 보니'
 
 
 T = '퇴직금·근속 24가지로 IRP 세금 셈해 보니'
+if 'old' in sys.argv:
+  exec('''
 T2 = '퇴직금·근속 24가지로|IRP 세금 셈해 보니'   # S-1·H-4 교훈: 168px에서 주제 낱말이 읽히게 두 줄로 키움
 make('rt1n_b.png', 'office_box_plant_9301822.jpg', 0.5, T2, top_sizes=[120, 120])
 make('rt1n_c.png', 'box_hands_top_4498123.jpg', 0.4, T2, top_sizes=[120, 120])
@@ -64,3 +67,8 @@ make('rt1n_d.png', 'office_box_carry_4226206.jpg', 0.55, T2, top_sizes=[120, 120
 make('rt1n_d2.png', 'office_box_carry_4226206.jpg', 0.75, T2, top_sizes=[120, 120], zoom=1.2)
 # 11/3 4차: 1초 시험(제미나이 2번·레드팀) 셋 다 '168px 위 흰 두 줄 안 읽힘' → 흰 줄만 120→150px, 위 그라데이션 진하게(H-4 g2 교훈)
 make('rt1n_d3.png', 'office_box_carry_4226206.jpg', 0.55, T2, top_sizes=[150, 150], tshade=(440, 240))
+''')
+
+# 11/3 23시: copywriter 18:54 '11/3 저녁 고친 판' 1위 P — d 사진·꼴 그대로 글자만. 흰 줄 '표로'·'계산', 큰 흰 '세금' 앞에, 주황 '24칸 중 3칸'('뿐' 뺌)
+TP = '퇴직금·근속 24칸 표로|IRP 세금 계산'
+make('rt1n_p.png', 'office_box_carry_4226206.jpg', 0.55, TP, big=['세금 1천만원 넘게 아끼는 칸', '24칸 중 3칸'], top_sizes=[120, 120])

@@ -18,6 +18,16 @@
     "url": "https://cafe.naver.com/firemap/377"
    },
    "note": "07:40 칸 비축 defer1027 발행 · verify OK 2016자·사진 3 · 편집 해시 일치(editor 07:10) · 올리기 전 확인 11/2 19:48(전날) · D-17 경고 2016자>1500 · 확인 창 처리 timeout은 넘어가고 발행 성공 · 회원 댓글 0 · 개선: 없음"
+  },
+  {
+   "hour": 9,
+   "ts": "10:18",
+   "blog": null,
+   "cafe": {
+    "title": "임차권등기명령 신청부터 등기까지 며칠 걸릴까?",
+    "url": "https://cafe.naver.com/firemap/378"
+   },
+   "note": "10:10 칸 leasereg1102 · 출처 6곳 11/3 다시 엶(06:3x)+조문 본문 raw1103 저장 · 교차검증 11/2 완료분 · verify OK 1771자·사진 3 · 블로그 없음(하루 상한·쉬는 규칙) · 개선: 법령 API 막힐 때 law.go.kr 웹 lsSideInfoP 본문 저장 스크립트(growth 아닌 pkg raw1103)"
   }
  ]
 }

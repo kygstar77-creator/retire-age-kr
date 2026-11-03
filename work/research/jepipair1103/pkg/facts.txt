@@ -1,0 +1,18 @@
+[오늘 찾은 것]
+2026-11-03 · 야후 파이낸스 chart API JEPI 일별 종가·분배(https://query1.finance.yahoo.com/v8/finance/chart/JEPI, raw/JEPI_chart_1103.json) · 2020-05-21~2026-11-02, 분배 76번
+2026-11-03 · JP모건 JEPI 팩트시트 2026-09-30(https://am.jpmorgan.com/content/dam/jpm-am-aem/americas/us/en/literature/fact-sheet/etfs/FS-JEPI.PDF, raw/FS-JEPI.txt) · 옵션 매도+미국 대형주, 옵션 프리미엄과 배당으로 매달 분배 · 5년 연평균 총수익 NAV 7.78% · 12개월 분배율 8.04%
+2026-11-03 · 미국 국세청 조세조약 세율표 Table 1(https://www.irs.gov/pub/irs-lbi/tax-treaty-table-1.pdf, raw/irs_table1.txt) · Korea, South 배당 15%
+2026-11-03 · 네이버 모바일 통합검색 'JEPI 원금'·'JEPI 배당 생활비'·'JEPI 주가 하락 원금' 1페이지 블로그 — 분배금을 꺼내 쓴 5년 뒤 주식 평가액을 센 글 0편(bench_raw)
+
+[사실표]
+기간 2021-11-01 종가 61.45달러 → 2026-11-02 종가 57.39달러 · 주가 -6.6%
+1,000만원어치(달러 기준 비율, 환율 변화 뺌) 분배금 꺼내 씀 → 주식 934만원 · 받은 분배금 393만원(59번) · 합 1,327만원
+가장 낮은 날 2022-10-12 종가 50.88달러 → 828만원
+분배금 다시 넣음 → 1,431만원 · 한 해 평균 7.4% · 차이 1,431-1,327 = 104만원
+한 달 평균 6.7만원(393/59) · 가장 적은 달 2023-08 4.7만원 · 가장 많은 달 2022-07 10.1만원
+한 해 합 2022 103.5만원 · 2023 75.1만원 · 2024 68.6만원 · 2025 76.8만원
+미국 원천징수 15% → 393 × 0.85 = 334만원
+JP모건 팩트시트 5년 연평균 총수익(NAV, 2026-09-30) 7.78% · 12개월 분배율 8.04%(본문 '8%쯤')
+유튜브: 쇼츠 de1s_jepi LtkVbpQjWyc(slots.json 11/3 19:20 공개 예약) · 롱폼 D-ETF-1 mkAxQPGaDqc(uploads.jsonl, 10/30 공개 — oEmbed 200 11/3 확인)
+쇼츠 문장 '배당을 생활비로 꺼내 쓰면 이보다 덜 불어납니다'(cardshorts/de1s_jepi/understand_input4.txt 장면 2)
+파이어맵 계산 = research/jepipair1103/calc.py → calc_out.txt · 그림 mkimg.py

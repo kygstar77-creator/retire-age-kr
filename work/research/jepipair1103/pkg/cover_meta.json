@@ -1,0 +1,9 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 JEPI 일별 종가·분배(2021-11-01~2026-11-02, 2026-11-03 받음) — research/jepipair1103/mkimg.py로 직접 그린 선·누적 그래프",
+ "made_at": "2026-11-03 16:52",
+ "by": "research/jepipair1103/mkimg.py",
+ "out": "img/00.png",
+ "topic_px": 64,
+ "num_px": 52
+}

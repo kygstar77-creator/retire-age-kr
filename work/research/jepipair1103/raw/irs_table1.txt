@@ -1,0 +1,437 @@
+Table 1. Tax Rates on Income Other Than Personal Service Income Under Chapter 3, Internal Revenue Code, and Income Tax Treaties 
+(Rev. May 2023) 
+ This table lists the income tax rates on interest, dividends, royalties, and other income that is not effectively connected with the conduct of a U.S. trade or business. 
+The income code numbers shown in this table are the same as the income codes on Form 1042- S, Foreign Person's U.S. Source Income Subject to Withholding. 
+ In most cases, a net basis tax, rather than a reduced tax rate or exemption, applies if the income is attributable to a permanent establishment of the taxpayer in the 
+United States under the Business Profits article of the treaty. 
+ If the Treaty Article Citation includes a “P,” that refers to a protocol that amends the treaty article. See also Table 3 – List of Tax Treaties. A reference to 2P or 
+5P would be to the 2nd protocol or the 5th protocol. 
+CAUTION: 
+ This table is not a comprehensive guide to all eligibility requirements for every treaty rate of tax or exemption listed. You should review the text of the treaty and 
+the Treasury Department Technical Explanation accompanying the treaty, as well any relevant competent authority arrangements to determine whether a reduced 
+rate of tax or an exemption is available. See the Competent Authority Arrangements  page on irs.gov. 
+ This table does not provide guidance on how to identify the relevant treaty resident and whether that resident is entitled to a reduced rate of tax or exemption set 
+forth in this table. See, for example, Table 4, Limitation on Benefits, and Treas. Reg. §§ 1.881 -3 and 1.894-1(d) for additional rules on entitlement to treaty 
+benefits. 
+ This table should not be relied on to determine whether a U.S. tax resident is entitled to the listed rate of tax from a foreign treaty country, although generally the 
+treaty rates of tax are the same. 
+ 
+ Interest ccc Dividends Pensions and Annuities 
+Income Code Number 1  6 7  15  
+Name Code Paid by U.S. 
+Obligors— 
+General 
+Treaty 
+Article 
+Citation 
+Paid by U.S. 
+Corporations— 
+General a 
+Qualifying for Direct 
+Dividend Rate a, b, aaa 
+Treaty 
+Article 
+Citation 
+Pensions and 
+Annuities d 
+Treaty Article 
+Citation 
+Australia.................... AS 10 g, jj, nn 11(2) / P7 15 mm 5 mm,oo 10(2) / P6 0 18(1) 
+Austria..................... AU 0 g,jj,ss 11(1) 15 w 5 w 10(2) 0 18(1)(a) 
+Bangladesh................ BG 10 g,bb,jj 11(2) 15 mm 10 mm 10(2) 0 f,q 19(1) 
+Barbados.............. BB 5 rr, z 11(1) /1PIV; 
+2PII(6) 
+15 w rr 5 w, rr 10(2) / 
+1PIII(1); 
+2PII(6) 
+0 f 18(1)(a) 
+Belgium ................ BE 0 g,jj, ss 11(1) 15 dd,mm 5 dd,mm,oo 10(2) 0 f 17(1) 
+Bulgaria ................... BU 5 g,dd,jj,z 11(1)-(3) 10 dd,mm 5 dd,mm 10(2) 0 f 17(1) 
+Chile……………………..       CI 10 z 11 (1)-(10) 15 15 z 10 (2) 0 15(1)-(3) 
+Canada...................... CA 0 g,jj XI(1) \ 
+5P6(1) 
+15 mm 5 mm X(2) / 
+5P5(1) 
+15 ii XVIII(1) / 3P9; 
+5P13 
+China, People's Rep. of...... CH 10 z 10(2) 10 10 9(2) 0 t 17(1) 
+Comm. of Independent 
+States*............. 
+0 n III(1)(g) 30 30 None 30 none 
+Cyprus..bbb................... CY 10 z 13(2) 15 5 12(2) 0 f 23(1) 
+Czech Republic........ EZ 0 g 11(1) 15 w 5 w 10(2) 0 f 19(1)(a) Page 2 of 10 Table 1. Tax Rates on Income Other Than Personal Service Income Under Chapter 3, Internal Revenue Code, and Income Tax Treaties 
+ 
+ Interest ccc Dividends Pensions and Annuities 
+Income Code Number 1  6 7  15  
+Name Code Paid by U.S. 
+Obligors— 
+General 
+Treaty 
+Article 
+Citation 
+Paid by U.S. 
+Corporations— 
+General a 
+Qualifying for Direct 
+Dividend Rate a, b, aaa 
+Treaty 
+Article 
+Citation 
+Pensions and 
+Annuities d 
+Treaty Article 
+Citation 
+Denmark................... DA 0 g,jj 11(1) 15 dd,mm 5 dd,mm,oo 10(2) / PII 30 c,t 18(1) 
+Egypt......................... EG 15 z 12(2) 15 5 11(2) 0 f 19(1) 
+Estonia....................... EN 10 g,jj, z 11(2) 15 w 5 w 10(2) 0 f 18(1) 
+Finland....................... FI 0 g,jj 11(1) / PIV 15 dd,mm 5 dd,mm,oo 10(2) / PIII 0 f 18(1) 
+France...................... FR 0 g,jj,ss 11(2) 15 mm 5 mm,oo,ss 10(2) / 2P2 30 t 18(1) / 1PIII 
+Germany................. GM 0 g,jj 11(1) 15 dd,mm 5 dd,mm,oo, 10(2) / PIV 0 f 18(1) 
+Greece....................... GR 0 r VI 30 30 IX 0 XI(2) 
+Iceland...................... IC 0 g,jj,ss 11(1) 15 dd,mm 5 dd,mm,ss 10(2) 0 17(1),(4) 
+India.......................... IN 15 z 11(2) 25 w 15 w 10(2) 0 f, ii 20(1) - (4) 
+Indonesia................... ID 10 z 12(2) / P2 15 10 11(2) / P1 15 q 21(1) 
+Ireland bbb............... EI 0 g,jj,ss 11(1) 15 mm 5 mm,ss 10(2) 0 f 18(1)(a) 
+Israel.. bbb................. IS 17½ z 13(2) 25 w 12½ w 12(2) 0 f 20(1) 
+Italy .......................... IT 10 g,h 12(2) 15 mm 5 mm 10(2) 0 f, ii 18(1) 
+Jamaica.. bbb............. JM 12½ z 11(2) 15 10 10(2) / P2 0 f,p 19(1)(a) 
+Japan... bbb................ JA 10 e,g,dd 11(2) 10 dd,mm 5 dd,mm,oo 10(2) 0 17(1) 
+Kazakhstan............... KZ 10 g, z 11(2) 15 ff 5 ff 10(2) 0 f 18(1)(a) 
+Korea, South............. KS 12 z 13(2) 15 10 12(2) 0 f 23(1) 
+Latvia......................... LG 10 g,jj, z 11(2) 15 w 5 w 10(2) 0 f 18(1) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Page 3 of 10 Table 1. Tax Rates on Income Other Than Personal Service Income Under Chapter 3, Internal Revenue Code, and Income Tax Treaties  
+ 
+ Interestccc Dividends Pensions and Annuities 
+Income Code Number 1  6 7  15  
+Name Code Paid by U.S. 
+Obligors— 
+General 
+Treaty 
+Article 
+Citation 
+Paid by U.S. 
+Corporations— 
+Generala 
+Qualifying for Direct 
+Dividend Ratea,b,aaa 
+Treaty 
+Article 
+Citation 
+Pensions and 
+Annuities d 
+Treaty Article 
+Citation 
+Lithuania................ LH 10 g, z, jj 11(2) 15 w 5 w 10(2) 0 f 18(1) 
+Luxembourg.............. LU 0 g,jj 12(1) 15 w 5 w 10(2) 0 19(1)(a) 
+Malta.....bbb.............. MT 10 g,jj, ss, z 11(2) 15 dd,mm 5 dd,mm, ss 10(2) 0 f 17(1) 
+Mexico.................. MX 15 g,dd,hh 11(2) 10 dd,mm 5 dd,mm,oo 10(2) / 2PII 0 19(1)(a) 
+Morocco... bbb........... MO 15 z 11(2) 15 10 10(2) 0 f 19(1) 
+Netherlands.............. NL 0, m,ss 12(1) 15 dd, pp 5 oo,pp 10(2) / 
+P3(a) 
+0 f, ii 19(1) - (3) 
+New Zealand............. NZ 10 g, jj, z 11(2) / PVII 15 mm 5 mm,oo 10(2) / PVI 0 18(1) 
+Norway.................. NO 0 s 9 / PV 15 15 8(2) / 
+PIV(1) 
+0 f 18(1) 
+Pakistan................. PK 30 XIV 30 15 VII(2) / 
+VI(1) 
+0 j X(1)-(3) 
+Philippines............... RP 15 z 12(2) 25 20 11(2) 30 q 18(1) 
+Poland.................. PL 0 12(1) 15 5 11(2) 30 None 
+Portugal................. PO 10 g, jj, z 11(2) 15 w 5 w 10(2),(3) 0 f 20(1)(a) 
+Romania................. RO 10 z 11(2) 10 10 10(2) 0 f 16(1) 
+Slovak Republic........... LO 0 g 11(1) 15 w 5 w 10(2) 0 f 19(1) 
+Slovenia................. SI 5 g, z, jj 11(2) 15 mm 5 mm 10(2) 0 f 18(1) 
+South Africa.............. SF 0 g, jj 11(1) 15 w 5 w 10(2) 15 l 18(1) 
+Spain................... SP 0 g, jj, zz 11(2) / PV 15 dd, mm 5 dd, mm, oo, zz 10(2) / PIV 0 f 20(1)-(2) 
+Sri Lanka................ CE 10 g, jj, z 11(2) / PVIII 15 gg 15 gg 10(2) 0 t 19(1) 
+Sweden................. SW 0 g, jj 11(1) 15 dd,mm 5 dd,mm,oo 10(2) / PIV 0 19(1) 
+Switzerland.............. SZ 0 g, jj 11(1) 15 w, dd 5 w 10(2) 0 18(1) 
+Thailand.. bbb............ TH 15 g, z 11(2) 15 w 10 w 10(2) 0 f 20(1) 
+Trinidad & 
+Tobago......... 
+TD 30 z 13 30 30 12(1) 0 f 22(1) 
+Tunisia.................. TS 15 z 11(2) 20 w 14 w 10(2) 0 f 18(1) 
+Turkey.................. TU 15 g, z, jj 11(2) 20 w 15 w 10(2) 0 18(1) 
+Ukraine.................. UP 0 g 11(1) 15 ff 5 ff 10(2) 0 19(2) 
+United Kingdom..bbb... UK 0 g, jj 11(1) 15 mm 5 mm,oo 10(2) 0 f, ii 17(1) 
+Venezuela............... VE 10 g, jj, z, ll 11(2) 15 mm 5 mm 10(2) 0 t 19(1) 
+Other Countries........... 30  30 30  30  
+ 
+* Those countries to which the U.S.-U.S.S.R. income tax treaty still applies: Armenia, Azerbaijan, Belarus, Georgia, Kyrgyzstan, Moldova, Tajikistan, 
+Turkmenistan, and Uzbekistan. Page 4 of 10 Table 1. Tax Rates on Income Other Than Personal Service Income Under Chapter 3, Internal Revenue Code, and Income Tax Treaties  
+ Social Security Royaltiesyy 
+Income Code Number   10 11 12  
+Name Code Social 
+Security qq 
+Treaty 
+Article 
+Citation 
+Industrial 
+Equipment 
+Know-How/ 
+Other 
+Industrial 
+Royalties 
+Patents Film & TV Copyrightstt Treaty Article 
+Citation 
+Australia................. AS 30 18(2) n/a u, 5 5 5 5 12(2) / P8 
+Austria................... AU 30 18(1)(b) n/a u 0 ss 0 ss 10 ss 0 ss 12(1), (2) 
+Bangladesh............... BG 30 19(2) n/a u 10 10 10 10 12(2) 
+Barbados................. BB 30 18(1)(b) n/a u rr 5 rr 5 rr 5 rr 5 rr 12(2) / 1PV; 2PII(6) 
+Belgium ................. BE 30 17(2) n/a u 0 ss 0 ss 0 ss 0 ss 12(1) 
+Bulgaria ................. BU 30 17(2) n/a u 5 5 5 5 12(2) / P5(7) 
+Canada.................. CA 0 XVIII(5) / 
+4P2(2) 
+10 0 0 10 0 12(2), (3) / 5P7(1) 
+Chile…………………..   CI 0 15(1)-(3) 2 10 10 10 10 12(1)-(6) 
+China, People's Rep. of..... CH 30 17(2) 7 v 10 10 10 10 II(2) 
+Comm. of Independent States........ 30 None 0 0 0 0 0 III(1)(a) 
+Cyprus..bbb................. CY 30 24 n/a u 0 0 0 0 14(1) 
+Czech Republic.......... EZ 30 19(1)(b) 10 10 10 0 0 12(2) 
+Denmark................. DA 30 18(2) n/a u 0 0 0 0 12(1) 
+Egypt.................... EG 0 20 n/a u 30 u 15 n/a u 15 13(1) 
+Estonia.................. EN 30 18(2) 5 10 10 10 10 12(2) 
+Finland................... FI 30 18(1) n/a u 0 0 0 0 12(1) 
+France................... FR 30 18(1) / 1PIII n/a u 0 ss 0 ss 0 ss 0 ss 12(1) / 2PIII 
+Germany................. GM 0 18(5) / PVIII n/a u 0 0 0 0 12(1) 
+Greece................... GR 30 XIV(1) 0 0 0 30 0 VII 
+          
+Iceland... IC 30 17(2) n/a u 5 i, ss 0 ss 5 ss 0 ss 12(1), (2) 
+India..................... IN 30 20(2) 10 x 15 x 15 x 15 x 15 x 12(2)-(4) 
+Indonesia................. ID 30 22 10 10 10 10 10 13(2) / P34 
+Ireland...bbb............... EI 0 18(1)(b) n/a u 0 ss 0 ss 0 ss 0 ss 12(1) 
+Israel.. bbb................ IS 0 21 n/a u 15 u 15 10 10 14(1) 
+Italy ..................... IT 0 18(2) 5 tt 8 8 8 0 12(2) 
+Jamaica.. bbb............. JM 30 19(1)(b) n/a u 10 10 10 10 12(2) 
+Japan.. bbb............... JA 0 17(1) n/a u 0 0 0 0 12(1) 
+Kazakhstan............... KZ 30 18(1)(b) 10 uu 10 10 10 10 12(2) 
+Korea, South.............. KS 30 24 n/a u 15 15 10 10 14(1) 
+Latvia.................... LG 30 18(2) 5 10 10 10 10 12(2) Page 5 of 10 Table 1. Tax Rates on Income Other Than Personal Service Income Under Chapter 3, Internal Revenue Code, and Income Tax Treaties  
+ Social Security Royaltiesyy 
+Income Code Number   10 11 12  
+Name Code Social 
+Security qq 
+Treaty 
+Article 
+Citation 
+Industrial 
+Equipment 
+Know-how/ 
+Other 
+Industrial 
+Royalties 
+Patents Film & TV Copyrightstt Treaty Article 
+Citation 
+Lithuania.............. LH 30 18(2) 5 10 10 10 10 12(2) 
+Luxembourg........... LU 30 19(1)(b) n/a u 0 ss 0 ss 0 ss 0 ss 13(1) 
+Malta.........bbb....... MT 30 17(2) n/a u 10 ss 10 ss 10 ss 10 ss 12(2) 
+Mexico............... MX 30 19(1)(b) 10 10 10 10 10 12(2) 
+Morocco... bbb........ MO 30 20(3) n/a u 10 10 10 10 12(2) 
+Netherlands........... NL 30 19(4) n/a u 0 ss 0 ss 0 ss 0 ss 13(1) 
+New Zealand.......... NZ 30 18(1)(b) n/a u 5 5 5 5 12(2) / PVIII 
+Norway............... NO 30 19 / PVIII n/a u 0 0 n/a u 0 10(1) 
+Pakistan…........... PK 30 None n/a u 0 0 n/a u 0 VIII(1) 
+Philippines............ RP 30 19 n/a u 15vv 15 vv 15 vv 15 vv 13(2) 
+Poland............... PL 30 None n/a u 10 10 10 10 13(2) 
+Portugal.............. PO 30 20(1)(b) 10 10 10 10 10 13(2) 
+Romania.............. RO 0 17 n/a u 15 15 10 10 12(2) 
+          
+Slovak Republic........ LO 30 19(1)(b) 10 10 10 0 0 12(2) 
+Slovenia.............. SI 30 18(2) n/a u 5 5 5 5 12(1) 
+South Africa........... SF 30 18(2) n/a u 0 0 0 0 12(1) 
+Spain................ SP 30 20(1)(b) n/a u 0 zz 0 zz 0 zz 0 zz 12(1)/PVI 
+Sri Lanka............. CE 30 19(2) 5 y 10 10 10 10 12(2) 
+Sweden.............. SW 30 19(2) n/a u 0 0 0 0 12(1) 
+Switzerland........... SZ 15 19(4) n/a u 0 0 n/a u 0 12(1) 
+Thailand.. bbb......... TH 30 20(2) 8 15 15 5 5 12(2) 
+Trinidad & Tobago...... TD 30 None n/a u 15 15 n/a u 0 cc 14(1) 
+Tunisia............... TS 30 18(1) 10 xx 15 15 15 15 12(2)-(3) 
+Turkey............... TU 30 18(2) 5 10 10 10 10 12(2) 
+Ukraine............... UP 30 19(1) n/a u 10 10 10 10 12(2) 
+United 
+Kingdom...bbb..... 
+UK 0 17(3) n/a u 0 0 0 0 12(1) 
+Venezuela............ VE 30 19(2) 5 10 10 10 10 12(2) 
+Other Countries........ 30  30 30 30 30 30  Page 6 of 10 Table 1. Tax Rates on Income Other Than Personal Service Income Under Chapter 3, Internal Revenue Code, and Income Tax Treaties  
+Footnotes to Table 1. Tax Rates on Income Other Than Personal Service Income Under Chapter 3, Internal Revenue Code, and 
+Income Tax Treaties 
+ 
+a No U.S. tax is imposed on a percentage of any dividend paid by a U.S. corporation in existence on January 1, 2011, that  received at least 80% of its gross 
+income from an active foreign business for the 3 year period before the dividend is declared. (See sections 871(i)(2)(B) and 881(d) of the Internal Revenue 
+Code.) 
+b The direct dividend rate generally applies to dividends paid by a subsidiary to a foreign parent corporation that owns the required percentage of the voting stock 
+ownership, generally 10%. In some cases, the income of the subsidiary must meet certain requirements (e.g., a certain percentage of its total income mu st 
+consist of income other than dividends and interest). 
+c In Denmark, the rate on U.S. source pension distributions is 0% if, since before March 31, 2000, the recipient: (i) has been receiving U.S. source pension 
+distributions, and (ii) was, and continues to be, a non-U.S. person and a resident of Denmark. 
+d The rate applies to both periodic and lump-sum payments unless the treaty (or accompanying technical explanation to a treaty) provides for a different rate for 
+lump-sum payments. See footnote ii below for more information about which treaties provide a different rate for lump-sum payments. In some cases, this rate 
+does not apply to pensions paid by a State or political subdivision or local authority thereof in respect of government servi ces, which may be addressed in a 
+separate treaty article. See specific treaty for rules related to distributions from government pensions. 
+e In Japan, interest is exempt if (a) paid to certain financial institutions; (b) paid on indebtedness from the sale on credit of equipment or merchandise; (c) paid to 
+Japan or its political subdivision, its central bank, and certain other wholly- owned government entities; or (d) paid to a pension fund if not derived from the 
+carrying on of a business by the pension fund. 
+f Includes alimony. 
+g Exemption or reduced rate does not apply to an excess inclusion for a residual interest in a real estate mortgage investment conduit (REMIC). 
+h In Italy, interest paid or accrued on the sale of goods, merchandise, or services between enterprises is exempt. Interest paid or accrued on the sale on credit of 
+industrial, commercial, or scientific property is exempt. In addition, interest paid to a qualified governmental entity that holds, directly or indirectly, less than 
+25 percent of the capital of the person paying the interest, or paid with respect to debt obligations guaranteed or insured by a qualified governmental entity of 
+Italy or the U.S. and beneficially owned by a resident of Italy is exempt. 
+i In Iceland, the rate is 5% for trademarks and any information concerning industrial, commercial, or scientific experience provided in connection with a rental or 
+franchise agreement that includes rights to use a trademark. 
+j In Pakistan, the exemption is not available when the distribution is from a fund under an employees' pension or annuity plan, if contributions to such plan are 
+deductible under U.S. tax laws in determining taxable income of the employer. 
+k [reserved] 
+l For South Africa, the reduced rate applies to pension distributions if the distribution is not subject to a penalty for early withdrawal. Annuities are not taxable if 
+purchased while the annuitant was not a resident of the United States. 
+m [reserved] Page 7 of 10 Table 1. Tax Rates on Income Other Than Personal Service Income Under Chapter 3, Internal Revenue Code, and Income Tax Treaties  
+Footnotes to Table 1. Tax Rates on Income Other Than Personal Service Income Under Chapter 3, Internal Revenue Code, and 
+Income Tax Treaties 
+ 
+ 
+n The exemption applies only to interest on credits, loans, and other indebtedness connected with the financing of trade between the United States and the C.I.S. 
+member. It does not include interest from the conduct of a general banking business.  
+o [reserved] 
+p For Jamaica, the exemption does not apply if the applicable past employment was performed in the United States while such person was a resident of the 
+United States, or if the annuity was purchased in the United States while such person was a resident of the United States.  
+q Annuities paid in return for other than the recipient's services are exempt. For Bangladesh, exemption does not apply to annuity received for services rendered. 
+r Exemption does not apply to such interest paid by a U.S. corporation to a Greek corporation controlling, directly or indirectly, more than 50 percent of the 
+entire voting power in the paying corporation. 
+s In Norway, the rate is 0% so long as Norway continues to exempt from tax interest derived within Norway (not attributable to a permanent establishment in 
+Norway) by persons not resident in Norway. 
+t The provision does not apply to annuities. For Denmark, annuities are exempt from U.S. tax. 
+u If enterprise earns income from leasing of equipment in the conduct of a trade or business, covered by Business Profits article (net tax). If passive income from 
+the leasing of equipment, and not in Royalty article, covered by the Other Income article, if any. In Pakistan payment for TV broadcasting rights are covered 
+by the Royalty article but not rental income from motion picture films. 
+v In China, 10% rate of tax imposed on 70% of gross royalties for rentals of industrial, commercial, or scientific equipment. 
+w The rate in column 6 applies to dividends paid by a regulated investment company (RIC) or a real estate investment trust (REIT). However, that rate applies to 
+dividends paid by a REIT only if the beneficial owner of the dividends is an individual holding less than a 10% interest (25% in the case of Portugal, Thailand, 
+and Tunisia) in the REIT. 
+x In India, the rate also applies to fees for included services. See Article 12(4) of the U.S.-India treaty and the May 15, 1989, Memorandum of Understanding 
+Concerning Fees for Included Services in Article 12. 
+y In Sri Lanka, the rate is 5% for the rental of tangible personal property. 
+z An exemption from tax or a reduced rate of tax may apply to interest that is paid to the government of a Contracting State or a political subdivision or local 
+authority thereof. An exemption or reduced rate may also apply to certain other types of interest, including interest paid to certain banks or other financial 
+institutions, interest derived on loans guaranteed or insured by the government of a Contracting State, and interest arising in connection with commercial credit 
+for goods or services. Please refer to the interest article of the relevant treaty for specific information.  Page 8 of 10 Table 1. Tax Rates on Income Other Than Personal Service Income Under Chapter 3, Internal Revenue Code, and Income Tax Treaties  
+Footnotes to Table 1. Tax Rates on Income Other Than Personal Service Income Under Chapter 3, Internal Revenue Code, and 
+Income Tax Treaties 
+ 
+ 
+aa [reserved] 
+bb In Bangladesh, the rate is 5% for interest (a) beneficially owned by a bank or other financial institution (including an insurance company) or (b) paid due to a 
+sale on credit of any industrial, commercial, or scientific equipment, or of any merchandise to an enterprise. The rate is 0% for interest that is (a) derived by the 
+government of Bangladesh, or an instrumentality thereof, or (b) on a debt obligation guaranteed or insured by Bangladesh or a n instrumentality thereof. 
+cc In Trinidad & Tobago, the rate is 15% for copyrights of scientific work. 
+dd Amounts paid to certain pension funds that are not derived from the carrying on of a business, directly or indirectly, by the  fund are exempt. This includes 
+dividends paid by a REIT only if the conditions in footnote mm are met. For Sweden, to be entitled to the exemption, the pension fund must not sell or make a 
+contract to sell the holding from which the dividend is derived within 2 months of the date the pension fund acquired the holding. The United States has 
+competent authority arrangements (MAP) with some treaty jurisdictions (e.g. Netherlands  and Switzerland) that describe which pension funds are eligible for 
+the exemption. See the Competent Authority Arrangements page on irs.gov. 
+ee [reserved] 
+ff The rate in column 6 applies to dividends paid by a regulated investment company (RIC). Dividends paid by a real estate investment trust (REIT) are subject to 
+a 30% rate. 
+gg In Sri Lanka, the rate applies to dividends paid by a real estate investment trust (REIT) only if the beneficial owner of the dividends is (a) an individual holding 
+less than a 10% interest in the REIT, (b) a person holding not more than 5% of any class of the REIT's stock and the dividends are paid on stock that is publicly 
+traded, or (c) a person holding not more than a 10% interest in the REIT and the REIT is diversified.  
+hh The rate is 4.9% for interest derived from (1) loans granted by banks and insurance companies and (2) bonds or securities that are regularly and substantially 
+traded on a recognized securities market. The rate is 10% for interest not described in the preceding sentence and paid (i)  by banks or (ii) by the buyer of 
+machinery and equipment to the seller due to a sale on credit. There is a full exemption if the beneficial owner is Mexico, a  political subdivision or local 
+authority; is a trust, company, or other organization constituted and operated exclusively to administer or provide benefits under one or more plans established 
+to provide pension, retirement or other employee benefits and its income is generally exempt from tax in Mexico, or if the interest ar ises in the United States 
+and is paid in respect of a loan for a period of not less than three years made, guaranteed, or insured, or a credit for such period extended, guaranteed, or insured 
+by the Banco Nacional de Comercio Exterior, S.N.C. or the Banco National Financiera, S.N.C.  Page 9 of 10 Table 1. Tax Rates on Income Other Than Personal Service Income Under Chapter 3, Internal Revenue Code, and Income Tax Treaties  
+Footnotes to Table 1. Tax Rates on Income Other Than Personal Service Income Under Chapter 3, Internal Revenue Code, and 
+Income Tax Treaties 
+ 
+ii In Canada, the 15% rate does not apply to a lump-sum payment. 
+In Italy, the exemption does not apply to lump-sum or severance payments received if the applicable past employment was performed in the United States while 
+such person was a resident of the United States. 
+In the Netherlands, the exemption does not apply if (1) the recipient was a U.S. resident during the 5- year period before the date of payment, (2) the amount 
+was paid for employment performed in the United States, and (3) the amount is not a periodic payment, or is a lump-sum payment in lieu of a right to receive 
+an annuity. 
+In the United Kingdom, the exemption does not apply to a lump-sum distribution derived from a U.S. pension plan. 
+In India, the exemption does not apply to a lump-sum payment. 
+jj The rate is 15% (10% for Bulgaria and Spain; 30% for Austria, Germany, and Switzerland) for contingent interest that does not qualify as portfolio interest. In 
+general, contingent interest is interest that is determined with reference to (a) receipts, sales, income, profits or other cash flow of the debtor or a related person, 
+(b) any change in the value of any property of the debtor or a related person, or (c) any dividend, partnership distribution, or similar payment made by the 
+debtor or related person. For Sweden and Germany, contingent interest is covered by the dividends article of the treaty.  
+kk [reserved] 
+ll In Venezuela, the rate is 4.95% if the interest is beneficially owned by a financial institution (including an insurance company). 
+mm The rate in column 6 applies to dividends paid by a regulated investment company (RIC) or real estate investment trust (REIT) . However, that rate applies to 
+dividends paid by a REIT only if the beneficial owner of the dividends is (a) an individual (or pension fund, in some cases) holding not more than a 10% 
+interest in the REIT, (b) a person holding not more than 5% of any class of the REIT's stock and the dividends are paid on stock that is publicly traded, or (c) a 
+person holding not more than a 10% interest in the REIT and the REIT is diversified.  
+nn Interest received by a financial institution is exempt, as is interest received by the government of Australia, a political or administrative sub-division or a local 
+authority thereof, or by any other body exercising governmental functions in Australia, or by a bank performing central banki ng functions in Australia. 
+oo Dividends received from an 80% owned corporate subsidiary are exempt if certain ownership period and limitation on benefits conditions are met by the 
+recipient. For Japan, greater than 50% ownership is necessary. See specific treaty article to determine other conditions. 
+pp The rate in column 6 applies to dividends paid by a regulated investment company (RIC) or real estate investment trust (REIT). However, that rate applies to 
+dividends paid by a REIT only if the beneficial owner of the dividends is (a) an individual holding not more than a 25% interest in the REIT, (b) a person 
+holding not more than 5% of any class of the REIT's stock and the dividends are paid on stock that is publicly traded, or (c) a person holding not more than a 
+10% interest in the REIT and the REIT is diversified, or (d) a Dutch belegginginstelling. 
+qq Applies to 85% of the social security payments received from the U.S. Government. The effective rate on the total social security payments received is 85% of 
+the rate shown in the table. These rates also apply to the social security equivalent portion of tier 1 railroad retirement benefits received from the U.S. The 
+remainder of tier 1, all of tier 2, dual, and supplemental railroad retirement benefits are t axed as shown in the “Pensions and Annuities” column. Page 10 of 10 Table 1. Tax Rates on Income Other Than Personal Service Income Under Chapter 3, Internal Revenue Code, and Income Tax Treaties  
+Footnotes to Table 1. Tax Rates on Income Other Than Personal Service Income Under Chapter 3, Internal Revenue Code, and 
+Income Tax Treaties 
+ 
+rr In Barbados, no benefits for interest, dividends or royalties are permitted if recipient is subject to a special tax regime or administrative practice that provides 
+for an effective tax rate substantially lower than the generally applicable tax rate for companies or individuals as appropri ate. 
+ss 15% rate applies if income is attributable to a permanent establishment which that enterprise has in a third state, if the tax that is actually paid with respect to 
+such income in the third state is less than 60 percent of the tax that would have been payable in the treaty country if the income were earned in by the enterprise 
+and were not attributable to the permanent establishment in the third state, unless derived in the active conduct of a trade or business in that third state.  
+tt Unless the treaty, technical explanation to the treaty, or any relevant competent authority arrangement provides otherwise, the copyright tax rate provided in 
+column 12 applies to royalties for computer software. In Italy, for example, royalties for computer software are subject to the same rate as payments for the 
+right to use industrial equipment. 
+uu In Kazakhstan, the beneficial owner may elect to compute tax on a net basis as if attributable to a U.S. permanent establishment. 
+vv Note that Philippine’s tax rate differs from the U.S. tax rate. 
+xx In Tunisia, payments for the use of ships, aircraft, or containers used in international traffic are not included. 
+yy In general, royalties include gains derived from the alienation of property covered by the Royalty article to the extent such gains are contingent on the 
+productivity, use, or disposition of such property. 
+zz 15% rate applies if income is attributable to a permanent establishment which the enterprise has in a third state and the profits of that permanent 
+establishment are subject to a combined aggregate effective rate of tax in the Treaty country and third stat e that is less than 60 percent of the general rate 
+of company tax applicable in the Treaty Country. However, this higher 15% rate does not apply to (1) royalties received as compensation for the use of, or 
+the right to use, intangible property produced or developed by the permanent establishment or (2) other income derived in connection with, or incidental to, 
+the active conduct of a trade or business carried on by the permanent establishment in the third state (other than the business of making, managing or 
+simply holding investments for the enterprise's own account, unless these activities are banking or securities activities carried on by a bank or registered 
+securities dealer). 
+aaa The branch profits tax applies only to the dividend equivalent amount of a foreign corporation that has business profits attributable to a permanent 
+establishment in the United States or is otherwise taxed on a net basis under a treaty (e.g., income from real property in the United States). The rate is generally 
+the same rate as the direct dividend rate (including an exemption if direct dividends qualify for an exemption), provided the  treaty has entered into effect after 
+January 1, 1987. If a new treaty has not entered into force, then the rate is 0 (Cyprus, China, Egypt, Greece, Hungary, Jamaica, Korea, Morocco, Norway, 
+Pakistan, Poland, Romania, and the Philippines), except for Trinidad &Tobago—10%, and countries to which the U.S.S.R. treaty applies —30% (no direct 
+dividend rate). 
+bbb If an individual is a resident but not a domiciliary of the country, and income or gain subject to tax by reference to the amount remitted to or received in that 
+country and not by reference to the full amount thereof, then the exemption or reduced rates for items provided for in this table is only available for the amount 
+remitted to that country. 
+ccc Branch interest (section 884(f)(1)(A)) paid by the U.S. trade or business of a foreign corporation is treated as if it were paid by a domestic corporation to the 
+actual lender and is subject to chapter 3 withholding (income code 4). For treaty purposes, interest borne by a permanent establishment and paid to a resident of 
+a treaty jurisdiction is taxable at the rate applicable to that payment as if had it been paid by a U.S. resident to such person. Alternatively, if a treaty specifically 
+prevents imposition of tax on U.S. source interest paid by a foreign corporation to such resident, then the rate is 0. The tax rate on excess interest is the same as 
+the general interest rate, but excess interest is a deemed payment by a domestic corporation to its foreign parent at the end of the year and is not a withholdable 
+amount. 
+ 

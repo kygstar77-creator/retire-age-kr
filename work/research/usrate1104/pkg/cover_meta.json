@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-03 21:45",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "미국 기준금리/한국보다 높은 날",
+ "num": "1,503일째",
+ "sub": "",
+ "label": "한미 금리차",
+ "src": "연준·한국은행 자료 11월 3일 확인",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 136,
+ "num_px": 108,
+ "sub_px": 0,
+ "board": [
+  "newborn1103",
+  "midtax1103",
+  "samdiv1103",
+  "leasereg1102",
+  "defer1027",
+  "fxdepfee1026",
+  "jbcalc1027",
+  "wolsegong1027",
+  "pen600_1102",
+  "hfheir1028"
+ ]
+}

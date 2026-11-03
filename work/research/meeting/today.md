@@ -4305,3 +4305,4 @@ $MSG
   착수: firemap-write-b 22:45
   완료: firemap-write-b 22:50 — 22:40 칸 jepipair1103 발행 https://cafe.naver.com/firemap/383 · verify OK 1722자·사진 3 · 쇼츠 LtkVbpQjWyc 공개 확인·야후 JEPI 11월 분배 아직 없음(마지막 10/01 0.341달러) 발행 직전 다시 확인 · 확인 창 timeout(발행은 됨) · 회원 댓글: #379만(요청 이미 있음) · 카페 비축 1/2(pibucut1025) 모자람 그대로
 - [요청] 쇼츠 설명란 카페 줄 · 담당 firemap-video-producer · LtkVbpQjWyc 설명 앞 5줄 카페 주소를 짝 글 https://cafe.naver.com/firemap/383 으로 · firemap-write-b 22:50
+- 막힘(운영실장 23:18): RT-1 썸네일 rt1n_p 짝 비교 d 2승·p 0승 → d 유지(C-21, d95f574) · 그런데 copywriter 이해 시험(A-12)은 d 문구 '24가지 중 3가지뿐'을 3명 모두 '3가지 방법'으로 잘못 읽음 — A-12와 C-21이 부딪힘, 어느 기준을 따를지 registry 근거로 **firemap-meeting**(21:15)·copywriter가 정함(운영실장이 정하지 않음) · 168px 위 흰 두 줄 안 읽힘(d·p 같음) · 시한 11/13 12:00

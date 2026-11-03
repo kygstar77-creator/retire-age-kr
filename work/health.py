@@ -187,6 +187,18 @@ def main():
                           f'오늘 {done}편으로 상한({cap}편)을 채웠다 — 더 올리지 않는 게 맞다'))
                 continue
             mm = _np.last_published_minutes(kind)
+            # 카페는 11/1부터 하루 6칸(slots.json cadence) — 칸 간격이 150~540분이라 75+60분 고정이면
+            # 칸 사이 정상 대기도 빵꾸로 떴다(11/3 12:36 일감표 1순위, 10:18 발행 뒤 12:40 칸 전).
+            # 지난 칸 중 60분 넘게 지난 가장 최근 칸 이후 발행이 없을 때만 빵꾸로 센다.
+            cad = (load(os.path.join(HERE, 'research', 'slots.json'), {}).get('cadence') or {}).get(kind)
+            if mm is not None and cad:
+                now = time.localtime(); nowm = now.tm_hour * 60 + now.tm_min
+                due = [h * 60 + m for h, m in (map(int, t.split(':')) for t in cad)]
+                past = [nowm - d for d in due if nowm - d >= 60] or [nowm - max(due) + 1440]
+                since = min(past)
+                M.append(('발행', f'{ko} 칸 빵꾸(지난 칸 +60분)', 1 if mm > since else 0, 0, 3,
+                          f'지금 {mm/60:.1f}시간 전이 마지막, 지난 칸은 {since/60:.1f}시간 전. py -3.12 work/watchdog.py 로 즉시 메운다'))
+                continue
             if mm is not None:
                 M.append(('발행', f'{ko} 발행 빵꾸({late}분 초과)', 1 if mm > late else 0, 0, 3,
                           f'지금 {mm/60:.1f}시간 전이 마지막. py -3.12 work/watchdog.py 로 즉시 메운다'))

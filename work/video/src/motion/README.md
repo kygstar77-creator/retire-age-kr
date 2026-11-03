@@ -126,3 +126,11 @@
 - **RaiseStairs — '같은 걸음, 갈수록 높은 계단'(목표 금액별 필요 연봉·필요 원금)**: `steps[{goal, pay, v, at, openAt}]·gaps[{text, at}]·gapAt·unitText·unitAt·axis`. 첫 칸은 처음부터 서 있음(앞 장면에서 말한 값 — at·openAt 0). 칸이 앞 칸 높이까지 오른 뒤 차만큼 솟고, 값은 '?' → 말에서 열림. gapAt부터 솟은 부분(챌면)이 진해지고 흰 차 글자, 마지막 차는 그 말에서만 주황 + 손 동그라미. 높이 = 차 비례, 바닥 = 첫 칸 값(0원 축 아님 — 첫 칸 글자가 그 값). seed로 방향(가끔 오른→왼)·칸 폭·탄성.
 - 자리: 바닥 BASE 780~790 — 아래 출처 줄(y≈860)과 칸 이름이 겹친다(11/1 첫 렌더 눈 검사). 맨 위 값 글자는 제목(≈y 175) 아래로 — 솟는 높이 390px.
 - 예: work/research/longform/ep/N-3/motion_preview/n3props.py(blocks·stairs, calc_out assert) · n3render2.py(렌더+줄별 스틸+motioncheck+U5) · judge.py blocks stairs.
+
+## 선 넘은 날 세기(DaysOver) · 두 선 순서 바뀜(CrossOver) · 같은 쪽 달 점판(SameDirDots) — K-1 (11/3)
+1. 재료: `research/longform/ep/K-1/motion_preview/k1props.py`가 raw 원자료(FRED 일별·한은 월별)를 그대로 읽고 facts 글자와 assert → k1_motion.json(over·cross·dots, V3S 꼴). 미리보기 `py -3.12 research/longform/ep/K-1/motion_preview/k1render.py`(원래 크기 + 줄마다 스틸 + motioncheck + U5).
+2. **작은 public**: 이 셋은 글꼴·종이 결만 쓴다 → k1render.py가 %TEMP%/k1_motion_pub(6MB)를 만들어 `--public-dir`로 넘긴다. 번들마다 public 5.9GB 복사를 피함(디스크 18GB에서 렌더). 새 부품 미리보기도 같은 수법을 쓴다.
+3. DaysOver 규칙: 확대는 카메라가 아니라 x·y 범위 보간(선이 굵어지지 않음) · 세는 숫자 = 찍힌 점 수 · '넘은'과 '이상'을 원문대로(경계값 = 기준값인 날이 있으면 수가 다름 — K-1 9/15 = 5.00) · 지난번 띠가 기준선에 붙어 보이면 `past.below`로 '못 닿음'을 말로.
+4. CrossOver 규칙: 교점은 두 칸 사이 직선 교점(값을 지어내지 않음), 동그라미는 두 칸을 감쌀 만큼 · 눈금은 끝까지(축이 0부터가 아니면 칠한 면 크기를 재는 자) · 말이 부른 선은 시작값 위 면을 옅게(U5).
+5. SameDirDots 규칙: 칸 순서 = 달 순서, 점 수 = calc 수(assert) · 판 이름을 바꿀 땐 두 판을 같은 기준으로 같이(`swapR`) — 한쪽만 바꾸면 짝이 어긋나 오독(심사 '틀림' 11/3) · 원인 글자 금지.
+6. 편마다 바뀜: seed로 왼쪽 여백(셋 다)·판 간격과 찍히는 빠르기(SameDirDots).

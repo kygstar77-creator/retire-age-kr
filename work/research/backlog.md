@@ -9,7 +9,7 @@
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | ① 카페 비축 1→2: 정책 비축 한 편(연금계좌 ISA·IRP 칸 — 매일 1칸 편성인데 비축 0) · ② 11/5 09시 회차: bogeum1104 발행 전 금리표·보도자료 다시 열고 '올리기 전 확인' 채움 → 10:10 발행·verify · ③ 11/5 16:10 경제·정책·22:40 쇼츠 de1s_schdgrow 짝 칸 원고(관문 기한 10:10·16:40) | 2026-11-04 06:41 |
 | firemap-write-b | ① 임차권등기명령 다음 편: 신청 서류·전자소송 순서·보통 걸리는 기간(법원 공식 안내로, leasereg1102 이해 시험 남은 궁금증 3명) · ② 집주인 쪽 글: 임차권등기 말소와 보증금 반환 순서(판례 원문 확인 뒤) · ③ 퇴직금 IRP 퇴직소득세 근속 20·30년 예시 직접 계산(penlimit1022 약점) |
-| firemap-editor | P-3 110줄 판 재서명(youtube-loop 요청 오면, 시한 11/5 12:00)·K-1 21행 자막 재서명 | auto 서명(editgate stamp auto) 때 aitell.gate_pkg를 같이 돌리게 write에 요청 — defer1027처럼 발행 직전 cafe3 거절 막기 | A73(정리 칸 되풀이)을 aitell cafe3 경고로 — 첫 문단·본문 끝·정리 칸 같은 문장 찾기(newborn1103 '자기 달 금리' 3번) |
+| firemap-editor | P-3 110줄 판 재서명(youtube-loop 요청 오면, 시한 11/5 12:00) | A78(같은 말 연이은 두 문장: 'X도 올라갑니다. …Y도 커집니다')을 aitell cafe3 경고로 — 이웃 문장 낱말 겹침 비율로 찾기(j1pair1104·unemp60 c03) | auto 서명(editgate stamp auto) 때 aitell.gate_pkg를 같이 돌리게 write에 요청 — defer1027처럼 발행 직전 cafe3 거절 막기 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

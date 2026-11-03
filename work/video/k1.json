@@ -1,0 +1,1657 @@
+{
+ "fps": 30,
+ "scenes": [
+  {
+   "kind": "brand",
+   "lines": [
+    {
+     "text": "안녕하세요, 파이어맵입니다. 오늘은 금리 이야기입니다.",
+     "audio": "audio/k-1/6b43e4eebafcf98a.wav",
+     "frames": 123,
+     "cap": null
+    }
+   ],
+   "frames": 123,
+   "data": {
+    "line": "오늘은 금리 이야기",
+    "sub": "한국은행 9월분 숫자로"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "미국 국채금리가 올가을 5%에 닿았습니다.",
+     "audio": "audio/k-1/3dc21b0391c0befe.wav",
+     "frames": 87,
+     "cap": null
+    }
+   ],
+   "frames": 87,
+   "data": {
+    "pic": "bg/k1/ai/bank_ticket.png",
+    "license": "AI 생성 그림(RealVisXL V5.0, openrail++)",
+    "badge": "AI 생성 그림",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그럼 내 예금 이자와 대출 이자는 얼마나 따라 올랐을까요?",
+     "audio": "audio/k-1/d5034abcfcb08334.wav",
+     "frames": 128,
+     "cap": null
+    }
+   ],
+   "frames": 128,
+   "data": {
+    "pic": "bg/k1/board/k1_two_q.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "먼저, 정기예금 1억원이 다음 달에 만기인 분이 있다고 해 볼게요.",
+     "audio": "audio/k-1/58c6a92ce5d17faf.wav",
+     "frames": 114,
+     "cap": null
+    }
+   ],
+   "frames": 114,
+   "data": {
+    "pic": "bg/k1/ai/phone_tea_over.png",
+    "license": "AI 생성 그림(RealVisXL V5.0, openrail++)",
+    "badge": "AI 생성 그림",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그리고 2021년 여름에 고정금리로 집 대출을 받은 분은, 고정 기간이 올여름에 끝났어요.",
+     "audio": "audio/k-1/8ea54a63ea7f223b.wav",
+     "frames": 163,
+     "cap": null
+    }
+   ],
+   "frames": 163,
+   "data": {
+    "pic": "bg/k1/ai/keys_envelope.png",
+    "license": "AI 생성 그림(RealVisXL V5.0, openrail++)",
+    "badge": "AI 생성 그림",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "답부터 말하면, 예금이 만기인 분은 받을 이자가 1년 전보다 87만원 늘어요.",
+     "audio": "audio/k-1/e28ed7fe21e78b57.wav",
+     "frames": 153,
+     "cap": null
+    },
+    {
+     "text": "고정 기간이 끝난 대출은, 금리를 다시 정하면 처음 대출받았을 때보다 한 달 납입액이 31만원 정도 늘 수 있어요.",
+     "audio": "audio/k-1/3651ec00b2eb0b5f.wav",
+     "frames": 209,
+     "cap": null
+    }
+   ],
+   "frames": 362,
+   "data": {
+    "pic": "bg/k1/board/k1_answer2.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "뉴스는 대부분 앞으로 어떻게 될지를 이야기해요.",
+     "audio": "audio/k-1/625ffd4418382a3b.wav",
+     "frames": 90,
+     "cap": null
+    },
+    {
+     "text": "오늘은 지난 1년 동안 실제로 얼마나 올랐는지를, 한국은행 숫자로 봅니다.",
+     "audio": "audio/k-1/6e7f4c6375de6fb5.wav",
+     "frames": 127,
+     "cap": null
+    },
+    {
+     "text": "그런데 흔히 하는 말, 미국 금리 때문이라는 말은 숫자로 보면 조금 달라요.",
+     "audio": "audio/k-1/ce56fe53fda291f2.wav",
+     "frames": 179,
+     "cap": null
+    }
+   ],
+   "frames": 396,
+   "data": {
+    "pic": "bg/k1/board/k1_q5.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "국채금리는 나라가 돈을 빌릴 때 내는 이자죠.",
+     "audio": "audio/k-1/e8c1e0566f3ae6c1.wav",
+     "frames": 99,
+     "cap": null
+    }
+   ],
+   "frames": 99,
+   "data": {
+    "n": "1장",
+    "q": "미국 국채금리 5%, 무슨 숫자인가"
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "미국 정부가 10년 동안 빌리는 돈의 이자가, 뉴스에 자주 나오는 미국 국채금리입니다.",
+     "audio": "audio/k-1/31719331f0b3fd3f.wav",
+     "frames": 161,
+     "cap": null
+    }
+   ],
+   "frames": 161,
+   "data": {
+    "src": "bg/k1/stock/newspaper_hand.mp4",
+    "license": "Pexels 5905282 무료(Dziana Hasanbekava)",
+    "say": "뉴스에 자주 나오는 미국 국채금리",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "미국 정부에 만 달러를 빌려주면, 한 해 이자로 500달러를 받는 금리죠.",
+     "audio": "audio/k-1/b0314626c50ddf07.wav",
+     "frames": 128,
+     "cap": null
+    }
+   ],
+   "frames": 128,
+   "data": {
+    "pic": "bg/k1/board/k1_bond_note.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "이 금리가 처음 그 선에 닿은 건 9월 중순이었어요.",
+     "audio": "audio/k-1/f64ac3e6d46ad5fe.wav",
+     "frames": 110,
+     "cap": null
+    },
+    {
+     "text": "그 뒤 한 달 사이, 5% 이상이었던 날만 열아홉 날이었습니다.",
+     "audio": "audio/k-1/ee0ec987cc8aaf8f.wav",
+     "frames": 147,
+     "cap": null
+    },
+    {
+     "text": "가장 높았던 날은 5.3%를 넘었어요.",
+     "audio": "audio/k-1/d1bc1b695ccb42b3.wav",
+     "frames": 99,
+     "cap": null
+    },
+    {
+     "text": "지난번 이만큼 올랐던 때는 2023년 10월이었어요.",
+     "audio": "audio/k-1/c64c96fa307f172a.wav",
+     "frames": 113,
+     "cap": null
+    },
+    {
+     "text": "그달 평균이 4.8%였습니다.",
+     "audio": "audio/k-1/8fb2187306385d69.wav",
+     "frames": 74,
+     "cap": null
+    }
+   ],
+   "frames": 543,
+   "data": {
+    "pic": "bg/k1/board/k1_dgs10.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그때 우리 예금 금리가 어땠는지는 뒤에서 다시 볼게요.",
+     "audio": "audio/k-1/4117dcb488b0835f.wav",
+     "frames": 99,
+     "cap": null
+    }
+   ],
+   "frames": 99,
+   "data": {
+    "pic": "bg/k1/ai/passbook.png",
+    "license": "AI 생성 그림(RealVisXL V5.0, openrail++)",
+    "badge": "AI 생성 그림",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "더 거슬러 가면 2007년 6월이에요.",
+     "audio": "audio/k-1/f5932e56018b1cef.wav",
+     "frames": 79,
+     "cap": null
+    },
+    {
+     "text": "그달 평균은 5.1%였어요.",
+     "audio": "audio/k-1/7b3cdd175cfab107.wav",
+     "frames": 81,
+     "cap": null
+    },
+    {
+     "text": "그때 한국 주택담보대출 평균은 6%를 넘었습니다.",
+     "audio": "audio/k-1/f7f766180588df3f.wav",
+     "frames": 112,
+     "cap": null
+    },
+    {
+     "text": "지금 평균은 그때보다 꽤 낮은 편이죠.",
+     "audio": "audio/k-1/feee9c4be430fcff.wav",
+     "frames": 73,
+     "cap": null
+    }
+   ],
+   "frames": 345,
+   "data": {
+    "pic": "bg/k1/board/k1_2007.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "이 영상을 만든 무렵, 같은 10년짜리 한국 국채금리는 미국보다 1%포인트 가까이 낮았어요.",
+     "audio": "audio/k-1/732a34b8463a088c.wav",
+     "frames": 172,
+     "cap": null
+    },
+    {
+     "text": "%포인트는 금리 숫자끼리 뺀 차이를 말해요.",
+     "audio": "audio/k-1/997ba59e9d9d3b38.wav",
+     "frames": 95,
+     "cap": null
+    }
+   ],
+   "frames": 267,
+   "data": {
+    "pic": "bg/k1/board/k1_us_kr_now.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "미국 금리가 왜 이렇게 올랐는지는 설명이 여러 갈래라, 오늘은 내 통장 쪽 숫자만 봅니다.",
+     "audio": "audio/k-1/63889db5203d06a1.wav",
+     "frames": 171,
+     "cap": null
+    }
+   ],
+   "frames": 171,
+   "data": {
+    "src": "bg/k1/stock/newspaper_hand.mp4",
+    "license": "Pexels 5905282 무료(Dziana Hasanbekava)",
+    "say": "오늘은 내 통장 쪽 숫자만",
+    "side": "left",
+    "from": 30
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "먼저 예금부터 볼까요?",
+     "audio": "audio/k-1/2b8a129ad3c326b1.wav",
+     "frames": 65,
+     "cap": null
+    }
+   ],
+   "frames": 65,
+   "data": {
+    "n": "2장",
+    "q": "내 예금 이자는 얼마나 따라왔나"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "한국은행은 은행들이 그달 새로 받은 정기예금의 금리를 평균 내서 발표해요.",
+     "audio": "audio/k-1/eb289b41841ed139.wav",
+     "frames": 144,
+     "cap": null
+    },
+    {
+     "text": "한 해짜리 정기예금 평균을, 작년과 올해 9월끼리 비교해 볼게요.",
+     "audio": "audio/k-1/1d547ef4a070f3bb.wav",
+     "frames": 120,
+     "cap": null
+    }
+   ],
+   "frames": 264,
+   "data": {
+    "pic": "bg/k1/board/k1_passbook.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "작년엔 2.5%였어요.",
+     "audio": "audio/k-1/f976fd5e2c009dd2.wav",
+     "frames": 63,
+     "cap": null
+    },
+    {
+     "text": "올해는 3.6%입니다.",
+     "audio": "audio/k-1/05be6e9012a90a8e.wav",
+     "frames": 59,
+     "cap": null
+    },
+    {
+     "text": "그사이 1%포인트 넘게 뛰었죠.",
+     "audio": "audio/k-1/c0067676b84f39c8.wav",
+     "frames": 74,
+     "cap": null
+    }
+   ],
+   "frames": 196,
+   "data": {
+    "pic": "bg/k1/board/k1_dep_bar.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "다음 달 만기인 1억원이면요.",
+     "audio": "audio/k-1/1637c1d584cf6f11.wav",
+     "frames": 56,
+     "cap": null
+    },
+    {
+     "text": "작년 금리라면, 세금 떼고 받는 이자가 215만원이에요.",
+     "audio": "audio/k-1/efcf0e535dcda895.wav",
+     "frames": 130,
+     "cap": null
+    },
+    {
+     "text": "지금 금리면 302만원이고요.",
+     "audio": "audio/k-1/927fd91c76f73f1a.wav",
+     "frames": 64,
+     "cap": null
+    },
+    {
+     "text": "차이가 87만원입니다.",
+     "audio": "audio/k-1/f759a37e026fa6b0.wav",
+     "frames": 54,
+     "cap": null
+    },
+    {
+     "text": "한 달로 나누면 7만원 정도예요.",
+     "audio": "audio/k-1/abf3e4bca56a4d8f.wav",
+     "frames": 84,
+     "cap": null
+    }
+   ],
+   "frames": 388,
+   "data": {
+    "pic": "bg/k1/board/k1_dep_calc.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "더 예전과 비교하면 차이가 훨씬 큽니다.",
+     "audio": "audio/k-1/6016374ab572f361.wav",
+     "frames": 80,
+     "cap": null
+    },
+    {
+     "text": "다섯 해 전 이맘때는 평균이 1.3% 정도였거든요.",
+     "audio": "audio/k-1/e62deceb978454e2.wav",
+     "frames": 115,
+     "cap": null
+    },
+    {
+     "text": "같은 돈을 맡겼다면 세금 떼고 111만원을 받던 때예요.",
+     "audio": "audio/k-1/5c75d2ad48df5e6f.wav",
+     "frames": 127,
+     "cap": null
+    }
+   ],
+   "frames": 322,
+   "data": {
+    "pic": "bg/k1/board/k1_coins3.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "다른 금리 영상 댓글에 이런 사연이 있었어요. 2억원 예금이 곧 만기인데, 작년이랑 금리 차이가 꽤 난다고요.",
+     "audio": "audio/k-1/06a330139f5b9e42.wav",
+     "frames": 192,
+     "cap": null
+    },
+    {
+     "text": "2억원도 평균 금리로 따져 봤어요.",
+     "audio": "audio/k-1/2a8c1ccb0ec40f3f.wav",
+     "frames": 78,
+     "cap": null
+    },
+    {
+     "text": "작년보다, 세금 떼고 받는 이자가 174만원 정도 늘어요.",
+     "audio": "audio/k-1/1953c82e8d095e53.wav",
+     "frames": 101,
+     "cap": null
+    }
+   ],
+   "frames": 371,
+   "data": {
+    "pic": "bg/k1/ai/phone_scroll.png",
+    "license": "AI 생성 그림(RealVisXL V5.0, openrail++)",
+    "badge": "AI 생성 그림",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "예금 금리와 같이 보면 좋은 숫자가 하나 있어요. 코픽스예요.",
+     "audio": "audio/k-1/2ea073b583927bcb.wav",
+     "frames": 105,
+     "cap": null
+    },
+    {
+     "text": "코픽스는 은행들이 예금 같은 걸로 돈을 모을 때 주는 금리를 평균 낸 숫자입니다.",
+     "audio": "audio/k-1/f3f98c0fd4199745.wav",
+     "frames": 150,
+     "cap": null
+    },
+    {
+     "text": "그달 새로 모은 돈을 보는 신규 코픽스도 1년 새 같이 올랐어요.",
+     "audio": "audio/k-1/809cb5b55c85b469.wav",
+     "frames": 116,
+     "cap": null
+    },
+    {
+     "text": "은행이 돈 모으는 값이 왜 올랐는지는, 공식 자료엔 이유가 적혀 있지 않아요.",
+     "audio": "audio/k-1/5cc5d97653740687.wav",
+     "frames": 121,
+     "cap": null
+    }
+   ],
+   "frames": 492,
+   "data": {
+    "pic": "bg/k1/board/k1_cofix89.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "다른 금리 영상 댓글에서 좋아요를 많이 받은 질문이 있어요. 대출 이자랑 예금 이자 차이가 너무 크지 않냐는 거예요.",
+     "audio": "audio/k-1/d3ec8e2ea8e35255.wav",
+     "frames": 185,
+     "cap": null
+    },
+    {
+     "text": "새로 맺은 주택담보대출 평균 금리에서 정기예금 평균 금리를 빼 봤어요.",
+     "audio": "audio/k-1/fbe338053b4b75d5.wav",
+     "frames": 150,
+     "cap": null
+    },
+    {
+     "text": "작년이나 지금이나 1.5%포인트 정도입니다.",
+     "audio": "audio/k-1/fec08792b586e8a0.wav",
+     "frames": 89,
+     "cap": null
+    },
+    {
+     "text": "그사이엔 거의 그대로였고, 다섯 해 전엔 오히려 더 벌어져 있었어요.",
+     "audio": "audio/k-1/1c1eab0e3ab1a970.wav",
+     "frames": 133,
+     "cap": null
+    }
+   ],
+   "frames": 557,
+   "data": {
+    "pic": "bg/k1/board/k1_gap.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "이번엔 대출인데요. 주택담보대출은 크게 둘로 나뉩니다.",
+     "audio": "audio/k-1/42686eeca291f24f.wav",
+     "frames": 114,
+     "cap": null
+    }
+   ],
+   "frames": 114,
+   "data": {
+    "n": "3장",
+    "q": "내 대출 이자는 — 고정형과 변동형"
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "정해진 기간 동안 금리가 그대로인 고정형, 그리고 몇 달마다 금리가 바뀌는 변동형이에요.",
+     "audio": "audio/k-1/314a2fb3efa95d95.wav",
+     "frames": 164,
+     "cap": null
+    }
+   ],
+   "frames": 164,
+   "data": {
+    "src": "bg/k1/stock/loan_papers.mp4",
+    "license": "Pexels 7821634 무료(RDNE Stock project)",
+    "say": "고정형과 변동형",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "1년 동안 새로 받은 대출 금리를 같이 놓고 볼게요.",
+     "audio": "audio/k-1/71e104e58fede111.wav",
+     "frames": 81,
+     "cap": null
+    },
+    {
+     "text": "고정형은 1%포인트 넘게 올랐어요.",
+     "audio": "audio/k-1/455a1d652fd0305e.wav",
+     "frames": 80,
+     "cap": null
+    },
+    {
+     "text": "변동형은 그 절반을 조금 넘었습니다.",
+     "audio": "audio/k-1/3debf92465a78c6f.wav",
+     "frames": 72,
+     "cap": null
+    }
+   ],
+   "frames": 233,
+   "data": {
+    "pic": "bg/k1/board/k1_fix_var.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그런데 1년 전엔 오히려 변동형이 고정형보다 조금 더 비쌌어요.",
+     "audio": "audio/k-1/ba0455e546e89878.wav",
+     "frames": 114,
+     "cap": null
+    },
+    {
+     "text": "올해 4월부터 순서가 바뀌어서, 지금은 고정형이 더 비쌉니다.",
+     "audio": "audio/k-1/5efe14803ddc5687.wav",
+     "frames": 111,
+     "cap": null
+    }
+   ],
+   "frames": 225,
+   "data": {
+    "pic": "bg/k1/board/k1_cross.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "3억원을 서른 해 동안 갚는 대출로 셈해 볼게요.",
+     "audio": "audio/k-1/479628cf4bea8b82.wav",
+     "frames": 104,
+     "cap": null
+    },
+    {
+     "text": "작년 고정형 금리라면 한 달에 142만원이에요.",
+     "audio": "audio/k-1/dc96cb4be5eef162.wav",
+     "frames": 102,
+     "cap": null
+    },
+    {
+     "text": "지금 금리면 163만원입니다.",
+     "audio": "audio/k-1/4887f7a72ce89b52.wav",
+     "frames": 77,
+     "cap": null
+    },
+    {
+     "text": "새로 빌리는 사람이라면, 1년 전보다 한 달에 21만원 정도 더 내는 셈이죠.",
+     "audio": "audio/k-1/ea57d4a38ad6b6e9.wav",
+     "frames": 131,
+     "cap": null
+    },
+    {
+     "text": "변동형으로 새로 빌렸다면, 1년 전보다 늘어난 돈은 한 달 12만원 정도예요.",
+     "audio": "audio/k-1/a567e27c48ef1270.wav",
+     "frames": 153,
+     "cap": null
+    }
+   ],
+   "frames": 567,
+   "data": {
+    "pic": "bg/k1/board/k1_3eok_table.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그럼 고정형과 변동형 중 어느 쪽이 나을까요? 이건 앞으로 금리에 달린 일이라, 여기선 답하지 않을게요. 지난 1년에 어떻게 움직였는지까지만 보여 드리는 거예요.",
+     "audio": "audio/k-1/6e9c06524398385f.wav",
+     "frames": 302,
+     "cap": null
+    },
+    {
+     "text": "그럼 변동형은 왜 덜 올랐을까요?",
+     "audio": "audio/k-1/b49b1f3dcbda0221.wav",
+     "frames": 75,
+     "cap": null
+    }
+   ],
+   "frames": 377,
+   "data": {
+    "src": "bg/k1/stock/rain_window.mp4",
+    "license": "Pexels 4786522 무료(Mark Warner)",
+    "say": "어느 쪽이 나을지는 앞으로 금리에 달린 일",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "변동형 금리는 보통 코픽스에, 은행이 붙이는 금리를 더해서 정해요.",
+     "audio": "audio/k-1/0ddb72e9f9503e1b.wav",
+     "frames": 123,
+     "cap": null
+    },
+    {
+     "text": "그런데 코픽스는 한 가지가 아니거든요.",
+     "audio": "audio/k-1/03502e857155d40d.wav",
+     "frames": 65,
+     "cap": null
+    },
+    {
+     "text": "그달 새로 모은 돈만 보는 신규 코픽스가 있고, 은행에 남아 있는 돈 전부를 보는 잔액 코픽스도 있어요.",
+     "audio": "audio/k-1/bc863dac2330ad9d.wav",
+     "frames": 165,
+     "cap": null
+    },
+    {
+     "text": "잔액 코픽스에는 예전에 낮은 금리로 받은 예금이 섞여 있어요. 그래서 천천히 움직입니다.",
+     "audio": "audio/k-1/23f030ead099d10c.wav",
+     "frames": 179,
+     "cap": null
+    }
+   ],
+   "frames": 532,
+   "data": {
+    "pic": "bg/k1/board/k1_cofix3.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "찬물이 가득한 큰 통에 더운물을 조금 부으면, 온도가 천천히 오르는 것과 비슷해요.",
+     "audio": "audio/k-1/d8bd288a696dba26.wav",
+     "frames": 153,
+     "cap": null
+    }
+   ],
+   "frames": 153,
+   "data": {
+    "src": "bg/k1/stock/rain_window.mp4",
+    "license": "Pexels 4786522 무료(Mark Warner)",
+    "say": "온도가 천천히 오르듯",
+    "side": "left",
+    "from": 180
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "같은 기간 신규 코픽스는 0.9%포인트 올랐어요.",
+     "audio": "audio/k-1/cc09415133e621a5.wav",
+     "frames": 105,
+     "cap": null
+    },
+    {
+     "text": "잔액 코픽스는 0.3%포인트가 안 됐고요.",
+     "audio": "audio/k-1/02c48e029fdb58c1.wav",
+     "frames": 102,
+     "cap": null
+    },
+    {
+     "text": "다만 변동형 평균이 이 중 어느 것을 얼마나 따랐는지는, 자료로 나눠 볼 수가 없어요.",
+     "audio": "audio/k-1/8c020862ef07ce47.wav",
+     "frames": 169,
+     "cap": null
+    }
+   ],
+   "frames": 376,
+   "data": {
+    "pic": "bg/k1/board/k1_cofix89.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "여기서 조심할 게 두 가지 있어요.",
+     "audio": "audio/k-1/07c28fd458675e85.wav",
+     "frames": 68,
+     "cap": null
+    },
+    {
+     "text": "하나, 내 변동금리는 코픽스 그대로가 아니에요. 은행이 붙이는 금리가 달라서, 같은 코픽스라도 사람마다 금리가 달라요.",
+     "audio": "audio/k-1/18a5c1b904c1d8ac.wav",
+     "frames": 212,
+     "cap": null
+    },
+    {
+     "text": "둘, 오늘 본 한국은행 숫자는 그달 새로 맺은 대출의 평균이에요. 이미 빌린 분의 금리는 아닙니다.",
+     "audio": "audio/k-1/b8f15fc23a8c5dfd.wav",
+     "frames": 195,
+     "cap": null
+    }
+   ],
+   "frames": 475,
+   "data": {
+    "pic": "bg/k1/board/k1_trap.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "이제 흔한 말 하나를 숫자로 볼게요. 내 이자가 오른 게 미국 금리 때문이라는 말이요.",
+     "audio": "audio/k-1/734e0cc1a4d89e22.wav",
+     "frames": 145,
+     "cap": null
+    }
+   ],
+   "frames": 145,
+   "data": {
+    "n": "4장",
+    "q": "미국 때문일까"
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "은행 금리 자료가 9월분까지라, 작년과 올해 같은 달끼리 맞췄어요.",
+     "audio": "audio/k-1/ced9c7e8c1705b41.wav",
+     "frames": 125,
+     "cap": null
+    }
+   ],
+   "frames": 125,
+   "data": {
+    "src": "bg/k1/stock/coffee_cloudy.mp4",
+    "license": "Pexels 6343938 무료(KATRIN  BOLOVTSOVA)",
+    "say": "작년과 올해 같은 달끼리",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "한 해 동안 미국 국채금리는 거의 0.9%포인트 올랐어요.",
+     "audio": "audio/k-1/a54e7f027d605f5a.wav",
+     "frames": 117,
+     "cap": null
+    },
+    {
+     "text": "같은 기간 한국 국채금리는, 같은 만기로 비교해 보면 1.6%포인트 올랐습니다.",
+     "audio": "audio/k-1/2742eab03e701657.wav",
+     "frames": 156,
+     "cap": null
+    },
+    {
+     "text": "한국 쪽이 두 배 가까이 더 움직였어요.",
+     "audio": "audio/k-1/820644b5b182ba97.wav",
+     "frames": 68,
+     "cap": null
+    }
+   ],
+   "frames": 341,
+   "data": {
+    "pic": "bg/k1/board/k1_us_kr_1y.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그리고 은행 평균 금리와 더 닮은 쪽도 미국이 아니었어요.",
+     "audio": "audio/k-1/c104d47d2717b902.wav",
+     "frames": 96,
+     "cap": null
+    }
+   ],
+   "frames": 96,
+   "data": {
+    "src": "bg/k1/stock/newspaper_hand.mp4",
+    "license": "Pexels 5905282 무료(Dziana Hasanbekava)",
+    "say": "더 닮은 쪽은 미국이 아니었다",
+    "side": "left",
+    "from": 120
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "2013년부터 달마다, 금리가 오르고 내린 폭을 서로 맞대 봤어요.",
+     "audio": "audio/k-1/f1c21f33815a3cf3.wav",
+     "frames": 127,
+     "cap": null
+    },
+    {
+     "text": "정기예금과 고정형 대출은 미국 국채보다 한국 국채, 그중에서도 3년짜리와 더 비슷하게 움직였어요.",
+     "audio": "audio/k-1/32c6242478be0a44.wav",
+     "frames": 204,
+     "cap": null
+    },
+    {
+     "text": "예를 들어 국채가 오른 달에 예금 금리도 올랐다면, 같은 쪽으로 움직인 달로 칩니다.",
+     "audio": "audio/k-1/4df464670b44a33c.wav",
+     "frames": 149,
+     "cap": null
+    }
+   ],
+   "frames": 480,
+   "data": {
+    "pic": "bg/k1/ai/calendar_hand.png",
+    "license": "AI 생성 그림(RealVisXL V5.0, openrail++)",
+    "badge": "AI 생성 그림",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "정기예금 평균은 한국 3년 국채와 같은 쪽으로 움직인 달이 열 달에 거의 일곱 달꼴입니다.",
+     "audio": "audio/k-1/041612d63ec0f4fb.wav",
+     "frames": 170,
+     "cap": null
+    },
+    {
+     "text": "미국 국채와는 열 달에 다섯 달을 조금 넘었고요.",
+     "audio": "audio/k-1/155c746e88642e72.wav",
+     "frames": 96,
+     "cap": null
+    },
+    {
+     "text": "고정형 대출도 한국 3년 국채와는 열 달에 일곱 달 넘게 같은 쪽이었어요.",
+     "audio": "audio/k-1/502b2ee80fbdf606.wav",
+     "frames": 143,
+     "cap": null
+    }
+   ],
+   "frames": 409,
+   "data": {
+    "pic": "bg/k1/board/k1_samedir.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "다만 같이 움직였다는 뜻이지, 한국 국채 때문에 올랐다는 뜻은 아니에요.",
+     "audio": "audio/k-1/8d59e39bdf630b69.wav",
+     "frames": 123,
+     "cap": null
+    }
+   ],
+   "frames": 123,
+   "data": {
+    "src": "bg/k1/stock/dusk_table.mp4",
+    "license": "Pexels 6780621 무료(Chris G)",
+    "say": "같이 움직였다는 뜻이지 그 때문은 아니다",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "변동형은 오르내린 폭으로 따지면 어느 국채와도 잘 안 닮았어요.",
+     "audio": "audio/k-1/3a6c3ca0ae99f2e2.wav",
+     "frames": 109,
+     "cap": null
+    },
+    {
+     "text": "미국과 한국 10년 국채금리가 꽤 비슷하게 움직이는 건 맞아요.",
+     "audio": "audio/k-1/07d2fe9f3133bb92.wav",
+     "frames": 121,
+     "cap": null
+    },
+    {
+     "text": "그래도 은행 평균 금리에 더 가까운 건 한국 금리였어요.",
+     "audio": "audio/k-1/63a4218ab658b9a4.wav",
+     "frames": 90,
+     "cap": null
+    }
+   ],
+   "frames": 320,
+   "data": {
+    "pic": "bg/k1/board/k1_samedir.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "이 비교 기간에 한국은행 기준금리도 두 번 올라 3%가 됐죠.",
+     "audio": "audio/k-1/33b2a680b4293118.wav",
+     "frames": 108,
+     "cap": null
+    },
+    {
+     "text": "한국 국채가 왜 미국보다 더 올랐는지는, 공식 자료에 이유가 적혀 있지 않아요.",
+     "audio": "audio/k-1/29b6f6e1efea0b6a.wav",
+     "frames": 155,
+     "cap": null
+    }
+   ],
+   "frames": 263,
+   "data": {
+    "pic": "bg/k1/board/k1_base_steps.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그럼 앞에서 본 그때, 2023년 가을엔 어땠을까요?",
+     "audio": "audio/k-1/9b45ef36133f04b2.wav",
+     "frames": 106,
+     "cap": null
+    },
+    {
+     "text": "정기예금 평균은 그해 11월에 가장 높았어요.",
+     "audio": "audio/k-1/55723bcc581219f2.wav",
+     "frames": 93,
+     "cap": null
+    },
+    {
+     "text": "4.2%였죠.",
+     "audio": "audio/k-1/120549fde2e6dd46.wav",
+     "frames": 39,
+     "cap": null
+    },
+    {
+     "text": "그로부터 석 달 뒤엔 3.6%로 내려왔습니다.",
+     "audio": "audio/k-1/062af444de03bed7.wav",
+     "frames": 89,
+     "cap": null
+    },
+    {
+     "text": "그때는 오를 때도 내릴 때도 몇 달 사이였어요. 이번에도 그럴지는 알 수 없습니다.",
+     "audio": "audio/k-1/8fd25e92fc0d6c0d.wav",
+     "frames": 145,
+     "cap": null
+    }
+   ],
+   "frames": 472,
+   "data": {
+    "pic": "bg/k1/board/k1_2023.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "이제 고정금리 대출 이야기예요.",
+     "audio": "audio/k-1/4b989df8963c80bb.wav",
+     "frames": 64,
+     "cap": null
+    }
+   ],
+   "frames": 64,
+   "data": {
+    "n": "5장",
+    "q": "고정 끝나는 사람은 얼마나 오르나"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "고정 기간이 끝나는 사람은, 새로 빌리는 사람보다 더 크게 늘 수 있습니다.",
+     "audio": "audio/k-1/455e5b8608051f36.wav",
+     "frames": 132,
+     "cap": null
+    },
+    {
+     "text": "여기서부터는 작년이 아니라, 처음 대출받은 2021년과 비교해요.",
+     "audio": "audio/k-1/0580595e7c24d1a7.wav",
+     "frames": 129,
+     "cap": null
+    }
+   ],
+   "frames": 261,
+   "data": {
+    "pic": "bg/k1/board/k1_calendar.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "처음에 말한 분, 2021년 여름에 집을 사며 대출받은 경우로 돌아가 보죠.",
+     "audio": "audio/k-1/fad41f8dccb8d0dd.wav",
+     "frames": 136,
+     "cap": null
+    },
+    {
+     "text": "3억원을 서른 해 동안 갚는 고정형이에요.",
+     "audio": "audio/k-1/77f8c3045301710b.wav",
+     "frames": 80,
+     "cap": null
+    }
+   ],
+   "frames": 216,
+   "data": {
+    "pic": "bg/k1/ai/keys_envelope.png",
+    "license": "AI 생성 그림(RealVisXL V5.0, openrail++)",
+    "badge": "AI 생성 그림",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그때 고정형 평균 금리는 3%가 안 됐어요.",
+     "audio": "audio/k-1/0728903f582c2adc.wav",
+     "frames": 94,
+     "cap": null
+    },
+    {
+     "text": "한 달에 126만원을 냈습니다.",
+     "audio": "audio/k-1/0fd849c4c79b34ee.wav",
+     "frames": 66,
+     "cap": null
+    },
+    {
+     "text": "5년이 지나 고정 기간이 끝나고, 지금 고정형 평균 금리로 다시 정한다고 놓아 볼게요.",
+     "audio": "audio/k-1/58b27f811b4dcf35.wav",
+     "frames": 142,
+     "cap": null
+    },
+    {
+     "text": "한 달에 158만원이 됩니다.",
+     "audio": "audio/k-1/297415971ce3e37b.wav",
+     "frames": 59,
+     "cap": null
+    },
+    {
+     "text": "새로 빌리는 사람의 163만원보다 조금 적은 건, 그새 갚은 원금이 빠졌기 때문이에요.",
+     "audio": "audio/k-1/e37631c6df9cb1bf.wav",
+     "frames": 150,
+     "cap": null
+    }
+   ],
+   "frames": 511,
+   "data": {
+    "pic": "bg/k1/board/k1_reset_flow.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "2021년에 내던 돈보다 한 달 31만원 정도 늘어요.",
+     "audio": "audio/k-1/8de0c595e5ec911e.wav",
+     "frames": 116,
+     "cap": null
+    },
+    {
+     "text": "한 해면 370만원이 넘습니다.",
+     "audio": "audio/k-1/183748c896931341.wav",
+     "frames": 59,
+     "cap": null
+    }
+   ],
+   "frames": 175,
+   "data": {
+    "pic": "bg/k1/board/k1_answer2.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "변동형 평균으로 다시 정했다면, 2021년보다 늘어나는 돈은 한 달 26만원 정도예요.",
+     "audio": "audio/k-1/9fb5a578ad2063c1.wav",
+     "frames": 184,
+     "cap": null
+    },
+    {
+     "text": "이건 평균 금리로 셈한 가정이에요. 실제 금리는 은행과 상품마다 다릅니다.",
+     "audio": "audio/k-1/a93e8266946945f5.wav",
+     "frames": 133,
+     "cap": null
+    }
+   ],
+   "frames": 317,
+   "data": {
+    "pic": "bg/k1/board/k1_reset_two.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "고정 5년이 길어 보여도 금방 간다는 댓글이 있었죠.",
+     "audio": "audio/k-1/63169d2b61874498.wav",
+     "frames": 95,
+     "cap": null
+    },
+    {
+     "text": "2021년 무렵 낮은 금리로 고정해 둔 분이라면, 그 날이 언제인지부터 보셔야 해요.",
+     "audio": "audio/k-1/91a9ee571a260031.wav",
+     "frames": 143,
+     "cap": null
+    }
+   ],
+   "frames": 238,
+   "data": {
+    "pic": "bg/k1/ai/phone_scroll.png",
+    "license": "AI 생성 그림(RealVisXL V5.0, openrail++)",
+    "badge": "AI 생성 그림",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그날이 오면 다시 고정으로 갈지, 변동으로 갈지도 정하게 돼요. 지금 평균으로는 변동형이 조금 낮지만, 앞으로도 그럴지는 알 수 없습니다.",
+     "audio": "audio/k-1/dd1e1f56e82f4318.wav",
+     "frames": 257,
+     "cap": null
+    }
+   ],
+   "frames": 257,
+   "data": {
+    "pic": "bg/k1/board/k1_reset_two.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "오늘 하실 일은 하나예요. 내 약정서나 예금 통장에서 날짜 한 줄을 찾아 보세요.",
+     "audio": "audio/k-1/48ac1983d0810ae8.wav",
+     "frames": 159,
+     "cap": null
+    }
+   ],
+   "frames": 159,
+   "data": {
+    "n": "6장",
+    "q": "그래서 볼 날짜"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "변동형이면 금리가 다시 정해지는 날, 고정형이면 고정이 끝나는 날, 예금이면 만기일이에요.",
+     "audio": "audio/k-1/b606eb5db8669863.wav",
+     "frames": 185,
+     "cap": null
+    },
+    {
+     "text": "대출이라면 그날 금리로 한 달 납입액을 다시 셈해 보면, 얼마가 늘지 미리 알 수 있어요.",
+     "audio": "audio/k-1/874bc8e947aace3e.wav",
+     "frames": 186,
+     "cap": null
+    }
+   ],
+   "frames": 371,
+   "data": {
+    "pic": "bg/k1/board/k1_check3.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "이 셈은 파이어맵 사이트의 대출이자 계산기에 넣으면 바로 나와요.",
+     "audio": "audio/k-1/48c08eb50509acc9.wav",
+     "frames": 133,
+     "cap": null
+    }
+   ],
+   "frames": 133,
+   "data": {
+    "src": "bg/k1/stock/notebook_hand.mp4",
+    "license": "Pexels 6326847 무료(https://kaboompics.com/)",
+    "say": "대출이자 계산기",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "예금이라면 만기 날, 그날 은행이 주는 금리로 이자를 다시 셈해 보면 됩니다.",
+     "audio": "audio/k-1/2a072a64d64ffe6f.wav",
+     "frames": 150,
+     "cap": null
+    }
+   ],
+   "frames": 150,
+   "data": {
+    "pic": "bg/k1/ai/passbook.png",
+    "license": "AI 생성 그림(RealVisXL V5.0, openrail++)",
+    "badge": "AI 생성 그림",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "미국 금리 5%라는 큰 숫자보다, 내 약정서 한 줄이 내 이자를 더 많이 말해 줘요.",
+     "audio": "audio/k-1/2a54ed5afe0af97a.wav",
+     "frames": 153,
+     "cap": null
+    },
+    {
+     "text": "다음 영상에서 다시 뵙겠습니다.",
+     "audio": "audio/k-1/c2bffcda9bf2cf50.wav",
+     "frames": 61,
+     "cap": null
+    },
+    {
+     "text": "",
+     "audio": null,
+     "frames": 690,
+     "cap": null
+    }
+   ],
+   "frames": 979,
+   "data": {
+    "pic": "bg/k1/ai/dusk_table.png",
+    "license": "AI 생성 그림(RealVisXL V5.0, openrail++)",
+    "badge": "AI 생성 그림",
+    "zoom": [
+     1.0,
+     1.08
+    ]
+   }
+  }
+ ],
+ "badge": ""
+}

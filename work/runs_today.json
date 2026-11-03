@@ -38,6 +38,16 @@
     "url": "https://cafe.naver.com/firemap/380"
    },
    "note": "12:40 칸 samdiv1103(write-b 작성·관문 통과) 발행 · verify OK 1924자·사진 3 · 검증 경로: write-b 회차 crosscheck+selfcheck(사실 0) · readcheck 긴문장 1건 고침 · 블로그는 하루 상한·무색인 방침으로 안 올림 · 개선: 없음"
+  },
+  {
+   "hour": 15,
+   "ts": "16:50",
+   "blog": null,
+   "cafe": {
+    "title": "종합소득세 중간예납 고지서, 연금만 받아도 낼까?",
+    "url": "https://cafe.naver.com/firemap/381"
+   },
+   "note": "16:10 칸 midtax1103 16:49 발행(jitter 48분 31초) verify OK 1330/1330자·사진 3/3 · 올리기 전 확인 11/3 06:4x(1일 안)·readcheck 0·aitell spoken 통과 · 11/4 10:10 부동산 칸 rechg1103 '재초환 부담금, 한 집만 오래 가지면 얼마나 줄까?' 관문 통과(법 원문 9조 웹 저장, 자료조사 출처 S1~S9+기사 4, 교차검증: 사실 지적 0 · 말투 12건 중 반영 10·유지 2(사실이 바뀜), 이해 2차 6명 뜻 틀림0, editgate auto, slots 배정) · 블로그 없음(규칙 쉬는 날·편성 없음) · 개선: naverpost jitter 안내 문구 '최대 약 40분'→'칸 시각+52분까지'(실제 48분 31초 쉼, 감시를 두 번 헛걸었음)"
   }
  ]
 }

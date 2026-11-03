@@ -3139,7 +3139,8 @@
    "owner": "firemap-write",
    "gates_ok": "2026-11-03 06:40",
    "note": "firemap-meeting 2026-11-02 21:37: 장르 경제·정책 · pibucut1025는 defer1027(07:40)과 같은 피부양자라 이번 주 뒤쪽(11/5 이후) | firemap-write 06:40: midtax1103 '종합소득세 중간예납 고지서, 연금만 받아도 낼까?'(세금, 검색 4,440) 관문 통과 — 소득세법 65·76·77·86조·시행령 123·140조·국세기본법 47조의4 원문 11/3, 기준액 100만원 미만 고지 없음·추계 신고선=고지 금액 60% 직접 계산(경쟁 6편 0편), 이해 3차 9명·교차검증(Gemini)·selfcheck 사실 0·editgate auto · 끝 안내 없음(11/3 지시) · 발행은 15시 회차",
-   "pkg": "work/research/midtax1103/pkg"
+   "pkg": "work/research/midtax1103/pkg",
+   "published": "https://cafe.naver.com/firemap/381 16:49 verify OK 1330자"
   },
   {
    "at": "2026-11-03 18:40",

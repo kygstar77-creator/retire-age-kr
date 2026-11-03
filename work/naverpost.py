@@ -53,7 +53,9 @@ def acquire_lock(wait_sec=900):
                 # 주인이 죽었으면 바로 버린다. 나이만 보면 죽은 잠금을 30분이나 기다리다 회차를 놓친다.
                 try: owner = open(LOCK, encoding='utf-8').read().strip()
                 except Exception: owner = ''
-                if not _alive(owner) or time.time() - os.path.getmtime(LOCK) > 1800:
+                # 2026-11-03 16:44: 주인이 살아 있으면 나이로 버리지 않는다. 카페 칸 안 jitter는 잠금을 쥔 채 최대 52분 쉬는데,
+                #   30분 규칙 때문에 check가 16:00부터 발행 대기 중이던 midtax1103(PID 987388)의 잠금을 지웠다. 나이 규칙은 주인을 모를 때만.
+                if not _alive(owner) or (not owner and time.time() - os.path.getmtime(LOCK) > 1800):
                     print(f'죽은 잠금 제거 (PID {owner or "?"})'); os.remove(LOCK)
             fd = os.open(LOCK, os.O_CREAT | os.O_EXCL | os.O_WRONLY); os.write(fd, str(os.getpid()).encode()); os.close(fd); return True
         except FileExistsError:
@@ -1118,7 +1120,7 @@ def jitter(kind, pkg=None):
     # 2026-09-28 03시: 회차가 `timeout 900`으로 감싸 돌렸는데 15분 16초를 뽑아 쉬는 중에 죽었다.
     # 출력엔 에러가 없고 published.txt만 없어 한참 헤맸다. 잠금 대기 15분 + 여기 17분 + 발행이라
     # 바깥에서 시간 제한을 걸려면 35분 넘게 준다(아니면 백그라운드로 돌린다).
-    print(f'{kind} 발행 전 {s//60}분 {s%60}초 쉰다(정각 몰림 방지) — 바깥 timeout은 60분 이상(카페 칸 안이면 최대 약 40분)', flush=True)
+    print(f'{kind} 발행 전 {s//60}분 {s%60}초 쉰다(정각 몰림 방지) — 바깥 timeout은 60분 이상(카페 칸 안이면 칸 시각 +52분까지 — 11/3 16:10 칸 48분 31초)', flush=True)
     time.sleep(s)
 
 def alive(page):

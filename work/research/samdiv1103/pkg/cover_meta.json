@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-03 11:03",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "삼성전자 배당금/건보료는 몇 주부터",
+ "num": "1,692주부터 1천만원 넘어요",
+ "sub": "지역가입자 · 2026년 1주당 5,913원",
+ "label": "DART 공시",
+ "src": "공시·법령 11/3 확인",
+ "icon": "coins",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 120,
+ "num_px": 76,
+ "sub_px": 57,
+ "board": [
+  "leasereg1102",
+  "defer1027",
+  "fxdepfee1026",
+  "jbcalc1027",
+  "wolsegong1027",
+  "pen600_1102",
+  "hfheir1028",
+  "crdt1027",
+  "rtcancel1022",
+  "cpi2pct1022"
+ ]
+}

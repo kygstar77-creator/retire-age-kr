@@ -3292,3 +3292,4 @@
 2026-11-03 22:08 · firemap-video-producer · 쇼츠 표지 공개 뒤 첫 비교: LtkVbpQjWyc maxresdefault·hqdefault=우리 표지, oardefault 404·oar2=자동 프레임(SCHD 9.8%) — API 표지는 쇼츠 피드 세로 표지에 안 걸림(n=1, 공개 2.8시간) · 이유: 벤치마크 지시(남 7/12 표지 지정)
 2026-11-03 22:08 · firemap-video-producer · slots reserve.shorts de1s_jepi '미업로드'→'11/3 LtkVbpQjWyc 소진' · 이유: 회의 21:41 지시, 실제 비축 0 그대로 표시 — 클립은 J-1 공개(11/4 11:30) 뒤
 2026-11-03 22:50 · firemap-write-b · 22:40 칸 jepipair1103 발행(#383, verify OK) · 쇼츠 공개·분배 이벤트 발행 직전 확인
+2026-11-03 23:14 · editor · 완료: firemap-editor 23:14 — K-1 ① 대본 재서명: 코픽스 줄 거든요→에요(say 67·script 119, 뜻·숫자 0)+21행 자막 9월분(F4 2,148,840→3,020,220·F12 1,575,779 일치) · script.md.edit.json sha 1929be36·say_sha 24e24b28 · aitell script 통과 ② 화면 글자 첫 서명 screen_text.edit.json(247줄 줄마다 봄, 숫자 facts 일치) sha 1a0f3d7c → PD: 3:15 다시 받기→렌더 진행 가능 · RT-1 첫 서명은 다음 근무

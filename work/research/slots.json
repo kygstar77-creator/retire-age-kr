@@ -3149,7 +3149,8 @@
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-03 14:06",
    "note": "firemap-meeting 2026-11-02 21:37: 장르 부동산② · 국토부 실거래·공시가격·대출 규제 원문만, 네이버 부동산 화면 금지 | firemap-write-b 14:06: 비축 부동산 0(pibucut1025 피부양자·renewpair1102 11/4 짝 글) → 새 글 newborn1103 '신생아 특례대출 5년 뒤 금리 얼마나 오를까?'(주택 구입 정책 대출, 검색 신생아특례대출 112,000·우리 첫 글) — 주택도시기금포털 금리표·규칙 5곳 11/3 원문, 8.5천 초과 종료 후 금리 11월 접수 4.77%(35달 중 최고)·8.5천 이하 +0.75%p, 3억 30년 6년째 +10.6만·+23.2만·+9.6만원 직접 계산(경쟁 7편 0편) · 이해 3차 9명·교차검증(Gemini, 사실 5건 유지 — 1.3억 초과 +0.2%p는 하한)·selfcheck 사실 0·editgate auto b5d91d65 · 끝 안내 없음 · 발행은 16:4x write-b 회차 | firemap-write-b 17:01: 16:4x 회차는 slot 18 전이라 못 올림(코너 시각 전) — firemap-write 18:1x 회차가 pending 맨 위(newborn1103)를 올린다, 못 올리면 write-b 19:4x 회차가 늦은 칸으로",
-   "pkg": "work/research/newborn1103/pkg"
+   "pkg": "work/research/newborn1103/pkg",
+   "published": "https://cafe.naver.com/firemap/382 18:50 verify OK 1884자"
   },
   {
    "at": "2026-11-03 19:20",
@@ -3196,10 +3197,10 @@
   {
    "at": "2026-11-04 12:40",
    "kind": "cafe",
-   "item": "yt_pair 짝 긴 글 — J-1 롱폼(11/4 11:30) 전체 표",
+   "item": "j1pair1104",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-02 21:37: yt_pair: J-1 · ep/J-1/cafe.md(공시 12~40억×거주/비거주×나이 표, calc.py·facts.txt) + 영상 링크 · **J-1이 실제 공개된 경우만**(못 올라가면 이 칸은 주식 장르 다른 글) · 설명란 {CAFE}에 글 주소 | PD 2026-11-03 06:04: J-1 예약됨 https://youtu.be/NNcjTE0L7yg (11/4 11:30 공개) — 글 주소 나오면 설명란 카페 줄을 그 글로"
+   "gates_ok": "2026-11-03 18:42",
+   "note": "firemap-meeting 2026-11-02 21:37: yt_pair: J-1 · ep/J-1/cafe.md(공시 12~40억×거주/비거주×나이 표, calc.py·facts.txt) + 영상 링크 · **J-1이 실제 공개된 경우만**(못 올라가면 이 칸은 주식 장르 다른 글) · 설명란 {CAFE}에 글 주소 | PD 2026-11-03 06:04: J-1 예약됨 https://youtu.be/NNcjTE0L7yg (11/4 11:30 공개) — 글 주소 나오면 설명란 카페 줄을 그 글로 | firemap-write 2026-11-03 18:42: j1pair1104 '종부세 개편안 내 집 공시가격이면 얼마 달라질까?' 관문 통과(이해 3차 9명·crosscheck·editgate auto aeceebfe) — 발행 회차: J-1(NNcjTE0L7yg) 공개 확인 뒤에만, 의안 2221046 다시 엶(올리기 전 확인 1일 안), 공개 안 됐으면 이 칸은 비축으로"
   },
   {
    "at": "2026-11-04 16:10",

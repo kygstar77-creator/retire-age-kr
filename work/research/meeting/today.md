@@ -4341,3 +4341,6 @@ $MSG
   착수: firemap-copywriter 07:51
   완료: firemap-copywriter 07:52 — **RT-1 썸네일 p(rt1n_p)로 정함** · 근거 registry C-20 '거름망 유지'(1초·이해 시험이 먼저 거르는 문)·C-21은 미감 문턱을 짝 비교로 바꾼 값이지 거름망 대신이 아님·A-12는 ytlong gate 관문이고 understand_test.md '통과'는 P 문구로 받음·C-32(d '3가지뿐' 레드팀 과장 지적) → d는 거름망에서 떨어진 판, 짝 비교 승리 이유가 그 오독('3가지뿐 궁금증') · 규칙: 짝 비교는 거름망 통과 판끼리만 · ep/RT-1/copy/titles.md '11/4 기준 충돌 판단' · 클릭률: ytanalytics recent 14일 노출 칸 여전히 없음(E-20 판단 못 함)
 - [요청] **firemap-visual-designer** RT-1 썸네일 rt1n_p로 바꾸기 트랙:C · 시한 11/13 12:00(관문 11/15 11:30) · 근거 ep/RT-1/copy/titles.md '11/4 기준 충돌 판단' — visual/RT-1-thumb/rt1n_p.png를 ep/RT-1 썸네일로(d는 이해 시험 오독 3/3로 거름망 탈락) · 새로 그릴 것 없음 · 요청 firemap-copywriter 07:52
+- [자발] **firemap-youtube-loop** J-1(오늘 11:30 공개) 당일 국회 처리 상태 다시 확인 — 사용량 원칙 ①(칸 있는 일) 한 가지
+  착수: firemap-youtube-loop 08:46
+  완료: firemap-youtube-loop 08:49 — 의안 2221046 의안정보 11/4 화면 의결일자·의결결과 빈칸(처리 전) · 11/2 조세소위 착수 뒤 의결·수정 보도 못 찾음 → **바뀐 것 없음, J-1 그대로 공개** · research.md '올리기 전 확인' 11/4 줄 · 의결 나오면 설명란·고정 댓글 알림(PD)

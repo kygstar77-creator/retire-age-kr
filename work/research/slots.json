@@ -3119,15 +3119,18 @@
    "owner": "firemap-write",
    "gates_ok": "2026-11-03 06:23",
    "note": "firemap-meeting 2026-11-02 21:37: 장르 부동산① · 비축 → 올리기 전 확인(판결·법원 절차 원문 다시) 뒤 발행 · 하루 부동산 2칸(10/13) | firemap-write 06:23: 비축 leasereg1102 배정 — 11/3 올리기 전 확인(S1~S6 다시 엶, 바뀐 것 없음)·끝 안내 줄 뺌(11/3 지시)·기준일 11/3·editgate auto 다시 찍음(31204e01)·slot.txt 11-03 10 · 발행은 09시 회차",
-   "pkg": "work/research/leasereg1102/pkg"
+   "pkg": "work/research/leasereg1102/pkg",
+   "published": "https://cafe.naver.com/firemap/378 10:18 verify OK 1771자"
   },
   {
    "at": "2026-11-03 12:40",
    "kind": "cafe",
-   "item": "TBD — 주식(배당·ETF)",
+   "item": "samdiv1103",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-02 21:37: 장르 주식 · 시황이면 '(11/3 15:30 종가)'가 아니라 12:40이라 전날 종가 '(11/2 15:30 종가)' 줄 · 편마다 bench.md 3편↑"
+   "gates_ok": "2026-11-03 11:07",
+   "note": "firemap-meeting 2026-11-02 21:37: 장르 주식 · 시황이면 '(11/3 15:30 종가)'가 아니라 12:40이라 전날 종가 '(11/2 15:30 종가)' 줄 · 편마다 bench.md 3편↑ | firemap-write-b 11:07: 비축 없음(pibucut1025는 피부양자라 이번 주 뒤·renewpair1102는 11/4 짝 글) → 새 글 samdiv1103 '삼성전자 배당금, 몇 주부터 건보료에 잡힐까?'(배당주, 검색 181,500) — DART 공시 5건·법령 7조문 11/3 원문, 2026년 1주당 5,913원 → 1,692주 1천만원·3,383주 2천만원·2027년 11월분 건보료 반영 직접 계산(경쟁 13편 0편), 이해 3차 9명·교차검증(Gemini)·selfcheck 사실 0·editgate auto · 끝 안내 건보료 계산기(계산 주제)",
+   "pkg": "work/research/samdiv1103/pkg",
+   "published": "https://cafe.naver.com/firemap/380 12:48 verify OK 1924자"
   },
   {
    "at": "2026-11-03 16:10",
@@ -3176,7 +3179,7 @@
    "item": "TBD — 부동산①",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-11-02 21:37: 장르 부동산① · J-1(종부세) 짝 긴 글과 겹치지 않는 부동산 주제"
+   "note": "firemap-meeting 2026-11-02 21:37: 장르 부동산① · J-1(종부세) 짝 긴 글과 겹치지 않는 부동산 주제 | firemap-write 11/03 12:2x: 후보 재건축 초과이익 환수(재초환) — demand 2,300(주담대 규제 1,100·공시가격 750·전세대출 규제 720·취득세 중과 550보다 높음)·지난 글과 안 겹침(bundang0929·costchk1016은 다른 주제) · 원문: 재건축초과이익 환수에 관한 법률·국토부 부담금 부과 현황 · 오늘 15:2x 회차가 씀"
   },
   {
    "at": "2026-11-04 11:30",

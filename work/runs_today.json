@@ -28,6 +28,16 @@
     "url": "https://cafe.naver.com/firemap/378"
    },
    "note": "10:10 칸 leasereg1102 · 출처 6곳 11/3 다시 엶(06:3x)+조문 본문 raw1103 저장 · 교차검증 11/2 완료분 · verify OK 1771자·사진 3 · 블로그 없음(하루 상한·쉬는 규칙) · 개선: 법령 API 막힐 때 law.go.kr 웹 lsSideInfoP 본문 저장 스크립트(growth 아닌 pkg raw1103)"
+  },
+  {
+   "hour": 12,
+   "ts": "12:49",
+   "blog": null,
+   "cafe": {
+    "title": "삼성전자 배당금, 몇 주부터 건보료에 잡힐까?",
+    "url": "https://cafe.naver.com/firemap/380"
+   },
+   "note": "12:40 칸 samdiv1103(write-b 작성·관문 통과) 발행 · verify OK 1924자·사진 3 · 검증 경로: write-b 회차 crosscheck+selfcheck(사실 0) · readcheck 긴문장 1건 고침 · 블로그는 하루 상한·무색인 방침으로 안 올림 · 개선: 없음"
   }
  ]
 }

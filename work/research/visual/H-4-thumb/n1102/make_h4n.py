@@ -27,7 +27,7 @@ def fit(d, t, size, w, maxw=MAXW, floor=40):
     return size
 
 
-def make(out, pic, ya, top, top_size=96, band=235, ls=1.10, target=0.90, xa=0.5, zoom=1.0, top_sizes=None, hmax=0.45, tshade=(300, 200)):
+def make(out, pic, ya, top, top_size=96, band=235, ls=1.10, target=0.90, xa=0.5, zoom=1.0, top_sizes=None, hmax=0.45, tshade=(300, 200), hl=None):
     im = photo(pic, y_anchor=ya, x_anchor=xa, zoom=zoom); d0 = ImageDraw.Draw(im)
     # C-35: 줄마다 크기 따로 — 폭 target에 맞춤. 짧은 첫 줄('서울 25개 구 중')이 커져 두 줄이 화면 45%(C-02)를 넘으면 둘을 같은 비율로 줄임
     sizes = [fit(d0, t, 320, 'black', maxw=int(W * target)) for t in BIG]
@@ -43,7 +43,13 @@ def make(out, pic, ya, top, top_size=96, band=235, ls=1.10, target=0.90, xa=0.5,
     widths = []
     for k, (t, s) in enumerate(zip(BIG, sizes)):
         bb = d.textbbox((X0, y - int(s * 0.12)), t, font=f(s, 'black'), stroke_width=6); widths.append((bb[2] - bb[0]) / W)
-        d.text((X0, y - int(s * 0.12)), t, font=f(s, 'black'), fill=WHITE if k == 0 else ORANGE, stroke_width=6, stroke_fill=INK); y += int(s * ls)
+        if hl and hl in t:   # 낱말 강조: 줄 전체 흰, hl 낱말만 주황(벤치마크 11/3 지시 — 남 10/16 낱말 단위)
+            x = X0
+            for part, c in zip(t.partition(hl), (WHITE, ORANGE, WHITE)):
+                d.text((x, y - int(s * 0.12)), part, font=f(s, 'black'), fill=c, stroke_width=6, stroke_fill=INK); x += d.textlength(part, font=f(s, 'black'))
+        else:
+            d.text((X0, y - int(s * 0.12)), t, font=f(s, 'black'), fill=WHITE if (k == 0 or hl) else ORANGE, stroke_width=6, stroke_fill=INK)
+        y += int(s * ls)
     sm = im.resize((1280, 720), Image.LANCZOS); sm.save(os.path.join(O, out))
     for px in (412, 168): sm.resize((px, px * 9 // 16), Image.LANCZOS).save(os.path.join(O, out.replace('.png', f'_{px}.png')))
     print(out, f'흰 줄 {tsz}px · 큰 글 {sizes}px · 줄별 폭 ' + '·'.join(f'{w:.0%}' for w in widths) + f' · 높이 {hb / HH:.0%}')
@@ -67,3 +73,5 @@ make('h4n_g2.png', 'gm_complex_wm.jpg', 0.45, T2, top_sizes=[130, 84], tshade=(4
 make('h4n_g3.png', 'gm_complex_wm.jpg', 0.45, '광명 아파트 15억이라던데,|실거래 세어 보니', top_sizes=[130, 84])
 # g4: 흰 둘째 줄이 짧아졌으니(13→9자) 84→112px — g 1초 시험 약점 '168px 위 두 줄 안 읽힘'
 make('h4n_g4.png', 'gm_complex_wm.jpg', 0.45, '광명 아파트 15억이라던데,|실거래 세어 보니', top_sizes=[130, 112])
+# w: g3와 같은 사진·문구·크기, 색만 — 큰 두 줄 다 흰, 답 숫자 '17곳'만 주황(today 11/3 벤치마크 지시 '낱말 단위 강조' 짝 비교)
+make('h4n_w.png', 'gm_complex_wm.jpg', 0.45, '광명 아파트 15억이라던데,|실거래 세어 보니', top_sizes=[130, 84], hl='17곳')

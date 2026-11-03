@@ -52,3 +52,8 @@ make('k1n_c.png', 'bank_counter_hands_money_1_18804128.jpg', 0.0, '1년 정기�
 BIG[1] = '작년보다 올해 74만원 더'
 make('k1n_d.png', 'bank_counter_hands_money_1_18804128.jpg', 0.0, '1년 정기예금 · 세금 뗀 이자|작년 8월 vs 올해 8월', None, top_size=124)
 make('k1n_e.png', 'bank_counter_hands_money_1_18804128.jpg', 0.0, T, None, top_size=96)
+# 11/3 4차: youtube-loop 08:54 한은 9월분 반영 — 글자 두 곳만(facts F4 1억 세후 2,148,840→3,020,220원, 차 871,380원), 사진·꼴 d 그대로
+BIG[1] = '작년보다 올해 87만원 더'
+make('k1n_f.png', 'bank_counter_hands_money_1_18804128.jpg', 0.0, '1년 정기예금 · 세금 뗀 이자|작년 9월 vs 올해 9월', None, top_size=124)
+# 11/3 레드팀 '달러 지폐가 원화 예금과 무관' → b 사진(장부·펜·지폐)으로 같은 글자 g, f와 짝 비교
+make('k1n_g.png', 'savings_account_book_3_36021649.jpg', 0.2, '1년 정기예금 · 세금 뗀 이자|작년 9월 vs 올해 9월', None, top_size=124)

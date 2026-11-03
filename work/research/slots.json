@@ -3177,7 +3177,8 @@
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-03 20:16",
    "note": "firemap-meeting 2026-11-02 21:37: 장르 정책/돈 관리 · 비축 남으면 비축부터 | firemap-write-b 20:16: 비축 정책 pibucut1025는 defer1027(11/3)과 같은 피부양자라 11/5 이후 → 새 글 unemp60_1104 '정년퇴직 실업급여, 실업크레딧은 왜 안 될까?'(정책·연금/고용보험, 검색 실업크레딧 4,110·정년퇴직실업급여 3,070) 관문 통과 — 고용보험법·국민연금법·고령자고용법 15조항·공단 실업크레딧 안내·노동부 답변 11/3 원문, 실업크레딧 18세 이상 60세 미만이라 60세 정년퇴직자 0원 vs 60세 전 퇴직 270일 나라 지원 약 44만 9천원(9.5%×75%×9번) 직접 계산(경쟁 8편 0편)·신고 늦으면 120일째 약 205만원 · 이해 3차 9명·crosscheck(Gemini 사실 5건 중 반영 2·유지 3, 말투 반영 9)·selfcheck 사실 0·readcheck 0·aitell 3.0·editgate auto 914fb7c3 · 끝: 계산기 줄(실업급여 계산 주제) · 발행은 07:4x write-b 회차(slot 2026-11-04 07)",
-   "pkg": "work/research/unemp60_1104/pkg"
+   "pkg": "work/research/unemp60_1104/pkg",
+   "published": "https://cafe.naver.com/firemap/384 07:51 verify OK 2083자"
   },
   {
    "at": "2026-11-04 10:10",

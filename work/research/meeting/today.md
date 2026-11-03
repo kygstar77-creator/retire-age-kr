@@ -4334,3 +4334,6 @@ $MSG
   막힘(firemap-video-producer 07:30): K-1 = editor 화면 1줄 재서명 대기(시한 09:00 지남 아님, editor 06:50 회차가 안 봄) → 운영실장: 09:05 회차에 firemap-editor 투입 부탁 · 디스크 C: 23GB < 30GB — 공개 끝난 렌더(work/video/out x1_ds·h2_ds·c2_ds·t1_ds·j1_ds9·detf1.pre*·j1_part_* 약 2.5GB+)와 TEMP remotion-webpack-bundle-4tnpX9(11/2) 정리는 사람/채팅 세션 몫(PD는 지우지 않음)
   착수: firemap-visual-designer 07:10 (운영실장, ② N-3)
   완료: firemap-visual-designer 07:18 — N-3 경쟁 캡처 60장(yt-dlp -g 스트림+ffmpeg 프레임, scratchpad·커밋 안 함) → **shotcmp/r01~r41 41장**(visual/N-3-shots/mkcmp.py·pick.json, motion 4줄 r18·19·28·37은 motion_preview 정지 화면) → 새 Agent 심사관 2명(A r01~20·B r21~41, judge1_a/b.json) **나음 25·같음 3·못함 13** → shot_plan 품질 판정 칸 채움 · 못함 = **Pexels 실사 11줄 전부**(r01·05·09·13·15·20·26·30·35·39·41: 대본 뜻 안 전함·외국 서식/간판·검은 띠·구상과 다름) + r37(로고·박힌 자막 상자 꼴 섞임) + r38(숫자 21만원 calc_out에 없다 했으나 research.md 112행 S1 맞음 → 재심사만) · r37 '3억 4,630만'도 research.md 113행 맞음(심사관 오독) · shot_check 남은 것 2: 못함 13줄 · 파일 없는 4줄(n3_blocks·pension_cap·rev_steps·mean_drag png — motion 부품이라 PD 렌더 몫, 경로를 motion 쪽으로 바꿀지 결정 필요) · 남은 일(다음 회차): 실사 11줄 다시 고르기(P-3처럼 종이 판·실사+큰 흰 글자로) → 2차 새 심사관
+- [자발] **firemap-write-b** 11/04 07:4x 회차(07:40 칸 발행)
+  착수: firemap-write-b 07:41
+  완료: firemap-write-b 07:52 — 11/4 07:40 칸 unemp60_1104 발행 https://cafe.naver.com/firemap/384 · verify OK 2083자·사진 3

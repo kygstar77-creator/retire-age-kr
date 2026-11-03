@@ -1,0 +1,1428 @@
+구직 급여 수급자 대상 실업크레딧 신청 안내 - 정책뉴스 | 뉴스 | 대한민국 정책브리핑
+<!-- 
+ Dable 메타 추가 
+ -->
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "239533bd6103e0";
+if(window.wcs) {
+  wcs_do();
+}
+$(document).ready(function() {
+	var target = document.querySelector('.select-opt ul');
+	if(target != undefined){
+		var observer = new MutationObserver((mutations) => {		
+			if($('.select_opt ul li').length == 0){
+				$('.select_opt ul').css('display', 'none');
+			}else{
+				$('.select_opt ul').css('display', 'block');
+			}
+		});
+		if($('.select_opt ul li').length == 0){
+			$('.select_opt ul').css('display', 'none');
+		}
+		var option = {
+			attributes : true,
+			childList: true,
+			characterData  :true
+		}
+		observer.observe(target, option);
+	}
+	/* 20240726 2024 파리올림픽 한컷기사 우클릭 방지 적용 */
+});
+		{
+		  "@context": "https://schema.org",
+		  "@type": "NewsArticle",
+		  "mainEntityOfPage": {
+		    "@type": "WebPage",
+		    "@id": "https://www.korea.kr/news/policyNewsView.do?newsId=148931167" 
+		  },
+		  "headline": "구직 급여 수급자 대상 실업크레딧 신청 안내", 
+		  "keyword":"대한민국 정책브리핑,KOREA.KR,정책브리핑,정책포털,대한민국정책,대한민국,정부정책,정책,정책코리아,K-희망사다리,국민연금 크레딧,구직급여",
+				  "image": {
+		   			 "@type": "ImageObject",
+						"@id": "https://www.korea.kr/newsWeb/resources/attaches/2024.07/08/1e8b2e91495d28a80fe8bc90744d5c58.jpg", 
+					    "url": "https://www.korea.kr/newsWeb/resources/attaches/2024.07/08/1e8b2e91495d28a80fe8bc90744d5c58.jpg", 
+					    "width": 384, 
+					    "height": 250 
+					   },
+		  "datePublished": "2024-07-08T09:09:00+09:00", 
+		  "author": {
+		    "@type": "Organization",
+		    "name": "고용노동부" 
+		  },
+		  "publisher": {
+		    "@type": "Organization",
+		    "@id": "https://www.korea.kr",
+		    "name": "대한민국 정책브리핑",
+		    "logo": {
+		      "@type": "ImageObject",
+		      "url": "https://www.korea.kr/images/event/korea_logo_2024.jpg",
+		      "width": 300,
+		      "height": 300
+		    }
+		  },
+		  "description": "실직 전 3개월간 평균소득의 50%를 구직급여 수급기간 동안 지원하는 제도로 노후 준비에 힘이 되어드립니다. 실업크레딧 ▲ 지원대상 · 국민연금 가입자 또는 가입자였던 사람 중 18세 이상 60세 미만의 구직급여 수급자 ※ 단, 재산세 과세표준의 합이 6억 원 또는 종합소득(사업 및 근로소득 제외)금액의 합이 1,680만 원을 초과하는 사람은 제외 ▲ 지원" 
+		}
+    // 페이징
+    function pageLink(pageNo){
+		history.replaceState({}, null, location.pathname);
+		$('#mainForm').attr('action', document.location.href);
+        $('#pageIndex').val(pageNo);
+        $('#mainForm').submit();
+    }
+    /* $(document).ready(function(){
+    	$("#container").css('display', 'none');
+    }); */
+    var lnbDep1 = 0;
+	var lnbDep2 = 0;
+				//관련기사 추가		
+				let key,cateId,sectId,findex,lIndex; //키워드 아이디
+				const nId = '148931167';	//뉴스 아이디
+				const bKey = '';	//bbsKey
+				$(document).ready(function() {
+					$(".related .rbody .rlst").empty();
+							const rjson = [{"calendarNo":0,"cartoonNo":0,"cateId":"graphic_news","content":"내가 알리는 모두의 희망사다리 영상 공모전총상금 3300만 원! 문화체육관광부 장관상 3점 한국언론진흥재단 이사장상 34점 여러분의 정책 경험담을 영상으로 들려주세요! 2026.7.30.(목) ~ 10.4.(일)☞ www.희망사다리공모전.kr","gubun":"news","newsId":"148969612","newsUrl":"/multi/visualNewsView.do?newsId=148969612","photoAddr":"","regiDate":"2026.08.06","resvDate":"2026.08.07","sectId":"graphic_sec_03","thumDesc":"내가 알리는 모두의 희망사다리 영상 공모전","thumbIdKey":"2cd043da1bb11a06adc3e142a57eef16","thumbImgUrl":"","thumbName":"0806-4s.jpg","thumbRegiDate":"2026.08.06","thumbUrl":"https://www.korea.kr/newsWeb/resources/attaches/2026.08/06/2cd043da1bb11a06adc3e142a57eef16.jpg","title":"내가 알리는 모두의 희망사다리 영상 공모전","totalCount":"3"},{"calendarNo":0,"cartoonNo":0,"cateId":"cardnews","content":"일상에서 경험한 정책, 영상으로 알린다! - 내가 알리는 모두의 정책 희망사다리 영상 공모전 · 공모전 총상금 3300만 원 · 접수: 7월 30일(목) ~ 10월 4일(일)■ 내가 알리는 모두의 정책 희망사다리 영상 공모전 여러 부처에 흩어져 있던 민생 지원 정책을 생애 주기와 생활 분야에 맞춰 모은 민생정보 모음집 '케이-희망...","gubun":"news","newsId":"148969271","newsUrl":"/multi/visualNewsView.do?newsId=148969271","photoAddr":"","regiDate":"2026.08.03","resvDate":"2026.08.03","sectId":"cardnews","thumDesc":"일상에서 경험한 정책, 영상으로 알린다!","thumbIdKey":"364ee44602333699e3edae101a14a44e","thumbImgUrl":"","thumbName":"1s(85).jpg","thumbRegiDate":"2026.08.03","thumbUrl":"https://www.korea.kr/newsWeb/resources/attaches/2026.08/03/364ee44602333699e3edae101a14a44e.jpg","title":"일상에서 경험한 정책, 영상으로 알린다!","totalCount":"3"},{"calendarNo":0,"cartoonNo":0,"cateId":"people_news","content":"나는 전직 방송작가다. 대학을 졸업하고 이십 년 가까이 이른바 '뼈 빠지게' 일하다가 코로나19를 기점으로 기획하던 프로그램이 무산되고 당시 초등학교 저학년이던 아들이 학교에 가지 못하는 날이 늘어나면서 자연스럽게 방송 일을 접고 지금의 일을 하게 됐다. 그러나 오랜 시간 동고동락하며 지낸 방송 종사자 동료들...","gubun":"news","newsId":"148964960","newsUrl":"/news/reporterView.do?newsId=148964960","photoAddr":"","regiDate":"2026.05.22","resvDate":"2026.06.10","sectId":"PE_SEC_1_EDS0204001","thumDesc":"프리랜서들도 구직급여와 실업크레딧 혜택으로 여유로운 구직이 가능해졌다.","thumbIdKey":"f8aa1afef1a02895f2917a00d62a0d13","thumbImgUrl":"","thumbName":"uju(1).jpg","thumbRegiDate":"2026.05.22","thumbUrl":"https://www.korea.kr/newsWeb/resources/attaches/2026.05/22/f8aa1afef1a02895f2917a00d62a0d13.jpg","title":"'구직급여·실업크레딧'으로 프리랜서도 여유롭게 구직!","totalCount":"3"}];
+					//키워드 유무 확인
+						const kjson = [{"keywordId":"70052480","keywordName":"K-희망사다리","totCnt":2},{"keywordId":"70022394","keywordName":"구직급여","totCnt":1},{"keywordId":"70034669","keywordName":"국민연금 크레딧","totCnt":0}];	
+					if($('#relation_news_area').length){
+						var cut = $('.related').detach();
+						$('#relation_news_area').after(cut);
+						$('#relation_news_area').remove();
+					}
+					if(rjson.length > 0){
+						var rj = rjson[0];
+						rj.keywordName = '전체';
+						rj.totCnt = rj.totalCount;
+						key = ['', rj.totalCount];
+						//키워드 유무 확인
+							var tmpl = $('#rkeyTmpl').tmpl(rj).appendTo('.related .rhead .rkey');	
+							tmpl.addClass('active');
+							$(kjson).each(function(){
+								if(this.totCnt > 0){
+									tmpl = $('#rkeyTmpl').tmpl(this).appendTo('.related .rhead .rkey');	
+								}							
+							})	
+						if(Number(rj.totalCount) <= 5){
+							$(".related .ropen").attr("style","display:none;");
+						}
+						$('#rbody_h').html(rj.keywordName);
+						$(rjson).each(function(i){			
+							if(i <= 4){
+								tmpl = $('#rlstTmpl').tmpl(this).appendTo('.related .rbody .rlst');	
+							}							
+						})
+						fn_RkeyWordList();			
+					}else{
+						$('.related').remove();
+					}		
+				});
+				function fn_RkeyWordList(){
+					$('.related .rb, .related .ropen').click(function(){
+						if($(this).hasClass('rb')){
+							key = $(this).attr('data-value').split('|');
+							if(key[1] > 5){
+								$(".related .ropen").attr("style","display:block;");
+							}else{
+								$(".related .ropen").attr("style","display:none;");
+							}
+							findex = 0;
+							lIndex = 5;
+							$('#rbody_h').html(key[2]);
+						}else{
+							let liCnt = $(".related .rbody .rlst li").length;				
+							findex = 0;
+							lIndex = Number(liCnt)+5;
+						}
+						if(key[1] <= lIndex){
+							$(".related .ropen").attr("style","display:none;");
+						}
+						var url = '/news/policyNewsView.do';
+						if(url.indexOf("cultureColumnView.do") > -1 || url.indexOf("cultureWriterView.do") > -1){
+							cateId = 'column_n_news';
+							sectId=  ''
+						}else if(key[0] == ''){
+							cateId='';
+							sectId='';
+						} 		
+						var param = { keywordId:key[0], newsId:nId, bbsKey:bKey, cateId:cateId, sectId:sectId , firstIndex:findex, lastIndex:lIndex};
+						$.getJSON('/common/ajaxRealtionNewsList.do', param, function(data){
+							let liCnt = $(".related .rbody .rlst li").length;				
+							 $(".related .rbody .rlst").empty();		
+							$(data.result).each(function(i){					
+								if(i < lIndex){
+									tmpl = $('#rlstTmpl').tmpl(this).appendTo('.related .rbody .rlst');	
+									console.log(tmpl);
+								}					
+							}) 	
+							$(".related .rbody .rlst a").eq(lIndex-5).attr('tabindex', -1).focus();
+						});
+					});
+				}
+$(document).ready(function() {
+	$('.view_cont').attr('itemprop','articleBody');				
+});
+	{{if keywordName != '전체'}}#{{/if}}${keywordName}(${totCnt})
+${title}
+  -->
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-134955174-1');
+{
+ "@context":"https://schema.org",
+ "@type":"Organization",
+ "name":"대한민국 정책브리핑",
+ "url":"https://www.korea.kr",
+ "sameAs":[
+   "https://www.facebook.com/hipolicy",
+   "https://twitter.com/actualpolicy_kr",
+   "https://www.youtube.com/user/hipolicy",
+   "https://story.kakao.com/ch/policy"
+ ]
+}
+	(function(d,a,b,l,e,_) { d[b]=d[b]||function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l); e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/plugin.min.js'; _=a.getElementsByTagName(l)[0];_.parentNode.insertBefore(e,_); })(window,document,'dable','script'); dable('setService', 'korea.kr'); dable('sendLogOnce'); 
+							var lnbDep1 = 1;
+							var lnbDep2 = 1;
+//<![CDATA[
+    function goList(){
+        $('#mainForm').attr('action', "/news/policyNewsList.do ");
+		$('#mainForm').submit();
+    }
+	function goView(url){
+        $('#mainForm').attr('action', url);
+		//$('#newsId').val(id);
+		$('#mainForm').submit();
+    }
+//]]>
+본문 바로가기
+메인메뉴 바로가기
+이 누리집은 대한민국 공식 전자정부 누리집입니다.
+//<![CDATA[
+	$(document).ready(function(){
+        $('#topSchKeyword').keyup(function(event) {
+        	if(event.keyCode == 13){
+        		fn_searchForm();
+    		}    		  		
+    	});
+        $('.util > .sch_top .submit').click(function(){        	
+        	fn_searchForm();
+        });
+	});
+	function fn_searchForm(){
+		if($("#topSchKeyword").val() == "" || $("#topSchKeyword").val() == null){
+    		alert("검색어를 입력해주세요");
+    		$("#topSchKeyword").val("");
+    		$("#topSchKeyword").focus();
+    		event.preventDefault();
+    		return false;            		
+    	}else{
+    		location.href = "/totalSearch.do?pWise=main&pWiseMain=S1&"+$("#searchForm").serialize();
+    	}
+	}
+//]]>
+대한민국 정책브리핑
+뉴스
+뉴스
+														정책뉴스
+														부처별 뉴스
+														정책포커스
+														국민이 말하는 정책
+														오피니언
+														키워드 뉴스
+														멀티미디어 뉴스
+브리핑룸
+브리핑룸
+														보도자료
+														사실은 이렇습니다
+														브리핑 자료
+														연설문
+정책자료
+정책자료
+														국정과제
+														전자책
+														전문자료
+														채용정보
+														국정신문(’92-’04)
+														대한뉴스
+구독&참여
+구독&참여
+														이벤트
+														뉴스레터
+														정책정보 알림설정
+														정부기관 SNS
+														배너달기
+														공지사항
+청와대 소식
+공직메일
+소통채널(SNS)
+ -->
+알림
+ON
+						controllNotiBtn();
+상세검색
+검색
+//<![CDATA[
+	$(document).ready(function(){
+        $('#hschSdate, #hschSdateBt').click(function(){
+        	$("#form_dateRange").val('day');
+        	show_calendar('hsch_calStart', 'hschSdate', $('#hschSdate').val());
+        });
+        $('#hschEdate, #hschEdateBt').click(function(){
+        	$("#form_dateRange").val('day');
+        	show_calendar('hsch_calEnd', 'hschEdate', $('#hschEdate').val());
+        });
+        $('#hschForm').submit(function(e){
+        	e.preventDefault();
+        });
+        $('input[name=hsch_dateRange]').click(function(){
+        	var range = $(this).val();  
+        	doDateTot(range);
+        });
+        $('input[name=hsch_range]').click(function(){
+        	$("#form_range").val($(this).val());
+        });
+        $("input[name=subJectType], input[name=subJectCode], input[name=deptType], input[name=deptCode], input[name=newsType]").click(function(){
+			$('.dtl_select_opt ul').empty();
+			var name = $(this).attr('name');
+			if('deptType' == name){
+				var code = $(this).attr('id').replace('deptType', '');
+				$("input[id^=pgtype_ta2_"+code+"]").attr("checked", false);				
+			}else if('deptCode' == name){
+				var code = $(this).val().substr(0,1);
+				$('input[id=deptType'+code+']').attr("checked", false);
+			}else if('subJectType' == name){
+				var code = $(this).val().substr(0,5);
+				$("input[id^=scode_"+code+"]").attr("checked", false);				
+			}else if('subJectCode' == name){
+				var code = $(this).val().substr(0,5);
+				$('input[id=stype_'+code+']').attr("checked", false);				
+			}
+			$("input[name=subJectType]:checked").each(function(){
+				$('.dtl_select_opt ul').append('
+' + $(this).attr('title') + '
+삭제
+');
+			}); 
+			$("input[name=subJectCode]:checked").each(function(){
+				$('.dtl_select_opt ul').append('
+' + $(this).attr('title') + '
+삭제
+');
+			}); 
+			$("input[name=deptType]:checked").each(function(){
+				$('.dtl_select_opt ul').append('
+' + $(this).attr('title') + '
+삭제
+');
+			}); 
+			$("input[name=deptCode]:checked").each(function(){
+				$('.dtl_select_opt ul').append('
+' + $(this).attr('title') + '
+삭제
+');
+			});
+			$("input[name=newsType]:checked").each(function(){
+				$('.dtl_select_opt ul').append('
+' + $(this).attr('title') + '
+삭제
+');
+			}); 
+			fn_liempty();
+		});
+        $('.sch_layer .sch_btn .sch, .sch_layer .submit').click(function(){        	
+        	fn_submit();
+        });
+        $('.dtl_sch_wrap .sch_btn .restart').click(function(){
+        	$($('input[name=hsch_dateRange]')[0]).prop('checked', true);        	
+        	$($('input[name=hsch_range]')[0]).prop('checked', true);
+        	doDateTot('all');
+        	$("#form_range").val('ALL');
+        	$('#hschSdate').val('');
+    		$('#hschEdate').val('');
+        	 $("input[name=subJectCode], input[name=subJectType], input[name=deptType], input[name=deptCode], input[name=newsType]").prop('checked', false);
+        	 $('.dtl_select_opt ul').empty();
+        });
+    	$(document).click(function(event) {    		
+    		if($(event.target).closest('.hsch, .sch').length == 0){
+    			hideArk(wrapId);
+    		}    		
+    	});
+    	$(document).keyup(function(event) {
+    		if(event.keyCode == 9){
+    			if($(event.target).closest('.hsch, .sch').length == 0){
+        			hideArk(wrapId);
+        		} 	
+    		}    		  		
+    	});
+     	let p = -1;
+    	$('.hsch, .sch').keydown(function(event) {   
+    		var key = event.keyCode;
+    		let arkCnt = $('.ark_content li button').length;
+       		if(key == 38 || key == 40){
+       			event.preventDefault();
+       			$('.ark_content li button').each(function(i){
+       				if(document.activeElement == this){
+       					p = i;
+       					return false;
+       				}else{
+       					p = -1;	
+       				}    				
+    			});
+       			//console.log(p);
+           		switch(key){
+       	    		case 38:       	    			
+       	    			p--;
+       	    			break;
+       	    		case 40:
+       	    			p++;
+       	    			break;
+           		}
+           		if(p == arkCnt){
+           			$('.ark_content button', this)[0].focus();	
+           			p = 0;
+           		}else if(p < 0){
+           			$('#topSearchKeyword').focus();
+           			p = -1;
+           		}else{
+           			$('.ark_content button', this)[p].focus();
+           		}           		
+       		}    		   		    		 
+    	}); 
+        $('#hsch_topSearchKeyword').keyup(function(event) {
+        	if(event.keyCode == 13){
+    			fn_submit(); 	
+    		}    		  		
+    	});
+	});
+	function fn_submit(){
+		var ckArray = new Array();
+    	$("input[name=deptType]:checked").each(function(){
+    		ckArray.push(this.value);
+    	});
+    	$('#dtl_dept_type').val(ckArray);
+    	ckArray = new Array();
+    	$("input[name=deptCode]:checked").each(function(){
+    		ckArray.push(this.value);
+    	});        	
+    	$('#dtl_dept_code').val(ckArray);
+    	ckArray = new Array();
+    	$("input[name=newsType]:checked").each(function(){
+    		ckArray.push(this.value);
+    	});        	
+    	$('#dtl_news_type').val(ckArray);
+    	ckArray = new Array();
+    	$("input[name=subJectCode]:checked").each(function(){
+    		ckArray.push(this.value);
+    	});        	
+    	$('#dtl_newsml_code').val(ckArray);
+    	ckArray = new Array();
+    	$("input[name=subJectType]:checked").each(function(){
+    		ckArray.push(this.value);
+    	});        	
+    	$('#dtl_smenu').val(ckArray);
+    	if($("#hsch_topSearchKeyword").val() == "" || $("#hsch_topSearchKeyword").val() == null || $("#hsch_topSearchKeyword").val()=="검색어를 입력하세요."){
+    		alert("검색어를 입력해주세요");
+    		$("#hsch_topSearchKeyword").val("");
+    		$("#hsch_topSearchKeyword").focus();
+    		return false;
+    		event.preventDefault();
+    	}
+    	if('day' == $('#form_dateRange').val()){        		
+    		if("" == $("#hschSdate").val()){
+    			alert("검색 시작일을 입력하세요.");
+    			$("#hschSdate").focus();
+                return false;
+    		}        		
+			if("" == $("#hschEdate").val()){
+				alert("검색 종료일을 입력하세요.");
+				$("#hschEdate").focus();
+                return false;
+    		}        		
+    		if( "" != $("#hschSdate").val() && "" != $("#hschEdate").val()) {
+	            if($("#hschSdate").val() > $("#hschEdate").val() ){
+	                alert("시작일이 종료일보다 클 수 없습니다.");
+	                $("#hschEdate").focus();
+	                return false;
+	            }
+	        }        		
+    		$("#form_sdate").val($('#hschSdate').val());
+    		$("#form_edate").val($('#hschEdate').val());
+    	} 
+    	$('#topSearchKeyword').val($('#hsch_topSearchKeyword').val())
+    	console.log($("#topSearchForm").serialize());
+		location.href = "/totalSearch.do?pWise=main&pWiseMain=S1&"+$("#topSearchForm").serialize();
+	}
+	// 날짜지정
+	function doDateTot(range){
+		var startDate = "";
+		var endDate = "";
+		if(range != "all") {
+			var currentDate = new Date();
+			endDate = dateFormat(currentDate,"-");
+			if (range == "day") {
+				currentDate.setDate(currentDate.getDate()-1);
+			} else if (range == "week") {
+				currentDate.setDate(currentDate.getDate()-7);
+			} else if (range == "month") {
+				currentDate.setMonth(currentDate.getMonth()-1);
+			} else if (range == "year") {
+				currentDate.setFullYear(currentDate.getFullYear()-1);
+			} else {
+				startDate = "1970-01-01";
+			}
+			startDate = dateFormat(currentDate,"-");
+		}
+		$("#hschSdate").val(startDate);
+		$("#hschEdate").val(endDate);
+		$("#form_sdate").val(startDate);
+		$("#form_edate").val(endDate);
+		$("#form_dateRange").val(range);
+	}
+	function fn_liempty(){
+		$('.dtl_select_opt ul li button').off('click').on('click', function(){});
+		$('.dtl_select_opt ul li button').click(function (){
+			var id = $(this).val();
+			$('#'+id).attr("checked", false);
+			$(this).closest('li').remove();
+	   });
+	}
+	function topKeywordSubmitSr(keyword){
+		if(keyword != null && keyword != ""){
+			$("#topSearchKeyword").val(keyword);
+		}
+	    location.href = "/totalSearch.do?"+$("#topSearchForm").serialize();	
+		return false;
+	}
+	function fn_click(val){
+		 $("#"+val).val("");
+		 hideArk(wrapId);
+	}
+	//상단 검색
+	function topKeywordSearch(num){
+	    $("#topSearchKeyword").val($("#topKeyword"+num).text());
+	    $("#topSearchWhere").val("ALL");    //검색종류세팅(전체)
+	    $("#topSearchOp").val("or");    //검색종류세팅(전체)
+	    return topKeywordSubmit(num);
+	}
+	//상단 키워드검색
+	function topAllKeywordSearch(num){
+	    $("#topSearchKeyword").val($("#topAllKeyword"+num).text());
+	    $("#topSearchWhere").val("ALL");    //검색종류세팅(전체)
+	    topKeywordSubmit(num);
+	}
+	function topKeywordSubmit(num){
+	    if(num == null){
+	        location.href = "/totalSearch.do?pWise=main&pWiseMain=S1&"+$("#topSearchForm").serialize();
+	    }else {
+	        location.href = "/totalSearch.do?pWise=main&pWiseMain=S2&"+$("#topSearchForm").serialize();
+	    }
+	    return false;
+	}
+	//]]>
+Search
+검색폼
+검색어를 입력하세요
+입력내용삭제
+검색
+#2027 예산안
+#국민성장펀드
+#3대 메가프로젝트
+상세검색
+열기
+검색기간
+전체
+최근 1년
+최근 1달
+최근 1주
+직접입력
+검색시작년월일입력
+시작날짜 달력 팝업 열기
+~
+검색마지막년월일입력
+끝날짜 달력 팝업 열기
+검색범위
+전체
+제목
+본문
+첨부파일
+주제별
+경제
+접기
+경제일반
+생활경제
+기업
+금융
+산업
+국토개발·지역경제
+통신·과학
+사회
+접기
+사회일반
+노동·고용
+복지
+보건·위생
+교육·입시
+환경
+문화
+접기
+문화일반
+공연·예술
+문화콘텐츠
+관광
+체육
+외교/안보
+접기
+외교
+안보
+남북관계
+국제
+기관별
+ 부처
+접기
+청와대
+국무조정실
+고용노동부
+과학기술정보통신부
+교육부
+국가데이터처
+국가보훈부
+국방부
+국토교통부
+기획예산처
+기후에너지환경부
+농림축산식품부
+문화체육관광부
+법무부
+법제처
+보건복지부
+산업통상부
+성평등가족부
+식품의약품안전처
+외교부
+인사혁신처
+재정경제부
+중소벤처기업부
+지식재산처
+통일부
+해양수산부
+행정안전부
+ 청
+접기
+경찰청
+공소청
+관세청
+국가유산청
+국세청
+기상청
+농촌진흥청
+방위사업청
+병무청
+산림청
+새만금개발청
+소방청
+우주항공청
+재외동포청
+조달청
+중대범죄수사청
+질병관리청
+해양경찰청
+행정중심복합도시건설청
+ 위원회
+접기
+감사원
+개인정보보호위원회
+공정거래위원회
+국가인권위원회
+국민권익위원회
+금융위원회
+방송미디어통신위원회
+원자력안전위원회
+중앙선거관리위원회
+유형별
+정책뉴스
+웹툰
+카드/한컷
+사진
+영상
+숏폼
+KTV
+사실은 이렇습니다
+국민이 말하는 정책
+오피니언
+보도자료
+브리핑
+전문자료
+연설문
+전자책
+국정신문
+선택한 항목
+초기화
+상세검색
+상세검색 닫기
+검색 닫기
+사이트 이동경로
+홈
+뉴스
+정책뉴스
+콘텐츠 영역
+//<![CDATA[
+	var currUrl = document.location.href;
+	var newtitle = '구직 급여 수급자 대상 실업크레딧 신청 안내';
+	newtitle = newtitle.replace("&#034;","''");
+	newtitle = newtitle.replace("&#034;","''");
+	var resultUrl = '';
+	//소셜연동팝업
+	/* function snsPopup(social) {
+		snsShareTwitter(social, newtitle, "PMN", "148931167");
+	} */
+	/* 기사담기 */
+	function newsBookmark(){
+	    var newsId   = "148931167";
+	    var title    = newtitle;
+	    var menuNavi = '정책정보>경제';
+	    var link     = "/policy/civilView.do?newsId=148931167";
+	    commonNewsBookmark(newsId, menuNavi, title, link);
+	}
+	/* 기사추천하기 */
+	async function newsRecommend(){
+		const formData = new FormData();
+		await fetch('/etc/getRsaKey.do')
+		.then(response => response.json())
+		.then(data => {
+			console.log(data);
+			formData.append('sessionId', data.sessionId);
+			formData.append('RSAModulus', data.RSAModulus);
+			formData.append('RSAExponent', data.RSAExponent);				
+		});
+		var newsId   = "148931167";
+			var rsa = new RSAKey();
+			rsa.setPublic(formData.get('RSAModulus'), formData.get('RSAExponent'));
+			const id = rsa.encrypt(newsId);		
+			formData.append('newsId', id);
+			fetch('/common/recommend.do',{
+				method : 'POST',
+				body : formData
+			}).then(response => response.json()).then(data => {
+				console.log(data);
+				if(data.status){							
+					$(".as_sns .like .count, .view_opt .like .count").html(data.ChkCnt);
+					$(".as_sns .like, .view_opt .like").addClass('active');	
+					$('.as_sns .like').attr('title', '공감 추천함');
+					//setCookieNewsId(newsId);
+				}else{
+					alert(data.message);
+				}
+			});				
+	}
+	function setCookieNewsId(newsId){
+		var todayDate = new Date();
+		todayDate.setDate( todayDate.getDate()+Number(0));
+		todayDate.setHours(23,59,59,999);
+		document.cookie = "newsIds"+newsId+"=done; path=/; expires=" + todayDate.toGMTString() + ";";	        	        
+	}
+	/* 즐겨찾기 */
+	function enjoyFind(){
+		 if (navigator.userAgent.indexOf("Chrome") != -1) {
+			 alert('Ctrl+D키를 눌러 북마크를 등록해주세요');
+		 }else if(window.sidebar){
+			 window.sidebar.addPanel('정책브리핑 - '+newtitle,currUrl,"");
+		 }else if(navigator.userAgent.indexOf("opera") != -1){	 
+		 	var elem = document.createElement('a');
+			 elem.setAttribute('href', currUrl);
+			 elem.setAttribute('title', '정책브리핑 - '+newtitle);
+			 elem.setAttribute('rel', 'sidebar');
+			 elem.click();
+		 }else{
+	   		{window.external.AddFavorite(currUrl,'정책브리핑 - '+newtitle);}
+		 }
+	}
+	//sns공유카운트 추가
+	function snsShareCount(snsType){
+		var tblKey = "PMN";
+		var newsId = "148931167";
+		var type = snsType;
+	    var longUrl     = new String(window.location);
+	    var dataStr = 'tblKey=' + tblKey + '&newsId=' + newsId + '&snsGubun=' + type + '&longUrl=' + encodeURIComponent(longUrl);
+	    $.ajax({
+	             type: 'get'
+	           , url: '/common/snsShare.do'
+	           , data: dataStr
+	           , dataType: 'xml'
+	           , timeout : 5000
+	           , success: function(data) {
+	             }
+	           , error : function() {
+	           }
+	           , complete : function() {
+	           }
+	       });        
+	}
+	//페이스북 공유
+	$(document).ready(function(){
+		$.ajaxSetup({cache: true});
+		$.getScript('//connect.facebook.net/en_US/sdk.js', function(){
+			FB.init({
+				appId: '709243569672550',
+				version:'v2.5'
+			});
+			var thisURL = document.location.href;
+		 	var thisPage = thisURL.match(/(\w+).do/g);
+		 	//var thumbnailUrl = "https://www.korea.kr/images/facebook/korea_logo_150.jpg";
+		 	var thumbnailUrl = "";
+		 	var title = newtitle;
+		 	if(thumbnailUrl == ""){
+		 		thumbnailUrl = "https://www.korea.kr/images/event/korea_logo_2024.jpg";
+		 	}
+		 	$('.share .share_lst .fb').click(function(){
+		 		snsShareCount('facebook');
+		 			FB.ui({
+		   	     	     method : 'feed',
+		   	     	     name : title,
+		   	      	     link : thisURL,
+		   	     	     picture : thumbnailUrl,
+		   	     	     caption : '',
+		   	     	     description : '',
+		   	     	     message : ''
+	        			}, function(response){   				
+	        			});
+	    	 	});
+		});
+		var newsId   = "148931167";
+		if($.cookie('newsId'+newsId) == 'done'){
+			$(".as_sns .like, .view_opt .like").addClass('active');
+		}
+	});
+   //트위터 공유
+   function twitter2() {
+       var tblKey = "PMN";
+ 	   var newsId = "148931167";
+       var linkUrl   = getLinkUrl();
+       var type      = "twitter";
+       var shortUrl  = '';
+       var dataStr   = 'tblKey=' + tblKey + '&newsId=' + newsId + '&snsGubun=' + type + '&longUrl=' + encodeURIComponent(linkUrl);
+       snsShareCount(type);
+	   var sendUrl = '';
+           sendUrl = 'https://twitter.com/intent/tweet'
+                   + '?text=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(linkUrl);
+           window.open(sendUrl,'recom_icon_pop', 'width=400,height=364,scrollbars=no,resizable=no');           
+   }
+	 //트위터 url생성
+	 function twitterGetUrl1() {
+		   var longUrl     = new String(window.location);
+		   var result = '';
+	       var bit = {
+	    		   version: "2.0.1",
+	    		   login: "koreawebmaster",
+	    		   apikey: "R_5574dd2b8628c6f937590d76536301c4",
+	    		   longUrl: encodeURIComponent(longUrl)
+	       };
+	       var apiCallUrl= "https://api.bit.ly/shorten?"
+	    	   + "version=" + bit.version
+	    	   + "&login=" + bit.login
+	    	   + "&apiKey=" + bit.apikey
+	    	   + "&callback=?"
+	    	   + "&longUrl=" + bit.longUrl;
+	       var dataStr = "version=" + bit.version
+	    	   + "&login=" + bit.login
+	    	   + "&apiKey=" + bit.apikey
+	    	   + "&callback=?"
+	    	   + "&longUrl=" + bit.longUrl;       
+	       $.ajax({
+	           type: 'get'
+	         , url: 'https://api.bit.ly/shorten'
+	         , data: dataStr
+	         , timeout : 5000
+	         , dataType: 'json'
+	         , success: function(data) {
+	        	 result = data.results[longUrl].shortUrl;
+	        	 resultUrl = result;
+	         }
+	         , error : function() {
+	         }
+	         , complete : function() {
+	         }
+	       });   
+	       return result;
+	   }
+	//밴드 공유
+	function band(){
+		snsShareCount('band');
+	    var linkUrl   = getLinkUrl();
+		var url = "https://band.us/plugin/share?body=";
+		url += encodeURIComponent(  $('#titleText').val() );
+		url += "\n";
+		url += linkUrl;
+		url += "&route=https://www.korea.kr/";
+		var opt = 'left=0, top=0, width=650, height=650, scrollbars=0, resizable=1';
+		window.open(url, '_band', '');
+	}
+	//카카오스토리 공유
+	function kakaostory() {
+		snsShareCount('kakaostory');
+		Kakao.Story.share({
+			url : document.location.href
+			, text : $('meta[property="og:title"]').attr('content')
+		});	
+	}	
+	/* URL 복사*/
+	function fn_clickurl(){
+		document.body.appendChild(cp_textarea);
+		cp_textarea.value = currUrl;
+		cp_textarea.select();
+		document.execCommand('copy');
+		document.body.removeChild(cp_textarea);
+		cp_textarea.value = "";		
+		//window.clipboardData.setData('Text', currUrl);
+	    alert('복사되었습니다.\nCtrl+v를 눌러 붙여넣기하세요.');
+	}
+	function getLinkUrl(){
+	 	var newsId = "148931167";
+	 	var cateId = "subject";		
+		var url_all = document.location.href;
+		var url_before =  url_all.split('?');
+		var url_newsId =  url_all.split('newsId=');
+		var url_final = url_before[0] +"?newsId="+newsId;
+	    //top50인 경우 cateId 추가
+	    if(url_all.indexOf("top50View.do")>-1){//top50
+	    	url_final = url_final + "&cateId=" + cateId;
+	    }		
+	    //정책포커스인 경우에는 policyNewsView로 보냄. 밴드에서 파라메터 두개 안됨
+	    if(url_all.indexOf("policyFocusView.do")>-1){//정책포커스
+	    	url_final = "https://www.korea.kr/news/policyNewsView.do?newsId=" + newsId;;
+	    }	    
+		return url_final;
+	}
+    var kboard_url = "https://www.korea.kr/";
+    var kb_con_title = kboard_url;
+    var kb_thum_link = "/images/icon/icon_korea_120.jpg";
+	//카카오톡 전송
+	function kakao_send(){
+	}
+	//]]>
+공유
+열기
+공유
+페이스북
+X
+밴드
+카카오톡
+카카오스토리
+ -->
+즐겨찾기
+URL 복사
+공유 닫기
+공감수
+5
+댓글수(클릭시 댓글로 이동)
+뉴스레터 구독신청(클릭시 페이지로 이동)
+				<!-- 
+				정책포커스만 추가
+정책뉴스
+ -->
+구직 급여 수급자 대상 실업크레딧 신청 안내
+2024.07.08
+문화체육관광부 국민소통실
+본문 듣기 시작
+글자크게
+글자작게
+인쇄
+		 -->
+			$(function(){
+				const audioCnt = '0';
+				const regiDate = '2024.07.08'.split('.');
+				if(audioCnt > 0){			
+					const arr = [];
+					for(var i=1; i <= audioCnt; i++){
+						let audioUrl = 'https://www.korea.kr/newsWeb/resources/attaches/TTS/'+regiDate[0]+'/'+regiDate[1]+'/148931167_'+i+'.mp3';
+						arr.push(audioUrl);
+					}
+					const audio = new Audio(arr[0]);		
+					let rate = 1.0;			
+					audio.playbackRate = rate;
+					$('.tts_lst .start').on('click', function(){
+						if(audio.paused){
+							audio.src = arr[0];		
+							audio.play();	
+							audio.playbackRate = rate;
+							fetch('/guide/emailReject.do?call_from=naver_tts_pc');
+						}else{
+							audio.pause();
+							audio.currentTime = 0;
+						}
+					});
+					let next = 0;
+					audio.addEventListener('ended', function(){				
+						next = next + 1;
+						if(next < arr.length){
+							audio.src = arr[next];
+							audio.load();		
+							audio.playbackRate = rate;
+							audio.play();
+							console.log(audio.src);
+						}else{
+							$('.tts_speed').removeClass('active');
+							$('.tts_speed .open span').text('열기');
+						}
+					});
+					$('.tts_lst ul button').on('click', function(){
+						rate = $('.tts_lst ul .active button').attr('data-rate');					
+						audio.playbackRate = rate;				
+					});
+					$('.tts_speed .open').on('click', function () {
+						var $wrap = $(this).closest('.tts_speed');
+						if ($wrap.hasClass('active')) {
+							if(!audio.paused){
+								audio.pause();
+								audio.currentTime = 0;					
+							}
+							//showTtsEndNotice($wrap);
+							$wrap.removeClass('active');
+							$(this).find('span').text('열기');					
+							return;
+						}
+						if ($(this).find('span').text() === '열기') {
+							$(this).next('.tts_lst').stop(true, true).fadeIn(150);
+							$(this).find('span').text('닫기');
+						} else {
+							$(this).find('span').text('열기');
+							$(this).next('.tts_lst').stop(true, true).fadeOut(150);
+						}
+					});
+					$(document).on('click', function (e) {
+						if ($('.tts_speed').hasClass('active') &&
+							$('.tts_speed .open span').text() === '멈추기') {
+							return;
+						}
+						if (!$(e.target).closest('.tts_speed').length) {
+							$('.tts_speed.active').each(function () {
+								//showTtsEndNotice($(this));
+							});
+							$('.tts_speed').removeClass('active');
+							$('.tts_speed .open span').text('열기');
+							$('.tts_speed .tts_lst').stop(true, true).fadeOut(150);
+						}
+					});
+				}
+			});
+본문듣기
+시작
+글자크기 설정
+열기
+글자크기 설정
+작게
+보통
+크게
+아주크게
+최대크게
+글자크기 설정 닫기
+인쇄하기
+목록
+실직 전 3개월간 평균소득의 50%를 구직급여 수급기간 동안 지원하는 제도로 노후 준비에 힘이 되어드립니다.
+실업크레딧
+▲ 지원대상 
+&middot; 국민연금 가입자 또는 가입자였던 사람 중 18세 이상 60세 미만의 구직급여 수급자
+※ 단, 재산세 과세표준의 합이 6억 원 또는 종합소득(사업 및 근로소득 제외)금액의 합이 1,680만 원을 초과하는 사람은 제외
+▲ 지원내용
+&middot; 인정소득 : 실직 전 3개월간 평균소득의 50%(최대 70만 원) 
+&middot; 지원기간 : 구직급여 수급기간
+&middot; 실업-재취업 반복 시 지속수급 및 생애 최대 12개월까지 지원 가능
+&middot; 월 보험료의 25% 본인 부담 시 연금보험료 75% 지원, 가입기간 추가 산입
+▲ 신청방법
+&middot; 방문 신청 : 전국 국민연금공단 지사 및 고용센터 (수급자격인정 신청 또는 실업인정 신청 시)
+▲ 문의 
+&middot; 국민연금공단(☎1355)
+&middot; 고용노동부 상담센터(☎1350)
+//<![CDATA[
+	// 담당자팝업
+	function copyRightPopup(){
+		var browserTop  = "";
+		var browserLeft = "";
+		var ie;
+		if (navigator.userAgent.indexOf('MSIE') > 0){
+		  ie = true;
+		} else {
+		  ie = false;
+		}
+		if(ie){
+			browserTop  = self.screenTop;
+			browserLeft = self.screenLeft;
+		}else{
+			browserTop  = window.screenY;
+			browserLeft = window.screenX;
+		}
+		window.open("/guide/copyRightPopup.do", "copyRightPopup", 'width='+700+',height='+600+',top='+browserTop+',left='+browserLeft+',resizable=yes, scrollbars=yes, status=no, location=no');
+	}
+	//]]>
+이 자료는 
+텍스트에 한하여 공공누리 제4유형(출처표시+상업적 이용금지+변경금지)의 조건
+에 따라 이용할 수 있습니다.
+단, 텍스트를 제외한 사진·이미지·일러스트·동영상 등 자료의 대부분은 정책브리핑이 저작권을 보유하고 있지 않으므로, 이용 전 해당 저작권자의 허락을 반드시 받으셔야 합니다.
+저작권정책
+담당자안내
+									기사 이용 시에는 출처를 반드시 표기해야 하며, 위반 시
+저작권법 제37조
+제37조(출처의 명시)
+① 이 관에 따라 저작물을 이용하는 자는 그 출처를 명시하여야 한다. 다만, 
+제26조
+, 
+제29조부터 제32조까지
+, 
+제34조
+ 및 
+제35조의2
+의 경우에는 그러하지 아니하다. 
+&lt;개정 2011. 12. 2.&gt;
+② 출처의 명시는 저작물의 이용 상황에 따라 합리적이라고 인정되는 방법으로 하여야 하며, 저작자의 실명 
+ 또는 이명이 표시된 저작물인 경우에는 그 실명 또는 이명을 명시하여야 한다.
+닫기
+ 및
+제138조
+제138조(벌칙)
+다음 각 호의 어느 하나에 해당하는 자는 500만원 이하의 벌금에 처한다. 
+&lt;개정 2011. 12. 2.&gt;
+1. 
+제35조
+제4항
+을 위반한 자
+2. 
+제37조
+(제87조 및 제94조에 따라 준용되는 경우를 포함한다)를 위반하여 출처를 명시하지 아니한 자
+3. 
+제58조
+제3항
+(제63조의2, 제88조 및 제96조에 따라 준용되는 경우를 포함한다)을 위반하여 저작재산권자의 표지를 하지 아니한 자
+4. 
+제58조의2
+제2항
+(제63조의2, 제88조 및 제96조에 따라 준용되는 경우를 포함한다)을 위반하여 저작자에게 알리지 아니한 자
+5. 
+제105조
+제1항
+에 따른 신고를 하지 아니하고 저작권대리중개업을 하거나, 
+제109조
+제2항
+에 따른 영업의 폐쇄명령을 받고 계속 그 영업을 한 자 [제목개정 2011. 12. 2.]
+닫기
+									에 따라 처벌될 수 있습니다.
+&lt;자료출처=정책브리핑 www.korea.kr&gt;
+<!-- 20190520 라이브리 업데이트에 따른 공공아이핀 삭제
+	function goGpinUrl() {
+		document.domain = "korea.kr";
+		var wWidth = 350;
+		var wHight = 120;
+		var wX = (window.screen.width - wWidth) / 2;
+		var wY = (window.screen.height - wHight) / 2;
+		var status = "toolbar=no, location=no, directories=no, status=yes, menubar=no, resizable=no, scollbars=no"
+				   + ", width=" + wWidth + " height=" + wHight	+ " left=" + wX	+ ", top=" + wY;
+		window.name = "gpinWindow";
+		window.open("https://www2.korea.kr/newsWeb/pages/unify2/gpinAuthRequestLivere.jsp?returnUrl=" + location.href, "", status);
+	}
+-->
+공유
+열기
+공유
+페이스북
+X
+밴드
+카카오톡
+즐겨찾기
+URL 복사
+공유 닫기
+좋아요 
+5
+댓글
+보기
+						//         
+						/* 라이브리 측에서 발급된 플랫폼 사용권한 Seq No. */
+						var consumer_seq   = "40"; 
+						var livere_seq     = "84"; 
+						var smartlogin_seq = "435"; 
+						//var livere_seq   = "22986"; // 라이브리 테스트 코드
+						//var livere_seq   = "33312"; // 라이브리 제로 테스트 코드
+						var urlTemp = location.href;
+						var lastIndex = urlTemp.indexOf("&");
+						var sIndex = urlTemp.indexOf("#");
+						var startIndex = urlTemp.indexOf("newsId=");
+						if(sIndex > -1){
+							urlTemp = urlTemp.substring(0, sIndex);						
+						}
+						var title = "구직 급여 수급자 대상 실업크레딧 신청 안내";
+						if(startIndex == -1){
+							//정책포커스, 대통령 정상외교 등 newsId 상위 패키지 존재시에는 newsId까지 주소 셋팅해주기 위해 (policyFocusView.do?pkgId=49500593&newsId=148774830)
+							if ("2" == "") {
+								lastIndex = urlTemp.indexOf("&", Number(lastIndex) + 1);
+							}
+							if (lastIndex == -1) {
+								lastIndex = urlTemp.length;
+							}
+							/* 설정 부분 */
+							// 20170915 라이브리 레퍼값 변경
+							var firstIndex = Number(urlTemp.indexOf("?")) + 1;
+							var refer = urlTemp.substring(firstIndex, lastIndex);
+							refer = "www.korea.kr?" + refer;
+							console.log(refer);
+						}else{
+							var temp = urlTemp.substring(startIndex, urlTemp.length);	
+							lastIndex = temp.indexOf("&");
+							if (lastIndex == -1) {
+								lastIndex = temp.length;
+							}
+							// 20170915 라이브리 레퍼값 변경
+							var firstIndex = Number(urlTemp.indexOf("?")) + 1;
+							var refer = temp.substring(0, lastIndex);
+							refer = "www.korea.kr?" + refer;
+							console.log(refer);
+						}
+						//refer = "overtherainbow.korea.kr?" + refer;
+						// 20190520 라이브리 버전 업데이트 모듈 변경
+						window.livereOptions = {
+							refer : refer,
+							eagarLoading : true,
+							customMessage : {
+								m_write_placeholder : '상업광고, 욕설, 도배글, 명예훼손, 개인정보유출, 저작권 침해 등은 운영원칙에 따라서 별도의 통보없이 삭제될 수 있고 관련 법률에 의해 제재를 받습니다.'
+							}
+						};
+						(function(d, s) {
+							var j, e = d.getElementsByTagName(s)[0];
+							if (typeof LivereTower == 'function') {
+								return;
+							}
+							j = d.createElement(s);
+							j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+							j.async = true;
+							e.parentNode.insertBefore(j, e);
+						})(document, 'script');
+						window.livereHooks = {
+							created : function(data) {
+								$('#livereContainer').show();
+								console.log(data);
+								$('.livere_comment em').text(data.totalCount>0?data.totalCount:'');
+								$('#comment_cnt').text(data.totalCount>0?data.totalCount:'');
+							}
+						};
+						fetch('https://connect.livere.org/api/v2/clients/articles/stats?referer='+refer, {
+							headers: {
+								'X-Origin': 'https://livere.org',
+								'Authorization' : 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJMS1BVM0Zmamg4OTRqRG9ZLVN0d3dFSDZNT3pBcnp3LUVyVmxZLXBmNlpjIn0.eyJleHAiOjE5Mjg2MzQwODEsImlhdCI6MTc3MzExNDA4MSwianRpIjoiMjYxZDQwY2QtY2U4Ny00YWRmLTgzYjYtZWYzNGE0OGIxNDM0IiwiaXNzIjoiaHR0cHM6Ly92YXVsdC5saXZlcmUub3JnL3JlYWxtcy9saXZlcmUiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMTRkYWI4YjAtZjkxNy00MWI4LWFhODktMzEzOTUxMGJjZTZjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiY29ubmVjdCIsInNpZCI6IjBkNDAxMGJjLWVhMGMtNDIwNi1iNGNlLTZjNGY2OGExZWJhNCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiLyoiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtbGl2ZXJlIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCBvZmZsaW5lX2FjY2VzcyIsIm9wZXJhdGlvbmFsX2NsaWVudF9pZHMiOlsiWWRoQVJxS1MxMDNDNFNMOHFlS04iXSwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJBZG1pbiBNQ1NUIiwibmlja25hbWUiOiJtY3N0X2FkbWluIiwicHJlZmVycmVkX3VzZXJuYW1lIjoibWNzdEBjaXppb24uY29tIiwiZ2l2ZW5fbmFtZSI6IkFkbWluIiwiZmFtaWx5X25hbWUiOiJNQ1NUIiwiZW1haWwiOiJtY3N0QGNpemlvbi5jb20ifQ.pRShgOR4LTDKya-fAX9bkLWikdWMZuCG3r-7e6Yx_FaVMfsLMeH5nVuRFiL-evj7FEjz3cEk7nlPkQnW3xl-dHih5CrOgdjqUTfBqptIDnhN7AsOGxv7x9gxmupgRNtjLy203znFChBdjPcmj-rI0x8gKbQ8Q4oX8N0U7y_893LwGnqmv2RASGicbPh3HTAdIDFOemCO2yAjBj9pnAlUiGsZI2shK2dd4VlQ1LFiRQABNaeNygUL8X7F-dXzM1hAkkvsSk8qqJypHDUUbJELeJ7P8uNfqL_uiGhqR2LSTVuksoQRNXKDnHeMiuSNVlYVMOSN_LyPTj6Ss1S7S7T2bw'
+							}
+							}).then(
+									response => {
+										if(response.statusText === 'OK'){
+											return response.json();
+										}else{
+											return 'noJson';
+										}
+									}
+								)
+							  .then(data => {
+								  if(data != 'noJson'){
+									const totalCnt = data.data.result.total_comment_count;
+									$('.livere_comment em').text(totalCnt>0?totalCnt:'');
+									$('#comment_cnt').text(totalCnt>0?totalCnt:'');  
+								  }									
+								});
+운영원칙
+열기
+정책브리핑 게시물 운영원칙에 따라 다음과 같은 게시물은 삭제 또는 계정이 차단 될 수 있습니다.
+1. 타인의 메일주소, 전화번호, 주민등록번호 등의 개인정보 또는 해당 정보를 게재하는 경우
+2. 확인되지 않은 내용으로 타인의 명예를 훼손시키는 경우
+3. 공공질서 및 미풍양속에 위반되는 내용을 유포하거나 링크시키는 경우
+4. 욕설 및 비속어의 사용 및 특정 인종, 성별, 지역 또는 특정한 정치적 견해를 비하하는 용어를
+									게시하는 경우
+5. 불법복제, 바이러스, 해킹 등을 조장하는 내용인 경우
+6. 영리를 목적으로 하는 광고 또는 특정 개인(단체)의 홍보성 글인 경우
+7. 타인의 저작물(기사, 사진 등 링크)을 무단으로 게시하여 저작권 침해에 해당하는 글
+8. 범죄와 관련있거나 범죄를 유도하는 행위 및 관련 내용을 게시한 경우
+9. 공인이나 특정이슈와 관련된 당사자 및 당사자의 주변인, 지인 등을 가장 또는 사칭하여 글을 게시하는 경우
+10. 해당 기사나 게시글의 내용과 관련없는 특정 의견, 주장, 정보 등을 게시하는 경우
+11. 동일한 제목, 내용의 글 또는 일부분만 변경해서 글을 반복 게재하는 경우
+12. 기타 관계법령에 위배된다고 판단되는 경우
+13. 수사기관 등의 공식적인 요청이 있는 경우
+운영원칙 닫기
+			<!-- 
+			 -->
+뉴스레터 구독
+관련기사
+관련기사 더보기
+	//<![CDATA[
+		 //이메일 유효성 검사
+		 function validEmail(email) {
+		 	 var chkRegular = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+		 	 if (chkRegular.test(email)) {
+		 		 return true;
+		 	 } else {
+		 		 return false;
+		 	 }
+		 }
+		 // 정책퀴즈 페이지 이동
+		 function joinQuiz(){
+			var chkedQZ = document.getElementsByName("chkQuiz");
+			var chkedQzVal = '';
+			for(var i=0; i<chkedQZ.length; i++){
+		        if (chkedQZ[i].checked){
+		        	chkedQzVal = chkedQZ[i].value;
+		        	chkedQzVal = encodeURI(encodeURIComponent(chkedQzVal));
+		        }
+			}
+			if(chkedQzVal == ''){
+				alert('정답을 선택해 주세요.');
+				return;
+			}
+		 	var sendUrl ="/policyplus/policyQuizPopup.do?quizId="+document.quizForm.quizId.value+"&examSeq="+chkedQzVal+"&pWise=Quiz3";
+	        window.open(sendUrl,'quiz_pop', 'width=518,height=580,scrollbars=no,resizable=no');
+		 }
+		 function randomMake(){
+			 var idx = 0;
+			/*  Date date = new Date();
+			 idx = date; */
+			 return idx;
+		 }
+	//]]>
+정책 NOW
+실시간 인기뉴스 
+11.03. 19:52 기준
+장애인전용주차구역 이용 대상 확대…가정위탁·주야간보호 포함
+NEW
+휴머노이드가 일하는 법 배우는 '데이터 생산기지' 국내 첫 개소
+단계상승
+3
+이 대통령 "사이버보안, 사후 대응서 선제 예방으로…범정부 총괄기구 검토"
+단계하락
+1
+"청주에서 온 줄 몰랐다"…구로 객석 울린 창작 오페라 '우리 아빠'의 반란
+단계하락
+3
+이 대통령 "2027년 예산안은 성장확산 예산…'모두의 성장' 대전환"
+NEW
+영수증 버려도 돼? 안 돼? 딱 정리해드립니다
+단계하락
+2
+인기뉴스
+												<a href="/news/policyNewsView.do?newsId=148974451&pWise=mostViewNewsSub&pWiseSub=B1"
+									        	>				
+이달 29일부터 주민등록 등·초본에 '계부·계모' 대신 '세대원' 표시
+												<a href="/news/policyNewsView.do?newsId=148974548&pWise=mostViewNewsSub&pWiseSub=B2"
+									        	>				
+수도권에 신규택지 7만 6700호 추가…2030년까지 착공 추진
+												<a href="/news/policyNewsView.do?newsId=148974590&pWise=mostViewNewsSub&pWiseSub=B3"
+									        	>				
+한국 첫 북극항로 왕복 성공에 세계 주목…"물류허브 도약 기대"
+												<a href="/news/policyNewsView.do?newsId=148974638&pWise=mostViewNewsSub&pWiseSub=B4"
+									        	>				
+고속도 휴게소 직계약 시범사업 착수…음식·편의 '가성비' 기대
+												<a href="/news/policyNewsView.do?newsId=148974467&pWise=mostViewNewsSub&pWiseSub=B5"
+									        	>				
+이 대통령 "'오늘도 무사히'는 나라의 책무…국민 안전권 실제로 보장해야"
+인기뉴스
+더보기
+ -->
+최신뉴스
+한-튀르키예 정상회담 결과 관련 김성완 대변인 서면 브리핑
+최휘영 장관, 전북도지사 만나 '2036 하계올림픽' 유치 현안 논의
+"청주에서 온 줄 몰랐다"…구로 객석 울린 창작 오페라 '우리 아빠'의 반란
+AI가 여는 바다, 미래를 양식하다…'2026 수산양식박람회'
+[보도설명자료] 「세종 추가 이전 발표해놓고 1차 경제 효과 이제야 분석」(11.3., 서울경제) 보도 관련
+최신 뉴스
+더보기
+ -->
+오늘의 멀티미디어
+								<a href="https://www.korea.kr/multi/mediaNewsView.do?newsId=148974804&pWise=sub&pWiseSub=D1"
+								   		 >
+연 10만 명 찾는 시골 햄버거집에 김원훈이 떴다!
+가짜뉴스 발견 시, 이렇게 제보하세요!
+								<a href="https://www.korea.kr/multi/visualNewsView.do?newsId=148974865&amp;cateId=cardnews&pWise=sub&pWiseSub=D3"
+								   		 >
+근로·자녀장려금 미신청 가구, 12월 1일까지 꼭 신청!!
+2027년 예산안 대통령 시정연설
+정책포커스
+//MY맞춤뉴스 영역에 최신뉴스 노출여부: [1순위] 면편집코드 'MY맞춤뉴스 최신뉴스 노출여부' [2순위] 'dable통신과 AdBlock차단여부에 따라 최신뉴스 노출 여부'
+	//면편집 MY맞춤뉴스 최신뉴스노출N
+	let dableResult = null;
+	let adBlockResult = null;
+	async function detectAdBlock() {
+		let adBlockEnabled = false;
+		const googleAdUrl = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+		try {
+			await fetch(new Request(googleAdUrl)).catch(_ => adBlockEnabled = true);
+		} catch (e) {
+			adBlockEnabled = true;
+			adBlockResult = false;
+		} finally {
+			if (adBlockEnabled) {
+				adBlockResult = false;
+				$("#div_dable").hide();
+				$("#ul_newest_news").show();
+				console.log('AdBlock Error or AdBlock On!');
+			} else {
+				adBlockResult = true;
+				console.log('AdBlock Off!');
+			}
+		}
+	}
+	detectAdBlock();
+	$(window).on('load', function() {	
+		if ($("#div_dable").find("iframe").length < 1) {
+			dableResult = false;
+			$("#div_dable").hide();
+			$("#ul_newest_news").show();		
+		}else{
+			dableResult = true;
+		}
+		adBlockCheck = setInterval(function() {
+			if (adBlockResult != null) {
+				clearInterval(adBlockCheck);
+				if (adBlockResult == false) {
+					$("#div_dable").hide();
+					$("#ul_newest_news").show();
+				}
+			}
+		}, 100);
+	});
+하단 배너 영역
+이전보기
+ / 
+정지
+다음보기
+사실은 이렇습니다
+국무조정실
+[보도설명자료] 「세종 추가 이전 발표해놓고 1차 경제 효과 이제야 분석」(11.3., 서울경제) 보도 관련
+2026.11.03
+공지사항
+정책브리핑 RSS 서비스 제공 중단 안내
+공지사항
+더보기
+대한민국 정책브리핑
+(30119) 세종특별자치시 갈매로 388 정부세종청사 15동
+전화
+ 044-203-3555 (월~금 09:00~18:00, 공휴일 제외)
+팩스
+ 044-203-3488
+대표메일
+webmaster@korea.kr
+관련사이트
+K-공감
+KTV
+코리아넷
+국민신문고
+내고장알리미
+페이스북 바로가기
+X 바로가기
+네이버포스트 바로가기
+유튜브 바로가기
+인스타그램 바로가기
+행정부처 바로가기
+개인정보처리방침
+저작권정책
+이메일 수집거부
+자주 묻는 질문(FAQ)
+© Ministry of Culture, Sports and Tourism . All rights reserved
+상단으로 이동
+(function(w, d, a){
+    w.__beusablerumclient__ = {
+        load : function(src){
+            var b = d.createElement("script");
+            b.src = src; b.async=true; b.type = "text/javascript";
+            d.getElementsByTagName("head")[0].appendChild(b);
+        }
+    };w.__beusablerumclient__.load(a + "?url=" + encodeURIComponent(d.URL));
+})(window, document, "//rum.beusable.net/load/b170510e100133u636");

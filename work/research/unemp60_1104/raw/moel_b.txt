@@ -1,0 +1,1268 @@
+고용노동부
+			var contextPath 	= "";
+			var gblMenuHelp 	= '';
+			var gblContactUs 	= ``;
+			var gblMenuList 		= JSON.parse('[{"menuCode":"83","menuNm":"민원","upperMenuCode":null,"menuUrl":null,"ppupYn":"N","cnt":4},{"menuCode":"89","menuNm":"민원이용안내","upperMenuCode":"83","menuUrl":null,"ppupYn":"N","cnt":3},{"menuCode":"338","menuNm":"민원신청방법","upperMenuCode":"89","menuUrl":"/minwon/guid/use_info_A.do","ppupYn":"N","cnt":0},{"menuCode":"339","menuNm":"민원따라하기","upperMenuCode":"89","menuUrl":"/minwon/info/use_info_B1.do","ppupYn":"N","cnt":0},{"menuCode":"340","menuNm":"관할관서찾기","upperMenuCode":"89","menuUrl":"/minwon/rigion/rigion_C1.do","ppupYn":"N","cnt":0},{"menuCode":"90","menuNm":"민원신청","upperMenuCode":"83","menuUrl":null,"ppupYn":"N","cnt":4},{"menuCode":"341","menuNm":"온라인민원신청","upperMenuCode":"90","menuUrl":"/minwon/apply/formApplyList.do","ppupYn":"N","cnt":0},{"menuCode":"342","menuNm":"질의민원","upperMenuCode":"90","menuUrl":"/minwon/qnaApply.do","ppupYn":"N","cnt":0},{"menuCode":"343","menuNm":"빠른인터넷상담","upperMenuCode":"90","menuUrl":"/minwon/fastcounsel/fastcounselList.do","ppupYn":"N","cnt":0},{"menuCode":"391","menuNm":"국민제안","upperMenuCode":"90","menuUrl":"/minwon/mbrnPpsl/mbrnPpslList.do","ppupYn":"N","cnt":0},{"menuCode":"91","menuNm":"신고센터","upperMenuCode":"83","menuUrl":"/minwon/petition/fraud_list.do","ppupYn":"N","cnt":0},{"menuCode":"384","menuNm":"과태료 조회·납부","upperMenuCode":"83","menuUrl":"https://ifine.moel.go.kr","ppupYn":"Y","cnt":0},{"menuCode":"84","menuNm":"국민참여","upperMenuCode":null,"menuUrl":null,"ppupYn":"N","cnt":4},{"menuCode":"345","menuNm":"국민의견","upperMenuCode":"84","menuUrl":null,"ppupYn":"N","cnt":5},{"menuCode":"99","menuNm":"칭찬합시다","upperMenuCode":"345","menuUrl":"/participate/praise/praiseList.do","ppupYn":"N","cnt":0},{"menuCode":"197","menuNm":"안전신문고","upperMenuCode":"345","menuUrl":"https://www.safetyreport.go.kr","ppupYn":"Y","cnt":0},{"menuCode":"94","menuNm":"정부포상 365일 추천창구","upperMenuCode":"345","menuUrl":"/participate/posang/posangList.do","ppupYn":"N","cnt":0},{"menuCode":"98","menuNm":"정책참여","upperMenuCode":"345","menuUrl":"/participate/policy/policyList.do","ppupYn":"N","cnt":0},{"menuCode":"387","menuNm":"예산제안","upperMenuCode":"345","menuUrl":"/participate/budgetPpsl/budgetPpslList.do","ppupYn":"N","cnt":0},{"menuCode":"95","menuNm":"규제혁신","upperMenuCode":"84","menuUrl":null,"ppupYn":"N","cnt":3},{"menuCode":"97","menuNm":"규제혁신성과","upperMenuCode":"95","menuUrl":"/participate/reform/list.do","ppupYn":"N","cnt":0},{"menuCode":"96","menuNm":"규제혁신제안","upperMenuCode":"95","menuUrl":"/participate/regulatoryreform/suggestList.do","ppupYn":"N","cnt":0},{"menuCode":"242","menuNm":"규제입증요청","upperMenuCode":"95","menuUrl":"/participate/regulation/regulationList.do","ppupYn":"N","cnt":0},{"menuCode":"227","menuNm":"적극행정","upperMenuCode":"84","menuUrl":null,"ppupYn":"N","cnt":3},{"menuCode":"247","menuNm":"제도소개","upperMenuCode":"227","menuUrl":"/participate/proactivePublic/introduce.do","ppupYn":"N","cnt":0},{"menuCode":"248","menuNm":"추천/신고","upperMenuCode":"227","menuUrl":"/participate/mbrnPatc/participation.do","ppupYn":"N","cnt":0},{"menuCode":"249","menuNm":"적극행정 자료실","upperMenuCode":"227","menuUrl":"/participate/proactivePublic/board/list.do","ppupYn":"N","cnt":0},{"menuCode":"259","menuNm":"크리에이터 협업","upperMenuCode":"84","menuUrl":"/participate/creator/main.do","ppupYn":"N","cnt":0},{"menuCode":"85","menuNm":"뉴스·소식","upperMenuCode":null,"menuUrl":null,"ppupYn":"N","cnt":3},{"menuCode":"102","menuNm":"공지사항","upperMenuCode":"85","menuUrl":"/news/notice/noticeList.do","ppupYn":"N","cnt":0},{"menuCode":"100","menuNm":"보도·설명","upperMenuCode":"85","menuUrl":null,"ppupYn":"N","cnt":2},{"menuCode":"337","menuNm":"보도자료","upperMenuCode":"100","menuUrl":"/news/enews/report/enewsList.do","ppupYn":"N","cnt":0},{"menuCode":"101","menuNm":"언론보도대응","upperMenuCode":"100","menuUrl":"/news/enews/explain/enewsList.do","ppupYn":"N","cnt":0},{"menuCode":"285","menuNm":"홍보자료","upperMenuCode":"85","menuUrl":null,"ppupYn":"N","cnt":4},{"menuCode":"386","menuNm":"국정성과","upperMenuCode":"285","menuUrl":"/news/achievements/list.do","ppupYn":"N","cnt":0},{"menuCode":"103","menuNm":"홍보동영상","upperMenuCode":"285","menuUrl":"/news/hongbo/hongboList.do","ppupYn":"N","cnt":0},{"menuCode":"104","menuNm":"카드뉴스","upperMenuCode":"285","menuUrl":"/news/cardinfo/list.do","ppupYn":"N","cnt":0},{"menuCode":"105","menuNm":"월간내일(기관지)","upperMenuCode":"285","menuUrl":"/news/magazine/magazineList.do","ppupYn":"N","cnt":0},{"menuCode":"86","menuNm":"정보공개","upperMenuCode":null,"menuUrl":null,"ppupYn":"N","cnt":9},{"menuCode":"107","menuNm":"사전정보 공표목록","upperMenuCode":"86","menuUrl":"/info/publict/publictList.do","ppupYn":"N","cnt":0},{"menuCode":"265","menuNm":"행정정보공개","upperMenuCode":"86","menuUrl":null,"ppupYn":"N","cnt":6},{"menuCode":"260","menuNm":"정보공개안내","upperMenuCode":"265","menuUrl":"/info/opendata/list.do","ppupYn":"N","cnt":0},{"menuCode":"261","menuNm":"정보목록","upperMenuCode":"265","menuUrl":"/info/dataList/openDataList.do","ppupYn":"N","cnt":0},{"menuCode":"396","menuNm":"비공개 대상정보 세부기준","upperMenuCode":"265","menuUrl":"/info/exemptInfo/exemptInfoCommon.do","ppupYn":"N","cnt":0},{"menuCode":"262","menuNm":"업무추진비 공개","upperMenuCode":"265","menuUrl":"/info/busiCost/busiCostList.do","ppupYn":"N","cnt":0},{"menuCode":"263","menuNm":"공무국외출장","upperMenuCode":"265","menuUrl":"/info/businessTrip/businessTripList.do","ppupYn":"N","cnt":0},{"menuCode":"264","menuNm":"상품권 구매ㆍ사용내역","upperMenuCode":"265","menuUrl":"/info/ticket/ticketList.do","ppupYn":"N","cnt":0},{"menuCode":"295","menuNm":"정책실명제","upperMenuCode":"86","menuUrl":null,"ppupYn":"N","cnt":2},{"menuCode":"296","menuNm":"정책실명제 안내","upperMenuCode":"295","menuUrl":"/info/realpolicy/realPolicyMain.do","ppupYn":"N","cnt":0},{"menuCode":"109","menuNm":"중점관리 대상사업","upperMenuCode":"295","menuUrl":"/info/policyBiz/realPolicyList.do","ppupYn":"N","cnt":0},{"menuCode":"111","menuNm":"공공데이터개방","upperMenuCode":"86","menuUrl":"/info/publicdata/publicopen/list.do","ppupYn":"N","cnt":0},{"menuCode":"205","menuNm":"청렴정책공개","upperMenuCode":"86","menuUrl":null,"ppupYn":"N","cnt":4},{"menuCode":"206","menuNm":"반부패청렴자료","upperMenuCode":"205","menuUrl":"/info/integritydata/list.do","ppupYn":"N","cnt":0},{"menuCode":"207","menuNm":"청탁금지법 상담 및 조치","upperMenuCode":"205","menuUrl":"/info/integritycounseling/list.do","ppupYn":"N","cnt":0},{"menuCode":"110","menuNm":"감사결과","upperMenuCode":"205","menuUrl":"/info/inspecresult/list.do","ppupYn":"N","cnt":0},{"menuCode":"208","menuNm":"부패행위현황","upperMenuCode":"205","menuUrl":"/info/integritylist/list.do","ppupYn":"N","cnt":0},{"menuCode":"346","menuNm":"예산&middot;법령정보","upperMenuCode":"86","menuUrl":null,"ppupYn":"N","cnt":9},{"menuCode":"156","menuNm":"예산·기금 설명","upperMenuCode":"346","menuUrl":"/agency/budget/budgetList.do","ppupYn":"N","cnt":0},{"menuCode":"121","menuNm":"국고보조사업","upperMenuCode":"346","menuUrl":"/info/govsupport/govsupportcon/govSupportConList.do","ppupYn":"N","cnt":0},{"menuCode":"124","menuNm":"재정정보공개","upperMenuCode":"346","menuUrl":"/info/financeInfo/openfiscal/list.do","ppupYn":"N","cnt":0},{"menuCode":"127","menuNm":"자산운용","upperMenuCode":"346","menuUrl":"/info/astmgmt/employ/employBbsList.do","ppupYn":"N","cnt":0},{"menuCode":"117","menuNm":"현행법령","upperMenuCode":"346","menuUrl":"/info/lawinfo/statute/statuteList.do","ppupYn":"N","cnt":0},{"menuCode":"118","menuNm":"최근 제·개정 법령","upperMenuCode":"346","menuUrl":"/info/lawinfo/revision/list.do","ppupYn":"N","cnt":0},{"menuCode":"119","menuNm":"입법·행정예고","upperMenuCode":"346","menuUrl":"/info/lawinfo/lawmaking/list.do","ppupYn":"N","cnt":0},{"menuCode":"120","menuNm":"훈령&middot;예규&middot;고시","upperMenuCode":"346","menuUrl":"/info/lawinfo/instruction/list.do","ppupYn":"N","cnt":0},{"menuCode":"113","menuNm":"행정해석(질의회시)","upperMenuCode":"346","menuUrl":"/info/publicdata/qnrinfo/qnrInfoList.do","ppupYn":"N","cnt":0},{"menuCode":"115","menuNm":"체불사업주 명단공개","upperMenuCode":"86","menuUrl":"/info/defaulter/defaulterList.do","ppupYn":"N","cnt":0},{"menuCode":"347","menuNm":"정보공개 기타","upperMenuCode":"86","menuUrl":null,"ppupYn":"N","cnt":2},{"menuCode":"134","menuNm":"협동조합 경영공시","upperMenuCode":"347","menuUrl":"/info/coop/coopList.do","ppupYn":"N","cnt":0},{"menuCode":"114","menuNm":"주요발간자료","upperMenuCode":"347","menuUrl":"/info/publicdata/majorpublish/majorPublishList.do","ppupYn":"N","cnt":0},{"menuCode":"392","menuNm":"재해조사보고서 공개","upperMenuCode":"86","menuUrl":"/info/dsstExaminRpt/list.do","ppupYn":"N","cnt":0},{"menuCode":"87","menuNm":"정책소개","upperMenuCode":null,"menuUrl":null,"ppupYn":"N","cnt":4},{"menuCode":"348","menuNm":"정책안내","upperMenuCode":"87","menuUrl":"/policyitrd/policyItrdList.do","ppupYn":"N","cnt":0},{"menuCode":"152","menuNm":"정책자료실","upperMenuCode":"87","menuUrl":"/policy/policydata/list.do","ppupYn":"N","cnt":0},{"menuCode":"135","menuNm":"업무보고","upperMenuCode":"87","menuUrl":"/policy/busireport/main.do","ppupYn":"N","cnt":0},{"menuCode":"302","menuNm":"추진상황","upperMenuCode":"297","menuUrl":"/policy/policyinfo/propulsion/main.do","ppupYn":"N","cnt":0},{"menuCode":"303","menuNm":"보도 및 홍보자료","upperMenuCode":"297","menuUrl":"/policy/policyinfo/laborReformGuide/main.do","ppupYn":"N","cnt":0},{"menuCode":"304","menuNm":"상생임금위원회","upperMenuCode":"297","menuUrl":"/policy/policyinfo/winwinwage/main.do","ppupYn":"N","cnt":0},{"menuCode":"307","menuNm":"임금체계 개선","upperMenuCode":"297","menuUrl":"/policy/policyinfo/wagesystemRenewal/main.do","ppupYn":"N","cnt":0},{"menuCode":"293","menuNm":"미래노동시장연구회","upperMenuCode":"297","menuUrl":"/policy/policyinfo/futurelabor/main.do","ppupYn":"N","cnt":0},{"menuCode":"349","menuNm":"통계정보","upperMenuCode":"87","menuUrl":null,"ppupYn":"N","cnt":2},{"menuCode":"132","menuNm":"고용노동통계","upperMenuCode":"349","menuUrl":"http://laborstat.moel.go.kr/","ppupYn":"Y","cnt":0},{"menuCode":"381","menuNm":"고용행정통계","upperMenuCode":"349","menuUrl":"https://eis.work.go.kr/eisps/main/index.do","ppupYn":"Y","cnt":0},{"menuCode":"88","menuNm":"기관소개","upperMenuCode":null,"menuUrl":null,"ppupYn":"N","cnt":5},{"menuCode":"153","menuNm":"고용노동부는","upperMenuCode":"88","menuUrl":null,"ppupYn":"N","cnt":4},{"menuCode":"154","menuNm":"주요업무","upperMenuCode":"153","menuUrl":"/agency/overview/vision/list.do","ppupYn":"N","cnt":0},{"menuCode":"155","menuNm":"연혁","upperMenuCode":"153","menuUrl":"/agency/overview/history/list.do","ppupYn":"N","cnt":0},{"menuCode":"377","menuNm":"기관문양","upperMenuCode":"153","menuUrl":"/agency/overview/mi/list.do","ppupYn":"N","cnt":0},{"menuCode":"182","menuNm":"고용노동행정서비스헌장","upperMenuCode":"153","menuUrl":"/site/charter/charterList.do","ppupYn":"N","cnt":0},{"menuCode":"350","menuNm":"열린 장관실","upperMenuCode":"88","menuUrl":"https://www.moel.go.kr/cyber/main.do","ppupYn":"Y","cnt":0},{"menuCode":"158","menuNm":"차관소개","upperMenuCode":"88","menuUrl":null,"ppupYn":"N","cnt":2},{"menuCode":"394","menuNm":"차관","upperMenuCode":"158","menuUrl":"/agency/overview/vice/intro.do","ppupYn":"N","cnt":0},{"menuCode":"395","menuNm":"산업안전보건본부장","upperMenuCode":"158","menuUrl":"/agency/overview/director/intro.do","ppupYn":"N","cnt":0},{"menuCode":"159","menuNm":"조직안내","upperMenuCode":"88","menuUrl":null,"ppupYn":"N","cnt":4},{"menuCode":"160","menuNm":"본부","upperMenuCode":"159","menuUrl":"/agency/org/ministry/list.do","ppupYn":"N","cnt":0},{"menuCode":"161","menuNm":"소속기관","upperMenuCode":"159","menuUrl":"/agency/org/our/list.do","ppupYn":"N","cnt":0},{"menuCode":"162","menuNm":"기관 및 부서 검색","upperMenuCode":"159","menuUrl":"/agency/org/staff/staffList.do","ppupYn":"N","cnt":0},{"menuCode":"163","menuNm":"산하기관","upperMenuCode":"159","menuUrl":"/agency/org/affiliated/list.do","ppupYn":"N","cnt":0},{"menuCode":"164","menuNm":"찾아오시는 길","upperMenuCode":"88","menuUrl":"/agency/map/list.do","ppupYn":"N","cnt":0},{"menuCode":"175","menuNm":"이용안내","upperMenuCode":null,"menuUrl":null,"ppupYn":"N","cnt":6},{"menuCode":"178","menuNm":"누리집 안내지도","upperMenuCode":"175","menuUrl":"/site/sitemap/sitemapList.do","ppupYn":"N","cnt":0},{"menuCode":"351","menuNm":"배너&middot;앱 모음","upperMenuCode":"175","menuUrl":null,"ppupYn":"N","cnt":3},{"menuCode":"382","menuNm":"알림판 모음","upperMenuCode":"351","menuUrl":"/site/notiboard/notiboardList.do","ppupYn":"N","cnt":0},{"menuCode":"176","menuNm":"누리집 배너 모음","upperMenuCode":"351","menuUrl":"/site/banner/bannerList.do","ppupYn":"N","cnt":0},{"menuCode":"183","menuNm":"모바일앱 모음","upperMenuCode":"351","menuUrl":"/site/mobile/mobileList.do","ppupYn":"N","cnt":0},{"menuCode":"352","menuNm":"운영 정책","upperMenuCode":"175","menuUrl":null,"ppupYn":"N","cnt":4},{"menuCode":"179","menuNm":"개인정보처리방침","upperMenuCode":"352","menuUrl":"/site/protect/protectList.do","ppupYn":"N","cnt":0},{"menuCode":"180","menuNm":"저작권정책","upperMenuCode":"352","menuUrl":"/site/copyright/copyrightList.do","ppupYn":"N","cnt":0},{"menuCode":"289","menuNm":"영상정보처리기기 운영ㆍ관리 방침 ","upperMenuCode":"352","menuUrl":"/site/video/videoProtectList.do","ppupYn":"N","cnt":0},{"menuCode":"181","menuNm":"품질인증","upperMenuCode":"352","menuUrl":"/site/mark/markList.do","ppupYn":"N","cnt":0},{"menuCode":"284","menuNm":"자주하는 질문","upperMenuCode":"175","menuUrl":"/faq/faqList.do","ppupYn":"N","cnt":0},{"menuCode":"353","menuNm":"부가서비스","upperMenuCode":"175","menuUrl":null,"ppupYn":"N","cnt":2},{"menuCode":"193","menuNm":"본인확인","upperMenuCode":"353","menuUrl":"/common/gpin/cnfirm.do","ppupYn":"N","cnt":0},{"menuCode":"177","menuNm":"RSS 서비스","upperMenuCode":"353","menuUrl":"/site/rss/rssList.do","ppupYn":"N","cnt":0},{"menuCode":"196","menuNm":"누리집 이용안내","upperMenuCode":"175","menuUrl":"/site/guide/guideList.do","ppupYn":"N","cnt":0}]');
+			if (typeof jQuery !== 'undefined' && !jQuery.browser) {
+				var ua = navigator.userAgent.toLowerCase();
+				jQuery.browser = {
+					mozilla: /mozilla/.test(ua) && !/webkit/.test(ua),
+					webkit: /webkit/.test(ua),
+					msie: /msie/.test(ua) || /trident/.test(ua),
+					opera: /opera/.test(ua)
+				};
+			}
+    		// F12 버튼 방지(웹접근성 수정으로 임시로막음)
+			$(document).ready(function(){
+				$(document).bind('keydown',function(e){
+    				if ( e.keyCode == 123 /* F12 */) {
+       				//e.preventDefault();
+           			//e.returnValue = false;
+	       			}
+				});
+			});
+    		var snsInfo = {
+	    		shareUrl : 'https://www.moel.go.kr/minwon/fastcounsel/fastcounselView.do?inetDcssMngId=202207181050169631000'  
+    		    ,facebookUrl : 'http://www.facebook.com/share.php?u=https%3a%2f%2fwww.moel.go.kr%2fminwon%2ffastcounsel%2ffastcounselView.do%3finetDcssMngId%3d202207181050169631000'
+    		   	,twitterUrl : 'https://twitter.com/intent/tweet?text=&url=https%3a%2f%2fwww.moel.go.kr%2fminwon%2ffastcounsel%2ffastcounselView.do%3finetDcssMngId%3d202207181050169631000'  
+    	    	,snsTitle : ''    		
+    		}
+    		//alert('1 : https://twitter.com/intent/tweet?text=&amp;url=https%3a%2f%2fwww.moel.go.kr%2fminwon%2ffastcounsel%2ffastcounselView.do%3finetDcssMngId%3d202207181050169631000')
+    		//alert('2 : https://twitter.com/intent/tweet?text=&url=https%3a%2f%2fwww.moel.go.kr%2fminwon%2ffastcounsel%2ffastcounselView.do%3finetDcssMngId%3d202207181050169631000')
+    		console.log('/back/layout.jsp')
+메뉴 바로가기
+본문 바로가기
+이 누리집은 대한민국 공식 전자정부 누리집입니다.
+공식 누리집 확인방법
+ -->
+공식 누리집 주소 확인하기
+                        go.kr 주소를 사용하는 누리집은 대한민국 정부기관이 관리하는 누리집입니다. 이 밖에 or.kr 또는 .kr등 다른 도메인 주소를 사용하고 있다면 아래 URL에서 도메인 주소를 확인해 보세요.
+운영중인 공식 누리집보기
+아이콘 또는 HTTPS 확인하기
+                        웹 브라우저의 주소 입력창에 표시된 자물쇠 아이콘과 주소 앞 https://가 있는지 체크하여 보안적용이 되어 있는지 확인하세요.
+var contextPath = "";
+function link_focus(id) {
+    document.getElementById(id).focus();
+}
+function print_popup(){
+	var opt = 'width=900,height=500,scrollbars=yes';
+	window.open('/common/printPop.do','',opt);
+}
+function menu_move(url,new_win){
+	if(new_win == "Y"){
+		window.open(url);
+	} else{
+		location.href=url;	
+	}
+}
+                <!-- 링크가 없는 경우엔 a태그 href에 javascript:void(0);이 들어가거나 button태그로 넣어야 합니다.
+                    mo_none 클래스 삽입할 경우 모바일에서는 보이지 않습니다.
+                -->
+누리집 안내지도
+화면크기
+작게
+보통
+조금 크게
+크게
+가장 크게
+초기화
+Language
+English
+메뉴 검색
+메뉴 검색 결과 닫기
+통합검색
+열기
+통합검색
+검색어를 입력해주세요
+검색에 어려움이 있으신가요?
+ -->
+검색
+인기검색어
+일간
+주간
+월간
+ -->
+최근검색어
+최근검색어 전체 삭제
+검색어 자동완성
+자동완성 닫기
+                                            //키워드 입력 시 연관 검색어 출력을 위해 임시로 넣었습니다.
+                                            //layout.js에 연관 검색어 이외 영역 클릭시 보이지 않도록 추가해놓았습니다.
+                                            //입력시 보여주기
+                                           /*  $(".search_keyword").on("keyup",function(){
+                                                if($(this).val()){
+                                                    $(".keyword_input").show();
+                                                }
+                                            }); */
+                                            //포커스가 빠지면 감추기
+                                            /* $(".search_keyword").on("focusout",function(){
+                                                $(".keyword_input").hide();
+                                            }) */
+통합검색 닫기
+민원
+민원이용안내
+민원이용안내
+민원신청방법
+민원따라하기
+관할관서찾기
+민원신청
+민원신청
+온라인민원신청
+질의민원
+빠른인터넷상담
+국민제안
+신고센터
+신고센터
+과태료 조회·납부
+과태료 조회·납부
+국민참여
+국민의견
+국민의견
+칭찬합시다
+안전신문고
+정부포상 365일 추천창구
+정책참여
+예산제안
+규제혁신
+규제혁신
+규제혁신성과
+규제혁신제안
+규제입증요청
+적극행정
+적극행정
+제도소개
+추천/신고
+적극행정 자료실
+크리에이터 협업
+크리에이터 협업
+뉴스·소식
+공지사항
+공지사항
+보도·설명
+보도·설명
+보도자료
+언론보도대응
+홍보자료
+홍보자료
+국정성과
+홍보동영상
+카드뉴스
+월간내일(기관지)
+정보공개
+사전정보 공표목록
+사전정보 공표목록
+행정정보공개
+행정정보공개
+정보공개안내
+정보목록
+비공개 대상정보 세부기준
+업무추진비 공개
+공무국외출장
+상품권 구매ㆍ사용내역
+정책실명제
+정책실명제
+정책실명제 안내
+중점관리 대상사업
+공공데이터개방
+공공데이터개방
+청렴정책공개
+청렴정책공개
+반부패청렴자료
+청탁금지법 상담 및 조치
+감사결과
+부패행위현황
+예산&middot;법령정보
+예산&middot;법령정보
+예산·기금 설명
+국고보조사업
+재정정보공개
+자산운용
+현행법령
+최근 제·개정 법령
+입법·행정예고
+훈령&middot;예규&middot;고시
+행정해석(질의회시)
+체불사업주 명단공개
+체불사업주 명단공개
+정보공개 기타
+정보공개 기타
+협동조합 경영공시
+주요발간자료
+재해조사보고서 공개
+재해조사보고서 공개
+정책소개
+정책안내
+정책안내
+정책자료실
+정책자료실
+업무보고
+업무보고
+통계정보
+통계정보
+고용노동통계
+고용행정통계
+기관소개
+고용노동부는
+고용노동부는
+주요업무
+연혁
+기관문양
+고용노동행정서비스헌장
+열린 장관실
+열린 장관실
+차관소개
+차관소개
+차관
+산업안전보건본부장
+조직안내
+조직안내
+본부
+소속기관
+기관 및 부서 검색
+산하기관
+찾아오시는 길
+찾아오시는 길
+이용안내
+누리집 안내지도
+누리집 안내지도
+배너&middot;앱 모음
+배너&middot;앱 모음
+알림판 모음
+누리집 배너 모음
+모바일앱 모음
+운영 정책
+운영 정책
+개인정보처리방침
+저작권정책
+영상정보처리기기 운영ㆍ관리 방침 
+품질인증
+자주하는 질문
+자주하는 질문
+부가서비스
+부가서비스
+본인확인
+RSS 서비스
+누리집 이용안내
+누리집 이용안내
+전체메뉴 
+열기
+민원
+민원이용안내
+민원이용안내
+민원신청방법
+민원이용안내
+민원따라하기
+민원이용안내
+관할관서찾기
+민원신청
+민원신청
+온라인민원신청
+민원신청
+질의민원
+민원신청
+빠른인터넷상담
+민원신청
+국민제안
+신고센터
+과태료 조회·납부
+국민참여
+국민의견
+국민의견
+칭찬합시다
+국민의견
+안전신문고
+국민의견
+정부포상 365일 추천창구
+국민의견
+정책참여
+국민의견
+예산제안
+규제혁신
+규제혁신
+규제혁신성과
+규제혁신
+규제혁신제안
+규제혁신
+규제입증요청
+적극행정
+적극행정
+제도소개
+적극행정
+추천/신고
+적극행정
+적극행정 자료실
+크리에이터 협업
+뉴스·소식
+공지사항
+보도·설명
+보도·설명
+보도자료
+보도·설명
+언론보도대응
+홍보자료
+홍보자료
+국정성과
+홍보자료
+홍보동영상
+홍보자료
+카드뉴스
+홍보자료
+월간내일(기관지)
+정보공개
+사전정보 공표목록
+행정정보공개
+행정정보공개
+정보공개안내
+행정정보공개
+정보목록
+행정정보공개
+비공개 대상정보 세부기준
+행정정보공개
+업무추진비 공개
+행정정보공개
+공무국외출장
+행정정보공개
+상품권 구매ㆍ사용내역
+정책실명제
+정책실명제
+정책실명제 안내
+정책실명제
+중점관리 대상사업
+공공데이터개방
+청렴정책공개
+청렴정책공개
+반부패청렴자료
+청렴정책공개
+청탁금지법 상담 및 조치
+청렴정책공개
+감사결과
+청렴정책공개
+부패행위현황
+예산&middot;법령정보
+예산&middot;법령정보
+예산·기금 설명
+예산&middot;법령정보
+국고보조사업
+예산&middot;법령정보
+재정정보공개
+예산&middot;법령정보
+자산운용
+예산&middot;법령정보
+현행법령
+예산&middot;법령정보
+최근 제·개정 법령
+예산&middot;법령정보
+입법·행정예고
+예산&middot;법령정보
+훈령&middot;예규&middot;고시
+예산&middot;법령정보
+행정해석(질의회시)
+체불사업주 명단공개
+정보공개 기타
+정보공개 기타
+협동조합 경영공시
+정보공개 기타
+주요발간자료
+재해조사보고서 공개
+정책소개
+정책안내
+정책자료실
+업무보고
+통계정보
+통계정보
+고용노동통계
+통계정보
+고용행정통계
+기관소개
+고용노동부는
+고용노동부는
+주요업무
+고용노동부는
+연혁
+고용노동부는
+기관문양
+고용노동부는
+고용노동행정서비스헌장
+열린 장관실
+차관소개
+차관소개
+차관
+차관소개
+산업안전보건본부장
+조직안내
+조직안내
+본부
+조직안내
+소속기관
+조직안내
+기관 및 부서 검색
+조직안내
+산하기관
+찾아오시는 길
+이용안내
+누리집 안내지도
+배너&middot;앱 모음
+배너&middot;앱 모음
+알림판 모음
+배너&middot;앱 모음
+누리집 배너 모음
+배너&middot;앱 모음
+모바일앱 모음
+운영 정책
+운영 정책
+개인정보처리방침
+운영 정책
+저작권정책
+운영 정책
+영상정보처리기기 운영ㆍ관리 방침 
+운영 정책
+품질인증
+자주하는 질문
+부가서비스
+부가서비스
+본인확인
+부가서비스
+RSS 서비스
+누리집 이용안내
+전체메뉴 
+닫기
+	$(document).ready(function(){
+		//loadRecommendKW();
+		/*
+		* 통합검색 창 텍스트 입력 시 최근검색어, 인기검색어 영역 비활성화
+		* */
+		$("#query").on("change keyup paste", function(){
+			if($(this).val() != ''){
+				$('.search-favor').hide();
+			}
+		})
+	    $('#mainSearchBtn').click(function () {
+	    	/* var query = $('#query').val();
+	    	if(query == ''){
+	    		alert('검색어를 입력 해 주세요.');
+	    	}else{
+	    		var blank_pattern = /^\s+|\s+$/g;
+	    		if(query.replace(blank_pattern, '') != ""){
+	    			//setMyKeyword(query);
+	    			$('#searchForm').submit();
+	    		}
+	    	} */
+	    	$('#searchForm').submit();
+	    });
+		$('#searchForm').submit(function(){
+			var query = $('#query').val();
+	    	if(query == ''){
+	    		alert('검색어를 입력 해 주세요.');
+	    		return false;
+	    	}else{
+	    		var blank_pattern = /^\s+|\s+$/g;
+	    		if(query.replace(blank_pattern, '') != ""){
+	    			setMyKeyword(query);
+	    			//$('#searchForm').submit();
+	    		}
+	    	}
+		});
+		/*
+		* 통합검색 창 텍스트 입력 취소 버튼 이태현 추가 start
+		* */
+	    $('#deleteKeywordBtn').click(function () {
+	    	$('#query').val('');
+	    	$('#deleteKeywordBtn').hide();
+	    });
+		/*
+		* 통합검색 창 텍스트 입력 취소 버튼 이태현 추가 end
+		* */
+		// 통합검색창 포커스 없을 시 자동완성 비활성화
+		$('#mainSearchBtn').on('blur', function(){
+			$('#ark_wrap').hide();
+			$('#ark_up').hide();
+			$('#ark_down').hide();
+		});
+		$("#query").on({
+			"keyup": function(event) {
+				/* if(event.which == 13) {
+					event.preventDefault();
+					$('#mainSearchBtn').click();
+					return false;
+				} else {
+					loadArkword($("#query").val());
+				} */
+				loadArkword($("#query").val());
+			}
+		});
+		if($("#query").val().length > 0){
+			$("#deleteKeywordBtn").show();
+		} else {
+			$("#deleteKeywordBtn").hide();
+		}
+		$("#query").on('input',function(){
+			if($(this).val().length > 0){
+				$("#deleteKeywordBtn").show();
+			} else {
+				$("#deleteKeywordBtn").hide();
+			}
+		})
+	});
+		// 브라우저에서 일어나는 클릭 이벤트를 체크한다.
+	$(document).click(function(event) {
+		 if (!$(event.target).is("#kwTotDiv") && !$(event.target).is("#myKwDiv") && !$(event.target).is(".search-favor__txt") &&
+				 !$(event.target).is("#popularKwDiv") && !$(event.target).is("#query") && !$(event.target).is("#kwPopMyDiv") &&
+				 !$(event.target).is(".search-favor__none") && !$(event.target).is(".search-favor__remove")) {
+			 if ( $('.search-favor').css('display') !== 'none' ) {
+					$('.search-favor').hide();
+			}
+		}
+	});
+	function searchGrpBtn() {
+		loadPopword('day'); //인기 검색어 조회
+		getMyKeyword(); //최근검색어
+		//통합검색 입력 커서 셋팅
+		setTimeout(function() {
+			var query = document.getElementById("query")
+			if (query) {
+				query.focus();	
+			}
+		}, 100);
+	};
+	/*
+	* 추천검색어(placeholedor1)
+	* */
+	function loadRecommendKW(){
+		$.ajax({
+			url : '/searchRecommendKW.do',
+			type : "POST",
+			dataType: "json",
+			success : function(rtnData) {
+				if(rtnData){
+					setRecommendKW(JSON.parse(rtnData));
+				}
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				alert('검색에 실패하였습니다.');
+			}
+		});
+	}
+	function setRecommendKW(rtnData){
+		$.each(rtnData.Data.Word, function(i, item){
+			$("#query").attr("placeholder", '추천 | ' + item);
+		});
+	}
+	/*
+	* 통합검색 창  클릭 시 최근 검색어, 인기검색어 영역 표출
+	* */
+	function clickQueryInput(obj){
+		getMyKeyword(); // 내가 찾은 검새어 조회
+		loadPopword('day'); //인기 검색어 조회
+		if(obj != null){
+			if($(obj).val() == ''){ //input에 입력된 텍스트가 없을 시 표출
+				if ( $('.search-favor').css('display') === 'none' ) {
+					$('.search-favor').show();
+				}
+			}
+		}
+	}
+	/*
+	* 통합검색 창 포커스 없을 시 최근검색어, 인기검색어 영역 비활성화
+	* */
+	function queryOnblurEvent(){
+		/*$('.search-favor').hide();*/
+	}
+	/*
+	* esc 키 입력 시 최근, 인기 검색어 영역 비활성화
+	* */
+/* 	$(document).keydown(function(event) {
+		if ( event.keyCode == 27 || event.which == 27 ) {
+			if ( $('.search-favor').css('display') !== 'none' ) {
+				$('.search-favor').hide();
+			}
+		}
+	}); */
+	/*
+	* 내가 찾은 검색어 조회
+	* */
+	function getMyKeyword() {
+		var myKeyword = getCookie("mykeyword");
+		if( myKeyword== null) {
+			myKeyword = "";
+		}
+		var myKeywords = myKeyword.split("^%");
+		showMyKeyword(myKeywords);
+	}
+	/*
+	* 내가 찾은 검색어 화면 set
+	* */
+	function showMyKeyword(myKeywords) {
+		var str = "";
+		$("#schmy").empty();
+		/* for( var i = 0; i < myKeywords.length; i++) {
+			if( myKeywords[i] == "") continue;
+			str += '
+';
+			str += 	'
+' + myKeywords[i] + '
+'
+			str += 		'
+'
+			str += 			'
+검색어 제거
+'
+			str +=		'
+'
+			str +=	'
+';
+		}
+		$("#schmy").html(str); */
+		for (var i = 0; i < myKeywords.length; i++) {
+		    if (myKeywords[i] == "") continue;
+		    // 1. 값의 안전한 처리를 위해 현재 루프의 키워드를 별도 변수에 바인딩 (클로저 이슈 방지)
+		    (function(keyword) {
+		        // 2. 기본 뼈대가 되는 li 구조를 jQuery 객체로 생성
+		        var $li = $('
+' +
+		                    '  
+' +
+		                    '  
+' +
+		                    '    
+검색어 제거
+' +
+		                    '  
+' +
+		                    '
+');
+		        // 3. text() 함수를 사용하여 검색어를 안전하게 주입 (XSS 원천 차단)
+		        $li.find('.keyword').text(keyword);
+		        // 4. 안전하게 jQuery on() 메서드로 이벤트 바인딩 (문자열 인젝션 방지)
+		        $li.find('.keyword_link').on('click', function(e) {
+		            e.preventDefault();
+		            mainDoKeyword(keyword);
+		        });
+		        $li.find('.btn_del').on('click', function() {
+		            removeMyKeyword(keyword);
+		        });
+		        // 5. 최종 완성된 안전한 li를 추가
+		        $("#schmy").append($li);
+		    })(myKeywords[i]);
+		}
+		if($("#schmy").html() == ""){
+			$("#totalKeyword").hide();
+		}else{
+			$("#totalKeyword").show();
+		}
+		/* if(myKeywords != ""){
+			$('.search-favor__none').hide();
+		}else{
+			$('.search-favor__none').show();
+		} */
+	}
+	/*
+	* 내가 찾은 키워드 삭제
+	* */
+	function removeMyKeyword(keyword) {
+		var myKeyword = getCookie("mykeyword");
+		if( myKeyword == null) {
+			myKeyword = "";
+		}
+		var myKeywords = myKeyword.split("^%");
+		var i = 0;
+		while (i < myKeywords.length) {
+			if (keyword == undefined) {
+				myKeywords.splice(i, 1);
+			} else if (myKeywords[i] == keyword) {
+				myKeywords.splice(i, 1);
+			} else {
+				i++;
+			}
+		}
+		setCookie("mykeyword", myKeywords.join("^%"), 365);
+		showMyKeyword(myKeywords);
+	}
+	/*
+	* 자동완성
+	* */
+	function loadArkword(keyword){
+		if(keyword == ""){
+			$(".keyword_input").hide();
+		}else{
+			$(".keyword_input").show();
+			$(".top_search").hide();
+		}
+		var param = {
+			'query':keyword,
+			'convert':'fw'
+		};
+		$.ajax({
+			url : '/v2024/ark.do',
+			type : "POST",
+			data : param,
+			dataType: "json",
+			success : function(rtnData) {
+				setArkword($.parseJSON(rtnData));
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				alert('검색에 실패하였습니다.');
+			}
+		});
+	}
+	/*
+	* 자동완성 화면 set
+	* */
+	function setArkword(rtnData){
+		var $schark = $('#ulArkSearch');
+		$schark.empty();
+		$.each(rtnData.result, function(i, list){
+			$.each(list.items, function(j, item){
+				var obj = '
+'
+							+ '
+'
+								+ item.hkeyword
+							+ '
+'
+						+ '
+';
+				$schark.append(obj);
+			});
+		});
+	}
+	/*
+	* 자동완성 해당 검색어로 셋팅
+	* */
+	function setDoKeyword(query){
+		$('#query').val(query);
+		$(".keyword_input").hide();
+		$(".top_search").show();
+		$("#query").focus();
+	}
+	/*
+	* 인기 검색어 조회
+	* */
+	function loadPopword(range){
+		var param = {
+			'range':range
+		};
+		$.ajax({
+			url : '/v2024/popword.do',
+			type : "POST",
+			data : param,
+			dataType: "json",
+			success : function(rtnData) {
+				setPopword($.parseJSON(rtnData));
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				alert('검색에 실패하였습니다.');
+			}
+		});
+	}
+	/*
+	* 인기 검색어 화면 set
+	* */
+	function setPopword(rtnData){
+		var $schfavor = $('#schfavor');
+		$schfavor.empty();
+		$.each(rtnData.Data.Query, function(i, item){
+			var upDownClass = '';
+			var count = item.count;
+			var pm_text = '';
+			var spanClass = '';
+			if(item.updown == 'U'){
+				upDownClass = 'rank_turn up';
+				pm_text = '상승';
+			}else if(item.updown == 'D'){
+				upDownClass = 'rank_turn down';
+				pm_text = '하락';
+			}else if(item.updown == 'N'){
+				upDownClass = 'rank_turn keep';
+				count = 'NEW';
+				spanClass = 'new';
+				pm_text = '신규'
+			}else if(item.updown == 'C'){
+				upDownClass = 'rank_turn keep';
+				count = '-';
+			}
+			var obj = '
+'
+						+ '
+'
+							+ '
+' + item.id  + '
+'
+							+ '
+' + item.content + '
+'
+							+ '
+' + count + '
+' + pm_text + '
+'
+						+ '
+'
+					+ '
+';
+			$schfavor.append(obj);
+		});
+	}
+	/*
+	* 인기, 최근 검색어 선택 시 해당 검색어로 검색
+	* */
+	function mainDoKeyword(query){
+		$('#query').val(query);
+		 $('#mainSearchBtn').click();
+	}
+	/*
+	* 검색 입력 창 지우기 버튼 클릭 이벤트
+	* */
+	function queryInputDel(){
+		$('#query').val('');
+	}
+	function getCookie( name )
+	{
+		var nameOfCookie = name + "=";
+		var x = 0;
+		while ( x <= document.cookie.length )
+		{
+			var y = (x+nameOfCookie.length);
+			if ( document.cookie.substring( x, y ) == nameOfCookie ) {
+				if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
+					endOfCookie = document.cookie.length;
+				return unescape( document.cookie.substring( y, endOfCookie ) );
+			}
+			x = document.cookie.indexOf( " ", x ) + 1;
+			if ( x == 0 )
+				break;
+		}
+		return "";
+	}
+	//쿠키값 설정
+	function setCookie(c_name,value,exdays) {
+		var exdate=new Date();
+		exdate.setDate(exdate.getDate() + exdays);
+		var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString())+"; path=/;";
+		document.cookie=c_name + "=" + c_value.replace("\r","").replace("\n", "");
+	}
+	function setMyKeyword(keyword) {
+		var MYKEYWORD_COUNT = 11; //내가 찾은 검색어 갯수 + 1
+		var myKeyword = getCookie("mykeyword");
+		var myKeywords = myKeyword.split("^%");
+		var existsKeyword = false;
+		for( var i = 0; i < myKeywords.length; i++) {
+			if( myKeywords[i] == keyword) {
+				existsKeyword = true;
+				break;
+			}
+		}
+		if( !existsKeyword ) {
+			myKeywords.push(keyword);
+			if( myKeywords.length == MYKEYWORD_COUNT) {
+				myKeywords = myKeywords.slice(1,MYKEYWORD_COUNT);
+			}
+		}
+		setCookie("mykeyword", myKeywords.join("^%"), 365);
+	};
+	function preSearchXsSubmit(){
+		var regExp = /[\\]/gi;
+		var x = $('#query').val();
+		if(x.match(regExp)){
+			alert('\\(역슬래시)는 검색어로 입력할 수 없습니다.');
+			return false;
+		}else{
+			if (x == ''){
+	    		return false;
+			} else {
+				return true;
+			}	
+		}
+	};
+	/*
+	* 모바일 메뉴 검색
+	* */
+	function loadMenuList(){
+		var divTrg = $("#divMobilMenu");
+		divTrg.empty();
+		$.ajax({
+			url : '/menu/mobile/selectMenuList.do',
+			type : "POST",
+			dataType: "json",
+			data : { menu_nm : $(".menuSch_input").val()},
+			success : function(rtnData) {
+				var result = JSON.parse(rtnData);
+				var obj = '';
+				if(result.menuList.length > 0){
+					obj = ' 
+';
+					obj = obj + '
+' + $(".menuSch_input").val() + '
+에 대한 검색 결과입니다.
+';
+					obj = obj + '
+';
+					$.each(result.menuList,function(i, menu){
+						obj = obj + '
+';
+						if(menu.MENU_URLAD.indexOf('http') > -1){
+							obj = obj + '<a href="' + menu.MENU_URLAD;
+						}else{
+							obj = obj + '<a href="' + menu.MENU_URLAD;
+						}
+						if(menu.PPUP_YN == "Y"){
+							obj = obj + '" target="_blank">';
+						}else{
+							obj = obj + '" >';
+						}
+						var arrMenu = menu.MENU_PATH.split(" > ");
+						$.each(arrMenu,function(j, path){
+							if(j < arrMenu.length-1){
+								obj = obj + path + ' > ';
+							}else{
+								obj = obj + '
+' + path + '
+';
+							}
+						});
+						obj = obj + '
+';
+						obj = obj + '
+';
+					});
+					obj = obj + '
+';
+					obj = obj + '
+';
+				}else{
+					obj = '
+메뉴 검색 결과가 없습니다.
+';
+				}
+				divTrg.append(obj);
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				alert('검색에 실패하였습니다.');
+			}
+		});
+	};
+고용노동부
+국민 누구나 원하는 일자리에서 마음껏 역량을 발휘하는 나라!
+민원
+민원이용안내
+						    							<li 
+						    							>
+ 민원신청방법 
+						    							<li 
+						    							>
+ 민원따라하기 
+						    							<li 
+						    							>
+ 관할관서찾기 
+ -->
+상징(MI) 및 청사진
+ -->
+연혁
+ -->
+예산·기금
+ -->
+고용노동행정서비스헌장
+ -->
+ -->
+민원신청
+						    							<li 
+						    							>
+ 온라인민원신청 
+						    							<li 
+						    							>
+ 질의민원 
+						    							<li 
+							    							class="active"
+						    							>
+ 빠른인터넷상담 
+						    							<li 
+						    							>
+ 국민제안 
+ -->
+상징(MI) 및 청사진
+ -->
+연혁
+ -->
+예산·기금
+ -->
+고용노동행정서비스헌장
+ -->
+ -->
+							    					<a href="/minwon/petition/fraud_list.do" 
+							    					title="신고센터 페이지로 이동">신고센터
+ -->
+상징(MI) 및 청사진
+ -->
+연혁
+ -->
+예산·기금
+ -->
+고용노동행정서비스헌장
+ -->
+ -->
+과태료 조회·납부
+ -->
+상징(MI) 및 청사진
+ -->
+연혁
+ -->
+예산·기금
+ -->
+고용노동행정서비스헌장
+ -->
+ -->
+ -->
+열린 장관실
+ -->
+ -->
+ -->
+차관소개
+ -->
+ -->
+ -->
+조직안내
+ -->
+ -->
+본부
+ -->
+소속기관
+ -->
+직원검색
+ -->
+산하기관
+ -->
+ -->
+ -->
+찾아오시는 길
+ -->
+빠른인터넷상담
+홈
+으로 이동
+민원
+민원신청
+빠른인터넷상담
+ -->
+공유하기 열기
+ -->
+ -->
+ -->
+페이스북
+ -->
+트위터
+ -->
+밴드
+ -->
+카카오스토리
+ -->
+카카오톡
+ -->
+ -->
+공유하기 닫기
+ -->
+ -->
+ -->
+인쇄
+ -->
+인쇄하기
+질의
+정년퇴직 후 해당 회사에서 촉탁직 계약직으로 몇년 더 근무하다가 계약만료 후 퇴직시 실업급여 신청이 가능 한가요?
+답변
+가. 정년퇴직후 공백없이 동일사업장에 계약직으로 연장되어 근무하게 된다면, 향후 퇴사당시 상황에 따라 퇴사사유의 비자발성 및 정당한 사유가 있는 퇴사로 인정가능여부를 판단할 수 있습니다.
+- 예를들어, 1년 단기계약직후 더이상 재계약이 불가하여 퇴사하게 되면 상실사유는 정년퇴직(상실사유코드:31)이 아닌 " 계약기간만료(상실사유코드:32)"로 비자발적인 퇴사로 인정 가능할 수 있으며, 1년 계약기간이 도래하기전에 퇴사하게 될 경우는 퇴사당시 상황에 따라 정확한 퇴사사유를 확인하여 수급자격요건을 판단하게 됩니다.
+나. 참고로, 실업급여 수급자격 요건에서 인정하는 정년의 도래나 계약기간의 만료로 회사를 계속 다닐 수 없게 되어 비자발적으로 퇴사하는 경우는 근로자는 계속 근로할 의사가 있으나 사업장에서 계약기간종료 후 재계약예정이 없어 부득이하게 퇴사하는 경우로서 퇴사당시 상황에 대한 관련 입증서류에 대한 검토 및 확인 후 “계약기간만료”에 의한 퇴사로 최종적으로 판단하게 됩니다.
+- 근무중인 사업장에서 계약연장등의 계속고용의사를 밝혔음에도 불구하고, 이를 거절하고 계약만료시점이나 만료일 이전에 사직의사를 먼저 표시하고 퇴사하는 경우는 고용보험법상 인정하는 정당한 사유가 있는 이직사유에 해당되지 않아 수급자격이 제한될 수 있습니다. 
+다. 또한, 실업급여수급요건에서 기간에 대한 기준은 사업장 변동이 있을 경우 고용보험 가입사업장에서 근무하신 이력을 합산하여 18개월(기준기간)동안에 피보험단위기간(180일)충족여부를 확인하며, 퇴사사유는 최종마지막 이직사업장을 기준으로 비자발성여부를 판단하오며 최종퇴사당시 고용형태(상용,일용,초단시간근로자, 자영업, 노무제공자등)에 따라 적용기준을 달리 정하고 있습니다. 
+     - 소정급여일수(최종이직일 기준 만연령 및 가입기간에 따라 120~270일) 산정시 고용보험 가입기간은 실업급여 수혜이력이 없고 이전직장 퇴사일과 재취업일 사이에 공백기간이 3년이내라면 총 가입기간은 누적합산하여 산정하게 됩니다.
+라. 우리부 빠른 인터넷 상담은 고용노동관련 지침 및 규정에 대한 기본적인 사항에 대해 간단히 답변하는 창구로서 일반적인 기준을 안내드렸으며, 실업급여와 관련하여 추가적으로 문의하실 사항이 있으신 경우 실무처리기관인 관할 고용센터 실업급여과(팀)해당업무 실무담당자로부터 상세한 상담을 받아 보시기 바랍니다.
+※ 실업급여 신청: 고용복지+센터 홈페이지(workplus.go.kr), 고용보험홈페이지(www.ei.go.kr) 참조
+이전글
+<a href="#"
+					onclick="scEventListener.fnView('202207181033267351000');return false;">업종코드 22299, 전기계약용량1,000kw/hr(현재 50%부하상태), 사출성형기100kw/hr 증 
+다음글
+<a href="#"
+					onclick="scEventListener.fnView('202207181055511681000');return false;">이전회사에서 퇴직한지 만으로 한달이 지났습니다. 그럼에도 현재까지 퇴직연금을 지 
+목록
+// gblSns.init("board_view_wrap");
+var scEventListener = {
+	fnList: function() {
+		$("#inetDcssMngId").val("");
+		$("#frm").attr("action", "/minwon/fastcounsel/fastcounselList.do");
+		$("#frm").submit();
+	},
+	fnView: function(seq) {
+		$("#inetDcssMngId").val(seq);
+		$("#frm").attr("action", "/minwon/fastcounsel/fastcounselView.do");
+		$("#frm").submit();
+	}
+};
+소속기관(지청 및 위원회)
+소속기관(지청 및 위원회)
+서울지방고용노동청
+서울강남지청
+서울동부지청
+서울서부지청
+서울남부지청
+서울북부지청
+서울관악지청
+경기지방고용노동청
+의정부지청
+고양지청
+성남지청
+안양지청
+안산지청
+평택지청
+중부지방고용노동청
+인천북부지청
+부천지청
+강원지청
+강릉지청
+원주지청
+태백지청
+영월출장소
+부산지방고용노동청
+부산동부지청
+부산북부지청
+창원지청
+울산지청
+울산동부지청
+양산지청
+진주지청
+통영지청
+대구지방고용노동청
+대구서부지청
+포항지청
+구미지청
+영주지청
+안동지청
+광주지방고용노동청
+전주지청
+익산지청
+군산지청
+목포지청
+여수지청
+대전지방고용노동청
+청주지청
+천안지청
+충주지청
+보령지청
+서산지청
+중앙노동위원회
+최저임금위원회
+산업재해보상보험재심사위원회
+고용보험심사위원회
+해당 관련링크 닫기
+업무별 누리집
+업무별 누리집
+고용센터
+고용24
+노동포털
+월드잡
+임금직업포털
+지역고용정보네트워크
+커리어넷
+한국직업방송
+가사랑
+일생활균형
+고용보험 서비스[EI]
+ -->
+고용노동통계
+ -->
+고용센터
+ -->
+직업훈련포탈[HRD-NET]
+ -->
+퇴직연금제도
+ -->
+외국인고용관리시스템[EPS]
+ -->
+워크넷[WORKNET]
+ -->
+월드잡
+ -->
+임금직무정보시스템
+ -->
+지역고용정보네트워크
+ -->
+커리어넷
+ -->
+한국직업방송
+ -->
+국민취업지원제도
+ -->
+온라인청년센터
+ -->
+가사랑
+ -->
+해당 관련링크 닫기
+산하기관 및 관련 단체
+산하기관 및 관련 단체
+근로복지공단
+한국산업안전보건공단
+한국산업인력공단
+한국장애인고용공단
+한국고용정보원
+한국폴리텍대학
+한국기술교육대학교
+노사발전재단
+건설근로자공제회
+한국사회적기업진흥원
+한국잡월드
+한국고용노동교육원
+경제사회노동위원회
+해당 관련링크 닫기
+정부기관
+정부기관
+대통령실
+국회
+대법원
+감사원
+국가정보원
+국가인권위원회
+방송미디어통신위원회
+중앙선거관리위원회
+헌법재판소
+국무조정실
+재정경제부
+과학기술정보통신부
+교육부
+외교부
+통일부
+법무부
+국방부
+행정안전부
+문화체육관광부
+농림축산식품부
+산업통상부
+보건복지부
+기후에너지환경부
+해양수산부
+성평등가족부
+국토교통부
+중소벤처기업부
+국가보훈부
+법제처
+식품의약품안전처
+공정거래위원회
+금융위원회
+해당 관련링크 닫기
+(30117) 세종특별자치시 한누리대로 422. 정부세종청사 11동
+(30117) 세종특별자치시 한누리대로 422 정부세종청사 11동 고용노동부
+ -->
+대표전화 
+1350
+ (유료, 평일 09시~18시)
+당직실 전화 
+044-202-7999
+ (평일 18시~익일 09시, 주말 · 공휴일, '26.1.1.부터 재택당직 시행 중)
+                    	  * 평일 근무시간(09:00~18:00) 이후 업무상담은 제한될 수 있습니다.
+유튜브
+페이스북
+트위터
+인스타그램
+블로그
+고용노동행정서비스헌장
+개인정보처리방침
+영상정보처리기기 운영·관리 방침
+저작권정책
+누리집 안내지도
+찾아오시는 길
+© Ministry of Employment and Labor. All rights reserved.
+상단으로 이동

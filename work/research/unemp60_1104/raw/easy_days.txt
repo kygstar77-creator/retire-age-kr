@@ -1,0 +1,1145 @@
+실업급여 &gt; 구직급여 &gt; 구직급여 수급 &gt; 구직급여 수급일수 (본문) |  찾기쉬운 생활법령정보
+    .arrow_box2 {position:relative;background: #fff;border: 1px solid #2c55ad;}
+    .arrow_box2:after, .arrow_box2:before {bottom: 100%;border: solid transparent;content: " ";height: 0;width: 0;position: absolute;/*pointer-events: none;*/}
+    .arrow_box2:after {border-color: rgba(255, 255, 255, 0);border-bottom-color: #fff;border-width: 5px;left: 80%;margin-left: -5px;}
+    .arrow_box2:before {border-color: rgba(44, 85, 173, 0);border-bottom-color: #2c55ad;border-width: 6px;left: 80%;margin-left: -6px;}
+/* <![CDATA[ */
+// 2013.07.19 Jung-Seok.YI :: SESSION
+var userValue = "null";
+var userNmVal = "null";
+var naviMenu = "null";
+var nowZoom = 100;  // Default Page Size
+var maxZoom = 200;  // Max Page Size
+var minZoom = 80;   // Min Page Size
+    $(document).ready(function(){
+        getMyFind();
+        $('a.modal').click(function(e) {
+            e.preventDefault();
+            var id = $(this).attr('href');
+            var maskHeight = $(document).height();
+            var maskWidth = $(window).width();
+            if("#pop_retrieve" == id){
+                // iFrame Action 변경
+                parent.$("#pop_csm").attr("src", "CsmTopRetrieveLst.laf").submit();
+                $('#mask').css({'width':maskWidth,'height':maskHeight});
+                $('#mask').fadeIn(500);
+                $('#mask').fadeTo(500,0.8);
+                var winH = $(window).height();
+                var winW = $(window).width();
+                $(id).css('top',  winH/2-$(id).height()/2 + $(document).scrollTop());
+                $(id).css('left', winW/2-$(id).width()/2);
+                $(id).fadeIn(500);              
+            }else if("#pop_movie" == id){
+                // iFrame Action 변경
+                parent.$("#pop_ucc").attr("src", "UccRetrieve01.laf?uccNo="+ document.getElementById("selectIdx").value +"&amp;topMenu=serviceUl4").submit();
+                $('#mask').css({'width':maskWidth,'height':maskHeight});
+                $('#mask').fadeIn(500);
+                $('#mask').fadeTo(500,0.8);
+                var winH = $(window).height();
+                var winW = $(window).width();
+                var vTop = winH/2-$(id).height()/2 + $(document).scrollTop();
+                if (vTop < 0){vTop=0};
+                $(id).css('top',  vTop);
+                $(id).css('left', winW/2-$(id).width()/2);
+                $(id).fadeIn(500);
+            }
+        });
+        //모달팝업창 닫기
+        $('.window .tit button').click(function (e) {
+            e.preventDefault();
+            $('#mask').hide();
+            $('.window').hide();
+            parent.document.getElementById("pop_ucc").src = ""; //safari에서 경우 닫기해도 동영상이 남아 있어서 조치함.
+        });
+        //if mask is clicked
+        $('#mask').click(function () {
+            $(this).hide();
+            $('.window').hide();
+            parent.document.getElementById("pop_ucc").src = "";   //safari에서 경우 닫기해도 동영상이 남아 있어서 조치함.
+        });
+        //주제별 선택 아이콘 변경
+        var astValue = $("#solomonAstValue").attr('value');
+        var astTitle = $(".ast_"+astValue).attr('title');
+        $(".ast_"+astValue).attr('class',"ast_"+astValue+"_on");
+        if('' != astValue){
+            $("#ast_"+astValue).focus();
+        } 
+    });
+    //ESC event 
+    $(document).keydown(function(event){ 
+    if ( event.keyCode == 27 ) { 
+        $('.window .tit button').click();
+    }
+    });
+    function keyHandler(event) {
+        isStarted = true;
+        autoLi = $("#listpop").children("ul").children("li");
+        liIndex = $("#listpop").children("ul").children(".on").index();
+        if(event.keyCode==40 && resultDataArray != null){
+            mvNextItem(); 
+        } else if(event.keyCode==38 && resultDataArray != null){ 
+            mvPrevItem(); 
+        } else if(event.keyCode==13) {
+            if( resultDataArray == null ) {
+                return false;
+            }
+            if( currItemIdx >= 0 ) {
+                go_srch(resultDataArray[currItemIdx]);
+            }
+        } else {
+            currItemIdx = -1;
+        }
+    }
+    function goMenu(m){
+        var url = "";
+        if(m == "1"){
+            url = "http://www.easylaw.go.kr/CSP/About01.laf?topMenu=introUl1";
+        }else if(m == "2"){
+            url = "http://www.easylaw.go.kr/CSP/CsmSortRetrieveLst.laf?sortType=easy";
+        }else if(m == "3"){
+            url = "http://www.easylaw.go.kr/CSP/OnhunqueansLstRetrieve.laf";
+        }else if(m == "4"){
+            url = "http://www.easylaw.go.kr/CSP/SolomonRetrieveLst.laf?topMenu=serviceUl6";
+        }else if(m == "5"){
+            url = "http://www.easylaw.go.kr/CSP/NtcRetrieveLst.laf?topMenu=openUl1";
+        }
+        location.href = url;
+    }
+    function goLogin(){
+        location.href = "https://www.easylaw.go.kr/CSP/Login.laf?topMenu=memberUl2";
+    }
+    function goRetrieveCnt(isCnt){
+        var valCnt = document.getElementById("retrieve_cnt");
+        if(null != valCnt){
+            valCnt.innerText = isCnt;
+        }
+    }
+    function goMyPage(){
+        location.href = "https://www.easylaw.go.kr/CSP/MyBookmarkPortDataLst.laf?topMenu=mypageUl1&arg=";
+    }
+    function delCookie(){
+        setCookie('myCsmSortRetrieve',"",365);
+        setCookie('myCsmSortRetrieveCnt',"0",365);
+        goRetrieveCnt(0);
+        alert("내가 찾은 맞춤결과가 삭제되었습니다.");
+        location.href = "/CSP/Main.laf";
+    }
+    function delCookie2(){
+        setCookie('myFind',"",365);
+        setCookie('myInfoNumber',"0",365);
+        alert("내가 찾은 법령정보가 삭제되었습니다.");
+        location.href = "/CSP/Main.laf";
+    }
+    function ReSearchTop(){
+        var sInput = document.srchForm.search_input.value;
+        sInput = sInput.replace(/</gi,"&lt;");
+        sInput = sInput.replace(/>/gi,"&gt;");
+        sInput = sInput.replace(/\(/gi,"");
+        var url ="/CSP/UnScRlt.laf?search_put="+encodeURIComponent(sInput);
+        location.href = url;
+    }
+    function reSearch() {
+        document.getElementById("search_put").value = document.getElementById("s_put").value;
+        var sInput = document.getElementById("search_put").value;
+        sInput = sInput.replace(/</gi,"&lt;");
+        sInput = sInput.replace(/>/gi,"&gt;");
+        sInput = sInput.replace(/\(/gi,"");
+        document.f1.action = "/CSP/UnScRlt.laf?search_put="+encodeURIComponent(sInput);
+        document.f1.submit();
+    }
+/* ]]> */
+    //전체메뉴 이벤트
+    $( document ).ready(function() {
+        $(".allMenu").click(function(){
+            $("#allMenu").css("display", "block");
+            $(".bg_cover").css("display", "block");
+        });
+        $(".btn").click(function(){
+            $("#allMenu").css("display", "none");
+            $(".bg_cover").css("display", "none");
+        });
+        $(".bg_cover").click(function(){
+            $("#allMenu").css("display", "none");
+            $(this).css("display", "none");
+        });
+        $("a").click(function(){
+            try{
+                var et = event.target.toString();
+            }catch(exception_var){
+                var et = ""; 
+            }
+            if( et.indexOf("#") == -1) {
+            var on_class = $(event.target).attr('class')?$(event.target).attr('class'):"";
+            try{
+                var ev_ttl = event.target.title.toString();
+            }catch(exception_var){
+                var ev_ttl = "";
+            }
+            if(on_class.toString().indexOf("on") != -1)   event.preventDefault();
+            else if(ev_ttl.indexOf("새창") == -1 )    linkClick();
+            }
+        });
+        $("#all_btn").click(function(){
+            try{
+                var ev_ttl = event.target.title.toString();
+            }catch(exception_var){
+                var ev_ttl = "";
+            }
+            if(ev_ttl.indexOf("새창") == -1 || event.target.attr('class').toString.indexOf("on") == -1){
+                var view_all = viewAll();
+                var sInput = document.srchForm.search_input.value;
+                sInput = sInput.replace(/</gi,"&lt;");
+                sInput = sInput.replace(/>/gi,"&gt;");
+                sInput = sInput.replace(/\(/gi,"+");
+                location.href = view_all + "&search_put=" + encodeURIComponent(sInput);
+            }
+        });
+    });          
+    function linkClick() {
+        var e = event;
+        var sInput = document.srchForm.search_input.value;
+        sInput = sInput.replace(/</gi,"&lt;");
+        sInput = sInput.replace(/>/gi,"&gt;"); 
+        sInput = sInput.replace(/\(/gi,"+");
+        var expUrl = /^http[s]?\:\/\//i;
+        if(navigator.userAgent.indexOf("Chrome") != -1){
+            if(window.location.href == event.currentTarget  && event.target.id.indexOf("#") == -1 && event.target.id.indexOf("search_my_info") == -1){
+                location.href = target;
+            }
+            if(event.target.parentNode.title.indexOf("새창") != -1){
+                //event.preventDefault();
+                //제목에 새창이 안들어갈 경우 
+            }
+            else if(event.target.tagName == "B"){
+                if(event.target.parentNode.parentNode.hasOwnProperty(title) == true)
+                    if(event.target.parentNode.parentNode.title.indexOf("새창") != -1) {
+                        event.preventDefault();
+            }
+            }
+            else if(expUrl.test(event.currentTarget) && event.target.id.indexOf("logo") == -1 && event.target.id.indexOf("header") == -1){
+                var target = e.target || e.srcElement;
+                url = e.currentTarget.toString();
+                event.preventDefault();
+                if(location.href.indexOf("?search_put=") != -1 || url.indexOf("?search_put")!= -1 ){
+                    url = url.toString().replace("search_put=","");
+                    url = url.replace(sInput,"");
+                }
+                else if(location.href.indexOf("&search_put=") != -1){
+                    if(event.target.parentNode.className.indexOf("paging") == 0){              
+                       location.href = target;
+                    } else {
+                        url = url.toString().replace("&search_put=","");
+                        url = url.replace(sInput,"");   
+                    }
+                }
+            target = (url.indexOf("?")==-1)?(url+"?search_put="+encodeURIComponent(sInput)):(url+"&search_put="+encodeURIComponent(sInput));
+            if(target.toString().indexOf("undefined") == -1) location.href = target;
+            }
+        }
+        // Chrome을 제외한 브러우저
+        else {
+        tar = (event.currentTarget) ? event.currentTarget : event.srcElement;
+        if(tar.toString().indexOf("HTML") != -1 || tar.target.toString().indexOf("blank") != -1){
+        }
+        else if(tar.id == "wlb" || tar.id == "ast" || tar.id == "abc" || event.target == null) {
+            url = tar.toString();
+            location.href = url + "&search_put=" + encodeURIComponent(sInput);
+        }  
+        else if(window.location.href == tar  && event.target.id.indexOf("header") == -1 && event.target.id.indexOf("search_my_info") == -1 && event.target.indexOf("allMenu") )   location.href = tar;
+        else if(event.target.id != "logoImg"  && event.target.id.indexOf("header") == -1 ){
+            var target = e.target || e.srcElement;
+            url = tar.toString();  
+            event.preventDefault(); 
+            if(location.href.indexOf("search_put=") != -1){
+                if(event.target.parentNode.className.indexOf("paging") == 0){              
+                    location.href = target;
+                } else {
+                    url = url.toString().replace("&search_put=","");
+                    url = url.replace(sInput,"");
+                }
+            }
+        if(url.indexOf("search_put=") == -1)  target = (url.indexOf("?")==-1)?(url+"?search_put="+encodeURIComponent(sInput)):(url+"&search_put="+encodeURIComponent(sInput));
+        else{
+            if(navigator.userAgent.toString().indexOf("edg") != -1 || navigator.userAgent.toString().indexOf("Firefox") != -1){
+            }
+            target = tar + "&search_put=" + encodeURIComponent(sInput);
+        }
+        location.href = target;
+        }
+        }
+    }
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G1Y9LMFDYR');
+    /* <![CDATA[ */
+        var msg ='';
+        //스크립트 소스는 개발단에서 수정/삭제하셔도 무방합니다. 
+        $(document).ready(function() {
+            resizeTo();
+            //내가 찾은 법령정보 쿠키에 담기
+            fLoad();
+            if( msg!='' ){
+                alert( msg );
+            }
+            //본문 검색팝업 열기
+            $('div.srch_box a.srch_btn').click(function() {
+                    $('#srch_box_pop').show();
+            });
+            //본문 검색팝업 닫기
+            $('#srch_box_pop .tit button').click(function() {
+                    $('#srch_box_pop').hide();
+            });
+            //공유하기 팝업창 열기/닫기
+            $('ul.btns button.sns').click(function() {
+                if($('.sns_pop').is(':hidden')){
+                    $('.sns_pop').show();
+                    $('.save_pop').hide();
+                }else{
+                    $('.sns_pop').hide();
+                }
+            });
+            //pdf 다운로드 팝업창 열기/닫기
+            $('ul.btns button.save').click(function() {
+                if($('.save_pop').is(':hidden')){
+                    $('.save_pop').show();
+                    $('.sns_pop').hide();
+                }else{
+                    $('.save_pop').hide();
+                }
+            });
+            $(".cnpClsNt").remove();
+            $(".cnpClsTitle").remove();
+            $(window).resize(browserResize.resize).resize();
+        });
+        var browserResize = {
+            browserHeight   : 0,
+            resize  : function() {
+              //  $(".ovDivbox1").css("width", ($(window).width() - $("#contents").offset().left) + "px");    
+                $(".ovDivbox1").children("[name=form2]").prev().css("width", "757px");
+            }
+        }
+        function resizeTo(){
+            // 이미지 사이즈가 크면 조정함
+            var objs = document.getElementsByName("resizeImg");
+            for(var i=0; i<objs.length; i++){
+                var obj = objs[i];
+                var newImg = new Image();
+                newImg.src = obj.src;
+                var width = newImg.width;
+                if(width > 650){
+                    obj.width = 650;
+                }
+            }   
+        }
+        //생활분야별 만족도 조사
+        function contentment(){
+            var selectCount = 0;
+            var selectCount2 = 0;
+            var selectCount3 = 0;
+            var selectCount4 = 0;
+            for (var i = 0; i <5; i++) {
+                if (document.getElementsByName("rdoVal1")[i].checked==true) {
+                    selectCount++;
+                }
+            }
+            if(document.getElementsByName("rdoVal2").length >0){ 
+            for (var i = 0; i <5; i++) {
+                if (document.getElementsByName("rdoVal2")[i].checked==true) {
+                    selectCount2++;
+                }
+            }
+            }
+            if(document.getElementsByName("rdoVal3").length >0){ 
+            for (var i = 0; i <5; i++) {
+                if (document.getElementsByName("rdoVal3")[i].checked==true) {
+                    selectCount3++;
+                }
+            }
+            }
+            for (var i = 0; i <5; i++) {
+                if (document.getElementsByName("rdoVal4")[i].checked==true) {
+                    selectCount4++;
+                }
+            }
+            var temp=getCsmCookie("f_csmseq");
+            var yn=false;
+            for(var i=0; i<temp.length; i++){
+                if(temp[i]==722){
+                    yn=true;
+                }
+            }
+            if(yn==false){
+                if(selectCount + selectCount2 + selectCount3 + selectCount4 == 0 ){
+                    alert("설문조사 질문에 답해 주세요.");
+                    return;
+                }
+                setCsmCookie("f_csmseq", "722", '1');
+                document.frmSurvey.submit();
+            }else{
+                alert("생활분야별 만족도 조사는 한번만 참여할 수 있습니다.");
+                return;
+            }
+        }
+         $(function() {
+             var IE = (document.all)?true:false;
+             $("img[name^='copyImg_']").click(function(){
+                var address = "http://www.easylaw.go.kr/CSP/CnpClsMain.laf?popMenu=ov&amp;csmSeq=722&amp;ccfNo=2&amp;cciNo=3&amp;cnpClsNo=1#";
+                address=address.replace(/&amp;/gi,"&");
+                 var idx= $(this).attr("id").substring( 8 );
+                 address = address + idx;
+                 if(IE){
+                     if(confirm("이 글의 주소를 클립보드에 복사하시겠습니까?")){
+                         window.clipboardData.setData("Text", address);
+                     }
+                 } else {
+                     temp = prompt("이 글의 주소입니다. Ctrl+C를 눌러 클립보드로 복사하세요",address);
+                 }
+             });
+         });
+        //즐겨찾기 (단락별로 츨겨찾기)
+        function setBookmarkCookiess(prarm){
+            var userid = 'null';
+            if(userid == 'null'){
+                alert('즐겨찾기는 로그인후 이용가능합니다');
+                return;
+            }
+            var csmSeq = "722";
+            var ccfNo = "2";
+            var cciNo = "3";
+            var cnpClsNo= "1";
+            setBookmarkCookieVal( csmSeq,  ccfNo, cciNo, cnpClsNo, prarm);
+        }
+        //즐겨찾기 (판례 등)
+        function setBookmarkRetreveCookiess(prarm){
+            var userid = 'null';
+            if(userid == 'null'){
+                alert('즐겨찾기는 로그인후 이용가능합니다');
+                return;
+            }
+            setBookmarkCookie( prarm );
+        }
+        function fLoad(){
+            if('0'==0){
+                setCookies('0',location.href,'1=722_2=2_3=3_4=1');
+                //내가 찾은 법령정보 쿠키에 담기
+            }
+        }
+        //--국가법령연결 링크 주소
+        function openKlaw(url){
+            window.open(url,null, "width=1024,height=768");
+        }
+        // 화면 인쇄
+        /* Print Page */
+        function fovPrint(menuType){
+            window.open('/CSP/jsp/csp1/printP.jsp','print','toolbar=no,width=780,height=800,location=no,resizable=no,status=no,menubar=no,scrollbars=yes');
+        }
+        // 쿠키 유효기간을 자정까지만 하도록 처리 
+        function setTimeCookies(cookieName , cookieValue ){
+            var today = new Date(); 
+            today.setMinutes(59);
+            today.setSeconds(59);
+            var h = 24 - today.getHours()-1;
+            today.setHours(today.getHours()+h); 
+            document.cookie = cookieName + "=" +  cookieValue  + "; path=/; expires=" + today.toGMTString() + ";";
+        }               
+        //박기돈. 추천하기 추가. 2013-07-31
+        function updateOnhunqueInfoUpdateForRecomMain(isOnhunqnaAstSeq, isOnhunqueSeq){
+        	var sInput = document.srchForm.search_input.value;
+            sInput = sInput.replace(/</gi,"&lt;");
+            sInput = sInput.replace(/>/gi,"&gt;");
+            sInput = sInput.replace(/\(/gi,"+"); 
+            document.form2.action = "CnpClsMain.laf?onhunqnaAstSeq="+isOnhunqnaAstSeq+"&onhunqueSeq="+isOnhunqueSeq+"&menuType=onhunqna&isCh=Y"+"&search_put="+sInput;
+            document.form2.target="_self";
+            document.form2.submit();
+        }
+        //생활법령 내용을 즐겨찾기 추가할 경우 로그인 체크 2013.08.06 Shin,Dong-Oh
+        function chkBookmark(param){
+            var userid = 'null';
+            if(userid == 'null'){
+                alert('즐겨찾기는 로그인후 이용가능합니다');
+                return;
+            }
+            setBookmarkCookie(param);
+        }
+        function makePDFEBook() {
+            if ( confirm("생활분야 콘텐츠(탭,이미지,표 수)에 따라 시간이 오래걸리수 있습니다.\n계속 진행하시겠습니까?") ) {
+                location.href = "/CSP/PDFEBookMakeToCSM.laf?csmSeq=" + 722
+                                                                                + "&ccfNo=" + 2
+                                                                                + "&cciNo=" + 3
+                                                                                + "&cnpClsNo=" + 1
+                                ;
+            }
+        }
+       function openBtrCard(lsId, joKey) {
+           var widthSize = 970;
+           var heightSize = 580;
+           var newLeft = (screen.availWidth - widthSize)/2;
+           var newTop = (screen.availHeight - heightSize)/2;
+           window.open("BtrByLawJokeyLst.laf?lsId="+lsId+"&joKey="+joKey,"BtrCard","scrollbars=yes,status=no,toolbar=no,resizable=no,location=no,menu=no,width="+widthSize+",height="+heightSize+",left="+newLeft+",top="+newTop);
+      }
+       //Epub다운로드 팝업 창
+       function openEpub(csmseq) {
+           var url = "/CSP/jsp/csp1/EpubInfo.jsp?csmSeq="+csmseq;
+           window.open(url,'epubinfo','scrollbar=yes,toolbar=no,resizable=yes,status=no,menubar=no,width=495px,height=320px');
+       }
+       //pdf 다운로드
+       function openPdf(csmseq){
+           var url = "/CSP/FileDownload.laf?flType=pdf&onhunqnaYn=N&csmSeq="+csmseq;
+           location.href = url;
+       }
+     //댓글 보기/닫기 화면 뷰 설정
+       function optReplDisplay(ind){
+           var parent_id = "optrpl_"+ind;
+           var display = "none";
+           var vH = $('#contents').height();
+           var mvH = $('#lnb').height();
+           if(mvH > vH) vH = mvH;
+           $( "li[id^='"+parent_id+"_']").each(
+               function( m ) {
+                   var child_id = parent_id + '_' + (m + 1);
+                   var cvH = $('#'+ child_id).height();
+                   if($("#"+child_id).css('display') == "none"){
+                       $("#"+child_id).css("display", "block");
+                       $('#btn_rpl_'+ind).addClass("on");
+                       vH = vH + cvH;                      
+//                     vH = vH + cvH + 30;                     
+                   }else{
+                       $("#"+child_id).css("display", "none");
+                       $('#btn_rpl_'+ind).removeClass("on");
+                       vH = vH - cvH;  
+//                     vH = vH - cvH - 30; 
+                   }
+               }
+           );
+           var nvH = vH + 80;
+           $('#body').css({'height':nvH});
+       }
+    /* ]]> */
+자바스크립트가 지원되지 않아 일부 기능이 제한될 수 있습니다.
+바로가기
+메인메뉴 바로가기
+서브메뉴 바로가기
+본문 바로가기
+통합검색박스
+검색어
+검색
+로그인
+최근 본 법령정보 
+-
+최근 본 법령정보가 없습니다.
+목록삭제 x
+더보기 >
+기본보기 >
+close
+Language
+메뉴전체보기
+책자형
+책자형 생활법령
+책자형 생활조례
+외국어 생활법령
+맞춤형 생활법령
+카드뉴스형
+카드뉴스형 생활법령
+외국어 카드뉴스
+생활법령
+백문백답
+생활법령 백문백답
+솔로몬의 재판
+솔로몬의 재판
+웹툰
+생활법령 웹툰
+소식∙참여
+소식
+공지사항
+신규 콘텐츠
+이벤트
+이슈법령
+이슈Q&amp;A
+참여
+생활법령 이용후기
+홈페이지 개선의견
+서비스 소개
+생활법령정보 소개
+이용안내
+사이트맵
+저작권정책
+전체메뉴
+책자형
+책자형 생활법령
+가정법률
+아동·청소년/교육
+부동산/임대차
+금융/금전
+사업
+창업
+무역/출입국
+소비자
+문화/여가생활
+민형사/소송
+교통/운전
+근로/노동
+복지
+국방/보훈
+정보통신/기술
+환경/에너지
+사회안전/범죄
+국가 및 지자체
+책자형 생활조례
+외국어 생활법령
+맞춤형 생활법령
+카드뉴스형
+카드뉴스형 생활법령
+외국어 카드뉴스
+ 생활법령
+백문백답
+생활법령 백문백답
+솔로몬의 재판
+솔로몬의 재판
+웹툰
+생활법령 웹툰
+소식∙참여
+소식
+공지사항
+신규 콘텐츠
+이벤트
+이슈법령
+이슈Q&amp;A
+참여
+생활법령 이용후기
+홈페이지 개선의견
+서비스 소개
+생활법령정보 소개
+이용안내
+사이트맵
+저작권정책
+통합검색
+회원관리
+로그인
+마이페이지
+나의 맞춤형 생활법령
+회원정보 수정
+닫기
+SMART 
+생활법률
+앱 다운로드
+설문조사
+$(document).ready(function(){
+    /*var today = new Date();
+    var sameday = new Date("2022-10-01");
+    if(today.getTime() > sameday.getTime()){
+        $(".srvEvt").remove();
+    }*/
+    $(".research_layer").click(function(){
+        window.open('/CSP/SurveyPopup.laf?','service_pollOpn20160602', "top=50, left=10, width=538, height=835");
+    });
+});
+$(document).ready(function() {
+    $('#skip a').on('focus', function(){
+        $(this).stop().animate({"top":"0", "opacity":1});
+    });
+    $('#skip a').on('focusout', function(){
+        $(this).stop().animate({"top":"-30px", "opacity":0});
+    });
+    $('ul.nav').hover(function(){
+        $(this).addClass("on");
+    }, function(){
+        $(this).removeClass("on");
+    });
+    // 퀵메뉴 소스
+    var currentPosition = parseInt($(".quickmenu_wrap").css("top"));
+    $(window).scroll(function() {
+        var position = $(window).scrollTop(); 
+        $(".quickmenu_wrap").stop().animate({"top":position+currentPosition+"px"},1);
+    }); 
+});
+확장/축소
+닫기
+열기
+실업급여
+이미지로 보는 
+카드뉴스
+사례로 보는 
+백문백답
+관련법령
+목차
+펼치기
+닫기
+하위 메뉴
+실업급여 알아보기
+실업급여 살펴보기
+하위메뉴 보기/숨기기
+"실업급여"란?
+구직급여
+구직급여 수급대상
+하위메뉴 보기/숨기기
+구직급여 수급자격
+구직급여 수급신청
+하위메뉴 보기/숨기기
+실업의 신고
+실업의 인정
+실업인정의 특례
+구직급여 수급
+하위메뉴 보기/숨기기
+구직급여 수급일수
+구직급여 수급액
+구직급여 수급·수급유예·수급정지
+구직급여 연장
+하위메뉴 보기/숨기기
+훈련연장급여
+개별연장급여
+특별연장급여
+질병 등에 따른 구직급여 수급
+하위메뉴 보기/숨기기
+상병급여
+취업촉진 수당
+취업촉진 수당 수급
+하위메뉴 보기/숨기기
+조기재취업 수당
+직업능력개발 수당
+광역 구직활동비
+이주비
+자영업자 실업급여
+자영업자 실업급여 수급
+하위메뉴 보기/숨기기
+자영업자 실업급여 수급
+실업급여 문제해결
+미지급 실업급여
+하위메뉴 보기/숨기기
+미지급 실업급여 수급
+실업급여 부정수급
+하위메뉴 보기/숨기기
+실업급여 부정수급
+부정수급에 따른 수급액 반환 및 징수
+실업급여 처분에 대한 이의 제기
+하위메뉴 보기/숨기기
+실업급여 심사청구
+실업급여 재심사청구
+확장/축소
+/* <![CDATA[ */
+//스크립트 소스는 개발단에서 수정/삭제하셔도 무방합니다.
+$(document).ready(function() {
+    //100문 100답 이미지
+    $('div.box_but2').css('width','100');
+    $('#lnb').css('height','auto');
+    $('#body').css('height','auto');
+    //LNB 확장/축소
+    $('#lnb .lnbvhide').click(function() {
+        if($('#lnb').width() == 208 || $('#lnb').width() == 225 || $('#lnb').width() == 226){
+            $(".botm").css("width", "380px");
+            if($('#lnb').width() == 180) {
+                $('#lnb').css({'width':'380px'});
+            } else {
+                $('#lnb').css({'width':'397px'});
+            }
+            $('#lnb div.list').css({'width':'378px'});
+            $('#lnb .title h3').addClass("on");
+            $('#lnb .lnbvhide').addClass("on");
+            //100문 100답 이미지
+            $('div.box_but2').css('width','200');
+            //본문높이값 구하기
+            var vH = $('#contents').height();
+            var mvH = $('#lnb').height();
+            if(vH < mvH){
+                var vH = mvH;
+            }
+            var nvH = vH + 80;
+            $('#body').css({'height':nvH});
+        }else{
+            $(".botm").css("width", "208px");
+            if( $('#lnb').width() == 380) {
+                $('#lnb').css({'width':'208px'});
+            } else {
+                $('#lnb').css({'width':'225px'});
+            }
+            $('#lnb div.list').css({'width':'208px'});
+            $('#lnb .title h3').removeClass("on");
+            $('#lnb .lnbvhide').removeClass("on");
+            //100문 100답 이미지
+            $('div.box_but2').css('width','100');
+            //본문높이값 구하기
+            var vH = $('#contents').height();
+            var mvH = $('#lnb').height();
+            if(vH < mvH){
+                var vH = mvH;
+            }
+            var nvH = vH + 80;
+            $('#body').css({'height':nvH});
+        }
+    });
+    //lnb 숨기기
+    $('.lnbClose').click(function(){
+        if($(this).parents('#lnb').hasClass('lnbSizeBig')){
+            $(this).parents('#lnb').addClass('active');
+            $(this).parents('.lnb_wrap').siblings('#contents').addClass('active');
+            $(this).parents('#body').addClass('active');
+            $(this).parents('#lnb').css({'width':'397px'});
+        }else{
+            $(this).parents('#lnb').addClass('active');
+            $(this).parents('.lnb_wrap').siblings('#contents').addClass('active');
+            $(this).parents('#body').addClass('active');
+            $(this).parents('#lnb').css({'width':'225px'});
+        }
+    });
+    //lnb 보이기
+    $('.lnbOpen').click(function(){
+        $(this).parents('#lnb').removeClass('active');
+        $(this).parents('.lnb_wrap').siblings('#contents').removeClass('active');
+        $(this).parents('#body').removeClass('active');
+    });
+    //lnb 확장버튼이 눌렸을때 숨기기
+    $('.lnbvhide').click(function(){
+        if($(this).parents('#lnb').hasClass('lnbSizeBig')){ 
+            $(this).parents('#lnb').removeClass('lnbSizeBig');
+        }else{
+            $(this).parents('#lnb').addClass('lnbSizeBig');
+        }
+    });
+    //LNB 목차 펼치기
+    $('#lnb button.view').click(function() {
+        $('#lnb li.Depth_3').show();
+        $('#lnb li.Depth_2 button').addClass("on");
+        //본문높이값 구하기
+        var vH = $('#contents').height();
+        var mvH = $('#lnb').height();
+        if(vH < mvH){
+            var vH = mvH;
+        }
+        var nvH = vH + 80;
+        $('#body').css({'height':nvH});
+        //펼치기 유지
+        setCookie('lnbView','view',1);
+    });
+    //LNB 목차 닫기
+    $('#lnb button.hidd').click(function() {
+        $('#lnb li.Depth_3').hide();
+        $('#lnb li.Depth_2 button').removeClass("on");
+        //본문높이값 구하기
+        var vH = $('#contents').height();
+        var mvH = $('#lnb').height();
+        if(vH < mvH){
+            var vH = mvH;
+        }
+        var nvH = vH + 80;
+        $('#body').css({'height':nvH});
+        //펼치기 유지
+        setCookie('lnbView','hide',1);
+    });
+    // 2레벨 클릭시 3레벨 펼치고 닫기
+    var lev2_init = "true"; //3레벨바로열기
+    $('li.Depth_2').click(function() {
+        var id = $(this).attr("id");
+        var pp = "";
+        if($(this).find("button").hasClass("")){
+            pp = "show";
+        }else{
+            pp = "hide";
+        }
+        // 1레벨 진하게 여리게
+        var imsi = id.split("_");
+        var obj = document.getElementById(imsi[0]);
+        $('li.Depth_1').removeClass("on");
+        $("#"+obj.id).addClass("on");
+        // 3레벨 펼치기 닫기
+        var lev3 = "";    //3레벨바로열기
+        var lev3_cnt = 0; //3레벨바로열기
+        for(var i=1; i<100; i++){
+            var obj = document.getElementById(id+"_3Depth");
+            if(obj == null){
+                break;
+            } else {
+                //alert("#"+obj.id);
+                if(pp == "show"){
+                    $("#"+obj.id).show();
+                    if(lev3 == ""){
+                        lev3 = obj.id;
+                    }
+                    lev3_cnt++;
+                } else {
+                    $("#"+obj.id).hide();
+                }
+            }
+        }
+        if(pp == "show"){
+            $(this).children().find("button").addClass("on");
+        }else{
+            $(this).children().find("button").removeClass("on");
+        }
+        //본문높이값 구하기
+        var vH = $('#contents').height();
+        var mvH = $('#lnb').height();
+        if(vH < mvH){
+            var vH = mvH;
+        }
+        var nvH = vH + 80;
+        $('#body').css({'height':nvH});        
+    });
+    // 3레벨 클릭시 본문보기
+    $('li.Depth_3 li').click(function() {
+        $(this).addClass("on");
+    });
+    // 목차닫기(최초)
+    $('#lnb li.Depth_3').hide();
+    $('#lnb li.Depth_2 button').removeClass("on");
+    // 이전작업 활성화(2레벨)
+    var clickMenuList = "cnp-2_3";
+    var clickMenu = "cnp-2_3_1";
+    var Depth_2_obj = $('li').filter('.Depth_2');
+    var Depth_2_id = "";
+    lev2_init = "false"; //3레벨바로열기
+    for(var i=0; i<Depth_2_obj.length; i++){
+        var obj = Depth_2_obj[i];
+        var imsi = null;
+        if(clickMenuList.indexOf(obj.id) >= 0 && clickMenu.substring(0,clickMenu.lastIndexOf("_")).indexOf(obj.id) < 0){
+            imsi = obj.id.split("_");
+            Depth_2_id = imsi[0]+"_"+imsi[1];
+            $("#"+Depth_2_id).click();
+        }
+    }
+    // 이전작업 활성화(3레벨)
+    var Depth_3_obj = $('li').filter('.Depth_3 li');
+    var Depth_2_id = "";
+    var Depth_3_id = "";
+    for(var i=Depth_3_obj.length-1; i >= 0; i--) {
+        var obj = Depth_3_obj[i];
+        var imsi = null;
+        if(clickMenu.indexOf(obj.id) >= 0){
+            imsi = obj.id.split("_");
+            Depth_2_id = imsi[0]+"_"+imsi[1];
+            Depth_3_id = obj.id;
+            break;
+        }
+    }
+    $("#"+Depth_2_id).click();
+    $("#"+Depth_3_id).addClass("on");
+    lev2_init = "true"; //3레벨바로열기    
+    if ('view' == getCookie('lnbView')) {
+        $('#lnb button.view').trigger('click');
+    }
+    $(".page_title").prepend("
+" + $(".box > ul > li [class*=on] > a").text() + "
+");
+});
+function fn_goUrl(url){
+    url = url.substring(1,url.length-1);
+    url = url.replace(/&amp;/gi,"&");
+    location.href = url;
+}
+function fn_goCms(url){
+    location.href = url;
+}
+//100문100답 팝업
+function fOpenCnpDataPop(url, csmSeq){
+    url += "?csmSeq=" + csmSeq;
+    popupScroll2(url, 'info',793, 643);
+}
+//주요법령 팝업 창
+function SysChartPop(csmseq){
+    var url = "/CSP/SysChartRetrievePLst.laf?csmSeq="+csmseq;
+    window.open(url,'sysChart','scrollbars=no,toolbar=no,resizable=no,status=no,menubar=no,width=796px,height=860px');
+}
+function movePage(){
+    $("#csmOrdinSeqForm").submit();
+}
+/* ]]> */
+현재위치 및 공유하기
+홈
+ &gt; 
+책자형
+ &gt;
+실업급여
+생활법령 내 검색
+생활법령 내 검색
+X
+검색어
+검색
+공유
+저장
+인쇄
+즐겨찾기
+페이스북
+트위터
+카카오톡
+전체 PDF 저장
+전체 EPUB 저장
+현재 페이지 PDF 저장
+본문 영역
+                                「고용보험법」
+                                2026년 11월 27일 시행(개정 사항을 검토하여 향후 업데이트 예정입니다.)
+본문
+100문 100답
+관련법령
+구직급여 수급일수
+구직급여의 수급기간은 구직급여의 수급자격과 관련된 이직(離職)일의 다음 날부터 계산하기 시작해서 12개월의 기간을 말합니다.
+임신·출산·육아, 질병이나 부상 등의 사유로 수급기간 중 일정한 사유로 취업할 수 없는 경우에는 최대 4년을 한도로 수급기간을 연기할 수 있습니다.
+구직급여는 수급기간 내에 피보험기간과 연령에 따라 정해진 소정급여일수 동안 받을 수 있습니다.
+인쇄체크
+구직급여 수급기간
+ "수급기간"이란?
+ “수급기간”이란 구직급여의 수급자격과 관련된 이직(離職)일의 다음 날부터 계산하기 시작해서 12개월의 기간을 말합니다(
+「고용보험법」 제48조
+제1항).
+인쇄체크
+구직급여 수급기간의 
+연기
+ 수급기간의 연기사유
+ 12개월의 수급기간 중 다음의 사유로 취업할 수 없는 사람이 그 사실을 수급기간에 고용센터에 신고한 경우에는 12개월의 기간에 그 취업할 수 없는 기간을 가산한 기간(4년을 넘을 때에는 4년)에 소정급여일수를 한도로 하여 구직급여를 받습니다[
+「고용보험법」 제48조
+제2항, 
+「고용보험법 시행령」 제70조
+, 
+「고용보험법 시행규칙」 제92조의2
+ 및 
+「고용보험법 시행규칙」
+(고용노동부령 제283호) 부칙 제2조].
+ 임신·출산·육아
+ 본인의 질병이나 부상(
+「고용보험법」 제63조
+에 따라 상병급여를 받은 경우의 질병이나 부상은 제외)
+ 배우자의 질병이나 부상
+ 배우자의 국외발령 등에 따른 동거 목적의 거소 이전
+ 본인과 배우자의 직계존속 및 직계비속의 질병이나 부상
+「병역법」
+에 따른 의무복무
+ 범죄혐의로 인한 구속이나 형의 집행(
+「형법」
+ 또는 직무와 관련된 법률을 위반하여 금고 이상의 형을 선고받은 경우에 해당하여 수급자격이 없는 자는 제외)
+「재난 및 안전관리 기본법」 제38조
+에 따른 심각 경보 발령(심각 경보 기간 중 이직한 사람에 대해서도 적용됨)
+ 수급기간 연기 신청
+ 취업할 수 없는 사실을 신고하려는 사람은 직접 또는 대리인을 통하여 수급기간 내에 
+수급기간 연기사유 신고서
+에 수급자격증(수급자격증을 발급 받은 경우로 한정)을 첨부하여 신청지 관할 고용센터에 제출해야 합니다(
+「고용보험법 시행령」 제71조
+제1항 본문, 
+「고용보험법 시행규칙」 제93조
+제1항 및
+ 별지 제86호서식
+).
+ 다만, 천재지변, 
+「병역법」
+에 따른 병역의무 이행, 그 밖의 부득이한 사유가 있는 경우에는 그 사유가 없어진 날부터 30일 이내에 제출해야 합니다(
+「고용보험법 시행령」 제71조
+제1항 단서).
+※ 다음의 어느 하나에 해당하는 경우에는 해당 최초 요양일에 수급기간 연기신고를 한 것으로 봅니다(
+「고용보험법」 제48조
+제3항).
+「산업재해보상보험법」 제40조
+에 따른 요양급여를 받는 경우
+ 질병 또는 부상으로 3개월 이상의 요양이 필요하여 이직하였고, 이직 기간 동안 취업활동이 곤란하였던 사실이 요양기간과 부상·질병상태를 구체적으로 밝힌 주치의사의 소견과 요양을 위해 이직하였다는 사업주의 의견을 통하여 확인된 경우
+ 수급기간 연기 통지
+ 연기 신청이 수급기간의 연기사유로 인정되면 신청인은 고용센터의 장으로부터 
+수급기간 연기통지서
+를 받고, 필요한 사항이 적힌 수급자격증을 돌려받습니다(
+「고용보험법 시행령」 제71조
+제3항, 
+「고용보험법 시행규칙」 제93조
+제2항 및
+ 별지 제87호서식
+).
+ 수급기간 연기사유 변경 등의 신고
+ 수급기간 연기 통지를 받은 사람이 그 수급기간 연기 사유가 없어지거나 수급기간 연기신청서에 적은 내용 중 수급기간 연기기간의 변경이 있는 경우에는 지체 없이 해당 사실을 신청지 관할 고용센터에 신고하고 
+수급기간 연기사유 변경 등 신고서
+에 수급기간 연기통지서 및 수급자격증을 첨부하여 제출해야 합니다(
+「고용보험법 시행령」 제71조
+제4항, 
+「고용보험법 시행규칙」 제93조
+제3항, 제4항 및
+ 별지 제86호서식
+).
+인쇄체크
+구직급여 소정급여일수
+ 소정급여일수란?
+ “소정급여일수”란 하나의 수급자격에 따라 구직급여를 지급받을 수 있는 날을 말합니다(
+「고용보험법」 제50조
+제1항 전단).
+ 소정급여일수의 산정
+ 소정급여일수는 대기기간이 끝난 다음날부터 계산하기 시작하여 피보험기간과 연령에 따라 다음에서 정한 일수가 되는 날까지로 합니다(
+「고용보험법」 제50조
+제1항 후단 및
+ 별표 1
+).
+구분
+피보험기간
+1년 미만
+1년 이상
+3년 미만
+3년 이상
+5년 미만
+5년 이상
+10년 미만
+10년 이상
+이직일 현재 연령
+50세 미만
+120일
+150일
+180일
+210일
+240일
+50세 이상 및 장애인
+120일
+180일
+210일
+240일
+270일
+※ 구직급여 대기기간
+Q. 구직급여 수급자격을 인정받으면 바로 실업인정을 신청하여 구직급여를 받을 수 있나요?
+A. 실업의 신고일부터 계산을 시작해서 7일 동안은 대기기간으로 보아 구직급여를 받을 수 없습니다(
+「고용보험법」 제49조
+제1항 본문).
+다만, 최종 이직 당시 건설일용근로자였던 사람에 대해서는 실업의 신고일부터 계산해서 구직급여를 지급합니다(
+「고용보험법」 제49조
+제1항 단서).
+이 정보는 
+2026년 10월 15일
+ 기준으로 작성된 것입니다.
+생활법령정보는 법적 효력을 갖는 유권해석(결정, 판단)의 근거가 되지 않고, 각종 신고, 불복 청구 등의 증거자료로서의 효력은 없습니다.
+구체적인 법령에 대한 질의는 담당기관이나  
+국민신문고
+에 문의하시기 바랍니다.
+위 내용에 대한 홈페이지 개선의견은 
+홈페이지 개선의견
+을 이용해 주시기 바랍니다.
+하단 영역
+개인정보처리방침
+저작권정책
+사이트맵
+RSS
+모바일 홈페이지
+생활법령 블로그
+모바일QR
+생활법령배너달기
+                    Copyright ⓒ 1997-2023 Korea Ministry of Government Legislation. All Rights Reserved.    |    
+홈페이지 개선의견
+관련기관 홈페이지
+법제처
+국가법령정보센터
+한국법령정보원
+스쿨로
+ --> 
+국민참여입법센터
+정부입법지원센터
+법령해석
+세계법제정보센터
+팝업 배경
+    $( document ).ready(function() {
+        var $footer = $("#footerNew");
+        var $quick = $footer.find(".quick");
+        var curState = false;
+        $quick.on("click","a",function(){
+            $quick.find("ul").toggle();
+            if(curState){
+                $quick.find("ul").css('display','block');
+                curState = false;
+            }
+            if($quick.find("ul").css('display') == "block"){
+                $(".quick > .quick_link").attr('title','목록 접기');
+            }else{
+                $(".quick > .quick_link").attr('title','목록 펼치기');
+            }
+        });
+      //개인정보처리방침 팝업 호출
+       $('#userPrivacyPopUp').on('click', function() {
+           window.open('/CSP/UserPrivacyPage.laf', 'userPrivacyPage', "top=50, left=10, width=1300, height=780");
+       });
+    })

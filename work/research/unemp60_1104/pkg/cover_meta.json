@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-03 20:09",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "정년퇴직 실업급여/실업크레딧은?",
+ "num": "연금 보험료 지원 0원",
+ "sub": "실업급여 270일은 그대로 받아요",
+ "label": "60세 정년퇴직이라면",
+ "src": "국민연금법·공단 안내 11월 3일 확인",
+ "icon": "piggy-bank",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 115,
+ "num_px": 92,
+ "sub_px": 53,
+ "board": [
+  "newborn1103",
+  "midtax1103",
+  "samdiv1103",
+  "leasereg1102",
+  "defer1027",
+  "fxdepfee1026",
+  "jbcalc1027",
+  "wolsegong1027",
+  "pen600_1102",
+  "hfheir1028"
+ ]
+}

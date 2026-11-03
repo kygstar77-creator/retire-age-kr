@@ -71,6 +71,16 @@
     "url": null
    },
    "note": "발행 없음 — 22:40 칸은 write-b 배정(jepipair1103 관문 통과). 11/4 22:40 칸에 renewpair1102 배정, 11/4 16:10 칸에 새 글 usrate1104 관문 통과(자료조사 원문 7곳: 연준 결정문·FOMC 일정·FRED·ECOS 기준금리·ECOS 환율·한은 10/22·2차 블로그 / 검증 경로 crosscheck(Gemini) 사실 6건 반영 2·유지 4(12명=10대 2 표결, 결정문 원문 저장, 변경 이력·발표 시각 facts에 추가), 말투 15건 반영 11 / selfcheck 0 / readcheck 0 / aitell 3.0). 개선: 없음(발견 — editgate 해시는 c??.txt 두 자리만 세서 c035 같은 이름은 빠짐 → 번호를 다시 매겨 피함)"
+  },
+  {
+   "hour": 22,
+   "ts": "22:50",
+   "blog": null,
+   "cafe": {
+    "title": "JEPI 분배금 꺼내 쓰면 5년 뒤 원금은?",
+    "url": "https://cafe.naver.com/firemap/383"
+   },
+   "note": "write-b 22:40 칸 짝 글(쇼츠 LtkVbpQjWyc 공개 확인 뒤) · 관문은 17:01 통과분 · 발행 직전 야후 분배 이벤트 다시 확인(11월 분배 없음) · verify OK 1722/1722자·사진 3/3 · 확인 창 timeout(발행은 됨) · 개선: 없음"
   }
  ]
 }

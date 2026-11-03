@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-03 14:03",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "신생아 특례대출/5년 뒤 금리",
+ "num": "11월 접수 4.77%",
+ "sub": "소득 8,500만원 넘는 집의 6년째 금리",
+ "label": "주택도시기금 금리표",
+ "src": "11월 3일 조회",
+ "icon": "baby",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 122,
+ "num_px": 96,
+ "sub_px": 48,
+ "board": [
+  "samdiv1103",
+  "leasereg1102",
+  "defer1027",
+  "fxdepfee1026",
+  "jbcalc1027",
+  "wolsegong1027",
+  "pen600_1102",
+  "hfheir1028",
+  "crdt1027",
+  "rtcancel1022"
+ ]
+}

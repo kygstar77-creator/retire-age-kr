@@ -1,0 +1,48 @@
+{
+ "ep": "P-3",
+ "series": "정책 — 건강보험 피부양자와 국민연금",
+ "title": "건강보험 피부양자 기준, 국민연금 월 166만원 넘으면 건보료 매달 얼마 낼까",
+ "title_by": "firemap-copywriter 2026-10-27 00:38 copy/titles.md 2차 1위(숫자 1·검색어 '건강보험 피부양자' 맨 앞)",
+ "title_candidates": [
+  "건강보험 피부양자 기준, 국민연금 월 166만원 넘으면 건보료 매달 얼마 낼까",
+  "건강보험 피부양자, 국민연금은 받은 돈 전부 소득으로 센다… 한 해 2천만원이 기준"
+ ],
+ "thumb_text_top": "건강보험 피부양자 · 국민연금만 받을 때",
+ "thumb_text": "국민연금 월 166만원 / 넘으면 피부양자 빠져요",
+ "thumb": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\P-3\\thumb_p3n_d.png",
+ "thumb_status": "10/27 17:47 visual 확정(N-2 thumb_A 꼴·알약 뺌·이해 2차 주제 3/3) · 근거 visual/P-3-thumb/judges.md",
+ "desc_first2": [
+  "국민연금만 받는 피부양자는 한 해 소득 2천만원(월 166만 6,667원)을 넘으면 그다음 판정에서 빠지고, 재산이 거의 없을 때 건강보험료가 매달 6만 8천원쯤 붙습니다.",
+  "국민연금은 세금 떼기 전 받은 돈 전부를 소득으로 세고, 부부는 각자 따로 봅니다. 연금이 물가만큼 오르면 몇 해 뒤 저절로 넘을 수 있어 통지서로 내 금액을 셈해 보는 법을 정리했습니다(파이어맵 계산)."
+ ],
+ "desc_tpl": null,
+ "desc": null,
+ "chapters": null,
+ "tags": [
+  "건강보험 피부양자",
+  "피부양자 자격",
+  "국민연금 건강보험료",
+  "피부양자 소득기준"
+ ],
+ "publishAt": "2026-11-08T11:30:00+09:00",
+ "privacy": "private",
+ "privacy_note": "예약 공개(private+publishAt) — 정해진 시각에 공개로 바뀜",
+ "paid": false,
+ "coupang": null,
+ "synthetic": true,
+ "veo": false,
+ "synthetic_note": "AI 음성 내레이션 + shot_plan.md의 AI 생성 장면 → containsSyntheticMedia True",
+ "voice": "2026-11-03 14:2x 녹음 — Chirp 3 HD Charon 1.1(tts.json), say_v1.txt 82줄, editor 서명 10/29 18:30 sha 일치",
+ "answers": {},
+ "experiment": {},
+ "endscreen": {
+  "how": "Studio 최종 화면 — 업로드 뒤 할 일",
+  "status": "미정"
+ },
+ "made_by": "firemap-video-producer",
+ "made_at": "2026-11-03",
+ "video": null,
+ "missing": 1,
+ "desc_first2_src": "calc_out.txt 167만원 행(67,926원)·say_v1 8·11·24·66행·copy/titles.md 2차 '남은 궁금증'",
+ "todo": "11/3 14:2x PD 초안 — 남은 칸: video·chapters·desc({CAFE}·출처 줄·'AI 음성 내레이션')·answers 5문항·첫 댓글 · 올리기 전 확인(11/7): 2027년 건보료율·피부양자 기준 고시가 바뀌었으면 desc_first2·대본 숫자 대조 · 설명 첫 줄의 '6만 8천원'은 2026년 요율 기준"
+}

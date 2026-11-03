@@ -1,4 +1,4 @@
-"""K-1 장면 판 25장 — visual-designer 2026-10-26.
+"""K-1 장면 판 25장 — visual-designer 2026-10-26 · 11/3 한은 9월분(facts F3~F8·F12·F24·F25)으로 숫자 바꿈(video-producer 요청).
 H-3 판(board_loan 등)과 같은 꼴: 구겨진 종이 바탕 · 찢은 종이 막대·조각 · 주황 #FF5A00은 그 화면의 답 하나 · 손으로 그린 동그라미·밑줄.
 숫자는 ep/K-1/facts.txt(F1~F25)·raw/series.json 값만. 판은 '답이 열린 마지막 모습' — '?' → 열림 움직임은 PD가 Remotion에서 건다.
 사용: py -3.12 k1boards.py [이름 ...]   (없으면 전부) → work/video/public/bg/k1/board/<이름>.png
@@ -18,6 +18,9 @@ W, H = 1920, 1080
 INK = (24, 24, 27); GREY = (92, 92, 98); SRC = (110, 110, 116)
 OR = (255, 90, 0); KRAFT = (192, 156, 114); KRAFT_L = (214, 190, 160); FADE = (196, 182, 160)
 SER = json.load(open(os.path.join(EP, 'raw', 'series.json'), encoding='utf-8'))
+# 11/3 한은 9월분(raw/series_1103.json, calc5) 덧붙임 — 겹치는 달 값은 같음(대조함), 202609만 새로 생김
+for _k, _v in json.load(open(os.path.join(EP, 'raw', 'series_1103.json'), encoding='utf-8')).items():
+    if _k in SER and _k in ('dep', 'dep1', 'mtg', 'mfix', 'mvar'): SER[_k].update(_v)
 
 _FC = {}
 def font(path, size):
@@ -125,12 +128,12 @@ def k1_two_q(im):
         torn(im, (330, y, 1590, y + 190), KRAFT_L, seed=seed)
         T(d, (560, y + 95), lab, 70)
         T(d, (1330, y + 95), '?', 150, OR if i == 0 else INK, F_X)
-    source(d, '한국은행 경제통계시스템 · 2025년 8월과 2026년 8월 비교')
+    source(d, '한국은행 경제통계시스템 · 2025년 9월과 2026년 9월 비교')
 
 @board
 def k1_answer2(im):
     d = ImageDraw.Draw(im); title(d, '답부터', 130)
-    rows = (('예금 1억, 1년 이자', '74만원 더', '작년 8월 대비'), ('2021년 고정 대출, 한 달', '28만원 정도 더', '2021년 대비'))
+    rows = (('예금 1억, 1년 이자', '87만원 더', '작년 9월 대비'), ('2021년 고정 대출, 한 달', '31만원 정도 더', '2021년 대비'))
     for i, (a, b, c) in enumerate(rows):
         y = 360 + i * 300
         T(d, (W // 2, y), a, 56, GREY)
@@ -192,10 +195,10 @@ def k1_2007(im):
     T(d, (500, 420), '미국 10년 5.1%', 66, (120, 100, 76))
     T(d, (500, 620), '한국 주담대 평균', 52, (120, 100, 76), F_M)
     T(d, (500, 730), '6.13%', 110, (120, 100, 76), F_X)
-    T(d, (1460, 200), '2026년 8월', 70, INK, F_X)
-    T(d, (1460, 420), '미국 10년 4.68%', 66, INK)
+    T(d, (1460, 200), '2026년 9월', 70, INK, F_X)
+    T(d, (1460, 420), '미국 10년 4.99%', 66, INK)
     T(d, (1460, 620), '한국 주담대 평균', 52, INK, F_M)
-    T(d, (1460, 730), '4.66%', 110, OR, F_X)
+    T(d, (1460, 730), '4.88%', 110, OR, F_X)
     source(d, '월평균 · FRED · 한국은행 예금은행 가중평균금리(신규취급액)')
 
 @board
@@ -211,26 +214,26 @@ def k1_us_kr_now(im):
 @board
 def k1_dep_bar(im):
     d = ImageDraw.Draw(im); title(d, '1년 정기예금 평균 금리', 100)
-    tops = bars(im, [('작년 8월', 2.51, KRAFT, '2.5%', INK), ('올해 8월', 3.39, KRAFT, '3.4%', INK)], vmax=4.0, top_y=300)
-    T(d, (W // 2, 200), '1년 새 거의 1%p ↑', 60, OR, F_X)
+    tops = bars(im, [('작년 9월', 2.54, KRAFT, '2.5%', INK), ('올해 9월', 3.57, KRAFT, '3.6%', INK)], vmax=4.2, top_y=300)
+    T(d, (W // 2, 200), '1년 새 1%p 넘게 ↑', 60, OR, F_X)
     source(d, '한국은행 · 예금은행 정기예금 1년, 그달 새로 받은 예금 평균')
 
 @board
 def k1_dep_calc(im):
     d = ImageDraw.Draw(im); title(d, '정기예금 1억, 1년 이자 (세금 뗀 뒤)', 110)
-    for i, (lab, f, ans) in enumerate((('작년 금리', '1억 × 2.5% − 세금', '212만원'), ('지금 금리', '1억 × 3.4% − 세금', '287만원'))):
+    for i, (lab, f, ans) in enumerate((('작년 금리', '1억 × 2.5% − 세금', '215만원'), ('지금 금리', '1억 × 3.6% − 세금', '302만원'))):
         y = 330 + i * 190
         T(d, (330, y), lab, 50, GREY, F_B, 'lm')
         T(d, (640, y), f, 62, INK, F_B, 'lm')
         T(d, (1600, y), '= ' + ans, 76, INK, F_X, 'rm')
     d.line([(330, 650), (1600, 650)], fill=INK, width=4)
-    T(d, (W // 2, 790), '차이 74만원', 130, OR, F_X)
-    source(d, '이자소득세 15.4% · 한 달로 나누면 6만원 정도')
+    T(d, (W // 2, 790), '차이 87만원', 130, OR, F_X)
+    source(d, '이자소득세 15.4% · 한 달로 나누면 7만원 정도')
 
 @board
 def k1_coins3(im):
     d = ImageDraw.Draw(im); title(d, '같은 1억, 1년 이자', 100)
-    data = (('5년 전 (2021.8)', '1.2%', 98, True), ('1년 전 (2025.8)', '2.5%', 212, False), ('지금 (2026.8)', '3.4%', 287, False))
+    data = (('5년 전 (2021.9)', '1.3%', 111, True), ('1년 전 (2025.9)', '2.5%', 215, False), ('지금 (2026.9)', '3.6%', 302, False))
     for i, (lab, r, v, faded) in enumerate(data):
         cx = 420 + i * 540; n = round(v / 18); base = 820
         col = FADE if faded else (214, 168, 70); edge = (170, 150, 120) if faded else (150, 110, 30)
@@ -246,40 +249,40 @@ def k1_coins3(im):
 @board
 def k1_cofix89(im):
     d = ImageDraw.Draw(im); title(d, '신규 코픽스 — 은행이 새로 모은 돈의 금리', 100)
-    bars(im, [('작년 8월', 2.49, FADE, '2.49%', (150, 140, 128)), ('올해 8월', 3.18, KRAFT, '3.18%', INK), ('9월', 3.43, KRAFT, '3.43%', OR)], vmax=3.9, top_y=300, bw=240, gap=160)
+    bars(im, [('작년 9월', 2.52, FADE, '2.52%', (150, 140, 128)), ('올해 9월', 3.43, KRAFT, '3.43%', OR)], vmax=3.9, top_y=300)
     source(d, '은행연합회 코픽스 · 9월분 10월 15일 발표')
 
 @board
 def k1_gap(im):
     d = ImageDraw.Draw(im); title(d, '대출 금리 − 예금 금리', 90)
-    a, b = '201901', '202608'
+    a, b = '201901', '202609'
     mt = [v for _, v in months('mtg', a, b)]; dp = [v for _, v in months('dep', a, b)]; ms = [m for m, _ in months('mtg', a, b)]
     box = (220, 210, 1720, 860)
     xl = [(i, m[:4]) for i, m in enumerate(ms) if m.endswith('01')]
     X, Y = linechart(im, [mt, dp], box, 0.5, 5.5, [INK, (120, 100, 76)], [6, 6], xl, fill_between=(0, 1, (255, 90, 0, 40)), yticks=(1, 3, 5))
     T(d, (X(len(ms) - 1) + 12, Y(mt[-1])), '주택담보대출', 34, INK, F_B, 'lm')
     T(d, (X(len(ms) - 1) + 12, Y(dp[-1])), '정기예금', 34, (120, 100, 76), F_B, 'lm')
-    for m, lab, col, dx in (('202108', '5년 전 1.9%p', INK, 0), ('202608', '지금 1.5%p', OR, -1)):
+    for m, lab, col, dx in (('202109', '5년 전 1.85%p', INK, 0), ('202609', '지금 1.49%p', OR, -1)):
         i = ms.index(m); x = X(i); d.line([(x, Y(mt[i])), (x, Y(dp[i]))], fill=col, width=5)
         for yy in (Y(mt[i]), Y(dp[i])): d.line([(x - 12, yy), (x + 12, yy)], fill=col, width=5)
-        T(d, (x - 26, (Y(mt[i]) + Y(dp[i])) / 2 + (50 if dx else 0)), lab, 44, col, F_X, 'rm')
+        T(d, (x - 26, (Y(mt[i]) + Y(dp[i])) / 2 + (85 if dx else 0)), lab, 44, col, F_X, 'rm')
     source(d, '한국은행 · 그달 새로 맺은 대출·예금 평균 금리 차이 (공식 예대금리차 지표 아님)')
 
 @board
 def k1_fix_var(im):
     d = ImageDraw.Draw(im); title(d, '1년 동안 오른 폭 (새로 받은 주담대)', 100)
-    bars(im, [('고정형', 0.94, KRAFT, '+0.94%p', OR), ('변동형', 0.45, KRAFT, '+0.45%p', INK)], vmax=1.15, top_y=300)
-    T(d, (W // 2 - 230, 990), '3.94 → 4.88%', 42, INK, F_B); T(d, (W // 2 + 230, 990), '4.08 → 4.53%', 42, INK, F_B)
-    source(d, '한국은행 · 2025년 8월 → 2026년 8월')
+    bars(im, [('고정형', 1.17, KRAFT, '+1.17%p', OR), ('변동형', 0.68, KRAFT, '+0.68%p', INK)], vmax=1.4, top_y=300)
+    T(d, (W // 2 - 230, 990), '3.94 → 5.11%', 42, INK, F_B); T(d, (W // 2 + 230, 990), '4.08 → 4.76%', 42, INK, F_B)
+    source(d, '한국은행 · 2025년 9월 → 2026년 9월')
 
 @board
 def k1_cross(im):
     d = ImageDraw.Draw(im); title(d, '고정형과 변동형, 순서가 바뀐 달', 90)
-    a, b = '202501', '202608'
+    a, b = '202501', '202609'
     fx = [v for _, v in months('mfix', a, b)]; vr = [v for _, v in months('mvar', a, b)]; ms = [m for m, _ in months('mfix', a, b)]
     box = (220, 220, 1700, 860)
     xl = [(i, f"{m[2:4]}.{m[4:]}") for i, m in enumerate(ms) if m[4:] in ('01', '05', '09')]
-    X, Y = linechart(im, [fx, vr], box, 3.6, 5.0, [OR, INK], [7, 6], xl, yfmt='{:.1f}%', yticks=(3.6, 4.0, 4.4, 4.8))
+    X, Y = linechart(im, [fx, vr], box, 3.6, 5.2, [OR, INK], [7, 6], xl, yfmt='{:.1f}%', yticks=(3.6, 4.0, 4.4, 4.8))
     T(d, (X(len(ms) - 1) + 14, Y(fx[-1])), '고정형', 38, OR, F_B, 'lm')
     T(d, (X(len(ms) - 1) + 14, Y(vr[-1])), '변동형', 38, INK, F_B, 'lm')
     i = ms.index('202604'); hand_ellipse(d, (X(i) - 80, Y(4.31) - 80, X(i) + 80, Y(4.31) + 80), seed=21)
@@ -290,13 +293,13 @@ def k1_cross(im):
 def k1_3eok_table(im):
     d = ImageDraw.Draw(im); title(d, '3억원 · 30년 · 고정형으로 새로 빌리면', 110)
     cx = [560, 1000, 1440]
-    for x, h in zip(cx[1:], ('작년 8월', '올해 8월')): T(d, (x, 300), h, 52, GREY)
-    rows = (('금리', '3.94%', '4.88%'), ('한 달에', '142만원', '159만원'))
+    for x, h in zip(cx[1:], ('작년 9월', '올해 9월')): T(d, (x, 300), h, 52, GREY)
+    rows = (('금리', '3.94%', '5.11%'), ('한 달에', '142만원', '163만원'))
     for r, (a, b, c) in enumerate(rows):
         y = 440 + r * 170
         T(d, (cx[0], y), a, 56, INK, F_B, 'rm'); T(d, (cx[1], y), b, 72, INK, F_X); T(d, (cx[2], y), c, 72, INK, F_X)
     d.line([(380, 360), (1600, 360)], fill=(150, 146, 140), width=3); d.line([(380, 700), (1600, 700)], fill=INK, width=4)
-    T(d, (cx[0], 820), '차이', 56, INK, F_B, 'rm'); T(d, ((cx[1] + cx[2]) / 2, 820), '한 달 17만원 정도 더', 90, OR, F_X)
+    T(d, (cx[0], 820), '차이', 56, INK, F_B, 'rm'); T(d, ((cx[1] + cx[2]) / 2, 820), '한 달 21만원 정도 더', 90, OR, F_X)
     source(d, '원리금균등 · 평균 금리로 셈한 값, 실제 금리는 은행·상품마다 다름')
 
 @board
@@ -305,14 +308,14 @@ def k1_cofix3(im):
     T(d, (W // 2, 170), '내 변동금리 = 코픽스 + 은행이 붙이는 금리', 64)
     hand_under(d, 690, 900, 215, INK, 6, seed=2)
     root = (795, 250)
-    items = (('신규 코픽스', '그달 새로 모은 돈', '+0.7%p', INK), ('잔액 코픽스', '은행에 남은 돈 전부', '+0.1%p', OR), ('신잔액 코픽스', '', '+0.17%p', INK))
+    items = (('신규 코픽스', '그달 새로 모은 돈', '+0.91%p', INK), ('잔액 코픽스', '은행에 남은 돈 전부', '+0.26%p', OR), ('신잔액 코픽스', '', '+0.30%p', INK))
     for i, (a, b, c, col) in enumerate(items):
         x = 420 + i * 540
         d.line([root, (x, 452)], fill=INK, width=5)
         torn(im, (x - 230, 450, x + 230, 830), KRAFT_L, seed=40 + i); d = ImageDraw.Draw(im)
         T(d, (x, 560), a, 52); T(d, (x, 710), c, 90, col, F_X)
     hand_ellipse(d, (960 - 300, 425, 960 + 300, 870), seed=44)
-    source(d, '은행연합회 · 2025년 8월 → 2026년 8월 오른 폭')
+    source(d, '은행연합회 · 2025년 9월 → 2026년 9월 오른 폭')
 
 @board
 def k1_trap(im):
@@ -332,9 +335,9 @@ def k1_trap(im):
 @board
 def k1_us_kr_1y(im):
     d = ImageDraw.Draw(im); title(d, '1년 동안 오른 폭 (10년 국채, 월평균)', 100)
-    bars(im, [('미국', 0.42, KRAFT, '+0.4%p', INK), ('한국', 1.47, OR, '+1.5%p', OR)], vmax=1.8, top_y=300)
-    T(d, (W // 2, 200), '한국이 세 배 넘게', 58, INK, F_X)
-    source(d, '2025년 8월 → 2026년 8월 · FRED · 한국은행')
+    bars(im, [('미국', 0.87, KRAFT, '+0.9%p', INK), ('한국', 1.60, OR, '+1.6%p', OR)], vmax=1.9, top_y=300)
+    T(d, (W // 2, 200), '한국이 두 배 가까이', 58, INK, F_X)
+    source(d, '2025년 9월 → 2026년 9월 · FRED · 한국은행')
 
 @board
 def k1_us_kr_sep(im):
@@ -407,18 +410,18 @@ def k1_reset_flow(im):
     d = ImageDraw.Draw(im); title(d, '2021년 여름, 3억원 · 30년 · 5년 고정', 100)
     flow_box(im, (100, 260, 600, 640), (('2021년', 44, GREY, F_B), ('고정 2.98%', 56, INK, F_X), ('한 달 126만원', 52, INK, F_B)), 101)
     flow_box(im, (710, 260, 1210, 640), (('5년 뒤', 44, GREY, F_B), ('남은 원금', 50, INK, F_B), ('2억 6,662만원', 52, INK, F_X)), 102)
-    flow_box(im, (1320, 260, 1820, 640), (('지금 고정형', 44, GREY, F_B), ('4.88% · 25년', 54, INK, F_X), ('한 달 154만원', 52, INK, F_B)), 103)
+    flow_box(im, (1320, 260, 1820, 640), (('지금 고정형', 44, GREY, F_B), ('5.11% · 25년', 54, INK, F_X), ('한 달 158만원', 52, INK, F_B)), 103)
     d = ImageDraw.Draw(im)
     hand_arrow(d, (612, 450), (698, 450)); hand_arrow(d, (1222, 450), (1308, 450))
-    T(d, (W // 2, 820), '2021년보다 한 달 28만원 정도 더', 96, OR, F_X)
+    T(d, (W // 2, 820), '2021년보다 한 달 31만원 정도 더', 96, OR, F_X)
     source(d, '평균 금리로 셈한 가정 · 원리금균등 · 실제 금리는 은행·상품마다 다름')
 
 @board
 def k1_reset_two(im):
     d = ImageDraw.Draw(im); title(d, '5년 고정이 끝나고 다시 정하면', 100)
     flow_box(im, (140, 380, 640, 700), (('2021년', 44, GREY, F_B), ('한 달 126만원', 54, INK, F_X)), 111)
-    flow_box(im, (1080, 200, 1780, 500), (('고정형 4.88%', 48, INK, F_B), ('154만원 · +28만원', 60, INK, F_X)), 112)
-    flow_box(im, (1080, 580, 1780, 880), (('변동형 4.53%', 48, INK, F_B), ('149만원 · +22만원', 60, OR, F_X)), 113)
+    flow_box(im, (1080, 200, 1780, 500), (('고정형 5.11%', 48, INK, F_B), ('158만원 · +31만원', 60, OR, F_X)), 112)
+    flow_box(im, (1080, 580, 1780, 880), (('변동형 4.76%', 48, INK, F_B), ('152만원 · +26만원', 60, INK, F_X)), 113)
     d = ImageDraw.Draw(im)
     hand_arrow(d, (660, 520), (1060, 360)); hand_arrow(d, (660, 560), (1060, 730))
     source(d, '2021년 대비 한 달 · 남은 원금 2억 6,662만원 · 25년 원리금균등 · 평균 금리 가정')

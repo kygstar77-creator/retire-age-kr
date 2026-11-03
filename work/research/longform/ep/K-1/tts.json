@@ -1,0 +1,10 @@
+{
+ "model": "chirp3-hd",
+ "voice": "ko-KR-Chirp3-HD-Charon",
+ "speakingRate": 1.1,
+ "markup": true,
+ "say_v": 2,
+ "nat_gate": true,
+ "pause_v": 2,
+ "note": "2026-11-03 PD: lfvoice NEW_EP 값 그대로(Charon 1.1·say_v 2·pause_v 2, B-31) — J-1과 같은 목소리·빠르기. 녹음은 editor 재서명(say_sha) 뒤 16:00 창"
+}

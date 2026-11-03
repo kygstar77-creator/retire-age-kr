@@ -1,0 +1,68 @@
+[
+ {
+  "r": "r03",
+  "verdict": "같음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ },
+ {
+  "r": "r06",
+  "verdict": "같음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ },
+ {
+  "r": "r07",
+  "verdict": "못함",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": "질문 없는 예고 판 → r08 질문 메모(p3_kin_q)로 바꿈"
+ },
+ {
+  "r": "r10",
+  "verdict": "나음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ },
+ {
+  "r": "r23",
+  "verdict": "나음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ },
+ {
+  "r": "r24",
+  "verdict": "못함",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": "1월 1일 동그라미가 '1월부터 탈락'으로 읽힘 → 흐름 판 p3_next_year"
+ },
+ {
+  "r": "r28",
+  "verdict": "나음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ },
+ {
+  "r": "r31",
+  "verdict": "못함",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": "(A) 휴대폰 위 손 흐림 → 종이 판 p3_call_first"
+ },
+ {
+  "r": "r34",
+  "verdict": "같음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ },
+ {
+  "r": "r36",
+  "verdict": "같음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ },
+ {
+  "r": "r39",
+  "verdict": "같음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ }
+]

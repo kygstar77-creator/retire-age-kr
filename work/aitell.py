@@ -470,6 +470,9 @@ LEN_WARN = 1500
 # 10/27 editor: '이달 20일'(crdt1027 c00, 비축 글이라 나가는 달이 바뀜) → 이달·이번 달 더함(지난달은 물가 글 "지난달보다"=전월 대비 뜻이라 뺌)
 REL_DATE = re.compile(r'(?<![가-힣])(오늘|어제|내일|그제|그저께|모레|이번\s*주|지난\s*주|다음\s*주|이달|이번\s*달)')
 ABS_DATE = re.compile(r'\d{1,2}\s*월\s*\d{1,2}\s*일|(?<![\d.])\d{1,2}/\d{1,2}(?![\d/])|\d{4}[.\-]\s*\d{1,2}[.\-]\s*\d{1,2}')
+# 11/3 editor: 비축 글 '작년 11월부터 올해 10월까지'(renewpair1102 c04)·J-1 '지난달' — 나가는 해·달이 바뀌면 틀림. 연도·날짜 없으면 경고만(물가 글 '지난달보다'는 전월 대비라 막지 않음)
+REL_YEAR = re.compile(r'(?<![가-힣])(작년|올해|지난해|내년|재작년|지난달|다음 달)')
+YEAR_ABS = re.compile(r'\d{4}\s*년')
 A53_RE = re.compile(r'(댓글|글|질문|뉴스|기사|얘기|이야기|말)[이가은도]?\s*(?:요즘\s*|올해\s*|부쩍\s*|자주\s*|많이\s*|종종\s*)+(보|올라|나오|들리|눈에)'
                     r'|카페마다|(?:가장|제일|자주|많이)\s*묻는|(?:묻는|궁금해하는|아는|헷갈리는|모르는|걱정하는|(?:갖고|들고|가지고)\s*계신)\s*분[들이]*\s*(?:이\s*)?(?:많|적지)')  # 10/27 editor: '갖고 계신 분들 많으시죠'(공개 #58 첫 문장)
 A53_SRC = re.compile(r'https?://(?:m\.)?(?:cafe\.naver\.com/(?!firemap)|kin\.naver\.com|(?:n\.)?news\.naver\.com|[^\s)]*youtube\.com/[^\s)]*lc=)')
@@ -491,6 +494,9 @@ def cafe3_check(pkg):
             m = REL_DATE.search(s)
             if m and not ABS_DATE.search(s):
                 block.append(f"상대 날짜 '{m.group(0)}' 날짜 없이: \"{s.strip()[:50]}\" — 10월 N일로(발행 다음 날 틀림)")
+            y = REL_YEAR.search(s)
+            if y and not YEAR_ABS.search(s) and not ABS_DATE.search(s):
+                warn.append(f"상대 시점 '{y.group(0)}' 연도 없이: \"{s.strip()[:50]}\" — 2026년처럼(비축·늦은 발행이면 틀림)")
     if not A53_SRC.search(body):
         for s in sentences(body):
             m = A53_RE.search(s)

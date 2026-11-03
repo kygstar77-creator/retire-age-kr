@@ -24,6 +24,9 @@ import {CapStop, CapStopProps} from '../CapStop';
 import {MeanPull, MeanPullProps} from '../MeanPull';
 import {PayBlocks, PayBlocksProps} from '../PayBlocks';
 import {RaiseStairs, RaiseStairsProps} from '../RaiseStairs';
+import {DaysOver, DaysOverProps} from '../DaysOver';
+import {CrossOver, CrossOverProps} from '../CrossOver';
+import {SameDirDots, SameDirDotsProps} from '../SameDirDots';
 
 type P = {scene: RScene; zoom: ZoomOutOpenProps};
 const OpenZoom: React.FC<P> = ({scene, zoom}) => (
@@ -151,6 +154,16 @@ const N3Motion2: React.FC<P16> = ({blocks, stairs}) => (
   </Series>
 );
 
+// K-1 움직이는 판 셋(11/3 motion) — over DaysOver · cross CrossOver · dots SameDirDots
+type P17 = {over: V3S<Omit<DaysOverProps, 'beats'>>; cross: V3S<Omit<CrossOverProps, 'beats'>>; dots: V3S<Omit<SameDirDotsProps, 'beats'>>};
+const K1Motion: React.FC<P17> = ({over, cross, dots}) => (
+  <Series>
+    <Series.Sequence durationInFrames={over.frames}>{v3Frame(over, <DaysOver {...over.data} beats={tallyStarts(over.lines)} />)}</Series.Sequence>
+    <Series.Sequence durationInFrames={cross.frames}>{v3Frame(cross, <CrossOver {...cross.data} beats={tallyStarts(cross.lines)} />)}</Series.Sequence>
+    <Series.Sequence durationInFrames={dots.frames}>{v3Frame(dots, <SameDirDots {...dots.data} beats={tallyStarts(dots.lines)} />)}</Series.Sequence>
+  </Series>
+);
+
 export const PreviewRoot: React.FC = () => (
   <>
   <Composition id="OpenZoom" component={OpenZoom as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
@@ -201,5 +214,8 @@ export const PreviewRoot: React.FC = () => (
   <Composition id="N3Motion2" component={N3Motion2 as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => { const q = props as unknown as P16; return {durationInFrames: q.blocks.frames + q.stairs.frames}; }} />
+  <Composition id="K1Motion" component={K1Motion as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => { const q = props as unknown as P17; return {durationInFrames: q.over.frames + q.cross.frames + q.dots.frames}; }} />
   </>
 );

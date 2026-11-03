@@ -1,0 +1,33 @@
+{
+ "date": "2026-11-03",
+ "runs": [
+  {
+   "hour": 6,
+   "ts": "06:40",
+   "blog": null,
+   "cafe": null,
+   "note": "발행 0(06시 회차 — 이번 시각 카페 칸 없음, 07:40은 write-b). 10:10 leasereg1102 올리기 전 확인(S1~S6 6곳 다시 엶, 바뀐 것 없음)·끝 안내 뺌·editgate 재도장·slots gates_ok. 16:10 midtax1103 새로 씀: 출처 법령 8조(국가법령정보센터 웹)·경쟁 블로그 6·지식iN 질문 3 · 검증 경로 crosscheck(Gemini, 사실 4건 반영2·유지2, 말투 14건 반영7)+selfcheck 사실 0 · 이해 시험 3차 9명 통과 · readcheck 0·aitell 9.5. 개선: 없음(로그인 정상) — research_gate 함수가 폴더 대신 파일 경로를 받는다는 걸 playbook에 적음"
+  },
+  {
+   "hour": 7,
+   "ts": "07:51",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "연기연금 피부양자 탈락, 절반만 미루면 피할까?",
+    "url": "https://cafe.naver.com/firemap/377"
+   },
+   "note": "07:40 칸 비축 defer1027 발행 · verify OK 2016자·사진 3 · 편집 해시 일치(editor 07:10) · 올리기 전 확인 11/2 19:48(전날) · D-17 경고 2016자>1500 · 확인 창 처리 timeout은 넘어가고 발행 성공 · 회원 댓글 0 · 개선: 없음"
+  },
+  {
+   "hour": 9,
+   "ts": "10:18",
+   "blog": null,
+   "cafe": {
+    "title": "임차권등기명령 신청부터 등기까지 며칠 걸릴까?",
+    "url": "https://cafe.naver.com/firemap/378"
+   },
+   "note": "10:10 칸 leasereg1102 · 출처 6곳 11/3 다시 엶(06:3x)+조문 본문 raw1103 저장 · 교차검증 11/2 완료분 · verify OK 1771자·사진 3 · 블로그 없음(하루 상한·쉬는 규칙) · 개선: 법령 API 막힐 때 law.go.kr 웹 lsSideInfoP 본문 저장 스크립트(growth 아닌 pkg raw1103)"
+  }
+ ]
+}

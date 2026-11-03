@@ -18,3 +18,4 @@
 - 2026-10-27: 회차 실행률은 스케줄 도구 없이 ~/.claude/projects/C--Users-----Documents-Codex/*.jsonl 첫 줄(enqueue timestamp UTC + scheduled-task name)로 센다 — find -newermt로 최근 파일만, ls *.jsonl 전체는 2분 넘게 걸린다. 예상 회차 수는 정상일(10/25) 간격으로 추정했음을 같이 적는다.
 - 10/28: 회차 실행률은 projects/*/*.jsonl 첫 줄 scheduled-task 이름+timestamp(UTC+9)로 셈 — 사흘 연속 17:04에 깨어남(PC를 켜는 시각으로 보임)
 - 2026-11-02: 일감표 '멈춘 회차'는 heartbeat end 누락일 수 있다 — list_sessions isRunning으로 먼저 보고, 끊기 전에 확인
+- (11/3) 계산기별 이벤트는 같지 않다 — calc_complete는 메인 계산(Result.jsx)만. 연봉·퇴직금·실업급여 '계산 끝'을 물으면 이벤트가 없다고 먼저 적고 *_gain_view로 대신하지 않는다. SQL에서 count(*)·count(distinct)에 별칭 없이 같은 이름 쓰면 JSON 키가 겹쳐 값 하나가 사라진다.

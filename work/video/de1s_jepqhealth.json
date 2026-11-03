@@ -1,0 +1,189 @@
+{
+ "fps": 30,
+ "name": "de1s_jepqhealth",
+ "v": 2,
+ "look": "live",
+ "question": [
+  "1억을 배당 ETF JEPQ에",
+  "넣으면 건보료가 붙을까"
+ ],
+ "hot": "건보료",
+ "answer": {
+  "label": "1억 JEPQ · 지역가입자 1년",
+  "items": [
+   "건보료 95만원 더",
+   "손에 남는 돈 900만원"
+  ],
+  "arrow": false,
+  "note": "건보료 95만원 더"
+ },
+ "base": "야후 파이낸스 분배 기록(2026-10-16 마감, 최근 12개월 그대로) · 지역가입자·다른 금융소득 0 가정 · 파이어맵 계산",
+ "long": "mkAxQPGaDqc",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "1억 JEPQ",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "1년 배당 · 세금 떼기 전",
+      "1,170만원",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "지역가입자 건보료",
+      "95만원 더",
+      "",
+      68,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "JEPQ는 세금 15%를 먼저 떼요.",
+     "audio": "audio/de1s_jepqhealth/jepq15_b.wav",
+     "frames": 68
+    },
+    {
+     "n": 2,
+     "text": "건보료도 95만원 정도 더 내요.",
+     "audio": "audio/d-etf-1/0c09eb9ad536251e.wav",
+     "frames": 66
+    }
+   ],
+   "frames": 134
+  },
+  {
+   "kind": "vs",
+   "label": "왜 붙나",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "건보료는 세금 떼기 전",
+      "1,170만원",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 3,
+     "text": "그리고 JEPQ는 세금 떼기 전에 1,170만원쯤 나와요. 건보료 선은 이 세금 떼기 전 금액으로 따지는데, 여기서 함정이 하나 있습니다.",
+     "audio": "audio/d-etf-1/22b0c50ed4be4029.wav",
+     "frames": 259
+    }
+   ],
+   "frames": 259
+  },
+  {
+   "kind": "vs",
+   "label": "1,000만원 선",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "1,000만원 넘으면",
+      "전부 건보료에",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "12개 중 넘는 건",
+      "JEPQ 하나",
+      "",
+      184,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "지역가입자는 예금 이자와 배당을 다 더한 금융소득이 매년 1,000만원을 넘으면, 그 전부가 건보료 계산에 들어가요.",
+     "audio": "audio/d-etf-1/bebb23535f69b124.wav",
+     "frames": 184
+    },
+    {
+     "n": 5,
+     "text": "다른 이자가 없다면, 1억으로 이 선을 넘는 건 JEPQ 하나뿐이었어요. 예금 이자가 있으면 그만큼 선이 가까워집니다.",
+     "audio": "audio/d-etf-1/d1386d45a74de3b1.wav",
+     "frames": 211
+    }
+   ],
+   "frames": 395
+  },
+  {
+   "kind": "vs",
+   "label": "손에 남는 돈",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "1,170만원에서 빼면",
+      "900만원",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "그래서 손에 남는 건 900만원이었습니다.",
+     "audio": "audio/d-etf-1/97b9d3a9e81e202c.wav",
+     "frames": 78
+    }
+   ],
+   "frames": 114
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/detf/stock/cut/5981346_28.mp4",
+   "from": 0,
+   "frames": 68,
+   "start": 0
+  },
+  {
+   "src": "bg/detf/stock/cut/8661806_2.mp4",
+   "from": 68,
+   "frames": 66,
+   "start": 0
+  },
+  {
+   "src": "bg/detf/stock/cut/5981346_20.mp4",
+   "from": 134,
+   "frames": 259,
+   "start": 0
+  },
+  {
+   "src": "bg/detf/stock/cut/5546876_1.mp4",
+   "from": 393,
+   "frames": 184,
+   "start": 0
+  },
+  {
+   "src": "bg/detf/stock/cut/6343634_2.mp4",
+   "from": 577,
+   "frames": 211,
+   "start": 0
+  },
+  {
+   "src": "bg/detf/stock/cut/5546876_9.mp4",
+   "from": 788,
+   "frames": 114,
+   "start": 0
+  }
+ ],
+ "credits": "5546876 Polina ⠀ · 5981346 https://kaboompics.com/ · 6343634 KATRIN  BOLOVTSOVA · 8661806 Adrian Frentescu (Pexels License)"
+}

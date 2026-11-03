@@ -1,0 +1,68 @@
+[
+ {
+  "r": "r03",
+  "verdict": "같음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ },
+ {
+  "r": "r06",
+  "verdict": "나음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ },
+ {
+  "r": "r07",
+  "verdict": "못함",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": "질문 없는 예고 판 → r08 질문 메모(p3_kin_q)로 바꿈"
+ },
+ {
+  "r": "r10",
+  "verdict": "나음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ },
+ {
+  "r": "r23",
+  "verdict": "나음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ },
+ {
+  "r": "r24",
+  "verdict": "같음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ },
+ {
+  "r": "r28",
+  "verdict": "같음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ },
+ {
+  "r": "r31",
+  "verdict": "나음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ },
+ {
+  "r": "r34",
+  "verdict": "못함",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": "(B) 과표가 내 집 얼마인지 안 보임 → 작은 줄 '재산세 고지서의 과세표준(시세 아님)'(환산 비율은 공식 확인 전이라 안 넣음)"
+ },
+ {
+  "r": "r36",
+  "verdict": "같음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ },
+ {
+  "r": "r39",
+  "verdict": "나음",
+  "reason": "11/3 07:15 새 Agent 1차(요약 — 전문은 decisions/log)",
+  "fix": ""
+ }
+]

@@ -117,7 +117,7 @@
    {
     "item": "renewpair1102",
     "pkg": "work/research/renewpair1102/pkg",
-    "status": "2026-11-02 21:37 관문 통과 — h2s_renew(SkUZ_F9JbKI, 11/4 19:20 공개) 짝 글 전용: 쇼츠 공개 뒤에만(11/4 22:40 칸 권장, slot.txt 2026-11-04 22). '계약갱신요구권 쓰면 전세 보증금 몇 %까지 올릴까?' 부동산 · 국토부 전월세 11/2 다시 받아 14단지 갱신 권리 씀 485건 5% 초과 0·표시 없음 339건 중 194건(57%) 초과 · 이해 2차 6명·교차검증·editgate auto · 발행 회차는 11/4 올리기 전 확인(1일 안) 다시 적을 것",
+    "status": "2026-11-03 21:26 소진 — 11/4 22:40 칸 배정 · 2026-11-02 21:37 관문 통과 — h2s_renew(SkUZ_F9JbKI, 11/4 19:20 공개) 짝 글 전용: 쇼츠 공개 뒤에만(11/4 22:40 칸 권장, slot.txt 2026-11-04 22). '계약갱신요구권 쓰면 전세 보증금 몇 %까지 올릴까?' 부동산 · 국토부 전월세 11/2 다시 받아 14단지 갱신 권리 씀 485건 5% 초과 0·표시 없음 339건 중 194건(57%) 초과 · 이해 2차 6명·교차검증·editgate auto · 발행 회차는 11/4 올리기 전 확인(1일 안) 다시 적을 것",
     "by": "firemap-write",
     "at": "2026-11-02 21:37",
     "gates_ok": "2026-11-02 21:37"
@@ -3206,10 +3206,10 @@
   {
    "at": "2026-11-04 16:10",
    "kind": "cafe",
-   "item": "TBD — 경제·정책",
+   "item": "usrate1104",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-02 21:37: 장르 경제·정책"
+   "gates_ok": "2026-11-03 21:48",
+   "note": "firemap-meeting 2026-11-02 21:37: 장르 경제·정책 | firemap-write 11/03 21:48: usrate1104 '미국 기준금리 한국보다 높은 날, 역대 가장 길까?'(경제 이야기, 검색 미국기준금리 31,600) 관문 통과 — FRED·ECOS 1999~2026 날짜별로 센 한미 금리 역전 1,503일(11/3, 역대 최장·이전 769일)·역전 첫날 대비 환율 1,393.6→1,341원 · 연준 10/28 결정문 원문 · 경쟁 블로그 6편(기간 센 글 0) · 이해 2차 6명 · crosscheck 사실 6건(반영 2·유지 4)·말투 15건(반영 11) · editgate auto 73ab29bd · 발행 회차는 올리기 전 확인(1일 안, FRED·ECOS·환율 다시)과 일수 갱신(11/4이면 1,504일 — c00·c06·표지·그림 01)"
   },
   {
    "at": "2026-11-04 18:40",
@@ -3230,10 +3230,50 @@
   {
    "at": "2026-11-04 22:40",
    "kind": "cafe",
-   "item": "yt_pair 짝 글 — h2s_renew 쇼츠(11/4 19:20 SkUZ_F9JbKI) 질문 하나",
+   "item": "renewpair1102",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-02 21:37",
+   "note": "firemap-meeting 2026-11-02 21:37: yt_pair: SkUZ_F9JbKI · 원본 롱폼 H-2 링크 · 원베일리 갱신 건수는 468(11/2 재실행) 또는 조회일 표기(감사 11/2) | firemap-write 11/03 21:26: 비축 짝 글 renewpair1102 배정(관문 11/2 21:37 통과, slot.txt 2026-11-04 22) — 원베일리는 이 글에 없음(잠실·대치·반포 14단지 84㎡) · 발행 회차가 올리기 전 확인(1일 안)·쇼츠 공개 확인 뒤 올림"
+  },
+  {
+   "at": "2026-11-05 07:40",
+   "kind": "cafe",
+   "item": "TBD — 돈 관리·연금",
    "owner": "firemap-write-b",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-11-02 21:37: yt_pair: SkUZ_F9JbKI · 원본 롱폼 H-2 링크 · 원베일리 갱신 건수는 468(11/2 재실행) 또는 조회일 표기(감사 11/2)"
+   "note": "firemap-meeting 2026-11-03 21:32: 장르 돈 관리·연금 · 비축 pibucut1025(피부양자)를 먼저 — 11/3 defer1027과 이틀 띄움, 올리기 전 확인 다시"
+  },
+  {
+   "at": "2026-11-05 10:10",
+   "kind": "cafe",
+   "item": "TBD — 부동산①",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-03 21:32: 장르 부동산① · 11/4 rechg1103(재초환)·j1pair1104(종부세)와 다른 주제(국토부 실거래·공시가격·대출 규제 원문)"
+  },
+  {
+   "at": "2026-11-05 12:40",
+   "kind": "cafe",
+   "item": "TBD — 주식(배당×건보료, 다른 종목)",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-03 21:41: 장르 주식 · 레드팀 O1 받아들임 — samdiv1103(#380 조회 223, 최근 23편 1위)과 같은 틀 '○○ 배당금, 몇 주부터 건보료에 잡힐까'를 다른 종목(현대차·KB금융 등 배당 큰 종목, DART·공단 원문)으로 · 같은 문장으로 시작하지 않기 · 11/12 비교: #380과 같은 나이 조회"
+  },
+  {
+   "at": "2026-11-05 16:10",
+   "kind": "cafe",
+   "item": "TBD — 경제·정책(세금·건보료·연금)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-03 21:32: 장르 경제·정책(세금·건보료·연금) · 11/4 16:10과 겹치지 않게"
+  },
+  {
+   "at": "2026-11-05 18:40",
+   "kind": "cafe",
+   "item": "TBD — 부동산②",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-03 21:32: 장르 부동산② · 부동산 하루 2칸(10/13 사장님)"
   },
   {
    "at": "2026-11-05 19:20",
@@ -3242,6 +3282,14 @@
    "owner": "firemap-video-producer",
    "gates_ok": "2026-11-02 15:00",
    "note": "15:00 PD: 관문 cardshorts/de1s_schdgrow/review.md(compete 6·숫자 대조·꼴 ⓐ~ⓓ·이해 3차 9명·밝기 Y75.8/14%·치직 0·안전 영역·bgcheck) · yt_pair: aW8HfeGCGgw (카페 짝 글은 쇼츠 공개 뒤 20:10·22:10 칸, firemap-write)"
+  },
+  {
+   "at": "2026-11-05 22:40",
+   "kind": "cafe",
+   "item": "TBD — yt_pair: aW8HfeGCGgw (쇼츠 de1s_schdgrow 11/5 19:20)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-03 21:32: yt_pair: aW8HfeGCGgw (쇼츠 de1s_schdgrow 11/5 19:20) · 쇼츠가 던진 질문 하나 + 쇼츠 링크 + 원본 롱폼 D-ETF-1 링크 + 그 질문의 표 · 쇼츠 공개 확인 뒤 올림"
   },
   {
    "at": "2026-11-06 11:30",

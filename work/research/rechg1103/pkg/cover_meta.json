@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-03 15:37",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "재건축 부담금/1주택 20년이면",
+ "num": "70% 줄어요",
+ "sub": "평균이익 2억: 2,100만원→630만원",
+ "label": "재초환법 제14조의2",
+ "src": "법령 11/3 확인",
+ "icon": "building-2",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 117,
+ "num_px": 92,
+ "sub_px": 48,
+ "board": [
+  "samdiv1103",
+  "leasereg1102",
+  "defer1027",
+  "fxdepfee1026",
+  "jbcalc1027",
+  "wolsegong1027",
+  "pen600_1102",
+  "hfheir1028",
+  "crdt1027",
+  "rtcancel1022"
+ ]
+}

@@ -114,7 +114,7 @@
 [scenes.28.data.say] 어느 쪽이 나을지는 앞으로 금리에 달린 일
 [scenes.28.data.side] left
 [scenes.29.lines.0.text] 변동형 금리는 보통 코픽스에, 은행이 붙이는 금리를 더해서 정해요.
-[scenes.29.lines.1.text] 그런데 코픽스는 한 가지가 아니거든요.
+[scenes.29.lines.1.text] 그런데 코픽스는 한 가지가 아니에요.
 [scenes.29.lines.2.text] 그달 새로 모은 돈만 보는 신규 코픽스가 있고, 은행에 남아 있는 돈 전부를 보는 잔액 코픽스도 있어요.
 [scenes.29.lines.3.text] 잔액 코픽스에는 예전에 낮은 금리로 받은 예금이 섞여 있어요. 그래서 천천히 움직입니다.
 [scenes.29.data.license] 파이어맵 자체 제작 판(출처는 판 안)

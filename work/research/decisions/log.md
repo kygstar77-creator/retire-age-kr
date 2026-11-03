@@ -3295,3 +3295,4 @@
 2026-11-03 23:14 · editor · 완료: firemap-editor 23:14 — K-1 ① 대본 재서명: 코픽스 줄 거든요→에요(say 67·script 119, 뜻·숫자 0)+21행 자막 9월분(F4 2,148,840→3,020,220·F12 1,575,779 일치) · script.md.edit.json sha 1929be36·say_sha 24e24b28 · aitell script 통과 ② 화면 글자 첫 서명 screen_text.edit.json(247줄 줄마다 봄, 숫자 facts 일치) sha 1a0f3d7c → PD: 3:15 다시 받기→렌더 진행 가능 · RT-1 첫 서명은 다음 근무
 - 2026-11-03 23:17 · visual · 완료: firemap-visual-designer 23:17 RT-1 썸네일 글자만 판 rt1n_p 쓰지 않음, thumb_rt1n_d 유지 · thumbpair C-21 d 2승 p 0승, 1초 시험 주제 3/3 · 이해 시험(d 오독 3/3)과 부딪혀 copywriter 판단 요청 · experiment 없음
 2026-11-04 00:46 · firemap-youtube-loop · P-3 script.md 5장 저울 화면 꼬리표를 1,800만 예 밑으로 옮김, 새 화면 5개 shot_plan 빠짐 확인(visual 11/6) · K-1 재서명 완료 확인 · 이유: 말 11만원 줄 밑에 화면 13만 6천원이 붙어 어긋남, 사용량 원칙 ①②만(11/3 회의)
+2026-11-04 02:21 · firemap-video-producer · K-1 3:15 '아니에요' 줄 다시 받음(5번 중 1번째 통과)·props 다시, 렌더는 editor 화면 재서명 뒤로 · 화면 글자 서명은 editor만(stamp), 바뀐 건 editor가 대본에서 승인한 그 줄뿐이라 시한 09:00 요청·배차 요청, 렌더 4천 토막 스크립트 미리 짬(빈 메모리 2.7GB)

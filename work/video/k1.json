@@ -872,9 +872,9 @@
      "cap": null
     },
     {
-     "text": "그런데 코픽스는 한 가지가 아니거든요.",
-     "audio": "audio/k-1/03502e857155d40d.wav",
-     "frames": 65,
+     "text": "그런데 코픽스는 한 가지가 아니에요.",
+     "audio": "audio/k-1/99d796193798078d.wav",
+     "frames": 71,
      "cap": null
     },
     {
@@ -890,7 +890,7 @@
      "cap": null
     }
    ],
-   "frames": 532,
+   "frames": 538,
    "data": {
     "pic": "bg/k1/board/k1_cofix3.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",

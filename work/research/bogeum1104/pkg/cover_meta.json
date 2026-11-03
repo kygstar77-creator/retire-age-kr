@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-04 06:39",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "보금자리론 금리/올해만 여섯 번 인상",
+ "num": "월 24만원 더",
+ "sub": "작년 12월보다 · 새로 3억 30년",
+ "label": "3억·30년",
+ "src": "주택금융공사 금리표 11월 4일 확인",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 115,
+ "num_px": 92,
+ "sub_px": 59,
+ "board": [
+  "jepipair1103",
+  "newborn1103",
+  "midtax1103",
+  "samdiv1103",
+  "leasereg1102",
+  "defer1027",
+  "fxdepfee1026",
+  "jbcalc1027",
+  "wolsegong1027",
+  "pen600_1102"
+ ]
+}

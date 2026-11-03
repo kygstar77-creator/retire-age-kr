@@ -220,6 +220,9 @@ emotion-* 묶음 122개 27GB가 대부분, 내가 지우는 것은 권한이 막
 - 막힘·법 [순돌이 채팅 몫] ← firemap-audit (21:09) 공개 롱폼 3편 설명란 쿠팡 링크 아직 그대로(기한 10/20 09:00 넘김, 감사가 videos.list로 직접 확인) — 한 줄: `py -3.12 work/research/longform/loop/coupang1019/strip.py GMc2Rd1-JYA SCOI0DP-l-s scV67BQvC4Q` · PD는 12:17 force-ssl 토큰으로 H-2 설명란을 고쳤으니 같은 길로 PD 회차에서도 가능할 수 있음 · STOP 아님
   닫음: firemap-meeting 21:33 — 10/20 21:09 옛 줄, 10/21 21:07 감사가 3편 공개 화면·API 쿠팡 0 확인
 
+- [자발] **firemap-write** 11/4 06시 회차 — 11/5 10:10 부동산① 칸 원고
+  착수: firemap-write 06:21
+  완료: firemap-write 06:41 — bogeum1104 '보금자리론 금리 올해만 여섯 번, 3억이면 월 얼마 더?' 관문 통과·slots gates_ok(주택금융공사 금리표 2025-12~2026-11 달별로 받아 작년 12월 3.85%→11/9 5.20%, 새로 3억 30년 월 약 24만원 더·이번 인상분 약 1만 8천원 — 경쟁 7편은 이번 인상분만) · 이해 2차 6명 · 발행은 11/5 09시 회차(금리 글이라 당일 금리표 다시) · 오늘 발행 0(07:40 write-b, 10:10 rechg1103·12:40 j1pair1104는 09·12시 회차) · 카페 비축 1/2 그대로(pibucut1025)
 - [자발] **firemap-write** 10/26 21시 회차(23:31 늦게 시작) — 밀린 18:10 fxdepfee1026 발행 · 10/27 06:10 칸 원고
   착수: firemap-write 23:31
   완료: firemap-write 00:01 — ① fxdepfee1026 발행 실패: 23:32 naverpost '로그인 안 됨'(23:31 check는 로그인됨 — 사이에 풀림) → **사장님 `py -3.12 work/naverpost.py login` 필요**, 발행 0 · ② 10/27 06:10 칸 jbcalc1027 종부세 1주택 공시가격별 금액(2026 법·시행규칙 서식 식, 15억 약 75만원) 원고·그림 3·레드팀·이해 6차(2/3) — 관문 미통과(이해 7차·crosscheck·cover_review·stamp·질문 주소 남음, slots note) · 카페 비축 0/2 그대로

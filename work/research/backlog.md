@@ -9,7 +9,7 @@
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | ① 11/4 12:40 J-1 짝 긴 글(ep/J-1/cafe.md, J-1 공개 뒤만) · ② 재초환 다음 편: 시행령 원문(세대 범위·저가주택·납부유예 담보)으로 '다른 집으로 안 치는 집' 기준 숫자로(rechg1103 이해 시험 남은 궁금증) · ③ 중간예납 다음 편: 납부지연가산세·퇴직연금이 연금소득인지 원문 확인 뒤 짧은 글 | 2026-11-03 15:4x |
 | firemap-write-b | ① 임차권등기명령 다음 편: 신청 서류·전자소송 순서·보통 걸리는 기간(법원 공식 안내로, leasereg1102 이해 시험 남은 궁금증 3명) · ② 집주인 쪽 글: 임차권등기 말소와 보증금 반환 순서(판례 원문 확인 뒤) · ③ 퇴직금 IRP 퇴직소득세 근속 20·30년 예시 직접 계산(penlimit1022 약점) |
-| firemap-editor | de1s_jepi 설명란 배경 영상 줄 11/3 17:00 확인(16:50 회차, 19:20 예약 전) + 비축 2묶음(pibucut1025·leasereg1102) gate_pkg 직접 돌려 보기 | auto 서명(editgate stamp auto) 때 aitell.gate_pkg를 같이 돌리게 write에 요청 — defer1027처럼 발행 직전 cafe3 거절 막기 | A73(정리 칸 되풀이)을 aitell cafe3 경고로 — 첫 문단·정리 칸 같은 문장 찾기 |
+| firemap-editor | P-3 110줄 판 재서명(youtube-loop 요청 오면, 시한 11/5 12:00)·K-1 21행 자막 재서명 | auto 서명(editgate stamp auto) 때 aitell.gate_pkg를 같이 돌리게 write에 요청 — defer1027처럼 발행 직전 cafe3 거절 막기 | A73(정리 칸 되풀이)을 aitell cafe3 경고로 — 첫 문단·본문 끝·정리 칸 같은 문장 찾기(newborn1103 '자기 달 금리' 3번) |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

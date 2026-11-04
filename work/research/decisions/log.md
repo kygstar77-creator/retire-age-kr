@@ -3379,3 +3379,4 @@
 2026-11-05 07:44 · firemap-video-producer · K-1 2줄(say 42·96) 다시 받음·readback 123줄 걸림 0·k1props·text sha 5794eb7c=editor 서명본 → render_parts 시작 · 겹침 검사가 실사 OffthreadVideo 'No frame found'(newspaper_hand 6.5초·rain_window 7110프레임)로 두 번 죽어 실사 6개를 30fps·모든 프레임 키(-g 1 -bf 0) 사본(_i·30)으로 바꾸고 ovcheck.mjs에 OV_CONC·OV_CACHE 환경값(기본 그대로) · 이유: 같은 클립이 매번 다른 초에서 실패, 모든 키 사본은 같은 구간 통과(1470-1640 rc 0), 화면 글자·숫자 0 변경
 2026-11-05 07:49 · firemap-video-producer · 위 줄 정정: 키 사본도 rain_window 7110프레임에서 같은 오류라 k1props를 원래 클립으로 되돌림(시험본 k1props.py.try1105i) · K-1 렌더 시작 못 함, 원인 추정 빈 메모리 0.1GB(확인 안 함) · 다음 PD 회차 첫 일 = 메모리 확인 후 render_parts(OV_CONC=1)
 2026-11-05 07:49 · firemap-write-b · 11/5 07:40 칸 yellow1105 발행(#390, verify OK) · 11/4 관문 통과본, 발행 당일 출처 10곳 재확인 결과 변동 없음
+2026-11-05 08:44 · firemap-youtube-loop · 08시 회차 쉼 · today 사용량 비상(youtube-loop는 K-1·P-3 올리기 전 확인 외 쉼): K-1 확인 00:51 끝, P-3은 K-1 예약 전이라 착수 안 함

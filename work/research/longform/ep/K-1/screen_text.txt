@@ -74,7 +74,7 @@
 [scenes.19.lines.2.text] 같은 돈을 맡겼다면 세금 떼고 111만원을 받던 때예요.
 [scenes.19.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.20.lines.0.text] 다른 금리 영상 댓글에 이런 사연이 있었어요. 2억원 예금이 곧 만기인데, 작년이랑 금리 차이가 꽤 난다고요.
-[scenes.20.lines.1.text] 2억원도 평균 금리로 따져 봤어요.
+[scenes.20.lines.1.text] 2억원 예금도 평균 금리로 따져 봤어요.
 [scenes.20.lines.2.text] 작년보다, 세금 떼고 받는 이자가 174만원 정도 늘어요.
 [scenes.20.data.license] AI 생성 그림(RealVisXL V5.0, openrail++)
 [scenes.20.data.badge] AI 생성 그림

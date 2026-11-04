@@ -57,7 +57,7 @@
 [scenes.15.data.n] 2장
 [scenes.15.data.q] 내 예금 이자는 얼마나 따라왔나
 [scenes.16.lines.0.text] 한국은행은 은행들이 그달 새로 받은 정기예금의 금리를 평균 내서 발표해요.
-[scenes.16.lines.1.text] 한 해짜리 정기예금 평균을, 작년과 올해 9월끼리 비교해 볼게요.
+[scenes.16.lines.1.text] 1년짜리 정기예금 평균을, 작년과 올해 9월끼리 비교해 볼게요.
 [scenes.16.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.17.lines.0.text] 작년엔 2.5%였어요.
 [scenes.17.lines.1.text] 올해는 3.6%입니다.
@@ -86,7 +86,7 @@
 [scenes.22.lines.0.text] 다른 금리 영상 댓글에서 좋아요를 많이 받은 질문이 있어요. 대출 이자랑 예금 이자 차이가 너무 크지 않냐는 거예요.
 [scenes.22.lines.1.text] 새로 맺은 주택담보대출 평균 금리에서 정기예금 평균 금리를 빼 봤어요.
 [scenes.22.lines.2.text] 작년이나 지금이나 1.5%포인트 정도입니다.
-[scenes.22.lines.3.text] 그사이엔 거의 그대로였고, 다섯 해 전엔 오히려 더 벌어져 있었어요.
+[scenes.22.lines.3.text] 그사이엔 거의 그대로였고, 5년 전엔 오히려 더 벌어져 있었어요.
 [scenes.22.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.23.lines.0.text] 이번엔 대출인데요. 주택담보대출은 크게 둘로 나뉩니다.
 [scenes.23.data.n] 3장
@@ -116,7 +116,7 @@
 [scenes.29.lines.0.text] 변동형 금리는 보통 코픽스에, 은행이 붙이는 금리를 더해서 정해요.
 [scenes.29.lines.1.text] 그런데 코픽스는 한 가지가 아니에요.
 [scenes.29.lines.2.text] 그달 새로 모은 돈만 보는 신규 코픽스가 있고, 은행에 남아 있는 돈 전부를 보는 잔액 코픽스도 있어요.
-[scenes.29.lines.3.text] 잔액 코픽스에는 예전에 낮은 금리로 받은 예금이 섞여 있어요. 그래서 천천히 움직입니다.
+[scenes.29.lines.3.text] 잔액 기준 코픽스에는 예전에 낮은 금리로 받은 예금이 섞여 있어요. 그래서 천천히 움직입니다.
 [scenes.29.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.30.lines.0.text] 찬물이 가득한 큰 통에 더운물을 조금 부으면, 온도가 천천히 오르는 것과 비슷해요.
 [scenes.30.data.license] Pexels 4786522 무료(Mark Warner)
@@ -158,7 +158,7 @@
 [scenes.39.data.license] Pexels 6780621 무료(Chris G)
 [scenes.39.data.say] 같이 움직였다는 뜻이지 그 때문은 아니다
 [scenes.39.data.side] left
-[scenes.40.lines.0.text] 변동형은 오르내린 폭으로 따지면 어느 국채와도 잘 안 닮았어요.
+[scenes.40.lines.0.text] 변동형은 오르내림 폭으로 따지면 어느 국채와도 잘 안 닮았어요.
 [scenes.40.lines.1.text] 미국과 한국 10년 국채금리가 꽤 비슷하게 움직이는 건 맞아요.
 [scenes.40.lines.2.text] 그래도 은행 평균 금리에 더 가까운 건 한국 금리였어요.
 [scenes.40.data.license] 파이어맵 자체 제작 판(출처는 판 안)
@@ -191,7 +191,7 @@
 [scenes.47.lines.1.text] 한 해면 370만원이 넘습니다.
 [scenes.47.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.48.lines.0.text] 변동형 평균으로 다시 정했다면, 2021년보다 늘어나는 돈은 한 달 26만원 정도예요.
-[scenes.48.lines.1.text] 이건 평균 금리로 셈한 가정이에요. 실제 금리는 은행과 상품마다 다릅니다.
+[scenes.48.lines.1.text] 이건 평균 금리로 계산한 가정이에요. 실제 금리는 은행과 상품마다 다릅니다.
 [scenes.48.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.49.lines.0.text] 고정 5년이 길어 보여도 금방 간다는 댓글이 있었죠.
 [scenes.49.lines.1.text] 2021년 무렵 낮은 금리로 고정해 둔 분이라면, 그 날이 언제인지부터 보셔야 해요.
@@ -203,13 +203,13 @@
 [scenes.51.data.n] 6장
 [scenes.51.data.q] 그래서 볼 날짜
 [scenes.52.lines.0.text] 변동형이면 금리가 다시 정해지는 날, 고정형이면 고정이 끝나는 날, 예금이면 만기일이에요.
-[scenes.52.lines.1.text] 대출이라면 그날 금리로 한 달 납입액을 다시 셈해 보면, 얼마가 늘지 미리 알 수 있어요.
+[scenes.52.lines.1.text] 대출이라면 그날 금리로 한 달 납입액을 다시 계산해 보면, 얼마가 늘지 미리 알 수 있어요.
 [scenes.52.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.53.lines.0.text] 이 셈은 파이어맵 사이트의 대출이자 계산기에 넣으면 바로 나와요.
 [scenes.53.data.license] Pexels 6326847 무료(https://kaboompics.com/)
 [scenes.53.data.say] 대출이자 계산기
 [scenes.53.data.side] left
-[scenes.54.lines.0.text] 예금이라면 만기 날, 그날 은행이 주는 금리로 이자를 다시 셈해 보면 됩니다.
+[scenes.54.lines.0.text] 예금이라면 만기 날, 그날 은행이 주는 금리로 이자를 다시 계산해 보면 됩니다.
 [scenes.54.data.license] AI 생성 그림(RealVisXL V5.0, openrail++)
 [scenes.54.data.badge] AI 생성 그림
 [scenes.55.lines.0.text] 미국 금리 5%라는 큰 숫자보다, 내 약정서 한 줄이 내 이자를 더 많이 말해 줘요.

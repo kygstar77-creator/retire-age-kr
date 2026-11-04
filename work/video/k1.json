@@ -422,13 +422,13 @@
      "cap": null
     },
     {
-     "text": "한 해짜리 정기예금 평균을, 작년과 올해 9월끼리 비교해 볼게요.",
-     "audio": "audio/k-1/1d547ef4a070f3bb.wav",
-     "frames": 120,
+     "text": "1년짜리 정기예금 평균을, 작년과 올해 9월끼리 비교해 볼게요.",
+     "audio": "audio/k-1/d080fb308ff88dc0.wav",
+     "frames": 124,
      "cap": null
     }
    ],
-   "frames": 264,
+   "frames": 268,
    "data": {
     "pic": "bg/k1/board/k1_passbook.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -547,11 +547,11 @@
     {
      "text": "같은 돈을 맡겼다면 세금 떼고 111만원을 받던 때예요.",
      "audio": "audio/k-1/5c75d2ad48df5e6f.wav",
-     "frames": 127,
+     "frames": 114,
      "cap": null
     }
    ],
-   "frames": 322,
+   "frames": 309,
    "data": {
     "pic": "bg/k1/board/k1_coins3.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -578,7 +578,7 @@
     {
      "text": "2억원도 평균 금리로 따져 봤어요.",
      "audio": "audio/k-1/2a8c1ccb0ec40f3f.wav",
-     "frames": 78,
+     "frames": 68,
      "cap": null
     },
     {
@@ -588,7 +588,7 @@
      "cap": null
     }
    ],
-   "frames": 371,
+   "frames": 361,
    "data": {
     "pic": "bg/k1/ai/phone_scroll.png",
     "license": "AI 생성 그림(RealVisXL V5.0, openrail++)",
@@ -654,7 +654,7 @@
     {
      "text": "새로 맺은 주택담보대출 평균 금리에서 정기예금 평균 금리를 빼 봤어요.",
      "audio": "audio/k-1/fbe338053b4b75d5.wav",
-     "frames": 150,
+     "frames": 153,
      "cap": null
     },
     {
@@ -664,13 +664,13 @@
      "cap": null
     },
     {
-     "text": "그사이엔 거의 그대로였고, 다섯 해 전엔 오히려 더 벌어져 있었어요.",
-     "audio": "audio/k-1/1c1eab0e3ab1a970.wav",
-     "frames": 133,
+     "text": "그사이엔 거의 그대로였고, 5년 전엔 오히려 더 벌어져 있었어요.",
+     "audio": "audio/k-1/2ff991c6949fc44c.wav",
+     "frames": 118,
      "cap": null
     }
    ],
-   "frames": 557,
+   "frames": 545,
    "data": {
     "pic": "bg/k1/board/k1_gap.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -726,7 +726,7 @@
     {
      "text": "1년 동안 새로 받은 대출 금리를 같이 놓고 볼게요.",
      "audio": "audio/k-1/71e104e58fede111.wav",
-     "frames": 81,
+     "frames": 79,
      "cap": null
     },
     {
@@ -742,7 +742,7 @@
      "cap": null
     }
    ],
-   "frames": 233,
+   "frames": 231,
    "data": {
     "pic": "bg/k1/board/k1_fix_var.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -794,7 +794,7 @@
     {
      "text": "3억원을 서른 해 동안 갚는 대출로 셈해 볼게요.",
      "audio": "audio/k-1/479628cf4bea8b82.wav",
-     "frames": 104,
+     "frames": 84,
      "cap": null
     },
     {
@@ -822,7 +822,7 @@
      "cap": null
     }
    ],
-   "frames": 567,
+   "frames": 547,
    "data": {
     "pic": "bg/k1/board/k1_3eok_table.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -880,17 +880,17 @@
     {
      "text": "그달 새로 모은 돈만 보는 신규 코픽스가 있고, 은행에 남아 있는 돈 전부를 보는 잔액 코픽스도 있어요.",
      "audio": "audio/k-1/bc863dac2330ad9d.wav",
-     "frames": 165,
+     "frames": 200,
      "cap": null
     },
     {
-     "text": "잔액 코픽스에는 예전에 낮은 금리로 받은 예금이 섞여 있어요. 그래서 천천히 움직입니다.",
-     "audio": "audio/k-1/23f030ead099d10c.wav",
-     "frames": 179,
+     "text": "잔액 기준 코픽스에는 예전에 낮은 금리로 받은 예금이 섞여 있어요. 그래서 천천히 움직입니다.",
+     "audio": "audio/k-1/2741d956b7d6c8b4.wav",
+     "frames": 160,
      "cap": null
     }
    ],
-   "frames": 538,
+   "frames": 554,
    "data": {
     "pic": "bg/k1/board/k1_cofix3.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -936,7 +936,7 @@
     {
      "text": "잔액 코픽스는 0.3%포인트가 안 됐고요.",
      "audio": "audio/k-1/02c48e029fdb58c1.wav",
-     "frames": 102,
+     "frames": 92,
      "cap": null
     },
     {
@@ -946,7 +946,7 @@
      "cap": null
     }
    ],
-   "frames": 376,
+   "frames": 366,
    "data": {
     "pic": "bg/k1/board/k1_cofix89.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1101,17 +1101,17 @@
     {
      "text": "정기예금과 고정형 대출은 미국 국채보다 한국 국채, 그중에서도 3년짜리와 더 비슷하게 움직였어요.",
      "audio": "audio/k-1/32c6242478be0a44.wav",
-     "frames": 204,
+     "frames": 182,
      "cap": null
     },
     {
      "text": "예를 들어 국채가 오른 달에 예금 금리도 올랐다면, 같은 쪽으로 움직인 달로 칩니다.",
      "audio": "audio/k-1/4df464670b44a33c.wav",
-     "frames": 149,
+     "frames": 151,
      "cap": null
     }
    ],
-   "frames": 480,
+   "frames": 460,
    "data": {
     "pic": "bg/k1/ai/calendar_hand.png",
     "license": "AI 생성 그림(RealVisXL V5.0, openrail++)",
@@ -1182,9 +1182,9 @@
    "kind": "pic",
    "lines": [
     {
-     "text": "변동형은 오르내린 폭으로 따지면 어느 국채와도 잘 안 닮았어요.",
-     "audio": "audio/k-1/3a6c3ca0ae99f2e2.wav",
-     "frames": 109,
+     "text": "변동형은 오르내림 폭으로 따지면 어느 국채와도 잘 안 닮았어요.",
+     "audio": "audio/k-1/a3ac0b34a6028e91.wav",
+     "frames": 132,
      "cap": null
     },
     {
@@ -1200,7 +1200,7 @@
      "cap": null
     }
    ],
-   "frames": 320,
+   "frames": 343,
    "data": {
     "pic": "bg/k1/board/k1_samedir.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1258,7 +1258,7 @@
     {
      "text": "정기예금 평균은 그해 11월에 가장 높았어요.",
      "audio": "audio/k-1/55723bcc581219f2.wav",
-     "frames": 93,
+     "frames": 105,
      "cap": null
     },
     {
@@ -1280,7 +1280,7 @@
      "cap": null
     }
    ],
-   "frames": 472,
+   "frames": 484,
    "data": {
     "pic": "bg/k1/board/k1_2023.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1430,11 +1430,11 @@
     {
      "text": "한 해면 370만원이 넘습니다.",
      "audio": "audio/k-1/183748c896931341.wav",
-     "frames": 59,
+     "frames": 74,
      "cap": null
     }
    ],
-   "frames": 175,
+   "frames": 190,
    "data": {
     "pic": "bg/k1/board/k1_answer2.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1459,13 +1459,13 @@
      "cap": null
     },
     {
-     "text": "이건 평균 금리로 셈한 가정이에요. 실제 금리는 은행과 상품마다 다릅니다.",
-     "audio": "audio/k-1/a93e8266946945f5.wav",
-     "frames": 133,
+     "text": "이건 평균 금리로 계산한 가정이에요. 실제 금리는 은행과 상품마다 다릅니다.",
+     "audio": "audio/k-1/c830cc2931b5b6e9.wav",
+     "frames": 151,
      "cap": null
     }
    ],
-   "frames": 317,
+   "frames": 335,
    "data": {
     "pic": "bg/k1/board/k1_reset_two.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1486,7 +1486,7 @@
     {
      "text": "고정 5년이 길어 보여도 금방 간다는 댓글이 있었죠.",
      "audio": "audio/k-1/63169d2b61874498.wav",
-     "frames": 95,
+     "frames": 90,
      "cap": null
     },
     {
@@ -1496,7 +1496,7 @@
      "cap": null
     }
    ],
-   "frames": 238,
+   "frames": 233,
    "data": {
     "pic": "bg/k1/ai/phone_scroll.png",
     "license": "AI 생성 그림(RealVisXL V5.0, openrail++)",
@@ -1558,13 +1558,13 @@
      "cap": null
     },
     {
-     "text": "대출이라면 그날 금리로 한 달 납입액을 다시 셈해 보면, 얼마가 늘지 미리 알 수 있어요.",
-     "audio": "audio/k-1/874bc8e947aace3e.wav",
-     "frames": 186,
+     "text": "대출이라면 그날 금리로 한 달 납입액을 다시 계산해 보면, 얼마가 늘지 미리 알 수 있어요.",
+     "audio": "audio/k-1/fed04cf935948c92.wav",
+     "frames": 154,
      "cap": null
     }
    ],
-   "frames": 371,
+   "frames": 339,
    "data": {
     "pic": "bg/k1/board/k1_check3.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1602,13 +1602,13 @@
    "kind": "pic",
    "lines": [
     {
-     "text": "예금이라면 만기 날, 그날 은행이 주는 금리로 이자를 다시 셈해 보면 됩니다.",
-     "audio": "audio/k-1/2a072a64d64ffe6f.wav",
-     "frames": 150,
+     "text": "예금이라면 만기 날, 그날 은행이 주는 금리로 이자를 다시 계산해 보면 됩니다.",
+     "audio": "audio/k-1/b7085d4fd8c7182b.wav",
+     "frames": 141,
      "cap": null
     }
    ],
-   "frames": 150,
+   "frames": 141,
    "data": {
     "pic": "bg/k1/ai/passbook.png",
     "license": "AI 생성 그림(RealVisXL V5.0, openrail++)",

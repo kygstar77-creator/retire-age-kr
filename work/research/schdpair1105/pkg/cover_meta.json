@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-04 15:29",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "SCHD 배당 성장/최근 1년은",
+ "num": "약 2%",
+ "sub": "",
+ "label": "배당 ETF 6개 비교",
+ "src": "슈왑·야후 배당 기록 11월 4일 확인",
+ "icon": "trending-up",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 134,
+ "num_px": 107,
+ "sub_px": 0,
+ "board": [
+  "j1pair1104",
+  "rechg1103",
+  "unemp60_1104",
+  "jepipair1103",
+  "newborn1103",
+  "midtax1103",
+  "samdiv1103",
+  "leasereg1102",
+  "defer1027",
+  "fxdepfee1026"
+ ]
+}

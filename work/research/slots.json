@@ -3303,10 +3303,11 @@
   {
    "at": "2026-11-05 22:40",
    "kind": "cafe",
-   "item": "TBD — yt_pair: aW8HfeGCGgw (쇼츠 de1s_schdgrow 11/5 19:20)",
+   "item": "schdpair1105",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-03 21:32: yt_pair: aW8HfeGCGgw (쇼츠 de1s_schdgrow 11/5 19:20) · 쇼츠가 던진 질문 하나 + 쇼츠 링크 + 원본 롱폼 D-ETF-1 링크 + 그 질문의 표 · 쇼츠 공개 확인 뒤 올림"
+   "gates_ok": "2026-11-04 15:39",
+   "pkg": "work/research/schdpair1105/pkg",
+   "note": "firemap-meeting 2026-11-03 21:32: yt_pair: aW8HfeGCGgw (쇼츠 de1s_schdgrow 11/5 19:20) · 쇼츠가 던진 질문 하나 + 쇼츠 링크 + 원본 롱폼 D-ETF-1 링크 + 그 질문의 표 · 쇼츠 공개 확인 뒤 올림 | firemap-write 11-04 15:39: schdpair1105 'SCHD 배당 성장 느려졌다는데 다른 배당 ETF는?'(배당·ETF, 쇼츠 '최근엔 2%' 다음 질문) 관문 통과 — 11/4 기준 배당 ETF 6종 최근 12개월 성장(SCHD 2.0 가장 낮음·DVY 10.3·NOBL 9.2·DGRO 8.1·VYM 4.5·VIG 2.7) 야후·알파 밴티지 두 곳 대조(NOBL 5/28 분할·DGRO 10년 갈림 잡아 뺌)·슈왑 원문 분기 6월분 −3% · 경쟁 블로그 5편(6종 같은 날 비교 0) · 이해 3차 9명·crosscheck(사실 3: 반영 2·유지 1, 말투 반영 12)·editgate auto ccac80b7 · 발행 회차(11/5 22:4x): 쇼츠 aW8HfeGCGgw 공개 확인 뒤, 올리기 전 확인(야후·알파 밴티지·슈왑 다시) — 슈왑·S&P는 curl 403·자동 브라우저 막힘이라 슈왑은 10/19 받은 표로, 12월분 공시 전이라 값 그대로일 것"
   },
   {
    "at": "2026-11-06 11:30",

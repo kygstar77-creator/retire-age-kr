@@ -48,6 +48,17 @@
     "url": null
    },
    "note": "발행 없음 — 12:40 칸은 #386 발행 끝, 18:40 rentrep1104는 칸 시각 전(18:4x 회차) · 16:10 usrate1104 올리기 전 확인(바뀐 것 없음, 해시 그대로) · 11/5 07:40 칸 새 글 yellow1105 관문 통과(자료 원문 9곳·경쟁 6편·이해 2차 6명·crosscheck Gemini 사실 2(반영 1·유지 1)·말투 반영 7·selfcheck 사실 0·editgate auto 6e2e5237) · 개선: 플레이북에 노란우산 원문 주소(8899 menuId) 적음"
+  },
+  {
+   "hour": 15,
+   "ts": "15:40",
+   "task": "firemap-write",
+   "blog": null,
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "발행 없음 — 16:10 usrate1104는 담당 write-b(:40 회차), 이번 회차 담당 칸 없음 · 11/5 22:40 쇼츠 짝 칸 새 글 schdpair1105 관문 통과(자료 원문·데이터 S1~S6: 슈왑 분기표·야후 11/4·알파 밴티지 11/4·ECOS·쇼츠 · 경쟁 블로그 5편 · 이해 3차 9명 · 검증 경로 crosscheck(Gemini 사실 3: 반영 2·유지 1, 말투 13 중 반영 12)·selfcheck 사실 0·readcheck 0·aitell 1.2 · editgate auto ccac80b7) · 개선: 두 번째 출처로 알파 밴티지 DIVIDENDS를 씀(av.py) — 야후만 썼으면 DGRO 10년 11.7%가 그대로 나갈 뻔, NOBL은 알파 밴티지가 분할 전 금액이라는 것도 확인 · 막힘: 슈왑·S&P 페이지 curl 403·Playwright 읽기 거부"
   }
  ]
 }

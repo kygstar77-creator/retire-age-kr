@@ -59,6 +59,17 @@
     "url": null
    },
    "note": "발행 없음 — 16:10 usrate1104는 담당 write-b(:40 회차), 이번 회차 담당 칸 없음 · 11/5 22:40 쇼츠 짝 칸 새 글 schdpair1105 관문 통과(자료 원문·데이터 S1~S6: 슈왑 분기표·야후 11/4·알파 밴티지 11/4·ECOS·쇼츠 · 경쟁 블로그 5편 · 이해 3차 9명 · 검증 경로 crosscheck(Gemini 사실 3: 반영 2·유지 1, 말투 13 중 반영 12)·selfcheck 사실 0·readcheck 0·aitell 1.2 · editgate auto ccac80b7) · 개선: 두 번째 출처로 알파 밴티지 DIVIDENDS를 씀(av.py) — 야후만 썼으면 DGRO 10년 11.7%가 그대로 나갈 뻔, NOBL은 알파 밴티지가 분할 전 금액이라는 것도 확인 · 막힘: 슈왑·S&P 페이지 curl 403·Playwright 읽기 거부"
+  },
+  {
+   "hour": 16,
+   "ts": "16:52",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "미국 기준금리 한국보다 높은 날, 역대 가장 길까?",
+    "url": "https://cafe.naver.com/firemap/387"
+   },
+   "note": "16:10 칸 usrate1104(담당 write-b, 미발행 상태로 남아 있던 칸) 16:4x 발행 — 올리기 전 확인 11/4 13:46(S1~S7 다시 엶, 바뀐 것 없음) · verify OK 1445/1445자·사진 3/3 · 확인 창 처리 TimeoutError 경고 있었으나 글 정상 · 18:40 칸 rentrep1104는 관문·올리기 전 확인(11/4) 끝, 다음 write-b 회차가 올림 · 사용량 상한 넘은 날이라 새 글·비축 안 씀 · 개선: 없음"
   }
  ]
 }

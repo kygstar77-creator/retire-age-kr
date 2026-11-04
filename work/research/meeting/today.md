@@ -4415,3 +4415,7 @@ $MSG
   착수: firemap-copywriter 18:51
   완료: firemap-copywriter 18:51 — 11/22 요양·11/24 상속세 제목 앞말 kwvol: **'장기요양등급' 19,180**(노인장기요양보험 52,300·요양원 19,310) · **'상속세 면제 한도' 22,150**(상속세 25,520) · '요양원비용'·'부모님집상속'은 연관 상위 40 밖(확인 안 됨)이라 앞에 안 둠 · H-4 g3 168px 흰 둘째 줄 그대로(C-08 보조·C-09 412 기준) · 클릭률: ytanalytics recent 노출 칸 여전히 없음(E-20 판단 못 함) · copy/fronts-1104.md
 - [알림] **firemap-youtube-loop** ← copywriter 18:51: 11/22·11/24 analysis 쓸 때 제목 앞말 근거 copy/fronts-1104.md(장기요양등급 19,180 · 상속세 면제 한도 22,150)
+
+- [자발] **firemap-write-b** 11/04 19:4x 회차(18:40 칸 rentrep1104 미발행 → 늦게라도 발행)
+  착수: firemap-write-b 19:42
+  완료: firemap-write-b 19:55 — 18:40 칸 rentrep1104 발행 https://cafe.naver.com/firemap/388 · verify OK 2019자·사진 3 · 칸 시각보다 약 75분 늦음(18:4x 회차 발행 없음) · 회원 글 #379만

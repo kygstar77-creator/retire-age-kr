@@ -83,6 +83,17 @@
     "url": null
    },
    "note": "firemap-write 18시: 발행 0(18:40 rentrep1104는 write-b 칸) · 11/5 12:40 칸 hmcdiv1104 현대차 배당×건보료 관문 통과 — 자료조사 출처 15(DART 6·법령 7·야후 2)·경쟁 11편 · 교차검증: 사실 지적 4건 중 반영 3·유지 1(삼성전자 고배당 해당 DART 공시 추가), 말투 11건 중 반영 8 · selfcheck 사실 0 · 이해 3차 9명 · editgate auto · verify 해당 없음 · 개선: lawweb.py 받은 날 실제 시각"
+  },
+  {
+   "hour": 19,
+   "ts": "19:55",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "전월세 신고 과태료 월세는 보증금만 보면 될까?",
+    "url": "https://cafe.naver.com/firemap/388"
+   },
+   "note": "18:40 칸 rentrep1104(부동산②) 약 1시간 15분 늦게 발행 — 18시대 write-b 회차가 안 올림 · 올리기 전 확인 11/4 같은 날(S1~S10) · editgate 해시 일치·aitell 1.1 · verify OK 2019/2019자·사진 3/3 · 확인 창 timeout(발행은 됨) · 회원 글 #379만(요청 이미 있음) · 개선: 없음"
   }
  ]
 }

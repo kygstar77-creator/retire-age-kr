@@ -1,0 +1,29 @@
+{
+ "name": "j1s_cliff",
+ "ep": "J-1",
+ "from_long": "NNcjTE0L7yg",
+ "mp4": "work/video/out/j1s_cliff_c1_ds.mp4",
+ "publishAt": "2026-11-07T19:20:00+09:00",
+ "publish_plan": "2026-11-07 19:20 (쇼츠 하루 1편·19:20 칸, E-07) — 11/5 SCHD·11/6 JEPQ(주식) 다음 정책(종부세) 축 · J-1(11/4 11:30 공개) 첫 클립",
+ "title": "종부세, 안 사는 집은 14억 살짝 넘어도 54만원 #shorts",
+ "description": "전체 계산: https://youtu.be/NNcjTE0L7yg (사는 집·안 사는 집·나이별 종부세)\n\n국회 심사 중인 정부 종부세 개정안(아직 통과 전) 기준 2028년 계산이에요. 세를 주거나 비워 둔 집 한 채는 공시가격이 14억을 넘는 순간 공제 12억 위 전부에 종부세가 붙어, 14억 100만원이면 54만원(55세·보유 10년)입니다.\n14억까지는 살든 안 살든 종부세가 없어요. 같은 집에 10년 살면 공제가 14억이고 나이·산 햇수 할인이 붙어 14억 100만원에서 거의 0원(2천원쯤)입니다.\n올해 12월 고지서는 지금 법이라 살든 안 살든 12억을 넘으면 나옵니다. 나이·보유 기간·공동명의·여러 채면 금액이 달라지니 전체 표는 위 영상에서 보세요. 법안은 국회에서 바뀔 수 있고, 집을 사거나 팔라는 뜻이 아닙니다.\n\n출처: 종합부동산세법 일부개정법률안(정부, 의안번호 2221046, 2026-09-03 제출 · 국회 의안정보시스템) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — FREE VIDEO HAPPY · Giorgi Gumburashvili · RDNE Stock project · Ron Lach · Stephen Leonardi · Towfiqu barbhuiya\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #종부세 #공시가격",
+ "tags": "종부세,종부세 개편,종부세 14억,종부세 비거주,공시가격 14억",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md 1~2차(6명)"
+ },
+ "cover": "work/research/cardshorts/j1s_cliff/cover_1104.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "G5ofrC5Di4U",
+ "uploaded_at": "2026-11-04 12:26:06",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-07T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

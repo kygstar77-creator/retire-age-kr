@@ -1,0 +1,29 @@
+{
+ "name": "j1s_couple",
+ "ep": "J-1",
+ "from_long": "NNcjTE0L7yg",
+ "mp4": "work/video/out/j1s_couple_c1_ds.mp4",
+ "publishAt": "2026-11-08T19:20:00+09:00",
+ "publish_plan": "2026-11-08 19:20 (쇼츠 하루 1편·19:20 칸) — 11/7 j1s_cliff 다음, 같은 J-1 연속 2편(규칙: 같은 롱폼 연속 2편까지), 질문 다름(안 사는 집 문턱 ↔ 공동명의 계산 고르기) · 주식 아님",
+ "title": "공동명의 종부세, 55세는 따로 70세는 한 사람이 덜 낸다 #shorts",
+ "description": "전체 계산: https://youtu.be/NNcjTE0L7yg (사는 집·안 사는 집·나이별 종부세)\n\n국회 심사 중인 정부 종부세 개정안(아직 통과 전) 기준 2028년 계산이에요. 공시 20억 집을 부부가 반반 가지고 그 집에 살 때, 55세·10년이면 각자 따로 내는 쪽이 54만원으로 한 사람으로 계산(114만원)보다 60만원 적고, 70세·15년이면 한 사람으로 계산하는 쪽이 38만원으로 15만원쯤 적어요.\n'한 사람으로 계산'은 명의를 바꾸는 게 아니라 세무서에 내는 신청이에요. 아무것도 신청하지 않으면 각자 따로 계산되고, 신청은 매년 9월 16일부터 보름 동안 하며 한 번 하면 다음 해에도 그대로 이어집니다.\n정부안이 통과되면 바뀐 계산이 처음 들어가는 건 2027년 12월 고지서라, 이미 신청해 둔 부부는 그해 9월 신청 기간 전에 두 가지를 다시 비교해 보세요. 공시가격·나이·산 햇수가 다르면 답도 달라지니 전체 표는 위 영상에서 보세요. 법안은 국회에서 바뀔 수 있고, 명의를 바꾸거나 집을 사고팔라는 뜻이 아닙니다.\n\n출처: 종합부동산세법 일부개정법률안(정부, 의안번호 2221046, 2026-09-03 제출 · 국회 의안정보시스템) · 국세청 공동명의 1주택자 특례 신청 안내 · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — Anastasia  Shuraeva · Drew Rae · FREE VIDEO HAPPY · Kampus Production · RDNE Stock project · Ron Lach · SHVETS production · Stephen Leonardi\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #종부세 #공동명의",
+ "tags": "종부세,공동명의 종부세,종부세 1주택 특례,부부 공동명의,종부세 개편",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md 1~3차(9명)"
+ },
+ "cover": "work/research/cardshorts/j1s_couple/cover_1104.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "x1e7vUdFghg",
+ "uploaded_at": "2026-11-04 12:27:16",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-08T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

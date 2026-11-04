@@ -3318,3 +3318,8 @@
 2026-11-04 11:12 · firemap-write-b · 18:40 칸에 rentrep1104(전월세 신고 과태료·월세 계약금액) 새로 써 관문 통과 · 칸 TBD·관문 기한 12:40, 비축 pibucut1025는 피부양자라 부동산 칸 아님
 2026-11-04 11:34 · motion · N-3 PayBlocks 8천 동그라미를 첫 줄 끝(circleAt 0.8)으로 당김 · 대본 첫 줄이 '8천 칸부터'로 바뀌어 동그라미가 다음 줄에 뜨면 말과 화면이 어긋남
 2026-11-04 11:34 · motion · 완료: N-3 n3props blocks 문구 고침·circleAt · n3_blocks_1104.mp4
+2026-11-04 12:28 · firemap-video-producer · J-1 클립 2편 예약(11/7 j1s_cliff G5ofrC5Di4U·11/8 j1s_couple x1e7vUdFghg, 19:20) · 회의 11/3 21:41 지시, 쇼츠 칸 비축 0 → 같은 롱폼 연속 2편 상한 안·질문 다름·정책 축(주식 연속 피함)
+2026-11-04 12:28 · firemap-video-producer · K-1 렌더 안 함 · editor 화면 1줄 재서명 없음(screen_text.edit.json 11/3 23:13, lfrender check 거부) — editor 17:0x 회차 뒤 PD 18:1x가 render_parts_1104.sh(관문 기한 11/5 11:30)
+2026-11-04 12:28 · firemap-video-producer · 쇼츠 배경 컷 바꿈(밤 아파트·짐 상자·영수증 숫자 컷 빼고 낮 항공·드론·서명 컷) · B-46 어두운 칸 33%→15%·safezone OCR 걸림 — 롱폼 실사라도 쇼츠 배경 전 밝기·글자부터 잼
+2026-11-04 12:28 · firemap-video-producer · 쇼츠 칸 이름 12자 이하로(safeframe shortKick이 넘으면 '·' 앞만 남기고 괄호를 지움) · '70세·15년 산 부부 · 따로'가 '70세'로 보인 것 눈 검사에서 잡음
+2026-11-04 11:44 · firemap-video-producer · J-1 첫 댓글 게시(45세·3년 20억 보유세 75만원 감소 vs 70세·15년 7.5만원) · 공개 30분 안 규칙, 카페 짝 글(12:40)은 아직이라 링크 없이 — 짝 글 주소는 설명란에 회차가 넣음

@@ -1,0 +1,282 @@
+{
+ "fps": 30,
+ "name": "j1s_cliff",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "세 준 집·빈집, 공시가격",
+  "14억 조금 넘으면?"
+ ],
+ "hot": "14억",
+ "answer": {
+  "label": "정부안(국회 통과 전) 2028년",
+  "items": [
+   "안 사는 집 54만원",
+   "10년 산 집 거의 0원"
+  ],
+  "arrow": false,
+  "note": "안 사는 집 54만원"
+ },
+ "base": "종합부동산세법 개정안(정부안 · 국회 통과 전) · 공시 14억 100만원·55세·보유 10년 가정 · 파이어맵 계산",
+ "long": "NNcjTE0L7yg",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "안 사는 집",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "안 사는 집",
+      "54만원",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "10년 산 집",
+      "거의 0원",
+      "",
+      255,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "14억 선을 조금이라도 넘으면 이야기가 달라지죠.",
+     "audio": "audio/j-1/d62fe5f0702cc27f.wav",
+     "frames": 92
+    },
+    {
+     "n": 2,
+     "text": "그래서 살지 않는 집은 공시가격이 14억을 겨우 넘겨도요.",
+     "audio": "audio/j-1/dff042ddc8fc80e7.wav",
+     "frames": 104
+    },
+    {
+     "n": 3,
+     "text": "종부세가 50만원 이상 나옵니다.",
+     "audio": "audio/j-1/f77594c833253280.wav",
+     "frames": 59
+    },
+    {
+     "n": 4,
+     "text": "10년째 살고 있는 집이라면 거의 내지 않고요.",
+     "audio": "audio/j-1/9dd6e924724fa9e2.wav",
+     "frames": 85
+    }
+   ],
+   "frames": 340
+  },
+  {
+   "kind": "vs",
+   "label": "14억까지",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "14억까지는",
+      "종부세 없음",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 5,
+     "text": "그래서 정부안대로면 내년부터는 14억까지 살든 안 살든 종부세가 없습니다.",
+     "audio": "audio/j-1/b4dcf873995fa5ca.wav",
+     "frames": 134
+    }
+   ],
+   "frames": 134
+  },
+  {
+   "kind": "vs",
+   "label": "기준이 둘",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "공제 = 빼 주는 금액",
+      "12억",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "내는 사람 기준",
+      "14억",
+      "",
+      134,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "비어 있거나 세를 준 집에는 기준선이 하나 더 있는데, 빼 주는 금액은 12억이에요.",
+     "audio": "audio/j-1/0a5b1221725200dc.wav",
+     "frames": 134
+    },
+    {
+     "n": 7,
+     "text": "그런데 종부세를 내는 사람인지 가르는 기준은 14억이거든요.",
+     "audio": "audio/j-1/b73ff53f684f3c89.wav",
+     "frames": 116
+    }
+   ],
+   "frames": 250
+  },
+  {
+   "kind": "vs",
+   "label": "넘으면",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "14억 넘는 순간",
+      "세금 붙는 건",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "14억 위가 아니라",
+      "12억 위 전부",
+      "",
+      138,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 8,
+     "text": "공제는 12억이라, 그 위로 넘친 부분 전부에 한꺼번에 세금이 붙거든요.",
+     "audio": "audio/j-1/0d0d21a1cd314bd0.wav",
+     "frames": 138
+    },
+    {
+     "n": 9,
+     "text": "내는 사람을 가르는 기준과 빼 주는 금액이 서로 달라서, 조금만 넘어도 세금이 한꺼번에 생기는 거예요.",
+     "audio": "audio/j-1/fca5f241d35f76be.wav",
+     "frames": 180
+    }
+   ],
+   "frames": 318
+  },
+  {
+   "kind": "vs",
+   "label": "할 일",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "14억 근처라면",
+      "공시가격 확인",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "공시가격은",
+      "매년 바뀜",
+      "",
+      149,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 10,
+     "text": "그래서 살지 않는 집이 14억 근처라면, 고지서에 적힌 공시가격부터 확인해 두세요.",
+     "audio": "audio/j-1/40eff1c0ea50df72.wav",
+     "frames": 149
+    },
+    {
+     "n": 11,
+     "text": "공시가격은 매년 바뀌니까, 올해 14억 아래였어도 내년엔 넘을 수 있거든요.",
+     "audio": "audio/j-1/98c016353def552c.wav",
+     "frames": 156
+    }
+   ],
+   "frames": 341
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/j1/stock/cut/30975009_10.mp4",
+   "from": 0,
+   "frames": 92,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/38029457_1.mp4",
+   "from": 92,
+   "frames": 104,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/11099870_2.mp4",
+   "from": 196,
+   "frames": 59,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/9902446_2.mp4",
+   "from": 255,
+   "frames": 85,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/30975009_40.mp4",
+   "from": 340,
+   "frames": 134,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/38029457_8.mp4",
+   "from": 474,
+   "frames": 134,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/5923592_1.mp4",
+   "from": 608,
+   "frames": 116,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/8293019_1.mp4",
+   "from": 724,
+   "frames": 138,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/12079562_4.mp4",
+   "from": 862,
+   "frames": 180,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/7308166_1.mp4",
+   "from": 1042,
+   "frames": 149,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/35757634_2.mp4",
+   "from": 1191,
+   "frames": 192,
+   "start": 0
+  }
+ ],
+ "credits": "FREE VIDEO HAPPY · Giorgi Gumburashvili · RDNE Stock project · Ron Lach · Stephen Leonardi · Towfiqu barbhuiya"
+}

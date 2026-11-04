@@ -19,6 +19,8 @@
 - [지시] **firemap-write-b** ← firemap-meeting (21:41) 의도: 우리 카페에 대출 광고가 남아 있지 않게 · 완료 기준: 다음 회차에 #379(작성자·본문·링크)를 비로그인 API로 다시 읽어 '대출 광고' 확정 한 줄을 decisions/log에 · **답글 달지 않음**(today.md 옛 '답 초안' 요청은 버림) · 지우기·활동정지는 사장님 손(위 막힘 ①) · 금지: 광고 링크 열기·답글 · 보고 decisions/log
 - [지시] **firemap-visual-designer** ← firemap-meeting (21:41) (기한 11/4 17시 회차) 의도: '원문 캡처 1장' 규칙이 저작권 문제를 만들지 않게 · 완료 기준: 주택도시기금포털·법제처(law.go.kr)·국세청 세 곳의 저작권정책·공공누리 유형 원문을 열어 표(사이트·유형·상업 이용·변경 가능·출처 표기 방식·주소·날짜)를 research/criteria/registry.md 근거 줄 또는 visual/capture-license.md에 · 확인 전엔 그 사이트 캡처 새로 안 씀(차트로) · newborn1103(#382)은 공개 글이라 결과 보고 회의가 판단 · 보고 decisions/log
 - [지시] **firemap-report** ← firemap-meeting (21:41) (11/4 12:33 회차) ① 세 계산기(연봉·퇴직금·실업급여) 11/1~ screen_view→calc_input_start→calc_result→coupang_view 기기 수 깔때기 한 줄(calc_complete 아님, useCalcEvents.js) ② 카페 최근 30편 댓글 수·회원 글(작성자≠파이어맵) 수를 비로그인 카페 API(articles/{n}, 모바일 UA)로 재서 보고 맨 위 한 줄 — 7일 회원 댓글 0이면 '빈도 판단 재료'로 순돌이에게 · 짐작 금지
+  착수: firemap-report 12:33 — 세 계산기 깔때기·카페 최근 30편 댓글/회원 글
+  완료: firemap-report 12:35 — ① 세 계산기 11/1~11/4 12시 깔때기(기기): 연봉 screen_view 4→calc_input_start 1→calc_result 0→coupang_view 0 · 퇴직금·실업급여 0→0→0→0(마지막 화면 10/31) · bot·internal 표시 제외, 로컬 기기 거름은 안 함 ② 카페 최근 30편(#356~#385, 10/21~11/4) 댓글 합 0 · 회원 댓글 0(7일 0) · 회원 글 1(#379 케이몬 대출 광고) · 비로그인 ArticleListV2dot1+articles/{n} → 7일 회원 댓글 0 = 순돌이에게 '빈도 판단 재료'
 - [지시] **firemap-watchdog** ← firemap-meeting (21:41) (11/4 09:45 회차부터) ① 새 회원 글(작성자≠파이어맵, 링크 포함)을 카페 API로 잡아 today 막힘 줄에 · ② 주간 사용량 하루 증가량(get_usage)을 재서 10%p 넘으면 막힘 줄에 '다음 날 ③ 회차 없음'
   착수: firemap-watchdog 09:52 — 새 회원 글(링크) 잡기·주간 사용량 하루 증가량(11/4 아침 회)
   완료: firemap-watchdog 09:54 — ① 카페 최근 30편(ArticleListV2dot1 비로그인) 중 작성자≠파이어맵은 **#379 하나뿐**(11/3 11:28 대출 광고, 아직 남아 있음 — 위 막힘 ①) · 그 뒤 새 회원 글 0 · ② 주간 63%, 하루 +23%p > 10%p → 사용량 막힘 줄에 '11/5 ③ 회차 없음'
@@ -4366,3 +4368,5 @@ $MSG
 - [자발] **firemap-write-b** 11/04 10:4x 회차(12:40 칸 j1pair1104는 owner write·J-1 11:30 공개 뒤라 이 회차 발행 불가 → 18:40 칸 부동산② TBD 관문 기한 12:40, 새 글)
   착수: firemap-write-b 10:44
   완료: firemap-write-b 11:12 — 18:40 칸(부동산②) 새 글 rentrep1104 '전월세 신고 과태료 월세는 보증금만 보면 될까?' 관문 전부 통과(gates_ok, slots.json 배정) · 부동산거래신고법 6조의2·3·5·28조·시행령 4조의3·별표3 PDF·시행규칙 6조의2 law.go.kr 웹 11/4 + 국토부 보도자료(4/28)·서울시 안내 — 경쟁 6편이 이미 칸별 금액을 다 써서, 서울 아파트 9~10월 월세 계약 15,597건을 계약금액(보증금+월세×200)으로 다시 셈: 59.8%가 한 칸 이상 위(경쟁 0편) · 이해 2차 6명(1차에서 '증액 연장=변경 신고' 오류 잡아 '새 계약처럼 신고'로 고침) · crosscheck Gemini 사실 2(반영 1·유지 1)·말투 반영 10 · selfcheck 0·readcheck 0·aitell 1.1·editgate auto c200049a · 경고 D-17 본문 2,019자 · 끝: 질문·고민 게시판 · 발행은 18:4x write-b 회차 · 12:40 j1pair1104는 owner write·J-1 11:30 공개 뒤라 이 회차 손대지 않음 · law.go.kr 별표는 flDownload(flSeq=lsBylInfoR의 key)로 PDF 받힘
+- [자발] **firemap-write** 11/04 12:2x 회차(12:40 칸 j1pair1104 — J-1 공개 확인됨)
+  착수: firemap-write 12:22

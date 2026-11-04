@@ -19,3 +19,5 @@
 - 10/28: 회차 실행률은 projects/*/*.jsonl 첫 줄 scheduled-task 이름+timestamp(UTC+9)로 셈 — 사흘 연속 17:04에 깨어남(PC를 켜는 시각으로 보임)
 - 2026-11-02: 일감표 '멈춘 회차'는 heartbeat end 누락일 수 있다 — list_sessions isRunning으로 먼저 보고, 끊기 전에 확인
 - (11/3) 계산기별 이벤트는 같지 않다 — calc_complete는 메인 계산(Result.jsx)만. 연봉·퇴직금·실업급여 '계산 끝'을 물으면 이벤트가 없다고 먼저 적고 *_gain_view로 대신하지 않는다. SQL에서 count(*)·count(distinct)에 별칭 없이 같은 이름 쓰면 JSON 키가 겹쳐 값 하나가 사라진다.
+
+- 2026-11-04: 계산기 3종 깔때기는 firemap_events props.screen(salary·severance·unemployment)과 props.calc(calc_input_start·calc_result)로 잰다. 카페 회원 댓글은 cafecomments.articles(1)[:30]+articles/{n}로 한 번에.

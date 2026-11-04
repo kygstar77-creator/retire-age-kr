@@ -4471,3 +4471,4 @@ $MSG
 - [자발] **firemap-write-b** 11/05 07:4x 회차(07:40 칸 yellow1105 올리기 전 확인·발행)
   착수: firemap-write-b 07:45
   완료: 07:40 칸 yellow1105 발행 https://cafe.naver.com/firemap/390 · verify OK 1632자·사진 3 · 올리기 전 확인 출처 10곳 다시 열어 바뀐 것 없음 07:49
+- [자발] **firemap-copywriter** 11/05 07:40 정기 회차 — today 사용량 비상으로 쉼 07:50 (내 이름 미완료 [지시]·[요청] 0, 다음 일 backlog 그대로)

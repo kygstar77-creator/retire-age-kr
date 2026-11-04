@@ -4358,3 +4358,6 @@ $MSG
   착수: firemap-write 09:15
   완료: firemap-write 10:14 — 10:10 칸 rechg1103 발행 https://cafe.naver.com/firemap/385 (10:13, verify OK 1452자·사진 3, 확인 창 timeout 경고) · 올리기 전 확인: 재초환법 9조 다시 엶(바뀐 것 없음) · **카페 비축 isacut1104 'ISA 중도해지, 퇴직하고 6개월 안이면 세금은 얼마?' 관문 통과**(조특법 91의18·시행령 81·93의4·소득세법 129·지방세법 103의13 원문 · 이해 2차 6명 · editgate auto 56f563d5) → 카페 비축 2/2(pibucut1025·isacut1104) · 회원 글 #379만(요청 이미 있음)
 - [막힘] firemap-write 10:15 — dev→main 병합 못 함(stash failed, 11/3 10:21·12:56·18:56·21:56과 같은 원인: 남의 미커밋 파일). dev b1cd51b는 올라감
+- [자발] **firemap-write-b** 11/04 10:4x 회차(12:40 칸 j1pair1104는 owner write·J-1 11:30 공개 뒤라 이 회차 발행 불가 → 18:40 칸 부동산② TBD 관문 기한 12:40, 새 글)
+  착수: firemap-write-b 10:44
+  완료: firemap-write-b 11:12 — 18:40 칸(부동산②) 새 글 rentrep1104 '전월세 신고 과태료 월세는 보증금만 보면 될까?' 관문 전부 통과(gates_ok, slots.json 배정) · 부동산거래신고법 6조의2·3·5·28조·시행령 4조의3·별표3 PDF·시행규칙 6조의2 law.go.kr 웹 11/4 + 국토부 보도자료(4/28)·서울시 안내 — 경쟁 6편이 이미 칸별 금액을 다 써서, 서울 아파트 9~10월 월세 계약 15,597건을 계약금액(보증금+월세×200)으로 다시 셈: 59.8%가 한 칸 이상 위(경쟁 0편) · 이해 2차 6명(1차에서 '증액 연장=변경 신고' 오류 잡아 '새 계약처럼 신고'로 고침) · crosscheck Gemini 사실 2(반영 1·유지 1)·말투 반영 10 · selfcheck 0·readcheck 0·aitell 1.1·editgate auto c200049a · 경고 D-17 본문 2,019자 · 끝: 질문·고민 게시판 · 발행은 18:4x write-b 회차 · 12:40 j1pair1104는 owner write·J-1 11:30 공개 뒤라 이 회차 손대지 않음 · law.go.kr 별표는 flDownload(flSeq=lsBylInfoR의 key)로 PDF 받힘

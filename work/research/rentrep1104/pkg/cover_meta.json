@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-04 11:08",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "전월세 신고 과태료/월세는 보증금만?",
+ "num": "보증금 + 월세×200",
+ "sub": "서울 월세 계약 약 60%가 과태료 한 칸 위",
+ "label": "늦게 신고하면",
+ "src": "부동산거래신고법 시행령 · 11월 4일 확인",
+ "icon": "file-text",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 115,
+ "num_px": 92,
+ "sub_px": 50,
+ "board": [
+  "rechg1103",
+  "unemp60_1104",
+  "jepipair1103",
+  "newborn1103",
+  "midtax1103",
+  "samdiv1103",
+  "leasereg1102",
+  "defer1027",
+  "fxdepfee1026",
+  "jbcalc1027"
+ ]
+}

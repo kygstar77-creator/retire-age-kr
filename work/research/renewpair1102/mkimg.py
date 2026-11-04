@@ -1,4 +1,4 @@
-# renewpair1102 그림 3장 — 숫자는 raw/(국토부 아파트 전월세 실거래, 2026-11-02 21시 받음) · 거르기는 calc.py와 같음
+# renewpair1102 그림 3장 — 숫자는 raw/(국토부 아파트 전월세 실거래, 2026-11-04 22:5x 다시 받음) · 거르기는 calc.py와 같음
 import os, json, glob, statistics as st, random
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 import matplotlib; matplotlib.use('Agg')
@@ -19,7 +19,7 @@ ren = [r for r in rows if r['umdNm'] in FOCUS and r['aptNm'].replace(' ', '') in
 def rate(r): return (num(r['deposit']) / num(r['preDeposit']) - 1) * 100
 U = [rate(r) for r in ren if r.get('useRRRight') == '사용']; N = [rate(r) for r in ren if r.get('useRRRight') != '사용']
 print(len(U), len(N), sum(v > 5.0001 for v in U), sum(v > 5.0001 for v in N))
-SRC = '국토교통부 아파트 전월세 실거래(2025.11~2026.10 계약, 11월 2일 받음) · 잠실·대치·반포 14단지 전용 80~85㎡ 전세 갱신 · 파이어맵 계산'
+SRC = '국토교통부 아파트 전월세 실거래(2025.11~2026.10 계약, 11월 4일 받음) · 잠실·대치·반포 14단지 전용 80~85㎡ 전세 갱신 · 파이어맵 계산'
 
 # 00 표지(차트): 큰 글 + 올린 폭 점
 fig = plt.figure(figsize=(9, 9), dpi=100); fig.patch.set_facecolor('white')

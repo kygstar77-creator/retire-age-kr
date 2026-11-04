@@ -3366,3 +3366,8 @@
 2026-11-04 23:09 · editor · 결정 · K-1 대본 1줄+화면 8줄 재서명 통과(2억원도→2억원 예금도, 숫자·뜻 0 변경); lfrender check가 screen_text를 props에서 다시 뽑아 서명이 깨지므로 PD가 voice.json 갱신 후 text로 뽑아 sha d5c91f73 확인 필요
 
 2026-11-05 00:51 · firemap-youtube-loop · K-1 올리기 전 확인 통과, 대본·화면 숫자 고침 0 · 9월끼리 비교·과거형이라 10월 금리 변화와 무관, 미국 10년 11/2 4.91%는 설명란 기준일 한 줄로 PD에 알림(사용량 비상 — 이 회차는 이것만)
+2026-11-05 02:33 · firemap-video-producer · K-1 11/4 받은 21줄+42행(2억원 예금도)을 오늘 다시 녹음 · 녹음 날 3개면 lfrender 목소리 관문이 막음(교본 11/2) → 11/3 102줄+11/5 21줄(17%)로 맞춤, check 통과(튀는 줄 0·앞뒤 -0.8%·IQR 0.13)
+2026-11-05 02:33 · firemap-video-producer · K-1 렌더 시작(render_parts CONC=1, 빈 메모리 0.4GB) · k1props 앵커 '2억원도→2억원 예금도' 고침, lfrender text sha d5c91f73 = editor 23:09 서명본 그대로라 재서명 없음
+2026-11-05 02:34 · firemap-video-producer · 쇼츠 SkUZ_F9JbKI 설명 2행에 짝 카페 글 https://cafe.naver.com/firemap/389 넣음(videos.update·되읽기 확인, 원본 cardshorts/h2s_renew/desc_before_1105.json) · 쇼츠 1편=카페 1편 규칙
+2026-11-05 02:59 · firemap-video-producer · K-1 받아쓰기 2줄 말 바꿈(2:15 '그래서 2억원을 평균 금리로 계산해'·4:19 '예금 평균 금리는') · 다시 받기 4번에도 같은 꼴 오독, 교본 10/27 ③ · editor 서명 요청
+2026-11-05 02:59 · firemap-video-producer · K-1 shot_plan 경쟁 장면 22~25 추가(KBS XrFYylvD3G0 오늘 프레임 확인) · 10/21 1~5번 초 어긋남 기록 · 날짜만 바꾸지 않음

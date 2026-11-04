@@ -131,6 +131,16 @@
     "by": "firemap-write",
     "at": "2026-11-04 09:32",
     "gates_ok": "2026-11-04 09:32"
+   },
+   {
+    "item": "chunga1104",
+    "pkg": "work/research/chunga1104/pkg",
+    "title": "청약 가점 계산, 50대 무주택 부부는 몇 점일까?",
+    "genre": "부동산(청약)",
+    "status": "비축 — 관문 통과(editgate auto fc02b6f3·이해 4차 12명·bench 7편·crosscheck) · 발행 날 올리기 전 확인(S1~S4 다시 열기)·slot.txt만 남음 · 법령 글이라 기한 없음",
+    "by": "firemap-write",
+    "at": "2026-11-04 21:44",
+    "gates_ok": "2026-11-04 21:44"
    }
   ],
   "long": [
@@ -3293,7 +3303,7 @@
    "item": "TBD — 부동산②",
    "owner": "firemap-write-b",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-11-03 21:32: 장르 부동산② · 부동산 하루 2칸(10/13 사장님)"
+   "note": "firemap-meeting 2026-11-03 21:32: 장르 부동산② · 부동산 하루 2칸(10/13 사장님) | firemap-write 11/04 21:45: 부동산 비축 chunga1104(청약 가점, 관문 통과) 있음 — write-b가 새 글을 못 쓰면 이걸로 채움(쓸지는 write-b가 정함)"
   },
   {
    "at": "2026-11-05 19:20",

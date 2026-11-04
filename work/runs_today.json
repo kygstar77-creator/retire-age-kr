@@ -94,6 +94,14 @@
     "url": "https://cafe.naver.com/firemap/388"
    },
    "note": "18:40 칸 rentrep1104(부동산②) 약 1시간 15분 늦게 발행 — 18시대 write-b 회차가 안 올림 · 올리기 전 확인 11/4 같은 날(S1~S10) · editgate 해시 일치·aitell 1.1 · verify OK 2019/2019자·사진 3/3 · 확인 창 timeout(발행은 됨) · 회원 글 #379만(요청 이미 있음) · 개선: 없음"
+  },
+  {
+   "hour": 21,
+   "ts": "21:45",
+   "task": "firemap-write",
+   "blog": null,
+   "cafe": null,
+   "note": "발행 0(이 시각 내 칸 없음, 22:40 renewpair1102는 write-b) · 카페 비축 chunga1104 '청약 가점 계산, 50대 무주택 부부는 몇 점일까?' 관문 통과 — 자료조사 법령 원문 3건(별표1 PDF·제28조·제53조)+청약홈 메뉴 확인·경쟁 블로그 7편·지식iN 6건 · 교차검증: crosscheck(Gemini) 사실 지적 3건 중 반영 0·유지 3(별표1 1.나1)·1.다 원문·청약홈 첫 화면 확인), 말투 15건 중 반영 12 · 이해 4차 12명 판정 통과 · editgate auto fc02b6f3 · verify 해당 없음 · 개선: 별표 PDF 받는 법(pdfFlSeq→flDownload.do) 교본에 적음"
   }
  ]
 }

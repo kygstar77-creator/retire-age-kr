@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+ <head>
+  <link rel="stylesheet" type="text/css" href="/LSW/js/jquery/jquery.fancybox-2.1.5.css" />
+  <style type="text/css">
+	div.ast_cont02{
+		height: calc(50vh);
+	}
+	div.form_cont{
+		height: calc(50vh - 10px);
+	}
+</style>
+ </head>
+ <body>
+  <input type="hidden" name="bylNm" id="bylNm" value="주택공급에 관한 규칙" /> 
+  <input type="hidden" id="bylLsId" name="bylLs" value="008243" /> 
+  <input type="hidden" id="bylSeq" name="bylSeq" value="18191615" /> 
+  <input type="hidden" id="lsiSeq" name="lsiSeq" value="286965" />  
+  <script type="text/javascript" src="/LSW/js/jquery/jquery.fancybox-2.1.5.pack.js"></script>  
+  <!-- 2018.11.29. 2018 국가법령 - 추가 --> 
+  <script type="text/javaScript" language="javascript">
+<!--
+$(document).ready(function() 
+{
+    // 팝업 페이지에서만 실행
+    if ("" != "Y" && $("#topDiv").length == 0) {
+
+        var $bylDiff = $("<a/>", {href:"javascript:;", class:"btn type8", text:"별표·서식비교", onClick:"f_lsBylDiffHwpP();return false;"});
+        $(".wrap_type .area_tit .ico_bx").prepend($bylDiff);
+    }
+});
+//-->
+</script> 
+  <!-- 컨텐츠 영역 --> 
+  <div class="wrap_type"> 
+   <div class="area_tit"> 
+    <p class="ast_tit">주택공급에 관한 규칙<br /><span class="c1">[시행 2026. 6. 15.] [국토교통부령 제1592호, 2026. 6. 15., 일부개정]</span></p> 
+    <div class="ico_bx"> 
+     <a href="" id="govLnk" title="정부24 바로가기" target="_blank" style="display:none"><img src="/LSW/images/button/gov_ico.png" alt="정부24 바로가기" /></a> 
+     <a href="javascript:;" title="관심법령" onclick="javascrpt:interestLaw();return false;"><img src="/LSW/images/common/btn_v13fn8.png" alt="관심법령" /></a> 
+     <a href="javascript:;" title="한글문서저장" onclick="javascrpt:setDownBtn('1');return false;"><img id="hanImg" src="/LSW/images/button/btn_han_w.gif" alt="한글문서저장" /></a> 
+     <a href="javascript:;" title="PDF문서저장" onclick="javascrpt:setDownBtn('3');return false;"><img id="pdfImg" src="/LSW/images/button/btn_pdf.gif" alt="PDF문서저장" /></a> 
+     <a href="javascript:;" style="margin-left: 5px;" onclick="javascrpt:printlsByl();return false;" title="인쇄(팝업으로 이동)"><img src="/LSW/images/common/btn_v13fn7.gif" alt="인쇄" /></a> 
+    </div> 
+   </div> 
+   <div class="ast_cont" style="min-width: 950px;"> 
+    <div class="cn"> 
+     <span class="tmi"></span> 
+     <span class="tle"></span> 
+     <span class="tri"></span> 
+     <span class="bmi"></span> 
+     <span class="ble"></span> 
+     <span class="bri"></span> 
+    </div> 
+    <!-- 목록 선택 영역 --> 
+    <ul class="ast_sel_list"> 
+     <li id="prboxList"> <label for="bylList"><img src="/LSW/images/common/stit_stpo1.gif" alt="별표목록" /></label> <select id="bylList" style="width:70%">
+       <!-- 팝업 사이즈에 맞게 %, px로 사이즈 지정 --> <option value="18191615,0001,00,110201,20260615" selected="selected">[별표 1] 가점제 적용기준(제2조제8호 관련)</option> <option value="18191617,0002,00,110201,20260615">[별표 2] 민영주택 청약 예치기준금액(제10조제1항 관련)</option> <option value="18191619,0003,00,110201,20260615">[별표 3] 삭제 &lt;2017. 11. 24.&gt;</option> <option value="18191621,0004,00,110201,20260615">[별표 4] 입주자모집 시기(제15조제3항 관련)</option> <option value="18191623,0001,00,110202,20260615">[서식 1] 입주자저축취급기관 지정신청서</option> <option value="18191625,0002,00,110202,20260615">[서식 2] 입주자저축취급기관 지정서</option> <option value="18191627,0003,00,110202,20260615">[서식 3] 주택청약종합저축 가입신청서</option> <option value="18191629,0003,02,110202,20260615">[서식 3의 2] 주택청약 접수증</option> <option value="18191631,0004,00,110202,20260615">[서식 4] 국민주택등 공급신청서</option> <option value="18191633,0005,00,110202,20260615">[서식 5] 민영주택 공급신청서</option> <option value="18191635,0006,00,110202,20260615">[서식 6] 서약서</option> <option value="18191637,0007,00,110202,20260615">[서식 7] 예비입주자 선정 및 주택공급명세 보고서</option> <option value="18191639,0008,00,110202,20260615">[서식 8] 주택[국민ㆍ민영] 당첨자 명단 통보서</option> </select> <a href="javascript:;" class="btn type" onclick="javascript:fHstLsBylList();return false;">선택</a> </li> 
+     <li id="bylListR"></li> 
+    </ul> 
+   </div> 
+   <div class="ast_cont02" style="height: auto; min-width: 922px;"> 
+    <div class="cn"> 
+     <span class="tmi"></span> 
+     <span class="tle"></span> 
+     <span class="tri"></span> 
+     <span class="ble"></span> 
+     <span class="bri"></span> 
+    </div> 
+    <!-- Content 영역 --> 
+    <div class="form_cont" id="bylContents" style="display: block; overflow: auto; width: 926px; height: 470px;"></div> 
+   </div> 
+  </div> 
+  <!-- 별표파일 TEXT 다운로드 ACTION --> 
+  <input type="hidden" id="bylTextDownAction" value="lsBylTextDownLoad.do" /> 
+ </body>
+</html>

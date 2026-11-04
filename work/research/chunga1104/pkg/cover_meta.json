@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-04 21:40",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "청약 가점/50대 부부는 몇 점",
+ "num": "자녀 둘이면 67점",
+ "sub": "집 판 지 5년이면 47점 · 84점 만점",
+ "label": "주택공급규칙 별표1",
+ "src": "법령 11/4 확인",
+ "icon": "building-2",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 117,
+ "num_px": 93,
+ "sub_px": 56,
+ "board": [
+  "rentrep1104",
+  "usrate1104",
+  "j1pair1104",
+  "rechg1103",
+  "unemp60_1104",
+  "jepipair1103",
+  "newborn1103",
+  "midtax1103",
+  "samdiv1103",
+  "leasereg1102"
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-04 18:41",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "현대차 배당금/건보료는 몇 주부터",
+ "num": "1,001주부터 1천만원 넘어요",
+ "sub": "지역가입자 · 보통주 1년 1주당 1만원",
+ "label": "DART 공시",
+ "src": "공시·법령 11/4 확인",
+ "icon": "coins",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 120,
+ "num_px": 76,
+ "sub_px": 57,
+ "board": [
+  "usrate1104",
+  "j1pair1104",
+  "rechg1103",
+  "unemp60_1104",
+  "jepipair1103",
+  "newborn1103",
+  "midtax1103",
+  "samdiv1103",
+  "leasereg1102",
+  "defer1027"
+ ]
+}

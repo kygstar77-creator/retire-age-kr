@@ -1,0 +1,99 @@
+ 
+.xforms * { font-family: 돋움체;}
+.xforms_title * { font-size: 13pt; padding : 0 0 10 0;}
+.xforms table {
+ font-size: 10px;
+ padding:0px;
+ border-collapse:collapse;
+ color: #3D3D3D;
+}
+.xforms td {
+ padding-left:0px;
+ padding-top:0px;
+ border-collapse:collapse;
+ line-height:22px;
+ color: #3D3D3D;
+ /*text-align:right;*/
+ vertical-align:middle;
+ border: 1px solid #7f7f7f;
+}
+.xforms span {
+ /*display: inline-block;*/
+ padding-left:3px;
+ padding-right: 1px;
+ line-height:22px;
+ padding-top:0px;
+ padding-bottom:0px;
+ text-align:left;
+ vertical-align:middle;
+ border: 0px solid #DBDBDB;
+}
+.xforms.img{
+ border : 0px;
+}
+.xforms a:link {
+ color: #194866;
+ text-decoration: none;
+}
+.xforms a:active {
+ color: #194866;
+ text-decoration: none;
+}
+.xforms a:visited {
+ color: #194866;
+ text-decoration: none;
+}
+.xforms A:hover {
+ color:008BE3;
+ text-decoration: none;
+}
+.xforms_input{
+ border: 0px solid #DBDBDB;
+ padding-left:3px;
+ padding-right: 1px;
+ height:22px;
+ padding-top:0px;
+ padding-bottom:0px;
+ text-align:left;
+}
+ 현대자동차/기업가치 제고 계획(자율공시)/(2026.05.29)기업가치 제고 계획(자율공시)(2025년 이행현황) 
+ 기업가치 제고 계획(자율공시) 
+ ※ 동 정보는 장래 계획사항, 예측정보를 포함할 수 있으며, 향후 계획사항이 변경되거나 실제 결과가 예측정보와 다를 수 있음. 또한, 조세특례제한법 제104조의27에 따른 고배당기업 여부는 기업의 자체적인 판단에 의함. 
+ 1. 계획서 명칭 
+ 2025년 현대자동차㈜ 기업가치 제고 계획 이행현황 
+ 2. 주요 내용 
+ 1. 주요 지표 현황 2. 기업가치 제고 계획에 대한 주주환원 이행현황 
+ □ '25년~'27년 기업가치 제고 계획('24년 8월 발표) 
+ - 총 주주환원율(TSR) 35% 이상 
+ - 주당 최소배당금 10,000원 
+ - TSR 35%+ 범위 내 자사주 매입·소각 추진 
+ □ 주주환원 이행현황('25년 귀속기준) 
+ - 총주주환원율(TSR) '25년 35.0% 달성 
+ - '25년 연간 주당배당금 10,000원, 배당성향 27.7% 
+ (연간 배당 2.6조원, TSR 27.7%) 
+ - 자사주 소각 0.5조원(소각일 종가 기준, TSR 5.2%), 
+ 우선주 디스카운트 고려한 자사주 매입 0.2조원(TSR 2.1%) ※ 상세 이행 현황 첨부 파일 참조 
+ 3. 조세특례제한법 제104조의27에 따른 고배당기업 여부 
+ 미해당 
+ 2024.12.31.이 속하는 사업연도의 배당소득(원) 
+ - 
+ 직전 사업연도 (2025) 배당성향(%) 
+ - 
+ 직전 사업연도 (2025) 이익배당금액(원) 
+ - 
+ 전전 사업연도 (2024) 이익배당금액(원) 
+ - 
+ 전전 사업연도 대비 직전 사업연도 이익배당금액 증가율(%) 
+ - 
+ 4. 결정일자 
+ 2026-05-29 
+ 5. 관련 자료 
+ 게재일시 
+ 2026-05-29 
+ 관련 웹페이지 
+ https://www.hyundai.com/worldwide 
+ 6. 기타 투자판단과 관련한 중요사항 
+ 1. 보다 자세한 내용은 첨부된 '현대자동차 기업가치 제고계획 이행 현황'을 참고하시기 바랍니다. 2. 상기 4항의 결정일자는 내부 보고일 기준입니다. 3. 본 공시에 포함된 계획사항은 향후 경영환경 및 제반 여건에 따라 변경될 수 있습니다. 
+ ※ 관련공시 
+ 2024-08-28 기업가치 제고 계획(자율공시) 
+ 

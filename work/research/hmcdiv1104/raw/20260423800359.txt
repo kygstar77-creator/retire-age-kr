@@ -1,0 +1,123 @@
+ 
+.xforms * { font-family: 돋움체;}
+.xforms_title * { font-size: 13pt; padding : 0 0 10 0;}
+.xforms table {
+ font-size: 10px;
+ padding:0px;
+ border-collapse:collapse;
+ color: #3D3D3D;
+}
+.xforms td {
+ padding-left:0px;
+ padding-top:0px;
+ border-collapse:collapse;
+ line-height:22px;
+ color: #3D3D3D;
+ /*text-align:right;*/
+ vertical-align:middle;
+ border: 1px solid #7f7f7f;
+}
+.xforms span {
+ /*display: inline-block;*/
+ padding-left:3px;
+ padding-right: 1px;
+ line-height:22px;
+ padding-top:0px;
+ padding-bottom:0px;
+ text-align:left;
+ vertical-align:middle;
+ border: 0px solid #DBDBDB;
+}
+.xforms.img{
+ border : 0px;
+}
+.xforms a:link {
+ color: #194866;
+ text-decoration: none;
+}
+.xforms a:active {
+ color: #194866;
+ text-decoration: none;
+}
+.xforms a:visited {
+ color: #194866;
+ text-decoration: none;
+}
+.xforms A:hover {
+ color:008BE3;
+ text-decoration: none;
+}
+.xforms_input{
+ border: 0px solid #DBDBDB;
+ padding-left:3px;
+ padding-right: 1px;
+ height:22px;
+ padding-top:0px;
+ padding-bottom:0px;
+ text-align:left;
+}
+ 현대자동차/현금ㆍ현물 배당 결정/(2026.04.23)현금ㆍ현물 배당 결정 
+ 현금ㆍ현물배당 결정 
+ 1. 배당구분 
+ 분기배당 
+ 2. 배당종류 
+ 현금배당 
+ - 현물자산의 상세내역 
+ - 
+ 3. 1주당 배당금(원) 
+ 보통주식 
+ 2,500 
+ 종류주식 
+ 2,500 
+ - 차등배당 여부 
+ 미해당 
+ 4. 시가배당률(%) 
+ 보통주식 
+ 0.5 
+ 종류주식 
+ 1.0 
+ 5. 배당금총액(원) 
+ 654,585,190,000 
+ 6. 배당기준일 
+ 2026-05-31 
+ 7. 배당금지급 예정일자 
+ 2026-06-30 
+ 8. 주주총회 개최여부 
+ 미개최 
+ 9. 주주총회 예정일자 
+ - 
+ 10. 이사회결의일(결정일) 
+ 2026-04-23 
+ - 사외이사 참석여부 
+ 참석(명) 
+ 7 
+ 불참(명) 
+ 0 
+ - 감사(사외이사가 아닌 감사위원) 참석여부 
+ - 
+ 11. 기타 투자판단과 관련한 중요사항 
+ ① 상기 3항 및 4항의 종류주식은 우선주 전체 기준임. ② 상기 6항의 배당기준일 및 7항의 배당금지급 예정일자는 당사 정관 및 자본시장법 제165조의12에 의거해 이사회에서 결정한 일자임. ③ 당사의 감사위원회는 전원 사외이사로 구성되어 있음. 
+ ※ 관련공시 
+ - 
+ 【종류주식에 대한 배당 관련 사항】 
+ 종류주식명 
+ 종류주식구분 
+ 1주당 배당금(원) 
+ 시가배당률(%) 
+ 배당금총액(원) 
+ 우선주 
+ 우선주 
+ 2,500 
+ 1.0 
+ 57,097,592,500 
+ 2우선주 
+ 우선주 
+ 2,500 
+ 1.0 
+ 85,642,617,500 
+ 3우선주 
+ 우선주 
+ 2,500 
+ 1.0 
+ 5,804,815,000 
+ 

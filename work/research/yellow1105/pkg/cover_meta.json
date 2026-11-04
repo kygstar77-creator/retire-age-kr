@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-04 13:58",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "노란우산 해지/폐업 전에 깨면",
+ "num": "아낀 세금 다시 낸다",
+ "sub": "월 50만원 5년: 폐업 약 103만원 · 해지 최소 495만원",
+ "label": "폐업 공제금 vs 그냥 해지",
+ "src": "조세특례제한법 제86조의3 · 중기중앙회 · 11/4 확인",
+ "icon": "umbrella",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 130,
+ "num_px": 96,
+ "sub_px": 32,
+ "board": [
+  "j1pair1104",
+  "rechg1103",
+  "unemp60_1104",
+  "jepipair1103",
+  "newborn1103",
+  "midtax1103",
+  "samdiv1103",
+  "leasereg1102",
+  "defer1027",
+  "fxdepfee1026"
+ ]
+}

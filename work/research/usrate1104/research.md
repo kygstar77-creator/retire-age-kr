@@ -49,7 +49,7 @@ bench.md — 블로그 6편. 모두 지금 금리·1%p·12월 일정·환율 영
 - 2008-12-15 이전 미국은 범위가 아닌 한 값(DFEDTAR) — 그 시기는 그 값으로 비교
 
 ## 한계
-- 한국은행 11월 26일 회의 날짜는 2차(S7)만 확인, 한국은행 원 일정표는 확인 안 함
+- 한국은행 11월 26일 회의 날짜는 11/3엔 2차(S7)만, 11/4 올리기 전 확인에서 한국은행 원 일정표로 확인함
 - 한국은행 10/22 동결 이유 원문은 못 받음
 - FRED·ECOS 두 자료 날짜가 겹치는 날만 셈. 결정 시각 차이로 하루 어긋나는 날이 있음(그래프의 가는 튐)
 
@@ -73,4 +73,13 @@ bench.md — 블로그 6편. 모두 지금 금리·1%p·12월 일정·환율 영
 | 한국은행 11월 26일 (2차) | 11월 26일 | S7 https://blog.naver.com/zappu/224463007537 · https://blog.naver.com/lsyivy0722/224458601600 |
 
 # 올리기 전 확인
-- (발행 회차가 적는다 — 발행 날 S1~S6 다시 열기, 기준일:, 바뀐 것:, 새로 찾은 것:)
+- 2026-11-04 13:46 firemap-write-b — 발행 당일(16:10 칸) 대조 칸 출처 전부 다시 엶
+  - S1 https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm — 200, '3-3/4 to 4 percent'·'Inflation remains elevated'·'1/4 percentage point' 그대로
+  - S2 https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm — 200, 2026 December '8-9*' 그대로
+  - S3 https://fred.stlouisfed.org/series/DFEDTARU — FRED API 11/4: DFEDTARU 2026-11-03 4 · DFEDTARL 3.75 그대로
+  - S4·S6 https://ecos.bok.or.kr/ — ECOS API 11/4: 722Y001 기준금리 2026-11-01 3 그대로 · 731Y001 환율 11/3 1,341 그대로, 11/4 1,341.2 새로 나옴
+  - S5 https://eiec.kdi.re.kr/policy/materialView.do?num=288401 — 오늘은 '정상적인 접근이 아닙니다' 안내만 나옴(봇 차단). 같은 결정은 한국은행 원문 일정표(아래)의 10월 22일(목) 국문보도자료(2610)로 확인
+  - S7(2차) https://blog.naver.com/zappu/224463007537 · https://blog.naver.com/lsyivy0722/224458601600 · https://secretlinker.co.kr/?p=6521 — 한국은행 원문으로 대신 확인(아래)
+- 기준일: 금리 2026-11-03(FRED)·2026-11-01(ECOS 일별 마지막 값), 환율 2026-11-03 매매기준율, 역전 일수 11/3 기준 1,503일 — 본문 c00·c06은 '11월 3일 기준'으로 날짜를 박아 두어 그대로 맞음. 환율도 11/3 값이라 일수와 기준일이 같아 고치지 않음(묶음 해시 그대로)
+- 바뀐 것: 없음 — 미국 3.75~4%(11/3)·한국 3.00%(11/1)·차이 1%p 그대로, 환율 11/4 1,341.2원(본문 11/3 1,341원과 0.2원 차, 본문은 11/3 기준이라 그대로), 연준 다음 회의 12월 8~9일 그대로
+- 새로 찾은 것: 한국은행 통화정책방향 결정회의 일정 원문 https://www.bok.or.kr/portal/singl/crncyPolicyDrcMtg/listYear.do?mtgSe=A&menuNo=200755 (raw/bok_mtg_1104.html) — 2026년 10월 22일(목) 국문보도자료(2610) 다음 칸이 11월 26일(목). S7을 1차로 확인함

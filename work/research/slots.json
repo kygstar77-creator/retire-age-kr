@@ -127,7 +127,7 @@
     "pkg": "work/research/isacut1104/pkg",
     "title": "ISA 중도해지, 퇴직하고 6개월 안이면 세금은 얼마?",
     "genre": "정책(연금계좌 ISA)",
-    "status": "비축 — 관문 통과(editgate auto 56f563d5·이해 2차 6명·bench 5편·crosscheck 말투 10 반영·research_gate strict) · 발행 날 올리기 전 확인(S1~S7 다시 열기)만 남음 · 연금계좌 칸용",
+    "status": "2026-11-04 12:23 소진 — 11/5 16:10 칸 배정 · 비축 — 관문 통과(editgate auto 56f563d5·이해 2차 6명·bench 5편·crosscheck 말투 10 반영·research_gate strict) · 발행 날 올리기 전 확인(S1~S7 다시 열기)만 남음 · 연금계좌 칸용",
     "by": "firemap-write",
     "at": "2026-11-04 09:32",
     "gates_ok": "2026-11-04 09:32"
@@ -3214,7 +3214,8 @@
    "item": "j1pair1104",
    "owner": "firemap-write",
    "gates_ok": "2026-11-03 18:42",
-   "note": "firemap-meeting 2026-11-02 21:37: yt_pair: J-1 · ep/J-1/cafe.md(공시 12~40억×거주/비거주×나이 표, calc.py·facts.txt) + 영상 링크 · **J-1이 실제 공개된 경우만**(못 올라가면 이 칸은 주식 장르 다른 글) · 설명란 {CAFE}에 글 주소 | PD 2026-11-03 06:04: J-1 예약됨 https://youtu.be/NNcjTE0L7yg (11/4 11:30 공개) — 글 주소 나오면 설명란 카페 줄을 그 글로 | firemap-write 2026-11-03 18:42: j1pair1104 '종부세 개편안 내 집 공시가격이면 얼마 달라질까?' 관문 통과(이해 3차 9명·crosscheck·editgate auto aeceebfe) — 발행 회차: J-1(NNcjTE0L7yg) 공개 확인 뒤에만, 의안 2221046 다시 엶(올리기 전 확인 1일 안), 공개 안 됐으면 이 칸은 비축으로"
+   "note": "firemap-meeting 2026-11-02 21:37: yt_pair: J-1 · ep/J-1/cafe.md(공시 12~40억×거주/비거주×나이 표, calc.py·facts.txt) + 영상 링크 · **J-1이 실제 공개된 경우만**(못 올라가면 이 칸은 주식 장르 다른 글) · 설명란 {CAFE}에 글 주소 | PD 2026-11-03 06:04: J-1 예약됨 https://youtu.be/NNcjTE0L7yg (11/4 11:30 공개) — 글 주소 나오면 설명란 카페 줄을 그 글로 | firemap-write 2026-11-03 18:42: j1pair1104 '종부세 개편안 내 집 공시가격이면 얼마 달라질까?' 관문 통과(이해 3차 9명·crosscheck·editgate auto aeceebfe) — 발행 회차: J-1(NNcjTE0L7yg) 공개 확인 뒤에만, 의안 2221046 다시 엶(올리기 전 확인 1일 안), 공개 안 됐으면 이 칸은 비축으로",
+   "published": "https://cafe.naver.com/firemap/386 12:48 verify OK 2684자"
   },
   {
    "at": "2026-11-04 16:10",
@@ -3252,10 +3253,11 @@
   {
    "at": "2026-11-05 07:40",
    "kind": "cafe",
-   "item": "TBD — 돈 관리·연금",
+   "item": "yellow1105",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-03 21:32: 장르 돈 관리·연금 · 비축 pibucut1025(피부양자)를 먼저 — 11/3 defer1027과 이틀 띄움, 올리기 전 확인 다시"
+   "gates_ok": "2026-11-04 14:06",
+   "note": "firemap-meeting 2026-11-03 21:32: 장르 돈 관리·연금 · 비축 pibucut1025(피부양자)를 먼저 — 11/3 defer1027과 이틀 띄움, 올리기 전 확인 다시 | firemap-write-b 14:06: 새 글 yellow1105 '노란우산 해지, 폐업 전에 깨면 아낀 세금 다 낼까?'(돈 관리·연금/세금, 검색 노란우산공제 60,100·노란우산해지 3,650, 카페 첫 노란우산 글) 관문 통과 — 조특법 86조의3·소득세법 14·21·129조 law.go.kr 11/4 원문 + 중기중앙회 노란우산 5쪽(예시표·해약환급금·기준이율 3.4%), 같은 3천만원(월 50만원 5년) 폐업 공제금 퇴직소득세 약 103만원 vs 그냥 해지 최소 약 495만원(4.8배)·5년 절세액 495만원 그대로 반납 직접 계산(경쟁 6편 0편) · 이해 2차 6명·crosscheck Gemini(사실 2: 반영 1·유지 1, 말투 반영 7)·readcheck 0·selfcheck 사실 0·aitell 5.1·editgate auto 6e2e5237 · 발행 회차는 올리기 전 확인(1일 안, S1~S9 다시 열기·기준이율 분기 바뀌는지)",
+   "pkg": "work/research/yellow1105/pkg"
   },
   {
    "at": "2026-11-05 10:10",
@@ -3276,10 +3278,11 @@
   {
    "at": "2026-11-05 16:10",
    "kind": "cafe",
-   "item": "TBD — 경제·정책(세금·건보료·연금)",
+   "item": "isacut1104",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-03 21:32: 장르 경제·정책(세금·건보료·연금) · 11/4 16:10과 겹치지 않게"
+   "gates_ok": "2026-11-04 09:32",
+   "note": "firemap-meeting 2026-11-03 21:32: 장르 경제·정책(세금·건보료·연금) · 11/4 16:10과 겹치지 않게 | firemap-write 11/04 12:23: 비축 isacut1104 'ISA 중도해지, 퇴직하고 6개월 안이면 세금은 얼마?'(정책·연금계좌, 관문 11/4 09:32 통과) 배정 — 발행 회차가 11/5 올리기 전 확인(S1~S7 다시 열기)·slot.txt 2026-11-05 16",
+   "pkg": "work/research/isacut1104/pkg"
   },
   {
    "at": "2026-11-05 18:40",

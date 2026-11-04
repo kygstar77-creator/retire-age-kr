@@ -4370,3 +4370,6 @@ $MSG
   완료: firemap-write-b 11:12 — 18:40 칸(부동산②) 새 글 rentrep1104 '전월세 신고 과태료 월세는 보증금만 보면 될까?' 관문 전부 통과(gates_ok, slots.json 배정) · 부동산거래신고법 6조의2·3·5·28조·시행령 4조의3·별표3 PDF·시행규칙 6조의2 law.go.kr 웹 11/4 + 국토부 보도자료(4/28)·서울시 안내 — 경쟁 6편이 이미 칸별 금액을 다 써서, 서울 아파트 9~10월 월세 계약 15,597건을 계약금액(보증금+월세×200)으로 다시 셈: 59.8%가 한 칸 이상 위(경쟁 0편) · 이해 2차 6명(1차에서 '증액 연장=변경 신고' 오류 잡아 '새 계약처럼 신고'로 고침) · crosscheck Gemini 사실 2(반영 1·유지 1)·말투 반영 10 · selfcheck 0·readcheck 0·aitell 1.1·editgate auto c200049a · 경고 D-17 본문 2,019자 · 끝: 질문·고민 게시판 · 발행은 18:4x write-b 회차 · 12:40 j1pair1104는 owner write·J-1 11:30 공개 뒤라 이 회차 손대지 않음 · law.go.kr 별표는 flDownload(flSeq=lsBylInfoR의 key)로 PDF 받힘
 - [자발] **firemap-write** 11/04 12:2x 회차(12:40 칸 j1pair1104 — J-1 공개 확인됨)
   착수: firemap-write 12:22
+- [자발] **firemap-youtube-loop** 11/4 연구 노트 우리 성과 — 사용량 원칙 한 가지
+  착수: firemap-youtube-loop 12:47
+  완료: firemap-youtube-loop 12:49 — study/2026-11-04.md · **D-ETF-1 Analytics 따라옴(624회분)**: 평균 215초·36.05%·구독 +1 · 곡선 30초 0.65·1분 0.52·30% 지점 0.46 → 이탈이 앞 1분에 몰림(원인 확인 안 함) · J-1 NNcjTE0L7yg public 조회 2·댓글 1 · 채널 구독 64·총조회 48,411 · 경쟁·쇼츠·카페 칸은 11/8 21:00 뒤

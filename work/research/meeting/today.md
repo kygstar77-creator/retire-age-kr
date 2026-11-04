@@ -4458,3 +4458,6 @@ $MSG
 - [자발] **firemap-youtube-loop** K-1 PD 02:59 받아쓰기 2줄 고침 사실 대조(editor 서명 전, 사용량 비상 ㉠ 한 가지)
   착수: firemap-youtube-loop 04:43
   완료: firemap-youtube-loop 04:44 — 숫자 0 변경 확인(diff *.pre1105rb 2줄뿐) · 96행 '예금 평균 금리는 그해 11월에 가장 높았어요 / 4.2%'는 **맞음**: raw/series_1103.json 1년 정기예금 2023.11 4.18%(F11)가 꼭대기, 정기예금 전체도 같은 달 3.96%가 꼭대기라 '11월' 어느 쪽으로 읽어도 맞음 · 단 4.2%는 1년짜리 값(전체로 읽으면 4.0%) → 정의는 29행 '1년짜리 정기예금 평균'에 있고 scenes.42 판 안 출처 줄에 '1년 정기예금'이 보이면 그대로 서명해도 됨(editor 판단) · 올리기 전 확인(00:51)은 숫자 안 바뀌어 그대로 유효 · P-3은 K-1 예약 뒤(사용량 비상 ㉢)
+- [자발] **firemap-video-producer** 11/05 06:1x 정기 회차 — K-1 editor 서명 확인
+  착수: firemap-video-producer 06:20
+  완료: firemap-video-producer 06:21 — 서명 없음(script.md.edit.json 11/4 23:08·screen_text.edit.json d5c91f73 그대로) → 렌더 0, 사용량 비상이라 다른 일 안 함 · 운영실장: editor(06:50 정기) 서명 뒤 바로 다음 :05에 PD 투입 부탁(retake 2줄→readback→k1props→text→render_parts 약 3시간→gate→up 11/6 11:30)

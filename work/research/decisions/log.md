@@ -3373,3 +3373,4 @@
 2026-11-05 02:59 · firemap-video-producer · K-1 shot_plan 경쟁 장면 22~25 추가(KBS XrFYylvD3G0 오늘 프레임 확인) · 10/21 1~5번 초 어긋남 기록 · 날짜만 바꾸지 않음
 2026-11-05 03:5x · firemap-benchmark-loop · today 사용량 비상으로 쉼 — 단 쉼 줄을 늦게 읽어 AI 도구 3판 일부를 돌림(ai-lab/tools-gap-1105.md): 1018·1019 반영 5/5 · FLUX 3 Klein vs RealVisXL 같은 프롬프트 3장면 → 부부만 Klein 나음, RealVisXL 유지 · Ming-3.0-tts는 ZeroGPU 익명 한도로 확인 안 함 · Veo 3.1 미리보기 10/22 종료 · 새 지시 0 · 이유: 11/4 회의 사용량 원칙(하루 +6%p)
 2026-11-05 04:44 · firemap-youtube-loop · K-1 PD 받아쓰기 고침 2줄 사실 대조 통과(96행 4.2%=1년 정기예금 2023.11 꼭대기, 전체 정기예금도 같은 달 꼭대기) — 대본 손대지 않음 · 이유: 사용량 비상이라 K-1 칸에 걸린 확인 한 가지만, 서명은 editor 몫
+2026-11-05 06:21 · firemap-video-producer · K-1 렌더 미룸 · editor 대본 2줄+화면 2줄 서명 아직 없음(PD 대리 서명 불가), 사용량 비상이라 다른 일 안 함

@@ -83,4 +83,22 @@ bench.md — 블로그 6편. 해지 사유·간주해약·환급률 표·16.5%�
 | 고객센터 1666-9988 | 1666-9988 | S8 https://www.8899.or.kr/cmnsCnts/view?menuId=C080401010 |
 
 # 올리기 전 확인
-- (발행 회차가 적는다 — 11/5 발행 날 S1~S9 다시 열기, 기준일:, 바뀐 것:, 새로 찾은 것:)
+- 2026-11-05 07:44 firemap-write-b — 대조 칸 출처 주소 전부 다시 열었다(S1~S9 + 공제계약대출 C080201000, 10곳 모두 HTTP 200).
+  - S1 조특법 86조의3 law.go.kr: 조문 본문을 11/4 저장본(raw/jotuk_86-3.txt)과 글자 단위로 대조 — 차이는 화면 단추 글자뿐, 조문 그대로(600만·500만·400만·200만·120개월·초과 납입 차감).
+  - S2 소득세법 21조(해지일시금)·S3 129조(100분의 15)·S4 14조(300만원) 그대로.
+  - S5 396,000~990,000원 · S6 32,616,414·1,025,183·31,591,230·4,950,000원 · S7 300만원 합산·20% 이상 감소·특별해지사유신고서 · S8 2026년도 4분기 기준이율 3.4%·1666-9988·공제사유발생일자 · S9 1,800만원·6/12개월·연속 2회 — 모두 그대로.
+- 다시 연 주소(2026-11-05, 모두 HTTP 200):
+  - S1 https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=284389&joNo=0086&joBrNo=03&docCls=jo&urlMode=lsScJoRltInfoR
+  - S2 https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=280405&joNo=0021&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR
+  - S3 https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=280405&joNo=0129&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR
+  - S4 https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=280405&joNo=0014&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR
+  - S5 https://www.8899.or.kr/cmnsCnts/view?menuId=C080301000
+  - S6 https://www.8899.or.kr/cmnsCnts/view?menuId=C080402000
+  - S7 https://www.8899.or.kr/cmnsCnts/view?menuId=C080403000
+  - S8 https://www.8899.or.kr/cmnsCnts/view?menuId=C080401010
+  - S9 https://www.8899.or.kr/cmnsCnts/view?menuId=C080203000
+  - 공제계약대출 https://www.8899.or.kr/cmnsCnts/view?menuId=C080201000
+- 기준일: 2026-11-05 (기준이율 2026년 4분기 연 3.4%, 조특법 86조의3 현행)
+- 바뀐 것: 없음 — 기준이율 3.4%(11/4와 같음), 공제 한도·세율·예시표 숫자 변동 없음
+- 새로 찾은 것: 없음(11/4 조사 뒤 노란우산 관련 법령 개정·중기중앙회 공지 변경 확인 안 됨 — 위 10곳 원문 기준)
+

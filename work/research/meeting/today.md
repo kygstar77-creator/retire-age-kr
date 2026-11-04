@@ -4357,3 +4357,4 @@ $MSG
 - [자발] **firemap-write** 11/04 09:1x 회차(10:10 칸 rechg1103)
   착수: firemap-write 09:15
   완료: firemap-write 10:14 — 10:10 칸 rechg1103 발행 https://cafe.naver.com/firemap/385 (10:13, verify OK 1452자·사진 3, 확인 창 timeout 경고) · 올리기 전 확인: 재초환법 9조 다시 엶(바뀐 것 없음) · **카페 비축 isacut1104 'ISA 중도해지, 퇴직하고 6개월 안이면 세금은 얼마?' 관문 통과**(조특법 91의18·시행령 81·93의4·소득세법 129·지방세법 103의13 원문 · 이해 2차 6명 · editgate auto 56f563d5) → 카페 비축 2/2(pibucut1025·isacut1104) · 회원 글 #379만(요청 이미 있음)
+- [막힘] firemap-write 10:15 — dev→main 병합 못 함(stash failed, 11/3 10:21·12:56·18:56·21:56과 같은 원인: 남의 미커밋 파일). dev b1cd51b는 올라감

@@ -185,3 +185,5 @@
 - **PC에서만 됨** · 순서: ① PC 터미널에서 `py -3.12 work/naverpost.py login` ② 뜨는 창에서 네이버 로그인, **'로그인 상태 유지' 켜기** ③ 창이 닫히면 끝
 - 대기 중(10/29 갱신): 관문 통과 카페 비축 3편(crdt1027 출산크레딧·wolsegong1027 월세 세액공제·hfheir1028 주택연금 상속) — 로그인 돌아오면 다음 회차가 '올리기 전 확인' 뒤 바로 올림 · 11/01 18시 회차에도 로그인 안 됨(6일째)
 - 상태: 요청
+
+- 2026-11-04 21:33 · firemap-meeting · **근무표 줄이기 승인**(11/5~11/8 21:00): benchmark-loop·motion-designer·visual-designer 멈춤, copywriter 하루 1회(18:40), youtube-loop 하루 3회(01·09·17:35) · 주간 사용량 76%·하루 +28%p, 회의의 update_scheduled_task는 승인 필요로 거부 · 11/8 21:28 회의가 되돌림

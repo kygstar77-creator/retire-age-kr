@@ -13,6 +13,7 @@ export type PayBlocksProps = {
   cols: {label: string; ins: number[]; tax: number; insPct: string; taxPct: string}[];   // ins = 보험료 넷 몫(0~1), tax = 소득세+지방 몫 · *Pct = 화면 글자('8.9%')
   insLabel: string; taxLabel: string; axis: string;
   insAt: number; taxAt: number; flatAt: number; steepAt: number;   // 말 줄 번호 + 비율
+  circleAt?: number;   // 끝 칸 손 동그라미(없으면 가파른 선 뒤) — N-3 11/4: 첫 줄이 '8천 칸부터'라 말에 맞춰 당김
   beats: number[];
 };
 
@@ -82,7 +83,7 @@ export const PayBlocks: React.FC<PayBlocksProps> = (p) => {
         {(() => { const pts = p.cols.map((c, i) => [cx(i) + (r('h' + i) - 0.5) * 10, allTop(c) - 4]); let len = 0; for (let i = 1; i < pts.length; i++) len += Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]);
           const d = 'M' + pts.map((q) => `${q[0]} ${q[1]}`).join(' L');
           return <path d={d} fill="none" stroke={T.accent} strokeWidth={8} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={len} strokeDashoffset={len * (1 - steepP)} opacity={steepP > 0.01 ? 1 : 0} />; })()}
-        <HandCircle cx={cx(last)} cy={allTop(p.cols[last]) + p.cols[last].tax * K / 2} rx={bw / 2 + 34} ry={p.cols[last].tax * K / 2 + 16} p={g(f, stA + 30, 22, Easing.inOut(Easing.quad))} />
+        <HandCircle cx={cx(last)} cy={allTop(p.cols[last]) + p.cols[last].tax * K / 2} rx={bw / 2 + 34} ry={p.cols[last].tax * K / 2 + 16} p={g(f, p.circleAt != null ? at(p.circleAt) : stA + 30, 22, Easing.inOut(Easing.quad))} />
       </svg>
     </div>
   );

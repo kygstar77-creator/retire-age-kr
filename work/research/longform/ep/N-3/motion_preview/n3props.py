@@ -66,11 +66,11 @@ for m in re.finditer(r'연봉 ([\d,]+)만 \| 월 세전 ([\d,]+) \| 공제 [\d,]
 bk = [3000, 5000, 7000, 8000]
 assert all(k in ded and pen[k] < CAP for k in bk), '블록 칸은 연금 상한 아래만(같은 비율이 깨지지 않게)'
 assert all(ded[k][1] == pen[k] for k in bk)
-has('낮은 연봉은 보험료가, 높은 연봉은 세금이 통장을 줄이는 셈이죠.', '보험료 네 가지는 월급에 같은 비율로 붙고, 소득세만 많이 벌수록 더 가파르게 붙습니다.')
-L3 = cut('3.', '낮은 연봉은 보험료가', '보험료 네 가지는')
+has('세금이 보험료보다 많아지는 건 연봉 8천 칸부터예요.', '보험료 네 가지는 월급에 같은 비율로 붙고, 소득세만 많이 벌수록 더 가파르게 붙습니다.')
+L3 = cut('3.', '세금이 보험료보다 많아지는 건', '보험료 네 가지는')
 assert len(L3) == 2, [l['text'] for l in L3]
 blocks = {'seed': 'N-3-blocks', 'insLabel': '보험료 넷', 'taxLabel': '소득세', 'axis': '연봉별 · 세전 월급 중 빠지는 비율(%)',
-  'insAt': 0.05, 'taxAt': 0.5, 'flatAt': 1.0, 'steepAt': 1.5,
+  'insAt': 0.05, 'taxAt': 0.5, 'flatAt': 1.0, 'steepAt': 1.5, 'circleAt': 0.8,   # 11/4 첫 줄 '8천 칸부터' 끝에 8천 동그라미
   'cols': [{'label': name(k), 'ins': [round(x / ded[k][0], 5) for x in ded[k][1:5]], 'tax': round((ded[k][5] + ded[k][6]) / ded[k][0], 5),
            'insPct': f'{sum(ded[k][1:5]) / ded[k][0] * 100:.1f}%', 'taxPct': f'{(ded[k][5] + ded[k][6]) / ded[k][0] * 100:.1f}%'} for k in bk]}   # % 글자 = calc_out 원 단위 나눗셈만(11/1 심사: % 없이는 금액으로 오독)
 

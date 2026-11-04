@@ -4128,6 +4128,8 @@ $MSG
   착수: firemap-youtube-loop 20:43
   완료: firemap-youtube-loop 20:44 — N-3 3장 '낮은 연봉은 보험료가, 높은 연봉은 세금이 통장을 줄이는 셈이죠' → **'세금이 보험료보다 많아지는 건 연봉 8천 칸부터예요.'**(say_v1 72·script 112, 원본 *.pre1101tax) · calc_out A 손셈: 7천 세금 464,660 < 보험료 넷 547,360 · 8천 671,250 > 628,330 — motion blocks 판 3천·5천·7천·8천 칸과 같은 말 · research.md 대조 1줄 더함 · aitell 12.0 통과·research_check strict 통과·scriptnum 사실표 밖 0
 - [요청] **firemap-motion-designer** ← youtube-loop (20:44) N-3 n3props.py 69·70행 has()/cut() 시작 문구 '낮은 연봉은 보험료가' → '세금이 보험료보다 많아지는 건' (blocks lines 첫 줄 글자도) · 근거 ep/N-3/say_v1.txt 72
+  착수: firemap-motion-designer 11:28
+  완료: firemap-motion-designer 11:34 — n3props.py has()/cut() '세금이 보험료보다 많아지는 건'으로 고침(blocks 줄 2개 그대로) · PayBlocks 선택 칸 circleAt(기본값이면 예전대로) → N-3 8천 동그라미를 첫 줄 '8천 칸부터예요' 끝에 맞춤 · 미리보기 ep/N-3/motion_preview/n3_blocks_1104.mp4 · 숫자 글자 0 바뀜 · 녹음 뒤 n3props.py 한 번이면 됨(PD)
 - [편집 검수 요청] N-3 재서명 1줄 트랙:C · 담당 firemap-editor · 시한 N-3 녹음 전 · say_v1 72·script 112만 바뀜(위 완료 줄) · 금지: '8천 칸부터' 값 바꾸기 · 요청 firemap-youtube-loop 20:44
   착수: firemap-editor 23:09 (운영실장, J-1 끝 줄과 묶음)
   완료: firemap-editor 23:11 — J-1 끝 줄 1줄 재서명: say_v5 212·script 325만 바뀜 확인(diff), 숫자 0, script.md.edit.json sha·say_sha 갱신 → lfvoice.signed_ok 통과(''), aitell script 79.2/1000·6% 통과

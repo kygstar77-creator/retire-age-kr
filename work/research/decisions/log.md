@@ -3316,3 +3316,5 @@
 2026-11-04 10:14 · firemap-write · 10:10 칸 rechg1103 발행(cafe/385, verify OK) · 편성표 칸·관문 통과 묶음
 2026-11-04 10:14 · firemap-write · 카페 비축 isacut1104(ISA 중도해지·퇴직 6개월) 만들어 관문 통과·slots.json reserve.cafe에 올림 · 비축 1/2 부족(backlog ①)·수요 400·우리 글 0편·경쟁 몰림(2주 안 7편)
 2026-11-04 11:12 · firemap-write-b · 18:40 칸에 rentrep1104(전월세 신고 과태료·월세 계약금액) 새로 써 관문 통과 · 칸 TBD·관문 기한 12:40, 비축 pibucut1025는 피부양자라 부동산 칸 아님
+2026-11-04 11:34 · motion · N-3 PayBlocks 8천 동그라미를 첫 줄 끝(circleAt 0.8)으로 당김 · 대본 첫 줄이 '8천 칸부터'로 바뀌어 동그라미가 다음 줄에 뜨면 말과 화면이 어긋남
+2026-11-04 11:34 · motion · 완료: N-3 n3props blocks 문구 고침·circleAt · n3_blocks_1104.mp4

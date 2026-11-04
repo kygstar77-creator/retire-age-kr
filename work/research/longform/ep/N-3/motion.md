@@ -21,7 +21,7 @@ shot_plan '장면 계획'의 움직이는 판 중 두 개를 부품으로 만들
 
 | shot_plan 줄 | 장면 | 부품 | 말 줄 | 무엇이 움직이나 |
 |---|---|---|---|---|
-| r18 3장 블록 | blocks | video/src/motion/PayBlocks.tsx | 3장 '낮은 연봉은 보험료가' ~ '보험료 네 가지는' 2줄 | 연봉 3천·5천·7천·8천 칸에 회색 보험료 블록 넷이 떨어져 쌓임 → 검은 소득세(+지방) 블록 → 보험료 윗선 점선(평평) → 소득세만 주황 + 가파른 손 선 + 8천 손 동그라미 |
+| r18 3장 블록 | blocks | video/src/motion/PayBlocks.tsx | 3장 '세금이 보험료보다 많아지는 건' ~ '보험료 네 가지는' 2줄 | 연봉 3천·5천·7천·8천 칸에 회색 보험료 블록 넷이 떨어져 쌓임 → 검은 소득세(+지방) 블록 → 보험료 윗선 점선(평평) → 소득세만 주황 + 가파른 손 선 + 8천 손 동그라미 |
 | r28 5장 계단 | stairs | video/src/motion/RaiseStairs.tsx | 5장 '통장 400만원이면' ~ '통장을 같은 100만원씩' 10줄 | 통장 300(4,100만원) 칸 서 있음 → 400·500·600 칸이 말 따라 솟고 연봉 '?' → 열림 → '칸 사이' 줄에 더 솟은 부분 진하게 + 흰 '+1,580만원'·'+1,650만원' → '+1,770만원'만 주황·손 동그라미 → 끝 줄 '+100만원' 셋 |
 
 - 숫자: n3props.py가 calc_out 'A' 줄(공제 내역 원 단위 ÷ 세전)·'I' 줄(통장 목표별 연봉)·대본 자막(칸 사이 1,580·1,650·1,770)을 assert. blocks 칸은 연금 상한 아래(8천까지)만 — 1억 위는 '같은 비율'이 깨져 뺌. 화면에 % 글자 없음.
@@ -33,3 +33,8 @@ shot_plan '장면 계획'의 움직이는 판 중 두 개를 부품으로 만들
 1. `py -3.12 work/research/longform/ep/N-3/motion_preview/n3props.py` (blocks·stairs도 같이 나옴, 줄 바뀌면 assert)
 2. N3.tsx 장면 kind 'blocks'·'stairs'에 `<PayBlocks {...s.data} beats={tallyStarts(s.lines)} />`·`<RaiseStairs {...s.data} beats={tallyStarts(s.lines)} />`(TallyFrame 자식, title·source는 n3_motion.json). shot_plan 파일 칸(bg/n3/board/n3_blocks.png·n3_rev_steps.png)은 이 장면 스틸로 대신.
 3. 렌더 뒤 그 구간 lfrender screen·overlap. 부품 안 글자는 screen_text 밖 → 편집 서명 때 n3_st2/ 스틸 같이.
+
+## 11/4 blocks 말 줄 바뀜 반영
+- 대본 3장 첫 줄 '낮은 연봉은 보험료가…' → '세금이 보험료보다 많아지는 건 연봉 8천 칸부터예요.'(youtube-loop 11/1 20:44) · n3props.py has()/cut() 시작 문구 고침 · 줄 2개 그대로(3.9·6.2초 어림).
+- PayBlocks에 선택 칸 circleAt 더함(없으면 예전대로 가파른 선 뒤) · N-3은 0.8 = 첫 줄 '8천 칸부터예요' 끝에 8천 칸 손 동그라미(10.1% > 9.4%가 말과 같은 때 보이게).
+- 미리보기 motion_preview/n3_blocks_1104.mp4(blocks 10.5초) · 눈 확인: 100프레임에 동그라미 시작·117프레임 다 그림, 숫자 글자 바뀐 것 없음. 심사 점수는 11/1 blocks 8.0 그대로(시점만 바뀜, 새 심사 안 함).

@@ -24,6 +24,19 @@
     "url": "https://cafe.naver.com/firemap/384"
    },
    "note": "07:40 칸 unemp60_1104(11/3 20:16 관문 통과·editor 11/4 07:06 재서명) 발행 · verify OK 2083자·사진 3 · 올리기 전 확인 11/3 19~20시(전날, 금리글 아님) · 확인 창 timeout 났지만 URL·verify 정상 · 개선: 없음"
+  },
+  {
+   "hour": 9,
+   "ts": "10:14",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "재초환 부담금, 한 집만 오래 가지면 얼마나 줄까?",
+    "url": "https://cafe.naver.com/firemap/385"
+   },
+   "note": "10:10 칸 rechg1103 발행(10:13) · verify OK 1452/1452자·사진 3/3 · 확인 창 timeout(발행은 됨) · 올리기 전 확인 11/4 09:1x 재초환법 조문 9개 다시 엶(lsiSeq 277019 그대로, 바뀐 것 없음) · 카페 비축 isacut1104 'ISA 중도해지, 퇴직하고 6개월 안이면 세금은 얼마?' 관문 통과(법령 원문 5개 조문 새로 받음 S1~S7·bench 5편·검증: crosscheck 사실 2건 유지(⑤ 손익 차감 원문 있음·2,000만원은 예시)·말투 10건 반영·selfcheck 사실 0·이해 2차 6명·editgate auto 56f563d5) → 비축 2/2 · 블로그 없음(DAY_CAP) · 개선: 플레이북에 '그림 유형 표시'·law.go.kr lsSideInfoP 법령 받기 적음"
   }
  ]
 }

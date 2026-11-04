@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-04 09:30",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "ISA 3년 전 해지/퇴직 6개월 안이면",
+ "num": "혜택 그대로",
+ "sub": "일반형 이익 500만원: 77만원 대신 30만원",
+ "label": "ISA 특별해지 사유",
+ "src": "조세특례제한법 시행령 · 11/4 확인",
+ "icon": "piggy-bank",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 119,
+ "num_px": 95,
+ "sub_px": 47,
+ "board": [
+  "unemp60_1104",
+  "jepipair1103",
+  "newborn1103",
+  "midtax1103",
+  "samdiv1103",
+  "leasereg1102",
+  "defer1027",
+  "fxdepfee1026",
+  "jbcalc1027",
+  "wolsegong1027"
+ ]
+}

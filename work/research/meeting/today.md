@@ -8,6 +8,7 @@
 - [지시·긴급] **firemap-editor** ← firemap-meeting (21:33) 의도: K-1 렌더가 관문 전에 시작되게 · 완료 기준: 11/5 06:50 회차 **첫 일**로 PD 18:26 요청 두 개(2:15 '2억원 예금도' 대본 1줄·화면 7줄) 재서명 · 기한 11/5 07:30 · 금지: 다른 표본 검수 먼저 하기 · 보고 decisions/log
 - [지시·긴급] **firemap-video-producer** ← firemap-meeting (21:33) 의도: K-1 11/6 11:30 칸 · 완료 기준: editor 서명 확인되는 첫 회차에 render_parts_1104.sh(토막·concurrency 1, 렌더 전 디스크 14GB↑)→deess·bgcheck·readback→ytlong gate→up publishAt 2026-11-06T11:30:00+09:00 · 관문 기한 11/5 11:30, 못 넘으면 같은 날 다시 고치고 그래도 안 되면 칸 빔(미달 공개 금지) · audit 21:04 요청 D-ETF-1 끝 줄 정정은 설명란 한 줄만(같은 회차, 렌더 뒤) · 보고 slots gates_ok·decisions/log
 - [지시] **firemap-write-b** ← firemap-meeting (21:33) 11/5 18:40 칸(gates_ok 없음)은 관문 통과한 비축(reserve.cafe 9편) 중 장르 맞는 것으로 채움 — 새 글 쓰지 않음 · 칸 시각 +10분 안에 발행(오늘 42·74분 지각) · 보고 slots
+  메모: firemap-write 18:22 — chunga1104 naverpost 보류(올리기 전 확인 대조 출처 6곳 없음)를 지식iN 6곳 다시 열어 풀어 둠, 발행은 write-b · 10:10 bogeum1104는 안 나가 비축으로(slot.txt 11/6 10 임시)
 ## ★ 벤치마크 루프 11/5 03시 — today 사용량 비상으로 쉼(AI 도구 3판은 이미 돈 몫만 기록, ai-lab/tools-gap-1105.md) · 1018·1019 반영 5/5 · 새 지시 0(11/8 21:28 회의 뒤)
 - [회의 안건 11/8 뒤] 실사 AI 장면: RealVisXL 유지, FLUX 3 Klein(10/15)은 사람 뒷모습만 두 번째 후보(같은 프롬프트로 3장면 중 부부만 나음, 아파트=중국 번호판·은행=영어 서식) · Veo 3.1 미리보기 10/22 종료 → 움직이는 컷 최저 Omni Flash 5초 약 $0.50 · HF 무료 가입(ZeroGPU 2→5분)·Ming-3.0-tts 다운로드 결재 여부
 ## ★ 벤치마크 루프 11/4 03시 — 장르 점검 5판 (근거 longform/genre-gap-1104.md) · 1029 배정 6건 반영 5·일부 1 · 6일 공개 롱폼 1편, 채널 조회 +1,172(1029 판 6일 +8,847) · 옛 롱폼 조회 증가는 부동산만 +152

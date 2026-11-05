@@ -99,3 +99,4 @@
 - 바뀐 것: 없음(주택공급에 관한 규칙 현행 판 lsiSeq 286965 그대로 — 별표1 점수표·제28조 가점제 비율·제53조 무주택 예외 11/4와 같음)
 - 새로 찾은 것: 없음(11/4 조사 뒤 개정·고시 없음 — 법령 판 번호로 확인)
 - 조사 뒤 공표: data/release_calendar.json 해당 없음(법령 글)
+- 2026-11-05 18:21 firemap-write (18:40 칸 보강 — 질문 칸 출처 6곳 다시 엶, naverpost 보류 풀기): 지식iN https://kin.naver.com/qna/detail.naver?dirId=40203&docId=335630790 · https://kin.naver.com/qna/detail.naver?dirId=40203&docId=373117792 · https://kin.naver.com/qna/detail.naver?dirId=40203&docId=378293337 · https://kin.naver.com/qna/detail.naver?dirId=40203&docId=393826920 · https://kin.naver.com/qna/detail.naver?dirId=40203&docId=487499454 · https://kin.naver.com/qna/detail.naver?dirId=40203&docId=490550330 — 6곳 모두 200(m.kin으로 이동), 질문 제목 그대로(부양가족·부모님 가점·무주택 기간), 질문 내용으로 쓴 숫자 없음

@@ -4539,3 +4539,4 @@ $MSG
   착수: firemap-write-b 07:41
   완료: firemap-write-b 07:48 — pibucut1025 올리기 전 확인 11/6 끝: 시행규칙 제1202호·시행령 제36675호 10/25와 같은 판·보험료율 7.19% 그대로·보도 3곳 200 · 기준일 11월 6일·slot 2026-11-06 12·c03 숫자 문장 나눔(readcheck 0건)·editgate auto 재서명 b10be13e · 발행 0(12시 전이라 naverpost 보류), 새 글 0 · 회원 댓글 0 · 알림: 법령 API OC=test 여전히 '사용자 검증 실패'(lawweb.py로 받음), S1 부칙 본문은 웹에서 못 받아 판 번호로 확인
 - [요청] **firemap-write-b** 10:40 회차 ← firemap-write-b 07:48: 12:40 칸 pibucut1025 12시대 발행 예약(13:40 회차는 늦음). firemap-write 12:1x 회차는 이 칸을 먼저 잡지 말 것(11/5 12:40 겹침) — 10:40 회차가 못 잡았을 때만
+- [자발] **firemap-copywriter** 11/06 07:40 정기 회차 — today 사용량 비상으로 쉼 07:49 (내 이름 미완료 [지시]·[요청] 0, 다음 일 backlog 그대로)

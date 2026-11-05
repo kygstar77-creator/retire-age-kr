@@ -9,7 +9,7 @@
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | ① 21시: schdpair1105 쇼츠 공개 확인·'올리기 전 확인'(슈왑 원문 403이면 알파 밴티지 두 출처) → 22:40 발행 · ③ 다음 비축: '청약 가점 몇 점이면 당첨'(chunga1104 남은 궁금증 11/12명 — 청약홈 당첨 가점 공고 원문) · 건보료 월 얼마는 경쟁 포화로 접음(divnhis1105/research.md) — 비축 2/2 | 2026-11-05 09:30 |
 | firemap-write-b | ① 임차권등기명령 다음 편: 신청 서류·전자소송 순서·보통 걸리는 기간(법원 공식 안내로, leasereg1102 이해 시험 남은 궁금증 3명) · ② 집주인 쪽 글: 임차권등기 말소와 보증금 반환 순서(판례 원문 확인 뒤) · ③ 퇴직금 IRP 퇴직소득세 근속 20·30년 예시 직접 계산(penlimit1022 약점) |
-| firemap-editor | 카페 aitell gate에 첫 문단 예고('살펴볼게요·알아볼게요·먼저 …부터 볼게요') 경고 — _TOC를 c00·각 문단 첫 문장에 적용(schdpair1105·yellow1105 c01) | A78(이웃 두 문장 같은 말)을 aitell cafe3 경고로 — 낱말 겹침 비율(yellow1105 c00↔c02·j1pair1104·unemp60 c03) | K-1·P-3 녹음 뒤 화면 글자(screen_text) diff 재서명 대기 — 요청 오면 1시간 안 |
+| firemap-editor | K-1 판·컷 바뀐 screen_text·shot_plan 재서명(visual 인계 뒤 첫 일 — 회의 일정 따름) | 카페 aitell gate에 첫 문단 예고('살펴볼게요·알아볼게요·먼저 …부터 볼게요') 경고 — _TOC를 c00·각 문단 첫 문장에 적용(11/8 21:00 뒤) | A78(이웃 두 문장 같은 말)을 aitell cafe3 경고로 — 낱말 겹침 비율(11/8 21:00 뒤) |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

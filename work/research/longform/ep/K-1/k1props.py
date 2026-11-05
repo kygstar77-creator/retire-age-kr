@@ -37,9 +37,9 @@ def ask(n, q, lines, frm=None): return S('ask', lines, n=n, q=q, **({'from': frm
 def board(f, lines, z=(1.0, 1.04)):
     assert os.path.exists(os.path.join(VID, 'public', 'bg', 'k1', 'board', f + '.png')), f
     return S('pic', lines, pic=f'bg/k1/board/{f}.png', license='파이어맵 자체 제작 판(출처는 판 안)', baked=True, inset=0.80, dark=True, zoom=list(z), cx=50, cy=45)
-def ai(f, lines, z=(1.0, 1.08)):
+def ai(f, lines, z=(1.0, 1.08), **kw):
     assert os.path.exists(os.path.join(VID, 'public', 'bg', 'k1', 'ai', f + '.png')), f
-    return S('pic', lines, pic=f'bg/k1/ai/{f}.png', license='AI 생성 그림(RealVisXL V5.0, openrail++)', badge='AI 생성 그림', zoom=list(z))
+    return S('pic', lines, pic=f'bg/k1/ai/{f}.png', license='AI 생성 그림(RealVisXL V5.0, openrail++)', badge='AI 생성 그림', zoom=list(z), **kw)
 USEDBG = {}
 def broll(name, lines, say, **kw):
     cid, have = STOCK[name]; c = CR[cid]; k = USEDBG.get(cid, 0); USEDBG[cid] = k + 1; have -= 0.5
@@ -100,7 +100,8 @@ scenes += [
     broll('coffee_cloudy', ['은행 금리 자료가'], '작년과 올해 같은 달끼리'),
     board('k1_us_kr_1y', ['한 해 동안 미국 국채금리는', '같은 기간 한국 국채금리는', '한국 쪽이 두 배']),
     broll('newspaper_hand', ['그리고 은행 평균 금리와'], '더 닮은 쪽은 미국이 아니었다'),
-    ai('calendar_hand', ['2013년부터 달마다', '정기예금과 고정형 대출은', '예를 들어 국채가']),
+    # 11/5 PD: 15.2초 한 그림이 zoom 1.08로는 lfrender screen '같은 화면 14.5초'(U5 8초) 거부 → 더 다가가며 옆으로 흐르게(글자·장면 나눔 그대로 — 화면 글자 서명 유지)
+    ai('calendar_hand', ['2013년부터 달마다', '정기예금과 고정형 대출은', '예를 들어 국채가'], z=(1.0, 1.3), pan=-160),
     board('k1_samedir', ['정기예금 평균은 한국', '미국 국채와는 열 달에', '고정형 대출도 한국']),
     broll('dusk_table', ['다만 같이 움직였다는'], '같이 움직였다는 뜻이지 그 때문은 아니다'),
     board('k1_samedir', ['변동형은 오르내림 폭', '미국과 한국 10년', '그래도 은행 평균 금리에']),

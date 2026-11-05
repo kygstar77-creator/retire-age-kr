@@ -1,0 +1,28 @@
+판 그림 | 판 프레임(초) | UI 상자 2개↑ 초 | 가장 큰 글자 중앙 %
+brand | 5 | 0 | 12.1
+k1_two_q.png | 5 | 5 | 6.5
+k1_answer2.png | 11 | 0 | 8.8
+k1_q5.png | 1 | 0 | 5.4
+ask | 23 | 0 | 9.8
+k1_bond_note.png | 4 | 4 | 12.9
+k1_2007.png | 11 | 0 | 7.9
+k1_us_kr_now.png | 9 | 9 | 9.0
+newspaper_hand.mp4 | 1 | 0 | 3.1
+k1_passbook.png | 9 | 0 | 7.3
+k1_dep_bar.png | 6 | 6 | 6.9
+k1_cofix89.png | 28 | 28 | 6.7
+k1_gap.png | 1 | 0 | 5.4
+k1_fix_var.png | 8 | 8 | 8.3
+k1_cofix3.png | 18 | 18 | 9.0
+k1_trap.png | 16 | 1 | 7.9
+k1_us_kr_1y.png | 12 | 12 | 8.3
+calendar_hand.png | 15 | 0 | 3.1
+k1_samedir.png | 2 | 0 | 5.4
+k1_base_steps.png | 9 | 9 | 6.5
+k1_2023.png | 16 | 0 | 4.8
+k1_calendar.png | 8 | 8 | 8.3
+keys_envelope.png | 1 | 1 | 8.3
+k1_reset_flow.png | 17 | 17 | 6.7
+k1_reset_two.png | 19 | 19 | 5.2
+k1_check3.png | 1 | 0 | 5.8
+같은 판 넘음(길이,시작초,한도,추가,간격): [[35.5, 357.4, 20.0, 1, 23.9], [34.4, 411.4, 20.0, 0, 34.4], [33.9, 159.5, 20.0, 0, 33.9], [27.6, 272.9, 20.0, 1, 17.1], [20.4, 80.1, 20.0, 1, 12.5]]

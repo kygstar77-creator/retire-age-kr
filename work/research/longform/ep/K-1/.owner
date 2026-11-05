@@ -17,3 +17,6 @@
 2026-11-05 02:59 | firemap-video-producer 정기 02:1x | 끝 — 받아쓰기 2줄 말 바꿈, editor 서명 대기
 2026-11-05 07:08 | firemap-video-producer 운영실장 07:08 | K-1 2줄 retake·readback·props·text·render_parts
 2026-11-05 07:49 | firemap-video-producer 운영실장 07:08 | 끝 — 2줄 녹음·readback 0·text 5794eb7c, 겹침 검사 No frame found로 렌더 못 함
+2026-11-05 10:17 | firemap-video-producer 정기 10:1x | K-1 렌더(ovcheck 'No frame found' 원인 확인·토막 렌더)
+2026-11-05 14:17 | firemap-video-producer 정기 14:1x | K-1 렌더(10:17 회차 렌더 로그 0바이트·프로세스 없음 → 다시)
+2026-11-05 16:14 | firemap-video-producer 정기 14:1x | 끝 — 렌더 k1_ds.mp4 완료, bgcheck 거부(판 디자인)로 예약 안 함, visual 요청·회의 결정 요청

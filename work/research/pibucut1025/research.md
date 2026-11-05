@@ -85,6 +85,15 @@
 | 월 기준선 | 2,000만원 ÷ 12 | 약 166만 7천원 | S5 · S1 (calc.py) |
 
 # 올리기 전 확인
+- 날짜: 2026-11-06 (발행 당일, 12:40 칸 · 원래 10/26 07:40 칸 몫이 비축으로 밀림)
+- 다시 연 주소(2026-11-06): https://car.withnews.kr/economy/health-dependent-relief-expiry · https://v.daum.net/v/20221115060022218 · https://www.imaeil.com/page/view/2026101106154788977 · https://www.law.go.kr/법령/국민건강보험법/제71조 · https://www.law.go.kr/법령/국민건강보험법시행규칙 · https://www.law.go.kr/법령/국민건강보험법시행규칙/제44조 · https://www.law.go.kr/법령/국민건강보험법시행령/제41조 · https://www.law.go.kr/법령/국민건강보험법시행령/제44조 · https://www.law.go.kr/법령/노인장기요양보험법/제8조 · https://www.law.go.kr/행정규칙/건강보험료경감대상자고시
+- 대조 출처 다시 연 기록: 07:4x firemap-write-b — 법령 API(OC=test)는 '사용자 검증 실패'라 lawweb.py로 시행령 44·41조·시행규칙 44조·법 71조·장기요양법 8조를 raw1106/에 다시 받음 · S7~S9 보도 3곳 200 · S6 고시 페이지 200 · S1 부칙은 웹에서 본문 못 받음(lsPrint 404) — 시행규칙 판이 10/25와 같은 제1202호(2026.9.28)라 부칙 변동 없음으로 봄
+- 기준일: 2026-11-06 현행 법령(시행규칙 제1202호 2026.9.28 · 시행령 제36675호 2026.10.1 — 10/25 받은 판과 같음)
+- 바뀐 것: 없음 — 보험료율 1만분의 719(7.19%)·연금 100분의 50·공적연금 전부 그대로 · 본문은 기준일만 2026년 11월 6일로 고침
+- 새로 찾은 것: 2027년 건강보험료율도 7.19% 동결(9/8 건정심, 보도 검색으로 확인 https://m.etnews.com/20260908000271) — 원문 고시를 안 열어 본문에는 안 씀
+- 조사 뒤 공표: 없음(data/release_calendar.json 해당 없음)
+
+## 이전 확인 기록(10/25)
 - 날짜: 2026-10-25 (발행 전날, 발행 2026-10-26 07:40)
 - 다시 연 주소(2026-10-25): https://www.law.go.kr/법령/국민건강보험법시행규칙 · https://www.law.go.kr/법령/국민건강보험법시행령/제44조 · https://www.law.go.kr/법령/국민건강보험법시행규칙/제44조 · https://www.law.go.kr/법령/국민건강보험법/제71조 · https://www.law.go.kr/법령/국민건강보험법시행령/제41조 · https://www.law.go.kr/행정규칙/건강보험료경감대상자고시 · https://www.imaeil.com/page/view/2026101106154788977 · https://v.daum.net/v/20221115060022218 · https://car.withnews.kr/economy/health-dependent-relief-expiry · https://www.law.go.kr/법령/노인장기요양보험법/제8조
 - 대조 출처 다시 연 기록: S1~S6·S10 22:4x~23:0x 법령 API(lawService.do law·admrul)로 원문 받음(raw/*.xml·*.txt), S7~S9 22:5x curl로 받음(raw/*.html)

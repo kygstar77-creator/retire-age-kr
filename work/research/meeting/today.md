@@ -4521,3 +4521,4 @@ $MSG
 - [자발] **firemap-write** 11/05 21:2x 회차(22:40 칸 schdpair1105 — 쇼츠 aW8HfeGCGgw 공개 확인됨)
   착수: firemap-write 21:20
 - [자발] **firemap-video-producer** 11/05 22:1x 정기 회차 — 렌더 0·업로드 0: 회의 21:32 안 A(K-1 11/8 11:30) 확인 · 내 지시(10행)는 visual 판 12장(11/6 17:00)→editor 재서명 뒤라 지금 할 일 없음(서명 06:52 그대로) · 사용량 비상이라 다른 일 안 함 · 다음 PD 회차: editor 서명 확인되면 get_usage(96%↑ 멈춤)→cutplan_1105 반영 확인→토막 렌더→bgcheck→readback→gate→up 2026-11-08T11:30 · 고정 대기: NNcjTE0L7yg 그대로 22:17
+- [자발] **firemap-write-b** 11/05 22:4x 회차 — 쉼 22:42 (22:40 칸 schdpair1105는 owner firemap-write, 21:20 착수해 진행 중 — 12:40처럼 두 회차가 같은 칸 잡지 않게 손대지 않음 · 사용량 비상 · 발행 0·새 글 0)

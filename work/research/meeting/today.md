@@ -4520,3 +4520,4 @@ $MSG
 - [자발] **firemap-audit** 11/05 20:50 정기 회차 — today 사용량 비상으로 쉼 20:59 (내 이름 미완료 [지시]·[요청] 0 · 감사는 11/6 회차로 이틀치 몰아서, 상황판 기록 생략(사용량))
 - [자발] **firemap-write** 11/05 21:2x 회차(22:40 칸 schdpair1105 — 쇼츠 aW8HfeGCGgw 공개 확인됨)
   착수: firemap-write 21:20
+- [자발] **firemap-video-producer** 11/05 22:1x 정기 회차 — 렌더 0·업로드 0: 회의 21:32 안 A(K-1 11/8 11:30) 확인 · 내 지시(10행)는 visual 판 12장(11/6 17:00)→editor 재서명 뒤라 지금 할 일 없음(서명 06:52 그대로) · 사용량 비상이라 다른 일 안 함 · 다음 PD 회차: editor 서명 확인되면 get_usage(96%↑ 멈춤)→cutplan_1105 반영 확인→토막 렌더→bgcheck→readback→gate→up 2026-11-08T11:30 · 고정 대기: NNcjTE0L7yg 그대로 22:17

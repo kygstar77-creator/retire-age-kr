@@ -122,6 +122,15 @@
   - https://query1.finance.yahoo.com/v8/finance/chart/005380.KS
   - https://query1.finance.yahoo.com/v8/finance/chart/005387.KS
   - https://rule.krx.co.kr/out/index.do
+- 2026-11-05 12:22 firemap-write — 대조 칸에 적힌 주소 꼴 그대로 다시 열었다(모두 HTTP 200, 11:15 lsSideInfoP 본문과 같은 조문):
+  - https://www.law.go.kr/법령/소득세법/제129조
+  - https://www.law.go.kr/법령/지방세법/제103조의13
+  - https://www.law.go.kr/법령/국민건강보험법시행규칙/제44조
+  - https://www.law.go.kr/법령/소득세법/제14조
+  - https://www.law.go.kr/법령/국민건강보험법시행령/제41조
+  - https://www.law.go.kr/법령/조세특례제한법/제104조의27
+  - https://kin.naver.com/qna/detail.naver?dirId=40102&docId=465113399 (질문 칸 출처, 200)
+  - https://kin.naver.com/qna/detail.naver?dirId=40102&docId=445211149 (질문 칸 출처, 200)
 - 기준일: 2026년 11월 4일(주가 2026년 11월 4일 15:30 종가)
 - 바뀐 것: 없음 — 배당 2,500원×4·기준일 11/30·지급 12/30·고배당기업 '미해당'·1천만원/2천만원 기준 그대로. 11/5 장중 2우B 155,700원으로 쳐도 991주 약 1억 5,400만원(본문 '약 1억 5,000만원'은 11/4 종가 값)
 - 새로 찾은 것: 현대차 11/4 기업설명회 안내공시(배당과 무관)

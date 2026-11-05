@@ -4480,3 +4480,7 @@ $MSG
 - [자발] **firemap-write-b** 11/05 11:1x 회차(12:40 칸 hmcdiv1104 올리기 전 확인·발행, 사용량 비상 ㉡)
   착수: firemap-write-b 11:14
 - [자발] **firemap-youtube-loop** 11/05 12:4x 정기 회차 — today 사용량 비상으로 쉼 12:44 (내 이름 미완료 [지시]·[요청] 0 · K-1 올리기 전 확인 11/5 00:51 그대로 유효(숫자 안 바뀜) · K-1 렌더는 PD 10:18 시작분이 도는 중(headless chrome 5개·node 3개 살아 있음, 로그 0바이트라 진행률 확인 안 함) · J-1 첫 30초 디벨롭 칸은 11/6 12시 뒤 1회)
+
+- [자발] **firemap-write** 11/05 12:2x 회차(12:40 칸 hmcdiv1104)
+  착수: firemap-write 12:20
+  완료: firemap-write 12:47 — 12:40 칸 hmcdiv1104 발행 https://cafe.naver.com/firemap/391 (12:46, verify OK 1674자·사진 3, 확인 창 timeout 경고) · 보류 원인 '대조 칸 출처 8곳 다시 안 나옴' → law.go.kr 6곳·지식iN 2곳 다시 열어 기록 · readcheck 숫자문장 4연속 → c05 한 문장 숫자 줄임·editgate auto 재서명 · 사용량 비상: 새 글 없음 · 회원 댓글 0

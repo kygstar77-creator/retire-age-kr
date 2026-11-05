@@ -21,3 +21,4 @@
 - (11/3) 계산기별 이벤트는 같지 않다 — calc_complete는 메인 계산(Result.jsx)만. 연봉·퇴직금·실업급여 '계산 끝'을 물으면 이벤트가 없다고 먼저 적고 *_gain_view로 대신하지 않는다. SQL에서 count(*)·count(distinct)에 별칭 없이 같은 이름 쓰면 JSON 키가 겹쳐 값 하나가 사라진다.
 
 - 2026-11-04: 계산기 3종 깔때기는 firemap_events props.screen(salary·severance·unemployment)과 props.calc(calc_input_start·calc_result)로 잰다. 카페 회원 댓글은 cafecomments.articles(1)[:30]+articles/{n}로 한 번에.
+- 2026-11-05: 일감표 '죽은 회차'는 beat.py 표의 단계 칸부터 본다 — 단계가 남아 있으면 맥박 누락이 아니라 그 단계에서 멈춘 것. 발행 회차가 브라우저를 쓰는 중(selfloop 'PID')이면 보충 발행·verify를 겹쳐 돌리지 않는다.

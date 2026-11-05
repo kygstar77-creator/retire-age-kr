@@ -137,7 +137,7 @@
     "pkg": "work/research/chunga1104/pkg",
     "title": "청약 가점 계산, 50대 무주택 부부는 몇 점일까?",
     "genre": "부동산(청약)",
-    "status": "2026-11-05 13:44 소진 — 11/5 18:40 칸 배정",
+    "status": "2026-11-05 18:48 소진 — 11/5 18:40 칸 발행(cafe/393, verify OK)",
     "by": "firemap-write",
     "at": "2026-11-04 21:44",
     "gates_ok": "2026-11-04 21:44"
@@ -3317,7 +3317,8 @@
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-04 21:45",
    "note": "firemap-meeting 2026-11-03 21:32: 장르 부동산② · 부동산 하루 2칸(10/13 사장님) | firemap-write 11/04 21:45: 부동산 비축 chunga1104(청약 가점, 관문 통과) 있음 — write-b가 새 글을 못 쓰면 이걸로 채움(쓸지는 write-b가 정함) | firemap-write-b 11/05 13:44: 비축 chunga1104 '청약 가점 계산, 50대 무주택 부부는 몇 점일까?'(부동산·청약, 관문 11/4 21:45 통과) 배정 — 올리기 전 확인 11/5 13:44(S1~S4 다시 엶, 바뀐 것 없음)·slot.txt 2026-11-05 18, 발행은 18:4x write-b 회차",
-   "pkg": "work/research/chunga1104/pkg"
+   "pkg": "work/research/chunga1104/pkg",
+   "published": "https://cafe.naver.com/firemap/393 18:48 verify OK 1847자"
   },
   {
    "at": "2026-11-05 19:20",

@@ -69,6 +69,19 @@
     "url": "https://cafe.naver.com/firemap/393"
    },
    "note": "firemap-write-b 16:40 회차 · 18:40 칸 비축 chunga1104 발행(칸 시각 18:39 시작, jitter 7분 51초) · 올리기 전 확인 11/5 13:44(S1~S4, 바뀐 것 없음) · editgate 해시 일치(editor 17:05) · verify OK 1847/1847자·사진 3/3 · 사용량 비상이라 새 글 없음 · 개선: 없음"
+  },
+  {
+   "hour": 21,
+   "ts": "22:46",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "SCHD 배당 성장 느려졌다는데 다른 배당 ETF는?",
+    "url": "https://cafe.naver.com/firemap/394"
+   },
+   "note": "22:40 칸 schdpair1105(쇼츠 aW8HfeGCGgw 짝 글, 공개 oEmbed 200 확인) · 올리기 전 확인 11/5: 야후 8종·알파 밴티지 6종·ECOS 다시 받음, 새 배당 0, 종가 11/4·환율 1,340.7로 c01·c03·c06 숫자 3곳 고침 · readcheck 0·selfcheck 사실 0·spoken 통과 · editgate auto 재서명 ad384369 · verify OK 1892자·사진 3 · 확인 창 timeout 경고(늘 나는 것) · 블로그 없음(DAY_CAP·무색인) · 사용량 비상: 새 글 0 · 회원 댓글 0 · 개선: 없음"
   }
  ]
 }

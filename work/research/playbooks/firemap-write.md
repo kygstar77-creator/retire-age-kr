@@ -223,3 +223,4 @@
 - (2026-11-04 21시) 법령 '별표'는 조문 웹(lawweb.py)에 안 나온다 — lsBylInfoPLinkR.do 페이지를 브라우저로 열어 #pdfFlSeq 값을 읽고 flDownload.do?flSeq=<값>을 curl로 받아 pypdf로 텍스트. 점수표 글은 이해 시험에서 '1년에 N점씩'을 그대로 곱하는 오해가 나온다 → 첫 구간·한 예시(1년이면 4점·10년이면 22점)를 같이 쓴다. 조건 예시('부모님 모시면')를 제목·표지에 올리면 권유로 읽힌다.
 - (2026-11-05 09시) crosscheck 반영본은 낱말을 잘라 먹을 수 있다 — bogeum1104 c01 '신청하는 t-보금자리론이라면'이 '신청하는 t라면'으로 나가기 직전 잡힘(.orig1104cc 대조). 발행 당일 확인 때 `diff c0N.txt.orig* c0N.txt`로 반영 줄만 다시 읽는다. 요일 같은 달력 사실도 출처 줄이 필요하다 — 한국천문연구원 월력 astro.kasi.re.kr/life/pageView/5?search_year=YYYY&search_month=M 이 curl로 받힌다(timeanddate는 403).
 - 11/5: 비축 원고 제목이 그날 쉼표 제목 한도(D-22, 칸 절반)에 걸릴 수 있다 — 발행 회차가 `aitell.py commaday <날짜>`부터 보고, 걸리면 쉼표를 빼고 editgate stamp를 다시 찍는다
+- 11/5: 비축 글의 '○일 종가·환율' 문장은 발행 당일 다시 받아 바꾼다 — 배당 기록이 그대로여도 배당률·원화 환산은 하루 만에 바뀐다(schdpair1105 SCHD 2.97→2.91%)

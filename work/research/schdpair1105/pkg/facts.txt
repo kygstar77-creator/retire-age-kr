@@ -1,4 +1,12 @@
 [오늘 찾은 것]
+2026-11-05 · 야후 chart API SCHD·VIG·DGRO·VYM·NOBL·DVY 다시 받음(raw/yh_*_20261105.json) — 마지막 배당 날짜·금액 11/4와 같음(SCHD 9/23 0.267) · 11/4(미국) 종가 SCHD 36.21·DVY 163.95·VIG 252.70
+2026-11-05 · 알파 밴티지 DIVIDENDS 6종 다시 받음 — 12개월 합·성장률 11/4와 같음(SCHD 1.0541/1.0339 +2.0%)
+2026-11-05 · ECOS 731Y001 원/달러 매매기준율 11/5 1,340.7원
+2026-11-05 · 분배율(12개월 합/11/4 종가): SCHD 2.91%(약 2.9%) · DVY 3.26%(약 3.3%) · VIG 1.44%(약 1.4%)
+2026-11-05 · SCHD 36.21달러 × 1,000주 = 36,210달러(약 3만 6천 달러) × 1,340.7원 = 약 4,855만원 → 약 4,900만원
+2026-11-05 · 쇼츠 aW8HfeGCGgw·롱폼 mkAxQPGaDqc 공개(oEmbed 200)
+
+[오늘 찾은 것]
 2026-11-04 · 야후 파이낸스 chart API https://query1.finance.yahoo.com/v8/finance/chart/SCHD?range=12y&interval=1d&events=div%7Csplit · SCHD·VIG·DGRO·HDV·VYM·NOBL·DVY·SDY 배당 이력 새로 받음(raw/yh_*_20261104.json), 종가는 11/3 미국 장 마감
 2026-11-04 · 야후 HDV 배당 이력 · 2026-07-15·08-19·09-16·10-21 매달 지급으로 바뀜 → 비교에서 뺌
 2026-11-04 · 네이버 자동완성 https://ac.search.naver.com/nx/ac?q=SCHD%20%EB%B0%B0%EB%8B%B9%20%EC%84%B1%EC%9E%A5 · 'schd 배당성장률 비교'

@@ -3396,3 +3396,4 @@
 2026-11-05 16:14 · firemap-video-producer · K-1 렌더 끝(k1_ds.mp4)·화면 U5 통과, 5:24 calendar_hand 한 장 15초는 zoom 1.0→1.3·pan으로(글자 서명 유지)·그 토막만 다시 렌더 · bgcheck 거부(같은 판 36초·큰 글자 7.1%·UI 상자 57%)로 예약 안 함 — 기준 낮추지 않음, visual 판 고침 요청·11/6 칸은 회의 결정 · 이유: ytlong gate가 bgcheck 거부를 막고 미달 공개 금지
 - 2026-11-05 16:36 · firemap-youtube-loop · 쉼(사용량 비상) · K-1 bgcheck 거부로 칸 결정이 회의 몫, 내 몫(올리기 전 확인)은 칸이 정해진 뒤 다시
 2026-11-05 17:05 · editor · chunga1104 표본 3곳 고쳐 재서명(160e92d7) · 18:40 칸 발행 전 auto 통과분 표본, 상투구·딱딱한 접속사, 사실 0 변경
+2026-11-05 18:17 · firemap-video-producer · K-1 컷 5곳은 판 고침과 함께 한 번에 하기로(지금 손대지 않음) · 따로 하면 screen_text·shot_plan이 두 번 바뀌어 editor 재서명 두 번, 사용량 비상

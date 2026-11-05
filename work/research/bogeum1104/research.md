@@ -9,6 +9,7 @@
 - S1 한국주택금융공사 보도자료 2026-11-02 '11월 보금자리론 금리 0.10% 포인트 인상' — 2026-11-04 확인(raw/p600738.html): https://www.hf.go.kr/ko/sub05/sub05_04_05.do?mode=view&articleNo=600738
 - S2 한국주택금융공사 금리안내 2026년 11월(공시일 11/01·11/09) — 2026-11-04 확인(raw/rate.html): https://www.hf.go.kr/ko/interest-rate-guidance.do
 - S3 같은 금리안내 2025년 12월~2026년 10월(srBYear·srBMonth) — 2026-11-04 확인(raw/hist/): https://www.hf.go.kr/ko/interest-rate-guidance.do?srBYear=2026&srBMonth=07
+- S5 한국천문연구원 월력 2026년 11월 — 2026-11-05 확인(raw1105/kasi_cal.html): https://astro.kasi.re.kr/life/pageView/5?search_year=2026&search_month=11
 - S4 한국주택금융공사 보금자리론(일반) 상품소개 — 2026-11-04 확인(raw/sub01_01_01.html): https://www.hf.go.kr/ko/sub01/sub01_01_01.do
 
 ## 경쟁
@@ -70,7 +71,27 @@ bench.md — 블로그 7편. 모두 이번 0.1%p·8일 기한·3억 월 차이(�
 | 규제지역 0.2%p | 규제지역인 경우 0.2%p 가산금리 | S4 |
 | 우대 최대 1.0%p·신혼 0.3%p → 4.90% | 최대 1.0%p 한도 · 신혼가구 0.3%p | S2 |
 | t = 은행에 직접 가서 신청 | 은행에 방문해서 직접신청하는 보금자리론 | S4 |
-| 8일은 일요일 | 2026-11-08 Sunday | 달력 계산 |
+| 8일은 일요일 | 2026년 11월 08일 일요일 | S5 https://astro.kasi.re.kr/life/pageView/5?search_year=2026&search_month=11 |
 
 # 올리기 전 확인
-- (발행 회차가 적는다 — 금리 글이라 발행 당일 S1~S4 다시 열기, 기준일:, 바뀐 것:(금리 숫자), 새로 찾은 것:)
+- 2026-11-05 09:22 firemap-write 발행 당일 확인 — S1~S4 다시 열어 raw1105/에 저장
+  - S1 https://www.hf.go.kr/ko/sub05/sub05_04_05.do?mode=view&articleNo=600738 (raw1105/p600738.html) — 본문 같음(조회수·다음 글만 바뀜), '11월 8일까지 신청 완료하면 인상 전 금리' 그대로
+  - S2 https://www.hf.go.kr/ko/interest-rate-guidance.do (raw1105/rate.html) — 11/04 받은 것과 글자 하나 다르지 않음(공시일 11/01·11/09, 30년 아낌e 5.20)
+  - S3 https://www.hf.go.kr/ko/interest-rate-guidance.do?srBYear=2025&srBMonth=12 (raw1105/hist202512.html) — 같음(30년 3.85)
+  - S4 https://www.hf.go.kr/ko/sub01/sub01_01_01.do (raw1105/sub01_01_01.html) — 같음
+  - S3 7월분 https://www.hf.go.kr/ko/interest-rate-guidance.do?srBYear=2026&srBMonth=07 (raw1105/hist202607.html) — 같음(7/7 30년 5.10)
+  - 질문 https://kin.naver.com/qna/detail.naver?dirId=4010502&docId=495013161 (raw1105/kin.html) — 질문 그대로 있음(신청일·실행일 금리)
+  - S5 https://astro.kasi.re.kr/life/pageView/5?search_year=2026&search_month=11 (raw1105/kasi_cal.html) — 11월 8일 일요일
+- 기준일: 2026-11-05 (금리는 공사 금리안내 공시일 2026-11-09분)
+- 바뀐 것: 없음 — 30년 아낌e 11/9부터 5.20%(11/1~8 5.10%), 작년 12월 3.85% 그대로라 계산(월 +약 24만원·이번 인상분 약 1만 8천원)도 그대로
+- 새로 찾은 것: 공사 보도자료 다음 글은 사장 캠페인 소식(금리와 무관) — 글에 넣을 새 사실 없음
+- 2026-11-06 06:2x firemap-write 발행 당일 다시 확인 — S1~S5·질문 다시 열어 raw1106/에 저장
+  - S1 https://www.hf.go.kr/ko/sub05/sub05_04_05.do?mode=view&articleNo=600738 — 조회수만 바뀜, '11월 8일까지 신청 완료' 그대로
+  - S2 https://www.hf.go.kr/ko/interest-rate-guidance.do — 어제와 같음(30년 아낌e 11/9부터 5.20)
+  - S3 https://www.hf.go.kr/ko/interest-rate-guidance.do?srBYear=2025&srBMonth=12 · https://www.hf.go.kr/ko/interest-rate-guidance.do?srBYear=2026&srBMonth=07 — 같음
+  - S4 https://www.hf.go.kr/ko/sub01/sub01_01_01.do — 같음
+  - S5 https://astro.kasi.re.kr/life/pageView/5?search_year=2026&search_month=11 — 같음
+  - 질문 https://kin.naver.com/qna/detail.naver?dirId=4010502&docId=495013161 — 그대로 있음
+- 기준일: 2026-11-06 (금리는 공사 금리안내 공시일 2026-11-09분)
+- 바뀐 것: 없음 — 30년 아낌e 11/9부터 5.20%(11/1~8 5.10%), 작년 12월 3.85% 그대로, 계산 그대로 · 글 끝 기준일만 11월 4일→11월 6일
+- 새로 찾은 것: 없음(공사 새 금리 공지 없음)

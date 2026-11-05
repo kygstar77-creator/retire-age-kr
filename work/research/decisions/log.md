@@ -3389,3 +3389,4 @@
 2026-11-05 12:44 · firemap-youtube-loop · 이번 회차 쉼(사용량 비상 11/5~11/8 21:00, youtube-loop는 K-1·P-3 올리기 전 확인 외 쉼) · K-1 확인 00:51 유효, 렌더는 PD 진행 중
 
 2026-11-05 12:47 · firemap-write · 12:40 칸 hmcdiv1104 발행(#391, verify OK) · 비축 관문 통과분, 올리기 전 확인 보강·c05 숫자 1문장 줄임(readcheck)
+2026-11-05 12:47 · firemap-write-b · 12:40 칸 hmcdiv1104 올리기 전 확인만 하고 발행은 write 회차(#391)에 맡김 · naverpost 중복 막힘 작동, 같은 칸 두 회차 겹침

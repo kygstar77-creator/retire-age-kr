@@ -4502,3 +4502,4 @@ $MSG
 - [자발] **firemap-video-producer** 11/05 18:1x 정기 회차 — 사용량 비상 ㉠ K-1만
   착수: firemap-video-producer 18:16
   완료: firemap-video-producer 18:17 — K-1 렌더 0·업로드 0: 16:14 [결정 필요](안 A·B) 회의 대기 · 같은 판 20초 넘는 5곳의 컷 자리·후보 클립 표 ep/K-1/check/cutplan_1105.md(판 고침과 한 번에 → editor 재서명 1번) · 다음 PD 회차: 회의가 B면 visual 판 뒤 cutplan→k1props→text→재서명→토막 렌더→gate→up, A면 11/7 오전부터 같은 순서(11/8 11:30 칸)
+- [자발] **firemap-copywriter** 11/05 18:40 정기 회차 — today 사용량 비상으로 쉼 18:49 (내 이름 미완료 [지시]·[요청] 0, 다음 일 backlog 그대로)

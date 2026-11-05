@@ -137,7 +137,7 @@
     "pkg": "work/research/chunga1104/pkg",
     "title": "청약 가점 계산, 50대 무주택 부부는 몇 점일까?",
     "genre": "부동산(청약)",
-    "status": "비축 — 관문 통과(editgate auto fc02b6f3·이해 4차 12명·bench 7편·crosscheck) · 발행 날 올리기 전 확인(S1~S4 다시 열기)·slot.txt만 남음 · 법령 글이라 기한 없음",
+    "status": "2026-11-05 13:44 소진 — 11/5 18:40 칸 배정",
     "by": "firemap-write",
     "at": "2026-11-04 21:44",
     "gates_ok": "2026-11-04 21:44"
@@ -3288,7 +3288,8 @@
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-04 18:42",
    "note": "firemap-meeting 2026-11-03 21:41: 장르 주식 · 레드팀 O1 받아들임 — samdiv1103(#380 조회 223, 최근 23편 1위)과 같은 틀 '○○ 배당금, 몇 주부터 건보료에 잡힐까'를 다른 종목(현대차·KB금융 등 배당 큰 종목, DART·공단 원문)으로 · 같은 문장으로 시작하지 않기 · 11/12 비교: #380과 같은 나이 조회 | firemap-write 18:42: hmcdiv1104 '현대차 배당금 받으면 건보료는 몇 주부터 붙을까?'(주식·배당, 검색 현대차배당금 7,670) 관문 통과 — DART 배당 공시 5건·기업가치 이행현황(고배당기업 미해당)·건보 시행령 41조·시행규칙 44조·소득세법 14·129조·조특법 104조의27 law.go.kr 웹 11/4, 1년 1주당 1만원(우선 1만 100원)으로 1,001주·2,001주·2우B 991주 약 1억 5,000만원·11월 새로 사면 올해 4,001주 직접 계산(경쟁 11편 0편) · 첫 문장 samdiv와 다름 · 이해 3차 9명·crosscheck·editgate auto · 발행은 write-b 12:4x 회차: 올리기 전 확인(S1~S15 다시, 주가·드는 돈은 11/5 종가로 다시 계산) · write-b는 이 칸 새로 쓰지 않음",
-   "pkg": "work/research/hmcdiv1104/pkg"
+   "pkg": "work/research/hmcdiv1104/pkg",
+   "published": "https://cafe.naver.com/ca-fe/cafes/31789001/articles/391 12:46 verify OK 1674자"
   },
   {
    "at": "2026-11-05 16:10",
@@ -3302,10 +3303,11 @@
   {
    "at": "2026-11-05 18:40",
    "kind": "cafe",
-   "item": "TBD — 부동산②",
+   "item": "chunga1104",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-03 21:32: 장르 부동산② · 부동산 하루 2칸(10/13 사장님) | firemap-write 11/04 21:45: 부동산 비축 chunga1104(청약 가점, 관문 통과) 있음 — write-b가 새 글을 못 쓰면 이걸로 채움(쓸지는 write-b가 정함)"
+   "gates_ok": "2026-11-04 21:45",
+   "note": "firemap-meeting 2026-11-03 21:32: 장르 부동산② · 부동산 하루 2칸(10/13 사장님) | firemap-write 11/04 21:45: 부동산 비축 chunga1104(청약 가점, 관문 통과) 있음 — write-b가 새 글을 못 쓰면 이걸로 채움(쓸지는 write-b가 정함) | firemap-write-b 11/05 13:44: 비축 chunga1104 '청약 가점 계산, 50대 무주택 부부는 몇 점일까?'(부동산·청약, 관문 11/4 21:45 통과) 배정 — 올리기 전 확인 11/5 13:44(S1~S4 다시 엶, 바뀐 것 없음)·slot.txt 2026-11-05 18, 발행은 18:4x write-b 회차",
+   "pkg": "work/research/chunga1104/pkg"
   },
   {
    "at": "2026-11-05 19:20",

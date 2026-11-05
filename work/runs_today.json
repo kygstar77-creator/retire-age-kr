@@ -31,6 +31,14 @@
     "url": "https://cafe.naver.com/firemap/391"
    },
    "note": "12:40 칸 hmcdiv1104(비축·관문 통과분). 올리기 전 확인 보강: 대조 칸 law.go.kr 6곳·지식iN 2곳 다시 엶(200) · readcheck 숫자문장 4연속 → c05 첫 문장 숫자 줄임(새 숫자 0)·editgate auto 재서명 · verify OK 1674/1674자·사진 3 · 확인 창 timeout 경고(발행됨) · 사용량 비상이라 새 글·블로그 없음 · 회원 댓글 0 · 개선: 없음"
+  },
+  {
+   "hour": 13,
+   "ts": "13:46",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": null,
+   "note": "12:40 칸은 #391로 이미 발행됨 → 다음 칸 18:40(부동산② TBD)에 비축 chunga1104 배정·올리기 전 확인 11/5(S1~S4 다시 엶, 바뀐 것 없음)·slot.txt 18시 · 발행 0(칸 시각 전) · 사용량 비상이라 새 글 없음 · 개선: 없음(lawweb.py 인자는 '제28조' 꼴 — 숫자만 주면 실패)"
   }
  ]
 }

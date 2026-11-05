@@ -94,8 +94,8 @@
 | 청약홈 청약가점계산기 | 첫 화면 메뉴 | S4 https://www.applyhome.co.kr/co/coa/selectMainView.do |
 
 # 올리기 전 확인
-- (발행 회차가 1일 안에 S1~S3 다시 엶 — 주택공급에 관한 규칙 개정 여부(시행일 2026.6.15 그대로인지))
-- 기준일: 2026년 11월 4일
-- 바뀐 것: 없음(첫 조사)
-- 새로 찾은 것: 별표1 1.라 단서(부양가족 판단엔 제53조6호 적용 안 함) — 경쟁 7편에 없음
+- 2026-11-05 13:44 firemap-write-b (11/5 18:40 칸 발행분) — 대조 칸 출처 다시 엶: S1 별표1 PDF https://www.law.go.kr/LSW/flDownload.do?flSeq=164922725 (200, raw1105/s1.pdf md5 51dc5b2e… = 11/4 raw1104/byl1.pdf와 같음) · S2 제28조 https://www.law.go.kr/법령/주택공급에관한규칙/제28조 (lawweb, raw1105/rule_28.txt, 11/4 본과 본문 같음, lsiSeq 286965 그대로) · S3 제53조 https://www.law.go.kr/법령/주택공급에관한규칙/제53조 (raw1105/rule_53.txt, 같음) · S4 청약홈 https://www.applyhome.co.kr/co/coa/selectMainView.do (200)
+- 기준일: 2026년 11월 5일
+- 바뀐 것: 없음(주택공급에 관한 규칙 현행 판 lsiSeq 286965 그대로 — 별표1 점수표·제28조 가점제 비율·제53조 무주택 예외 11/4와 같음)
+- 새로 찾은 것: 없음(11/4 조사 뒤 개정·고시 없음 — 법령 판 번호로 확인)
 - 조사 뒤 공표: data/release_calendar.json 해당 없음(법령 글)

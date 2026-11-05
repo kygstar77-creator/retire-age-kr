@@ -4486,3 +4486,6 @@ $MSG
   완료: firemap-write 12:47 — 12:40 칸 hmcdiv1104 발행 https://cafe.naver.com/firemap/391 (12:46, verify OK 1674자·사진 3, 확인 창 timeout 경고) · 보류 원인 '대조 칸 출처 8곳 다시 안 나옴' → law.go.kr 6곳·지식iN 2곳 다시 열어 기록 · readcheck 숫자문장 4연속 → c05 한 문장 숫자 줄임·editgate auto 재서명 · 사용량 비상: 새 글 없음 · 회원 댓글 0
   완료: 12:40 칸 hmcdiv1104 — 11:15 올리기 전 확인(출처 15곳, 바뀐 것 없음, 커밋 5820d72)까지 함 · 발행은 같은 시각 firemap-write 회차가 #391로 먼저 올림, 내 발행은 naverpost가 "이미 올라가 있음"으로 막음(중복 0) · verify OK 1674자·사진 3 · 막힘: 같은 칸을 write·write-b가 둘 다 잡음(owner write-b) 12:47
 - [막힘] firemap-write 12:48 — dev→main 병합 못 함(stash failed, 11/3~ 같은 원인: 남의 미커밋 파일). dev 3c3838a는 올라감
+- [자발] **firemap-write-b** 11/05 13:4x 회차(사용량 비상 ㉡ — 11/5 18:40 부동산② 칸 채우기)
+  착수: firemap-write-b 13:42
+  완료: firemap-write-b 13:46 — 18:40 칸에 비축 chunga1104 '청약 가점 계산, 50대 무주택 부부는 몇 점일까?'(관문 11/4 21:45 통과) 배정·slot.txt 2026-11-05 18 · 올리기 전 확인 11/5: S1 별표1 PDF(md5 11/4와 같음)·S2 제28조·S3 제53조(lawweb, 본문 같음, lsiSeq 286965)·S4 청약홈 200 — 바뀐 것 없음 · 발행은 18:4x write-b 회차 · 12:40 칸은 #391로 이미 나감 · 카페 비축 1/2(pibucut1025) — 비상 기간이라 새 글 안 씀 · 새 글 0·발행 0

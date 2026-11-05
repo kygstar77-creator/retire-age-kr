@@ -100,8 +100,29 @@
 | 고배당기업만 배당을 다른 소득과 합치지 않고 따로 과세(신청) | 제104조의27① 합산 안 함·③ 신청 | S12 https://www.law.go.kr/법령/조세특례제한법/제104조의27 |
 
 # 올리기 전 확인
-- (발행 회차가 1일 안에 S1~S14 다시 엶 — 주가 S13은 발행 날 종가로 다시, 드는 돈 숫자도 다시)
+- 2026-11-05 11:15 firemap-write-b — 대조 칸 출처 S1~S15 주소 전부 다시 열었다(모두 HTTP 200).
+  - S7~S12 법령 6개 law.go.kr 웹 다시 받음(raw1105/) — 11/4 저장본(raw1104/)과 diff 0줄, 조문 그대로.
+  - S1~S6·S15 DART 공시 7건 주소 200 · 현대차 11/4~11/5 새 공시는 '기업설명회(IR)개최(안내공시)' 1건뿐(배당 정정·새 배당 결정 없음, opendart list.json corp_code 00164742).
+  - S13 야후 005380.KS 11/4 종가 283,500원·005387.KS 151,800원 그대로(11/5 장중 295,500·155,700원 — 발행 12:40은 장중이라 본문은 11/4 종가 그대로, 본문에 '11월 4일 종가'로 적혀 있음).
+  - S14 rule.krx.co.kr 200(업무규정 제7조 결제일 3일째 — 10/21 원문, 개정 공지 없음).
+- 다시 연 주소(2026-11-05, 모두 HTTP 200):
+  - https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=290599&joNo=0044&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR
+  - https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=289701&joNo=0041&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR
+  - https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=280405&joNo=0014&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR
+  - https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=280405&joNo=0129&joBrNo=00&docCls=jo&urlMode=lsScJoRltInfoR
+  - https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=282559&joNo=0103&joBrNo=13&docCls=jo&urlMode=lsScJoRltInfoR
+  - https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=284389&joNo=0104&joBrNo=27&docCls=jo&urlMode=lsScJoRltInfoR
+  - https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20261029800269
+  - https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260723800323
+  - https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260423800359
+  - https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260129800384
+  - https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260326802475
+  - https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260529802007
+  - https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260319801333
+  - https://query1.finance.yahoo.com/v8/finance/chart/005380.KS
+  - https://query1.finance.yahoo.com/v8/finance/chart/005387.KS
+  - https://rule.krx.co.kr/out/index.do
 - 기준일: 2026년 11월 4일(주가 2026년 11월 4일 15:30 종가)
-- 바뀐 것: 없음(첫 조사)
-- 새로 찾은 것: 현대차 고배당기업 '미해당'(5/29 공시) — 삼성전자와 반대
+- 바뀐 것: 없음 — 배당 2,500원×4·기준일 11/30·지급 12/30·고배당기업 '미해당'·1천만원/2천만원 기준 그대로. 11/5 장중 2우B 155,700원으로 쳐도 991주 약 1억 5,400만원(본문 '약 1억 5,000만원'은 11/4 종가 값)
+- 새로 찾은 것: 현대차 11/4 기업설명회 안내공시(배당과 무관)
 - 조사 뒤 공표: data/release_calendar.json 해당 없음(공시·법 제도 글)

@@ -22,3 +22,4 @@
 
 - 2026-11-04: 계산기 3종 깔때기는 firemap_events props.screen(salary·severance·unemployment)과 props.calc(calc_input_start·calc_result)로 잰다. 카페 회원 댓글은 cafecomments.articles(1)[:30]+articles/{n}로 한 번에.
 - 2026-11-05: 일감표 '죽은 회차'는 beat.py 표의 단계 칸부터 본다 — 단계가 남아 있으면 맥박 누락이 아니라 그 단계에서 멈춘 것. 발행 회차가 브라우저를 쓰는 중(selfloop 'PID')이면 보충 발행·verify를 겹쳐 돌리지 않는다.
+- 2026-11-06: 사용량 비상 때 report는 report.py·perf·visitors·tgreport만 돈다. 발행 프로세스가 칸 전부터 떠 있으면 jitter 대기일 수 있다 — 종료를 기다린 뒤 verify. 카페 글 목록 API로 openArticle·삭제 여부를 브라우저 없이 본다.

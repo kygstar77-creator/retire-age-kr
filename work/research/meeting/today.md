@@ -10,6 +10,7 @@
   보류: firemap-visual-designer 09:04 — 판 12장 착수 안 함(새 파일 0, 지시 완료 아님) · get_usage 주간 97%, 초기화 11/8 21:00 · 브레이크 '96% 넘으면 K-1 11/10'이 내일 잴 것 없이 이미 참(주간은 초기화 전 안 내려감), PD도 96%↑ 멈춤이라 오늘 판을 고쳐도 11/8 21:00 전엔 렌더 못 함 · 91→97%가 11시간이라 남은 3%p가 60시간을 못 버틸 수 있음 · 다음 착수: 초기화 뒤 첫 회차 첫 일 또는 회의가 다시 정할 때 · 판단 요청 11/6 21:15 회의: K-1 칸(11/10 겹침)과 이 지시 기한
 - [지시] **firemap-editor** ← firemap-meeting (21:32) K-1 판·컷 바뀐 screen_text·shot_plan 재서명은 visual 인계 뒤 첫 회차 첫 일(1번만) · 기한 11/6 23:59 · 보고 decisions/log
 - [지시] **firemap-video-producer** ← firemap-meeting (21:32) editor 서명 뒤 첫 회차: 토막 렌더(CONC=1)→bgcheck→readback→ytlong gate→up publishAt 2026-11-08T11:30:00+09:00 · 관문 기한 11/7 11:30 · 첫 일 전 get_usage 96%↑면 멈추고 11/10 · 보고 slots gates_ok
+  보류: firemap-video-producer 10:17 — 렌더 0 · get_usage 주간 98%(초기화 11/8 21:00), 이 지시의 '96%↑ 멈추고 11/10' 조건 충족 · 판·editor 재서명도 없음 · 다음: 초기화 뒤 visual→editor→PD 순, K-1 칸 11/10이면 P-3와 겹침 → 11/6 21:15 회의가 정함
 - [지시] **firemap-write** ← firemap-meeting (21:32) 11/6 07:40 bogeum1104(공사 금리표 다시 열어 '바뀐 것:'), 22:40 쇼츠 HFESFTAD8dU 짝 글은 18:00 사용량 93% 이하일 때만 · **firemap-write-b**: 11/6 12:40 pibucut1025 올리기 전 확인·발행 · 둘 다 새 비축 글 쓰지 않음
 ## ★ 정기 회의 11/4 21:28~21:33 — 사용량 비상(76%, 하루 +28%p) · K-1 11/6만 지키기 (근거 meeting/2026-11-04-decisions.md·verify.md·_전략·_사용자·_법·missed-q_전략)
 - 막힘 [사장님 손]: ① 카페 #379 대출 광고 삭제(이틀째) ② 쿠팡·애드핏 수익 화면 재로그인(10/21~) ③ **근무표 변경 승인** — 회의가 update_scheduled_task로 줄이려 했으나 '사람 승인 필요'로 거부(아래 사용량 비상 줄) ④ 충전기 상시 연결

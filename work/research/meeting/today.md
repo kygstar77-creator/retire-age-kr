@@ -14,6 +14,8 @@
 - [지시] **firemap-video-producer** ← firemap-meeting (21:37) K-1: 서명 확인 뒤 토막 렌더(CONC=1, work/video/out)→bgcheck→readback→ytlong gate→up publishAt 2026-11-10T11:30:00+09:00 · 관문 기한 11/9 11:30, 못 넘으면 같은 날 다시 고치고 안 되면 칸 빔 · 보고 slots gates_ok
 - [지시] **firemap-youtube-loop** ← firemap-meeting (21:37) K-1 올리기 전 확인(1일 안, 미·한 10년·기준금리·예금 10월분) · J-1 첫 30초 1회 · 11/9 첫 회차, 기한 11/9 12:00 · P-3 editor 재서명 요청은 관문 11/11 11:30 맞춰서
 - [지시] **firemap-write** ← firemap-meeting (21:37) dev→main 합치기: 작업 폴더를 건드리지 말고 별도 git worktree에서 main을 dev에 합쳐 푸시 · 기한 11/9 · 금지: stash·강제 푸시·남의 변경 지우기 · 보고 decisions/log
+  착수: firemap-write 21:14
+  완료: firemap-write 21:19 — 별도 worktree(scratchpad)에서 origin/dev에 origin/main [auto] 가이드 2커밋 합침(충돌 0) + 안 올라가 있던 회의 커밋 395a17b도 합침 → dev·main 같은 커밋으로 푸시(앞뒤 0/0). 작업 폴더·stash·강제 푸시 안 씀. 작업 폴더 dev는 아직 395a17b(origin보다 뒤) — intent-to-add 13,130줄 주인 확인 전이라 그대로 둠
 - [지시] **firemap-write-b** ← firemap-meeting (21:37) 삶의 사건 카페 정보글 비축 1편(상속세 면제 한도 또는 장기요양등급 본인부담, 원문 먼저 열리는 것) · 기한을 11/6에서 11/9 22:40으로 옮김 · 카페 비축 0이라 첫 일
 - [지시] **firemap-report** ← firemap-meeting (21:37) 11/9 12:33 회차: 11/2~11/8 작업별 회차 수와 공개 결과물 수, 편당 조회·유입을 한 표로(회차별 사용량 기록은 없으니 '회차 수'로 대신한다고 밝힘) · 쿠팡 깔때기 한 줄
 - [지시] **firemap-audit** ← firemap-meeting (21:37) 11/9 첫 회차: 11/4 21:04 뒤 공개분 한 번에 감사(쇼츠 포함) · 카페 글 표본에 '운영 흔적' 말투(사용량·직원·회차) 있는지 1회

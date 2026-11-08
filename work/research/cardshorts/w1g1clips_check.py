@@ -141,7 +141,9 @@ def layout_rest(layout):
             return d if d.tzinfo else d.replace(tzinfo=datetime.timezone(datetime.timedelta(hours=9)))
         except Exception: return None
     rows = [json.loads(x) for x in open(os.path.join(HERE, 'log.jsonl'), encoding='utf-8') if x.strip()]
-    rows = [r for r in rows if r.get('id') and pub(r) and pub(r) <= now]
+    # 11/9 youtube-loop E-18 판정: 공개 48시간 지난 편만 센다(양쪽 다) — E-17 기준선이 '쇼츠 48시간'이고,
+    # 공개 2시간째 편(11/8 couple)을 몇 주 쌓인 편과 맞대 새 편에 불리했다(today.md 막힘 11/8).
+    rows = [r for r in rows if r.get('id') and pub(r) and pub(r) <= now - datetime.timedelta(hours=48)]
     rows.sort(key=pub)
     try:
         yt = ytupload.service(); ids = [r['id'] for r in rows][-60:]; views = {}

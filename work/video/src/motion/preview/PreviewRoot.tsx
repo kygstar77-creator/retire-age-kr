@@ -1,6 +1,6 @@
 import React from 'react';
 import {Composition} from 'remotion';
-import {TallyFrame} from '../TallyFrame';
+import {TallyFrame, TallyLine} from '../TallyFrame';
 import {ZoomOutOpen, ZoomOutOpenProps} from '../ZoomOutOpen';
 import type {RScene} from '../../R1';
 import {ReverseAsk, ReverseAskProps} from '../ReverseAsk';
@@ -164,6 +164,9 @@ const K1Motion: React.FC<P17> = ({over, cross, dots}) => (
   </Series>
 );
 
+// 11/8 motion: TallyFrame 출처 위 작은 줄(cap) 잘림 시험 — 실제 편 props의 긴 줄을 넣고 줄마다 스틸
+const CapFitTest: React.FC<{title: string; source: string; lines: TallyLine[]}> = ({title, source, lines}) => <TallyFrame title={title} source={source} lines={lines} />;
+
 export const PreviewRoot: React.FC = () => (
   <>
   <Composition id="OpenZoom" component={OpenZoom as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
@@ -217,5 +220,8 @@ export const PreviewRoot: React.FC = () => (
   <Composition id="K1Motion" component={K1Motion as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => { const q = props as unknown as P17; return {durationInFrames: q.over.frames + q.cross.frames + q.dots.frames}; }} />
+  <Composition id="CapFitTest" component={CapFitTest as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => ({durationInFrames: ((props as unknown as {lines: TallyLine[]}).lines).reduce((a, l) => a + l.frames, 0)})} />
   </>
 );

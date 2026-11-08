@@ -69,6 +69,13 @@ export const tallyIdx = (lines: TallyLine[], f: number) => { const st = tallySta
 
 // 출처는 자르지 않고 글자를 줄여 한 줄(x 120~1400)에 넣는다 — 한글 1em, 영문·숫자 0.56em로 어림
 export const srcSize = (src: string) => { const u = [...('출처 ' + src)].reduce((a, c) => a + (/[ㄱ-힝]/.test(c) ? 1 : 0.56), 0); return Math.max(13, Math.min(19, Math.floor((SAFE.textRight - SAFE.left) / u))); };
+// 11/8 motion: 출처 위 작은 줄(cap)도 같은 법 — 22px 고정·nowrap·overflow hidden이 긴 근거를 오른쪽에서 잘랐다(H-3 v5 30곳↑, PD 알림).
+//   한 줄에 들게 22px에서 줄이고 하한은 출처와 같은 13px(새 기준 아님). 13px로도 넘치면 잘리지 않게 두 줄로 접고 위로 한 줄 올린다(작은 글자 출처 포함 2줄 규칙 —
+//   이 경우 3줄이 되므로 capfit.py가 렌더 전에 '대본·props에서 줄여라'로 잡는다).
+export const SMALL_MIN = 13;
+export const smallUnits = (t: string) => [...t].reduce((a, c) => a + (/[ㄱ-힝]/.test(c) ? 1 : /\s/.test(c) ? 0.3 : 0.56), 0);
+export const capLineSize = (cap: string) => Math.max(SMALL_MIN, Math.min(22, Math.floor((SAFE.textRight - SAFE.left) / Math.max(1, smallUnits(cap)))));
+export const capFits = (cap: string) => smallUnits(cap) * SMALL_MIN <= SAFE.textRight - SAFE.left;
 
 // 말 자막 쪽 나누기: 한 쪽 공백 뺀 18자, 5자 이하로 남는 꼬리 쪽은 앞 쪽에 붙인다(caption-spec 4장)
 const CAP_MAX = 18, CAP_TAIL = 5;
@@ -139,7 +146,7 @@ export const TallyFrame: React.FC<{title: string; sub?: string | null; source?: 
       </div>
       {board && (boardCard || bg) ? <div style={{position: 'absolute', left: BOARD.x, top: BOARD.y, width: BOARD.w, height: BOARD.h, background: bg ? 'rgba(255,255,255,0.96)' : '#fff', border: bg ? 'none' : `2px solid ${T.line}`, borderRadius: 24, opacity: o, boxShadow: bg ? '0 20px 60px rgba(0,0,0,0.45)' : undefined}} /> : null}
       {children}
-      {cap ? <div style={{position: 'absolute', left: SAFE.left, top: capTop, maxWidth: SAFE.textRight - SAFE.left, opacity: co, ...F, fontWeight: 700, fontSize: 22, color: bg ? '#f2f3f5' : T.ink2, whiteSpace: 'nowrap', overflow: 'hidden', textShadow: bg ? SH : undefined}}>{cap}</div> : null}
+      {cap ? <div style={{position: 'absolute', left: SAFE.left, top: capFits(cap) ? capTop : capTop - Math.round(SMALL_MIN * 1.3), width: SAFE.textRight - SAFE.left, opacity: co, ...F, fontWeight: 700, fontSize: capLineSize(cap), lineHeight: 1.3, color: bg ? '#f2f3f5' : T.ink2, whiteSpace: capFits(cap) ? 'nowrap' : 'normal', wordBreak: 'keep-all', textShadow: bg ? SH : undefined}}>{cap}</div> : null}
       <TallyCaption lines={lines} capX={capX} />
       {source ? <div style={{...F, fontWeight: 500, fontSize: srcSize(source), color: bg ? '#e8eaee' : T.ink3, textShadow: bg ? SH : undefined, position: 'absolute', left: SAFE.left, top: 864, whiteSpace: 'nowrap'}}>출처 {source}</div> : null}
     </AbsoluteFill>

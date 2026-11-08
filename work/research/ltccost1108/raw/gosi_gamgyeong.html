@@ -1,0 +1,1220 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta http-equiv="Content-TYPE" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+<title>lawFullContents</title>
+<link type="text/css" rel="stylesheet" href="/lm/jquery/jquery-ui.min.css"/>
+<link type="text/css" rel="stylesheet" href="/lm/css/lmx/service/common.css">
+<link type="text/css" rel="stylesheet" href="/lm/css/lmx/service/lawdetailcontent.css" />
+<link type="text/css" rel="stylesheet" href="/lm/css/lmx/service/sub.css">
+<link type="text/css" rel="stylesheet" href="/lm/css/lmx/service/popup.css">
+
+<script type="text/javascript" src="/lm/jquery/jquery-2.2.4.js"></script>
+<script type="text/javascript" src="/lm/jquery/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/lm/lmxmng/javascript/searchKeyword.js"></script>
+<script type="text/javascript" src="/lm/lmxmng/javascript/link.js"></script>
+<script type="text/javascript" src="/lm/lmxmng/javascript/common.js"></script>
+<script type="text/javascript" src="/lm/lmxsrv/javascript/bookMark.js"></script>
+<script type="text/javascript" src="/lm/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/lm/javascript/service/lmxUtil.js"></script>
+<script type="text/javascript" src="/lm/javascript/service/common.js"></script>
+<script type="text/javascript" src="/lm/jquery/popup.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		if("" == "twoView" || "" == "threeView"){
+			$("#lawcontent").css("padding-top", "65px");
+			$(".btn_td").hide();
+		}
+		
+		var w = 0;
+		$(".JO table tbody td").each(function(){
+			if($(this).attr("width") != null && $(this).attr("width").length > 0){
+				w = 0;
+				w = $(this).attr("width") * 1.5;
+				$(this).attr("width", w);
+			}
+		});
+		
+		$(".JO table tbody td p").css("margin-top", "");
+		$(".JO table tbody td p").css("margin-bottom", "");
+		$(".JO table tbody td p").css("margin-right", "");
+		$(".JO table tbody td p").css("margin-left", "");
+		$("table p").removeClass("level1").removeClass("level2").removeClass("level3").removeClass("level4");
+		var url = parent.location.href;
+		if(url.indexOf("/lmxsrv/law/lawDetail.do") != -1) {
+	        window.parent.postMessage({type: 'lawFullContentsLoad'}, "*");
+		}
+		if(url.indexOf("/lmxsrv/law/lawFullView.do") != -1) {
+			restoreFocus();
+		}
+
+	    var url = location.href;
+		if(url.indexOf("MODE=twoView") != -1){
+			restoreFocus();
+		}
+	});
+
+	function thisJoPrint(cseq){
+		showPopup('/lm/lmxsrv/print/lawDetailPrintView.do?SEQ=99&SEQ_HISTORY=595750&SEQ_CONTENTS='+cseq, 'preview', 1024, 768);
+	}
+
+	function thisChangeHistory(){
+		saveFocus();
+		location.href = "/lm/lmxsrv/law/lawFullContent.do?SEQ=99&SEQ_HISTORY="+$("#SEQ_HISTORY").val()+"&hideBookMark=1&MODE=twoView";
+	}
+
+	//개정연혁을 보여준다
+	function thisHistoryShow(){
+		$(".historyContent").show();
+		$(".historyShow").hide();
+		$(".historyHide").show();
+	}
+
+	//개정연혁을 감춘다
+	function thisHistoryHide(){
+		$(".historyContent").hide();
+		$(".historyShow").show();
+		$(".historyHide").hide();
+	}
+
+	//트리메뉴 보기
+	function showTree(law_group){
+		parent.showTree(law_group);
+	}
+
+	//별표 이미지를 보여준다
+	function thisShowAttachImg(seq){
+		$(".showAttachImgSpan"+seq).hide();
+		$(".hideAttachImgSpan"+seq).show();
+		$(".attachImgTr"+seq).show();
+	}
+
+	//별표 이미지를 감춘다
+	function thisHideAttachImg(seq){
+		$(".showAttachImgSpan"+seq).show();
+		$(".hideAttachImgSpan"+seq).hide();
+		$(".attachImgTr"+seq).hide();
+	}
+	
+	//한눈보기 팝업
+	function oneViewImg(seq) {
+		var width = 680;
+		var height = 823;
+		var sw = (document.body.offsetWidth) - width;
+		var sh = 0;
+		var url = "/lm/lmxsrv/newLawImg.do?flSeq=" + seq;
+		window.open(url, '', 'left=' + sw + ', top=' + sh 
+				+', scrollbars=yes, toolbar=no, resizable=yes, status=no, menubar=no, width=' 
+				+ width + 'px,height=' + height + 'px' );
+	}
+
+	// 포커스 유지 함수
+	function saveFocus() {
+		const activeElement = document.activeElement;
+		if (activeElement) {
+			// id 우선, 없으면 name 사용
+			const focusKey = activeElement.id || activeElement.getAttribute("name") || activeElement.getAttribute("class");
+			if (focusKey) {
+	    		sessionStorage.setItem("lastFocusKey", focusKey);
+	    		
+	    		// 속성 체크
+	    		if (activeElement.id) {
+	    			sessionStorage.setItem("lastFocusType", "id");
+	    		} else if (activeElement.getAttribute("name")){
+	    			sessionStorage.setItem("lastFocusType", "name");
+	    		} else if (activeElement.getAttribute("class")) {
+	    			sessionStorage.setItem("lastFocusType", "class");
+	    		} else {
+	    			return;
+	    		}
+			}
+		}
+	}
+
+	function restoreFocus(){
+		const lastFocusKey = sessionStorage.getItem("lastFocusKey");
+		const lastFocusType = sessionStorage.getItem("lastFocusType");
+		
+		if (lastFocusKey && lastFocusType) {
+			var el = null;
+			if (lastFocusType === "id") {
+				el = parent.document.getElementById(lastFocusKey);
+			} else if (lastFocusType === "name") {
+				var keyName = "[name=" + lastFocusKey + "]";
+				el = parent.document.querySelector(keyName);
+			} else if (lastFocusType === "class") {
+				var keyName = "." + lastFocusKey.replaceAll(" ", ".");
+				el = $(keyName);
+			}
+			
+			if (el) {
+				el.focus();
+			}
+			sessionStorage.removeItem("lastFocusKey");
+			sessionStorage.removeItem("lastFocusType");
+		}
+	}
+</script>
+<style>
+	.sr-only {
+	    position: absolute !important;
+	    width: 1px !important;
+	    height: 1px !important;
+	    padding: 0 !important;
+	    margin: -1px !important;
+	    overflow: hidden !important;
+	    clip: rect(0, 0, 0, 0) !important;
+	    white-space: nowrap !important;
+	    border: 0 !important;
+	}
+</style>
+</head>
+<body>
+
+<!-- 2단보기 -->
+
+
+<div id="lawcontent" style="padding-top: 50px;">
+	
+	
+		
+			
+				<div class="lawname" class="ta-center">장기요양 본인부담금 감경에 관한 고시</div>
+				<div class="historyCenter" style="color:#3a3a4a;font-weight:500;text-align:center;">
+					[
+						시행 
+						<script type="text/javascript">showDate('20211201', '6');</script>
+					]
+					[
+						
+							보건복지부고시 제2021-283호
+						
+						<!-- 제/개정일자 -->
+						<script type="text/javascript">showDate('20211125', '6');</script>
+						개정
+					]
+				</div>
+				
+				<div class="historyCenter" style="color:#3a3a4a;font-weight:500;text-align:right;">
+					<!-- 소관부서 -->
+					
+						<p>[ 보건복지부 ]</p>
+					
+				</div>
+				
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 조 -->
+				<a id="000001" name="000001"></a>
+				<a id="c000100000" name="c000100000"></a>
+				
+				
+					<div class="JO" id="20904294">
+				
+					
+						
+							<!-- 조 제목 -->
+							<div class="article">
+								<table border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>&nbsp;제1조 (목적)</td>
+										
+										<td>
+											<ul class="doc_btn">
+												<li class="ml2">
+													<a href="/lm/lmxsrv/law/joHistory.do?SEQ=99&SEQ_HISTORY=595750&SEQ_CONTENTS=20904294" target="_blank" title='조문 연혁 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_paper.png" alt="조문 연혁" title='조문 연혁 새창열림'/>
+													</a>
+												</li>
+												<li class="ml2">
+													<a href="javascript:thisJoPrint(20904294);" title='조문 인쇄 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_print.png" alt="조문 인쇄" title='조문 인쇄 새창열림'/>
+													</a>
+												</li>
+												
+												<li class="ml2 sns_share_sub" id="shareSub20904294">
+													<a href="javascript:void(0);" onclick="javascript:showSnsShare(20904294);">
+														<img src="/lm/images/lmx/service/newimg/icon/ico_sns.png" alt="SNS" title='SNS'/>
+													</a>
+													<div class="sns_popup" id="popup20904294">
+														<ul>
+															<li><a href="javascript:thisJoSnsShare('kakaostory', 99, 595750, 20904294, 'Y');" title="카카오스토리 공유하기  새창 열림">카카오스토리</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('facebook', 99, 595750, 20904294, 'Y');" title="페이스북 공유하기  새창 열림">페이스북</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('twitter', 99, 595750, 20904294, 'Y');" title="트위터 공유하기 새창 열림">트위터</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverBlog', 99, 595750, 20904294, 'Y');" title="네이버 블로그 공유하기 새창 열림">네이버 블로그</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverLine', 99, 595750, 20904294, 'Y');" title="네이버 라인 공유하기 새창 열림">네이버 라인</a></li>
+							                                <!--   기존 URL복사 방식
+							                                	<li><a href="javascript:thisJoClip(99, 595750, 20904294, 'Y');" title="URL 공유하기">URL</a></li>
+							                                -->
+							                                <!-- URL복사 시, URL 경로 변경  - 박상현  -->
+							                                <li><a href="javascript:thisJoRefIdClip(99, 595750, 20904294, 'Y', '000001');" title="URL 공유하기">URL</a></li>
+														</ul>
+														<button class="close" style="height:19px;line-height:1;" onclick="javascript:showSnsShare(20904294);"><img src="/lm/images/lmx/service/sub/close_icon.png" alt="닫기" style="vertical-align:middle;"></button>
+													</div>
+												</li>
+												
+											</ul>
+										</td>
+										
+									</tr>
+								</table>
+							</div>
+						
+							<!-- 조 내용 -->
+							<div class="articleText lawgroup2">
+								 <div class="none level1"><span style="0"> 이 고시는 「노인장기요양보험법」(이하 "법"이라 한다) 제40조제3항 같은 법 시행규칙 제4조제2항제4호, 제35조제1항제3호 및 제36조제2항제3호에 따라 본인부담금 감경대상, 감경률, 절차 및 적용시기 등을 정함을 목적으로 한다.</span></div>
+							</div>
+						
+						
+					
+					
+				</div>
+	        
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 조 -->
+				<a id="000002" name="000002"></a>
+				<a id="c000200000" name="c000200000"></a>
+				
+				
+					<div class="JO" id="20904295">
+				
+					
+						
+							<!-- 조 제목 -->
+							<div class="article">
+								<table border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>&nbsp;제2조 (감경대상 및 감경률)</td>
+										
+										<td>
+											<ul class="doc_btn">
+												<li class="ml2">
+													<a href="/lm/lmxsrv/law/joHistory.do?SEQ=99&SEQ_HISTORY=595750&SEQ_CONTENTS=20904295" target="_blank" title='조문 연혁 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_paper.png" alt="조문 연혁" title='조문 연혁 새창열림'/>
+													</a>
+												</li>
+												<li class="ml2">
+													<a href="javascript:thisJoPrint(20904295);" title='조문 인쇄 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_print.png" alt="조문 인쇄" title='조문 인쇄 새창열림'/>
+													</a>
+												</li>
+												
+												<li class="ml2 sns_share_sub" id="shareSub20904295">
+													<a href="javascript:void(0);" onclick="javascript:showSnsShare(20904295);">
+														<img src="/lm/images/lmx/service/newimg/icon/ico_sns.png" alt="SNS" title='SNS'/>
+													</a>
+													<div class="sns_popup" id="popup20904295">
+														<ul>
+															<li><a href="javascript:thisJoSnsShare('kakaostory', 99, 595750, 20904295, 'Y');" title="카카오스토리 공유하기  새창 열림">카카오스토리</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('facebook', 99, 595750, 20904295, 'Y');" title="페이스북 공유하기  새창 열림">페이스북</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('twitter', 99, 595750, 20904295, 'Y');" title="트위터 공유하기 새창 열림">트위터</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverBlog', 99, 595750, 20904295, 'Y');" title="네이버 블로그 공유하기 새창 열림">네이버 블로그</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverLine', 99, 595750, 20904295, 'Y');" title="네이버 라인 공유하기 새창 열림">네이버 라인</a></li>
+							                                <!--   기존 URL복사 방식
+							                                	<li><a href="javascript:thisJoClip(99, 595750, 20904295, 'Y');" title="URL 공유하기">URL</a></li>
+							                                -->
+							                                <!-- URL복사 시, URL 경로 변경  - 박상현  -->
+							                                <li><a href="javascript:thisJoRefIdClip(99, 595750, 20904295, 'Y', '000002');" title="URL 공유하기">URL</a></li>
+														</ul>
+														<button class="close" style="height:19px;line-height:1;" onclick="javascript:showSnsShare(20904295);"><img src="/lm/images/lmx/service/sub/close_icon.png" alt="닫기" style="vertical-align:middle;"></button>
+													</div>
+												</li>
+												
+											</ul>
+										</td>
+										
+									</tr>
+								</table>
+							</div>
+						
+							<!-- 조 내용 -->
+							<div class="articleText lawgroup2">
+								<div class="hang level1"><span style="0">① 다음 각 호의 어느 하나에 해당하는 자는 본인부담금의 100분의 60을 감경한다.</span></div><div class="ho level2"><span style="0">1. 「의료급여법」제3조제1항제2호부터 제9호까지의 규정에 따른 수급권자</span></div><div class="ho level2"><span style="0">2. 「국민건강보험법 시행규칙」제15조에 따라 국민건강보험공단(이하 "공단"이라 한다)으로부터 건강보험 본인부담액 경감 인정을 받은 자</span></div><div class="ho level2"><span style="0">3. 천재지변 등 보건복지부령으로 정하는 사유로 인하여 생계가 곤란한 자</span></div><div class="ho level2"><span style="0">4. 「국민건강보험법」 제69조제4항 및 제5항의 월별 보험료액(이하 "보험료액"이라 한다)이 국민건강보험 가입자 종류별 및 가입자수별(직장가입자의 경우 당해 피부양자를 포함한다) 보험료 순위 0～25%이하에 해당되며, 직장가입자는 재산이 일정기준 이하인</span></div><div class="hang level1"><span style="0">② 다음에 해당하는 자는 본인부담금의 100분의 40을 감경한다</span></div><div class="ho level2"><span style="0">1. 보험료액이 국민건강보험 가입자 종류별 및 가입자수별(직장가입자의 경우 당해 피부양자를 포함한다) 보험료 순위 25%초과～50%이하에 해당되며, 직장가입자는 재산이 일정기준 이하인자</span></div><div class="hang level1"><span style="0">③ 제1항제4호 및 제2항제1호에 따른 재산기준은「국민건강보험법 시행령」제42조제3항제1호에 해당하는 재산으로, 당해 직장가입자와 그 가입자의 피부양자로 등재된 자 모두의 재산과표액을 합산한 금액이 직장 가입자수별 재산과표액기준 이하여야 한다.</span></div><div class="hang level1"><span style="0">④ 보건복지부장관은 제1항제4호, 제2항제1호 및 제3항에 따른 감경적용 기준을 매년 1월말까지 확정하여 공단에 통보하여야 한다.</span></div>
+							</div>
+						
+						
+					
+					
+				</div>
+	        
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 조 -->
+				<a id="000003" name="000003"></a>
+				<a id="c000300000" name="c000300000"></a>
+				
+				
+					<div class="JO" id="20904296">
+				
+					
+						
+							<!-- 조 제목 -->
+							<div class="article">
+								<table border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>&nbsp;제2조의2 (감경제외대상)</td>
+										
+										<td>
+											<ul class="doc_btn">
+												<li class="ml2">
+													<a href="/lm/lmxsrv/law/joHistory.do?SEQ=99&SEQ_HISTORY=595750&SEQ_CONTENTS=20904296" target="_blank" title='조문 연혁 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_paper.png" alt="조문 연혁" title='조문 연혁 새창열림'/>
+													</a>
+												</li>
+												<li class="ml2">
+													<a href="javascript:thisJoPrint(20904296);" title='조문 인쇄 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_print.png" alt="조문 인쇄" title='조문 인쇄 새창열림'/>
+													</a>
+												</li>
+												
+												<li class="ml2 sns_share_sub" id="shareSub20904296">
+													<a href="javascript:void(0);" onclick="javascript:showSnsShare(20904296);">
+														<img src="/lm/images/lmx/service/newimg/icon/ico_sns.png" alt="SNS" title='SNS'/>
+													</a>
+													<div class="sns_popup" id="popup20904296">
+														<ul>
+															<li><a href="javascript:thisJoSnsShare('kakaostory', 99, 595750, 20904296, 'Y');" title="카카오스토리 공유하기  새창 열림">카카오스토리</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('facebook', 99, 595750, 20904296, 'Y');" title="페이스북 공유하기  새창 열림">페이스북</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('twitter', 99, 595750, 20904296, 'Y');" title="트위터 공유하기 새창 열림">트위터</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverBlog', 99, 595750, 20904296, 'Y');" title="네이버 블로그 공유하기 새창 열림">네이버 블로그</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverLine', 99, 595750, 20904296, 'Y');" title="네이버 라인 공유하기 새창 열림">네이버 라인</a></li>
+							                                <!--   기존 URL복사 방식
+							                                	<li><a href="javascript:thisJoClip(99, 595750, 20904296, 'Y');" title="URL 공유하기">URL</a></li>
+							                                -->
+							                                <!-- URL복사 시, URL 경로 변경  - 박상현  -->
+							                                <li><a href="javascript:thisJoRefIdClip(99, 595750, 20904296, 'Y', '000003');" title="URL 공유하기">URL</a></li>
+														</ul>
+														<button class="close" style="height:19px;line-height:1;" onclick="javascript:showSnsShare(20904296);"><img src="/lm/images/lmx/service/sub/close_icon.png" alt="닫기" style="vertical-align:middle;"></button>
+													</div>
+												</li>
+												
+											</ul>
+										</td>
+										
+									</tr>
+								</table>
+							</div>
+						
+							<!-- 조 내용 -->
+							<div class="articleText lawgroup2">
+								<div class="hang level1"><span style="0">① 「노인복지법」제34조에 따른 노인의료복지시설로 주민등록상 주소지를 변경한 자 중 국민건강보험 지역가입자인 경우에는 제2조제1항제4호 및 제2조제2항제1호에 따른 감경을 적용하지 아니한다. 다만, 다음 각 호에 해당하는 경우는 그러지 아니한다.</span></div><div class="ho level2"><span style="0">1. 노인의료복지시설로 주민등록상 주소지 변경한 달에 「의료급여법」제3조제1항제1호부터 제9호까지의 규정에 따른 수급권자이거나 제2조제1항제2호, 제4호 및 제2조제2항제1호에 따라 감경 적용된 경우</span></div><div class="ho level2"><span style="0">2. 무연고자이거나 그에 준하는 사유에 해당하는 경우</span></div><div class="ho level2"><span style="0">3. 그 밖에 감경적용이 필요하다고 공단 이사장이 정하는 경</span></div><div class="hang level1"><span style="0">② 「국민건강보험법」 제5조에 따른 직장가입자의 피부양자였다가 같은 법 제8조제1항제2호에 따라 단독세대(「국민건강보험법」제69조제5항에 따라 월별 보험료액 산정대상이 본인 단독인 경우를 말한다.) 지역가입자로 자격 변동된 자가 자격 변동 전 부양자였던 직장가입자와 주민등록상 주소지가 동일한 경우에는 제2조제1항제4호 및 제2조제2항제1호에 따른 감경을 적용하지 아니한다. 다만, 다음 각 호에 해당하는 경우는 그러하지 아니한다.</span></div><div class="ho level2"><span style="0">1. 직장가입자의 피부양자에서 지역가입자로 자격이 변동되기 전에 제2조제1항제4호 및 제2조제2항제1호에 따라 감경 적용된 경우</span></div><div class="ho level2"><span style="0">2. 제2조의2제2항에 따라 주민등록상 주소지가 동일한 직장가입자가 배우자 또는 1촌 이내의 직계존비속이 아닌 경우</span></div><div class="ho level2"><span style="0">3. 그 밖에 감경 적용이 필요하다고 공단 이사장이 정하는 경우</span></div>
+							</div>
+						
+						
+					
+					
+				</div>
+	        
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 조 -->
+				<a id="000004" name="000004"></a>
+				<a id="c000400000" name="c000400000"></a>
+				
+				
+					<div class="JO" id="20904297">
+				
+					
+						
+							<!-- 조 제목 -->
+							<div class="article">
+								<table border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>&nbsp;제3조 (감경 절차)</td>
+										
+										<td>
+											<ul class="doc_btn">
+												<li class="ml2">
+													<a href="/lm/lmxsrv/law/joHistory.do?SEQ=99&SEQ_HISTORY=595750&SEQ_CONTENTS=20904297" target="_blank" title='조문 연혁 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_paper.png" alt="조문 연혁" title='조문 연혁 새창열림'/>
+													</a>
+												</li>
+												<li class="ml2">
+													<a href="javascript:thisJoPrint(20904297);" title='조문 인쇄 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_print.png" alt="조문 인쇄" title='조문 인쇄 새창열림'/>
+													</a>
+												</li>
+												
+												<li class="ml2 sns_share_sub" id="shareSub20904297">
+													<a href="javascript:void(0);" onclick="javascript:showSnsShare(20904297);">
+														<img src="/lm/images/lmx/service/newimg/icon/ico_sns.png" alt="SNS" title='SNS'/>
+													</a>
+													<div class="sns_popup" id="popup20904297">
+														<ul>
+															<li><a href="javascript:thisJoSnsShare('kakaostory', 99, 595750, 20904297, 'Y');" title="카카오스토리 공유하기  새창 열림">카카오스토리</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('facebook', 99, 595750, 20904297, 'Y');" title="페이스북 공유하기  새창 열림">페이스북</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('twitter', 99, 595750, 20904297, 'Y');" title="트위터 공유하기 새창 열림">트위터</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverBlog', 99, 595750, 20904297, 'Y');" title="네이버 블로그 공유하기 새창 열림">네이버 블로그</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverLine', 99, 595750, 20904297, 'Y');" title="네이버 라인 공유하기 새창 열림">네이버 라인</a></li>
+							                                <!--   기존 URL복사 방식
+							                                	<li><a href="javascript:thisJoClip(99, 595750, 20904297, 'Y');" title="URL 공유하기">URL</a></li>
+							                                -->
+							                                <!-- URL복사 시, URL 경로 변경  - 박상현  -->
+							                                <li><a href="javascript:thisJoRefIdClip(99, 595750, 20904297, 'Y', '000004');" title="URL 공유하기">URL</a></li>
+														</ul>
+														<button class="close" style="height:19px;line-height:1;" onclick="javascript:showSnsShare(20904297);"><img src="/lm/images/lmx/service/sub/close_icon.png" alt="닫기" style="vertical-align:middle;"></button>
+													</div>
+												</li>
+												
+											</ul>
+										</td>
+										
+									</tr>
+								</table>
+							</div>
+						
+							<!-- 조 내용 -->
+							<div class="articleText lawgroup2">
+								<div class="hang level1"><span style="0">① 공단은 법 제15조에 따른 수급자로 판정된 자(이하 "수급자"라 한다) 제2조제1항 및 제2항 각 호에 해당하는 자로 확인된 경우 본인부담금을 감경한다. 다만, 공단이 제2조제1항제4호 및 제2조제2항제1호의 감경 적용기준에 따른 감경대상 여부를 확인할 수 없는 경우에는 장기요양보험가입자 또는 그 피부양자로부터 본인부담금 감경신청을 받아 본인부담금을 감경할 수 있다</span></div><div class="hang level1"><span style="0">② 제1항의 단서에 따라 장기요양보험가입자 또는 그 피부양자가 본인부담금 감경신청을 하는 경우에는 별지 제1호 서식에 따른 본인부담금 감경신청서를 공단에 제출하여야 한다.</span></div><div class="hang level1"><span style="0">③ 공단은 수급자가 각 호에 해당하게 된 경우, 각 호의 구분에 따라 필요한 조치를 하여야 한다.</span></div><div class="ho level2"><span style="0">1. 제2조의 감경기준에 따른 감경 대상자로 확인된 경우: 별지 제2호 서식의 본인부담금 감경대상자 증명서를 수급자에게 지체없이 송부하여야 한다</span></div><div class="ho level2"><span style="0">2. 제2조에 따라 본인부담금 감경률이 변경된 경우 : 별지 제 2-2호서식의 본인부담금 감경률 변경 통보서를 수급자에게 지체없이 송부하여야 한다</span></div><div class="ho level2"><span style="0">3. 감경대상자에서 제외된 경우: 별지 제3호서식의 본인부담금 감경해지 통보서를 수급자에게 지체없이 송부하여야 한다</span></div>
+							</div>
+						
+						
+					
+					
+				</div>
+	        
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 조 -->
+				<a id="000005" name="000005"></a>
+				<a id="c000500000" name="c000500000"></a>
+				
+				
+					<div class="JO" id="20904298">
+				
+					
+						
+							<!-- 조 제목 -->
+							<div class="article">
+								<table border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>&nbsp;제4조 (감경 적용시기)</td>
+										
+										<td>
+											<ul class="doc_btn">
+												<li class="ml2">
+													<a href="/lm/lmxsrv/law/joHistory.do?SEQ=99&SEQ_HISTORY=595750&SEQ_CONTENTS=20904298" target="_blank" title='조문 연혁 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_paper.png" alt="조문 연혁" title='조문 연혁 새창열림'/>
+													</a>
+												</li>
+												<li class="ml2">
+													<a href="javascript:thisJoPrint(20904298);" title='조문 인쇄 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_print.png" alt="조문 인쇄" title='조문 인쇄 새창열림'/>
+													</a>
+												</li>
+												
+												<li class="ml2 sns_share_sub" id="shareSub20904298">
+													<a href="javascript:void(0);" onclick="javascript:showSnsShare(20904298);">
+														<img src="/lm/images/lmx/service/newimg/icon/ico_sns.png" alt="SNS" title='SNS'/>
+													</a>
+													<div class="sns_popup" id="popup20904298">
+														<ul>
+															<li><a href="javascript:thisJoSnsShare('kakaostory', 99, 595750, 20904298, 'Y');" title="카카오스토리 공유하기  새창 열림">카카오스토리</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('facebook', 99, 595750, 20904298, 'Y');" title="페이스북 공유하기  새창 열림">페이스북</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('twitter', 99, 595750, 20904298, 'Y');" title="트위터 공유하기 새창 열림">트위터</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverBlog', 99, 595750, 20904298, 'Y');" title="네이버 블로그 공유하기 새창 열림">네이버 블로그</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverLine', 99, 595750, 20904298, 'Y');" title="네이버 라인 공유하기 새창 열림">네이버 라인</a></li>
+							                                <!--   기존 URL복사 방식
+							                                	<li><a href="javascript:thisJoClip(99, 595750, 20904298, 'Y');" title="URL 공유하기">URL</a></li>
+							                                -->
+							                                <!-- URL복사 시, URL 경로 변경  - 박상현  -->
+							                                <li><a href="javascript:thisJoRefIdClip(99, 595750, 20904298, 'Y', '000005');" title="URL 공유하기">URL</a></li>
+														</ul>
+														<button class="close" style="height:19px;line-height:1;" onclick="javascript:showSnsShare(20904298);"><img src="/lm/images/lmx/service/sub/close_icon.png" alt="닫기" style="vertical-align:middle;"></button>
+													</div>
+												</li>
+												
+											</ul>
+										</td>
+										
+									</tr>
+								</table>
+							</div>
+						
+							<!-- 조 내용 -->
+							<div class="articleText lawgroup2">
+								<div class="hang level1"><span style="0">① 제2조제1항제2호에 따른 감경은 공단이 「국민건강보험법 시행규칙」제15조에 따라 경감인정을 한 날부터 발생하는 본인부담액부터 적용한다</span></div><div class="hang level1"><span style="0">② 제2조제1항제4호 및 제2조제2항제1호에 따른 감경의 적용시기는  공단이 매월 해당요건을 확인한 날이 속하는 달의 다음 달부터 적용한다. 다만, 다음 각 호 어느 하나에 해당하는 경우에는 각 호의 구분에 따라 감경 적용할 수 있다.</span></div><div class="ho level2"><span style="0">1. 「국민건강보험법」제8조제1항제1호, 제3호 또는 제4호에 따라 국민건강보험 자격을 취득한 자는 취득 후 최초로 산정된 보험료액 및 재산과표액 등이 제2조제1항제4호 또는 제2조제2항제1호에 해당하는 경우 자격취득일부터 적용</span></div><div class="ho level2"><span style="0">2. 장기요양 인정유효기간 시작 날의 직전 달 보험료액 및 재산과표액 등이 제2조제1항제4호 또는 제2조제2항제1호에 해당하는 경우 인정유효기간 시작 날부터 적용       ③ 공단은 「국민건강보험법」 제8조부터 제10조까지의 규정에 따라 가입자격이 취득, 변동 또는 상실되는 때에는 해당 보험료액 및 재산과표액 등에 따른 감경적용기준을 확인하여 감경대상자로 결정하여야 한다.</span></div>
+							</div>
+						
+						
+					
+					
+				</div>
+	        
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 조 -->
+				<a id="000006" name="000006"></a>
+				<a id="c000600000" name="c000600000"></a>
+				
+				
+					<div class="JO" id="20904299">
+				
+					
+						
+							<!-- 조 제목 -->
+							<div class="article">
+								<table border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>&nbsp;제5조 (감경 적용기간)</td>
+										
+										<td>
+											<ul class="doc_btn">
+												<li class="ml2">
+													<a href="/lm/lmxsrv/law/joHistory.do?SEQ=99&SEQ_HISTORY=595750&SEQ_CONTENTS=20904299" target="_blank" title='조문 연혁 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_paper.png" alt="조문 연혁" title='조문 연혁 새창열림'/>
+													</a>
+												</li>
+												<li class="ml2">
+													<a href="javascript:thisJoPrint(20904299);" title='조문 인쇄 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_print.png" alt="조문 인쇄" title='조문 인쇄 새창열림'/>
+													</a>
+												</li>
+												
+												<li class="ml2 sns_share_sub" id="shareSub20904299">
+													<a href="javascript:void(0);" onclick="javascript:showSnsShare(20904299);">
+														<img src="/lm/images/lmx/service/newimg/icon/ico_sns.png" alt="SNS" title='SNS'/>
+													</a>
+													<div class="sns_popup" id="popup20904299">
+														<ul>
+															<li><a href="javascript:thisJoSnsShare('kakaostory', 99, 595750, 20904299, 'Y');" title="카카오스토리 공유하기  새창 열림">카카오스토리</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('facebook', 99, 595750, 20904299, 'Y');" title="페이스북 공유하기  새창 열림">페이스북</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('twitter', 99, 595750, 20904299, 'Y');" title="트위터 공유하기 새창 열림">트위터</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverBlog', 99, 595750, 20904299, 'Y');" title="네이버 블로그 공유하기 새창 열림">네이버 블로그</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverLine', 99, 595750, 20904299, 'Y');" title="네이버 라인 공유하기 새창 열림">네이버 라인</a></li>
+							                                <!--   기존 URL복사 방식
+							                                	<li><a href="javascript:thisJoClip(99, 595750, 20904299, 'Y');" title="URL 공유하기">URL</a></li>
+							                                -->
+							                                <!-- URL복사 시, URL 경로 변경  - 박상현  -->
+							                                <li><a href="javascript:thisJoRefIdClip(99, 595750, 20904299, 'Y', '000006');" title="URL 공유하기">URL</a></li>
+														</ul>
+														<button class="close" style="height:19px;line-height:1;" onclick="javascript:showSnsShare(20904299);"><img src="/lm/images/lmx/service/sub/close_icon.png" alt="닫기" style="vertical-align:middle;"></button>
+													</div>
+												</li>
+												
+											</ul>
+										</td>
+										
+									</tr>
+								</table>
+							</div>
+						
+							<!-- 조 내용 -->
+							<div class="articleText lawgroup2">
+								<div class="hang level1"><span style="0">① 제2조제1항제2호에 따른 감경은 공단이 「국민건강보험법시행규칙」제15조에 따라 경감 제외결정을 한 날까지 적용한다</span></div><div class="hang level1"><span style="0">② 제2조제1항제4호 및 제2조제2항제1호에 따른 감경은 공단이 감경대상자가 감경적용기준에 해당하지 아니함을 확인한 날이 속하는 달까지 적용한다.</span></div>
+							</div>
+						
+						
+					
+					
+				</div>
+	        
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 조 -->
+				<a id="000007" name="000007"></a>
+				<a id="c000700000" name="c000700000"></a>
+				
+				
+					<div class="JO" id="20904300">
+				
+					
+						
+							<!-- 조 제목 -->
+							<div class="article">
+								<table border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>&nbsp;제6조 (세부사항)</td>
+										
+										<td>
+											<ul class="doc_btn">
+												<li class="ml2">
+													<a href="/lm/lmxsrv/law/joHistory.do?SEQ=99&SEQ_HISTORY=595750&SEQ_CONTENTS=20904300" target="_blank" title='조문 연혁 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_paper.png" alt="조문 연혁" title='조문 연혁 새창열림'/>
+													</a>
+												</li>
+												<li class="ml2">
+													<a href="javascript:thisJoPrint(20904300);" title='조문 인쇄 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_print.png" alt="조문 인쇄" title='조문 인쇄 새창열림'/>
+													</a>
+												</li>
+												
+												<li class="ml2 sns_share_sub" id="shareSub20904300">
+													<a href="javascript:void(0);" onclick="javascript:showSnsShare(20904300);">
+														<img src="/lm/images/lmx/service/newimg/icon/ico_sns.png" alt="SNS" title='SNS'/>
+													</a>
+													<div class="sns_popup" id="popup20904300">
+														<ul>
+															<li><a href="javascript:thisJoSnsShare('kakaostory', 99, 595750, 20904300, 'Y');" title="카카오스토리 공유하기  새창 열림">카카오스토리</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('facebook', 99, 595750, 20904300, 'Y');" title="페이스북 공유하기  새창 열림">페이스북</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('twitter', 99, 595750, 20904300, 'Y');" title="트위터 공유하기 새창 열림">트위터</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverBlog', 99, 595750, 20904300, 'Y');" title="네이버 블로그 공유하기 새창 열림">네이버 블로그</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverLine', 99, 595750, 20904300, 'Y');" title="네이버 라인 공유하기 새창 열림">네이버 라인</a></li>
+							                                <!--   기존 URL복사 방식
+							                                	<li><a href="javascript:thisJoClip(99, 595750, 20904300, 'Y');" title="URL 공유하기">URL</a></li>
+							                                -->
+							                                <!-- URL복사 시, URL 경로 변경  - 박상현  -->
+							                                <li><a href="javascript:thisJoRefIdClip(99, 595750, 20904300, 'Y', '000007');" title="URL 공유하기">URL</a></li>
+														</ul>
+														<button class="close" style="height:19px;line-height:1;" onclick="javascript:showSnsShare(20904300);"><img src="/lm/images/lmx/service/sub/close_icon.png" alt="닫기" style="vertical-align:middle;"></button>
+													</div>
+												</li>
+												
+											</ul>
+										</td>
+										
+									</tr>
+								</table>
+							</div>
+						
+							<!-- 조 내용 -->
+							<div class="articleText lawgroup2">
+								 <div class="none level1"><span style="0"> 그 밖에 감경적용에 필요한 세부사항은 공단의 이사장이 정한다.</span></div>
+							</div>
+						
+						
+					
+					
+				</div>
+	        
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 조 -->
+				<a id="000008" name="000008"></a>
+				<a id="c000800000" name="c000800000"></a>
+				
+				
+					<div class="JO" id="20904301">
+				
+					
+						
+							<!-- 조 제목 -->
+							<div class="article">
+								<table border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td>&nbsp;제7조 (재검토기한)</td>
+										
+										<td>
+											<ul class="doc_btn">
+												<li class="ml2">
+													<a href="/lm/lmxsrv/law/joHistory.do?SEQ=99&SEQ_HISTORY=595750&SEQ_CONTENTS=20904301" target="_blank" title='조문 연혁 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_paper.png" alt="조문 연혁" title='조문 연혁 새창열림'/>
+													</a>
+												</li>
+												<li class="ml2">
+													<a href="javascript:thisJoPrint(20904301);" title='조문 인쇄 새창열림'>
+														<img class="image" src="/lm/images/lmx/service/newimg/icon/ico_print.png" alt="조문 인쇄" title='조문 인쇄 새창열림'/>
+													</a>
+												</li>
+												
+												<li class="ml2 sns_share_sub" id="shareSub20904301">
+													<a href="javascript:void(0);" onclick="javascript:showSnsShare(20904301);">
+														<img src="/lm/images/lmx/service/newimg/icon/ico_sns.png" alt="SNS" title='SNS'/>
+													</a>
+													<div class="sns_popup" id="popup20904301">
+														<ul>
+															<li><a href="javascript:thisJoSnsShare('kakaostory', 99, 595750, 20904301, 'Y');" title="카카오스토리 공유하기  새창 열림">카카오스토리</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('facebook', 99, 595750, 20904301, 'Y');" title="페이스북 공유하기  새창 열림">페이스북</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('twitter', 99, 595750, 20904301, 'Y');" title="트위터 공유하기 새창 열림">트위터</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverBlog', 99, 595750, 20904301, 'Y');" title="네이버 블로그 공유하기 새창 열림">네이버 블로그</a></li>
+							                                <li><a href="javascript:thisJoSnsShare('naverLine', 99, 595750, 20904301, 'Y');" title="네이버 라인 공유하기 새창 열림">네이버 라인</a></li>
+							                                <!--   기존 URL복사 방식
+							                                	<li><a href="javascript:thisJoClip(99, 595750, 20904301, 'Y');" title="URL 공유하기">URL</a></li>
+							                                -->
+							                                <!-- URL복사 시, URL 경로 변경  - 박상현  -->
+							                                <li><a href="javascript:thisJoRefIdClip(99, 595750, 20904301, 'Y', '000008');" title="URL 공유하기">URL</a></li>
+														</ul>
+														<button class="close" style="height:19px;line-height:1;" onclick="javascript:showSnsShare(20904301);"><img src="/lm/images/lmx/service/sub/close_icon.png" alt="닫기" style="vertical-align:middle;"></button>
+													</div>
+												</li>
+												
+											</ul>
+										</td>
+										
+									</tr>
+								</table>
+							</div>
+						
+							<!-- 조 내용 -->
+							<div class="articleText lawgroup2">
+								 <div class="none level1"><span style="0"> 보건복지부 장관은 「훈령 · 예규 등의 발령 및 관리에 관한 규정」(대통령훈령 제 334호)에 따라 이 고시에 대하여 2018년 7월1일을 기준으로 매 3년이 되는 시점(6월 30일까지를 말한다)마다 그 타당성을 검토하여 개선 등의 조치를 하여야 한다.</span></div>
+							</div>
+						
+						
+					
+					
+				</div>
+	        
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="9"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2008-160호,2008.12.18></div>
+				<div class="addendaContent" id="20904302">
+                	<div class="addenda_none"><span style="0">이 고시는 2009년 1월 1일부터 시행한다.</span></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="11"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2009-108호,2009.6.16></div>
+				<div class="addendaContent" id="20904303">
+                	<div class="addenda_none"><span style="0">(시행일)이 고시는 2009년 7월 1일부터 시행한다.</span></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="14"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2009-150호,2009.8.24></div>
+				<div class="addendaContent" id="20904304">
+                	<div class="addenda_none"><span style="0">이 고시는 2009년 8월 24일부터 시행한다.</span></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="18"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2010-13호,2010.1.27></div>
+				<div class="addendaContent" id="20904305">
+                	<div class="addenda_none"><span style="0">(시행일)이 고시는 2010년 2월 1일부터 시행한다.</span></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="23"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2011-14호,2011.1.31></div>
+				<div class="addendaContent" id="20904306">
+                	<div class="addenda_none"><span style="0">(시행일)이 고시는 2011년 1월 31일부터 시행한다.</span></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="29"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2012-12호,2012.1.26></div>
+				<div class="addendaContent" id="20904307">
+                	<div class="addenda_none"><span style="0">(시행일)이 고시는 2012년 1월 31일부터 시행한다.</span></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="36"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2012-106호,2012.8.28></div>
+				<div class="addendaContent" id="20904308">
+                	<div class="addenda_none"><span style="0">(시행일) 이 고시는 2012년 9월 1일부터 시행한다.</span></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="44"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2012-164호,2012.12.18></div>
+				<div class="addendaContent" id="20904309">
+                	<div class="addenda_none"><span style="0">(시행일) 이 고시는 2013년 1월 1일부터 시행한다.</span></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="53"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2013-188호,2013.12.4></div>
+				<div class="addendaContent" id="20904310">
+                	<div class="addenda_none"><span style="0">이 고시는 2014년 1월 1일부터 시행한다.</span></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="63"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2015-7호,2015.1.30.></div>
+				<div class="addendaContent" id="20904311">
+                	<div class="addenda_none"><span style="0">이 고시는 2015년 2월 1일부터 시행한다.</span></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="74"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2016-7호,2016.1.26.></div>
+				<div class="addendaContent" id="20904312">
+                	<div class="addenda_none"><span style="0">이 고시는 2016년 2월 1일부터 시행한다.</span></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="86"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2017-10호,2017.1.24.></div>
+				<div class="addendaContent" id="20904313">
+                	<div class="addenda_none"><span style="0">이 고시는 2017년 2월 1일부터 시행한다.</span></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="99"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2018-128호,2018.6.28.></div>
+				<div class="addendaContent" id="20904314">
+                	<div class="JO"><div class="article">제1조(시행일)</div><div class="none level1"><span style="0">이 고시는 2018년 7월 1일부터 시행한다. 다만 제2조, 제3조제3항의 개정규정은 2018년 8월 1일부터 적용한다.</span></div></div><div class="JO"><div class="article">제2조(본인일부부담금 감경 적용에 관한 특례)</div><div class="hang level1"><span style="0">① 제2조제1항제4호 및 제2조제2항제1호의 개정에도 불구하고 종전 규정에 따라 본인일부부담금을 감경 받고 있는 직장가입자의 경우 재산과표액이 종전 규정 별표에 정한 감경 적용기준에 해당되면 직장 보험료액만을 기준으로 제2조에 따라 감경한다.</span></div><div class="hang level1"><span style="0">② 법률 제14776호 국민건강보험법 일부개정법률 부칙 제4조제1호에 따라 감액 받은 지역 보험료액이 종전 규정 별표에 정한 감경 적용기준에 해당되는 지역가입자는 제2조제1항에 따라 감경한다.</span></div><div class="hang level1"><span style="0">① 제2조제1항제4호 및 제2조제2항제1호의 개정에도 불구하고 종전 규정에 따라 본인일부부담금을 감경 받고 있는 직장가입자의 경우 재산과표액이 종전 규정 별표에 정한 감경 적용기준에 해당되면 직장 보험료액만을 기준으로 제2조에 따라 감경한다.</span></div><div class="hang level1"><span style="0">③ 제1항 및 제2항에도 불구하고 다음 각 호 어느 하나에 해당하는 경우에는 확인한 날이 속하는 달까지만 본인일부부담금을 감경한다.</span></div><div class="hang level1"><span style="0">① 제2조제1항제4호 및 제2조제2항제1호의 개정에도 불구하고 종전 규정에 따라 본인일부부담금을 감경 받고 있는 직장가입자의 경우 재산과표액이 종전 규정 별표에 정한 감경 적용기준에 해당되면 직장 보험료액만을 기준으로 제2조에 따라 감경한다.</span></div><div class="ho level2"><span style="0">1. 제1항에 따라 감경을 적용받던 직장가입자의 자격이 변동된 경우</span></div><div class="hang level1"><span style="0">① 제2조제1항제4호 및 제2조제2항제1호의 개정에도 불구하고 종전 규정에 따라 본인일부부담금을 감경 받고 있는 직장가입자의 경우 재산과표액이 종전 규정 별표에 정한 감경 적용기준에 해당되면 직장 보험료액만을 기준으로 제2조에 따라 감경한다.</span></div><div class="ho level2"><span style="0">2. 제2항에 따라 감경을 적용받던 지역가입자가 대통령령 제28693호 국민건강보험법 시행령 부칙 제2조제3항제1호 및 제2호에 따라 감액적용에서 제외된 경우</span></div><div class="hang level1"><span style="0">① 제2조제1항제4호 및 제2조제2항제1호의 개정에도 불구하고 종전 규정에 따라 본인일부부담금을 감경 받고 있는 직장가입자의 경우 재산과표액이 종전 규정 별표에 정한 감경 적용기준에 해당되면 직장 보험료액만을 기준으로 제2조에 따라 감경한다.</span></div></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="115"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2019-18호,2019.1.29.></div>
+				<div class="addendaContent" id="20904315">
+                	<div class="addenda_none"><span style="0">이 고시는 2019년 2월 1일부터 시행한다. 다만, 이 고시의 ‘본인부담금’ 용어개정은 「노인장기요양보험법」법률 제15881호의 시행일부터 시행한다.</span></div><div class="addenda_hang"><span style="0">① 제2조제1항제4호 및 제2조제2항제1호의 개정에도 불구하고 종전 규정에 따라 본인일부부담금을 감경 받고 있는 직장가입자의 경우 재산과표액이 종전 규정 별표에 정한 감경 적용기준에 해당되면 직장 보험료액만을 기준으로 제2조에 따라 감경한다.</span></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="130"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2019-292호,2019.12.24.></div>
+				<div class="addendaContent" id="20904316">
+                	<div class="JO"><div class="article">제1조(시행일)</div><div class="none level1"><span style="0">이 고시는 2020년 1월 1일부터 시행한다. 다만, 이 고시 제2조의2는 2020년 1월에 해당요건을 확인하여 2020년 2월 1일부터 적용한다.</span></div></div><div class="JO"><div class="article">제2조(감경제외대상에 관한 감경적용 특례)</div><div class="none level1"><span style="0">제2조의2에 따라 부칙 제1조의 적용시기부터 감경제외된 자의 감경제외사유가 소멸되고, 제2조제1항제4호 및 제2조제2항제1호에 따른 감경대상에 해당하는 경우 제4조제2항에도 불구하고 제외일부터 감경 적용할 수 있다.</span></div></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="148"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2020-300호,2020.12.22.></div>
+				<div class="addendaContent" id="20904317">
+                	<div class="JO"><div class="article">제1조(시행일)</div><div class="none level1"><span style="0">이 고시는 2021년 1월 1일부터 시행한다. 다만, 이 고시 제2조의2제2항는 2021년 1월에 해당요건을 확인하여 2021년 2월 1일부터 적용한다.</span></div></div><div class="JO"><div class="article">제2조(감경제외대상에 관한 감경적용 특례)</div><div class="hang level1"><span style="0">① 제2조의2제1항에 따라 부칙(2019-292호) 제1조의 적용시기부터 감경제외된 자의 감경제외사유가 소멸되고, 제2조제1항제4호 및 제2조제2항제1호에 따른 감경대상에 해당하는 경우 제4조제2항에도 불구하고 제외일부터 감경 적용할 수 있다.</span></div><div class="hang level1"><span style="0">② 제2조의2제2항에 따라 부칙 제1조의 적용시기부터 감경제외된 자의 감경제외사유가 소멸되고, 제2조제1항제4호 및 제2조제2항제1호에 따른 감경대상에 해당하는 경우 제4조제2항에도 불구하고 제외일부터 감경 적용할 수 있다.</span></div><div class="hang level1"><span style="0">① 제2조의2제1항에 따라 부칙(2019-292호) 제1조의 적용시기부터 감경제외된 자의 감경제외사유가 소멸되고, 제2조제1항제4호 및 제2조제2항제1호에 따른 감경대상에 해당하는 경우 제4조제2항에도 불구하고 제외일부터 감경 적용할 수 있다.</span></div></div><div class="JO"><div class="article">제3조(유효기간)</div><div class="hang level1"><span style="0">① 부칙 제2조제1항의 규정은 2021년 1월 31일까지 효력을 가진다.</span></div><div class="hang level1"><span style="0">② 부칙 제2조제2항의 개정규정은 2022년 1월 31일까지 효력을 가진다.</span></div><div class="hang level1"><span style="0">① 부칙 제2조제1항의 규정은 2021년 1월 31일까지 효력을 가진다.</span></div></div>
+                </div>
+			
+		
+	
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!-- 부칙 -->
+				<a name="168"></a>
+				<a name=""></a>
+				<div class="addenda">부칙 <제2021-283호, 2021.11.25.></div>
+				<div class="addendaContent" id="20904318">
+                	<div class="JO"><div class="article">제1조(시행일)</div><div class="none level1"><span style="0">이 고시는 2021년 12월 1일부터 시행한다.</span></div></div>
+                </div>
+			
+		
+	
+</div>
+
+
+
+<form id="linkFrom" name="linkFrom">
+    <input type="hidden" id="OC" name="OC" value='kdhcliss'/>
+    <input type="hidden" id="ID" name="ID"/>
+	<input type="hidden" id="JO" name="JO"/>
+</form>
+
+<script type="text/javascript">
+	
+	if("0" != "1"){
+		$(".historyContent").hide();
+	}else if("0" == "1"){
+		$(".historyShow").hide();
+	}
+</script>
+</body>
+</html>

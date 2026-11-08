@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-08 21:49",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "요양원 비용/한 달 얼마",
+ "num": "1등급 약 56만원",
+ "sub": "보험 몫 20% · 식재료비는 따로",
+ "label": "공단 2026년 기준",
+ "src": "국민건강보험공단 월 한도액 및 급여비용(2026.1.1)",
+ "icon": "shield-plus",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 123,
+ "num_px": 91,
+ "sub_px": 44,
+ "board": [
+  "pibucut1025",
+  "bogeum1104",
+  "schdpair1105",
+  "chunga1104",
+  "isacut1104",
+  "hmcdiv1104",
+  "yellow1105",
+  "renewpair1102",
+  "rentrep1104",
+  "usrate1104"
+ ]
+}

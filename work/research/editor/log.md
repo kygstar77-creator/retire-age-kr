@@ -1,3 +1,11 @@
+## 2026-11-09 07:13 · 정기(06:50 회차) — K-1 재서명·P-3 두 건·W-3·aitell 같은 날 검사
+- K-1 screen_text(편집 07:05): 새 글자 = motion over·cross·dots 라벨·제목·출처 + Pexels 출처 줄 9개 · 숫자 facts와 일치 · 대본·say 해시 그대로 · lfrender check 관문 통과
+- P-3 0:2 '어디쯤일까요?' 재서명(aitell say 3.4·script 89.9/16%) · script 61행 '- - ' 오타 고침 → 자막 scenes.18 '- 집 같은…' 새던 것 · voice.json text 고침은 PD 요청 · screen_text stamp는 재녹음 뒤
+- W-3 하이닉스 새 줄 6줄+2줄: 고침 0(say 6.3·script 70.9/2%) · 재서명
+- aitell: sameday_warn(끝 문장·소제목 같은 날 3칸 경고)·video_check(A83·A36 첫 덩어리) — 11/4 387~389 끝 문장 3칸, 383·386·389·394 영상 줄 걸림
+- 표본: 지난 12시간 자동 통과 0건(사용량 정지 뒤) → 대기 nhis11_1109 미리 읽음, 고칠 곳 없음
+- 새로 배운 것: 대본 '- ' 목록 기호 오타는 voice.json text로 넘어가 자막에 그대로 뜬다 — screen_text 볼 때 줄 머리 '- '를 grep
+
 ## 2026-11-08 21:33 · 정기(초기화 뒤 첫 회차) — RT-1 재서명·점검표 A80·A81
 - RT-1 say_v1/script.md v1.8: 11/4 서명 해시 그대로 확인 → 127행 '짧게 짚을게요' 빈 예고 지움(A45) · aitell say 10.6→10.6·script 57.0→57.5/1,000·9% · humanlike AI 티 0.0/100 · 재서명 c2be8ccf/82ab73ad
 - 점검표: A80 상상 유도·A81 공유 부탁·A45 재발 표현을 aitell script_habits에 더함 · 대기 대본 8편 0줄 · humanlike --ref 돎

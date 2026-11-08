@@ -187,7 +187,7 @@ SUMMARY_END = re.compile(r'한눈에|정리|요약')
 TITLE_WARN_LEN = 30     # D-23: 상위 카페 제목 3,908개 길이 중앙 20자(growth/cafe-copy-1019) — 30자 넘으면 경고만
 
 
-def frame_check(pkg):
+def frame_check(pkg, strict=False):
     """카페 틀(기준 리뉴얼 10/19, registry D-18~D-23). 어긴 곳 목록.
     D-18 소제목 수는 막지 않는다(0~6 허용, 7개 넘으면 경고) — 800자 넘는 상위 글 52편 중 33편이 소제목 없이 문단으로만.
     D-19 끝 '한눈에 정리'(정리·요약) 필수, FAQ는 선택 — 사장님 10/19 "한 편만 봐도 … 전부 이해".
@@ -228,6 +228,9 @@ def frame_check(pkg):
             if tot - n > cap: bad.append(f'{day} 카페 쉼표 제목 {tot - n}편 > 하루 칸 절반 {cap}편 — 이 제목을 쉼표 없이(D-22)')
     sp2 = os.path.join(pkg, 'slot.txt')
     if (open(sp2, encoding='utf-8').read().strip()[:10] if os.path.exists(sp2) else '9999') >= OPEN_FROM: bad += opening_check(pkg)
+    vb = video_check(pkg)   # 11/9 editor ㉢㉣: YT_FROM 칸부터 막음, 그 전 칸은 경고(frame 명령=strict는 다 보임)
+    if strict or day1 >= YT_FROM: bad += vb
+    else: [print('[경고·11/10 칸부터 막음]', e) for e in vb]
     return bad
 
 
@@ -394,6 +397,69 @@ def sameday_check(day, pkg=None):
     return over, endbad
 
 
+# 11/9 editor(지시 1103 ④, 근거 growth/cafe-gap-1109.md · 11/4 387·388·389가 모두 '궁금한 점은 질문·고민 게시판에 남겨 주세요.'로 끝남) — 경고만.
+#   ㉠ 독자가 마지막으로 읽는 문장(※·출처·주소·'관련 영상' 줄은 건너뜀)이 같은 날 3칸 이상 같으면
+#   ㉡ 소제목 글자가 같은 날 3칸 이상 같으면('한눈에 정리'·FAQ처럼 D-19가 시키는 끝 소제목은 뺌)
+TAIL_SKIP = re.compile(r'\s*(※|출처\s*[:：]|##|■|\||관련\s*영상|쇼츠\s*[:：]|영상\s*[:：])|.*https?://')
+HEAD_SKIP = re.compile(r'한눈에|정리|요약|FAQ|자주\s*묻는')
+
+
+def last_sentence(pkg):
+    """독자가 마지막으로 읽는 본문 문장(※·출처·주소 줄 건너뜀). 없으면 ''."""
+    _, files = pkg_text(pkg)
+    lines = [ln for f in files for ln in open(f, encoding='utf-8').read().splitlines() if ln.strip() and not TAIL_SKIP.match(ln)]
+    ss = sentences(lines[-1]) if lines else []
+    return ' '.join(ss[-1].split()) if ss else ''
+
+
+def head_keys(pkg):
+    """소제목 글자(앞 기호 뺌) 집합 — 끝 정리 소제목은 뺀다."""
+    text, _ = pkg_text(pkg)
+    hs = {' '.join(re.sub(r'^\s*(##+|■)\s*', '', ln).split()) for ln in text.splitlines() if re.match(r'\s*(##\s|■)', ln)}
+    return {h for h in hs if h and not HEAD_SKIP.search(h)}
+
+
+def sameday_warn(day, pkg=None):
+    """같은 날 카페 칸끼리 ㉠ 끝 문장 ㉡ 소제목 글자가 END_SAME_MIN칸 이상 같은지. 경고 줄 목록(막지 않음)."""
+    items = _day_pkgs(day)
+    me = os.path.basename(os.path.dirname(os.path.abspath(pkg))) if pkg else None
+    if pkg and me not in [i for i, _ in items]: items.append((me, pkg))
+    out = []
+    tails = collections.defaultdict(list)
+    for i, d in items:
+        s = last_sentence(d)
+        if len(s) >= 6: tails[s].append(i)
+    for k, v in tails.items():
+        if len(v) >= END_SAME_MIN and (not me or me in v):
+            out.append(f"끝 문장 '{k[:30]}' {len(v)}칸({', '.join(v)}) — 같은 날 {END_SAME_MIN}칸 이상, 글마다 다른 마지막 문장으로(A75)")
+    heads = collections.defaultdict(list)
+    for i, d in items:
+        for h in head_keys(d): heads[h].append(i)
+    for k, v in heads.items():
+        if len(v) >= END_SAME_MIN and (not me or me in v):
+            out.append(f"소제목 '{k[:30]}' {len(v)}칸({', '.join(v)}) — 같은 날 {END_SAME_MIN}칸 이상 같은 소제목(템플릿 신호)")
+    return out
+
+
+# 11/9 editor(지시 1103 ④): 영상 주소 — ㉢ 같은 유튜브 주소가 한 글에 2번(A83, 386 NNcjTE0L7yg) ㉣ 첫 덩어리(c00)에 영상 주소 줄(A36 확장,
+#   383·389·394 '쇼츠: https://youtu.be/…'가 첫 덩어리 6~7행 — 지시문의 '첫 세 줄'로는 하나도 안 걸려 첫 덩어리 전체를 본다). 영상 안내는 끝 '관련 영상' 1줄.
+YT_FROM = '2026-11-10'   # 이날 칸부터 frame에서 막는다(그 전 칸은 gate에서 경고만, frame 명령은 날짜 없이 다 보임). 공개 글은 고치지 않음
+YT_ID = re.compile(r'(?:youtu\.be/|youtube\.com/(?:watch\?v=|shorts/))([\w-]{11})')
+
+
+def video_check(pkg):
+    """㉢·㉣ 어긴 곳 목록."""
+    _, files = pkg_text(pkg)
+    bad = []
+    ids = collections.Counter(m for f in files for m in YT_ID.findall(open(f, encoding='utf-8').read()))
+    for v, n in ids.items():
+        if n >= 2: bad.append(f'A83 같은 영상 주소 {v} {n}번 — 끝 관련 영상 1줄만')
+    if files:
+        for k, ln in enumerate(open(files[0], encoding='utf-8').read().splitlines(), 1):
+            if YT_ID.search(ln): bad.append(f'A36 첫 덩어리 {os.path.basename(files[0])} {k}행 영상 주소 줄 "{ln.strip()[:30]}" — 빼고 끝 관련 영상 1줄로')
+    return bad
+
+
 RECENT_END_N = 2   # RULES 238: 최근 공개 카페 2편과 끝말이 같으면 3연속 — 막는다(날을 넘어도)
 
 
@@ -521,6 +587,7 @@ def gate_pkg(pkg):
             # 10/17 audit: endbad를 [경고]만 찍어 '얼마' 끝말이 하루 5칸 나갔다 — 막는다(10/18 칸부터)
             if endbad and day0 >= END_BLOCK_FROM: return False, '같은 날 끝말 반복 — ' + '; '.join(endbad), endbad
             for e in endbad: print('[경고]', e)
+            for e in sameday_warn(day0, pkg): print('[경고]', e)
             if day0 >= END_BLOCK_FROM:
                 rb = recent_end_check(pkg)
                 if rb: return False, rb, [rb]
@@ -838,10 +905,11 @@ def main(a):
     if a[0] == 'sameday':
         over, endbad = sameday_check(a[1])
         for x in over + endbad: print('걸림:', x)
+        for x in sameday_warn(a[1]): print('경고:', x)
         print(f'{a[1]} 같은 날 칸 검사 — ' + ('통과' if not (over or endbad) else f'숫자 겹침 {len(over)}건·끝말 {len(endbad)}건'))
         return 5 if (over or endbad) else 0
     if a[0] == 'frame':
-        bad = frame_check(a[1])
+        bad = frame_check(a[1], strict=True)
         if not bad: print('카페 틀 v2 통과', a[1]); return 0
         print('카페 틀 v2 어김', a[1]); [print('  ', b) for b in bad]; return 5
     if a[0] == 'cafe3':   # 10/22: D-17 글자 수(경고)·상대 날짜·A53(막음) — 날짜 상관없이 다 보인다

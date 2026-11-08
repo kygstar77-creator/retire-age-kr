@@ -23,8 +23,8 @@ CR = {c['id']: c for c in json.load(open(os.path.join(EP, 'stock', 'credits.json
 STOCK = {'newspaper_hand': (5905282, 8.0), 'loan_papers': (7821634, 7.3), 'rain_window': (4786522, 90.1),
          'coffee_cloudy': (6343938, 10.9), 'notebook_hand': (6326847, 12.5), 'dusk_table': (6780621, 6.0),
          # 11/8 PD: 판끼리는 ffmpeg 컷이 안 잡혀(점수 0.09~0.15) 20초 넘는 판 묶음 9곳에 실사 — 얼굴·상표·외국 지폐 없는 것만(stock/_contact*.jpg 눈 확인)
-         'news_cup': (32114693, 12.5), 'rain_drops': (5366344, 12.0), 'money_count': (5981351, 25.2), 'money_pen': (6327790, 19.8), 'cup_stir': (946148, 21.5),
-         'notepad_calc': (5981346, 37.1), 'water_drops': (36408448, 12.0), 'empty_office': (5716999, 20.6), 'dining_room': (5823595, 14.0)}   # 길이는 11/3 ffmpeg 실측
+         'news_cup': (6975845, 12.5), 'rain_drops': (5366344, 12.0), 'money_count': (5466763, 25.2), 'money_pen': (1188938, 19.8), 'cup_stir': (946148, 21.5),
+         'notepad_calc': (29303349, 37.1), 'water_drops': (16648343, 12.0), 'empty_office': (5716999, 20.6), 'dining_room': (11099870, 14.0)}   # 길이는 11/3 ffmpeg 실측
 
 def L(t, cap=None):
     hit = [i for i, l in enumerate(ALL) if l['text'].startswith(t)]; assert len(hit) == 1, (t, hit)

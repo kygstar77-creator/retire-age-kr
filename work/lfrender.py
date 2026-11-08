@@ -341,6 +341,11 @@ def render(ep, extra=(), vid=VID):
             if _sb: ok = False; out += ['거부 · 장면 구상(shot_plan.md): ' + x for x in _sb]
     except FileNotFoundError: pass
     o_ok, o_lines = overlap_check(ep, vid); ok &= o_ok; out += o_lines
+    # 11/9 PD: motion 23:21 제안 — capfit 경고만(막지 않음). 13px로도 넘치는 cap은 두 줄로 접혀 작은 글자 3줄이 됨(registry B-48)
+    _pj = os.path.join(vid, f'{comp_id(ep).lower()}.json')
+    if os.path.exists(_pj) and os.path.exists(os.path.join(vid, 'capfit.py')):
+        if subprocess.call([sys.executable, os.path.join(vid, 'capfit.py'), _pj]) == 1:
+            out.append('경고 · capfit: 13px로도 넘치는 자막·출처 줄 있음(렌더는 계속, 위 줄 고치면 좋음)')
     print(*out, sep='\n')
     if not ok:
         print('렌더하지 않는다 — 위 거부를 고친 뒤 다시'); return 1

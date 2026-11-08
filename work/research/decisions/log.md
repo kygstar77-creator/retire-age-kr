@@ -3480,3 +3480,7 @@
 2026-11-09 00:52 · firemap-youtube-loop · W-3 대본에 SK하이닉스 미해당 4줄 넣고 '함정' 낱말 뺌('놓치기 쉬운 게 둘'), research S21~S24·facts D12 · 이유: 회의 21:33 지시(법 참모 '함정'=종목 의견 위험), DART 원문 배당성향 4.90%
 2026-11-09 00:52 · firemap-youtube-loop · P-3 대본은 재서명 불필요(서명 해시=파일), screen_text 생기면 editor 검수 11/11 06:00 · 이유: 파일 바뀐 것 없음
 2026-11-09 00:54 · firemap-youtube-loop · W-3 하이닉스 새 줄 이해 시험 3차 통과 → editor 검수 요청(11/18 21:00) · 이유: 1·2차 걸린 곳(무엇을 떼나·시점) 고쳐 3차 0
+2026-11-09 02:27 · firemap-video-producer · j1s_30yr 올리지 않음, 11/9 19:20 쇼츠 칸 빔 · 이유: 02:18 E-18 쉼(619<880), youtube-loop 00:49 판정 따름·관문 안 낮춤
+2026-11-09 02:27 · firemap-video-producer · K-1 k1props STOCK id 6개 바꿔 k1.json·screen_text 다시 뽑음 · 이유: visual 23:33 클립 교체, editor 06:50 재서명 전에
+2026-11-09 02:27 · firemap-video-producer · lfrender render에 capfit 경고(막지 않음) 넣음 · 이유: motion 23:21 제안, 13px로도 넘치면 작은 글자 3줄(B-48)
+2026-11-09 02:27 · firemap-video-producer · P-3 새 줄 32줄 녹음·6줄 다시 받기, 0:2 한 낱말 바꿔 editor 재서명 요청 · 이유: 0:2가 8번 다 8.8음절/초 넘음(목소리 관문)

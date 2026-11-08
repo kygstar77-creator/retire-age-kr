@@ -2,6 +2,7 @@
 ## ★ 주간 회의 11/8 21:24~21:33 — 사용량 리셋 1%(초기화 11/15 21:00) · 하루 상한 +12%p(X-OPS-14) · 11/10 K-1 (근거 meeting/2026-11-08-decisions.md·verify.md·_전략·_사용자·_법·missed-q_전략)
 - 막힘 [사장님 손]: ① 근무표 줄이기 승인(11/4 거부) ② 쿠팡·애드핏 수익 화면 재로그인(10/21~) ③ 충전기 상시 연결 ④ 카페 회원 모으기 결정(이월 4회)
 - 막힘 [youtube-loop E-18 판정]: 쇼츠 E-18이 공개 1~2일 된 편을 채널 20편 중앙(오래된 편 포함)과 맞대 새 편에 불리 — 11/9 19:20 j1s_30yr가 이 때문에 막힘(PD 21:58). 공개 48시간 지난 편만 세는지 판정 요청
+- 막힘 [운영실장 23:34]: 작업 폴더 dev가 origin/dev보다 ahead·behind(로컬 커밋 394fffe·e69a583·dispatch 포함, 작업 폴더 미커밋 파일 있음) — 푸시 거절, 남의 변경이라 rebase·강제 푸시 안 함. 합칠 사람 필요(write의 worktree 합치기와 같이)
 - 막힘 [11/9 처리]: dev→main 합치기 — firemap-write 별도 worktree로 진행 중(아래 지시)
 - 판정: 공개 11/7 쇼츠 1(G5ofrC5Di4U)·11/8 쇼츠 1(x1e7vUdFghg), 둘 다 oEmbed 200 = 하루 1(기준 3 미달 — 원인: 주간 사용량 100%, 11/6 18:21~11/8 21:00 정지) · 11월 수익 측정 불가(사이트 쿠팡 이벤트 11/7·11/8 0), 일할 160,000원 **뒤처짐** · 주간 사용량 1%
 - **하루 사용량 상한 +12%p (X-OPS-14, 11/15 판정)**: 매일 21:2x 회의가 get_usage로 잰다. 넘은 다음 날은 이 순서로 회차를 '쉼'으로 끝낸다(기록·커밋 없이): ① benchmark-loop ② motion ③ copywriter ④ youtube-loop 분석 일(올리기 전 확인 제외) ⑤ 카페 6→3칸(07:40·12:40·22:40). 끝까지 남는 것: 롱폼 관문(visual·editor·PD), 쇼츠 칸, 카페 3칸 · 실패 신호: 11/11 21시 40% 초과 → 그날 회의가 ⑤까지 바로 적용 · 관문 넘은 편은 그 자리에서 publishAt(멈춤 중 나간 건 예약분뿐이었다)
@@ -20,6 +21,7 @@
 - [지시] **firemap-dispatcher** ← firemap-meeting (21:37) 의도: 관문 기한 지키기 · 완료 기준: 11/8 23:05 회차에 visual 투입(아래 줄) · 기한 11/8 23:30
   진행: firemap-dispatcher 21:41 — visual 고정 근무 21:35부터 running이라 이번(15:05 밀린) 회차엔 안 부름, 23:05 회차가 끝났는지 보고 투입
   착수: firemap-visual-designer 23:10 (운영실장) — PD 22:25 알림: K-1 새 실사 9컷 shot_plan·비교 그림·shot_check · 같이 투입 firemap-motion-designer(backlog ① capfit 관문)
+  완료: firemap-dispatcher 23:34 — visual 투입 끝(394fffe): K-1 실사 9컷 shot_plan·shotcmp r38~r46·클립 6개 교체, shot_check 0건 → PD가 k1props STOCK id 6개 바꾸고 k1.json 다시(editor 06:50 전) · motion e69a583(B-48 출처 줄 13px 유지) · 두 커밋 모두 푸시 못 함(dev behind)
 - [지시] **firemap-visual-designer** ← firemap-meeting (21:37) 의도: K-1 bgcheck 통과 · 완료 기준: PD 요청 판 12장(같은 판 20초↑ 5곳·큰 글자·UI 상자 57%)을 cutplan_1105.md 컷 5곳과 한 번에, 렌더 전 판 PNG로 bgcheck · 기한 11/9 06:00 · 금지: 기준 낮추기 · 보고 decisions/log·PD 인계
   착수: firemap-visual-designer 21:50
   완료: firemap-visual-designer 21:57 — **판 부분만 끝**: K-1 판 25장 다시 그림(visual/K-1-shots/k1boards.py → video/public/bg/k1/board/, 숫자 0 변경) · 렌더 전 판 PNG 검사 visual/K-1-shots/boardcheck.py(판 82%·bgcheck 같은 함수, k1_ds 실측과 ±0.4%p): 큰 글자 25/25 ≥9%(최저 9.4) · 안쪽 UI 상자 25/25 0개(갈색 칸·단색 막대 → 손 빗금 막대·종이 위에 바로, 동전은 쇠 빛) · 새 심사관 7~9차 26줄 나음 23·같음 3·못함 0(못함 5 고쳐 재심사) · shot_check 0건 · 판 글자는 그림이라 screen_text 안 바뀜(editor 재서명 불필요, 바뀐 말: us_kr_now '한국이 1%p 가까이 낮음') · **컷 5곳은 안 함**: motion이 21:44 k1props에 mo 3곳(over·cross·dots)을 넣는 중이라 k1props를 안 건드림 → PD 인계(아래)

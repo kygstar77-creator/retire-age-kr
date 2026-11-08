@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-09 07:49",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "11월 정기예금 금리",
+ "num": "한 달 새 올린 곳 6",
+ "sub": "5대 은행은 그대로",
+ "label": "2026.11.9 금감원 공시 기준",
+ "src": "금융감독원 금융상품 한눈에 정기예금 공시",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 120,
+ "num_px": 96,
+ "sub_px": 62,
+ "board": [
+  "nhis11_1109",
+  "pibucut1025",
+  "bogeum1104",
+  "schdpair1105",
+  "chunga1104",
+  "isacut1104",
+  "hmcdiv1104",
+  "yellow1105",
+  "renewpair1102",
+  "rentrep1104"
+ ]
+}

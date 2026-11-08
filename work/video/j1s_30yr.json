@@ -1,0 +1,246 @@
+{
+ "fps": 30,
+ "name": "j1s_30yr",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "정부안 · 종부세 산 햇수 할인",
+  "30년 살면 더 깎일까?"
+ ],
+ "hot": "30년",
+ "answer": {
+  "label": "정부안(국회 통과 전) 2028년 종부세",
+  "items": [
+   "15년 산 70세: 38만원",
+   "30년 산 70세: 38만원"
+  ],
+  "arrow": false,
+  "note": "내 경우는 아래 연결 영상 전체 표"
+ },
+ "base": "종합부동산세법 개정안(정부안 · 국회 통과 전) · 재정경제부 세제개편 상세본 · 공시 20억·70세·그 집에 삶 가정 · 파이어맵 계산",
+ "long": "NNcjTE0L7yg",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "기준",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "30년 살면",
+      "할인 더 클까",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "할인 기준",
+      "그 집에 산 해",
+      "",
+      101,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "이런 댓글이 있었어요. 한집에 30년 산 게 죄냐고요.",
+     "audio": "audio/j-1/7c2c72cfddcd7699.wav",
+     "frames": 101
+    },
+    {
+     "n": 2,
+     "text": "정부안은 그 기준을 '갖고 있던 해'에서 '그 집에 산 해'로 바꿉니다.",
+     "audio": "audio/j-1/8d36c08e563c658e.wav",
+     "frames": 104
+    }
+   ],
+   "frames": 205
+  },
+  {
+   "kind": "vs",
+   "label": "5년",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "산 햇수 할인",
+      "5년부터",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 3,
+     "text": "산 햇수 할인은 5년을 살면 붙기 시작해서, 오래 살수록 커져요.",
+     "audio": "audio/j-1/2d20a89c1b22d13d.wav",
+     "frames": 114
+    }
+   ],
+   "frames": 114
+  },
+  {
+   "kind": "vs",
+   "label": "15년",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "산 햇수 할인",
+      "15년에서 끝",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "15년 이상",
+      "종부세 50% 깎음",
+      "",
+      56,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "할인은 15년에서 끝나요.",
+     "audio": "audio/j-1/b387310f59d2306f.wav",
+     "frames": 56
+    },
+    {
+     "n": 5,
+     "text": "그때 50%가 되고, 그 뒤로는 더 늘지 않습니다.",
+     "audio": "audio/j-1/1c2d73b6abab158d.wav",
+     "frames": 96
+    }
+   ],
+   "frames": 152
+  },
+  {
+   "kind": "vs",
+   "label": "같음",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "15년 = 30년",
+      "세금 같음",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "공시 20억·70세",
+      "종부세 38만원",
+      "",
+      66,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "그래서 15년을 산 사람과 30년을 산 사람은 세금 차이가 없어요.",
+     "audio": "audio/j-1/6cc0b8c2e0c597dc.wav",
+     "frames": 119
+    }
+   ],
+   "frames": 119
+  },
+  {
+   "kind": "vs",
+   "label": "할 일",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "정부안",
+      "국회 심사 중",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "내 경우 찾기",
+      "공시가격·사는지",
+      "",
+      116,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 7,
+     "text": "이 법안은 아직 국회에서 심사 중입니다. 통과 전이라 바뀔 수 있죠.",
+     "audio": "audio/j-1/7a710bfc16c3b85c.wav",
+     "frames": 116
+    },
+    {
+     "n": 8,
+     "text": "고지서의 공시가격, 그리고 그 집에 지금 사는지. 이 두 가지만 알면 내 경우가 어디에 들어가는지 찾을 수 있어요.",
+     "audio": "audio/j-1/cdc870ab366bdcec.wav",
+     "frames": 198
+    }
+   ],
+   "frames": 350
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/j1/stock/cut/8970842_2_y.mp4",
+   "from": 0,
+   "frames": 101,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/8439245_1_y.mp4",
+   "from": 101,
+   "frames": 104,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/8293019_1_y.mp4",
+   "from": 205,
+   "frames": 114,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/12079562_4_y.mp4",
+   "from": 319,
+   "frames": 56,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/30975009_10_y.mp4",
+   "from": 375,
+   "frames": 96,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/8794903_2_y.mp4",
+   "from": 471,
+   "frames": 119,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/7308166_1_y.mp4",
+   "from": 590,
+   "frames": 116,
+   "start": 0
+  },
+  {
+   "src": "bg/j1/stock/cut/30975009_50_y.mp4",
+   "from": 706,
+   "frames": 234,
+   "start": 0
+  }
+ ],
+ "credits": "Anastasia  Shuraeva · FREE VIDEO HAPPY · Kampus Production · RDNE Stock project · SHVETS production · Stephen Leonardi"
+}

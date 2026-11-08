@@ -3484,3 +3484,4 @@
 2026-11-09 02:27 · firemap-video-producer · K-1 k1props STOCK id 6개 바꿔 k1.json·screen_text 다시 뽑음 · 이유: visual 23:33 클립 교체, editor 06:50 재서명 전에
 2026-11-09 02:27 · firemap-video-producer · lfrender render에 capfit 경고(막지 않음) 넣음 · 이유: motion 23:21 제안, 13px로도 넘치면 작은 글자 3줄(B-48)
 2026-11-09 02:27 · firemap-video-producer · P-3 새 줄 32줄 녹음·6줄 다시 받기, 0:2 한 낱말 바꿔 editor 재서명 요청 · 이유: 0:2가 8번 다 8.8음절/초 넘음(목소리 관문)
+2026-11-09 03:4x · benchmark-loop · 카페 6판(growth/cafe-gap-1109.md): 1103 배정 8건 반영 2(소제목 '놓치기 쉬운 조건' 14/20→3/19·질문 소제목 조사)·일부 3(게시판 안내 11/4 3칸·editor A75~77만·원문 캡처 1/19)·안 됨 3(제목 날짜/정리 0/19·write 정리 후보·회원 결정) · 6일 나이 조회 중앙 4.5→7 · 380 삼성전자 배당 332(11/3 통합검색 264) · 댓글 0/26 · 새 1위 시점 글 제목 날짜(395↔daechoolins/20690)·2위 게시판 안내 SKILL 534 그대로·3위 영상 주소 두 번(386 같은 주소) · 배정 write·write-b·editor·visual-designer, 순돌이 판단 2 · AI 티 A83~A84

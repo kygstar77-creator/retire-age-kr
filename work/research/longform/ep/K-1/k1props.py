@@ -40,6 +40,16 @@ def board(f, lines, z=(1.0, 1.04)):
 def ai(f, lines, z=(1.0, 1.08), **kw):
     assert os.path.exists(os.path.join(VID, 'public', 'bg', 'k1', 'ai', f + '.png')), f
     return S('pic', lines, pic=f'bg/k1/ai/{f}.png', license='AI 생성 그림(RealVisXL V5.0, openrail++)', badge='AI 생성 그림', zoom=list(z), **kw)
+# 11/8 motion: 선·점이 말을 따라 움직여야 뜻이 서는 판 셋(r09 over·r20+21 cross·r29 dots)은 그림 대신 motion 부품(K1.tsx Mo).
+#   motion_preview/k1props.py를 먼저 돌려 voice.json 길이로 k1_motion.json을 새로 만들고, 줄 글자가 이 파일의 줄과 같은지 assert.
+import subprocess
+_r = subprocess.run([sys.executable, os.path.join(EP, 'motion_preview', 'k1props.py')], capture_output=True, text=True, encoding='utf-8'); assert _r.returncode == 0, _r.stderr[-800:]
+MOT = json.load(open(os.path.join(EP, 'motion_preview', 'k1_motion.json'), encoding='utf-8'))
+def mo(key, lines):
+    m = MOT[key]; s = S('mo', lines, part=key, p=m['data'], title=m['title'], sub=m['sub'], source=m['source'], chapter=m['chapter'])
+    assert [l['text'] for l in s['lines']] == [l['text'] for l in m['lines']], (key, '줄 어긋남')
+    assert [l['frames'] for l in s['lines']] == [l['frames'] for l in m['lines']], (key, 'voice 길이 어긋남 — motion_preview/k1props.py가 voice.json으로 안 돌았다')
+    return s
 USEDBG = {}
 def broll(name, lines, say, **kw):
     cid, have = STOCK[name]; c = CR[cid]; k = USEDBG.get(cid, 0); USEDBG[cid] = k + 1; have -= 0.5
@@ -64,7 +74,7 @@ scenes += [
     ask('1장', '미국 국채금리 5%, 무슨 숫자인가', ['국채금리는 나라가']),
     broll('newspaper_hand', ['미국 정부가 10년 동안'], '뉴스에 자주 나오는 미국 국채금리'),
     board('k1_bond_note', ['미국 정부에 만 달러를']),
-    board('k1_dgs10', ['이 금리가 처음 그 선에', '그 뒤 한 달 사이', '가장 높았던 날은', '지난번 이만큼', '그달 평균이 4']),
+    mo('over', ['이 금리가 처음 그 선에', '그 뒤 한 달 사이', '가장 높았던 날은', '지난번 이만큼', '그달 평균이 4']),   # 11/8 motion: 그림 k1_dgs10 대신 DaysOver
     ai('passbook', ['그때 우리 예금 금리가']),
     board('k1_2007', ['더 거슬러 가면', '그달 평균은 5', '그때 한국 주택담보대출', '지금 평균은 그때보다']),
     board('k1_us_kr_now', ['이 영상을 만든 무렵', '%포인트는 금리']),
@@ -85,8 +95,7 @@ scenes += [
 scenes += [
     ask('3장', '내 대출 이자는 — 고정형과 변동형', ['이번엔 대출인데요']),
     broll('loan_papers', ['정해진 기간 동안'], '고정형과 변동형'),
-    board('k1_fix_var', ['1년 동안 새로 받은', '고정형은 1%포인트', '변동형은 그 절반을']),
-    board('k1_cross', ['그런데 1년 전엔', '올해 4월부터']),
+    mo('cross', ['1년 동안 새로 받은', '고정형은 1%포인트', '변동형은 그 절반을', '그런데 1년 전엔', '올해 4월부터']),   # 11/8 motion: 그림 k1_fix_var+k1_cross 대신 CrossOver 한 장면
     board('k1_3eok_table', ['3억원을 서른 해 동안 갚는 대출', '작년 고정형 금리라면', '지금 금리면 1', '새로 빌리는 사람이라면', '변동형으로 새로 빌렸다면']),
     broll('rain_window', ['그럼 고정형과 변동형 중', '그럼 변동형은 왜'], '어느 쪽이 나을지는 앞으로 금리에 달린 일'),
     board('k1_cofix3', ['변동형 금리는 보통', '그런데 코픽스는 한 가지가', '그달 새로 모은 돈만', '잔액 기준 코픽스에는']),
@@ -101,8 +110,8 @@ scenes += [
     board('k1_us_kr_1y', ['한 해 동안 미국 국채금리는', '같은 기간 한국 국채금리는', '한국 쪽이 두 배']),
     broll('newspaper_hand', ['그리고 은행 평균 금리와'], '더 닮은 쪽은 미국이 아니었다'),
     # 11/5 PD: 15.2초 한 그림이 zoom 1.08로는 lfrender screen '같은 화면 14.5초'(U5 8초) 거부 → 더 다가가며 옆으로 흐르게(글자·장면 나눔 그대로 — 화면 글자 서명 유지)
-    ai('calendar_hand', ['2013년부터 달마다', '정기예금과 고정형 대출은', '예를 들어 국채가'], z=(1.0, 1.3), pan=-160),
-    board('k1_samedir', ['정기예금 평균은 한국', '미국 국채와는 열 달에', '고정형 대출도 한국']),
+    ai('calendar_hand', ['2013년부터 달마다', '정기예금과 고정형 대출은'], z=(1.0, 1.3), pan=-160),
+    mo('dots', ['예를 들어 국채가', '정기예금 평균은 한국', '미국 국채와는 열 달에', '고정형 대출도 한국']),   # 11/8 motion: 첫 k1_samedir 대신 SameDirDots('예를 들어'부터 — 보기 박자)
     broll('dusk_table', ['다만 같이 움직였다는'], '같이 움직였다는 뜻이지 그 때문은 아니다'),
     board('k1_samedir', ['변동형은 오르내림 폭', '미국과 한국 10년', '그래도 은행 평균 금리에']),
     board('k1_base_steps', ['이 비교 기간에', '한국 국채가 왜']),
@@ -159,12 +168,14 @@ def strings(x):
             if not isinstance(v, (int, float)): yield from strings(v)
     elif isinstance(x, str): yield x
 SRCDOC = CALC + SCRIPT
+# 11/8 motion: mo 판 출처 줄의 기간·첫 달 — motion_preview/k1props.py가 raw 원자료로 assert(일별 ~2026-10-15 · 2025.09~2026.09 13달 · 2013.02~2026.08 163달)
+MOT_RANGE = {'2023.1.3', '2026.10.15', '2025.9', '2026.9', '2013.2', '2026.8', '201302'}
 bad = []; nnum = 0
 for s in scenes:
     for st in strings(s['data']):
         for d in re.findall(r'\d[\d,.]*', st):
             d = d.rstrip('.,'); nnum += 1
-            if d not in SRCDOC: bad.append((st[:40], d))
+            if d not in SRCDOC and d not in MOT_RANGE: bad.append((st[:40], d))
 assert not bad, bad
 
 tot = sum(s['frames'] for s in scenes); live = sum(s['frames'] for s in scenes if s['kind'] == 'broll' or (s['kind'] == 'pic' and 'bg/k1/ai/' in s['data']['pic']))

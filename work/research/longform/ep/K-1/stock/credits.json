@@ -71,7 +71,7 @@
   "page": "https://www.pexels.com/video/cozy-coffee-break-with-newspaper-reading-32114693/",
   "license": "https://www.pexels.com/license/",
   "got": "2026-10-21 17:12",
-  "used": "K-1 news_cup (PD 11/8 판 묶음 끊기)",
+  "used": "K-1 news_cup — 11/8 visual 교체로 안 씀(외국 지폐·국기·외국어 글자·지저분함, 심사 못함)",
   "desc_line": "영상 일부: Esra Afşar / Pexels (https://www.pexels.com/video/cozy-coffee-break-with-newspaper-reading-32114693/)"
  },
  {
@@ -221,7 +221,7 @@
   "page": "https://www.pexels.com/video/abstract-water-drops-on-glass-window-36408448/",
   "license": "https://www.pexels.com/license/",
   "got": "2026-10-21 17:13",
-  "used": "K-1 water_drops (PD 11/8 판 묶음 끊기)",
+  "used": "K-1 water_drops — 11/8 visual 교체로 안 씀(외국 지폐·국기·외국어 글자·지저분함, 심사 못함)",
   "desc_line": "영상 일부: 정규송 Nui MALAMA / Pexels (https://www.pexels.com/video/abstract-water-drops-on-glass-window-36408448/)"
  },
  {
@@ -431,7 +431,7 @@
   "page": "https://www.pexels.com/video/a-person-counting-and-computing-money-while-writing-on-a-notepad-5981351/",
   "license": "https://www.pexels.com/license/",
   "got": "2026-10-21 17:14",
-  "used": "K-1 money_count (PD 11/8 판 묶음 끊기)",
+  "used": "K-1 money_count — 11/8 visual 교체로 안 씀(외국 지폐·국기·외국어 글자·지저분함, 심사 못함)",
   "desc_line": "영상 일부: https://kaboompics.com/ / Pexels (https://www.pexels.com/video/a-person-counting-and-computing-money-while-writing-on-a-notepad-5981351/)"
  },
  {
@@ -446,7 +446,7 @@
   "page": "https://www.pexels.com/video/person-counting-money-6327790/",
   "license": "https://www.pexels.com/license/",
   "got": "2026-10-21 17:14",
-  "used": "K-1 money_pen (PD 11/8 판 묶음 끊기)",
+  "used": "K-1 money_pen — 11/8 visual 교체로 안 씀(외국 지폐·국기·외국어 글자·지저분함, 심사 못함)",
   "desc_line": "영상 일부: https://kaboompics.com/ / Pexels (https://www.pexels.com/video/person-counting-money-6327790/)"
  },
  {
@@ -461,7 +461,7 @@
   "page": "https://www.pexels.com/video/a-person-computing-while-writing-on-a-notepad-5981346/",
   "license": "https://www.pexels.com/license/",
   "got": "2026-10-21 17:14",
-  "used": "K-1 notepad_calc (PD 11/8 판 묶음 끊기)",
+  "used": "K-1 notepad_calc — 11/8 visual 교체로 안 씀(외국 지폐·국기·외국어 글자·지저분함, 심사 못함)",
   "desc_line": "영상 일부: https://kaboompics.com/ / Pexels (https://www.pexels.com/video/a-person-computing-while-writing-on-a-notepad-5981346/)"
  },
  {
@@ -536,7 +536,97 @@
   "page": "https://www.pexels.com/video/interior-design-of-a-dining-room-5823595/",
   "license": "https://www.pexels.com/license/",
   "got": "2026-10-21 17:14",
-  "used": "K-1 dining_room (PD 11/8 판 묶음 끊기)",
+  "used": "K-1 dining_room — 11/8 visual 교체로 안 씀(외국 지폐·국기·외국어 글자·지저분함, 심사 못함)",
   "desc_line": "영상 일부: Charlotte May / Pexels (https://www.pexels.com/video/interior-design-of-a-dining-room-5823595/)"
+ },
+ {
+  "id": 5466763,
+  "query": "calculator hand",
+  "file": "video/public/bg/k1/stock/money_count.mp4 (가공본, 원본 mp4는 저장 안 함)",
+  "w": 1920,
+  "h": 1080,
+  "sec": 21,
+  "author": "olia danilevich",
+  "author_url": "https://www.pexels.com/@olia-danilevich",
+  "page": "https://www.pexels.com/video/using-a-calculator-5466763/",
+  "license": "https://www.pexels.com/license/",
+  "got": "2026-11-08 23:32",
+  "used": "K-1 money_count (visual 11/8 교체 — 원본 20.9초를 1.206배 느리게 25.17초)",
+  "desc_line": "영상 일부: olia danilevich / Pexels (https://www.pexels.com/video/using-a-calculator-5466763/)"
+ },
+ {
+  "id": 1188938,
+  "query": "hourglass",
+  "file": "video/public/bg/k1/stock/money_pen.mp4 (가공본, 원본 mp4는 저장 안 함)",
+  "w": 1920,
+  "h": 1080,
+  "sec": 29,
+  "author": "Samer Daboul",
+  "author_url": "https://www.pexels.com/@samerdaboul",
+  "page": "https://www.pexels.com/video/sand-inside-an-hourglass-1188938/",
+  "license": "https://www.pexels.com/license/",
+  "got": "2026-11-08 23:32",
+  "used": "K-1 money_pen (visual 11/8 교체 — 앞 19.73초)",
+  "desc_line": "영상 일부: Samer Daboul / Pexels (https://www.pexels.com/video/sand-inside-an-hourglass-1188938/)"
+ },
+ {
+  "id": 6975845,
+  "query": "hand holding tv remote",
+  "file": "video/public/bg/k1/stock/news_cup.mp4 (가공본, 원본 mp4는 저장 안 함)",
+  "w": 1366,
+  "h": 720,
+  "sec": 21,
+  "author": "T Leish",
+  "author_url": "https://www.pexels.com/@leish",
+  "page": "https://www.pexels.com/video/close-up-video-of-a-person-holding-a-remote-controller-6975845/",
+  "license": "https://www.pexels.com/license/",
+  "got": "2026-11-08 23:32",
+  "used": "K-1 news_cup (visual 11/8 교체 — 1366×720 → 1920×1080, 앞 12.43초)",
+  "desc_line": "영상 일부: T Leish / Pexels (https://www.pexels.com/video/close-up-video-of-a-person-holding-a-remote-controller-6975845/)"
+ },
+ {
+  "id": 29303349,
+  "query": "korea apartment complex",
+  "file": "video/public/bg/k1/stock/notepad_calc.mp4 (가공본, 원본 mp4는 저장 안 함)",
+  "w": 1920,
+  "h": 1080,
+  "sec": 83,
+  "author": "성창 남",
+  "author_url": "https://www.pexels.com/@1496373594",
+  "page": "https://www.pexels.com/video/aerial-view-of-urban-cityscape-on-clear-day-29303349/",
+  "license": "https://www.pexels.com/license/",
+  "got": "2026-11-08 23:32",
+  "used": "K-1 notepad_calc (visual 11/8 교체 — 앞 37.07초)",
+  "desc_line": "영상 일부: 성창 남 / Pexels (https://www.pexels.com/video/aerial-view-of-urban-cityscape-on-clear-day-29303349/)"
+ },
+ {
+  "id": 16648343,
+  "query": "thin ice / cracked ice",
+  "file": "video/public/bg/k1/stock/water_drops.mp4 (가공본, 원본 mp4는 저장 안 함)",
+  "w": 1920,
+  "h": 1080,
+  "sec": 100,
+  "author": "Tom Fisk",
+  "author_url": "https://www.pexels.com/@tomfisk",
+  "page": "https://www.pexels.com/video/a-crack-in-the-ice-on-a-frozen-lake-16648343/",
+  "license": "https://www.pexels.com/license/",
+  "got": "2026-11-08 23:32",
+  "used": "K-1 water_drops (visual 11/8 교체 — 앞 11.97초)",
+  "desc_line": "영상 일부: Tom Fisk / Pexels (https://www.pexels.com/video/a-crack-in-the-ice-on-a-frozen-lake-16648343/)"
+ },
+ {
+  "id": 11099870,
+  "query": "wallet empty hands",
+  "file": "video/public/bg/k1/stock/dining_room.mp4 (가공본, 원본 mp4는 저장 안 함)",
+  "w": 1920,
+  "h": 1080,
+  "sec": 51,
+  "author": "Towfiqu barbhuiya",
+  "author_url": "https://www.pexels.com/@towfiqu-barbhuiya-3440682",
+  "page": "https://www.pexels.com/video/close-up-view-of-empty-wallet-11099870/",
+  "license": "https://www.pexels.com/license/",
+  "got": "2026-11-08 23:32",
+  "used": "K-1 dining_room (visual 11/8 교체 — 앞 13.97초)",
+  "desc_line": "영상 일부: Towfiqu barbhuiya / Pexels (https://www.pexels.com/video/close-up-view-of-empty-wallet-11099870/)"
  }
 ]

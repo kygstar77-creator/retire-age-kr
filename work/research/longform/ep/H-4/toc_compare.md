@@ -104,3 +104,15 @@
 | 9억으로 철산동 84㎡ | 예산 6~7억대 후보 https://www.youtube.com/watch?v=TS-GnCzdxps&t=0 · 소득·자산으로 적정 예산 https://www.youtube.com/watch?v=2xmGwtG36Jg&t=161 · 입주 전세 https://www.youtube.com/watch?v=1bo4O19bpJk&t=835 · 전월세 원문 https://apis.data.go.kr/1613000/RTMSDataSvcAptRent |
 | 사려면 붙는 조건 | 보금자리론 https://www.youtube.com/watch?v=1nEq1Usy1WA&t=131 · 생애최초 대출 6억 https://www.youtube.com/watch?v=2xmGwtG36Jg&t=39 · 대출 막힘 https://www.youtube.com/watch?v=TS-GnCzdxps&t=521 · 대책 원문 https://www.korea.kr/news/policyNewsView.do?newsId=148950973 · 허가구역 https://gris.gg.go.kr/gnPlan/selectLandTransactionZone.do · (추가 제안) 조합원 지위 예외 https://www.youtube.com/watch?v=q-Izf47zMig&t=1320 |
 | 정리 | 숫자 요약 https://www.youtube.com/watch?v=EzQzN_9b6t4&t=568 · 한 문장 결론 https://www.youtube.com/watch?v=9Zrl-re0z5o&t=1250 · 다음 편 한 걸음 https://www.youtube.com/watch?v=1bo4O19bpJk&t=1140 |
+
+# 끝맺음
+(2026-11-09 youtube-loop · 자막 끝 45초 읽음 — 4편 raw/subs, 3편 youtube_transcript_api 읽기만·저장 안 함)
+- https://www.youtube.com/watch?v=1bo4O19bpJk&t=1125 (매부리TV) — 18:41 '총평' 한 줄(얼신 트렌드·인프라 되면 잘 나갈 곳) → 19:10 "준비한 내용은 여기까지" → 다음 편 예고(관심 가실 가격대 아파트) → 인사.
+- https://www.youtube.com/watch?v=kuB0GEfUuTM&t=1580 (댑쏭) — 3기 신도시 Q&A 끝에 "매수를 미룰 필요는 없겠다"로 닫음 → 매수 판단(권유)으로 끝, 인사 없음.
+- https://www.youtube.com/watch?v=9Zrl-re0z5o&t=1235 (부동산오감스) — 20:46 '현재 하안동의 핵심' 한 줄 → 리스크(속도·교통 일정 유동적) → "구역별 단계와 타이밍을 확인하면서 나에게 맞는 곳인지" 확인 행동으로 닫음.
+- https://www.youtube.com/watch?v=EzQzN_9b6t4&t=540 (윤동산TV) — 9:00 "오늘의 핵심 요약" 동네 셋 한 줄씩 → 관점 한 문장 → 구독·좋아요·공유 부탁 → 이름 인사.
+- https://www.youtube.com/watch?v=Piy1Cj0WVdE&t=873 (실거주부동산) — 동행 임장 대화 중 "처음 매수하는 걸 추천" → 학교 앞 장면으로 끊김, 요약 없음.
+- https://www.youtube.com/watch?v=2xmGwtG36Jg&t=635 (부룡TV) — "첫 집에서 100% 만족하려 하지 말고" 마음가짐 한 줄 → 유료 멤버십 안내로 닫음.
+- https://www.youtube.com/watch?v=TS-GnCzdxps&t=550 (스페이씨) — 규제·대출 막힘 한탄 → "다음 영상에서 그 문제를 얘기" 예고 → 인사.
+- 공통: 결론 한 줄(총평·핵심 요약) → (확인할 것 또는 마음가짐) → 다음 편·인사. 7편 중 매수 추천으로 닫은 편 2(kuB0·Piy1), 유료 안내 1(2xmG), 구독 부탁 1(EzQz) · 댓글 질문으로 닫은 편 0.
+우리: 따라 할 것 = #6·#15처럼 결론 한 줄('서울보다 비싸다는 말은 새 단지만 보면 맞고, 광명 전체로는 서울 중간보다 아래') + 앞 정리 표 4줄 + #11처럼 확인할 순서는 5장 '순서 세 칸'으로 이미 줌 → 쉼 실사 3초 → 구독 1줄 → "다음 영상에서 다시 뵙겠습니다"(#6·#16 꼴). 뺄 것 = 매수 추천·'미룰 필요 없다'(#10·#5, 권유), 유료·멤버십·파이어맵 억지 안내(#14), 아무 댓글 질문, 공유 부탁. 마지막 20초는 최종 화면 자리 — 쉼 실사 3초부터 끝까지 판 글자 없이 둠. 대본 바꿀 것 없음(지금 끝 그대로, 재서명 불필요).

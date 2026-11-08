@@ -134,3 +134,9 @@
 4. CrossOver 규칙: 교점은 두 칸 사이 직선 교점(값을 지어내지 않음), 동그라미는 두 칸을 감쌀 만큼 · 눈금은 끝까지(축이 0부터가 아니면 칠한 면 크기를 재는 자) · 말이 부른 선은 시작값 위 면을 옅게(U5).
 5. SameDirDots 규칙: 칸 순서 = 달 순서, 점 수 = calc 수(assert) · 판 이름을 바꿀 땐 두 판을 같은 기준으로 같이(`swapR`) — 한쪽만 바꾸면 짝이 어긋나 오독(심사 '틀림' 11/3) · 원인 글자 금지.
 6. 편마다 바뀜: seed로 왼쪽 여백(셋 다)·판 간격과 찍히는 빠르기(SameDirDots).
+
+## TallyFrame 출처 위 작은 줄(cap) — 11/8 고침
+- 전: 22px 고정·nowrap·overflow hidden → 긴 근거가 오른쪽에서 잘림(H-3 v5 30곳↑, PD 알림).
+- 지금: `capLineSize` = 22px에서 한 줄(x 120~1400)에 들게 줄임, 하한 13px(출처 srcSize와 같은 값, 새 기준 아님). 13px로도 넘치면 `capFits`=false → 두 줄로 접고 한 줄 위로(잘림 없음). 22px에 드는 줄은 화면 그대로(K-1 cap 0줄 → 변화 없음).
+- 렌더 전: `py -3.12 work/video/capfit.py <props.json>` — 13px로도 넘치는 cap(작은 글자가 출처 포함 3줄 됨)을 찍고 종료 코드 1. 넘치면 props·대본에서 줄인다(지난 편: h3 13줄·x1 2·h1 1·p1 1).
+- 시험: research/longform/motion_preview_capfit/board_capfit.png(17·76·99·191칸 네 줄, 잘림 0).

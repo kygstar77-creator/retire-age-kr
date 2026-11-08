@@ -609,6 +609,10 @@ _TAG = re.compile(r'\{[^}]*\}|\[[^\]]*\]|(이미지|그림|장면|슬라이드)\
 _TTSMARK = re.compile(r'\[pause(?:\s+(?:short|long))?\]')   # Chirp 3 HD 쉼 표시 — 읽히지 않는다
 _BUNIRAMYEON = re.compile(r'분이라면')
 _LIMITW = re.compile(r'기록상|이\s?기록에서는|자료에\s?없|자료에\s?나오지\s?않|확인되지\s?않')
+# A80(11/8 editor, SDLddQ49ZR4 2:17·8:27): 숫자 없는 상상 유도 장면 · A81(18:07): 공유 부탁 — 끝은 구독 1줄만 · A45 재발 '무대부터 정하겠습니다'·'숫자가 많았으니까요'
+_IMAGINE = re.compile(r'상상해\s?(?:보시죠|보세요|보겠습니다|볼게요|봅시다)')  # '떠올려 보세요'는 회상 안내라 뺌(S-1 98행 오탐)
+_SHARE = re.compile(r'(?:먼저|꼭|주변에|가족에게|부모님께)?\s?(?:보내\s?(?:주세요|드리세요)|공유해\s?(?:주세요|보세요|드리세요))')
+_A45 = re.compile(r'부터\s?정하겠습니다|부터\s?정할게요|숫자가\s?많았으니까요|짧게\s?짚을게요|하나\s?더\s?짚을게요|다음\s?장에서\s?볼게요')
 _PREVIEW = re.compile(r'(차례로|하나씩|순서대로)\s?(답해|살펴|알아|짚어)\s?(볼게요|보겠습니다|드릴게요)|조금\s?(뒤에|이따|있다가)\s?(볼게요|보겠습니다|말씀드릴게요)')
 
 
@@ -673,6 +677,9 @@ def script_habits(lines, said=None, screen_titles=None):
         if len(v) >= 3: hits += [('A46 한계 낱말 반복', i, l) for i, l in v]
     # A43 예고 줄('질문 다섯 개에 차례로 답해 볼게요'·'조금 뒤에 볼게요'), A44 끝 '정리하면' 되풀이.
     hits += [('A43 예고 줄', i, l) for i, l in enumerate(lines, 1) if _PREVIEW.search(l)]
+    hits += [('A80 상상 유도', i, l) for i, l in enumerate(lines, 1) if _IMAGINE.search(l) and not re.search(r'\d', l)]
+    hits += [('A81 공유 부탁', i, l) for i, l in enumerate(lines, 1) if _SHARE.search(l) and re.search(r'영상|이\s?글', l)]
+    hits += [('A45 빈 이음말', i, l) for i, l in enumerate(lines, 1) if _A45.search(l)]
     hits += [('A44 끝 정리하면', i, l) for i, l in enumerate(lines, 1) if i > n - 8 and re.match(r'\s*-?\s*(정리하면|정리해 보면|요약하면)', l)]
     # A47 같은 판 제목 3번 이상(C-2 '누구라면' 4장) — 판 제목은 그 판의 내용으로.
     from collections import Counter

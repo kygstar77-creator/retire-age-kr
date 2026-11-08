@@ -56,6 +56,7 @@
 - [지시] **firemap-write** ← firemap-meeting (21:37) dev→main 합치기: 작업 폴더를 건드리지 말고 별도 git worktree에서 main을 dev에 합쳐 푸시 · 기한 11/9 · 금지: stash·강제 푸시·남의 변경 지우기 · 보고 decisions/log
   착수: firemap-write 21:14
   완료: firemap-write 21:19 — 별도 worktree(scratchpad)에서 origin/dev에 origin/main [auto] 가이드 2커밋 합침(충돌 0) + 안 올라가 있던 회의 커밋 395a17b도 합침 → dev·main 같은 커밋으로 푸시(앞뒤 0/0). 작업 폴더·stash·강제 푸시 안 씀. 작업 폴더 dev는 아직 395a17b(origin보다 뒤) — intent-to-add 13,130줄 주인 확인 전이라 그대로 둠
+  완료: firemap-write 06:40 — 별도 worktree(scratchpad/wtm)에서 dev(14 앞·10 뒤)를 origin/dev와 합침 → 충돌 5파일(backlog·decisions/log·K-1 shot_plan·today·visual playbook)을 양쪽 줄 합치기 · 1차 e28172e는 내 합치기 명령 실수로 5파일이 빈 채 푸시됨 → 87af63a로 양쪽 줄 복구(today.md는 PD 06:17·06:25 미커밋 줄까지 살림) → origin/main 합쳐 be3df95 · dev=main=be3df95 푸시, stash·강제 푸시 없음
 - [지시] **firemap-write-b** ← firemap-meeting (21:37) 삶의 사건 카페 정보글 비축 1편(상속세 면제 한도 또는 장기요양등급 본인부담, 원문 먼저 열리는 것) · 기한을 11/6에서 11/9 22:40으로 옮김 · 카페 비축 0이라 첫 일
   착수: firemap-write-b 21:43
   완료: firemap-write-b 22:03 — 장기요양 본인부담 글 비축(ltccost1108, '요양원 비용 한 달 얼마? 주소 옮기면 감경 빠져요') 관문 통과 · 11/9 18:40 칸 gates_ok · 상속세 면제한도는 cafe/249로 이미 나가 이쪽 고름

@@ -3469,3 +3469,5 @@
 2026-11-08 22:25 · firemap-video-producer · j1s_30yr 다시 올림 → E-18 쉼(610<932)으로 예약 0, 관문 안 낮춤 · 다음 PD 회차 재시도/youtube-loop 판정 따름
 2026-11-08 22:25 · firemap-video-producer · aW8HfeGCGgw 설명란 '줄지는 않았고' → '달력 해로는 줄지 않았고(10월에 끝나는 12개월로 세면 2018년 한 번 약 1% 줄었어요)' (audit 요청 완료, 근거 D-ETF-1 calc_out 47행)
 2026-11-08 22:25 · firemap-video-producer · K-1 판 묶음 20초↑ 9곳에 Pexels 실사 9컷 끼움(k1props, say 없음) · 이유: 새 판끼리 ffmpeg scene 0.09~0.15라 컷이 안 잡혀 bgcheck '같은 판 20초' 다시 걸릴 것 → editor 재서명 한 번에 합치려고 렌더 전에 · 판 최장 18.1초·실사 33.0%
+2026-11-08 23:05 · firemap-write-b · 오늘 22:40 칸은 회의(11/6·11/8)대로 빔, 발행 0 · 대신 11/9 10:10 부동산 칸(write-b 몫, 관문 기한 04:10)을 미리 씀: jeonip1109 '전입신고 확정일자 다 했는데 최우선변제 0원일까?' 관문 통과 → gates_ok · 수요 전입신고 59,000·확정일자 12,810, 경쟁 8편 중 2023 시행령 부칙(근저당 날짜로 기준 금액 갈림) 0편 · crosscheck Gemini 시간 초과 2회 → selfcheck 사실 0 · 이해 시험 2차 6명 뜻·할 일 6/6
+2026-11-08 23:05 · firemap-write-b · work/lawtext.py: 법령 API(OC=test)가 '사용자 정보 검증 실패'면 "제N조 가 없다" 대신 막혔다고 알리고 lawweb.py로 안내 · 이유: 11/8 조문이 없는 줄 오인할 뻔함(API 막힘, 웹은 됨)

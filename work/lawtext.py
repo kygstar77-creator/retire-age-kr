@@ -25,7 +25,12 @@ CDATA = re.compile(r'<!\[CDATA\[(.*?)\]\]>', re.S)
 
 
 def _get(url):
-    return urllib.request.urlopen(url, timeout=90).read().decode('utf-8', 'replace')
+    t = urllib.request.urlopen(url, timeout=90).read().decode('utf-8', 'replace')
+    # 2026-11-08 write-b: OC=test가 '사용자 정보 검증에 실패'로 막히면 예전엔 "제3조 가 없다"로 찍혀 조문이 없는 줄 알았다.
+    if '사용자 정보 검증에 실패' in t:
+        sys.exit('법령 API(OC=test)가 사용자 검증 실패로 막힘 — 조문이 없는 게 아니다. '
+                 'work/lawweb.py <법령> 제N조 <저장 파일> 로 받는다(국가법령정보센터 웹)')
+    return t
 
 
 def latest_ef(law_name, today=None):

@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-08 23:00",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "전입신고 확정일자/다 했는데",
+ "num": "최우선변제 0원?",
+ "sub": "서울 1억6천 · 근저당 날짜로 갈려요",
+ "label": "2026.11.8 법령 기준",
+ "src": "주택임대차보호법 시행령 제10조·제11조, 2023 부칙",
+ "icon": "house",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 115,
+ "num_px": 92,
+ "sub_px": 53,
+ "board": [
+  "pibucut1025",
+  "bogeum1104",
+  "schdpair1105",
+  "chunga1104",
+  "isacut1104",
+  "hmcdiv1104",
+  "yellow1105",
+  "renewpair1102",
+  "rentrep1104",
+  "usrate1104"
+ ]
+}

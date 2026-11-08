@@ -21,7 +21,10 @@ USED = set()
 
 CR = {c['id']: c for c in json.load(open(os.path.join(EP, 'stock', 'credits.json'), encoding='utf-8'))}
 STOCK = {'newspaper_hand': (5905282, 8.0), 'loan_papers': (7821634, 7.3), 'rain_window': (4786522, 90.1),
-         'coffee_cloudy': (6343938, 10.9), 'notebook_hand': (6326847, 12.5), 'dusk_table': (6780621, 6.0)}   # 길이는 11/3 ffmpeg 실측
+         'coffee_cloudy': (6343938, 10.9), 'notebook_hand': (6326847, 12.5), 'dusk_table': (6780621, 6.0),
+         # 11/8 PD: 판끼리는 ffmpeg 컷이 안 잡혀(점수 0.09~0.15) 20초 넘는 판 묶음 9곳에 실사 — 얼굴·상표·외국 지폐 없는 것만(stock/_contact*.jpg 눈 확인)
+         'news_cup': (32114693, 12.5), 'rain_drops': (5366344, 12.0), 'money_count': (5981351, 25.2), 'money_pen': (6327790, 19.8), 'cup_stir': (946148, 21.5),
+         'notepad_calc': (5981346, 37.1), 'water_drops': (36408448, 12.0), 'empty_office': (5716999, 20.6), 'dining_room': (5823595, 14.0)}   # 길이는 11/3 ffmpeg 실측
 
 def L(t, cap=None):
     hit = [i for i, l in enumerate(ALL) if l['text'].startswith(t)]; assert len(hit) == 1, (t, hit)
@@ -67,7 +70,8 @@ scenes += [
     ai('phone_tea_over', ['먼저, 정기예금 1억원이']),
     ai('keys_envelope', ['그리고 2021년 여름에']),
     board('k1_answer2', ['답부터 말하면', '고정 기간이 끝난 대출은']),
-    board('k1_q5', ['뉴스는 대부분', '오늘은 지난 1년', '그런데 흔히 하는 말']),
+    broll('news_cup', ['뉴스는 대부분'], None),   # 11/8 PD: answer2→q5 판 25초 끊기
+    board('k1_q5', ['오늘은 지난 1년', '그런데 흔히 하는 말']),
 ]
 # ── 1. 미국 국채금리 5% (r07~r11) ──
 scenes += [
@@ -76,7 +80,8 @@ scenes += [
     board('k1_bond_note', ['미국 정부에 만 달러를']),
     mo('over', ['이 금리가 처음 그 선에', '그 뒤 한 달 사이', '가장 높았던 날은', '지난번 이만큼', '그달 평균이 4']),   # 11/8 motion: 그림 k1_dgs10 대신 DaysOver
     ai('passbook', ['그때 우리 예금 금리가']),
-    board('k1_2007', ['더 거슬러 가면', '그달 평균은 5', '그때 한국 주택담보대출', '지금 평균은 그때보다']),
+    board('k1_2007', ['더 거슬러 가면', '그달 평균은 5', '그때 한국 주택담보대출']),
+    broll('rain_drops', ['지금 평균은 그때보다'], None),   # 11/8 PD: 2007→us_kr_now 20.4초 끊기
     board('k1_us_kr_now', ['이 영상을 만든 무렵', '%포인트는 금리']),
     broll('newspaper_hand', ['미국 금리가 왜 이렇게'], '오늘은 내 통장 쪽 숫자만'),
 ]
@@ -84,24 +89,29 @@ scenes += [
 scenes += [
     ask('2장', '내 예금 이자는 얼마나 따라왔나', ['먼저 예금부터']),
     board('k1_passbook', ['한국은행은 은행들이', '1년짜리 정기예금']),
-    board('k1_dep_bar', ['작년엔 2', '올해는 3', '그사이 1%포인트']),
+    board('k1_dep_bar', ['작년엔 2', '올해는 3']),
+    broll('money_count', ['그사이 1%포인트'], None),   # 11/8 PD: passbook~coins3 판 38초 끊기 ①
     board('k1_dep_calc', ['다음 달 만기인', '작년 금리라면', '지금 금리면 3', '차이가 87', '한 달로 나누면']),
-    board('k1_coins3', ['더 예전과 비교하면', '다섯 해 전 이맘때', '같은 돈을 맡겼다면']),
+    broll('money_pen', ['더 예전과 비교하면'], None),   # 11/8 PD: ②
+    board('k1_coins3', ['다섯 해 전 이맘때', '같은 돈을 맡겼다면']),
     ai('phone_scroll', ['다른 금리 영상 댓글에 이런', '그래서 2억원을 평균', '작년보다, 세금']),
     board('k1_cofix89', ['예금 금리와 같이', '코픽스는 은행들이', '그달 새로 모은 돈을 보는', '은행이 돈 모으는 값이']),
-    board('k1_gap', ['다른 금리 영상 댓글에서', '새로 맺은 주택담보대출', '작년이나 지금이나', '그사이엔 거의']),
+    broll('cup_stir', ['다른 금리 영상 댓글에서'], None),   # 11/8 PD: cofix89→gap 34초 끊기
+    board('k1_gap', ['새로 맺은 주택담보대출', '작년이나 지금이나', '그사이엔 거의']),
 ]
 # ── 3. 내 대출 이자 (r19~r25) ──
 scenes += [
     ask('3장', '내 대출 이자는 — 고정형과 변동형', ['이번엔 대출인데요']),
     broll('loan_papers', ['정해진 기간 동안'], '고정형과 변동형'),
     mo('cross', ['1년 동안 새로 받은', '고정형은 1%포인트', '변동형은 그 절반을', '그런데 1년 전엔', '올해 4월부터']),   # 11/8 motion: 그림 k1_fix_var+k1_cross 대신 CrossOver 한 장면
-    board('k1_3eok_table', ['3억원을 서른 해 동안 갚는 대출', '작년 고정형 금리라면', '지금 금리면 1', '새로 빌리는 사람이라면', '변동형으로 새로 빌렸다면']),
+    broll('notepad_calc', ['3억원을 서른 해 동안 갚는 대출'], None),   # 11/8 PD: mo cross→3eok 34초 끊기
+    board('k1_3eok_table', ['작년 고정형 금리라면', '지금 금리면 1', '새로 빌리는 사람이라면', '변동형으로 새로 빌렸다면']),
     broll('rain_window', ['그럼 고정형과 변동형 중', '그럼 변동형은 왜'], '어느 쪽이 나을지는 앞으로 금리에 달린 일'),
     board('k1_cofix3', ['변동형 금리는 보통', '그런데 코픽스는 한 가지가', '그달 새로 모은 돈만', '잔액 기준 코픽스에는']),
     broll('rain_window', ['찬물이 가득한'], '온도가 천천히 오르듯'),
     board('k1_cofix89', ['같은 기간 신규 코픽스는', '잔액 코픽스는', '다만 변동형 평균이']),
-    board('k1_trap', ['여기서 조심할 게', '하나, 내 변동금리는', '둘, 오늘 본']),
+    broll('water_drops', ['여기서 조심할 게'], None),   # 11/8 PD: cofix89→trap 28초 끊기
+    board('k1_trap', ['하나, 내 변동금리는', '둘, 오늘 본']),
 ]
 # ── 4. 미국 때문일까 (r26~r30) ──
 scenes += [
@@ -114,7 +124,8 @@ scenes += [
     mo('dots', ['예를 들어 국채가', '정기예금 평균은 한국', '미국 국채와는 열 달에', '고정형 대출도 한국']),   # 11/8 motion: 첫 k1_samedir 대신 SameDirDots('예를 들어'부터 — 보기 박자)
     broll('dusk_table', ['다만 같이 움직였다는'], '같이 움직였다는 뜻이지 그 때문은 아니다'),
     board('k1_samedir', ['변동형은 오르내림 폭', '미국과 한국 10년', '그래도 은행 평균 금리에']),
-    board('k1_base_steps', ['이 비교 기간에', '한국 국채가 왜']),
+    board('k1_base_steps', ['이 비교 기간에']),
+    broll('empty_office', ['한국 국채가 왜'], None),   # 11/8 PD: samedir→2023 36초 끊기
     board('k1_2023', ['그럼 앞에서 본 그때', '예금 평균 금리는 그해', '4.2%였죠', '그로부터 석 달', '그때는 오를 때도']),
 ]
 # ── 5. 고정 끝나는 사람 (r31~r33) ──
@@ -123,7 +134,8 @@ scenes += [
     board('k1_calendar', ['고정 기간이 끝나는 사람은', '여기서부터는 작년이']),
     ai('keys_envelope', ['처음에 말한 분', '3억원을 서른 해 동안 갚는 고정형']),
     board('k1_reset_flow', ['그때 고정형 평균', '한 달에 126', '5년이 지나', '한 달에 158', '새로 빌리는 사람의']),
-    board('k1_answer2', ['2021년에 내던 돈보다', '한 해면 370']),
+    broll('dining_room', ['2021년에 내던 돈보다'], None),   # 11/8 PD: reset_flow→reset_two 34초 끊기
+    board('k1_answer2', ['한 해면 370']),
     board('k1_reset_two', ['변동형 평균으로 다시', '이건 평균 금리로']),
     ai('phone_scroll', ['고정 5년이 길어', '2021년 무렵 낮은']),
     board('k1_reset_two', ['그날이 오면 다시']),

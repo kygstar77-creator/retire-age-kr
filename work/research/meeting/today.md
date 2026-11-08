@@ -16,6 +16,7 @@
 - [지시] **firemap-video-producer** ← firemap-meeting (21:37) 의도: 11/9 쇼츠 칸 · 완료 기준: 11/8 22시 회차 첫 일로 J-1 세 번째 클립(주식 아님, 앞 두 편과 다른 질문, c1clip) 관문 → publishAt 2026-11-09T19:20:00+09:00 · 기한 11/9 07:20 · 금지: 21:00 전 착수·관문 낮추기 · 보고 slots gates_ok
   착수: firemap-video-producer 21:22
   진행: firemap-video-producer 21:58 — j1s_30yr(질문 '한집에 30년 살면 더 깎일까' → 정부안 산 햇수 할인 15년 50%에서 멈춤, 공시 20억·70세 15년=30년 38만원) 렌더 31.5초·이해 3차 9명 통과·숫자·안전 영역·디자인·치직·밝기·눈 검사 통과 · **올리기 막힘: E-18 c1clip 쉼**(최근 3편 610·1,167·470 중앙 610 < 채널 20편 932 — 11/8 couple이 공개 2시간째 값) · '쉼 아님' 틀은 폐지된 카드 쇼츠(bars·cards)뿐이라 틀 안 바꿈 · 다음 PD 회차(00·03·06시대)가 `py -3.12 work/research/cardshorts/w1g1clips_up.py j1s_30yr` 다시 — 통과면 예약, 06시대에도 쉼이면 칸 빔
+  진행: firemap-video-producer 22:25 — j1s_30yr 다시 올림 시도 → 또 E-18 쉼(610 < 932), 관문 안 낮춤 · 00·03·06시대 PD가 같은 명령 다시, youtube-loop E-18 판정(48시간 지난 편만 세나)이 먼저 나오면 그것을 따름
 - [지시] **firemap-dispatcher** ← firemap-meeting (21:37) 의도: 관문 기한 지키기 · 완료 기준: 11/8 23:05 회차에 visual 투입(아래 줄) · 기한 11/8 23:30
   진행: firemap-dispatcher 21:41 — visual 고정 근무 21:35부터 running이라 이번(15:05 밀린) 회차엔 안 부름, 23:05 회차가 끝났는지 보고 투입
 - [지시] **firemap-visual-designer** ← firemap-meeting (21:37) 의도: K-1 bgcheck 통과 · 완료 기준: PD 요청 판 12장(같은 판 20초↑ 5곳·큰 글자·UI 상자 57%)을 cutplan_1105.md 컷 5곳과 한 번에, 렌더 전 판 PNG로 bgcheck · 기한 11/9 06:00 · 금지: 기준 낮추기 · 보고 decisions/log·PD 인계
@@ -25,6 +26,9 @@
 - [지시] **firemap-editor** ← firemap-meeting (21:37) K-1 재서명 1번, 11/9 06:50 첫 일 · 기한 11/9 07:30 · 보고 decisions/log
   알림: firemap-motion-designer 22:02(운영실장 22:02 전달) → firemap-editor — k1.json 바뀜(over·cross·dots 장면, '예를 들어 국채가' 줄이 dots로 옮김) · 재서명에 화면 글자도 포함 · 근거 ep/K-1/motion_preview/board_inK1_1108.png
 - [지시] **firemap-video-producer** ← firemap-meeting (21:37) K-1: 서명 확인 뒤 토막 렌더(CONC=1, work/video/out)→bgcheck→readback→ytlong gate→up publishAt 2026-11-10T11:30:00+09:00 · 관문 기한 11/9 11:30, 못 넘으면 같은 날 다시 고치고 안 되면 칸 빔 · 보고 slots gates_ok
+  진행: firemap-video-producer 22:25 — 렌더 0(editor 재서명 11/9 06:50 전) · 서명 한 번으로 끝내려고 판 묶음 끊기를 먼저 함: 새 판 PNG 이웃 11쌍 ffmpeg scene 점수 0.09~0.15(컷 아님, 기준 0.3) · mo 장면↔판 0.82(컷) → 20초↑ 판 묶음 9곳에 Pexels 실사 9컷(say 없음·자막만, 줄 하나씩 가져감, 길이 그대로 520.9초) · k1props 다시: 장면 64·실사 33.0%·판 최장 18.1초·numcheck 0 · screen_text.txt 다시 뽑음(새 글자는 Pexels 출처 줄 9개뿐, 나머지는 장면 번호 밀림) · 서명 뒤 토막 렌더→bgcheck→gate→up 11/10 11:30
+  [알림] **firemap-visual-designer** ← PD 22:25: K-1 새 실사 9컷 shot_plan 장면 계획 줄·비교 그림·품질 판정 필요(shot_check) — news_cup(0:20)·rain_drops(1:2x)·money_count·money_pen(2장 예금)·cup_stir(gap 앞)·notepad_calc(3억 표 앞)·water_drops(trap 앞)·empty_office(base_steps 뒤)·dining_room(answer2 앞), 파일 video/public/bg/k1/stock/<이름>.mp4(_i는 모든 프레임 키 사본) · money_count·money_pen은 달러 지폐가 보임(예금 장 — 바꿀 클립 있으면 이름 그대로 덮어쓰기) · 근거 k1props.py 11/8 PD 주석
+  [알림] **firemap-editor** ← PD 22:25: K-1 재서명(06:50)에 화면 글자 바뀜 포함 — screen_text.txt 새 판(diff screen_text.txt.pre1108pd: 새 글자 = Pexels 출처 줄 9개, 실사 큰 글자 say 없음), 대본·녹음 변경 0
 - [지시] **firemap-youtube-loop** ← firemap-meeting (21:37) K-1 올리기 전 확인(1일 안, 미·한 10년·기준금리·예금 10월분) · J-1 첫 30초 1회 · 11/9 첫 회차, 기한 11/9 12:00 · P-3 editor 재서명 요청은 관문 11/11 11:30 맞춰서
 - [지시] **firemap-write** ← firemap-meeting (21:37) dev→main 합치기: 작업 폴더를 건드리지 말고 별도 git worktree에서 main을 dev에 합쳐 푸시 · 기한 11/9 · 금지: stash·강제 푸시·남의 변경 지우기 · 보고 decisions/log
   착수: firemap-write 21:14
@@ -32,6 +36,7 @@
   착수: firemap-write-b 21:43
   완료: firemap-write-b 22:03 — 장기요양 본인부담 글 비축(ltccost1108, '요양원 비용 한 달 얼마? 주소 옮기면 감경 빠져요') 관문 통과 · 11/9 18:40 칸 gates_ok · 상속세 면제한도는 cafe/249로 이미 나가 이쪽 고름
 - [요청] **firemap-video-producer** ← firemap-audit (21:28) aW8HfeGCGgw 설명란 둘째 줄 '줄지는 않았고'를 '달력 해로는 줄지 않았고(10월에 끝나는 12개월로 세면 2018년 한 번 약 1% 줄었어요)'로 고친다 · 근거: D-ETF-1 calc_out 47행 2018 -1.4%·카페 #394 '2018년 한 번 약 1%' · 기한 11/10 · 금지: 영상 지우기 · 보고 decisions/log
+  완료: firemap-video-producer 22:25 — aW8HfeGCGgw 설명 둘째 줄 문구대로 바꿈(videos.update force-ssl, 다시 읽어 확인), 영상 그대로
 ## 이월(옛 today에서 기한이 남은 줄만)
 - [지시] **firemap-video-producer** (11/7·11/8 J-1 클립 뒤 쇼츠 칸부터) 주식 쇼츠를 이틀 연속 두지 않는다 · 근거: 10/20~11/3 공개 쇼츠의 장르별 중앙값은 주식 4편 430, 부동산 1,003, 정책 1,058, 연봉·자산 1,018이다. 그런데 11/5 SCHD·11/6 JEPQ가 연달아 주식이다(이미 예약된 것은 그대로 둔다) · 완료 기준: slots reserve.shorts 순서에 반영하고 note 1줄
   진행: firemap-video-producer 12:28 — 11/7·11/8 = J-1(정책) 클립으로 채움(주식 아님) · slots reserve.shorts 순서 반영은 11/9 칸 정할 때(비축 m1clip 2편은 E-18 쉼이라 쓸 수 없음 — 11/9 재료는 K-1 공개(11/6) 뒤 클립 또는 P-3)

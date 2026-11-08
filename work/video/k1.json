@@ -137,14 +137,27 @@
    }
   },
   {
-   "kind": "pic",
+   "kind": "broll",
    "lines": [
     {
      "text": "뉴스는 대부분 앞으로 어떻게 될지를 이야기해요.",
      "audio": "audio/k-1/625ffd4418382a3b.wav",
      "frames": 90,
      "cap": null
-    },
+    }
+   ],
+   "frames": 90,
+   "data": {
+    "src": "bg/k1/stock/news_cup.mp4",
+    "license": "Pexels 32114693 무료(Esra Afşar)",
+    "say": null,
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
     {
      "text": "오늘은 지난 1년 동안 실제로 얼마나 올랐는지를, 한국은행 숫자로 봅니다.",
      "audio": "audio/k-1/6e7f4c6375de6fb5.wav",
@@ -158,7 +171,7 @@
      "cap": null
     }
    ],
-   "frames": 396,
+   "frames": 306,
    "data": {
     "pic": "bg/k1/board/k1_q5.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1342,15 +1355,9 @@
      "audio": "audio/k-1/f7f766180588df3f.wav",
      "frames": 112,
      "cap": null
-    },
-    {
-     "text": "지금 평균은 그때보다 꽤 낮은 편이죠.",
-     "audio": "audio/k-1/feee9c4be430fcff.wav",
-     "frames": 73,
-     "cap": null
     }
    ],
-   "frames": 345,
+   "frames": 272,
    "data": {
     "pic": "bg/k1/board/k1_2007.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1363,6 +1370,25 @@
     ],
     "cx": 50,
     "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "지금 평균은 그때보다 꽤 낮은 편이죠.",
+     "audio": "audio/k-1/feee9c4be430fcff.wav",
+     "frames": 73,
+     "cap": null
+    }
+   ],
+   "frames": 73,
+   "data": {
+    "src": "bg/k1/stock/rain_drops.mp4",
+    "license": "Pexels 5366344 무료(Zuzanna Musial)",
+    "say": null,
+    "side": "left",
+    "from": 0
    }
   },
   {
@@ -1476,15 +1502,9 @@
      "audio": "audio/k-1/05be6e9012a90a8e.wav",
      "frames": 59,
      "cap": null
-    },
-    {
-     "text": "그사이 1%포인트 넘게 뛰었죠.",
-     "audio": "audio/k-1/c0067676b84f39c8.wav",
-     "frames": 74,
-     "cap": null
     }
    ],
-   "frames": 196,
+   "frames": 122,
    "data": {
     "pic": "bg/k1/board/k1_dep_bar.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1497,6 +1517,25 @@
     ],
     "cx": 50,
     "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그사이 1%포인트 넘게 뛰었죠.",
+     "audio": "audio/k-1/c0067676b84f39c8.wav",
+     "frames": 74,
+     "cap": null
+    }
+   ],
+   "frames": 74,
+   "data": {
+    "src": "bg/k1/stock/money_count.mp4",
+    "license": "Pexels 5981351 무료(https://kaboompics.com/)",
+    "say": null,
+    "side": "left",
+    "from": 0
    }
   },
   {
@@ -1549,14 +1588,27 @@
    }
   },
   {
-   "kind": "pic",
+   "kind": "broll",
    "lines": [
     {
      "text": "더 예전과 비교하면 차이가 훨씬 큽니다.",
      "audio": "audio/k-1/6016374ab572f361.wav",
      "frames": 80,
      "cap": null
-    },
+    }
+   ],
+   "frames": 80,
+   "data": {
+    "src": "bg/k1/stock/money_pen.mp4",
+    "license": "Pexels 6327790 무료(https://kaboompics.com/)",
+    "say": null,
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
     {
      "text": "다섯 해 전 이맘때는 평균이 1.3% 정도였거든요.",
      "audio": "audio/k-1/e62deceb978454e2.wav",
@@ -1570,7 +1622,7 @@
      "cap": null
     }
    ],
-   "frames": 303,
+   "frames": 223,
    "data": {
     "pic": "bg/k1/board/k1_coins3.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1662,14 +1714,27 @@
    }
   },
   {
-   "kind": "pic",
+   "kind": "broll",
    "lines": [
     {
      "text": "다른 금리 영상 댓글에서 좋아요를 많이 받은 질문이 있어요. 대출 이자랑 예금 이자 차이가 너무 크지 않냐는 거예요.",
      "audio": "audio/k-1/d3ec8e2ea8e35255.wav",
      "frames": 185,
      "cap": null
-    },
+    }
+   ],
+   "frames": 185,
+   "data": {
+    "src": "bg/k1/stock/cup_stir.mp4",
+    "license": "Pexels 946148 무료(Carlos Arribas)",
+    "say": null,
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
     {
      "text": "새로 맺은 주택담보대출 평균 금리에서 정기예금 평균 금리를 빼 봤어요.",
      "audio": "audio/k-1/fbe338053b4b75d5.wav",
@@ -1689,7 +1754,7 @@
      "cap": null
     }
    ],
-   "frames": 536,
+   "frames": 351,
    "data": {
     "pic": "bg/k1/board/k1_gap.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1862,14 +1927,27 @@
    }
   },
   {
-   "kind": "pic",
+   "kind": "broll",
    "lines": [
     {
      "text": "3억원을 서른 해 동안 갚는 대출로 셈해 볼게요.",
      "audio": "audio/k-1/479628cf4bea8b82.wav",
      "frames": 89,
      "cap": null
-    },
+    }
+   ],
+   "frames": 89,
+   "data": {
+    "src": "bg/k1/stock/notepad_calc.mp4",
+    "license": "Pexels 5981346 무료(https://kaboompics.com/)",
+    "say": null,
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
     {
      "text": "작년 고정형 금리라면 한 달에 142만원이에요.",
      "audio": "audio/k-1/dc96cb4be5eef162.wav",
@@ -1895,7 +1973,7 @@
      "cap": null
     }
    ],
-   "frames": 552,
+   "frames": 463,
    "data": {
     "pic": "bg/k1/board/k1_3eok_table.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -2035,14 +2113,27 @@
    }
   },
   {
-   "kind": "pic",
+   "kind": "broll",
    "lines": [
     {
      "text": "여기서 조심할 게 두 가지 있어요.",
      "audio": "audio/k-1/07c28fd458675e85.wav",
      "frames": 68,
      "cap": null
-    },
+    }
+   ],
+   "frames": 68,
+   "data": {
+    "src": "bg/k1/stock/water_drops.mp4",
+    "license": "Pexels 36408448 무료(정규송 Nui MALAMA)",
+    "say": null,
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
     {
      "text": "하나, 내 변동금리는 코픽스 그대로가 아니에요. 은행이 붙이는 금리가 달라서, 같은 코픽스라도 사람마다 금리가 달라요.",
      "audio": "audio/k-1/18a5c1b904c1d8ac.wav",
@@ -2056,7 +2147,7 @@
      "cap": null
     }
    ],
-   "frames": 475,
+   "frames": 407,
    "data": {
     "pic": "bg/k1/board/k1_trap.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -2983,15 +3074,9 @@
      "audio": "audio/k-1/33b2a680b4293118.wav",
      "frames": 108,
      "cap": null
-    },
-    {
-     "text": "한국 국채가 왜 미국보다 더 올랐는지는, 공식 자료에 이유가 적혀 있지 않아요.",
-     "audio": "audio/k-1/29b6f6e1efea0b6a.wav",
-     "frames": 155,
-     "cap": null
     }
    ],
-   "frames": 263,
+   "frames": 108,
    "data": {
     "pic": "bg/k1/board/k1_base_steps.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -3004,6 +3089,25 @@
     ],
     "cx": 50,
     "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "한국 국채가 왜 미국보다 더 올랐는지는, 공식 자료에 이유가 적혀 있지 않아요.",
+     "audio": "audio/k-1/29b6f6e1efea0b6a.wav",
+     "frames": 155,
+     "cap": null
+    }
+   ],
+   "frames": 155,
+   "data": {
+    "src": "bg/k1/stock/empty_office.mp4",
+    "license": "Pexels 5716999 무료(Tima Miroshnichenko)",
+    "say": null,
+    "side": "left",
+    "from": 0
    }
   },
   {
@@ -3179,14 +3283,27 @@
    }
   },
   {
-   "kind": "pic",
+   "kind": "broll",
    "lines": [
     {
      "text": "2021년에 내던 돈보다 한 달 31만원 정도 늘어요.",
      "audio": "audio/k-1/8de0c595e5ec911e.wav",
      "frames": 116,
      "cap": null
-    },
+    }
+   ],
+   "frames": 116,
+   "data": {
+    "src": "bg/k1/stock/dining_room.mp4",
+    "license": "Pexels 5823595 무료(Charlotte May)",
+    "say": null,
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
     {
      "text": "한 해면 370만원이 넘습니다.",
      "audio": "audio/k-1/183748c896931341.wav",
@@ -3194,7 +3311,7 @@
      "cap": null
     }
    ],
-   "frames": 190,
+   "frames": 74,
    "data": {
     "pic": "bg/k1/board/k1_answer2.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",

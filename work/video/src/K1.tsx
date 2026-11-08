@@ -11,6 +11,9 @@ import {TallyBars} from './motion/TallyBars';
 import {tallyStarts} from './motion/TallyFrame';
 import {EqStack} from './motion/EqStack';
 import {LoanSteps} from './motion/LoanSteps';
+import {DaysOver} from './motion/DaysOver';
+import {CrossOver} from './motion/CrossOver';
+import {SameDirDots} from './motion/SameDirDots';
 import {KTable} from './parts/t1kit';
 
 type CLine = {text: string; audio: string | null; frames: number; cap?: string | null};
@@ -269,11 +272,12 @@ const Pic: React.FC<{s: CScene; badge: string}> = ({s, badge}) => {
 };
 
 // motion 부품 판(10/18 motion): data.part 'loan' → LoanSteps, 'eq' → EqStack · 박자 = 줄 시작(tallyStarts)
+// 11/8 motion: K-1 움직이는 판 셋 'over' DaysOver · 'cross' CrossOver · 'dots' SameDirDots — 재료 ep/K-1/motion_preview/k1_motion.json(voice.json 길이), k1props.py mo()가 붙임
 const Mo: React.FC<{s: CScene}> = ({s}) => {
   const d = s.data; const L = tl(s.lines); const B: number[] = d.beats ?? tallyStarts(L);
   return (
     <TallyFrame title={d.title} sub={d.sub} source={d.source} chapter={d.chapter} lines={L}>
-      {d.part === 'eq' ? <EqStack {...d.p} beats={B} /> : <LoanSteps {...d.p} beats={B} />}
+      {d.part === 'eq' ? <EqStack {...d.p} beats={B} /> : d.part === 'over' ? <DaysOver {...d.p} beats={B} /> : d.part === 'cross' ? <CrossOver {...d.p} beats={B} /> : d.part === 'dots' ? <SameDirDots {...d.p} beats={B} /> : <LoanSteps {...d.p} beats={B} />}
     </TallyFrame>
   );
 };

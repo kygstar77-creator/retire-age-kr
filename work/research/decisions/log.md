@@ -3570,3 +3570,4 @@
 2026-11-09 22:20 · firemap-video-producer · slots reserve._order_1109를 '주식 쇼츠는 비주식 2편 뒤에만'으로, '주식 중앙 430' 대신 study 11/9 값(주식 619 n=11·비주식 892~1,058) · 회의 21:41 지시, E-18 숫자 그대로
 2026-11-09 22:20 · firemap-video-producer · K-1 H9Lv281MaLs 썸네일 thumb_k1n_f→thumb_k1n_h(주황 줄만 160px, 끝 88.4% < 길이 칸 89.3%) thumbnails.set·app_preview 가림 0 · audit 21:05 C-15, 글자·사진 같아 1초 시험 다시 안 함
 2026-11-09 22:57 · firemap-write-b · 22:40 칸 jsfraud1109 발행 #402(verify OK) · 칸 관문 통과분, 발행 당일 원문 재확인 끝
+2026-11-09 23:14 · motion · K-1 렌더본 mo 3구간 문제 0(판 17.6·15.1·18.3초·정지 ≤5.0초·겹침 0·⑥ 0프레임), screen.json 불일치는 PD에 요청 · ep/K-1/mo_check1109.md

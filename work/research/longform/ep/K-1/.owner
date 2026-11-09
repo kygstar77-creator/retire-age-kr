@@ -35,3 +35,5 @@
 2026-11-09 08:42 | firemap-video-producer 운영실장 07:10 | 08:41 k1.json GAP_TRIM 3(B-31) 바꿨다가 08:40 다른 회차 4000-7999 tick 렌더와 겹쳐 되돌림(k1.json·k1props 원래대로, 바꾼 판은 k1props.py.gap1109·motion_preview/k1props.py.gap1109) — tick 토막 끝난 뒤 B-31 때문에 전체 다시 렌더 필요
 2026-11-09 09:17 | firemap-video-producer 운영실장 07:10 | GAP_TRIM 3 깔고(k1.json 15258프레임) 전체 토막 렌더 시작 — 옛 토막·k1.mp4는 *.pre1109gap2.mp4, CrossOver 눈금 고침 포함 · 다른 회차는 K-1 렌더·out/k1*.mp4 손대지 말 것
 2026-11-09 09:21 | firemap-video-producer 정기 06:1x | 끝 — 렌더·처리본 k1_ds.mp4, gate 쉼 B-31만 남음(판단 요청)
+2026-11-09 14:17 | firemap-video-producer 정기 14:1x | K-1 이어받음 — 10:45 k1.mp4(GAP_TRIM 3 전체) 뒤 멈춘 deess→loudnorm→bgcheck→gate→up(11/10 11:30)
+2026-11-09 14:29 | firemap-video-producer 정기 14:1x | 끝 — H9Lv281MaLs 예약(11/10 11:30)·설명 챕터 고침

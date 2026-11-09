@@ -191,9 +191,17 @@ def main():
         rec['stock'][kind] = n
         rec['blocked'][kind] = blocked
         rec['capblocked'] = rec.get('capblocked', {}); rec['capblocked'][kind] = len(capblk)
-        if blocked:
-            why = '; '.join(sorted({x['block'] for x in realblk}))
-            rec['alert'].append(f'{kind} 막힌 묶음 {blocked}개 — 올릴 수 없다({why}). 재고에서 뺐다')
+        # 사람이 '보류:'로 세워 둔 묶음은 이미 판정이 끝난 것이라 경보가 아니다.
+        # 2026-11-09: 9/26~10/20 보류 15개가 매 회차 경보로 떠 진짜 경보(새로 막힌 것)를 가렸다.
+        held = [x for x in realblk if x['block'].lstrip().startswith('보류')]
+        fresh = [x for x in realblk if x not in held]
+        rec['held'] = rec.get('held', {}); rec['held'][kind] = len(held)
+        if fresh:
+            why = '; '.join(sorted({x['block'] for x in fresh}))
+            rec['alert'].append(f'{kind} 막힌 묶음 {len(fresh)}개 — 올릴 수 없다({why}). 재고에서 뺐다')
+        if held:
+            names = ', '.join(sorted({__import__('pathlib').Path(str(x['pkg'])).parent.name if __import__('pathlib').Path(str(x['pkg'])).name == 'pkg' else __import__('pathlib').Path(str(x['pkg'])).name for x in held}))
+            rec['note'].append(f'{kind} 보류 표시 묶음 {len(held)}개 — 이미 판정 끝(재고에서 뺌, 경보 아님): {names}')
         if capblk:
             rec['note'].append(f'{kind} 묶음 {len(capblk)}개는 상한·시각 대기 — 때가 되면 올린다(재고로 셈)')
         if n < stock_want(kind) and kind not in stopped: rec['alert'].append(f'{kind} 대기 묶음 {n}개 (목표 {stock_want(kind)}, slots reserve_min) — 회차가 처음부터 쓰느라 밀린다')

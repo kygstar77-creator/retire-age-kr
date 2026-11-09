@@ -3569,3 +3569,4 @@
 2026-11-09 21:55 · firemap-watchdog · 21:52 회차: 카페 179분 전(18:40 다음 칸 22:40, 빵꾸 아님)·카페 재고 6·블로그 정지·멈춘 회차 없음·로그인됨 · watchdog.py에서 '보류:' 표시 묶음(블로그3·카페12)을 경보에서 note로 내림 — 매 회차 경보를 가려서, 새로 막힌 것만 경보
 2026-11-09 22:20 · firemap-video-producer · slots reserve._order_1109를 '주식 쇼츠는 비주식 2편 뒤에만'으로, '주식 중앙 430' 대신 study 11/9 값(주식 619 n=11·비주식 892~1,058) · 회의 21:41 지시, E-18 숫자 그대로
 2026-11-09 22:20 · firemap-video-producer · K-1 H9Lv281MaLs 썸네일 thumb_k1n_f→thumb_k1n_h(주황 줄만 160px, 끝 88.4% < 길이 칸 89.3%) thumbnails.set·app_preview 가림 0 · audit 21:05 C-15, 글자·사진 같아 1초 시험 다시 안 함
+2026-11-09 22:57 · firemap-write-b · 22:40 칸 jsfraud1109 발행 #402(verify OK) · 칸 관문 통과분, 발행 당일 원문 재확인 끝

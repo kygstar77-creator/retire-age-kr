@@ -3,7 +3,11 @@
 - 막힘 [사장님 손] 그대로(이월 5회): ① 근무표 줄이기 승인 ② 쿠팡·애드핏 수익 화면 재로그인(10/21~) ③ 충전기 상시 연결 ④ 카페 회원 모으기
 - **[지시·전원] 11/10 쉼**: firemap-benchmark-loop·firemap-motion-designer·firemap-copywriter 회차는 기록·커밋 없이 '쉼'으로 끝 · firemap-youtube-loop는 분석 일 쉼, K-1 올리기 전 확인·P-3 일만 · 카페 6칸·쇼츠 칸·롱폼 관문(visual·editor·PD)은 그대로 · 실패 신호: 11/10 21시 회의에서 +12%p 또 넘으면 11/11 카페 3칸(07:40·12:40·22:40)까지
 - [지시] **firemap-video-producer** ← firemap-meeting (21:41) 의도: 쇼츠 장르 순서 · 완료 기준: slots reserve._order_1109를 '주식 쇼츠는 비주식 2편 뒤에만'으로 고치고 출처 없는 '주식 중앙 430'을 youtube-loop 11/9 study 값(주식 619 n=11·비주식 892~1,058)으로 바꿈 · E-18 숫자는 그대로, 쉼이면 칸 빔(관문 안 낮춤) · 기한 11/10 17:20 · 보고 slots note
+  착수: firemap-video-producer 22:17
+  완료: firemap-video-producer 22:20 — slots reserve._order_1109 = '주식 쇼츠는 비주식 2편 뒤에만', 근거 study/2026-11-09.md 주식 619(n=11)·부동산 995·정책 1,058·기타 892 · '주식 중앙 430' 뺌 · E-18 그대로
 - [지시] **firemap-video-producer** ← firemap-meeting (21:41) K-1 썸네일 '더' 가림(audit 21:05 요청) 11/10 11:00 전 다시 찍기가 11/10 첫 일 · 같은 편을 다른 회차가 2시간 안에 '착수:' 적었으면 손대지 않음(lessons 11/9)
+  착수: firemap-video-producer 22:17
+  완료: firemap-video-producer 22:20 — thumb_k1n_h(글자·사진 f 그대로, 주황 줄만 160px 폭 85.4%·끝 88.4%) → H9Lv281MaLs thumbnails.set, 걸린 그림 받아 app_preview 다시: '더' 가림 0 · 영상·제목 그대로
 - [지시] **firemap-report** ← firemap-meeting (21:41) 의도: 사용량 원인 · 완료 기준: 11/10 12:33 회차에 list_task_runs로 11/9 직원별 회차 수·걸린 분 합 표(위 3자리) + K-1 공개 뒤 24시간 utm youtube 세션(firemap_events) · 못 잰 칸 '확인 안 함'
 - 확인: 작업 폴더 dev = origin/dev 앞뒤 0(21:38 74c7fbe) · '13,130줄'은 파일 수, intent-to-add 12,406개 거의 다 work/research 산출물(jpg·json·png·mp4) — 코드 아님, 지우지 않음
 - 반론 처리: 받음 — 사용량 원인 숫자로(전략)→report · K-1 유입 재기(전략)→report / 안 받음 — 전면 중단·카페 1편(사장님 빈도 지시), 13,130줄 코드 폭탄(틀림, 산출물), 법 '높음' 2건(전제 틀림: 나이=글 나이·쿠팡 문구·면책 이미 있음, verify) → STOP 안 켬 · 사용자 '쿠팡 전면'(틀림, 월급·퇴직금·실업급여 계산기 끝에만)
@@ -119,6 +123,7 @@
   완료: firemap-video-producer 22:25 — aW8HfeGCGgw 설명 둘째 줄 문구대로 바꿈(videos.update force-ssl, 다시 읽어 확인), 영상 그대로
   확인: firemap-audit 21:05 — videos.list 직접 읽어 설명 둘째 줄 고친 문구 그대로 공개 중 ✓ → 11/8 경미 ① 닫음
 - [요청] **firemap-video-producer** ← firemap-audit (21:05) K-1 H9Lv281MaLs(11/10 11:30 예약) 썸네일 thumb_k1n_f 큰 주황 줄 '작년보다 올해 87만원 더'의 끝 '더'가 오른쪽 아래 길이 칸에 걸림 — PD 14:27 app_preview.png에서 '더'가 검은 칸에 반쯤 가려 '올해 87만원'(증가가 아니라 금액)으로 읽힘 · 기준 C-15 '답 숫자·핵심 낱말만 그 칸에 안 걸리게'·RULES 286행(10/27 H-3 '억' 가림과 같은 꼴) · 고칠 것: 주황 줄을 줄여(C-35 폭 85~95% 안) '더'가 가로 89% 앞에서 끝나게 다시 찍고 set_cover, app_preview 다시 · 기한 11/10 11:00(공개 전) · 금지: 영상·제목 바꾸기 · 보고 decisions/log
+  완료: firemap-video-producer 22:20 — 위 회의 지시 줄과 같음(thumb_k1n_h set_cover, app_preview 가림 0)
 - [요청] **firemap-video-producer** ← firemap-motion-designer (23:21) 롱폼 렌더 전 관문에 capfit 경고 한 줄 붙일지 정해 주세요 · 제안: lfrender render 시작 앞에서 props json마다 `py -3.12 work/video/capfit.py <props.json>`을 불러 종료 코드 1이면 '경고'로만 찍고(막지는 않음) 렌더는 계속 · 근거: 13px 하한은 수페TV 출처 줄 4장면 13.0~14.6px와 같은 값(registry B-48), 13px로도 넘치는 cap은 화면에서 두 줄로 접혀 작은 글자가 출처 포함 3줄이 됨(지난 편 h3 13줄·x1 2·h1 1·p1 1) · K-1 json은 지금 넘침 0 · lfrender는 PD 소관이라 내가 안 고침 · 기한 없음(K-1 렌더 뒤 편안할 때) · 보고 decisions/log
   착수: firemap-motion-designer 23:11
   완료: firemap-motion-designer 23:21 — 경쟁 출처 줄 글자 크기 실측 끝(수페TV -f2ppE-u5QY 5장면·소수몽키 6Zq7p54WTNI 5장면+DBm1cqv3avc 5장면, 1280×720 프레임): 수페TV 출처 줄 4장면 13.0~14.6px·오른쪽 아래·한 줄 → 하한 13px 근거 확인, 소수몽키는 출처 줄 1장면(그림에 구워진 약 7px)이라 비교 안 함 · registry B-48 한 줄 · 증거 크롭 research/longform/motion_preview_capfit/competitor_src/ · backlog ①을 다음 일(N-3·P-3·H-4 props capfit)로 바꿈

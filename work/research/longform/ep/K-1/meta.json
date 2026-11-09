@@ -9,8 +9,8 @@
  ],
  "thumb_text_top": "1년 정기예금 · 세금 뗀 이자 / 작년 9월 vs 올해 9월",
  "thumb_text": "정기예금 1억 이자 / 작년보다 올해 87만원 더",
- "thumb": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\K-1\\thumb_k1n_f.png",
- "thumb_status": "11/03 09:08 visual 한은 9월분 글자 고침(facts F4 871,380원) — d 사진·꼴 그대로 · 1초 시험 제미나이 순서 바꿔 2번 주제 맞힘·레드팀 주제 맞힘(고쳐서: 큰 글 '세후·1년' 없음·달러 사진) · 장부 사진 g와 짝 비교 1:1이라 f 유지 · 근거 visual/K-1-thumb/judges.md",
+ "thumb": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\K-1\\thumb_k1n_h.png",
+ "thumb_status": "11/09 22:20 PD: audit 21:05 '더' 길이 칸 가림 → f와 글자·사진·꼴 같고 주황 줄만 160px(폭 85.4%·끝 88.4%, 길이 칸 89.3%부터) — make_k1n.py make_h · thumbnails.set H9Lv281MaLs, 걸린 그림 받아 app_preview 다시(가림 0) · 1초 시험은 글자 같아 다시 안 함 · 이전: 11/03 09:08 visual 한은 9월분 글자 고침(facts F4 871,380원) — d 사진·꼴 그대로 · 1초 시험 제미나이 순서 바꿔 2번 주제 맞힘·레드팀 주제 맞힘(고쳐서: 큰 글 '세후·1년' 없음·달러 사진) · 장부 사진 g와 짝 비교 1:1이라 f 유지 · 근거 visual/K-1-thumb/judges.md",
  "desc_first2": [
   "한국은행 신규취급액 평균 금리로 2025년 9월과 2026년 9월을 비교하면, 1년 정기예금 금리는 2.54%에서 3.57%로 올라 1억원을 1년 맡길 때 세금 뗀 이자가 87만원쯤 늘었습니다.",
   "같은 1년 미국 10년 국채금리(FRED)는 0.9%포인트쯤, 한국 10년 국고채(ECOS)는 1.6%포인트 올랐고, 2021년 여름 고정금리로 빌린 3억원 대출은 지금 평균 금리로 다시 정하면 한 달 31만원 정도 늘 수 있습니다(파이어맵 계산 · 금리 전망·가입 권유 아님)."
@@ -82,7 +82,7 @@
  "video": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\video\\out\\k1_ds.mp4",
  "missing": 0,
  "todo": "11/4 14:3x PD k1meta: desc·chapters·answers·missing 채움 · 남은 것: 렌더(editor 화면 재서명 뒤 check/render_parts_1104.sh)·readback·올리기 전 확인(youtube-loop 11/5 오전)·카페 짝 글 주소(cafe_url) · 렌더 뒤 이 파일 다시 돌림(챕터 시각 k1.json 그대로면 같음)",
- "thumb_prev": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\K-1\\thumb_k1n_d.png",
+ "thumb_prev": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\K-1\\thumb_k1n_f.png",
  "desc_first2_src": "facts F3·F4·F24·F12 (calc5_out, 한은 9월분 11/3 받음) · 옛 8월판 meta.json.pre1103sep",
  "first_comment_draft": "대출 이자가 궁금하신 분이 많았어요. 영상 뒤쪽에서 3억원·30년 고정형으로 셈했는데, 2021년 여름 평균 금리로 빌린 대출이 고정 기간이 끝나 지금 평균으로 다시 정하면 한 달 31만원 정도 늘 수 있어요. 내 예금 만기일이나 대출 고정 기간이 끝나는 날, 언제인가요? {CAFE}",
  "first_comment_src": "copy/titles.md 32행을 9월분(F12 314,201원)으로 · '9월분은 10월 말 발표' 문장은 이미 나와 지움"

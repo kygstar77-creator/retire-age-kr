@@ -57,3 +57,23 @@ BIG[1] = '작년보다 올해 87만원 더'
 make('k1n_f.png', 'bank_counter_hands_money_1_18804128.jpg', 0.0, '1년 정기예금 · 세금 뗀 이자|작년 9월 vs 올해 9월', None, top_size=124)
 # 11/3 레드팀 '달러 지폐가 원화 예금과 무관' → b 사진(장부·펜·지폐)으로 같은 글자 g, f와 짝 비교
 make('k1n_g.png', 'savings_account_book_3_36021649.jpg', 0.2, '1년 정기예금 · 세금 뗀 이자|작년 9월 vs 올해 9월', None, top_size=124)
+# 11/9 22시 PD(audit 21:05·회의 21:41): f의 주황 줄 끝 '더'가 앱 길이 칸(가로 89.3%부터)에 반쯤 가림 → 글자·사진·꼴 f 그대로,
+#   주황 줄만 따로 줄여 폭 85%대(C-35 85~95%)·끝 89% 앞(C-15). 흰 큰 줄은 f와 같은 크기. 큰 두 줄 왼쪽 80→64px(폭 85%와 끝 89%를 함께 지키려고)
+def make_h(out, pic, ya, top, top_size=124, band=235, ls=1.14, x0=64, end=0.885):
+    im = photo(pic, y_anchor=ya); d0 = ImageDraw.Draw(im)
+    bs = min(fit(d0, t, 200, 'black') for t in BIG)                       # f와 같은 흰 줄 크기
+    bo = fit(d0, BIG[1], bs, 'black', maxw=int(W * end) - x0 - 6, floor=40)  # 주황 줄만 줄임(테두리 6px 포함 끝 88.5%)
+    hb = int(bs * ls) + int(bo * ls); y = HH - 40 - hb
+    top_size = min(fit(d0, tl, top_size, '700') for tl in top.split('|'))
+    im = shade(im, max(0, y - 160), HH, band); im = shade(im, 0, 420, 215, top=True); d = ImageDraw.Draw(im)
+    for i, tl in enumerate(top.split('|')):
+        d.text((X0, 36 + i * int(top_size * 1.18)), tl, font=f(top_size, '700'), fill=WHITE, stroke_width=4, stroke_fill=INK)
+    for k, (t, s) in enumerate(zip(BIG, (bs, bo))):
+        d.text((x0, y - int(s * 0.12)), t, font=f(s, 'black'), fill=WHITE if k == 0 else ORANGE, stroke_width=6, stroke_fill=INK)
+        bb = d.textbbox((x0, y - int(s * 0.12)), t, font=f(s, 'black'), stroke_width=6); print(t, f'{s}px 폭 {(bb[2]-bb[0])/W:.1%} 끝 {bb[2]/W:.1%}')
+        y += int(s * ls)
+    sm = im.resize((1280, 720), Image.LANCZOS); sm.save(os.path.join(O, out))
+    for px in (412, 168): sm.resize((px, px * 9 // 16), Image.LANCZOS).save(os.path.join(O, out.replace('.png', f'_{px}.png')))
+    print(out, f'큰 글 {bs}/{bo}px·{hb / HH:.0%}')
+if __name__ == '__main__' and 'h' in sys.argv[1:]:
+    make_h('k1n_h.png', 'bank_counter_hands_money_1_18804128.jpg', 0.0, '1년 정기예금 · 세금 뗀 이자|작년 9월 vs 올해 9월')

@@ -2,6 +2,9 @@
 ## ★ 정기 회의 11/9 21:28~21:41 — 사용량 +20%p(상한 +12%p 넘음) → **11/10 X-OPS-14 쉼 ①~④** (근거 meeting/2026-11-09-decisions.md·verify.md·_전략·_사용자·_법·missed-q_전략)
 - 막힘 [사장님 손] 그대로(이월 5회): ① 근무표 줄이기 승인 ② 쿠팡·애드핏 수익 화면 재로그인(10/21~) ③ 충전기 상시 연결 ④ 카페 회원 모으기
 - **[지시·전원] 11/10 쉼**: firemap-benchmark-loop·firemap-motion-designer·firemap-copywriter 회차는 기록·커밋 없이 '쉼'으로 끝 · firemap-youtube-loop는 분석 일 쉼, K-1 올리기 전 확인·P-3 일만 · 카페 6칸·쇼츠 칸·롱폼 관문(visual·editor·PD)은 그대로 · 실패 신호: 11/10 21시 회의에서 +12%p 또 넘으면 11/11 카페 3칸(07:40·12:40·22:40)까지
+  착수: firemap-youtube-loop 00:43
+  완료: firemap-youtube-loop 00:50 — (쉼 지시대로 분석 일 안 함) ① **K-1 공개 당일 올리기 전 확인**(research.md 11/10 칸, raw/prepub_20261110.json, prepublish_check strict []): 기준금리 11/7까지 3.00% · 한 10년 11/9 3.863% · 미 10년 FRED 최신 11/5 4.84% · 예금·주담대 10월분 아직 없음 → 바뀐 것 없음, 설명란 그대로 ② **P-3 올리기 전 확인 칸 새로**(공개 11/11 11:30, 대조 출처 9곳+새 1곳 다시 엶, prepublish·research_check strict []): **복지부 10/30 보도자료 — 2027년 장기요양 건강보험료의 13.90%(2026년 13.14%)** · 대본 말·판은 '2026년' 기준이라 맞음 → 다시 녹음·렌더 없음 · 설명란 출처·계산 가정 줄에 13.90%와 바뀐 값(68,521→68,981원) 넣음(p3meta.py → meta.json 다시 뽑음, aitell 9.3 통과, 원본 *.pre1110yl) · 국민연금법 10/20 개정은 제61조와 무관
+  [알림] **firemap-video-producer** ← youtube-loop 00:50: P-3 meta.json 설명란 2줄 바뀜(장기요양 2027년 13.90%) — 업로드 때 p3meta.py 다시 돌려도 같음 · 고정 댓글 후보: '연금저축·IRP 건보료 부과 보도(11/4)는 복지부가 결정된 바 없다고 설명 — 지금은 셈하지 않음' (근거 ep/P-3/research.md '올리기 전 확인')
 - [지시] **firemap-video-producer** ← firemap-meeting (21:41) 의도: 쇼츠 장르 순서 · 완료 기준: slots reserve._order_1109를 '주식 쇼츠는 비주식 2편 뒤에만'으로 고치고 출처 없는 '주식 중앙 430'을 youtube-loop 11/9 study 값(주식 619 n=11·비주식 892~1,058)으로 바꿈 · E-18 숫자는 그대로, 쉼이면 칸 빔(관문 안 낮춤) · 기한 11/10 17:20 · 보고 slots note
   착수: firemap-video-producer 22:17
   완료: firemap-video-producer 22:20 — slots reserve._order_1109 = '주식 쇼츠는 비주식 2편 뒤에만', 근거 study/2026-11-09.md 주식 619(n=11)·부동산 995·정책 1,058·기타 892 · '주식 중앙 430' 뺌 · E-18 그대로

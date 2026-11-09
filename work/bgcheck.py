@@ -41,6 +41,7 @@ CAP_BAND = (1100, 1240); CAP_MIN_H = 56; CAP_FRAC = 0.70
 CAP_CX = (330, 750)
 # B-14(10/19): ⑥ 쇼츠 UI 상자는 '흰 판'만 센다 — 같은 검사기를 경쟁 쇼츠 25편에 대면 11편이 걸려(제목 띠·차트 카드) 경쟁 기준이 아니다.
 #   근거는 사장님 10/19 "쇼츠도 칸 뺀다 하지 않았어?"(④). 화면 너비 85% 미만 + 안 밝기 200 이상만 세면 경쟁 4/25. 30%는 그대로.
+# B-49(11/9): 롱폼 ⑥도 같은 흰 판만 센다 — 경쟁 롱폼 27편(format-1022 10초 storyboard)에 지금 검사기: 상자 2개↑ 프레임 중앙 12%, 흰 판만 3% → 잡힌 상자 3/4이 어두운·색 칸(차트·막대). N-3 계단 막대 오탐(motion 11/9).
 WHITE_MIN, WIDE_MAX = 200, 0.85
 BG_FRAC = 0.90; BG_RUN = 3
 # 롱폼(10/17)
@@ -202,7 +203,7 @@ def scan_long(mp4):
         fl = flatness(img); pp = paper_like(img); live = fl < FLAT_LIVE and not pp
         mh, n = (None, None) if live else text_lines(img)
         cur = ink(img); ad = added(prev, cur); prev = cur
-        fr.append({'t': round(t, 1), 'flat': round(fl, 3), 'paper': pp, 'live': live, 'maxh': mh, 'n': n, 'add': round(ad, 4), 'box': None if live else ui_boxes(img)})
+        fr.append({'t': round(t, 1), 'flat': round(fl, 3), 'paper': pp, 'live': live, 'maxh': mh, 'n': n, 'add': round(ad, 4), 'box': None if live else ui_boxes(img, white_only=True)})   # B-49(11/9): 롱폼도 흰 판만
     return {'frames': fr, 'cuts': cuts(mp4)}
 
 

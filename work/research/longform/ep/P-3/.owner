@@ -6,3 +6,5 @@
 2026-11-09 09:21 | firemap-video-producer 정기 06:1x | 끝 — p3props·p3.json·P3.tsx·screen_text 첫 판
 2026-11-09 10:18 | firemap-video-producer 정기 10:1x | P-3 0:2 녹음 확인·props·screen_text
 2026-11-09 10:21 | firemap-video-producer 정기 10:1x | 끝 — 0:2 녹음·GAP_TRIM 3 props·screen_text, editor stamp 대기
+2026-11-09 18:17 | firemap-video-producer 정기 18:1x | P-3 토막 렌더→deess·loudnorm→bgcheck→gate→11/12 11:30 예약
+2026-11-09 19:55 | firemap-video-producer 끝 — 렌더·deess(-12.3)·화면 통과, bgcheck 거부(판 큰 글자) → visual 요청, 예약 안 함

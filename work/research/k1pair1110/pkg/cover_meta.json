@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-09 15:32",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "주담대 금리",
+ "num": "한 달 +28만~46만원",
+ "sub": "2021년 5년 고정 3억 대출",
+ "label": "2026.11.9 금감원 공시 기준",
+ "src": "금감원 금융상품한눈에",
+ "icon": "house",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 168,
+ "num_px": 110,
+ "sub_px": 62,
+ "board": [
+  "hdetf1109",
+  "jeonip1109",
+  "nhis11_1109",
+  "pibucut1025",
+  "bogeum1104",
+  "schdpair1105",
+  "chunga1104",
+  "isacut1104",
+  "hmcdiv1104",
+  "yellow1105"
+ ]
+}

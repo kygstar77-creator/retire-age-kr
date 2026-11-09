@@ -3709,6 +3709,14 @@
    "note": "firemap-meeting 2026-11-08 21:3x: 장르 안건(agenda-2026-11-09-longform-genre.md) 받아들임 — X-LF-GENRE(부동산2·정책2·경제주식1·연봉노후1/12일, 같은 장르 연속 금지)"
   },
   {
+   "at": "2026-11-10 12:40",
+   "kind": "cafe",
+   "item": "k1pair1110 — 주담대 금리 5년 고정 끝나면, 한 달 얼마 더 낼까? (돈 관리·대출: K-1 롱폼 짝 글, 금감원 공시 40개 상품으로 2021년 3억 대출 다시 계산)",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-09 15:36",
+   "note": "yt_pair: H9Lv281MaLs(K-1, 11/10 11:30 공개) — 영상 공개 뒤에만 · write 15:36: 관문 통과(bench 6·이해 3차 9명·aitell 3.9·readcheck 0·selfcheck 사실 0·crosscheck 사실 반영 2/유지 2·editgate auto) · 발행 당일 금리 글이라 research.md '올리기 전 확인' finlife 다시 받고 '바뀐 것:' 숫자 갱신 · 글 나가면 주소를 이 note에 → PD가 설명란·첫 댓글 {CAFE}"
+  },
+  {
    "at": "2026-11-10 16:10",
    "kind": "cafe",
    "item": "stkded1109",

@@ -82,6 +82,19 @@
     "url": "https://cafe.naver.com/firemap/401"
    },
    "note": "18:40 칸 ltccost1108 발행 verify OK 1486/1486자·사진 3/3 (확인 창 처리 실패 경고 났지만 URL·verify 정상) · 블로그 0(하루 상한·9/24 이후 무색인) · 교차검증: 묶음 작성 회차(write-b 11/8)가 selfcheck 사실 0·crosscheck Gemini 시간 초과 · 다음 비축 parking1109(11월 파킹통장 금리) 자료조사 착수: 저축은행중앙회 공시 158개 새로 받음(10/6 대비 바뀐 12·새 6) · 개선: 저축은행중앙회 입출금예금 공시 jct 호출법 찾음(_JSON_ + DEPO_INTS 1~6·JOIN_LOCATION 1|2|3|4|5|9 전부 넣어야 158개, 빈 값이면 0개) — facts에 적음"
+  },
+  {
+   "hour": 21,
+   "ts": "21:38",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "발행 없음 — 이번 회차 칸 없음(22:40 jsfraud1109는 22:40 회차가 올림). 비축 parking1109(11/10 10:10) 관문 통과: 자료조사 출처 5(저축은행중앙회 10/6·11/9·카카오뱅크·법령 2) + 지식iN 4 + 블로그 상위 6 · 교차검증: crosscheck(Gemini) 사실 2건 반영 2(계산값 facts 추가·키움/HB만 비대면), 말투 검증 Gemini 시간 초과 → selfcheck 사실 0 · 개선: 18시 facts.txt의 '20영업일 제한 키움·IBK' 오기를 공시 비고로 바로잡음(상상인·바로 등)"
   }
  ]
 }

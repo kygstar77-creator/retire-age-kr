@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-09 21:25",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "11월 파킹통장 금리",
+ "num": "5천만원이면 3.53%",
+ "sub": "최고 5%는 100만원까지만",
+ "label": "2026.11.9 저축은행중앙회 공시 기준",
+ "src": "저축은행중앙회 소비자포털 입출금자유예금 공시",
+ "icon": "wallet",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 120,
+ "num_px": 96,
+ "sub_px": 62,
+ "board": [
+  "ltccost1108",
+  "deprate1109",
+  "hdetf1109",
+  "jeonip1109",
+  "nhis11_1109",
+  "pibucut1025",
+  "bogeum1104",
+  "schdpair1105",
+  "chunga1104",
+  "isacut1104"
+ ]
+}

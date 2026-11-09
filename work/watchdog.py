@@ -168,6 +168,7 @@ def main():
         if m is None: rec['alert'].append(f'{kind} 최근 발행 시각을 못 쟀다(RSS·API 실패)')
         elif (cafe_late(m) if kind == 'cafe' and cafe_late(m) is not None else m > late_min(kind)) and not (quiet and kind == 'blog') and kind not in capped:
             rec['alert'].append(f'{kind} 마지막 발행이 {m/60:.1f}시간 전 — 회차를 놓쳤다')
+            rec.setdefault('islate', {})[kind] = True
 
     # 2) 미리 써 둔 묶음이 몇 개인가 — 0이면 다음 회차도 놓친다
     pend = N.list_pending()
@@ -331,8 +332,11 @@ def main():
             else: rec['did'].append(f'{kind} 메우기 실패: ' + (out.splitlines()[-1][:120] if out else '(출력 없음)'))
     elif need:
         rec['did'].append('--check 라서 올리지는 않았다: ' + ', '.join(need))
-    elif rec['alert'] and not any(any(x['kind'] == k for x in okpend) for k in ('blog', 'cafe')):
-        rec['did'].append('메울 묶음이 하나도 없다 — 회차 루틴이 새로 써야 한다')
+    else:
+        # 11/9: 예전엔 '막힌 묶음·안 나간 시리즈' 같은 경보만 있어도 이 줄이 떠, 칸 사이 공백(다음 칸에 시각 대기 묶음 있음)에도
+        # "메울 묶음이 하나도 없다"로 보였다(11/5·11/6·11/9 09:52). 이제는 실제로 지각한 매체가 있고 그 매체 재고(시각 대기 포함)가 0일 때만 띄운다.
+        empty = [k for k in kinds if (rec.get('islate') or {}).get(k) and not rec['stock'].get(k)]
+        if empty: rec['did'].append('메울 묶음이 하나도 없다(' + ', '.join(empty) + ') — 회차 루틴이 새로 써야 한다')
 
     rec['sec'] = int(time.time() - t0)
     log = load(LOG, []) or []; log.append(rec)

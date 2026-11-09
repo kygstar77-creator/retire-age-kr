@@ -28,3 +28,9 @@
 2026-11-08 22:25 | firemap-video-producer 정기 22:1x | 끝 — 실사 9컷 끼움, 렌더 0(재서명 대기)
 2026-11-09 02:17 | firemap-video-producer 정기 02:1x | k1props STOCK id 6개 교체·k1.json·screen_text
 2026-11-09 02:27 | firemap-video-producer 정기 02:1x | 끝 — STOCK id·k1.json·screen_text, 렌더 0(재서명 대기)
+2026-11-09 06:17 | firemap-video-producer 정기 06:1x | K-1 재서명 기다려 렌더·P-3 props
+2026-11-09 07:06 | firemap-video-producer 정기 06:1x | editor 07:05 서명 확인 → 토막 렌더 시작(CONC=1)
+2026-11-09 07:12 | firemap-video-producer 운영실장 07:10 | 07:06 렌더(정기 06:1x가 띄운 render_parts_1104.sh, 분리 실행) 지켜봄 → 끝나면 bgcheck·readback·gate·up 이어받음, 렌더 다시 띄우지 않음
+2026-11-09 08:40 | firemap-video-producer | CrossOver 눈금 잘림 고침 → 4000-7999 토막 다시
+2026-11-09 08:42 | firemap-video-producer 운영실장 07:10 | 08:41 k1.json GAP_TRIM 3(B-31) 바꿨다가 08:40 다른 회차 4000-7999 tick 렌더와 겹쳐 되돌림(k1.json·k1props 원래대로, 바꾼 판은 k1props.py.gap1109·motion_preview/k1props.py.gap1109) — tick 토막 끝난 뒤 B-31 때문에 전체 다시 렌더 필요
+2026-11-09 09:17 | firemap-video-producer 운영실장 07:10 | GAP_TRIM 3 깔고(k1.json 15258프레임) 전체 토막 렌더 시작 — 옛 토막·k1.mp4는 *.pre1109gap2.mp4, CrossOver 눈금 고침 포함 · 다른 회차는 K-1 렌더·out/k1*.mp4 손대지 말 것

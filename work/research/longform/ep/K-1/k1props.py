@@ -10,6 +10,7 @@ EP = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.normpath(os.path.join(EP, '..', '..', '..', '..'))
 VID = os.path.join(WORK, 'video')
 FPS, TAIL = 30, 75
+GAP_TRIM = 3   # 11/9 PD: B-31 쉼 관문(렌더본 앞 180초 14.2%>12%) — H-3 10/21과 같은 수법, 줄 사이 빈틈 6→3프레임(motion_preview/k1props.py도 같은 값)
 END_PAD = 23 * 30   # 맺는 말 뒤 숨 3초 + 최종 화면 자리 20초(answer/6388789)
 CALC = ''.join(open(os.path.join(EP, f), encoding='utf-8').read() for f in ('calc5_out.txt', 'facts.txt'))
 SCRIPT = open(os.path.join(EP, 'script.md'), encoding='utf-8').read()
@@ -30,7 +31,8 @@ def L(t, cap=None):
     hit = [i for i, l in enumerate(ALL) if l['text'].startswith(t)]; assert len(hit) == 1, (t, hit)
     i = hit[0]; assert i not in USED, ('두 번 씀', t); USED.add(i)
     l = ALL[i]; assert l.get('audio') and os.path.exists(os.path.join(VID, 'public', l['audio'])), t
-    return {'text': l['text'], 'audio': l['audio'], 'frames': l['frames'], 'cap': cap, 'i': i}
+    fr = l['frames'] - GAP_TRIM; assert fr >= int(l['sec'] * FPS + 0.999), ('소리가 잘림', t)   # 줄 사이 빈틈만 줄임, 소리는 그대로
+    return {'text': l['text'], 'audio': l['audio'], 'frames': fr, 'cap': cap, 'i': i}
 
 def S(kind, lines, **data):
     ls = [L(t) for t in lines]

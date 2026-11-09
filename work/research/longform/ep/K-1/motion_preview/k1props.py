@@ -15,6 +15,7 @@ SRC = rd('facts.txt') + rd('calc_out.txt') + rd('calc4_out.txt') + rd('calc5_out
 def has(*ws):
     for w in ws: assert w in SRC, w
 secs = SC.parse(script)
+GAP_TRIM = 3   # 11/9 PD: B-31 쉼 — ../k1props.py GAP_TRIM과 같은 값
 voice = {}
 vj = os.path.join(EP, 'voice.json')
 if os.path.exists(vj):
@@ -25,7 +26,7 @@ SPF = json.load(open(os.path.join(EP, '..', 'P-1', 'motion_preview', 'p1_timing.
 def cut(sec, a, b):
     s = next(x for x in secs if x['title'].lstrip('[').startswith(sec))['lines']
     i = next(k for k, t in enumerate(s) if t.startswith(a)); j = next(k for k, t in enumerate(s) if t.startswith(b))
-    return [{'text': t, 'frames': voice[t]['frames'] if t in voice else max(12, round(SC.syl(SC.speak(t)) / SPF)), 'audio': voice[t]['audio'] if t in voice else None} for t in s[i:j + 1]]
+    return [{'text': t, 'frames': voice[t]['frames'] - GAP_TRIM if t in voice else max(12, round(SC.syl(SC.speak(t)) / SPF)), 'audio': voice[t]['audio'] if t in voice else None} for t in s[i:j + 1]]
 def scene(key, title, sub, chapter, source, lines, data):
     return {'key': key, 'title': title, 'sub': sub, 'chapter': chapter, 'source': source, 'lines': lines, 'frames': sum(l['frames'] for l in lines) + 12, 'data': data}
 

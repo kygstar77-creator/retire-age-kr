@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-09 12:38",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "전세사기 최소보장/11월 10일 신청",
+ "num": "2억이면 얼마?",
+ "sub": "보증금 3분의 1까지 채워 줘요",
+ "label": "국토부 2026.11.9 발표",
+ "src": "국토교통부 보도자료 · 전세사기피해자법 제25조의9",
+ "icon": "house",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 115,
+ "num_px": 92,
+ "sub_px": 53,
+ "board": [
+  "jeonip1109",
+  "nhis11_1109",
+  "pibucut1025",
+  "bogeum1104",
+  "schdpair1105",
+  "chunga1104",
+  "isacut1104",
+  "hmcdiv1104",
+  "yellow1105",
+  "renewpair1102"
+ ]
+}

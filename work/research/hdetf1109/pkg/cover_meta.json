@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-09 09:34",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "고배당 ETF 분배금",
+ "num": "분리과세 안 돼요",
+ "sub": "2천만원 이하면 세금 같아요",
+ "label": "2026.11.9 조세특례제한법 기준",
+ "src": "조세특례제한법 제104조의27",
+ "icon": "coins",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 122,
+ "num_px": 97,
+ "sub_px": 62,
+ "board": [
+  "nhis11_1109",
+  "pibucut1025",
+  "bogeum1104",
+  "schdpair1105",
+  "chunga1104",
+  "isacut1104",
+  "hmcdiv1104",
+  "yellow1105",
+  "renewpair1102",
+  "rentrep1104"
+ ]
+}

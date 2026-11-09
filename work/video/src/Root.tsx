@@ -38,6 +38,8 @@ import {DETF1, DETF1Props, detf1Frames} from './DETF1';
 import detf1 from '../detf1.json';
 import {K1, K1Props, k1Frames} from './K1';
 import k1 from '../k1.json';
+import {P3, P3Props, p3Frames} from './P3';
+import p3 from '../p3.json';
 import {P1, P1Props, p1Frames} from './P1';
 import p1 from '../p1.json';
 import {T1, T1Props, t1Frames} from './T1';
@@ -77,6 +79,7 @@ export const Root: React.FC = () => {
   const jp1 = j1 as unknown as J1Props;
   const detp1 = detf1 as unknown as DETF1Props;
   const kp1 = k1 as unknown as K1Props;
+  const pp3 = p3 as unknown as P3Props;
   const pp1 = p1 as unknown as P1Props;
   const tp1 = t1 as unknown as T1Props;
   const np2 = n2 as unknown as N2Props;
@@ -148,6 +151,9 @@ export const Root: React.FC = () => {
     <Composition id="K1" component={K1 as unknown as React.FC<Record<string, unknown>>} durationInFrames={k1Frames(kp1)} fps={kp1.fps}
       width={1920} height={1080} defaultProps={kp1 as unknown as Record<string, unknown>}
       calculateMetadata={({props: pp}) => ({durationInFrames: k1Frames(pp as unknown as K1Props)})} />
+    <Composition id="P3" component={P3 as unknown as React.FC<Record<string, unknown>>} durationInFrames={p3Frames(pp3)} fps={pp3.fps}
+      width={1920} height={1080} defaultProps={pp3 as unknown as Record<string, unknown>}
+      calculateMetadata={({props: pp}) => ({durationInFrames: p3Frames(pp as unknown as P3Props)})} />
     <Composition id="P1" component={P1 as unknown as React.FC<Record<string, unknown>>} durationInFrames={p1Frames(pp1)} fps={pp1.fps}
       width={1920} height={1080} defaultProps={pp1 as unknown as Record<string, unknown>}
       calculateMetadata={({props: pp}) => ({durationInFrames: p1Frames(pp as unknown as P1Props)})} />

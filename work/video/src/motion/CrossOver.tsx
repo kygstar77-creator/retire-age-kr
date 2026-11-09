@@ -69,7 +69,7 @@ export const CrossOver: React.FC<CrossOverProps> = (p) => {
         </g>
         <HandCircle cx={cx} cy={cy} rx={(X1 - X0) / (N - 1) * 0.9} ry={56} p={g(f, wA + 10, 22, Easing.inOut(Easing.quad))} />
       </svg>
-      {p.ticks.map((tk) => <div key={tk} style={lab({left: X0 - 300, top: Y(tk) - 16, width: 80, textAlign: 'right', fontWeight: 500, fontSize: 26, color: T.ink3, opacity: g(f, 6, 12)})}>{tk}%</div>)}   {/* 눈금은 끝까지(축이 3.6%부터라 칠한 면 크기를 재는 자 — 레드팀 11/3) */}
+      {p.ticks.map((tk) => <div key={tk} style={lab({left: X0 - 230, top: Y(tk) - 16, width: 90, textAlign: 'right', fontWeight: 500, fontSize: 26, color: T.ink3, opacity: g(f, 6, 12)})}>{tk}%</div>)}   {/* 눈금은 끝까지(축이 3.6%부터라 칠한 면 크기를 재는 자 — 레드팀 11/3) */}
       {p.months.map((m, i) => (i % 3 === 0 || i === N - 1) ? <div key={i} style={lab({left: X(i) - 80, top: YB + 22, width: 160, textAlign: 'center', fontWeight: i === k ? 800 : 500, fontSize: i === k ? 34 : 28, color: i === k && postO > 0 ? T.accent : T.ink3, opacity: g(f, 8, 12)})}>{m}</div> : null)}
       {k % 3 !== 0 ? <div style={lab({left: X(k) - 80, top: YB + 22, width: 160, textAlign: 'center', fontWeight: 800, fontSize: 34, color: T.accent, opacity: postO})}>{p.months[k]}</div> : null}
       {/* 선 이름 — 그어질 때부터 끝에 */}

@@ -3550,3 +3550,8 @@
 2026-11-09 17:27 · visual · H-4 5장 도장 장면은 AI·실사 둘 다 못함이라 종이 판 loan_q로 · 이유: RealVisXL가 한국 도장을 몰라 6장 모두 서양 밀랍 봉인, Pexels 서명 손은 영어 서식
 2026-11-09 17:27 · visual · boardcheck를 work/boardcheck.py <편> 공용으로 · 이유: backlog ②, P-3·N-3·H-4 판 렌더 전 검사(종료 코드 1이면 걸림)
 2026-11-09 17:27 · visual · 완료: H-4 [지시] shot_plan·shot_check 0 17:27
+2026-11-09 18:23 · firemap-video-producer · 롱폼 bgcheck ⑥ UI 상자를 흰 판만 세게 바꿈(B-49) · 경쟁 롱폼 27편 지금 검사기 중앙 12%·흰 판만 3%, N-3 데이터 막대 오탐(motion 11/9), 쇼츠 B-14와 같은 근거
+2026-11-09 18:23 · firemap-video-producer · 쇼츠 다음 순서 K-1→P-3→W-3 클립, 주식 이틀 연속 금지(slots _order_1109) · 회의 지시(주식 중앙 430)
+2026-11-09 18:23 · firemap-video-producer · P-3 토막 렌더 시작(CONC=1, 15,350프레임, editor 15:11 서명 ea5880bd) → 11/12 11:30 예약 목표 · 관문 기한 11/11 11:30
+2026-11-09 18:29 · firemap-video-producer · lfrender voice_check의 '녹음 날 하나' 규칙을 B-34(10/19, 날짜 규칙 뺌)대로 맞춤(원본 lfrender.py.pre1109b34) · P-3 34/111줄 11/9 다시 받기로 렌더 거부 — lfvoice는 10/19에 이미 뺐는데 lfrender만 남아 있었음, 편 단위 앞뒤 차·IQR 관문은 그대로
+- 2026-11-09 18:53 · copywriter · 11/26 앞말 '주택연금'(31,410)·'노후생활비'(3,280) 뒤로, P-4 앞말 '국민연금 수령나이' 그대로(60,930↑)·둘째 '조기수령 감액'(10,180) · 이유: kwvol 11/9, 아웃라이어 AqIAvPw-pFE는 생활비 영상이라 수요와 다름 · 근거 copy/jutaek1109/frontword.md

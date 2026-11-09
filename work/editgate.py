@@ -282,6 +282,9 @@ if __name__ == '__main__':
         if aitell.is_cafe_pkg(pk):
             fb = aitell.frame_check(pk)
             if fb: print('안 찍음 · 카페 틀 v2 어김 — ' + '; '.join(fb)); sys.exit(1)
+            # 11/10 editor(backlog ①): auto 서명이 cafe3를 안 돌려 A53('글이 종종 올라오죠', stkded1109)이 서명을 지나 발행기에서야 걸렸다 — 찍을 때 막는다.
+            c3, _ = aitell.cafe3_check(pk)
+            if c3: print('안 찍음 · cafe3 — ' + '; '.join(c3)); sys.exit(1)
             cb = compare_check(pk)
             if cb: print('안 찍음 · 경쟁 비교 없음 — ' + '; '.join(cb)); sys.exit(1)
             pb = premise_check(pk)

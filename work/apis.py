@@ -156,6 +156,18 @@ def ecos(stat='722Y001', cycle='M', start=None, end=None, item='0101000', n=12):
 
 FIN_GROUP = {'은행': '020000', '저축은행': '030300', '신협': '050000', '보험': '050000'}
 
+def finlife_all(kind='deposit', group='020000', max_pages=20):
+    """finlife 모든 쪽을 이어 받는다. 2026-11-09 write-b: 저축은행(030300) 정기예금은 4쪽(79곳·1년 636줄)인데
+    finlife()는 1쪽만 돌려줘 '159개 중 절반 4.0% 이상·최고 4.11%'로 썼다가 발행 직전 '절반 3.95% 이상·최고 4.13%'로 고쳤다.
+    은행(020000)은 1쪽이라 티가 안 났다. 업권 전체 통계(개수·중앙·최고)를 낼 때는 이걸 쓴다."""
+    out = []
+    for pg in range(1, max_pages + 1):
+        rows = finlife(kind, group, pg)
+        if not rows: break
+        out += rows
+    return out
+
+
 def finlife(kind='deposit', group='020000', page=1):
     """예금·적금·주담대·전세대출 금리 — 금융감독원 금융상품통합비교공시.
     kind: deposit(정기예금) / saving(적금) / mortgage(주택담보대출) / rent(전세자금대출) / credit(신용대출)"""

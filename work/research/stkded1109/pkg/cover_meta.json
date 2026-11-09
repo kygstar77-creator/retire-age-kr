@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-09 13:53",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "해외주식 양도세/기본공제 250만원",
+ "num": "빠뜨렸으면 돌려받아요",
+ "sub": "22%면 55만원 · 5년 안 경정청구",
+ "label": "국세청 11월 3일 발표",
+ "src": "국세청 보도참고자료 2026.11.3·소득세법 제103조",
+ "icon": "receipt",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 117,
+ "num_px": 93,
+ "sub_px": 56,
+ "board": [
+  "hdetf1109",
+  "jeonip1109",
+  "nhis11_1109",
+  "pibucut1025",
+  "bogeum1104",
+  "schdpair1105",
+  "chunga1104",
+  "isacut1104",
+  "hmcdiv1104",
+  "yellow1105"
+ ]
+}

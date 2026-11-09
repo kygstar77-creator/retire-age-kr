@@ -40,3 +40,5 @@
 - 2026-11-09 금리 글: 금감원 공시 '기본/최고' 두 칸이 다르다고 우대조건 때문이라 쓰지 않는다 — KB Star·쏠편한·하나의정기예금은 두 칸이 2.4/3.6인데 spcl_cnd '해당사항없음'. raw API baseList의 spcl_cnd·join_way·etc_note를 먼저 본다(apis.finlife는 이 칸을 버림).
 
 - 2026-11-09 retpay1109: 경쟁 6편이 '세금 1,000만원이면'처럼 세금 자체를 가정할 때 퇴직금·근속으로 직접 계산한 값(홈택스 모의계산과 맞대 검산)이 차별점이 됐다. 이해 시험에서 '10년'이 근속인지 연금 햇수인지 3/3이 헷갈림 — 햇수가 두 종류 나오는 글은 처음 나올 때 무엇을 세는지 한 문장으로 못박는다. slots.json item은 묶음 폴더 이름과 똑같이 써야 naverpost 장부 대조가 된다.
+
+- 2026-11-09 14:00 stkded1109: 공식 발표 자료가 첨부 PDF뿐이면 목록 HTML의 fileKey로 nttFileDownload.do를 받아 pypdf로 읽는다(국세청 보도자료) · 법령 DRF(OC=test)가 막히면 work/lawweb.py <법령> 제N조 <파일> · editgate calc_check는 제목이 계산기 주제(양도세 등)면 끝 계산기 줄을 요구 — ㉢을 처음부터 계산기 줄로 고른다 · 장부 slots.json item은 묶음 폴더 이름 그대로(설명을 붙이면 naverpost가 칸을 못 찾음)

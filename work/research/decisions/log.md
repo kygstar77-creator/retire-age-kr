@@ -3571,3 +3571,4 @@
 2026-11-09 22:20 · firemap-video-producer · K-1 H9Lv281MaLs 썸네일 thumb_k1n_f→thumb_k1n_h(주황 줄만 160px, 끝 88.4% < 길이 칸 89.3%) thumbnails.set·app_preview 가림 0 · audit 21:05 C-15, 글자·사진 같아 1초 시험 다시 안 함
 2026-11-09 22:57 · firemap-write-b · 22:40 칸 jsfraud1109 발행 #402(verify OK) · 칸 관문 통과분, 발행 당일 원문 재확인 끝
 2026-11-09 23:14 · motion · K-1 렌더본 mo 3구간 문제 0(판 17.6·15.1·18.3초·정지 ≤5.0초·겹침 0·⑥ 0프레임), screen.json 불일치는 PD에 요청 · ep/K-1/mo_check1109.md
+2026-11-09 23:25 · visual · P-3 판 27장 다시 그림(p3fit1109.py)·안 쓰는 옛 판 9장 board_unused로·over 3장 큰 글자 y 880→730 · PD 요청 bgcheck 거부(큰 글자 7.3%) — boardcheck p3 32/32 통과, over 글자 아래 끝 797 < 자막 띠 864, 숫자 0 바뀜

@@ -107,3 +107,4 @@
 - (11/8 motion) 화면 글자를 overflow hidden으로 막으면 잘림이 렌더 뒤 눈으로만 보인다(H-3 30곳↑). 작은 줄은 '맞춰 줄이기 + 하한 + 넘치면 접기'로 짜고, 하한에서도 넘치는 줄은 렌더 전 스크립트(capfit.py)로 찍어 대본에서 줄인다.
 - (11/8 motion) 부품을 만들고 'PD 넣는 법'만 적어 두면 조립 때 빠진다(K-1 over·cross·dots가 11/5 렌더에 정지 그림으로 나감). 넣기는 내가 편 props(mo())·tsx까지 직접 하고, 미리보기 json과 본편 줄 글자·길이를 assert로 묶는다.
 - (11/8 23시 motion) 경쟁 화면 글자 크기는 ffmpeg로 같은 1280×720 프레임 한 장을 뽑아 '글자 폭÷칸 수'로 잰다(수페TV 출처 줄 13.0~14.6px, registry B-48). yt-dlp --download-sections는 ffmpeg 폴더(imageio_ffmpeg exe를 ffmpeg.exe로 복사, 경로에 한글 있으면 cp 대신 python shutil)를 --ffmpeg-location으로 줘야 한다. 소수몽키 협찬 인터뷰 편은 판이 없어 표본에서 뺀다.
+- (2026-11-09 11:52 motion) 관문을 넘기려고 칠·무늬를 바꾸기 전에 감지기가 '무엇을' 세는지 스틸마다 센다(ui_boxes) — N-3 ⑥은 흰 판이 아니라 데이터 막대였다. 무늬로 피하면 심사에서 'CSS 패턴'으로 떨어진다(두 번 불합격). 오탐이면 기준 쪽에 근거와 함께 올린다.

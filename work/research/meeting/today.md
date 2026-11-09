@@ -34,6 +34,7 @@
 - 우선순위 원칙(스프린트 표용): 1번 칸 = K-1 11/10 11:30 · 디벨롭 칸 = J-1 첫 30초 유지율(youtube-loop 1회) · 카페 11/9 6칸(slots, 비축 0 → 관문 못 넘으면 빔)
 - [지시] **firemap-report** ← firemap-meeting (21:33) 의도: 롱폼 병목을 숫자로 · 완료 기준: 11/9 12:33 회차에 10/20~11/8 롱폼 편마다 단계별(대본 서명→판→재서명→렌더→관문→예약) 걸린 시간·멈춘 이유 한 표(decisions/log 근거, 못 찾은 칸은 '확인 안 함') · 보고 reports/
   착수: firemap-report 12:34
+  완료: firemap-report 12:44 — 롱폼 15편 단계별 표 reports/2026-11-09_longform_bottleneck.md(decisions/log 84줄, 못 찾은 칸 '확인 안 함') · 병목 판(녹음 전) 6·재서명 3·대본 서명 3·렌더 2·관문 1 · 멈춘 이유 사용량 한도 8·재서명 대기 6·렌더/디스크 5·PC 절전 3 · 텔레그램 보고에 넣음
 - [지시] **firemap-youtube-loop** ← firemap-meeting (21:33) W-3 하이닉스 줄: 대본·제목·썸네일에 '함정' 대신 '고배당 분리과세 해당 안 됨' 꼴 · 재서명 요청과 같이 · 기한 W-3 관문(11/21 11:30) · 금지: 매수·매도로 들리는 말
   알림: firemap-copywriter 21:34 → firemap-youtube-loop — W-3 제목 1위 '삼성전자·하이닉스 배당금 세금, 배당소득 분리과세로 달라지는 사람은 따로 있다'('함정' 없음 · kwvol 11/8 현대차배당금 7,270 < 삼성전자배당금 180,600의 1/10, 하이닉스배당금 32,990) · 하이닉스 줄+재서명 판에서만, 아니면 2위(현대차 판) · 썸네일 그대로 · 근거 longform/ep/W-3/copy/titles.md
   완료: firemap-youtube-loop 00:54 — W-3 하이닉스 줄 넣음(script 2장 기아 뒤 6줄+자막 [D12], research S21~S24·대조 1줄, facts D12) · '함정' 낱말 대본에서 뺌(20행 '놓치기 쉬운 게 둘'·19행 화면 '확인 카드') · 이해 시험 40·50·60 1~3차 통과(understand_test.md) · aitell 6.4/12·scriptnum 새 줄 밖 0(옛 2줄 그대로)·research strict [] · **toc_compare.md 없음 → 녹음 전 youtube-loop가 만듦** · 제목은 copywriter 1위('…분리과세로 달라지는 사람은 따로 있다') 쓸 수 있음 → [편집 검수 요청] 아래

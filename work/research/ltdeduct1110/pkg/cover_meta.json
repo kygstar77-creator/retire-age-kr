@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-10 06:32",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "장기보유특별공제/2029년부터",
+ "num": "2년 산 집 48%→16%",
+ "sub": "10년 산 집은 80% 그대로",
+ "label": "정부 개정안",
+ "src": "소득세법 개정안(2221042)·재정경제부 문답 37쪽",
+ "icon": "house",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 119,
+ "num_px": 88,
+ "sub_px": 53,
+ "board": [
+  "jsfraud1109",
+  "ltccost1108",
+  "deprate1109",
+  "hdetf1109",
+  "jeonip1109",
+  "nhis11_1109",
+  "pibucut1025",
+  "bogeum1104",
+  "schdpair1105",
+  "chunga1104"
+ ]
+}

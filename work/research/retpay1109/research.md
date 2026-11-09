@@ -87,6 +87,7 @@
 | 내 퇴직금·근속으로 세금은 홈택스 퇴직소득 모의계산 | 홈택스 (모의계산) 퇴직소득 지급명세서 화면 | S10 https://hometax.go.kr |
 
 # 올리기 전 확인
+- 2026-11-10 06:17 발행 날 다시 엶(firemap-write): 퇴직급여법 제9조·시행령 제3조의2·소득세법 제129조·제146조·소득세법 시행령 제40조의2 국가법령정보센터 웹(lawweb.py)으로 다시 받아 raw/1110/ — 11/9 받은 것과 날짜 줄 빼고 글자 같음(개정 없음). 바뀐 것 없음, 기준일 2026년 11월 10일
 - 2026-11-09 11시 대조 칸 출처 S1~S10 전부 다시 엶(raw/ 받은 시각 11/9 10:47~11:0x) — 비축분이라 발행 날 다시 열어 이 칸을 다시 채운다
 - 다시 연 주소: https://www.law.go.kr/법령/근로자퇴직급여보장법/제9조 · https://www.law.go.kr/법령/근로자퇴직급여보장법시행령/제3조의2 · https://www.law.go.kr/행정규칙/개인형퇴직연금제도로의이전예외사유해당금액고시 · https://www.law.go.kr/법령/소득세법시행령/제40조의2 · https://www.law.go.kr/법령/소득세법/제129조 · https://www.law.go.kr/법령/소득세법/제21조 · https://www.law.go.kr/법령/소득세법/제146조 · https://www.law.go.kr/법령/소득세법/제48조 · https://www.law.go.kr/법령/소득세법/제55조 · https://www.law.go.kr/법령/지방세법/제103조의13 · https://blog.naver.com/byheesoe/224468216130 · https://blog.naver.com/uddeu_appa/224469882027 · https://korea.legal/wiki/고용노동부고시-제2026-65호/ · https://hometax.go.kr
 - 2차 주소(byheesoe·uddeu_appa·korea.legal)는 한도 식·300만원 대조용 · 홈택스는 10/21 모의계산 기록(raw) 대조, 화면 다시 열기는 발행 날

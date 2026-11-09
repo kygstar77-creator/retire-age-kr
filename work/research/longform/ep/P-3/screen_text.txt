@@ -8,7 +8,7 @@
 [scenes.0.data.side] left
 [scenes.1.lines.0.text] 국민연금이 한 달에 딱 만원 올랐을 뿐인데, 안 내던 건강보험료를 매달 7만원 가까이 내게 되는 자리가 있습니다.
 [scenes.1.data.license] 파이어맵 자체 제작 판(출처는 판 안)
-[scenes.2.lines.0.text] 그 자리가 어디일까요?
+[scenes.2.lines.0.text] 그 자리가 어디쯤일까요?
 [scenes.2.lines.1.text] 예를 들어 예순다섯에 자녀 직장 건강보험 피부양자로 올라 있는 분이라면, 건강보험료를 한 푼도 안 내요. 소득 기준은 나이와 상관없이 같습니다.
 [scenes.2.data.license] AI 생성 그림(RealVisXL V5.0, openrail++) 위 파이어맵 글자
 [scenes.2.data.badge] AI 생성 그림

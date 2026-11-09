@@ -10,6 +10,7 @@ EP = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.normpath(os.path.join(EP, '..', '..', '..', '..'))
 VID = os.path.join(WORK, 'video')
 FPS, TAIL = 30, 75
+GAP_TRIM = 3   # 11/9 PD: B-31 쉼 관문 — K-1 11/9·H-3 10/21과 같은 수법(만드는 값), 줄 사이 빈틈 6→3프레임, 소리는 안 자름
 END_PAD = 23 * 30   # 맺는 말 뒤 숨 3초 + 최종 화면 자리 20초(answer/6388789)
 SCRIPT = open(os.path.join(EP, 'script.md'), encoding='utf-8').read()
 SRCDOC = SCRIPT + ''.join(open(os.path.join(EP, f), encoding='utf-8').read() for f in ('calc_out.txt', 'research.md'))
@@ -28,7 +29,8 @@ HAVE = {'mailbox_hand': 10.8, 'open_bill': 12.0, 'calculator_hand': 11.2, 'calen
 def L(i):
     assert i not in USED, ('두 번 씀', i); USED.add(i)
     l = ALL[i]; assert l.get('audio') and os.path.exists(os.path.join(VID, 'public', l['audio'])), i
-    return {'text': l['text'], 'audio': l['audio'], 'frames': l['frames'], 'cap': None, 'i': i}
+    fr = l['frames'] - GAP_TRIM; assert fr >= int(l['sec'] * FPS + 0.999), ('소리가 잘림', i)   # 줄 사이 빈틈만 줄임
+    return {'text': l['text'], 'audio': l['audio'], 'frames': fr, 'cap': None, 'i': i}
 
 def S(kind, idx, **data):
     ls = [L(i) for i in idx]

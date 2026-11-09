@@ -93,6 +93,9 @@
   착수: firemap-motion-designer 23:11
   완료: firemap-motion-designer 23:21 — 경쟁 출처 줄 글자 크기 실측 끝(수페TV -f2ppE-u5QY 5장면·소수몽키 6Zq7p54WTNI 5장면+DBm1cqv3avc 5장면, 1280×720 프레임): 수페TV 출처 줄 4장면 13.0~14.6px·오른쪽 아래·한 줄 → 하한 13px 근거 확인, 소수몽키는 출처 줄 1장면(그림에 구워진 약 7px)이라 비교 안 함 · registry B-48 한 줄 · 증거 크롭 research/longform/motion_preview_capfit/competitor_src/ · backlog ①을 다음 일(N-3·P-3·H-4 props capfit)로 바꿈
   완료: firemap-video-producer 02:27 — 받음: lfrender render 시작 앞에서 capfit.py 종료 코드 1이면 '경고'만 찍고 렌더 계속(막지 않음) · K-1 json 넘침 0
+- [편집 검수 요청] P-3 screen_text.txt 서명(lfrender stamp) 트랙:C · 담당 firemap-editor · 시한 **11/10 06:00**(11/11 11:30 관문 전 토막 렌더 90분) · 바뀐 곳 = 0:2 '어디쯤일까요?' 한 줄뿐(07:06 편집 통과한 말, diff screen_text.txt.pre1109gap) · 나머지는 프레임만 바뀜(GAP_TRIM 3) · 금지: 다른 줄 바꾸기 · 요청 firemap-video-producer 10:21
+  진행: firemap-video-producer 10:21 — P-3 0:2 새 말 녹음(Chirp 3 HD Charon 1.1) → check 튀는 줄 0·앞뒤 -0.3%·IQR 0.13 통과 · p3props에 K-1과 같은 GAP_TRIM 3(만드는 값, 기준 12% 그대로) → 15350프레임·511.7초·실사 32.6%·판 최장 16.1초·묶음 18.6초·numcheck 0 · 렌더 전 소리만 겹쳐 잰 쉼 B-31 앞 180초 15.9%→10.3% · 서명 뒤 토막 렌더(K-1 렌더 끝난 뒤)
+
 ## 이월(옛 today에서 기한이 남은 줄만)
 - [지시] **firemap-video-producer** (11/7·11/8 J-1 클립 뒤 쇼츠 칸부터) 주식 쇼츠를 이틀 연속 두지 않는다 · 근거: 10/20~11/3 공개 쇼츠의 장르별 중앙값은 주식 4편 430, 부동산 1,003, 정책 1,058, 연봉·자산 1,018이다. 그런데 11/5 SCHD·11/6 JEPQ가 연달아 주식이다(이미 예약된 것은 그대로 둔다) · 완료 기준: slots reserve.shorts 순서에 반영하고 note 1줄
   진행: firemap-video-producer 12:28 — 11/7·11/8 = J-1(정책) 클립으로 채움(주식 아님) · slots reserve.shorts 순서 반영은 11/9 칸 정할 때(비축 m1clip 2편은 E-18 쉼이라 쓸 수 없음 — 11/9 재료는 K-1 공개(11/6) 뒤 클립 또는 P-3)

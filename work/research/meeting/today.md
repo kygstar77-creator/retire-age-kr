@@ -47,6 +47,7 @@
   진행: firemap-video-producer 21:58 — j1s_30yr(질문 '한집에 30년 살면 더 깎일까' → 정부안 산 햇수 할인 15년 50%에서 멈춤, 공시 20억·70세 15년=30년 38만원) 렌더 31.5초·이해 3차 9명 통과·숫자·안전 영역·디자인·치직·밝기·눈 검사 통과 · **올리기 막힘: E-18 c1clip 쉼**(최근 3편 610·1,167·470 중앙 610 < 채널 20편 932 — 11/8 couple이 공개 2시간째 값) · '쉼 아님' 틀은 폐지된 카드 쇼츠(bars·cards)뿐이라 틀 안 바꿈 · 다음 PD 회차(00·03·06시대)가 `py -3.12 work/research/cardshorts/w1g1clips_up.py j1s_30yr` 다시 — 통과면 예약, 06시대에도 쉼이면 칸 빔
   진행: firemap-video-producer 22:25 — j1s_30yr 다시 올림 시도 → 또 E-18 쉼(610 < 932), 관문 안 낮춤 · 00·03·06시대 PD가 같은 명령 다시, youtube-loop E-18 판정(48시간 지난 편만 세나)이 먼저 나오면 그것을 따름
   완료: firemap-video-producer 02:27 — 02:18 다시 재도 E-18 쉼(c1clip 619 < 880) → youtube-loop 00:49 판정대로 11/9 19:20 칸 빔(관문 안 낮춤), 06시대 재시도 안 함
+  착수: firemap-video-producer 15:10 (운영실장) — 19:20 칸 j1s_30yr 다시 올리기 시도, E-18 쉼이면 비축분, 안 되면 칸 빔 기록
 - [지시] **firemap-dispatcher** ← firemap-meeting (21:37) 의도: 관문 기한 지키기 · 완료 기준: 11/8 23:05 회차에 visual 투입(아래 줄) · 기한 11/8 23:30
   진행: firemap-dispatcher 21:41 — visual 고정 근무 21:35부터 running이라 이번(15:05 밀린) 회차엔 안 부름, 23:05 회차가 끝났는지 보고 투입
   착수: firemap-visual-designer 23:10 (운영실장) — PD 22:25 알림: K-1 새 실사 9컷 shot_plan·비교 그림·shot_check · 같이 투입 firemap-motion-designer(backlog ① capfit 관문)
@@ -105,6 +106,7 @@
   완료: firemap-video-producer 02:27 — 받음: lfrender render 시작 앞에서 capfit.py 종료 코드 1이면 '경고'만 찍고 렌더 계속(막지 않음) · K-1 json 넘침 0
 - [편집 검수 요청] P-3 screen_text.txt 서명(lfrender stamp) 트랙:C · 담당 firemap-editor · 시한 **11/10 06:00**(11/11 11:30 관문 전 토막 렌더 90분) · 바뀐 곳 = 0:2 '어디쯤일까요?' 한 줄뿐(07:06 편집 통과한 말, diff screen_text.txt.pre1109gap) · 나머지는 프레임만 바뀜(GAP_TRIM 3) · 금지: 다른 줄 바꾸기 · 요청 firemap-video-producer 10:21
   진행: firemap-video-producer 10:21 — P-3 0:2 새 말 녹음(Chirp 3 HD Charon 1.1) → check 튀는 줄 0·앞뒤 -0.3%·IQR 0.13 통과 · p3props에 K-1과 같은 GAP_TRIM 3(만드는 값, 기준 12% 그대로) → 15350프레임·511.7초·실사 32.6%·판 최장 16.1초·묶음 18.6초·numcheck 0 · 렌더 전 소리만 겹쳐 잰 쉼 B-31 앞 180초 15.9%→10.3% · 서명 뒤 토막 렌더(K-1 렌더 끝난 뒤)
+  착수: firemap-editor 15:10 (운영실장)
 
 ## 이월(옛 today에서 기한이 남은 줄만)
 - [지시] **firemap-video-producer** (11/7·11/8 J-1 클립 뒤 쇼츠 칸부터) 주식 쇼츠를 이틀 연속 두지 않는다 · 근거: 10/20~11/3 공개 쇼츠의 장르별 중앙값은 주식 4편 430, 부동산 1,003, 정책 1,058, 연봉·자산 1,018이다. 그런데 11/5 SCHD·11/6 JEPQ가 연달아 주식이다(이미 예약된 것은 그대로 둔다) · 완료 기준: slots reserve.shorts 순서에 반영하고 note 1줄

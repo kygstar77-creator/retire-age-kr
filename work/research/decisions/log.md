@@ -3535,3 +3535,4 @@
 2026-11-09 14:29 · firemap-video-producer · K-1 예약 H9Lv281MaLs(11/10 11:30) · 운영실장 회차가 렌더 뒤 멈춰 .owner 2시간 규칙대로 이어받음, deess·loudnorm·bgcheck·gate 모두 통과(관문 안 낮춤)
 2026-11-09 14:29 · firemap-video-producer · K-1 설명란 챕터 6줄 고침(videos.update) · GAP_TRIM 3로 장면이 당겨졌는데 meta 챕터는 옛 시각(최대 12초 늦음)
 2026-11-09 14:29 · firemap-video-producer · K-1 카페 짝 글 firemap-write에 요청 · 롱폼 1편=카페 1편(사장님 10/11), 11/10 칸은 회의가 정함
+2026-11-09 15:11 · firemap-editor · P-3 screen_text.txt 편집 통과·stamp(sha ea5880bd) · 바뀐 곳 0:2 어디쯤일까요? 한 줄뿐(diff pre1109gap), 07:06 통과한 말, 다른 줄 0

@@ -107,6 +107,7 @@
 - [편집 검수 요청] P-3 screen_text.txt 서명(lfrender stamp) 트랙:C · 담당 firemap-editor · 시한 **11/10 06:00**(11/11 11:30 관문 전 토막 렌더 90분) · 바뀐 곳 = 0:2 '어디쯤일까요?' 한 줄뿐(07:06 편집 통과한 말, diff screen_text.txt.pre1109gap) · 나머지는 프레임만 바뀜(GAP_TRIM 3) · 금지: 다른 줄 바꾸기 · 요청 firemap-video-producer 10:21
   진행: firemap-video-producer 10:21 — P-3 0:2 새 말 녹음(Chirp 3 HD Charon 1.1) → check 튀는 줄 0·앞뒤 -0.3%·IQR 0.13 통과 · p3props에 K-1과 같은 GAP_TRIM 3(만드는 값, 기준 12% 그대로) → 15350프레임·511.7초·실사 32.6%·판 최장 16.1초·묶음 18.6초·numcheck 0 · 렌더 전 소리만 겹쳐 잰 쉼 B-31 앞 180초 15.9%→10.3% · 서명 뒤 토막 렌더(K-1 렌더 끝난 뒤)
   착수: firemap-editor 15:10 (운영실장)
+  편집 통과: firemap-editor 15:11 — P-3 screen_text.txt 서명 완료(screen_text.edit.json sha ea5880bd) · diff pre1109gap = 0:2 '그 자리가 어디쯤일까요?' 한 줄뿐 확인, 다른 줄 바꾼 곳 0 · sameday_check ㉠~㉣은 이번 회차 착수 안 함(30분 한 조각 한도) → 다음 근무 첫 일, 기한 11/10 23:59
 
 ## 이월(옛 today에서 기한이 남은 줄만)
 - [지시] **firemap-video-producer** (11/7·11/8 J-1 클립 뒤 쇼츠 칸부터) 주식 쇼츠를 이틀 연속 두지 않는다 · 근거: 10/20~11/3 공개 쇼츠의 장르별 중앙값은 주식 4편 430, 부동산 1,003, 정책 1,058, 연봉·자산 1,018이다. 그런데 11/5 SCHD·11/6 JEPQ가 연달아 주식이다(이미 예약된 것은 그대로 둔다) · 완료 기준: slots reserve.shorts 순서에 반영하고 note 1줄

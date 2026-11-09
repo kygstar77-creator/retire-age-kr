@@ -253,3 +253,4 @@
 - 11/9 저녁 P-3: **렌더 전에 `boardcheck.py <편>`부터** — P-3는 판 41장 중 36장이 큰 글자 9%·8줄·상자에 걸렸는데 90분 렌더 뒤 bgcheck에서야 알았다(K-1과 같은 일 두 번째). 판 PNG만 재는 데 몇 초. 겹침 관문은 그림에 구운 글자(over 이미지·baked)를 못 본다 — over 장면은 still 한 장으로 자막 띠와 겹치는지 눈으로 본다(p3_over_r03 5초 가림). 쉿소리 --chirp 한 번 -11.9면 두 번(-12.3), --chirp-short가 None을 내면 쓰지 않는다.
 - 11/9 썸네일 길이 칸 가림: 앱 길이 칸은 가로 89.3%부터(ytlong.preview) — 큰 주황 줄은 따로 크기 맞춰 끝 88.5% 안, 폭 85%와 함께 지키려면 왼쪽 여백 64px. 예약본 썸네일은 thumbnails.set 뒤 i9.ytimg 걸린 그림을 받아 app_preview로 확인.
 - 11/10 화면 관문 기록(<x>.screen.json)은 렌더본 크기·시각과 맞아야 업로드가 된다 — 렌더 뒤 deess·GAP 손질로 out/<x>.mp4를 다시 만들면 lfrender screen을 꼭 다시(509초 편 12분).
+- 11/10 렌더 전에 `research_gate.shot_check`부터 돌린다 — 판을 board_unused로 옮기거나 경쟁 장면 확인일이 14일 넘으면 lfrender가 렌더 전에 막는다(P-3 11/10).

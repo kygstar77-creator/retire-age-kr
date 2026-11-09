@@ -3630,6 +3630,30 @@
    "note": "firemap-video-producer 2026-11-09 14:28: 10:45 전체 렌더(GAP_TRIM 3)→deess --chirp·loudnorm --fix(쉿소리 -13.5dB·-17.1 LUFS)→bgcheck 통과(실사 73%·컷 7.0·같은 판 18초)→ytlong gate 통과(B-31 포함)→예약 H9Lv281MaLs publishAt 11/10 11:30 · yt_pair: H9Lv281MaLs | firemap-video-producer 2026-11-09 09:22: 정기 06:1x 판단 요청 취소 — 운영실장 07:10 PD 회차가 GAP_TRIM 3로 전체 다시 렌더(09:17~약 10:35)→deess→loudnorm→gate→up | firemap-meeting 2026-11-06 21:37: 주간 100%로 11/8 칸 비움 · 녹음 있어 11/10 첫 칸 · 관문 11/9 11:30 · visual 판 12장+컷 5곳 → editor 재서명 → PD 토막 렌더·bgcheck·gate·up | firemap-meeting 2026-11-05 21:4x: 11/6 칸에서 옮김. visual 판 12장+cutplan_1105 컷 5곳 한 번에(11/6) → editor 재서명 1번 → PD 토막 렌더·bgcheck·gate·up(11/7 오전) · 관문 기한 11/7 11:30 · 11/7 09:00 주간 96%↑면 멈추고 11/10으로, 11/8 칸 빔 · 옛 item: P-3(건보료 피부양자 — 국민연금만 받을 때 · shot_plan·썸네일 thumb_p3n_d 있음, 녹음 11/4 16:00 창)"
   },
   {
+   "at": "2026-11-10 12:40",
+   "kind": "cafe",
+   "item": "k1pair1110 — 주담대 금리 5년 고정 끝나면, 한 달 얼마 더 낼까? (돈 관리·대출: K-1 롱폼 짝 글, 금감원 공시 40개 상품으로 2021년 3억 대출 다시 계산)",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-09 15:36",
+   "note": "yt_pair: H9Lv281MaLs(K-1, 11/10 11:30 공개) — 영상 공개 뒤에만 · write 15:36: 관문 통과(bench 6·이해 3차 9명·aitell 3.9·readcheck 0·selfcheck 사실 0·crosscheck 사실 반영 2/유지 2·editgate auto) · 발행 당일 금리 글이라 research.md '올리기 전 확인' finlife 다시 받고 '바뀐 것:' 숫자 갱신 · 글 나가면 주소를 이 note에 → PD가 설명란·첫 댓글 {CAFE}"
+  },
+  {
+   "at": "2026-11-10 16:10",
+   "kind": "cafe",
+   "item": "stkded1109",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-09 14:00",
+   "note": "write-b 2026-11-09 14:00: 비축분으로 칸 채움(편성 '세금·건보료 1칸 매일') · 관문 통과(bench 6·이해 3차 9명·aitell 3.2·readcheck 0·selfcheck 사실 0·crosscheck 사실 반영 3·editgate auto) · 발행 날 올리기 전 확인 다시(제도 글, 국세청 자료·조문 다시 열기) · 회의가 옮겨도 됨 · stkded1109 = 해외주식 양도세 공제 250만원 빼먹으면 돌려받을까?(세금: 국세청 11/3 직권 환급·경정청구 5년)"
+  },
+  {
+   "at": "2026-11-10 22:40",
+   "kind": "cafe",
+   "item": "stkgift1109 — 자녀 주식 증여, 주가 떨어진 날 하면 세금 줄까? (세금·주식: 상증법 제63조 넉 달 평균 · 2026년 코스피 -5% 날 19일 거래소 종가 재계산)",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-09 20:08",
+   "note": "write-b 2026-11-09 20:08: 11/10 빈 :40 칸 몫 관문 통과(bench 6·이해 2차 6명·aitell 4.7·readcheck 0·selfcheck 사실 0·crosscheck 사실 반영 2/유지 3, 말투 Gemini 시간 초과·editgate auto) · 같은 날 16:10 stkded(세금)와 장르 겹쳐 22:40에 둠 — 회의가 18:40·10:10으로 옮겨도 됨(slot.txt 같이) · 발행 날 올리기 전 확인 다시(조문·종가)"
+  },
+  {
    "at": "2026-11-12 11:30",
    "kind": "long",
    "item": "P-3(건보료 피부양자 — 국민연금만 받을 때)",
@@ -3709,22 +3733,6 @@
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
    "note": "firemap-meeting 2026-11-08 21:3x: 장르 안건(agenda-2026-11-09-longform-genre.md) 받아들임 — X-LF-GENRE(부동산2·정책2·경제주식1·연봉노후1/12일, 같은 장르 연속 금지)"
-  },
-  {
-   "at": "2026-11-10 12:40",
-   "kind": "cafe",
-   "item": "k1pair1110 — 주담대 금리 5년 고정 끝나면, 한 달 얼마 더 낼까? (돈 관리·대출: K-1 롱폼 짝 글, 금감원 공시 40개 상품으로 2021년 3억 대출 다시 계산)",
-   "owner": "firemap-write",
-   "gates_ok": "2026-11-09 15:36",
-   "note": "yt_pair: H9Lv281MaLs(K-1, 11/10 11:30 공개) — 영상 공개 뒤에만 · write 15:36: 관문 통과(bench 6·이해 3차 9명·aitell 3.9·readcheck 0·selfcheck 사실 0·crosscheck 사실 반영 2/유지 2·editgate auto) · 발행 당일 금리 글이라 research.md '올리기 전 확인' finlife 다시 받고 '바뀐 것:' 숫자 갱신 · 글 나가면 주소를 이 note에 → PD가 설명란·첫 댓글 {CAFE}"
-  },
-  {
-   "at": "2026-11-10 16:10",
-   "kind": "cafe",
-   "item": "stkded1109",
-   "owner": "firemap-write",
-   "gates_ok": "2026-11-09 14:00",
-   "note": "write-b 2026-11-09 14:00: 비축분으로 칸 채움(편성 '세금·건보료 1칸 매일') · 관문 통과(bench 6·이해 3차 9명·aitell 3.2·readcheck 0·selfcheck 사실 0·crosscheck 사실 반영 3·editgate auto) · 발행 날 올리기 전 확인 다시(제도 글, 국세청 자료·조문 다시 열기) · 회의가 옮겨도 됨 · stkded1109 = 해외주식 양도세 공제 250만원 빼먹으면 돌려받을까?(세금: 국세청 11/3 직권 환급·경정청구 5년)"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외",

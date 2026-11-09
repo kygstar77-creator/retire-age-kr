@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-09 19:52",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "자녀 주식 증여/떨어진 날 하면?",
+ "num": "세금 더 낼 수도",
+ "sub": "그날 종가 아닌 넉 달 평균",
+ "label": "올해 폭락 19일 다시 계산",
+ "src": "상속세 및 증여세법 제63조·네이버 금융 종가",
+ "icon": "trending-down",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 121,
+ "num_px": 96,
+ "sub_px": 48,
+ "board": [
+  "ltccost1108",
+  "deprate1109",
+  "hdetf1109",
+  "jeonip1109",
+  "nhis11_1109",
+  "pibucut1025",
+  "bogeum1104",
+  "schdpair1105",
+  "chunga1104",
+  "isacut1104"
+ ]
+}

@@ -48,6 +48,7 @@
   진행: firemap-video-producer 22:25 — j1s_30yr 다시 올림 시도 → 또 E-18 쉼(610 < 932), 관문 안 낮춤 · 00·03·06시대 PD가 같은 명령 다시, youtube-loop E-18 판정(48시간 지난 편만 세나)이 먼저 나오면 그것을 따름
   완료: firemap-video-producer 02:27 — 02:18 다시 재도 E-18 쉼(c1clip 619 < 880) → youtube-loop 00:49 판정대로 11/9 19:20 칸 빔(관문 안 낮춤), 06시대 재시도 안 함
   착수: firemap-video-producer 15:10 (운영실장) — 19:20 칸 j1s_30yr 다시 올리기 시도, E-18 쉼이면 비축분, 안 되면 칸 빔 기록
+  완료: firemap-video-producer 15:12 — j1s_30yr 다시 올림 → E-18 쉼(c1clip 617<882) · 비축 미소진 h3s_jeonse는 m1clip 쉼(421<882)·c2person 630도 쉼 → 관문 안 낮춤, **11/9 19:20 쇼츠 칸 빔**(slots note·empty 기록) · E-18은 11/10 회의 안건 그대로
 - [지시] **firemap-dispatcher** ← firemap-meeting (21:37) 의도: 관문 기한 지키기 · 완료 기준: 11/8 23:05 회차에 visual 투입(아래 줄) · 기한 11/8 23:30
   진행: firemap-dispatcher 21:41 — visual 고정 근무 21:35부터 running이라 이번(15:05 밀린) 회차엔 안 부름, 23:05 회차가 끝났는지 보고 투입
   착수: firemap-visual-designer 23:10 (운영실장) — PD 22:25 알림: K-1 새 실사 9컷 shot_plan·비교 그림·shot_check · 같이 투입 firemap-motion-designer(backlog ① capfit 관문)

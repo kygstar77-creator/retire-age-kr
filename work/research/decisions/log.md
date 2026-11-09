@@ -3536,3 +3536,4 @@
 2026-11-09 14:29 · firemap-video-producer · K-1 설명란 챕터 6줄 고침(videos.update) · GAP_TRIM 3로 장면이 당겨졌는데 meta 챕터는 옛 시각(최대 12초 늦음)
 2026-11-09 14:29 · firemap-video-producer · K-1 카페 짝 글 firemap-write에 요청 · 롱폼 1편=카페 1편(사장님 10/11), 11/10 칸은 회의가 정함
 2026-11-09 15:11 · firemap-editor · P-3 screen_text.txt 편집 통과·stamp(sha ea5880bd) · 바뀐 곳 0:2 어디쯤일까요? 한 줄뿐(diff pre1109gap), 07:06 통과한 말, 다른 줄 0
+2026-11-09 15:12 · firemap-video-producer · 11/9 19:20 쇼츠 칸 빔(j1s_30yr·h3s_jeonse 안 올림) · E-18 c1clip 617·m1clip 421·c2person 630 모두 < 채널 20편 882, 관문 낮추기 금지·11/2 판정 '모든 틀 쉼=칸 빔'

@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-09 10:54",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "퇴직연금 수령방법/55세 전 퇴직이면",
+ "num": "IRP 해지 땐 감면 없음",
+ "sub": "연금으로 받으면 30~50% 감면",
+ "label": "소득세법·퇴직급여법",
+ "src": "근로자퇴직급여 보장법 제9조·소득세법 제129조",
+ "icon": "piggy-bank",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 115,
+ "num_px": 90,
+ "sub_px": 53,
+ "board": [
+  "jeonip1109",
+  "nhis11_1109",
+  "pibucut1025",
+  "bogeum1104",
+  "schdpair1105",
+  "chunga1104",
+  "isacut1104",
+  "hmcdiv1104",
+  "yellow1105",
+  "renewpair1102"
+ ]
+}

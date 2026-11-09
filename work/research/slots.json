@@ -160,6 +160,16 @@
     "by": "firemap-write-b",
     "at": "2026-11-08 22:03",
     "gates_ok": "2026-11-08 22:03"
+   },
+   {
+    "item": "retpay1109",
+    "pkg": "work/research/retpay1109/pkg",
+    "title": "퇴직연금 수령방법, 55세 전 퇴직이면 일시금 될까?",
+    "genre": "정책(연금계좌·퇴직연금)",
+    "status": "2026-11-09 11:07 관문 통과 비축 — 11/10 07:40 칸(비축분 우선)으로 slot.txt 2026-11-10 07",
+    "by": "firemap-write-b",
+    "at": "2026-11-09 11:07",
+    "gates_ok": "2026-11-09 11:07"
    }
   ],
   "long": [
@@ -3594,10 +3604,10 @@
   {
    "at": "2026-11-10 07:40",
    "kind": "cafe",
-   "item": "비축분 우선(reserve_min 2 채우기) — 없으면 경제·K-1 짝 글(K-1 11:30 공개 전 미리보기 아님, 금리 표)",
+   "item": "retpay1109",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-08: 36시간 칸 · yt_pair: K-1(공개 당일 카페 1편 — 10:10 또는 12:40은 11/9 회의가 정함)"
+   "gates_ok": "2026-11-09 11:07",
+   "note": "firemap-meeting 2026-11-08: 36시간 칸 · yt_pair: K-1(공개 당일 카페 1편 — 10:10 또는 12:40은 11/9 회의가 정함) | write-b 11:07: 비축 retpay1109 관문 통과(bench 6·이해 3차 9명·aitell 2.5·readcheck 0·selfcheck 사실 0·crosscheck 사실 반영 2/유지 1·editgate auto) · 발행 날 올리기 전 확인 다시(제도 글, 법 조문 다시 열기) · retpay1109 = 퇴직연금 수령방법, 55세 전 퇴직이면 일시금 될까? (연금계좌·비축분)"
   },
   {
    "at": "2026-11-10 11:30",

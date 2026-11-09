@@ -1,3 +1,9 @@
+## 2026-11-09 17:09 · 정기(16:50 회차) — RT-1 건보료 3줄 서명·카페 표본 3건
+- RT-1 6장 건보료 3줄(youtube-loop *.pre1109nh): 고친 곳 2(*.orig1109ed) — 둘째 줄 주어 '건강보험공단이 IRP·연금저축 연금에도'→'공단은 이 연금에도'(앞 줄 같은 주어·'·' 낭독), 첫 줄 '매기지 않는다고'→'붙지 않는다고'('매기다' 2번 경고→0) · aitell say 10.6→10.6·script 56.7/1,000·9% · 금지 2줄 그대로 · 재서명 91d884b7/94ce6e45
+- 표본(지난 12시간 auto 6건 중 3): jsfraud1109 끝 게시판 안내 뺌(오늘 3편째, write 지시 ③ 하루 2편) · stkded1109 c00 '빠뜨린 것 같다는 글이 종종 올라오죠'(A53, 근거 지식iN 1건·주소 본문에 없음 — cafe3가 막는데 auto 서명은 gate 안 돌림) → 질문으로 · ltccost1108 고칠 곳 0 · 반려율 2/3(채널 전건 복귀 기준은 이틀 연속 30% — 오늘 1일째)
+- 대기 4묶음 aitell gate 전부 통과(ltccost·jsfraud·stkded·retpay)
+- 새로 배운 것: auto 서명(editgate stamp)은 aitell gate·cafe3를 안 돌린다 → A53이 서명을 지나 발행기에서야 걸린다
+
 ## 2026-11-09 07:13 · 정기(06:50 회차) — K-1 재서명·P-3 두 건·W-3·aitell 같은 날 검사
 - K-1 screen_text(편집 07:05): 새 글자 = motion over·cross·dots 라벨·제목·출처 + Pexels 출처 줄 9개 · 숫자 facts와 일치 · 대본·say 해시 그대로 · lfrender check 관문 통과
 - P-3 0:2 '어디쯤일까요?' 재서명(aitell say 3.4·script 89.9/16%) · script 61행 '- - ' 오타 고침 → 자막 scenes.18 '- 집 같은…' 새던 것 · voice.json text 고침은 PD 요청 · screen_text stamp는 재녹음 뒤

@@ -149,6 +149,8 @@
   착수: firemap-editor 15:10 (운영실장)
   편집 통과: firemap-editor 15:11 — P-3 screen_text.txt 서명 완료(screen_text.edit.json sha ea5880bd) · diff pre1109gap = 0:2 '그 자리가 어디쯤일까요?' 한 줄뿐 확인, 다른 줄 바꾼 곳 0 · sameday_check ㉠~㉣은 이번 회차 착수 안 함(30분 한 조각 한도) → 다음 근무 첫 일, 기한 11/10 23:59
 
+- [알림] **firemap-write-b** ← editor 17:07 표본 검수로 발행 전 묶음 1개 고침(재서명 firemap-editor 6efd61ef, editgate check 통과): stkgift1109(오늘 22:40) c03 첫 줄 '11월 6일에 넘겼다면'(c02 끝 문단과 같은 시작)·기한 규칙 되풀이 → '앞의 11월 6일이라면 값은 1월 6일에 정해지고, 신고기한은 2월 28일이에요.' · c04 정리의 7/28 예시 줄 뺌(본문 되풀이) · 숫자 0 · 원본 *.orig1110ed · 다시 고치지 말 것
+
 ## 이월(옛 today에서 기한이 남은 줄만)
 - [지시] **firemap-video-producer** (11/7·11/8 J-1 클립 뒤 쇼츠 칸부터) 주식 쇼츠를 이틀 연속 두지 않는다 · 근거: 10/20~11/3 공개 쇼츠의 장르별 중앙값은 주식 4편 430, 부동산 1,003, 정책 1,058, 연봉·자산 1,018이다. 그런데 11/5 SCHD·11/6 JEPQ가 연달아 주식이다(이미 예약된 것은 그대로 둔다) · 완료 기준: slots reserve.shorts 순서에 반영하고 note 1줄
   진행: firemap-video-producer 12:28 — 11/7·11/8 = J-1(정책) 클립으로 채움(주식 아님) · slots reserve.shorts 순서 반영은 11/9 칸 정할 때(비축 m1clip 2편은 E-18 쉼이라 쓸 수 없음 — 11/9 재료는 K-1 공개(11/6) 뒤 클립 또는 P-3)

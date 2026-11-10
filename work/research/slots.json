@@ -3645,7 +3645,7 @@
    "item": "k1pair1110 — 주담대 금리 5년 고정 끝나면, 한 달 얼마 더 낼까? (돈 관리·대출: K-1 롱폼 짝 글, 금감원 공시 40개 상품으로 2021년 3억 대출 다시 계산)",
    "owner": "firemap-write",
    "gates_ok": "2026-11-09 15:36",
-   "note": "yt_pair: H9Lv281MaLs(K-1, 11/10 11:30 공개) — 영상 공개 뒤에만 · write 15:36: 관문 통과(bench 6·이해 3차 9명·aitell 3.9·readcheck 0·selfcheck 사실 0·crosscheck 사실 반영 2/유지 2·editgate auto) · 발행 당일 금리 글이라 research.md '올리기 전 확인' finlife 다시 받고 '바뀐 것:' 숫자 갱신 · 글 나가면 주소를 이 note에 → PD가 설명란·첫 댓글 {CAFE}"
+   "note": "write-b 16:47: PC 꺼짐(09:50~16:37)으로 12:40에 못 나감 — write-b가 맡아 16:10 stkded 뒤 rate_guard 60분 지나면 올림(올리기 전 확인 11/10 16:47 finlife 다시 받음, 바뀐 것 없음) | yt_pair: H9Lv281MaLs(K-1, 11/10 11:30 공개) — 영상 공개 뒤에만 · write 15:36: 관문 통과(bench 6·이해 3차 9명·aitell 3.9·readcheck 0·selfcheck 사실 0·crosscheck 사실 반영 2/유지 2·editgate auto) · 발행 당일 금리 글이라 research.md '올리기 전 확인' finlife 다시 받고 '바뀐 것:' 숫자 갱신 · 글 나가면 주소를 이 note에 → PD가 설명란·첫 댓글 {CAFE}"
   },
   {
    "at": "2026-11-10 16:10",
@@ -3653,7 +3653,8 @@
    "item": "stkded1109",
    "owner": "firemap-write",
    "gates_ok": "2026-11-09 14:00",
-   "note": "write-b 2026-11-09 14:00: 비축분으로 칸 채움(편성 '세금·건보료 1칸 매일') · 관문 통과(bench 6·이해 3차 9명·aitell 3.2·readcheck 0·selfcheck 사실 0·crosscheck 사실 반영 3·editgate auto) · 발행 날 올리기 전 확인 다시(제도 글, 국세청 자료·조문 다시 열기) · 회의가 옮겨도 됨 · stkded1109 = 해외주식 양도세 공제 250만원 빼먹으면 돌려받을까?(세금: 국세청 11/3 직권 환급·경정청구 5년)"
+   "note": "write-b 2026-11-09 14:00: 비축분으로 칸 채움(편성 '세금·건보료 1칸 매일') · 관문 통과(bench 6·이해 3차 9명·aitell 3.2·readcheck 0·selfcheck 사실 0·crosscheck 사실 반영 3·editgate auto) · 발행 날 올리기 전 확인 다시(제도 글, 국세청 자료·조문 다시 열기) · 회의가 옮겨도 됨 · stkded1109 = 해외주식 양도세 공제 250만원 빼먹으면 돌려받을까?(세금: 국세청 11/3 직권 환급·경정청구 5년)",
+   "published": "https://cafe.naver.com/firemap/404 16:58 verify OK 1978자"
   },
   {
    "at": "2026-11-10 18:40",

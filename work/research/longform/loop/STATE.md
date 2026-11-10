@@ -1,3 +1,4 @@
+- 2026-11-11 04:46 [youtube-loop] 공통 일 — 2027년 요율 맞대기(고칠 줄 0)·study 11/11·H-4 세 낀 집 실거주 유예 예외(S17) research 메모, 대본 안 고침 · 다음: H-4 올리기 전 확인에서 그 한 줄 판단·국토부 9/17 원문, 쇼츠 후보 '2027년 달라지는 돈'
 - 2026-11-11 03:12 [PD] 정기 02:1x 끝 — **k1s_fix 쇼츠 비축 관문 통과**(K-1 5장 '3억 고정 대출, 고정 끝나면 평균 금리로 한 달 31만원', 31.9초·새 녹음 0·이해 5차 15명·safezone·bgcheck·치직 0) → 쇼츠 비축 3편(h3s_jeonse·k1s_dep·k1s_fix) · P-3은 editor screen_text stamp(06:50) 전이라 렌더 0, 06시대 PD가 렌더→gate→11/12 11:30 예약 · H-4 새 줄은 editor 재서명(11/12 06:00) 뒤 · 업로드 0 · 고정 대기: NNcjTE0L7yg, H9Lv281MaLs
 - 2026-11-11 02:18 [PD] 정기 02:1x — P-3은 editor screen_text stamp(06:50) 전이라 렌더 0 · H-4 새 줄은 editor 재서명(11/12 06:00) 전이라 녹음 0 · k1s_fix(K-1 5장 '2021 고정 대출 끝 +31만원') 쇼츠 비축 제작 시작
 - 2026-11-10 23:19 [PD] 정기 22:1x 끝 — j1s_30yr **7bBwnLg86-Q** 11/11 19:20 예약 · k1s_dep 쇼츠 비축 관문 통과(비축 2편) · P-3 3:7 새 말 녹음·check·readback·props·screen_text 1줄 → editor stamp(11/11 06:50) 뒤 06시대 PD 렌더→gate→11/12 11:30 예약 · 고정 대기: NNcjTE0L7yg, H9Lv281MaLs

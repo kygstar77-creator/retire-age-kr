@@ -3619,3 +3619,9 @@
 2026-11-11 03:12 · firemap-video-producer · K-1 두 번째 쇼츠 k1s_fix 비축 관문 통과(31.9초, 새 녹음 0) · 쇼츠 비축 2편=최소선, '클립 비축 늘 4편'에 모자라 backlog ②를 함, P-3·H-4는 editor 서명 전이라 손댈 것 없음 · 말 순서: 답 줄 0초→조건 뒤로(이해 1·2차 '내 대출' 오해 3/3) · 제목 숫자 2개 안에 조건 다 못 넣음(제목만 보면 '누구나' 2/3 남김, 0초 질문·면책으로 보완)
 2026-11-11 03:3x · firemap-benchmark-loop · AI 도구 4판(ai-lab/tools-gap-1111.md): 1105 반영 0/4(Klein 재시험·G1/G2 점검표·결재 3건·11/17 종료 TTS) · 새 도구 MiniMax-H3-Image(11/3)·MOSS-Image(Apache) couple 장면 비교 → H3>Klein>RealVisXL, MOSS는 세로로 잘못 넣어 쇼츠 배경 후보 · apt·bank·ZONOS3 TTS는 ZeroGPU 익명 한도로 확인 안 함 · 교체 대신 사람 뒷모습 장면 두 판 비교 지시(video-producer)·G1~G3 editor·HF 계정 결재
 2026-11-11 04:46 · firemap-youtube-loop · H-4 대본은 고치지 않고 세 낀 집 실거주 유예(S17)를 research 메모로만 둠 · editor 서명 진행 중이라 지금 바꾸면 서명이 풀림, 지금 말('허가 뒤 실거주 의무')은 원칙으로 틀리지 않음 → 올리기 전 확인 때 판단
+2026-11-11 06:17 · firemap-video-producer · A-1 voice.py·tour_voice.py MODELS에서 gemini-2.5-flash-preview-tts 뺌 · 11/17 종료 모델(benchmark-loop 지시)
+2026-11-11 07:04 · editor · P-3 screen_text stamp e2426d73(scenes.30 한 줄 '덜 내던'만) · PD 23:19 요청, 대본 서명 3549ac25와 같은 말
+2026-11-11 07:07 · editor · H-4 보강 36줄 편집 통과·재서명 09b0b6b0/54265c8e(고친 곳 6, 말만) · youtube-loop 00:52 요청, 숫자·금지 줄 0 변경
+2026-11-11 07:07 · editor · N-3 판 n3_donuts '1억은 절반 넘게 세금' 반려(연봉 절반으로 읽힘) · 나머지 판 숫자 calc_out 일치
+2026-11-11 07:10 · editor · editgate 해시 v2(c\d+.txt, c025 포함)·aitell sameday/repeat c025 포함 · 서명 뒤 c025 고쳐도 안 걸리던 구멍, 옛 서명은 sha_of로 옛 방식 대조
+2026-11-11 07:10 · editor · bunrinhis1111(12:40) 표본 고침 2(되풀이·'올해'), 숫자 0, 재서명 05da8969

@@ -386,7 +386,7 @@ def sameday_check(day, pkg=None):
     # 10/21 R3(registry D-34): 링크 횟수 상한은 근거 없음. 운영원칙 8항 '특정 단어/문구 반복 삽입'에 맞춰 firemap.kr 안내 문장(주소 뺀 글자)이 같은 날 통째로 반복되는 것만 본다
     links = collections.defaultdict(set)
     for i, d in items:
-        for f in sorted(glob.glob(os.path.join(d, 'c[0-9][0-9].txt'))):
+        for f in sorted([g for g in glob.glob(os.path.join(d, 'c[0-9]*.txt')) if re.fullmatch(r'c\d+\.txt', os.path.basename(g))]):
             for ln in open(f, encoding='utf-8').read().splitlines():
                 if 'firemap.kr' not in ln: continue
                 k = ' '.join(re.sub(r'(https?://)?firemap\.kr\S*', '', ln).split())
@@ -511,7 +511,7 @@ def repeat_check(pkg):
     10/20~21 editor 표본 6건 중 5건이 이 되풀이였다(h1helio1021 '8건을 한꺼번에…16%쯤 낮았' c00·c03, divdrop1020·h2cafe1019 등)."""
     import difflib, glob
     sents = []
-    for f in sorted(glob.glob(os.path.join(pkg, 'c??.txt'))):
+    for f in sorted([g for g in glob.glob(os.path.join(pkg, 'c[0-9]*.txt')) if re.fullmatch(r'c\d+\.txt', os.path.basename(g))]):
         t = open(f, encoding='utf-8').read()
         if re.search(r'^##\s*(한눈에|정리|요약)', t, re.M): continue
         for s in re.split(r'(?<=[.?!])\s+|\n+', t):

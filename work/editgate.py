@@ -1,6 +1,6 @@
 # 편집 통과 해시 관문(2026-10-02, 대역 지시 10/1 21:35) — 편집자가 통과시킨 원고와 실제로 나가는 원고가 같은지 본다.
 # 10/2 카페 190: 06:40 통과본과 08:28 공개본 해시가 달랐다(editor 10:50 확인). 통과 뒤에 제목·조각을 바꾸면 통과가 아니다.
-# 해시 = title.txt + c??.txt(이름순) 파일 바이트를 그대로 이어 붙인 sha256 — editor가 10/2 07:43부터 쓰는 방식(e1table1002·b10cafe1002 재현).
+# 해시 = title.txt + c*.txt(이름순, 11/11부터 c025 같은 세 자리 조각 포함 — 옛 서명은 c??만) 파일 바이트를 그대로 이어 붙인 sha256 — editor가 10/2 07:43부터 쓰는 방식(e1table1002·b10cafe1002 재현).
 #   py -3.12 work/editgate.py check <pkg>                지금 원고가 .edit.json과 같은지
 #   py -3.12 work/editgate.py stamp <pkg> <by> [note]    편집 통과 표시(.edit.json)를 이 방식으로 찍는다(카페는 틀 v2·compare.md 먼저)
 #   py -3.12 work/editgate.py compare <pkg>              카페 경쟁 비교 관문만
@@ -14,13 +14,17 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 LOG = os.path.join(HERE, 'research', 'editor', 'gate-refusals.md')
 
 
-def files(pkg):
-    cs = sorted(f for f in os.listdir(pkg) if re.fullmatch(r'c\d\d\.txt', f))
+V2 = 'title.txt+c*.txt bytes v2'   # 11/11 editor: c025.txt 같은 세 자리 조각이 해시에서 빠져 서명 뒤 고쳐도 안 걸렸다(bunrinhis1111)
+
+
+def files(pkg, v2=True):
+    pat = r'c\d+\.txt' if v2 else r'c\d\d\.txt'   # 이름순: c02 < c025 < c03 = order.txt 순서
+    cs = sorted(f for f in os.listdir(pkg) if re.fullmatch(pat, f))
     return [os.path.join(pkg, f) for f in ['title.txt'] + cs if os.path.exists(os.path.join(pkg, f))]
 
 
-def sha(pkg):
-    return hashlib.sha256(b''.join(open(f, 'rb').read() for f in files(pkg))).hexdigest()
+def sha(pkg, v2=True):
+    return hashlib.sha256(b''.join(open(f, 'rb').read() for f in files(pkg, v2))).hexdigest()
 
 
 def mark_path(pkg):
@@ -36,7 +40,8 @@ def check(pkg):
     if not p: return None, '편집 통과 표시(.edit.json) 없음'
     try: d = json.load(open(p, encoding='utf-8'))
     except Exception as e: return False, f'.edit.json을 못 읽음: {e}'
-    want, now = d.get('sha'), sha(pkg)
+    v2 = d.get('sha_of') == V2   # 옛 서명(c??)은 옛 방식으로 대조
+    want, now = d.get('sha'), sha(pkg, v2)
     fs = d.get('files')
     if isinstance(fs, dict) and fs:  # 10/2 06:40 방식: 파일마다 sha256 — 표시에 적힌 파일이 하나라도 다르면 불일치
         diff = [f for f, h in fs.items() if not os.path.exists(os.path.join(pkg, f))
@@ -45,7 +50,7 @@ def check(pkg):
         return True, f'편집 통과 파일별 해시 일치({d.get("by", "?")} {d.get("at", "?")}, {len(fs)}개)'
     if not want: return False, '.edit.json에 sha 없음'
     if want != now:
-        newer = [os.path.basename(f) for f in files(pkg) if os.path.getmtime(f) > os.path.getmtime(p) + 1]
+        newer = [os.path.basename(f) for f in files(pkg, v2) if os.path.getmtime(f) > os.path.getmtime(p) + 1]
         return False, f'편집 통과({d.get("by", "?")} {d.get("at", "?")}) 뒤 원고가 바뀌었다' + (f' — 바뀐 파일: {", ".join(newer)}' if newer else '')
     return True, f'편집 통과 해시 일치({d.get("by", "?")} {d.get("at", "?")})'
 
@@ -250,7 +255,7 @@ def stamp(pkg, by, note=''):
     if os.path.exists(p):
         try: d = json.load(open(p, encoding='utf-8'))
         except Exception: d = {}
-    d.update({'by': by, 'at': datetime.datetime.now().strftime('%Y-%m-%d %H:%M'), 'sha': sha(pkg), 'sha_of': 'title.txt+c??.txt bytes'})
+    d.update({'by': by, 'at': datetime.datetime.now().strftime('%Y-%m-%d %H:%M'), 'sha': sha(pkg), 'sha_of': V2})
     if note: d['note'] = note
     json.dump(d, open(p, 'w', encoding='utf-8'), ensure_ascii=False)
     return d['sha']

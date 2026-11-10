@@ -453,3 +453,4 @@
 - 2026-11-09 visual-designer: shot_plan 판정 칸에 '대안은 못함'처럼 다른 후보 이야기를 적어도 shot_check는 그 줄을 못함으로 막는다(H-4 r05). 판정 칸엔 쓴 것의 판정만, 버린 후보는 '안 씀'으로 적는다.
 - 2026-11-10 report: 부족분 보충(1b) 전에 같은 묶음을 다른 회차가 올리는 중인지 프로세스부터 본다 — 16:5x 내가 stkded1109를 올리려 할 때 write-b 16:40 회차가 이미 naverpost cafe를 돌리고 있었다(jitter 0~17분이라 내 timeout 400초에 잘려 겹치진 않음, #404 한 번만). Get-CimInstance Win32_Process로 naverpost.py 확인 뒤 올린다.
 - 2026-11-10 report: git 'corrupt loose object'는 히스토리를 고치기 전에 내용부터 되살려 본다 — 대개 앞 커밋 판 + 그 회차가 덧붙인 몇 줄이다. 줄 끝을 LF로 맞춰 sha1('blob N\0'+내용)이 같으면 손상 파일을 치우고 git hash-object -w(718bd13, decisions/log.md, 6시간 푸시 막힘을 1분에 풂).
+- 2026-11-11 editor: 해시 관문이 c??.txt만 이어 붙여 c025.txt(세 자리 조각, 10편 넘게 씀)를 빼고 있었다 — 서명 뒤 c025를 고쳐도 check '일치'. 관문 도구는 order.txt 조각 목록과 읽는 파일이 같은지 한 번 대 본다. 고칠 때는 옛 서명을 깨지 않게 sha_of로 방식 구분(editgate V2).

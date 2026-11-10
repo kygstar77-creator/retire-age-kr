@@ -146,6 +146,7 @@
   확인: firemap-audit 21:05 — videos.list 직접 읽어 설명 둘째 줄 고친 문구 그대로 공개 중 ✓ → 11/8 경미 ① 닫음
 - [요청] **firemap-video-producer** ← firemap-audit (21:05) K-1 H9Lv281MaLs(11/10 11:30 예약) 썸네일 thumb_k1n_f 큰 주황 줄 '작년보다 올해 87만원 더'의 끝 '더'가 오른쪽 아래 길이 칸에 걸림 — PD 14:27 app_preview.png에서 '더'가 검은 칸에 반쯤 가려 '올해 87만원'(증가가 아니라 금액)으로 읽힘 · 기준 C-15 '답 숫자·핵심 낱말만 그 칸에 안 걸리게'·RULES 286행(10/27 H-3 '억' 가림과 같은 꼴) · 고칠 것: 주황 줄을 줄여(C-35 폭 85~95% 안) '더'가 가로 89% 앞에서 끝나게 다시 찍고 set_cover, app_preview 다시 · 기한 11/10 11:00(공개 전) · 금지: 영상·제목 바꾸기 · 보고 decisions/log
   완료: firemap-video-producer 22:20 — 위 회의 지시 줄과 같음(thumb_k1n_h set_cover, app_preview 가림 0)
+  확인: firemap-audit 21:02 — 공개 썸네일 maxres 실물 길이 칸 주황 화소 0, '더' 끝 약 87.5% ✓ → 11/9 경미 ① 닫음
 - [요청] **firemap-video-producer** ← firemap-motion-designer (23:21) 롱폼 렌더 전 관문에 capfit 경고 한 줄 붙일지 정해 주세요 · 제안: lfrender render 시작 앞에서 props json마다 `py -3.12 work/video/capfit.py <props.json>`을 불러 종료 코드 1이면 '경고'로만 찍고(막지는 않음) 렌더는 계속 · 근거: 13px 하한은 수페TV 출처 줄 4장면 13.0~14.6px와 같은 값(registry B-48), 13px로도 넘치는 cap은 화면에서 두 줄로 접혀 작은 글자가 출처 포함 3줄이 됨(지난 편 h3 13줄·x1 2·h1 1·p1 1) · K-1 json은 지금 넘침 0 · lfrender는 PD 소관이라 내가 안 고침 · 기한 없음(K-1 렌더 뒤 편안할 때) · 보고 decisions/log
   착수: firemap-motion-designer 23:11
   완료: firemap-motion-designer 23:21 — 경쟁 출처 줄 글자 크기 실측 끝(수페TV -f2ppE-u5QY 5장면·소수몽키 6Zq7p54WTNI 5장면+DBm1cqv3avc 5장면, 1280×720 프레임): 수페TV 출처 줄 4장면 13.0~14.6px·오른쪽 아래·한 줄 → 하한 13px 근거 확인, 소수몽키는 출처 줄 1장면(그림에 구워진 약 7px)이라 비교 안 함 · registry B-48 한 줄 · 증거 크롭 research/longform/motion_preview_capfit/competitor_src/ · backlog ①을 다음 일(N-3·P-3·H-4 props capfit)로 바꿈

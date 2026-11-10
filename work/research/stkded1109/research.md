@@ -86,9 +86,9 @@
 | 배당금은 양도소득 아님 | 제17조 배당소득 · 제94조 양도소득 범위에 배당 없음 | S8 https://www.law.go.kr/법령/소득세법/제17조 · S3 https://www.law.go.kr/법령/소득세법/제94조 |
 
 # 올리기 전 확인
-- 2026-11-09 13시 대조 칸 출처 S1~S8 전부 다시 엶(raw/ 받은 시각 11/9 13:46~13:52) — 비축분이라 발행 날 다시 열어 이 칸을 다시 채운다
+- 2026-11-10 16:39 발행 날 대조 칸 출처 S1~S8 전부 다시 엶(raw/1110/ — 국세청 11/3 보도자료·소득세법 제17·94·102·103·104·110조·국세기본법 제45조의2, 11/9 받은 원문과 글자 수까지 같음) · 11/9 13시 첫 확인
 - 다시 연 주소: https://www.nts.go.kr/nts/na/ntt/selectNttInfo.do?mi=2201&bbsId=1028&nttSn=1355828 · https://www.law.go.kr/법령/소득세법/제103조 · https://www.law.go.kr/법령/소득세법/제94조 · https://www.law.go.kr/법령/소득세법/제104조 · https://www.law.go.kr/법령/소득세법/제102조 · https://www.law.go.kr/법령/소득세법/제110조 · https://www.law.go.kr/법령/국세기본법/제45조의2 · https://www.law.go.kr/법령/소득세법/제17조 · 질문 주소 https://kin.naver.com/qna/detail.naver?dirId=40301&docId=467714893 · https://kin.naver.com/qna/detail.naver?dirId=40309&docId=476984462 · https://kin.naver.com/qna/detail.naver?dirId=40102&docId=489963057 · https://kin.naver.com/qna/detail.naver?dirId=40309&docId=495711401
-- 기준일: 2026년 11월 9일
-- 바뀐 것: 국세청 11/3 직권 환급(4,687명·21억원) 새로 나옴 · 소득세법 제103조 2024.12.31 개정(4호 신탁수익권 등) 뒤 그대로, 주식 공제 250만원 변함없음
+- 기준일: 2026년 11월 10일
+- 바뀐 것: 11/9 대비 없음(조문·보도자료 그대로) · 국세청 11/3 직권 환급(4,687명·21억원) 새로 나옴 · 소득세법 제103조 2024.12.31 개정(4호 신탁수익권 등) 뒤 그대로, 주식 공제 250만원 변함없음
 - 새로 찾은 것: 판별 기준 '환급결정 2026년 10월'·부동산 공제와 따로(문답 8) — 경쟁 0편
 - 조사 뒤 공표: data/release_calendar.json 해당 없음(제도 글)

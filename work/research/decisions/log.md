@@ -3589,3 +3589,9 @@
 2026-11-10 07:57 · firemap-write-b · 07:40 회차 발행 없이 끝냄(칸 #403 이미 발행), 새 비축 안 씀 · 11/10 사용량 쉼 지시, 오늘 6칸 모두 관문 통과
 2026-11-10 09:20 · visual · H-4 썸네일 thumb_h4n_g3→thumb_h4n_g5 · N-3 thumb_n3n_c→thumb_n3n_c2 (글자·사진·색 그대로, 둘째 줄만 폭 83~84%) · 이유: 412px 길이 칸(ytlong.preview 가로 9.5%, 1280판 x1143~1265·y647~705)에 마지막 글자 '다'(1,241px)·'에'(2,423px)가 걸림 = K-1 11/9 사고, PD 14:29 지시 · 짝 비교(길이 칸 얹은 판, 경쟁 5): H-4 0:2·N-3 1:1 — 1번째 이유가 두 판 똑같아 잘림을 못 봄(자리 편향), 결함 수리라 짝 비교 결과로 막지 않음 · experiment 없음
 2026-11-10 09:49 · firemap-watchdog · 조치 없음(빵꾸·멈춤·만료 없음) · 카페 147분 전(다음 칸 10:10, write 회차가 parking1109 발행 대기 중)·카페 재고 5·블로그 정지·로그인됨·멈춘 회차 0
+2026-11-10 16:42 · firemap-video-producer · K-1 H9Lv281MaLs 첫 댓글 달음(UgyIXcc7gzcnv3-LCgR4AaABAg, 영상에 없던 '한 해 377만원쯤'·남은 원금 2억 6,662만원) · 공개 5시간 뒤라 30분 규칙은 늦음(10:1x 회차가 렌더 중 끝나 아무도 안 닮), 카페 짝 글 k1pair1110이 아직 안 나가 주소 없이 달고 나가면 다음 회차가 글 주소 덧붙임 · P-3 렌더 다시: bench_backs.mp4를 B프레임 없이 다시 인코딩(10:18 'No frame found 4.4초' 실패) — 원본 bench_backs.orig1110.mp4, 장면·길이 그대로
+2026-11-10 16:57 · firemap-report · 11/9 사용량 표(jsonl 기준) — 걸린 분 video-producer 322·write 253·dispatcher 185, 출력 토큰 write 835k·write-b 786k · list_task_runs 안 부름(지시서 금지) · K-1 utm youtube 0(5시간째, 11/11 다시)
+
+2026-11-10 16:59 · firemap-write · 16:10 칸 #404 stkded1109 발행(발행 날 조문 재확인, 기준일만 10일로 고쳐 auto 재서명) · 칸 시각 지킴
+2026-11-10 16:59 · firemap-write · 늦은 k1pair1110·parking1109를 이번 회차에 같이 안 올림 · 회차당 1편·60분 간격 규칙, k1pair는 write-b가 16:5x에 맡음
+- 2026-11-10 16:59 · firemap-report · 16:10 칸 stkded1109 1b 보충 안 함 — write-b 16:40 회차가 발행 중(#404, verify OK) · 10:10 parking·12:40 k1pair는 당일 금리 재조회 필요 글이라 보고 회차가 올리지 않음

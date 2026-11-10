@@ -254,3 +254,5 @@
 - 11/9 썸네일 길이 칸 가림: 앱 길이 칸은 가로 89.3%부터(ytlong.preview) — 큰 주황 줄은 따로 크기 맞춰 끝 88.5% 안, 폭 85%와 함께 지키려면 왼쪽 여백 64px. 예약본 썸네일은 thumbnails.set 뒤 i9.ytimg 걸린 그림을 받아 app_preview로 확인.
 - 11/10 화면 관문 기록(<x>.screen.json)은 렌더본 크기·시각과 맞아야 업로드가 된다 — 렌더 뒤 deess·GAP 손질로 out/<x>.mp4를 다시 만들면 lfrender screen을 꼭 다시(509초 편 12분).
 - 11/10 렌더 전에 `research_gate.shot_check`부터 돌린다 — 판을 board_unused로 옮기거나 경쟁 장면 확인일이 14일 넘으면 lfrender가 렌더 전에 막는다(P-3 11/10).
+- 11/10 16시 P-3: Remotion 'No frame found at position'(실사 클립 중간 시각)이면 그 클립을 B프레임 없이(-bf 0 -g 12 -r 30) 다시 인코딩 — 장면·길이는 그대로라 서명·shot_plan 안 건드림 · 공개 첫 댓글은 렌더 기다리지 말고 공개 30분 안에 먼저(K-1은 5시간 늦음)
+- 11/10 녹음 전에 `lfvoice make --dry`의 '길이 N분'부터 본다 — 8분 아래면 ytlong이 렌더 뒤에 막는다(H-4 6.0분). 주의: 이 --dry는 실제로 받아 버렸다(18:24), 길이만 보려면 say 글자 수 ÷ 약 1,200자/분으로 어림.

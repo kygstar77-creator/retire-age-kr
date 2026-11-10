@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-11 07:52",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "아파트 취득세/서울은 얼마",
+ "num": "거래 48%가 세율 3%",
+ "sub": "8~10월 실거래 1만 160건",
+ "label": "국토부 실거래",
+ "src": "국토교통부 실거래 · 지방세법 제11조",
+ "icon": "building-2",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 129,
+ "num_px": 80,
+ "sub_px": 46,
+ "board": [
+  "k1pair1110",
+  "stkgift1109",
+  "ltdeduct1110",
+  "stkded1109",
+  "retpay1109",
+  "jsfraud1109",
+  "ltccost1108",
+  "deprate1109",
+  "hdetf1109",
+  "jeonip1109"
+ ]
+}

@@ -3739,10 +3739,10 @@
   {
    "at": "2026-11-11 16:10",
    "kind": "cafe",
-   "item": "write-b 부동산 글 — 국토부 실거래·공시·대출 규제 원문",
+   "item": "acqseoul1111",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · 부동산 하루 1칸 이상"
+   "gates_ok": "2026-11-11 08:07",
+   "note": "write-b 08:07: 관문 통과(bench 7·이해 3차 9명·aitell 6.6·readcheck 0·selfcheck 사실 0·crosscheck 사실 0, 말투 반영 3/안 받음 1·editgate auto) · acqseoul1111 = 아파트 취득세 3%, 서울 몇 개 구가 해당될까?(부동산·취득세: 국토부 실거래 8~10월 10,160건 중 48% 9억 초과·중간 거래가 9억 이상 16개 구) · 올리기 전 확인 11/11(같은 날, 다시 열 필요 없음) | firemap-meeting 2026-11-10 21:37: 36시간 칸 · 부동산 하루 1칸 이상"
   },
   {
    "at": "2026-11-11 18:40",

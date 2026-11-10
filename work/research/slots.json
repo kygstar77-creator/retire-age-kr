@@ -3717,8 +3717,8 @@
    "kind": "cafe",
    "item": "k1pair1110 (비축, K-1 짝 글) — 발행 회차가 당일 주담대 금리 다시 조회",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · yt_pair: K-1 H9Lv281MaLs · 10:10·12:40 놓친 칸을 몰아 올리지 않고 비축으로 돌린 편"
+   "gates_ok": "2026-11-11 06:23",
+   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · yt_pair: K-1 H9Lv281MaLs · 10:10·12:40 놓친 칸을 몰아 올리지 않고 비축으로 돌린 편 · 발행 #407 https://cafe.naver.com/firemap/407 (07:18 write, verify OK 1,426자·사진 3) → PD: K-1 설명란 cafe.naver.com/firemap 줄·첫 댓글 {CAFE}를 이 주소로"
   },
   {
    "at": "2026-11-11 10:10",
@@ -3731,10 +3731,10 @@
   {
    "at": "2026-11-11 12:40",
    "kind": "cafe",
-   "item": "write 회차 글 — 정책·세금(연금·건보료) 축",
+   "item": "bunrinhis1111 — 분리과세 건강보험료, 이자 1천만원 넘으면 얼마 붙을까? (정책·건보료 축)",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · 비축 0이면 회차 글, 관문 못 넘으면 칸 빔(미달 공개 금지)"
+   "gates_ok": "2026-11-11 06:39",
+   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · 비축 0이면 회차 글, 관문 못 넘으면 칸 빔(미달 공개 금지) · write 06:10 회차: 관문 통과(editgate auto·이해 3차 9명·research/bench/prepublish 0) — 발행 회차는 당일 확인 이미 있음(11/11)"
   },
   {
    "at": "2026-11-11 16:10",

@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-11 06:31",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "분리과세/건강보험료",
+ "num": "이자 1천만원 넘으면",
+ "sub": "지금 붙는 것·안 붙는 것",
+ "label": "2026.11.11 법령 기준",
+ "src": "국민건강보험법 시행규칙 제44조·복지부 11.4",
+ "icon": "shield-plus",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 123,
+ "num_px": 84,
+ "sub_px": 44,
+ "board": [
+  "stkgift1109",
+  "ltdeduct1110",
+  "stkded1109",
+  "retpay1109",
+  "jsfraud1109",
+  "ltccost1108",
+  "deprate1109",
+  "hdetf1109",
+  "jeonip1109",
+  "nhis11_1109"
+ ]
+}

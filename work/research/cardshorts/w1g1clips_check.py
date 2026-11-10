@@ -160,6 +160,33 @@ def layout_rest(layout):
     return m_l < m_c, m_l, m_c, f'{layout} 최근 3편 중앙 {m_l:,.0f} vs 채널 최근 20편 중앙 {m_c:,.0f}'
 
 
+CLIP_LAYOUTS = ('c1clip', 'm1clip', 'c2person')   # 지금 만드는 클립 틀(bars·rank·cards 카드 쇼츠는 10/11 폐지)
+
+
+def e18_gate(layout, name=None):
+    # 11/10 E-18 재조사(criteria/registry.md E-18 11/10 줄): '그 틀 최근 3편 중앙 < 채널 최근 20편 중앙' 쉼 신호는
+    # 다음 편 조회를 못 맞힌다 — 경쟁 고정 틀 쇼츠 5곳 822판정: 쉼 신호 뒤 다음 편이 채널 중앙 아래 51.7% vs 신호 없을 때 48.6%(Fisher p=0.37),
+    # 우리 29판정 4/11 vs 7/18(p=1.0), 우리 클립 38편 연속 순서↔조회 순위상관 -0.02. 틀과 무관해도 한 틀 쉼 54%·세 틀 모두 쉼 16%(구조상 반은 쉼).
+    # 그래서 신호는 '고를 편이 있을 때 고르는 순서'로만 쓴다: 쉼 틀은 더 나은 자리의 관문 통과 비축 편이 있을 때만 막고, 없으면 칸을 비우지 않는다
+    # (사장님 쇼츠 하루 1편·칸 비우기 실패 · 공식 answer/141805 추천 트래픽이 줄어드는 흔한 이유 'Uploading less frequently than usual').
+    # 반환 (막음 여부, 설명). 조회를 못 재면 그대로 막는다(재지 않고 올리지 않는다).
+    rest, m_l, _, why = layout_rest(layout)
+    if not rest: return False, why
+    if m_l is None: return True, why
+    st = {l: layout_rest(l) for l in CLIP_LAYOUTS if l != layout}
+    def better(l):   # 쉬지 않는 틀이거나, 둘 다 쉼이면 3편 중앙이 더 높은 틀
+        r = st.get(l)
+        return bool(r) and r[1] is not None and (not r[0] or r[1] > m_l)
+    try: res = json.load(open(os.path.join(WORK, 'research', 'slots.json'), encoding='utf-8'))['reserve']['shorts']
+    except Exception: res = []
+    ready = [f"{it['item']}({it.get('layout')})" for it in res if it.get('gates_ok') and '소진' not in (it.get('status') or '')
+             and it.get('item') != name and better(it.get('layout'))]
+    rank = ' · '.join(f'{l} {r[1]:,.0f}{"(쉼)" if r[0] else ""}' for l, r in st.items() if r[1] is not None)
+    if ready: return True, f'{why} — 더 나은 자리 관문 통과 비축 {", ".join(ready)} 있음 → 그 편 먼저 [다른 틀: {rank}]'
+    return False, (f'{why} — 쉼 신호지만 ' + ('모든 클립 틀 쉼' if all(r[0] for r in st.values()) else '더 나은 틀의 관문 통과 비축 없음')
+                   + f' → 칸 비우지 않고 이 편 올림(E-18 11/10: 신호 예측력 없음) [다른 틀: {rank}]')
+
+
 def form_check(name, layout=None, upload=False):
     p = json.load(open(os.path.join(WORK, 'video', name + '.json'), encoding='utf-8'))
     first = p['scenes'][0]['lines'][0]['text'].strip(); last = p['scenes'][-1]['lines'][-1]['text'].strip()
@@ -171,8 +198,8 @@ def form_check(name, layout=None, upload=False):
     for t in dict.fromkeys(screen_texts(p)):
         for m in WON7.finditer(t): bad.append(f'ⓒ 원 단위 7자리 이상 → 만원 반올림: {m.group(0)} | {t[:60]}')
     if upload:
-        lay = layout or 'c1clip'; rest, _, _, why = layout_rest(lay)
-        if rest: bad.append(f'ⓓ E-18 쉼: {why} — 다른 틀로(모든 틀이 쉼이면 youtube-loop E-18 판정 줄을 따름)')
+        lay = layout or 'c1clip'; block, why = e18_gate(lay, name)
+        if block: bad.append(f'ⓓ E-18 쉼: {why}')
         else: print(f'  ⓓ E-18 통과: {why}')
     print(f'## {name} 꼴 관문: ' + ('통과' if not bad else f'걸림 {len(bad)}'))
     for b in bad: print('  ' + b)
@@ -191,8 +218,8 @@ if __name__ == '__main__' and '--fix-won' in sys.argv:   # props를 고쳐 쓴�
 if __name__ == '__main__' and '--form' in sys.argv:
     names = [a for a in sys.argv[1:] if not a.startswith('--')]
     hits = {n: form_check(n) for n in names}
-    for lay in ('m1clip', 'c1clip', 'c2person'):
-        rest, _, _, why = layout_rest(lay); print(f'ⓓ E-18 {lay}: {why} → ' + ('쉼(업로드 거부)' if rest else '통과'))
+    for lay in CLIP_LAYOUTS:
+        block, why = e18_gate(lay); print(f'ⓓ E-18 {lay}: {why} → ' + ('쉼(업로드 거부)' if block else '통과'))
     sys.exit(2 if any(hits.values()) else 0)
 
 if __name__ == '__main__':

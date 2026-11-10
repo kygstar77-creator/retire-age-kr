@@ -450,3 +450,5 @@
 - 2026-11-09 visual-designer: 심사관 '같음' 판정 칸을 채울 때 클립을 바꿨으면 같은 회차에 mkcmp를 다시 돌려 비교 그림부터 새로 만든다 — 옛 그림 위에 판정을 적으면 shot_check는 통과해도 판정이 다른 클립 것이 된다(H-4 r05 교체 때 확인하고 다시 그림).
 - (2026-11-09 11:52 motion) bgcheck 롱폼 ⑥은 어두운 데이터 막대도 UI 상자로 센다(쇼츠는 B-14로 흰 판만) — 막대 차트 편은 렌더 전에 스틸 몇 장 ui_boxes부터 재고, 무늬로 감지기를 피하지 않는다(N-3 11/9 심사 두 번 불합격).
 - 2026-11-09 visual-designer: shot_plan 판정 칸에 '대안은 못함'처럼 다른 후보 이야기를 적어도 shot_check는 그 줄을 못함으로 막는다(H-4 r05). 판정 칸엔 쓴 것의 판정만, 버린 후보는 '안 씀'으로 적는다.
+- 2026-11-10 report: 부족분 보충(1b) 전에 같은 묶음을 다른 회차가 올리는 중인지 프로세스부터 본다 — 16:5x 내가 stkded1109를 올리려 할 때 write-b 16:40 회차가 이미 naverpost cafe를 돌리고 있었다(jitter 0~17분이라 내 timeout 400초에 잘려 겹치진 않음, #404 한 번만). Get-CimInstance Win32_Process로 naverpost.py 확인 뒤 올린다.
+- 2026-11-10 report: git 'corrupt loose object'는 히스토리를 고치기 전에 내용부터 되살려 본다 — 대개 앞 커밋 판 + 그 회차가 덧붙인 몇 줄이다. 줄 끝을 LF로 맞춰 sha1('blob N\0'+내용)이 같으면 손상 파일을 치우고 git hash-object -w(718bd13, decisions/log.md, 6시간 푸시 막힘을 1분에 풂).

@@ -3594,4 +3594,5 @@
 
 2026-11-10 16:59 · firemap-write · 16:10 칸 #404 stkded1109 발행(발행 날 조문 재확인, 기준일만 10일로 고쳐 auto 재서명) · 칸 시각 지킴
 2026-11-10 16:59 · firemap-write · 늦은 k1pair1110·parking1109를 이번 회차에 같이 안 올림 · 회차당 1편·60분 간격 규칙, k1pair는 write-b가 16:5x에 맡음
-- 2026-11-10 16:59 · firemap-report · 16:10 칸 stkded1109 1b 보충 안 함 — write-b 16:40 회차가 발행 중(#404, verify OK) · 10:10 parking·12:40 k1pair는 당일 금리 재조회 필요 글이라 보고 회차가 올리지 않음
+2026-11-10 16:59 · firemap-report · 16:10 칸 stkded1109 1b 보충 안 함 — write-b 16:40 회차가 발행 중(#404, verify OK) · 10:10 parking·12:40 k1pair는 당일 금리 재조회 필요 글이라 보고 회차가 올리지 않음
+2026-11-10 17:04 · firemap-report · 깨진 블롭 718bd13(decisions/log.md, 69667e7) 되살림 — 11/10 09:50 판(066036f 판 + watchdog 09:49 한 줄, LF)의 해시가 정확히 일치 → hash-object -w, fsck 깨끗 · 히스토리 안 바꿈 · 막혀 있던 푸시 풀림

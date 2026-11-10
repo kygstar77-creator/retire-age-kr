@@ -24,3 +24,4 @@
 - 2026-11-05: 일감표 '죽은 회차'는 beat.py 표의 단계 칸부터 본다 — 단계가 남아 있으면 맥박 누락이 아니라 그 단계에서 멈춘 것. 발행 회차가 브라우저를 쓰는 중(selfloop 'PID')이면 보충 발행·verify를 겹쳐 돌리지 않는다.
 - 2026-11-06: 사용량 비상 때 report는 report.py·perf·visitors·tgreport만 돈다. 발행 프로세스가 칸 전부터 떠 있으면 jitter 대기일 수 있다 — 종료를 기다린 뒤 verify. 카페 글 목록 API로 openArticle·삭제 여부를 브라우저 없이 본다.
 - (2026-11-09) naverpost check는 발행 회차가 브라우저를 쥐고 있으면 120초 넘게 멈춘다 — 한 번 끊기면 1~2분 뒤 timeout 150으로 다시 재면 된다(12:38 '로그인됨'). 블로그 색인 '하루 지난 글' 기준이 '어제 글 표본 없음 — 지난 글 전체'로 찍히면 브레이크 근거가 아니다(블로그 발행 0).
+- 2026-11-10: 사용량 원인은 list_task_runs 대신 ~/.claude/projects/C--Users-----Documents-Codex/*.jsonl 첫 user 메시지의 scheduled-task name과 usage(output_tokens)로 셀 수 있다(하위 Agent 기록은 빠짐, 2,618개 훑는 데 2분 넘음 → 백그라운드로).

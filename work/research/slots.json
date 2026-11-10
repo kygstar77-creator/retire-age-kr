@@ -3694,6 +3694,70 @@
    "note": "write-b 2026-11-10 19:46: 발행 당일 올리기 전 확인 끝 — 조문 9개 다시 받아 11/9 본과 같음·종가 11/10까지 다시 받아 계산 그대로(23·19·12일), 본문 고칠 것 없음 · research_gate research·prepublish 통과 · 22:40 회차가 올림 | item 이름을 묶음 이름으로 맞춤(naverpost 장부 대조) — 원래 'stkgift1109 — 자녀 주식 증여, 주가 떨어진 날 하면 세금 줄까? (세금·주식: 상증법 제63조 넉 달 평균 · 2026년 코스피 -5% 날 19일 거래소 종가 재계산)' | write-b 2026-11-09 20:08: 11/10 빈 :40 칸 몫 관문 통과(bench 6·이해 2차 6명·aitell 4.7·readcheck 0·selfcheck 사실 0·crosscheck 사실 반영 2/유지 3, 말투 Gemini 시간 초과·editgate auto) · 같은 날 16:10 stkded(세금)와 장르 겹쳐 22:40에 둠 — 회의가 18:40·10:10으로 옮겨도 됨(slot.txt 같이) · 발행 날 올리기 전 확인 다시(조문·종가)"
   },
   {
+   "at": "2026-11-11 07:40",
+   "kind": "cafe",
+   "item": "k1pair1110 (비축, K-1 짝 글) — 발행 회차가 당일 주담대 금리 다시 조회",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · yt_pair: K-1 H9Lv281MaLs · 10:10·12:40 놓친 칸을 몰아 올리지 않고 비축으로 돌린 편"
+  },
+  {
+   "at": "2026-11-11 10:10",
+   "kind": "cafe",
+   "item": "parking1109 (비축, 예금·이자) — 당일 저축은행 금리 다시 조회",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸"
+  },
+  {
+   "at": "2026-11-11 12:40",
+   "kind": "cafe",
+   "item": "write 회차 글 — 정책·세금(연금·건보료) 축",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · 비축 0이면 회차 글, 관문 못 넘으면 칸 빔(미달 공개 금지)"
+  },
+  {
+   "at": "2026-11-11 16:10",
+   "kind": "cafe",
+   "item": "write-b 부동산 글 — 국토부 실거래·공시·대출 규제 원문",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · 부동산 하루 1칸 이상"
+  },
+  {
+   "at": "2026-11-11 18:40",
+   "kind": "cafe",
+   "item": "write 회차 글 — 주식·ETF 축(종목 권유 금지)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸"
+  },
+  {
+   "at": "2026-11-11 22:40",
+   "kind": "cafe",
+   "item": "쇼츠 짝 글 — j1s_30yr이 던진 질문 하나(쇼츠 링크+원본 J-1 링크+표)",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · yt_pair: j1s_30yr(19:20 공개 뒤) · 쇼츠 예약 안 되면 write-b 비축 글"
+  },
+  {
+   "at": "2026-11-12 07:40",
+   "kind": "cafe",
+   "item": "write-b 비축 글(11/11 첫 회차에 만드는 2편 중 1)",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸"
+  },
+  {
+   "at": "2026-11-12 10:10",
+   "kind": "cafe",
+   "item": "write 회차 글 — 돈 관리·예금",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸"
+  },
+  {
    "at": "2026-11-12 11:30",
    "kind": "long",
    "item": "P-3(건보료 피부양자 — 국민연금만 받을 때)",

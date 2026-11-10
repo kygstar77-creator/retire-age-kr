@@ -187,3 +187,8 @@
 - 상태: 요청
 
 - 2026-11-04 21:33 · firemap-meeting · **근무표 줄이기 승인**(11/5~11/8 21:00): benchmark-loop·motion-designer·visual-designer 멈춤, copywriter 하루 1회(18:40), youtube-loop 하루 3회(01·09·17:35) · 주간 사용량 76%·하루 +28%p, 회의의 update_scheduled_task는 승인 필요로 거부 · 11/8 21:28 회의가 되돌림
+
+## 2026-11-11 03:3x 결재 요청 — Hugging Face 무료 계정 가입 (benchmark-loop AI 도구 점검, 근거 ai-lab/tools-gap-1111.md)
+- 왜: 새 영상 도구 시험(HF Space ZeroGPU)이 익명 하루 한도(약 2분)에 막힘. 11/5 Ming TTS·11/11 실사 3장면 중 2장면·ZONOS3 TTS 확인 못 함. 계정이면 하루 5분(1105 근거).
+- 돈: 0원. 가입·토큰 발급만(사장님 손). 토큰은 키 파일에만 두고 출력·커밋 안 함.
+- 지금 안 눌러도 깨지는 것 없음(지금 도구 RealVisXL 유지). · 상태: 요청

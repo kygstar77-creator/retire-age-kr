@@ -2,6 +2,9 @@
 ## ★ 정기 회의 11/10 21:28~21:43 — 사용량 +5%p(상한 안) → **11/11 쉼 풂** (근거 meeting/2026-11-10-decisions.md·verify.md·_전략·_사용자·_법·missed-q_전략)
 - 막힘 [사장님 손] 그대로(이월 6회): ① 근무표 줄이기 승인 ② 쿠팡·애드핏 수익 화면 재로그인(10/21~) ③ **충전기 상시 연결 — 11/10 PC 꺼짐 09:50~16:37로 카페 2칸·K-1 첫 댓글 놓침** ④ 카페 회원 모으기
 - **[지시·전원] 11/11 쉼 풂**: benchmark-loop·motion-designer·copywriter·youtube-loop 분석 일 다시 · 상한 +12%p 그대로 · 렌더 같은 무거운 일은 같은 편 두 회차 겹치지 않기(lessons 11/9) · 실패 신호: 11/11 21시 회의에서 +12%p 넘으면 11/12 쉼 ①~④ 다시, 40% 넘으면 ⑤ 카페 3칸까지
+- [지시] **firemap-video-producer** ← firemap-benchmark-loop (11/11 03:3x) 의도: 실사 사람 장면 영상미 올리기(근거 ai-lab/tools-gap-1111.md ③, clips/couple__minimax-h3-hfspace.mp4) · 완료 기준: 다음 편의 사람 뒷모습 장면 1개를 RealVisXL(로컬)과 MiniMax-H3-Image(HF Space minimaxai/minimax-h3-image, 16:9·1MP)로 같은 프롬프트 두 판 만들어 손·물건·간판 확대 비교 후 하나 고름, H3를 고르면 설명란에 'AI 생성 장면 일부: MiniMax-H3-Image' 한 줄+containsSyntheticMedia · 기한 다음 롱폼 렌더 전 · 금지: 아파트·서류 장면에 H3 쓰기(확인 안 함), 렌더 같은 편 두 회차 겹치기
+- [지시] **firemap-editor** ← firemap-benchmark-loop (11/11 03:3x) 의도: AI 실사 장면 점검 · 완료 기준: style-guide.md G1~G3(번호판·서류 영어·손에 든 물건)을 AI 장면 들어간 편 검수 때 확대 확인 · 기한 다음 서명부터
+- [지시] **firemap-video-producer** ← firemap-benchmark-loop (11/11 03:3x) 의도: 11/17 종료 모델 정리 · 완료 기준: ep/A-1/voice.py:10·research/sonpum2/tour_voice.py:10 MODELS에서 'gemini-2.5-flash-preview-tts' 빼기(앞 순번이 먼저라 지금은 안 깨짐) · 기한 11/16
 - [지시] **firemap-editor** ← firemap-meeting (21:43) 의도: P-3 11/12 11:30 공개 · 완료 기준: PD 19:09 요청 받아쓰기 1줄 낱말 바꾸기 재서명(뜻·숫자 그대로) · 기한 11/11 07:30 · 금지: 관문 낮추기 · 보고 decisions/log·PD 인계
   착수: firemap-editor 23:10 (운영실장)
 - [지시] **firemap-video-producer** ← firemap-meeting (21:43) 의도: P-3 관문 기한 지키기 · 완료 기준: editor 재서명 뒤 그 줄만 다시 받기→readback→ytlong gate→publishAt 2026-11-12T11:30:00+09:00 예약, slots gates_ok · 기한 11/11 11:30(관문 24시간 전), 못 넘으면 같은 날 다시 · 금지: 관문 낮추기

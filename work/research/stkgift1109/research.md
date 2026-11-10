@@ -89,6 +89,12 @@
 | 11/6 19만 3,500원·앞 두 달 약 24만 6천원·14만원 아래 | 193,500 · 246,312 · 139,490 | S10 https://api.finance.naver.com/siseJson.naver?symbol=005930&requestType=1&startTime=20250101&endTime=20261109&timeframe=day |
 
 # 올리기 전 확인
+- 2026-11-10 19:43 발행 당일 다시 엶(write-b 19:40 회차): 조문 9개(상증법 제4·26·47·53·63·68·69조, 같은 법 시행령 제24조, 국세기본법 제5조)를 국가법령정보센터 웹(work/lawweb.py)으로 다시 받아 11/9 본과 글자 대조 — 9개 모두 같음(raw/1110/) · 법령 API(OC=test)는 사용자 검증 실패라 웹으로 받음
+- 2026-11-10 19:43 종가 다시 받음: https://api.finance.naver.com/siseJson.naver?symbol=005930&requestType=1&startTime=20250101&endTime=20261110&timeframe=day · symbol=069500 · symbol=KOSPI 같은 주소(endTime 20261110) → calc.py 기준일만 11/10으로 다시 돌림(calc_out_1110.txt)
+- 기준일: 2026년 11월 10일
+- 바뀐 것: 조문 바뀐 것 없음 · 11/10 삼성전자 종가 197,700·코스피 5,239.13 · 올해 5% 넘게 빠진 날 23일·평가 끝난 19일·평균>종가 12일 그대로 · 11/6 예시의 남은 거래일 평균 문턱 139,490→137,968원(본문 '14만원 아래' 그대로 맞음, 본문 고칠 것 없음)
+- 새로 찾은 것: 11/10 하루 코스피 5% 하락 없음(23일 그대로) · 9/10 전후 폭락일 없어 11/10에 새로 평가가 끝난 날 없음
+- (아래는 11/9 기록)
 - 2026-11-09 20시 대조 칸 출처 S1~S12 전부 이번 회차에 처음 받음(raw/ 11/9 19:45~20:05) — 발행 날 다시 열어 이 칸을 다시 채운다
 - 다시 연 주소: https://www.law.go.kr/법령/상속세%20및%20증여세법/제63조 · https://www.law.go.kr/법령/상속세%20및%20증여세법/제53조 · https://www.law.go.kr/법령/상속세%20및%20증여세법/제26조 · https://www.law.go.kr/법령/상속세%20및%20증여세법/제69조 · https://www.law.go.kr/법령/상속세%20및%20증여세법/제68조 · https://www.law.go.kr/법령/상속세%20및%20증여세법/제4조 · https://www.law.go.kr/법령/상속세%20및%20증여세법/제47조 · https://www.law.go.kr/법령/상속세%20및%20증여세법%20시행령/제24조 · https://www.law.go.kr/법령/국세기본법/제5조 · https://api.finance.naver.com/siseJson.naver?symbol=005930&requestType=1&startTime=20250101&endTime=20261109&timeframe=day · https://api.finance.naver.com/siseJson.naver?symbol=KOSPI&requestType=1&startTime=20250101&endTime=20261109&timeframe=day · https://api.finance.naver.com/siseJson.naver?symbol=069500&requestType=1&startTime=20250101&endTime=20261109&timeframe=day · 질문 주소 https://kin.naver.com/qna/detail.naver?dirId=40309&docId=495734914 · https://kin.naver.com/qna/detail.naver?dirId=40303&docId=491351650 · https://kin.naver.com/qna/detail.naver?dirId=40303&docId=488162599 · https://kin.naver.com/qna/detail.naver?dirId=60220&docId=427702138 · https://kin.naver.com/qna/detail.naver?dirId=40102&docId=494396624
 - 기준일: 2026년 11월 9일

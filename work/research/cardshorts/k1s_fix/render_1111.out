@@ -1,0 +1,8 @@
+skip 0-299
+skip 300-599
+part 600-955 03:09
+CONCAT OK
+후 None
+음량 맞춤 {'I': -17.1, 'TP': -1.3}
+out/k1s_fix_c1_ds.mp4
+K1F_DONE 03:09

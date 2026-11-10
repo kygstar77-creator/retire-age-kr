@@ -1,3 +1,5 @@
+- 2026-11-11 03:12 [PD] 정기 02:1x 끝 — **k1s_fix 쇼츠 비축 관문 통과**(K-1 5장 '3억 고정 대출, 고정 끝나면 평균 금리로 한 달 31만원', 31.9초·새 녹음 0·이해 5차 15명·safezone·bgcheck·치직 0) → 쇼츠 비축 3편(h3s_jeonse·k1s_dep·k1s_fix) · P-3은 editor screen_text stamp(06:50) 전이라 렌더 0, 06시대 PD가 렌더→gate→11/12 11:30 예약 · H-4 새 줄은 editor 재서명(11/12 06:00) 뒤 · 업로드 0 · 고정 대기: NNcjTE0L7yg, H9Lv281MaLs
+- 2026-11-11 02:18 [PD] 정기 02:1x — P-3은 editor screen_text stamp(06:50) 전이라 렌더 0 · H-4 새 줄은 editor 재서명(11/12 06:00) 전이라 녹음 0 · k1s_fix(K-1 5장 '2021 고정 대출 끝 +31만원') 쇼츠 비축 제작 시작
 - 2026-11-10 23:19 [PD] 정기 22:1x 끝 — j1s_30yr **7bBwnLg86-Q** 11/11 19:20 예약 · k1s_dep 쇼츠 비축 관문 통과(비축 2편) · P-3 3:7 새 말 녹음·check·readback·props·screen_text 1줄 → editor stamp(11/11 06:50) 뒤 06시대 PD 렌더→gate→11/12 11:30 예약 · 고정 대기: NNcjTE0L7yg, H9Lv281MaLs
 - 2026-11-10 22:17 [PD] 정기 22:1x — j1s_30yr 11/11 19:20 예약(순돌이 20:53 지시)·K-1 클립 비축 시작 · P-3은 editor 재서명(11/11 07:30) 대기
 - 2026-11-10 19:09 [PD] 정기 16:3x 끝 — P-3 렌더·bgcheck 통과, 예약 0: gate C-readback 1줄(3:7 '깎아 받던'→'깎아봤던')만 남음 → editor 한 줄 고침 요청(11/11 06:30), 06시대 PD가 녹음→props→stamp→다시 렌더→gate→11/12 11:30 예약 · K-1 H9Lv281MaLs 첫 댓글 달음(늦음, 카페 주소는 k1pair1110 나간 뒤 덧붙임) · 고정 대기: NNcjTE0L7yg, H9Lv281MaLs

@@ -1,0 +1,246 @@
+{
+ "fps": 30,
+ "name": "k1s_fix",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "한국은행 평균 금리 · 주택담보대출",
+  "2021년 3억 고정 대출, 고정 끝나면 한 달 얼마 늘까?"
+ ],
+ "hot": "고정 끝나면",
+ "answer": {
+  "label": "3억·30년 고정형 대출 한 달 납입액(은행 평균 금리)",
+  "items": [
+   "2021년 8월 2.98%: 126만원",
+   "5년 뒤 5.11%로 다시: 158만원"
+  ],
+  "arrow": false,
+  "note": "갚고 남은 원금 기준 · 내 금리는 은행마다 달라요"
+ },
+ "base": "한국은행 예금은행 신규취급 주택담보대출 고정형 평균 금리 2021년 8월·2026년 9월분 · 원리금균등 30년 · 파이어맵 계산",
+ "long": "H9Lv281MaLs",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "2021년",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "2021년 여름 대출",
+      "3억 · 30년 고정형",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "그때 고정형 평균",
+      "3%가 안 됨",
+      "",
+      80,
+      "ink"
+     ],
+     [
+      "그때 한 달",
+      "126만원",
+      "",
+      174,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "3억원을 서른 해 동안 갚는 고정형이에요.",
+     "audio": "audio/k-1/77f8c3045301710b.wav",
+     "frames": 80
+    },
+    {
+     "n": 2,
+     "text": "그때 고정형 평균 금리는 3%가 안 됐어요.",
+     "audio": "audio/k-1/0728903f582c2adc.wav",
+     "frames": 94
+    },
+    {
+     "n": 3,
+     "text": "한 달에 126만원을 냈습니다.",
+     "audio": "audio/k-1/0fd849c4c79b34ee.wav",
+     "frames": 66
+    }
+   ],
+   "frames": 240
+  },
+  {
+   "kind": "vs",
+   "label": "5년 뒤",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "5년 뒤 고정 끝",
+      "남은 원금에 지금 평균 5.11%",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "이제 한 달",
+      "158만원",
+      "",
+      142,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "5년이 지나 고정 기간이 끝나고, 지금 고정형 평균 금리로 다시 정한다고 놓아 볼게요.",
+     "audio": "audio/k-1/58b27f811b4dcf35.wav",
+     "frames": 142
+    },
+    {
+     "n": 5,
+     "text": "한 달에 158만원이 됩니다.",
+     "audio": "audio/k-1/297415971ce3e37b.wav",
+     "frames": 59
+    }
+   ],
+   "frames": 201
+  },
+  {
+   "kind": "vs",
+   "label": "답",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "평균 셈, 한 달 더",
+      "31만원쯤",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "열두 달 더하면",
+      "370만원 넘게",
+      "",
+      116,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "2021년에 내던 돈보다 한 달 31만원 정도 늘어요.",
+     "audio": "audio/k-1/8de0c595e5ec911e.wav",
+     "frames": 116
+    },
+    {
+     "n": 7,
+     "text": "한 해면 370만원이 넘습니다.",
+     "audio": "audio/k-1/183748c896931341.wav",
+     "frames": 74
+    }
+   ],
+   "frames": 190
+  },
+  {
+   "kind": "vs",
+   "label": "할 일",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "평균으로 셈한 가정",
+      "은행·상품마다 달라요",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "고정형 대출이라면",
+      "고정 끝나는 날 확인",
+      "",
+      146,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 8,
+     "text": "이건 평균 금리로 계산한 가정이에요. 실제 금리는 은행과 상품마다 다릅니다.",
+     "audio": "audio/k-1/c830cc2931b5b6e9.wav",
+     "frames": 146
+    },
+    {
+     "n": 9,
+     "text": "2021년 무렵 낮은 금리로 고정해 둔 분이라면, 그 날이 언제인지부터 보셔야 해요.",
+     "audio": "audio/k-1/91a9ee571a260031.wav",
+     "frames": 143
+    }
+   ],
+   "frames": 325
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/k1/stock/cut/dining_room_0_f.mp4",
+   "from": 0,
+   "frames": 80,
+   "start": 0
+  },
+  {
+   "src": "bg/k1/stock/cut/news_cup_2_f.mp4",
+   "from": 80,
+   "frames": 94,
+   "start": 0
+  },
+  {
+   "src": "bg/k1/stock/cut/money_pen_12_f.mp4",
+   "from": 174,
+   "frames": 66,
+   "start": 0
+  },
+  {
+   "src": "bg/k1/stock/cut/rain_window_10_f.mp4",
+   "from": 240,
+   "frames": 142,
+   "start": 0
+  },
+  {
+   "src": "bg/k1/stock/cut/cup_stir_1_f.mp4",
+   "from": 382,
+   "frames": 59,
+   "start": 0
+  },
+  {
+   "src": "bg/k1/stock/cut/coffee_cloudy_1_f.mp4",
+   "from": 441,
+   "frames": 116,
+   "start": 0
+  },
+  {
+   "src": "bg/k1/stock/cut/notebook_hand_0_f.mp4",
+   "from": 557,
+   "frames": 74,
+   "start": 0
+  },
+  {
+   "src": "bg/k1/stock/cut/water_drops_2_f.mp4",
+   "from": 631,
+   "frames": 146,
+   "start": 0
+  },
+  {
+   "src": "bg/k1/stock/cut/rain_window_40_f.mp4",
+   "from": 777,
+   "frames": 179,
+   "start": 0
+  }
+ ],
+ "credits": "Carlos Arribas · KATRIN  BOLOVTSOVA · Mark Warner · Samer Daboul · T Leish · Tom Fisk · Towfiqu barbhuiya · https://kaboompics.com/"
+}

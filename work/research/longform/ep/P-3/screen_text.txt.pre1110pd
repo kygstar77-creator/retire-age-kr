@@ -1,0 +1,241 @@
+# 화면 글자 — P-3 (lfrender.py text가 만듦. 여기를 고치지 말고 대본·props·tsx를 고친 뒤 다시 뽑는다)
+# 그래프 제목·부제·출처·자막(lines.text)·막대 이름·코드에 박힌 글자. 썸네일 문구는 그림이라 안 들어간다.
+
+## props: video/p3.json
+[scenes.0.lines.0.text] 안녕하세요, 파이어맵입니다. 오늘은 건강보험 피부양자 이야기입니다.
+[scenes.0.data.license] Pexels 7430218 무료(alleksana)
+[scenes.0.data.say] 파이어맵 · 건강보험 피부양자
+[scenes.0.data.side] left
+[scenes.1.lines.0.text] 국민연금이 한 달에 딱 만원 올랐을 뿐인데, 안 내던 건강보험료를 매달 7만원 가까이 내게 되는 자리가 있습니다.
+[scenes.1.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.2.lines.0.text] 그 자리가 어디쯤일까요?
+[scenes.2.lines.1.text] 예를 들어 예순다섯에 자녀 직장 건강보험 피부양자로 올라 있는 분이라면, 건강보험료를 한 푼도 안 내요. 소득 기준은 나이와 상관없이 같습니다.
+[scenes.2.data.license] AI 생성 그림(RealVisXL V5.0, openrail++) 위 파이어맵 글자
+[scenes.2.data.badge] AI 생성 그림
+[scenes.3.lines.0.text] 답부터 말하면, 월 166만원에서 167만원으로 넘어가는 사이예요.
+[scenes.3.data.license] AI 생성 그림(RealVisXL V5.0, openrail++)
+[scenes.3.data.badge] AI 생성 그림
+[scenes.4.lines.0.text] 166만원이면 한 푼도 안 내요.
+[scenes.4.lines.1.text] 167만원이 되면 보험료가 붙어요.
+[scenes.4.lines.2.text] 매달 6만 8천원쯤입니다.
+[scenes.4.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.5.lines.0.text] 국민연금을 올해 한 달 165만원 받는 분이라면, 아직은 기준 아래예요. 그런데 아무것도 안 해도 넘을 수 있습니다. 왜 그런지, 넘으면 언제부터 얼마인지 차례로 볼게요.
+[scenes.5.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.6.lines.0.text] 그리고 이자나 배당이 있는 분이라면, 11월이 왜 갈림길인지도 뒤에서 짚을게요.
+[scenes.6.data.license] Pexels 8246770 무료(Mikhail Nilov)
+[scenes.6.data.side] left
+[scenes.7.lines.0.text] 지식iN에 이런 질문이 있었어요. 국민연금이 2천만원을 넘으면 건보료 부담이 어느 정도냐고요.
+[scenes.7.data.n] 1장
+[scenes.7.data.q] 문턱은 정확히 얼마인가
+[scenes.8.lines.0.text] 기준은 한 해 소득 2천만원입니다.
+[scenes.8.lines.1.text] 한 달로 나누면 166만원을 조금 넘어요.
+[scenes.8.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.9.lines.0.text] 여기서 국민연금은 받은 돈을 전부 셉니다. 세금을 떼는지와 상관없이요.
+[scenes.9.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.10.lines.0.text] 왜 전부냐고 물으면, 법이 그렇게 정해 놨다는 것 말고는 답이 없어요. 이유를 적은 문장은 법에 없거든요.
+[scenes.10.data.license] Pexels 4066391 무료(cottonbro studio)
+[scenes.10.data.side] left
+[scenes.11.lines.0.text] 반대로 연금저축이나 IRP에서 받는 연금은 이 소득에 넣지 않아요. 공단이 그렇게 안내하고 있습니다.
+[scenes.11.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.12.lines.0.text] 그래서 같은 돈을 받아도, 어디서 받느냐에 따라 기준까지 남은 거리가 다릅니다.
+[scenes.12.data.license] Pexels 7430218 무료(alleksana)
+[scenes.12.data.side] left
+[scenes.13.lines.0.text] 한 달에 국민연금 100만원, 연금저축 66만원을 받는 분이 있어요.
+[scenes.13.lines.1.text] 다 합치면 166만원이지만, 피부양자 소득으로 세는 건 국민연금뿐이에요.
+[scenes.13.lines.2.text] 그래서 기준까지 아직 한참 남아 있어요.
+[scenes.13.lines.3.text] 같은 166만원이라도, 국민연금으로만 받는 분과는 사정이 전혀 달라요.
+[scenes.13.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.14.lines.0.text] 기준을 넘으면 피부양자에서 빠지고, 지역가입자가 됩니다. 이제 보험료 고지서가 본인 이름으로 와요.
+[scenes.14.data.n] 2장
+[scenes.14.data.q] 넘으면 매달 얼마인가
+[scenes.15.lines.0.text] 계산은 생각보다 단순해요. 탈락을 가를 땐 연금을 전부 셌지만, 지역가입자가 되어 보험료를 매길 땐 연금의 절반만 소득으로 봅니다.
+[scenes.15.lines.1.text] 그 절반에 보험료율 7.19%를 곱해요.
+[scenes.15.lines.2.text] 그러면 건강보험료가 6만원 정도 나와요.
+[scenes.15.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.16.lines.0.text] 여기서 끝이 아닙니다. 고지서에는 장기요양보험료가 같이 붙어요.
+[scenes.16.data.license] Pexels 6851679 무료(cottonbro studio)
+[scenes.16.data.side] left
+[scenes.17.lines.0.text] 건강보험료에 13.14%를 곱한 만큼이에요.
+[scenes.17.lines.1.text] 그래서 8천원 정도 더해집니다.
+[scenes.17.lines.2.text] 둘을 더하면 매달 6만 8천원쯤이에요.
+[scenes.17.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.18.lines.0.text] 집 같은 재산이 있으면 재산에도 보험료가 따로 붙어서, 이보다 커집니다.
+[scenes.18.data.license] Pexels 7593891 무료(Pavel Danilyuk)
+[scenes.18.data.side] left
+[scenes.19.lines.0.text] 표로 보면 모양이 보여요. 기준 바로 위에서 한 번 크게 뛰고, 그 뒤로는 조금씩 오릅니다.
+[scenes.19.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.20.lines.0.text] 월 170만원이면 6만 9천원 정도예요.
+[scenes.20.lines.1.text] 180만원이면 7만 3천원 정도고요.
+[scenes.20.lines.2.text] 200만원이 돼도 8만 1천원 정도입니다.
+[scenes.20.lines.3.text] 연금이 10만원 더 많아져도, 보험료는 4천원 정도 더 붙을 뿐이에요.
+[scenes.20.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.21.lines.0.text] 보험료가 가장 크게 뛰는 건, 선을 처음 넘는 그 한 칸이에요.
+[scenes.21.lines.1.text] 안 내던 보험료가 갑자기 생기는 그 자리요.
+[scenes.21.data.license] Pexels 8246770 무료(Mikhail Nilov)
+[scenes.21.data.say] 선을 처음 넘는 그 한 칸
+[scenes.21.data.side] left
+[scenes.22.lines.0.text] 다시 167만원으로 돌아가서, 그 보험료를 10년 동안 낸다고 쳐 볼게요.
+[scenes.22.lines.1.text] 모두 더하면 800만원이 넘어요.
+[scenes.22.lines.2.text] 월 200만원인 분은 같은 기간에 1천만원 정도 내요.
+[scenes.22.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.23.lines.0.text] 국민연금은 해마다 1월에 물가만큼 오릅니다.
+[scenes.23.lines.1.text] 올해는 2.1% 올랐어요.
+[scenes.23.data.license] Pexels 5408798 무료(Leeloo The First)
+[scenes.23.data.side] left
+[scenes.24.lines.0.text] 내년에도 같은 비율로 오른다면, 연금은 168만원을 조금 넘습니다. 기준 위예요.
+[scenes.24.lines.1.text] 그러면 그다음 해 판정에서 탈락하고, 그때부터 매달 6만 8천원쯤 내게 됩니다.
+[scenes.24.lines.2.text] 한 해로 치면 80만원이 넘어요.
+[scenes.24.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.25.lines.0.text] 올해 월 164만원을 받는 분부터 이렇게 됩니다. 아무것도 안 했는데 기준을 넘는 거예요.
+[scenes.25.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.26.lines.0.text] 탈락해도 처음 몇 년은 깎아 준다는 말, 들어 보셨을 거예요.
+[scenes.26.data.n] 3장
+[scenes.26.data.q] "깎아 준다던데요?"
+[scenes.27.lines.0.text] 그런 제도가 있었던 건 맞습니다. 그런데 이제 끝났어요.
+[scenes.27.lines.1.text] 2022년 9월에 시작한, 정해진 기간에만 있던 제도예요.
+[scenes.27.lines.2.text] 올해 8월에 끝났고, 그 사이 처음 탈락한 사람만 받았습니다.
+[scenes.27.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.28.lines.0.text] 깎아 주는 비율은 해마다 줄었어요. 처음엔 80%였어요.
+[scenes.28.lines.1.text] 마지막 해엔 20%였고, 올해 8월분으로 모두 끝났습니다.
+[scenes.28.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.29.lines.0.text] 해가 갈수록 깎아 주는 몫은 줄고, 내는 돈은 늘어난 거예요.
+[scenes.29.data.license] Pexels 4066391 무료(cottonbro studio)
+[scenes.29.data.side] left
+[scenes.30.lines.0.text] 이미 깎아 받던 분들도 9월분부터는 전부 내고 있어요.
+[scenes.30.lines.1.text] 그래서 지금 새로 탈락하는 분은 깎아 주는 게 없어요. 고지서 첫 달부터 전부 냅니다.
+[scenes.30.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.31.lines.0.text] 예전 기사나 영상을 보고 기대하셨다면, 그 계산은 지우셔야 합니다.
+[scenes.31.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.32.lines.0.text] 그럼 연금이 오르면 바로 그달부터 탈락일까요? 그렇지 않아요.
+[scenes.32.data.n] 4장
+[scenes.32.data.q] 언제 다시 보나
+[scenes.33.lines.0.text] 피부양자인지 볼 때 연금은 늘 작년 한 해 받은 돈으로 봅니다. 해가 바뀌는 1월마다 한 해씩 넘어가요.
+[scenes.33.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.34.lines.0.text] 그래서 내년에 오른 연금은, 그다음 해 판정에 들어가요. 이 계산대로라면 연금이 오른 내년이 아니라, 그다음 해부터 고지서가 오는 거예요.
+[scenes.34.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.35.lines.0.text] 연금은 1월에 넘어가지만, 이자나 배당 같은 다른 소득은 11월에 넘어가요.
+[scenes.35.data.license] Pexels 8246770 무료(Mikhail Nilov)
+[scenes.35.data.side] left
+[scenes.36.lines.0.text] 여기서 넘어간다는 건, 판정에 쓰는 소득이 1년 뒤의 것으로 바뀐다는 말이에요.
+[scenes.36.lines.1.text] 10월까지는 재작년 소득을 봐요.
+[scenes.36.lines.2.text] 11월이 되면 작년 소득으로 바꿔 봅니다.
+[scenes.36.lines.3.text] 그래서 이자나 배당이 있는 분은 11월이 갈림길이에요.
+[scenes.36.lines.4.text] 그달에 오는 고지서나 통지를 꼭 보셔야 합니다.
+[scenes.36.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.37.lines.0.text] 통지 내용이 내 계산과 다르다면, 공단 고객센터에 어느 해 소득으로 본 건지부터 물어보세요.
+[scenes.37.lines.1.text] 탈락 통지를 받았는데 그사이 소득이 줄었다면, 공단 고객센터에 물어 조정을 신청할 수 있습니다.
+[scenes.37.data.license] Pexels 6851679 무료(cottonbro studio)
+[scenes.37.data.say] 공단 고객센터에 먼저 물어보기
+[scenes.37.data.side] left
+[scenes.38.lines.0.text] 기준 근처인 분은 예금 이자도 신경이 쓰이죠. 지식iN에서 답이 엇갈린 질문도 있었어요. 이자·배당이 999만원이면 0원으로 보느냐고요.
+[scenes.38.data.n] 5장
+[scenes.38.data.q] 이자·배당이 섞이면
+[scenes.39.lines.0.text] 보험료를 계산할 때는, 보통 은행 이자·배당은, 세금 떼기 전 금액이 한 해 1천만원 이하면 소득에 넣지 않아요.
+[scenes.39.lines.1.text] 그런데 피부양자를 가를 때도 이 기준이 똑같은지는, 공단 문서로는 확인이 안 됐어요.
+[scenes.39.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.40.lines.0.text] 999만원처럼 선 근처라면, 공단 고객센터 1577-1000에 먼저 물어보세요.
+[scenes.40.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.41.lines.0.text] 1천만원을 넘으면 어느 쪽이든 분명해요. 넘은 만큼이 아니라 전부가 들어갑니다. 여기가 함정이에요.
+[scenes.41.data.license] Pexels 7593891 무료(Pavel Danilyuk)
+[scenes.41.data.say] 넘은 만큼이 아니라 전부
+[scenes.41.data.side] left
+[scenes.42.lines.0.text] 예를 들어 연금이 한 해 1,000만원이라고 해 볼게요.
+[scenes.42.lines.1.text] 여기에 이자·배당이 1,100만원 있으면, 둘을 더해 2천만원보다 많아져요.
+[scenes.42.lines.2.text] 그러면 탈락이에요.
+[scenes.42.lines.3.text] 보험료는 연금의 절반에 이자·배당 전부를 더해서 매겨요. 장기요양까지 붙이면 매달 11만원쯤 냅니다.
+[scenes.42.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.43.lines.0.text] 연금이 더 많으면 어떨까요. 연금이 1년에 1,800만원인 분을 볼게요.
+[scenes.43.data.license] Pexels 5408798 무료(Leeloo The First)
+[scenes.43.data.side] left
+[scenes.44.lines.0.text] 여기에 이자·배당이 1,100만원 있으면, 전부가 들어가서 기준을 넘어요.
+[scenes.44.lines.1.text] 그러면 장기요양까지 매달 13만원 넘게 냅니다.
+[scenes.44.lines.2.text] 이자·배당이 1천만원 아래였다면 안 냈을 수도 있는 보험료가, 100만원 정도 차이로 이만큼 붙는 거예요.
+[scenes.44.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.45.lines.0.text] 지금까지 계산은 재산이 거의 없는 경우예요. 집이 있으면 길이 갈립니다.
+[scenes.45.data.n] 6장
+[scenes.45.data.q] 누구라면 달라지나
+[scenes.46.lines.0.text] 집 같은 재산의 과세표준, 그러니까 시세가 아니라 재산세를 매기는 기준 금액이 5억 4천만원을 넘으면, 이야기가 달라져요.
+[scenes.46.data.license] Pexels 38259256 무료(vignesh srivatsav) 위 파이어맵 글자
+[scenes.47.lines.0.text] 연금과 이자를 모두 합친 소득 기준이 2천만원이 아니라 1천만원으로 내려가요. 9억원을 넘으면 소득과 상관없이 피부양자가 될 수 없고요.
+[scenes.47.lines.1.text] 그리고 탈락하면 재산분 보험료가 따로 붙어서, 오늘 본 금액보다 커집니다.
+[scenes.47.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.48.lines.0.text] 사업소득은 더 엄격해요. 사업자등록을 하고 사업소득이 있으면, 금액과 상관없이 피부양자가 될 수 없어요. 등록이 없어도 한 해 500만원이 넘으면 마찬가지고요.
+[scenes.48.data.license] Pexels 7593891 무료(Pavel Danilyuk)
+[scenes.48.data.say] 사업자등록이 있으면
+[scenes.48.data.side] left
+[scenes.49.lines.0.text] 결혼한 분은 부부를 각자 따로 따져요. 그런데 한 사람만 넘어도 배우자까지 같이 빠집니다.
+[scenes.49.lines.1.text] 어떤 부부가 있어요. 한 분은 연금이 월 170만원, 배우자는 월 50만원이에요.
+[scenes.49.lines.2.text] 둘을 합쳐서 2천만원과 비교하는 게 아니에요.
+[scenes.49.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.50.lines.0.text] 배우자는 혼자 따지면 기준 한참 아래지만, 한 분이 넘었으니 두 사람 다 피부양자에서 빠집니다.
+[scenes.50.data.license] Pexels 8795948 무료(Anastasia Shuraeva)
+[scenes.50.data.say] 두 사람 다 빠져요
+[scenes.50.data.side] left
+[scenes.51.lines.0.text] 따지는 건 각자지만, 빠질 땐 함께라는 뜻이에요.
+[scenes.51.lines.1.text] 그러니 연금이 많은 쪽 한 사람만 먼저 계산해 봐도, 둘 다 빠지는지는 바로 알 수 있어요.
+[scenes.51.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.52.lines.0.text] 이런 생각이 드실 수 있어요. 피부양자를 지키려면 연금을 일찍 당겨 받아서 줄이면 되지 않을까.
+[scenes.52.data.n] 7장
+[scenes.52.data.q] 흔한 말 하나
+[scenes.53.lines.0.text] 일찍 받으면 한 해 당길 때마다 연금이 6%씩 줄고, 그 줄어든 금액으로 평생 받게 됩니다.
+[scenes.53.lines.1.text] 당겨 받기는 연금을 받기 시작하기 전에, 받을 나이보다 최대 5년 앞서 고르는 거예요.
+[scenes.53.lines.2.text] 이미 받고 계신 분은 해당이 없고요.
+[scenes.53.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.54.lines.0.text] 가장 길게 당기면 30%가 줄어요.
+[scenes.54.lines.1.text] 월 165만원을 받을 연금이라면, 115만원 정도로 평생 받는 셈이에요.
+[scenes.54.data.license] Pexels 8795948 무료(Anastasia Shuraeva)
+[scenes.54.data.side] left
+[scenes.55.lines.0.text] 일찍 받은 연금도 국민연금이라 소득으로 세지만, 줄어든 금액으로 세니 기준 아래로 내려갈 수는 있어요.
+[scenes.55.lines.1.text] 그래서 이건 보험료 몇만원과 평생 연금을 맞바꾸는 선택입니다. 어느 쪽이 나은지는 사람마다 달라서, 저희는 숫자만 보여 드릴게요.
+[scenes.55.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.56.lines.0.text] 미뤄 받으면 괜찮다는 말도 있어요. 지금 받으면 월 130만원인 분이 있다고 해 볼게요.
+[scenes.56.lines.1.text] 이분이 연금을 3년 미뤄 받으면 금액이 늘어요.
+[scenes.56.data.license] Pexels 6851679 무료(cottonbro studio)
+[scenes.56.data.side] left
+[scenes.57.lines.0.text] 늘어도 한 해 1,900만원쯤이라 기준 아래라는 거죠.
+[scenes.57.lines.1.text] 그런데 연금은 받기 시작한 뒤에도 해마다 물가만큼 오릅니다.
+[scenes.57.lines.2.text] 올해처럼 해마다 2.1%씩 오른다고 쳐 보죠.
+[scenes.57.lines.3.text] 1,900만원쯤에서 시작해도, 세 번 오르고 나면 2천만원보다 많아져요.
+[scenes.57.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.58.lines.0.text] 그러니 기준 바로 밑에 맞춘 계산은, 몇 년 뒤까지 같이 보셔야 합니다.
+[scenes.58.data.license] Pexels 38259256 무료(vignesh srivatsav)
+[scenes.58.data.side] left
+[scenes.59.lines.0.text] 연금이 기준 근처라면, 오늘 할 일은 하나예요.
+[scenes.59.data.n] 8장
+[scenes.59.data.q] 그래서 할 일
+[scenes.60.lines.0.text] 연금 통지서를 꺼내서, 내년 연금이 물가만큼 올랐을 때 한 해 2천만원을 넘는지 계산해 보세요.
+[scenes.60.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.61.lines.0.text] 만원 더 받는 게 손해가 되는 자리가 있다는 것. 그걸 미리 알고 있으면, 고지서가 와도 덜 놀라실 거예요.
+[scenes.61.lines.1.text] 도움이 되셨다면 구독으로 다음 편도 받아 보세요.
+[scenes.61.lines.2.text] 다음 영상에서 다시 뵙겠습니다.
+[scenes.61.data.license] AI 생성 그림(RealVisXL V5.0, openrail++)
+[scenes.61.data.badge] AI 생성 그림
+
+## 화면 코드: video/src/P3.tsx
+[P3.tsx] 달러로
+[P3.tsx] 1달러 값
+[P3.tsx] 원화로
+[P3.tsx] live: license 칸 비었음
+[P3.tsx] live: say에 숫자 금지
+[P3.tsx] 파이어맵
+[P3.tsx] 파이어맵
+[P3.tsx] 파이어맵
+[P3.tsx] pic: license 칸 비었음
+[P3.tsx] 파이어맵
+[P3.tsx] PD 글꼴
+
+## 화면 코드: video/src/parts/human.tsx
+
+## 화면 코드: video/src/parts/fm.tsx
+[fm.tsx] ${e}억 ${r.toLocaleString()}만원
+[fm.tsx] ${e}억원
+[fm.tsx] ${r.toLocaleString()}만원
+[fm.tsx] 1년 뒤 남은 돈
+[fm.tsx] 원금
+[fm.tsx] 떨어진 해
+[fm.tsx] 세금·건보료
+[fm.tsx] 월 100만원 원금
+[fm.tsx] 파이어맵
+[fm.tsx] 파이어맵
+
+## 화면 코드: video/src/parts/t1kit.tsx

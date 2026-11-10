@@ -1,0 +1,215 @@
+{
+ "fps": 30,
+ "name": "k1s_dep",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "은행 평균 금리 · 1년 정기예금",
+  "1억 새로 맡기면, 이자 얼마 늘까?"
+ ],
+ "hot": "1억",
+ "answer": {
+  "label": "1억·1년 정기예금 세금 떼고 받는 이자(은행 평균)",
+  "items": [
+   "작년 9월 2.5%: 215만원",
+   "올해 9월 3.6%: 302만원"
+  ],
+  "arrow": false,
+  "note": "새로 맡길 때 기준 · 내 금리는 은행마다 달라요"
+ },
+ "base": "한국은행 예금은행 신규취급 정기예금(1년) 평균 금리 2025·2026년 9월분 · 이자소득세 15.4% · 파이어맵 계산",
+ "long": "H9Lv281MaLs",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "금리",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "1년 정기예금",
+      "작년 vs 올해 9월",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "작년 9월",
+      "2.5%",
+      "",
+      119,
+      "ink"
+     ],
+     [
+      "올해 9월",
+      "3.6%",
+      "",
+      182,
+      "ink"
+     ],
+     [
+      "은행 평균 금리",
+      "새로 맺은 예금 평균",
+      "",
+      241,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "1년짜리 정기예금 평균을, 작년과 올해 9월끼리 비교해 볼게요.",
+     "audio": "audio/k-1/d080fb308ff88dc0.wav",
+     "frames": 119
+    },
+    {
+     "n": 2,
+     "text": "작년엔 2.5%였어요.",
+     "audio": "audio/k-1/f976fd5e2c009dd2.wav",
+     "frames": 63
+    },
+    {
+     "n": 3,
+     "text": "올해는 3.6%입니다.",
+     "audio": "audio/k-1/05be6e9012a90a8e.wav",
+     "frames": 59
+    },
+    {
+     "n": 4,
+     "text": "한국은행은 은행들이 그달 새로 받은 정기예금의 금리를 평균 내서 발표해요.",
+     "audio": "audio/k-1/eb289b41841ed139.wav",
+     "frames": 144
+    }
+   ],
+   "frames": 385
+  },
+  {
+   "kind": "vs",
+   "label": "이자",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "작년에 새로 맡겼다면",
+      "세금 떼고 215만원",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "올해 새로 맡기면",
+      "세금 떼고 302만원",
+      "",
+      130,
+      "ink"
+     ],
+     [
+      "평균으로 셈하면",
+      "87만원 차이",
+      "",
+      194,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 5,
+     "text": "작년 금리라면, 세금 떼고 받는 이자가 215만원이에요.",
+     "audio": "audio/k-1/efcf0e535dcda895.wav",
+     "frames": 130
+    },
+    {
+     "n": 6,
+     "text": "지금 금리면 302만원이고요.",
+     "audio": "audio/k-1/927fd91c76f73f1a.wav",
+     "frames": 64
+    },
+    {
+     "n": 7,
+     "text": "차이가 87만원입니다.",
+     "audio": "audio/k-1/f759a37e026fa6b0.wav",
+     "frames": 54
+    }
+   ],
+   "frames": 248
+  },
+  {
+   "kind": "vs",
+   "label": "할 일",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "만기 뒤 다시 맡길 때",
+      "그날 금리 확인",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 8,
+     "text": "예금이라면 만기 날, 그날 은행이 주는 금리로 이자를 다시 계산해 보면 됩니다.",
+     "audio": "audio/k-1/b7085d4fd8c7182b.wav",
+     "frames": 144
+    }
+   ],
+   "frames": 180
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/k1/stock/cut/notepad_calc_2_d.mp4",
+   "from": 0,
+   "frames": 119,
+   "start": 0
+  },
+  {
+   "src": "bg/k1/stock/cut/cup_stir_1_d.mp4",
+   "from": 119,
+   "frames": 63,
+   "start": 0
+  },
+  {
+   "src": "bg/k1/stock/cut/money_pen_1_d.mp4",
+   "from": 182,
+   "frames": 59,
+   "start": 0
+  },
+  {
+   "src": "bg/k1/stock/cut/news_cup_0_d.mp4",
+   "from": 241,
+   "frames": 144,
+   "start": 0
+  },
+  {
+   "src": "bg/k1/stock/cut/coffee_cloudy_1_d.mp4",
+   "from": 385,
+   "frames": 130,
+   "start": 0
+  },
+  {
+   "src": "bg/k1/stock/cut/cup_stir_8_d.mp4",
+   "from": 515,
+   "frames": 64,
+   "start": 0
+  },
+  {
+   "src": "bg/k1/stock/cut/money_pen_9_d.mp4",
+   "from": 579,
+   "frames": 54,
+   "start": 0
+  },
+  {
+   "src": "bg/k1/stock/cut/rain_window_40_d.mp4",
+   "from": 633,
+   "frames": 180,
+   "start": 0
+  }
+ ],
+ "credits": "Carlos Arribas · KATRIN  BOLOVTSOVA · Mark Warner · Samer Daboul · T Leish · 성창 남"
+}

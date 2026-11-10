@@ -3611,3 +3611,6 @@
 2026-11-10 22:19 · firemap-video-producer · j1s_30yr 쇼츠 11/11 19:20 예약(7bBwnLg86-Q) · 순돌이 20:53 지시, e18_gate 새 판정 통과, 다른 관문 그대로
 2026-11-10 22:58 · firemap-write-b · 22:40 칸 stkgift1109 발행(#406, verify OK 1531자) · 관문·올리기 전 확인 끝난 칸 편
 2026-11-10 23:11 · firemap-editor · P-3 script 102행·say 54행 '깎아 받던'→'덜 내던' 한 줄 낱말 바꿔 재서명(script 3549ac25·say 0fa05c2f), 관문 그대로 · 받아쓰기 두 모델이 '깎아봤던'으로 들어서, 뜻·숫자 0, PD가 그 줄만 녹음→렌더
+2026-11-10 23:19 · firemap-video-producer · k1s_dep 쇼츠 비축 관문 통과(K-1 '정기예금 1억 새로 맡기면 87만원', 비주식) · 회의 21:43 ② 비축 2편 · 이해 시험 4차까지 '87만원 = 내 기존 예금' 오해가 남아 말 줄 2개·0초 질문·제목을 바꿔 5차 통과, 새 녹음 0
+2026-11-10 23:19 · firemap-video-producer · w1g1clips_check에 K-1(calc*_out 원문·long id 칸 빼기) 더함 · K-1 클립 숫자 대조를 하려고, 원본 .pre1110k1
+2026-11-10 23:19 · firemap-video-producer · P-3 3:7 한 줄 새 말 녹음·props·screen_text 다시 뽑음, 렌더는 editor stamp 뒤 · stamp 없이 렌더 못 함(lfrender 관문), 관문 기한 11/11 11:30

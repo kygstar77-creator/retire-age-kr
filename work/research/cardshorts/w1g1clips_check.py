@@ -5,9 +5,10 @@ import os, re, sys, json
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.normpath(os.path.join(HERE, '..', '..'))
-_N = ([a for a in sys.argv[1:] if not a.startswith('--')] or ['w1s_div'])[0]; _E = {'w1': 'W-1', 'g1': 'G-1', 'r1': 'R-1', 'h1': 'H-1', 'd1': 'D-1', 'p1': 'P-1', 'c2': 'C-2', 'n1': 'N-1', 'n2': 'N-2', 't1': 'T-1', 'x1': 'X-1', 'h3': 'H-3', 'de': 'D-ETF-1', 'h2': 'H-2', 'j1': 'J-1'}[_N[:2]]; _J = _E.replace('-', '').lower() + '.json'   # 10/12 22시 R-1 추가 · 10/14 C-2(c2.json) · 10/16 N-1(n1.json)
+_N = ([a for a in sys.argv[1:] if not a.startswith('--')] or ['w1s_div'])[0]; _E = {'w1': 'W-1', 'g1': 'G-1', 'r1': 'R-1', 'h1': 'H-1', 'd1': 'D-1', 'p1': 'P-1', 'c2': 'C-2', 'n1': 'N-1', 'n2': 'N-2', 't1': 'T-1', 'x1': 'X-1', 'h3': 'H-3', 'de': 'D-ETF-1', 'h2': 'H-2', 'j1': 'J-1', 'k1': 'K-1'}[_N[:2]]; _J = _E.replace('-', '').lower() + '.json'   # 10/12 22시 R-1 추가 · 10/14 C-2(c2.json) · 10/16 N-1(n1.json)
 EP = os.path.join(WORK, 'research', 'longform', 'ep', _E)   # 10/12 PD: W-1·G-1 쇼츠용(한 번에 한 편)
 SRC = (open(os.path.join(EP, 'facts.txt'), encoding='utf-8').read() if os.path.exists(os.path.join(EP, 'facts.txt')) else '') + '\n' + (open(os.path.join(EP, 'calc_n1_out.txt'), encoding='utf-8').read() if os.path.exists(os.path.join(EP, 'calc_n1_out.txt')) else '') + '\n' + (open(os.path.join(EP, 'calc_out.txt'), encoding='utf-8').read() if os.path.exists(os.path.join(EP, 'calc_out.txt')) else '')   # 10/14: D-1은 calc_out 없음(계산은 facts [계산] 줄)
+import glob as _g; SRC += chr(10) + chr(10).join(open(f, encoding='utf-8').read() for f in sorted(_g.glob(os.path.join(EP, 'calc*_out.txt'))) if not f.endswith(('calc_out.txt', 'calc_n1_out.txt')))   # 11/10 PD k1s_dep: K-1은 calc2~5_out.txt
 # 편집 통과한 롱폼 화면 글자(video/c1.json — 자막·칩·그림 글자·눈금, calc_out 문구에서 뽑은 것)도 원문으로 본다
 def _flat(x, out):
     if isinstance(x, dict): [_flat(v, out) for k, v in x.items() if k not in ('audio', 'frames')]
@@ -29,7 +30,7 @@ EOK2 = set(float(m.group(1)) for m in re.finditer(r'(\d+(?:\.\d+)?)억', SRC))  
 def texts(x, out, key=''):
     if isinstance(x, dict):
         for k, v in x.items():
-            if k in ('audio', 'n', 'frames', 'fps', 'kind', 'name', 'bg', 'bg_credits', 'credits'): continue   # 11/2 PD: credits(C1S Pexels 번호)도 · 10/17 PD: bg·bg_credits = 배경 영상 파일 경로·Pexels 주소(화면 글자 아님, 영상 번호가 숫자로 잡힘)
+            if k in ('audio', 'n', 'frames', 'fps', 'kind', 'name', 'bg', 'bg_credits', 'credits', 'long'): continue   # 11/10 PD: long = 원본 롱폼 영상 id   # 11/2 PD: credits(C1S Pexels 번호)도 · 10/17 PD: bg·bg_credits = 배경 영상 파일 경로·Pexels 주소(화면 글자 아님, 영상 번호가 숫자로 잡힘)
             texts(v, out, k)
     elif isinstance(x, list):
         for v in x: texts(v, out, key)

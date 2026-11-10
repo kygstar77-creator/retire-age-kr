@@ -375,13 +375,13 @@
     {
      "text": "계산은 생각보다 단순해요. 탈락을 가를 땐 연금을 전부 셌지만, 지역가입자가 되어 보험료를 매길 땐 연금의 절반만 소득으로 봅니다.",
      "audio": "audio/p-3/aa5d68908c7c1595.wav",
-     "frames": 269,
+     "frames": 278,
      "cap": null
     },
     {
      "text": "그 절반에 보험료율 7.19%를 곱해요.",
      "audio": "audio/p-3/5412cc6b0a565010.wav",
-     "frames": 99,
+     "frames": 102,
      "cap": null
     },
     {
@@ -391,7 +391,7 @@
      "cap": null
     }
    ],
-   "frames": 453,
+   "frames": 465,
    "data": {
     "pic": "bg/p3/board/p3_calc_health.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -654,11 +654,11 @@
     {
      "text": "한 해로 치면 80만원이 넘어요.",
      "audio": "audio/p-3/7c09bff18e6f057a.wav",
-     "frames": 72,
+     "frames": 59,
      "cap": null
     }
    ],
-   "frames": 351,
+   "frames": 338,
    "data": {
     "pic": "bg/p3/board/p3_raise.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -763,11 +763,11 @@
     {
      "text": "마지막 해엔 20%였고, 올해 8월분으로 모두 끝났습니다.",
      "audio": "audio/p-3/a91bb1026b2b3608.wav",
-     "frames": 128,
+     "frames": 104,
      "cap": null
     }
    ],
-   "frames": 239,
+   "frames": 215,
    "data": {
     "pic": "bg/p3/board/p3_cut_steps.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -805,9 +805,9 @@
    "kind": "pic",
    "lines": [
     {
-     "text": "이미 깎아 받던 분들도 9월분부터는 전부 내고 있어요.",
-     "audio": "audio/p-3/a052f16e0c704e70.wav",
-     "frames": 97,
+     "text": "이미 덜 내던 분들도 9월분부터는 전부 내고 있어요.",
+     "audio": "audio/p-3/e5dac25513028030.wav",
+     "frames": 107,
      "cap": null
     },
     {
@@ -817,7 +817,7 @@
      "cap": null
     }
    ],
-   "frames": 247,
+   "frames": 257,
    "data": {
     "pic": "bg/p3/board/p3_cut_calendar.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1068,12 +1068,12 @@
    "lines": [
     {
      "text": "999만원처럼 선 근처라면, 공단 고객센터 1577-1000에 먼저 물어보세요.",
-     "audio": "audio/p-3/c9ca5167df12e69e.wav",
-     "frames": 159,
+     "audio": "audio/p-3/fa3f32423da9e793.wav",
+     "frames": 164,
      "cap": null
     }
    ],
-   "frames": 159,
+   "frames": 164,
    "data": {
     "pic": "bg/p3/board/p3_call_first.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1131,11 +1131,11 @@
     {
      "text": "보험료는 연금의 절반에 이자·배당 전부를 더해서 매겨요. 장기요양까지 붙이면 매달 11만원쯤 냅니다.",
      "audio": "audio/p-3/33152fd6a65f0ac7.wav",
-     "frames": 173,
+     "frames": 189,
      "cap": null
     }
    ],
-   "frames": 405,
+   "frames": 421,
    "data": {
     "pic": "bg/p3/board/p3_mix_calc.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1407,8 +1407,8 @@
     },
     {
      "text": "당겨 받기는 연금을 받기 시작하기 전에, 받을 나이보다 최대 5년 앞서 고르는 거예요.",
-     "audio": "audio/p-3/81cc7d7159b74337.wav",
-     "frames": 155,
+     "audio": "audio/p-3/40a52864b461d433.wav",
+     "frames": 158,
      "cap": null
     },
     {
@@ -1418,7 +1418,7 @@
      "cap": null
     }
    ],
-   "frames": 394,
+   "frames": 397,
    "data": {
     "pic": "bg/p3/board/p3_early_q.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1495,23 +1495,23 @@
     {
      "text": "미뤄 받으면 괜찮다는 말도 있어요. 지금 받으면 월 130만원인 분이 있다고 해 볼게요.",
      "audio": "audio/p-3/739dfa4f2a862e0c.wav",
-     "frames": 170,
+     "frames": 143,
      "cap": null
     },
     {
      "text": "이분이 연금을 3년 미뤄 받으면 금액이 늘어요.",
      "audio": "audio/p-3/9072ad8b745274c0.wav",
-     "frames": 99,
+     "frames": 95,
      "cap": null
     }
    ],
-   "frames": 269,
+   "frames": 238,
    "data": {
     "src": "bg/p3/stock/open_bill.mp4",
     "license": "Pexels 6851679 무료(cottonbro studio)",
     "say": null,
     "side": "left",
-    "from": 76
+    "from": 107
    }
   },
   {

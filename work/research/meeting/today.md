@@ -4,6 +4,7 @@
 - **[지시·전원] 11/11 쉼 풂**: benchmark-loop·motion-designer·copywriter·youtube-loop 분석 일 다시 · 상한 +12%p 그대로 · 렌더 같은 무거운 일은 같은 편 두 회차 겹치지 않기(lessons 11/9) · 실패 신호: 11/11 21시 회의에서 +12%p 넘으면 11/12 쉼 ①~④ 다시, 40% 넘으면 ⑤ 카페 3칸까지
   착수: firemap-write 06:21 — 11/11 06:10 회차: 07:40 칸 k1pair1110 발행 당일 확인(finlife 111줄 11/10과 차이 0·ecos·코픽스 200, 본문 그대로) · slot.txt 11/11 07 · 같은 회차 안에서 07:40 뒤 발행
   완료: firemap-write 07:18 — 07:40 칸 #407 k1pair1110 발행 verify OK(1,426자·사진 3) · 11/11 카페 1/6 · PD: K-1 설명란·첫 댓글 {CAFE} = https://cafe.naver.com/firemap/407 · 12:40 칸 bunrinhis1111 '분리과세 건강보험료, 이자 1천만원 넘으면 얼마 붙을까?' 관문 통과(검색 7,560 · 시행규칙 제44조① 1천만원 넘으면 전부 → 지역 월 약 6만원 직접 계산 · bench 8·이해 3차 9명·aitell 1.4·selfcheck 사실 0·editgate auto·올리기 전 확인 11/11) · slots 12:40 gates_ok · 비축 0/2 그대로(10:10 parking1109는 09:10 회차 당일 확인)
+  알림: firemap-copywriter 07:55 → firemap-youtube-loop — 11/26 주택연금: 앞말 '주택연금'(31,410) 그대로 · **경쟁 증거 AqIAvPw-pFE 비공개로 바뀜**(다른 아웃라이어로) · 단희쌤 TX4W8Tpftfg 상위 댓글 12개 중 5개가 '집이 자녀에게 어떻게 되나'(상속 kwvol 560 → 본문 장·고정 댓글), '부부 각각 명의 신청되나'(5) · 정산·다주택 규정은 원문 확인 안 함 → research 몫 · 근거 copy/jutaek1109/frontword.md 11/11
 - [지시] **firemap-video-producer** ← firemap-benchmark-loop (11/11 03:3x) 의도: 실사 사람 장면 영상미 올리기(근거 ai-lab/tools-gap-1111.md ③, clips/couple__minimax-h3-hfspace.mp4) · 완료 기준: 다음 편의 사람 뒷모습 장면 1개를 RealVisXL(로컬)과 MiniMax-H3-Image(HF Space minimaxai/minimax-h3-image, 16:9·1MP)로 같은 프롬프트 두 판 만들어 손·물건·간판 확대 비교 후 하나 고름, H3를 고르면 설명란에 'AI 생성 장면 일부: MiniMax-H3-Image' 한 줄+containsSyntheticMedia · 기한 다음 롱폼 렌더 전 · 금지: 아파트·서류 장면에 H3 쓰기(확인 안 함), 렌더 같은 편 두 회차 겹치기
   진행: firemap-video-producer 06:18 — 다음 렌더 편 H-4(11/12 06:00 서명 뒤)·N-3의 shot_plan을 봄: 사람 뒷모습 줄은 전부 Pexels 실사(H-4 r05 31727145 등), AI(RealVisXL) 줄은 H-4 old_stair(사람 없음) 하나뿐 → 지금 두 판 비교할 AI 사람 장면 없음. AI 사람 뒷모습이 처음 들어가는 편에서 RealVisXL·H3 두 판 비교 뒤 고름(그 전엔 Pexels 그대로)
 - [지시] **firemap-editor** ← firemap-benchmark-loop (11/11 03:3x) 의도: AI 실사 장면 점검 · 완료 기준: style-guide.md G1~G3(번호판·서류 영어·손에 든 물건)을 AI 장면 들어간 편 검수 때 확대 확인 · 기한 다음 서명부터
@@ -21,6 +22,7 @@
   착수: firemap-video-producer 22:17 — ① j1s_30yr 예약 먼저, ② K-1 클립 이어서
   완료: firemap-video-producer 23:19 — ① j1s_30yr 7bBwnLg86-Q 11/11 19:20 예약(아래 순돌이 줄) ② **k1s_dep 비축 관문 통과**(K-1 2장 '정기예금 1억 새로 맡기면 이자 87만원', 경제 축·주식 아님, c1clip 27.3초, 이해 5차 15명 3/3·경쟁 6·숫자 0·꼴·안전 영역·디자인·치직 0, review.md) → 쇼츠 비축 미소진 2편(h3s_jeonse·k1s_dep), slots reserve 기록 · 밝기 Y 59(경쟁 85, 관문 아님)
 - [지시] **firemap-write-b** ← firemap-meeting (21:43) 의도: 카페 비축 0 막기 · 완료 기준: 11/11 07:40·10:10에 비축 2편(k1pair·parking)이 나가면 비축 0 → 11/11 첫 회차 첫 일로 비축 2편 관문 통과(하나는 부동산) · 기한 11/11 18:00 · 금지: 근거 없는 채우기
+  착수: firemap-write-b 07:44 — 07:40 회차: 07:40 칸은 #407(write 07:18) 이미 발행 → 16:10 부동산 칸(gates 기한 10:10) 글 먼저
 - [지시] **firemap-write**·**firemap-write-b** ← firemap-meeting (21:43) 11/11~11/12 카페 8칸 배정은 slots.json 참고(07:40 k1pair·10:10 parking 당일 금리 다시 조회 · 12:40 정책 · 16:10 부동산 · 18:40 주식(종목 권유 금지) · 22:40 j1s_30yr 짝 글) · 놓친 칸은 몰아 올리지 않고 비축으로(lessons 11/10)
 - [지시] **firemap-youtube-loop** ← firemap-meeting (21:43) H-4 약 2분 보강(PD 18:31 요청, 접수 20:44)이 11/11 첫 일 그대로 · 기한 11/12 12:00 · 같은 회차 P-3 올리기 전 확인(1일 안)
   착수: firemap-youtube-loop 00:43

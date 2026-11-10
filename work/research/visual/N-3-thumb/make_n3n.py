@@ -25,10 +25,10 @@ def shade(im, y0, y1, alpha, top=False):
 def fit(d, t, size, w, maxw=MAXW, floor=40):
     while size > floor and d.textlength(t, font=f(size, w)) > maxw: size -= 2
     return size
-def make(out, pic, ya, top, top_size=96, band=235, ls=1.10, target=0.90, xa=0.5, zoom=1.0):
+def make(out, pic, ya, top, top_size=96, band=235, ls=1.10, target=0.90, xa=0.5, zoom=1.0, targets=None):
     im = photo(pic, y_anchor=ya, x_anchor=xa, zoom=zoom); d0 = ImageDraw.Draw(im)
     # C-35: 줄마다 크기 따로 — 폭 target(85~95%)에 맞춤. 둘째 줄 끝은 x 1808(1280판 1205)라 길이 칸(약 1215~)에 안 걸림(C-15)
-    sizes = [fit(d0, t, 320, 'black', maxw=int(W * target)) for t in BIG]
+    sizes = [fit(d0, t, 320, 'black', maxw=int(W * tg)) for t, tg in zip(BIG, targets or [target] * len(BIG))]
     hb = sum(int(s * ls) for s in sizes); y = HH - 30 - hb
     top_size = min(fit(d0, tl, top_size, '700') for tl in top.split('|'))
     im = shade(im, max(0, y - 160), HH, band); im = shade(im, 0, 300, 200, top=True); d = ImageDraw.Draw(im)
@@ -50,3 +50,5 @@ make('n3n_b.png', 'two_suits_back_31863763.jpg', 0.35, T)
 make('n3n_c.png', 'crowd_crossing_aerial_16456831.jpg', 0.9, T, xa=0.35, zoom=1.35)
 # d(10/29 visual): c가 제미나이 'AI 사진 티' 4/4·일본 교차로(레드팀) → 한국 거리 실사 Pexels 19271600(비 오는 서울 남대문로 횡단보도, 우산 든 사람들 작게·얼굴 없음, original)
 make('n3n_d.png', 'seoul_crosswalk_backs_19271600.jpg', 0.55, T)
+# c2(visual 11/10 09시): c와 같은 사진·문구, 둘째 줄만 폭 83% — c '안에'의 '에'가 412px 길이 칸(가로 9.5%, ytlong.preview, 1280판 x 1143~)에 걸림(H-4 g3·K-1 f와 같은 사고).
+make('n3n_c2.png', 'crowd_crossing_aerial_16456831.jpg', 0.9, T, xa=0.35, zoom=1.35, targets=[0.90, 0.835])

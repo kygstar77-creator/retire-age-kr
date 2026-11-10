@@ -27,10 +27,10 @@ def fit(d, t, size, w, maxw=MAXW, floor=40):
     return size
 
 
-def make(out, pic, ya, top, top_size=96, band=235, ls=1.10, target=0.90, xa=0.5, zoom=1.0, top_sizes=None, hmax=0.45, tshade=(300, 200), hl=None):
+def make(out, pic, ya, top, top_size=96, band=235, ls=1.10, target=0.90, xa=0.5, zoom=1.0, top_sizes=None, hmax=0.45, tshade=(300, 200), hl=None, targets=None):
     im = photo(pic, y_anchor=ya, x_anchor=xa, zoom=zoom); d0 = ImageDraw.Draw(im)
     # C-35: 줄마다 크기 따로 — 폭 target에 맞춤. 짧은 첫 줄('서울 25개 구 중')이 커져 두 줄이 화면 45%(C-02)를 넘으면 둘을 같은 비율로 줄임
-    sizes = [fit(d0, t, 320, 'black', maxw=int(W * target)) for t in BIG]
+    sizes = [fit(d0, t, 320, 'black', maxw=int(W * tg)) for t, tg in zip(BIG, targets or [target] * len(BIG))]
     hb = sum(int(s * ls) for s in sizes)
     if hb > HH * hmax: k = HH * hmax / hb; sizes = [int(s * k) for s in sizes]; hb = sum(int(s * ls) for s in sizes)
     y = HH - 30 - hb
@@ -75,3 +75,6 @@ make('h4n_g3.png', 'gm_complex_wm.jpg', 0.45, '광명 아파트 15억이라던�
 make('h4n_g4.png', 'gm_complex_wm.jpg', 0.45, '광명 아파트 15억이라던데,|실거래 세어 보니', top_sizes=[130, 112])
 # w: g3와 같은 사진·문구·크기, 색만 — 큰 두 줄 다 흰, 답 숫자 '17곳'만 주황(today 11/3 벤치마크 지시 '낱말 단위 강조' 짝 비교)
 make('h4n_w.png', 'gm_complex_wm.jpg', 0.45, '광명 아파트 15억이라던데,|실거래 세어 보니', top_sizes=[130, 84], hl='17곳')
+# g5(visual 11/10 09시): g3와 같은 사진·문구, 둘째 줄만 폭 84%(끝 88%) — g3 '비쌌다'의 '다'가 412px 길이 칸(가로 9.5%, ytlong.preview)에 1,241px 걸림.
+#   K-1 11/9 같은 사고(PD thumb_k1n_h 주황 줄 폭 85.4%·끝 88.4%)를 따라 함. 글자·사진·색 그대로.
+make('h4n_g5.png', 'gm_complex_wm.jpg', 0.45, '광명 아파트 15억이라던데,|실거래 세어 보니', top_sizes=[130, 84], targets=[0.90, 0.835])

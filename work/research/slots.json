@@ -3816,10 +3816,9 @@
   {
    "at": "2026-11-12 11:30",
    "kind": "long",
-   "item": "P-3(건보료 피부양자 — 국민연금만 받을 때)",
+   "item": "빔(P-3 철회 — vgFx2od9_sg 예약 해제·비공개 유지, 삭제 안 함)",
    "owner": "firemap-youtube-loop",
-   "gates_ok": "2026-11-11 09:03",
-   "note": "firemap-video-producer 2026-11-11 09:03: 3:7 새 말 반영 전체 다시 렌더(08:51, stock 13개 -bf 0 다시 인코딩)→deess --chirp 두 번(-14.3dB·-17.0 LUFS)→screen 최장 7.0초·겹침 0→bgcheck 통과(실사 82%·컷 6.1·같은 판 18초·큰 글자 10.4%)→ytlong gate 통과→예약 vgFx2od9_sg publishAt 11/12 11:30(private, 되읽기 확인) · yt_pair: vgFx2od9_sg → 11/12 카페 짝 글(firemap-write, 공개 뒤) | firemap-video-producer 2026-11-10 19:09: 렌더(18:00)·deess·screen·bgcheck 통과, gate 남은 막힘 C-readback 1줄(3:7) → editor 낱말 고침 11/11 06:30 → 06시대 PD 녹음·props·stamp·다시 렌더·gate·예약(관문 11/11 11:30) | firemap-meeting 2026-11-06 21:37: 새 말 28줄 녹음(TTS 16:00)이 11/9 관문 뒤라 11/12 · 관문 11/11 11:30 | firemap-meeting 2026-11-05 21:4x: 11/8 칸이 K-1로 가서 이동 · 착수는 11/8 21:00 사용량 초기화 뒤 · 관문 기한 11/9 11:30"
+   "note": "firemap-video-producer 2026-11-11 09:03: 3:7 새 말 반영 전체 다시 렌더(08:51, stock 13개 -bf 0 다시 인코딩)→deess --chirp 두 번(-14.3dB·-17.0 LUFS)→screen 최장 7.0초·겹침 0→bgcheck 통과(실사 82%·컷 6.1·같은 판 18초·큰 글자 10.4%)→ytlong gate 통과→예약 vgFx2od9_sg publishAt 11/12 11:30(private, 되읽기 확인) · yt_pair: vgFx2od9_sg → 11/12 카페 짝 글(firemap-write, 공개 뒤) | firemap-video-producer 2026-11-10 19:09: 렌더(18:00)·deess·screen·bgcheck 통과, gate 남은 막힘 C-readback 1줄(3:7) → editor 낱말 고침 11/11 06:30 → 06시대 PD 녹음·props·stamp·다시 렌더·gate·예약(관문 11/11 11:30) | firemap-meeting 2026-11-06 21:37: 새 말 28줄 녹음(TTS 16:00)이 11/9 관문 뒤라 11/12 · 관문 11/11 11:30 | firemap-meeting 2026-11-05 21:4x: 11/8 칸이 K-1로 가서 이동 · 착수는 11/8 21:00 사용량 초기화 뒤 · 관문 기한 11/9 11:30 | 순돌이 11/12 01:3x 사장님 11/11 \"이미 만들었다고 올리지 말자 · 뭐든 결정할 때 추측하지 말고 통계를 보고\" → 롱폼 주제 통계(공개 25편): 개별주식 중앙 17·금/연금/세금정책 20 vs 배당ETF·지수 460·아파트 실거래 408·상위 몇% 2,746 → 건보료 P-3 빼고 칸 비움"
   },
   {
    "at": "2026-11-14 11:30",
@@ -3849,10 +3848,9 @@
   {
    "at": "2026-11-20 11:30",
    "kind": "long",
-   "item": "RT-1(퇴직금 세금 — 일시금 vs IRP 연금 수령 · research·toc 끝, 대본 남음)",
+   "item": "TBD — 통계로 정함(배당ETF·지수 / 아파트 실거래 비교 / 상위 몇%), 옛 RT-1(퇴직금 세금 — 일시금 vs IRP 연금 수령 · researc",
    "owner": "firemap-youtube-loop",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-06 21:37: 한 칸씩 뒤로 | youtube-loop 2026-11-02 00:48: 이틀 주기 새 칸(회의 11/1 [지시])"
+   "note": "firemap-meeting 2026-11-06 21:37: 한 칸씩 뒤로 | youtube-loop 2026-11-02 00:48: 이틀 주기 새 칸(회의 11/1 [지시]) | 순돌이 11/12 01:3x 사장님 11/11 \"이미 만들었다고 올리지 말자 · 뭐든 결정할 때 추측하지 말고 통계를 보고\" → 세금정책·국민연금 주제는 우리 롱폼 중앙 20(5편)이라 뺌"
   },
   {
    "at": "2026-11-22 11:30",
@@ -3881,10 +3879,9 @@
   {
    "at": "2026-11-28 11:30",
    "kind": "long",
-   "item": "P-4(국민연금 수령나이 — 당겨·늦춰 받기 · 기획 전, 11/24에서 옮김)",
+   "item": "TBD — 통계로 정함(배당ETF·지수 / 아파트 실거래 비교 / 상위 몇%), 옛 P-4(국민연금 수령나이 — 당겨·늦춰 받기 · 기획 전, 11/24에서",
    "owner": "firemap-youtube-loop",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-08 21:3x: 장르 안건(agenda-2026-11-09-longform-genre.md) 받아들임 — X-LF-GENRE(부동산2·정책2·경제주식1·연봉노후1/12일, 같은 장르 연속 금지) · 후보 A·B(정책)는 12월 칸을 장르 표대로 11/22 회의가 넣음"
+   "note": "firemap-meeting 2026-11-08 21:3x: 장르 안건(agenda-2026-11-09-longform-genre.md) 받아들임 — X-LF-GENRE(부동산2·정책2·경제주식1·연봉노후1/12일, 같은 장르 연속 금지) · 후보 A·B(정책)는 12월 칸을 장르 표대로 11/22 회의가 넣음 | 순돌이 11/12 01:3x 사장님 11/11 \"이미 만들었다고 올리지 말자 · 뭐든 결정할 때 추측하지 말고 통계를 보고\" → 세금정책·국민연금 주제는 우리 롱폼 중앙 20(5편)이라 뺌"
   },
   {
    "at": "2026-11-30 11:30",
@@ -3897,10 +3894,9 @@
   {
    "at": "2026-11-12 12:40",
    "kind": "cafe",
-   "item": "p3pair1111",
+   "item": "TBD(p3pair1111 철회 — 짝 영상 P-3 비공개)",
    "owner": "firemap-write",
-   "gates_ok": "2026-11-11 23:27",
-   "note": "P-3 짝 글(건보료 피부양자, 전체 표·계산 근거) — yt_pair: vgFx2od9_sg · firemap-meeting 2026-11-11 21:4x: 36시간 칸 · write 23:27: 관문 통과(bench 6·이해 3차 9명·aitell 4.9·selfcheck 사실 0·editgate auto·올리기 전 확인 11/11) · 영상 11:30 공개 뒤 발행 · 발행 회차는 올리기 전 확인(1일 안) 다시"
+   "note": "P-3 짝 글(건보료 피부양자, 전체 표·계산 근거) — yt_pair: vgFx2od9_sg · firemap-meeting 2026-11-11 21:4x: 36시간 칸 · write 23:27: 관문 통과(bench 6·이해 3차 9명·aitell 4.9·selfcheck 사실 0·editgate auto·올리기 전 확인 11/11) · 영상 11:30 공개 뒤 발행 · 발행 회차는 올리기 전 확인(1일 안) 다시 | 순돌이 11/12 01:3x 사장님 11/11 \"이미 만들었다고 올리지 말자 · 뭐든 결정할 때 추측하지 말고 통계를 보고\" → 짝 영상이 안 나가므로 짝 글 order.txt → order.txt.withdrawn1112"
   },
   {
    "at": "2026-11-12 16:10",

@@ -60,7 +60,7 @@
     "item": "k1s_dep",
     "ep": "work/research/cardshorts/k1s_dep",
     "layout": "c1clip",
-    "status": "2026-11-10 23:16 관문 통과(경쟁 6·숫자 대조 0·꼴 ⓐ~ⓓ·안전 영역·디자인·치직 0·쉿소리·이해 5차 15명, review.md) · 미업로드 — K-1 H9Lv281MaLs 2장 '정기예금 1억 새로 맡기면 이자 87만원' · 경제(금리) 축, 주식 아님 · mp4 work/video/out/k1s_dep_c1_ds.mp4 · 쓸 때 upload.json publishAt 정하고 w1g1clips_up.py k1s_dep",
+    "status": "2026-11-11 22:22 소진 — 11/12 19:20 칸으로 예약(jGtx9f6SZKA). 2026-11-10 23:16 관문 통과(경쟁 6·숫자 대조 0·꼴 ⓐ~ⓓ·안전 영역·디자인·치직 0·쉿소리·이해 5차 15명, review.md) · 미업로드 — K-1 H9Lv281MaLs 2장 '정기예금 1억 새로 맡기면 이자 87만원' · 경제(금리) 축, 주식 아님 · mp4 work/video/out/k1s_dep_c1_ds.mp4 · 쓸 때 upload.json publishAt 정하고 w1g1clips_up.py k1s_dep",
     "by": "firemap-video-producer",
     "at": "2026-11-10 23:16",
     "gates_ok": "2026-11-10 23:16"
@@ -3930,8 +3930,8 @@
    "kind": "shorts",
    "item": "k1s_dep (비축, K-1 경제·주식 아님, c1clip)",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-11 21:4x: 36시간 칸 · 관문 통과 비축이라 바로 publishAt, 다음 h3s_jeonse·k1s_fix"
+   "gates_ok": "2026-11-11 22:22",
+   "note": "firemap-video-producer 2026-11-11 22:22: 비축 k1s_dep 예약 jGtx9f6SZKA publishAt 2026-11-12T10:20:00Z(19:20 KST)·private 되읽기 확인 · 꼴 관문·E-18(c1clip 998 vs 채널 996)·AI 티 0·안전 영역·디자인 통과 · yt_pair: jGtx9f6SZKA → 11/12 22:40 카페 짝 글(write, 공개 확인 뒤) | firemap-meeting 2026-11-11 21:4x: 36시간 칸 · 관문 통과 비축이라 바로 publishAt, 다음 h3s_jeonse·k1s_fix"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외",

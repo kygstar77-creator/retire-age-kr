@@ -29,6 +29,7 @@ FIRST2 = ['광명 84㎡ 매매 실거래(2026년 7~9월 계약)를 서울 25개 
 TPL = '\n'.join(FIRST2) + '''
 
 전체 표와 계산 근거(카페): {CAFE}
+파이어맵: https://firemap.kr/?utm_source=youtube&utm_medium=description&utm_campaign=h-4
 
 {CHAPTERS}
 

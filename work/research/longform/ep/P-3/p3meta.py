@@ -26,6 +26,7 @@ credits = [c['desc_line'] for c in json.load(open(os.path.join(EP, 'bg_used.json
 TPL = '\n'.join(old['desc_first2']) + '''
 
 전체 표와 계산 근거(카페): {CAFE}
+파이어맵 계산기 · 파이어 후 건보료: https://firemap.kr/health-insurance?utm_source=youtube&utm_medium=description&utm_campaign=p3
 
 {CHAPTERS}
 

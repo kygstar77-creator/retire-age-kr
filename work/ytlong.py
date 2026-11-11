@@ -220,6 +220,9 @@ def gate(ep):
     # 10/17 회의(레드팀 R3): 짝 카페 글 주소는 설명 첫 5줄 안(접힘 위) — 없으면 cafe.naver.com/firemap
     if '{CAFE}' in d: bad.append('C9 설명에 {CAFE} 그대로 — 짝 카페 글 주소로 바꿔야 함(글이 아직 없으면 cafe.naver.com/firemap)')
     if not re.search(r'cafe\.naver\.com|\{CAFE\}', ' '.join(d.splitlines()[:5])): bad.append('C9 설명 첫 5줄에 카페 줄 없음(짝 글 주소, 없으면 cafe.naver.com/firemap)')
+    # 11/11 회의(verify 안건 E): 최근 롱폼 11편 설명란에 사이트 링크 0 → 유튜브→사이트 0. H-4부터 firemap.kr + utm_source=youtube 줄 필수
+    #   형식: 카페 줄 바로 아래 '파이어맵 계산기 · <계산기 이름>: https://firemap.kr/<경로>?utm_source=youtube&utm_medium=description&utm_campaign=<편>'(맞는 계산기 없으면 '파이어맵: https://firemap.kr/?…')
+    if not re.search(r'firemap\.kr[^\s]*utm_source=youtube', d): bad.append('C9 설명에 firemap.kr 사이트 링크(utm_source=youtube) 없음 — 카페 줄 아래 계산기 링크 한 줄(맞는 계산기 없으면 메인)')
     # A-42: 태그 3~5개는 근거 없음(answer/146402 'tags play a minimal role') → 개수 검사 뺌, API 한도만 막음(videos 문서: 태그 500자·제목 100자·설명 5,000 — 설명은 실측으로 글자 수)
     tags = m.get('tags') or []
     if len(','.join(tags)) + 2 * sum(' ' in t for t in tags) > 500: bad.append('C9 태그 합 500자 넘음(YouTube API 한도)')

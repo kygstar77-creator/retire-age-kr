@@ -3,7 +3,7 @@
  "ep": "K-1",
  "from_long": "H9Lv281MaLs",
  "mp4": "work/video/out/k1s_dep_c1_ds.mp4",
- "publishAt": null,
+ "publishAt": "2026-11-12T19:20:00+09:00",
  "publish_plan": "비축(11/10 회의 지시 ② 쇼츠 비축 2편 — K-1 주식 아닌 질문) · 쓸 때 PD가 publishAt 정함 · 경제(금리) 축",
  "title": "정기예금 1억 새로 맡기면, 이자 작년보다 87만원 늘었다 #shorts",
  "description": "전체 계산: https://youtu.be/H9Lv281MaLs (예금·대출 이자, 미국 금리와 비교)\n\n새로 맺는 1년 정기예금의 은행 평균 금리가 작년 9월 2.5%에서 올해 9월 3.6%로 올라, 1억을 1년 맡기면 세금 떼고 받는 이자가 215만원에서 302만원으로 87만원 늘어요.\n한국은행이 발표하는 '새로 맺은 예금' 평균으로 셈한 값이라, 내 금리는 은행·상품마다 달라요. 만기 날 그날 은행이 주는 금리로 다시 계산해 보면 내 경우가 나와요. 지나간 평균 값이고, 예금에 넣거나 빼라는 권유가 아닙니다.\n\n출처: 한국은행 경제통계시스템 예금은행 신규취급액 기준 정기예금(1년) 가중평균금리 2025년·2026년 9월분 · 이자소득세 15.4% · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — Carlos Arribas · KATRIN  BOLOVTSOVA · Mark Warner · Samer Daboul · T Leish · 성창 남\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #정기예금 #예금금리",
@@ -13,5 +13,17 @@
  "title_review": {
   "understand": "understand.md 1~3차(9명)"
  },
- "cover": "work/research/cardshorts/k1s_dep/cover_1110.png"
+ "cover": "work/research/cardshorts/k1s_dep/cover_1110.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "jGtx9f6SZKA",
+ "uploaded_at": "2026-11-11 22:22:22",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-12T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
 }

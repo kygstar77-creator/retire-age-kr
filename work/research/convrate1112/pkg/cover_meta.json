@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-12 08:00",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "전월세전환율/갱신 월세 한도",
+ "num": "4건 중 1건 넘었다",
+ "sub": "8~10월 서울 아파트 갱신 483건",
+ "label": "국토부 실거래",
+ "src": "국토교통부 실거래 · 주택임대차보호법 제7조의2",
+ "icon": "house",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 119,
+ "num_px": 91,
+ "sub_px": 44,
+ "board": [
+  "bunrinhis1111",
+  "acqseoul1111",
+  "k1pair1110",
+  "stkgift1109",
+  "ltdeduct1110",
+  "stkded1109",
+  "retpay1109",
+  "jsfraud1109",
+  "ltccost1108",
+  "deprate1109"
+ ]
+}

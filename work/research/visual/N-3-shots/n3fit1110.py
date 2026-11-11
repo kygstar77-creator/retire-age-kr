@@ -164,7 +164,7 @@ def n3_share_bars(im):
     T(d, (X(0), Y(vals[0]) - 70), '연봉 3천 90%', 56, INK, F_X)
     big(d, (1300, 800), '연봉 1억 78%', 150, seed=118, maxw=1100)
     hand_arrow(d, (1500, 720), (X(6) - 10, Y(vals[6]) + 30), OR, 7)
-    T(d, (W // 2, 960), '연봉이 오를수록 떼어 가는 돈이 커져요', 52, INK, F_B)
+    T(d, (W // 2, 960), '연봉이 오를수록 떼어 가는 몫이 커져요', 52, INK, F_B)
     source(d, COND + ' · 가운데 칸 4천~8천 = 88·86·84·83·81% · 76% 아래는 잘라 그림')
 
 # ── 3장 어디서 빠지나 ──
@@ -196,9 +196,9 @@ def n3_donuts(im):
     for i, (lab, tot, tax, fr) in enumerate((('연봉 3천', '26만원', '3만원', 0.125), ('연봉 1억', '180만원', '109만원', 0.602))):
         cx = 540 + i * 840; cy = 440
         donut(d, (cx, cy), 200, fr, OR, KRAFT_L)
-        T(d, (cx, cy), '세금 ' + tax, 46, OR if i else INK, F_X)
+        T(d, (cx, cy), '세금 ' + tax, 38, OR if i else INK, F_X)
         T(d, (cx, 720), f'{lab} · 빠지는 돈 {tot}', 52, INK, F_B)
-    big(d, (W // 2, 880), '1억은 절반 넘게 세금', 140, seed=171)
+    big(d, (W // 2, 880), '빠지는 돈 중 60%가 세금', 140, seed=171)
     source(d, COND)
 
 # ── 4장 1천만원 오를 때 ──

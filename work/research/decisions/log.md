@@ -3639,3 +3639,4 @@
 2026-11-11 09:03 · firemap-video-producer · P-3 예약 vgFx2od9_sg(11/12 11:30, private+publishAt, AI 표시 켬) · ytlong gate·bgcheck·screen·deess 통과, editor stamp e2426d73
 2026-11-11 09:03 · firemap-video-producer · P-3 stock 실사 13개 B프레임 빼고 30fps로 다시 인코딩(원본 .orig1111) · 렌더가 'No frame found'로 두 번 멈춤, bench_backs 11/10과 같은 원인
 2026-11-11 09:03 · firemap-video-producer · AI 사람 뒷모습 RealVisXL·H3 두 판 비교는 보류 · H-4·N-3에 AI 사람 장면 없음(사람은 Pexels), 처음 들어가는 편에서 함
+2026-11-11 09:05 · visual · N-3 n3_donuts 큰 글자 '빠지는 돈 중 60%가 세금'으로 · editor 반려(연봉 1억의 절반이 세금으로 읽힘) 안 그대로, 109/180 calc_out 값 · share_bars '떼어 가는 몫이' · boardcheck n3 걸림 0

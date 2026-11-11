@@ -1,0 +1,83 @@
+{
+ "ep": "H-4",
+ "series": "부동산 — 광명 실거래",
+ "title": "광명 아파트 서울보다 비싸다? 15억은 2019년 뒤 지은 단지 이야기였다",
+ "title_by": "firemap-copywriter 2026-10-29 18:52 copy/titles.md 1위(37자·숫자 2·검색어 광명아파트 맨 앞)",
+ "title_candidates": [
+  "광명 아파트 서울보다 비싸다? 15억은 2019년 뒤 지은 단지 이야기였다",
+  "광명 아파트 서울보다 비싸다? 그 말은 2019년 뒤 지은 단지 이야기였다"
+ ],
+ "thumb_text_top": "광명 아파트 15억이라던데, 실거래 세어 보니",
+ "thumb_text": "서울 25개 구 중 / 17곳이 광명보다 비쌌다",
+ "thumb": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\H-4\\thumb_h4n_g5.png",
+ "thumb_status": "11/11 09:20 visual 길이 칸 가림 고침(g3 → g5, 글자·사진 그대로)",
+ "desc_first2": [
+  "광명 84㎡ 매매 실거래(2026년 7~9월 계약)를 서울 25개 구와 같은 잣대(가운데 값)로 줄 세웠어요. 광명보다 싼 서울 구 8곳도, 철산자이더헤리티지 전세와 옆 단지 매매도 봤습니다.",
+  "광명 전체로는 26곳 가운데 18번째였고, 2019년 뒤 지은 단지만 보면 가운데 값이 15억 가까이였어요."
+ ],
+ "desc_first2_src": "copy/titles.md 2026-10-29 설명 첫 줄 + 대본 3·34~36행(18번째·2019년 뒤 단지 15억 가까이)",
+ "tags": [
+  "광명아파트",
+  "광명 실거래가",
+  "철산자이더헤리티지",
+  "하안주공",
+  "철산동 아파트"
+ ],
+ "desc_tpl": "광명 84㎡ 매매 실거래(2026년 7~9월 계약)를 서울 25개 구와 같은 잣대(가운데 값)로 줄 세웠어요. 광명보다 싼 서울 구 8곳도, 철산자이더헤리티지 전세와 옆 단지 매매도 봤습니다.\n광명 전체로는 26곳 가운데 18번째였고, 2019년 뒤 지은 단지만 보면 가운데 값이 15억 가까이였어요.\n\n전체 표와 계산 근거(카페): {CAFE}\n\n{CHAPTERS}\n\n출처\n· 아파트 매매·전월세 실거래(신규·갱신 구분): 국토교통부 실거래가 공개시스템(rt.molit.go.kr)·공공데이터포털 국토교통부 아파트 매매/전월세 실거래 자료 — 광명시 2025년 11월~2026년 10월 계약, 서울 25개 구 2026년 7~9월 계약, 2026-10-16 받음\n· 철산주공13단지·12단지 정비구역 지정: 경기도 광명시 고시 제2025-105호·제2025-190호(토지이음)\n· 광명 조정대상지역·투기과열지구, 주택담보대출 한도(15억 이하 6억·15억 초과 4억): 관계부처 합동 '주택시장 안정화 대책'(2025-10-15, 정책브리핑)\n· 토지거래허가구역 2025-10-20~2026-12-31: 국토교통부공고 제2025-1219호(경기도 토지거래허가구역 지정 현황)\n· 허가 대상(매매 같은 소유권 이전 계약, 임대차 아님): 부동산 거래신고 등에 관한 법률 제11조\n· 단지 검색 수: 네이버 검색광고 키워드 도구(한 달 검색 수)\n계산 가정: 84㎡대 = 전용 80~85㎡ · 값은 거래를 줄 세운 가운데 값 · 분양권 거래는 매매 실거래에 들어 있지 않음 · 실제 대출 한도는 소득·다른 대출에 따라 다르니 은행에서, 허가·실거주 의무 세부 조건은 광명시청에서 확인하세요.\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 일부 장면은 AI로 만든 그림(RealVisXL V5.0 — 오래된 아파트 계단, 사람·글자 없음)입니다. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 시세 설명이고, 특정 단지를 사거나 팔라는 권유는 아니에요.\n영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/ko-kr/video/31727145/)\n영상 일부: Esra Afşar / Pexels (https://www.pexels.com/video/browsing-real-estate-listings-on-mobile-phone-31907490/)\n영상 일부: Jueon Kim 김주언 / Pexels (https://www.pexels.com/video/urban-sunset-over-high-rise-buildings-37873585/)\n영상 일부: vignesh srivatsav / Pexels (https://www.pexels.com/video/aerial-view-of-dense-urban-landscape-at-dusk-38259259/)\n영상 일부: 대정 김 / Pexels (https://www.pexels.com/video/urban-park-with-flowers-and-high-rise-buildings-40294066/)\n영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/man-using-calculator-6964247/)\n영상 일부: SHVETS production / Pexels (https://www.pexels.com/video/a-person-taping-a-box-7205591/)\n영상 일부: MART  PRODUCTION / Pexels (https://www.pexels.com/video/glass-panels-window-on-the-building-exterior-7317305/)\n영상 일부: Kindel Media / Pexels (https://www.pexels.com/video/a-person-computing-using-a-calculator-7651886/)\n영상 일부: SHVETS production / Pexels (https://www.pexels.com/video/a-person-marking-on-calendar-9057559/)",
+ "desc": "광명 84㎡ 매매 실거래(2026년 7~9월 계약)를 서울 25개 구와 같은 잣대(가운데 값)로 줄 세웠어요. 광명보다 싼 서울 구 8곳도, 철산자이더헤리티지 전세와 옆 단지 매매도 봤습니다.\n광명 전체로는 26곳 가운데 18번째였고, 2019년 뒤 지은 단지만 보면 가운데 값이 15억 가까이였어요.\n\n전체 표와 계산 근거(카페): https://cafe.naver.com/firemap\n\n0:00 예고\n0:36 서울 25개 구 옆에 세우면\n2:06 그럼 '광명 15억'은 어디서 나왔을까\n3:39 철산동 안의 사다리\n4:23 9억으로 철산동 84㎡\n6:45 사려면 붙는 조건\n8:02 정리\n\n출처\n· 아파트 매매·전월세 실거래(신규·갱신 구분): 국토교통부 실거래가 공개시스템(rt.molit.go.kr)·공공데이터포털 국토교통부 아파트 매매/전월세 실거래 자료 — 광명시 2025년 11월~2026년 10월 계약, 서울 25개 구 2026년 7~9월 계약, 2026-10-16 받음\n· 철산주공13단지·12단지 정비구역 지정: 경기도 광명시 고시 제2025-105호·제2025-190호(토지이음)\n· 광명 조정대상지역·투기과열지구, 주택담보대출 한도(15억 이하 6억·15억 초과 4억): 관계부처 합동 '주택시장 안정화 대책'(2025-10-15, 정책브리핑)\n· 토지거래허가구역 2025-10-20~2026-12-31: 국토교통부공고 제2025-1219호(경기도 토지거래허가구역 지정 현황)\n· 허가 대상(매매 같은 소유권 이전 계약, 임대차 아님): 부동산 거래신고 등에 관한 법률 제11조\n· 단지 검색 수: 네이버 검색광고 키워드 도구(한 달 검색 수)\n계산 가정: 84㎡대 = 전용 80~85㎡ · 값은 거래를 줄 세운 가운데 값 · 분양권 거래는 매매 실거래에 들어 있지 않음 · 실제 대출 한도는 소득·다른 대출에 따라 다르니 은행에서, 허가·실거주 의무 세부 조건은 광명시청에서 확인하세요.\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 일부 장면은 AI로 만든 그림(RealVisXL V5.0 — 오래된 아파트 계단, 사람·글자 없음)입니다. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 시세 설명이고, 특정 단지를 사거나 팔라는 권유는 아니에요.\n영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/ko-kr/video/31727145/)\n영상 일부: Esra Afşar / Pexels (https://www.pexels.com/video/browsing-real-estate-listings-on-mobile-phone-31907490/)\n영상 일부: Jueon Kim 김주언 / Pexels (https://www.pexels.com/video/urban-sunset-over-high-rise-buildings-37873585/)\n영상 일부: vignesh srivatsav / Pexels (https://www.pexels.com/video/aerial-view-of-dense-urban-landscape-at-dusk-38259259/)\n영상 일부: 대정 김 / Pexels (https://www.pexels.com/video/urban-park-with-flowers-and-high-rise-buildings-40294066/)\n영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/man-using-calculator-6964247/)\n영상 일부: SHVETS production / Pexels (https://www.pexels.com/video/a-person-taping-a-box-7205591/)\n영상 일부: MART  PRODUCTION / Pexels (https://www.pexels.com/video/glass-panels-window-on-the-building-exterior-7317305/)\n영상 일부: Kindel Media / Pexels (https://www.pexels.com/video/a-person-computing-using-a-calculator-7651886/)\n영상 일부: SHVETS production / Pexels (https://www.pexels.com/video/a-person-marking-on-calendar-9057559/)",
+ "chapters": [
+  [
+   0,
+   "예고"
+  ],
+  [
+   36,
+   "서울 25개 구 옆에 세우면"
+  ],
+  [
+   126,
+   "그럼 '광명 15억'은 어디서 나왔을까"
+  ],
+  [
+   219,
+   "철산동 안의 사다리"
+  ],
+  [
+   264,
+   "9억으로 철산동 84㎡"
+  ],
+  [
+   405,
+   "사려면 붙는 조건"
+  ],
+  [
+   483,
+   "정리"
+  ]
+ ],
+ "voice": "Chirp 3 HD Charon 1.1 · 124줄 · 510.3초 · 11/10 녹음 88줄 + 11/11 보강 36줄(editor 11/11 07:06 서명 say 54265c8e)·0:1·5:6 다시 받기",
+ "missing": 0,
+ "publishAt": "2026-11-14T11:30:00+09:00",
+ "privacy": "private",
+ "privacy_note": "예약 공개(private+publishAt) — 정해진 시각에 공개로 바뀜",
+ "paid": false,
+ "coupang": null,
+ "synthetic": true,
+ "veo": false,
+ "synthetic_note": "AI 음성 내레이션 + shot_plan.md의 AI 생성 장면(old_stair) → containsSyntheticMedia True",
+ "answers": {
+  "q1_바꿔끼우기": "아니오 — 광명 84㎡대 매매 171건을 서울 25개 구와 같은 석 달·같은 크기·가운데 값으로 줄 세워 26곳 중 18번째, 2019년 뒤 단지만 떼면 영등포구 위, 철산동 안 16억~6억 사다리와 신규·갱신 전세 차이를 국토교통부 원자료로 직접 셌다(calc_out.txt·calc_renew_out.txt).",
+  "q2_연달아보기": "아니오 — 앞 편 P-3(정책·건보료, 11/12)·다음 편 N-3(연봉, 11/16)과 축이 다르다(부동산). 앞 부동산 편 H-3과 다른 지역·다른 질문(서울 비교).",
+  "q3_약속이행": "예 — 제목 '서울보다 비싸다? 15억은 2019년 뒤 지은 단지 이야기'는 1장(26곳 중 18번째)·2장(2019년 뒤 단지 가운데 값 15억 가까이, 영등포구 위)이 답하고, 3~5장이 동 안 사다리·9억 예산·대출 한도와 허가를 채운다.",
+  "q4_조언으로들리나": "아니오 — 특정 단지를 사라·팔라 0. 4장 끝은 '새 집에 세 들어 살지, 오래된 집을 내 집으로 가질지는 각자 정할 일', 할 일은 같은 동·같은 크기 1년 실거래 보기·계약 전 허가와 은행 한도 확인까지다.",
+  "q5_사람의몫": "예 — '광명 15억' 말이 어디서 왔는지(새 단지 구성 차이)를 원자료로 갈라 보이고, 매매 실거래 0건인 인기 단지(분양권)와 신규·갱신 전세가 꼭 갱신이 싸지 않다는 것을 처음 셌다."
+ },
+ "endscreen": {
+  "how": "Studio 최종 화면 — 업로드 뒤 할 일(다음 편 N-3 또는 H-3)",
+  "status": "미정"
+ },
+ "made_by": "firemap-video-producer",
+ "made_at": "2026-11-11",
+ "video": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\video\\out\\h4_ds.mp4",
+ "todo": "11/11 21시 PD h4meta: 제목·설명·챕터·5문항·publishAt 11/14 · 남은 것: editor screen_text stamp → 렌더 → deess → screen·bgcheck → 올리기 전 확인(youtube-loop, 1일 안) → gate → up · 카페 짝 글 주소(cafe_url)"
+}

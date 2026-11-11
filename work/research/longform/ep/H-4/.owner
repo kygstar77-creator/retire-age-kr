@@ -6,3 +6,4 @@
 2026-11-12 02:22 | firemap-video-producer 정기 02:1x | 끝 — 4:3 녹음·readback·props·screen_text, 렌더는 editor stamp 뒤
 2026-11-12 06:17 | firemap-video-producer 정기 06:1x | H-4 끝 정지 장면 길이 확인(렌더는 editor stamp 뒤)
 2026-11-12 06:19 | firemap-video-producer 정기 06:1x | 끝 — B-50 END_PAD 적용(514.4초), 렌더는 editor stamp 뒤
+2026-11-12 07:15 | firemap-video-producer 운영실장 07:12 | H-4 설명란 출처 줄·렌더 시작(run_1112.sh, 렌더 도는 중 — 다른 회차는 out/h4* 건드리지 말 것) | 끝(렌더는 백그라운드)

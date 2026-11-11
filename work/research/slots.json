@@ -3892,6 +3892,46 @@
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
    "note": "firemap-meeting 2026-11-08 21:3x: 장르 안건(agenda-2026-11-09-longform-genre.md) 받아들임 — X-LF-GENRE(부동산2·정책2·경제주식1·연봉노후1/12일, 같은 장르 연속 금지)"
+  },
+  {
+   "at": "2026-11-12 12:40",
+   "kind": "cafe",
+   "item": "P-3 짝 글(건보료 피부양자, 전체 표·계산 근거) — yt_pair: vgFx2od9_sg",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-11 21:4x: 36시간 칸"
+  },
+  {
+   "at": "2026-11-12 16:10",
+   "kind": "cafe",
+   "item": "부동산(국토부 실거래·공시·대출 규제 원문)",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-11 21:4x: 36시간 칸"
+  },
+  {
+   "at": "2026-11-12 18:40",
+   "kind": "cafe",
+   "item": "주식·ETF 축(종목 권유 금지)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-11 21:4x: 36시간 칸"
+  },
+  {
+   "at": "2026-11-12 22:40",
+   "kind": "cafe",
+   "item": "쇼츠 짝 글(11/12 쇼츠 질문 하나) — yt_pair: k1s_dep",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-11 21:4x: 36시간 칸"
+  },
+  {
+   "at": "2026-11-12 19:20",
+   "kind": "shorts",
+   "item": "k1s_dep (비축, K-1 경제·주식 아님, c1clip)",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-11 21:4x: 36시간 칸 · 관문 통과 비축이라 바로 publishAt, 다음 h3s_jeonse·k1s_fix"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외",

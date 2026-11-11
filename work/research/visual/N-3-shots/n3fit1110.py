@@ -389,11 +389,11 @@ def n3_top25_10(im):
 def n3_partyear(im):
     d = ImageDraw.Draw(im); title(d, '이 줄에는 몇 달만 일한 사람도 있어요', 110)
     x0, x1 = 150, 1770; step = (x1 - x0) / 49; h = 110; r = step * 0.3
-    for k in range(50): person(d, x0 + k * step, 250, h, (172, 164, 152) if k < 44 else (222, 214, 200), r)
-    hand_ellipse(d, (x0 + 43.4 * step, 220, x1 + 30, 390), seed=381)
+    for k in range(50): person(d, x0 + k * step, 250, h, (172, 164, 152) if k < 49 else (222, 214, 200), r)
+    hand_ellipse(d, (x1 - step * 0.9, 215, x1 + step * 0.9, 395), seed=381)   # 11/11 맨 끝 한 사람만(1% 구간 — 심사관: 8명 감싸면 10%로 읽힘)
     T(d, (x1 - 120, 430), '맨 뒤', 40, GREY, F_B)
     T(d, (W // 2, 520), '한 해 중 몇 달만 일해도 줄에 들어가요', 52, INK, F_B)
-    T(d, (W // 2, 640), '맨 뒤 구간 평균 총급여', 64, INK, F_X)
+    T(d, (W // 2, 640), '맨 뒤 1% 구간 · 1년 동안 받은 총급여 평균', 60, INK, F_X)
     big(d, (W // 2, 780), '21만원', 150, seed=382)
     T(d, (W // 2, 950), "'일 년 내내 일한 직장인 중 몇 번째'와는 조금 달라요", 48, INK, F_B)
     source(d, SRC_NTS + ' · 2,108만 명')

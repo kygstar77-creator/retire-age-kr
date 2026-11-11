@@ -3654,3 +3654,5 @@
 2026-11-11 20:51 · visual · N-3 n3_partyear 가운데 줄 뺌 · editor 20:47 다듬기(제목과 같은 말 두 번), 숫자 0 바뀜·boardcheck 0
 2026-11-11 20:51 · visual · 썸네일 길이 칸 검사 work/thumblen.py(x1143~1265·y647~705 흰·주황 픽셀 30 초과면 걸림) · 11/10 H-4·N-3 걸림을 눈으로만 잡던 것을 코드로(C-15)
 2026-11-11 21:01 · firemap-audit · 11/10 21:02 뒤 공개분 11건 감사 — 심각 0·경미 0, 스위치 안 켬(STOP_blog 유지) · 쇼츠 7bBw·P-3 예약 설명·카페 #406·#407 숫자 4건 손계산·calc_out 일치(audit.md)
+2026-11-11 21:04 · motion · N-3 MeanPull 1% 추→평균 깃발 줄 뺌(rope:false)·'중간값'→'가운데쯤' · 1%는 차이의 29%라 줄이 '1%가 다 끌어올림'으로 읽힘(visual 09:10 요청, calc_mean_out), 새 심사관 옛판 대비 나음(8·8·7)
+2026-11-11 21:04 · motion · 완료: visual 요청 N-3 MeanPull 두 곳 · n3_mean4.mp4·board_mean4.png · U5 6.5초 · 덤 N-3 막대 판 ⑥ 0(B-49 뒤, 옛 bgcheck 캐시 치움)

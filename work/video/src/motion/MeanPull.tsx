@@ -4,6 +4,7 @@
 // 가운데 깃발은 그대로 서 있다. 두 깃발 사이 폭에 답 하나(주황) + 손 밑줄. N1·N2 '100명 줄'(사람 점)과 다른 꼴(반복 템플릿 신호 피하기).
 // 글자는 전부 HTML(카메라 안 SVG 글자 어긋남 10/13). 판 전체 1.00→1.04 다가가기(U5 10/19). 숫자 글자는 props만(편별 props 스크립트가 calc·대본 assert).
 // 시각 at = 말 줄 번호 + 줄 안 비율(1.4 = 둘째 줄 40% 자리).
+// rope=false(11/11 N-3 심사): 추와 깃발을 잇는 줄을 긋지 않는다 — 줄이 있으면 '1%가 차이를 다 끌어올림'으로 읽힘(실제 1%는 차이의 29%). 깃발은 '위쪽 사람들' 말에 화살표와 함께 기울기만 한다.
 import React from 'react';
 import {interpolate, useCurrentFrame, Easing, random, spring, useVideoConfig} from 'remotion';
 import {T, F, CL} from '../parts/fm';
@@ -16,6 +17,7 @@ export type MeanPullProps = {
   mid: {v: number; label: string; text: string; at: number; stay: string};
   top: {label: string; text: string; at: number; pull: number};   // 추가 내려앉는 때(at) · 줄이 팽팽해지는 때(pull)
   gap: {text: string; at: number};
+  rope?: boolean;                                        // 기본 true(옛 미리보기 그대로)
   unit: string;
   beats: number[];
 };
@@ -86,7 +88,7 @@ export const MeanPull: React.FC<MeanPullProps> = (p) => {
       <Flag x={mx} o={mIn} color={T.ink} label={p.mean.label} text={p.mean.text} tilt={lean} side={sideM} />
       {/* 줄 */}
       <svg style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080, overflow: 'visible', pointerEvents: 'none'}}>
-        <path d={ropePath} fill="none" stroke={T.ink2} strokeWidth={5} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - rope} opacity={1 - off * 0.7} />
+        <path d={ropePath} fill="none" stroke={T.ink2} strokeWidth={5} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - rope} opacity={(p.rope === false ? 0 : 1) * (1 - off * 0.7)} />
         {/* 당기는 쪽 화살표(깃발 위, 팽팽해진 뒤) */}
                 <polyline points={`${mx + 40},${AY} ${mx + 150},${AY}`} fill="none" stroke={T.ink} strokeWidth={6} strokeLinecap="round" opacity={taut * (1 - off)} />
         <polyline points={`${mx + 132},${AY - 14} ${mx + 152},${AY} ${mx + 132},${AY + 14}`} fill="none" stroke={T.ink} strokeWidth={6} strokeLinecap="round" strokeLinejoin="round" opacity={taut * (1 - off)} />

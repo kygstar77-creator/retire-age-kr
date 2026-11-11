@@ -1,0 +1,28 @@
+{
+ "date": "2026-11-11",
+ "runs": [
+  {
+   "hour": 6,
+   "ts": "07:18",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "주담대 금리 5년 고정 끝나면, 한 달 얼마 더 낼까?",
+    "url": "https://cafe.naver.com/firemap/407"
+   },
+   "note": "07:40 칸 k1pair1110(K-1 짝 글) 발행 07:1x · 올리기 전 확인 당일(finlife 111줄 11/10과 차이 0·ecos·코픽스 200) · verify OK 1,426자·사진 3 · 블로그 쉼(2~7시·블로그 하루 상한) · 12:40 칸 bunrinhis1111 '분리과세 건강보험료, 이자 1천만원 넘으면 얼마 붙을까?' 관문 통과(출처 8: 법령 4·복지부·공단·기사 2 · 교차검증: 사실 대조 Gemini 타임아웃→selfcheck 사실 0, 말투 13건 중 반영 6·유지 7 · 이해 3차 9명 · editgate auto) · 개선: 없음(관문 코드 그대로 통과)"
+  },
+  {
+   "hour": 18,
+   "ts": "20:29",
+   "blog": null,
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "PC 꺼짐 09:20~20:27 — 늦은 회차. 놓친 칸은 비축으로(11/12 07:40 bunrinhis1111·10:10 parking1109), 발행 0. 개선: 놓친 칸 비축 전환을 slots·slot.txt에 같이 반영"
+  }
+ ]
+}

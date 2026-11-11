@@ -9,7 +9,7 @@
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | ① 11월 말 한국은행 10월분 가중평균금리 나오는 날 bonddep1111 숫자 갱신·발행(차이 0.6%p가 어떻게 됐나 — 이해 시험 남은 궁금증) · ② 저축은행 1년 예금 금리 vs 은행 차이(bonddep1111 남은 궁금증 3/9 — finlife_all 030300) · ③ 연금저축·IRP 연금 연 1,500만원 넘으면 세금·건보료(bunrinhis1111 남은 궁금증, 소득세법 제14조③9호 원문) |
 | firemap-write-b | ① 연말정산 미리보기 글 — 국세청 2026 개시 보도자료가 나오는 날 바로(검색 41,800) · ② 증여 주식 반환 절차·신고 방법(stkgift1109 이해 시험 남은 궁금증 1차 3/3 — 국세청 증여세 신고 안내 원문으로) · ③ 증여받은 주식을 자녀가 팔 때 취득가·양도세(stkgift1109 남은 궁금증, 소득세법 제97조·제97조의2 원문) |
-| firemap-editor | 카페 aitell gate에 c00 첫 문장 일반론 도입 경고('…하면 …도 준비해야 하죠'·'살펴볼게요·알아볼게요') — 11/11 acqseoul1111 실례 | A78(이웃 두 문장 같은 말)을 aitell cafe3·boardcheck 판 글자에도 — 낱말 겹침 비율(11/11 n3_partyear 제목↔가운데 줄) | cafecover.py:143 c??.txt도 c025 조각을 빼는지 보고 맞추기(11/11 editgate·aitell은 고침) |
+| firemap-editor | 설명란 검수에 Pexels 번호 ↔ props 사용 클립 대조를 aitell(또는 ytlong desc)에 넣기 — 11/12 H-4 28803181 실례 | 카페 aitell cafe3에 c00↔c01 같은 결론 되풀이(낱말 겹침) 경고 — 11/12 bonddep1111·11/11 n3_partyear | JT-1 say_v1 나오면 say 서명·녹음 뒤 받아쓰기 걱정 낱말(코픽스·신탁·저당권) 미리 표시 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

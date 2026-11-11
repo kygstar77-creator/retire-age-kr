@@ -1,51 +1,18 @@
 {
- "date": "2026-11-11",
+ "date": "2026-11-12",
  "runs": [
   {
    "hour": 6,
-   "ts": "07:18",
+   "ts": "07:56",
    "blog": {
     "title": null,
     "url": null
    },
    "cafe": {
-    "title": "주담대 금리 5년 고정 끝나면, 한 달 얼마 더 낼까?",
-    "url": "https://cafe.naver.com/firemap/407"
+    "title": "분리과세 건강보험료, 이자 1천만원 넘으면 얼마 붙을까?",
+    "url": "https://cafe.naver.com/firemap/409"
    },
-   "note": "07:40 칸 k1pair1110(K-1 짝 글) 발행 07:1x · 올리기 전 확인 당일(finlife 111줄 11/10과 차이 0·ecos·코픽스 200) · verify OK 1,426자·사진 3 · 블로그 쉼(2~7시·블로그 하루 상한) · 12:40 칸 bunrinhis1111 '분리과세 건강보험료, 이자 1천만원 넘으면 얼마 붙을까?' 관문 통과(출처 8: 법령 4·복지부·공단·기사 2 · 교차검증: 사실 대조 Gemini 타임아웃→selfcheck 사실 0, 말투 13건 중 반영 6·유지 7 · 이해 3차 9명 · editgate auto) · 개선: 없음(관문 코드 그대로 통과)"
-  },
-  {
-   "hour": 18,
-   "ts": "20:29",
-   "blog": null,
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "PC 꺼짐 09:20~20:27 — 늦은 회차. 놓친 칸은 비축으로(11/12 07:40 bunrinhis1111·10:10 parking1109), 발행 0. 개선: 놓친 칸 비축 전환을 slots·slot.txt에 같이 반영"
-  },
-  {
-   "hour": 21,
-   "ts": "21:39",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "이 시각 카페 칸 없음(22:40 write-b acqseoul1111) · 블로그 쉬는 날 · 로그인됨 · 회원 댓글 0 · 비축 새로 bonddep1111 '정기예금 금리는 국고채를 몇 달 뒤 따라갈까?' — 자료조사 출처 13(ECOS 4계열·finlife 40상품·연합·SBS 2차·경쟁 6·지식iN 5) · 교차검증: Gemini 시간초과→selfcheck(사실 0)+새 Agent 원자료 대조(숫자 틀림 0, 근거 없는 서술 7건 전부 반영) · 이해 3차 9명 통과 · editgate auto · verify 해당 없음(미발행) · 개선: 이해 시험에서 방향 숫자(33/18)가 예측으로 읽히는 문제를 playbook에 규칙으로"
-  },
-  {
-   "hour": 22,
-   "ts": "22:38",
-   "blog": null,
-   "cafe": {
-    "title": "아파트 취득세 3%, 서울 몇 개 구가 해당될까?",
-    "url": "https://cafe.naver.com/firemap/408"
-   },
-   "note": "write-b 22:40 칸: j1s_30yr 쇼츠 미업로드(E-18)로 짝 글 대신 비축 acqseoul1111 · 관문 재확인(editgate 해시 일치·research/prepublish/bench 0·readcheck 0·구어 통과·aitell 6.7) · 올리기 전 확인 11/11 같은 날 · verify OK 1480자·사진 3 · 회원 댓글 0 · 개선: verify가 같은 item 옛 칸(16:10)에 published를 적는 문제 발견, 장부 손으로 바로잡음"
+   "note": "07:40 칸(회의 배정) · 당일 확인 WebSearch 1회(새 발표 없음) · 교차검증은 11/11 완료분(crosscheck·selfcheck 사실 0) · verify OK 1541자/사진3 · 블로그 0(하루 1편 상한·이 회차 몫 아님) · 개선: 출처 줄 81자가 발행기 readcheck에서야 걸림 → 두 줄로 나눔, playbook에 당일 확인 후 같은 회차 대기 발행 기록"
   }
  ]
 }

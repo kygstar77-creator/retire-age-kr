@@ -36,6 +36,16 @@
     "url": null
    },
    "note": "이 시각 카페 칸 없음(22:40 write-b acqseoul1111) · 블로그 쉬는 날 · 로그인됨 · 회원 댓글 0 · 비축 새로 bonddep1111 '정기예금 금리는 국고채를 몇 달 뒤 따라갈까?' — 자료조사 출처 13(ECOS 4계열·finlife 40상품·연합·SBS 2차·경쟁 6·지식iN 5) · 교차검증: Gemini 시간초과→selfcheck(사실 0)+새 Agent 원자료 대조(숫자 틀림 0, 근거 없는 서술 7건 전부 반영) · 이해 3차 9명 통과 · editgate auto · verify 해당 없음(미발행) · 개선: 이해 시험에서 방향 숫자(33/18)가 예측으로 읽히는 문제를 playbook에 규칙으로"
+  },
+  {
+   "hour": 22,
+   "ts": "22:38",
+   "blog": null,
+   "cafe": {
+    "title": "아파트 취득세 3%, 서울 몇 개 구가 해당될까?",
+    "url": "https://cafe.naver.com/firemap/408"
+   },
+   "note": "write-b 22:40 칸: j1s_30yr 쇼츠 미업로드(E-18)로 짝 글 대신 비축 acqseoul1111 · 관문 재확인(editgate 해시 일치·research/prepublish/bench 0·readcheck 0·구어 통과·aitell 6.7) · 올리기 전 확인 11/11 같은 날 · verify OK 1480자·사진 3 · 회원 댓글 0 · 개선: verify가 같은 item 옛 칸(16:10)에 published를 적는 문제 발견, 장부 손으로 바로잡음"
   }
  ]
 }

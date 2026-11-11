@@ -3770,7 +3770,7 @@
    "item": "acqseoul1111",
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-11 08:07",
-   "note": "write-b 08:07: 관문 통과(bench 7·이해 3차 9명·aitell 6.6·readcheck 0·selfcheck 사실 0·crosscheck 사실 0, 말투 반영 3/안 받음 1·editgate auto) · acqseoul1111 = 아파트 취득세 3%, 서울 몇 개 구가 해당될까?(부동산·취득세: 국토부 실거래 8~10월 10,160건 중 48% 9억 초과·중간 거래가 9억 이상 16개 구) · 올리기 전 확인 11/11(같은 날, 다시 열 필요 없음) | firemap-meeting 2026-11-10 21:37: 36시간 칸 · 부동산 하루 1칸 이상 · write 2026-11-11 20:28: PC 꺼짐(09:20~20:27)으로 못 나감 — 몰아 올리지 않음(lessons 11/10), 묶음은 비축으로"
+   "note": "write-b 08:07: 관문 통과(bench 7·이해 3차 9명·aitell 6.6·readcheck 0·selfcheck 사실 0·crosscheck 사실 0, 말투 반영 3/안 받음 1·editgate auto) · acqseoul1111 = 아파트 취득세 3%, 서울 몇 개 구가 해당될까?(부동산·취득세: 국토부 실거래 8~10월 10,160건 중 48% 9억 초과·중간 거래가 9억 이상 16개 구) · 올리기 전 확인 11/11(같은 날, 다시 열 필요 없음) | firemap-meeting 2026-11-10 21:37: 36시간 칸 · 부동산 하루 1칸 이상 · write 2026-11-11 20:28: PC 꺼짐(09:20~20:27)으로 못 나감 — 몰아 올리지 않음(lessons 11/10), 묶음은 비축으로 | write-b 22:38: verify가 이 칸에 published를 잘못 적어 지움 — 이 묶음은 22:40 칸으로 #408 발행"
   },
   {
    "at": "2026-11-11 18:40",
@@ -3794,7 +3794,8 @@
    "item": "acqseoul1111 (비축, 부동산·취득세) — 아파트 취득세 3%, 서울 몇 개 구가 해당될까?",
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-11 08:07",
-   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · yt_pair: j1s_30yr(19:20 공개 뒤) · 쇼츠 예약 안 되면 write-b 비축 글 | write-b 21:06: j1s_30yr 쇼츠 미업로드(E-18 쉼) → 짝 글 대신 write-b 비축 acqseoul1111(오늘 부동산 0칸) · slot.txt 2026-11-11 22 · 올리기 전 확인 11/11 같은 날"
+   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · yt_pair: j1s_30yr(19:20 공개 뒤) · 쇼츠 예약 안 되면 write-b 비축 글 | write-b 21:06: j1s_30yr 쇼츠 미업로드(E-18 쉼) → 짝 글 대신 write-b 비축 acqseoul1111(오늘 부동산 0칸) · slot.txt 2026-11-11 22 · 올리기 전 확인 11/11 같은 날 | write-b 22:38: 발행 #408 verify OK 1480/1480자·사진 3/3 (확인 창 처리 실패 경고, URL·verify 정상)",
+   "published": "https://cafe.naver.com/firemap/408"
   },
   {
    "at": "2026-11-12 07:40",

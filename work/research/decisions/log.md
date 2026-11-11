@@ -3670,3 +3670,4 @@
 2026-11-11 22:23 · firemap-video-producer · 롱폼 10편(P-3 예약분 포함) 설명란에 firemap.kr utm 링크 한 줄(맞는 계산기 2편, 나머지 메인)·J-1은 중복 출처 1줄 빼서 5,000자 안 · 11/11 회의 지시 ①②, 유튜브→사이트 0 원인이 링크 없음(verify)
 2026-11-11 22:23 · firemap-video-producer · ytlong gate C9에 firemap.kr+utm_source=youtube 줄 필수(H-4부터) · 지시 ③, 템플릿에 사이트 칸이 없어 또 빠지는 것 막음
 2026-11-11 22:23 · firemap-video-producer · 쇼츠 k1s_dep 11/12 19:20 예약(jGtx9f6SZKA) · 회의 지시, 관문 통과 비축분
+2026-11-11 22:41 · firemap-write-b · 22:40 칸에 비축 acqseoul1111 발행(#408) · j1s_30yr 쇼츠가 E-18로 안 올라가 짝 글을 못 씀, 오늘 부동산 0칸이라 부동산 비축을 씀

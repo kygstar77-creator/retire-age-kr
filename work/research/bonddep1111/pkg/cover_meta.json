@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-11 21:33",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "정기예금 금리/국고채 몇 달 뒤?",
+ "num": "2022년엔 딱 한 달 차이",
+ "sub": "한국은행 통계 25년 맞대 봄",
+ "label": "한국은행 통계",
+ "src": "한국은행 경제통계(ECOS)",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 120,
+ "num_px": 81,
+ "sub_px": 50,
+ "board": [
+  "k1pair1110",
+  "stkgift1109",
+  "ltdeduct1110",
+  "stkded1109",
+  "retpay1109",
+  "jsfraud1109",
+  "ltccost1108",
+  "deprate1109",
+  "hdetf1109",
+  "jeonip1109"
+ ]
+}

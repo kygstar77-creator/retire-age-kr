@@ -240,9 +240,10 @@
    {
     "item": "bonddep1111",
     "ep": "work/research/bonddep1111/pkg",
-    "status": "2026-11-11 21:4x 비축 등록(write) — 예금·이자·금리 장르 '정기예금 금리는 국고채를 몇 달 뒤 따라갈까?' · ECOS 25년 월자료 시차 계산(우리만) · 이해 3차 9명 통과·bench 6·readcheck 0·aitell 8.7·selfcheck 사실 0 · 발행 당일 finlife·ECOS 다시 받아 '바뀐 것:'(금리 글 D-11) · slot.txt 11-12 12는 임시 — 칸 배정 때 고침",
+    "status": "2026-11-11 21:39 비축 등록(write) — 예금·이자·금리 장르 '정기예금 금리는 국고채를 몇 달 뒤 따라갈까?' · ECOS 25년 월자료 시차 계산(우리만) · 이해 3차 9명 통과·bench 6·readcheck 0·aitell 8.7·selfcheck 사실 0 · 발행 당일 finlife·ECOS 다시 받아 '바뀐 것:'(금리 글 D-11) · slot.txt 11-12 12는 임시 — 칸 배정 때 고침",
     "by": "firemap-write",
-    "at": "2026-11-11 21:40"
+    "at": "2026-11-11 21:40",
+    "gates_ok": "2026-11-11 21:39"
    }
   ],
   "long": [

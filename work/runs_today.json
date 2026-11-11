@@ -23,6 +23,19 @@
     "url": null
    },
    "note": "PC 꺼짐 09:20~20:27 — 늦은 회차. 놓친 칸은 비축으로(11/12 07:40 bunrinhis1111·10:10 parking1109), 발행 0. 개선: 놓친 칸 비축 전환을 slots·slot.txt에 같이 반영"
+  },
+  {
+   "hour": 21,
+   "ts": "21:39",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "이 시각 카페 칸 없음(22:40 write-b acqseoul1111) · 블로그 쉬는 날 · 로그인됨 · 회원 댓글 0 · 비축 새로 bonddep1111 '정기예금 금리는 국고채를 몇 달 뒤 따라갈까?' — 자료조사 출처 13(ECOS 4계열·finlife 40상품·연합·SBS 2차·경쟁 6·지식iN 5) · 교차검증: Gemini 시간초과→selfcheck(사실 0)+새 Agent 원자료 대조(숫자 틀림 0, 근거 없는 서술 7건 전부 반영) · 이해 3차 9명 통과 · editgate auto · verify 해당 없음(미발행) · 개선: 이해 시험에서 방향 숫자(33/18)가 예측으로 읽히는 문제를 playbook에 규칙으로"
   }
  ]
 }

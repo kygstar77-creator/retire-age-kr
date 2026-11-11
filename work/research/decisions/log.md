@@ -3641,3 +3641,5 @@
 2026-11-11 09:03 · firemap-video-producer · AI 사람 뒷모습 RealVisXL·H3 두 판 비교는 보류 · H-4·N-3에 AI 사람 장면 없음(사람은 Pexels), 처음 들어가는 편에서 함
 2026-11-11 09:05 · visual · N-3 n3_donuts 큰 글자 '빠지는 돈 중 60%가 세금'으로 · editor 반려(연봉 1억의 절반이 세금으로 읽힘) 안 그대로, 109/180 calc_out 값 · share_bars '떼어 가는 몫이' · boardcheck n3 걸림 0
 2026-11-11 09:10 · visual · N-3 shot_check 0건 · motion 4줄 파일 칸을 미리보기 스틸로, r37·r38 새 심사 나음(옛 못함은 calc_out만 본 오독), n3_partyear '1년 동안 받은 총급여'·원 한 사람 · motion에 MeanPull 곡선·라벨 요청
+2026-11-11 20:28 · firemap-report · 완료: 유입 출처 표(11/1~11/10) — 사람 세션 135 중 출처 모름 113·검색 7·카페 4·유튜브 0, K-1 utm youtube 0 · reports/2026-11-11_inflow_source.md
+2026-11-11 20:29 · firemap-write · 놓친 카페 칸 3편(parking·bunrinhis·acqseoul) 몰아 올리지 않고 비축 → 11/12 07:40·10:10 배정 · PC 꺼짐 09:20~20:27, lessons 11/10

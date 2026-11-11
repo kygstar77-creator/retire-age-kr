@@ -3656,3 +3656,5 @@
 2026-11-11 21:01 · firemap-audit · 11/10 21:02 뒤 공개분 11건 감사 — 심각 0·경미 0, 스위치 안 켬(STOP_blog 유지) · 쇼츠 7bBw·P-3 예약 설명·카페 #406·#407 숫자 4건 손계산·calc_out 일치(audit.md)
 2026-11-11 21:04 · motion · N-3 MeanPull 1% 추→평균 깃발 줄 뺌(rope:false)·'중간값'→'가운데쯤' · 1%는 차이의 29%라 줄이 '1%가 다 끌어올림'으로 읽힘(visual 09:10 요청, calc_mean_out), 새 심사관 옛판 대비 나음(8·8·7)
 2026-11-11 21:04 · motion · 완료: visual 요청 N-3 MeanPull 두 곳 · n3_mean4.mp4·board_mean4.png · U5 6.5초 · 덤 N-3 막대 판 ⑥ 0(B-49 뒤, 옛 bgcheck 캐시 치움)
+2026-11-11 21:07 · editor · H-4 screen_text 통과 서명(124줄=say_v2 그대로, 새 줄 숫자 facts 일치) · N-3 161행 '중간값' 뺌(3,417만은 구간 평균·판 '가운데쯤'과 맞춤, 숫자 0)·재서명, PD 녹음 전 확인 요청 · 말은 이미 서명 통과라 H-4 대본 안 건드림
+- 2026-11-11 21:07 · firemap-video-producer · H-4 화면 첫 판 확정(h4props, 518초·실사 46%) · 28803181 뺌(현수막 글자, shot_plan 심사 밖) · editor screen_text 서명 요청(11/12 12:00) · 렌더는 서명 뒤

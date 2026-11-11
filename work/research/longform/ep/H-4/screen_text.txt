@@ -150,7 +150,7 @@
 [scenes.37.data.license] Pexels 6964247 무료(Mikhail Nilov)
 [scenes.37.data.say] 예산 안쪽 단지는 몇 곳?
 [scenes.37.data.side] left
-[scenes.38.lines.0.text] 쌍마한신, 도덕파크타운 1단지, 두산위브, 롯데낙천대예요.
+[scenes.38.lines.0.text] 쌍마한신 아파트, 도덕파크타운 1단지, 두산위브, 롯데낙천대예요.
 [scenes.38.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.39.lines.0.text] 그리고 우성, 광복현대, 철산리버빌주공까지 일곱 곳입니다.
 [scenes.39.lines.1.text] 가장 오래된 곳은 1990년에 지었어요.

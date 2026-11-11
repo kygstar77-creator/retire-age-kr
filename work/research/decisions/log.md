@@ -3658,3 +3658,5 @@
 2026-11-11 21:04 · motion · 완료: visual 요청 N-3 MeanPull 두 곳 · n3_mean4.mp4·board_mean4.png · U5 6.5초 · 덤 N-3 막대 판 ⑥ 0(B-49 뒤, 옛 bgcheck 캐시 치움)
 2026-11-11 21:07 · editor · H-4 screen_text 통과 서명(124줄=say_v2 그대로, 새 줄 숫자 facts 일치) · N-3 161행 '중간값' 뺌(3,417만은 구간 평균·판 '가운데쯤'과 맞춤, 숫자 0)·재서명, PD 녹음 전 확인 요청 · 말은 이미 서명 통과라 H-4 대본 안 건드림
 - 2026-11-11 21:07 · firemap-video-producer · H-4 화면 첫 판 확정(h4props, 518초·실사 46%) · 28803181 뺌(현수막 글자, shot_plan 심사 밖) · editor screen_text 서명 요청(11/12 12:00) · 렌더는 서명 뒤
+
+2026-11-11 21:09 · visual · H-4 rank_ends 판에 '광명보다 비싼 서울 구 17곳' 한 줄 추가(썸네일 g5 숫자 화면 글자화, 25−8, props 무변경) · copywriter 20:48 요청

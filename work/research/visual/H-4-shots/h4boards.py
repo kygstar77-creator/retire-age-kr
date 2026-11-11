@@ -91,6 +91,9 @@ def rank_ends(im):
     x, y, xr = xs['강남구']; T(d, (xr + 30, y + 40), '강남구 30억', 134, INK, F_X, 'lm')
     x, y, xr = xs['도봉구']; T(d, ((x + xr) / 2, y - 60), '도봉구 6억', 64, INK, F_B, 'rm')
     gx, gy, gxr = xs['광명시']; dx, dy, dxr = xs['도봉구']
+    # 11/11 copywriter 요청: 광명보다 비싼 서울 구 17곳(25−8, facts [2][3]) — 위 한 줄 + 강남~성북 17칸 위에 손 괄호선
+    TF(d, (W // 2, 105), '광명보다 비싼 서울 구 17곳', 92, INK, F_X)
+    hand_under(d, xs['강남구'][0], xs['성북구'][2], 190, INK, 7, seed=17)
     # 손 화살표: 도봉(맨 아래)부터 광명까지 아홉 칸을 거꾸로 셈
     for k in range(9):
         nm = RANK[25 - k][0]; a, _, b = xs[nm]

@@ -1,3 +1,4 @@
+[PD] H-4 렌더 대기(editor stamp 11/12 12:00) · B-50 끝 화면 20초 적용 h4props 514.4초 · 업로드 0 · 11/12 11:30 롱폼 칸은 사장님 지시로 빔 06:19
 - 2026-11-12 04:51 [youtube-loop] 배정 2건 끝 — ① 11/20=N-3·11/28=배당ETF·지수(SCHD vs 나스닥100) 통계표 topic_stats_1112.md·전략 반론 처리·slots ② A-52 첫 40초 기준 등록·N-3 앞머리 예고 5줄→1줄(editor 재서명 요청 11/17) · 판단: N-2(81)는 약 2분·시청 56%라 롱폼 표본 아님 → 상위 몇% 롱폼 근거는 N-1 1편 · 다음: H-4 올리기 전 확인(11/13), 11/28 ETF 각도 analysis
 - 2026-11-12 02:22 [PD] 정기 02:1x 끝 — H-4 4:3 '쌍마한신 아파트' 다시 녹음·readback 통과(say.json 힌트)·h4props·screen_text 10a09aeb → editor stamp 대기(11/12 12:00), 렌더 0 · 업로드 0 · P-3은 순돌이 01:3x 철회(손 안 댐) · 고정 대기 NNcjTE0L7yg·H9Lv281MaLs 그대로
 - 2026-11-12 02:17 [PD] H-4 제작 시작(정기 02:1x — editor 23:12 4:3 새 말 녹음→readback→props→screen_text→stamp 요청)

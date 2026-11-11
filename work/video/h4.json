@@ -998,13 +998,13 @@
    "kind": "pic",
    "lines": [
     {
-     "text": "쌍마한신, 도덕파크타운 1단지, 두산위브, 롯데낙천대예요.",
-     "audio": "audio/h-4/18ae35ebaa5341db.wav",
-     "frames": 123,
+     "text": "쌍마한신 아파트, 도덕파크타운 1단지, 두산위브, 롯데낙천대예요.",
+     "audio": "audio/h-4/900f662e87718756.wav",
+     "frames": 143,
      "cap": null
     }
    ],
-   "frames": 123,
+   "frames": 143,
    "data": {
     "pic": "bg/h4/board/under9.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1793,11 +1793,11 @@
     {
      "text": "",
      "audio": null,
-     "frames": 690,
+     "frames": 525,
      "cap": null
     }
    ],
-   "frames": 819,
+   "frames": 654,
    "data": {
     "src": "bg/h4/stock/37873585.mp4",
     "license": "Pexels 37873585 무료(Jueon Kim 김주언)",

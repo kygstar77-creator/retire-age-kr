@@ -12,7 +12,7 @@ WORK = os.path.normpath(os.path.join(EP, '..', '..', '..', '..'))
 VID = os.path.join(WORK, 'video')
 FPS, TAIL = 30, 75
 GAP_TRIM = 3   # B-31 쉼 관문 — K-1·P-3과 같은 수법(만드는 값), 줄 사이 빈틈 6→3프레임, 소리는 안 자름
-END_PAD = 23 * 30   # 맺는 말 뒤 숨 3초 + 최종 화면 자리 20초(answer/6388789)
+END_PAD = 20 * 30 - TAIL   # 마지막 말 뒤 화면 = 최종 화면 자리 20초(TAIL 포함) — answer/6388789 '마지막 5~20초', registry B-50(11/12 PD: J-1·K-1 끝 한 컷 30~40초 줄이기)
 SCRIPT = open(os.path.join(EP, 'script.md'), encoding='utf-8').read()
 SRCDOC = SCRIPT + ''.join(open(os.path.join(EP, f), encoding='utf-8').read() for f in ('calc_out.txt', 'calc_renew_out.txt', 'research.md', 'facts.txt'))
 V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
@@ -145,7 +145,7 @@ scenes += [
 scenes += [
     ask(6, [121]),
     board('summary4', [122]),
-    broll('37873585', [123], frm=0),   # 끝 숨 3초+최종 화면 20초 — 33초 클립 앞에서부터
+    broll('37873585', [123], frm=0),   # 마지막 말 1.7초 + 최종 화면 20초 — 33초 클립 앞에서부터
 ]
 scenes[-1]['frames'] += END_PAD
 scenes[-1]['data']['_need'] += END_PAD / FPS + TAIL / FPS

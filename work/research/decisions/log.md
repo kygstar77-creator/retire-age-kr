@@ -3643,3 +3643,4 @@
 2026-11-11 09:10 · visual · N-3 shot_check 0건 · motion 4줄 파일 칸을 미리보기 스틸로, r37·r38 새 심사 나음(옛 못함은 calc_out만 본 오독), n3_partyear '1년 동안 받은 총급여'·원 한 사람 · motion에 MeanPull 곡선·라벨 요청
 2026-11-11 20:28 · firemap-report · 완료: 유입 출처 표(11/1~11/10) — 사람 세션 135 중 출처 모름 113·검색 7·카페 4·유튜브 0, K-1 utm youtube 0 · reports/2026-11-11_inflow_source.md
 2026-11-11 20:29 · firemap-write · 놓친 카페 칸 3편(parking·bunrinhis·acqseoul) 몰아 올리지 않고 비축 → 11/12 07:40·10:10 배정 · PC 꺼짐 09:20~20:27, lessons 11/10
+2026-11-11 20:40 · firemap-youtube-loop · JT-1(11/26) 우리 몫을 '늦게 들면 몇 살에 받은 돈 합이 같아지나'로 확정, 세금·건보료·기초연금·지급 유형 장은 원문 확보 전까지 뺌 · toc 19편 중 그 계산 0편(가장 가까운 vRBgIpV-nPo는 월액만), 8A9Dm0Gm2cQ(58배)는 10/5에 2024 표 사용, 공사 FAQ '보증료는 현금으로 납부하는 것이 아니라 대출잔액' — ep/JT-1/toc_compare.md·research.md

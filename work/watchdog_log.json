@@ -12154,5 +12154,63 @@
    "B11 손품"
   ],
   "sec": 10
+ },
+ {
+  "at": "2026-11-11 20:40",
+  "late": {
+   "blog": 61645,
+   "cafe": 803
+  },
+  "stock": {
+   "blog": 0,
+   "cafe": 3
+  },
+  "blocked": {
+   "blog": 6,
+   "cafe": 12
+  },
+  "did": [
+   "--check 라서 올리지는 않았다: cafe"
+  ],
+  "alert": [
+   "cafe 마지막 발행이 13.4시간 전 — 회차를 놓쳤다",
+   "최근 글에 한 편도 없는 시리즈: B6 미국증시 한 장, B8 부동산 한 장, B12/C8 배당 히트맵, C7 내부자 매수, C4 주간 캘린더, C6 유튜버 숫자 검증, B13 종목 발굴, B11 손품"
+  ],
+  "note": [
+   "blog 정지 중(research/STOP_blog) — 빵꾸·재고로 보지 않는다",
+   "blog 보류 표시 묶음 6개 — 이미 판정 끝(재고에서 뺌, 경보 아님): apgu0930, firecase0928, jamwon1001, peak0926, ssearn0928, tax2yr1002",
+   "cafe 보류 표시 묶음 12개 — 이미 판정 끝(재고에서 뺌, 경보 아님): c1cafe1011, cafeqna1018, deposit1004, djdiv4_0928, eitclate1009, nhisrent1005, offiyield0926, pibu1002, usmkt0930, uswk0928, ymf2wait1019, youthsave1010",
+   "cafe 묶음 2개는 상한·시각 대기 — 때가 되면 올린다(재고로 셈)"
+  ],
+  "quiet": false,
+  "capped": {},
+  "islate": {
+   "cafe": true
+  },
+  "capblocked": {
+   "blog": 0,
+   "cafe": 2
+  },
+  "held": {
+   "blog": 6,
+   "cafe": 12
+  },
+  "login_age_h": 235.1,
+  "power": {
+   "on_battery": false,
+   "pct": 100
+  },
+  "site": "ok",
+  "안 나간 시리즈": [
+   "B6 미국증시 한 장",
+   "B8 부동산 한 장",
+   "B12/C8 배당 히트맵",
+   "C7 내부자 매수",
+   "C4 주간 캘린더",
+   "C6 유튜버 숫자 검증",
+   "B13 종목 발굴",
+   "B11 손품"
+  ],
+  "sec": 8
  }
 ]

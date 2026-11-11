@@ -1,0 +1,11 @@
+200 53996 https://www.law.go.kr/LSW/flDownload.do?gubun=&flSeq=169566181&bylClsCd=110201
+200 145358 https://www.law.go.kr/LSW/lsInfoP.do?lsNm=%EA%B5%AD%EB%AF%BC%EA%B1%B4%EA%B0%95%EB%B3%B4%ED%97%98%EB%B2%95+%EC%8B%9C%ED%96%89%EB%A0%B9
+200 145682 https://www.law.go.kr/LSW/lsInfoP.do?lsNm=%EA%B5%AD%EB%AF%BC%EA%B1%B4%EA%B0%95%EB%B3%B4%ED%97%98%EB%B2%95+%EC%8B%9C%ED%96%89%EA%B7%9C%EC%B9%99
+200 12302 https://www.nhis.or.kr/static/alim/paper/oldpaper/202309/sub/section3_3.html
+200 275652 https://www.nhis.or.kr/nhis/together/wbhaea01000m01.do?mode=view&articleNo=11008009
+200 121024 https://www.mohw.go.kr/board.es?act=view&bid=0027&list_no=1487817&mid=a10503000000
+200 141321 https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&list_no=1492396&act=view
+200 114110 https://mohw.go.kr/board.es?act=view&bid=0027&list_no=1488572&mid=a10503000000
+200 165166 https://www.korea.kr/policy/civilView.do?newsId=156780681
+200 142137 https://economist.co.kr/article/view/ecn202611050022
+200 46607 https://biz.sbs.co.kr/amp/article/20000344153

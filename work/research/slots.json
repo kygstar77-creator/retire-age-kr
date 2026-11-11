@@ -3897,10 +3897,10 @@
   {
    "at": "2026-11-12 12:40",
    "kind": "cafe",
-   "item": "P-3 짝 글(건보료 피부양자, 전체 표·계산 근거) — yt_pair: vgFx2od9_sg",
+   "item": "p3pair1111",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-11 21:4x: 36시간 칸"
+   "gates_ok": "2026-11-11 23:27",
+   "note": "P-3 짝 글(건보료 피부양자, 전체 표·계산 근거) — yt_pair: vgFx2od9_sg · firemap-meeting 2026-11-11 21:4x: 36시간 칸 · write 23:27: 관문 통과(bench 6·이해 3차 9명·aitell 4.9·selfcheck 사실 0·editgate auto·올리기 전 확인 11/11) · 영상 11:30 공개 뒤 발행 · 발행 회차는 올리기 전 확인(1일 안) 다시"
   },
   {
    "at": "2026-11-12 16:10",

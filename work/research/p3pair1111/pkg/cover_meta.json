@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-11 23:17",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "건강보험 피부양자",
+ "num": "월 167만원부터 보험료",
+ "sub": "국민연금만 받을 때 · 한 달 약 6만 8천원",
+ "label": "2026.11.11 기준",
+ "src": "국민건강보험법 시행령·시행규칙",
+ "icon": "shield-plus",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 132,
+ "num_px": 101,
+ "sub_px": 58,
+ "board": [
+  "acqseoul1111",
+  "k1pair1110",
+  "stkgift1109",
+  "ltdeduct1110",
+  "stkded1109",
+  "retpay1109",
+  "jsfraud1109",
+  "ltccost1108",
+  "deprate1109",
+  "hdetf1109"
+ ]
+}

@@ -3671,3 +3671,5 @@
 2026-11-11 22:23 · firemap-video-producer · ytlong gate C9에 firemap.kr+utm_source=youtube 줄 필수(H-4부터) · 지시 ③, 템플릿에 사이트 칸이 없어 또 빠지는 것 막음
 2026-11-11 22:23 · firemap-video-producer · 쇼츠 k1s_dep 11/12 19:20 예약(jGtx9f6SZKA) · 회의 지시, 관문 통과 비축분
 2026-11-11 22:41 · firemap-write-b · 22:40 칸에 비축 acqseoul1111 발행(#408) · j1s_30yr 쇼츠가 E-18로 안 올라가 짝 글을 못 씀, 오늘 부동산 0칸이라 부동산 비축을 씀
+2026-11-11 22:43 · firemap-write-b · 22:40 칸 중복 기동, 발행 안 함 · #408 이미 발행
+2026-11-11 23:12 · firemap-editor · H-4 4장 단지 이름 줄에 '아파트' 한 단어 더('쌍마한신 아파트, 도덕파크타운…', 1줄·숫자 0·*.pre1111pd)·재서명 · rank_ends 판 글자 통과 · screen_text는 자막이 바뀌어 stamp 보류→PD 재추출 뒤 · 받아쓰기가 '쌍마한신'을 쌍문·상만으로 네 번 오독

@@ -3783,10 +3783,10 @@
   {
    "at": "2026-11-11 22:40",
    "kind": "cafe",
-   "item": "쇼츠 짝 글 — j1s_30yr이 던진 질문 하나(쇼츠 링크+원본 J-1 링크+표)",
+   "item": "acqseoul1111 (비축, 부동산·취득세) — 아파트 취득세 3%, 서울 몇 개 구가 해당될까?",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · yt_pair: j1s_30yr(19:20 공개 뒤) · 쇼츠 예약 안 되면 write-b 비축 글"
+   "gates_ok": "2026-11-11 08:07",
+   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · yt_pair: j1s_30yr(19:20 공개 뒤) · 쇼츠 예약 안 되면 write-b 비축 글 | write-b 21:06: j1s_30yr 쇼츠 미업로드(E-18 쉼) → 짝 글 대신 write-b 비축 acqseoul1111(오늘 부동산 0칸) · slot.txt 2026-11-11 22 · 올리기 전 확인 11/11 같은 날"
   },
   {
    "at": "2026-11-12 07:40",

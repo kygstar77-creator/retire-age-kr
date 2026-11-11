@@ -454,3 +454,6 @@
 - 2026-11-10 report: 부족분 보충(1b) 전에 같은 묶음을 다른 회차가 올리는 중인지 프로세스부터 본다 — 16:5x 내가 stkded1109를 올리려 할 때 write-b 16:40 회차가 이미 naverpost cafe를 돌리고 있었다(jitter 0~17분이라 내 timeout 400초에 잘려 겹치진 않음, #404 한 번만). Get-CimInstance Win32_Process로 naverpost.py 확인 뒤 올린다.
 - 2026-11-10 report: git 'corrupt loose object'는 히스토리를 고치기 전에 내용부터 되살려 본다 — 대개 앞 커밋 판 + 그 회차가 덧붙인 몇 줄이다. 줄 끝을 LF로 맞춰 sha1('blob N\0'+내용)이 같으면 손상 파일을 치우고 git hash-object -w(718bd13, decisions/log.md, 6시간 푸시 막힘을 1분에 풂).
 - 2026-11-11 editor: 해시 관문이 c??.txt만 이어 붙여 c025.txt(세 자리 조각, 10편 넘게 씀)를 빼고 있었다 — 서명 뒤 c025를 고쳐도 check '일치'. 관문 도구는 order.txt 조각 목록과 읽는 파일이 같은지 한 번 대 본다. 고칠 때는 옛 서명을 깨지 않게 sha_of로 방식 구분(editgate V2).
+
+- 2026-11-11 09:04 · firemap-video-producer · **살아 있는 렌더를 '죽었다'고 보고 같은 편을 또 렌더함** — 06:17 회차가 07:05에 건 렌더(run_in_background)의 로그가 앞 단계(겹침 검사) 동안 0바이트라, 운영실장 07:12 회차가 .owner 2시간 규칙을 넘어 07:14 렌더를 겹쳐 걸었다(07:24 실패). 두 렌더가 같은 out/p3.mp4·overlap.json을 쓴다. 막는 법: 죽었는지는 로그 크기가 아니라 tasklist의 chrome-headless-shell·node(remotion) 프로세스로 본다. .owner에 2시간 안 줄이 있으면 손대지 않는다.
+- 2026-11-11 09:04 · firemap-video-producer · Remotion 'No frame found at position N'은 B프레임이 든 Pexels mp4에서 우연히 나온다(11/10 bench_backs, 11/11 mailbox_hand·queue_ticket). 렌더 전에 ep stock 전부 `ffmpeg -an -r 30 -c:v libx264 -bf 0 -g 30 -crf 18`로 다시 인코딩한다(원본 .orig 남김). 오프스레드 캐시는 1GB로.

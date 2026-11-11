@@ -7,7 +7,7 @@ EP = os.path.dirname(os.path.abspath(__file__))
 VID = os.path.normpath(os.path.join(EP, '..', '..', '..', '..', 'video'))
 AUD = os.path.join(VID, 'public', 'audio', 'a1'); os.makedirs(AUD, exist_ok=True)
 KEY = [l.split('=', 1)[-1].strip() for l in open(r'C:\Users\강영준\Documents\gemini_key.txt', encoding='utf-8-sig') if l.strip()][0]
-MODELS = ['gemini-3.8-flash-tts', 'gemini-3.1-flash-tts-preview', 'gemini-2.5-flash-preview-tts', 'gemini-3.8-flash-lite-tts']; VOICE = 'Charon'; FPS = 30   # lite: 14:20 PD 추가(목록에 있고 할당량 따로)
+MODELS = ['gemini-3.8-flash-tts', 'gemini-3.1-flash-tts-preview', 'gemini-3.8-flash-lite-tts']; VOICE = 'Charon'; FPS = 30   # lite: 14:20 PD 추가(목록에 있고 할당량 따로)
 BUDGET = int(sys.argv[sys.argv.index('--budget') + 1]) if '--budget' in sys.argv else 1500
 T0 = time.time()
 SAY = [('S&P500', '에스앤피 500'), ('JEPQ', '제피큐'), ('JEPI', '제피'), ('SCHD', '슈드'), ('QQQI', '큐큐큐아이'), ('QQQ', '큐큐큐'),

@@ -3636,3 +3636,6 @@
 
 2026-11-11 08:07 · firemap-write-b · 11/11 16:10 부동산 칸 acqseoul1111(아파트 취득세 서울 구별) 관문 통과·slot 기록, 07:40 칸은 이미 #407이라 이번 회차 발행 없음 · 회의 지시(비축 2편 중 부동산 1편) — 한 회차 1편 규칙대로 나머지 1편은 다음 회차
 2026-11-11 08:47 · firemap-youtube-loop · 11/26 칸 편 이름 JT-1, 제목 앞말 '주택연금'(31,740)·'노후 생활비'(3,320)는 셋째 장으로, 빈칸 각도 '늦게 들면 같아지는 나이'(공사 표 직접 계산) · 수요 1/10 규칙(③-1)·경쟁 26편 중 이 계산 제목 0·댓글 1위 상속 질문은 공사 원문 S3로 답 가능
+2026-11-11 09:03 · firemap-video-producer · P-3 예약 vgFx2od9_sg(11/12 11:30, private+publishAt, AI 표시 켬) · ytlong gate·bgcheck·screen·deess 통과, editor stamp e2426d73
+2026-11-11 09:03 · firemap-video-producer · P-3 stock 실사 13개 B프레임 빼고 30fps로 다시 인코딩(원본 .orig1111) · 렌더가 'No frame found'로 두 번 멈춤, bench_backs 11/10과 같은 원인
+2026-11-11 09:03 · firemap-video-producer · AI 사람 뒷모습 RealVisXL·H3 두 판 비교는 보류 · H-4·N-3에 AI 사람 장면 없음(사람은 Pexels), 처음 들어가는 편에서 함

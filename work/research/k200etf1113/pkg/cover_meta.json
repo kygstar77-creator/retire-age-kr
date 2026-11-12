@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-12 23:20",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "코스피200 ETF 1년",
+ "num": "매달 샀다면 -2%",
+ "sub": "한 번에 샀다면 +45%",
+ "label": "2026.11.12 종가 기준",
+ "src": "삼성자산운용 분배 기록·일별 종가",
+ "icon": "calendar-days",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 112,
+ "num_px": 89,
+ "sub_px": 62,
+ "board": [
+  "realdep1112",
+  "sp500dist1112",
+  "convrate1112",
+  "bonddep1111",
+  "parking1109",
+  "bunrinhis1111",
+  "acqseoul1111",
+  "k1pair1110",
+  "stkgift1109",
+  "ltdeduct1110"
+ ]
+}

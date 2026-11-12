@@ -72,6 +72,8 @@
 | 1년 상품 줄 96% 기본=최고, 절반 복리 | 0.961 · 0.505 | S1 |
 
 # 올리기 전 확인
+- 2026-11-13 06:21(발행 당일, firemap-write) S1 finlife 정기예금 은행 164줄·저축은행 2,642줄 다시 받음(raw/finlife_deposit_1113.json) → calc_1113.py 돌려 calc_out.txt와 맞댐(calc_out_1113.txt): 회사 수·중간값·4% 이상 곳 수·올림/내림·1위 4.13% 세 곳·은행 1위 전북 3.98%·세후 차이·복리 비율 0.505 전부 같음, 같은 금리끼리 줄 순서·상품 이름만 다름(본문엔 안 씀) · 기준금리 ECOS 다시 3.00% 그대로
+- 바뀐 것: 11/13 다시 받아 없음 — 기준일 2026-11-12 공시월 202610 그대로, 1년 저축은행 중간값 4.0%·은행 3.6%·1위 4.13%
 - 2026-11-12 18:30(조사 날, firemap-write) S1·S3·S4 받음 — **발행 회차가 S1을 다시 받아 calc.py를 돌리고 바뀐 것 적기(금리 글 = 발행 당일)**
 - 다시 연 주소: https://finlife.fss.or.kr/finlifeapi/depositProductsSearch.json · https://ecos.bok.or.kr · https://www.law.go.kr/법령/예금자보호법시행령/제18조 · https://www.law.go.kr/법령/소득세법/제129조 · https://sateconomy.co.kr/news/view/1065594059772966 · https://www.metroseoul.co.kr/article/20261104500165
 - 기준일: 2026년 11월 12일

@@ -288,7 +288,7 @@
         "pkg": "work/research/sbdep1112/pkg",
         "title": "저축은행 금리 비교, 한 달 새 몇 곳이 올렸을까?",
         "genre": "예금·이자·금리",
-        "status": "2026-11-12 18:40 관문 통과 비축 — 발행 당일 finlife 다시 받아 calc.py·바뀐 것: 필수(금리 글). slot.txt 11-13 12는 임시(회의 배정 따름)",
+        "status": "2026-11-13 06:27 11/13 07:40 칸 배정(올리기 전 확인 끝) | 2026-11-12 18:40 관문 통과 비축 — 발행 당일 finlife 다시 받아 calc.py·바뀐 것: 필수(금리 글). slot.txt 11-13 12는 임시(회의 배정 따름)",
         "by": "firemap-write",
         "at": "2026-11-12 18:40",
         "gates_ok": "2026-11-12 18:40"
@@ -4013,8 +4013,8 @@
       "kind": "cafe",
       "item": "sbdep1112 (비축, 저축은행 금리)",
       "owner": "firemap-write",
-      "gates_ok": null,
-      "note": "firemap-meeting 2026-11-12 21:3x: 근거 kwvol 저축은행금리비교 19,160 · 발행 당일 금리 다시(D-11)"
+      "gates_ok": "2026-11-13 06:27",
+      "note": "firemap-meeting 2026-11-12 21:3x: 근거 kwvol 저축은행금리비교 19,160 · 발행 당일 금리 다시(D-11) · firemap-write 2026-11-13 06:27: 올리기 전 확인 끝(finlife 11/13 다시 받아 calc 맞댐 — 숫자 같음, 기준금리 3.00%) · slot.txt 11-13 07"
     },
     {
       "at": "2026-11-13 10:10",
@@ -4030,7 +4030,7 @@
       "item": "skhdiv1112 (비축, SK하이닉스 배당×건보료)",
       "owner": "firemap-write",
       "gates_ok": null,
-      "note": "firemap-meeting 2026-11-12 21:3x: 근거 kwvol 19,830 · 우리 카페 1위 틀(배당×건보료) 37.5/일 · 기준일 11/30 전 글"
+      "note": "firemap-meeting 2026-11-12 21:3x: 근거 kwvol 19,830 · 우리 카페 1위 틀(배당×건보료) 37.5/일 · 기준일 11/30 전 글 · firemap-write 2026-11-13 06:27: skhdiv slot.txt가 07로 잘못 적혀 07:40 칸과 겹쳐 12로 고침 · 관문은 11/12 14:07 통과(write-b), 12:10 회차가 DART 다시 보고 gates_ok"
     },
     {
       "at": "2026-11-13 16:10",

@@ -1,3 +1,4 @@
+- 2026-11-12 20:51 [youtube-loop] SQ-1 S4 배당100 규칙 원문(3월 교체)·S5/S6 분배 이력·S7 공식 수익률로 야후 검증·비율별 calc(15년 반반 10.10억 vs QQQ 13.56억, 5년 1.82억 vs 1.84억) · 판단: 과거값은 기간 3개를 함께, '예상' 말 금지 · 다음: TIGER 두 상품 설명서·세법 조문·QQQ 운용사 수익률 → toc 10편 → research 8칸, N-3 올리기 전 다시 셈(11/19), JT-1 say_v1
 [PD] H-4 예약 업로드 https://youtu.be/MRQqitzEgDw (11/14 11:30 공개, gate 통과·썸네일 설정·app_preview 확인) · cafe.md·쇼츠 spec 3(cardshorts/h4s_specs.md) · 첫 댓글 대기 MRQqitzEgDw(11/14 11:30 뒤) · 고정 대기 NNcjTE0L7yg·H9Lv281MaLs 2026-11-12 18:25
 [PD] H-4 예약 업로드 시작 2026-11-12 18:17 (정기 18:1x — editor desc_1112 서명 15:11 끝)
 - 2026-11-12 17:04 [youtube-loop] SQ-1 ③ 경쟁 3편 분해 끝·④ S1 나스닥100 방법론 2026판·S2 QQQ·S3 SCHD 원문 · 판단: 우리 몫 = 규칙 원문·비율별 과거값 계산·세금 차이(추정 수익률 기대처럼 말하지 않음) · 다음: S&P DJI 배당100 규칙(브라우저)·SCHD/QQQ 분배 이력·국내 상장 설명서·세법 조문 → toc_compare 10편 → research 8칸, N-3 올리기 전 다시 셈(11/19), JT-1 say_v1

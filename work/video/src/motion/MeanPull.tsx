@@ -18,6 +18,7 @@ export type MeanPullProps = {
   top: {label: string; text: string; at: number; pull: number};   // 추가 내려앉는 때(at) · 줄이 팽팽해지는 때(pull)
   gap: {text: string; at: number};
   rope?: boolean;                                        // 기본 true(옛 미리보기 그대로)
+  cut?: {v: number; label: string; text: string; at: number};   // 11/12: '열 명 중 한 명꼴까지 빼고 다시 셈하면' — 점선 깃발이 평균 자리에서 가운데로 미끄러져 회색 깃발 아래에 선다(진짜 평균 깃발은 그대로)
   unit: string;
   beats: number[];
 };
@@ -43,7 +44,9 @@ export const MeanPull: React.FC<MeanPullProps> = (p) => {
   const rope = g(f, tA + 10, 22);                           // 줄이 추에서 깃발로 그어짐
   const taut = g(f, pA, 20, Easing.inOut(Easing.quad));     // 팽팽해짐
   const shake = f > pA ? Math.sin((f - pA) / 2.2) * Math.exp(-(f - pA) / 18) * 6 : 0;
-  const gapO = g(f, gA, 12);
+  const gapIn = g(f, gA, 12);
+  const cutDim = p.cut ? 1 - 0.75 * g(f, (p.cut ? at(p.cut.at) : 1e9) + 8, 14) : 1;   // 11/12 심사: '같아집니다'에서 '1천만원 차이'가 그대로 밝으면 말과 엇갈림 → 흐리게
+  const gapO = gapIn;
   // 답이 열릴 땐 줄이 느슨해지고 깃발이 바로 선다 — 차이 전체가 추(1%) 탓으로 읽히지 않게(10/29 심사: 1%를 빼도 평균은 중간값보다 한참 위)
   const off = g(f, gA - 6, 16);
   const lean = (taut * 13 + shake) * (1 - off);             // 평균 깃발 오른쪽(앞)으로 기욺(도)
@@ -65,6 +68,11 @@ export const MeanPull: React.FC<MeanPullProps> = (p) => {
   const sag = (1 - taut + off * 0.6) * 120;                             // 처진 줄 → 팽팽
   const ropePath = `M ${wx} ${wy} Q ${(wx + hx) / 2} ${Math.max(wy, hookY) + sag} ${hx} ${hy}`;
   const AY = ZY - POLE - 40;
+  // 점선 깃발(cut): 평균 자리 → cut.v 로 미끄러짐. 장대는 짧게(0.55) — 천이 회색 깃발 천 바로 아래에 와서 '가운데쯤 / 빼면'이 위아래로 맞대진다
+  const cA = p.cut ? at(p.cut.at) : 1e9;
+  const cIn = g(f, cA, 10), cMove = sp(cA + 8, 14);
+  const cx = p.cut ? mx + (X(p.cut.v) - mx) * cMove : 0;
+  const CP = Math.round(POLE * 0.55);
   const sideM: 1 | -1 = 1, sideD: 1 | -1 = -1;
   return (
     <div style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080, transform: `scale(${push})`, transformOrigin: '50% 60%'}}>
@@ -81,6 +89,14 @@ export const MeanPull: React.FC<MeanPullProps> = (p) => {
       {/* 끊김 표시 — 자 너머는 멀다 */}
       <div style={{position: 'absolute', left: X1 + 40, top: ZY - 26, opacity: g(f, tA - 6, 10), ...F, fontWeight: 800, fontSize: 52, color: T.ink3, letterSpacing: -6}}>/ /</div>
       <div style={{position: 'absolute', left: X1 + 120, top: ZY - 3, width: (TX - 60 - X1 - 120) * g(f, tA - 4, 14), height: 6, background: T.ink3, borderRadius: 3, opacity: 0.6}} />
+      {/* 점선 깃발(cut) — 회색 깃발보다 먼저 그려 회색 장대가 위에 온다 */}
+      {p.cut && <div style={{position: 'absolute', left: cx, top: ZY - CP, width: 0, height: CP, opacity: cIn}}>
+        <div style={{position: 'absolute', left: -2, top: 0, width: 0, height: CP, borderLeft: `5px dashed ${T.ink}`}} />
+        <div style={{position: 'absolute', right: 3, top: 2, padding: '10px 18px 8px 0', color: T.ink, whiteSpace: 'nowrap', textAlign: 'right'}}>
+          <div style={{...F, fontWeight: 700, fontSize: 28, lineHeight: 1.1}}>{p.cut.label}</div>
+          <div style={{...F, fontWeight: 800, fontSize: 56, lineHeight: 1.05, letterSpacing: -1}}>{p.cut.text}</div>
+        </div>
+      </div>}
       {/* 가운데 깃발(그대로) */}
       <Flag x={dx} o={dIn} color={T.ink2} label={p.mid.label} text={p.mid.text} tilt={0} side={sideD} />
       <div style={{position: 'absolute', left: dx - 260, top: ZY - POLE - 64, width: 250, textAlign: 'right', opacity: g(f, pA + 14, 12) * (1 - off), ...F, fontWeight: 700, fontSize: 30, color: T.ink2}}>{p.mid.stay}</div>
@@ -99,11 +115,11 @@ export const MeanPull: React.FC<MeanPullProps> = (p) => {
       </div>
       <div style={{position: 'absolute', left: TX - 150, top: ZY + 26, width: 350, textAlign: 'center', opacity: g(f, tA + 12, 12), ...F, fontWeight: 800, fontSize: 40, color: T.ink, whiteSpace: 'nowrap'}}>{p.top.text}</div>
       {/* 두 깃발 사이 — 답 */}
-      <div style={{position: 'absolute', left: dx, top: ZY + 112, width: (mx - dx) * gapO, height: 0, borderTop: `5px solid ${T.accent}`}} />
-      <div style={{position: 'absolute', left: dx - 3, top: ZY + 100, width: 5, height: 26, background: T.accent, opacity: gapO}} />
-      <div style={{position: 'absolute', left: mx - 2, top: ZY + 100, width: 5, height: 26, background: T.accent, opacity: g(f, gA + 10, 6)}} />
-      <div style={{position: 'absolute', left: (dx + mx) / 2 - 400, top: ZY + 132 + (1 - gapO) * 16, width: 800, textAlign: 'center', opacity: gapO, ...F, fontWeight: 800, fontSize: 92, color: T.accent, letterSpacing: -2, whiteSpace: 'nowrap'}}>{p.gap.text}</div>
-      <HandUnderline x={(dx + mx) / 2 - 170} y={ZY + 248} w={340} p={g(f, gA + 12, 18)} seed={3} />
+      <div style={{position: 'absolute', left: dx, top: ZY + 112, width: (mx - dx) * gapO, height: 0, borderTop: `5px solid ${T.accent}`, opacity: cutDim}} />
+      <div style={{position: 'absolute', left: dx - 3, top: ZY + 100, width: 5, height: 26, background: T.accent, opacity: gapO * cutDim}} />
+      <div style={{position: 'absolute', left: mx - 2, top: ZY + 100, width: 5, height: 26, background: T.accent, opacity: g(f, gA + 10, 6) * cutDim}} />
+      <div style={{position: 'absolute', left: (dx + mx) / 2 - 400, top: ZY + 132 + (1 - gapO) * 16, width: 800, textAlign: 'center', opacity: gapO * cutDim, ...F, fontWeight: 800, fontSize: 92, color: T.accent, letterSpacing: -2, whiteSpace: 'nowrap'}}>{p.gap.text}</div>
+      <div style={{opacity: cutDim}}><HandUnderline x={(dx + mx) / 2 - 170} y={ZY + 248} w={340} p={g(f, gA + 12, 18)} seed={3} /></div>
     </div>
   );
 };

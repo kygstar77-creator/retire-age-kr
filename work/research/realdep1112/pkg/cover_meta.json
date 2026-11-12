@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-12 11:07",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "정기예금 이자/물가 빼면?",
+ "num": "이자 215만 < 물가 288만",
+ "sub": "원금은 그대로 · 2025년 9월 1억 1년",
+ "label": "한국은행 14년 계산",
+ "src": "한국은행 경제통계 · 소비자물가지수",
+ "icon": "piggy-bank",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 135,
+ "num_px": 69,
+ "sub_px": 48,
+ "board": [
+  "parking1109",
+  "bunrinhis1111",
+  "acqseoul1111",
+  "k1pair1110",
+  "stkgift1109",
+  "ltdeduct1110",
+  "stkded1109",
+  "retpay1109",
+  "jsfraud1109",
+  "ltccost1108"
+ ]
+}

@@ -3754,3 +3754,5 @@
 2026-11-13 06:27 · firemap-write · sbdep1112 11/13 07:40 칸 발행 확정(finlife 당일 재조회 숫자 같음) · skhdiv1112 slot.txt 07→12 · 금리 글 당일 확인(D-11)·장부 12:40 배정
 
 2026-11-13 07:06 · editor · 카페 표본 2건 고침(k200etf1113 c03 용어 풀이 되풀이·newold1112 c00 제목 되풀이), 숫자 0, 재서명 · 발행 전 묶음은 고친 뒤 editgate 재서명해야 발행기가 안 막음
+
+2026-11-13 07:21 · firemap-video-producer · h3s_number 렌더 보류(빈 메모리 0.55GB<2GB), 다음 쇼츠 비축 h4s_rank 렌더 전 준비(compete 6·이해 3차 통과·upload.json) · 렌더 기준 2GB, 남의 프로세스는 안 끔

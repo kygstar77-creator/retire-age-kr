@@ -1,0 +1,30 @@
+{
+ "name": "h4s_rank",
+ "ep": "H-4",
+ "from_long": "MRQqitzEgDw",
+ "mp4": "work/video/out/h4s_rank_c1_ds.mp4",
+ "publishAt": null,
+ "publish_plan": "비축(회의 지시 — 쇼츠 비축 1편 더, 공개 롱폼 아파트 축) · 원본 H-4 공개 11/14 11:30 뒤 · h3s_number(부동산)와 하루 이상 띄워 11/17 이후 칸 · 렌더 안 됨(빈 메모리 2GB 미만, 11/13 07시) · 확정 판 = understand.md 2차 판(say 2·4·11·13·15~21, 49.6초)",
+ "title": "광명 84㎡, 서울 25개 구와 줄 세우면 몇 번째? #shorts",
+ "description": "전체 계산: https://youtu.be/MRQqitzEgDw (광명 아파트 실거래가)\n\n2026년 7~9월 계약 84㎡대(전용 80~85㎡) 실거래 가운데 값으로 광명을 서울 25개 구와 한 줄로 세우면 26곳 중 18번째(9.70억)였어요. 광명보다 낮은 서울 구는 8곳이고, 붙어 있는 구로·금천보다는 1억·2억 넘게 높았어요.\n가운데 값은 거래를 값 순서로 줄 세웠을 때 한가운데 오는 값이에요. 석 달 동안 광명 84㎡대는 171건 팔렸어요. 지나간 거래 값이고, 사거나 팔라는 권유가 아닙니다.\n\n출처: 국토교통부 아파트 매매 실거래가(계약 2026.07~09, 2026-10-16 받음·11-12 다시 받아 확인) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — 렌더 뒤 credits로 채움\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #광명아파트 #광명아파트실거래가",
+ "tags": "광명 아파트,광명 아파트 실거래가,광명 84,광명 집값,철산동 아파트",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": null,
+ "say_lines": [
+  2,
+  4,
+  11,
+  13,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21
+ ]
+}

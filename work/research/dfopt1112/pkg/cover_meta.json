@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-12 21:30",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "디폴트옵션 수익률/내 돈은 어느 쪽?",
+ "num": "82%가 원리금보장",
+ "sub": "332개 상품 9월 말 공시 직접 셈",
+ "label": "고용노동부 비교공시",
+ "src": "고용노동부 사전지정운용방법 상품별 비교공시",
+ "icon": "piggy-bank",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 115,
+ "num_px": 92,
+ "sub_px": 53,
+ "board": [
+  "sp500dist1112",
+  "convrate1112",
+  "bonddep1111",
+  "parking1109",
+  "bunrinhis1111",
+  "acqseoul1111",
+  "k1pair1110",
+  "stkgift1109",
+  "ltdeduct1110",
+  "stkded1109"
+ ]
+}

@@ -7,3 +7,6 @@
 2026-11-12 06:17 | firemap-video-producer 정기 06:1x | H-4 끝 정지 장면 길이 확인(렌더는 editor stamp 뒤)
 2026-11-12 06:19 | firemap-video-producer 정기 06:1x | 끝 — B-50 END_PAD 적용(514.4초), 렌더는 editor stamp 뒤
 2026-11-12 07:15 | firemap-video-producer 운영실장 07:12 | H-4 설명란 출처 줄·렌더 시작(run_1112.sh, 렌더 도는 중 — 다른 회차는 out/h4* 건드리지 말 것) | 끝(렌더는 백그라운드)
+2026-11-12 10:17 | firemap-video-producer 정기 10:1x | H-4 렌더 다시(07:43 31907490 No frame found로 죽음)
+2026-11-12 11:51 | firemap-video-producer 정기 10:1x | 렌더 도는 중(render_parts_1112b.sh 1천 토막·토막마다 3번 다시, 로그 ep/H-4/check/run_1112.log) — 다른 회차는 out/h4* 건드리지 말 것
+2026-11-12 13:05 | firemap-video-producer 정기 10:1x | 끝 — 렌더본 out/h4_ds.mp4(12:58) 관문 통과, 손 뗌

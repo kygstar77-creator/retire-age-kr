@@ -43,6 +43,7 @@ TPL = '\n'.join(FIRST2) + '''
 계산 가정: 84㎡대 = 전용 80~85㎡ · 값은 거래를 줄 세운 가운데 값 · 분양권 거래는 매매 실거래에 들어 있지 않음 · 실제 대출 한도는 소득·다른 대출에 따라 다르니 은행에서, 허가·실거주 의무 세부 조건은 광명시청에서 확인하세요.
 
 내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 일부 장면은 AI로 만든 그림(RealVisXL V5.0 — 오래된 아파트 계단, 사람·글자 없음)입니다. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 시세 설명이고, 특정 단지를 사거나 팔라는 권유는 아니에요.
+썸네일 사진: Kimhs5400, CC BY 4.0, https://commons.wikimedia.org/wiki/File:Apartmentgwangmyeong.jpg (자르기·어둡게·글자 추가)
 ''' + '\n'.join(credits)
 cafe = old.get('cafe_url') or 'https://cafe.naver.com/firemap'
 m = dict(old)

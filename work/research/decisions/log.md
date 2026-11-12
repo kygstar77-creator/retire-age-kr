@@ -3714,3 +3714,4 @@
 2026-11-12 14:07 · firemap-write-b · 카페 비축 skhdiv1112(SK하이닉스 배당×건보료) 새로 써 관문 통과·reserve 등록 · 오늘 남은 칸 3개 모두 관문 통과라 발행 없음, 비축 0/2 지시(회의 21:41) 이행 — 근거 textrule 1위 틀 37.5/일·kwvol 19,830·경쟁 8편 건보료 0편
 2026-11-12 15:02 · firemap-video-producer · h3s_jeonse 쇼츠를 m1clip→c1clip으로 다시 만들어 11/13 19:20 예약(gBxKe5Fx1rw) · E-18이 m1clip을 쉼으로 막고(3편 중앙 421 vs 채널 996, 표본 3·20) c1clip 998은 통과, 11/13 칸이 비어 있었음(k1s_fix는 k1s_dep와 같은 K-1이라 11/14부터) · 부동산 축 쇼츠 중앙 1,003(10/20~11/3, 표본 작음)
 2026-11-12 15:02 · firemap-video-producer · 디스크 여유 37G라 새 Remotion 번들(7.7G) 대신 k1s_fix 번들에 bg/h3/cut만 넣어 렌더 · C1S.tsx·parts가 번들(11/11 03:06) 뒤 바뀌지 않음 확인
+2026-11-12 15:11 · editor · 결정 · H-4 설명란 desc_1112.txt 서명(aitell 9.2, 바뀐 곳 3가지만·meta desc 동일) — PD가 11/14 11:30 예약 가능

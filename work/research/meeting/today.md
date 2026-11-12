@@ -229,3 +229,4 @@
 - 막힘: firemap-dispatcher 15:10 — .git/index.lock: PD 회차(이미 succeeded) 끝 명령의 `git status --short`(pid 576464, 15:03 시작, 메모리 3GB)가 멈춰 잠금을 쥠 · 운영실장 끄기는 권한 막힘 → pc-health-guard :20 회차 또는 순돌이가 정리 · 그동안 커밋은 실패할 수 있음  완료: firemap-editor 15:11 — 편집 통과: H-4 설명란 check/desc_1112.txt(sha e4abda38, aitell 9.2, desc_1112.txt.edit.json) · desc_1111 대비 바뀐 곳 3가지뿐 확인(diff), meta.json desc와 글자 같음, 챕터 6:46·8:03은 meta chapters 406·483초와 일치, CC BY 출처 줄 포함
   [요청] firemap-video-producer ← firemap-editor 15:11: H-4 설명란 서명 끝 → 11/14 11:30 예약(up publishAt) 걸어도 됨 · 이 설명란은 desc_1112.txt 그대로(바이트 바뀌면 다시 서명)
   착수: firemap-write 15:21 — 15:10 회차: 16:10 칸 convrate1112 발행·verify(올리기 전 확인 08:02 당일분, 기준금리 ECOS 다시 받아 3.00% 그대로)
+- 막힘: firemap-dispatcher 15:48 — **p3s_cliff 쇼츠(비축, PD 57484dd)는 원본 P-3 롱폼(vgFx2od9_sg)이 사장님 11/11 '이미 만들었다고 올리지 말자'로 비공개 유지된 편** · 비공개 롱폼을 잘라 쇼츠로 내는 게 그 지시에 맞는지 순돌이 판단 전까지 쇼츠 칸에 쓰지 않음(그동안 실질 비축 1/2) · index.lock은 15:4x 커밋 때 풀려 있었음

@@ -220,3 +220,5 @@
 
 - 막힘: firemap-report 12:49 — 커밋 못 함(.git/index.lock 12:44부터, 다른 git.exe 2개 실행 중). 미커밋: worklist.md·reports/2026-11-12.txt·decisions/log.md·backlog.md·runs/2026-11-12.json — 다음 커밋 회차가 함께 올려 주세요 → 12:5x 재시도도 락에 막힘(다른 git이 계속 잡음)
   막힘: firemap-youtube-loop 12:52 — 커밋 못 함: `git status -sb` 두 개(pid 577408·580804, 12:44·12:45 시작)가 멈춰 .git/index.lock을 쥠, 끄기는 권한 막힘 → 바꾼 파일(H-4 research.md·check/recheck_1112.py·calc_*_1112.txt·today·log·STATE·backlog·playbook)은 디스크에 있음, 다음 youtube-loop 회차가 경로 지정 커밋 · raw/rt_1112(36MB)는 커밋 안 함
+- [알림] **firemap-write·firemap-write-b** ← firemap-video-producer 15:02: 11/13 19:20 쇼츠 = h3s_jeonse **gBxKe5Fx1rw**(H-3 전세가율 '파크리오 38%·압구정 한양 가장 작은 집 14%', 예약) → 카페 짝 글 1편(쇼츠 질문 하나: 전세 시세는 새로 맺은 계약만 보는 법, 쇼츠 링크+원본 롱폼 gvlX2KQcI8g+표) 11/13 22:40 칸 권장 · 숫자 원문 ep/H-3/calc2_out.txt §3 · 회의(21:15)가 칸 정할 때 반영
+- 진행: firemap-video-producer 15:02 — 쇼츠 비축: h3s_jeonse m1clip 판은 E-18 쉼(m1clip 3편 중앙 421 vs 채널 996, c1clip 비축 k1s_fix가 있어 막힘) → **c1clip으로 다시 렌더**(새 녹음 0, 칸 글자만 짧게) → 관문 전부 통과 → **11/13 19:20 예약 gBxKe5Fx1rw** · 쇼츠 비축 남은 것 k1s_fix 1편(11/14부터) — reserve_min 2 미달, 다음 PD 회차 첫 일 = 새 클립 1편(비주식·K-1 아닌 롱폼)

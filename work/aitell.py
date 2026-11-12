@@ -680,6 +680,8 @@ _LIMITW = re.compile(r'기록상|이\s?기록에서는|자료에\s?없|자료에
 _IMAGINE = re.compile(r'상상해\s?(?:보시죠|보세요|보겠습니다|볼게요|봅시다)')  # '떠올려 보세요'는 회상 안내라 뺌(S-1 98행 오탐)
 _SHARE = re.compile(r'(?:먼저|꼭|주변에|가족에게|부모님께)?\s?(?:보내\s?(?:주세요|드리세요)|공유해\s?(?:주세요|보세요|드리세요))')
 _A45 = re.compile(r'부터\s?정하겠습니다|부터\s?정할게요|숫자가\s?많았으니까요|짧게\s?짚을게요|하나\s?더\s?짚을게요|다음\s?장에서\s?볼게요')
+# A86(11/12 benchmark-loop, quality-gap-1112 ②1·registry A-52): 첫 40초(약 280자)에 단서·방법·시리즈 소개·예고 2줄 이상(J-1 4줄 → 34초 0.33).
+_A86 = re.compile(r'뒤에서|이따가|끝까지\s?보시면|이렇게\s?봅니다|(?:두|세|네)\s?가지(?:도|를)?\s?(?:볼|짚|살펴|알아)|짚어\s?볼게요|시리즈|차례로|하나씩|찾아봅니다|셉니다')
 _PREVIEW = re.compile(r'(차례로|하나씩|순서대로)\s?(답해|살펴|알아|짚어)\s?(볼게요|보겠습니다|드릴게요)|조금\s?(뒤에|이따|있다가)\s?(볼게요|보겠습니다|말씀드릴게요)')
 
 
@@ -746,6 +748,14 @@ def script_habits(lines, said=None, screen_titles=None):
     hits += [('A43 예고 줄', i, l) for i, l in enumerate(lines, 1) if _PREVIEW.search(l)]
     hits += [('A80 상상 유도', i, l) for i, l in enumerate(lines, 1) if _IMAGINE.search(l) and not re.search(r'\d', l)]
     hits += [('A81 공유 부탁', i, l) for i, l in enumerate(lines, 1) if _SHARE.search(l) and re.search(r'영상|이\s?글', l)]
+    acc, early = 0, []
+    for i, l in enumerate(lines, 1):
+        if acc > 280: break
+        acc += len(re.sub(r'\s', '', l))
+        if _A86.search(l): early.append((i, l))
+    if len(early) >= 2: hits += [('A86 앞머리 예고 쌓기', i, l) for i, l in early]
+    qt = [t for t in (screen_titles or []) if '?' in t or '？' in t]
+    if len(qt) >= 5: hits.append(('A87 물음표 판', 0, f'판 제목에 ? {len(qt)}장 (5장 이상 — J-1 9장)'))
     hits += [('A45 빈 이음말', i, l) for i, l in enumerate(lines, 1) if _A45.search(l)]
     hits += [('A44 끝 정리하면', i, l) for i, l in enumerate(lines, 1) if i > n - 8 and re.match(r'\s*-?\s*(정리하면|정리해 보면|요약하면)', l)]
     # A47 같은 판 제목 3번 이상(C-2 '누구라면' 4장) — 판 제목은 그 판의 내용으로.

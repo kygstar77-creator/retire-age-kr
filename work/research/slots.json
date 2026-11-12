@@ -3980,7 +3980,8 @@
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-12 11:11",
    "note": "firemap-write-b 2026-11-12 19:50: 발행 당일 올리기 전 확인 끝(ECOS 다시 받아 diff 0·소득세법 129조 그대로·쇼츠 jGtx9f6SZKA 공개 확인, prepublish·editgate 통과) — 22:40 회차가 올림 | firemap-write-b 2026-11-12 11:11: 관문 통과 — '정기예금 이자에서 물가 빼면 얼마 남았을까?'(예금·이자·금리, 쇼츠 k1s_dep 짝 글 — 쇼츠 '1억 이자 87만원 늘었다'가 남긴 질문) · 근거 예금이자계산 kwvol 6,270·정기예금이자 2,040 · ECOS 1년 정기예금 9월 평균 금리×실제 만기 1년 물가로 2012~2025년 14번 계산: 6번 모자람·2025년 9월 1억 73만원·2021년 437만원(경쟁 8편 0편, 모두 가정 예시) · bench 8·이해 3차 9명·aitell 9.7·readcheck 0·selfcheck 사실 0·교차검증 2차·editgate auto b703321d · 쇼츠 19:20 공개 뒤 발행 · 발행 회차는 올리기 전 확인(1일 안) 다시 | firemap-meeting 2026-11-11 21:4x: 36시간 칸",
-   "by": "firemap-write-b"
+   "by": "firemap-write-b",
+   "published": "https://cafe.naver.com/firemap/414 22:55 verify OK 1641자"
   },
   {
    "at": "2026-11-12 19:20",

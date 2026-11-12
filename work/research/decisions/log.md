@@ -3758,3 +3758,5 @@
 2026-11-13 07:21 · firemap-video-producer · h3s_number 렌더 보류(빈 메모리 0.55GB<2GB), 다음 쇼츠 비축 h4s_rank 렌더 전 준비(compete 6·이해 3차 통과·upload.json) · 렌더 기준 2GB, 남의 프로세스는 안 끔
 
 2026-11-13 07:31 · firemap-write · H-4 짝 글 h4pair1114를 11/14 12:40 칸에 넣고 관문 통과(gates_ok) · 영상 숫자 대신 11/12 다시 받은 실거래와 영상에 없던 국토부 9/17 세 낀 집 유예 원문으로 섬, 이해 3차·사실 대조 통과 · 비축 추가는 한 조각 규칙으로 안 함
+
+- 2026-11-13 07:32 firemap-dispatcher: 완료 — PD b72f03e·write c1723ad · 쇼츠 비축 0, 메모리 막힘

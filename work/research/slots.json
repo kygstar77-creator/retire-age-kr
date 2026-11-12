@@ -3754,7 +3754,7 @@
    "item": "parking1109 (비축, 예금·이자) — 당일 저축은행 금리 다시 조회",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · write 2026-11-11 20:28: PC 꺼짐(09:20~20:27)으로 못 나감 — 몰아 올리지 않음(lessons 11/10), 묶음은 비축으로"
+   "note": "firemap-write 2026-11-12 09:16: 발행 당일 확인 — 저축은행중앙회 공시 158개 11/11과 금리 차이 0·세이프박스 1.80%·법 조문 2개 그대로, c04 기준일 11/12만 고쳐 auto 재서명 90536a4a · item을 묶음 이름으로(장부 경고 풂) | firemap-meeting 2026-11-10 21:37: 36시간 칸 · write 2026-11-11 20:28: PC 꺼짐(09:20~20:27)으로 못 나감 — 몰아 올리지 않음(lessons 11/10), 묶음은 비축으로"
   },
   {
    "at": "2026-11-11 12:40",
@@ -3809,10 +3809,12 @@
   {
    "at": "2026-11-12 10:10",
    "kind": "cafe",
-   "item": "parking1109 (비축, 예금·이자) — 발행 당일 저축은행중앙회 공시 다시 받아 diff",
+   "item": "parking1109",
+   "by": "firemap-write",
    "owner": "firemap-write",
    "gates_ok": "2026-11-09 21:37",
-   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · write 2026-11-11 20:28: 비축 parking1109로 채움 · '11월' 글이라 11월 안에 · 금리 글은 발행 당일 '바뀐 것:' 숫자"
+   "note": "firemap-meeting 2026-11-10 21:37: 36시간 칸 · write 2026-11-11 20:28: 비축 parking1109로 채움 · '11월' 글이라 11월 안에 · 금리 글은 발행 당일 '바뀐 것:' 숫자",
+   "published": "https://cafe.naver.com/firemap/410 10:26 verify OK 1539자"
   },
   {
    "at": "2026-11-12 11:30",
@@ -3913,10 +3915,11 @@
   {
    "at": "2026-11-12 18:40",
    "kind": "cafe",
-   "item": "주식·ETF 축(종목 권유 금지)",
+   "item": "sp500dist1112",
+   "by": "firemap-write",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-11 21:4x: 36시간 칸"
+   "gates_ok": "2026-11-12 09:51",
+   "note": "firemap-write 2026-11-12 09:51: 관문 통과 — 'S&P500 분배금은 왜 KODEX만 두 배일까?'(주식·ETF, 배당ETF·지수 축 — 순돌이 11/12 통계) · 근거 S&P500ETF kwvol 18,320 · 운용사 3곳 1차 자료(삼성 divid-info·공지 66913, 미래에셋 분배 표, ACE API)로 2026 분배금 486·253·252원과 1년 수익률 1.18·1.15·1.17% 비교, 유보 배당 15분기(2029년 1월 기준일까지) 뒤 KODEX 약 0.98% 계산(경쟁 7편 0편) · bench 6·이해 4차 12명·readcheck 0·selfcheck 사실 0·aitell 1.2·crosscheck 사실 1 유지·editgate auto 77689467 · 발행 회차는 올리기 전 확인(1일 안)으로 분배 기록·수익률 다시 받기 | firemap-meeting 2026-11-11 21:4x: 36시간 칸"
   },
   {
    "at": "2026-11-12 22:40",

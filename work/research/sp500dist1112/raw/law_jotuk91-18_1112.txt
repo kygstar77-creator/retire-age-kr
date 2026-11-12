@@ -1,0 +1,1519 @@
+# https://www.law.go.kr/LSW//lsSideInfoP.do?lsiSeq=284389&joNo=0091&joBrNo=18&docCls=jo&urlMode=lsScJoRltInfoR
+# 받은 날 2026-11-12 09:36
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ var webRoot = '/LSW';
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ .ui-layout-pane {
+ padding: 0;
+ background:	#EEE;
+ }
+ .ui-layout-west {
+ background:	#CFC;
+ }
+ .ui-layout-center {
+ background:	#FFC;
+ padding:	0; /* IMPORTANT - remove padding so pane can 'collapse' to 0-width */
+ }
+ .ui-layout-west > .ui-layout-center {
+ background:	#CFC;
+ }
+ .ui-layout-west > .ui-layout-south {
+ background:	#AFE;
+ }
+ .ui-layout-pane { border-width: 0; }
+ .ui-layout-north { border-bottom-width:	1px; }
+ .ui-layout-south { border-top-width: 1px; }
+ .ui-layout-resizer-west {
+ border-width: 0;
+ border-left: 2px solid #b4b4b4;
+ background-color:white;
+ }
+ .ui-layout-toggler {
+ border: 0;
+ background-color:#fff
+ }
+ .ui-layout-toggler-west-closed {
+ background-image: url("./images/button/leslidev7_2.gif");
+ background-color:white;
+ background-repeat: no-repeat;
+ }
+ .ui-layout-toggler-west-open {
+ background-image: url("./images/button/leslidev7_1.gif");
+ background-color:white;
+ background-repeat: no-repeat;
+ }
+ 
+ 
+/* html{ background:#fff;overflow:hidden;} */
+html{overflow:hidden;}
+ 국가법령정보센터 | 변경조문
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+//<![CDATA[
+ var lsVO = new LsValueObj();
+ lsVO.lsValue.lsiSeq = '284389';
+ lsVO.lsValue.lsId = '';
+ lsVO.lsValue.chrClsCd = '010202';
+ lsVO.lsValue.ancYd = '';
+ lsVO.lsValue.ancNo = '';
+ function lsJoContentSave(url, obj, param){
+ var form = el('joInfoSaveForm');
+ form.action = url;
+ appendInputElsNotRemove(form, "hidden", param);
+ SaveWindow.showJoInfoSave(obj,240,0);
+ }
+ function appendInputElsNotRemove(parent, type, paramArray){
+ if (paramArray == null) return "";
+ for (var i in paramArray){
+ if (paramArray[i] != ""){
+ appendInputEl(parent, type, i, paramArray[i]);
+ }
+ }
+ }
+ function bdySavePrint(mode,obj,xValue){
+ var bdyContentNm = 'lsScJoRltInfoR';
+ if(el("lsiSeq").value != ""){
+ if(bdyContentNm == 'lsChgJoInfoR'){
+				lsVO.lsValue.joChgYn = 'Y';
+ fLsUpdate("lsOutPutLayer","lsOutPutLayer.do",makeParam(lsVO.lsValue) + "&mode=" + mode ,'output');
+ var yValue = 0;
+ 
+ LsPopLayer.showLsOutPutLayerNew(obj, xValue,yValue, mode);
+ 
+ } else {
+ var contentNm = "";
+ 
+ if(bdyContentNm == "engLsInfoR" || bdyContentNm.indexOf("eng") > -1){
+					contentNm = "영문법령";
+					
+				} else if(bdyContentNm == "lsRvsDocInfoR") {
+ contentNm = "개정문";
+ 
+ } else if(bdyContentNm == "lsRvsRsnInfoR") {
+ contentNm = "개정이유";
+ 
+ } else if(bdyContentNm == "lsOgCorInfoR") {
+ contentNm = "관보정정";
+ 
+ } else if(bdyContentNm == "lsOldAndNew") {
+ contentNm = "신구조문대비표";
+ 
+					titleNm1 = Ext.getDom("tmpWidth2").value;
+					titleNm2 = Ext.getDom("tmpWidth3").value;
+ 
+ } else if(bdyContentNm == "thdCmp"){
+					var thdCmpLsSeq = el('thdCmpLsSeq').value;
+					var thdCmpCls = el('thdCmpCls').value;
+					
+					var thdUrl = "";
+					
+					if(el('LsCmp').className == 'on'){
+						if(mode == 0){
+							listLsSave('LS', thdCmpLsSeq, thdCmpCls, getLsId(), obj);
+							
+						} else {
+							thdUrl = "thdCmpLsInfoPrint.do?thdCmpLsSeq="+thdCmpLsSeq+"&thdCmpCls="+thdCmpCls+"&lsId="+getLsId();
+							openScrollPop(thdUrl);
+						}
+						
+					} else if(el('JoCmp').className == 'on'){
+						if(mode == 0){
+							listLsSave('JO', thdCmpLsSeq, thdCmpCls, getLsId(), obj);
+							
+						} else {
+							thdUrl = "thdCmpJoAllInfoPrint.do?thdCmpLsSeq="+thdCmpLsSeq+"&thdCmpCls="+thdCmpCls+"&lsId="+getLsId();
+							openScrollPop(thdUrl);
+						}
+						
+					}else{
+					 
+						if(mode == 0){
+						 listLsSave('JO', thdCmpLsSeq, thdCmpCls, getLsId(), obj);
+						 
+						} else {
+						 thdUrl = "thdCmpJoAllInfoPrint.do?thdCmpLsSeq="+thdCmpLsSeq+"&thdCmpCls="+thdCmpCls+"&lsId="+getLsId();
+							openScrollPop(thdUrl);
+						}
+					}
+					return true;
+				// 규제정보 팝업 저장 및 인쇄 레이어 mode=0 저장 mode=1 인쇄
+				} else if( bdyContentNm == "lsScJoRltInfoR" ) {
+ lsVO.lsValue.joNo = RjoNo + ":" + RjoBrNo;
+					lsVO.lsValue.efYd = el("efYd").value;
+					lsVO.lsValue.arSeq = el("arSeq").value;
+					
+					if(mode == 0) {
+						lsVO.lsValue.lsJoSize = "10";
+						lsVO.lsValue.joEfOutPutYn = "on";
+ lsJoContentSave( "", obj, lsVO.lsValue );
+						return true;
+					}else if(mode == 1) {
+						var params = makeParam({
+							lsiSeq : lsVO.lsValue.lsiSeq,
+							efYd : lsVO.lsValue.efYd,
+							chrClsCd : lsVO.lsValue.chrClsCd,
+							joNo : lsVO.lsValue.joNo,
+							arSeq : lsVO.lsValue.arSeq 
+						});
+						var windowName = "국가법령정보센터조문인쇄페이지";
+						var windowFeatures = "width=957,height=750,menubar=no,status=no,toolbar=no, scrollbars=yes";
+						
+						window.open( "lsBdyPrint.do?" + params, windowName, windowFeatures );
+						return true;
+					}
+		 }
+ 
+ if(mode == 0){
+					var goUrl = bdyContentNm +".do";
+					
+					if(bdyContentNm == "lsOldAndNew"){
+					 goUrl = "lsOldAndNewSave.do";
+					 LsOldAndNewSave( goUrl, obj, lsVO.lsValue);
+					 
+					} else {
+					 LsContentSave( goUrl, obj, lsVO.lsValue);
+					}
+					
+					return true;
+				}
+			
+			 if(bdyContentNm == "lsOldAndNew"){
+			 openScrollPop("/LSW/jsp/ls/lsSideInfoPrint.jsp?contentNm=" + encodeURIComponent(contentNm)+"&titleNm1="+titleNm1+"&titleNm2="+titleNm2);
+			 
+			 } else {
+			 openScrollPop("lsSideInfoPrint.do?contentNm=" + encodeURIComponent(contentNm));
+			 }
+			}
+		}else {
+ alert(lsVO.msg);
+		}
+	}
+ 
+ 	// 규제정보 법령 조문 저장
+ function joBeforeSavePrint() {
+ 	
+ 	var frm = document.getElementById("joInfoSaveForm");
+ 	
+ 	if(el("joDocSelectIdPDF").checked){
+ 		frm.action = "lsPdfPrint.do";
+ 	}else if(el("joDocSelectIdHWP").checked){
+ 		frm.action = "lsNewHwpSave.do?";
+ 	}else if(el("joDocSelectIdDOC").checked){
+ 		frm.action = "lsRtfPrint.do";
+ 	}
+ 		frm.target = "_self";
+ 		
+ 	closeSetTime('SaveWindow.hideJoInfoSave()');
+ 	frm.submit();
+ }
+ 
+ /* 언어 변환 */
+ function chrChange(obj){
+ 	if("lsScJoRltInfoR".indexOf("eng") > -1) {
+			alert("영문법령에서는 지원하지 않습니다.");
+		} else {
+	 if(lsVO.lsValue.chrClsCd == "010202"){
+	 lsVO.lsValue.chrClsCd = "010201";
+	 
+	 } else {
+	 lsVO.lsValue.chrClsCd = "010202";
+	 }
+	 var frm = el('translateMode');
+ el('RchrClsCd').value = lsVO.lsValue.chrClsCd;
+ var langType = $(obj).find('img').attr('alt');
+ if (langType === '한자') {
+ $('#langType').find('img').attr('alt', '한글');
+ $('#langType').find('img').attr('src', webRoot + '/images/common/btn_v13fn10_1.png');
+ } else if (langType === '한글') {
+ $('#langType').find('img').attr('alt', '한자');
+ $('#langType').find('img').attr('src', webRoot + '/images/common/btn_v13fn5_1.png');
+ }
+	 frm.submit();
+		}
+ }
+ /* 법령 update */
+ function fLsUpdate(divLayId,urlName,parameter,mode){
+ Ext.Ajax.request({
+ url: urlName,
+ success: function(){
+ Ext.get(divLayId).dom.innerHTML = arguments[0].responseText;
+ if(lsVO.lsValue.lsiSeq != ""){
+					try{
+						lsVO.lsValue.ancYd = el("ancYd").value;
+						lsVO.lsValue.ancNo = el("ancNo").value;
+					}catch(e){
+						lsVO.lsValue.ancYd = "";
+						lsVO.lsValue.ancNo = "";
+					}
+				} 
+ if(mode == "output"){
+ if(lsVO.lsValue.joChgYn == 'Y'){ // 변경조문 목록 요청
+ //getLsJoOutPutList('outPutJoListDiv','5', '1',el('lsiSeq').value);
+ 	getLsJoOutPutList('outPutJoListDiv','5', '1',el('lsiSeq').value,lsVO.lsValue.paras);
+		 				selectJoNoList();
+ }
+ }
+ 
+ if(urlName.indexOf("lsOldAndNew") > -1){
+		 			window.onresize = function(){
+						bodyHeightResize('bodyId');
+						setElHeight("oldAndNewDiv",Ext.get("bodyId").getHeight() - 143);
+						topModeHeightResize();
+						
+						if(Ext.get("tmpWidth") != null){
+ 					var totWidth = Ext.get("tmpWidth").getWidth();
+ 
+ Ext.get("tmpWidth1").setWidth(54);
+ Ext.get("tmpWidth4").setWidth(54);
+ 
+ var tmpWidth1 = Ext.get("tmpWidth1").getWidth();
+ var tmpWidth2 = Ext.get("tmpWidth2").getWidth();
+ var tmpWidth3 = Ext.get("tmpWidth3").getWidth();
+ var tmpWidth4 = Ext.get("tmpWidth4").getWidth();
+ 
+ var reWidth = ((totWidth - tmpWidth1 - tmpWidth4)/2);
+ 
+ Ext.get("tmpWidth2").setWidth(reWidth);
+ Ext.get("tmpWidth3").setWidth(reWidth);
+ 				 }
+					}
+					
+					setElHeight("oldAndNewDiv",Ext.get("bodyId").getHeight() - 143);
+					
+					if(Ext.get("tmpWidth") != null){
+ 					var totWidth = Ext.get("tmpWidth").getWidth();
+ 					
+ 					Ext.get("tmpWidth1").setWidth(54);
+ 					Ext.get("tmpWidth4").setWidth(54);
+ 					
+ 					var tmpWidth1 = Ext.get("tmpWidth1").getWidth();
+ 					var tmpWidth2 = Ext.get("tmpWidth2").getWidth();
+ 					var tmpWidth3 = Ext.get("tmpWidth3").getWidth();
+ 					var tmpWidth4 = Ext.get("tmpWidth4").getWidth();
+ 					
+ 					var reWidth = ((totWidth - tmpWidth1 - tmpWidth4)/2);
+ 					
+ 					Ext.get("tmpWidth2").setWidth(reWidth);
+ 					Ext.get("tmpWidth3").setWidth(reWidth);
+				 }
+		 		}
+ },
+ isLoding:true
+ ,
+ failure: function(){
+ },
+ params: parameter
+ });
+ }
+ 
+ /* 본문 이외의 정보 조회 */
+ function sideInfo(url, tmpLsiSeq){
+ var seq = "";
+ try{
+ if(tmpLsiSeq != null && tmpLsiSeq != ""){
+			 seq = tmpLsiSeq;
+			 
+			} else {
+			 seq = el("lsiSeq").value;
+			}
+ 
+ }catch(e){
+ seq = "";
+ }
+ 
+ if(seq != ""){
+ if(url == 'lsOldAndNew' || url.indexOf('lsOldAndNew') > -1){
+ if(url.indexOf('Prev') > -1){
+ lsVO.lsValue.lsId = el("prevLsId").value;
+ lsVO.lsValue.ancYd = el("prevAncYd").value;
+ lsVO.lsValue.ancNo = el("prevAncNo").value;
+ 
+ } else if(url.indexOf('Next') > -1) {
+ lsVO.lsValue.lsId = el("nextLsId").value;
+ lsVO.lsValue.ancYd = el("nextAncYd").value;
+ lsVO.lsValue.ancNo = el("nextAncNo").value;
+ 
+ } else {
+ lsVO.lsValue.lsId = el("lsId").value;
+ lsVO.lsValue.ancYd = el("ancYd").value;
+ lsVO.lsValue.ancNo = el("ancNo").value;
+ }
+ 
+ url = 'lsOldAndNew';
+ 
+ } else {
+ lsVO.lsValue.lsId = "";
+ lsVO.lsValue.ancYd = "";
+ lsVO.lsValue.ancNo = "";
+ }
+ 
+ setPopValue(url);
+ lsVO.lsValue.lsiSeq = seq;
+ lsVO.updateValue.updateDiv = "bodySideContent";
+ lsVO.updateValue.actionUrl = url + ".do";
+ lsVO.updateValue.updateMode = "sideContent";
+ fLsUpdate(lsVO.updateValue.updateDiv, lsVO.updateValue.actionUrl, makeParam(lsVO.lsValue), lsVO.updateValue.updateMode);
+ 
+ } else {
+ alert(lsVO.msg);
+ }
+ }
+ var RjoNo="";
+ var RjoBrNo="";
+ window.onload = function() {
+ if(lsVO.lsValue.chrClsCd == "010202"){
+ lsVO.lsValue.chrClsCd = "010202";
+ el('chrImg').alt = "한자";
+ el('chrImg').src = webRoot + "/images/common/btn_v13fn5_1.png";
+ } else {
+ lsVO.lsValue.chrClsCd = "010201";
+ el('chrImg').alt = "한글";
+ el('chrImg').src = webRoot + "/images/common/btn_v13fn10_1.png";
+ }
+ 
+ el('chrClsCd').value = lsVO.lsValue.chrClsCd;
+ RjoNo= el("RjoNo").value;
+ RjoBrNo= el("RjoBrNo").value;
+ lsVO.updateValue.updateDiv = "bodySideContent";
+ 
+ try{
+ setElHeight("oldAndNewDiv", $("#bodyId").height() - 143);
+ 
+ var totWidth = $("#tmpWidth").width();
+ 
+ $("#tmpWidth1").width(54);
+ $("#tmpWidth4").width(54);
+ 
+ var tmpWidth1 = $("#tmpWidth1").width();
+ var tmpWidth2 = $("#tmpWidth2").width();
+ var tmpWidth3 = $("#tmpWidth3").width();
+ var tmpWidth4 = $("#tmpWidth4").width();
+ 
+ var reWidth = ((totWidth - tmpWidth1 - tmpWidth4)/2);
+ 
+ $("#tmpWidth2").width(reWidth);
+ $("#tmpWidth3").width(reWidth);
+ 
+ } catch(e) {
+ setElHeight("viewwrapCenter", $("#bodyId").height() - 100);
+ }
+ var popUrlMode = 'lsScJoRltInfoR';
+ if(popUrlMode == 'lsScJoRltInfoR')
+ 	scroll();
+		$('#rvsConScroll').height( $('#viewwrapCenter').height() - $('#rvsConTop').height());
+ }
+ 
+ window.onresize = function() {
+ try{
+ setElHeight("oldAndNewDiv", $("#bodyId").height() - 143);
+ }catch(e){
+ setElHeight("viewwrapCenter", $("#bodyId").height() - 100);
+ }
+ 
+ var popUrlMode = 'lsScJoRltInfoR';
+ if(popUrlMode == 'lsScJoRltInfoR') scroll();
+ }
+ function lsZoomInOut(mode){
+ 	if("lsScJoRltInfoR".indexOf("eng") > -1) {
+ 		zoomInOut(mode,'bodySideContent');
+ 	}else{
+ 		zoomInOut(mode,'viewwrapCenter');
+ 	}
+ }
+ 
+ function bfCmp(no, lsJoEfYdSeq1, lsJoEfYdSeq2){
+	 var cnt = el("joHstInfoHong").value;
+	 
+	 for(var i = 0;i < cnt;i++){
+	 if(eval(el("hhhong1"+i)) != null) eval(el("hhhong1"+i)).style.display = "inline";
+	 if(eval(el("hhhong2"+i)) != null) eval(el("hhhong2"+i)).style.display = "none";
+	 if(eval(el("hhhong3"+(i+1))) != null) eval(el("hhhong3"+(i+1))).style.display = "none";
+	 }
+	 
+	 lsVO.lsJoHstPara = "joHstNo=" + no+1 
+			 +"&lsJoEfYdSeq1=" + lsJoEfYdSeq1
+ 			 +"&lsJoEfYdSeq2=" + lsJoEfYdSeq2
+ 			 +"&lsiSeq=" + el("lsiSeqHong").value
+ 			 +"&joSeq=" + el("joSeqHong").value
+ 			 +"&gubun=1";
+	 
+	 fSlimUpdateByAjaxDiff("","lsJoHstProc2.do",lsVO.lsJoHstPara, no+1);
+	}
+ 
+ /* 조문제목으로 팝업 조회시 스크롤바 생성되도록 */
+ function scroll() {
+ 	
+		if( $('#bodySideContent').height() > $('#bodyId').height() - 40){
+			var height = '';
+			if(navigator.userAgent.indexOf("MSIE") > -1 || navigator.userAgent.indexOf("Trident") > -1) {
+				height = $('#bodyId').height() - $('#bdyLayPrint').height();
+			}else if (navigator.userAgent.indexOf("Firefox") > -1 ) {
+				height = $('#bodyId').height() - $('#bdyLayPrint').height() - 28;
+			}else {
+				height = $('#bodyId').height() - $('#bdyLayPrint').height() - 25;
+			}
+	
+	 		$('#container').css("height", height);	
+	 	$('#container').css("overflow-y", "auto");
+	 	$('#container').css("overflow-x", "hidden");
+	 	
+		 } else {
+			 $('#container').css("overflow", "hidden");
+			 $('#container').css("height", "");	
+		 }
+ }
+ //]]>
+ 
+ 
+//<![CDATA[
+	
+	// lsList.js 에서 이사옴
+	function lsJoLayView(linkParam, linkLawNm){
+		
+		
+		try{
+			if(linkLawNm == "Ordin"){
+			 fSlimUpdateByAjax("lsLinkLayer","ordinLinkProc.do",makeParam(linkParam));
+			 
+			} else {
+			 fSlimUpdateByAjax("lsLinkLayer","lsLinkProc.do",makeParam(linkParam));
+			}
+			
+		}catch(e){
+			logger.err("오류:조문링크 update중..." + e);
+		}
+	
+		var title = "조문정보 "
+					+""
+					+"&nbsp;" 
+					+""
+					+""
+					+"";
+					//+"";
+	//	Jeon Hyun Wook 웹 접근성인 경우 팝업으로 엽니다.
+		LsLinkLayer.showLsLinkLayer(0,title);
+		
+	}
+//]]>
+ 
+ 
+//<![CDATA[
+	
+	function setHeadTitle(str) {
+		document.title = str + " | 국가법령정보센터";
+	}
+	
+	// 화면내 검색 글자 처리
+	function setTRangeSelectOn(){
+		TRange.execCommand("RemoveFormat");
+		TRange.execCommand("ForeColor", false, "#FFFFFF");
+		TRange.execCommand("BackColor", false, "#FF0000");
+	}
+	function setTRangeSelectOff(){
+		TRange.execCommand("RemoveFormat");
+		TRange.execCommand("ForeColor", false, "#FF0000");
+	} 
+	function setTRangeSelectOffUp(){
+		TRangeCopy.execCommand("RemoveFormat");
+		TRangeCopy.execCommand("ForeColor", false, "#a30200");
+	}
+	function setTRangeOn(){
+		TRange.execCommand("ForeColor", false, "#FF0000");
+	}
+	
+	// 화면내검색시 "|" 문자열를 활용해 찾은 검색어 글자 BackColor처리
+	function setTRangeOnAddColor(obj,setColorValue){
+		if(setColorValue == 0){
+			TRange.execCommand("BackColor", false, "#FF0000");
+		}else if(setColorValue == 1){
+			TRange.execCommand("BackColor", false, "#FF8C00");
+		}else if(setColorValue == 2){
+			TRange.execCommand("BackColor", false, "#FFD700");
+		}else if(setColorValue == 3){
+			TRange.execCommand("BackColor", false, "#33CC33");
+		}else if(setColorValue == 4){
+			TRange.execCommand("BackColor", false, "#33CCFF");
+		}
+	}
+ function initEDotXPress(name) {
+ $("#eDotViewr").css("display", "block");
+ $("#eDotViewr").removeAttr("onclick");
+ $("#eDotViewr").attr("onclick", "openBrlViewer('"+name+"', null, brlConfArray);return false;");
+ }
+//]]>
+ 
+ 
+ --> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 법령 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 화면내검색 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ancYnChk 파라미터 추가 --> 
+ 
+function fileLayer(temp){
+	var tempStr = $("#hwptext"+temp).attr("value");
+	if(tempStr.length > 32){
+ 		$("#hwptext"+temp).css("width", "80%").css("text-overflow", "ellipsis").css("overflow","hidden").css("white-space","nowrap");
+ 		$("#hwpxtext"+temp).css("width", "80%").css("text-overflow", "ellipsis").css("overflow","hidden").css("white-space","nowrap");
+ 		$("#pdftext"+temp).css("width", "80%").css("text-overflow", "ellipsis").css("overflow","hidden").css("white-space","nowrap");
+ 	}
+	
+ 	$(".byl_pop").css("display","none");
+	var lay_pop = $('#fileSaveLayer'+temp);
+	var pos = $('#imgPos'+temp).position();
+	lay_pop.css('top', (pos.top)+25 + 'px');
+	lay_pop.css('left', '250px');
+	document.getElementById("fileSaveLayer"+temp).style.display="block";
+}
+function copyToClipBoard(temp2){
+	var content = document.getElementById('textarea'+temp2);
+	content.select();
+	document.execCommand('copy');
+	alert("주소가 클립보드에 저장되었습니다.");
+	content.setSelectionRange(0,0);
+}
+function delLayer(temp){
+	document.getElementById("fileSaveLayer"+temp).style.display="none";
+}
+ 
+ 
+ 
+ 
+ 조세특례제한법 
+ 
+ 
+ 
+ [시행 2026. 9. 18.] [법률 제21467호, 2026. 3. 17., 타법개정] 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 재정경제부(조세특례제도과-연구인력개발, 투자), 044-215-4131, 4136 
+ 재정경제부(조세특례제도과-중소기업, 고용, 최저한세), 044-215-4132 
+ 재정경제부(조세특례제도과-지방이전, 특구등), 044-215-4133 
+ 재정경제부(조세법령운용팀-징수특례등), 044-215-4152 
+ 재정경제부(조세분석과-조세지출), 044-215-4141 
+ 재정경제부(소득세제과-소득세(근로장려세제포함)), 044-215-4211~4213, 4215~4217 
+ 재정경제부(법인세제과-법인세), 044-215-4222, 4223, 4226 
+ 재정경제부(금융세제과-금융소득, 주식양도세, 증권거래세등), 044-215-4231~4234, 4236 
+ 재정경제부(재산세제과-양도소득, 종합부동산세, 증여세등), 044-215-4312~4314, 4316, 4308 
+ 재정경제부(부가가치세제과-부가가치세), 044-215-4322, 4323, 4326 
+ 재정경제부(환경에너지세제과-개별소비세, 주세, 유류세), 044-215-4331, 4333, 4337 
+ 재정경제부(국제조세제도과-외국인투자, 외국법인등), 044-215-4656 
+ 재정경제부(관세제도과-관세), 044-215-4413 
+ 행정안전부(지방세특례제도과-지방세(취득세 등)), 044-205-3860 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 제91조의18(개인종합자산관리계좌에 대한 과세특례) ① 다음 각 호의 어느 하나에 해당하는 거주자가 제3항 각 호의 요건을 모두 갖춘 계좌(이하 이 조에서 “개인종합자산관리계좌”라 한다)에 가입하거나 계약기간을 연장하는 경우 해당 계좌에서 발생하는 이자소득 및 배당소득(이하 이 조에서 “이자소득등”이라 한다)의 합계액에 대해서는 제2항에 따른 비과세 한도금액까지는 소득세를 부과하지 아니하며, 제2항에 따른 비과세 한도금액을 초과하는 금액에 대해서는 「소득세법」 제129조에도 불구하고 100분의 9의 세율을 적용하고 같은 법 제14조제2항에 따른 종합소득과세표준에 합산하지 아니한다.  &lt;개정 2017. 12. 19., 2018. 12. 24., 2020. 12. 29., 2021. 12. 28., 2024. 12. 31.&gt; 
+ 1. 가입일 또는 연장일 기준 19세 이상인 자 
+ 2. 가입일 또는 연장일 기준 15세 이상인 자로서 가입일 또는 연장일이 속하는 과세기간의 직전 과세기간에 근로소득이 있는 자(비과세소득만 있는 자는 제외한다. 이하 이 조에서 같다) 
+ 3. 삭제  &lt;2020. 12. 29.&gt; 
+ ② 개인종합자산관리계좌의 비과세 한도금액은 가입일 또는 연장일을 기준으로 다음 각 호의 구분에 따른 금액으로 한다.  &lt;개정 2017. 12. 19., 2020. 12. 29., 2021. 12. 28.&gt; 
+ 1. 다음 각 목의 어느 하나에 해당하는 경우: 400만원 
+ 가. 직전 과세기간의 총급여액이 5천만원 이하인 거주자(직전 과세기간에 근로소득만 있거나 근로소득 및 종합소득과세표준에 합산되지 아니하는 종합소득이 있는 자로 한정한다) 
+ 나. 직전 과세기간의 종합소득과세표준에 합산되는 종합소득금액이 3천8백만원 이하인 거주자(직전 과세기간의 총급여액이 5천만원을 초과하지 아니하는 자로 한정한다) 
+ 다. 대통령령으로 정하는 농어민(직전 과세기간의 종합소득과세표준에 합산되는 종합소득금액이 3천8백만원을 초과하는 자는 제외한다) 
+ 2. 제1호에 해당하지 아니하는 자의 경우: 200만원 
+ ③ “개인종합자산관리계좌”란 다음 각 호의 요건을 모두 갖춘 계좌를 말한다.  &lt;개정 2016. 12. 20., 2018. 12. 24., 2020. 12. 29., 2021. 12. 28., 2024. 12. 31., 2025. 12. 23.&gt; 
+ 1. 1명당 1개의 계좌만 보유할 것 
+ 2. 계좌의 명칭이 개인종합자산관리계좌이고 다음 각 목의 어느 하나에 해당하는 계좌일 것 
+ 가. 「자본시장과 금융투자업에 관한 법률」 제8조제3항에 따른 투자중개업자(이하 이 조에서 “투자중개업자”라 한다)와 대통령령으로 정하는 계약을 체결하여 개설한 계좌 
+ 나. 「자본시장과 금융투자업에 관한 법률」 제8조제6항에 따른 투자일임업자(이하 이 조에서 “투자일임업자”라 한다)와 대통령령으로 정하는 계약을 체결하여 개설한 계좌 
+ 다. 「자본시장과 금융투자업에 관한 법률」 제8조제7항에 따른 신탁업자(이하 이 조에서 “신탁업자”라 한다)와 특정금전신탁계약을 체결하여 개설한 신탁계좌 
+ 3. 다음 각 목의 재산으로 운용할 것 
+ 가. 예금ㆍ적금ㆍ예탁금 및 그 밖에 이와 유사한 것으로서 대통령령으로 정하는 금융상품 
+ 나. 「소득세법」 제17조제1항제5호에 따른 집합투자기구의 집합투자증권(「자본시장과 금융투자업에 관한 법률」 제279조제1항에 따른 외국 집합투자증권은 제외한다) 
+ 다. 「소득세법」 제17조제1항제5호의2에 따른 파생결합증권 또는 파생결합사채 
+ 라. 「소득세법」 제17조제1항제9호에 따라 과세되는 증권 또는 증서 
+ 마. 「소득세법」 제88조제3호에 따른 주권상장법인의 주식 
+ 바. 그 밖에 대통령령으로 정하는 재산 
+ 4. 계약기간이 3년 이상일 것 
+ 5. 총납입한도가 1억원(제91조의14에 따른 재형저축 또는 제91조의16에 따른 장기집합투자증권저축에 가입한 거주자는 재형저축 및 장기집합투자증권저축의 계약금액 총액을 뺀 금액으로 한다) 이하이고, 연간 납입한도가 다음의 계산식에 따른 금액일 것 
+ ④ 개인종합자산관리계좌의 계좌보유자는 계약기간 만료일 전에 해당 계좌의 계약기간을 연장할 수 있다.  &lt;신설 2020. 12. 29.&gt; 
+ ⑤ 제1항 또는 제2항을 적용할 때 이자소득등의 합계액은 개인종합자산관리계좌의 계약 해지일을 기준으로 하여 제3항제3호 각 목의 재산에서 발생한 이자소득등에서 제3항제3호 각 목의 재산에서 발생한 대통령령으로 정하는 손실을 대통령령으로 정하는 방법에 따라 차감하여 계산한다.  &lt;개정 2017. 12. 19., 2020. 12. 29., 2021. 12. 28., 2024. 12. 31.&gt; 
+ ⑥ 신탁업자, 투자일임업자 및 투자중개업자(이하 이 조에서 “신탁업자등”이라 한다)는 「소득세법」 제130조 및 제155조의2에도 불구하고 계약 해지일에 이자소득등에 대한 소득세를 원천징수하여야 한다.  &lt;개정 2016. 12. 20., 2017. 12. 19., 2020. 12. 29., 2021. 12. 28., 2024. 12. 31.&gt; 
+ ⑦ 신탁업자등은 개인종합자산관리계좌의 계좌보유자가 최초로 계약을 체결한 날부터 3년이 되는 날 전에 계약을 해지하는 경우(계좌보유자의 사망ㆍ해외이주 등 대통령령으로 정하는 부득이한 사유로 계약을 해지하는 경우는 제외하며, 이하 이 조에서 “중도해지”라 한다)에는 과세특례를 적용받은 소득세에 상당하는 세액을 제146조의2에 따라 추징하여야 한다.  &lt;개정 2024. 12. 31.&gt; 
+ ⑧ 개인종합자산관리계좌의 계좌보유자가 최초로 계약을 체결한 날부터 3년이 되는 날 전에 계약기간 중 납입한 금액의 합계액을 초과하는 금액을 인출하는 경우에는 해당 인출일에 계약이 중도해지된 것으로 보아 제5항부터 제7항까지를 적용한다.  &lt;개정 2020. 12. 29., 2021. 12. 28., 2024. 12. 31.&gt; 
+ ⑨ 국세청장은 개인종합자산관리계좌의 계좌보유자가 제1항제2호(근로소득 요건에 한정한다), 제2항 각 호(총급여액 및 종합소득금액 요건에 한정한다)에 해당하는지를 확인하여 신탁업자등에게 통보하여야 한다.  &lt;개정 2016. 12. 20., 2017. 12. 19., 2020. 12. 29., 2021. 12. 28., 2024. 12. 31.&gt; 
+ ⑩ 제9항에 따라 신탁업자등이 개인종합자산관리계좌의 계좌보유자가 제1항제2호(근로소득 요건에 한정한다)에 해당하지 아니하는 것으로 통보받은 경우에는 그 통보를 받은 날에 계약이 해지된 것으로 보며, 해당 신탁업자등은 이를 개인종합자산관리계좌의 계좌보유자에게 통보하여야 한다.  &lt;개정 2016. 12. 20., 2017. 12. 19., 2020. 12. 29., 2021. 12. 28., 2024. 12. 31.&gt; 
+ ⑪ 개인종합자산관리계좌의 계좌보유자가 최초로 계약을 체결한 날부터 3년이 되는 날 이후에 「소득세법」 제59조의3제3항에 따라 해당 계좌 잔액의 전부 또는 일부를 연금계좌로 납입한 경우에는 해당 개인종합자산관리계좌의 계약기간이 만료된 것으로 본다.  &lt;신설 2020. 12. 29., 2021. 12. 28., 2024. 12. 31.&gt; 
+ ⑫ 개인종합자산관리계좌의 가입ㆍ연장절차, 가입대상의 확인ㆍ관리, 이자소득등의 계산방법 및 그 밖에 필요한 사항은 대통령령으로 정한다.  &lt;개정 2017. 12. 19., 2020. 12. 29., 2021. 12. 28., 2024. 12. 31.&gt; 
+ [본조신설 2015. 12. 15.] 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+	(function () {
+		initEDotXPress('\uC870\uC138\uD2B9\uB840\uC81C\uD55C\uBC95');
+	})();
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<!--
+$(document).ready(function()
+{
+ // 화면내 검색 Layer의 별표본문내용 체크박스 Click Event
+ $("#bdySearchLayer").delegate("input:checkbox[id=selectSearchByl]", "click", function(e) {
+ isBylChkChg = true;
+ });
+});
+//-->
+ 
+ 
+ 
+ 
+ 
+ 
+ 위로 
+ 
+ 아래로 
+ 
+ 검색조문선택 
+ 
+ 
+ 
+ 화면내검색 입력 폼 
+ 
+ 검색어 입력 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 모드 
+ 
+ 전체저장 
+ 
+ 목록저장 
+ 닫기 
+ 
+ 
+ 파일형식 
+ 
+ 
+ XLS(엑셀) 
+ 
+ TXT(텍스트) 
+ 
+ 
+ 
+ 저장 
+ 닫기 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 모드 
+ 
+ 전체저장 
+ 
+ 목록저장 
+ 닫기 
+ 
+ 
+ 파일형식 
+ 
+ 
+ XLS(엑셀) 
+ 
+ TXT(텍스트) 
+ 
+ 한글(본문) 
+ 
+ 
+ 
+ 저장 
+ 닫기 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 내용저장 
+ 닫기 
+ 
+ 
+ 파일형식 
+ 
+ 
+ 한글(HWP) 
+ 
+ PDF 
+ 
+ 오피스(DOC) 
+ 
+ 
+ 저장 
+ 닫기 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 파일형식 선택 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 파일형식 
+ HTML XLS(엑셀) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 내용저장 
+ 닫기 
+ 
+ 
+ 파일형식 
+ 
+ 
+ HTML 
+ 
+ HWP(한글) 
+ 
+ XLS(엑셀) 
+ 
+ PDF 
+ 
+ 
+ 
+ 저장 
+ 닫기 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 내용저장 
+ 닫기 
+ 
+ 
+ 파일형식 
+ 
+ 
+ HWP 
+ 
+ HWPX 
+ 
+ PDF 
+ 
+ DOC 
+ 
+ 
+ 
+ 저장 
+ 닫기 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 내용저장 
+ 닫기 
+ 
+ 
+ 파일형식 
+ 
+ 
+ 한글(HWP) 
+ 
+ PDF 
+ 
+ 오피스(DOC) 
+ 
+ 
+ 
+ 저장 
+ 닫기 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 목록저장 
+ 닫기 
+ 
+ 
+ 파일형식 
+ 
+ 
+ HWP(한글) 
+ 
+ TXT(텍스트) 
+ 
+ 
+ 
+ 저장 
+ 닫기 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 목록저장 
+ 닫기 
+ 
+ 
+ 파일형식 
+ 
+ 
+ HWP(한글) 
+ 
+ TXT(텍스트) 
+ 
+ 
+ 
+ 저장 
+ 닫기 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 목록 저장 
+ 닫기 
+ 
+ 
+ 파일형식 
+ 
+ 
+ HWP(한글) 
+ 
+ TXT(텍스트) 
+ 
+ 
+ 
+ 저장 
+ 닫기 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 목록저장 
+ 닫기 
+ 
+ 
+ 파일형식 
+ 
+ 
+ 한글(HWP) 
+ 
+ PDF 
+ 
+ 오피스(DOC) 
+ 
+ 
+ 
+ 저장 
+ 닫기 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 본문저장 
+ 닫기 
+ 
+ 
+ 파일형식 
+ 
+ 
+ 한글(HWP) 
+ 
+ PDF 
+ 
+ 오피스(DOC) 
+ 
+ 
+ 
+ 저장 
+ 닫기 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 파일형식 선택 
+ 
+ 
+ 법령용어명 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 파일형식 
+ 한글(HWP) PDF 
+ 오피스(DOC)--> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 법령용어명 
+ 
+ 
+ 목록저장 
+ 닫기 
+ 
+ 
+ 파일형식 
+ 
+ 
+ 한글(HWP) 
+ 
+ TXT(텍스트) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 파일형식 선택 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 파일형식 
+ HTML HWP(한글) XLS(엑셀) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 내용저장 
+ 닫기 
+ 
+ 
+ 파일형식 
+ 
+ 
+ HTML 
+ 
+ HWP(한글) 
+ 
+ XLS(엑셀) 
+ 
+ PDF 
+ 
+ DOC 
+ 
+ 
+ 
+ 저장 
+ 닫기 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 파일형식 선택 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 파일형식 
+ HTML XLS(엑셀) HWP(한글) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 내용저장 
+ 닫기 
+ 
+ 
+ 파일형식 
+ 
+ 
+ HTML 
+ 
+ HWP(한글) 
+ 
+ XLS(엑셀) 
+ 
+ 
+ 
+ 저장 
+ 닫기 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 내용저장 
+ 닫기 
+ 
+ 
+ 파일형식 
+ 
+ 
+ HTML 
+ 
+ HWP(한글) 
+ 
+ XLS(엑셀) 
+ 
+ 
+ 
+ 저장 
+ 닫기 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 카카오톡 
+ 페이스북 
+ 트위터 
+ 라인 
+ 주소복사 
+ 
+ 
+ 
+ 
+//<![CDATA[
+	window.addEventListener('mouseup', function(e){
+		var movewrap = document.getElementsByClassName("shareLayer");
+		for(var i=0; i<movewrap.length;i++){
+			if(!movewrap[i].contains(e.target)){
+				movewrap[i].style.display = "none";
+			}
+		}
+	});
+	$('.btnUrl').keydown(function(){
+		if(event.keyCode == 9 && !event.shiftKey){
+			$('.shareLayer').hide();
+		}
+	})
+	$('#share').keyup(function(){
+		$(".shareLayer").hide();
+	})
+	
+//]]>
+ 
+ 복사 | 
+ 돋보기 
+ | 
+ 생활법령정보 
+ | 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

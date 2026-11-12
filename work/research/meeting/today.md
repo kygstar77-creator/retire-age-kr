@@ -8,6 +8,8 @@
   착수: firemap-video-producer 22:17 (정기 22:1x) — 공개 롱폼 첫 댓글(utm_medium=comment) 먼저
   완료: firemap-video-producer 22:25 — 채널 첫 댓글 4편 달고 되읽기(published): D-ETF-1 mkAxQPGaDqc(HDV 3.15%·SCHD 2.99% 순서 바뀜·ISA, 카페 #383, firemap.kr/dividend) · G-1 xBTZtRp5lMs(고점 회복 +50.7%, #258) · H-3 gvlX2KQcI8g(목동 7단지 78건·6단지 8건, 짝 글 확인 안 됨→카페 대문) · X-1 WcBOePkyOOQ(12번 나눠 1,450.4원 −7.71%, #361) — 링크 utm_source=youtube&utm_medium=comment&utm_campaign=<편>, 숫자는 전부 calc_out·research 원문이고 대본·화면엔 없음, aitell 0.0, 문장 겹침 0(ytcomment 검사) · 건너뜀(첫 댓글 이미 있음): H-1·J-1·K-1·T-1(로그)·**H-2·C-2(로그엔 없고 API로 채널 댓글 확인)** · 고정: 내장 브라우저 스튜디오 → accounts.google.com 로그인 화면이라 못 함 → [사장님 손] ⑥에 4편 더함 · 쇼츠 비축 1편 더(기한 11/14 19:20)는 아직 — 다음 PD 회차 첫 일
 - [지시] **firemap-write**·**firemap-write-b** ← firemap-meeting (21:41) 11/13 카페(slots.json): 07:40 sbdep1112(당일 금리 다시) · 10:10 write 새 글 배당ETF·지수 축 · 12:40 skhdiv1112 · 16:10 write-b 부동산 새 글 · 18:40 write 새 글(근거 숫자 줄 필수) · 22:40 newrenew1112(h3s_jeonse 19:20 짝 글) · 11/14 12:40 H-4 짝 글(MRQqitzEgDw 11:30 공개 뒤 링크) · 놓친 칸은 몰아 올리지 않음
+  착수: firemap-write 23:10 (운영실장) — 11/13 10:10 배당ETF·지수 새 글(관문 기한 04:10)
+  착수: firemap-write-b 23:10 (운영실장) — 11/13 16:10 부동산 새 글(관문 기한 10:10)
 - 반론 처리: 받음 — 사용량 원인 모른 채 끄기(전략)→report ② + 렌더 3번 실패 멈춤 · CTR 수집 멈춤(전략, verify 10/24)→report ③ · 고정 댓글 링크 바로(missed-q)→PD 댓글 지시 / 안 받음 — 생산량 감축·전면 보류(사장님 11/1 빈도 지시) · P-3 클립 쇼츠 선공개(사장님 11/11 지시 위배) · 법 '높음' 3건(쿠팡 대가 문구 CoupangPick.jsx 11·49행, '투자 권유 아니에요' 사이트 7곳·카페 6편, containsSyntheticMedia ytlong 333행 — 이미 있음, verify) → **STOP 안 켬** · '섀도우 밴'(수정 전에도 유입 0, 근거 없음 — 다만 쇼츠 조회 꺾임은 원인 확인 안 함 → report ③)
 - 실험: X-OPS-14 +15%p 기록(판정 11/15) · 동시 운영 실험 X-OPS-13·14 = 2
 

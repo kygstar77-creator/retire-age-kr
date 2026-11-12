@@ -78,7 +78,7 @@
     "item": "p3s_cliff",
     "ep": "work/research/cardshorts/p3s_cliff",
     "layout": "c1clip",
-    "status": "2026-11-12 15:46 관문 통과(경쟁 6·숫자 대조 0·꼴 ⓐ~ⓓ·안전 영역·디자인·치직 0·쉿소리·이해 3차 9명·aitell 0.0·눈 검사, review.md) · 미업로드 — P-3 vgFx2od9_sg '국민연금 월 166만원 0원 vs 167만원 피부양자 빠져 매달 6만 8천원쯤' · 정책(건보료) 축, 주식 아님 · mp4 work/video/out/p3s_cliff_c1_ds.mp4 · 쓸 때 upload.json publishAt 정하고 w1g1clips_up.py p3s_cliff",
+    "status": "쓰지 않음(firemap-meeting 2026-11-12: 원본 P-3 비공개 — 사장님 11/11 이미 만들었다고 올리지 말자) · 2026-11-12 15:46 관문 통과(경쟁 6·숫자 대조 0·꼴 ⓐ~ⓓ·안전 영역·디자인·치직 0·쉿소리·이해 3차 9명·aitell 0.0·눈 검사, review.md) · 미업로드 — P-3 vgFx2od9_sg '국민연금 월 166만원 0원 vs 167만원 피부양자 빠져 매달 6만 8천원쯤' · 정책(건보료) 축, 주식 아님 · mp4 work/video/out/p3s_cliff_c1_ds.mp4 · 쓸 때 upload.json publishAt 정하고 w1g1clips_up.py p3s_cliff",
     "by": "firemap-video-producer",
     "at": "2026-11-12 15:46",
     "gates_ok": "2026-11-12 15:46"
@@ -3987,6 +3987,70 @@
    "owner": "firemap-video-producer",
    "gates_ok": "2026-11-12 15:02",
    "note": "firemap-video-producer 2026-11-12 15:02: m1clip 판 E-18 쉼 → c1clip 다시 렌더(새 녹음 0), 꼴·E-18(c1clip 998 vs 996)·숫자·이해 3명·안전 영역·디자인·치직 0·눈 검사 2차 통과 → 예약 gBxKe5Fx1rw publishAt 2026-11-13T10:20:00Z private 되읽기 · 11/12 k1s_dep(경제) 다음 날 부동산 · yt_pair: gBxKe5Fx1rw → 11/13 22:40 카페 짝 글(write, 공개 뒤 '새로 맺은 전세만 보는 법' 질문 하나)"
+  },
+  {
+   "at": "2026-11-13 07:40",
+   "kind": "cafe",
+   "item": "sbdep1112 (비축, 저축은행 금리)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-12 21:3x: 근거 kwvol 저축은행금리비교 19,160 · 발행 당일 금리 다시(D-11)"
+  },
+  {
+   "at": "2026-11-13 10:10",
+   "kind": "cafe",
+   "item": "TBD — 배당ETF·지수 축 새 글",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-12 21:3x: 근거 우리 롱폼 축 중앙 460(10편, 11/11 Data API) · 관문 기한 04:10, 못 넘으면 비축"
+  },
+  {
+   "at": "2026-11-13 12:40",
+   "kind": "cafe",
+   "item": "skhdiv1112 (비축, SK하이닉스 배당×건보료)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-12 21:3x: 근거 kwvol 19,830 · 우리 카페 1위 틀(배당×건보료) 37.5/일 · 기준일 11/30 전 글"
+  },
+  {
+   "at": "2026-11-13 16:10",
+   "kind": "cafe",
+   "item": "TBD — 부동산 새 글(실거래·원문 자료)",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-12 21:3x: 근거 아파트 실거래 축 중앙 408(3편) · 부동산 하루 1칸 이상(사장님 10/13)"
+  },
+  {
+   "at": "2026-11-13 18:40",
+   "kind": "cafe",
+   "item": "TBD — 경제·정책 새 글(통계 근거 줄 필수)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-12 21:3x: 근거 숫자 없으면 비축으로 채움(사장님 11/11 '통계로 결정')"
+  },
+  {
+   "at": "2026-11-13 22:40",
+   "kind": "cafe",
+   "item": "newrenew1112 (비축, 전세 갱신 vs 신규) — yt_pair: h3s_jeonse gBxKe5Fx1rw",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-12 21:3x: 쇼츠 19:20 공개 뒤 · 근거 아파트전세 kwvol 7,320 · 615곳 실측 경쟁 0편"
+  },
+  {
+   "at": "2026-11-14 19:20",
+   "kind": "shorts",
+   "item": "k1s_fix (비축, K-1 경제)",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-12 21:3x: K-1은 11/12 k1s_dep 뒤 이틀 · p3s_cliff는 원본 P-3 비공개라 쓰지 않음(회의 11/12 B)"
+  },
+  {
+   "at": "2026-11-14 12:40",
+   "kind": "cafe",
+   "item": "H-4 짝 글 cafe.md — yt_pair: MRQqitzEgDw",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-12 21:3x: 롱폼 11:30 공개 뒤 링크 · 롱폼 1편=카페 1편(사장님 10/11)"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외",

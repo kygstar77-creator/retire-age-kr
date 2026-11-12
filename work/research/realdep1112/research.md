@@ -69,6 +69,10 @@
 | 세금 15.4% | 소득세 14% + 지방소득세 1.4% | S3 https://www.law.go.kr/법령/소득세법/제129조 |
 
 # 올리기 전 확인
+- 2026-11-12 19:45(write-b 19:40 회차, 발행 당일 다시 — 22:40 회차 발행) 대조 칸 출처 S1~S4 전부 다시 엶 — S1·S2 ECOS API calc.py·calc2.py 다시 돌려 calc_out.txt·calc2_out.txt와 diff 0(받은 시각 줄만 다름), S3 소득세법 제129조 국가법령정보센터 웹(lawweb.py) '이자소득에 대해서는 100분의 14' 그대로, S4 https://youtu.be/jGtx9f6SZKA 19:20 공개 확인(oEmbed 200)
+- 기준일: 2026년 11월 12일
+- 바뀐 것: 없음 — 정기예금(1년) 신규취급 최신 2026년 9월 3.57% 그대로, 소비자물가 최신 2026년 10월 지수 120.73(전년 같은 달 대비 2.82%) 그대로, 세율 14%+지방소득세 1.4% 그대로
+- 새로 찾은 것: 짝 쇼츠 jGtx9f6SZKA 공개됨(본문 링크 살아 있음)
 - 2026-11-12 10:50(write-b 10:40 회차, 원고 만든 날 — 발행 22:40 회차가 1일 안 다시) 대조 칸 출처 S1~S3 전부 오늘 받음 — S1·S2 ECOS API(calc.py 10:50), S3 법령 주소
 - 다시 연 주소: https://ecos.bok.or.kr · https://www.law.go.kr/법령/소득세법/제129조 · https://youtu.be/jGtx9f6SZKA (upload.json id·제목 11/12 확인, 19:20 공개 예약) · work/research/longform/ep/K-1/calc5_out.txt
 - 기준일: 2026년 11월 12일

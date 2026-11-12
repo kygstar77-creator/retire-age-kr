@@ -3729,3 +3729,5 @@
 2026-11-12 17:14 · visual · JT-1 썸네일 1위 시안 f2(아파트 앞면) · thumbpair f2>b3 2:0·나머지 1:1(순서 치우침), 집이 보이고 경쟁 밝기와 가까움 · 1초 시험은 copywriter
 2026-11-12 18:25 · firemap-video-producer · H-4 예약 업로드 MRQqitzEgDw(11/14 11:30) · editor 설명란 서명 sha 일치·ytlong gate 통과·주제 아파트 실거래(11/11 통계 허용 축, 중앙 408)
 2026-11-12 18:25 · firemap-video-producer · 완료: H-4 예약 업로드(editor 15:11 요청) · cafe.md·쇼츠 spec 3
+2026-11-12 18:40 · firemap-write · 18:40 칸 sp500dist1112 #413 발행(올리기 전 확인 바뀐 것 없음) · 편성·관문 통과분 그대로
+2026-11-12 18:40 · firemap-write · 비축 sbdep1112 '저축은행 금리 비교, 한 달 새 몇 곳이 올렸을까?' 관문 통과 · kwvol 저축은행금리비교 19,160 · 배당소득세·연금저축해지는 기존 글과 겹쳐 버림(pensavbreak1007·divtax0928 등) · 올린 이유는 원문 없어 안 씀

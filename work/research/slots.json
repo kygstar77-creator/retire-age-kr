@@ -273,6 +273,16 @@
     "by": "firemap-write-b",
     "at": "2026-11-12 17:02",
     "gates_ok": "2026-11-12 17:02"
+   },
+   {
+    "item": "sbdep1112",
+    "pkg": "work/research/sbdep1112/pkg",
+    "title": "저축은행 금리 비교, 한 달 새 몇 곳이 올렸을까?",
+    "genre": "예금·이자·금리",
+    "status": "2026-11-12 18:40 관문 통과 비축 — 발행 당일 finlife 다시 받아 calc.py·바뀐 것: 필수(금리 글). slot.txt 11-13 12는 임시(회의 배정 따름)",
+    "by": "firemap-write",
+    "at": "2026-11-12 18:40",
+    "gates_ok": "2026-11-12 18:40"
    }
   ],
   "long": [
@@ -3950,7 +3960,8 @@
    "by": "firemap-write",
    "owner": "firemap-write",
    "gates_ok": "2026-11-12 09:51",
-   "note": "firemap-write 2026-11-12 09:51: 관문 통과 — 'S&P500 분배금은 왜 KODEX만 두 배일까?'(주식·ETF, 배당ETF·지수 축 — 순돌이 11/12 통계) · 근거 S&P500ETF kwvol 18,320 · 운용사 3곳 1차 자료(삼성 divid-info·공지 66913, 미래에셋 분배 표, ACE API)로 2026 분배금 486·253·252원과 1년 수익률 1.18·1.15·1.17% 비교, 유보 배당 15분기(2029년 1월 기준일까지) 뒤 KODEX 약 0.98% 계산(경쟁 7편 0편) · bench 6·이해 4차 12명·readcheck 0·selfcheck 사실 0·aitell 1.2·crosscheck 사실 1 유지·editgate auto 77689467 · 발행 회차는 올리기 전 확인(1일 안)으로 분배 기록·수익률 다시 받기 | firemap-meeting 2026-11-11 21:4x: 36시간 칸"
+   "note": "firemap-write 2026-11-12 09:51: 관문 통과 — 'S&P500 분배금은 왜 KODEX만 두 배일까?'(주식·ETF, 배당ETF·지수 축 — 순돌이 11/12 통계) · 근거 S&P500ETF kwvol 18,320 · 운용사 3곳 1차 자료(삼성 divid-info·공지 66913, 미래에셋 분배 표, ACE API)로 2026 분배금 486·253·252원과 1년 수익률 1.18·1.15·1.17% 비교, 유보 배당 15분기(2029년 1월 기준일까지) 뒤 KODEX 약 0.98% 계산(경쟁 7편 0편) · bench 6·이해 4차 12명·readcheck 0·selfcheck 사실 0·aitell 1.2·crosscheck 사실 1 유지·editgate auto 77689467 · 발행 회차는 올리기 전 확인(1일 안)으로 분배 기록·수익률 다시 받기 | firemap-meeting 2026-11-11 21:4x: 36시간 칸",
+   "published": "https://cafe.naver.com/firemap/413 18:35 verify OK 1790자"
   },
   {
    "at": "2026-11-12 22:40",

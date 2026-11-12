@@ -83,5 +83,7 @@
 - 다시 연 주소: https://m.samsungfund.com/api/v1/kodex/divid-info.do?id=2ETFE4 · https://www.samsungfund.com/etf/lounge/notice-view.do?no=66913 · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7360750004 · https://papi.aceetf.co.kr/api/funds/K55101D78195/dividend?page=1 · https://papi.aceetf.co.kr/api/funds/K55101D78195 · https://m.samsungfund.com/api/v1/kodex/product/2ETFE4.do · https://www.law.go.kr/법령/소득세법/제129조 · https://www.law.go.kr/법령/소득세법/제14조 · https://www.law.go.kr/법령/조세특례제한법/제91조의18
 - 기준일: 2026년 11월 12일(수익률·종가는 11월 11일)
 - 바뀐 것: 조사 날이라 없음 — 10/30 기준일 분배금 세 상품 모두 11/3 지급 끝
+- 2026-11-12 18:21(발행 회차, firemap-write) 다시 받음(r4/): S1 KODEX 분배 기록 4건 486원 그대로 · S5 yieldYear1 1.18%(기준 20261112) · S4 ACE 분배 59·66·62·65원·yy1ErnRt 1.167%(기준 20261111) · S3 TIGER 기준가격 1년 1.15% 그대로
+- 바뀐 것: 없음 — 분배금 3상품·1년 수익률 1.18·1.17·1.15% 모두 09:4x와 같음
 - 새로 찾은 것: KODEX 유보 배당 15분기 분배(2029년 1월 기준일까지) · 세 상품 1년 수익률 1.15~1.18%
 - 조사 뒤 공표: data/release_calendar.json에 운용사 분배 일정 없음(다음 분배 기준일 1월 마지막 영업일)

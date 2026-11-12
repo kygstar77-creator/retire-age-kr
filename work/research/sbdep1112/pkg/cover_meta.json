@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-12 18:34",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "저축은행 금리/한 달 새 몇 곳?",
+ "num": "4% 이상 21→44곳",
+ "sub": "79곳 공시 두 번 맞대 봄",
+ "label": "금감원 비교공시",
+ "src": "금융감독원 금융상품통합비교공시",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 120,
+ "num_px": 88,
+ "sub_px": 46,
+ "board": [
+  "convrate1112",
+  "bonddep1111",
+  "parking1109",
+  "bunrinhis1111",
+  "acqseoul1111",
+  "k1pair1110",
+  "stkgift1109",
+  "ltdeduct1110",
+  "stkded1109",
+  "retpay1109"
+ ]
+}

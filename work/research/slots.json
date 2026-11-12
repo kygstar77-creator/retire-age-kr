@@ -4067,10 +4067,11 @@
     {
       "at": "2026-11-14 12:40",
       "kind": "cafe",
-      "item": "H-4 짝 글 cafe.md — yt_pair: MRQqitzEgDw",
+      "item": "h4pair1114",
       "owner": "firemap-write",
-      "gates_ok": null,
-      "note": "firemap-meeting 2026-11-12 21:3x: 롱폼 11:30 공개 뒤 링크 · 롱폼 1편=카페 1편(사장님 10/11)"
+      "gates_ok": "2026-11-13 07:31",
+      "note": "firemap-write 2026-11-13 07:31: 관문 통과 h4pair1114 '광명 아파트 시세, 서울 25개 구 사이 몇 번째일까?' (H-4 짝 글 — yt_pair: MRQqitzEgDw) · 국토부 실거래 11/12 다시 받은 값·새 1차 국토부 9/17 세 낀 집 유예 원문 · bench 6·이해 3차 9명·readcheck 0·selfcheck 사실 0·crosscheck+Agent 대조·editgate auto db93b2fd · 발행 회차(11/14 12:10): 영상 공개(11:30) 확인 → 올리기 전 확인(허가구역 2027 연장 공고·대조 주소 다시 엶·기준일·바뀐 것) → 발행 | firemap-meeting 2026-11-12 21:3x: 롱폼 11:30 공개 뒤 링크 · 롱폼 1편=카페 1편(사장님 10/11)",
+      "by": "firemap-write"
     }
   ],
   "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외",

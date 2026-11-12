@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-13 07:19",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "광명 아파트 시세",
+ "num": "26곳 중 18번째",
+ "sub": "서울 25개 구와 84㎡대 가운데 값",
+ "label": "2026.11.12 국토부 실거래 기준",
+ "src": "국토교통부 실거래가",
+ "icon": "house",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 142,
+ "num_px": 113,
+ "sub_px": 62,
+ "board": [
+  "realdep1112",
+  "sp500dist1112",
+  "convrate1112",
+  "bonddep1111",
+  "parking1109",
+  "bunrinhis1111",
+  "acqseoul1111",
+  "k1pair1110",
+  "stkgift1109",
+  "ltdeduct1110"
+ ]
+}

@@ -10,3 +10,5 @@
 2026-11-12 10:17 | firemap-video-producer 정기 10:1x | H-4 렌더 다시(07:43 31907490 No frame found로 죽음)
 2026-11-12 11:51 | firemap-video-producer 정기 10:1x | 렌더 도는 중(render_parts_1112b.sh 1천 토막·토막마다 3번 다시, 로그 ep/H-4/check/run_1112.log) — 다른 회차는 out/h4* 건드리지 말 것
 2026-11-12 13:05 | firemap-video-producer 정기 10:1x | 끝 — 렌더본 out/h4_ds.mp4(12:58) 관문 통과, 손 뗌
+2026-11-12 18:17 | firemap-video-producer 정기 18:1x | H-4 예약 업로드(ytlong up publishAt 11/14 11:30)
+2026-11-12 18:25 | firemap-video-producer 정기 18:1x | 끝

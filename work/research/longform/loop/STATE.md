@@ -1,3 +1,5 @@
+[PD] H-4 예약 업로드 https://youtu.be/MRQqitzEgDw (11/14 11:30 공개, gate 통과·썸네일 설정·app_preview 확인) · cafe.md·쇼츠 spec 3(cardshorts/h4s_specs.md) · 첫 댓글 대기 MRQqitzEgDw(11/14 11:30 뒤) · 고정 대기 NNcjTE0L7yg·H9Lv281MaLs 2026-11-12 18:25
+[PD] H-4 예약 업로드 시작 2026-11-12 18:17 (정기 18:1x — editor desc_1112 서명 15:11 끝)
 - 2026-11-12 17:04 [youtube-loop] SQ-1 ③ 경쟁 3편 분해 끝·④ S1 나스닥100 방법론 2026판·S2 QQQ·S3 SCHD 원문 · 판단: 우리 몫 = 규칙 원문·비율별 과거값 계산·세금 차이(추정 수익률 기대처럼 말하지 않음) · 다음: S&P DJI 배당100 규칙(브라우저)·SCHD/QQQ 분배 이력·국내 상장 설명서·세법 조문 → toc_compare 10편 → research 8칸, N-3 올리기 전 다시 셈(11/19), JT-1 say_v1
 [PD] h3s_jeonse 쇼츠 c1clip 판 관문 통과·11/13 19:20 예약 https://youtu.be/gBxKe5Fx1rw · 롱폼 업로드 0(H-4는 editor 설명란 서명 11/13 06:00 뒤 다음 PD가 11/14 11:30 예약) · 쇼츠 비축 k1s_fix 1편(최소 2 미달) 2026-11-12 15:02
 [PD] h3s_jeonse 쇼츠 c1clip 다시 만들기 시작 2026-11-12 14:17 (정기 14:1x — 11/13 쇼츠 칸 재료, H-4는 editor 설명란 서명 11/13 06:00 대기)

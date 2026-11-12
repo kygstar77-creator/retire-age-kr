@@ -73,6 +73,15 @@
     "by": "firemap-video-producer",
     "at": "2026-11-11 03:12",
     "gates_ok": "2026-11-11 03:12"
+   },
+   {
+    "item": "p3s_cliff",
+    "ep": "work/research/cardshorts/p3s_cliff",
+    "layout": "c1clip",
+    "status": "2026-11-12 15:46 관문 통과(경쟁 6·숫자 대조 0·꼴 ⓐ~ⓓ·안전 영역·디자인·치직 0·쉿소리·이해 3차 9명·aitell 0.0·눈 검사, review.md) · 미업로드 — P-3 vgFx2od9_sg '국민연금 월 166만원 0원 vs 167만원 피부양자 빠져 매달 6만 8천원쯤' · 정책(건보료) 축, 주식 아님 · mp4 work/video/out/p3s_cliff_c1_ds.mp4 · 쓸 때 upload.json publishAt 정하고 w1g1clips_up.py p3s_cliff",
+    "by": "firemap-video-producer",
+    "at": "2026-11-12 15:46",
+    "gates_ok": "2026-11-12 15:46"
    }
   ],
   "cafe": [

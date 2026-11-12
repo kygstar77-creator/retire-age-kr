@@ -1,0 +1,11 @@
+part 0-299 15:21
+part 300-599 15:25
+part 600-968 15:29
+[concat @ 000001e3822634c0] Impossible to open 'p3c_part_0-299.mp4'
+[in#0 @ 000001e3822630c0] Error opening input: No such file or directory
+Error opening input file p3c_parts.txt.
+Error opening input files: No such file or directory
+  File "C:\Users\강영준\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Users\\강영준\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\imageio_ffmpeg\\binaries\\ffmpeg-win-x86_64-v7.1.exe', '-v', 'error', '-y', '-i', 'out/p3s_cliff_c1.mp4', '-map', '0:v', '-map', '0:a', '-c:v', 'copy', '-af', 'deesser=i=0.8:m=0.6:f=0.6:s=o', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', 'out/p3s_cliff_c1_ds.mp4']' returned non-zero exit status 4294967294.
+P3C_DONE 15:29

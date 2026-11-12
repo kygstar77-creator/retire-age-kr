@@ -3715,3 +3715,6 @@
 2026-11-12 15:02 · firemap-video-producer · h3s_jeonse 쇼츠를 m1clip→c1clip으로 다시 만들어 11/13 19:20 예약(gBxKe5Fx1rw) · E-18이 m1clip을 쉼으로 막고(3편 중앙 421 vs 채널 996, 표본 3·20) c1clip 998은 통과, 11/13 칸이 비어 있었음(k1s_fix는 k1s_dep와 같은 K-1이라 11/14부터) · 부동산 축 쇼츠 중앙 1,003(10/20~11/3, 표본 작음)
 2026-11-12 15:02 · firemap-video-producer · 디스크 여유 37G라 새 Remotion 번들(7.7G) 대신 k1s_fix 번들에 bg/h3/cut만 넣어 렌더 · C1S.tsx·parts가 번들(11/11 03:06) 뒤 바뀌지 않음 확인
 2026-11-12 15:11 · editor · 결정 · H-4 설명란 desc_1112.txt 서명(aitell 9.2, 바뀐 곳 3가지만·meta desc 동일) — PD가 11/14 11:30 예약 가능
+2026-11-12 15:24 · firemap-video-producer · 쇼츠 비축 새 클립 = P-3(vgFx2od9_sg, 정책·건보료 축, 비주식·K-1 아님) 'p3s_cliff' c1clip · 이유: 11/12 k1s_dep(경제)·11/13 h3s_jeonse(부동산)·11/14 k1s_fix(경제)와 축이 다르고, 경쟁 최근 30일 최고 21만(수요 큼)인데 원 단위 보험료(월 166만 0원 vs 167만 6만 8천원)를 보인 편 0 · 새 녹음 0
+2026-11-12 15:24 · firemap-video-producer · p3s_cliff 첫 줄을 롱폼 질문 줄(63자, 꼴 관문 ⓐ 35자 초과)에서 '기준은 한 해 소득 2천만원입니다.'로 바꾸고 물가 장(2:19·2:24) 더함 · 이해 시험 3차(9명) 고친 칸 3곳('2.1% 오르면 기준 위'·'피부양자 빠짐'·출처 줄 '보험료 = 연금의 절반 × 7.19%') 뒤 통과
+2026-11-12 15:46 · firemap-video-producer · 완료: 쇼츠 비축 p3s_cliff 관문 통과·slots reserve.shorts 등록(비축 k1s_fix·p3s_cliff 2편 = reserve_min 2) · H-4 예약은 다음 PD 회차

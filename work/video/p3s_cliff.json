@@ -1,0 +1,246 @@
+{
+ "fps": 30,
+ "name": "p3s_cliff",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "건강보험 피부양자 소득 기준",
+  "국민연금 월 166만원과 167만원, 건보료는?"
+ ],
+ "hot": "167만원",
+ "answer": {
+  "label": "국민연금만 받는 피부양자 · 재산 거의 없을 때",
+  "items": [
+   "월 166만원: 건보료 0원",
+   "월 167만원: 매달 6만 8천원쯤"
+  ],
+  "arrow": false,
+  "note": "건강보험+장기요양 합친 값 · 재산 있으면 더 커요"
+ },
+ "base": "국민건강보험법 시행규칙 피부양자 소득 기준 연 2천만원 · 보험료 = 연금의 절반 × 7.19%, 장기요양은 그 13.14% · 파이어맵 계산",
+ "long": "vgFx2od9_sg",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "기준",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "피부양자 소득 기준",
+      "한 해 2천만원",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "한 달로 나누면",
+      "166만원쯤",
+      "",
+      77,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "기준은 한 해 소득 2천만원입니다.",
+     "audio": "audio/p-3/bf87d3b3f02d7173.wav",
+     "frames": 77
+    },
+    {
+     "n": 2,
+     "text": "한 달로 나누면 166만원을 조금 넘어요.",
+     "audio": "audio/p-3/96aef116bd83a664.wav",
+     "frames": 92
+    }
+   ],
+   "frames": 169
+  },
+  {
+   "kind": "vs",
+   "label": "답",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "월 166만원",
+      "0원",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "월 167만원",
+      "피부양자 빠짐",
+      "",
+      75,
+      "ink"
+     ],
+     [
+      "건보+장기요양",
+      "매달 6만 8천원",
+      "",
+      151,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 3,
+     "text": "166만원이면 한 푼도 안 내요.",
+     "audio": "audio/p-3/318d16ec8b58ab59.wav",
+     "frames": 75
+    },
+    {
+     "n": 4,
+     "text": "167만원이 되면 보험료가 붙어요.",
+     "audio": "audio/p-3/6ce360bdc9fcbeeb.wav",
+     "frames": 76
+    },
+    {
+     "n": 5,
+     "text": "매달 6만 8천원쯤입니다.",
+     "audio": "audio/p-3/1e53f0716204778d.wav",
+     "frames": 59
+    }
+   ],
+   "frames": 210
+  },
+  {
+   "kind": "vs",
+   "label": "물가",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "해마다 1월",
+      "물가만큼 오름",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "올해 월 164만원도",
+      "2.1% 오르면 기준 위",
+      "",
+      96,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "국민연금은 해마다 1월에 물가만큼 오릅니다.",
+     "audio": "audio/p-3/71cd35b2cae4c5b2.wav",
+     "frames": 96
+    },
+    {
+     "n": 7,
+     "text": "올해 월 164만원을 받는 분부터 이렇게 됩니다. 아무것도 안 했는데 기준을 넘는 거예요.",
+     "audio": "audio/p-3/9c64af10ebcbf0d2.wav",
+     "frames": 154
+    }
+   ],
+   "frames": 250
+  },
+  {
+   "kind": "vs",
+   "label": "할 일",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "재산이 있으면",
+      "이보다 커져요",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "연금 통지서로",
+      "내년 2천만원 넘나",
+      "",
+      144,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 8,
+     "text": "집 같은 재산이 있으면 재산에도 보험료가 따로 붙어서, 이보다 커집니다.",
+     "audio": "audio/p-3/08b1b8873635e7e0.wav",
+     "frames": 144
+    },
+    {
+     "n": 9,
+     "text": "연금 통지서를 꺼내서, 내년 연금이 물가만큼 올랐을 때 한 해 2천만원을 넘는지 계산해 보세요.",
+     "audio": "audio/p-3/cf688a94ce55c491.wav",
+     "frames": 160
+    }
+   ],
+   "frames": 340
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/p3/stock/cut/apartment_windows_8_f.mp4",
+   "from": 0,
+   "frames": 77,
+   "start": 0
+  },
+  {
+   "src": "bg/p3/stock/cut/bench_backs_6_f.mp4",
+   "from": 77,
+   "frames": 92,
+   "start": 0
+  },
+  {
+   "src": "bg/p3/stock/cut/phone_pickup_0_f.mp4",
+   "from": 169,
+   "frames": 75,
+   "start": 0
+  },
+  {
+   "src": "bg/p3/stock/cut/open_bill_0_f.mp4",
+   "from": 244,
+   "frames": 76,
+   "start": 0
+  },
+  {
+   "src": "bg/p3/stock/cut/mailbox_hand_0_f.mp4",
+   "from": 320,
+   "frames": 59,
+   "start": 0
+  },
+  {
+   "src": "bg/p3/stock/cut/apartment_windows_14_f.mp4",
+   "from": 379,
+   "frames": 96,
+   "start": 0
+  },
+  {
+   "src": "bg/p3/stock/cut/bench_backs_0_f.mp4",
+   "from": 475,
+   "frames": 154,
+   "start": 0
+  },
+  {
+   "src": "bg/p3/stock/cut/apartment_windows_2_f.mp4",
+   "from": 629,
+   "frames": 144,
+   "start": 0
+  },
+  {
+   "src": "bg/p3/stock/cut/drawer_paper_0_f.mp4",
+   "from": 773,
+   "frames": 196,
+   "start": 0
+  }
+ ],
+ "credits": "Anastasia  Shuraeva · Dario Fernandez Ruz · Pavel Danilyuk · alleksana · cottonbro studio · vignesh srivatsav"
+}

@@ -1,0 +1,8 @@
+part 0-299 15:32
+skip 300-599
+skip 600-968
+CONCAT OK
+후 None
+음량 맞춤 {'I': -17.0, 'TP': -1.5}
+out/p3s_cliff_c1_ds.mp4
+P3C_DONE 15:32

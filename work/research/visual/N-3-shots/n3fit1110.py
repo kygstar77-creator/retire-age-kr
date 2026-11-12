@@ -346,7 +346,8 @@ def n3_seven(im):   # r09 '이제 일곱 칸입니다. 칸마다 통장 금액�
     for i in range(7): pts += [(x0 + i * dx, yb - 62 * (i + 1)), (x0 + (i + 1) * dx, yb - 62 * (i + 1))]
     d.line(pts, fill=INK, width=7, joint='curve')
     T(d, (W // 2, 930), '연봉 3천 · 4천 · 5천 · 6천 · 7천 · 8천 · 1억', 60, INK, F_X)
-    T(d, (x1 - dx / 2, yb - 62 * 7 - 90), '통장 ?', 90, OR, F_X)
+    # 11/12 '통장 ?' 글자 → 통장 그림(quality-gap-1112 ②: '?' 판 3장 이하·판 몸통 사물 그림)
+    K.obj(im, 'bankbook', x1 - dx / 2, yb - 62 * 7 - 110, 230, rot=4)
     T(d, (700, 470), '칸마다 통장 금액 · 백 명 줄에서 몇 번째', 46, INK, F_B)
 
 @board

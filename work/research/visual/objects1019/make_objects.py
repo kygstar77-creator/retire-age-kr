@@ -112,6 +112,33 @@ OBJ['hourglass'] = ('모래시계', '기간·돈이 바닥나는 시점',
     f'<path d="M148 335 Q200 278 252 335 Z" fill="{ACC}"/>'
     f'<line x1="105" y1="60" x2="295" y2="60" {S}/><line x1="105" y1="340" x2="295" y2="340" {S}/>')
 
+# --- 11/12 더함(quality-gap-1112 ② 7종: 아파트 동·집·은행·달력·고지서·통장·계산기 — 없던 3종) ---
+# 11 아파트 동 — 단지·동·순위·실거래 판 (높은 동 + 낮은 동, 창 격자, 한 칸만 주황 = '이 집')
+win = lambda x0, y0, nc, nr, hi=None: ''.join(
+    f'<rect x="{x0 + c * 30}" y="{y0 + r * 30}" width="18" height="16" rx="3" fill="{ACC if (r, c) == hi else LINE}"/>' for r in range(nr) for c in range(nc))
+OBJ['apt'] = ('아파트 동', '단지·동·실거래·순위',
+    f'<rect x="60" y="150" width="120" height="200" fill="{W}" {S}/>' + win(82, 172, 3, 5)
+    + f'<rect x="200" y="60" width="140" height="290" fill="{W}" {S}/>' + win(222, 84, 4, 7, (3, 2))
+    + f'<line x1="30" y1="350" x2="370" y2="350" {S}/>')
+
+# 12 은행 — 대출·예금·금리 판 (기둥 건물, 지붕 위 동그라미 하나 주황)
+OBJ['bank'] = ('은행', '대출·예금·금리',
+    f'<path d="M50 150 L200 70 L350 150 Z" fill="{SOFT}" {S}/>'
+    f'<circle cx="200" cy="120" r="14" fill="{ACC}"/>'
+    f'<rect x="65" y="150" width="270" height="22" fill="{W}" {S}/>'
+    + ''.join(f'<rect x="{88 + i * 62}" y="185" width="30" height="125" fill="{W}" {s6}/>' for i in range(4))
+    + f'<rect x="55" y="315" width="290" height="22" fill="{W}" {S}/><line x1="35" y1="345" x2="365" y2="345" {S}/>')
+
+# 13 고지서 — 건보료·재산세·관리비 '청구' 판 (봉투 창 + 낼 돈 칸 주황, 영수증=낸 돈과 구분)
+OBJ['bill'] = ('고지서', '건보료·재산세·청구된 돈',
+    f'<rect x="70" y="70" width="260" height="270" rx="10" fill="{W}" {S}/>'
+    f'<rect x="70" y="70" width="260" height="56" rx="10" fill="{SOFT}" {S}/>'
+    f'<line x1="105" y1="98" x2="215" y2="98" {s6}/>'
+    + gl(105, 165, 295, 165) + gl(105, 200, 260, 200) + gl(105, 235, 280, 235)
+    + f'<line x1="100" y1="268" x2="300" y2="268" {s6}/>'
+    f'<rect x="185" y="282" width="115" height="36" rx="6" fill="{ACC}"/>'
+    f'<rect x="105" y="282" width="62" height="36" rx="6" fill="{LINE}"/>')
+
 
 def svg(body, px=400):
     return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="{px}" height="{px}">{body}</svg>'

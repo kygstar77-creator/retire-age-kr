@@ -43,6 +43,38 @@ def canvas(sepia=False):
 def T(d, xy, s, size, fill=INK, f=F_B, anchor='mm'):
     d.text(xy, s, font=font(f, size), fill=fill, anchor=anchor)
 
+# 11/12 판 몸통 사물 그림 칸(quality-gap-1112 ②) — 자체 제작 그림 13종 visual/objects1019/png/<이름>.png(512 투명)
+# apt 아파트 동 · house 집 · bank 은행 · calendar 달력 · bill 고지서 · bankbook 통장 · calculator 계산기
+# + scale 저울 · coins 동전 · receipt 영수증 · hourglass 모래시계 · flow 흐름 · flags_kr_us 국기. 판 하나에 그림 하나, 판 문장의 '무엇'과 같은 사물.
+OBJ_DIR = os.path.join(WORK, 'research', 'visual', 'objects1019', 'png')
+def obj(im, name, cx, cy, size=240, rot=-3, seed=7):
+    """판 몸통에 사물 그림 하나 — 가운데 (cx, cy), 한 변 size px.
+    판과 같은 손그림 꼴로 바꿔 붙인다(평면 아이콘은 판의 종이·손 선과 따로 놀고 '아이콘 세트' 티 — no-claude-look-1019):
+    ① 흰 바탕 칠은 빼서 종이가 비치게 ② 색 칠(주황·연주황·옅은 회색)은 크래프트 손 빗금 — 판의 주황은 그 화면의 답 하나뿐
+    ③ 검은 선은 살짝 흔들어(±2px) 손으로 그린 선처럼 ④ 살짝 기울임(rot도)."""
+    import numpy as np
+    g = Image.open(os.path.join(OBJ_DIR, name + '.png')).convert('RGBA').resize((size, size), Image.LANCZOS)
+    a = np.asarray(g).astype(float); r, gg, b, al = a[..., 0], a[..., 1], a[..., 2], a[..., 3]
+    lum = (r + gg + b) / 3
+    ink = (lum < 110) & (al > 60)
+    tint = (~ink) & (al > 60) & (((r - b) > 20) | (lum < 236))           # 주황·연주황·옅은 회색 칠
+    yy, xx = np.mgrid[0:size, 0:size]
+    step = max(10, size // 22)
+    hatch = ((xx + yy) % step) < max(3, step // 3)                          # 45도 빗금
+    out = np.zeros((size, size, 4))
+    out[tint & hatch] = (*KRAFT, 235)
+    out[ink] = (*INK, 255); out[ink, 3] = al[ink]
+    g = Image.fromarray(out.astype('uint8'), 'RGBA')
+    rnd = random.Random(seed)                                              # 손 떨림: 부드러운 흔들림 맵
+    nx = Image.effect_noise((size // 24 + 2, size // 24 + 2), 60).resize((size, size), Image.BICUBIC)
+    ny = Image.effect_noise((size // 24 + 2, size // 24 + 2), 60).resize((size, size), Image.BICUBIC)
+    dx = (np.asarray(nx).astype(float) - 128) / 128 * 2.2; dy = (np.asarray(ny).astype(float) - 128) / 128 * 2.2
+    src = np.asarray(g)
+    sx = np.clip((xx + dx).round().astype(int), 0, size - 1); sy = np.clip((yy + dy).round().astype(int), 0, size - 1)
+    g = Image.fromarray(src[sy, sx], 'RGBA')
+    if rot: g = g.rotate(rot + rnd.uniform(-0.5, 0.5), resample=Image.BICUBIC, expand=True)
+    im.paste(g, (int(cx - g.width / 2), int(cy - g.height / 2)), g)
+
 def title(d, s, y=96): T(d, (W // 2, y), s, 64)
 
 def source(d, s): T(d, (W - 48, H - 44), s, 26, SRC, F_M, 'rs')

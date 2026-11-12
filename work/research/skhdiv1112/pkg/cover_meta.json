@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-12 14:00",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "SK하이닉스 배당금/건보료는 몇 주부터",
+ "num": "442주부터 1천만원 넘어요",
+ "sub": "지역가입자 · 배당만 있을 때",
+ "label": "DART 공시",
+ "src": "공시·법령 11/12 확인",
+ "icon": "coins",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 115,
+ "num_px": 82,
+ "sub_px": 59,
+ "board": [
+  "bonddep1111",
+  "parking1109",
+  "bunrinhis1111",
+  "acqseoul1111",
+  "k1pair1110",
+  "stkgift1109",
+  "ltdeduct1110",
+  "stkded1109",
+  "retpay1109",
+  "jsfraud1109"
+ ]
+}

@@ -35,7 +35,7 @@
 | firemap-improve | refactorcands.py 재측정(10/12~): #126·#81 rewrite·#56 제목(edittitle 적용 뒤) 7일 조회·카페탭 비교 | 카페 제목 금액 규칙(10/9) 재측정(10/23): 규칙 뒤 금액 제목 비율·하루당 조회 vs 규칙 전, 형식(계산형) 섞임 떼고 | 예금·이자 규칙(10/22)·배당ETF 제목 %→금액 규칙(10/24) 재측정: 규칙 뒤 해당 편 하루당 조회 vs 그 외 |
 | firemap-admin | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-watchdog | watchdog.py 메우기에 'PC 꺼짐 복귀' 막기 — 마지막 회차 맥박 공백이 3시간 넘으면 메우지 않고 note만(11/11 20:37 803분 공백을 메우려다 write의 '몰아 올리지 않음'과 부딪침) | watchdog_log.json 쓰기를 임시 파일→os.replace로 바꿔 중간에 끊겨도 안 깨지게(11/11 잘림) | 카페 회원 글 감시(ArticleListV2dot1, 작성자≠파이어맵·링크 포함) 자동 출력 |
-| firemap-audit | aW8H 조회 9 원인 감사 — Analytics 노출 수·노출 클릭률을 HFESF·G5of와 나란히(주식 장르 vs 정책) | K-1 첫 48시간 조회·노출 클릭률을 J-1·D-ETF-1 같은 시점과 나란히(롱폼 저품질 신호) | 카페 조회 중앙 원인 — cafe_serp 검색 노출·제목 kwvol 대조로 #380(290)·#400·#401 차이 한 줄 |
+| firemap-audit | 쇼츠 조회 꺾임 원인 감사 — 7bBw(26시간 1)·jGtx·aW8H를 x1e7·G5of와 Analytics 노출 수·노출 클릭률·제한 여부로 나란히 | K-1 첫 72시간 조회·노출 클릭률을 J-1 같은 시점과 나란히(롱폼 저품질 신호) | 카페 #409 verify links 3(want 1) 원인 실물 확인 + 카페 조회 중앙 원인(cafe_serp·kwvol) |
 | firemap-soondol-deputy | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-loop | 쇼츠 utm 실유입 10/7 재측정(work/sql/yt_inflow.sql) — 14일 진짜 12기기(10/5 21:5x), 도착지 /calc/* vs 첫 화면 나눠 세기 | 카페 '예금·이자·금리' 묶음 10/9 재측정 — write가 비축 칸에 넣은 편이 하루당 조회 1.31(묶음 중앙값)을 넘는지, read_snaps 24시간 값이 왜 4편만 맞는지(30분 간격 찍기가 회차 사이에 안 돎?) | 롱폼 420b 10→224 원인 — YouTube Analytics 트래픽 소스(검색·추천)로 확인, 다른 롱폼 10~54와 비교 |
 | firemap-ai-lab | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

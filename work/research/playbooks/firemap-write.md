@@ -241,3 +241,5 @@
 - 11/11 bonddep1111: 시장 흐름 글은 과거 '오른 횟수 vs 내린 횟수'를 쓰면 독자 9명 중 9명이 '기다리면 오른다'로 읽었다. 숫자가 많은 쪽이 예측이 된다 — 방향 숫자는 research.md에만 두고 본문은 '두 경우 다 있었다'로. 제목도 '오르면 따라올까?'처럼 방향을 넣지 않는다.
 - 11/12 06:10: 칸 1시간 넘게 남은 회차는 당일 확인을 먼저 끝내고 같은 회차 안에서 시각까지 백그라운드로 기다렸다 올린다(prepublish_check는 research.md 경로를 넘겨야 함, 폴더를 주면 PermissionError).
 - 2026-11-12 sp500dist1112: 국내 ETF 분배 기록은 운용사마다 숨은 API가 있다 — 삼성 m.samsungfund.com/api/v1/kodex/divid-info.do?id=<fId>(분배 탭을 눌러야 부름, sniff2.py), 미래에셋은 상품 페이지 '분배금 지급현황' 표를 Playwright로 열고 글자로(tiger_click.txt), 한투 ACE는 acedist.py. FunETF는 2차라 1차가 없을 때만. 공지 본문이 그림이면 shot.py로 원본 그림을 받아 Read로 읽는다.
+
+- 11/12 #411: naverpost '확인 창 처리 실패(계속할까요 TimeoutError)'가 떠도 URL이 찍히면 발행된 것 — verify로만 판정(이번 OK 1,330자). 재시도하면 두 번 올라간다.

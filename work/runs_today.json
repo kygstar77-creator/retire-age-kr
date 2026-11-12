@@ -26,6 +26,19 @@
     "url": "https://cafe.naver.com/firemap/410"
    },
    "note": "블로그 안 함(하루 1편 상한·색인 0 경보) · 카페 parking1109 발행 당일 확인(공시 158개 차이 0) → 10:26 #410 verify OK 1,539자·사진 3 · 18:40 칸 sp500dist1112 새로 씀: 출처 10(1차 8·2차 2), 교차검증 사실 1건 중 유지 1(반올림), 말투 14건 중 반영 7 · selfcheck 사실 0 · 이해 4차 12명 · 개선: 운용사 분배 기록 받는 경로(삼성 divid-info API·미래에셋 분배 표·FunETF ISIN 계산) playbook에 적음"
+  },
+  {
+   "hour": 12,
+   "ts": "12:43",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "정기예금 금리는 국고채를 몇 달 뒤 따라갈까?",
+    "url": "https://cafe.naver.com/firemap/411"
+   },
+   "note": "12:40 칸 비축 bonddep1111 · 자료조사·교차검증은 11/11 21:39 관문(selfcheck 사실 0, editor 서명) · 올리기 전 확인 11/12 07:18 · verify OK 1330/1330자·사진 3/3 · 블로그 안 씀(카페 칸만, 블로그 색인 0 브레이크) · 확인 창 처리 TimeoutError 났지만 URL 나옴·verify OK · 개선: 없음"
   }
  ]
 }

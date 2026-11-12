@@ -243,3 +243,5 @@
 - 2026-11-12 sp500dist1112: 국내 ETF 분배 기록은 운용사마다 숨은 API가 있다 — 삼성 m.samsungfund.com/api/v1/kodex/divid-info.do?id=<fId>(분배 탭을 눌러야 부름, sniff2.py), 미래에셋은 상품 페이지 '분배금 지급현황' 표를 Playwright로 열고 글자로(tiger_click.txt), 한투 ACE는 acedist.py. FunETF는 2차라 1차가 없을 때만. 공지 본문이 그림이면 shot.py로 원본 그림을 받아 Read로 읽는다.
 
 - 11/12 #411: naverpost '확인 창 처리 실패(계속할까요 TimeoutError)'가 떠도 URL이 찍히면 발행된 것 — verify로만 판정(이번 OK 1,330자). 재시도하면 두 번 올라간다.
+
+- 11/12 #412: 15:10 회차가 16:10 칸을 올릴 땐 naverpost cafe가 16시 전엔 예외를 내니, 백그라운드로 "16시까지 30초씩 기다림 → cafe → verify" 한 줄을 걸어 두고 그동안 기록·조사를 한다. jitter(이번 23분)까지 더해 회차 끝은 16:30쯤 — 비축 쓰기를 같은 회차에 넣으려면 15:20 시작부터 바로 해야 한다.

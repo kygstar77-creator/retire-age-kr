@@ -39,6 +39,19 @@
     "url": "https://cafe.naver.com/firemap/411"
    },
    "note": "12:40 칸 비축 bonddep1111 · 자료조사·교차검증은 11/11 21:39 관문(selfcheck 사실 0, editor 서명) · 올리기 전 확인 11/12 07:18 · verify OK 1330/1330자·사진 3/3 · 블로그 안 씀(카페 칸만, 블로그 색인 0 브레이크) · 확인 창 처리 TimeoutError 났지만 URL 나옴·verify OK · 개선: 없음"
+  },
+  {
+   "hour": 15,
+   "ts": "16:25",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "전월세전환율 5% 상한, 갱신 때 월세는 지켜졌을까?",
+    "url": "https://cafe.naver.com/firemap/412"
+   },
+   "note": "블로그 안 함(하루 1편 상한·색인 0 경보) · 16:10 칸 convrate1112 발행 verify OK 1,369자·사진 3 · 올리기 전 확인 08:02 당일분(법령 7조문·ECOS·국토부) + 15:2x ECOS 기준금리 3.00% 다시 확인 · 교차검증 2차·selfcheck 사실 0(write-b 08:17) · 확인 창 처리 TimeoutError 났지만 발행·verify 정상 · 개선: 없음 · 비축 0/2"
   }
  ]
 }

@@ -3,7 +3,7 @@
  "ep": "K-1",
  "from_long": "H9Lv281MaLs",
  "mp4": "work/video/out/k1s_fix_c1_ds.mp4",
- "publishAt": null,
+ "publishAt": "2026-11-14T19:20:00+09:00",
  "publish_plan": "비축(쇼츠 비축 늘 4편 목표 — 지금 h3s_jeonse·k1s_dep 2편) · 쓸 때 PD가 publishAt 정함 · 경제(대출 금리) 축 · k1s_dep(같은 K-1)과 이틀 이상 띄움",
  "title": "3억 고정 대출, 고정 끝나면 평균 금리로 한 달 31만원 늘어요 #shorts",
  "description": "전체 계산: https://youtu.be/H9Lv281MaLs (예금·대출 이자, 미국 금리와 비교)\n\n2021년 8월 은행 평균 고정형 금리(2.98%)로 3억을 30년 빌렸다면 한 달 126만원, 5년 뒤 갚고 남은 원금에 지금 평균(5.11%)으로 다시 정하면 158만원이라 31만원쯤 늘어요.\n한국은행이 발표하는 '새로 맺은 대출' 평균으로 셈한 가정이라, 내 금리와 남은 원금은 은행·상품마다 달라요. 약정서에서 고정 기간이 끝나는 날부터 확인해 보세요. 대출을 바꾸라는 권유가 아닙니다.\n\n출처: 한국은행 경제통계시스템 예금은행 신규취급액 기준 주택담보대출 고정형 가중평균금리 2021년 8월·2026년 9월분 · 원리금균등 30년 · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — Carlos Arribas · KATRIN  BOLOVTSOVA · Mark Warner · Samer Daboul · T Leish · Tom Fisk · Towfiqu barbhuiya · https://kaboompics.com/\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #주택담보대출 #고정금리",
@@ -13,5 +13,17 @@
  "title_review": {
   "understand": "understand.md"
  },
- "cover": "work/research/cardshorts/k1s_fix/cover_1111.png"
+ "cover": "work/research/cardshorts/k1s_fix/cover_1111.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "p1NgZhn5QUk",
+ "uploaded_at": "2026-11-13 02:09:34",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-14T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
 }

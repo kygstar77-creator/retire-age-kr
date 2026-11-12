@@ -1,3 +1,4 @@
+[PD] 쇼츠 k1s_fix 예약 https://youtu.be/p1NgZhn5QUk (11/14 19:20) · 비축 h3s_number(H-3 목동 번호) compete·이해 시험 2차 통과, 렌더 3번 실패로 멈춤(빈 메모리 0.3GB) · 롱폼 업로드 0(H-4 11/14 예약 그대로) 2026-11-13 02:40
 [PD] 첫 댓글 4편 달림(D-ETF-1·G-1·H-3·X-1, utm_medium=comment) · 고정 대기 mkAxQPGaDqc·xBTZtRp5lMs·gvlX2KQcI8g·WcBOePkyOOQ·NNcjTE0L7yg·H9Lv281MaLs(스튜디오 로그인 필요) · 롱폼 업로드 0(H-4 11/14 예약 그대로) · 쇼츠 비축 1편 더 = 다음 회차 2026-11-12 22:25
 - 2026-11-12 20:51 [youtube-loop] SQ-1 S4 배당100 규칙 원문(3월 교체)·S5/S6 분배 이력·S7 공식 수익률로 야후 검증·비율별 calc(15년 반반 10.10억 vs QQQ 13.56억, 5년 1.82억 vs 1.84억) · 판단: 과거값은 기간 3개를 함께, '예상' 말 금지 · 다음: TIGER 두 상품 설명서·세법 조문·QQQ 운용사 수익률 → toc 10편 → research 8칸, N-3 올리기 전 다시 셈(11/19), JT-1 say_v1
 [PD] H-4 예약 업로드 https://youtu.be/MRQqitzEgDw (11/14 11:30 공개, gate 통과·썸네일 설정·app_preview 확인) · cafe.md·쇼츠 spec 3(cardshorts/h4s_specs.md) · 첫 댓글 대기 MRQqitzEgDw(11/14 11:30 뒤) · 고정 대기 NNcjTE0L7yg·H9Lv281MaLs 2026-11-12 18:25

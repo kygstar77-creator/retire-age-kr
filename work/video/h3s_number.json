@@ -1,0 +1,322 @@
+{
+ "fps": 30,
+ "name": "h3s_number",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "목동신시가지 실거래",
+  "같은 평수인데, 단지 번호 따라 값이 다를까?"
+ ],
+ "hot": "번호 따라",
+ "answer": {
+  "label": "60㎡대 평당 중간 가격 차이",
+  "items": [
+   "7단지 vs 11단지: 30% 정도",
+   "앞 번호 vs 뒤 번호: 20%"
+  ],
+  "arrow": false,
+  "note": "왜 차이 나는지는 실거래 자료에 없어요"
+ },
+ "base": "국토교통부 아파트 매매 실거래가(계약 2025.11~2026.10, 2026-10-22 받음) · 건축물대장 세대수 · 파이어맵 계산",
+ "long": "gvlX2KQcI8g",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "가장 큰 차이",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "7단지 vs 11단지",
+      "같은 60㎡대끼리",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "평당 중간 가격",
+      "7단지가 30% 높음",
+      "",
+      121,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "같은 작은 평수에선 7단지와 11단지 차이가 가장 컸어요.",
+     "audio": "audio/h-3/b65e54f7d6360cbc.wav",
+     "frames": 121
+    },
+    {
+     "n": 2,
+     "text": "평당 30% 정도 났습니다.",
+     "audio": "audio/h-3/6392f9a027bcd66e.wav",
+     "frames": 57
+    }
+   ],
+   "frames": 178
+  },
+  {
+   "kind": "vs",
+   "label": "번호와 주소",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "목동신시가지",
+      "1~14단지",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "1~7단지 주소",
+      "목동 · 8~14는 신정동",
+      "",
+      92,
+      "ink"
+     ],
+     [
+      "동 이름 검색",
+      "8~14단지 빠짐",
+      "",
+      240,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 3,
+     "text": "목동신시가지 아파트는 단지마다 번호가 붙어 있어요.",
+     "audio": "audio/h-3/9fde2b27ba6d9f0e.wav",
+     "frames": 92
+    },
+    {
+     "n": 4,
+     "text": "그런데 신고된 주소를 보면, 7단지까지만 목동이고 그 뒤 번호는 신정동이었습니다.",
+     "audio": "audio/h-3/778b15ea6a8f0cbc.wav",
+     "frames": 148
+    },
+    {
+     "n": 5,
+     "text": "그래서 동 이름으로만 찾으면 뒤 번호 단지들은 빠져요.",
+     "audio": "audio/h-3/09228c32c57e3573.wav",
+     "frames": 102
+    }
+   ],
+   "frames": 342
+  },
+  {
+   "kind": "vs",
+   "label": "앞 번호 vs 뒤 번호",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "앞 번호 1~7단지",
+      "평당 20% 높음",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "60㎡대 한 채 중간값",
+      "23.70억 vs 19.90억",
+      "",
+      154,
+      "ink"
+     ],
+     [
+      "왜 차이 날까",
+      "실거래 자료엔 없음",
+      "",
+      217,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "작은 평수끼리 비교하면, 목동 쪽이 신정동 쪽보다 평당 20% 비쌌습니다.",
+     "audio": "audio/h-3/d49377fb2685e1c0.wav",
+     "frames": 154
+    },
+    {
+     "n": 7,
+     "text": "한 채로 치면 4억 정도 차이죠.",
+     "audio": "audio/h-3/f078ee7f3efe9f37.wav",
+     "frames": 63
+    },
+    {
+     "n": 8,
+     "text": "왜 이만큼 차이가 나는지는 실거래 자료에 나오지 않습니다.",
+     "audio": "audio/h-3/31f6c8a33f48c128.wav",
+     "frames": 100
+    }
+   ],
+   "frames": 317
+  },
+  {
+   "kind": "vs",
+   "label": "거래가 적다",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "14단지 세대",
+      "2만 6천 넘음",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "1년에 팔린 집",
+      "431채",
+      "",
+      135,
+      "ink"
+     ],
+     [
+      "1년에 팔린 비율",
+      "앞 2% · 뒤 1.2%",
+      "",
+      228,
+      "ink"
+     ],
+     [
+      "거래가 적으면",
+      "몇 건으로 단정 조심",
+      "",
+      366,
+      "ink"
+     ],
+     [
+      "10번도 안 팔리면",
+      "한 건이 값을 흔듦",
+      "",
+      515,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 9,
+     "text": "목동신시가지 열네 단지는 모두 합치면 2만 6천 세대가 넘어요.",
+     "audio": "audio/h-3/a0b9a7d19f142ee2.wav",
+     "frames": 135
+    },
+    {
+     "n": 10,
+     "text": "그런데 팔린 집은 431채였습니다.",
+     "audio": "audio/h-3/7c58589ca36ce4fa.wav",
+     "frames": 93
+    },
+    {
+     "n": 11,
+     "text": "앞 번호 단지들은 백 집에 두 집, 뒤 번호 단지들은 한 집 조금 넘었어요.",
+     "audio": "audio/h-3/a66286173961cc55.wav",
+     "frames": 138
+    },
+    {
+     "n": 12,
+     "text": "거래가 이렇게 적으면, 1년 거래 몇 건으로 그 단지 가격을 말하기는 조심스러워요.",
+     "audio": "audio/h-3/c63dc3b030941fb5.wav",
+     "frames": 149
+    },
+    {
+     "n": 13,
+     "text": "특히 1년에 열 번도 안 팔린 단지라면, 거래 한 건이 중간 가격을 크게 흔들 수 있거든요.",
+     "audio": "audio/h-3/2afb481a1b8c69a0.wav",
+     "frames": 158
+    }
+   ],
+   "frames": 709
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/h3/cut/38259254_2_r121.mp4",
+   "from": 0,
+   "frames": 121,
+   "start": 0
+  },
+  {
+   "src": "bg/h3/cut/34630604_2_r57.mp4",
+   "from": 121,
+   "frames": 57,
+   "start": 0
+  },
+  {
+   "src": "bg/h3/cut/38259256_2_r92.mp4",
+   "from": 178,
+   "frames": 92,
+   "start": 0
+  },
+  {
+   "src": "bg/h3/cut/30975009_5_r148.mp4",
+   "from": 270,
+   "frames": 148,
+   "start": 0
+  },
+  {
+   "src": "bg/h3/cut/38259259_2_r102.mp4",
+   "from": 418,
+   "frames": 102,
+   "start": 0
+  },
+  {
+   "src": "bg/h3/cut/29303349_10_r154.mp4",
+   "from": 520,
+   "frames": 154,
+   "start": 0
+  },
+  {
+   "src": "bg/h3/cut/7578842_0_r63.mp4",
+   "from": 674,
+   "frames": 63,
+   "start": 0
+  },
+  {
+   "src": "bg/h3/cut/8478946_2_r100.mp4",
+   "from": 737,
+   "frames": 100,
+   "start": 0
+  },
+  {
+   "src": "bg/h3/cut/38029457_2_r135.mp4",
+   "from": 837,
+   "frames": 135,
+   "start": 0
+  },
+  {
+   "src": "bg/h3/cut/4554447_1_r93.mp4",
+   "from": 972,
+   "frames": 93,
+   "start": 0
+  },
+  {
+   "src": "bg/h3/cut/37500921_0_r138.mp4",
+   "from": 1065,
+   "frames": 138,
+   "start": 0
+  },
+  {
+   "src": "bg/h3/cut/8471105_2_r149.mp4",
+   "from": 1203,
+   "frames": 149,
+   "start": 0
+  },
+  {
+   "src": "bg/h3/cut/16392935_2_r194.mp4",
+   "from": 1352,
+   "frames": 194,
+   "start": 0
+  }
+ ],
+ "credits": "16392935 Bảo Nghĩa · 29303349 성창 남 · 30975009 Stephen Leonardi · 34630604 Nothing Ahead · 37500921 FREE VIDEO HAPPY · 38029457 FREE VIDEO HAPPY · 38259254 vignesh srivatsav · 38259256 vignesh srivatsav · 38259259 vignesh srivatsav · 4554447 cottonbro studio · 7578842 Kindel Media · 8471105 Thirdman · 8478946 ArtHouse Studio (Pexels License)"
+}

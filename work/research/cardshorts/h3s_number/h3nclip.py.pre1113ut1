@@ -1,0 +1,89 @@
+# h3s_number c1clip (firemap-video-producer 2026-11-13 02:3x) — h3s_jeonse/h3jc1.py 사본, 줄·장면·배경만 바꿈
+#   py -3.12 work/research/cardshorts/h3s_number/h3nclip.py   → work/video/h3s_number.json
+# 재료: cardshorts/h3_specs.md 'h3s_number' (목동신시가지 앞 번호 vs 뒤 번호) · 목소리 = H-3 voice.json(say_v5) 문장 wav 그대로(새 녹음 0), 브랜드 첫·끝 줄 뺌
+# 숫자: calc_out §1(60~70㎡대 평당 11,957 vs 9,931 +20.4% · 7단지 12,757 vs 11단지 9,881 +29.1%) · calc2_out §6(26,635세대·431건, 10/22 다시 받음) · research.md 앞 번호 2.0 vs 뒤 번호 1.2
+# 주의(spec): 차이의 이유는 말·자막 모두 해석 0 — '실거래 자료에 나오지 않습니다'(voice 62줄) 꼭 넣음 · 사라·팔라·전망·단지 추천 0
+# 꼴 ⓐ: 첫 줄 = '같은 작은 평수에선 7단지와 11단지 차이가 가장 컸어요.'(숫자·29자, 접속사 아님) → 30% → 이유 없음 → 번호·주소 → 앞/뒤 번호 20%·4억 → 거래 적음 조심
+import os, re, json, sys, subprocess, imageio_ffmpeg
+FF = imageio_ffmpeg.get_ffmpeg_exe()
+sys.stdout.reconfigure(encoding='utf-8')
+HERE = os.path.dirname(os.path.abspath(__file__))
+WORK = os.path.normpath(os.path.join(HERE, '..', '..', '..'))
+VID = os.path.join(WORK, 'video')
+EP = os.path.join(WORK, 'research', 'longform', 'ep', 'H-3')
+V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
+BYTEXT = {l['text']: l for s in V['sections'] for l in s['lines']}
+SRC = ''.join(open(os.path.join(EP, f), encoding='utf-8').read() for f in ('research.md', 'calc_out.txt', 'calc2_out.txt', 'facts.txt') if os.path.exists(os.path.join(EP, f)))
+CRED = {}
+for _d in ('stock', 's2/stock', 's3/stock'):
+    for c in json.load(open(os.path.join(VID, 'public', 'bg', 'h3', _d, 'credits.json'), encoding='utf-8')):
+        CRED.setdefault(str(c['id']), dict(c, dir=_d))
+TAIL = 36
+n = 0
+
+
+def L(t):
+    global n
+    hit = [k for k in BYTEXT if k.startswith(t)]; assert len(hit) == 1, (t, hit)
+    l = BYTEXT[hit[0]]; assert l.get('audio') and os.path.exists(os.path.join(VID, 'public', l['audio'])), t
+    n += 1
+    return {'n': n, 'text': l['text'], 'audio': l['audio'], 'frames': l['frames']}
+
+
+def sc(label, lines, data):
+    ls = [L(t) for t in lines]
+    spoken = ' '.join(l['text'] for l in ls)
+    strs = []
+    walk = lambda x: [walk(y) for y in x] if isinstance(x, list) else ([walk(y) for y in x.values()] if isinstance(x, dict) else (strs.append(x) if isinstance(x, str) else None))
+    walk(data)
+    for d in re.findall(r'\d[\d,.]*', ' '.join(strs)):
+        d = d.rstrip('.,')
+        assert d in spoken or d in SRC, f'숫자 {d} — 말 줄·H-3 원문에 없음'
+    return {'kind': 'vs', 'label': label, 'source': None, 'data': data, 'lines': ls, 'frames': sum(l['frames'] for l in ls)}
+
+
+scenes = [
+    sc('가장 큰 차이', ['같은 작은 평수에선 7단지와 11단지', '평당 30% 정도 났습니다', '왜 이만큼 차이가 나는지는'],
+       {'tiles': [['7단지 vs 11단지', '60㎡대끼리', '', 0, 'ink'], ['평당 차이', '30% 정도', '', 0, 'ink'], ['왜 차이 날까', '실거래 자료엔 없음', '', 0, 'ink']]}),
+    sc('번호와 주소', ['목동신시가지 아파트는 단지마다', '그런데 신고된 주소를 보면, 7단지까지만', '그래서 동 이름으로만 찾으면'],
+       {'tiles': [['목동신시가지', '1~14단지', '', 0, 'ink'], ['7단지까지 주소', '목동 · 뒤는 신정동', '', 0, 'ink'], ['동 이름 검색', '뒤 번호 빠짐', '', 0, 'ink']]}),
+    sc('앞 번호 vs 뒤 번호', ['작은 평수끼리 비교하면, 목동 쪽이', '한 채로 치면 4억 정도'],
+       {'tiles': [['60㎡대 평당', '앞 번호 20% 비쌈', '', 0, 'ink'], ['한 채로 치면', '4억 정도', '', 0, 'ink']]}),
+    sc('거래가 적다', ['목동신시가지 열네 단지는', '그런데 팔린 집은 431채', '앞 번호 단지들은 백 집에', '거래가 이렇게 적으면', '특히 1년에 열 번도'],
+       {'tiles': [['14단지 세대', '2만 6천 넘음', '', 0, 'ink'], ['1년에 팔린 집', '431채', '', 0, 'ink'], ['백 집 중 팔린 집', '앞 2 · 뒤 1.2', '', 0, 'ink'],
+                  ['거래가 적으면', '값 말하기 조심', '', 0, 'ink'], ['10번도 안 팔리면', '한 건이 흔듦', '', 0, 'ink']]}),
+]
+for s_ in scenes:   # 칸 i = 줄 i 시작 프레임
+    st = [sum(l['frames'] for l in s_['lines'][:i]) for i in range(len(s_['lines']))]
+    assert len(st) == len(s_['data']['tiles'])
+    for t, f0 in zip(s_['data']['tiles'], st): t[3] = f0
+    assert len({t[3] for t in s_['data']['tiles']}) == len(s_['data']['tiles'])
+assert all(len(t[0]) <= 12 for s_ in scenes for t in s_['data']['tiles']), [t[0] for s_ in scenes for t in s_['data']['tiles'] if len(t[0]) > 12]
+need = ['+20.4%', '11,957', '9,931', '12,757', '9,881', '+29.1%', '26,635', '431']
+for x in need: assert x in SRC, f'원문에 없음 {x}'
+scenes[-1]['frames'] += TAIL
+# 배경: 줄마다 말을 받는 그림 하나 — (줄 번호, 클립, 시작 초) · H-3 롱폼 Pexels 풀(bg/h3), 글자·간판 있는 6962695·6962707·8482325 안 씀
+BG = [(1, '37527858', 2), (2, '34630604', 2), (3, '8478946', 2), (4, '38259256', 2), (5, '30975009', 5), (6, '38259259', 2), (7, '29303349', 10), (8, '7578842', 0),
+      (9, '38029457', 2), (10, '4554447', 1), (11, '37500921', 0), (12, '8471105', 2), (13, '16392935', 2)]
+allines = [l for s in scenes for l in s['lines']]
+assert len(allines) == len(BG), (len(allines), len(BG))
+bg = []; at = 0
+for (k, cid, st), l in zip(BG, allines):
+    fr = l['frames'] + (TAIL if k == len(BG) else 0)
+    src = os.path.join(VID, 'public', 'bg', 'h3', CRED[cid]['dir'], f'{cid}.mp4')
+    assert os.path.exists(src), src
+    assert CRED[cid]['sec'] - st >= fr / 30 + 0.3, (cid, CRED[cid]['sec'], fr / 30)
+    cut = f'bg/h3/cut/{cid}_{st}_n{fr}.mp4'; cp = os.path.join(VID, 'public', cut)   # 길이를 이름에 — 옛 클립 cut(다른 길이)과 섞이지 않게
+    if not os.path.exists(cp):   # k1s_fix 법: B프레임 없이 -g 10으로 잘라 'No frame found' 피함
+        os.makedirs(os.path.dirname(cp), exist_ok=True)
+        subprocess.run([FF, '-y', '-v', 'error', '-ss', str(st), '-i', src, '-t', f'{fr / 30 + 0.5:.2f}', '-an', '-c:v', 'libx264', '-g', '10', '-bf', '0', '-crf', '18', '-pix_fmt', 'yuv420p', cp], check=True)
+    bg.append({'src': cut, 'from': at, 'frames': fr, 'start': 0}); at += fr
+credits = ' · '.join(sorted({f"{c} {CRED[c].get('author', '').strip()}" for _, c, _ in BG})) + ' (Pexels License)'
+p = {'fps': 30, 'name': 'h3s_number', 'v': 1, 'look': 'live', 'question': ['목동신시가지 실거래', '같은 평수인데, 단지 번호 따라 값이 다를까?'], 'hot': '번호 따라',
+     'answer': {'label': '60㎡대 평당 중간 가격 차이', 'items': ['7단지 vs 11단지: 30% 정도', '앞 번호 vs 뒤 번호: 20%'], 'arrow': False, 'note': '왜 차이 나는지는 실거래 자료에 없어요'},
+     'base': '국토교통부 아파트 매매 실거래가(계약 2025.11~2026.10, 2026-10-22 받음) · 건축물대장 세대수 · 파이어맵 계산', 'long': 'gvlX2KQcI8g',
+     'scenes': scenes, 'bg': bg, 'credits': credits}
+json.dump(p, open(os.path.join(VID, 'h3s_number.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+fr = sum(s['frames'] for s in scenes)
+print(f'h3s_number: {fr} 프레임 = {fr / 30:.1f}초 · 장면 {len(scenes)} · 최장 장면 {max(s["frames"] for s in scenes) / 30:.1f}초 · 배경 {len(bg)}컷(최장 {max(b["frames"] for b in bg) / 30:.1f}초)')
+print('credits:', credits)

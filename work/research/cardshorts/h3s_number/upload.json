@@ -1,0 +1,17 @@
+{
+ "name": "h3s_number",
+ "ep": "H-3",
+ "from_long": "gvlX2KQcI8g",
+ "mp4": "work/video/out/h3s_number_c1_ds.mp4",
+ "publishAt": null,
+ "publish_plan": "비축(회의 11/12 지시 — 쇼츠 비축 1편 더, 공개 롱폼 아파트 축) · 쓸 때 PD가 publishAt 정함 · 부동산 축 · h3s_jeonse(11/13)와 이틀 이상 띄움",
+ "title": "목동신시가지, 같은 평수인데 단지 따라 평당 30% 차이 #shorts",
+ "description": "전체 계산: https://youtu.be/gvlX2KQcI8g (압구정·신천·목동 아파트 실거래가)\n\n목동신시가지 60㎡대 1년 실거래를 같은 평수끼리 보면, 평당 중간 가격이 7단지가 11단지보다 30% 정도, 앞 번호(1~7단지, 주소 목동)가 뒤 번호(8~14단지, 주소 신정동)보다 20% 높았어요. 한 채로 치면 4억 정도 차이예요.\n왜 차이 나는지는 실거래 자료에 나오지 않아요. 열네 단지 2만 6천 세대 중 1년에 팔린 집은 431채라, 거래가 적은 단지는 한 건이 중간 가격을 크게 흔들 수 있어요. 지나간 거래 값이고, 사거나 팔라는 권유가 아닙니다.\n\n출처: 국토교통부 아파트 매매 실거래가(계약 2025.11~2026.10, 2026-10-22 받음) · 국토교통부 건축물대장 총괄표제부 세대수 · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — ArtHouse Studio · Bảo Nghĩa · FREE VIDEO HAPPY · Kindel Media · Nothing Ahead · Stephen Leonardi · Thirdman · cottonbro studio · vignesh srivatsav · 성창 남\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #목동신시가지 #목동아파트",
+ "tags": "목동신시가지,목동 아파트 실거래가,목동 7단지,목동 11단지,목동 아파트 시세",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/h3s_number/cover_1113.png"
+}

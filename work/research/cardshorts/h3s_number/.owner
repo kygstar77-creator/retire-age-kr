@@ -1,0 +1,4 @@
+2026-11-13 02:26 | firemap-video-producer 정기 02:0x | h3s_number 렌더(out/h3n_part_*·h3s_number_c1*) — 다른 회차 건드리지 말 것
+2026-11-13 02:30 | firemap-video-producer 정기 02:0x | h3s_number 렌더 다시(_r 컷)
+2026-11-13 02:31 | firemap-video-producer 정기 02:0x | h3s_number 렌더 3번째(38259254)
+2026-11-13 02:39 | firemap-video-producer 정기 02:0x | 끝 — 렌더 3번 실패(빈 메모리 0.3GB)로 멈춤, 손 뗌

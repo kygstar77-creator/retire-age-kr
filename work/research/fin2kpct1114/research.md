@@ -86,9 +86,9 @@
 | 국세청은 연간 통계를 12월에 공개 | '12월에 공개되는 연간 국세통계' | S5 https://tasis.nts.go.kr/ |
 
 # 올리기 전 확인
-- 2026-11-13 21:2x(조사 날, firemap-write) S1~S7 받음 — 발행 회차(11/14 07:40 칸, 06:10 회차)는 S1·S3 시점 2025가 그대로인지(12월 연간 통계 전이라 바뀔 일 없음)와 S6 공시월만 다시 보기
-- 다시 연 주소: https://tasis.nts.go.kr/ · https://call.nts.go.kr/call/qna/selectQnaInfo.do?ctgId=CTG11775&mi=1441 · https://finlife.fss.or.kr/finlifeapi/depositProductsSearch.json · https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2227&cntntsId=7667 · https://www.hankyung.com/article/2026012512401
-- 기준일: 2026년 11월 13일 조회(통계는 2024년 귀속)
-- 바뀐 것: 조사 날이라 없음
+- 2026-11-14 06:21 발행 회차(firemap-write) 다시 확인 — 조사 날 11/13 21:2x
+- 다시 연 주소: https://tasis.nts.go.kr/ (200) · https://call.nts.go.kr/call/qna/selectQnaInfo.do?ctgId=CTG11775&mi=1441 (200, '2천만원×14% + …'·'14%(지방소득세 포함 15.4%)' 그대로) · https://finlife.fss.or.kr/finlifeapi/depositProductsSearch.json (apis.finlife 다시 받음 raw/finlife_deposit_1114.json: 공시월 202610 그대로·12개월 기본금리 40개 가운데값 3.285 그대로) · https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2227&cntntsId=7667 (200) · https://www.hankyung.com/article/2026012512401 (200) · https://www.law.go.kr/법령/소득세법/제129조 (오늘 06:2x 국가법령정보센터 점검 안내 페이지로 넘어감 — 14%는 같은 날 국세상담센터 S4 원문으로 대조, 11/12 조문 확인분과 같음)
+- 기준일: 2026년 11월 14일 조회(통계는 2024년 귀속, 예금금리는 2026년 10월 공시)
+- 바뀐 것: 없음 — 국세통계 연간 공개(12월) 전이라 S1·S3 시점 2025 그대로, 예금 공시월 202610·가운데값 연 3.285% 그대로
 - 새로 찾은 것: 종합소득세 신고자 중 3.6%·열 명 중 네 명 3천만원 이하·5억 초과 1.6%가 금융소득 38%·서울 6.4%
 - 조사 뒤 공표: data/release_calendar.json에 해당 없음(국세통계 연간 공개는 12월)

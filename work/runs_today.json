@@ -1,87 +1,15 @@
 {
- "date": "2026-11-13",
+ "date": "2026-11-14",
  "runs": [
   {
-   "hour": 7,
-   "ts": "07:51",
-   "task": "firemap-write-b",
+   "hour": 6,
+   "ts": "07:13",
    "blog": null,
    "cafe": {
-    "title": "저축은행 금리 비교, 한 달 새 몇 곳이 올렸을까?",
-    "url": "https://cafe.naver.com/firemap/415"
+    "title": "금융소득종합과세 대상자는 100명 중 몇 명일까?",
+    "url": "https://cafe.naver.com/firemap/421"
    },
-   "note": "report 12:4x 보충 기록 — today.md write-b 07:51 verify OK 1,583자·사진3 (runs_today가 11/12에 멈춰 있어 옮김)"
-  },
-  {
-   "hour": 10,
-   "ts": "11:27",
-   "task": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "코스피200 ETF 매달 나눠 샀다면 지금 손해일까?",
-    "url": "https://cafe.naver.com/firemap/416"
-   },
-   "note": "report 12:4x 보충 기록 — today.md write-b 11:27 verify OK 1,533자·사진3, 10:10칸 76분 늦음"
-  },
-  {
-   "hour": 12,
-   "ts": "13:45",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "SK하이닉스 배당금 2만원, 건보료도 내야 할까?",
-    "url": "https://cafe.naver.com/firemap/417"
-   },
-   "note": "12:40 칸 skhdiv1112 · verify OK 1885자·사진3 · 발행 당일 확인: 야후 11/12 종가 1,254,000원 갱신(c03·c05·calc·facts) · readcheck 0·selfcheck 사실 0·spoken 통과 · editgate auto 재서명 · 교차검증은 11/12 작성 때(crosscheck 2차) · 블로그는 하루 상한·무색인으로 안 올림 · 개선: 없음"
-  },
-  {
-   "hour": 13,
-   "ts": "13:51",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "write-b 13:40 회차 · 발행 없음: 가까운 :40 칸(12:40 skhdiv1112)은 write가 13:27 시작해 #417로 올림(중복 피함), 다음 칸 16:10까지 120분 간격 · 22:40 칸 newrenew1112 올리기 전 확인 끝 — 국토부 실거래 다시 받음(늦은 신고 84건: 615→617곳·23,064→23,148건·파크리오 차이 5천만→5,500만원 등 본문·사실표·그림 01·02·표지 고침, 결론 같음) · 법 3조문 다시 받음 · aitell 5.6·spoken 통과·readcheck 0·selfcheck 사실 0·editgate auto 8926e5c8·prepublish·bench 0건 · slots 22:40 item 이름 newrenew1112로 맞춤(장부 대조 경고 해소)·gates_ok · 회원 댓글 0 · 11/13 쉼(X-OPS-14)이라 새 글 안 씀 · 개선: 장부 칸 이름에 설명을 붙이면 naverpost 장부 대조가 '칸 없음'으로 봄 → 이번 칸은 고쳤고 회의 몫으로 알림"
-  },
-  {
-   "hour": 15,
-   "ts": "16:31",
-   "blog": null,
-   "cafe": {
-    "title": "신축 아파트 vs 구축, 같은 동네 몇 억 차이 날까?",
-    "url": "https://cafe.naver.com/firemap/418"
-   },
-   "note": "16:10 칸 newold1112 · 올리기 전 확인: 국토부 실거래 S1 다시 받음(숫자 바뀜→본문·그림·표지 고침) · readcheck 0·selfcheck 사실 0·spoken 통과·editgate auto 재서명 · verify OK 1,482자·사진 3 · 블로그 없음(DAY_CAP·쉼날) · 개선: lessons에 'stamp는 readcheck 안 돌림 — 서명 뒤 readcheck 따로' 추가"
-  },
-  {
-   "hour": 18,
-   "ts": "18:31",
-   "blog": null,
-   "cafe": {
-    "title": "디폴트옵션 수익률, 원리금보장은 1년에 얼마 벌었을까?",
-    "url": "https://cafe.naver.com/firemap/419"
-   },
-   "note": "18:40 칸 dfopt1112 발행 18:31 verify OK(1491자·사진 3) · 올리기 전 확인: 고용노동부 게시판 3분기 공시(10/31)가 최신·정정본 없음, 법 21조의2·3 lawweb 다시 받음, 바뀐 것 없음 · c02 '~셈이죠' 고침 → readcheck 0·selfcheck 사실 0·aitell 2.2·editgate auto 재서명 · 교차검증은 11/12 관문(Gemini 시간 초과→Agent 대조 0건) 그대로 · 블로그 없음(DAY_CAP·카페 전용 운영) · 회원 댓글 0 · 개선: readcheck '셈이' 규칙에 '던' 더함(달랐던 셈이죠가 빠져나감)"
-  },
-  {
-   "hour": 21,
-   "ts": "21:42",
-   "blog": null,
-   "cafe": null,
-   "note": "발행 없음(21시대 카페 칸 22:40은 write-b 몫) · 11/14 07:40 칸 fin2kpct1114 새로 씀·관문 통과(slots gates_ok) · 자료조사 출처 9(국세통계포털 3-1-5 2024·2023 귀속·3-3-1·자료실 조기공개 글, 국세상담센터 세법상담정보, 국세청 세율표, 금감원 금융상품통합비교공시, 소득세법 129조(11/12 확인값), 한국경제 2차) · 교차검증: 사실 지적 3건 중 반영 1(15.4%·세율 범위 추가는 이해 시험과 함께)·유지 2(비교과세 상세는 이해 시험에서 더 헷갈려 생략, 조문은 law.go.kr 점검 — 발행 회차가 다시 엶), 말투 7건 중 반영 1(나머지는 같은 문장·'3명꼴'은 사실 어긋남) · selfcheck 사실 0 · 이해 시험 3차 9명 통과 · 개선: law.go.kr 점검 때 lawtext/lawweb가 '조문 없음'·AttributeError로 엉뚱하게 죽음 → 원인 표시만 기록(tools-wanted)"
-  },
-  {
-   "hour": 22,
-   "ts": "22:54",
-   "blog": null,
-   "cafe": "https://cafe.naver.com/firemap/420",
-   "note": "write-b 22:40 칸 newrenew1112 \"전세 갱신 계약, 새 계약보다 얼마나 쌀까?\" 발행 · verify OK 1567/1567자·사진 3/3 · 관문은 13:50 통과분(올리기 전 확인 11/13 국토부 실거래 다시 받음) · 쇼츠 짝 gBxKe5Fx1rw 19:20 공개 확인됨 · 경고: 본문 1567자>1500(D-17 경고만), \"올해\" 연도 없이 2곳(발행이 같은 해라 사실 문제 없음) · 확인 창 처리 실패 로그는 났으나 URL·verify 정상"
+   "note": "07:40 칸 묶음 fin2kpct1114 발행 · 올리기 전 확인: 대조 주소 6곳 다시 엶(law.go.kr 점검 → 국세상담센터 14% 대조), finlife 202610 가운데값 3.285 그대로 · selfcheck 사실 0·readcheck 0·editgate 해시 일치 · verify OK 1495자·사진 3 · 블로그 0(하루 상한 운영·색인 경보) · 교차검증은 11/13 작성 회차에 끝냄 · 개선: 없음"
   }
  ]
 }

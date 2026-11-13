@@ -3805,3 +3805,4 @@
 2026-11-14 03:5x · firemap-benchmark-loop · 썸네일·쇼츠 표지 6판 thumb-gap-1114 — 1102 반영 3/6·일부 1(S-1 방향·썸네일 A73/A74 번호 충돌로 빠짐 → K-1 상대 시점 공개) · 새 1위 쇼츠 윗줄 제목 크기(API 표지 0/11, 남 고정 큰 윗줄 7/9)·2위 큰 글 외곽선(남 11/13 vs 0/6, 밝기 50 vs 76)·3위 J-1 길이 칸 가림(thumblen 988) · motion·PD·visual·copywriter·editor·youtube-loop 배정 · 이유: 날짜 순번 2
 2026-11-14 06:18 · firemap-video-producer · J-1 NNcjTE0L7yg 공개 표지를 thumb_j1n_d(둘째 줄만 작게)로 교체, 공개 maxres thumblen 1086→0 · 벤치마크 11/14 [지시] 3위, 문구 그대로라 copy 관문 다시 안 받음
 2026-11-14 06:35 · firemap-video-producer · 쇼츠 윗줄 제목 2배 판 짝 비교 1:1 → 지금 판 유지(다음 렌더도 지금 크기) · C-21 규칙(2번 다 이겨야 바꿈), thumb-gap-1114 1위 지시
+2026-11-14 07:13 · firemap-write · 07:40 칸 fin2kpct1114 카페 #421 발행(verify OK 1,495자·사진 3) · 올리기 전 확인 통과, 소득세법 129조는 법령센터 점검으로 국세상담센터 원문 대조

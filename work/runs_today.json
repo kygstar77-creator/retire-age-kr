@@ -48,6 +48,16 @@
     "url": null
    },
    "note": "write-b 13:40 회차 · 발행 없음: 가까운 :40 칸(12:40 skhdiv1112)은 write가 13:27 시작해 #417로 올림(중복 피함), 다음 칸 16:10까지 120분 간격 · 22:40 칸 newrenew1112 올리기 전 확인 끝 — 국토부 실거래 다시 받음(늦은 신고 84건: 615→617곳·23,064→23,148건·파크리오 차이 5천만→5,500만원 등 본문·사실표·그림 01·02·표지 고침, 결론 같음) · 법 3조문 다시 받음 · aitell 5.6·spoken 통과·readcheck 0·selfcheck 사실 0·editgate auto 8926e5c8·prepublish·bench 0건 · slots 22:40 item 이름 newrenew1112로 맞춤(장부 대조 경고 해소)·gates_ok · 회원 댓글 0 · 11/13 쉼(X-OPS-14)이라 새 글 안 씀 · 개선: 장부 칸 이름에 설명을 붙이면 naverpost 장부 대조가 '칸 없음'으로 봄 → 이번 칸은 고쳤고 회의 몫으로 알림"
+  },
+  {
+   "hour": 15,
+   "ts": "16:31",
+   "blog": null,
+   "cafe": {
+    "title": "신축 아파트 vs 구축, 같은 동네 몇 억 차이 날까?",
+    "url": "https://cafe.naver.com/firemap/418"
+   },
+   "note": "16:10 칸 newold1112 · 올리기 전 확인: 국토부 실거래 S1 다시 받음(숫자 바뀜→본문·그림·표지 고침) · readcheck 0·selfcheck 사실 0·spoken 통과·editgate auto 재서명 · verify OK 1,482자·사진 3 · 블로그 없음(DAY_CAP·쉼날) · 개선: lessons에 'stamp는 readcheck 안 돌림 — 서명 뒤 readcheck 따로' 추가"
   }
  ]
 }

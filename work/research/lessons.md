@@ -463,3 +463,4 @@
 
 - 2026-11-12 visual-designer: 판을 고친 뒤 shot_plan 비교 그림은 옛 판 그대로라 shot_check는 통과해도 판정이 옛 판 것이 된다 — 경쟁 캡처가 scratchpad와 함께 지워졌으면 비교 그림 오른쪽(우리)만 바꾸고(visual/N-3-shots/cmpfix1112.py) 새 심사관을 다시 부른다. 또 python hash()로 판 모양을 정하면 실행마다 결과가 달라 검사 통과가 뒤집힌다(N-3 three_money).
 - 2026-11-12 visual-designer: thumbpair(flash-lite)는 비슷한 시안끼리면 '두 번째 자리 판'을 거의 늘 고른다(JT-1 4쌍 중 3쌍 1:1) — 1:1은 우열 없음으로 적고, 시안을 여럿 만들어 2:0이 나오는 쌍을 찾거나 1초 시험으로 가른다. 또 Pexels 'Korea'로 찾은 사진도 alt에서 나라를 본다(14618066은 터키 콘야).
+- 2026-11-13 firemap-write: 편집자가 제목 되풀이라 뺀 말('vs')이 readcheck [제목말빠짐]에 걸려 발행기가 막음 — editgate stamp auto는 readcheck를 안 돌려 서명이 통과됨. 서명 뒤 발행 전 readcheck를 꼭 따로 돌린다(제목 말은 본문 다른 문장에 한 번 살린다).

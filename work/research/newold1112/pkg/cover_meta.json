@@ -1,10 +1,10 @@
 {
- "made_at": "2026-11-12 23:17",
+ "made_at": "2026-11-13 15:27",
  "by": "work/cafecover.py",
  "out": "img\\00.png",
  "topic": "신축 vs 구축/같은 동 84㎡",
- "num": "5억원쯤 차이",
- "sub": "서울 8~10월 실거래 1만 667건",
+ "num": "6억원쯤 차이",
+ "sub": "서울 8~10월 실거래 1만 772건",
  "label": "국토부 실거래",
  "src": "국토교통부 아파트 매매 실거래 · 서울 25개 구",
  "icon": "building-2",
@@ -14,15 +14,15 @@
  "num_px": 91,
  "sub_px": 44,
  "board": [
+  "skhdiv1112",
+  "k200etf1113",
+  "sbdep1112",
   "realdep1112",
   "sp500dist1112",
   "convrate1112",
   "bonddep1111",
   "parking1109",
   "bunrinhis1111",
-  "acqseoul1111",
-  "k1pair1110",
-  "stkgift1109",
-  "ltdeduct1110"
+  "acqseoul1111"
  ]
 }

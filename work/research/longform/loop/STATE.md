@@ -1,3 +1,6 @@
+[PD] 쇼츠 h3s_number 11/15 19:20 예약 https://youtu.be/UeWaoO3_T_Q (비축 0이던 칸) · h4s_rank props 47.8초(첫 줄 새로 받음, 꼴 ⓐ)·렌더 전(빈 메모리 0.65GB) · N-3 readback 둘째 귀 할당량 막힘 117줄 → 다음 회차 --resume --batch · 롱폼 업로드 0(H-4 11/14 11:30 예약 그대로) 2026-11-13 15:12
+[PD] h3s_number 렌더 다시 시작 2026-11-13 14:17 (정기 14:1x — 빈 메모리 2.15GB)
+[PD] N-3 녹음 시작 2026-11-13 10:08 (정기 10:0x — 렌더는 빈 메모리 0.3GB라 못 함)
 [PD] h3s_number 렌더 또 막힘(빈 메모리 0.2GB, 시험 2번 No frame found 16·21프레임) · 롱폼 업로드 0(H-4 11/14 11:30 예약 그대로, N-3 11/16 편집·녹음 전) · 11/15 19:20 쇼츠 비축 0 위험 2026-11-13 06:21
 [PD] 쇼츠 k1s_fix 예약 https://youtu.be/p1NgZhn5QUk (11/14 19:20) · 비축 h3s_number(H-3 목동 번호) compete·이해 시험 2차 통과, 렌더 3번 실패로 멈춤(빈 메모리 0.3GB) · 롱폼 업로드 0(H-4 11/14 예약 그대로) 2026-11-13 02:40
 [PD] 첫 댓글 4편 달림(D-ETF-1·G-1·H-3·X-1, utm_medium=comment) · 고정 대기 mkAxQPGaDqc·xBTZtRp5lMs·gvlX2KQcI8g·WcBOePkyOOQ·NNcjTE0L7yg·H9Lv281MaLs(스튜디오 로그인 필요) · 롱폼 업로드 0(H-4 11/14 예약 그대로) · 쇼츠 비축 1편 더 = 다음 회차 2026-11-12 22:25

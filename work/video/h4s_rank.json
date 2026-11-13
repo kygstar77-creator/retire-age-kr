@@ -1,0 +1,296 @@
+{
+ "fps": 30,
+ "name": "h4s_rank",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "광명 84㎡ 실거래",
+  "서울 25개 구 사이 몇 번째?"
+ ],
+ "hot": "몇 번째",
+ "answer": {
+  "label": "광명 84㎡대 가운데 값",
+  "items": [
+   "26곳 중 위에서 18번째",
+   "9.70억 · 낮은 서울 구 8곳"
+  ],
+  "arrow": false,
+  "note": "2026년 7~9월 계약 실거래"
+ },
+ "base": "국토교통부 아파트 매매 실거래가(계약 2026.07~09, 2026-10-16 받음) · 파이어맵 계산",
+ "long": "MRQqitzEgDw",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "몇 번째",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "84㎡대",
+      "전용 80~85㎡",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "26곳 중",
+      "위에서 18번째",
+      "",
+      117,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "광명 84㎡, 서울 스물다섯 개 구 사이 몇 번째일까요?",
+     "audio": "audio/h4s/8539189016d103ea.wav",
+     "frames": 117
+    },
+    {
+     "n": 2,
+     "text": "답부터 말하면, 광명까지 넣은 스물여섯 곳 가운데 비싼 순으로 18번째였습니다. 중간보다 아래예요.",
+     "audio": "audio/h-4/1540e3ba9adaca34.wav",
+     "frames": 198
+    }
+   ],
+   "frames": 315
+  },
+  {
+   "kind": "vs",
+   "label": "가운데 값",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "광명 가운데 값",
+      "9.70억",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "바로 위 · 아래",
+      "성북 10.00억 · 관악 9.44억",
+      "",
+      147,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 3,
+     "text": "값은 가운데 값으로 봤습니다. 거래를 값 순서로 줄 세웠을 때 한가운데 오는 값이에요.",
+     "audio": "audio/h-4/b19163f55516ed5c.wav",
+     "frames": 147
+    },
+    {
+     "n": 4,
+     "text": "바로 위가 성북구, 바로 아래가 관악구입니다.",
+     "audio": "audio/h-4/4989d9ac35cd1b77.wav",
+     "frames": 105
+    }
+   ],
+   "frames": 252
+  },
+  {
+   "kind": "vs",
+   "label": "광명보다 낮은 서울 구",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "광명보다 낮은 구",
+      "8곳",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "관악·은평·구로·노원",
+      "강북·중랑·금천·도봉",
+      "",
+      113,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 5,
+     "text": "광명보다 낮은 서울 구는 몇 곳이었을까요? 여덟 곳이었습니다.",
+     "audio": "audio/h-4/d9a4532cb7fa6843.wav",
+     "frames": 113
+    },
+    {
+     "n": 6,
+     "text": "관악, 은평, 구로, 노원, 강북, 중랑, 금천, 도봉이에요.",
+     "audio": "audio/h-4/c4297ce0d1de343f.wav",
+     "frames": 110
+    }
+   ],
+   "frames": 223
+  },
+  {
+   "kind": "vs",
+   "label": "붙어 있는 구",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "광명과 붙은 구",
+      "구로 · 금천",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "구로 · 금천",
+      "8.26억 · 7.10억",
+      "",
+      123,
+      "ink"
+     ],
+     [
+      "광명 9.70억",
+      "구로보다 1억 넘게",
+      "",
+      216,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 7,
+     "text": "이 가운데 구로구와 금천구는 광명과 바로 붙어 있는 곳이죠.",
+     "audio": "audio/h-4/1cbfe30b1a3042e7.wav",
+     "frames": 123
+    },
+    {
+     "n": 8,
+     "text": "구로구는 8억대, 금천구는 7억쯤이었어요.",
+     "audio": "audio/h-4/3a5211d6c84cfe8b.wav",
+     "frames": 93
+    },
+    {
+     "n": 9,
+     "text": "광명이 구로구보다 1억 넘게, 금천구보다 2억 넘게 높았던 거예요.",
+     "audio": "audio/h-4/9c4943175be581d0.wav",
+     "frames": 118
+    }
+   ],
+   "frames": 334
+  },
+  {
+   "kind": "vs",
+   "label": "거래 수",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "석 달 거래",
+      "광명 171건",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "관악은",
+      "140건",
+      "",
+      159,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 10,
+     "text": "거래 수도 적지 않았어요. 석 달 동안 광명 84㎡대는 171건 팔렸어요.",
+     "audio": "audio/h-4/c6e1b6c4f5196aa5.wav",
+     "frames": 159
+    },
+    {
+     "n": 11,
+     "text": "관악구 140건보다 많아서, 몇 건에 값이 흔들릴 걱정은 적어요.",
+     "audio": "audio/h-4/8ecd4e9042dbfee2.wav",
+     "frames": 116
+    }
+   ],
+   "frames": 311
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/h4/cut/37873585_2_r117.mp4",
+   "from": 0,
+   "frames": 117,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/38259259_2_r198.mp4",
+   "from": 117,
+   "frames": 198,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/40294066_12_r147.mp4",
+   "from": 315,
+   "frames": 147,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/37500921_2_r105.mp4",
+   "from": 462,
+   "frames": 105,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/40294066_2_r113.mp4",
+   "from": 567,
+   "frames": 113,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/35865018_2_r110.mp4",
+   "from": 680,
+   "frames": 110,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/37500921_10_r123.mp4",
+   "from": 790,
+   "frames": 123,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/7317305_1_r93.mp4",
+   "from": 913,
+   "frames": 93,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/38259259_20_r118.mp4",
+   "from": 1006,
+   "frames": 118,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/7205591_0_r159.mp4",
+   "from": 1124,
+   "frames": 159,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/7263304_2_r152.mp4",
+   "from": 1283,
+   "frames": 152,
+   "start": 0
+  }
+ ],
+ "credits": "35865018 Airam Dato-on · 37500921 FREE VIDEO HAPPY · 37873585 Jueon Kim 김주언 · 38259259 vignesh srivatsav · 40294066 대정 김 · 7205591 SHVETS production · 7263304 MART  PRODUCTION · 7317305 MART  PRODUCTION (Pexels License)"
+}

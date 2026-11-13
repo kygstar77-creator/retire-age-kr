@@ -4,3 +4,4 @@
 2026-11-13 02:39 | firemap-video-producer 정기 02:0x | 끝 — 렌더 3번 실패(빈 메모리 0.3GB)로 멈춤, 손 뗌
 2026-11-13 06:18 | firemap-video-producer 정기 06:1x | h3s_number 렌더 다시(캐시 1GB 시험 → 전체) — 다른 회차 건드리지 말 것
 2026-11-13 06:21 | firemap-video-producer 정기 06:1x | 끝 — 빈 메모리 0.2GB로 렌더 못 함, 손 뗌
+2026-11-13 14:17 | firemap-video-producer 정기 14:1x | h3s_number 렌더 다시(빈 메모리 2.15GB) — 다른 회차 건드리지 말 것

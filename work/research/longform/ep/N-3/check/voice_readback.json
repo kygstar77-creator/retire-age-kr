@@ -1,0 +1,3114 @@
+[
+ {
+  "at": "0:0",
+  "text": "안녕하세요, 파이어맵입니다. 오늘은 연봉 실수령액 이야기입니다.",
+  "say": "안녕하세요, 파이어맵입니다. [pause short] 오늘은 연봉 실수령액 이야기입니다.",
+  "audio": "audio/n-3/3d7c40a3a59a34f7.wav",
+  "heard": [
+   "안녕하세요. 파이어맵입니다. 오늘은 연봉 실수령액 이야기입니다.",
+   "안녕하세요파이엠입니다오늘은연봉실수령액이야기입니다"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": 0.94,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "0:1",
+  "text": "연봉 5천이면, 통장에는 한 달에 얼마가 들어올까요?",
+  "say": "연봉 오천이면, 통장에는 한 달에 얼마가 들어올까요?",
+  "audio": "audio/n-3/33f1e38345aaf869.wav",
+  "heard": [
+   "연봉 5천이면 통장에는 한 달에 얼마가 들어올까요?",
+   "연봉 5천이면 통장에는 한 달에 얼마가 들어올까요?"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": ""
+ },
+ {
+  "at": "0:2",
+  "text": "답은 357만원쯤입니다.",
+  "say": "답은 삼백오십칠만원쯤입니다.",
+  "audio": "audio/n-3/ac080fd238b6e9b8.wav",
+  "heard": [
+   "답은 357만 원쯤입니다.",
+   "답은 357만원쯤입니다."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": ""
+ },
+ {
+  "at": "0:3",
+  "text": "그럼 우리나라 직장인 백 명을 줄 세우면, 이 연봉은 몇 번째 정도일까요?",
+  "say": "그럼 우리나라 직장인 백 명을 줄 세우면, 이 연봉은 몇 번째 정도일까요?",
+  "audio": "audio/n-3/cd51214e0856b450.wav",
+  "heard": [
+   "그럼 우리나라 직장인 100명을 줄 세우면 이 연봉은 몇 번째 정도일까요?",
+   "그럼 우리나라 직장인 100명을 줄 세우면 이 연봉은 몇 번째 정도일까요?"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small"
+  ],
+  "sim": 0.98,
+  "pair": 1.0,
+  "flag": ""
+ },
+ {
+  "at": "0:4",
+  "text": "앞에서 서른세 명 안에 들어요.",
+  "say": "앞에서 서른세 명 안에 들어요.",
+  "audio": "audio/n-3/0592b489a0c88d66.wav",
+  "heard": [
+   "앞에서 서른세 명 안에 들어요.",
+   "앞에서 33명 안에 들어요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small"
+  ],
+  "sim": 1.0,
+  "pair": 0.86,
+  "flag": ""
+ },
+ {
+  "at": "0:5",
+  "text": "상위 33% 안쪽이라는 뜻이에요.",
+  "say": "상위 삼십삼퍼센트 안쪽이라는 뜻이에요.",
+  "audio": "audio/n-3/cce74bca8cd0f9ce.wav",
+  "heard": [
+   "상위 33% 안쪽이라는 뜻이에요.",
+   "상위 33% 안쪽이라는 뜻이에요."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": ""
+ },
+ {
+  "at": "0:6",
+  "text": "오늘은 연봉이 천만원 올라도 통장이 가장 덜 느는 구간을 찾아봅니다.",
+  "say": "오늘은 연봉이 천만원 올라도 통장이 가장 덜 느는 구간을 찾아봅니다.",
+  "audio": "audio/n-3/74864dd943b8fc23.wav",
+  "heard": [
+   "오늘은 연봉이 100만 원 올라도 통장이 가장 덜 르는 구간을 찾아봅니다.",
+   "오늘은연봉이1000만원올라도통장이가장덜느는구간을찾아봅니다"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.98,
+  "pair": 0.96,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "1:0",
+  "text": "처음 보시는 분을 위해, 먼저 '연봉'이 어떤 돈인지부터요.",
+  "say": "처음 보시는 분을 위해, 먼저 '연봉'이 어떤 돈인지부터요.",
+  "audio": "audio/n-3/bacb970de1b0d83a.wav",
+  "heard": [
+   "처음 보시는 분을 위해 먼저 연봉이 어떤 돈인지부터요",
+   "처음 보시는 분을 위해 먼저 연봉이 어떤 돈인지부터요."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": ""
+ },
+ {
+  "at": "1:1",
+  "text": "이런 댓글이 있었어요. 연봉이 기본급인지, 상여금을 넣는지, 원천징수에 찍힌 금액인지.",
+  "say": "이런 댓글이 있었어요. [pause short] 연봉이 기본급인지, 상여금을 넣는지, 원천징수에 찍힌 금액인지.",
+  "audio": "audio/n-3/cc0e5170e36d6ad8.wav",
+  "heard": [
+   "이런 댓글이 있었어요. 연봉이 기본급인지 상여금을 넣는지 원천징수에 찍힌 금액인지",
+   "이런 댓글이 있었어요. 연봉이 기본급인지 상여금을 넣는지 원천징수에 찍힌 금액인지"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": ""
+ },
+ {
+  "at": "1:2",
+  "text": "계약서에 적힌 연봉은 세금과 보험료를 떼기 전 돈, 세전입니다.",
+  "say": "계약서에 적힌 연봉은 세금과 보험료를 떼기 전 돈, 세전입니다.",
+  "audio": "audio/n-3/f0a543e39c2c4dc7.wav",
+  "heard": [
+   "계약서에 적힌 연봉은 세금과 보험료를 떼기 전 돈 세전입니다.",
+   "계약사에 적힌 연봉은 세금과 보험료를 떼기 전 돈 세전입니다."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small"
+  ],
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": ""
+ },
+ {
+  "at": "1:3",
+  "text": "통장에 들어오는 돈은 그걸 다 뗀 세후고요.",
+  "say": "통장에 들어오는 돈은 그걸 다 뗀 세후고요.",
+  "audio": "audio/n-3/16384ebf66d15a28.wav",
+  "heard": [
+   "통장에 들어오는 돈은 그걸 다 땐 세우고요.",
+   "통장에들어오는돈은그걸다뗀세후고요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": 0.94,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "1:4",
+  "text": "그런데 국세청이 사람들을 줄 세울 때는 또 다른 숫자, '총급여'를 씁니다.",
+  "say": "그런데 국세청이 사람들을 줄 세울 때는 또 다른 숫자, '총급여'를 씁니다.",
+  "audio": "audio/n-3/1b825e761a4beecd.wav",
+  "heard": [
+   "그런데 국세청이 사람들을 줄 세울 때는 또 다른 숫자 총급여를 씁니다.",
+   "그런데 국세청이 사람들을 줄 세울 때는 또 다른 숫자 총급여를 씁니다."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": ""
+ },
+ {
+  "at": "1:5",
+  "text": "상여금은 넣고, 식대처럼 세금을 안 붙이는 돈은 뺀 돈이에요.",
+  "say": "상여금은 넣고, 식대처럼 세금을 안 붙이는 돈은 뺀 돈이에요.",
+  "audio": "audio/n-3/c187cbc73979e61d.wav",
+  "heard": [
+   "상여금은 넣고 식대처럼 세금을 안 붙이는 돈은 뺀 돈이에요.",
+   "상여금은 넣고 쉽게처럼 세금을 안 붙이는 돈은 뺀돈이에요."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small"
+  ],
+  "sim": 1.0,
+  "pair": 0.92,
+  "flag": ""
+ },
+ {
+  "at": "1:6",
+  "text": "식대를 한 달 20만원 받는 회사라면요.",
+  "say": "식대를 한 달 이십만원 받는 회사라면요.",
+  "audio": "audio/n-3/a54218b2d8f742a4.wav",
+  "heard": [
+   "식대를 한 달 20만 원 받는 회사라면요",
+   "식대를 1달 20만원 받는 회사라면요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small"
+  ],
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": ""
+ },
+ {
+  "at": "1:7",
+  "text": "한 해에 240만원이 빠집니다.",
+  "say": "한 해에 이백사십만원이 빠집니다.",
+  "audio": "audio/n-3/ab9373847381818b.wav",
+  "heard": [
+   "한 해 240만 원이 빠집니다.",
+   "한 해 240만 원이 빠집니다."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small"
+  ],
+  "sim": 0.95,
+  "pair": 1.0,
+  "flag": ""
+ },
+ {
+  "at": "1:8",
+  "text": "그래서 연봉 5천은 국세청 줄에서 4,760만원으로 섭니다.",
+  "say": "그래서 연봉 오천은 국세청 줄에서 사천칠백육십만원으로 섭니다.",
+  "audio": "audio/n-3/9825e19f529d760e.wav",
+  "heard": [
+   "그래서 연봉 5,000은 국세청 줄에서 4,760만 원으로 섭니다.",
+   "그래서 연봉우천은 국세청줄에서 4,760만 원으로 섭니다.",
+   "그래서 연봉 5,000은 국세청 자료에서 4,760만 원으로 섭니다."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small",
+   "gemini-3.5-transcribe"
+  ],
+  "sim": 0.98,
+  "pair": 0.95,
+  "flag": ""
+ },
+ {
+  "at": "1:9",
+  "text": "내 자리를 찾을 때는 계약서 말고 원천징수영수증의 총급여를 보세요.",
+  "say": "내 자리를 찾을 때는 계약서 말고 원천징수영수증의 총급여를 보세요.",
+  "audio": "audio/n-3/ee84b2f72d8c6ef9.wav",
+  "heard": [
+   "내 자리를 찾을 때는 계약서 말고 원천 징수 영수증의 총급여를 보세요.",
+   "내 자리를 찾을 때는 계약서 말고 원천징수영수 중에 총급여를 보세요."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small"
+  ],
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": ""
+ },
+ {
+  "at": "1:10",
+  "text": "계약서 숫자로 찾으면, 실제보다 몇 칸 앞에 서 있는 것처럼 보여요.",
+  "say": "계약서 숫자로 찾으면, 실제보다 몇 칸 앞에 서 있는 것처럼 보여요.",
+  "audio": "audio/n-3/0e5e291833df8f83.wav",
+  "heard": [
+   "계약서 숫자를 찾으면 실제보다 몇 칸 앞에 서 있는 것처럼 보여요.",
+   "계약서 숫자로 찾으면 실제보다 몇 칸 앞에 서 있는 것처럼 보여요."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small"
+  ],
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": ""
+ },
+ {
+  "at": "1:11",
+  "text": "하나 더요. 국세청은 사람을 한 명씩 줄 세운 자료를 내지 않아요.",
+  "say": "하나 더요. [pause short] 국세청은 사람을 한 명씩 줄 세운 자료를 내지 않아요.",
+  "audio": "audio/n-3/5a02611525b16ce8.wav",
+  "heard": [
+   "하나 더요. 국세청은 사람을 한 명씩 줄 세운 자료를 내지 않아요.",
+   "하나 더여 국세청은 사람을 한 명씩 줄세운 자료를 내지 않아요."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small"
+  ],
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": ""
+ },
+ {
+  "at": "1:12",
+  "text": "백 명 중 한 명씩 묶은 칸마다, 그 칸의 평균만 알려 줍니다.",
+  "say": "백 명 중 한 명씩 묶은 칸마다, 그 칸의 평균만 알려 줍니다.",
+  "audio": "audio/n-3/8a0c713826ba2d21.wav",
+  "heard": [
+   "100명 중 한 명씩 묶은 칸마다 그 칸의 평균을 알려줍니다.",
+   "100명중1명씩묶은칸마다그칸의평균만알려줍니다"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.95,
+  "pair": 0.88,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "1:13",
+  "text": "그래서 오늘 말하는 '몇 번째'는 딱 한 자리가 아니라, 대략 그 근처라는 뜻이에요.",
+  "say": "그래서 오늘 말하는 '몇 번째'는 딱 한 자리가 아니라, 대략 그 근처라는 뜻이에요.",
+  "audio": "audio/n-3/ac558d7ee8c12a91.wav",
+  "heard": [
+   "그래서 오늘 말하는 몇 번째는 한 자리가 아니라 대략 그 근처라는 뜻이에요.",
+   "그래서오늘말하는몇번째는칸자리가아니라대략그근처라는뜻이에요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.98,
+  "pair": 0.93,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:0",
+  "text": "이제 일곱 칸입니다. 칸마다 통장 금액과 줄 위치를 같이 볼게요.",
+  "say": "이제 일곱 칸입니다. [pause short] 칸마다 통장 금액과 줄 위치를 같이 볼게요.",
+  "audio": "audio/n-3/1798656271b12d2a.wav",
+  "heard": [
+   "제일곡한입니다. 칸마다 통장 금액과 줄 위치를 같이 볼게요.",
+   "이제7칸입니다칸마다통장금액과줄위치를같이볼게요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.96,
+  "pair": 0.89,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:1",
+  "text": "첫 칸은 연봉 3천입니다.",
+  "say": "첫 칸은 연봉 삼천입니다.",
+  "audio": "audio/n-3/96f6fe8089663fdf.wav",
+  "heard": [
+   "첫하는 연봉 3000입니다.",
+   "첫칸은연봉3000입니다"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.94,
+  "pair": 0.75,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:2",
+  "text": "통장에 224만원 정도 들어와요.",
+  "say": "통장에 이백이십사만원 정도 들어와요.",
+  "audio": "audio/n-3/65fe5d8445512c53.wav",
+  "heard": [
+   "통장에 224만 원 정도 들어와요.",
+   "통장에224만원정도들어와요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:3",
+  "text": "줄에서는 백 명 중 앞에서 예순두 명 안에 들어요.",
+  "say": "줄에서는 백 명 중 앞에서 예순두 명 안에 들어요.",
+  "audio": "audio/n-3/a3a21d5ee42b2d0a.wav",
+  "heard": [
+   "줄에서는 100명 중 앞에서 62명 안에 들어요.",
+   "줄에서는100명중앞에서52명안에들어요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.88,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:4",
+  "text": "다음은 연봉 4천.",
+  "say": "다음은 연봉 사천.",
+  "audio": "audio/n-3/1762665c7929cd00.wav",
+  "heard": [
+   "다음은 연봉 4천",
+   "다음은연봉4000"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": 0.91,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:5",
+  "text": "통장은 294만원 정도입니다.",
+  "say": "통장은 이백구십사만원 정도입니다.",
+  "audio": "audio/n-3/19d02546400acb24.wav",
+  "heard": [
+   "통장은 294만 원 정도입니다.",
+   "통장은294만원정도입니다"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:6",
+  "text": "백 명 중 앞에서 마흔다섯 명 안, 줄 한가운데보다 조금 앞이에요.",
+  "say": "백 명 중 앞에서 마흔다섯 명 안, 줄 한가운데보다 조금 앞이에요.",
+  "audio": "audio/n-3/cc9625f38fe3d3d0.wav",
+  "heard": [
+   "100명 중 앞에서 45명 안 줄 한가운데보다 조금 앞이에요.",
+   "100명중앞에서45명안줄한가운데보다조금앞이에요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.89,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:7",
+  "text": "연봉 5천은 앞에서 본 대로, 백 명 중 앞에서 서른세 명 안.",
+  "say": "연봉 오천은 앞에서 본 대로, 백 명 중 앞에서 서른세 명 안.",
+  "audio": "audio/n-3/3be8b94f1c57b85f.wav",
+  "heard": [
+   "연봉 5,000은 앞에서 본 대로 100명 중 앞에서 33명 안",
+   "연봉5000은앞에서본대로100명중앞에서33명안"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.86,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:8",
+  "text": "연봉 6천이 되면,",
+  "say": "연봉 육천이 되면,",
+  "audio": "audio/n-3/fe89622fd0ccb22c.wav",
+  "heard": [
+   "연봉 6,000이 되면",
+   "연봉6000이되면"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.91,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:9",
+  "text": "420만원 정도가 들어옵니다.",
+  "say": "사백이십만원 정도가 들어옵니다.",
+  "audio": "audio/n-3/1049eebe4db8e0d4.wav",
+  "heard": [
+   "420만 원 정도가 들어옵니다.",
+   "420만원정도가들어옵니다"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:10",
+  "text": "여기서부터 네 명 중 한 명 안쪽, 백 명 중 앞에서 스물다섯 명 안에 들어요.",
+  "say": "여기서부터 네 명 중 한 명 안쪽, 백 명 중 앞에서 스물다섯 명 안에 들어요.",
+  "audio": "audio/n-3/fff809b344b12522.wav",
+  "heard": [
+   "여기서부터 4명 중 1명 안쪽 100명 중 앞에서 25명 안에 들아요.",
+   "여기서부터4명중1명안쪽100명중앞에서25명안에들어요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.86,
+  "pair": 0.95,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:11",
+  "text": "연봉 7천이면",
+  "say": "연봉 칠천이면",
+  "audio": "audio/n-3/517d6e3d0bd820fa.wav",
+  "heard": [
+   "연봉 7,000이면",
+   "연봉7000이면"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.89,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:12",
+  "text": "482만원쯤입니다.",
+  "say": "사백팔십이만원쯤입니다.",
+  "audio": "audio/n-3/e5ca07f30d50ded9.wav",
+  "heard": [
+   "382만 원쯤입니다.",
+   "482만원쯤입니다",
+   "482만 원쯤입니다."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:13",
+  "text": "백 명 중 앞에서 열아홉 명 안에 들고요.",
+  "say": "백 명 중 앞에서 열아홉 명 안에 들고요.",
+  "audio": "audio/n-3/bc9b58aa01c20f7f.wav",
+  "heard": [
+   "100명 중 앞에서 19명 안에 들고요,",
+   "100명중앞에서19명안에들고요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.85,
+  "pair": 1.0,
+  "flag": "합의오독(1.00/0.85 )",
+  "batch2": true
+ },
+ {
+  "at": "2:14",
+  "text": "연봉 8천.",
+  "say": "연봉 팔천.",
+  "audio": "audio/n-3/1f92858baaaf189e.wav",
+  "heard": [
+   "연봉 8000",
+   "연봉8000"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.8,
+  "pair": 1.0,
+  "flag": "합의오독(1.00/0.80 )",
+  "batch2": true
+ },
+ {
+  "at": "2:15",
+  "text": "537만원 정도, 백 명 중 앞에서 열다섯 명 안.",
+  "say": "오백삼십칠만원 정도, 백 명 중 앞에서 열다섯 명 안.",
+  "audio": "audio/n-3/2992233f7c5dd80b.wav",
+  "heard": [
+   "537만 원 정도 100명 중 앞에서 15명 안.",
+   "537만원정도100명중앞에서15명안"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 0.85,
+  "pair": 1.0,
+  "flag": "합의오독(1.00/0.85 )",
+  "batch2": true
+ },
+ {
+  "at": "2:16",
+  "text": "그리고 연봉 1억.",
+  "say": "그리고 연봉 일억.",
+  "audio": "audio/n-3/53b30f0f7fd9bce6.wav",
+  "heard": [
+   "그리고 연봉 1억",
+   "그리고연봉1억"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:17",
+  "text": "653만원쯤 들어옵니다.",
+  "say": "육백오십삼만원쯤 들어옵니다.",
+  "audio": "audio/n-3/e9bbc9e19ffc7df6.wav",
+  "heard": [
+   "653만 원쯤 들어옵니다.",
+   "653만원쯤들어옵니다"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:18",
+  "text": "백 명 중 앞에서 아홉 명 안으로 들어가고요.",
+  "say": "백 명 중 앞에서 아홉 명 안으로 들어가고요.",
+  "audio": "audio/n-3/9c6619e858467de0.wav",
+  "heard": [
+   "100명 중 앞에서 아홉 명 안으로 들어가요.",
+   "100명중앞에서9명안으로들어가고요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 0.94,
+  "pair": 0.9,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:19",
+  "text": "막대를 같이 놓으면 하나가 보입니다.",
+  "say": "막대를 같이 놓으면 하나가 보입니다.",
+  "audio": "audio/n-3/e3e6b57f32b17ad8.wav",
+  "heard": [
+   "막대를 같이 놓으면 하나가 보입니다.",
+   "막대를같이놓으면하나가보입니다"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:20",
+  "text": "연봉 3천은 세전 월급의 열에 아홉이 통장에 남아요.",
+  "say": "연봉 삼천은 세전 월급의 열에 아홉이 통장에 남아요.",
+  "audio": "audio/n-3/0ace5becaa02b2db.wav",
+  "heard": [
+   "연봉 3,000은 세전 월급의 열에 아홉이 통장에 남아요.",
+   "연봉3천은세전월급에열에아홉이통장에남아요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 1.0,
+  "pair": 0.97,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:21",
+  "text": "1억은 그보다 적은 78%만 남고요.",
+  "say": "일억은 그보다 적은 칠십팔퍼센트만 남고요.",
+  "audio": "audio/n-3/d0b6e24a18b5c4da.wav",
+  "heard": [
+   "이 넌 그보다 적은 78%만 남고요.",
+   "1억은그보다적은78%만남고요",
+   "1억은 그보다 적은 78%만 남고요."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.5-transcribe"
+  ],
+  "sim": 1.0,
+  "pair": 0.82,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:22",
+  "text": "연봉이 오를수록 떼어 가는 돈이 커진다는 뜻이죠.",
+  "say": "연봉이 오를수록 떼어 가는 돈이 커진다는 뜻이죠.",
+  "audio": "audio/n-3/49021d0e970fe07d.wav",
+  "heard": [
+   "연봉",
+   "연봉이오를수록떼어가는돈이커진다는뜻이죠"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 1.0,
+  "pair": 0.18,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:23",
+  "text": "이 표는 내 급여명세서의 '실지급액'과 바로 비교해 보시면 됩니다.",
+  "say": "이 표는 내 급여명세서의 '실지급액'과 바로 비교해 보시면 됩니다.",
+  "audio": "audio/n-3/41207ed68830028e.wav",
+  "heard": [
+   "이 편은 내 급여명세서의 실지급액과 바로 비교해 보시면 됩니다.",
+   "이표는내급여명세서의실지급액과바로비교해보시면됩니다"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 1.0,
+  "pair": 0.92,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:24",
+  "text": "다만 상여금이 나온 달은 세금도 따로 붙으니, 보통 달끼리 비교하세요.",
+  "say": "다만 상여금이 나온 달은 세금도 따로 붙으니, 보통 달끼리 비교하세요.",
+  "audio": "audio/n-3/f3856058e0e9943b.wav",
+  "heard": [
+   "다만 상여금이 나온다는 세금도 따로 붙으니 보통 달끼리 비교하세요.",
+   "다만상여금이나온달은세금도따로붙으니보통달끼리비교하세요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 1.0,
+  "pair": 0.93,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:25",
+  "text": "1억 위도 많이 찾으셔서, 두 칸만 더 볼게요.",
+  "say": "일억 위도 많이 찾으셔서, 두 칸만 더 볼게요.",
+  "audio": "audio/n-3/e36ee8f09efff3ad.wav",
+  "heard": [
+   "1억 위도 많이 찾으셔서 툭 한만 더 볼까요?",
+   "1억위도많이찾으셔서두칸만더볼게요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 1.0,
+  "pair": 0.81,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:26",
+  "text": "먼저 연봉 1억 2천만원.",
+  "say": "먼저 연봉 일억 이천만원.",
+  "audio": "audio/n-3/51cd6e1f882f5053.wav",
+  "heard": [
+   "먼저 연봉 1억 2,000만 원.",
+   "먼저연봉1억2천만원"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 1.0,
+  "pair": 0.93,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:27",
+  "text": "통장에 761만원쯤 들어옵니다.",
+  "say": "통장에 칠백육십일만원쯤 들어옵니다.",
+  "audio": "audio/n-3/8d51841769cf66b9.wav",
+  "heard": [
+   "통장에 761만 원쯤 들어옵니다.",
+   "통장에761만원쯤들어옵니다"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:28",
+  "text": "백 명 중 앞에서 여섯 명 안에 섭니다.",
+  "say": "백 명 중 앞에서 여섯 명 안에 섭니다.",
+  "audio": "audio/n-3/51738aec2a0bc0a6.wav",
+  "heard": [
+   "백 명 중 앞에서 여섯 명 안에 섭니다.",
+   "100명중앞에서여섯명안에섭니다"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:29",
+  "text": "연봉 1억 5천만원이면",
+  "say": "연봉 일억 오천만원이면",
+  "audio": "audio/n-3/0cdaca205d2202cc.wav",
+  "heard": [
+   "연봉 1억 5천만 원이면",
+   "연봉1억5천만원이면"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:30",
+  "text": "902만원 정도입니다.",
+  "say": "구백이만원 정도입니다.",
+  "audio": "audio/n-3/994822610dccc84a.wav",
+  "heard": [
+   "921,000 원 정도입니다.",
+   "902만원정도입니다",
+   "92만 원 정도입니다."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.5-transcribe"
+  ],
+  "sim": 1.0,
+  "pair": 0.92,
+  "flag": "숫자",
+  "batch2": true
+ },
+ {
+  "at": "2:31",
+  "text": "이쯤이면 백 명 중 앞에서 세 명 안에 들고요.",
+  "say": "이쯤이면 백 명 중 앞에서 세 명 안에 들고요.",
+  "audio": "audio/n-3/9762bf68f2d8d596.wav",
+  "heard": [
+   "100명 중 앞에서 세 명 안에 들고요.",
+   "이쯤이면100명중앞에서3명안에들고요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 0.94,
+  "pair": 0.81,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "2:32",
+  "text": "세전 월급에서 통장에 남는 몫은 72%까지 내려옵니다.",
+  "say": "세전 월급에서 통장에 남는 몫은 칠십이퍼센트까지 내려옵니다.",
+  "audio": "audio/n-3/cb4ba5a22b0a959b.wav",
+  "heard": [
+   "세전 월급에서 통장에 남는 몫은 72%까지 내려옵니다.",
+   "세전월급에서통장에남는몫은72%까지내려옵니다"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 1.0,
+  "pair": 0.95,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "3:0",
+  "text": "다시 연봉 5천으로 볼게요.",
+  "say": "다시 연봉 오천으로 볼게요.",
+  "audio": "audio/n-3/f4e5f862d6fb81e7.wav",
+  "heard": [
+   "다시 연봉 5천으로 볼게요.",
+   "다시연봉5천으로볼게요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "3:1",
+  "text": "그 세전 월급에서, 무엇이 얼마나 빠질까요?",
+  "say": "그 세전 월급에서, 무엇이 얼마나 빠질까요?",
+  "audio": "audio/n-3/160a24bc92cc1ccb.wav",
+  "heard": [
+   "그 세전 월급에서 무엇이 얼마나 빠질까요?",
+   "그세전월급에서무엇이얼마나빠질까요"
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
+  ],
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
+  "batch2": true
+ },
+ {
+  "at": "3:2",
+  "text": "가장 큰 건 소득세와 국민연금이에요. 둘 다 19만원 정도입니다.",
+  "say": "가장 큰 건 소득세와 국민연금이에요. [pause short] 둘 다 십구만원 정도입니다.",
+  "audio": "audio/n-3/64aff2b6d0522c0e.wav",
+  "heard": [
+   "가장 큰 건 소득세와 국민연금이에요. 둘 다 19만 원 정도입니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:3",
+  "text": "건강보험, 고용보험, 장기요양, 지방소득세 네 가지는 다 해서 22만원쯤이고요.",
+  "say": "건강보험, 고용보험, 장기요양, 지방소득세 네 가지는 다 해서 이십이만원쯤이고요.",
+  "audio": "audio/n-3/0ad3d3dbf6a8c68a.wav",
+  "heard": [
+   "건강보험, 고용보험, 장기요양, 지방소득세 네 가지는 다 해서 22만 원쯤이고요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:4",
+  "text": "다 합치면 60만원쯤이 빠져요.",
+  "say": "다 합치면 육십만원쯤이 빠져요.",
+  "audio": "audio/n-3/c972a56201a36832.wav",
+  "heard": [
+   "다 합치면 60만 원쯤이 빠져요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:5",
+  "text": "그런데 연봉에 따라 빠지는 돈의 구성이 달라집니다.",
+  "say": "그런데 연봉에 따라 빠지는 돈의 구성이 달라집니다.",
+  "audio": "audio/n-3/655c366a9c4eb4b6.wav",
+  "heard": [
+   "그런데 연봉에 따라 빠지는 돈의 구성이 달라집니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:6",
+  "text": "낮은 칸, 연봉 3천부터 볼게요.",
+  "say": "낮은 칸, 연봉 삼천부터 볼게요.",
+  "audio": "audio/n-3/d93242afba654382.wav",
+  "heard": [
+   "낮은 칸 연봉 3,000부터 볼게요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.95,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:7",
+  "text": "빠지는 돈은 26만원쯤.",
+  "say": "빠지는 돈은 이십육만원쯤.",
+  "audio": "audio/n-3/45d5b91d2fd64068.wav",
+  "heard": [
+   "빠지는 돈은 26만 원쯤.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:8",
+  "text": "그중 세금은 3만원 정도예요.",
+  "say": "그중 세금은 삼만원 정도예요.",
+  "audio": "audio/n-3/7e3159193b4f85ae.wav",
+  "heard": [
+   "그 중 세금은 3만 원 정도에요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:9",
+  "text": "나머지는 거의 보험료입니다.",
+  "say": "나머지는 거의 보험료입니다.",
+  "audio": "audio/n-3/97a7edb9388741c4.wav",
+  "heard": [
+   "나머지는 거의 보험료입니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:10",
+  "text": "이번엔 연봉 1억.",
+  "say": "이번엔 연봉 일억.",
+  "audio": "audio/n-3/4081ea8c3be58931.wav",
+  "heard": [
+   "이번엔 연봉 1억",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:11",
+  "text": "빠지는 돈은 180만원쯤으로 커지고요.",
+  "say": "빠지는 돈은 백팔십만원쯤으로 커지고요.",
+  "audio": "audio/n-3/29d3d20a3f7e333a.wav",
+  "heard": [
+   "빠지는 돈은 180만 원쯤으로 커지고요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:12",
+  "text": "그중 세금이 109만원, 절반이 넘어요.",
+  "say": "그중 세금이 백구만원, 절반이 넘어요.",
+  "audio": "audio/n-3/30bf1027d7d744c7.wav",
+  "heard": [
+   "그 중 세금이 109만 원 절반이 넘어요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:13",
+  "text": "세금이 보험료보다 많아지는 건 연봉 8천 칸부터예요.",
+  "say": "세금이 보험료보다 많아지는 건 연봉 팔천 칸부터예요.",
+  "audio": "audio/n-3/ecd9c0e44213d8db.wav",
+  "heard": [
+   "세금이 보험료보다 많아지는 건 연봉 8000칸부터예요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.98,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:14",
+  "text": "보험료 네 가지는 월급에 같은 비율로 붙고, 소득세만 많이 벌수록 더 가파르게 붙습니다.",
+  "say": "보험료 네 가지는 월급에 같은 비율로 붙고, 소득세만 많이 벌수록 더 가파르게 붙습니다.",
+  "audio": "audio/n-3/318cf675cb1a0e45.wav",
+  "heard": [
+   "보험료 네 가지는 월급의 같은 비율로 붙고, 소득세만 많이 벌수록 더 가파르게 붙습니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:15",
+  "text": "그런데 국민연금에는 끝이 있어요.",
+  "say": "그런데 국민연금에는 끝이 있어요.",
+  "audio": "audio/n-3/3e5761135b6ed4b7.wav",
+  "heard": [
+   "그런데 국민연금에는 끝이 있어요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:16",
+  "text": "연금은 한 달 659만원까지만 보험료를 붙입니다.",
+  "say": "연금은 한 달 육백오십구만원까지만 보험료를 붙입니다.",
+  "audio": "audio/n-3/8287a19755639bbb.wav",
+  "heard": [
+   "연금은 한 달 659만 원까지만 보험료를 붙입니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:17",
+  "text": "그래서 연봉이 높은 칸에서는 연금 보험료가 그 끝에 닿아요.",
+  "say": "그래서 연봉이 높은 칸에서는 연금 보험료가 그 끝에 닿아요.",
+  "audio": "audio/n-3/978cd56df5ad5d3f.wav",
+  "heard": [
+   "그래서 연봉이 높은 칸에서는 연금 보험료가 그 끝에 다아요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.96,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:18",
+  "text": "31만원 정도에서 더 늘지 않습니다.",
+  "say": "삼십일만원 정도에서 더 늘지 않습니다.",
+  "audio": "audio/n-3/6acd5c767675506d.wav",
+  "heard": [
+   "31만 원 정도에서 더 늘지 않습니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "3:19",
+  "text": "이게 다음 장에서 숫자 하나를 바꿉니다.",
+  "say": "이게 다음 장에서 숫자 하나를 바꿉니다.",
+  "audio": "audio/n-3/7f35b835cfed01c4.wav",
+  "heard": [
+   "이게 다음 장에서 숫자 하나를 바꿉니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:0",
+  "text": "연봉이 올랐는데 월급은 왜 별로 안 늘까요. 정말 많이 묻는 질문이에요.",
+  "say": "연봉이 올랐는데 월급은 왜 별로 안 늘까요. [pause short] 정말 많이 묻는 질문이에요.",
+  "audio": "audio/n-3/4679752c111993a7.wav",
+  "heard": [
+   "연봉이 올랐는데 월급은 왜 별로 안 늘까요? 정말 많이 묻는 질문이에요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:1",
+  "text": "먼저 크게 보면, 연봉이 5천에서 1억으로 두 배가 될 때요.",
+  "say": "먼저 크게 보면, 연봉이 오천에서 일억으로 두 배가 될 때요.",
+  "audio": "audio/n-3/490590cac592b14a.wav",
+  "heard": [
+   "먼저 크게 보면 연봉이 5,000에서 1억으로 두 배가 될 때요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.98,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:2",
+  "text": "통장은 1.8배쯤밖에 안 됩니다.",
+  "say": "통장은 일 점 팔배쯤밖에 안 됩니다.",
+  "audio": "audio/n-3/c2e936484c1c39ff.wav",
+  "heard": [
+   "통장은 1.8배쯤 밖에 안 됩니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:3",
+  "text": "연봉이 천만원 오르면, 세전 월급은 83만원쯤 늡니다.",
+  "say": "연봉이 천만원 오르면, 세전 월급은 팔십삼만원쯤 늡니다.",
+  "audio": "audio/n-3/d9ad075505b33880.wav",
+  "heard": [
+   "연봉이 1,000만 원 오르면 세전 월급은 83만 원쯤 듭니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.92,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:4",
+  "text": "그중 통장에 얼마가 남는지 칸마다 셌어요.",
+  "say": "그중 통장에 얼마가 남는지 칸마다 셌어요.",
+  "audio": "audio/n-3/cedb9be32f983487.wav",
+  "heard": [
+   "그중 통장에 얼마가 남는지 칸마다 세어요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.94,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:5",
+  "text": "3천에서 4천으로 오를 때는요.",
+  "say": "삼천에서 사천으로 오를 때는요.",
+  "audio": "audio/n-3/c5c2b079baa0b45a.wav",
+  "heard": [
+   "3천에서 4천으로 오를 때는요",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:6",
+  "text": "69만원 정도가 남아요.",
+  "say": "육십구만원 정도가 남아요.",
+  "audio": "audio/n-3/bb148a4f4c227ee2.wav",
+  "heard": [
+   "69만 원 정도가 남아요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:7",
+  "text": "그 위로 7천까지는 칸마다 남는 돈이 거의 같습니다.",
+  "say": "그 위로 칠천까지는 칸마다 남는 돈이 거의 같습니다.",
+  "audio": "audio/n-3/d8fa2ed7881251a9.wav",
+  "heard": [
+   "그 위로 7천까지는 칸마다 남는 돈이 거의 같습니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:8",
+  "text": "그런데 7천에서 8천으로 갈 때는 뚝 줄어요.",
+  "say": "그런데 칠천에서 팔천으로 갈 때는 뚝 줄어요.",
+  "audio": "audio/n-3/2ed2521459807b53.wav",
+  "heard": [
+   "그런데 7000에서 8000으로 갈 때는 뚝 줄어요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.93,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:9",
+  "text": "55만원 정도만 남습니다.",
+  "say": "오십오만원 정도만 남습니다.",
+  "audio": "audio/n-3/e56cd4c3849192c8.wav",
+  "heard": [
+   "55만 원 정도만 남습니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:10",
+  "text": "오른 돈의 삼분의 이 정도만 남는 칸입니다.",
+  "say": "오른 돈의 삼분의 이 정도만 남는 칸입니다.",
+  "audio": "audio/n-3/da450121a63a0a09.wav",
+  "heard": [
+   "오른돈의 3분의 이 정도만 남는 간입니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.91,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:11",
+  "text": "이유는 소득세율 계단이에요.",
+  "say": "이유는 소득세율 계단이에요.",
+  "audio": "audio/n-3/61079e16a1c4fed2.wav",
+  "heard": [
+   "이유는 소득세율 계단이에요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:12",
+  "text": "연봉이 아니라, 연봉에서 이것저것 빼고 남은 돈이 5천만원을 넘으면요.",
+  "say": "연봉이 아니라, 연봉에서 이것저것 빼고 남은 돈이 오천만원을 넘으면요.",
+  "audio": "audio/n-3/8c5b8d42f085ac38.wav",
+  "heard": [
+   "연봉이 아니라 연봉에서 이것저것 빼고 남은 돈이 5000만 원을 넘으면요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.98,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:13",
+  "text": "넘는 부분에만 15% 대신 24%가 붙습니다.",
+  "say": "넘는 부분에만 십오퍼센트 대신 이십사퍼센트가 붙습니다.",
+  "audio": "audio/n-3/44edda756ae9e53e.wav",
+  "heard": [
+   "넘는 부분에만 15% 대신 24%가 붙습니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:14",
+  "text": "바로 이 칸에서, 이것저것 빼고 남은 돈이 그 선을 넘는 거예요.",
+  "say": "바로 이 칸에서, 이것저것 빼고 남은 돈이 그 선을 넘는 거예요.",
+  "audio": "audio/n-3/1f2756a3b0853d34.wav",
+  "heard": [
+   "바로 이 칸에서 이것저것 빼고 남은 돈이 그 선을 넘는 거예요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:15",
+  "text": "그런데 8천에서 1억으로 가는 칸은 다시 올라가요.",
+  "say": "그런데 팔천에서 일억으로 가는 칸은 다시 올라가요.",
+  "audio": "audio/n-3/eea503630dacda3d.wav",
+  "heard": [
+   "그런데 8천에서 1억으로 가는 칸은 다시 올라가요?",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:16",
+  "text": "70%쯤 남습니다.",
+  "say": "칠십퍼센트쯤 남습니다.",
+  "audio": "audio/n-3/97b29b7e1fda412c.wav",
+  "heard": [
+   "70% 쯤 남습니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:17",
+  "text": "앞에서 본 국민연금 상한 때문이에요. 이쯤부터는 연금 보험료가 더 안 늘거든요.",
+  "say": "앞에서 본 국민연금 상한 때문이에요. [pause short] 이쯤부터는 연금 보험료가 더 안 늘거든요.",
+  "audio": "audio/n-3/4fa6027bc91acc6a.wav",
+  "heard": [
+   "앞에서 본 국민연금 상한 때문이에요. 이쯤부터는 연금 보험료가 더 안 늘거든요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:18",
+  "text": "그래서 연봉 이야기를 할 때는 오른 연봉을 통장 금액으로 바꿔 보세요.",
+  "say": "그래서 연봉 이야기를 할 때는 오른 연봉을 통장 금액으로 바꿔 보세요.",
+  "audio": "audio/n-3/0349c753a2977f02.wav",
+  "heard": [
+   "그래서 연봉 이야기를 할 때는 오른 연봉을 통장 금액으로 바꿔 보세요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:19",
+  "text": "같은 인상이라도, 어느 칸이냐에 따라 한 달에 10만원 넘게 차이가 납니다.",
+  "say": "같은 인상이라도, 어느 칸이냐에 따라 한 달에 십만원 넘게 차이가 납니다.",
+  "audio": "audio/n-3/a17692ba07f8b718.wav",
+  "heard": [
+   "같은 인상이라도 어느 칸이냐에 따라 한 달에 10만 원 넘게 차이가 납니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:20",
+  "text": "그럼 1억 위에서는 어떨까요.",
+  "say": "그럼 일억 위에서는 어떨까요.",
+  "audio": "audio/n-3/e3d8b9bf32c1e02a.wav",
+  "heard": [
+   "그럼 1억 위에는 어떨까요?",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.95,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:21",
+  "text": "1억에서 1억 2천만원으로 오르면요.",
+  "say": "일억에서 일억 이천만원으로 오르면요.",
+  "audio": "audio/n-3/9e12c999e39376e9.wav",
+  "heard": [
+   "1억에서 1억 2,000만 원으로 오르면요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.96,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:22",
+  "text": "오른 돈의 65%가 통장에 남습니다.",
+  "say": "오른 돈의 육십오퍼센트가 통장에 남습니다.",
+  "audio": "audio/n-3/e211fd7d7984c6fd.wav",
+  "heard": [
+   "오른손에 65%가 통장에 남습니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.92,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:23",
+  "text": "거기서 1억 5천만원으로 가면 더 내려가요.",
+  "say": "거기서 일억 오천만원으로 가면 더 내려가요.",
+  "audio": "audio/n-3/af3780e2d3f475be.wav",
+  "heard": [
+   "거기서 1억 5천만 원으로 가면 더 내려가요?",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:24",
+  "text": "56%예요.",
+  "say": "오십육퍼센트예요.",
+  "audio": "audio/n-3/7737796b5b7c6873.wav",
+  "heard": [
+   "56%이에요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.8,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:25",
+  "text": "오른 돈에서 절반 조금 넘게만 남는 거죠.",
+  "say": "오른 돈에서 절반 조금 넘게만 남는 거죠.",
+  "audio": "audio/n-3/8371703c967c9617.wav",
+  "heard": [
+   "오른돈에서 절반 조금 넘게만 남는 거죠.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "4:26",
+  "text": "이 칸에서는 연금이 이미 끝에 닿아 있어서, 더 떼는 돈 대부분이 소득세거든요.",
+  "say": "이 칸에서는 연금이 이미 끝에 닿아 있어서, 더 떼는 돈 대부분이 소득세거든요.",
+  "audio": "audio/n-3/9d28ca8c5dcdbe22.wav",
+  "heard": [
+   "이 경우에는 연금이 이미 끝에 다 와 있어서 더 떼는 돈 대부분이 소득세거든요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.87,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:0",
+  "text": "검색창에는 거꾸로 묻는 분도 많습니다. 세후 300이면 연봉이 얼마냐고요.",
+  "say": "검색창에는 거꾸로 묻는 분도 많습니다. [pause short] 세후 삼백이면 연봉이 얼마냐고요.",
+  "audio": "audio/n-3/bcbd2e06629d70fe.wav",
+  "heard": [
+   "검색창에는 거꾸로 묻는 분도 많습니다. 새우 300이면 연봉이 얼마냐고요?",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.96,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:1",
+  "text": "통장에 한 달 300만원이 찍히려면요.",
+  "say": "통장에 한 달 삼백만원이 찍히려면요.",
+  "audio": "audio/n-3/edbfa3c32296f139.wav",
+  "heard": [
+   "통장에 한 달 300만 원이 찍히려면요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:2",
+  "text": "연봉 4,100만원쯤이 필요합니다.",
+  "say": "연봉 사천백만원쯤이 필요합니다.",
+  "audio": "audio/n-3/f387a67e7e4fc5ac.wav",
+  "heard": [
+   "연봉 4,100만 원쯤이 필요합니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:3",
+  "text": "줄에서는 백 명 중 앞에서 마흔네 명 안, 한가운데보다 조금 앞이에요.",
+  "say": "줄에서는 백 명 중 앞에서 마흔네 명 안, 한가운데보다 조금 앞이에요.",
+  "audio": "audio/n-3/39a3bb1471d98961.wav",
+  "heard": [
+   "줄에서의 랭킹 중 앞에서 44명 안 한 가운데보다 조금 앞이에요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.82,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:4",
+  "text": "통장 400만원이면,",
+  "say": "통장 사백만원이면,",
+  "audio": "audio/n-3/2bc1595a9b1c7645.wav",
+  "heard": [
+   "통장 400만 원이면",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:5",
+  "text": "연봉 5,680만원쯤입니다.",
+  "say": "연봉 오천육백팔십만원쯤입니다.",
+  "audio": "audio/n-3/c6e3aab1a720b967.wav",
+  "heard": [
+   "연봉 5,680만 원쯤입니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:6",
+  "text": "500만원은요,",
+  "say": "오백만원은요,",
+  "audio": "audio/n-3/f0d1d88ae701a018.wav",
+  "heard": [
+   "500만 원은요",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:7",
+  "text": "7,330만원쯤이고요.",
+  "say": "칠천삼백삼십만원쯤이고요.",
+  "audio": "audio/n-3/ae1e561aff8cdcad.wav",
+  "heard": [
+   "7330만 원쯤이고요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:8",
+  "text": "600만원이 되려면,",
+  "say": "육백만원이 되려면,",
+  "audio": "audio/n-3/2b7cfec2e4eecc4a.wav",
+  "heard": [
+   "600만 원이 되려면",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:9",
+  "text": "9,100만원 정도가 필요합니다.",
+  "say": "구천백만원 정도가 필요합니다.",
+  "audio": "audio/n-3/4179ecc62aa1b587.wav",
+  "heard": [
+   "9,100만 원 정도가 필요합니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:10",
+  "text": "칸 사이를 보시면 하나가 보여요.",
+  "say": "칸 사이를 보시면 하나가 보여요.",
+  "audio": "audio/n-3/e225c66703055c92.wav",
+  "heard": [
+   "간사를 보시면 하나가 보여요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.88,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:11",
+  "text": "맨 아래 한 칸은 연봉이 1,580만원 더 있으면 되는데요.",
+  "say": "맨 아래 한 칸은 연봉이 천오백팔십만원 더 있으면 되는데요.",
+  "audio": "audio/n-3/fcf2ab86b29723ed.wav",
+  "heard": [
+   "맨 아래 한 칸은 연봉이 1,580만 원 더 있으면 되는데요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:12",
+  "text": "맨 위 한 칸은 1,770만원이 더 들어요.",
+  "say": "맨 위 한 칸은 천칠백칠십만원이 더 들어요.",
+  "audio": "audio/n-3/129250f18127afaa.wav",
+  "heard": [
+   "맨 윗 칸은 1770만 원이 더 들어요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.87,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:13",
+  "text": "통장을 같은 100만원씩 올리려 해도, 위로 갈수록 연봉은 더 많이 올라야 하는 거죠.",
+  "say": "통장을 같은 백만원씩 올리려 해도, 위로 갈수록 연봉은 더 많이 올라야 하는 거죠.",
+  "audio": "audio/n-3/0143ef21afd2e5d6.wav",
+  "heard": [
+   "통장을 같은 100만 원씩 올리려 해도 위로 갈수록 연봉은 더 많이 올라야 하는 거죠.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:14",
+  "text": "앞 장의 세율 계단을 거꾸로 보면 이렇습니다.",
+  "say": "앞 장의 세율 계단을 거꾸로 보면 이렇습니다.",
+  "audio": "audio/n-3/cfd3ec0ea78724d1.wav",
+  "heard": [
+   "앞장의 세 울 계단을 거꾸로 보면 이렇습니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.94,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:15",
+  "text": "그래서 '세후 얼마'라는 말을 들으면, 이 표처럼 연봉으로 바꿔서 맞춰 보세요.",
+  "say": "그래서 '세후 얼마'라는 말을 들으면, 이 표처럼 연봉으로 바꿔서 맞춰 보세요.",
+  "audio": "audio/n-3/039847b1a701348e.wav",
+  "heard": [
+   "그래서 새우 얼마라는 말을 들으면 이 표처럼 연봉으로 바꿔서 맞춰 보세요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.97,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:16",
+  "text": "이 연봉도 조건에 따라 움직입니다.",
+  "say": "이 연봉도 조건에 따라 움직입니다.",
+  "audio": "audio/n-3/c789985cf5c8997f.wav",
+  "heard": [
+   "이 연봉도 조건에 따라 움직입니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:17",
+  "text": "식대 비과세가 없는 회사라면, 통장 400만원을 받는 데 연봉이 앞의 표보다 90만원쯤 더 필요해요.",
+  "say": "식대 비과세가 없는 회사라면, 통장 사백만원을 받는 데 연봉이 앞의 표보다 구십만원쯤 더 필요해요.",
+  "audio": "audio/n-3/7aab256b17fefdd8.wav",
+  "heard": [
+   "식대 비과세가 없는 회사라면 통장 400만 원을 받는데 연봉이 앞에 표보다 90만 원쯤 더 필요해요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:18",
+  "text": "반대로 배우자와 자녀 둘을 부양가족으로 올린 네 식구라면요.",
+  "say": "반대로 배우자와 자녀 둘을 부양가족으로 올린 네 식구라면요.",
+  "audio": "audio/n-3/301c224290c36c11.wav",
+  "heard": [
+   "반대로 배우자와 자녀들을 부양 가족으로 올린 내 식구라면요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.96,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:19",
+  "text": "같은 통장 금액에, 앞의 표보다 연봉이 260만원쯤 덜 필요합니다.",
+  "say": "같은 통장 금액에, 앞의 표보다 연봉이 이백육십만원쯤 덜 필요합니다.",
+  "audio": "audio/n-3/f0ed492a8fd6a282.wav",
+  "heard": [
+   "같은 통장 금액의 앞의 표보다 연봉이 260만 원쯤 덜 필요합니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:20",
+  "text": "같은 '세후 400'이 사람마다 다른 연봉을 뜻하는 이유예요.",
+  "say": "같은 '세후 사백 '이 사람마다 다른 연봉을 뜻하는 이유예요.",
+  "audio": "audio/n-3/3995c6e8c10f6775.wav",
+  "heard": [
+   "같은 새우, 400이 사람마다 다른 연봉을 뜻하는 이유예요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.95,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "5:21",
+  "text": "그 차이가 어디서 오는지는 다음 장에서 봅니다.",
+  "say": "그 차이가 어디서 오는지는 다음 장에서 봅니다.",
+  "audio": "audio/n-3/7314107b02547fa3.wav",
+  "heard": [
+   "그 차이가 어디서 오는지는 다음 장에서 봅니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:0",
+  "text": "처음에 본 357만원으로 돌아가 볼게요.",
+  "say": "처음에 본 삼백오십칠만원으로 돌아가 볼게요.",
+  "audio": "audio/n-3/9ed2e2cc128b2059.wav",
+  "heard": [
+   "처음에 본 357만 원으로 돌아가 볼게요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:1",
+  "text": "다른 영상에 이런 댓글이 있었어요. 실제로는 그보다 훨씬 적게 들어온다고요.",
+  "say": "다른 영상에 이런 댓글이 있었어요. [pause short] 실제로는 그보다 훨씬 적게 들어온다고요.",
+  "audio": "audio/n-3/1d704ec4a6e03a91.wav",
+  "heard": [
+   "다른 영상에 이런 댓글이 있었어요. 실제로는 그보다 훨씬 적게 들어온다고요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:2",
+  "text": "답글은 이랬습니다. 비과세가 아예 없는 회사라 더 적게 들어온다고요.",
+  "say": "답글은 이랬습니다. [pause short] 비과세가 아예 없는 회사라 더 적게 들어온다고요.",
+  "audio": "audio/n-3/d119235215ebc7ef.wav",
+  "heard": [
+   "답글은 이",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.25,
+  "pair": null,
+  "flag": "밀림의심(0.25) 받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:3",
+  "text": "맞는 말이에요. 식대 비과세가 없는 회사라면 같은 연봉에서 352만원 정도입니다.",
+  "say": "맞는 말이에요. [pause short] 식대 비과세가 없는 회사라면 같은 연봉에서 삼백오십이만원 정도입니다.",
+  "audio": "audio/n-3/a052aa1a79d0cda3.wav",
+  "heard": [
+   "맞는 말이에요. 식대 비과세가 없는 회사라면 같은 연봉에서 352만 원 정도입니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:4",
+  "text": "한 달 5만원쯤 차이가 나요.",
+  "say": "한 달 오만원쯤 차이가 나요.",
+  "audio": "audio/n-3/a92574a9fea36437.wav",
+  "heard": [
+   "한 달 5만 원쯤 차이가 나요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:5",
+  "text": "급여명세서에 '비과세' 줄이 있는지 한번 보세요.",
+  "say": "급여명세서에 '비과세' 줄이 있는지 한번 보세요.",
+  "audio": "audio/n-3/151815347e15c9b1.wav",
+  "heard": [
+   "급여 명세서 앱이 과세 줄이 있는지 한번 보세요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.89,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:6",
+  "text": "가족 수로도 달라집니다.",
+  "say": "가족 수로도 달라집니다.",
+  "audio": "audio/n-3/bce865141b71a853.wav",
+  "heard": [
+   "가족 수로도 달라집니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:7",
+  "text": "배우자와, 여덟 살부터 스무 살 사이 자녀 둘이 있으면요.",
+  "say": "배우자와, 여덟 살부터 스무 살 사이 자녀 둘이 있으면요.",
+  "audio": "audio/n-3/d0913843f2910ab8.wav",
+  "heard": [
+   "배우자와 8살부터 20살 사이 자녀 둘이 있으면요",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.9,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:8",
+  "text": "연봉 5천이면, 혼자일 때보다 한 달 16만원 정도 더 들어옵니다.",
+  "say": "연봉 오천이면, 혼자일 때보다 한 달 십육만원 정도 더 들어옵니다.",
+  "audio": "audio/n-3/3b0c177056860aba.wav",
+  "heard": [
+   "연봉 5천이면 혼자일 때보다 한 달 16만 원 정도 더 들어옵니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:9",
+  "text": "연봉 1억이면 그보다 많은 30만원쯤 더 들어오고요.",
+  "say": "연봉 일억이면 그보다 많은 삼십만원쯤 더 들어오고요.",
+  "audio": "audio/n-3/fff9b947f3910eef.wav",
+  "heard": [
+   "연봉 1억이면 그보다 많은 30만 원쯤 더 들어오고요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:10",
+  "text": "달마다 떼는 소득세가 가족 수 칸마다 다르게 정해져 있어서 그렇습니다.",
+  "say": "달마다 떼는 소득세가 가족 수 칸마다 다르게 정해져 있어서 그렇습니다.",
+  "audio": "audio/n-3/f70d80f190922deb.wav",
+  "heard": [
+   "달마다 때는 소득세가 가족 수 칸마다 다르게 정해져 있어서 그렇습니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:11",
+  "text": "회사에 부양가족 신고가 안 돼 있으면 달마다 더 떼고, 연말정산 때 돌려받아요.",
+  "say": "회사에 부양가족 신고가 안 돼 있으면 달마다 더 떼고, 연말정산 때 돌려받아요.",
+  "audio": "audio/n-3/239a1852b429371c.wav",
+  "heard": [
+   "회사 부양 가족 신고가 안 돼 있으면 달마다 더 떼고 연말 정산 때 돌려받아요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.98,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:12",
+  "text": "그리고 달마다 떼는 세금의 크기를 직접 고를 수도 있습니다.",
+  "say": "그리고 달마다 떼는 세금의 크기를 직접 고를 수도 있습니다.",
+  "audio": "audio/n-3/f0fbb76f98968b46.wav",
+  "heard": [
+   "그리고 달마다 떼는 세금의 크기를 직접 고를 수도 있습니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:13",
+  "text": "회사는 나라가 정한 표대로 세금을 떼는데요, 그보다 덜 떼거나 더 떼도록 회사에 신청할 수 있어요.",
+  "say": "회사는 나라가 정한 표대로 세금을 떼는데요, 그보다 덜 떼거나 더 떼도록 회사에 신청할 수 있어요.",
+  "audio": "audio/n-3/a06cb45159d46c2b.wav",
+  "heard": [
+   "회사는 나라가 정한 표대로 세금을 떼는데요. 그보다 덜 떼거나 더 떼도록 회사의 신청할 수 있어요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:14",
+  "text": "기준보다 덜 떼기, 그대로 떼기, 더 떼기 중에 고르시면 돼요.",
+  "say": "기준보다 덜 떼기, 그대로 떼기, 더 떼기 중에 고르시면 돼요.",
+  "audio": "audio/n-3/402cb792fe3f6f10.wav",
+  "heard": [
+   "기존보다 덜 때기, 그대로 때기, 더 때기 중에 고르시면 돼요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.96,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:15",
+  "text": "연봉 1억으로 볼게요.",
+  "say": "연봉 일억으로 볼게요.",
+  "audio": "audio/n-3/8c46219f1136fec2.wav",
+  "heard": [
+   "연봉이라고 그럴게요.",
+   null,
+   "연봉이라고 불러볼게요."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
+  ],
+  "sim": 0.56,
+  "pair": null,
+  "flag": "숫자 밀림의심(0.56) 받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:16",
+  "text": "가장 적게 떼는 쪽을 고르면, 달마다 통장이 22만원 정도 늘어납니다.",
+  "say": "가장 적게 떼는 쪽을 고르면, 달마다 통장이 이십이만원 정도 늘어납니다.",
+  "audio": "audio/n-3/650e2c9f4f4ac4ee.wav",
+  "heard": [
+   "가장 적게 때는 쪽을 고르면 달마다 통장이 22만 원 정도 늘어납니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:17",
+  "text": "대신 덜 뗀 만큼 연말정산 때 한꺼번에 더 내게 될 수 있어요.",
+  "say": "대신 덜 뗀 만큼 연말정산 때 한꺼번에 더 내게 될 수 있어요.",
+  "audio": "audio/n-3/7128642809240a76.wav",
+  "heard": [
+   "대신 덜 땐 만큼 연말 정산 때 한꺼번에 더 내게 될 수 있어요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:18",
+  "text": "한 해 세금 자체가 줄어드는 건 아니고, 내는 때만 바뀌는 거예요.",
+  "say": "한 해 세금 자체가 줄어드는 건 아니고, 내는 때만 바뀌는 거예요.",
+  "audio": "audio/n-3/40cf0e0654f3c7c7.wav",
+  "heard": [
+   "하늘의 색금 자체가 줄어드는 건 아니고 네온에 때만 바뀌는 거예요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.81,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:19",
+  "text": "그런데 여기 함정이 하나 있습니다.",
+  "say": "그런데 여기 함정이 하나 있습니다.",
+  "audio": "audio/n-3/c7355e3436a3301a.wav",
+  "heard": [
+   "그런데 여기 함정이 하나 있습니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:20",
+  "text": "달마다 떼는 소득세는 미리 어림해서 떼는 값이에요.",
+  "say": "달마다 떼는 소득세는 미리 어림해서 떼는 값이에요.",
+  "audio": "audio/n-3/a0bf46ba8833a833.wav",
+  "heard": [
+   "달마다 떼는 소득세는 미리 어림해서 떼는 값이에요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:21",
+  "text": "일 년 치 세금은 연말정산에서 정해지고, 그때 더 내거나 돌려받습니다.",
+  "say": "일 년 치 세금은 연말정산에서 정해지고, 그때 더 내거나 돌려받습니다.",
+  "audio": "audio/n-3/731354896288a981.wav",
+  "heard": [
+   "1년치 세금은 연말 정산에서 정해지고 그때 더 내거나 돌려받습니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.98,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "6:22",
+  "text": "그러니 오늘 본 통장 금액은 '보통 달' 금액이지, 일 년 최종 세후는 아니에요.",
+  "say": "그러니 오늘 본 통장 금액은 '보통 달' 금액이지, 일 년 최종 세후는 아니에요.",
+  "audio": "audio/n-3/b79b28fc597a43da.wav",
+  "heard": [
+   "그러니 오늘 본 통장 금액은 보통 달 금액이지 일 년 최종 세우는 아니에요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.97,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:0",
+  "text": "이번엔 이런 댓글이에요. 난 왜 상위 25%인데 삶이 힘드냐.",
+  "say": "이번엔 이런 댓글이에요. [pause short] 난 왜 상위 이십오퍼센트인데 삶이 힘드냐.",
+  "audio": "audio/n-3/e335d04205a79f6d.wav",
+  "heard": [
+   "이런 이런 댓글이에요. 난 왜 상위 25%인데 삶이 힘드냐.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.93,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:1",
+  "text": "백 명 중 앞에서 스물다섯 번째쯤 서 있는 사람들은요.",
+  "say": "백 명 중 앞에서 스물다섯 번째쯤 서 있는 사람들은요.",
+  "audio": "audio/n-3/2301fad9adc766c1.wav",
+  "heard": [
+   "10",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.0,
+  "pair": null,
+  "flag": "밀림의심(0.00) 받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:2",
+  "text": "총급여가 5,727만원쯤입니다.",
+  "say": "총급여가 오천칠백이십칠만원쯤입니다.",
+  "audio": "audio/n-3/be25da3213c690b4.wav",
+  "heard": [
+   "195727만 원쯤입니다.",
+   null,
+   "총 비용은 5,727만 원쯤입니다."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
+  ],
+  "sim": 0.75,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:3",
+  "text": "통장에는 418만원쯤이고요.",
+  "say": "통장에는 사백십팔만원쯤이고요.",
+  "audio": "audio/n-3/85ea3c5b1450424a.wav",
+  "heard": [
+   "통장은 418만 원쯤이고요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.84,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:4",
+  "text": "'상위권'이라는 말에서 떠올리는 금액보다 작게 느껴질 수 있습니다.",
+  "say": "'상위권'이라는 말에서 떠올리는 금액보다 작게 느껴질 수 있습니다.",
+  "audio": "audio/n-3/8b3d50499f16cabf.wav",
+  "heard": [
+   "상위권이라는 말에서 떠올리는 금액보다 작게 느껴질 수 있습니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:5",
+  "text": "그럼 자동완성에 자주 뜨는 '연봉 상위 10%'는요.",
+  "say": "그럼 자동완성에 자주 뜨는 '연봉 상위 십퍼센트'는요.",
+  "audio": "audio/n-3/1a222e9787edafea.wav",
+  "heard": [
+   "그럼 자동 완성의 자주 뜨는 연봉 상위 10%는요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:6",
+  "text": "앞에서 열 번째쯤 사람들은 총급여가 9,117만원이에요.",
+  "say": "앞에서 열 번째쯤 사람들은 총급여가 구천백십칠만원이에요.",
+  "audio": "audio/n-3/63d7901c15b9a34a.wav",
+  "heard": [
+   "현재 열 번째쯤 사람들은 총 급여가 9,117만 원이에요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.87,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:7",
+  "text": "통장에는 616만원쯤 들어옵니다.",
+  "say": "통장에는 육백십육만원쯤 들어옵니다.",
+  "audio": "audio/n-3/e2bab7169368a8eb.wav",
+  "heard": [
+   "통장에는 616만 원쯤 들어옵니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:8",
+  "text": "평균도 마찬가지예요.",
+  "say": "평균도 마찬가지예요.",
+  "audio": "audio/n-3/aeca8b7ac647615b.wav",
+  "heard": [
+   "평균도 마찬가지예요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:9",
+  "text": "국세청 자료에서 직장인 평균 총급여는 4,475만원입니다.",
+  "say": "국세청 자료에서 직장인 평균 총급여는 사천사백칠십오만원입니다.",
+  "audio": "audio/n-3/d272c173cd120105.wav",
+  "heard": [
+   "국세청 자료에 따르면 직장인 평균 총 급여는 4,475만 원입니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.91,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:10",
+  "text": "그런데 줄 한가운데, 쉰 번째 근처 사람들은 3천4백만원 정도예요.",
+  "say": "그런데 줄 한가운데, 쉰 번째 근처 사람들은 삼천 사백만원 정도예요.",
+  "audio": "audio/n-3/a5f8ef459e911e3f.wav",
+  "heard": [
+   "그런데 줄 한가운데 쉰 번째 근처 사람들은 3,400만 원 정도에요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.96,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:11",
+  "text": "맨 앞, 백 명 중 한 명꼴인 상위 1%는요.",
+  "say": "맨 앞, 백 명 중 한 명꼴인 상위 일퍼센트는요.",
+  "audio": "audio/n-3/c49aeb53725114d8.wav",
+  "heard": [
+   "백만 명 중 한 명 꼴인 상위 1%는요",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.88,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:12",
+  "text": "평균 3억 5천만원 가까이 벌어요.",
+  "say": "평균 삼억 오천만원 가까이 벌어요.",
+  "audio": "audio/n-3/513c409797fc2eb6.wav",
+  "heard": [
+   "평균 3억 5,000만 원 가까이 벌어요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.96,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:13",
+  "text": "이런 위쪽 사람들이 평균을 위로 끌어올려요.",
+  "say": "이런 위쪽 사람들이 평균을 위로 끌어올려요.",
+  "audio": "audio/n-3/6a8c24ea7f9788f5.wav",
+  "heard": [
+   "이런 위쪽 사람들이 평균을 위로 끌어올려요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:14",
+  "text": "그래서 '평균 연봉'은 가운데 사람보다 1천만원쯤 높게 나와요.",
+  "say": "그래서 '평균 연봉'은 가운데 사람보다 천만원쯤 높게 나와요.",
+  "audio": "audio/n-3/9682041340fe306c.wav",
+  "heard": [
+   "그래서 평균 연봉은 가운데 사람보다 1,000만 원쯤 높게 나와요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.98,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:15",
+  "text": "맨 앞, 열 명 중 한 명꼴까지 빼고 다시 셈하면, 평균이 가운데 값과 거의 같아집니다.",
+  "say": "맨 앞, 열 명 중 한 명꼴까지 빼고 다시 셈하면, 평균이 가운데 값과 거의 같아집니다.",
+  "audio": "audio/n-3/a36585cc53ea75f4.wav",
+  "heard": [
+   "매남 열 명 중 한 명 꼴까지 빼고 다시 세면 평균이 가운데값과 거의 같아집니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.89,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:16",
+  "text": "하나 더 있어요. 이 줄 2,108만 명에는 한 해 중 몇 달만 일한 사람도 들어 있습니다.",
+  "say": "하나 더 있어요. [pause short] 이 줄 이천백팔만 명에는 한 해 중 몇 달만 일한 사람도 들어 있습니다.",
+  "audio": "audio/n-3/1b5a3caa31dce20c.wav",
+  "heard": [
+   "하나 더 있어요. 이줄 2,100만 명에는 한 해 중 몇 달만 일한 사람도 들어 있습니다.",
+   null,
+   "하나 더 있어요. 이 줄 2,108만 명에는 한 해 중 몇 달만 일한 사람도 들어 있습니다."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:17",
+  "text": "맨 뒤 구간은 한 해 총급여 평균이 21만원이에요.",
+  "say": "맨 뒤 구간은 한 해 총급여 평균이 이십일만원이에요.",
+  "audio": "audio/n-3/34a1ba74d7674fb0.wav",
+  "heard": [
+   "멘디 구간은 한의 총 급여 평균이 21만 원이에요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.89,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:18",
+  "text": "그래서 '일 년 내내 일한 직장인 중 몇 번째'와는 조금 다릅니다.",
+  "say": "그래서 '일 년 내내 일한 직장인 중 몇 번째'와는 조금 다릅니다.",
+  "audio": "audio/n-3/082e38c02d8e467c.wav",
+  "heard": [
+   "그래서 1년간 일한 직장인 중 몇 번째와는 조금 다릅니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.91,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "7:19",
+  "text": "내 자리를 볼 때는 이 줄이 어떤 사람들인지까지 같이 보세요.",
+  "say": "내 자리를 볼 때는 이 줄이 어떤 사람들인지까지 같이 보세요.",
+  "audio": "audio/n-3/589ca179d56a3088.wav",
+  "heard": [
+   "내 자리를 볼 때는 이 줄이 어떤 사람들인지까지 같이 보세요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "8:0",
+  "text": "오늘 본 숫자는 전부 같은 계산식에서 나왔습니다.",
+  "say": "오늘 본 숫자는 전부 같은 계산식에서 나왔습니다.",
+  "audio": "audio/n-3/87c570552578e9e7.wav",
+  "heard": [
+   "오늘 본 숫자는 전부 같은 계산식에서 나왔습니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "8:1",
+  "text": "파이어맵 월급 계산기에 내 연봉, 식대 비과세, 가족 수를 넣으면 통장 금액이 바로 나와요.",
+  "say": "파이어맵 월급 계산기에 내 연봉, 식대 비과세, 가족 수를 넣으면 통장 금액이 바로 나와요.",
+  "audio": "audio/n-3/9b69b1864fc0d409.wav",
+  "heard": [
+   "파인얍의 월급 계산기에 내 연봉 10대 비과세 가족수를 넣으면 통장 금액이 바로 나와요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.9,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "8:2",
+  "text": "보험료율과 간이세액표는 올해 기준이고요.",
+  "say": "보험료율과 간이세액표는 올해 기준이고요.",
+  "audio": "audio/n-3/04166325167b8e5a.wav",
+  "heard": [
+   "품명과 가니 색상은 올해 기준이고요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.48,
+  "pair": null,
+  "flag": "밀림의심(0.48) 받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "8:3",
+  "text": "국세청 줄은 2024년 귀속 자료입니다.",
+  "say": "국세청 줄은 이천이십사년 귀속 자료입니다.",
+  "audio": "audio/n-3/9dd58e84db71c241.wav",
+  "heard": [
+   "국세청장은 2024년 귀속 자료입니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.92,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "8:4",
+  "text": "연말정산 뒤 실제 세금은 사람마다 다를 수 있어요.",
+  "say": "연말정산 뒤 실제 세금은 사람마다 다를 수 있어요.",
+  "audio": "audio/n-3/4d3639c022d91d79.wav",
+  "heard": [
+   "연말 정산 뒤 실제 세금은 사람마다 다를 수 있어요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "8:5",
+  "text": "오늘 영상이 도움이 되셨다면 구독으로 다음 편도 받아 보세요.",
+  "say": "오늘 영상이 도움이 되셨다면 구독으로 다음 편도 받아 보세요.",
+  "audio": "audio/n-3/cce101cf7349be01.wav",
+  "heard": [
+   "오늘 영상이 도움이 되셨다면 구독으로 다음 편도 받아보세요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ },
+ {
+  "at": "8:6",
+  "text": "다음 영상에서 다시 뵙겠습니다.",
+  "say": "다음 영상에서 다시 뵙겠습니다.",
+  "audio": "audio/n-3/c2bffcda9bf2cf50.wav",
+  "heard": [
+   "다음 영상에서 다시 뵙겠습니다.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 1.0,
+  "pair": null,
+  "flag": "받아쓰기 실패",
+  "batch2": true
+ }
+]

@@ -1,0 +1,3 @@
+2026-11-13 10:08 | firemap-video-producer 정기 10:0x | N-3 녹음(lfvoice make)·check·readback
+2026-11-13 14:17 | firemap-video-producer 정기 14:1x | N-3 readback 이어서(10:08 회차 readback 로그 빈 채 끝남)
+2026-11-13 14:51 | firemap-video-producer 정기 14:1x | 끝 — readback 둘째 귀 묶음 3~8 할당량 막힘(받아쓰기 실패 117줄), 다음 회차 --resume --batch

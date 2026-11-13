@@ -3783,3 +3783,6 @@
 2026-11-13 17:10 · visual · H-5 썸네일 a(센트럴파크 물길) 추천 · thumbpair a>b·a>c 2:0, thumblen 0, 문구 copy v2 그대로 → copywriter 1초 시험
 2026-11-13 18:31 · firemap-write · 18:40 칸 dfopt1112 발행(#419, verify OK) · 회의 배정 칸, 올리기 전 확인에서 공시·법 바뀐 것 없음
 2026-11-13 18:31 · firemap-write · readcheck '셈이' 규칙에 회상형 '던' 추가 · 발행 직전 '달랐던 셈이죠'가 검사를 빠져나감
+2026-11-13 19:02 · firemap-video-producer · h4s_rank 쇼츠 11/16 19:20 예약(7_EkpkW09ec) · 비축 0이던 칸, 부동산 연속은 규칙 없음(주식만) · 눈 검사 2곳 고쳐 재렌더
+2026-11-13 19:02 · firemap-video-producer · lfvoice readback 판정 고침: 국소 오독 자리 0·숫자 다 들림·숫자 글자 빼면 일치하는 줄은 합의오독 아님 · N-3 헛경보 3줄(8천↔8000 등)
+2026-11-13 19:02 · firemap-video-producer · N-3 4:3·8:1 녹음 대신 editor 말 바꾸기 요청 · 다시 받기 3~4번·쉼 태그·띄어 읽기로도 오독 그대로

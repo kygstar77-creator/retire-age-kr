@@ -3882,6 +3882,128 @@
    "note": "firemap-video-producer 2026-11-11 09:03: 3:7 새 말 반영 전체 다시 렌더(08:51, stock 13개 -bf 0 다시 인코딩)→deess --chirp 두 번(-14.3dB·-17.0 LUFS)→screen 최장 7.0초·겹침 0→bgcheck 통과(실사 82%·컷 6.1·같은 판 18초·큰 글자 10.4%)→ytlong gate 통과→예약 vgFx2od9_sg publishAt 11/12 11:30(private, 되읽기 확인) · yt_pair: vgFx2od9_sg → 11/12 카페 짝 글(firemap-write, 공개 뒤) | firemap-video-producer 2026-11-10 19:09: 렌더(18:00)·deess·screen·bgcheck 통과, gate 남은 막힘 C-readback 1줄(3:7) → editor 낱말 고침 11/11 06:30 → 06시대 PD 녹음·props·stamp·다시 렌더·gate·예약(관문 11/11 11:30) | firemap-meeting 2026-11-06 21:37: 새 말 28줄 녹음(TTS 16:00)이 11/9 관문 뒤라 11/12 · 관문 11/11 11:30 | firemap-meeting 2026-11-05 21:4x: 11/8 칸이 K-1로 가서 이동 · 착수는 11/8 21:00 사용량 초기화 뒤 · 관문 기한 11/9 11:30 | 순돌이 11/12 01:3x 사장님 11/11 \"이미 만들었다고 올리지 말자 · 뭐든 결정할 때 추측하지 말고 통계를 보고\" → 롱폼 주제 통계(공개 25편): 개별주식 중앙 17·금/연금/세금정책 20 vs 배당ETF·지수 460·아파트 실거래 408·상위 몇% 2,746 → 건보료 P-3 빼고 칸 비움"
   },
   {
+   "at": "2026-11-12 12:40",
+   "kind": "cafe",
+   "item": "bonddep1111 (비축, 예금·이자·금리) '정기예금 금리는 국고채를 몇 달 뒤 따라갈까?'",
+   "owner": "firemap-write",
+   "note": "firemap-write 2026-11-12 07:18: p3pair1111 철회 칸을 비축 bonddep1111로 채움(관문 11/11 21:39·editor 재서명 a5979add, editgate check 통과) · 근거 정기예금금리 kwvol 96,400(11/11)·비축 중 남은 유일한 관문 통과 편(acqseoul1111은 11/11 22:40 #408로 나감) · 올리기 전 확인 11/12 07:18 finlife·ECOS 다시 받음, 바뀐 것 없음(research.md) · 발행은 12:40 회차 | P-3 짝 글(건보료 피부양자, 전체 표·계산 근거) — yt_pair: vgFx2od9_sg · firemap-meeting 2026-11-11 21:4x: 36시간 칸 · write 23:27: 관문 통과(bench 6·이해 3차 9명·aitell 4.9·selfcheck 사실 0·editgate auto·올리기 전 확인 11/11) · 영상 11:30 공개 뒤 발행 · 발행 회차는 올리기 전 확인(1일 안) 다시 | 순돌이 11/12 01:3x 사장님 11/11 \"이미 만들었다고 올리지 말자 · 뭐든 결정할 때 추측하지 말고 통계를 보고\" → 짝 영상이 안 나가므로 짝 글 order.txt → order.txt.withdrawn1112",
+   "by": "firemap-write",
+   "gates_ok": "2026-11-12 07:18"
+  },
+  {
+   "at": "2026-11-12 16:10",
+   "kind": "cafe",
+   "item": "convrate1112",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-12 08:17",
+   "note": "'전월세전환율 5% 상한, 갱신 때 월세는 지켜졌을까?'(부동산·전월세, 새로 씀) · firemap-write-b 2026-11-12 08:17: 관문 통과 — 근거 전월세전환율 kwvol 14,630(부동산 후보 1위) · 국토부 전월세 실거래 8~10월 48,212건 직접 계산(갱신요구권 갱신 483건 중 115건 상한 넘게 신고, 경쟁 8편 0편) · 카페 #293(10/16 신규 계약) 다음 달 판 · bench 8·이해 3차 9명·aitell 6.9·readcheck 0·selfcheck 사실 0·교차검증 2차·editgate auto 798d56aa · 발행 회차는 올리기 전 확인(1일 안) 다시 | firemap-write 2026-11-12 07:18: 관문 기한 10:10 — 남은 관문 통과 비축 0(bonddep1111→12:40, acqseoul1111은 #408 발행됨) · 이번 회차(30분 한 조각)로는 새 부동산 글 bench·이해 3차·편집까지 못 끝냄 → write-b(담당) 09:40 회차가 새로 쓰거나, 못 넘으면 칸 빔(미달 공개 금지, 비축 없음) | firemap-meeting 2026-11-11 21:4x: 36시간 칸",
+   "by": "firemap-write-b",
+   "published": "https://cafe.naver.com/firemap/412 16:25 verify OK 1369자"
+  },
+  {
+   "at": "2026-11-12 18:40",
+   "kind": "cafe",
+   "item": "sp500dist1112",
+   "by": "firemap-write",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-12 09:51",
+   "note": "firemap-write 2026-11-12 09:51: 관문 통과 — 'S&P500 분배금은 왜 KODEX만 두 배일까?'(주식·ETF, 배당ETF·지수 축 — 순돌이 11/12 통계) · 근거 S&P500ETF kwvol 18,320 · 운용사 3곳 1차 자료(삼성 divid-info·공지 66913, 미래에셋 분배 표, ACE API)로 2026 분배금 486·253·252원과 1년 수익률 1.18·1.15·1.17% 비교, 유보 배당 15분기(2029년 1월 기준일까지) 뒤 KODEX 약 0.98% 계산(경쟁 7편 0편) · bench 6·이해 4차 12명·readcheck 0·selfcheck 사실 0·aitell 1.2·crosscheck 사실 1 유지·editgate auto 77689467 · 발행 회차는 올리기 전 확인(1일 안)으로 분배 기록·수익률 다시 받기 | firemap-meeting 2026-11-11 21:4x: 36시간 칸",
+   "published": "https://cafe.naver.com/firemap/413 18:35 verify OK 1790자"
+  },
+  {
+   "at": "2026-11-12 19:20",
+   "kind": "shorts",
+   "item": "k1s_dep (비축, K-1 경제·주식 아님, c1clip)",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-11-11 22:22",
+   "note": "firemap-video-producer 2026-11-11 22:22: 비축 k1s_dep 예약 jGtx9f6SZKA publishAt 2026-11-12T10:20:00Z(19:20 KST)·private 되읽기 확인 · 꼴 관문·E-18(c1clip 998 vs 채널 996)·AI 티 0·안전 영역·디자인 통과 · yt_pair: jGtx9f6SZKA → 11/12 22:40 카페 짝 글(write, 공개 확인 뒤) | firemap-meeting 2026-11-11 21:4x: 36시간 칸 · 관문 통과 비축이라 바로 publishAt, 다음 h3s_jeonse·k1s_fix"
+  },
+  {
+   "at": "2026-11-12 22:40",
+   "kind": "cafe",
+   "item": "realdep1112",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-12 11:11",
+   "note": "firemap-write-b 2026-11-12 19:50: 발행 당일 올리기 전 확인 끝(ECOS 다시 받아 diff 0·소득세법 129조 그대로·쇼츠 jGtx9f6SZKA 공개 확인, prepublish·editgate 통과) — 22:40 회차가 올림 | firemap-write-b 2026-11-12 11:11: 관문 통과 — '정기예금 이자에서 물가 빼면 얼마 남았을까?'(예금·이자·금리, 쇼츠 k1s_dep 짝 글 — 쇼츠 '1억 이자 87만원 늘었다'가 남긴 질문) · 근거 예금이자계산 kwvol 6,270·정기예금이자 2,040 · ECOS 1년 정기예금 9월 평균 금리×실제 만기 1년 물가로 2012~2025년 14번 계산: 6번 모자람·2025년 9월 1억 73만원·2021년 437만원(경쟁 8편 0편, 모두 가정 예시) · bench 8·이해 3차 9명·aitell 9.7·readcheck 0·selfcheck 사실 0·교차검증 2차·editgate auto b703321d · 쇼츠 19:20 공개 뒤 발행 · 발행 회차는 올리기 전 확인(1일 안) 다시 | firemap-meeting 2026-11-11 21:4x: 36시간 칸",
+   "by": "firemap-write-b",
+   "published": "https://cafe.naver.com/firemap/414 22:55 verify OK 1641자"
+  },
+  {
+   "at": "2026-11-13 07:40",
+   "kind": "cafe",
+   "item": "sbdep1112 (비축, 저축은행 금리)",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-13 06:27",
+   "note": "firemap-meeting 2026-11-12 21:3x: 근거 kwvol 저축은행금리비교 19,160 · 발행 당일 금리 다시(D-11) · firemap-write 2026-11-13 06:27: 올리기 전 확인 끝(finlife 11/13 다시 받아 calc 맞댐 — 숫자 같음, 기준금리 3.00%) · slot.txt 11-13 07"
+  },
+  {
+   "at": "2026-11-13 10:10",
+   "kind": "cafe",
+   "item": "k200etf1113",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-12 23:35",
+   "note": "firemap-meeting 2026-11-12 21:3x: 근거 우리 롱폼 축 중앙 460(10편, 11/11 Data API) · 관문 기한 04:10, 못 넘으면 비축 · firemap-write 2026-11-12 23:35: 관문 통과 k200etf1113 — 근거 kwvol KODEX200 114,400·코스피200ETF 5,270(11/12, 축 안 1위; TIGER미국배당다우존스 25,450은 분배금 글 4편 있어 피함) · KODEX 200 매달 50만원 1년 -2.0% vs 한 번에 +44.7%(11/12 종가) · 발행 회차는 S1·S3·S4 다시 받아 바뀐 것 적기 · firemap-write-b 2026-11-13 11:28: write 09:20 회차가 10:10 발행 단계에서 끊김(죽은 잠금 PID 1415080) → write-b가 대신 발행 #416 verify OK 1533자·사진 3 (76분 늦음)",
+   "published": "https://cafe.naver.com/firemap/416 11:26 verify OK 1533자"
+  },
+  {
+   "at": "2026-11-13 12:40",
+   "kind": "cafe",
+   "item": "skhdiv1112 (비축, SK하이닉스 배당×건보료)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-12 21:3x: 근거 kwvol 19,830 · 우리 카페 1위 틀(배당×건보료) 37.5/일 · 기준일 11/30 전 글 · firemap-write 2026-11-13 06:27: skhdiv slot.txt가 07로 잘못 적혀 07:40 칸과 겹쳐 12로 고침 · 관문은 11/12 14:07 통과(write-b), 12:10 회차가 DART 다시 보고 gates_ok"
+  },
+  {
+   "at": "2026-11-13 16:10",
+   "kind": "cafe",
+   "item": "newold1112",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-12 23:30",
+   "note": "firemap-meeting 2026-11-12 21:3x: 근거 아파트 실거래 축 중앙 408(3편) · 부동산 하루 1칸 이상(사장님 10/13) · firemap-write-b 2026-11-12 23:30: 관문 통과 newold1112 '신축 아파트 vs 구축, 같은 동네 몇 억 차이 날까?'(국토부 매매 실거래 8~10월 서울 1만 667건 직접 계산 — 같은 동 11곳 모두 신축이 비쌈·차이 중간값 5억원 정도, 경쟁 8편 0편) · 근거 kwvol 신축아파트 1,790 + 구축아파트 1,170 = 2,960(실거래 칸으로 셀 수 있는 부동산 후보 중 1위, 11/12 23시) · 발행 회차는 S1 다시 받아 올리기 전 확인",
+   "published": "https://cafe.naver.com/firemap/418 16:30 verify OK 1482자"
+  },
+  {
+   "at": "2026-11-13 18:40",
+   "kind": "cafe",
+   "item": "dfopt1112",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-12 21:58",
+   "note": "firemap-meeting 2026-11-12 21:3x: 근거 숫자 없으면 비축으로 채움(사장님 11/11 '통계로 결정') · firemap-write 2026-11-12 21:58: 관문 통과 dfopt1112로 채움(고용노동부 공시 통계 근거 — 칸 요구 충족) · 발행 회차는 고용노동부 게시판 정정본·새 공시 확인",
+   "published": "https://cafe.naver.com/firemap/419 18:31 verify OK 1491자"
+  },
+  {
+   "at": "2026-11-13 19:20",
+   "kind": "shorts",
+   "item": "h3s_jeonse (비축, H-3 부동산 전세가율, c1clip)",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-11-12 15:02",
+   "note": "firemap-video-producer 2026-11-12 15:02: m1clip 판 E-18 쉼 → c1clip 다시 렌더(새 녹음 0), 꼴·E-18(c1clip 998 vs 996)·숫자·이해 3명·안전 영역·디자인·치직 0·눈 검사 2차 통과 → 예약 gBxKe5Fx1rw publishAt 2026-11-13T10:20:00Z private 되읽기 · 11/12 k1s_dep(경제) 다음 날 부동산 · yt_pair: gBxKe5Fx1rw → 11/13 22:40 카페 짝 글(write, 공개 뒤 '새로 맺은 전세만 보는 법' 질문 하나)"
+  },
+  {
+   "at": "2026-11-13 22:40",
+   "kind": "cafe",
+   "item": "newrenew1112",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-13 13:50",
+   "note": "firemap-meeting 2026-11-12 21:3x: 쇼츠 19:20 공개 뒤 · 근거 아파트전세 kwvol 7,320 · 615곳 실측 경쟁 0편 · firemap-write-b 2026-11-13 13:50: 칸 이름 'newrenew1112 (비축, 전세 갱신 vs 신규) — yt_pair: h3s_jeonse gBxKe5Fx1rw' → newrenew1112(naverpost 장부 대조는 묶음 이름과 같아야 함) · 올리기 전 확인 끝(국토부 실거래 11/13 다시 받음 — 늦은 신고 84건, 615→617곳·23,064→23,148건 등 숫자 고침, 결론 88%·12%·5% 초과 0건 그대로 · 법 3조문 다시 받음) · 관문 다시 aitell 5.6·readcheck 0·selfcheck 사실 0·editgate auto 8926e5c8 · 발행은 쇼츠 gBxKe5Fx1rw 19:20 공개 확인 뒤 22:40 회차"
+  },
+  {
+   "at": "2026-11-14 07:40",
+   "kind": "cafe",
+   "item": "fin2kpct1114",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-write-b 2026-11-13 15:2x(운영실장 15:10 배차): 비축 실질 0(k1pair1110은 #407로 11/11 발행됨·skhdiv1112 #417·나머지 소진, irpdec1112 보류) → 새 글 · 세금·건보료 1칸 · 주제: 금융소득 2천만원 넘는 사람은 몇 명·몇 %일까(국세통계 종합과세 신고 인원·1차 국세청) · 근거 kwvol(11/13 잰 값) 금융소득종합과세 9,540·건보료 5,940 · 같은 주제 우리 글 fin2k0927(원금 계산)·fintax(계산식)·dep5eok0929(5억 예금)는 있으나 '인원·비율' 각도는 제목 전수(*/pkg/title.txt) 0편 · 우리 건보료 글(skhdiv1112 11/13)과 이틀 이상 띄움 · 관문 기한 11/14 01:40 · 담당 write 11/13 21:10 회차 | 숫자 못 구하면(국세통계 공표 없음) 주제 바꾸되 세금 칸 유지"
+  },
+  {
+   "at": "2026-11-14 10:10",
+   "kind": "cafe",
+   "item": "sp500etf1114",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-13 17:06",
+   "note": "firemap-write-b 2026-11-13 15:2x(운영실장 15:10 배차): 비축 실질 0 → 새 글 · 배당ETF·지수 축(사장님 11/11 '통계로 결정') · 주제: 같은 S&P500인데 국내 상장 ETF 3~4개 1년 수익률·총보수 차이는 몇 %p일까(운용사 공시·KRX 1차, 우리가 직접 계산) · 근거 kwvol TIGER미국S&P500 105,500·S&P500ETF 18,320(11/12 잰 값) · 중복 확인: sp500dist1112(분배금 각도, 11/12 #413)·qqqm 계열 있으나 '수익률·보수 차이' 각도는 제목 전수 0편 · k200etf1113(11/13 #416)과 다른 지수라 같은 축 연속 아님 · 관문 기한 11/14 04:10 · 담당 write-b 11/13 16:40 이후 회차(첫 일) · firemap-write-b 17:06: 관문 통과 sp500etf1114 'S&P500 ETF 보수 싼 게 수익률도 더 높을까?'(FunETF·삼성·한국투자 공시로 5개 3년 차이 0.73%p=1억원 약 73만원·실부담비용 총보수의 14~30배·총보수 순서≠수익률 순서 직접 계산, 경쟁 7편 0편) · bench 7·이해 3차 9명·aitell 3.7·readcheck 0·selfcheck 사실 0·crosscheck Gemini 반영·editgate auto ee02c176 · 발행 회차(11/14 10:10)는 S1·S2·S3 다시 받아 기준일(11/13)·바뀐 숫자 적기"
+  },
+  {
    "at": "2026-11-14 11:30",
    "kind": "long",
    "item": "H-4(광명 철산동 — say_v2 서명됨 · toc_compare·shot_plan·이해 시험 40·50·60세 남음, 녹음 11/5 16:00 창)",
@@ -3891,12 +4013,45 @@
    "published": "MRQqitzEgDw (예약 2026-11-14T11:30+09:00)"
   },
   {
+   "at": "2026-11-14 12:40",
+   "kind": "cafe",
+   "item": "h4pair1114",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-13 07:31",
+   "note": "firemap-write 2026-11-13 07:31: 관문 통과 h4pair1114 '광명 아파트 시세, 서울 25개 구 사이 몇 번째일까?' (H-4 짝 글 — yt_pair: MRQqitzEgDw) · 국토부 실거래 11/12 다시 받은 값·새 1차 국토부 9/17 세 낀 집 유예 원문 · bench 6·이해 3차 9명·readcheck 0·selfcheck 사실 0·crosscheck+Agent 대조·editgate auto db93b2fd · 발행 회차(11/14 12:10): 영상 공개(11:30) 확인 → 올리기 전 확인(허가구역 2027 연장 공고·대조 주소 다시 엶·기준일·바뀐 것) → 발행 | firemap-meeting 2026-11-12 21:3x: 롱폼 11:30 공개 뒤 링크 · 롱폼 1편=카페 1편(사장님 10/11)",
+   "by": "firemap-write"
+  },
+  {
+   "at": "2026-11-14 19:20",
+   "kind": "shorts",
+   "item": "k1s_fix (비축, K-1 경제)",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-11-13 02:09",
+   "note": "firemap-video-producer 2026-11-13 02:09: 꼴·E-18(c1clip 998 vs 996)·숫자 47개 0·AI 티 0·안전 영역·디자인 통과 → 예약 https://youtu.be/p1NgZhn5QUk publishAt 2026-11-14T19:20:00+09:00·private 되읽기 | firemap-meeting 2026-11-12 21:3x: K-1은 11/12 k1s_dep 뒤 이틀 · p3s_cliff는 원본 P-3 비공개라 쓰지 않음(회의 11/12 B)"
+  },
+  {
+   "at": "2026-11-15 19:20",
+   "kind": "shorts",
+   "item": "h3s_number (H-3 부동산, c1clip)",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-11-13 14:41",
+   "note": "firemap-video-producer 2026-11-13 14:41: 비축 0이던 칸 — 렌더(빈 메모리 2.15GB)·숫자 대조 0·꼴 E-18 998 vs 996·안전 영역·디자인·치직 0·AI 티 0·이해 2차 통과 → 예약 https://youtu.be/UeWaoO3_T_Q publishAt 2026-11-15T19:20:00+09:00·private 되읽기"
+  },
+  {
    "at": "2026-11-16 11:30",
    "kind": "long",
    "item": "N-3(연봉 실수령·몇 번째 — shot_plan·서명 있음, 11/1 20:44 1줄 재서명 대기, 녹음 11/6 16:00 창)",
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
    "note": "firemap-meeting 2026-11-06 21:37: 한 칸씩 뒤로 | firemap-meeting 2026-11-01 21:4x: 롱폼 이틀에 1편(사장님 11/1, long_anchor 11/2)에 맞춰 11-07→11-12 옮김(축 정책→경제→정책→부동산→정책→주식, youtube-loop가 겹침만 없으면 바꿔도 됨) · youtube-loop 2026-10-23 04:5x: 벤치마크 10/23 03시 [지시] 11/2 주 정책 1칸. 검증 국민연금수령나이 53,670(kwvol 10/23) · KBS fIyFbw6AcKA 193만 · P-1 짧은 판 재게시 금지, 새 것 ①연기연금 ②2025 개혁 ③피부양자·연금소득세(ep/P-4/plan.md) · 대본 11/3 21:00 · 관문 11/6 11:30 · 제작 PD | youtube-loop 2026-11-02 00:48: 회의 11/1 [지시](녹음 순서·새 칸) — 준비된 대본 먼저, 같은 축 연속 없음: J-1 정책 11/4 → K-1 경제 11/6 → P-3 정책 11/8 → H-4 부동산 11/10 → N-3 경제(소득) 11/12 → S-1 주식 11/14 → RT-1 정책 11/16 → W-3 주식(세금) 11/18 → P-4 정책 11/20 · H-6(TBD-부동산)은 H-4 뒤 다음 부동산 칸 · 녹음(16:00 창 하루 1편): 11/2 J-1 → 11/3 K-1 → 11/4 P-3 → 11/5 H-4 → 11/6 N-3 → 11/7 S-1 → 11/9 RT-1(대본 전) → 11/11 W-3"
+  },
+  {
+   "at": "2026-11-16 19:20",
+   "kind": "shorts",
+   "item": "h4s_rank (H-4 부동산, c1clip)",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-11-13 19:02",
+   "note": "firemap-video-producer 2026-11-13 19:02: 비축 0이던 칸 — 새 첫 줄 다시 렌더·눈 검사 2곳 고쳐 재렌더·숫자 대조 0·꼴 E-18 998 vs 996·안전 영역·디자인 96%·치직 0·빈 곳 0%·이해 4차 통과 → 예약 https://youtu.be/7_EkpkW09ec publishAt 2026-11-16T19:20:00+09:00·private 되읽기·표지 cover_1113"
   },
   {
    "at": "2026-11-18 11:30",
@@ -3952,153 +4107,6 @@
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
    "note": "firemap-meeting 2026-11-08 21:3x: 장르 안건(agenda-2026-11-09-longform-genre.md) 받아들임 — X-LF-GENRE(부동산2·정책2·경제주식1·연봉노후1/12일, 같은 장르 연속 금지)"
-  },
-  {
-   "at": "2026-11-12 12:40",
-   "kind": "cafe",
-   "item": "bonddep1111 (비축, 예금·이자·금리) '정기예금 금리는 국고채를 몇 달 뒤 따라갈까?'",
-   "owner": "firemap-write",
-   "note": "firemap-write 2026-11-12 07:18: p3pair1111 철회 칸을 비축 bonddep1111로 채움(관문 11/11 21:39·editor 재서명 a5979add, editgate check 통과) · 근거 정기예금금리 kwvol 96,400(11/11)·비축 중 남은 유일한 관문 통과 편(acqseoul1111은 11/11 22:40 #408로 나감) · 올리기 전 확인 11/12 07:18 finlife·ECOS 다시 받음, 바뀐 것 없음(research.md) · 발행은 12:40 회차 | P-3 짝 글(건보료 피부양자, 전체 표·계산 근거) — yt_pair: vgFx2od9_sg · firemap-meeting 2026-11-11 21:4x: 36시간 칸 · write 23:27: 관문 통과(bench 6·이해 3차 9명·aitell 4.9·selfcheck 사실 0·editgate auto·올리기 전 확인 11/11) · 영상 11:30 공개 뒤 발행 · 발행 회차는 올리기 전 확인(1일 안) 다시 | 순돌이 11/12 01:3x 사장님 11/11 \"이미 만들었다고 올리지 말자 · 뭐든 결정할 때 추측하지 말고 통계를 보고\" → 짝 영상이 안 나가므로 짝 글 order.txt → order.txt.withdrawn1112",
-   "by": "firemap-write",
-   "gates_ok": "2026-11-12 07:18"
-  },
-  {
-   "at": "2026-11-12 16:10",
-   "kind": "cafe",
-   "item": "convrate1112",
-   "owner": "firemap-write-b",
-   "gates_ok": "2026-11-12 08:17",
-   "note": "'전월세전환율 5% 상한, 갱신 때 월세는 지켜졌을까?'(부동산·전월세, 새로 씀) · firemap-write-b 2026-11-12 08:17: 관문 통과 — 근거 전월세전환율 kwvol 14,630(부동산 후보 1위) · 국토부 전월세 실거래 8~10월 48,212건 직접 계산(갱신요구권 갱신 483건 중 115건 상한 넘게 신고, 경쟁 8편 0편) · 카페 #293(10/16 신규 계약) 다음 달 판 · bench 8·이해 3차 9명·aitell 6.9·readcheck 0·selfcheck 사실 0·교차검증 2차·editgate auto 798d56aa · 발행 회차는 올리기 전 확인(1일 안) 다시 | firemap-write 2026-11-12 07:18: 관문 기한 10:10 — 남은 관문 통과 비축 0(bonddep1111→12:40, acqseoul1111은 #408 발행됨) · 이번 회차(30분 한 조각)로는 새 부동산 글 bench·이해 3차·편집까지 못 끝냄 → write-b(담당) 09:40 회차가 새로 쓰거나, 못 넘으면 칸 빔(미달 공개 금지, 비축 없음) | firemap-meeting 2026-11-11 21:4x: 36시간 칸",
-   "by": "firemap-write-b",
-   "published": "https://cafe.naver.com/firemap/412 16:25 verify OK 1369자"
-  },
-  {
-   "at": "2026-11-12 18:40",
-   "kind": "cafe",
-   "item": "sp500dist1112",
-   "by": "firemap-write",
-   "owner": "firemap-write",
-   "gates_ok": "2026-11-12 09:51",
-   "note": "firemap-write 2026-11-12 09:51: 관문 통과 — 'S&P500 분배금은 왜 KODEX만 두 배일까?'(주식·ETF, 배당ETF·지수 축 — 순돌이 11/12 통계) · 근거 S&P500ETF kwvol 18,320 · 운용사 3곳 1차 자료(삼성 divid-info·공지 66913, 미래에셋 분배 표, ACE API)로 2026 분배금 486·253·252원과 1년 수익률 1.18·1.15·1.17% 비교, 유보 배당 15분기(2029년 1월 기준일까지) 뒤 KODEX 약 0.98% 계산(경쟁 7편 0편) · bench 6·이해 4차 12명·readcheck 0·selfcheck 사실 0·aitell 1.2·crosscheck 사실 1 유지·editgate auto 77689467 · 발행 회차는 올리기 전 확인(1일 안)으로 분배 기록·수익률 다시 받기 | firemap-meeting 2026-11-11 21:4x: 36시간 칸",
-   "published": "https://cafe.naver.com/firemap/413 18:35 verify OK 1790자"
-  },
-  {
-   "at": "2026-11-12 22:40",
-   "kind": "cafe",
-   "item": "realdep1112",
-   "owner": "firemap-write-b",
-   "gates_ok": "2026-11-12 11:11",
-   "note": "firemap-write-b 2026-11-12 19:50: 발행 당일 올리기 전 확인 끝(ECOS 다시 받아 diff 0·소득세법 129조 그대로·쇼츠 jGtx9f6SZKA 공개 확인, prepublish·editgate 통과) — 22:40 회차가 올림 | firemap-write-b 2026-11-12 11:11: 관문 통과 — '정기예금 이자에서 물가 빼면 얼마 남았을까?'(예금·이자·금리, 쇼츠 k1s_dep 짝 글 — 쇼츠 '1억 이자 87만원 늘었다'가 남긴 질문) · 근거 예금이자계산 kwvol 6,270·정기예금이자 2,040 · ECOS 1년 정기예금 9월 평균 금리×실제 만기 1년 물가로 2012~2025년 14번 계산: 6번 모자람·2025년 9월 1억 73만원·2021년 437만원(경쟁 8편 0편, 모두 가정 예시) · bench 8·이해 3차 9명·aitell 9.7·readcheck 0·selfcheck 사실 0·교차검증 2차·editgate auto b703321d · 쇼츠 19:20 공개 뒤 발행 · 발행 회차는 올리기 전 확인(1일 안) 다시 | firemap-meeting 2026-11-11 21:4x: 36시간 칸",
-   "by": "firemap-write-b",
-   "published": "https://cafe.naver.com/firemap/414 22:55 verify OK 1641자"
-  },
-  {
-   "at": "2026-11-12 19:20",
-   "kind": "shorts",
-   "item": "k1s_dep (비축, K-1 경제·주식 아님, c1clip)",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-11 22:22",
-   "note": "firemap-video-producer 2026-11-11 22:22: 비축 k1s_dep 예약 jGtx9f6SZKA publishAt 2026-11-12T10:20:00Z(19:20 KST)·private 되읽기 확인 · 꼴 관문·E-18(c1clip 998 vs 채널 996)·AI 티 0·안전 영역·디자인 통과 · yt_pair: jGtx9f6SZKA → 11/12 22:40 카페 짝 글(write, 공개 확인 뒤) | firemap-meeting 2026-11-11 21:4x: 36시간 칸 · 관문 통과 비축이라 바로 publishAt, 다음 h3s_jeonse·k1s_fix"
-  },
-  {
-   "at": "2026-11-13 19:20",
-   "kind": "shorts",
-   "item": "h3s_jeonse (비축, H-3 부동산 전세가율, c1clip)",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-12 15:02",
-   "note": "firemap-video-producer 2026-11-12 15:02: m1clip 판 E-18 쉼 → c1clip 다시 렌더(새 녹음 0), 꼴·E-18(c1clip 998 vs 996)·숫자·이해 3명·안전 영역·디자인·치직 0·눈 검사 2차 통과 → 예약 gBxKe5Fx1rw publishAt 2026-11-13T10:20:00Z private 되읽기 · 11/12 k1s_dep(경제) 다음 날 부동산 · yt_pair: gBxKe5Fx1rw → 11/13 22:40 카페 짝 글(write, 공개 뒤 '새로 맺은 전세만 보는 법' 질문 하나)"
-  },
-  {
-   "at": "2026-11-13 07:40",
-   "kind": "cafe",
-   "item": "sbdep1112 (비축, 저축은행 금리)",
-   "owner": "firemap-write",
-   "gates_ok": "2026-11-13 06:27",
-   "note": "firemap-meeting 2026-11-12 21:3x: 근거 kwvol 저축은행금리비교 19,160 · 발행 당일 금리 다시(D-11) · firemap-write 2026-11-13 06:27: 올리기 전 확인 끝(finlife 11/13 다시 받아 calc 맞댐 — 숫자 같음, 기준금리 3.00%) · slot.txt 11-13 07"
-  },
-  {
-   "at": "2026-11-13 10:10",
-   "kind": "cafe",
-   "item": "k200etf1113",
-   "owner": "firemap-write",
-   "gates_ok": "2026-11-12 23:35",
-   "note": "firemap-meeting 2026-11-12 21:3x: 근거 우리 롱폼 축 중앙 460(10편, 11/11 Data API) · 관문 기한 04:10, 못 넘으면 비축 · firemap-write 2026-11-12 23:35: 관문 통과 k200etf1113 — 근거 kwvol KODEX200 114,400·코스피200ETF 5,270(11/12, 축 안 1위; TIGER미국배당다우존스 25,450은 분배금 글 4편 있어 피함) · KODEX 200 매달 50만원 1년 -2.0% vs 한 번에 +44.7%(11/12 종가) · 발행 회차는 S1·S3·S4 다시 받아 바뀐 것 적기 · firemap-write-b 2026-11-13 11:28: write 09:20 회차가 10:10 발행 단계에서 끊김(죽은 잠금 PID 1415080) → write-b가 대신 발행 #416 verify OK 1533자·사진 3 (76분 늦음)",
-   "published": "https://cafe.naver.com/firemap/416 11:26 verify OK 1533자"
-  },
-  {
-   "at": "2026-11-13 12:40",
-   "kind": "cafe",
-   "item": "skhdiv1112 (비축, SK하이닉스 배당×건보료)",
-   "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-12 21:3x: 근거 kwvol 19,830 · 우리 카페 1위 틀(배당×건보료) 37.5/일 · 기준일 11/30 전 글 · firemap-write 2026-11-13 06:27: skhdiv slot.txt가 07로 잘못 적혀 07:40 칸과 겹쳐 12로 고침 · 관문은 11/12 14:07 통과(write-b), 12:10 회차가 DART 다시 보고 gates_ok"
-  },
-  {
-   "at": "2026-11-13 16:10",
-   "kind": "cafe",
-   "item": "newold1112",
-   "owner": "firemap-write-b",
-   "gates_ok": "2026-11-12 23:30",
-   "note": "firemap-meeting 2026-11-12 21:3x: 근거 아파트 실거래 축 중앙 408(3편) · 부동산 하루 1칸 이상(사장님 10/13) · firemap-write-b 2026-11-12 23:30: 관문 통과 newold1112 '신축 아파트 vs 구축, 같은 동네 몇 억 차이 날까?'(국토부 매매 실거래 8~10월 서울 1만 667건 직접 계산 — 같은 동 11곳 모두 신축이 비쌈·차이 중간값 5억원 정도, 경쟁 8편 0편) · 근거 kwvol 신축아파트 1,790 + 구축아파트 1,170 = 2,960(실거래 칸으로 셀 수 있는 부동산 후보 중 1위, 11/12 23시) · 발행 회차는 S1 다시 받아 올리기 전 확인",
-   "published": "https://cafe.naver.com/firemap/418 16:30 verify OK 1482자"
-  },
-  {
-   "at": "2026-11-13 18:40",
-   "kind": "cafe",
-   "item": "dfopt1112",
-   "owner": "firemap-write",
-   "gates_ok": "2026-11-12 21:58",
-   "note": "firemap-meeting 2026-11-12 21:3x: 근거 숫자 없으면 비축으로 채움(사장님 11/11 '통계로 결정') · firemap-write 2026-11-12 21:58: 관문 통과 dfopt1112로 채움(고용노동부 공시 통계 근거 — 칸 요구 충족) · 발행 회차는 고용노동부 게시판 정정본·새 공시 확인",
-   "published": "https://cafe.naver.com/firemap/419 18:31 verify OK 1491자"
-  },
-  {
-   "at": "2026-11-13 22:40",
-   "kind": "cafe",
-   "item": "newrenew1112",
-   "owner": "firemap-write-b",
-   "gates_ok": "2026-11-13 13:50",
-   "note": "firemap-meeting 2026-11-12 21:3x: 쇼츠 19:20 공개 뒤 · 근거 아파트전세 kwvol 7,320 · 615곳 실측 경쟁 0편 · firemap-write-b 2026-11-13 13:50: 칸 이름 'newrenew1112 (비축, 전세 갱신 vs 신규) — yt_pair: h3s_jeonse gBxKe5Fx1rw' → newrenew1112(naverpost 장부 대조는 묶음 이름과 같아야 함) · 올리기 전 확인 끝(국토부 실거래 11/13 다시 받음 — 늦은 신고 84건, 615→617곳·23,064→23,148건 등 숫자 고침, 결론 88%·12%·5% 초과 0건 그대로 · 법 3조문 다시 받음) · 관문 다시 aitell 5.6·readcheck 0·selfcheck 사실 0·editgate auto 8926e5c8 · 발행은 쇼츠 gBxKe5Fx1rw 19:20 공개 확인 뒤 22:40 회차"
-  },
-  {
-   "at": "2026-11-14 19:20",
-   "kind": "shorts",
-   "item": "k1s_fix (비축, K-1 경제)",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-13 02:09",
-   "note": "firemap-video-producer 2026-11-13 02:09: 꼴·E-18(c1clip 998 vs 996)·숫자 47개 0·AI 티 0·안전 영역·디자인 통과 → 예약 https://youtu.be/p1NgZhn5QUk publishAt 2026-11-14T19:20:00+09:00·private 되읽기 | firemap-meeting 2026-11-12 21:3x: K-1은 11/12 k1s_dep 뒤 이틀 · p3s_cliff는 원본 P-3 비공개라 쓰지 않음(회의 11/12 B)"
-  },
-  {
-   "at": "2026-11-14 12:40",
-   "kind": "cafe",
-   "item": "h4pair1114",
-   "owner": "firemap-write",
-   "gates_ok": "2026-11-13 07:31",
-   "note": "firemap-write 2026-11-13 07:31: 관문 통과 h4pair1114 '광명 아파트 시세, 서울 25개 구 사이 몇 번째일까?' (H-4 짝 글 — yt_pair: MRQqitzEgDw) · 국토부 실거래 11/12 다시 받은 값·새 1차 국토부 9/17 세 낀 집 유예 원문 · bench 6·이해 3차 9명·readcheck 0·selfcheck 사실 0·crosscheck+Agent 대조·editgate auto db93b2fd · 발행 회차(11/14 12:10): 영상 공개(11:30) 확인 → 올리기 전 확인(허가구역 2027 연장 공고·대조 주소 다시 엶·기준일·바뀐 것) → 발행 | firemap-meeting 2026-11-12 21:3x: 롱폼 11:30 공개 뒤 링크 · 롱폼 1편=카페 1편(사장님 10/11)",
-   "by": "firemap-write"
-  },
-  {
-   "at": "2026-11-15 19:20",
-   "kind": "shorts",
-   "item": "h3s_number (H-3 부동산, c1clip)",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-13 14:41",
-   "note": "firemap-video-producer 2026-11-13 14:41: 비축 0이던 칸 — 렌더(빈 메모리 2.15GB)·숫자 대조 0·꼴 E-18 998 vs 996·안전 영역·디자인·치직 0·AI 티 0·이해 2차 통과 → 예약 https://youtu.be/UeWaoO3_T_Q publishAt 2026-11-15T19:20:00+09:00·private 되읽기"
-  },
-  {
-   "at": "2026-11-14 07:40",
-   "kind": "cafe",
-   "item": "fin2kpct1114",
-   "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-write-b 2026-11-13 15:2x(운영실장 15:10 배차): 비축 실질 0(k1pair1110은 #407로 11/11 발행됨·skhdiv1112 #417·나머지 소진, irpdec1112 보류) → 새 글 · 세금·건보료 1칸 · 주제: 금융소득 2천만원 넘는 사람은 몇 명·몇 %일까(국세통계 종합과세 신고 인원·1차 국세청) · 근거 kwvol(11/13 잰 값) 금융소득종합과세 9,540·건보료 5,940 · 같은 주제 우리 글 fin2k0927(원금 계산)·fintax(계산식)·dep5eok0929(5억 예금)는 있으나 '인원·비율' 각도는 제목 전수(*/pkg/title.txt) 0편 · 우리 건보료 글(skhdiv1112 11/13)과 이틀 이상 띄움 · 관문 기한 11/14 01:40 · 담당 write 11/13 21:10 회차 | 숫자 못 구하면(국세통계 공표 없음) 주제 바꾸되 세금 칸 유지"
-  },
-  {
-   "at": "2026-11-14 10:10",
-   "kind": "cafe",
-   "item": "sp500etf1114",
-   "owner": "firemap-write-b",
-   "gates_ok": "2026-11-13 17:06",
-   "note": "firemap-write-b 2026-11-13 15:2x(운영실장 15:10 배차): 비축 실질 0 → 새 글 · 배당ETF·지수 축(사장님 11/11 '통계로 결정') · 주제: 같은 S&P500인데 국내 상장 ETF 3~4개 1년 수익률·총보수 차이는 몇 %p일까(운용사 공시·KRX 1차, 우리가 직접 계산) · 근거 kwvol TIGER미국S&P500 105,500·S&P500ETF 18,320(11/12 잰 값) · 중복 확인: sp500dist1112(분배금 각도, 11/12 #413)·qqqm 계열 있으나 '수익률·보수 차이' 각도는 제목 전수 0편 · k200etf1113(11/13 #416)과 다른 지수라 같은 축 연속 아님 · 관문 기한 11/14 04:10 · 담당 write-b 11/13 16:40 이후 회차(첫 일) · firemap-write-b 17:06: 관문 통과 sp500etf1114 'S&P500 ETF 보수 싼 게 수익률도 더 높을까?'(FunETF·삼성·한국투자 공시로 5개 3년 차이 0.73%p=1억원 약 73만원·실부담비용 총보수의 14~30배·총보수 순서≠수익률 순서 직접 계산, 경쟁 7편 0편) · bench 7·이해 3차 9명·aitell 3.7·readcheck 0·selfcheck 사실 0·crosscheck Gemini 반영·editgate auto ee02c176 · 발행 회차(11/14 10:10)는 S1·S2·S3 다시 받아 기준일(11/13)·바뀐 숫자 적기"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외",

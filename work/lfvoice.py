@@ -871,6 +871,12 @@ def readback(ep, only=None, resume=False, batch=False, offline=False):
             pair = sm(h1, hf) if (h1 and hf) else None
             agree = pair is not None and pair >= AGREE and max(ds(h1), ds(hf)) < OFF
             spots = consensus(spoken, h1, hf)          # 대본 글(숫자 표기)과 맞대야 받아쓰기의 '30%'와 어긋나지 않는다
+            # 11/13 PD: 국소 자리(spots)가 0이고 대본 숫자도 두 귀 다 들었는데 문장 전체 일치율만 낮은 줄 = 숫자 말↔숫자 표기 차이뿐
+            #   (N-3 2:14 '연봉 8천.'↔'연봉8000' 0.80·2:13 '열아홉 명'↔'19명'·2:15 '백 명'↔'100명' — 두 귀 모두 맞게 들음, readback_1113pd3.log).
+            #   숫자 글자·숫자 말 글자를 양쪽에서 빼고도 일치율이 OFF 밑이면 그대로 잡는다.
+            if agree and not spots and not any(h is not None and miss(h) for h in (h1, hf)):
+                _nn = lambda t: re.sub(r'[^가-힣]', '', t or '').translate({ord(c): None for c in _NUMCH})
+                if max(sm(_nn(spoken), _nn(h1)), sm(_nn(spoken), _nn(hf))) >= OFF: agree = False
             if spots: agree = True
             failed = h1 is None or hf is None
             flag = ('숫자 ' if wrong >= 2 else '') + ('길이 ' if slow else '') + (f'밀림의심({sim:.2f}) ' if shift else '')                 + (f'합의오독({pair:.2f}/{max(ds(h1), ds(hf)):.2f} ' + ' '.join(f'{a}→{b}/{c}' for a, b, c in spots[:3]) + ') ' if agree else '') + ('받아쓰기 실패' if failed else '')

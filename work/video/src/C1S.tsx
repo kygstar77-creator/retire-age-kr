@@ -17,7 +17,7 @@ import {DuckedMusic} from './parts/human';
 
 type SLine = {n: number; text: string; cap?: string | null; audio: string; frames: number};
 type SScene = {kind: string; label: string; source?: string | null; data: any; lines: SLine[]; frames: number};
-export type C1SProps = {fps: number; name: string; question: string[]; hot: string; base: string; scenes: SScene[]; answer?: {label: string; items: string[]; arrow?: boolean; note?: string} | null; bg?: BgSeg[] | null; look?: 'live' | 'board'};
+export type C1SProps = {fps: number; name: string; question: string[]; hot: string; base: string; scenes: SScene[]; answer?: {label: string; items: string[]; arrow?: boolean; note?: string} | null; bg?: BgSeg[] | null; look?: 'live' | 'board'; titleMax?: number};   // titleMax: 11/14 윗줄 2배 시험
 // 10/19 기본 look = 'live'(실사가 있으면): 흰 판·칸·진행 막대 없이 실사 위 큰 숫자 박자(parts/safeframe LiveSceneBody) + 끝 3초 출처 한 줄 + 말 밑 덕킹 음. 'board'는 옛 흰 판(공개본 다시 만들 때만).
 export const c1sLive = (p: C1SProps) => (p.look ? p.look === 'live' : !!(p.bg && p.bg.length));
 export const c1sFrames = (p: C1SProps) => p.scenes.reduce((a, s) => a + s.frames, 0);
@@ -333,10 +333,10 @@ export const C1S: React.FC<C1SProps> = (p) => {
   return (
     <AbsoluteFill style={{background: T.dbg}}>
       <style>{FONT_CSS}</style>
-      <Backdrop question={p.question} answer={p.answer as Answer} bg={p.bg} />
+      <Backdrop question={p.question} answer={p.answer as Answer} bg={p.bg} qmax={p.titleMax} />
       {c1sLive(p) ? <LiveDim /> : null}
       {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Frame s={s} from={from} total={total} first={i === 0} p={p} /></Sequence>; from += s.frames; return el; })}
-      <Hero question={p.question} hot={p.hot} answer={p.answer as Answer} until={0} />
+      <Hero question={p.question} hot={p.hot} answer={p.answer as Answer} until={0} qmax={p.titleMax} />
       {c1sLive(p) ? <><EndSource text={p.base} total={total} /><DuckedMusic lines={(() => { const r: {at: number; audio: string; frames: number}[] = []; let a = 0; for (const s of p.scenes) { let b = a; for (const l of s.lines) { r.push({at: b, audio: l.audio, frames: l.frames}); b += l.frames; } a += s.frames; } return r; })()} low={0.06} high={0.16} /></>
         : <SourceLine text={p.base} dark={!!(p.bg && p.bg.length)} />}
     </AbsoluteFill>

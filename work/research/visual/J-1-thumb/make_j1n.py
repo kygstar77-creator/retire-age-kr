@@ -25,9 +25,10 @@ def shade(im, y0, y1, alpha, top=False):
 def fit(d, t, size, w, maxw=MAXW, floor=40):
     while size > floor and d.textlength(t, font=f(size, w)) > maxw: size -= 4
     return size
-def make(out, pic, ya, top, pill, top_size=88, pill_size=100, band=235, ls=1.14):
+def make(out, pic, ya, top, pill, top_size=88, pill_size=100, band=235, ls=1.14, maxw2=None):
     im = photo(pic, y_anchor=ya); d0 = ImageDraw.Draw(im)
     bs = min(fit(d0, t, 200, 'black') for t in BIG); hb = len(BIG) * int(bs * ls); y = HH - 40 - hb
+    bs2 = fit(d0, BIG[-1], bs, 'black', maxw2) if maxw2 else bs  # 11/14 PD: 둘째 줄만 길이 칸(1920 기준 x≥1714) 앞에서 끝나게
     top_size = fit(d0, top, top_size, '700')
     im = shade(im, max(0, y - 160), HH, band); im = shade(im, 0, 420, 215, top=True); d = ImageDraw.Draw(im)
     d.text((X0, 36), top, font=f(top_size, '700'), fill=WHITE, stroke_width=4, stroke_fill=INK)
@@ -36,7 +37,8 @@ def make(out, pic, ya, top, pill, top_size=88, pill_size=100, band=235, ls=1.14)
         yy = 36 + top_size + 28; ft = f(pill_size, '700'); tw = d.textlength(pill, font=ft); ph = int(pill_size * 1.36)
         d.rounded_rectangle((X0, yy, X0 + tw + 64, yy + ph), 24, fill=ORANGE); d.text((X0 + 32, yy + ph // 2), pill, font=ft, fill=WHITE, anchor='lm')
     for k, t in enumerate(BIG):
-        d.text((X0, y - int(bs * 0.12)), t, font=f(bs, 'black'), fill=WHITE if k == 0 else ORANGE, stroke_width=6, stroke_fill=INK); y += int(bs * ls)
+        sz = bs2 if k == len(BIG) - 1 else bs
+        d.text((X0, y - int(bs * 0.12) + (bs - sz)), t, font=f(sz, 'black'), fill=WHITE if k == 0 else ORANGE, stroke_width=6, stroke_fill=INK); y += int(bs * ls)
     sm = im.resize((1280, 720), Image.LANCZOS); sm.save(os.path.join(O, out))
     for px in (412, 168): sm.resize((px, px * 9 // 16), Image.LANCZOS).save(os.path.join(O, out.replace('.png', f'_{px}.png')))
     print(out, top_size, pill_size if pill else '-')
@@ -51,3 +53,8 @@ if len(sys.argv) == 1: make('j1n_b.png', 'korean_apartment_complex_3_38249703.jp
 if len(sys.argv) > 1 and sys.argv[1] == 'c':
     BIG[:] = ['공시가격 20억 보유세', '거주 안 하면 140만원 늘어']
     make('j1n_c.png', 'korean_apartment_complex_3_38249703.jpg', 0.3, '종부세 정부안 · 국회 심사 중 · 집 한 채', '2028년 한 해', top_size=120, pill_size=120)
+
+# 11/14 PD(today 벤치마크 11/14 [지시] 3위): 공개 J-1 c판 둘째 줄 '어'가 길이 칸에 걸림(thumblen 1086) → 문구·사진·윗줄 그대로, 둘째 줄 글자 크기만 줄여 x 1600 안에서 끝나게
+if len(sys.argv) > 1 and sys.argv[1] == 'd':
+    BIG[:] = ['공시가격 20억 보유세', '거주 안 하면 140만원 늘어']
+    make('j1n_d.png', 'korean_apartment_complex_3_38249703.jpg', 0.3, '종부세 정부안 · 국회 심사 중 · 집 한 채', '2028년 한 해', top_size=120, pill_size=120, maxw2=1600 - X0)

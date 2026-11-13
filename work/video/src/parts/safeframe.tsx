@@ -97,7 +97,7 @@ export type Answer = {label: string; items: string[]; arrow?: boolean; note?: st
 
 // ── 배치 계산 ──
 export const Q_TOP = TOP_Y0 + 6, Q_LH = 1.08, Q_MAX = DS.titleMax;   // v3: 76 → 92(경쟁 제목 글자 높이 중앙 4.6%) · B-03: 시작 y 294 → 156
-export const qSize = (q: string[]) => Math.min(...q.map((l) => fit(l, TW, Q_MAX)));
+export const qSize = (q: string[], qmax = Q_MAX) => Math.min(...q.map((l) => fit(l, TW, qmax)));   // 11/14 PD: qmax = 윗줄 2배 시험(thumb-gap-1114 1위) — 기본값 그대로
 export const SRC_H = 32;                                  // 출처 한 줄(맨 아래)
 export const CAP_H = 72;
 export const capTop = () => DS.capCy - DS.capH / 2;    // v3: 자막 가운데 y 1176(61.3%)
@@ -127,8 +127,8 @@ export const answerParts = (a: Answer) => {
   return {small: a.label, ss: ss3, lines, paren: '', bs, arrow: !!a.arrow};
 };
 
-export const layout = (question: string[], answer: Answer) => {
-  const qs = qSize(question); const qEnd = Q_TOP + question.length * qs * Q_LH;
+export const layout = (question: string[], answer: Answer, qmax = Q_MAX) => {
+  const qs = qSize(question, qmax); const qEnd = Q_TOP + question.length * qs * Q_LH;
   const ap = answerParts(answer);
   const aTop = qEnd + 6; const bTop = ap ? aTop + Math.round(ap.ss * 1.3) : aTop; const heroEnd = ap ? bTop + Math.round(ap.bs * 1.06 * ap.lines.length) : qEnd;
   const hdrEnd = heroEnd + 14;                             // 어두운 머리 띠 끝(바탕은 화면 위 끝 0부터)
@@ -138,8 +138,8 @@ export const layout = (question: string[], answer: Answer) => {
 
 export const BAND_END = SZ.y1 + 40;                       // 흰 띠 끝(자막·출처까지 흰 바탕, 그 밑은 유튜브 제목 자리라 어두운 바탕)
 // ── 바탕: 화면 전체(0~1920)를 깐다. 위 = 어두운 띠(질문·답), 가운데 = 흰 띠(판, 가장자리 0~1080까지), 아래 = 어두운 그라데이션(유튜브 제목·채널 이름이 흰 글자라 어두운 바탕에서 읽힘) + 진행 막대 ──
-export const Backdrop: React.FC<{question: string[]; answer: Answer; progress?: number; bg?: BgSeg[] | null}> = ({question, answer, bg}) => {
-  const L = layout(question, answer);
+export const Backdrop: React.FC<{question: string[]; answer: Answer; progress?: number; bg?: BgSeg[] | null; qmax?: number}> = ({question, answer, bg, qmax}) => {
+  const L = layout(question, answer, qmax);
   if (bg && bg.length) return <><BgLayer bg={bg} /><ShortScrim hdrEnd={L.hdrEnd} /></>;   // v3: 실사 배경이 화면 전체
   return (
     <>
@@ -157,9 +157,9 @@ export const Progress: React.FC<{progress: number}> = ({progress}) => (
 );
 
 // ── 질문(안전 영역 맨 위, 크게) + 답(이름표 한 줄 + 큰 숫자 한 줄) ──
-export const Hero: React.FC<{question: string[]; hot: string; answer: Answer; hotColor?: string; until?: number}> = ({question, hot, answer, hotColor = YEL, until}) => {
+export const Hero: React.FC<{question: string[]; hot: string; answer: Answer; hotColor?: string; until?: number; qmax?: number}> = ({question, hot, answer, hotColor = YEL, until, qmax}) => {
   const fr = useCurrentFrame();   // v3(10/16 22시 '같은 숫자 되풀이 금지'): 답 숫자는 첫 장면(until 프레임 전)에만
-  const L = layout(question, until != null && fr >= until ? null : answer); const ap = L.ap;
+  const L = layout(question, until != null && fr >= until ? null : answer, qmax); const ap = L.ap;
   return (
     <>
       <div style={{position: 'absolute', left: TOP_X0 + PAD, top: Q_TOP, width: TW, textAlign: 'center'}}>

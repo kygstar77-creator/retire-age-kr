@@ -1,0 +1,29 @@
+{
+ "name": "h4s_ladder",
+ "ep": "H-4",
+ "from_long": "MRQqitzEgDw",
+ "mp4": "work/video/out/h4s_ladder_c1_ds.mp4",
+ "publishAt": "2026-11-18T19:20:00+09:00",
+ "publish_plan": "11/18 19:20 칸(비축 0이던 칸, backlog ①) · 원본 H-4 공개 11/14 11:30 뒤 · 11/16 h4s_rank(같은 H-4)와 하루 띄움, 11/17 de1s_basket(ETF) 다음 · 쇼츠 실적 부동산 클립이 가장 높음(h1s_forest 1,732·h1s_gap 1,165, 11/14 Data API) — 통계로 고름",
+ "title": "철산동 아파트, 같은 동네 같은 크기인데 16억과 6억 #shorts",
+ "description": "전체 계산: https://youtu.be/MRQqitzEgDw (광명 아파트 실거래가)\n\n광명 철산동 84㎡대(전용 80~85㎡) 단지별 1년 실거래 가운데 값(2025년 11월~2026년 10월 계약, 5건 이상 16곳)은 맨 위 15.95억, 맨 아래 6.35억이었어요. 1986년에 지은 주공13단지(13.85억)가 2009년에 지은 래미안자이(13.40억)보다 조금 높았어요.\n가운데 값은 그 단지 거래를 값 순서로 줄 세웠을 때 한가운데 오는 값이에요. 지나간 거래 값이고, 사거나 팔라는 권유가 아닙니다.\n\n출처: 국토교통부 아파트 매매 실거래가(철산동 84㎡대, 계약 2025.11~2026.10, 2026-11-12 받음) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — Airam Dato-on · FREE VIDEO HAPPY · Jueon Kim 김주언 · MART  PRODUCTION · Paul Bill · vignesh srivatsav · 대정 김\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #철산동아파트 #광명아파트실거래가",
+ "tags": "철산동 아파트,광명 아파트 실거래가,철산 래미안자이,철산주공,광명 아파트",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/h4s_ladder/cover_1114.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "ISLXaS9Wa18",
+ "uploaded_at": "2026-11-14 07:19:56",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-18T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

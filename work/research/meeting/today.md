@@ -1,4 +1,13 @@
 # today.md — 지금 열린 일만 (150줄 이하 유지. 옛 기록 4,575줄은 meeting/archive/today-2026-11-06.md, 11/6 회의 정리 · 11/8~11/9 칸은 meeting/archive/today-2026-11-11.md)
+## 벤치마크 11/14 03시 — 썸네일·쇼츠 표지 6판 (근거 longform/thumb-gap-1114.md · 1102 반영 3/6·일부 1)
+- [지시] **firemap-motion-designer + firemap-video-producer** ← firemap-benchmark-loop 의도: 쇼츠 피드 표지는 API로 안 걸리고(oardefault 0/11) 영상 속 프레임이 표지다. 우리 윗줄 제목 높이 약 2.5~3% vs 남 7/9 약 5~6.5% · 완료 기준: 다음 비축 쇼츠 1편 '윗줄 2배' 판 vs 지금 판 첫 프레임 412px 짝 비교(순서 바꿔 2번) 결과 줄+이긴 판 파일, 이기면 다음 렌더부터 · 기한 11/14 23:59
+- [지시] **firemap-visual-designer** ← firemap-benchmark-loop 의도: 큰 글 외곽선 남 11/13·우리 0/6, 우리는 글 읽히려 사진을 덮어 밝기 50 vs 76·채도 66 vs 102 · 완료 기준: JT-1 또는 H-5 시안에 '검정 테두리+덮개 걷은 사진' 판 thumbpair 짝 비교 결과 줄(judges.md에 밝기·줄별 폭 %) · 기한 11/14 23:59
+- [지시] **firemap-video-producer** ← firemap-benchmark-loop 의도: 공개 J-1 NNcjTE0L7yg 썸네일 '늘어'의 '어'가 길이 칸에 걸림(thumblen 988, 한도 30) · 완료 기준: 둘째 줄만 줄인 판 thumblen ≤30 → set_cover, log 한 줄+공개 maxres 다시 잰 값 · 기한 11/14 18:00
+- [지시] **firemap-editor** ← firemap-benchmark-loop 의도: 1102 A73·A74가 번호 충돌로 빠짐 → K-1 '작년보다 올해 87만원 더' 공개 · 완료 기준: aitell thumb_warn에 A88(올해·작년·이번 달·지난달·최근·요즘, 연도·월 같이 있으면 통과), K-1 공개 문구로 경고 나옴 · 기한 11/14 23:59
+- [지시] **firemap-visual-designer + firemap-copywriter** ← firemap-benchmark-loop 의도: K-1 썸네일 상대 시점을 박힌 해로('2025년 9월 vs 2026년 9월' 꼴) · 완료 기준: 1초 시험 다시 → PD set_cover, 공개 maxres '작년·올해' 0 · 기한 11/14 23:59
+- [지시] **firemap-visual-designer** ← firemap-benchmark-loop (1102 다시 배정) S-1 배경 차트가 오른쪽 위로 올라 '1번만 올랐다'와 반대 · 완료 기준: s1n_e, 레드팀 약점 ① 닫힘 · 기한 S-1 관문 전
+- [지시] **firemap-youtube-loop** ← firemap-benchmark-loop 의도: 11/3 뒤 쇼츠 11편 중 aW8HfeGCGgw 9회(9일)·7bBwnLg86-Q 1회(3일)·jGtx9f6SZKA 0회(1.5일), 나머지 421~1,196회. 자동 표지는 같은 꼴이라 표지로 설명 안 됨 · 완료 기준: 원인 후보+근거 한 줄(모르면 '확인 안 함') · 기한 11/14 23:59
+- 결정 필요(순돌이→사장님): 쇼츠 표지를 사장님이 스튜디오 데스크톱에서 편마다 고를지, 영상 속 윗줄 키우기만 할지
 ## ★ 정기 회의 11/13 21:28~21:39 — 사용량 64%(+13%p, 쉼 ①~④ 날에도 상한 넘음) · 공개 6(카페 5·쇼츠 1)+22:40 예약 1 · 롱폼 0(이틀 주기, 기준 3 충족) (근거 meeting/2026-11-13-decisions.md·verify.md·_전략·_사용자·_법·missed-q_전략)
 - 막힘 [사장님 손] 그대로(이월 9회): ① 윈도 업데이트 사용 시간 ② 충전기 ③ 쿠팡·애드핏 재로그인(11월 수익 측정 불가 9일째) ④ 근무표 줄이기 ⑤ 카페 회원 모으기 ⑥ 유튜브 스튜디오 첫 댓글 '고정'(6편 대기) · [자원] PC 빈 메모리(렌더는 2GB↑에서만, whale·ChatGPT 창 정리 필요)
 - **[지시·전원] 사용량**: 쉼 ①~④는 리셋(11/15 21:00)까지 그대로 · ⑤(카페 6→3칸)는 안 함 — 남은 36%p/47시간 = 하루 18%p > 지금 속도 13%p, 카페 6칸은 사장님 11/1 지시 · write-b 토큰 1위는 반복 오류가 아니라 비축 4편 만든 값(verify) → 줄이지 않음 · 실패 신호: 11/14 21시 +15%p 넘으면 11/15 PD 회차를 관문 기한 칸만

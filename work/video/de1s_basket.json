@@ -1,0 +1,208 @@
+{
+ "fps": 30,
+ "name": "de1s_basket",
+ "v": 2,
+ "look": "live",
+ "question": [
+  "SCHD + 국내 미국배당다우존스",
+  "둘 다 담으면 나눠 담은 걸까"
+ ],
+ "hot": "나눠 담은 걸까",
+ "answer": {
+  "label": "업종 비중",
+  "items": [
+   "거의 똑같다",
+   "한 바구니"
+  ],
+  "arrow": false,
+  "note": "한 바구니"
+ },
+ "base": "슈왑 보유 종목(10/15) · 네이버 증권 ETF 분석(11/13) · 파이어맵 계산",
+ "long": "mkAxQPGaDqc",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "같이 담으면",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "SCHD + 국내 상품",
+      "둘 다 담으면?",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "업종마다 비율",
+      "차이 0.2%포인트 안",
+      "",
+      129,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "SCHD랑 미국배당다우존스, 2개 담으면 나눠 담은 걸까요?",
+     "audio": "audio/de1s_basket/q2.wav",
+     "frames": 129
+    },
+    {
+     "n": 2,
+     "text": "SCHD와 국내 미국배당다우존스를 같이 담으면, 업종마다 비율이 거의 똑같거든요. 이름만 둘이지 한 바구니인 셈이죠.",
+     "audio": "audio/de1s_basket/basket.wav",
+     "frames": 251
+    }
+   ],
+   "frames": 380
+  },
+  {
+   "kind": "vs",
+   "label": "세 업종",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "세 업종",
+      "생활용품 · 제약 · 석유",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "상품마다 담긴 돈",
+      "절반 넘게 세 업종에",
+      "",
+      45,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 3,
+     "text": "생활용품, 제약, 석유.",
+     "audio": "audio/de1s_basket/half_a.wav",
+     "frames": 45
+    },
+    {
+     "n": 4,
+     "text": "이 세 업종에 돈이 절반 넘게 들어 있어요.",
+     "audio": "audio/de1s_basket/half_b.wav",
+     "frames": 105
+    }
+   ],
+   "frames": 150
+  },
+  {
+   "kind": "vs",
+   "label": "같은 지수",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "국내 상품 이름",
+      "TIGER · SOL · ACE · KODEX",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "모두 SCHD와",
+      "같은 지수를 따라감",
+      "",
+      154,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 5,
+     "text": "SCHD는 재무가 튼튼하고 배당을 꾸준히 준 미국 기업 100개를 고르는 지수를 따라가요.",
+     "audio": "audio/de1s_basket/index_a.wav",
+     "frames": 154
+    },
+    {
+     "n": 6,
+     "text": "그렇게 고른 회사들이 이 세 업종에 많았던 거예요.",
+     "audio": "audio/de1s_basket/index_b.wav",
+     "frames": 85
+    }
+   ],
+   "frames": 239
+  },
+  {
+   "kind": "vs",
+   "label": "같이 담을 땐",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "같이 담을 땐",
+      "큰 업종이 겹치는지 먼저",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 7,
+     "text": "그래서 두 개를 같이 담을 생각이라면, 큰 칸이 겹치는지부터 보세요.",
+     "audio": "audio/d-etf-1/7376b32b9906ceed.wav",
+     "frames": 114
+    }
+   ],
+   "frames": 150
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/detf/stock/6343634.mp4",
+   "from": 0,
+   "frames": 129,
+   "start": 2
+  },
+  {
+   "src": "bg/detf/stock/4121749.mp4",
+   "from": 129,
+   "frames": 251,
+   "start": 0.5
+  },
+  {
+   "src": "bg/detf/stock/7118320.mp4",
+   "from": 380,
+   "frames": 45,
+   "start": 0
+  },
+  {
+   "src": "bg/detf/stock/7118320.mp4",
+   "from": 425,
+   "frames": 105,
+   "start": 1.6
+  },
+  {
+   "src": "bg/detf/stock/5546876.mp4",
+   "from": 530,
+   "frames": 154,
+   "start": 1
+  },
+  {
+   "src": "bg/detf/stock/5546876.mp4",
+   "from": 684,
+   "frames": 85,
+   "start": 6.2
+  },
+  {
+   "src": "bg/detf/stock/8661806.mp4",
+   "from": 769,
+   "frames": 150,
+   "start": 2
+  }
+ ],
+ "credits": "4121749 Jack Sparrow · 5546876 Polina ⠀ · 6343634 KATRIN  BOLOVTSOVA · 7118320 cottonbro studio · 8661806 Adrian Frentescu (Pexels License)"
+}

@@ -8,6 +8,9 @@
   완료: firemap-video-producer 06:18 — J-1 NNcjTE0L7yg 표지 교체: 둘째 줄 '거주 안 하면 140만원 늘어'만 글자 크기 줄인 판 ep/J-1/thumb_j1n_d.png(문구·사진·윗줄 0 바뀜, 만든 법 visual/J-1-thumb/make_j1n.py d) · 로컬 thumblen 1086→0 · thumbnails.set 걸음 · **공개 maxres 다시 잰 thumblen 0** · 공개 11/4라 E-19(72시간) 해당 없음
 - [지시] **firemap-editor** ← firemap-benchmark-loop 의도: 1102 A73·A74가 번호 충돌로 빠짐 → K-1 '작년보다 올해 87만원 더' 공개 · 완료 기준: aitell thumb_warn에 A88(올해·작년·이번 달·지난달·최근·요즘, 연도·월 같이 있으면 통과), K-1 공개 문구로 경고 나옴 · 기한 11/14 23:59
 - [지시] **firemap-visual-designer + firemap-copywriter** ← firemap-benchmark-loop 의도: K-1 썸네일 상대 시점을 박힌 해로('2025년 9월 vs 2026년 9월' 꼴) · 완료 기준: 1초 시험 다시 → PD set_cover, 공개 maxres '작년·올해' 0 · 기한 11/14 23:59
+  착수: firemap-copywriter 07:53 — K-1 썸네일 박힌 해 문구 후보·1초 시험
+  완료: firemap-copywriter 07:56 — K-1 박힌 해 판 1초 시험 **y2 통과**: 흰 줄 '…/ 2025년 9월 vs 2026년 9월' · 큰 '정기예금 1억 이자 / 1년 새 87만원 더'(사진·꼴 그대로, facts F4 871,380원) · 제미나이 주제·시점 4/4 · 50대·레드팀 y2('2025년보다'는 흰 줄과 겹치고 한 해 전체로 읽힘) · 파일 longform/ep/K-1/thumb_k1y_y2.png(만든 법 visual/K-1-thumb/sec1114/make_k1y.py) · visual은 새로 그릴 일 없음 · 근거 visual/K-1-thumb/judges.md
+- [요청] **firemap-video-producer** ← firemap-copywriter 07:56 K-1 H9Lv281MaLs 표지 교체 트랙:C · 완료 기준: thumbnails.set ep/K-1/thumb_k1y_y2.png → 공개 maxres 받아 '작년·올해' 0·thumblen 확인 · meta thumb·thumb_text_top '1년 정기예금 · 세금 뗀 이자 / 2025년 9월 vs 2026년 9월'·thumb_text '정기예금 1억 이자 / 1년 새 87만원 더' · 시한 11/14 23:59 · 공개 11/6이라 E-19 해당 없음
 - [지시] **firemap-visual-designer** ← firemap-benchmark-loop (1102 다시 배정) S-1 배경 차트가 오른쪽 위로 올라 '1번만 올랐다'와 반대 · 완료 기준: s1n_e, 레드팀 약점 ① 닫힘 · 기한 S-1 관문 전
 - [지시] **firemap-youtube-loop** ← firemap-benchmark-loop 의도: 11/3 뒤 쇼츠 11편 중 aW8HfeGCGgw 9회(9일)·7bBwnLg86-Q 1회(3일)·jGtx9f6SZKA 0회(1.5일), 나머지 421~1,196회. 자동 표지는 같은 꼴이라 표지로 설명 안 됨 · 완료 기준: 원인 후보+근거 한 줄(모르면 '확인 안 함') · 기한 11/14 23:59
 - 결정 필요(순돌이→사장님): 쇼츠 표지를 사장님이 스튜디오 데스크톱에서 편마다 고를지, 영상 속 윗줄 키우기만 할지
@@ -346,6 +349,9 @@ $L
 - [알림] **firemap-write·firemap-write-b** ← editor 17:08 표본 검수로 발행 전 묶음 2개 고침(재서명 firemap-editor, editgate check·aitell gate·frame·cafe3·sameday 11/14 통과): h4pair1114(11/14 12:40) c03 '고시 이름은 …이에요' 뺌(앞 문장과 같은 말) · sp500etf1114(11/14 10:10) c03 끝 세전 단서 되풀이 문장 뺌 → '일반 계좌라면 … 15.4% 배당소득세가 빠져요. 실제로 손에 쥐는 돈은 앞의 수익률보다 적습니다.' · 숫자 0 · 원본 *.orig1113ed · 발행 당일 '바뀐 것:' 고치면 auto 재서명 그대로 · 열린 [편집 검수 요청] 0
 - 진행: firemap-visual-designer 17:10 — **H-5(11/24 칸) 썸네일 시안**(문구 copy v2 그대로, 숫자 calc2 9.00억→7.35억): 추천 **ep/H-5/thumb_h5_a.png**(Pexels 18495181 센트럴파크) · 예비 thumb_h5_b.png · thumbpair a>b 2:0·a>c 2:0 · thumblen 0 · 판정·출처 visual/H-5-thumb/judges.md · 경쟁 5장 최근 30일 여부 확인 안 함
   [알림] **firemap-copywriter** ← visual 17:10: H-5 썸네일 1초 시험 부탁 — a(1위)·b 412/168px = visual/H-5-thumb/h5_a_412.png·_168.png · 문구 0 바뀜 · 실거래 다시 받아 7.35억이 바뀌면 visual에 알려 주세요(make_h5.py 한 줄)
+  착수: firemap-copywriter 07:53 — H-5 썸네일 1초 시험(a·b)
+  완료: firemap-copywriter 07:56 — H-5 1초 시험 **a 1위 통과**(제미나이 4/4·50대·레드팀 주제 맞힘, 권유 아니오, b는 어두워 송도인지 모름) · 다만 '지금'이 언제인지 없음(50대·레드팀, K-1과 같은 문제)·알약 '2021년'은 고점 2021.07~22.06과 다름 → 알약만 고침 · 근거 visual/H-5-thumb/judges.md '1초 시험'
+- [요청] **firemap-visual-designer** ← firemap-copywriter 07:56 H-5 thumb_h5_a 알약 문구 트랙:C · 완료 기준: 알약 '2021년 고점 기준' → '2021~22년 고점 vs 2026년 7~10월'(make_h5.py 한 줄, 큰 글·사진 그대로) 412·168px → copywriter 1초 시험 다시 · 올리기 전 실거래 다시 받아 값·월이 바뀌면 알약 월도 같이 · 시한 11/22 · 근거 longform/ep/H-5/copy/titles.md
   착수: firemap-write 18:21 — 18:10 회차: 18:40 칸 dfopt1112 올리기 전 확인(고용노동부 게시판 정정본·새 공시·법 조문 다시)·발행·verify
   완료: firemap-write 18:31 — 18:40 칸 #419 dfopt1112 '디폴트옵션 수익률, 원리금보장은 1년에 얼마 벌었을까?' 발행 verify OK(1,491자·사진 3, 18:31) · 올리기 전 확인: 고용노동부 3분기 공시(10/31) 최신·정정본 없음, 퇴직급여법 21조의2·3 다시 받음 → 바뀐 것 없음 · c02 '~셈이죠' 고침(readcheck가 '던 셈이' 놓침 → 규칙 고침) · editgate auto 재서명 · slots item 이름 'dfopt1112'로(장부 대조) · 11/13 카페 5/6 · 회원 댓글 0 · 쉼날이라 새 글 안 씀
 - 막힘: firemap-write 18:33 — dev←main 합치기 여전히 실패(outputs/jepiq_short.mp4 not uptodate, 남의 작업 중 파일 — 11/12부터 같은 증상) · dev 푸시(0e33c03)는 됨 · 손대지 않음

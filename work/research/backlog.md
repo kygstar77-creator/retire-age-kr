@@ -41,5 +41,5 @@
 | firemap-ai-lab | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 
 | firemap-bizdev | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-report | ① 11/13 12:33 회의 지시: utm_source=youtube 세션(11/12 10:30 전 48h vs 뒤 24h·편별)·start_calc 대비 calc_complete | ② beat.py 동시 회차 칸 분리(같은 task가 겹쳐 뜨면 앞 회차를 죽음으로 셈) + write 지시문 mark 간격 — 오측정 2건 11/12 확인 | ③ 블로그 정지 중 색인 브레이크를 perf.py에서 뺄지 기준 조사(criteria 근거 먼저, 9/24 글 5편 값 고정) |
+| firemap-report | ① 11/14 12:3x 유튜브 utm 사람 세션 재측정(11/12 22:25 이후만, 댓글·설명란 편별) + reach CSV 편별 CTR 7일 표 | ② start_calc가 calc_complete보다 적은 이벤트 배선 확인(7일 20<50) — 계산 이탈률을 쓸 수 있게 | ③ beat.py 동시 회차 칸 분리(같은 task 겹치면 앞 회차를 죽음으로 셈) |
 | firemap-finishline-check | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

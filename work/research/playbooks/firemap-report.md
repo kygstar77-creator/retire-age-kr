@@ -26,3 +26,4 @@
 - (2026-11-09) naverpost check는 발행 회차가 브라우저를 쥐고 있으면 120초 넘게 멈춘다 — 한 번 끊기면 1~2분 뒤 timeout 150으로 다시 재면 된다(12:38 '로그인됨'). 블로그 색인 '하루 지난 글' 기준이 '어제 글 표본 없음 — 지난 글 전체'로 찍히면 브레이크 근거가 아니다(블로그 발행 0).
 - 2026-11-10: 사용량 원인은 list_task_runs 대신 ~/.claude/projects/C--Users-----Documents-Codex/*.jsonl 첫 user 메시지의 scheduled-task name과 usage(output_tokens)로 셀 수 있다(하위 Agent 기록은 빠짐, 2,618개 훑는 데 2분 넘음 → 백그라운드로).
 - 2026-11-11: 유입 출처는 firemap_events session_start props의 utm_source·ref·bot으로 센다(referrer 칸 이름은 'ref'). 봇 70/205라 bot 칸을 꼭 뺀다. 사람 세션 84%는 ref 없음 — 앱 내 브라우저는 referrer를 안 넘기니 utm 없는 링크는 출처가 사라진다.
+- 2026-11-13: 유튜브 utm 세션은 '링크 단 직후 2분 묶음'(편당 2~3건 1~2초 간격, ref m.dcinside·없음, bot 섞임)이면 검사·미리보기다 — 시각 묶음부터 본다. reach CSV는 매 회차 `py -3.12 work/ytreach.py`(정기 호출이 없어 10/24에 멈췄었다). runs_today.json 날짜가 어제면 report.py가 오늘 발행 0으로 찍는다 — today.md 발행 줄로 넘겨 적는다.

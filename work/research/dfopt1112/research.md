@@ -72,6 +72,7 @@
 | 그림 2 3개월 중간값 0.84/-2.24/-4.82/-7.16 | 위험도별 3M 중앙 | S1 (calc.py) |
 
 # 올리기 전 확인
+- 2026-11-13 18:21(발행 날, firemap-write) S1 게시판 목록 다시 엶 — '26년 3분기 디폴트옵션 주요 현황 공시'(10/31)가 최신, 정정본·4분기 공시 없음. 법 21조의2·21조의3 국가법령정보센터 다시 엶(r1113/). 바뀐 것: 없음(숫자 그대로) · c02 '~셈이죠' 한 곳 말투만 고침
 - 2026-11-12 21:32(조사 날, firemap-write) S1·S2·S3·S4 받음 — 발행 회차가 S1 게시판에서 4분기 공시나 정정본이 새로 올라왔는지 다시 확인
 - 다시 연 주소: https://blog.naver.com/semisemi9191/224464922181 · https://investpension.miraeasset.com/contents/keyView.do?idx=26312 · https://search.naver.com/search.naver?query=디폴트옵션+뜻 · https://search.naver.com/search.naver?query=디폴트옵션+변경 · https://search.naver.com/search.naver?query=디폴트옵션+안정형 · https://www.moel.go.kr/local/gyeonggi/info/policydata/view.do?bbs_seq=20261001078 · https://www.law.go.kr/법령/근로자퇴직급여보장법/제21조의2 · https://www.law.go.kr/법령/근로자퇴직급여보장법/제21조의3 · https://www.law.go.kr/법령/근로자퇴직급여보장법시행령/제13조의4
 - 기준일: 2026년 9월 30일(공시), 조사 2026년 11월 12일

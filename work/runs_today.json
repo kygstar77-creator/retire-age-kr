@@ -58,6 +58,16 @@
     "url": "https://cafe.naver.com/firemap/418"
    },
    "note": "16:10 칸 newold1112 · 올리기 전 확인: 국토부 실거래 S1 다시 받음(숫자 바뀜→본문·그림·표지 고침) · readcheck 0·selfcheck 사실 0·spoken 통과·editgate auto 재서명 · verify OK 1,482자·사진 3 · 블로그 없음(DAY_CAP·쉼날) · 개선: lessons에 'stamp는 readcheck 안 돌림 — 서명 뒤 readcheck 따로' 추가"
+  },
+  {
+   "hour": 18,
+   "ts": "18:31",
+   "blog": null,
+   "cafe": {
+    "title": "디폴트옵션 수익률, 원리금보장은 1년에 얼마 벌었을까?",
+    "url": "https://cafe.naver.com/firemap/419"
+   },
+   "note": "18:40 칸 dfopt1112 발행 18:31 verify OK(1491자·사진 3) · 올리기 전 확인: 고용노동부 게시판 3분기 공시(10/31)가 최신·정정본 없음, 법 21조의2·3 lawweb 다시 받음, 바뀐 것 없음 · c02 '~셈이죠' 고침 → readcheck 0·selfcheck 사실 0·aitell 2.2·editgate auto 재서명 · 교차검증은 11/12 관문(Gemini 시간 초과→Agent 대조 0건) 그대로 · 블로그 없음(DAY_CAP·카페 전용 운영) · 회원 댓글 0 · 개선: readcheck '셈이' 규칙에 '던' 더함(달랐던 셈이죠가 빠져나감)"
   }
  ]
 }

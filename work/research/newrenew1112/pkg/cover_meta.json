@@ -1,10 +1,10 @@
 {
- "made_at": "2026-11-12 16:54",
+ "made_at": "2026-11-13 13:48",
  "by": "work/cafecover.py",
  "out": "img\\00.png",
  "topic": "전세 갱신 vs 새 계약",
  "num": "10곳 중 9곳 새 계약이 비쌌다",
- "sub": "서울 아파트 615곳 실거래",
+ "sub": "서울 아파트 617곳 실거래",
  "label": "국토부 실거래",
  "src": "국토교통부 아파트 전월세 실거래 2026년 8~10월",
  "icon": "key",
@@ -14,15 +14,15 @@
  "num_px": 78,
  "sub_px": 58,
  "board": [
+  "skhdiv1112",
+  "k200etf1113",
+  "sbdep1112",
+  "realdep1112",
+  "sp500dist1112",
   "convrate1112",
   "bonddep1111",
   "parking1109",
   "bunrinhis1111",
-  "acqseoul1111",
-  "k1pair1110",
-  "stkgift1109",
-  "ltdeduct1110",
-  "stkded1109",
-  "retpay1109"
+  "acqseoul1111"
  ]
 }

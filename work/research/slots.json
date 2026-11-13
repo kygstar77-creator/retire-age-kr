@@ -4073,6 +4073,30 @@
       "gates_ok": "2026-11-13 07:31",
       "note": "firemap-write 2026-11-13 07:31: 관문 통과 h4pair1114 '광명 아파트 시세, 서울 25개 구 사이 몇 번째일까?' (H-4 짝 글 — yt_pair: MRQqitzEgDw) · 국토부 실거래 11/12 다시 받은 값·새 1차 국토부 9/17 세 낀 집 유예 원문 · bench 6·이해 3차 9명·readcheck 0·selfcheck 사실 0·crosscheck+Agent 대조·editgate auto db93b2fd · 발행 회차(11/14 12:10): 영상 공개(11:30) 확인 → 올리기 전 확인(허가구역 2027 연장 공고·대조 주소 다시 엶·기준일·바뀐 것) → 발행 | firemap-meeting 2026-11-12 21:3x: 롱폼 11:30 공개 뒤 링크 · 롱폼 1편=카페 1편(사장님 10/11)",
       "by": "firemap-write"
+    },
+    {
+      "at": "2026-11-15 19:20",
+      "kind": "shorts",
+      "item": "h3s_number (H-3 부동산, c1clip)",
+      "owner": "firemap-video-producer",
+      "gates_ok": "2026-11-13 14:41",
+      "note": "firemap-video-producer 2026-11-13 14:41: 비축 0이던 칸 — 렌더(빈 메모리 2.15GB)·숫자 대조 0·꼴 E-18 998 vs 996·안전 영역·디자인·치직 0·AI 티 0·이해 2차 통과 → 예약 https://youtu.be/UeWaoO3_T_Q publishAt 2026-11-15T19:20:00+09:00·private 되읽기"
+    },
+    {
+      "at": "2026-11-14 07:40",
+      "kind": "cafe",
+      "item": "fin2kpct1114",
+      "owner": "firemap-write",
+      "gates_ok": null,
+      "note": "firemap-write-b 2026-11-13 15:2x(운영실장 15:10 배차): 비축 실질 0(k1pair1110은 #407로 11/11 발행됨·skhdiv1112 #417·나머지 소진, irpdec1112 보류) → 새 글 · 세금·건보료 1칸 · 주제: 금융소득 2천만원 넘는 사람은 몇 명·몇 %일까(국세통계 종합과세 신고 인원·1차 국세청) · 근거 kwvol(11/13 잰 값) 금융소득종합과세 9,540·건보료 5,940 · 같은 주제 우리 글 fin2k0927(원금 계산)·fintax(계산식)·dep5eok0929(5억 예금)는 있으나 '인원·비율' 각도는 제목 전수(*/pkg/title.txt) 0편 · 우리 건보료 글(skhdiv1112 11/13)과 이틀 이상 띄움 · 관문 기한 11/14 01:40 · 담당 write 11/13 21:10 회차 | 숫자 못 구하면(국세통계 공표 없음) 주제 바꾸되 세금 칸 유지"
+    },
+    {
+      "at": "2026-11-14 10:10",
+      "kind": "cafe",
+      "item": "sp500etf1114",
+      "owner": "firemap-write-b",
+      "gates_ok": null,
+      "note": "firemap-write-b 2026-11-13 15:2x(운영실장 15:10 배차): 비축 실질 0 → 새 글 · 배당ETF·지수 축(사장님 11/11 '통계로 결정') · 주제: 같은 S&P500인데 국내 상장 ETF 3~4개 1년 수익률·총보수 차이는 몇 %p일까(운용사 공시·KRX 1차, 우리가 직접 계산) · 근거 kwvol TIGER미국S&P500 105,500·S&P500ETF 18,320(11/12 잰 값) · 중복 확인: sp500dist1112(분배금 각도, 11/12 #413)·qqqm 계열 있으나 '수익률·보수 차이' 각도는 제목 전수 0편 · k200etf1113(11/13 #416)과 다른 지수라 같은 축 연속 아님 · 관문 기한 11/14 04:10 · 담당 write-b 11/13 16:40 이후 회차(첫 일)"
     }
   ],
   "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외",

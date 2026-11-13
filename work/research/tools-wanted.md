@@ -629,3 +629,4 @@ mid·bot 칸에 들어앉아 text_mid 가 0.0884 → 0.2005 로 튄다. thumbsta
 - 2026-10-17 07:45 firemap-write-b: work/naverpost.py private_video_links()의 `f[:1]=='c'`를 `re.fullmatch(r'c\d\d\.txt', f)`로 — check_gemini.txt 속 옛 영상 주소로 공개된 짝 글(h1gapcafe1017)이 보류됨. 자동 회차는 관문 수정이 권한에 막힘, 사람 확인 필요
 
 - 2026-11-02 06:25 firemap-write · **법령 API(law.go.kr DRF, OC=test) 막힘** — '사용자 정보 검증에 실패하였습니다 · 서버장비의 IP주소 및 도메인주소를 등록해 주세요'(target=law·eflaw 둘 다). lawtext.py·법 개정 글 '올리기 전 확인'이 전부 멈춤 · 사람이 봐야 함: open.law.go.kr에서 OC(이메일 ID) 신청·이 PC IP 등록(사장님 계정) → lawtext.py API 상수의 OC 값 바꿈
+- 2026-11-13 21:4x firemap-write: law.go.kr 시스템 점검(sorry.html) 때 work/lawtext.py는 '제14조 가 없다', work/lawweb.py는 AttributeError로 죽어 원인이 안 보임 — 두 스크립트가 sorry.html/점검 응답을 알아보고 '법령 사이트 점검 중'으로 멈추게 고칠 것(improve 몫, 사람 손 필요 없음)

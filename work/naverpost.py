@@ -2025,6 +2025,9 @@ def main():
             ok_ed, why_ed = editgate.check(pkg)
             if ok_ed is False: editgate.refuse(pkg, why_ed, cmd); sys.exit(4)
             print(why_ed)
+            # 11/14 회의 지시: 주식·ETF·예금 등 상품 이름이 나오는 글은 '권유 아님' 줄이 없으면 올리지 않는다(#419 dfopt1112가 줄 없이 나감).
+            _db = editgate.disclaim_check(pkg)
+            if _db: print('면책 줄 관문 — ' + '; '.join(_db)); sys.exit(4)
             # 올리기 전에 같은 제목이 이미 올라가 있는지 본다. published.txt가 없어도 글은 올라가 있을 수 있다.
             up = already_up(cmd, title)
             if up:

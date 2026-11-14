@@ -1,0 +1,29 @@
+{
+ "name": "x1s_even",
+ "ep": "X-1",
+ "from_long": "WcBOePkyOOQ",
+ "mp4": "work/video/out/x1s_even_c1_ds.mp4",
+ "publishAt": "2026-11-20T19:20:00+09:00",
+ "publish_plan": "11/20 19:20 쇼츠 칸(비축 0이던 칸) · 환율·ETF 축 — 11/18 부동산·11/19 정책 뒤(주식 쇼츠는 비주식 2편 뒤 규칙 충족) · 같은 날 11:30 롱폼 N-3(월급)과 다른 질문",
+ "title": "미국주식 본전 환율, 달러 수익률 16%면 1.16으로 나눈다 #shorts",
+ "description": "전체 계산: https://youtu.be/WcBOePkyOOQ\n\n미국 ETF를 원화로 따질 때 본전이 되는 환율은 '산 날 환율 ÷ 그 뒤 주가가 몇 배가 됐는지'로 셉니다. 증권사 앱에 달러 수익률이 16%로 나오면 산 날 환율을 1.16으로 나누면 돼요.\n예: 2025년 10월 13일(1,420.5원)에 SPY를 샀다면 그 뒤 주가가 1.1640배라 1,220원까지 내려도 본전, 달러가 가장 비쌌던 2026년 7월 2일(1,554.4원)에 샀다면 주가가 1.0363배(3.63% 오름)라 1,500원은 돼야 본전입니다(SPY 2026년 10월 15일 종가 기준).\n본전 환율은 주가가 그대로일 때만 맞고, 주가가 움직이면 같이 움직입니다. 지나간 값이고, 특정 상품을 사거나 팔라는 뜻이 아닙니다.\n\n출처: 한국은행 경제통계시스템 원/달러 매매기준율 · SPY 종가(2025-10-13·2026-07-02·2026-10-15) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — Jakub Zerdzicki · olia danilevich · RDNE Stock project · K · cottonbro studio · Tima Miroshnichenko · Adrian Frentescu\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #미국주식 #환율",
+ "tags": "본전 환율,미국주식 환율,환차손,미국 ETF,S&P500",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/x1s_even/cover_1114.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "bBGrarSnl5U",
+ "uploaded_at": "2026-11-14 23:13:18",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-20T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

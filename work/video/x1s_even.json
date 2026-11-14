@@ -1,0 +1,246 @@
+{
+ "fps": 30,
+ "name": "x1s_even",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "미국 ETF 본전 환율",
+  "달러로 16% 올랐다면, 환율 몇 원까지?"
+ ],
+ "hot": "본전",
+ "answer": {
+  "label": "본전 환율 = 산 날 환율 ÷ 주가 몇 배",
+  "items": [
+   "2025.10.13 매수: 1,220원",
+   "2026.7.2 매수: 1,500원"
+  ],
+  "arrow": false,
+  "note": "SPY 2026.10.15 종가 기준 · 주가가 바뀌면 달라짐"
+ },
+ "base": "한국은행 매매기준율 · SPY 종가(2026.10.15 기준) · 파이어맵 계산",
+ "long": "WcBOePkyOOQ",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "질문",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "달러 수익률 16%",
+      "본전 환율은?",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "달러로 16% 오른 미국 ETF, 환율 몇 원이면 본전일까요?",
+     "audio": "audio/x1s/3106c9b09ff75df5.wav",
+     "frames": 129
+    }
+   ],
+   "frames": 129
+  },
+  {
+   "kind": "vs",
+   "label": "계산법",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "본전 환율",
+      "산 날 환율 ÷ 몇 배",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "달러 수익률 16%",
+      "÷ 1.16",
+      "",
+      152,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 2,
+     "text": "산 날 환율을, 그 뒤 주가가 몇 배가 됐는지로 나누면 끝이에요.",
+     "audio": "audio/x-1/ff3e9fc79eaf830f.wav",
+     "frames": 152
+    },
+    {
+     "n": 3,
+     "text": "증권사 앱에 달러 수익률이 16%로 나오면, 일 점 일육 배로 나누면 됩니다.",
+     "audio": "audio/x-1/0e47c41a6428226e.wav",
+     "frames": 150
+    }
+   ],
+   "frames": 302
+  },
+  {
+   "kind": "vs",
+   "label": "1년 전",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "본전 환율",
+      "1,220원",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "산 날 1,420.5원",
+      "÷ 1.1640",
+      "",
+      130,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "1년 전에 산 경우는 1,220원까지 내려가도 아직 본전입니다.",
+     "audio": "audio/x-1/23ec56a6a4ce2bd8.wav",
+     "frames": 130
+    }
+   ],
+   "frames": 180
+  },
+  {
+   "kind": "vs",
+   "label": "최고점",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "본전 환율",
+      "1,500원",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "최고점 1,554.4원",
+      "÷ 1.0363",
+      "",
+      118,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 5,
+     "text": "가장 비싸던 날 산 경우는, 환율이 1,500원은 돼야 본전이에요.",
+     "audio": "audio/x-1/c9a2b29a47914aa4.wav",
+     "frames": 118
+    }
+   ],
+   "frames": 168
+  },
+  {
+   "kind": "vs",
+   "label": "조심",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "본전 환율은",
+      "주가 그대로일 때만",
+      "",
+      41,
+      "ink"
+     ],
+     [
+      "주가가 움직이면",
+      "본전도 움직여요",
+      "",
+      157,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "조심할 게 있어요.",
+     "audio": "audio/x-1/408a8a5e6e5f3b9d.wav",
+     "frames": 41
+    },
+    {
+     "n": 7,
+     "text": "본전 환율은 주가가 지금 그대로일 때만 맞는 숫자예요.",
+     "audio": "audio/x-1/60e924ab8c4d2517.wav",
+     "frames": 116
+    },
+    {
+     "n": 8,
+     "text": "주가가 움직이면 같이 움직입니다.",
+     "audio": "audio/x-1/2080bf14547f213f.wav",
+     "frames": 83
+    }
+   ],
+   "frames": 276
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/x1s_even/stock/cut/dollar_count_1_129.mp4",
+   "from": 0,
+   "frames": 129,
+   "start": 0
+  },
+  {
+   "src": "bg/x1s_even/stock/cut/calc_pen_1_152.mp4",
+   "from": 129,
+   "frames": 152,
+   "start": 0
+  },
+  {
+   "src": "bg/x1s_even/stock/cut/phone_hands_1_150.mp4",
+   "from": 281,
+   "frames": 150,
+   "start": 0
+  },
+  {
+   "src": "bg/x1s_even/stock/cut/clock_2_180.mp4",
+   "from": 431,
+   "frames": 180,
+   "start": 0
+  },
+  {
+   "src": "bg/x1s_even/stock/cut/wallet_2_168.mp4",
+   "from": 611,
+   "frames": 168,
+   "start": 0
+  },
+  {
+   "src": "bg/x1s_even/stock/cut/gold_coins_1_41.mp4",
+   "from": 779,
+   "frames": 41,
+   "start": 0
+  },
+  {
+   "src": "bg/x1s_even/stock/cut/coins_1_116.mp4",
+   "from": 820,
+   "frames": 116,
+   "start": 0
+  },
+  {
+   "src": "bg/x1s_even/stock/cut/typing_2_119.mp4",
+   "from": 936,
+   "frames": 119,
+   "start": 0
+  }
+ ],
+ "credits": "Adrian Frentescu · Jakub Zerdzicki · K · RDNE Stock project · Tima Miroshnichenko · cottonbro studio · olia danilevich"
+}

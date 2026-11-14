@@ -315,7 +315,7 @@
    },
    {
     "item": "yejung1115",
-    "status": "2026-11-14 20:05 관문 통과 비축(write-b) — 세금 칸 '연말정산 미리보기, 더 내는 직장인은 몇 %일까?' · TASIS 4-2-1·4-2-4(2024년 귀속) 직접 계산: 추가납부 17.9%·총급여 3천만원 이하 9.5%~1억 초과 31.2%·1억 초과 7%가 추가납부 세액 63% · kwvol 연말정산미리보기 59,000 · editgate auto dd53b804 · editor 전건 검수 대기([편집 검수 요청] today.md) · 배정 칸 미정(회의 21:15) — 11/15 12:40·18:40·22:40 칸 후보(세금 칸) · 발행 회차가 '올리기 전 확인'(국세통계 2025년 귀속 조기공개 여부)",
+    "status": "2026-11-14 23:14 소진 — 11/15 12:40 칸 배정(slot.txt 2026-11-15 12, write) | 2026-11-14 20:05 관문 통과 비축(write-b) — 세금 칸 '연말정산 미리보기, 더 내는 직장인은 몇 %일까?' · TASIS 4-2-1·4-2-4(2024년 귀속) 직접 계산: 추가납부 17.9%·총급여 3천만원 이하 9.5%~1억 초과 31.2%·1억 초과 7%가 추가납부 세액 63% · kwvol 연말정산미리보기 59,000 · editgate auto dd53b804 · editor 전건 검수 대기([편집 검수 요청] today.md) · 배정 칸 미정(회의 21:15) — 11/15 12:40·18:40·22:40 칸 후보(세금 칸) · 발행 회차가 '올리기 전 확인'(국세통계 2025년 귀속 조기공개 여부)",
     "by": "firemap-write-b",
     "at": "2026-11-14 20:05",
     "gates_ok": "2026-11-14 20:05"
@@ -4095,6 +4095,15 @@
    "note": "firemap-meeting 2026-11-13 21:38: 비축 실질 0(verify — reserve.cafe 목록 6편 전부 published.txt에 발행 번호) → 새 글 · 주제는 담당이 kwvol 검색수·우리 제목 전수 겹침 0을 note에 적고 정함(숫자 없으면 칸 비움, 미달 공개 금지) · 부동산 축 · 관문 기한 11/15 04:10 | firemap-write-b 2026-11-14 10:5x 착수: pentax1115 연금계좌 몫(11/14 칸에 연금계좌 없음) · 주제: 연금저축·IRP 1년 1,500만원 넘게 꺼내면 연금소득세 얼마(분리 5.5~3.3% vs 16.5% vs 종합 — 소득세법 원문으로 직접 계산) · 근거 kwvol 11/14 연금소득세 1,050·사적연금 540·연금소득공제 390·연금소득종합과세 160·분리과세 80 · 우리 제목 전수 '연금소득세·1,500만원' 0편(penlimit1022는 연금수령한도, rettax0927은 퇴직소득 재원) · write 07:40 회차는 연금계좌 잡지 말 것 | firemap-write-b 2026-11-14 11:03: 관문 통과 pentax1115 '연금소득세 1,500만원 넘으면 세금 세 배일까?'(연금계좌) — 국세청 원천징수>연금소득 공제표·세율표로 직접 계산: 65세·다른 소득 없음 2,000만원 16.5% 330만원 vs 종합과세 약 77만원 · 갈림점 세금 붙는 국민연금 연 4,060만원(월 338만원) · 1,500→1,600만원 16.5%면 82만 5천→264만원(경쟁 1위만 계산, 종합과세 비교 경쟁 6편 0편) · bench 6·이해 3차 9명·aitell 1.4·readcheck 0·selfcheck 사실 0·crosscheck Gemini 사실 1 반영·editgate auto 00ae7d1b · 발행 회차(11/15 10:10): law.go.kr 점검 끝났으면 소득세법 14·47의2·64의4·129조 원문 다시 열어 대조(11/14 오전 sorry 화면 — 국세청 안내로 대신)·올리기 전 확인 날짜 갱신"
   },
   {
+   "at": "2026-11-15 12:40",
+   "kind": "cafe",
+   "item": "yejung1115",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-14 23:15",
+   "note": "firemap-meeting 2026-11-14 21:40: 비축 yejung1115(관문 20:06) — editor 전건 검수 서명 뒤에만 발행(verify 11/14). 서명 없으면 칸 비움 | firemap-write 2026-11-14 23:14 (운영실장 배차 23:12): 12:40 칸 yejung1115 확정 · pkg/slot.txt 2026-11-15 12 새로 씀(없었음) · aitell sameday 2026-11-15 통과(07:40 sav1115·10:10 pentax1115·12:40·16:10 offbase1114, 숫자 겹침 0 — 10:10 연금소득세와 같은 세금연금 축이지만 연말정산 원천징수 정산이라 주제 다름) · editgate check 해시 일치(auto dd53b804) · naverpost pending block=코너 시각 전뿐 · editor 전건 검수 서명 23:13 확인(firemap-editor, 바꾼 것 0·해시 dd53b804 그대로, editgate check 통과) · 발행 회차 올리기 전 확인(국세통계 2025년 귀속 조기공개 여부)",
+   "by": "firemap-write"
+  },
+  {
    "at": "2026-11-15 16:10",
    "kind": "cafe",
    "item": "offbase1114",
@@ -4102,6 +4111,14 @@
    "gates_ok": "2026-11-14 14:04",
    "note": "firemap-write-b 2026-11-14 14:04: 관문 통과 offbase1114 '오피스텔 기준시가, 4년 전보다 얼마나 내렸을까?'(부동산 — 부동산 하루 2칸 몫, 새로 씀·비축으로 만들어 이 칸에 둠) — 근거 kwvol(11/14 13:4x) 기준시가 1,790·오피스텔기준시가 650·오피스텔재산세 350 등 합 2,950 · 우리 제목 전수 541개 '기준시가' 0편 · 국세청 11/12 보도참고자료 붙임 3 변동률 이어 곱함: 2023년 고시 대비 2027년 안 전국 -6.1%·대구 -19.6%·서울 +1.8%(경쟁 8편 누적 0편) · bench 7·이해 3차 9명·aitell 5.4·readcheck 0·selfcheck 사실 0·crosscheck Gemini 사실 4건 원문 재확인 유지·editgate auto 60a0fcf9 · 발행 회차: 올리기 전 확인(국세청 보도 주소 다시 엶·12/2 열람 마감 전인지) · 12/2 지나 발행하면 c04 일정 문장 고칠 것 · 회의가 칸을 옮기면 pkg/slot.txt도 같이 | 버린 주제: 연말정산 미리보기(국세청 개통 발표 없음 — 발표 뒤 세금 칸 글감)",
    "by": "firemap-write-b"
+  },
+  {
+   "at": "2026-11-15 18:40",
+   "kind": "cafe",
+   "item": "tdf1115",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-14 21:40: 새 글 — 주제는 kwvol 숫자·우리 제목 겹침 0을 note에. 장르는 주식·ETF 또는 돈 관리(같은 날 07:40 금리·10:10 연금·12:40 세금·16:10 부동산 뒤) | firemap-write 2026-11-14 23:15 배정(관문 전): tdf1115 주식·ETF 축 TDF(타깃데이트펀드) · 근거 kwvol 11/14 23:1x TDF 4,750(PC 1,590·모바일 3,160) · 우리 제목 전수 343개 TDF·타겟데이트 0편 · 다른 후보: 반도체ETF 15,560(우리 [ETF 시황] 2편 겹침)·금ETF 11,730(금 제목 5편)·커버드콜ETF 9,610(7편)·나스닥100ETF 6,320(2편)·리츠 7,320(2편) — 겹침 0인 것 중 1위 · 조심: dfopt1112(디폴트옵션 수익률, 11/13 발행) 본문과 같은 공시 숫자 쓰지 말 것, 같은 날 10:10 pentax1115(연금계좌 세금)와 각도 겹치지 않게 연금계좌 세제 말고 상품(빈티지별 주식 비중·보수·1년 수익, 운용사 공시) · 관문 기한 11/15 12:40"
   },
   {
    "at": "2026-11-15 19:20",
@@ -4112,6 +4129,30 @@
    "note": "firemap-video-producer 2026-11-13 14:41: 비축 0이던 칸 — 렌더(빈 메모리 2.15GB)·숫자 대조 0·꼴 E-18 998 vs 996·안전 영역·디자인·치직 0·AI 티 0·이해 2차 통과 → 예약 https://youtu.be/UeWaoO3_T_Q publishAt 2026-11-15T19:20:00+09:00·private 되읽기"
   },
   {
+   "at": "2026-11-15 22:40",
+   "kind": "cafe",
+   "item": "TBD (h3s_number 짝 글)",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-14 21:40: yt_pair: h3s_number(UeWaoO3_T_Q, 11/15 19:20) — 쇼츠가 던진 질문 하나에 답하는 짧은 글+쇼츠·원본 H-3 링크. 부동산 하루 2칸째"
+  },
+  {
+   "at": "2026-11-16 07:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-14 21:40: 새 글 — 경제·금리 또는 정책(kwvol 근거 note)"
+  },
+  {
+   "at": "2026-11-16 10:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-14 21:40: 새 글 — 연금/보험/세금 축(kwvol 근거 note)"
+  },
+  {
    "at": "2026-11-16 11:30",
    "kind": "long",
    "item": "skip — 롱폼 없음(N-3는 11/20 칸, 비축 롱폼 0)",
@@ -4120,12 +4161,44 @@
    "note": "firemap-meeting 2026-11-14 21:40: 비움 — youtube-loop 11/12 04:51 N-3를 11/20으로, PD 11/14 02:32 '11/16은 옛 계획' 알림(verify 11/14). 관문 통과 예비 롱폼 없음 → 칸 실패로 기록, 미달 공개 금지 | firemap-meeting 2026-11-06 21:37: 한 칸씩 뒤로 | firemap-meeting 2026-11-01 21:4x: 롱폼 이틀에 1편(사장님 11/1, long_anchor 11/2)에 맞춰 11-07→11-12 옮김(축 정책→경제→정책→부동산→정책→주식, youtube-loop가 겹침만 없으면 바꿔도 됨) · youtube-loop 2026-10-23 04:5x: 벤치마크 10/23 03시 [지시] 11/2 주 정책 1칸. 검증 국민연금수령나이 53,670(kwvol 10/23) · KBS fIyFbw6AcKA 193만 · P-1 짧은 판 재게시 금지, 새 것 ①연기연금 ②2025 개혁 ③피부양자·연금소득세(ep/P-4/plan.md) · 대본 11/3 21:00 · 관문 11/6 11:30 · 제작 PD | youtube-loop 2026-11-02 00:48: 회의 11/1 [지시](녹음 순서·새 칸) — 준비된 대본 먼저, 같은 축 연속 없음: J-1 정책 11/4 → K-1 경제 11/6 → P-3 정책 11/8 → H-4 부동산 11/10 → N-3 경제(소득) 11/12 → S-1 주식 11/14 → RT-1 정책 11/16 → W-3 주식(세금) 11/18 → P-4 정책 11/20 · H-6(TBD-부동산)은 H-4 뒤 다음 부동산 칸 · 녹음(16:00 창 하루 1편): 11/2 J-1 → 11/3 K-1 → 11/4 P-3 → 11/5 H-4 → 11/6 N-3 → 11/7 S-1 → 11/9 RT-1(대본 전) → 11/11 W-3"
   },
   {
+   "at": "2026-11-16 12:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-14 21:40: 새 글 — 주식·ETF(종목 권유 금지, '권유 아님' 줄)"
+  },
+  {
+   "at": "2026-11-16 16:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-14 21:40: 부동산 새 글(국토부 실거래 원자료) — 부동산 하루 2칸 중 1"
+  },
+  {
+   "at": "2026-11-16 18:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-14 21:40: 새 글 — 돈 관리·시리즈"
+  },
+  {
    "at": "2026-11-16 19:20",
    "kind": "shorts",
    "item": "h4s_rank (H-4 부동산, c1clip)",
    "owner": "firemap-video-producer",
    "gates_ok": "2026-11-13 19:02",
    "note": "firemap-video-producer 2026-11-13 19:02: 비축 0이던 칸 — 새 첫 줄 다시 렌더·눈 검사 2곳 고쳐 재렌더·숫자 대조 0·꼴 E-18 998 vs 996·안전 영역·디자인 96%·치직 0·빈 곳 0%·이해 4차 통과 → 예약 https://youtu.be/7_EkpkW09ec publishAt 2026-11-16T19:20:00+09:00·private 되읽기·표지 cover_1113"
+  },
+  {
+   "at": "2026-11-16 22:40",
+   "kind": "cafe",
+   "item": "TBD (h4s_rank 짝 글)",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-11-14 21:40: yt_pair: h4s_rank(7_EkpkW09ec, 11/16 19:20) — 쇼츠 질문 하나 답하는 짧은 글. 부동산 하루 2칸째"
   },
   {
    "at": "2026-11-17 19:20",
@@ -4153,11 +4226,27 @@
    "note": "firemap-video-producer 2026-11-14 07:20: 비축 0이던 칸 — compete 6·숫자 대조 0·꼴 E-18 998 vs 996·이해 3차 9명·안전 영역·디자인 91%·치직 0·빈 곳 0%·AI 티 0·눈 검사(끝 장면 얼굴·간판 → 항공 실사) → 예약 https://youtu.be/ISLXaS9Wa18 publishAt 2026-11-18T19:20+09:00 · yt_pair: ISLXaS9Wa18(카페 짝 글 = 질문 하나: 같은 철산동 84㎡ 단지별 1년 실거래 가운데 값 줄 세우기, 쇼츠 링크+원본 MRQqitzEgDw+calc_out §2 표, 20:10·22:40 칸)"
   },
   {
+   "at": "2026-11-19 19:20",
+   "kind": "shorts",
+   "item": "p1s_born (P-1 정책, c1clip)",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-11-14 18:36",
+   "note": "firemap-video-producer 2026-11-14 14:43: p1s_born(P-1 국민연금 수령나이, 정책 축) — compete 7·숫자 대조 0·꼴 ⓐ~ⓓ 통과·이해 4차 12명 통과·68세 법 개정 없음(11/14 검색)·첫 줄만 Charon 1.1 새로 받음 · 남은 것: 렌더(빈 메모리 1.25GB라 못 함, render_parts_1114.sh)·deess·안전 영역·디자인·치직·눈 검사·표지 → w1g1clips_up · 관문 기한 11/19 07:20 · 2026-11-14 18:36 PD 정기 18:1x: 렌더 3토막 1번에 통과·deess·안전 영역·디자인 100%·치직 0·눈 검사·표지 → 예약 r5VPQEOjRHU(11/19 19:20) · 공개 전날 68세 법 개정 여부 다시 확인"
+  },
+  {
    "at": "2026-11-20 11:30",
    "kind": "long",
    "item": "N-3",
    "owner": "firemap-youtube-loop",
    "note": "firemap-youtube-loop 2026-11-12 04:50: 통계로 고름(longform/loop/topic_stats_1112.md) — 상위 몇% 축 우리 N-1 2,746(롱폼 1편; N-2 81은 약 2분짜리)·연봉실수령액 kwvol 70,200·경쟁 4편 배수 중앙 7.56 · 대본 v1.2 앞머리 예고 5줄→1줄(A-52) 편집 재서명 뒤 녹음 · 관문 11/19 11:30 | firemap-meeting 2026-11-06 21:37: 한 칸씩 뒤로 | youtube-loop 2026-11-02 00:48: 이틀 주기 새 칸(회의 11/1 [지시]) | 순돌이 11/12 01:3x 사장님 11/11 \"이미 만들었다고 올리지 말자 · 뭐든 결정할 때 추측하지 말고 통계를 보고\" → 세금정책·국민연금 주제는 우리 롱폼 중앙 20(5편)이라 뺌"
+  },
+  {
+   "at": "2026-11-20 19:20",
+   "kind": "shorts",
+   "item": "x1s_even (X-1 환율·ETF, c1clip)",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-11-14 23:13",
+   "note": "firemap-video-producer 2026-11-14 23:13: 비축 0이던 칸 — compete 6·숫자 대조 0·꼴 통과·이해 3차 9명·안전 영역·디자인 100%·치직 0·빈 곳 0%·AI 티 0·눈 검사(계산기 상표 → 금화 컷 재렌더) → 예약 https://youtu.be/bBGrarSnl5U publishAt 2026-11-20T19:20+09:00·private 되읽기 · yt_pair: bBGrarSnl5U(카페 짝 글 = 질문 하나: 본전 환율 셈법, 쇼츠 링크+원본 WcBOePkyOOQ+X-1 calc_out §8 표, 11/20 22:40 칸 권장)"
   },
   {
    "at": "2026-11-22 11:30",
@@ -4197,86 +4286,6 @@
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
    "note": "firemap-meeting 2026-11-08 21:3x: 장르 안건(agenda-2026-11-09-longform-genre.md) 받아들임 — X-LF-GENRE(부동산2·정책2·경제주식1·연봉노후1/12일, 같은 장르 연속 금지)"
-  },
-  {
-   "at": "2026-11-19 19:20",
-   "kind": "shorts",
-   "item": "p1s_born (P-1 정책, c1clip)",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-14 18:36",
-   "note": "firemap-video-producer 2026-11-14 14:43: p1s_born(P-1 국민연금 수령나이, 정책 축) — compete 7·숫자 대조 0·꼴 ⓐ~ⓓ 통과·이해 4차 12명 통과·68세 법 개정 없음(11/14 검색)·첫 줄만 Charon 1.1 새로 받음 · 남은 것: 렌더(빈 메모리 1.25GB라 못 함, render_parts_1114.sh)·deess·안전 영역·디자인·치직·눈 검사·표지 → w1g1clips_up · 관문 기한 11/19 07:20 · 2026-11-14 18:36 PD 정기 18:1x: 렌더 3토막 1번에 통과·deess·안전 영역·디자인 100%·치직 0·눈 검사·표지 → 예약 r5VPQEOjRHU(11/19 19:20) · 공개 전날 68세 법 개정 여부 다시 확인"
-  },
-  {
-   "at": "2026-11-15 12:40",
-   "kind": "cafe",
-   "item": "yejung1115",
-   "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-14 21:40: 비축 yejung1115(관문 20:06) — editor 전건 검수 서명 뒤에만 발행(verify 11/14). 서명 없으면 칸 비움"
-  },
-  {
-   "at": "2026-11-15 18:40",
-   "kind": "cafe",
-   "item": "TBD",
-   "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-14 21:40: 새 글 — 주제는 kwvol 숫자·우리 제목 겹침 0을 note에. 장르는 주식·ETF 또는 돈 관리(같은 날 07:40 금리·10:10 연금·12:40 세금·16:10 부동산 뒤)"
-  },
-  {
-   "at": "2026-11-15 22:40",
-   "kind": "cafe",
-   "item": "TBD (h3s_number 짝 글)",
-   "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-14 21:40: yt_pair: h3s_number(UeWaoO3_T_Q, 11/15 19:20) — 쇼츠가 던진 질문 하나에 답하는 짧은 글+쇼츠·원본 H-3 링크. 부동산 하루 2칸째"
-  },
-  {
-   "at": "2026-11-16 07:40",
-   "kind": "cafe",
-   "item": "TBD",
-   "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-14 21:40: 새 글 — 경제·금리 또는 정책(kwvol 근거 note)"
-  },
-  {
-   "at": "2026-11-16 10:10",
-   "kind": "cafe",
-   "item": "TBD",
-   "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-14 21:40: 새 글 — 연금/보험/세금 축(kwvol 근거 note)"
-  },
-  {
-   "at": "2026-11-16 12:40",
-   "kind": "cafe",
-   "item": "TBD",
-   "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-14 21:40: 새 글 — 주식·ETF(종목 권유 금지, '권유 아님' 줄)"
-  },
-  {
-   "at": "2026-11-16 16:10",
-   "kind": "cafe",
-   "item": "TBD",
-   "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-14 21:40: 부동산 새 글(국토부 실거래 원자료) — 부동산 하루 2칸 중 1"
-  },
-  {
-   "at": "2026-11-16 18:40",
-   "kind": "cafe",
-   "item": "TBD",
-   "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-14 21:40: 새 글 — 돈 관리·시리즈"
-  },
-  {
-   "at": "2026-11-16 22:40",
-   "kind": "cafe",
-   "item": "TBD (h4s_rank 짝 글)",
-   "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-14 21:40: yt_pair: h4s_rank(7_EkpkW09ec, 11/16 19:20) — 쇼츠 질문 하나 답하는 짧은 글. 부동산 하루 2칸째"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외",

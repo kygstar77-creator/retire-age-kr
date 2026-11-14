@@ -2,3 +2,5 @@
 2026-11-13 14:17 | firemap-video-producer 정기 14:1x | N-3 readback 이어서(10:08 회차 readback 로그 빈 채 끝남)
 2026-11-13 14:51 | firemap-video-producer 정기 14:1x | 끝 — readback 둘째 귀 묶음 3~8 할당량 막힘(받아쓰기 실패 117줄), 다음 회차 --resume --batch
 2026-11-13 18:17 | firemap-video-producer 정기 18:1x | N-3 readback --resume --batch
+2026-11-14 10:19 | firemap-video-producer 정기 10:1x | N-3 4:3·8:1 새 말 녹음→readback→props→screen_text
+2026-11-14 10:38 | firemap-video-producer 정기 10:1x | 끝 — 두 줄 녹음·props·screen_text, editor stamp 대기

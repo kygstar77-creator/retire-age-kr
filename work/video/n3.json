@@ -1,0 +1,2310 @@
+{
+ "fps": 30,
+ "scenes": [
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "안녕하세요, 파이어맵입니다. 오늘은 연봉 실수령액 이야기입니다.",
+     "audio": "audio/n-3/3d7c40a3a59a34f7.wav",
+     "frames": 129,
+     "cap": null
+    }
+   ],
+   "frames": 129,
+   "data": {
+    "src": "bg/n3/stock/7687970.mp4",
+    "license": "Pexels 7687970 무료(Kindel Media)",
+    "say": "연봉 실수령액",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "연봉 5천이면, 통장에는 한 달에 얼마가 들어올까요?",
+     "audio": "audio/n-3/33f1e38345aaf869.wav",
+     "frames": 96,
+     "cap": null
+    },
+    {
+     "text": "답은 357만원쯤입니다.",
+     "audio": "audio/n-3/ac080fd238b6e9b8.wav",
+     "frames": 60,
+     "cap": null
+    }
+   ],
+   "frames": 156,
+   "data": {
+    "pic": "bg/n3/board/n3_hook357.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그럼 우리나라 직장인 백 명을 줄 세우면, 이 연봉은 몇 번째 정도일까요?",
+     "audio": "audio/n-3/cd51214e0856b450.wav",
+     "frames": 129,
+     "cap": null
+    },
+    {
+     "text": "앞에서 서른세 명 안에 들어요.",
+     "audio": "audio/n-3/0592b489a0c88d66.wav",
+     "frames": 62,
+     "cap": null
+    },
+    {
+     "text": "상위 33% 안쪽이라는 뜻이에요.",
+     "audio": "audio/n-3/cce74bca8cd0f9ce.wav",
+     "frames": 70,
+     "cap": null
+    }
+   ],
+   "frames": 261,
+   "data": {
+    "pic": "bg/n3/board/n3_line100_33.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "오늘은 연봉이 천만원 올라도 통장이 가장 덜 느는 구간을 찾아봅니다.",
+     "audio": "audio/n-3/74864dd943b8fc23.wav",
+     "frames": 123,
+     "cap": null
+    }
+   ],
+   "frames": 123,
+   "data": {
+    "pic": "bg/n3/board/n3_toc.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "처음 보시는 분을 위해, 먼저 '연봉'이 어떤 돈인지부터요.",
+     "audio": "audio/n-3/bacb970de1b0d83a.wav",
+     "frames": 119,
+     "cap": null
+    }
+   ],
+   "frames": 119,
+   "data": {
+    "n": "1장",
+    "q": "'연봉'은 어느 돈인가"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "이런 댓글이 있었어요. 연봉이 기본급인지, 상여금을 넣는지, 원천징수에 찍힌 금액인지.",
+     "audio": "audio/n-3/cc0e5170e36d6ad8.wav",
+     "frames": 168,
+     "cap": null
+    },
+    {
+     "text": "계약서에 적힌 연봉은 세금과 보험료를 떼기 전 돈, 세전입니다.",
+     "audio": "audio/n-3/f0a543e39c2c4dc7.wav",
+     "frames": 109,
+     "cap": null
+    },
+    {
+     "text": "통장에 들어오는 돈은 그걸 다 뗀 세후고요.",
+     "audio": "audio/n-3/16384ebf66d15a28.wav",
+     "frames": 66,
+     "cap": null
+    }
+   ],
+   "frames": 343,
+   "data": {
+    "pic": "bg/n3/board/n3_gross.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그런데 국세청이 사람들을 줄 세울 때는 또 다른 숫자, '총급여'를 씁니다.",
+     "audio": "audio/n-3/1b825e761a4beecd.wav",
+     "frames": 126,
+     "cap": null
+    }
+   ],
+   "frames": 126,
+   "data": {
+    "src": "bg/n3/stock/3202364.mp4",
+    "license": "Pexels 3202364 무료(cottonbro studio)",
+    "say": "국세청은 다른 숫자로 센다",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "상여금은 넣고, 식대처럼 세금을 안 붙이는 돈은 뺀 돈이에요.",
+     "audio": "audio/n-3/c187cbc73979e61d.wav",
+     "frames": 121,
+     "cap": null
+    }
+   ],
+   "frames": 121,
+   "data": {
+    "pic": "bg/n3/board/n3_three_money.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "식대를 한 달 20만원 받는 회사라면요.",
+     "audio": "audio/n-3/a54218b2d8f742a4.wav",
+     "frames": 72,
+     "cap": null
+    },
+    {
+     "text": "한 해에 240만원이 빠집니다.",
+     "audio": "audio/n-3/ab9373847381818b.wav",
+     "frames": 62,
+     "cap": null
+    },
+    {
+     "text": "그래서 연봉 5천은 국세청 줄에서 4,760만원으로 섭니다.",
+     "audio": "audio/n-3/9825e19f529d760e.wav",
+     "frames": 115,
+     "cap": null
+    }
+   ],
+   "frames": 249,
+   "data": {
+    "pic": "bg/n3/board/n3_4760.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "내 자리를 찾을 때는 계약서 말고 원천징수영수증의 총급여를 보세요.",
+     "audio": "audio/n-3/ee84b2f72d8c6ef9.wav",
+     "frames": 120,
+     "cap": null
+    },
+    {
+     "text": "계약서 숫자로 찾으면, 실제보다 몇 칸 앞에 서 있는 것처럼 보여요.",
+     "audio": "audio/n-3/0e5e291833df8f83.wav",
+     "frames": 132,
+     "cap": null
+    }
+   ],
+   "frames": 252,
+   "data": {
+    "src": "bg/n3/stock/7535095.mp4",
+    "license": "Pexels 7535095 무료(Mikhail Nilov)",
+    "say": "계약서 말고 총급여",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "하나 더요. 국세청은 사람을 한 명씩 줄 세운 자료를 내지 않아요.",
+     "audio": "audio/n-3/5a02611525b16ce8.wav",
+     "frames": 126,
+     "cap": null
+    },
+    {
+     "text": "백 명 중 한 명씩 묶은 칸마다, 그 칸의 평균만 알려 줍니다.",
+     "audio": "audio/n-3/8a0c713826ba2d21.wav",
+     "frames": 109,
+     "cap": null
+    },
+    {
+     "text": "그래서 오늘 말하는 '몇 번째'는 딱 한 자리가 아니라, 대략 그 근처라는 뜻이에요.",
+     "audio": "audio/n-3/ac558d7ee8c12a91.wav",
+     "frames": 150,
+     "cap": null
+    }
+   ],
+   "frames": 385,
+   "data": {
+    "pic": "bg/n3/board/n3_percentile_box.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "이제 일곱 칸입니다. 칸마다 통장 금액과 줄 위치를 같이 볼게요.",
+     "audio": "audio/n-3/1798656271b12d2a.wav",
+     "frames": 120,
+     "cap": null
+    }
+   ],
+   "frames": 120,
+   "data": {
+    "n": "2장",
+    "q": "연봉 사다리 3천~1억"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "첫 칸은 연봉 3천입니다.",
+     "audio": "audio/n-3/96f6fe8089663fdf.wav",
+     "frames": 53,
+     "cap": null
+    },
+    {
+     "text": "통장에 224만원 정도 들어와요.",
+     "audio": "audio/n-3/65fe5d8445512c53.wav",
+     "frames": 80,
+     "cap": null
+    },
+    {
+     "text": "줄에서는 백 명 중 앞에서 예순두 명 안에 들어요.",
+     "audio": "audio/n-3/a3a21d5ee42b2d0a.wav",
+     "frames": 97,
+     "cap": null
+    }
+   ],
+   "frames": 230,
+   "data": {
+    "pic": "bg/n3/board/n3_seven.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "다음은 연봉 4천.",
+     "audio": "audio/n-3/1762665c7929cd00.wav",
+     "frames": 46,
+     "cap": null
+    },
+    {
+     "text": "통장은 294만원 정도입니다.",
+     "audio": "audio/n-3/19d02546400acb24.wav",
+     "frames": 79,
+     "cap": null
+    }
+   ],
+   "frames": 125,
+   "data": {
+    "src": "bg/n3/stock/7822029.mp4",
+    "license": "Pexels 7822029 무료(RDNE Stock project)",
+    "say": "한 칸 위로",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "백 명 중 앞에서 마흔다섯 명 안, 줄 한가운데보다 조금 앞이에요.",
+     "audio": "audio/n-3/cc9625f38fe3d3d0.wav",
+     "frames": 107,
+     "cap": null
+    },
+    {
+     "text": "연봉 5천은 앞에서 본 대로, 백 명 중 앞에서 서른세 명 안.",
+     "audio": "audio/n-3/3be8b94f1c57b85f.wav",
+     "frames": 116,
+     "cap": null
+    },
+    {
+     "text": "연봉 6천이 되면,",
+     "audio": "audio/n-3/fe89622fd0ccb22c.wav",
+     "frames": 41,
+     "cap": null
+    },
+    {
+     "text": "420만원 정도가 들어옵니다.",
+     "audio": "audio/n-3/1049eebe4db8e0d4.wav",
+     "frames": 62,
+     "cap": null
+    },
+    {
+     "text": "여기서부터 네 명 중 한 명 안쪽, 백 명 중 앞에서 스물다섯 명 안에 들어요.",
+     "audio": "audio/n-3/fff809b344b12522.wav",
+     "frames": 141,
+     "cap": null
+    }
+   ],
+   "frames": 467,
+   "data": {
+    "pic": "bg/n3/board/n3_ladder_a.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "연봉 7천이면",
+     "audio": "audio/n-3/517d6e3d0bd820fa.wav",
+     "frames": 39,
+     "cap": null
+    },
+    {
+     "text": "482만원쯤입니다.",
+     "audio": "audio/n-3/e5ca07f30d50ded9.wav",
+     "frames": 47,
+     "cap": null
+    }
+   ],
+   "frames": 86,
+   "data": {
+    "src": "bg/n3/stock/28587785.mp4",
+    "license": "Pexels 28587785 무료(Oleh Bachynskyi)",
+    "say": "칸이 높아지면",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "백 명 중 앞에서 열아홉 명 안에 들고요.",
+     "audio": "audio/n-3/bc9b58aa01c20f7f.wav",
+     "frames": 69,
+     "cap": null
+    },
+    {
+     "text": "연봉 8천.",
+     "audio": "audio/n-3/1f92858baaaf189e.wav",
+     "frames": 27,
+     "cap": null
+    },
+    {
+     "text": "537만원 정도, 백 명 중 앞에서 열다섯 명 안.",
+     "audio": "audio/n-3/2992233f7c5dd80b.wav",
+     "frames": 92,
+     "cap": null
+    },
+    {
+     "text": "그리고 연봉 1억.",
+     "audio": "audio/n-3/53b30f0f7fd9bce6.wav",
+     "frames": 35,
+     "cap": null
+    },
+    {
+     "text": "653만원쯤 들어옵니다.",
+     "audio": "audio/n-3/e9bbc9e19ffc7df6.wav",
+     "frames": 57,
+     "cap": null
+    },
+    {
+     "text": "백 명 중 앞에서 아홉 명 안으로 들어가고요.",
+     "audio": "audio/n-3/9c6619e858467de0.wav",
+     "frames": 75,
+     "cap": null
+    }
+   ],
+   "frames": 355,
+   "data": {
+    "pic": "bg/n3/board/n3_ladder_b.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "막대를 같이 놓으면 하나가 보입니다.",
+     "audio": "audio/n-3/e3e6b57f32b17ad8.wav",
+     "frames": 59,
+     "cap": null
+    }
+   ],
+   "frames": 59,
+   "data": {
+    "src": "bg/n3/stock/8783211.mp4",
+    "license": "Pexels 8783211 무료(RDNE Stock project)",
+    "say": "막대로 놓으면",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "연봉 3천은 세전 월급의 열에 아홉이 통장에 남아요.",
+     "audio": "audio/n-3/0ace5becaa02b2db.wav",
+     "frames": 108,
+     "cap": null
+    },
+    {
+     "text": "1억은 그보다 적은 78%만 남고요.",
+     "audio": "audio/n-3/d0b6e24a18b5c4da.wav",
+     "frames": 74,
+     "cap": null
+    },
+    {
+     "text": "연봉이 오를수록 떼어 가는 돈이 커진다는 뜻이죠.",
+     "audio": "audio/n-3/49021d0e970fe07d.wav",
+     "frames": 90,
+     "cap": null
+    }
+   ],
+   "frames": 272,
+   "data": {
+    "pic": "bg/n3/board/n3_share_bars.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "이 표는 내 급여명세서의 '실지급액'과 바로 비교해 보시면 됩니다.",
+     "audio": "audio/n-3/41207ed68830028e.wav",
+     "frames": 119,
+     "cap": null
+    },
+    {
+     "text": "다만 상여금이 나온 달은 세금도 따로 붙으니, 보통 달끼리 비교하세요.",
+     "audio": "audio/n-3/f3856058e0e9943b.wav",
+     "frames": 153,
+     "cap": null
+    }
+   ],
+   "frames": 272,
+   "data": {
+    "pic": "bg/n3/board/n3_netcheck.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "1억 위도 많이 찾으셔서, 두 칸만 더 볼게요.",
+     "audio": "audio/n-3/e36ee8f09efff3ad.wav",
+     "frames": 69,
+     "cap": null
+    }
+   ],
+   "frames": 69,
+   "data": {
+    "src": "bg/n3/stock/4992563.mp4",
+    "license": "Pexels 4992563 무료(Ketut Subiyanto)",
+    "say": "두 칸만 더",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "먼저 연봉 1억 2천만원.",
+     "audio": "audio/n-3/51cd6e1f882f5053.wav",
+     "frames": 64,
+     "cap": null
+    },
+    {
+     "text": "통장에 761만원쯤 들어옵니다.",
+     "audio": "audio/n-3/8d51841769cf66b9.wav",
+     "frames": 63,
+     "cap": null
+    },
+    {
+     "text": "백 명 중 앞에서 여섯 명 안에 섭니다.",
+     "audio": "audio/n-3/51738aec2a0bc0a6.wav",
+     "frames": 63,
+     "cap": null
+    },
+    {
+     "text": "연봉 1억 5천만원이면",
+     "audio": "audio/n-3/0cdaca205d2202cc.wav",
+     "frames": 48,
+     "cap": null
+    },
+    {
+     "text": "902만원 정도입니다.",
+     "audio": "audio/n-3/994822610dccc84a.wav",
+     "frames": 45,
+     "cap": null
+    },
+    {
+     "text": "이쯤이면 백 명 중 앞에서 세 명 안에 들고요.",
+     "audio": "audio/n-3/9762bf68f2d8d596.wav",
+     "frames": 90,
+     "cap": null
+    },
+    {
+     "text": "세전 월급에서 통장에 남는 몫은 72%까지 내려옵니다.",
+     "audio": "audio/n-3/cb4ba5a22b0a959b.wav",
+     "frames": 116,
+     "cap": null
+    }
+   ],
+   "frames": 489,
+   "data": {
+    "pic": "bg/n3/board/n3_ladder_c.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "다시 연봉 5천으로 볼게요.",
+     "audio": "audio/n-3/f4e5f862d6fb81e7.wav",
+     "frames": 50,
+     "cap": null
+    }
+   ],
+   "frames": 50,
+   "data": {
+    "n": "3장",
+    "q": "어디서 빠지나"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그 세전 월급에서, 무엇이 얼마나 빠질까요?",
+     "audio": "audio/n-3/160a24bc92cc1ccb.wav",
+     "frames": 83,
+     "cap": null
+    }
+   ],
+   "frames": 83,
+   "data": {
+    "pic": "bg/n3/board/n3_leak_q.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "가장 큰 건 소득세와 국민연금이에요. 둘 다 19만원 정도입니다.",
+     "audio": "audio/n-3/64aff2b6d0522c0e.wav",
+     "frames": 111,
+     "cap": null
+    },
+    {
+     "text": "건강보험, 고용보험, 장기요양, 지방소득세 네 가지는 다 해서 22만원쯤이고요.",
+     "audio": "audio/n-3/0ad3d3dbf6a8c68a.wav",
+     "frames": 143,
+     "cap": null
+    },
+    {
+     "text": "다 합치면 60만원쯤이 빠져요.",
+     "audio": "audio/n-3/c972a56201a36832.wav",
+     "frames": 65,
+     "cap": null
+    }
+   ],
+   "frames": 319,
+   "data": {
+    "pic": "bg/n3/board/n3_waterfall.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그런데 연봉에 따라 빠지는 돈의 구성이 달라집니다.",
+     "audio": "audio/n-3/655c366a9c4eb4b6.wav",
+     "frames": 87,
+     "cap": null
+    }
+   ],
+   "frames": 87,
+   "data": {
+    "src": "bg/n3/stock/5923592.mp4",
+    "license": "Pexels 5923592 무료(RDNE Stock project)",
+    "say": "빠지는 돈의 구성",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "낮은 칸, 연봉 3천부터 볼게요.",
+     "audio": "audio/n-3/d93242afba654382.wav",
+     "frames": 58,
+     "cap": null
+    },
+    {
+     "text": "빠지는 돈은 26만원쯤.",
+     "audio": "audio/n-3/45d5b91d2fd64068.wav",
+     "frames": 58,
+     "cap": null
+    },
+    {
+     "text": "그중 세금은 3만원 정도예요.",
+     "audio": "audio/n-3/7e3159193b4f85ae.wav",
+     "frames": 64,
+     "cap": null
+    },
+    {
+     "text": "나머지는 거의 보험료입니다.",
+     "audio": "audio/n-3/97a7edb9388741c4.wav",
+     "frames": 51,
+     "cap": null
+    },
+    {
+     "text": "이번엔 연봉 1억.",
+     "audio": "audio/n-3/4081ea8c3be58931.wav",
+     "frames": 43,
+     "cap": null
+    },
+    {
+     "text": "빠지는 돈은 180만원쯤으로 커지고요.",
+     "audio": "audio/n-3/29d3d20a3f7e333a.wav",
+     "frames": 85,
+     "cap": null
+    },
+    {
+     "text": "그중 세금이 109만원, 절반이 넘어요.",
+     "audio": "audio/n-3/30bf1027d7d744c7.wav",
+     "frames": 68,
+     "cap": null
+    }
+   ],
+   "frames": 427,
+   "data": {
+    "pic": "bg/n3/board/n3_donuts.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "mo",
+   "lines": [
+    {
+     "text": "세금이 보험료보다 많아지는 건 연봉 8천 칸부터예요.",
+     "audio": "audio/n-3/ecd9c0e44213d8db.wav",
+     "frames": 99,
+     "cap": null
+    },
+    {
+     "text": "보험료 네 가지는 월급에 같은 비율로 붙고, 소득세만 많이 벌수록 더 가파르게 붙습니다.",
+     "audio": "audio/n-3/318cf675cb1a0e45.wav",
+     "frames": 161,
+     "cap": null
+    }
+   ],
+   "frames": 260,
+   "data": {
+    "part": "blocks",
+    "title": "보험료는 같은 비율, 소득세는 가파르게",
+    "sub": null,
+    "chapter": "3",
+    "source": "국민연금법 · 국민건강보험법·노인장기요양보험법·고용보험료징수법 시행령 · 소득세법 시행령 간이세액표 · 파이어맵 계산",
+    "p": {
+     "seed": "N-3-blocks",
+     "insLabel": "보험료 넷",
+     "taxLabel": "소득세",
+     "axis": "연봉별 · 세전 월급 중 빠지는 비율(%)",
+     "insAt": 0.05,
+     "taxAt": 0.5,
+     "flatAt": 1.0,
+     "steepAt": 1.5,
+     "circleAt": 0.8,
+     "cols": [
+      {
+       "label": "3천",
+       "ins": [
+        0.0437,
+        0.03307,
+        0.00434,
+        0.00828
+       ],
+       "tax": 0.01283,
+       "insPct": "8.9%",
+       "taxPct": "1.3%"
+      },
+      {
+       "label": "5천",
+       "ins": [
+        0.04521,
+        0.03422,
+        0.0045,
+        0.00857
+       ],
+       "tax": 0.05032,
+       "insPct": "9.2%",
+       "taxPct": "5.0%"
+      },
+      {
+       "label": "7천",
+       "ins": [
+        0.04587,
+        0.03472,
+        0.00456,
+        0.00869
+       ],
+       "tax": 0.07966,
+       "insPct": "9.4%",
+       "taxPct": "8.0%"
+      },
+      {
+       "label": "8천",
+       "ins": [
+        0.04607,
+        0.03487,
+        0.00458,
+        0.00873
+       ],
+       "tax": 0.10069,
+       "insPct": "9.4%",
+       "taxPct": "10.1%"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "kind": "mo",
+   "lines": [
+    {
+     "text": "그런데 국민연금에는 끝이 있어요.",
+     "audio": "audio/n-3/3e5761135b6ed4b7.wav",
+     "frames": 64,
+     "cap": null
+    },
+    {
+     "text": "연금은 한 달 659만원까지만 보험료를 붙입니다.",
+     "audio": "audio/n-3/8287a19755639bbb.wav",
+     "frames": 106,
+     "cap": null
+    },
+    {
+     "text": "그래서 연봉이 높은 칸에서는 연금 보험료가 그 끝에 닿아요.",
+     "audio": "audio/n-3/978cd56df5ad5d3f.wav",
+     "frames": 106,
+     "cap": null
+    },
+    {
+     "text": "31만원 정도에서 더 늘지 않습니다.",
+     "audio": "audio/n-3/6acd5c767675506d.wav",
+     "frames": 67,
+     "cap": null
+    },
+    {
+     "text": "이게 다음 장에서 숫자 하나를 바꿉니다.",
+     "audio": "audio/n-3/7f35b835cfed01c4.wav",
+     "frames": 67,
+     "cap": null
+    }
+   ],
+   "frames": 410,
+   "data": {
+    "part": "cap",
+    "title": "국민연금에는 끝이 있다",
+    "sub": null,
+    "chapter": "3",
+    "source": "국민연금법 · 국민연금공단 기준소득월액 상한(2026.7~2027.6) · 파이어맵 계산",
+    "p": {
+     "seed": "N-3-cap",
+     "cap": 313020,
+     "capLabel": "연금은 월급 659만원까지만",
+     "capAt": 1.15,
+     "stopText": "31만원에서 멈춤",
+     "stopAt": 3.1,
+     "axis": "연봉별 · 국민연금 보험료(내 몫) 한 달",
+     "bars": [
+      {
+       "label": "3천",
+       "v": 109250,
+       "at": 0.08
+      },
+      {
+       "label": "4천",
+       "v": 148810,
+       "at": 0.21000000000000002
+      },
+      {
+       "label": "5천",
+       "v": 188380,
+       "at": 0.34
+      },
+      {
+       "label": "6천",
+       "v": 228000,
+       "at": 0.47000000000000003
+      },
+      {
+       "label": "7천",
+       "v": 267560,
+       "at": 0.6
+      },
+      {
+       "label": "8천",
+       "v": 307130,
+       "at": 0.73
+      },
+      {
+       "label": "1억",
+       "v": 313020,
+       "at": 2.1
+      },
+      {
+       "label": "1억 2천",
+       "v": 313020,
+       "at": 2.3200000000000003
+      },
+      {
+       "label": "1억 5천",
+       "v": 313020,
+       "at": 2.54
+      }
+     ]
+    }
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "연봉이 올랐는데 월급은 왜 별로 안 늘까요. 정말 많이 묻는 질문이에요.",
+     "audio": "audio/n-3/4679752c111993a7.wav",
+     "frames": 117,
+     "cap": null
+    }
+   ],
+   "frames": 117,
+   "data": {
+    "n": "4장",
+    "q": "1천만원 오를 때 통장은 얼마 느나"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "먼저 크게 보면, 연봉이 5천에서 1억으로 두 배가 될 때요.",
+     "audio": "audio/n-3/490590cac592b14a.wav",
+     "frames": 113,
+     "cap": null
+    },
+    {
+     "text": "통장은 1.8배쯤밖에 안 됩니다.",
+     "audio": "audio/n-3/c2e936484c1c39ff.wav",
+     "frames": 73,
+     "cap": null
+    }
+   ],
+   "frames": 186,
+   "data": {
+    "pic": "bg/n3/board/n3_x18.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "연봉이 천만원 오르면, 세전 월급은 83만원쯤 늘어납니다.",
+     "audio": "audio/n-3/e70203699bdb0fff.wav",
+     "frames": 138,
+     "cap": null
+    },
+    {
+     "text": "그중 통장에 얼마가 남는지 칸마다 셌어요.",
+     "audio": "audio/n-3/cedb9be32f983487.wav",
+     "frames": 82,
+     "cap": null
+    }
+   ],
+   "frames": 220,
+   "data": {
+    "src": "bg/n3/stock/6771533.mp4",
+    "license": "Pexels 6771533 무료(Max Vakhtbovych)",
+    "say": "오른 연봉, 통장에는?",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "3천에서 4천으로 오를 때는요.",
+     "audio": "audio/n-3/c5c2b079baa0b45a.wav",
+     "frames": 57,
+     "cap": null
+    },
+    {
+     "text": "69만원 정도가 남아요.",
+     "audio": "audio/n-3/bb148a4f4c227ee2.wav",
+     "frames": 47,
+     "cap": null
+    },
+    {
+     "text": "그 위로 7천까지는 칸마다 남는 돈이 거의 같습니다.",
+     "audio": "audio/n-3/d8fa2ed7881251a9.wav",
+     "frames": 106,
+     "cap": null
+    },
+    {
+     "text": "그런데 7천에서 8천으로 갈 때는 뚝 줄어요.",
+     "audio": "audio/n-3/2ed2521459807b53.wav",
+     "frames": 105,
+     "cap": null
+    },
+    {
+     "text": "55만원 정도만 남습니다.",
+     "audio": "audio/n-3/e56cd4c3849192c8.wav",
+     "frames": 49,
+     "cap": null
+    }
+   ],
+   "frames": 364,
+   "data": {
+    "pic": "bg/n3/board/n3_raise_table.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "오른 돈의 삼분의 이 정도만 남는 칸입니다.",
+     "audio": "audio/n-3/da450121a63a0a09.wav",
+     "frames": 75,
+     "cap": null
+    }
+   ],
+   "frames": 75,
+   "data": {
+    "src": "bg/n3/stock/9823115.mp4",
+    "license": "Pexels 9823115 무료(Afonso Oliveira)",
+    "say": "남는 몫이 줄어드는 칸",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "이유는 소득세율 계단이에요.",
+     "audio": "audio/n-3/61079e16a1c4fed2.wav",
+     "frames": 58,
+     "cap": null
+    },
+    {
+     "text": "연봉이 아니라, 연봉에서 이것저것 빼고 남은 돈이 5천만원을 넘으면요.",
+     "audio": "audio/n-3/8c5b8d42f085ac38.wav",
+     "frames": 128,
+     "cap": null
+    },
+    {
+     "text": "넘는 부분에만 15% 대신 24%가 붙습니다.",
+     "audio": "audio/n-3/44edda756ae9e53e.wav",
+     "frames": 103,
+     "cap": null
+    },
+    {
+     "text": "바로 이 칸에서, 이것저것 빼고 남은 돈이 그 선을 넘는 거예요.",
+     "audio": "audio/n-3/1f2756a3b0853d34.wav",
+     "frames": 119,
+     "cap": null
+    }
+   ],
+   "frames": 408,
+   "data": {
+    "pic": "bg/n3/board/n3_taxsteps.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그런데 8천에서 1억으로 가는 칸은 다시 올라가요.",
+     "audio": "audio/n-3/eea503630dacda3d.wav",
+     "frames": 92,
+     "cap": null
+    }
+   ],
+   "frames": 92,
+   "data": {
+    "src": "bg/n3/stock/28587785.mp4",
+    "license": "Pexels 28587785 무료(Oleh Bachynskyi)",
+    "say": "다시 올라가는 칸",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "70%쯤 남습니다.",
+     "audio": "audio/n-3/97b29b7e1fda412c.wav",
+     "frames": 44,
+     "cap": null
+    },
+    {
+     "text": "앞에서 본 국민연금 상한 때문이에요. 이쯤부터는 연금 보험료가 더 안 늘거든요.",
+     "audio": "audio/n-3/4fa6027bc91acc6a.wav",
+     "frames": 136,
+     "cap": null
+    }
+   ],
+   "frames": 180,
+   "data": {
+    "pic": "bg/n3/board/n3_raise_table_b.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그래서 연봉 이야기를 할 때는 오른 연봉을 통장 금액으로 바꿔 보세요.",
+     "audio": "audio/n-3/0349c753a2977f02.wav",
+     "frames": 123,
+     "cap": null
+    },
+    {
+     "text": "같은 인상이라도, 어느 칸이냐에 따라 한 달에 10만원 넘게 차이가 납니다.",
+     "audio": "audio/n-3/a17692ba07f8b718.wav",
+     "frames": 137,
+     "cap": null
+    }
+   ],
+   "frames": 260,
+   "data": {
+    "src": "bg/n3/stock/8783211.mp4",
+    "license": "Pexels 8783211 무료(RDNE Stock project)",
+    "say": "통장 금액으로 바꿔 보기",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그럼 1억 위에서는 어떨까요.",
+     "audio": "audio/n-3/e3d8b9bf32c1e02a.wav",
+     "frames": 51,
+     "cap": null
+    },
+    {
+     "text": "1억에서 1억 2천만원으로 오르면요.",
+     "audio": "audio/n-3/9e12c999e39376e9.wav",
+     "frames": 63,
+     "cap": null
+    },
+    {
+     "text": "오른 돈의 65%가 통장에 남습니다.",
+     "audio": "audio/n-3/e211fd7d7984c6fd.wav",
+     "frames": 70,
+     "cap": null
+    },
+    {
+     "text": "거기서 1억 5천만원으로 가면 더 내려가요.",
+     "audio": "audio/n-3/af3780e2d3f475be.wav",
+     "frames": 77,
+     "cap": null
+    },
+    {
+     "text": "56%예요.",
+     "audio": "audio/n-3/7737796b5b7c6873.wav",
+     "frames": 38,
+     "cap": null
+    },
+    {
+     "text": "오른 돈에서 절반 조금 넘게만 남는 거죠.",
+     "audio": "audio/n-3/8371703c967c9617.wav",
+     "frames": 75,
+     "cap": null
+    },
+    {
+     "text": "이 칸에서는 연금이 이미 끝에 닿아 있어서, 더 떼는 돈 대부분이 소득세거든요.",
+     "audio": "audio/n-3/9d28ca8c5dcdbe22.wav",
+     "frames": 125,
+     "cap": null
+    }
+   ],
+   "frames": 499,
+   "data": {
+    "pic": "bg/n3/board/n3_raise_top.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "검색창에는 거꾸로 묻는 분도 많습니다. 세후 300이면 연봉이 얼마냐고요.",
+     "audio": "audio/n-3/bcbd2e06629d70fe.wav",
+     "frames": 126,
+     "cap": null
+    }
+   ],
+   "frames": 126,
+   "data": {
+    "n": "5장",
+    "q": "거꾸로: 통장 300만원이 되려면"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "통장에 한 달 300만원이 찍히려면요.",
+     "audio": "audio/n-3/edbfa3c32296f139.wav",
+     "frames": 70,
+     "cap": null
+    }
+   ],
+   "frames": 70,
+   "data": {
+    "pic": "bg/n3/board/n3_rev_q.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "연봉 4,100만원쯤이 필요합니다.",
+     "audio": "audio/n-3/f387a67e7e4fc5ac.wav",
+     "frames": 66,
+     "cap": null
+    },
+    {
+     "text": "줄에서는 백 명 중 앞에서 마흔네 명 안, 한가운데보다 조금 앞이에요.",
+     "audio": "audio/n-3/39a3bb1471d98961.wav",
+     "frames": 122,
+     "cap": null
+    }
+   ],
+   "frames": 188,
+   "data": {
+    "pic": "bg/n3/board/n3_rev300.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "mo",
+   "lines": [
+    {
+     "text": "통장 400만원이면,",
+     "audio": "audio/n-3/2bc1595a9b1c7645.wav",
+     "frames": 43,
+     "cap": null
+    },
+    {
+     "text": "연봉 5,680만원쯤입니다.",
+     "audio": "audio/n-3/c6e3aab1a720b967.wav",
+     "frames": 63,
+     "cap": null
+    },
+    {
+     "text": "500만원은요,",
+     "audio": "audio/n-3/f0d1d88ae701a018.wav",
+     "frames": 32,
+     "cap": null
+    },
+    {
+     "text": "7,330만원쯤이고요.",
+     "audio": "audio/n-3/ae1e561aff8cdcad.wav",
+     "frames": 54,
+     "cap": null
+    },
+    {
+     "text": "600만원이 되려면,",
+     "audio": "audio/n-3/2b7cfec2e4eecc4a.wav",
+     "frames": 40,
+     "cap": null
+    },
+    {
+     "text": "9,100만원 정도가 필요합니다.",
+     "audio": "audio/n-3/4179ecc62aa1b587.wav",
+     "frames": 55,
+     "cap": null
+    },
+    {
+     "text": "칸 사이를 보시면 하나가 보여요.",
+     "audio": "audio/n-3/e225c66703055c92.wav",
+     "frames": 54,
+     "cap": null
+    },
+    {
+     "text": "맨 아래 한 칸은 연봉이 1,580만원 더 있으면 되는데요.",
+     "audio": "audio/n-3/fcf2ab86b29723ed.wav",
+     "frames": 102,
+     "cap": null
+    },
+    {
+     "text": "맨 위 한 칸은 1,770만원이 더 들어요.",
+     "audio": "audio/n-3/129250f18127afaa.wav",
+     "frames": 81,
+     "cap": null
+    },
+    {
+     "text": "통장을 같은 100만원씩 올리려 해도, 위로 갈수록 연봉은 더 많이 올라야 하는 거죠.",
+     "audio": "audio/n-3/0143ef21afd2e5d6.wav",
+     "frames": 138,
+     "cap": null
+    }
+   ],
+   "frames": 662,
+   "data": {
+    "part": "stairs",
+    "title": "같은 100만원, 더 높아지는 계단",
+    "sub": null,
+    "chapter": "5",
+    "source": "소득세법 시행령 간이세액표 · 4대 보험 법령 요율 · 파이어맵 계산(1인·식대 비과세 월 20만원)",
+    "p": {
+     "seed": "N-3-stairs",
+     "axis": "통장 한 달 목표 → 필요한 연봉",
+     "gapAt": 6.3,
+     "unitAt": 9.05,
+     "steps": [
+      {
+       "goal": "통장 300만원",
+       "pay": "4,100만원",
+       "v": 4100,
+       "at": 0,
+       "openAt": 0
+      },
+      {
+       "goal": "400만원",
+       "pay": "5,680만원",
+       "v": 5680,
+       "at": 0.05,
+       "openAt": 1.1
+      },
+      {
+       "goal": "500만원",
+       "pay": "7,330만원",
+       "v": 7330,
+       "at": 2.05,
+       "openAt": 3.1
+      },
+      {
+       "goal": "600만원",
+       "pay": "9,100만원",
+       "v": 9100,
+       "at": 4.05,
+       "openAt": 5.1
+      }
+     ],
+     "gaps": [
+      {
+       "text": "+1,580만원",
+       "at": 7.3
+      },
+      {
+       "text": "+1,650만원",
+       "at": 7.75
+      },
+      {
+       "text": "+1,770만원",
+       "at": 8.35
+      }
+     ]
+    }
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "앞 장의 세율 계단을 거꾸로 보면 이렇습니다.",
+     "audio": "audio/n-3/cfd3ec0ea78724d1.wav",
+     "frames": 88,
+     "cap": null
+    }
+   ],
+   "frames": 88,
+   "data": {
+    "src": "bg/n3/stock/4992563.mp4",
+    "license": "Pexels 4992563 무료(Ketut Subiyanto)",
+    "say": "세율 계단을 거꾸로",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그래서 '세후 얼마'라는 말을 들으면, 이 표처럼 연봉으로 바꿔서 맞춰 보세요.",
+     "audio": "audio/n-3/039847b1a701348e.wav",
+     "frames": 131,
+     "cap": null
+    }
+   ],
+   "frames": 131,
+   "data": {
+    "src": "bg/n3/stock/7535095.mp4",
+    "license": "Pexels 7535095 무료(Mikhail Nilov)",
+    "say": "세후를 연봉으로",
+    "side": "left",
+    "from": 124
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "이 연봉도 조건에 따라 움직입니다.",
+     "audio": "audio/n-3/c789985cf5c8997f.wav",
+     "frames": 59,
+     "cap": null
+    },
+    {
+     "text": "식대 비과세가 없는 회사라면, 통장 400만원을 받는 데 연봉이 앞의 표보다 90만원쯤 더 필요해요.",
+     "audio": "audio/n-3/7aab256b17fefdd8.wav",
+     "frames": 182,
+     "cap": null
+    },
+    {
+     "text": "반대로 배우자와 자녀 둘을 부양가족으로 올린 네 식구라면요.",
+     "audio": "audio/n-3/301c224290c36c11.wav",
+     "frames": 131,
+     "cap": null
+    },
+    {
+     "text": "같은 통장 금액에, 앞의 표보다 연봉이 260만원쯤 덜 필요합니다.",
+     "audio": "audio/n-3/f0ed492a8fd6a282.wav",
+     "frames": 138,
+     "cap": null
+    }
+   ],
+   "frames": 510,
+   "data": {
+    "pic": "bg/n3/board/n3_rev_cond.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "같은 '세후 400'이 사람마다 다른 연봉을 뜻하는 이유예요.",
+     "audio": "audio/n-3/3995c6e8c10f6775.wav",
+     "frames": 104,
+     "cap": null
+    },
+    {
+     "text": "그 차이가 어디서 오는지는 다음 장에서 봅니다.",
+     "audio": "audio/n-3/7314107b02547fa3.wav",
+     "frames": 76,
+     "cap": null
+    }
+   ],
+   "frames": 180,
+   "data": {
+    "src": "bg/n3/stock/5923592.mp4",
+    "license": "Pexels 5923592 무료(RDNE Stock project)",
+    "say": "사람마다 다른 연봉",
+    "side": "left",
+    "from": 105
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "처음에 본 357만원으로 돌아가 볼게요.",
+     "audio": "audio/n-3/9ed2e2cc128b2059.wav",
+     "frames": 72,
+     "cap": null
+    }
+   ],
+   "frames": 72,
+   "data": {
+    "n": "6장",
+    "q": "같은 연봉, 다른 통장"
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "다른 영상에 이런 댓글이 있었어요. 실제로는 그보다 훨씬 적게 들어온다고요.",
+     "audio": "audio/n-3/1d704ec4a6e03a91.wav",
+     "frames": 134,
+     "cap": null
+    }
+   ],
+   "frames": 134,
+   "data": {
+    "src": "bg/n3/stock/7822029.mp4",
+    "license": "Pexels 7822029 무료(RDNE Stock project)",
+    "say": "훨씬 적게 들어온다는 댓글",
+    "side": "left",
+    "from": 91
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "답글은 이랬습니다. 비과세가 아예 없는 회사라 더 적게 들어온다고요.",
+     "audio": "audio/n-3/d119235215ebc7ef.wav",
+     "frames": 136,
+     "cap": null
+    },
+    {
+     "text": "맞는 말이에요. 식대 비과세가 없는 회사라면 같은 연봉에서 352만원 정도입니다.",
+     "audio": "audio/n-3/a052aa1a79d0cda3.wav",
+     "frames": 164,
+     "cap": null
+    },
+    {
+     "text": "한 달 5만원쯤 차이가 나요.",
+     "audio": "audio/n-3/a92574a9fea36437.wav",
+     "frames": 56,
+     "cap": null
+    },
+    {
+     "text": "급여명세서에 '비과세' 줄이 있는지 한번 보세요.",
+     "audio": "audio/n-3/151815347e15c9b1.wav",
+     "frames": 74,
+     "cap": null
+    }
+   ],
+   "frames": 430,
+   "data": {
+    "pic": "bg/n3/board/n3_nontax.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "가족 수로도 달라집니다.",
+     "audio": "audio/n-3/bce865141b71a853.wav",
+     "frames": 42,
+     "cap": null
+    },
+    {
+     "text": "배우자와, 여덟 살부터 스무 살 사이 자녀 둘이 있으면요.",
+     "audio": "audio/n-3/d0913843f2910ab8.wav",
+     "frames": 95,
+     "cap": null
+    }
+   ],
+   "frames": 137,
+   "data": {
+    "src": "bg/n3/stock/6771533.mp4",
+    "license": "Pexels 6771533 무료(Max Vakhtbovych)",
+    "say": "가족 수로도 달라진다",
+    "side": "left",
+    "from": 148
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "연봉 5천이면, 혼자일 때보다 한 달 16만원 정도 더 들어옵니다.",
+     "audio": "audio/n-3/3b0c177056860aba.wav",
+     "frames": 126,
+     "cap": null
+    },
+    {
+     "text": "연봉 1억이면 그보다 많은 30만원쯤 더 들어오고요.",
+     "audio": "audio/n-3/fff9b947f3910eef.wav",
+     "frames": 94,
+     "cap": null
+    },
+    {
+     "text": "달마다 떼는 소득세가 가족 수 칸마다 다르게 정해져 있어서 그렇습니다.",
+     "audio": "audio/n-3/f70d80f190922deb.wav",
+     "frames": 107,
+     "cap": null
+    },
+    {
+     "text": "회사에 부양가족 신고가 안 돼 있으면 달마다 더 떼고, 연말정산 때 돌려받아요.",
+     "audio": "audio/n-3/239a1852b429371c.wav",
+     "frames": 135,
+     "cap": null
+    }
+   ],
+   "frames": 462,
+   "data": {
+    "pic": "bg/n3/board/n3_family.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그리고 달마다 떼는 세금의 크기를 직접 고를 수도 있습니다.",
+     "audio": "audio/n-3/f0fbb76f98968b46.wav",
+     "frames": 102,
+     "cap": null
+    }
+   ],
+   "frames": 102,
+   "data": {
+    "src": "bg/n3/stock/3202364.mp4",
+    "license": "Pexels 3202364 무료(cottonbro studio)",
+    "say": "떼는 크기를 고른다",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "회사는 나라가 정한 표대로 세금을 떼는데요, 그보다 덜 떼거나 더 떼도록 회사에 신청할 수 있어요.",
+     "audio": "audio/n-3/a06cb45159d46c2b.wav",
+     "frames": 166,
+     "cap": null
+    },
+    {
+     "text": "기준보다 덜 떼기, 그대로 떼기, 더 떼기 중에 고르시면 돼요.",
+     "audio": "audio/n-3/402cb792fe3f6f10.wav",
+     "frames": 118,
+     "cap": null
+    },
+    {
+     "text": "연봉 1억으로 볼게요.",
+     "audio": "audio/n-3/8c46219f1136fec2.wav",
+     "frames": 38,
+     "cap": null
+    },
+    {
+     "text": "가장 적게 떼는 쪽을 고르면, 달마다 통장이 22만원 정도 늘어납니다.",
+     "audio": "audio/n-3/650e2c9f4f4ac4ee.wav",
+     "frames": 131,
+     "cap": null
+    },
+    {
+     "text": "대신 덜 뗀 만큼 연말정산 때 한꺼번에 더 내게 될 수 있어요.",
+     "audio": "audio/n-3/7128642809240a76.wav",
+     "frames": 107,
+     "cap": null
+    }
+   ],
+   "frames": 560,
+   "data": {
+    "pic": "bg/n3/board/n3_8020.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "한 해 세금 자체가 줄어드는 건 아니고, 내는 때만 바뀌는 거예요.",
+     "audio": "audio/n-3/40cf0e0654f3c7c7.wav",
+     "frames": 108,
+     "cap": null
+    }
+   ],
+   "frames": 108,
+   "data": {
+    "src": "bg/n3/stock/28587785.mp4",
+    "license": "Pexels 28587785 무료(Oleh Bachynskyi)",
+    "say": "내는 때만 바뀐다",
+    "side": "left",
+    "from": 300
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그런데 여기 함정이 하나 있습니다.",
+     "audio": "audio/n-3/c7355e3436a3301a.wav",
+     "frames": 62,
+     "cap": null
+    },
+    {
+     "text": "달마다 떼는 소득세는 미리 어림해서 떼는 값이에요.",
+     "audio": "audio/n-3/a0bf46ba8833a833.wav",
+     "frames": 104,
+     "cap": null
+    },
+    {
+     "text": "일 년 치 세금은 연말정산에서 정해지고, 그때 더 내거나 돌려받습니다.",
+     "audio": "audio/n-3/731354896288a981.wav",
+     "frames": 125,
+     "cap": null
+    },
+    {
+     "text": "그러니 오늘 본 통장 금액은 '보통 달' 금액이지, 일 년 최종 세후는 아니에요.",
+     "audio": "audio/n-3/b79b28fc597a43da.wav",
+     "frames": 126,
+     "cap": null
+    }
+   ],
+   "frames": 417,
+   "data": {
+    "pic": "bg/n3/board/n3_trap_yearend.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "이번엔 이런 댓글이에요. 난 왜 상위 25%인데 삶이 힘드냐.",
+     "audio": "audio/n-3/e335d04205a79f6d.wav",
+     "frames": 122,
+     "cap": null
+    }
+   ],
+   "frames": 122,
+   "data": {
+    "n": "7장",
+    "q": "평균 4,475만원과 '상위 25%'"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "백 명 중 앞에서 스물다섯 번째쯤 서 있는 사람들은요.",
+     "audio": "audio/n-3/2301fad9adc766c1.wav",
+     "frames": 104,
+     "cap": null
+    },
+    {
+     "text": "총급여가 5,727만원쯤입니다.",
+     "audio": "audio/n-3/be25da3213c690b4.wav",
+     "frames": 66,
+     "cap": null
+    },
+    {
+     "text": "통장에는 418만원쯤이고요.",
+     "audio": "audio/n-3/85ea3c5b1450424a.wav",
+     "frames": 57,
+     "cap": null
+    },
+    {
+     "text": "'상위권'이라는 말에서 떠올리는 금액보다 작게 느껴질 수 있습니다.",
+     "audio": "audio/n-3/8b3d50499f16cabf.wav",
+     "frames": 120,
+     "cap": null
+    }
+   ],
+   "frames": 347,
+   "data": {
+    "pic": "bg/n3/board/n3_top25_q.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그럼 자동완성에 자주 뜨는 '연봉 상위 10%'는요.",
+     "audio": "audio/n-3/1a222e9787edafea.wav",
+     "frames": 101,
+     "cap": null
+    }
+   ],
+   "frames": 101,
+   "data": {
+    "src": "bg/n3/stock/9823115.mp4",
+    "license": "Pexels 9823115 무료(Afonso Oliveira)",
+    "say": "자동완성에 뜨는 상위권",
+    "side": "left",
+    "from": 34
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "앞에서 열 번째쯤 사람들은 총급여가 9,117만원이에요.",
+     "audio": "audio/n-3/63d7901c15b9a34a.wav",
+     "frames": 111,
+     "cap": null
+    },
+    {
+     "text": "통장에는 616만원쯤 들어옵니다.",
+     "audio": "audio/n-3/e2bab7169368a8eb.wav",
+     "frames": 85,
+     "cap": null
+    }
+   ],
+   "frames": 196,
+   "data": {
+    "pic": "bg/n3/board/n3_top25_10.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "mo",
+   "lines": [
+    {
+     "text": "평균도 마찬가지예요.",
+     "audio": "audio/n-3/aeca8b7ac647615b.wav",
+     "frames": 40,
+     "cap": null
+    },
+    {
+     "text": "국세청 자료에서 직장인 평균 총급여는 4,475만원입니다.",
+     "audio": "audio/n-3/d272c173cd120105.wav",
+     "frames": 123,
+     "cap": null
+    },
+    {
+     "text": "그런데 줄 한가운데, 쉰 번째 근처 사람들은 3천4백만원 정도예요.",
+     "audio": "audio/n-3/a5f8ef459e911e3f.wav",
+     "frames": 149,
+     "cap": null
+    },
+    {
+     "text": "맨 앞, 백 명 중 한 명꼴인 상위 1%는요.",
+     "audio": "audio/n-3/c49aeb53725114d8.wav",
+     "frames": 74,
+     "cap": null
+    },
+    {
+     "text": "평균 3억 5천만원 가까이 벌어요.",
+     "audio": "audio/n-3/513c409797fc2eb6.wav",
+     "frames": 63,
+     "cap": null
+    },
+    {
+     "text": "이런 위쪽 사람들이 평균을 위로 끌어올려요.",
+     "audio": "audio/n-3/6a8c24ea7f9788f5.wav",
+     "frames": 71,
+     "cap": null
+    },
+    {
+     "text": "그래서 '평균 연봉'은 가운데 사람보다 1천만원쯤 높게 나와요.",
+     "audio": "audio/n-3/9682041340fe306c.wav",
+     "frames": 110,
+     "cap": null
+    },
+    {
+     "text": "맨 앞, 열 명 중 한 명꼴까지 빼고 다시 셈하면, 평균이 가운데 값과 거의 같아집니다.",
+     "audio": "audio/n-3/a36585cc53ea75f4.wav",
+     "frames": 151,
+     "cap": null
+    }
+   ],
+   "frames": 781,
+   "data": {
+    "part": "mean",
+    "title": "평균은 위쪽으로 쏠린다",
+    "sub": null,
+    "chapter": "7",
+    "source": "국세청 근로소득 천분위(2024년 귀속, 2,108만 명) · 파이어맵 계산",
+    "p": {
+     "seed": "N-3-mean",
+     "xMax": 6000,
+     "ticks": [
+      0,
+      1000,
+      2000,
+      3000,
+      4000,
+      5000,
+      6000
+     ],
+     "unit": "한 해 총급여 · 만원",
+     "mean": {
+      "v": 4475,
+      "label": "평균",
+      "text": "4,475만원",
+      "at": 1.25
+     },
+     "mid": {
+      "v": 3417,
+      "label": "가운데쯤",
+      "text": "3,417만원",
+      "at": 2.15,
+      "stay": "그대로"
+     },
+     "top": {
+      "label": "상위 1%",
+      "text": "평균 3억 4,630만원",
+      "at": 3.3,
+      "pull": 5.1
+     },
+     "gap": {
+      "text": "약 1천만원 차이",
+      "at": 6.35
+     },
+     "rope": false,
+     "cut": {
+      "v": 3395,
+      "label": "상위 10% 빼면",
+      "text": "3,395만원",
+      "at": 7.35
+     }
+    }
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "하나 더 있어요. 이 줄 2,108만 명에는 한 해 중 몇 달만 일한 사람도 들어 있습니다.",
+     "audio": "audio/n-3/1b5a3caa31dce20c.wav",
+     "frames": 170,
+     "cap": null
+    },
+    {
+     "text": "맨 뒤 구간은 한 해 총급여 평균이 21만원이에요.",
+     "audio": "audio/n-3/34a1ba74d7674fb0.wav",
+     "frames": 102,
+     "cap": null
+    },
+    {
+     "text": "그래서 '일 년 내내 일한 직장인 중 몇 번째'와는 조금 다릅니다.",
+     "audio": "audio/n-3/082e38c02d8e467c.wav",
+     "frames": 116,
+     "cap": null
+    },
+    {
+     "text": "내 자리를 볼 때는 이 줄이 어떤 사람들인지까지 같이 보세요.",
+     "audio": "audio/n-3/589ca179d56a3088.wav",
+     "frames": 115,
+     "cap": null
+    }
+   ],
+   "frames": 503,
+   "data": {
+    "pic": "bg/n3/board/n3_partyear.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "오늘 본 숫자는 전부 같은 계산식에서 나왔습니다.",
+     "audio": "audio/n-3/87c570552578e9e7.wav",
+     "frames": 96,
+     "cap": null
+    }
+   ],
+   "frames": 96,
+   "data": {
+    "n": "8장",
+    "q": "내 숫자 넣기"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그 계산식이 파이어맵 월급 계산기에 들어 있어요. 내 연봉, 식대 비과세, 가족 수를 넣으면 통장 금액이 바로 나와요.",
+     "audio": "audio/n-3/3e972bd9786b1b72.wav",
+     "frames": 193,
+     "cap": null
+    },
+    {
+     "text": "보험료율과 간이세액표는 올해 기준이고요.",
+     "audio": "audio/n-3/04166325167b8e5a.wav",
+     "frames": 68,
+     "cap": null
+    }
+   ],
+   "frames": 261,
+   "data": {
+    "pic": "bg/n3/board/n3_calc_site.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "국세청 줄은 2024년 귀속 자료입니다.",
+     "audio": "audio/n-3/9dd58e84db71c241.wav",
+     "frames": 87,
+     "cap": null
+    },
+    {
+     "text": "연말정산 뒤 실제 세금은 사람마다 다를 수 있어요.",
+     "audio": "audio/n-3/4d3639c022d91d79.wav",
+     "frames": 91,
+     "cap": null
+    }
+   ],
+   "frames": 178,
+   "data": {
+    "pic": "bg/n3/board/n3_sameformula.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "오늘 영상이 도움이 되셨다면 구독으로 다음 편도 받아 보세요.",
+     "audio": "audio/n-3/cce101cf7349be01.wav",
+     "frames": 110,
+     "cap": null
+    }
+   ],
+   "frames": 110,
+   "data": {
+    "src": "bg/n3/stock/7687970.mp4",
+    "license": "Pexels 7687970 무료(Kindel Media)",
+    "say": null,
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "다음 영상에서 다시 뵙겠습니다.",
+     "audio": "audio/n-3/c2bffcda9bf2cf50.wav",
+     "frames": 58,
+     "cap": null
+    },
+    {
+     "text": "",
+     "audio": null,
+     "frames": 525,
+     "cap": null
+    }
+   ],
+   "frames": 658,
+   "data": {
+    "pic": "bg/n3/over/n3_end_r41.png",
+    "license": "Pexels 8890683 무료(Yaroslav Shuraev) + 파이어맵 글자",
+    "baked": true,
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "cx": 50,
+    "cy": 50
+   }
+  }
+ ],
+ "badge": ""
+}

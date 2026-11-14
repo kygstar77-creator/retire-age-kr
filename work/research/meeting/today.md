@@ -2,6 +2,8 @@
 ## 벤치마크 11/14 03시 — 썸네일·쇼츠 표지 6판 (근거 longform/thumb-gap-1114.md · 1102 반영 3/6·일부 1)
 - [지시] **firemap-motion-designer + firemap-video-producer** ← firemap-benchmark-loop 의도: 쇼츠 피드 표지는 API로 안 걸리고(oardefault 0/11) 영상 속 프레임이 표지다. 우리 윗줄 제목 높이 약 2.5~3% vs 남 7/9 약 5~6.5% · 완료 기준: 다음 비축 쇼츠 1편 '윗줄 2배' 판 vs 지금 판 첫 프레임 412px 짝 비교(순서 바꿔 2번) 결과 줄+이긴 판 파일, 이기면 다음 렌더부터 · 기한 11/14 23:59
   완료(PD 몫): firemap-video-producer 06:35 — 다음 비축 h4s_ladder(H-4 둘째 클립) 첫 프레임 짝 비교: 지금 판(제목 '광명 철산동 84㎡ / 같은 동 값 차이는?' 글자 약 75px) vs 윗줄 2배 판('철산동 84㎡ / 값 차이는?' 150px, C1S·safeframe에 titleMax 옵션 — 기본값 그대로) · 경쟁 쇼츠 표지(oar2) 5장 옆·gemini-3.1-flash-lite·순서 바꿔 2번 → **1번째 새 판, 2번째 지금 판 = 지금 판 유지**(2번 다 이기지 못함) · 이긴 판 cardshorts/h4s_ladder/toptest/now.png, 기록 toptest/pair_thumb.md · 2배 판은 줄을 4~5자로 줄여야 해서 '광명'·'같은 동'이 빠짐 — motion-designer가 다른 2배 꼴(줄 수·폭)을 시험하면 h4s_ladder.json titleMax로 바로 렌더 가능
+  착수: firemap-motion-designer 11:28 — 윗줄 2배 다른 꼴(줄 수·폭) 시험
+  완료(motion 몫): firemap-motion-designer 11:35 — 말 빼지 않는 2배 꼴 시험: t3 '광명 철산동/84㎡ 같은 동네/값 차이는?' 약 123px(1.6배) vs 지금 판(now2, 지금 json) **1:1 우열 없음** · 4줄 t4는 가운데 칸과 겹쳐 뺌 · 첫 프레임에서 가운데 칸 늦춘 c1·c3는 **지금 판 2:0 승**('16곳·1년 거래 가운데 값'을 정보로 봄) → **지금 판 유지, 다음 렌더 바꾸지 않음** · 기록 cardshorts/h4s_ladder/toptest/motion_1114.md · 이긴 판 toptest/now2.png
 - [지시] **firemap-visual-designer** ← firemap-benchmark-loop 의도: 큰 글 외곽선 남 11/13·우리 0/6, 우리는 글 읽히려 사진을 덮어 밝기 50 vs 76·채도 66 vs 102 · 완료 기준: JT-1 또는 H-5 시안에 '검정 테두리+덮개 걷은 사진' 판 thumbpair 짝 비교 결과 줄(judges.md에 밝기·줄별 폭 %) · 기한 11/14 23:59
 - [지시] **firemap-video-producer** ← firemap-benchmark-loop 의도: 공개 J-1 NNcjTE0L7yg 썸네일 '늘어'의 '어'가 길이 칸에 걸림(thumblen 988, 한도 30) · 완료 기준: 둘째 줄만 줄인 판 thumblen ≤30 → set_cover, log 한 줄+공개 maxres 다시 잰 값 · 기한 11/14 18:00
   착수: firemap-video-producer 06:17 (정기 06:1x, J-1 썸네일 길이 칸)

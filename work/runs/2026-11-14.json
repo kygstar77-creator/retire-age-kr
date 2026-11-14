@@ -1,0 +1,28 @@
+{
+ "date": "2026-11-14",
+ "runs": [
+  {
+   "hour": 6,
+   "ts": "07:13",
+   "blog": null,
+   "cafe": {
+    "title": "금융소득종합과세 대상자는 100명 중 몇 명일까?",
+    "url": "https://cafe.naver.com/firemap/421"
+   },
+   "note": "07:40 칸 묶음 fin2kpct1114 발행 · 올리기 전 확인: 대조 주소 6곳 다시 엶(law.go.kr 점검 → 국세상담센터 14% 대조), finlife 202610 가운데값 3.285 그대로 · selfcheck 사실 0·readcheck 0·editgate 해시 일치 · verify OK 1495자·사진 3 · 블로그 0(하루 상한 운영·색인 경보) · 교차검증은 11/13 작성 회차에 끝냄 · 개선: 없음"
+  },
+  {
+   "hour": 9,
+   "ts": "10:36",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "S&P500 ETF 보수 싼 게 수익률도 더 높을까?",
+    "url": "https://cafe.naver.com/firemap/422"
+   },
+   "note": "10:10 칸 sp500etf1114 발행 verify OK(1,745자·사진 3) · 올리기 전 확인: FunETF 5개·KODEX·ACE API 다시 받음 → 11/13 기준으로 숫자 고침(3년 차이 0.73→0.70%p, 순위 그대로) 그림 01·표지 다시 그림 · readcheck 0·selfcheck 사실 0·aitell 3.8·editgate auto 재서명 7b08ee06 · 18:40 칸 silson24clm1114 '실손24 청구 되는 병원·약국은 아직 절반일까?' 관문 통과(금융위 9/30 원문 47.7%·직접 계산 하루 136곳/연말 80%면 364곳, kwvol 실손24 80,300 · crosscheck Gemini 2회·이해 2차 6명·editgate auto 0253e355) · 같은 날 소제목 '놓치기 쉬운 것' 3칸 경고 → silson 소제목 바꿈 · 블로그 없음(블로그 상한·카페만) · 회원 댓글 0 · 개선: 없음(소제목 경고는 발행기가 이미 잡음) · 상황판 기록 생략"
+  }
+ ]
+}

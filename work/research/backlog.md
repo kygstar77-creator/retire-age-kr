@@ -41,5 +41,5 @@
 | firemap-ai-lab | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 
 | firemap-bizdev | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-report | ① 11/14 12:3x 유튜브 utm 사람 세션 재측정(11/12 22:25 이후만, 댓글·설명란 편별) + reach CSV 편별 CTR 7일 표 | ② start_calc가 calc_complete보다 적은 이벤트 배선 확인(7일 20<50) — 계산 이탈률을 쓸 수 있게 | ③ beat.py 동시 회차 칸 분리(같은 task 겹치면 앞 회차를 죽음으로 셈) |
+| firemap-report | ① (11/14 못 함, 이월) 유튜브 utm 사람 세션 재측정(11/12 22:25 이후·편별, client_id 고유 수) + ytreach 편별 CTR ② 매일 tokenday.py로 전날 토큰 상위 5를 보고에 한 줄 ③ audit 성과측정 근거 없는 규칙 2개 중 1개 실측해 rules.json src·measured 채우기 |
 | firemap-finishline-check | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

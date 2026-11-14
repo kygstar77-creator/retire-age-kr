@@ -81,4 +81,20 @@
 | 신고 30일 | 법 제3조 | S8 https://www.law.go.kr/법령/부동산거래신고등에관한법률 |
 
 # 올리기 전 확인
-- (발행 회차 11/14 12:10이 채운다: 허가구역 2027 연장 공고·실거래 다시 받기 여부·대조 칸 주소 전부 다시 엶·기준일:·바뀐 것:·새로 찾은 것:)
+- 2026-11-14 12:24 firemap-write 확인
+- 영상 MRQqitzEgDw 공개 확인(YouTube oEmbed 200 — 공개 영상만 응답)
+- 대조 칸 출처 주소 전부 다시 엶(11/14):
+  - https://apis.data.go.kr/1613000/RTMSDataSvcAptTradeDev — 응답 옴(S1) · 공개 화면 https://rt.molit.go.kr 200
+  - https://apis.data.go.kr/1613000/RTMSDataSvcAptRent — 응답 옴(S2)
+  - https://www.korea.kr/news/policyNewsView.do?newsId=148950973 — 200(S3)
+  - https://gris.gg.go.kr/gnPlan/selectLandTransactionZone.do — 200, 광명시 등 12개 ′25.10.20~′26.12.31(2025-1219) 그대로(S4)
+  - https://www.korea.kr/news/policyNewsView.do?newsId=148964215 — 200(S5)
+  - https://eiec.kdi.re.kr/policy/materialView.do?num=287030 — 200(S6)
+  - https://eum.go.kr/web/gs/gv/gvGosiDet.jsp?mobile_yn=&seq=611901 — 200(S7)
+  - https://www.law.go.kr/법령/부동산거래신고등에관한법률 — 오늘도 시스템 점검 화면, 11/13 받은 조문(신고 30일)으로 대조(S8)
+  - 질문 출처 https://www.youtube.com/shorts/1zsr7B98MJc · https://www.youtube.com/watch?v=1bo4O19bpJk · https://www.youtube.com/watch?v=kuB0GEfUuTM — 공개 그대로(oEmbed 200)
+- 허가구역 2027년 연장 공고: 없음(gris 공고 목록 그대로 ′26.12.31, 웹 검색 11/14에도 연장 확정 보도 없음) → c05 '2026년 12월 31일까지' 그대로 맞음
+- 실거래는 다시 받지 않음(11/12 받은 값 그대로 — 기준일 줄에 적혀 있음)
+- 기준일: 2026-11-12(국토부 실거래) · 제도 2026-11-14 확인
+- 바뀐 것: 없음
+- 새로 찾은 것: 광명동·가학동·노온사동·옥길동 일대 토지거래허가구역(공공주택지구, 2024-03-02~2027-03-01)은 아파트 허가구역과 별개 — 글 범위(철산동 아파트) 밖이라 안 넣음

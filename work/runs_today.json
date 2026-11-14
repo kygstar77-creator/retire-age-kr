@@ -23,6 +23,19 @@
     "url": "https://cafe.naver.com/firemap/422"
    },
    "note": "10:10 칸 sp500etf1114 발행 verify OK(1,745자·사진 3) · 올리기 전 확인: FunETF 5개·KODEX·ACE API 다시 받음 → 11/13 기준으로 숫자 고침(3년 차이 0.73→0.70%p, 순위 그대로) 그림 01·표지 다시 그림 · readcheck 0·selfcheck 사실 0·aitell 3.8·editgate auto 재서명 7b08ee06 · 18:40 칸 silson24clm1114 '실손24 청구 되는 병원·약국은 아직 절반일까?' 관문 통과(금융위 9/30 원문 47.7%·직접 계산 하루 136곳/연말 80%면 364곳, kwvol 실손24 80,300 · crosscheck Gemini 2회·이해 2차 6명·editgate auto 0253e355) · 같은 날 소제목 '놓치기 쉬운 것' 3칸 경고 → silson 소제목 바꿈 · 블로그 없음(블로그 상한·카페만) · 회원 댓글 0 · 개선: 없음(소제목 경고는 발행기가 이미 잡음) · 상황판 기록 생략"
+  },
+  {
+   "hour": 12,
+   "ts": "12:52",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "광명 아파트 시세, 서울 25개 구 사이 몇 번째일까?",
+    "url": "https://cafe.naver.com/firemap/423"
+   },
+   "note": "12:40 칸 h4pair1114(H-4 짝 글, MRQqitzEgDw 공개 확인) · 올리기 전 확인: 대조 출처 11곳 다시 엶, gris 허가구역 ′26.12.31 그대로·2027 연장 공고 없음, law.go.kr 점검 중 → 11/13 조문 · 바뀐 것 없음 · verify OK 2121/2121자·사진 3/3 · 블로그 없음(하루 상한) · 회원 댓글 0 · 개선: 없음 — 확인 창 '계속할까요' TimeoutError 났지만 발행·verify 정상"
   }
  ]
 }

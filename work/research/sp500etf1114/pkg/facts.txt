@@ -1,0 +1,35 @@
+[오늘 찾은 것]
+2026-11-14 09:3x · FunETF 상품 정보 5개 다시 받음(raw/funetf_*.txt, 26.11.13 기준, 11/13 값은 raw1113bak/) · NAV 1년·3년·5년: TIGER 1.77·78.09·93.88 / KODEX 1.8·78.52·95.13 / ACE 1.79·77.97·94.59 / RISE 1.96·78.46·94.29 / SOL 1.6·77.82·- · KODEX 기초지수 1년 2.1·3년 80.31 · 실부담비율 그대로(0.0939·0.1067·0.0922·0.0973·0.1424) · 총보수 그대로 · 순자산 TIGER 210,046억·KODEX 105,529억·ACE 38,994억·RISE 15,315억·SOL 2,963억
+2026-11-14 · 삼성자산운용 KODEX API(https://m.samsungfund.com/api/v1/kodex/product/2ETFE4.do, raw1114_kodex.json) yieldYear1 1.80·3 78.52·5 95.13·idxYieldYear1 2.10 — FunETF와 같음 · 한국투자 ACE API(raw1114_ace.json)는 stdDt 20261112 그대로(갱신 전)
+[계산 11/13 기준] 3년 최고 KODEX 78.52 − 최저 SOL 77.82 = 0.70%p · 1억원 → 178,520,000 vs 177,820,000 → 70만원 · 5년 KODEX 95.13 − TIGER 93.88 = 1.25%p · 1년 RISE 1.96 최고·SOL 1.60 최저 · 3년 순위 KODEX 78.52 > RISE 78.46 > TIGER 78.09 > ACE 77.97 > SOL 77.82 (11/12와 같은 순서) · 1억원 3년 뒤: KODEX 1억 7,852만·RISE 1억 7,846만·TIGER 1억 7,809만·ACE 1억 7,797만·SOL 1억 7,782만 · 순자산 TIGER 21조 46억원·SOL 2,963억원
+
+[오늘 찾은 것]
+2026-11-13 · FunETF 상품 정보 5개(https://www.funetf.co.kr/product/etf/view/KR7360750004 · KR7379800008 · KR7360200000 · KR7379780002 · KR7433330002, raw/funetf_*.txt) · 11/12 기준 NAV 수익률(분배금 재투자 세전) 1년·3년·5년, 총보수·TER·실부담비율·순자산·상장일
+  TIGER 1.87·81.82·93.69 / 총보수 0.0068% TER 0.06% 실부담 0.0939% / 순자산 209,543억 / 상장 2020.08.07
+  KODEX 1.91·82.29·94.93 / 0.0062% 0.07% 0.1067% / 105,227억 / 2021.04.09 (기초지수 2.21·84.12·98.46)
+  ACE 1.89·81.72·94.39 / 0.0047% 0.07% 0.0922% / 38,979억 / 2020.08.07
+  RISE 2.05·82.16·94.07 / 0.0047% 0.07% 0.0973% / 15,254억 / 2021.04.09
+  SOL 1.70·81.56·(5년 없음) / 0.0047% 0.08% 0.1424% / 2,960억 / 2022.06.21 / 금년 분배 10번·작년 12번(나머지 넷은 3~4번)
+  FunETF 문구: '수익률에는 실비용(총보수+기타비용+매매중개수수료율)이 이미 반영' · '기준가격(NAV)는 분배금 재투자를 가정한 세전 수익률'
+2026-11-13 · 삼성자산운용 KODEX 미국S&P500 상품 API(https://m.samsungfund.com/api/v1/kodex/product/2ETFE4.do, raw/kodex_2ETFE4.json) · yieldYear1 1.91 · yieldYear3 82.29 · yieldYear5 94.93 · 총보수 0.0062 — FunETF와 같음
+2026-11-13 · 한국투자신탁운용 ACE 미국S&P500 API(https://papi.aceetf.co.kr/api/funds/K55101D78195, raw/ace.json) · stdDt 20261112 · yy1 1.887 · yy3 81.716 · yy5 94.387 · '총보수 0.0047%' · 분배 '지급(매분기)' — FunETF와 같음
+2026-11-13 · 미래에셋 TIGER 미국S&P500 상품 페이지(https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7360750004, raw/tiger.txt) · 총보수 연 0.0068% · 분배 지급기준일 1,4,7,10월 마지막 영업일
+2026-11-13 · 네이버페이 증권 ETF 정보(https://m.stock.naver.com/api/stock/379780/integration 외 433330·360750) · totalFee RISE 0.0047 · SOL 0.0047 · TIGER 0.0068 · 순자산 RISE 1조 5,254억 · SOL 2,960억 · TIGER 20조 9,543억
+2026-11-13 · KB자산운용 'ETF 비용은 총보수만 보면 될까?'(https://kbam.co.kr/insights/guide/etf-total-expense-ratio-vs-actual-cost, raw/kbam_cost.txt) · 실부담비용 = 총보수+기타비용+매매·중개수수료 · 기타비용 = 지수사용료·회계감사비 등 · 매일 가격에서 차감돼 수익률에 녹아 있음 · 금융투자협회 전자공시·ETF CHECK에서 확인
+2026-11-12 · 삼성자산운용 공지 66913(https://www.samsungfund.com/etf/lounge/notice-view.do?no=66913) · KODEX 미국대표지수 ETF 유보 배당 15분기 분배 → 2029년 1월 기준일까지 (sp500dist1112 S2)
+2026-11-12 · 소득세법 제129조 배당 100분의 14(+지방소득세 10% = 15.4%) (https://www.law.go.kr/법령/소득세법/제129조, sp500dist1112 S6)
+2026-11-13 · 야후 파이낸스 일별 종가·분배(https://query1.finance.yahoo.com/v8/finance/chart/360750.KS?range=5y&interval=1d&events=div 외 4) · 종가+분배 재투자 직접 계산 3년 77.17~78.27%(차이 1.10%p) — 순위·차이 크기 대조용, 글에는 안 씀
+
+2026-11-13 · KODEX 기초지수(S&P500 원화·배당 재투자 총수익) 1년 2.21% · 3년 84.12% (S2 idxYieldYear1·3, FunETF 379800 기초지수 줄 같음)
+2026-11-13 · FunETF 3개월 평균 괴리율 TIGER 0.06% · KODEX 0.05% · ACE 0.05% · RISE 0.07% · SOL 0.04% (S1)
+2026-11-12 · 우리 카페 지난 글 #413 'S&P500 분배금은 왜 KODEX만 두 배일까?'(https://cafe.naver.com/firemap/413, sp500dist1112/pkg/published.txt)
+
+[계산] calc.py → calc_out.txt
+3년 최고 KODEX 82.29 − 최저 SOL 81.56 = 0.73%p · 1억원 → 182,290,000 vs 181,560,000 → 73만원
+1억 8,229만원 · 1억 8,156만원
+5년 최고 KODEX 94.93 − 최저 TIGER 93.69 = 1.24%p
+1년 최고 RISE 2.05 · 최저 SOL 1.70 (차이 0.35%p)
+1억원 1년 총보수 ACE·RISE·SOL 4,700원 · KODEX 6,200원 · TIGER 6,800원
+1억원 1년 실부담 ACE 92,200(약 9만 2천원) · TIGER 93,900 · RISE 97,300 · KODEX 106,700 · SOL 142,400(약 14만 2천원)
+실부담/총보수 TIGER 14배 · KODEX 17배 · ACE 20배 · RISE 21배 · SOL 30배
+3년 순위 KODEX 82.29 > RISE 82.16 > TIGER 81.82 > ACE 81.72 > SOL 81.56 (ACE 4등) · 실부담 순위 SOL > KODEX > RISE > TIGER > ACE

@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-14 09:29",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "실손24",
+ "num": "100곳 중 48곳",
+ "sub": "병원·의원·약국 연결 비율",
+ "label": "9월 28일 기준",
+ "src": "금융위원회 보도자료",
+ "icon": "shield-plus",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 168,
+ "num_px": 124,
+ "sub_px": 62,
+ "board": [
+  "fin2kpct1114",
+  "newrenew1112",
+  "dfopt1112",
+  "newold1112",
+  "skhdiv1112",
+  "k200etf1113",
+  "sbdep1112",
+  "realdep1112",
+  "sp500dist1112",
+  "convrate1112"
+ ]
+}

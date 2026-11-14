@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>시스템 점검</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="법제처">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <style>
+      html,body {width:100%;height:100%;padding:0;margin:0;font-weight:500;font-family:"Noto Sans", "Malgun Gothic", "맑은고딕", "돋음";letter-spacing:-0.06rem;}
+			body {position:relative;background-color:#e9f2f6;}			
+			.popup-wrap {width:725px;position:absolute;top:50%;left:50%;transform:translate(-50%, calc(-50% - 42px));}
+			.popup-wrap.wide {width:1200px;}			
+			.popup-wrap .logo {margin-bottom:10px;}			
+			.popup-content {border-radius:10px;overflow:hidden}
+			.popup-header {min-height:75px;line-height:1.2;background-color:#3860b7;padding:15px 0;font-size:36px;color:#fff;font-weight:700;text-align:center;letter-spacing:-0.25rem;box-sizing:border-box;}
+			.popup-header.alert {display:flex;justify-content:center;align-items:center;min-height:110px;}
+			.popup-header.alert:before {content:"";display:block;width:76px;height:70px;background:url(images/img_header_alert.png) no-repeat 50% 50%;margin-right:5px;}
+			.popup-header span {display:inline-block;margin-left:25px;font-size:17px;font-weight:400;text-align:left;letter-spacing:-0.08rem;}			
+			.popup-body {display:flex;flex-direction:column;justify-content:center;justify-items:center;min-height:275px;padding:30px 0;background:url(images/bg.png) no-repeat top 50% right 45px #fff;box-sizing:border-box;}
+			.popup-body.columns {display:flex;flex-direction:row;justify-content:center;align-items:flex-start;background:none;background-color:#fff;}
+			.popup-body.columns > div {width:50%;padding:0 20px;}
+			.popup-body ul {padding:0;margin:0;list-style:none;}
+			.popup-body ul li {font-size:15px;margin-bottom:6px;}
+			.popup-body ul.dash li {padding-left:25px;}
+			.popup-body ul li:last-child {margin-bottom:0;}
+			.popup-body ul li .bold {font-weight:700;margin-right:10px;}
+			.popup-body ul li a {display:inline-block;height:19px;padding:0 7px;margin-left:3px;border:1px solid #ddd;border-radius:3px;background-color:#fff;font-size:12px;color:#666;font-weight:700;line-height:19px;vertical-align:bottom;text-decoration:none;}
+			.popup-body .tit {position:relative;display:inline-block;margin-left:25px;margin-bottom:10px;font-size:17px;color:#3860b7;font-weight:700;}
+			.popup-body .tit:before {content:"";position:absolute;bottom:8px;left:-25px;display:inline-block;width:12px;height:7px;border:2px solid #3860b7;border-top:0;border-right:0;transform: rotate(-45deg);}
+			.popup-body .tit > span {font-size:14px;color:#000;font-weight:400;}
+			.popup-body .txt {color:#000;text-align:center;line-height:1.3;transform:translateX(-12%);letter-spacing:-0.08rem}
+			.popup-body .txt.gray {color:#666;}			
+			.popup-body .box-gray {padding:10px;margin:20px 0;border-radius:10px;background-color:#f4f4f4;}
+			.popup-body .box-gray .top {display:block;margin-bottom:5px;font-size:17px;color:#00afcc;font-weight:700;line-height:1.0;text-align:center;}
+			.popup-body .links {column-count:2;}
+			.popup-body .links li {margin-bottom:9px;}
+			.popup-body .orange {color:#e66700;}
+			.popup-footer {min-height:35px;padding:5px 0;background-color:#465061;font-size:18px;color:#fff;line-height:35px;text-align:center;letter-spacing:-0.04rem}			
+    </style>
+</head>
+<body>
+	<div class="popup-wrap wide">
+		<div class="logo">
+			<img src="images/logo.png" alt="법제처">
+		</div>
+		<div class="popup-content">
+			<div class="popup-header alert">시스템 점검
+				<span>시스템 작업(중단) 시간 :<span style="font-weight:700;margin-left:10px;">11월 13일(금) 21:00 ~ 11월 14일(토) 21:00</span></span>
+			</div>
+			<div class="popup-body columns">
+				<div class="column">
+					<div class="box-gray">
+						<span class="top">모바일앱서비스는 중단없이 사용 가능합니다.</span>
+                        <!--
+						<ul>
+							<li>- <span class="bold">사법정보공개포털</span> 알림통계 → 공지사항 <a href="https://portal.scourt.go.kr/pgp/index.on?m=PGP401M01&l=N&c=900">바로가기</a></li>
+							<li>- <span class="bold">국회법률정보시스템</span> 법률관련정보 → 법제참고자료 <a href="https://likms.assembly.go.kr/law/lawsLawyInqyList2010.do?genActiontypeCd=2ACT1010&genDoctreattypeCd=&genMenuId=menu_serv_nlaw_lawt_5020&procWorkId=">바로가기</a></li>
+							<li>- <span class="bold">한국법령정보원</span> 공지사항 <a href="https://www.lawinfo.or.kr/pc/notice/notice01.php">바로가기</a></li>
+							<li>- <span class="bold">법제처 블로그</span> 현행공포법령 <a href="https://blog.naver.com/PostList.naver?blogId=molegin&categoryNo=44&skinType=&skinId=&from=menu&userSelectMenu=true">바로가기</a></li>
+							<li>- <span class="bold">법제처 누리집</span> 법제업무정보 → 현행공포법령 <a href="https://moleg.go.kr/board.es?mid=a10109050000&bid=0082">바로가기</a></li>
+						</ul>
+                        -->
+					</div>
+					<span class="tit">법령정보 열람 관련 대체사이트</span>
+					<ul class="dash">
+						<li>- 사법정보공개포털 <a href="https://portal.scourt.go.kr/">바로가기</a></li>
+						<li>- 국회법률정보시스템 <a href="https://likms.assembly.go.kr/law">바로가기</a></li>
+					</ul>
+					<ul style="margin-top: 15px;">
+						<li><span class="tit">영문법령 열람 대체 사이트</span>
+                            <ul class="dash">
+                                <li>- 한국법제연구원 | 대한민국영문법령 <a href="https://elaw.klri.re.kr/">바로가기</a></li>
+                            </ul>
+                        </li>
+						<li><span class="tit">조약 열람 대체 사이트</span>
+                            <ul class="dash">
+                                <li>- 외교부 조약정보시스템 <a href="https://treatyweb.mofa.go.kr/usr/main/main.do;jsessionid=GPj32oFfOye7Z7lxyKyXeRt4hAlLuOqV2RYjkA1d.treatyinter03">바로가기</a></li>
+                            </ul>
+                        </li>
+						<li><span class="tit">법제처 법령해석례 열람 대체 사이트</span>
+                            <ul class="dash">
+                                <li>- 국민참여입법센터 <a href="https://opinion.lawmaking.go.kr/nl4li/lsItptEmp/list?mode=all">바로가기</a></li>
+                            </ul>
+                        </li>
+					</ul>
+				</div>
+				<div class="column">
+					<span class="tit">행정규칙 제공 사이트 목록
+						<span>(행정규칙의 경우 각 부처 홈페이지를 확인 부탁드립니다.)</span>	
+					</span>	
+					<ul class="links dash">
+						<li>1. 국토교통부 <a href="https://www.molit.go.kr/USR/I0204/m_45/lst.jsp">바로가기</a></li>
+						<li>2. 법무부 <a href="https://www.moj.go.kr/moj/206/subview.do">바로가기</a></li>
+						<li>3. 성평등가족부 <a href="https://www.mogef.go.kr/io/ind/io_ind_s030.do">바로가기</a></li>
+						<li>4. 중소벤처기업부 <a href="https://www.mss.go.kr/site/smba/ex/bbs/List.do?cbIdx=125&ext6=Y">바로가기</a></li>
+						<li>5. 경찰청 <a href="https://www.police.go.kr/user/bbs/BD_selectBbsList.do?q_bbsCode=1029">바로가기</a></li>
+						<li>6. 국가유산청 <a href="https://www.khs.go.kr/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_1014&mn=NS_03_01_04">바로가기</a></li>
+						<li>7. 식품의약품안전처 <a href="https://www.mfds.go.kr/brd/m_211/list.do">바로가기</a></li>
+						<li>8. 국세청 <a href="https://www.nts.go.kr/nts/na/ntt/selectNttList.do?mi=2205&bbsId=1120">바로가기</a></li>
+						<li>9. 국가보훈부 <a href="https://www.mpva.go.kr/mpva/selectBbsNttList.do?bbsNo=64&key=193">바로가기</a></li>
+						<li>10. 보건복지부 <a href="https://www.mohw.go.kr/board.es?mid=a10409020000&bid=0026">바로가기</a></li>
+						<li>11. 산업통상부 <a href="https://www.motir.go.kr/kor/article/ATCL0c554f816">바로가기</a></li>
+						<li>12. 공소청 <a href="https://www.spo.go.kr/site/spo/ex/board/List.do?cbIdx=1304">바로가기</a></li>
+						<li>13. 관세청 <a href="https://unipass.customs.go.kr/clip/index.do">바로가기</a></li>
+						<li>14. 기상청 <a href="https://www.kma.go.kr/kma/news/law_02.jsp">바로가기</a></li>
+						<li>15. 농촌진흥청 <a href="https://www.rda.go.kr/board/board.do?mode=list&prgId=law_rdalwEntry">바로가기</a></li>
+						<li>16. 병무청 <a href="https://open.mma.go.kr/caisGGGS/board/boardList.do?menu_id=mma0000135&gesipan_id=48">바로가기</a></li>
+						<li>17. 새만금개발청 <a href="https://www.saemangeum.go.kr/sda/brd/list.do?key=2009075580577">바로가기</a></li>
+						<li>18. 조달청 <a href="https://www.pps.go.kr/kor/bbs/list.do;jsessionid=tYvwRyp7a0c1Qq6xdpV8HP2e5nFq2w-NoOH823ls7G6bzueOK1gl!1646315335?key=00029">바로가기</a></li>
+						<li>19. 지식재산처 <a href="https://www.kipo.go.kr/ko/kpoBultnMgmt.do?menuCd=SCD0200639&parntMenuCd2=SCD0200280">바로가기</a></li>
+						<li>20. 공정거래위원회 <a href="https://www.ftc.go.kr/www/selectBbsNttList.do?bordCd=6&key=18&searchCtgry=1">바로가기</a></li>
+						<li>21. 국민권익위원회 <a href="https://www.acrc.go.kr/board.es?mid=a10503020000&bid=11">바로가기</a></li>
+						<li>22. 국가인권위원회 <a href="https://www.humanrights.go.kr/base/board/list?boardManagementNo=187&menuLevel=3&menuNo=85">바로가기</a></li>
+						<li>23. 국가교육위원회 <a href="https://www.ne.go.kr/user/bbs/BD_selectBbsList.do?q_bbsSn=1016">바로가기</a></li>
+						<li>24. 법제처 <a href="https://www.moleg.go.kr/esusr/mpbStaSts/stastsList.es?mid=a10110010000&srch_csf_cd=120001">바로가기</a></li>
+						<li>25. 농림축산식품부 <a href="https://www.mafra.go.kr/home/5686/subview.do">바로가기</a></li>
+						<li>26. 통일부 <a href="https://www.unikorea.go.kr/unikorea/policy/law/unistatute/">바로가기</a></li>
+						<li>27. 해양수산부 <a href="https://www.mof.go.kr/doc/ko/selectDocList.do?menuSeq=885&bbsSeq=35&listUpdtDt=2025-10-16++10%3A00">바로가기</a></li>
+						<li>28. 우주항공청 <a href="https://www.kasa.go.kr/kor/sub03_02.do">바로가기</a></li>
+						<li>29. 원자력안전위원회 <a href="https://www.nssc.go.kr/ko/cms/FR_CON/index.do?MENU_ID=970">바로가기</a></li>
+						<li>30. 고위공직자범죄수사처 <a href="https://cio.go.kr/board/list/128">바로가기</a></li>
+						<li>31. 중대범죄수사청 <a href="https://sci.go.kr/bbs/list.do?key=104301">바로가기</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="popup-footer">안내 문의: 1551-3060</div>
+		</div>
+	</div>
+</body>
+</html>

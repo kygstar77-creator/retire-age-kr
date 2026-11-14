@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-14 09:25",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "S&P500 ETF 5개",
+ "num": "3년 차이 0.70%p",
+ "sub": "보수 싼 순서와 달랐어요",
+ "label": "2026.11.13 기준",
+ "src": "FunETF·운용사 공시",
+ "icon": "chart-bar",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 116,
+ "num_px": 92,
+ "sub_px": 62,
+ "board": [
+  "fin2kpct1114",
+  "newrenew1112",
+  "dfopt1112",
+  "newold1112",
+  "skhdiv1112",
+  "k200etf1113",
+  "sbdep1112",
+  "realdep1112",
+  "sp500dist1112",
+  "convrate1112"
+ ]
+}

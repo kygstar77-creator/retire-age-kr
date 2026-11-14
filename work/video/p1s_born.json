@@ -1,0 +1,249 @@
+{
+ "fps": 30,
+ "name": "p1s_born",
+ "v": 5,
+ "look": "live",
+ "question": [
+  "국민연금 수령나이 · 출생연도",
+  "몇 년생부터 65세? 하루 차이로 한 살 갈린다"
+ ],
+ "hot": "한 살",
+ "answer": {
+  "label": "국민연금 받기 시작하는 나이(출생연도별)",
+  "items": [
+   "1961~64년생: 63세",
+   "1965~68년생: 64세",
+   "1969년생부터: 65세"
+  ],
+  "arrow": false,
+  "note": "68세는 국회 토론회 제안 · 법 개정 아님"
+ },
+ "base": "국민연금법 부칙(법률 제8541호) 제8조 · 국민연금공단 노령연금 안내 · 68세: 2026년 국회 토론회 발제안(법 개정 아님)",
+ "long": "vsL7mojDW7w",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "지금 법",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "지금 법으로는",
+      "1969년생부터 65세",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "지금 법으로는 1969년생부터 모두 65세에 받아요.",
+     "audio": "audio/p1s/8cf5da7c92b0c19b.wav",
+     "frames": 125
+    }
+   ],
+   "frames": 125
+  },
+  {
+   "kind": "vs",
+   "label": "하루 차이",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "1968년생",
+      "64세부터",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "1969년생",
+      "65세부터",
+      "",
+      146,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 2,
+     "text": "한 해의 마지막 날 태어난 사람과, 하루 뒤 새해 첫날 태어난 사람이 있어요.",
+     "audio": "audio/p-1/c004979e4737c732.wav",
+     "frames": 146
+    },
+    {
+     "n": 3,
+     "text": "둘은 국민연금을 받기 시작하는 나이가 한 살 다릅니다.",
+     "audio": "audio/p-1/7b54da100a6806e7.wav",
+     "frames": 121
+    }
+   ],
+   "frames": 267
+  },
+  {
+   "kind": "vs",
+   "label": "네 해마다",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "1953~56년생",
+      "61세",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "1957~60년생",
+      "62세",
+      "",
+      54,
+      "ink"
+     ],
+     [
+      "1961~64년생",
+      "63세",
+      "",
+      108,
+      "ink"
+     ],
+     [
+      "1965~68년생",
+      "64세",
+      "",
+      162,
+      "ink"
+     ],
+     [
+      "1969년생부터",
+      "65세",
+      "",
+      216,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "받는 나이는 네 해 묶음마다 한 살씩 늦춰졌습니다.",
+     "audio": "audio/p-1/3ed08f12b7c222c3.wav",
+     "frames": 96
+    },
+    {
+     "n": 5,
+     "text": "화면에서 내 칸을 찾아 보세요.",
+     "audio": "audio/p-1/19a6cebca0964737.wav",
+     "frames": 63
+    }
+   ],
+   "frames": 270
+  },
+  {
+   "kind": "vs",
+   "label": "68세?",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "요즘 도는 이야기",
+      "68세?",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "국회 토론회 발제안",
+      "제안일 뿐",
+      "",
+      124,
+      "ink"
+     ],
+     [
+      "법 개정",
+      "아직 없음",
+      "",
+      217,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "요즘 '받는 나이를 68세로 늦춘다'는 이야기도 많이 보셨을 거예요.",
+     "audio": "audio/p-1/c23a312abd344ccc.wav",
+     "frames": 124
+    },
+    {
+     "n": 7,
+     "text": "이건 국회 토론회에서 나온 발제안입니다.",
+     "audio": "audio/p-1/d6de8d9dca10ebb5.wav",
+     "frames": 93
+    },
+    {
+     "n": 8,
+     "text": "법이 바뀐 건 아니에요.",
+     "audio": "audio/p-1/8b2cc2f555d619fe.wav",
+     "frames": 75
+    }
+   ],
+   "frames": 328
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/p1s_born/stock/cut/paper_stack_1_f.mp4",
+   "from": 0,
+   "frames": 125,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_born/stock/cut/cake_1_f.mp4",
+   "from": 125,
+   "frames": 146,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_born/stock/cut/star_candle_1_f.mp4",
+   "from": 271,
+   "frames": 121,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_born/stock/cut/book_flip_2_f.mp4",
+   "from": 392,
+   "frames": 96,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_born/stock/cut/cal_hand_2_f.mp4",
+   "from": 488,
+   "frames": 174,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_born/stock/cut/stamp_desk_1_f.mp4",
+   "from": 662,
+   "frames": 124,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_born/stock/cut/stamp_hand_1_f.mp4",
+   "from": 786,
+   "frames": 93,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_born/stock/cut/walk_boots_2_f.mp4",
+   "from": 879,
+   "frames": 111,
+   "start": 0
+  }
+ ],
+ "credits": "Anna Tarazevich · Artem Podrez · MART  PRODUCTION · Monstera Production · Sketch Benjamin · Taryn Elliott · Thirdman · https://kaboompics.com/"
+}

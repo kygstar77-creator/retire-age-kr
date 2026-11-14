@@ -332,7 +332,7 @@
 [scenes.60.data.p.top.label] 상위 1%
 [scenes.60.data.p.top.text] 평균 3억 4,630만원
 [scenes.60.data.p.gap.text] 약 1천만원 차이
-[scenes.60.data.p.cut.label] 상위 10% 빼면
+[scenes.60.data.p.cut.label] 하위 90%만
 [scenes.60.data.p.cut.text] 3,395만원
 [scenes.61.lines.0.text] 하나 더 있어요. 이 줄 2,108만 명에는 한 해 중 몇 달만 일한 사람도 들어 있습니다.
 [scenes.61.lines.1.text] 맨 뒤 구간은 한 해 총급여 평균이 21만원이에요.

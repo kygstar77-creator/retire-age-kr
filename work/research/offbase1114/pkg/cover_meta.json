@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-14 13:56",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "오피스텔 기준시가",
+ "num": "4년 새 -6%",
+ "sub": "서울만 +1.8%, 대구는 -20%",
+ "label": "세금 계산용 국세청 고시가격",
+ "src": "2023년 고시 대비 2027년 안 · 국세청 2026.11.12",
+ "icon": "building-2",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 132,
+ "num_px": 105,
+ "sub_px": 62,
+ "board": [
+  "h4pair1114",
+  "sp500etf1114",
+  "fin2kpct1114",
+  "newrenew1112",
+  "dfopt1112",
+  "newold1112",
+  "skhdiv1112",
+  "k200etf1113",
+  "sbdep1112",
+  "realdep1112"
+ ]
+}

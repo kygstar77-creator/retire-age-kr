@@ -29,7 +29,7 @@ for c in json.load(open(os.path.join(EP, 'bg_used.json'), encoding='utf-8')):
         credits.append('영상 일부: Yaroslav Shuraev / Pexels (https://www.pexels.com/video/woman-looking-through-a-glass-window-8890683/)')
     else: credits.append(c['desc_line'])
 FIRST2 = ['연봉 5천이면 통장에는 한 달 357만원쯤 들어와요(본인 1인·식대 비과세 월 20만원, 2026년 보험료율·간이세액표 기준).',
-          '국세청 2024년 귀속 근로소득 자료로 줄 세우면 연봉 5천은 직장인 백 명 중 앞에서 서른세 명 안이고, 3천부터 1억까지 연봉이 천만원 오를 때 통장이 얼마 느는지도 셌습니다.']
+          '국세청 2024년 귀속 근로소득 자료로 줄 세우면 연봉 5천은 직장인 백 명 중 앞에서 서른세 명 안이에요. 3천부터 1억까지 연봉이 천만원 오를 때 통장이 얼마 느는지도 셌습니다.']
 TPL = '\n'.join(FIRST2) + '''
 
 전체 표와 계산 근거(카페): {CAFE}

@@ -36,6 +36,29 @@
     "url": "https://cafe.naver.com/firemap/423"
    },
    "note": "12:40 칸 h4pair1114(H-4 짝 글, MRQqitzEgDw 공개 확인) · 올리기 전 확인: 대조 출처 11곳 다시 엶, gris 허가구역 ′26.12.31 그대로·2027 연장 공고 없음, law.go.kr 점검 중 → 11/13 조문 · 바뀐 것 없음 · verify OK 2121/2121자·사진 3/3 · 블로그 없음(하루 상한) · 회원 댓글 0 · 개선: 없음 — 확인 창 '계속할까요' TimeoutError 났지만 발행·verify 정상"
+  },
+  {
+   "hour": 16,
+   "ts": "16:55",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "아파트 1층, 전세도 매매만큼 쌀까?",
+    "url": "https://cafe.naver.com/firemap/424"
+   },
+   "note": "write-b 16:40 회차 · 16:10 칸 floor1114(write-b 몫, 미발행이던 것) · 올리기 전 확인: 국토부 9·10월 매매·전월세 다시 받아 재계산 — 1층 매매 215→221건(207건 더 쌈, 94%·7.2% 그대로)·전세 661→663건·차이 2,100→2,250만원·갱신 4.2→4.1% → 본문·그림 01·02 고침, law.go.kr 여전히 점검(11/12·13 사본) · readcheck 0·selfcheck 사실 0(어미 1 고침)·aitell 3.2·editgate auto 재서명 1e0fa4f6 · crosscheck 다시 안 돌림(숫자 갱신만, 11/13 통과) · verify OK 1344/1344자·사진 3/3 · 확인 창 TimeoutError 났지만 발행 정상 · 회원 댓글 0 · 블로그 없음 · 개선: 없음"
+  },
+  {
+   "hour": 18,
+   "ts": "18:56",
+   "blog": null,
+   "cafe": {
+    "title": "실손24 청구 되는 병원·약국은 아직 절반일까?",
+    "url": "https://cafe.naver.com/firemap/425"
+   },
+   "note": "18:40 칸 silson24clm1114 발행 verify OK(1,330/1,330자·사진 3/3) · 올리기 전 확인 10:0x(1일 안)+금융위 검색 다시 · 블로그 없음(카페만 정책) · 새 글 sav1115(11/15 07:40) 관문 통과: 출처 ECOS 121Y002·722Y001·finlife 9·10월·2차 1 · crosscheck Gemini 시간 초과→selfcheck 사실 0+Agent 원자료 재검산(지적 2 반영: 상품 51·50, 해석 완화) · 이해 3차 9명 · 개선: 없음(사실 검증 대체 경로로 막힘 없음)"
   }
  ]
 }

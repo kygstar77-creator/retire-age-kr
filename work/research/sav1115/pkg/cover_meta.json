@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-14 18:30",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "적금 금리",
+ "num": "실제 평균 3.21%",
+ "sub": "같은 달 예금은 3.57%",
+ "label": "2026년 9월 · 은행 신규 가입",
+ "src": "한국은행 경제통계",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 168,
+ "num_px": 124,
+ "sub_px": 62,
+ "board": [
+  "floor1114",
+  "h4pair1114",
+  "sp500etf1114",
+  "fin2kpct1114",
+  "newrenew1112",
+  "dfopt1112",
+  "newold1112",
+  "skhdiv1112",
+  "k200etf1113",
+  "sbdep1112"
+ ]
+}

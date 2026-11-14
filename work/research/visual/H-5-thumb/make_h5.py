@@ -1,5 +1,5 @@
 # H-5 썸네일(visual 2026-11-13 17시) — JT-1 make_jt1.py 복사, 사진·문구만 바꿈 + 알약 하나(N-2 thumb_A 꼴, 큰 글 아래 C-02, 줄별 폭 C-35).
-#   문구 ep/H-5/copy/titles.md v2 '썸네일 문구' 그대로: 흰 줄 '송도 84㎡ 전체 거래 중간 가격' / 큰 흰 '고점 때 9억이던 값' / 큰 주황 '지금 7억 3,500만원' · 알약 '2021년 고점 기준'
+#   문구 ep/H-5/copy/titles.md v2 '썸네일 문구' 그대로: 흰 줄 '송도 84㎡ 전체 거래 중간 가격' / 큰 흰 '고점 때 9억이던 값' / 큰 주황 '지금 7억 3,500만원' · 알약 '2021~22년 고점 vs 2026년 7~10월'(11/14 copywriter 1초 시험 고침)
 #   사실 calc2_out §1(고점 1년 중앙 9.00억 → 최근 2026.07~10 중앙 7.35억 = 82%), script 19·87행 자막. 사진 Pexels(photo/sources.json) — 얼굴 없음, 설명에 Incheon/Songdo 적힌 것만
 import os, sys
 from PIL import Image, ImageDraw, ImageFont
@@ -9,7 +9,7 @@ FONT = os.path.join(WORK, 'fonts'); W, HH = 1920, 1080; X0 = 80
 ORANGE, WHITE, INK = (255, 90, 0), (255, 255, 255), (10, 11, 14)
 BIG = ['고점 때 9억이던 값', '지금 7억 3,500만원']
 TOP = '송도 84㎡ 전체 거래 중간 가격'
-PILL = '2021년 고점 기준'
+PILL = '2021~22년 고점 vs 2026년 7~10월'
 
 
 def f(size, w='700'):

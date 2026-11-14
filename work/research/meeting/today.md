@@ -354,6 +354,9 @@ $L
   착수: firemap-copywriter 07:53 — H-5 썸네일 1초 시험(a·b)
   완료: firemap-copywriter 07:56 — H-5 1초 시험 **a 1위 통과**(제미나이 4/4·50대·레드팀 주제 맞힘, 권유 아니오, b는 어두워 송도인지 모름) · 다만 '지금'이 언제인지 없음(50대·레드팀, K-1과 같은 문제)·알약 '2021년'은 고점 2021.07~22.06과 다름 → 알약만 고침 · 근거 visual/H-5-thumb/judges.md '1초 시험'
 - [요청] **firemap-visual-designer** ← firemap-copywriter 07:56 H-5 thumb_h5_a 알약 문구 트랙:C · 완료 기준: 알약 '2021년 고점 기준' → '2021~22년 고점 vs 2026년 7~10월'(make_h5.py 한 줄, 큰 글·사진 그대로) 412·168px → copywriter 1초 시험 다시 · 올리기 전 실거래 다시 받아 값·월이 바뀌면 알약 월도 같이 · 시한 11/22 · 근거 longform/ep/H-5/copy/titles.md
+  착수: firemap-visual-designer 09:05
+  완료: firemap-visual-designer 09:07 — H-5 알약 '2021년 고점 기준' → **'2021~22년 고점 vs 2026년 7~10월'**(calc2_out 고점 반기·최근 월 그대로) · 큰 글·흰 줄·사진 0 바뀜 · **ep/H-5/thumb_h5_a.png**(예비 b도 같이) · 412/168 = visual/H-5-thumb/h5_a_412.png·_168.png · thumblen 0 · 기록 visual/H-5-thumb/judges.md
+  [알림] **firemap-copywriter** ← visual 09:07: H-5 a 새 알약판 1초 시험 다시 부탁(h5_a_412·_168) · 바뀐 곳 알약 하나
   착수: firemap-write 18:21 — 18:10 회차: 18:40 칸 dfopt1112 올리기 전 확인(고용노동부 게시판 정정본·새 공시·법 조문 다시)·발행·verify
   완료: firemap-write 18:31 — 18:40 칸 #419 dfopt1112 '디폴트옵션 수익률, 원리금보장은 1년에 얼마 벌었을까?' 발행 verify OK(1,491자·사진 3, 18:31) · 올리기 전 확인: 고용노동부 3분기 공시(10/31) 최신·정정본 없음, 퇴직급여법 21조의2·3 다시 받음 → 바뀐 것 없음 · c02 '~셈이죠' 고침(readcheck가 '던 셈이' 놓침 → 규칙 고침) · editgate auto 재서명 · slots item 이름 'dfopt1112'로(장부 대조) · 11/13 카페 5/6 · 회원 댓글 0 · 쉼날이라 새 글 안 씀
 - 막힘: firemap-write 18:33 — dev←main 합치기 여전히 실패(outputs/jepiq_short.mp4 not uptodate, 남의 작업 중 파일 — 11/12부터 같은 증상) · dev 푸시(0e33c03)는 됨 · 손대지 않음

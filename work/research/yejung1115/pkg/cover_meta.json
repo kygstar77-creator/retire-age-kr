@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-14 19:55",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "연말정산 미리보기",
+ "num": "더 낸 사람 17.9%",
+ "sub": "2024년 귀속 2,108만 명 중 377만 명",
+ "label": "국세청 국세통계 · 2024년 귀속",
+ "src": "국세청 국세통계포털(TASIS)",
+ "icon": "receipt",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 132,
+ "num_px": 105,
+ "sub_px": 60,
+ "board": [
+  "silson24clm1114",
+  "floor1114",
+  "h4pair1114",
+  "sp500etf1114",
+  "fin2kpct1114",
+  "newrenew1112",
+  "dfopt1112",
+  "newold1112",
+  "skhdiv1112",
+  "k200etf1113"
+ ]
+}

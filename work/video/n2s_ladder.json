@@ -1,0 +1,282 @@
+{
+ "fps": 30,
+ "name": "n2s_ladder",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "직장인 100명 중 내 월급 몇 등?",
+  "1등 = 가장 많이 받는 사람"
+ ],
+ "hot": "몇 등",
+ "answer": {
+  "label": "세전 월급 → 100명 중 몇 등",
+  "items": [
+   "150만원 79등 · 250만원 59등",
+   "350만원 38등 · 450만원 27등"
+  ],
+  "arrow": false,
+  "note": "2024년 12월 세전 월 보수 · 일자리 기준"
+ },
+ "base": "국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」 · 2024년 12월 세전 · 파이어맵 계산",
+ "long": "kXnAKjC-84Q",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "질문",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "직장인 100명",
+      "월급 순서로 한 줄",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "맨 앞 1등",
+      "가장 많이 받는 사람",
+      "",
+      87,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "내 월급, 직장인 100명을 한 줄로 세우면 몇 등일까요?",
+     "audio": "audio/n2s/6e7c55b787ff29be.wav",
+     "frames": 87
+    },
+    {
+     "n": 2,
+     "text": "맨 앞에 서는 1등이 가장 많이 받는 사람이고, 맨 뒤가 가장 적게 받는 사람입니다.",
+     "audio": "audio/n-2/70eba299b7ae0347.wav",
+     "frames": 139
+    }
+   ],
+   "frames": 226
+  },
+  {
+   "kind": "vs",
+   "label": "150",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "세전 150만원",
+      "79등쯤",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 3,
+     "text": "먼저 세전 150만원. 79등쯤입니다.",
+     "audio": "audio/n-2/772c9f6f001dedba.wav",
+     "frames": 110
+    }
+   ],
+   "frames": 110
+  },
+  {
+   "kind": "vs",
+   "label": "250",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "세전 250만원",
+      "59등쯤",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "다음은 세전 250만원. 59등쯤입니다.",
+     "audio": "audio/n-2/bacdffe57caf54a0.wav",
+     "frames": 110
+    }
+   ],
+   "frames": 110
+  },
+  {
+   "kind": "vs",
+   "label": "350",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "세전 350만원",
+      "38등쯤",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 5,
+     "text": "세전 350만원. 38등쯤입니다.",
+     "audio": "audio/n-2/9dc5a6f0ee1e484b.wav",
+     "frames": 92
+    }
+   ],
+   "frames": 92
+  },
+  {
+   "kind": "vs",
+   "label": "450",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "세전 450만원",
+      "27등쯤",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "세전 450만원. 27등쯤입니다. 여기까지 오면 꽤 앞쪽이죠.",
+     "audio": "audio/n-2/0ce96962b8d44080.wav",
+     "frames": 160
+    }
+   ],
+   "frames": 160
+  },
+  {
+   "kind": "vs",
+   "label": "맨 앞",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "월 1,000만원 이상",
+      "100명 중 4명",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 7,
+     "text": "맨 앞으로 가 볼까요. 한 달에 1,000만원 이상 받는 사람은 네 명뿐입니다.",
+     "audio": "audio/n-2/851f63c3ab4c57c2.wav",
+     "frames": 130
+    }
+   ],
+   "frames": 130
+  },
+  {
+   "kind": "vs",
+   "label": "세전 모르면",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "세전 모르면",
+      "통장 금액 + 10%쯤",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "통장 300만원 넘으면",
+      "+ 15%쯤",
+      "",
+      151,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 8,
+     "text": "세금 떼기 전 월급을 모르시면, 통장에 들어오는 돈에 10%쯤 더해 보세요.",
+     "audio": "audio/n-2/dd08877689e90fcf.wav",
+     "frames": 151
+    },
+    {
+     "n": 9,
+     "text": "통장에 300만원 넘게 들어오면, 세금이 늘어서 15%쯤 더해 보세요.",
+     "audio": "audio/n-2/c8f568dbe12bf8ee.wav",
+     "frames": 133
+    }
+   ],
+   "frames": 350
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/n2s_ladder/stock/cut/platform_0_87.mp4",
+   "from": 0,
+   "frames": 87,
+   "start": 0
+  },
+  {
+   "src": "bg/n2s_ladder/stock/cut/legs_1_139.mp4",
+   "from": 87,
+   "frames": 139,
+   "start": 0
+  },
+  {
+   "src": "bg/n2s_ladder/stock/cut/cross_0_110.mp4",
+   "from": 226,
+   "frames": 110,
+   "start": 0
+  },
+  {
+   "src": "bg/n2s_ladder/stock/cut/suit_0_110.mp4",
+   "from": 336,
+   "frames": 110,
+   "start": 0
+  },
+  {
+   "src": "bg/n2s_ladder/stock/cut/glass_1_92.mp4",
+   "from": 446,
+   "frames": 92,
+   "start": 0
+  },
+  {
+   "src": "bg/n2s_ladder/stock/cut/calc_1_160.mp4",
+   "from": 538,
+   "frames": 160,
+   "start": 0
+  },
+  {
+   "src": "bg/n2s_ladder/stock/cut/night_15_130.mp4",
+   "from": 698,
+   "frames": 130,
+   "start": 0
+  },
+  {
+   "src": "bg/n2s_ladder/stock/cut/road_1_151.mp4",
+   "from": 828,
+   "frames": 151,
+   "start": 0
+  },
+  {
+   "src": "bg/n2s_ladder/stock/cut/sky_1_199.mp4",
+   "from": 979,
+   "frames": 199,
+   "start": 0
+  }
+ ],
+ "credits": "Argenis Matos · Ben Kyselka · Beyzaa Yurtkuran · Coverr · Ketut Subiyanto · MART  PRODUCTION · Marc Espejo · RDNE Stock project"
+}

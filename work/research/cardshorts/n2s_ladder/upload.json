@@ -1,0 +1,29 @@
+{
+ "name": "n2s_ladder",
+ "ep": "N-2",
+ "from_long": "kXnAKjC-84Q",
+ "mp4": "work/video/out/n2s_ladder_c1_ds.mp4",
+ "publishAt": "2026-11-21T19:20:00+09:00",
+ "publish_plan": "11/21 19:20 쇼츠 칸(비축 0이던 칸) · 연봉·자산 축 — 11/20 환율·ETF 뒤, 부동산·주식 아님 · N-2 두 번째 클립(n2s_middle 10/19 '한가운데·평균'과 다른 질문: 월급 계단별 등수) · 11/20 롱폼 N-3(소득 상위·보험료)과 하루 띄움",
+ "title": "월급 순위, 직장인 100명을 줄 세우면 내 월급은 몇 등? #shorts",
+ "description": "전체 계산: https://youtu.be/kXnAKjC-84Q\n\n직장인 전체를 100명으로 줄여 세전 월급 순서로 한 줄 세우면(1등이 가장 많이 받는 사람), 세전 150만원은 79등쯤, 250만원은 59등쯤, 350만원은 38등쯤, 450만원은 27등쯤이에요. 한 달 1,000만원 이상은 100명 중 4명쯤(4.3%)입니다.\n세전 월급을 모르면 통장에 들어오는 돈에 10%쯤 더해 보세요(통장 300만원이 넘으면 15%쯤).\n등수는 통계 원문 구간 경계값(150·250·350·450·1,000만원)에서만 읽었고, 그 사이 월급은 등수도 그 사이예요.\n\n출처: 국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23 보도자료) 소득구간별 분포 · 2024년 12월 세전 월 보수\n통계 단위는 사람이 아니라 일자리라, 두 곳에서 일하면 두 번 셉니다.\n통장 금액: 파이어맵 월급 계산기(2026년 간이세액표·4대보험 요율, 본인 1명·식대 비과세 월 20만원 가정)\n통계를 읽는 자료이고, 월급을 올리거나 직장을 옮기라는 권유가 아닙니다.\n배경 영상: Pexels(Pexels License) — Argenis Matos · Ben Kyselka · Beyzaa Yurtkuran · Coverr · Ketut Subiyanto · MART PRODUCTION · Marc Espejo · RDNE Stock project\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #월급순위 #직장인월급",
+ "tags": "월급 순위,직장인 월급,월급 상위 몇 퍼센트,평균 월급,중위소득",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/n2s_ladder/cover_1115.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "-PVLzBdU4go",
+ "uploaded_at": "2026-11-15 07:17:49",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-21T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

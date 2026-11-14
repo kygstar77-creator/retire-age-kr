@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-15 07:52",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "목동 7단지 vs 11단지",
+ "num": "같은 평수 5억 4천 차이",
+ "sub": "1년 전엔 7억 차이였어요",
+ "label": "국토부 실거래",
+ "src": "국토교통부 아파트 매매 실거래 2024.11~2026.11 계약",
+ "icon": "building-2",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 102,
+ "num_px": 81,
+ "sub_px": 60,
+ "board": [
+  "sav1115",
+  "exdiv1114",
+  "silson24clm1114",
+  "floor1114",
+  "h4pair1114",
+  "sp500etf1114",
+  "fin2kpct1114",
+  "newrenew1112",
+  "dfopt1112",
+  "newold1112"
+ ]
+}

@@ -45,9 +45,9 @@
 | 2 연봉 사다리 3천~1억 — 칸마다 통장 월·국세청 줄 위치 | https://www.youtube.com/watch?v=vr5qMqpwPZM · https://www.youtube.com/watch?v=bCDnpi5VN7Q · https://www.youtube.com/watch?v=EEqb20M2mQA (5:45 4천~6천 위치) |
 | 3 어디서 빠지나 — 연금·건강·요양·고용·소득세, 연금은 월 659만원까지만 | https://www.youtube.com/watch?v=kEXcudKBf8A (1:29) · https://www.youtube.com/watch?v=bCDnpi5VN7Q (8:45 상한) · https://www.youtube.com/watch?v=o1pW2q0bFOM (0:44) |
 | 4 1천만원 오를 때 통장은 얼마 느나 — 7천→8천 칸이 가장 덜 남음 | https://www.youtube.com/watch?v=rSHZSk9rLak (1:15) · https://www.youtube.com/watch?v=FcQtpc7u8Zw (10:00) |
-| 5 거꾸로: 통장 300·400·500·600만원이 되려면 연봉 얼마 — 조건(식대 비과세·4인)별 | https://www.youtube.com/watch?v=zwbPgDs11OM (세후 300 위치) · https://www.youtube.com/watch?v=EsNVt4cRxHs (월 300) · https://ac.search.naver.com/nx/ac?q=%EC%84%B8%ED%9B%84%20300 (자동완성 '세후 300 연봉 얼마', 2026-10-28) |
+| 5 거꾸로: 통장 300만원이 되려면 — 300·400·500·600만원 칸마다 연봉 얼마, 조건(식대 비과세·4인)별 | https://www.youtube.com/watch?v=zwbPgDs11OM (세후 300 위치) · https://www.youtube.com/watch?v=EsNVt4cRxHs (월 300) · https://ac.search.naver.com/nx/ac?q=%EC%84%B8%ED%9B%84%20300 (자동완성 '세후 300 연봉 얼마', 2026-10-28) |
 | 6 같은 연봉, 다른 통장 — 식대 비과세 있음/없음·부양가족, 달마다 떼는 세금은 미리 떼는 값 | https://www.youtube.com/watch?v=kEXcudKBf8A&lc=Ugy6tsDEuWRzHnH8aZ94AaABAg (댓글 '5000이 355라구요? 훨씬 적을 텐데' → 답글 '비과세 아예 없는 기준 348') · https://www.youtube.com/watch?v=o1pW2q0bFOM (1:34 비과세) |
-| 7 '평균 4,475만원'과 '상위 25%'가 헷갈리는 이유 — 가운데 사람은 3천만원대, 줄에는 한 해 일부만 일한 사람도 | https://www.youtube.com/watch?v=vr5qMqpwPZM&lc=UgxWf0W9sVNDojRJS6F4AaABAg (댓글 '난 왜 상위25%인데, 삶이 힘드냐') · https://www.youtube.com/watch?v=EEqb20M2mQA (2:30) · https://www.youtube.com/watch?v=BigDizC2mwg (3:06) |
+| 7 평균 4,475만원과 '상위 25%' — 헷갈리는 이유: 가운데 사람은 3천만원대, 줄에는 한 해 일부만 일한 사람도 | https://www.youtube.com/watch?v=vr5qMqpwPZM&lc=UgxWf0W9sVNDojRJS6F4AaABAg (댓글 '난 왜 상위25%인데, 삶이 힘드냐') · https://www.youtube.com/watch?v=EEqb20M2mQA (2:30) · https://www.youtube.com/watch?v=BigDizC2mwg (3:06) |
 | 8 내 숫자 넣기 — 파이어맵 월급 계산기(같은 계산식) | https://ac.search.naver.com/nx/ac?q=%EC%8B%A4%EC%88%98%EB%A0%B9%EC%95%A1%20%EA%B3%84%EC%82%B0 (자동완성 '실수령액 계산기'·'연봉 실수령액 계산기', 2026-10-27) |
 
 # 끝맺음

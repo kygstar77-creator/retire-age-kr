@@ -1,0 +1,36 @@
+연봉 5천이면 통장에는 한 달 357만원쯤 들어와요(본인 1인·식대 비과세 월 20만원, 2026년 보험료율·간이세액표 기준).
+국세청 2024년 귀속 근로소득 자료로 줄 세우면 연봉 5천은 직장인 백 명 중 앞에서 서른세 명 안이고, 3천부터 1억까지 연봉이 천만원 오를 때 통장이 얼마 느는지도 셌습니다.
+
+전체 표와 계산 근거(카페): https://cafe.naver.com/firemap
+내 연봉 넣어 보기(파이어맵 월급 계산기): https://firemap.kr/calc/salary?utm_source=youtube&utm_medium=description&utm_campaign=n-3
+
+0:00 예고
+0:22 '연봉'은 어느 돈인가
+1:15 연봉 사다리 3천~1억
+2:40 어디서 빠지나
+3:35 1천만원 오를 때 통장은 얼마 느나
+4:55 거꾸로: 통장 300만원이 되려면
+6:00 같은 연봉, 다른 통장
+7:21 평균 4,475만원과 '상위 25%'
+8:29 내 숫자 넣기
+
+출처
+· 근로소득 백분위(천분위) 자료, 2024년 귀속: 국세청(공공데이터포털 15082063, '근로소득 백분위(천분위) 자료_20251231')
+· 근로소득 간이세액표: 소득세법 시행령 별표 2(2026.2.27 개정) · 식대 월 20만원 이하 비과세: 소득세법 제12조 제3호 러목 · 세율·근로소득공제: 소득세법 제55조①·제47조①
+· 국민연금 보험료율(2026년 9.5%, 근로자 절반 4.75%): 국민연금법 부칙 · 기준소득월액 상한 659만원(2026.7~2027.6): 국민연금공단
+· 건강보험료율 7.19%: 국민건강보험법 시행령 제44조① · 장기요양보험료(건강보험료의 13.14%): 노인장기요양보험법 시행령 제4조 · 고용보험 실업급여 0.9%(근로자): 고용보험 및 산재보험 보험료징수법 시행령 제12조①2호
+계산 가정: 통장 금액은 달마다 떼는 돈(간이세액 100%) 기준이고, 연말정산 뒤 실제 세금은 사람마다 다를 수 있어요 · 국세청 순위는 계약서 연봉이 아니라 총급여(비과세 뺀 돈) 기준, 구간마다 평균만 공개돼 '앞에서 몇 명 안'으로 읽었습니다.
+
+내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이에요. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 정보 제공용이고, 특정 상품을 사거나 팔라는 권유가 아니에요.
+썸네일 사진: Szymon Shields / Pexels (https://www.pexels.com/photo/aerial-view-of-pedestrians-walking-on-a-long-street-crossing-in-city-16456831/) (자르기·어둡게·글자 추가)
+영상 일부: Oleh Bachynskyi / Pexels (https://www.pexels.com/video/reflection-in-the-windows-of-the-winter-town-28587785/)
+영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/people-working-on-their-laptops-in-an-office-3202364/)
+영상 일부: Ketut Subiyanto / Pexels (https://www.pexels.com/video/person-holding-a-bag-while-crossing-the-street-4992563/)
+영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/person-using-calculator-while-writing-on-paper-5923592/)
+영상 일부: Max Vakhtbovych / Pexels (https://www.pexels.com/video/close-up-view-of-a-person-shopping-online-6771533/)
+영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/a-man-using-a-smartphone-while-holding-a-bank-card-7535095/)
+영상 일부: Kindel Media / Pexels (https://www.pexels.com/video/person-typing-on-computer-7687970/)
+영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/close-up-video-of-a-person-using-a-cellphone-7822029/)
+영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/drone-footage-of-a-buildings-with-glass-windows-8783211/)
+영상 일부: Afonso Oliveira / Pexels (https://www.pexels.com/video/male-hands-typing-on-computer-9823115/)
+영상 일부: Yaroslav Shuraev / Pexels (https://www.pexels.com/video/woman-looking-through-a-glass-window-8890683/)

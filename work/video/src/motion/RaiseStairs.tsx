@@ -16,6 +16,7 @@ export type RaiseStairsProps = {
   gaps: {text: string; at: number}[];                                             // steps[i] → steps[i+1] 차, 마지막 = 답(주황)
   gapAt: number;                                                                  // 챌면 칠하기 시작
   unitAt: number;                                                                 // 끝 줄 — 통장 목표 글자 밑 손 밑줄(같은 폭 = 같은 100만원)
+  unitArrow?: boolean;                                                            // 11/15 PD: 끝 줄 밑줄 대신 막대 위를 지나는 흰 손 화살표(왼쪽 아래→오른쪽 위, '위로 갈수록') — N-3 5:09 판 22초, 밑줄은 bgcheck '요소 추가'(320×180 잉크 0.15%)에 0.06%로 안 잡힘
   axis: string;
   beats: number[];
 };
@@ -73,7 +74,16 @@ export const RaiseStairs: React.FC<RaiseStairsProps> = (p) => {
         </React.Fragment>;
       })}
       <svg style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080, overflow: 'visible', pointerEvents: 'none'}}>
-        {p.steps.map((_, i) => i > 0 ? <HandUnderline key={i} x={xOf(i) + 40} y={BASE + 56} w={W - 80} p={g(f, at(p.unitAt) + (i - 1) * 9, 14)} color={T.ink2} seed={i} stroke={5} /> : null)}
+        {p.unitArrow ? (() => {   // 막대 몸통 안쪽만 지나게: 첫 칸 바닥 근처 → 끝 칸 앞 칸 높이 아래(차 숫자 칸 피함)
+          const x0 = xOf(0) + W / 2, y0 = BASE - 40, x1 = xOf(n - 1) + W / 2, y1 = topOf(n - 2) + 70;
+          const pts: string[] = []; for (let k = 0; k <= 24; k++) { const t = k / 24; pts.push(`${(x0 + (x1 - x0) * t).toFixed(1)},${(y0 + (y1 - y0) * t + 6 * Math.sin(t * 7.3)).toFixed(1)}`); }
+          const pa = g(f, at(p.unitAt), 22, Easing.inOut(Easing.quad)), ph = g(f, at(p.unitAt) + 20, 8);
+          const ang = Math.atan2(y1 - y0, x1 - x0), L = 46;
+          const hd = [ang + 2.6, ang - 2.6].map((q) => `${(x1 + L * Math.cos(q)).toFixed(1)},${(y1 + L * Math.sin(q)).toFixed(1)}`);
+          return <g opacity={0.95}>
+            <polyline points={pts.join(' ')} fill="none" stroke="#ffffff" strokeWidth={14} strokeLinecap="round" strokeLinejoin="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - pa} />
+            <polyline points={`${hd[0]} ${x1.toFixed(1)},${y1.toFixed(1)} ${hd[1]}`} fill="none" stroke="#ffffff" strokeWidth={14} strokeLinecap="round" strokeLinejoin="round" opacity={ph} />
+          </g>; })() : p.steps.map((_, i) => i > 0 ? <HandUnderline key={i} x={xOf(i) + 40} y={BASE + 56} w={W - 80} p={g(f, at(p.unitAt) + (i - 1) * 9, 14)} color={T.ink2} seed={i} stroke={5} /> : null)}
         {(() => { const i = n - 1; const top = topOf(i), mid = BASE - (BASE - topOf(i - 1));
           return <HandCircle cx={xOf(i) + W / 2} cy={(top + mid) / 2} rx={W / 2 - 6} ry={(mid - top) / 2 + 12} p={g(f, at(p.gaps[n - 2].at) + 16, 22, Easing.inOut(Easing.quad))} />; })()}
       </svg>

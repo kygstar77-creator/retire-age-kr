@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-15 07:21",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "TDF 2030·2050",
+ "num": "석 달 -4.5% vs -9.0%",
+ "sub": "KODEX TDF 주식 비중 48.7% · 77.4%",
+ "label": "FunETF · 11/13 기준",
+ "src": "FunETF 상품 정보(삼성자산운용 공시)",
+ "icon": "trending-down",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 126,
+ "num_px": 94,
+ "sub_px": 56,
+ "board": [
+  "exdiv1114",
+  "silson24clm1114",
+  "floor1114",
+  "h4pair1114",
+  "sp500etf1114",
+  "fin2kpct1114",
+  "newrenew1112",
+  "dfopt1112",
+  "newold1112",
+  "skhdiv1112"
+ ]
+}

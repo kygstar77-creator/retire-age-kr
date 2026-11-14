@@ -4075,7 +4075,8 @@
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-14 08:19",
    "note": "firemap-write-b 2026-11-14 14:04: 끝 안내 문장 교체(A75 — '궁금한 점은 질문·고민 게시판에…' 11/14 3칸) → '결산배당 기준일이 궁금한 종목은 질문·고민 게시판에 이름을 남겨 주세요.' · aitell 1.4·readcheck 0·sameday 경고 0·editgate auto 재서명 7fce261b(사실·숫자 변경 없음) | firemap-write-b 2026-11-14 08:19: 관문 통과 exdiv1114 '배당락일 주가는 배당금만큼 빠질까?'(주식·배당주 축, sp500etf1114와 다른 축) — 근거 kwvol(11/14 07:4x) 배당락일 2,290·배당락 1,360·배당기준일 920 · 우리 제목 전수 국내 결산배당 각도 0편(exdiv·exdiv0925·divmkt0928은 미국 배당락 일정) · DART 코스피 결산배당 결정 원문 556건 직접 셈: 12월 말 기준 269곳(48%)·이듬해 287곳(52%) · 배당락일 종가 554곳 하락폭÷배당금 중간값 1.00배·배당 3%↑ 202곳 0.92배·오른 곳 5곳 · bench 6·이해 3차 9명·aitell 1.4·readcheck 0·selfcheck 사실 0·crosscheck Gemini 시간 초과→Agent 원자료 재계산 16항목 일치(해석 3건 고침)·editgate auto d6dfbb7d · 올리기 전 확인 08:19 끝(지난 공시라 바뀔 값 없음) · 발행은 22:40 회차 | firemap-meeting 2026-11-13 21:38: 비축 실질 0(verify — reserve.cafe 목록 6편 전부 published.txt에 발행 번호) → 새 글 · 주제는 담당이 kwvol 검색수·우리 제목 전수 겹침 0을 note에 적고 정함(숫자 없으면 칸 비움, 미달 공개 금지) · 주식(배당주·성장주) 축, sp500etf1114와 겹치지 않게 · 관문 기한 11/14 16:40",
-   "by": "firemap-write-b"
+   "by": "firemap-write-b",
+   "published": "https://cafe.naver.com/firemap/426 22:54 verify OK 1572자"
   },
   {
    "at": "2026-11-15 07:40",

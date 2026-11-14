@@ -25,7 +25,7 @@ def shade(im, y0, y1, alpha, top=False):
 def fit(d, t, size, w, maxw=MAXW, floor=40):
     while size > floor and d.textlength(t, font=f(size, w)) > maxw: size -= 2
     return size
-def make(out, pic, ya, top, top_size=96, band=235, ls=1.10, target=0.90, xa=0.5, zoom=1.0, blur=None, top_sizes=None):
+def make(out, pic, ya, top, top_size=96, band=235, ls=1.10, target=0.90, xa=0.5, zoom=1.0, blur=None, top_sizes=None, sw=6, tshade=200):
     im = photo(pic, y_anchor=ya, x_anchor=xa, zoom=zoom)
     if blur:  # 사진 속 남의 상표 글자(휴대폰 화면 'Apple Inc' 등) 흐리게
         from PIL import ImageFilter; im.paste(im.crop(blur).filter(ImageFilter.GaussianBlur(14)), blur[:2])
@@ -35,14 +35,14 @@ def make(out, pic, ya, top, top_size=96, band=235, ls=1.10, target=0.90, xa=0.5,
     hb = sum(int(s * ls) for s in sizes); y = HH - 30 - hb
     top_size = min(fit(d0, tl, top_size, '700') for tl in top.split('|'))
     tsz = top_sizes or [top_size] * len(top.split('|'))
-    im = shade(im, max(0, y - 160), HH, band); im = shade(im, 0, 300, 200, top=True); d = ImageDraw.Draw(im)
+    im = shade(im, max(0, y - 160), HH, band); im = shade(im, 0, 300, tshade, top=True); d = ImageDraw.Draw(im)
     ty = 36
     for tl, ts in zip(top.split('|'), tsz):
-        d.text((X0, ty), tl, font=f(ts, '700'), fill=WHITE, stroke_width=4 if ts < 120 else 6, stroke_fill=INK); ty += int(ts * 1.18)
+        d.text((X0, ty), tl, font=f(ts, '700'), fill=WHITE, stroke_width=(4 if ts < 120 else 6) + (sw - 6) // 2, stroke_fill=INK); ty += int(ts * 1.18)
     widths = []
     for k, (t, s) in enumerate(zip(BIG, sizes)):
-        bb = d.textbbox((X0, y - int(s * 0.12)), t, font=f(s, 'black'), stroke_width=6); widths.append((bb[2] - bb[0]) / W)
-        d.text((X0, y - int(s * 0.12)), t, font=f(s, 'black'), fill=WHITE if k == 0 else ORANGE, stroke_width=6, stroke_fill=INK); y += int(s * ls)
+        bb = d.textbbox((X0, y - int(s * 0.12)), t, font=f(s, 'black'), stroke_width=sw); widths.append((bb[2] - bb[0]) / W)
+        d.text((X0, y - int(s * 0.12)), t, font=f(s, 'black'), fill=WHITE if k == 0 else ORANGE, stroke_width=sw, stroke_fill=INK); y += int(s * ls)
     sm = im.resize((1280, 720), Image.LANCZOS); sm.save(os.path.join(O, out))
     for px in (412, 168): sm.resize((px, px * 9 // 16), Image.LANCZOS).save(os.path.join(O, out.replace('.png', f'_{px}.png')))
     print(out, f'흰 줄 {top_size}px · 큰 글 {sizes}px · 줄별 폭 ' + '·'.join(f'{w:.0%}' for w in widths) + f' · 높이 {hb / HH:.0%}')
@@ -58,3 +58,9 @@ make('s1n_c2.png', 'hand_point_chart_39135247_kr.jpg', 0.2, T)
 make('s1n_d.png', 'hand_point_chart_39135247_kr.jpg', 0.2, '삼성전자 주가|2017년부터 실적 발표 날', top_sizes=[150, 84])
 # d2(10/29 18:2x 새 심사관·레드팀 d: '배경 차트는 오른쪽 위로 오르고 손가락도 꼭대기 — 1번만 올랐다와 반대') — 같은 사진 좌우 뒤집어 오른쪽으로 내려가게
 make('s1n_d2.png', 'hand_point_chart_39135247_kr_flip.jpg', 0.2, '삼성전자 주가|2017년부터 실적 발표 날', top_sizes=[150, 84])
+# e(11/14 17시 benchmark A73·thumb-gap-1114 2위): d2 뒤집은 사진(오른쪽 아래로) + 큰 글 검정 테두리 15px(1280에선 약 10px) + 덮개 걷음 — H-5 o1이 지금 판에 2:0
+make('s1n_e.png', 'hand_point_chart_39135247_kr_flip.jpg', 0.2, '삼성전자 주가|2017년부터 실적 발표 날', top_sizes=[150, 84], sw=15, band=0, tshade=0, target=0.86)  # 테두리 굵어 길이 칸 걸림(thumblen 1243) → 폭 0.86
+# e2: 원래 내려가는 봉 차트(35118208 'bearish trend')를 한국식 색으로(krcolor 같은 식) + 같은 테두리·덮개 걷음
+make('s1n_e2.png', 'candle_down_35118208_kr.jpg', 0.3, '삼성전자 주가|2017년부터 실적 발표 날', top_sizes=[150, 84], sw=15, band=0, tshade=0, target=0.86)  # 테두리 굵어 길이 칸 걸림(thumblen 1243) → 폭 0.86
+# e3: e2에 아래 덮개만 다시(짝 비교 d>e2 2:0 이유 '주황 줄이 뒤 빨간 봉과 겹침') — 이 사진은 원래 어두워 밝기 손해 적음
+make('s1n_e3.png', 'candle_down_35118208_kr.jpg', 0.3, '삼성전자 주가|2017년부터 실적 발표 날', top_sizes=[150, 84], sw=15, band=200, tshade=0, target=0.86)

@@ -37,7 +37,7 @@ def fit(d, t, size, w, maxw, floor=40):
     return size
 
 
-def make(out, pic, ya, xa=0.5, zoom=1.0, band=235, tshade=(380, 210), targets=(0.86, 0.80), ls=1.10, hmax=0.45, top_size=104):
+def make(out, pic, ya, xa=0.5, zoom=1.0, band=235, tshade=(380, 210), targets=(0.86, 0.80), ls=1.10, hmax=0.45, top_size=104, sw=6, tsw=5):
     im = photo(pic, y_anchor=ya, x_anchor=xa, zoom=zoom); d0 = ImageDraw.Draw(im)
     sizes = [fit(d0, t, 320, 'black', maxw=int(W * tg)) for t, tg in zip(BIG, targets)]
     hb = sum(int(s * ls) for s in sizes)
@@ -46,20 +46,25 @@ def make(out, pic, ya, xa=0.5, zoom=1.0, band=235, tshade=(380, 210), targets=(0
     ts = fit(d0, TOP, top_size, '700', maxw=int(W * 0.88))
     im = shade(im, max(0, y - 160), HH, band); im = shade(im, 0, tshade[0], tshade[1], top=True); d = ImageDraw.Draw(im)
     ty = 36
-    d.text((X0, ty), TOP, font=f(ts, '700'), fill=WHITE, stroke_width=5, stroke_fill=INK); ty += int(ts * 1.30)
+    d.text((X0, ty), TOP, font=f(ts, '700'), fill=WHITE, stroke_width=tsw, stroke_fill=INK); ty += int(ts * 1.30)
     # 알약: 주황 바탕 흰 글(답 숫자 아님 — 기준 시점 한 줄, copy v2)
     ps = int(ts * 0.80); pf = f(ps, '700'); tw = d.textlength(PILL, font=pf); px, py = 28, 12
     d.rounded_rectangle((X0, ty, X0 + tw + 2 * px, ty + ps + 2 * py + 6), radius=(ps + 2 * py) // 2, fill=ORANGE)
     d.text((X0 + px, ty + py - int(ps * 0.08)), PILL, font=pf, fill=WHITE)
     widths = []
     for k, (t, s) in enumerate(zip(BIG, sizes)):
-        bb = d.textbbox((X0, y - int(s * 0.12)), t, font=f(s, 'black'), stroke_width=6); widths.append((bb[2] - bb[0]) / W)
-        d.text((X0, y - int(s * 0.12)), t, font=f(s, 'black'), fill=WHITE if k == 0 else ORANGE, stroke_width=6, stroke_fill=INK); y += int(s * ls)
+        bb = d.textbbox((X0, y - int(s * 0.12)), t, font=f(s, 'black'), stroke_width=sw); widths.append((bb[2] - bb[0]) / W)
+        d.text((X0, y - int(s * 0.12)), t, font=f(s, 'black'), fill=WHITE if k == 0 else ORANGE, stroke_width=sw, stroke_fill=INK); y += int(s * ls)
     sm = im.resize((1280, 720), Image.LANCZOS); sm.save(os.path.join(O, out))
     for p in (412, 168): sm.resize((p, p * 9 // 16), Image.LANCZOS).save(os.path.join(O, out.replace('.png', f'_{p}.png')))
     print(out, f'흰 줄 {ts}px · 알약 {ps}px · 큰 글 {sizes}px · 줄별 폭 ' + '·'.join(f'{w:.0%}' for w in widths) + f' · 높이 {hb / HH:.0%}')
 
 
+if __name__ == '__main__' and sys.argv[1:] == ['outline']:
+    # 11/14 benchmark 지시(thumb-gap-1114 2위): 검정 테두리 8~10px(1280 기준) + 덮개 걷은 사진. 1920에서 그려 1280으로 줄이므로 ×1.5
+    make('h5_o1.png', 'songdo_park_canal_18495181.jpg', 0.25, band=0, tshade=(380, 0), sw=15, tsw=9)    # 덮개 0, 테두리 10px
+    make('h5_o2.png', 'songdo_park_canal_18495181.jpg', 0.25, band=90, tshade=(380, 60), sw=13, tsw=8)  # 덮개 약하게, 테두리 약 9px
+    sys.exit()
 if __name__ == '__main__':
     make('h5_a.png', 'songdo_park_canal_18495181.jpg', 0.25)
     make('h5_b.png', 'songdo_canal_dusk_37736994.jpg', 0.35)

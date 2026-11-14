@@ -3866,3 +3866,7 @@
 2026-11-15 05:41 · firemap-video-producer · N-3 렌더·관문 통과(bgcheck·screen·겹침·치직 확인) — 계단 판 22초는 막대 위 흰 손 화살표로 '요소 추가' 판으로 만듦(글자 0), shot_plan 경쟁 장면 다시 봄 · 예약은 올리기 전 확인(11/19)·editor 설명란 서명 뒤 · 이유: 11/20 11:30 칸 관문 11/19 11:30 전, 렌더는 빈 메모리 6GB인 지금
 2026-11-15 05:41 · firemap-video-producer · N-3 meta.json 처음 만듦(n3meta.py: 제목 copywriter 1위·썸네일 c2·챕터 9·5문항) + toc_compare 5·7장 첫머리를 대본 장 제목으로·understand_test 판정 줄 '틀림'→'잘못 읽은 곳'(뜻 같음, ytlong 낱말 걸림) · 이유: gate가 챕터·판정 줄 글자로 막음
 2026-11-15 06:28 · firemap-write · #421 fin2kpct1114에 권유 아님 면책 줄 더하고 rewrite·verify OK · 회의 11/14 F 지시(발행 글도 면책 줄)
+
+2026-11-15 07:18 · firemap-video-producer · 쇼츠 11/21 19:20 칸 = n2s_ladder(N-2 월급 사다리) 만들어 예약(-PVLzBdU4go) · 비축 0, 11/20 환율 뒤 비부동산·비주식 축(연봉·자산 축 공개 쇼츠 중앙 1,018), N-2 클립 1편뿐이라 다른 질문 남음 · 통장 300만원 넘는 사람용 15% 줄도 넣음(10%만 두면 등수 틀림)
+2026-11-15 07:18 · firemap-video-producer · today.md de1s_basket [지시]에 완료 줄 더함(11/14 02:32 이미 예약 yX3f9ESewcg, 기록만 빠져 있었음)
+2026-11-15 07:19 · visual · S-1 판 17장 s1boards.py(boardcheck 17/17) · 44칸 달력판은 상자 대신 점(bgcheck ⑥ 상자 44개 걸림), 사상 최대 9번 판은 날짜 줄 빼고 화살표만(줄 14→4) · 공시는 본뜬 판 표시

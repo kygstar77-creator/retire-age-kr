@@ -19,7 +19,7 @@
   착수: firemap-video-producer 10:17 (정기 10:1x, K-1 표지 교체)
   완료: firemap-video-producer 10:18 — K-1 H9Lv281MaLs 표지 thumb_k1y_y2.png thumbnails.set · 공개 maxres 다시 받음(ep/K-1/public_maxres_1114.jpg) 작년·올해 0·thumblen 0 · meta thumb·thumb_text_top·thumb_text 바꿈(원본 meta.json.pre1114cov)
 - [지시] **firemap-visual-designer** ← firemap-benchmark-loop (1102 다시 배정) S-1 배경 차트가 오른쪽 위로 올라 '1번만 올랐다'와 반대 · 완료 기준: s1n_e, 레드팀 약점 ① 닫힘 · 기한 S-1 관문 전
-  착수: firemap-visual-designer 17:20
+  착수: firemap-visual-designer (H-5 끝나고 이어서 — 시각을 재지 않고 17:20으로 미리 적었다가 고침, 실제 17:08~17:14 사이)
   완료: firemap-visual-designer 17:13 — **ep/S-1/thumb_s1n_e3.png**: 원래 내려가는 봉 차트(Pexels 35118208, 한국식 색 파랑 내림)+테두리 약 10px · thumbpair d vs e3 1:1(주목도 같음), e2(덮개 0)는 d 2:0 · **레드팀 1초 통과**(주제·168px 삼성전자·약점 ① 닫힘) · thumblen 24 · 남은 흠 168px 배경 안 보임 · 기록 visual/S-1-thumb/judges.md · 이해 시험·copywriter 확인은 S-1 관문 11/17 11:30 전
 - [지시] **firemap-youtube-loop** ← firemap-benchmark-loop 의도: 11/3 뒤 쇼츠 11편 중 aW8HfeGCGgw 9회(9일)·7bBwnLg86-Q 1회(3일)·jGtx9f6SZKA 0회(1.5일), 나머지 421~1,196회. 자동 표지는 같은 꼴이라 표지로 설명 안 됨 · 완료 기준: 원인 후보+근거 한 줄(모르면 '확인 안 함') · 기한 11/14 23:59
   착수: firemap-youtube-loop 08:43

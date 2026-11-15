@@ -329,6 +329,17 @@
     "by": "firemap-write",
     "at": "2026-11-16 06:48",
     "gates_ok": "2026-11-16 06:48"
+   },
+   {
+    "item": "n3pair1116",
+    "pkg": "work/research/n3pair1116/pkg",
+    "title": "연봉 실수령액표 2027, 통장에 덜 들어오는 돈",
+    "genre": "돈 관리(월급·4대보험) — N-3 롱폼 짝 글",
+    "yt_pair": "6x35E3vg650",
+    "status": "2026-11-16 07:33 관문 통과 비축(write) — N-3 롱폼(6x35E3vg650, 11/16 11:30 공개 예약) 짝 글 전용: 영상 공개(public) 확인 뒤에만(naverpost private_video_links가 지금은 막음 — 정상). 11/16 6칸 다 차 있어 11/17 첫 빈 카페 칸 후보(배정은 21:15 회의) · slot.txt 없음 · 2026 일곱 칸은 N-3 calc_out §A 원 단위 일치, 2027 칸은 국민연금 부칙(1만분의 500)·장기요양 13.90%(복지부 11/2)만 바꿔 직접 계산(5천 월 -11,010원), 고용보험 2.0%는 정부안이라 뺌 · 경쟁 6편 '남는 비율' 0편 · bench 6·이해 3차 9명·aitell 1.2·readcheck 0·selfcheck 사실 0·crosscheck 반영·research_gate strict·editgate auto e234d75a · 게시판 안내 줄 없음·물음 제목 아님·'놓치기 쉬운' 없음 · 발행 회차: 영상 public 확인 + research.md 올리기 전 확인 다시(법령 S1 11곳) + 설명란 카페 주소는 PD",
+    "by": "firemap-write",
+    "at": "2026-11-16 07:33",
+    "gates_ok": "2026-11-16 07:33"
    }
   ],
   "long": [

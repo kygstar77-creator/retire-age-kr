@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-16 07:24",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "연봉 실수령액표",
+ "num": "2027년엔 월 1만 1천원 덜",
+ "sub": "연봉 5천만원: 357만원 → 356만원",
+ "label": "혼자 사는 직장인 기준",
+ "src": "국민연금법 부칙·보건복지부(2026.11.2)",
+ "icon": "briefcase",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 148,
+ "num_px": 86,
+ "sub_px": 62,
+ "board": [
+  "mokpair1115",
+  "tdf1115",
+  "offbase1114",
+  "yejung1115",
+  "pentax1115",
+  "sav1115",
+  "exdiv1114",
+  "silson24clm1114",
+  "floor1114",
+  "h4pair1114"
+ ]
+}

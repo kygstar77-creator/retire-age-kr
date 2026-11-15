@@ -268,3 +268,5 @@
 
 - 2026-11-16 isa1116: 금투협 ISA 비교공시(dis.kofia.or.kr websquare)는 Playwright로 '#main_content' 텍스트를 받으면 2026-09-30 표가 기본으로 나온다(isa1116/kofia_fetch.py). 운용표 열은 예적금·RP·주식형(국내·해외)·혼합·채권·MMF·ETF·파생·기타·파생결합·주식·K-OTC·채권 순이라 첫 열·소계·비중 줄만 확실히 쓴다. 이해 시험에서 3명이 같은 데서 막히면(신탁형·중개형, 연금계좌) 용어 풀이 한 줄이 가장 싸다. 지식iN 질문 주소는 m.search.naver.com where=m_kin을 curl 모바일 UA로 받고 og:title로 제목 확인
 - 2026-11-16 법령 API(OC=test)·lawweb.py가 둘 다 막힐 때: Playwright로 https://www.law.go.kr/법령/<법>/<제N조> 를 열고 frame들 inner_text에서 조문을 찾으면 받아진다(isa1116/raw/art91_18.txt)
+
+- 2026-11-16 n3pair1116: 롱폼 짝 글은 영상 숫자만 옮기면 재탕 — 경쟁이 이미 다루는 "다음 해" 변화를 1차 원문으로 확인(국민연금 부칙 lsInfoR.do?lsiSeq=… curl로 본문 받힘, OC=test API는 막힘)해 새 칸을 만들고, 경쟁이 확정처럼 쓴 정부안(고용보험)은 빼고 그 이유를 적는다. 영상 링크는 frame A36·A83 때문에 끝 "관련 영상" 한 줄만.

@@ -1,0 +1,301 @@
+{
+ "fps": 30,
+ "name": "p1s_avg",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "국민연금 평균 수명까지 받으면",
+  "당겨·제때·미뤄 받기 중 어느 쪽이 더?"
+ ],
+ "hot": "누가 더",
+ "answer": {
+  "label": "월 100만원 · 평균 수명까지 받은 돈",
+  "items": [
+   "남자 84.5세: 미룸이 제때보다 264만원",
+   "여자 88.7세: 미룸이 제때보다 2,078만원"
+  ],
+  "arrow": false,
+  "note": "1969년생 · 제때 65세 · 평균일 뿐, 개인 수명 아님"
+ },
+ "base": "국민연금법 제61조·제62조 · 국가데이터처 간이생명표 2024(65세 기대여명) · 월 100만원 가정 · 파이어맵 계산",
+ "long": "vsL7mojDW7w",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "질문",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "제때 65세부터",
+      "월 100만원이라면",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "국민연금 월 100만원, 평균 수명까지면 누가 더 받을까요?",
+     "audio": "audio/p1s/02ffb9b1023ddb21.wav",
+     "frames": 87
+    }
+   ],
+   "frames": 87
+  },
+  {
+   "kind": "vs",
+   "label": "세 길",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "60세로 당기면",
+      "월 70만원",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "70세로 미루면",
+      "월 136만원",
+      "",
+      69,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 2,
+     "text": "5년을 당기면 70만원입니다.",
+     "audio": "audio/p-1/e004d32aa949e673.wav",
+     "frames": 69
+    },
+    {
+     "n": 3,
+     "text": "반대로 5년을 미루면 136만원입니다.",
+     "audio": "audio/p-1/66d601c74e12865c.wav",
+     "frames": 102
+    }
+   ],
+   "frames": 171
+  },
+  {
+   "kind": "vs",
+   "label": "남자 평균",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "65세 남자 평균",
+      "84.5세까지",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "제때가 당김보다",
+      "+2,820만원",
+      "",
+      173,
+      "ink"
+     ],
+     [
+      "미룸이 제때보다",
+      "+264만원",
+      "",
+      294,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "통계청 생명표로 보면, 지금 65세 남자는 평균 84세 반쯤까지 살아요.",
+     "audio": "audio/p-1/c5122d6a2469b3bb.wav",
+     "frames": 173
+    },
+    {
+     "n": 5,
+     "text": "남자 평균까지면, 제때가 당김보다 2,800만원쯤 많아요.",
+     "audio": "audio/p-1/6199549294ee066e.wav",
+     "frames": 121
+    },
+    {
+     "n": 6,
+     "text": "그런데 미룸은 제때보다 겨우 264만원 많습니다.",
+     "audio": "audio/p-1/dcfcc73c39d1751a.wav",
+     "frames": 109
+    }
+   ],
+   "frames": 403
+  },
+  {
+   "kind": "vs",
+   "label": "여자 평균",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "65세 여자 평균",
+      "88.7세까지",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "미룸이 제때보다",
+      "+2,078만원",
+      "",
+      157,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 7,
+     "text": "여자는 89세 가까이고요.",
+     "audio": "audio/p-1/23087448e3a6425b.wav",
+     "frames": 74
+    },
+    {
+     "n": 8,
+     "text": "여자 평균까지 가면 그림이 달라지는데요.",
+     "audio": "audio/p-1/030c2b7a95ca4613.wav",
+     "frames": 83
+    },
+    {
+     "n": 9,
+     "text": "미룸이 제때보다 2,000만원 넘게 앞서요.",
+     "audio": "audio/p-1/3ba10c2978b7e4c6.wav",
+     "frames": 83
+    }
+   ],
+   "frames": 240
+  },
+  {
+   "kind": "vs",
+   "label": "갈림",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "오래 받으면",
+      "미룬 쪽이 앞섬",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "답을 가르는 것",
+      "건강 · 그동안 쓸 돈",
+      "",
+      199,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 10,
+     "text": "오래 받을수록 미룬 쪽이, 일찍 끝날수록 당긴 쪽이 앞서는 거죠.",
+     "audio": "audio/p-1/4c83dc69de447a97.wav",
+     "frames": 134
+    },
+    {
+     "n": 11,
+     "text": "그래서 답은 평균에 있지 않아요.",
+     "audio": "audio/p-1/13f8174d97dcddd4.wav",
+     "frames": 65
+    },
+    {
+     "n": 12,
+     "text": "내 건강, 그리고 그 사이에 쓸 다른 돈이 있는지에 달려 있습니다.",
+     "audio": "audio/p-1/5299405e32a659b5.wav",
+     "frames": 130
+    }
+   ],
+   "frames": 365
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/p1s_avg/stock/cut/pages_2_f.mp4",
+   "from": 0,
+   "frames": 87,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_avg/stock/cut/candle_dark_1_f.mp4",
+   "from": 87,
+   "frames": 69,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_avg/stock/cut/cake_many_1_f.mp4",
+   "from": 156,
+   "frames": 102,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_avg/stock/cut/couple_back_8_f.mp4",
+   "from": 258,
+   "frames": 173,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_avg/stock/cut/leaves_feet_1_f.mp4",
+   "from": 431,
+   "frames": 121,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_avg/stock/cut/jeans_feet_1_f.mp4",
+   "from": 552,
+   "frames": 109,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_avg/stock/cut/stamp_hand_1_f.mp4",
+   "from": 661,
+   "frames": 74,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_avg/stock/cut/path_feet_0.5_f.mp4",
+   "from": 735,
+   "frames": 83,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_avg/stock/cut/cake_party_1_f.mp4",
+   "from": 818,
+   "frames": 83,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_avg/stock/cut/boots_2_f.mp4",
+   "from": 901,
+   "frames": 134,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_avg/stock/cut/star_candle_1_f.mp4",
+   "from": 1035,
+   "frames": 65,
+   "start": 0
+  },
+  {
+   "src": "bg/p1s_avg/stock/cut/boots_18_f.mp4",
+   "from": 1100,
+   "frames": 166,
+   "start": 0
+  }
+ ],
+ "credits": "Anna Tarazevich · Connor Scott McManus · Gustavo Fring · K · Ludovic Delot · Monstera Production · SHVETS production · Sketch Benjamin · Taryn Elliott · Thirdman · Yan Krukau"
+}

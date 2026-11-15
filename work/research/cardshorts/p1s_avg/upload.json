@@ -1,0 +1,29 @@
+{
+ "name": "p1s_avg",
+ "ep": "P-1",
+ "from_long": "vsL7mojDW7w",
+ "mp4": "work/video/out/p1s_avg_c1_ds.mp4",
+ "publishAt": "2026-11-22T19:20:00+09:00",
+ "publish_plan": "11/22 19:20 쇼츠 칸(비축 0이던 칸) · 정책(국민연금) 축 — 11/21 n2s_ladder(연봉) 뒤, 부동산·주식 아님 · P-1 넷째 클립(p1s_cross '따라잡히는 나이'와 다른 질문: 남녀 평균 수명까지 더한 값) · 공개 전날(11/21) KOSIS 생명표 새 판·조기/연기 비율 개정 여부 다시 확인",
+ "title": "국민연금 미뤄 받으면 이득? 평균 수명까지면 남녀가 갈린다 #shorts",
+ "description": "전체 계산: https://youtu.be/vsL7mojDW7w (따라잡히는 나이·일하면 깎이는 선까지)\n\n국민연금을 제때(1969년생 65세) 받으면 월 100만원이라 치면, 5년 당기면 월 70만원·5년 미루면 월 136만원이에요. 65세 남자 평균 수명(84.5세)까지 받으면 미룬 쪽이 제때보다 264만원 더, 여자 평균(88.7세)까지면 2,078만원 더 받습니다. 평균일 뿐 개인 수명 예측이 아니고, 연금을 당기거나 미루라는 권유가 아닙니다.\n84.5세까지 받은 돈: 당김 2억 580만원 · 제때 2억 3,400만원 · 미룸 2억 3,664만원\n88.7세까지 받은 돈: 당김 2억 4,108만원 · 제때 2억 8,440만원 · 미룸 3억 518만원\n\n출처: 국민연금법 제61조②·제62조②(조기 한 해 6%·연기 한 해 7.2%) · 국가데이터처 간이생명표 2024(65세 기대여명 남 19.5년·여 23.7년) · 월 100만원 가정 · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — Anna Tarazevich · Artem Podrez · Connor Scott McManus · Gustavo Fring · K · Ludovic Delot · Monstera Production · SHVETS production · Sketch Benjamin · Taryn Elliott · Thirdman · Yan Krukau\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #국민연금 #연기연금",
+ "tags": "국민연금 연기연금,국민연금 조기수령,국민연금 손익분기,국민연금 언제 받아야,노령연금",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/p1s_avg/cover_1115.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "u7RzhDJikcY",
+ "uploaded_at": "2026-11-15 11:00:11",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-22T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

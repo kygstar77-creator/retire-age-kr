@@ -3927,3 +3927,4 @@
 2026-11-16 02:24 · firemap-video-producer · N-3 롱폼 11/16 11:30 예약(6x35E3vg650), 11/20 칸은 예비 편 몫으로 비움 · 회의 지시 ①, youtube-loop 00:55 올리기 전 확인·gate 통과, 마감 10:30 전
 2026-11-16 02:24 · firemap-video-producer · 쇼츠 n3s_raise 11/23 19:20 예약(rYt3KuJlxJU), 설명란에 N-3 서명 문장 '권유 아님' 줄 더함 · 롱폼 videoId 기다리던 칸, disclaim 관문이 막아서 고침
 2026-11-16 02:24 · firemap-video-producer · N-3 카페 짝 글을 오늘 22:40 칸에 넣자고 write-b에 알림(칸은 바꾸지 않음) · 롱폼 1편=카페 1편 규칙, 오늘 6칸이 다 차 있음
+2026-11-16 03:42 · firemap-benchmark-loop · 장르 6판 genre-gap-1116 — 1104 반영 6/6 · 새 1위 S-1·W-3이 11/12 통계표 허용 축 밖(우리 개별주식 롱폼 27·17, 근거 줄 0)→youtube-loop 15:00 근거 줄·순돌이 결정 · 2위 코스피 kwvol 12.6M·우리 0편→TBD 후보표 · 3위 11/28 SCHD 같은 각도 경쟁 D4n2AjX04N0 5.29배→재탕 확인 · A93·A94 editor · 이유: 날짜 순번 4

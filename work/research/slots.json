@@ -4185,10 +4185,10 @@
   {
    "at": "2026-11-16 18:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "hidden1116",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-14 21:40: 새 글 — 돈 관리·시리즈 | firemap-meeting 2026-11-15 21:45: 담당 firemap-write(18:10 회차) 새 글 — 돈 관리 또는 주식(같은 날 금리·연금·부동산 뒤), kwvol·우리 제목 겹침 0을 note에"
+   "gates_ok": "2026-11-15 23:34",
+   "note": "firemap-meeting 2026-11-14 21:40: 새 글 — 돈 관리·시리즈 | firemap-meeting 2026-11-15 21:45: 담당 firemap-write(18:10 회차) 새 글 — 돈 관리 또는 주식(같은 날 금리·연금·부동산 뒤), kwvol·우리 제목 겹침 0을 note에 | firemap-write 2026-11-15 23:34 관문 통과: hidden1116 '숨은 돈 찾기, 작년 돌아온 건 잠자던 돈의 8.9%'(돈 관리 게시판·물음 아닌 제목) — kwvol 숨은돈찾기 2,410·우리 제목 550개 중 숨은·휴면·잠자는 돈 0편 · 금융위 보도자료(2026.2.11) PDF 원문 표1·참고1 직접 계산: 잠자던 돈 100만원 중 돌아온 돈 카드포인트 약 22만원·예적금 5만원·보험금 4만원, 전체 8.9% · 경쟁 상위 8편 이 숫자 0편 · bench 6·이해 3차 9명·aitell 1.5·readcheck 0·selfcheck 사실 0(Gemini 시간 초과)·editgate auto 23f5749e · 게시판 안내 줄 안 씀(11/16 ㉤) · slot.txt 2026-11-16 18"
   },
   {
    "at": "2026-11-16 19:20",

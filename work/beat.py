@@ -112,6 +112,21 @@ def mark(task, label=''):
     print(f'{task} 단계 {r.get("stage", "-")} ({r["alive_at"]})')
 
 
+
+def _last_log(task, since, until=None):
+    """decisions/log.md에서 'YYYY-MM-DD HH:MM · firemap-<task> ·' 줄 중 since(유닉스 시각) 뒤 마지막 시각. 없으면 None.
+    firemap-write와 firemap-write-b처럼 이름이 겹치면 정확히 그 이름만 센다."""
+    import re
+    try: t = open(os.path.join(HERE, 'research', 'decisions', 'log.md'), encoding='utf-8').read()
+    except Exception: return None
+    best = None
+    for m in re.finditer(r'^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}) · firemap-' + re.escape(task) + r' ·', t, re.M):
+        try: ts = time.mktime(time.strptime(m.group(1), '%Y-%m-%d %H:%M'))
+        except Exception: continue
+        if since < ts <= (until or time.time()) and (best is None or ts > best[0]): best = (ts, m.group(1))
+    return best[1] if best else None
+
+
 def start(task):
     d = load()
     # 2026-09-26: loop 회차가 11:52에 시작해 12:05에 세션이 죽었다(end 없음).
@@ -133,6 +148,13 @@ def start(task):
                      'how': 'overlap' if fresh else ('mark' if alive else 'upper'),
                      'stage': prev.get('stage') or '',
                      'budget': BUDGET.get(task, 60), 'found': time.strftime('%Y-%m-%d %H:%M')})
+        # 2026-11-16 write: 11/15 write 06:20·18:20이 '4분·3분에 죽음'으로 잡혔는데 결정 기록을 보면 06:20은 06:28까지,
+        # 18:20은 발행·verify까지 하고(21:23 보충 기록) 기록 전에 끝났다. 마지막 mark보다 늦은 결정 기록 줄이 있으면
+        # 그 시각을 '마지막으로 살아 있던 시각'으로 적는다(죽음으로는 그대로 센다 — end를 못 찍은 건 사실이다).
+        last = _last_log(task, alive or prev['start'])
+        if last and not fresh:
+            gone[-1]['last_log'] = last
+            gone[-1]['min'] = round((time.mktime(time.strptime(last, '%Y-%m-%d %H:%M')) - prev['start']) / 60)
         d[GONE] = gone[-60:]
         g = gone[-1]
         print(f'! {task} 지난 회차가 끝을 못 찍고 죽었다 — {prev.get("at")} 시작, '
@@ -153,7 +175,7 @@ def abandoned(hours=24, now=None):
     for g in (load() or {}).get(GONE) or []:
         try: t = time.mktime(time.strptime(g.get('found', ''), '%Y-%m-%d %H:%M'))
         except Exception: continue
-        if g.get('how') == 'overlap': continue   # 예산 안에 다음 start가 떴다 — 죽음으로 확인 안 됨
+        if g.get('how') == 'overlap': continue   # 예산 안에 다음 start가 떴다 — 죽음으로 확인 안 됨   # 예산 안에 다음 start가 떴다 — 죽음으로 확인 안 됨
         if (now - t) / 3600 <= hours: out.append(g)
     return out
 
@@ -280,7 +302,11 @@ def main():
             f'{g["task"]} {g["at"]}('
             + (f'{g["min"]}분' if g.get('how') == 'mark' else f'{g["min"]}분 이내')
             + f'/예산 {g["budget"]}분'
-            + (f', {g["stage"]}에서' if g.get('stage') else '') + ')' for g in ab[-5:]))
+            + (f', {g["stage"]}에서' if g.get('stage') else '')
+            # 2026-11-15 watchdog: 같은 작업의 뒤 회차가 끝났으면 일은 이어졌다 — 거짓 경보와 구분한다.
+            + (' · 뒤 회차 정상' if (d.get(g['task']) or {}).get('end')
+               and (d.get(g['task']) or {}).get('at', '') > (g.get('at') or '') else '')
+            + ')' for g in ab[-5:]))
     sl = stale(now)
     if sl:
         print(NL + '예약 간격을 넘긴 회차: ' + ', '.join(

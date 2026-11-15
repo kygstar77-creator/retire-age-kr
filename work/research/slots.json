@@ -319,6 +319,16 @@
     "by": "firemap-write-b",
     "at": "2026-11-14 20:05",
     "gates_ok": "2026-11-14 20:05"
+   },
+   {
+    "item": "isa1116",
+    "pkg": "work/research/isa1116/pkg",
+    "title": "ISA계좌 비과세 200만원, 예금만 넣으면 다 쓸까?",
+    "genre": "연금계좌(ISA)",
+    "status": "2026-11-16 06:48 관문 통과 비축(write) — 금투협 ISA 통계 2026-09-30 직접 계산: 은행 신탁형 예적금 88.9% vs 증권 중개형 6.3% · 예금 3.285%면 3년 비과세 200만원 채우는 원금 약 2,029만원 · kwvol ISA계좌 54,400·우리 제목 ISA 0편 · 이해 3차 9명·editgate auto 4bc132ed·crosscheck 반영 · slot.txt 없음(회의가 칸 배정) — 발행 날 finlife 다시 받아 calc.py·'바뀐 것:'(11/26 금통위 뒤면 필수)",
+    "by": "firemap-write",
+    "at": "2026-11-16 06:48",
+    "gates_ok": "2026-11-16 06:48"
    }
   ],
   "long": [

@@ -78,6 +78,7 @@
 | 다섯 은행 신용 0.27~0.75%p, 주담대 0.03~0.06%p | 위 F6 최소·최대 | S1 https://portal.kfb.or.kr/compare/loan_reduce_new.php |
 
 # 올리기 전 확인
+- 2026-11-16 06:2x firemap-write 발행 날 다시 확인: 은행연합회 비교공시(portal.kfb.or.kr/compare/loan_reduce_new.php) 다시 열어 2026 상반기 전체 은행 표 153줄 — 11/15 받은 표와 한 칸도 안 다름(raw/kfb_tables_1115.json 대조). 하반기 선택지는 있으나 하반기 공시는 아직 확인 안 함(보통 이듬해 초)
 - 2026-11-15 09:3x firemap-write(조사·작성 날, 발행 11/16 07:40 — 1일 안). 발행 회차가 은행연합회 표를 다시 열어 2026년 하반기 공시가 새로 올라왔는지 볼 것(하반기 실적은 보통 이듬해 초 공시 — 확인 안 함)
 - 다시 연 주소: https://portal.kfb.or.kr/compare/loan_reduce_new.php (09:1x kfb_fetch.py) · https://m.korea.kr/briefing/pressReleaseView.do?newsId=156319267 · https://fsc.go.kr/no010101/73727 · https://blog.naver.com/zkdhtm1346/224469150619 (09:2x)
 - 기준일: 은행연합회 2026년 상반기 공시(2026.11.15 조회)

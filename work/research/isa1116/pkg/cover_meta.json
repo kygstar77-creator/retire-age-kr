@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-16 06:36",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "ISA계좌 비과세",
+ "num": "예금이면 원금 약 2,030만원",
+ "sub": "3년 이자 200만원을 채우려면",
+ "label": "정기예금 연 3.3%로 계산",
+ "src": "금감원 정기예금 공시 · 조세특례제한법",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 144,
+ "num_px": 83,
+ "sub_px": 62,
+ "board": [
+  "mokpair1115",
+  "tdf1115",
+  "offbase1114",
+  "yejung1115",
+  "pentax1115",
+  "sav1115",
+  "exdiv1114",
+  "silson24clm1114",
+  "floor1114",
+  "h4pair1114"
+ ]
+}

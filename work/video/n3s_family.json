@@ -1,0 +1,201 @@
+{
+ "fps": 30,
+ "name": "n3s_family",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "같은 연봉 5천",
+  "통장 한 달 16만원 차이?"
+ ],
+ "hot": "16만원",
+ "answer": {
+  "label": "같은 연봉, 가족 수에 따라 통장에 더 들어오는 돈",
+  "items": [
+   "연봉 5천: 한 달 +16만원",
+   "연봉 1억: 한 달 +30만원쯤"
+  ],
+  "arrow": false,
+  "note": "배우자·자녀 2(8~20세) vs 혼자 · 식대 비과세 월 20만원 · 2026년 기준"
+ },
+ "base": "2026년 근로소득 간이세액표·4대 보험료율 · 식대 비과세 월 20만원 · 파이어맵 계산",
+ "long": null,
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "질문",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "같은 연봉 5천",
+      "통장은 다를 수 있음",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "네 식구라면",
+      "나·배우자·자녀 2",
+      "",
+      111,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "연봉이 똑같이 5천인데, 왜 통장 금액은 사람마다 다를까요?",
+     "audio": "audio/n3s/649b573ad4569004.wav",
+     "frames": 111
+    },
+    {
+     "n": 2,
+     "text": "배우자와, 여덟 살부터 스무 살 사이 자녀 둘이 있으면요.",
+     "audio": "audio/n-3/d0913843f2910ab8.wav",
+     "frames": 98
+    }
+   ],
+   "frames": 209
+  },
+  {
+   "kind": "vs",
+   "label": "5천",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "연봉 5천 · 네 식구",
+      "부양가족 0명보다 +16만원",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 3,
+     "text": "연봉 5천이면, 혼자일 때보다 한 달 16만원 정도 더 들어옵니다.",
+     "audio": "audio/n-3/3b0c177056860aba.wav",
+     "frames": 129
+    }
+   ],
+   "frames": 129
+  },
+  {
+   "kind": "vs",
+   "label": "1억",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "연봉 1억 · 네 식구",
+      "부양가족 0명보다 +30만원쯤",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "연봉 1억이면 그보다 많은 30만원쯤 더 들어오고요.",
+     "audio": "audio/n-3/fff9b947f3910eef.wav",
+     "frames": 97
+    }
+   ],
+   "frames": 97
+  },
+  {
+   "kind": "vs",
+   "label": "이유",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "나라가 정한 세금표",
+      "가족 수마다 칸이 따로",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 5,
+     "text": "달마다 떼는 소득세가 가족 수 칸마다 다르게 정해져 있어서 그렇습니다.",
+     "audio": "audio/n-3/f70d80f190922deb.wav",
+     "frames": 110
+    }
+   ],
+   "frames": 110
+  },
+  {
+   "kind": "vs",
+   "label": "신고",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "신고 안 돼 있으면",
+      "연말에 한꺼번에 돌려받음",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "회사에 부양가족 신고가 안 돼 있으면 달마다 더 떼고, 연말정산 때 돌려받아요.",
+     "audio": "audio/n-3/239a1852b429371c.wav",
+     "frames": 138
+    }
+   ],
+   "frames": 204
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/n3s_family/stock/cut/853830_0_111.mp4",
+   "from": 0,
+   "frames": 111,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_family/stock/cut/5923592_0_98.mp4",
+   "from": 111,
+   "frames": 98,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_family/stock/cut/7822029_0_129.mp4",
+   "from": 209,
+   "frames": 129,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_family/stock/cut/6771533_0_97.mp4",
+   "from": 338,
+   "frames": 97,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_family/stock/cut/4992563_0_110.mp4",
+   "from": 435,
+   "frames": 110,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_family/stock/cut/8783211_0_204.mp4",
+   "from": 545,
+   "frames": 204,
+   "start": 0
+  }
+ ],
+ "credits": "Coverr · Ketut Subiyanto · Max Vakhtbovych · RDNE Stock project"
+}

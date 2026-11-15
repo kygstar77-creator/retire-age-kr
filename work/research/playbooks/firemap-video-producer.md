@@ -308,3 +308,4 @@
 - 11/15 n3s_raise: 이해 시험 1차 지적을 화면 숫자로 메우다 말('거의 같다')과 어긋나는 새 혼란을 만들었다(2차 3/3) — 화면 칸을 고칠 땐 그 장면 말 줄과 같은 뜻인지 먼저 대 본다.
 - 2026-11-15 18시 h4s_new15: 백그라운드 렌더를 TaskStop으로 멈춰도 Windows에선 bash·npx·remotion 자식 프로세스가 살아남아 옛 LIST로 계속 돌고, 새 회차의 bundle 폴더를 지워 BUNDLE_FAIL이 났다 — 멈춘 뒤 PowerShell `Get-CimInstance Win32_Process | ? CommandLine -match '<편>'`로 남은 것을 Stop-Process 하고 0개인지 보고 다시 띄운다. 이해 시험은 렌더 전에 2차까지 끝내고 띄운다(이번엔 1·2·3차마다 렌더를 버림).
 - 11/15 22시 h4s_new15 옮기기: 예약 영상 publishAt을 videos.update(part=status)로 바꾸면 응답은 바로 새 값인데 videos.list 되읽기는 몇 초 옛 값을 준다 — 20초쯤 뒤 다시 읽어 확인하고, status 전체를 덮으니 STATUS_KEEP 칸+containsSyntheticMedia=True를 같이 보낸다(c1clips_up.fix_synth와 같은 꼴). 공개 영상 정정은 설명란 줄 넣기(snippet 전체 title·tags·categoryId 같이)+정정 댓글(ytcomment.post는 두 번째 댓글을 막으니 직접 insert 뒤 yt_comments.jsonl에 kind:correction)
+- 2026-11-16: 롱폼 videoId를 기다리던 쇼츠는 롱폼 예약 직후 같은 회차에 바로 예약한다(from_long·{N3} 채움) — 이번엔 disclaim 관문이 '권유 아님' 줄 없다고 막았으니, 쇼츠 upload.json을 만들 때 그 롱폼의 editor 서명 면책 문장을 처음부터 넣어 둔다.

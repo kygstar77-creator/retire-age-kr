@@ -1,95 +1,95 @@
 {
- "ep": "N-3",
- "series": "경제 — 연봉 실수령액",
- "title": "연봉 실수령액, 연봉 5천이면 통장엔 월 357만원… 직장인 100명 중 몇 번째일까",
- "title_by": "firemap-copywriter 2026-10-27 copy/titles.md 1위(짝 비교 2승×2, 10/28 고친 판에도 1위 그대로)",
- "title_candidates": [
-  "연봉 실수령액, 연봉 5천이면 통장엔 월 357만원… 직장인 100명 중 몇 번째일까",
-  "연봉 실수령액 3천부터 1억까지, 통장엔 월 얼마 들어오고 100명 중 몇 번째일까"
- ],
- "thumb_text_top": "2024년 국세청 직장인 전체 연봉 순위",
- "thumb_text": "연봉 5천은 100명 중 / 위에서 33명 안에",
- "thumb": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\N-3\\thumb_n3n_c2.png",
- "thumb_status": "visual 11/10 09:20 길이 칸 가림 고침(c → c2, 글자·사진 그대로) · 문구 = copy/titles.md 10/28 확정판 · 1초 시험 visual/N-3-thumb/judges.md · 사진 Pexels 16456831",
- "desc_first2": [
-  "연봉 5천이면 통장에는 한 달 357만원쯤 들어와요(본인 1인·식대 비과세 월 20만원, 2026년 보험료율·간이세액표 기준).",
-  "국세청 2024년 귀속 근로소득 자료로 줄 세우면 연봉 5천은 직장인 백 명 중 앞에서 서른세 명 안이에요. 3천부터 1억까지 연봉이 천만원 오를 때 통장이 얼마 느는지도 셌습니다."
- ],
- "desc_first2_src": "say_v1 3·5줄(357만원쯤·앞에서 서른세 명 안)·13~16줄(식대 20만원)·calc_out.txt A(1인·식대 비과세 월 20만·간이세액 100%) · copywriter 남은 궁금증 \"설명 첫 줄에 1인 기준\" 반영",
- "tags": [
-  "연봉 실수령액",
-  "월급 실수령액",
-  "연봉 1억 실수령액",
-  "2026 연봉 실수령액표",
-  "연봉 상위 몇 프로"
- ],
- "desc_tpl": "연봉 5천이면 통장에는 한 달 357만원쯤 들어와요(본인 1인·식대 비과세 월 20만원, 2026년 보험료율·간이세액표 기준).\n국세청 2024년 귀속 근로소득 자료로 줄 세우면 연봉 5천은 직장인 백 명 중 앞에서 서른세 명 안이에요. 3천부터 1억까지 연봉이 천만원 오를 때 통장이 얼마 느는지도 셌습니다.\n\n전체 표와 계산 근거(카페): {CAFE}\n내 연봉 넣어 보기(파이어맵 월급 계산기): https://firemap.kr/calc/salary?utm_source=youtube&utm_medium=description&utm_campaign=n-3\n\n{CHAPTERS}\n\n출처\n· 근로소득 백분위(천분위) 자료, 2024년 귀속: 국세청(공공데이터포털 15082063, '근로소득 백분위(천분위) 자료_20251231')\n· 근로소득 간이세액표: 소득세법 시행령 별표 2(2026.2.27 개정) · 식대 월 20만원 이하 비과세: 소득세법 제12조 제3호 러목 · 세율·근로소득공제: 소득세법 제55조①·제47조①\n· 국민연금 보험료율(2026년 9.5%, 근로자 절반 4.75%): 국민연금법 부칙 · 기준소득월액 상한 659만원(2026.7~2027.6): 국민연금공단\n· 건강보험료율 7.19%: 국민건강보험법 시행령 제44조① · 장기요양보험료(건강보험료의 13.14%): 노인장기요양보험법 시행령 제4조 · 고용보험 실업급여 0.9%(근로자): 고용보험 및 산재보험 보험료징수법 시행령 제12조①2호\n계산 가정: 통장 금액은 달마다 떼는 돈(간이세액 100%) 기준이고, 연말정산 뒤 실제 세금은 사람마다 다를 수 있어요 · 국세청 순위는 계약서 연봉이 아니라 총급여(비과세 뺀 돈) 기준, 구간마다 평균만 공개돼 '앞에서 몇 명 안'으로 읽었습니다.\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이에요. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 정보 제공용이고, 특정 상품을 사거나 팔라는 권유가 아니에요.\n썸네일 사진: Szymon Shields / Pexels (https://www.pexels.com/photo/aerial-view-of-pedestrians-walking-on-a-long-street-crossing-in-city-16456831/) (자르기·어둡게·글자 추가)\n영상 일부: Oleh Bachynskyi / Pexels (https://www.pexels.com/video/reflection-in-the-windows-of-the-winter-town-28587785/)\n영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/people-working-on-their-laptops-in-an-office-3202364/)\n영상 일부: Ketut Subiyanto / Pexels (https://www.pexels.com/video/person-holding-a-bag-while-crossing-the-street-4992563/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/person-using-calculator-while-writing-on-paper-5923592/)\n영상 일부: Max Vakhtbovych / Pexels (https://www.pexels.com/video/close-up-view-of-a-person-shopping-online-6771533/)\n영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/a-man-using-a-smartphone-while-holding-a-bank-card-7535095/)\n영상 일부: Kindel Media / Pexels (https://www.pexels.com/video/person-typing-on-computer-7687970/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/close-up-video-of-a-person-using-a-cellphone-7822029/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/drone-footage-of-a-buildings-with-glass-windows-8783211/)\n영상 일부: Afonso Oliveira / Pexels (https://www.pexels.com/video/male-hands-typing-on-computer-9823115/)\n영상 일부: Yaroslav Shuraev / Pexels (https://www.pexels.com/video/woman-looking-through-a-glass-window-8890683/)",
- "desc": "연봉 5천이면 통장에는 한 달 357만원쯤 들어와요(본인 1인·식대 비과세 월 20만원, 2026년 보험료율·간이세액표 기준).\n국세청 2024년 귀속 근로소득 자료로 줄 세우면 연봉 5천은 직장인 백 명 중 앞에서 서른세 명 안이에요. 3천부터 1억까지 연봉이 천만원 오를 때 통장이 얼마 느는지도 셌습니다.\n\n전체 표와 계산 근거(카페): https://cafe.naver.com/firemap\n내 연봉 넣어 보기(파이어맵 월급 계산기): https://firemap.kr/calc/salary?utm_source=youtube&utm_medium=description&utm_campaign=n-3\n\n0:00 예고\n0:22 '연봉'은 어느 돈인가\n1:15 연봉 사다리 3천~1억\n2:40 어디서 빠지나\n3:35 1천만원 오를 때 통장은 얼마 느나\n4:55 거꾸로: 통장 300만원이 되려면\n6:00 같은 연봉, 다른 통장\n7:21 평균 4,475만원과 '상위 25%'\n8:29 내 숫자 넣기\n\n출처\n· 근로소득 백분위(천분위) 자료, 2024년 귀속: 국세청(공공데이터포털 15082063, '근로소득 백분위(천분위) 자료_20251231')\n· 근로소득 간이세액표: 소득세법 시행령 별표 2(2026.2.27 개정) · 식대 월 20만원 이하 비과세: 소득세법 제12조 제3호 러목 · 세율·근로소득공제: 소득세법 제55조①·제47조①\n· 국민연금 보험료율(2026년 9.5%, 근로자 절반 4.75%): 국민연금법 부칙 · 기준소득월액 상한 659만원(2026.7~2027.6): 국민연금공단\n· 건강보험료율 7.19%: 국민건강보험법 시행령 제44조① · 장기요양보험료(건강보험료의 13.14%): 노인장기요양보험법 시행령 제4조 · 고용보험 실업급여 0.9%(근로자): 고용보험 및 산재보험 보험료징수법 시행령 제12조①2호\n계산 가정: 통장 금액은 달마다 떼는 돈(간이세액 100%) 기준이고, 연말정산 뒤 실제 세금은 사람마다 다를 수 있어요 · 국세청 순위는 계약서 연봉이 아니라 총급여(비과세 뺀 돈) 기준, 구간마다 평균만 공개돼 '앞에서 몇 명 안'으로 읽었습니다.\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이에요. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 정보 제공용이고, 특정 상품을 사거나 팔라는 권유가 아니에요.\n썸네일 사진: Szymon Shields / Pexels (https://www.pexels.com/photo/aerial-view-of-pedestrians-walking-on-a-long-street-crossing-in-city-16456831/) (자르기·어둡게·글자 추가)\n영상 일부: Oleh Bachynskyi / Pexels (https://www.pexels.com/video/reflection-in-the-windows-of-the-winter-town-28587785/)\n영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/people-working-on-their-laptops-in-an-office-3202364/)\n영상 일부: Ketut Subiyanto / Pexels (https://www.pexels.com/video/person-holding-a-bag-while-crossing-the-street-4992563/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/person-using-calculator-while-writing-on-paper-5923592/)\n영상 일부: Max Vakhtbovych / Pexels (https://www.pexels.com/video/close-up-view-of-a-person-shopping-online-6771533/)\n영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/a-man-using-a-smartphone-while-holding-a-bank-card-7535095/)\n영상 일부: Kindel Media / Pexels (https://www.pexels.com/video/person-typing-on-computer-7687970/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/close-up-video-of-a-person-using-a-cellphone-7822029/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/drone-footage-of-a-buildings-with-glass-windows-8783211/)\n영상 일부: Afonso Oliveira / Pexels (https://www.pexels.com/video/male-hands-typing-on-computer-9823115/)\n영상 일부: Yaroslav Shuraev / Pexels (https://www.pexels.com/video/woman-looking-through-a-glass-window-8890683/)",
- "chapters": [
-  [
-   0,
-   "예고"
+  "ep": "N-3",
+  "series": "경제 — 연봉 실수령액",
+  "title": "연봉 실수령액, 연봉 5천이면 통장엔 월 357만원… 직장인 100명 중 몇 번째일까",
+  "title_by": "firemap-copywriter 2026-10-27 copy/titles.md 1위(짝 비교 2승×2, 10/28 고친 판에도 1위 그대로)",
+  "title_candidates": [
+    "연봉 실수령액, 연봉 5천이면 통장엔 월 357만원… 직장인 100명 중 몇 번째일까",
+    "연봉 실수령액 3천부터 1억까지, 통장엔 월 얼마 들어오고 100명 중 몇 번째일까"
   ],
-  [
-   22,
-   "'연봉'은 어느 돈인가"
+  "thumb_text_top": "2024년 국세청 직장인 전체 연봉 순위",
+  "thumb_text": "연봉 5천은 100명 중 / 위에서 33명 안에",
+  "thumb": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\N-3\\thumb_n3n_c2.png",
+  "thumb_status": "visual 11/10 09:20 길이 칸 가림 고침(c → c2, 글자·사진 그대로) · 문구 = copy/titles.md 10/28 확정판 · 1초 시험 visual/N-3-thumb/judges.md · 사진 Pexels 16456831",
+  "desc_first2": [
+    "연봉 5천이면 통장에는 한 달 357만원쯤 들어와요(본인 1인·식대 비과세 월 20만원, 2026년 보험료율·간이세액표 기준).",
+    "국세청 2024년 귀속 근로소득 자료로 줄 세우면 연봉 5천은 직장인 백 명 중 앞에서 서른세 명 안이에요. 3천부터 1억까지 연봉이 천만원 오를 때 통장이 얼마 느는지도 셌습니다."
   ],
-  [
-   75,
-   "연봉 사다리 3천~1억"
+  "desc_first2_src": "say_v1 3·5줄(357만원쯤·앞에서 서른세 명 안)·13~16줄(식대 20만원)·calc_out.txt A(1인·식대 비과세 월 20만·간이세액 100%) · copywriter 남은 궁금증 \"설명 첫 줄에 1인 기준\" 반영",
+  "tags": [
+    "연봉 실수령액",
+    "월급 실수령액",
+    "연봉 1억 실수령액",
+    "2026 연봉 실수령액표",
+    "연봉 상위 몇 프로"
   ],
-  [
-   161,
-   "어디서 빠지나"
+  "desc_tpl": "연봉 5천이면 통장에는 한 달 357만원쯤 들어와요(본인 1인·식대 비과세 월 20만원, 2026년 보험료율·간이세액표 기준).\n국세청 2024년 귀속 근로소득 자료로 줄 세우면 연봉 5천은 직장인 백 명 중 앞에서 서른세 명 안이에요. 3천부터 1억까지 연봉이 천만원 오를 때 통장이 얼마 느는지도 셌습니다.\n\n전체 표와 계산 근거(카페): {CAFE}\n내 연봉 넣어 보기(파이어맵 월급 계산기): https://firemap.kr/calc/salary?utm_source=youtube&utm_medium=description&utm_campaign=n-3\n\n{CHAPTERS}\n\n출처\n· 근로소득 백분위(천분위) 자료, 2024년 귀속: 국세청(공공데이터포털 15082063, '근로소득 백분위(천분위) 자료_20251231')\n· 근로소득 간이세액표: 소득세법 시행령 별표 2(2026.2.27 개정) · 식대 월 20만원 이하 비과세: 소득세법 제12조 제3호 러목 · 세율·근로소득공제: 소득세법 제55조①·제47조①\n· 국민연금 보험료율(2026년 9.5%, 근로자 절반 4.75%): 국민연금법 부칙 · 기준소득월액 상한 659만원(2026.7~2027.6): 국민연금공단\n· 건강보험료율 7.19%: 국민건강보험법 시행령 제44조① · 장기요양보험료(건강보험료의 13.14%): 노인장기요양보험법 시행령 제4조 · 고용보험 실업급여 0.9%(근로자): 고용보험 및 산재보험 보험료징수법 시행령 제12조①2호\n계산 가정: 통장 금액은 달마다 떼는 돈(간이세액 100%) 기준이고, 연말정산 뒤 실제 세금은 사람마다 다를 수 있어요 · 국세청 순위는 계약서 연봉이 아니라 총급여(비과세 뺀 돈) 기준, 구간마다 평균만 공개돼 '앞에서 몇 명 안'으로 읽었습니다.\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이에요. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 정보 제공용이고, 특정 상품을 사거나 팔라는 권유가 아니에요.\n썸네일 사진: Szymon Shields / Pexels (https://www.pexels.com/photo/aerial-view-of-pedestrians-walking-on-a-long-street-crossing-in-city-16456831/) (자르기·어둡게·글자 추가)\n영상 일부: Oleh Bachynskyi / Pexels (https://www.pexels.com/video/reflection-in-the-windows-of-the-winter-town-28587785/)\n영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/people-working-on-their-laptops-in-an-office-3202364/)\n영상 일부: Ketut Subiyanto / Pexels (https://www.pexels.com/video/person-holding-a-bag-while-crossing-the-street-4992563/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/person-using-calculator-while-writing-on-paper-5923592/)\n영상 일부: Max Vakhtbovych / Pexels (https://www.pexels.com/video/close-up-view-of-a-person-shopping-online-6771533/)\n영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/a-man-using-a-smartphone-while-holding-a-bank-card-7535095/)\n영상 일부: Kindel Media / Pexels (https://www.pexels.com/video/person-typing-on-computer-7687970/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/close-up-video-of-a-person-using-a-cellphone-7822029/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/drone-footage-of-a-buildings-with-glass-windows-8783211/)\n영상 일부: Afonso Oliveira / Pexels (https://www.pexels.com/video/male-hands-typing-on-computer-9823115/)\n영상 일부: Yaroslav Shuraev / Pexels (https://www.pexels.com/video/woman-looking-through-a-glass-window-8890683/)",
+  "desc": "연봉 5천이면 통장에는 한 달 357만원쯤 들어와요(본인 1인·식대 비과세 월 20만원, 2026년 보험료율·간이세액표 기준).\n국세청 2024년 귀속 근로소득 자료로 줄 세우면 연봉 5천은 직장인 백 명 중 앞에서 서른세 명 안이에요. 3천부터 1억까지 연봉이 천만원 오를 때 통장이 얼마 느는지도 셌습니다.\n\n전체 표와 계산 근거(카페): https://cafe.naver.com/firemap\n내 연봉 넣어 보기(파이어맵 월급 계산기): https://firemap.kr/calc/salary?utm_source=youtube&utm_medium=description&utm_campaign=n-3\n\n0:00 예고\n0:22 '연봉'은 어느 돈인가\n1:15 연봉 사다리 3천~1억\n2:40 어디서 빠지나\n3:35 1천만원 오를 때 통장은 얼마 느나\n4:55 거꾸로: 통장 300만원이 되려면\n6:00 같은 연봉, 다른 통장\n7:21 평균 4,475만원과 '상위 25%'\n8:29 내 숫자 넣기\n\n출처\n· 근로소득 백분위(천분위) 자료, 2024년 귀속: 국세청(공공데이터포털 15082063, '근로소득 백분위(천분위) 자료_20251231')\n· 근로소득 간이세액표: 소득세법 시행령 별표 2(2026.2.27 개정) · 식대 월 20만원 이하 비과세: 소득세법 제12조 제3호 러목 · 세율·근로소득공제: 소득세법 제55조①·제47조①\n· 국민연금 보험료율(2026년 9.5%, 근로자 절반 4.75%): 국민연금법 부칙 · 기준소득월액 상한 659만원(2026.7~2027.6): 국민연금공단\n· 건강보험료율 7.19%: 국민건강보험법 시행령 제44조① · 장기요양보험료(건강보험료의 13.14%): 노인장기요양보험법 시행령 제4조 · 고용보험 실업급여 0.9%(근로자): 고용보험 및 산재보험 보험료징수법 시행령 제12조①2호\n계산 가정: 통장 금액은 달마다 떼는 돈(간이세액 100%) 기준이고, 연말정산 뒤 실제 세금은 사람마다 다를 수 있어요 · 국세청 순위는 계약서 연봉이 아니라 총급여(비과세 뺀 돈) 기준, 구간마다 평균만 공개돼 '앞에서 몇 명 안'으로 읽었습니다.\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이에요. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 정보 제공용이고, 특정 상품을 사거나 팔라는 권유가 아니에요.\n썸네일 사진: Szymon Shields / Pexels (https://www.pexels.com/photo/aerial-view-of-pedestrians-walking-on-a-long-street-crossing-in-city-16456831/) (자르기·어둡게·글자 추가)\n영상 일부: Oleh Bachynskyi / Pexels (https://www.pexels.com/video/reflection-in-the-windows-of-the-winter-town-28587785/)\n영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/people-working-on-their-laptops-in-an-office-3202364/)\n영상 일부: Ketut Subiyanto / Pexels (https://www.pexels.com/video/person-holding-a-bag-while-crossing-the-street-4992563/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/person-using-calculator-while-writing-on-paper-5923592/)\n영상 일부: Max Vakhtbovych / Pexels (https://www.pexels.com/video/close-up-view-of-a-person-shopping-online-6771533/)\n영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/a-man-using-a-smartphone-while-holding-a-bank-card-7535095/)\n영상 일부: Kindel Media / Pexels (https://www.pexels.com/video/person-typing-on-computer-7687970/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/close-up-video-of-a-person-using-a-cellphone-7822029/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/drone-footage-of-a-buildings-with-glass-windows-8783211/)\n영상 일부: Afonso Oliveira / Pexels (https://www.pexels.com/video/male-hands-typing-on-computer-9823115/)\n영상 일부: Yaroslav Shuraev / Pexels (https://www.pexels.com/video/woman-looking-through-a-glass-window-8890683/)",
+  "chapters": [
+    [
+      0,
+      "예고"
+    ],
+    [
+      22,
+      "'연봉'은 어느 돈인가"
+    ],
+    [
+      75,
+      "연봉 사다리 3천~1억"
+    ],
+    [
+      161,
+      "어디서 빠지나"
+    ],
+    [
+      215,
+      "1천만원 오를 때 통장은 얼마 느나"
+    ],
+    [
+      296,
+      "거꾸로: 통장 300만원이 되려면"
+    ],
+    [
+      361,
+      "같은 연봉, 다른 통장"
+    ],
+    [
+      441,
+      "평균 4,475만원과 '상위 25%'"
+    ],
+    [
+      510,
+      "내 숫자 넣기"
+    ]
   ],
-  [
-   215,
-   "1천만원 오를 때 통장은 얼마 느나"
+  "voice": "Chirp 3 HD Charon 1.1 · 173줄 · 555.9초 · editor 11/14 07:07 두 줄 다시 녹음·readback 통과",
+  "missing": 0,
+  "publishAt": "2026-11-16T11:30:00+09:00",
+  "privacy": "private",
+  "privacy_note": "예약 공개(private+publishAt) — 정해진 시각에 공개로 바뀜",
+  "paid": false,
+  "coupang": null,
+  "synthetic": true,
+  "veo": false,
+  "synthetic_note": "AI 음성 내레이션 → containsSyntheticMedia True (AI 생성 그림은 쓰지 않음 — 실사 Pexels 11개·판 자체 제작)",
+  "answers": {
+    "q1_바꿔끼우기": "아니오 — 2026년 간이세액표·보험료율로 3천~1억 일곱 칸 통장 금액을 직접 계산하고(calc_out.txt), 국세청 2024년 귀속 천분위 자료로 같은 연봉의 줄 위치를 셌다. 천만원 오를 때 통장에 남는 비율(76.3%·74.9% 등)은 남이 낸 숫자가 아니다.",
+    "q2_연달아보기": "아니오 — 앞 편 S-1(주식, 11/18)·H-4(부동산, 11/14), 다음 편 W-3(주식, 11/22)과 축이 다르다(경제·연봉). 앞 연봉 편 N-1(상위 몇 %)과 질문이 다르다(세후 통장 금액·오를 때 느는 몫).",
+    "q3_약속이행": "예 — 제목 '5천이면 통장엔 월 357만원… 100명 중 몇 번째'는 첫 30초에 357만원·앞에서 서른세 명 안으로 답하고, 2~8장이 사다리·빠지는 돈·오를 때 느는 몫·거꾸로 계산·가족 수 차이·평균과 상위 25%를 채운다.",
+    "q4_조언으로들리나": "아니오 — 상품 권유 0. 할 일은 원천징수영수증 총급여로 내 자리 찾기, 부양가족 신고·원천징수 비율 고르기(제도), 계산기에 내 숫자 넣기까지다.",
+    "q5_사람의몫": "예 — '연봉 = 계약서 숫자'라는 흔한 말을 국세청 총급여 기준으로 바로잡고(5천 → 4,760만원으로 섬), 국세청이 구간 평균만 낸다는 한계를 말하고 '앞에서 몇 명 안'으로만 읽었다."
+  },
+  "endscreen": {
+    "how": "Studio 최종 화면 — 업로드 뒤 할 일(다음 편 또는 N-1)",
+    "status": "미정"
+  },
+  "made_by": "firemap-video-producer",
+  "made_at": "2026-11-15",
+  "video": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\video\\out\\n3_ds.mp4",
+  "todo": "11/15 05시 PD: 렌더·deess·screen·bgcheck·bench_check 끝(out/n3_ds.mp4) · 남은 것: editor 설명란 서명(desc_1115.txt) → 올리기 전 확인(youtube-loop, 11/19) → gate → up publishAt 11/20 11:30 · 카페 짝 글 주소(cafe_url)",
+  "click_ok": [
+    177.1
   ],
-  [
-   296,
-   "거꾸로: 통장 300만원이 되려면"
-  ],
-  [
-   361,
-   "같은 연봉, 다른 통장"
-  ],
-  [
-   441,
-   "평균 4,475만원과 '상위 25%'"
-  ],
-  [
-   510,
-   "내 숫자 넣기"
-  ]
- ],
- "voice": "Chirp 3 HD Charon 1.1 · 173줄 · 555.9초 · editor 11/14 07:07 두 줄 다시 녹음·readback 통과",
- "missing": 0,
- "publishAt": "2026-11-20T11:30:00+09:00",
- "privacy": "private",
- "privacy_note": "예약 공개(private+publishAt) — 정해진 시각에 공개로 바뀜",
- "paid": false,
- "coupang": null,
- "synthetic": true,
- "veo": false,
- "synthetic_note": "AI 음성 내레이션 → containsSyntheticMedia True (AI 생성 그림은 쓰지 않음 — 실사 Pexels 11개·판 자체 제작)",
- "answers": {
-  "q1_바꿔끼우기": "아니오 — 2026년 간이세액표·보험료율로 3천~1억 일곱 칸 통장 금액을 직접 계산하고(calc_out.txt), 국세청 2024년 귀속 천분위 자료로 같은 연봉의 줄 위치를 셌다. 천만원 오를 때 통장에 남는 비율(76.3%·74.9% 등)은 남이 낸 숫자가 아니다.",
-  "q2_연달아보기": "아니오 — 앞 편 S-1(주식, 11/18)·H-4(부동산, 11/14), 다음 편 W-3(주식, 11/22)과 축이 다르다(경제·연봉). 앞 연봉 편 N-1(상위 몇 %)과 질문이 다르다(세후 통장 금액·오를 때 느는 몫).",
-  "q3_약속이행": "예 — 제목 '5천이면 통장엔 월 357만원… 100명 중 몇 번째'는 첫 30초에 357만원·앞에서 서른세 명 안으로 답하고, 2~8장이 사다리·빠지는 돈·오를 때 느는 몫·거꾸로 계산·가족 수 차이·평균과 상위 25%를 채운다.",
-  "q4_조언으로들리나": "아니오 — 상품 권유 0. 할 일은 원천징수영수증 총급여로 내 자리 찾기, 부양가족 신고·원천징수 비율 고르기(제도), 계산기에 내 숫자 넣기까지다.",
-  "q5_사람의몫": "예 — '연봉 = 계약서 숫자'라는 흔한 말을 국세청 총급여 기준으로 바로잡고(5천 → 4,760만원으로 섬), 국세청이 구간 평균만 낸다는 한계를 말하고 '앞에서 몇 명 안'으로만 읽었다."
- },
- "endscreen": {
-  "how": "Studio 최종 화면 — 업로드 뒤 할 일(다음 편 또는 N-1)",
-  "status": "미정"
- },
- "made_by": "firemap-video-producer",
- "made_at": "2026-11-15",
- "video": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\video\\out\\n3_ds.mp4",
- "todo": "11/15 05시 PD: 렌더·deess·screen·bgcheck·bench_check 끝(out/n3_ds.mp4) · 남은 것: editor 설명란 서명(desc_1115.txt) → 올리기 전 확인(youtube-loop, 11/19) → gate → up publishAt 11/20 11:30 · 카페 짝 글 주소(cafe_url)",
- "click_ok": [
-  177.1
- ],
- "click_ok_note": "177.1초('빠지는 돈의 구성이' 줄 가운데): 문장 wav clickscan 0, 완성본 175.8~179초 잘라 제미나이 gemini-3-flash-preview·3.5-flash 둘 다 '잡음 없음, 빠지는의 지' (PD 11/15 05시, check/ 기록)"
+  "click_ok_note": "177.1초('빠지는 돈의 구성이' 줄 가운데): 문장 wav clickscan 0, 완성본 175.8~179초 잘라 제미나이 gemini-3-flash-preview·3.5-flash 둘 다 '잡음 없음, 빠지는의 지' (PD 11/15 05시, check/ 기록)"
 }

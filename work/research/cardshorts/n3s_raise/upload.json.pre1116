@@ -1,0 +1,17 @@
+{
+ "name": "n3s_raise",
+ "ep": "N-3",
+ "from_long": null,
+ "mp4": "work/video/out/n3s_raise_c1_ds.mp4",
+ "publishAt": "2026-11-23T19:20:00+09:00",
+ "publish_plan": "11/23 19:20 쇼츠 칸(비축 0이던 칸) · 연봉 축 — 11/22 p1s_avg(정책) 뒤, 부동산·주식 아님 · N-3 첫 클립(롱폼 11/20 11:30 공개 예정) · **올리기 전: N-3 videoId가 생긴 뒤 from_long·설명 {N3} 채우고 w1g1clips_up.py n3s_raise** · N-3 예약이 밀리면 이 칸도 그 뒤로",
+ "title": "연봉 실수령액, 천만원 올라도 통장엔 덜 느는 구간 #shorts",
+ "description": "전체 계산: https://youtu.be/{N3} (연봉 3천~1억 5천 칸별 실수령액·부양가족·식대 비과세까지)\n\n연봉이 천만원 오르면 세전 월급은 한 달 83만원쯤 늘어요. 3천→4천은 통장에 69만원이 남지만 7천→8천은 55만원만 남습니다. 연봉에서 각종 공제를 뺀 돈(과세표준)이 5천만원을 넘는 부분에 소득세 15% 대신 24%가 붙기 때문이에요. 1인·식대 비과세 월 20만원·2026년 기준이고, 부양가족이 있으면 숫자가 달라집니다.\n천만원 오를 때 통장 월 증가: 3천→4천 691,373원 · 4천→5천 635,773원 · 5천→6천 623,824원 · 6천→7천 625,903원 · 7천→8천 545,773원 · (8천→1억, 2천만원 오를 때 1,163,837원)\n\n출처: 소득세법 제55조(종합소득세율) · 2026년 근로소득 간이세액표 · 2026년 4대 보험료율 · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — Coverr · Ketut Subiyanto · Max Vakhtbovych · Mikhail Nilov · RDNE Stock project · cottonbro studio\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #연봉실수령액 #연봉인상",
+ "tags": "연봉 실수령액,연봉 인상 실수령액,연봉 1000만원 인상,소득세율 구간,과세표준",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/n3s_raise/cover_1115.png"
+}

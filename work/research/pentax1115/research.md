@@ -73,6 +73,10 @@
 | 공단 전자민원 연금소득 원천징수영수증 | 공단이 원천징수(소득세법 제127조) · 전자민원 연금소득 원천징수영수증 | S3 https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0088M0.do |
 
 # 올리기 전 확인
+- 2026-11-15 10:45 firemap-write-b(발행 날 다시 확인): 대조 출처 3곳 전부 다시 엶 — https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7888 (200, raw/nts_7888_1115.txt) · https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6449&cntntsId=7885 (200, raw/nts_7885_1115.txt) · https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0088M0.do (200, raw/nps_0088_1115.txt) — 1,500만원·15%·5/4/3%·종신·이연퇴직·2002 문구 11/14 저장본과 같음
+- 기준일: 2026년 11월 15일 국세청·국민연금공단 안내 조회(2026년 연금수령분 세율)
+- 바뀐 것: 없음 — 세율 5%·4%·3%, 1,500만원 선, 15% 분리과세 선택 11/14과 같음
+- 새로 찾은 것: 없음 — law.go.kr 소득세법 원문은 오늘도 못 엶(OPEN API OC=test '사용자 정보 검증 실패', lawweb.py 조문 화면 구조 불일치) → 국세청 안내(1차)로 대조 유지
 - 2026-11-14 11:3x firemap-write-b(조사·작성 날, 발행 11/15 10:10 — 1일 안). 발행 회차가 law.go.kr 소득세법 원문을 다시 열 것
 - 다시 연 주소: https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7888 (200, raw/nts_7888.txt) · https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6449&cntntsId=7885 (200, raw/nts_7885.txt) · https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0088M0.do (200, raw/nps_0088.txt)
 - 기준일: 2026년 11월 14일 국세청 안내 조회(2026년 연금수령분 세율)

@@ -85,10 +85,17 @@ def s1_nine(im):           # 0. 사상 최대 9번 · 화살표 9개 중 하나�
 @board
 def s1_nine_grow(im):      # 1. 9개 막대 · 2018.1·2026.7 강조
     d, x0, bw, gap = record_bars(im, hi=('2018-01-09', '2026-07-07'), labels=False, top=330)
-    T(d, (W // 2, 130), '14.0조원 → 107.4조원', 150, INK, F_X)
-    for dt, sd in (('2018-01-09', 61), ('2026-07-07', 62)):
-        i = RECORD.index(dt); cx = x0 + i * (bw + gap) + bw // 2
-        T(d, (cx, 250), f"{BYDATE[dt]['day']:+.2f}%", 64, OR if dt == '2026-07-07' else INK, F_X)
+    # 11/15 새 심사관 r07 못함: 제목 '14.0→107.4조원'과 강조 막대(8번째 2026.7)가 어긋나 '107.4조=−6.92%'로 읽힘 → 제목에서 107.4 빼고, 강조 막대에 연·월을 붙임
+    # 2차(11/15 새 심사관 r07 못함): −6.92% 주황이 '오름'처럼 읽히고 숫자가 화살표 사이에 뜸, '9번 중 1번'이 숫자로 없음
+    #   → 숫자를 그 화살표 바로 위에 파랑(내림 색)으로 붙이고, 제목에 '9번 중 오른 날 1번'
+    T(d, (W // 2, 120), '사상 최대 9번 중 오른 날 1번', 120, INK, F_X)
+    for dt in ('2018-01-09', '2026-07-07'):
+        i = RECORD.index(dt); cx = x0 + i * (bw + gap) + bw // 2; r = BYDATE[dt]
+        ytop = 860 - (860 - 330) * r['op'] / 107.4 - 40 - 90
+        lab = f"{r['day']:+.2f}%".replace('-', '−')
+        if dt == '2026-07-07': T(d, (cx - 40, ytop + 45), lab, 72, BLUE, F_X, 'rm')   # 9번째 화살표와 붙지 않게 제 화살표 왼쪽
+        else: T(d, (cx, ytop - 50), lab, 60, BLUE, F_X)
+        T(d, (cx, 940), f"{dt[:4]}.{int(dt[5:7])}", 46, INK, F_B)
     source(d, SRC_DART + ' · 막대 = 그 분기 영업이익 · 화살표 = 발표 날 등락')
 
 @board
@@ -174,7 +181,7 @@ def s1_pre_split(im):      # 3-1. 발표 전 한 달 올라 있던 28번 vs 16�
     d.line([(W // 2, 320), (W // 2, 760)], fill=LINE, width=4)
     hand_under(d, 250, 750, 680, seed=71)
     T(d, (W // 2, 880), '발표 날 내린 횟수', 60, GREY, F_B)
-    source(d, '발표 전 한 달 = 21거래일 전 종가 → 발표 전날 종가 · calc_pre')
+    source(d, '발표 전 한 달 = 21거래일 전 종가 → 발표 전날 종가')
 
 def cells(d, x, y, vals, s=52, g=10):
     for i, v in enumerate(vals):

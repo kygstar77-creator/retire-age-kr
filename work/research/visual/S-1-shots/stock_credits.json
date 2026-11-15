@@ -1,0 +1,34 @@
+[
+ {
+  "id": 39426039,
+  "query": "notebook pen desk evening",
+  "file": "bg/s1/stock/s1_desk.mp4",
+  "w": 1920,
+  "h": 1080,
+  "sec": 31,
+  "author": "Sergei Starostin",
+  "author_url": "https://www.pexels.com/@sejio402",
+  "page": "https://www.pexels.com/video/person-writing-in-journal-at-home-desk-39426039/",
+  "license": "https://www.pexels.com/license/",
+  "got": "2026-11-15 09:14",
+  "used": false,
+  "desc_line": "영상 일부: Sergei Starostin / Pexels (https://www.pexels.com/video/person-writing-in-journal-at-home-desk-39426039/)",
+  "note": "얼굴·간판 없음 확인(1.5초 프레임) · -bf 0 다시 인코딩(lessons 11/11)"
+ },
+ {
+  "id": 40863417,
+  "query": "rainy window city street",
+  "file": "bg/s1/stock/s1_rain.mp4",
+  "w": 1920,
+  "h": 1080,
+  "sec": 14,
+  "author": "Evgenij Mikhailov",
+  "author_url": "https://www.pexels.com/@evgenij-mikhailov-118166450",
+  "page": "https://www.pexels.com/video/rainy-city-night-with-blurred-lights-40863417/",
+  "license": "https://www.pexels.com/license/",
+  "got": "2026-11-15 09:14",
+  "used": false,
+  "desc_line": "영상 일부: Evgenij Mikhailov / Pexels (https://www.pexels.com/video/rainy-city-night-with-blurred-lights-40863417/)",
+  "note": "얼굴·간판 없음 확인(1.5초 프레임) · -bf 0 다시 인코딩(lessons 11/11)"
+ }
+]

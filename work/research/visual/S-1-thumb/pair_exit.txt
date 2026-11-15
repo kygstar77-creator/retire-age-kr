@@ -1,0 +1,9 @@
+b-vs-a exit 0
+b-vs-c exit 3
+d-vs-c exit 3
+d-vs-c2 exit 3
+gem-d done
+d2-vs-d exit 3
+e3-vs-f exit 3
+e3-vs-f exit 0
+e3-vs-f2 exit 3

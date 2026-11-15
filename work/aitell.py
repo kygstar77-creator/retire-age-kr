@@ -902,9 +902,27 @@ def thumb_check(lines):
 
 def thumb_warn(lines):
     """A65(10/27 thumb-gap-1027): 윗줄 가운뎃점 나열 — 우리 롱폼 6/7, 경쟁 상위 0/16. 경고만(막지 않음)."""
+    out = []
     if lines and len(re.findall(r'\s[·ㆍ・]\s|[·ㆍ・]', lines[0])) >= 2:
-        return [f'A65 윗줄 가운뎃점 나열: {lines[0]} — 문장 한 줄이나 꼬리표 하나로(남 상위 0/16)']
-    return []
+        out.append(f'A65 윗줄 가운뎃점 나열: {lines[0]} — 문장 한 줄이나 꼬리표 하나로(남 상위 0/16)')
+    # A88(11/14 thumb-gap-1114 ③, editor 11/16): 상대 시점 — 썸네일은 몇 년 노출되니 박힌 해로. 같은 줄에 네 자리 연도가 있으면 통과
+    for l in lines:
+        m = re.search(r'올해|작년|이번\s*달|지난\s*달|최근|요즘', l)
+        if m and not re.search(r'\d{4}', l): out.append(f'A88 상대 시점 "{m.group(0)}": {l} — "2025년 9월 vs 2026년 9월"처럼 박힌 해로')
+    return out
+
+
+def script_warn(text):
+    """A93·A94(11/16 genre-gap-1116 ③, editor): 대본 경고만(막지 않음)."""
+    out = []
+    # A93 비유 갈아타기: 한 편에 비유 2개 이상. 숫자 환산('100주로 치면')은 비유가 아니라 뺀다
+    sim = [m.group(0).strip() for m in re.finditer(r'\S*로\s*치면|떠올려\s*보|[와과]\s*같습니다', text)
+           if not re.match(r'[\d,.]+|예로', m.group(0).strip())]   # '앞에서 든 예로 치면'은 계산 되부르기(S-1 11/16)
+    if len(sim) >= 2: out.append(f'A93 비유 {len(sim)}번({", ".join(sim[:4])}) — 비유는 한 편에 하나, 끝에선 그 하나만 다시')
+    # A94 권유 꼬리: 설명 끝이 투자 권유
+    for m in re.finditer(r'[^.?!\n]{0,25}(?:게\s*맞습니다|편이\s*낫습니다|사\s*모으세요|사세요)', text):
+        out.append(f'A94 권유 꼬리 "{m.group(0).strip()}" — "…였어요/…예요" 사실로 끝내기')
+    return out
 
 
 def main(a):
@@ -934,6 +952,7 @@ def main(a):
         for w, i, l, to in sp: print(f'   [{w} → {to}] {i}줄: {l[:70]}')
         for x in over: print('   [경고·많이 씀]', x)
         if sp: print('  사람 자막에 거의 안 나오는 말이다. 바꿀 말로 고치되 숫자·사실은 그대로. 법·제도 이름·상품명이면 not_spoken.json terms에 그 이름을 더한다.')
+        for w in script_warn(script_text(a[1])): print('   [경고]', w)
         return 0 if ok and not habits and not sp else 6
     if a[0] == 'spoken':   # 카페 묶음·아무 글: 구어 아닌 말만(10/19). 발행 관문(gate)에는 안 넣음 — 글로 쓰는 말과 말로 하는 말은 다르다
         tot = 0

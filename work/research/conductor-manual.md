@@ -38,6 +38,7 @@
 | 중간 | 카페 글쓰기(firemap-write·firemap-write-b, 칸 놓침 10/17 07:40·10/18 19:40), 영상 PD(firemap-video-producer, C-2 관문 기한 넘김 10/18), 유튜브 루프(firemap-youtube-loop), 문장 편집자(firemap-editor), 감사관(firemap-audit) | 지시서를 주고, 결과물 중 표본을 하루 2건 검수한다. |
 | 높음 (기준을 꾸준히 넘김) | 발행 감시(firemap-watchdog), 보고(firemap-report) | 결과 숫자만 본다. |
 | (10/18 회의 갱신) | 10/6·10/11 조직 축소로 지운 자리(제품 개발·성장·쇼츠·예술가·신사업·improve·loop)는 표에서 뺐다. 편집자는 10/18 하루 서명 11건(decisions/log)으로 매일 관문을 돌려 낮음→중간(2주 반려 수는 세지 않음, 다음 일요일 확인). | |
+| (11/15 회의 갱신) | 바뀐 자리 없음: write·write-b 중간 유지(카페 전건 검수 3일째, 11/15 반려 2/6=33%) · PD 중간 유지(K-1 낡은 숫자 공개, 대신 N-3·쇼츠 4편 조기) · editor·youtube-loop·visual·copywriter 그대로 | |
 
 전체 회의가 매주 일요일에 성숙도 표를 갱신한다. 기준: 2주 연속 검수 통과면 한 단계 올리고, 한 번 크게 실패하면 한 단계 내린다.
 

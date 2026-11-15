@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-15 09:25",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "금리인하요구권",
+ "num": "1건에 1년 약 11만원",
+ "sub": "주택담보대출은 약 6만원",
+ "label": "2026년 상반기 · 가계 신용대출",
+ "src": "은행연합회 비교공시",
+ "icon": "badge-percent",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 158,
+ "num_px": 110,
+ "sub_px": 62,
+ "board": [
+  "sav1115",
+  "exdiv1114",
+  "silson24clm1114",
+  "floor1114",
+  "h4pair1114",
+  "sp500etf1114",
+  "fin2kpct1114",
+  "newrenew1112",
+  "dfopt1112",
+  "newold1112"
+ ]
+}

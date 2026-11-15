@@ -72,6 +72,7 @@
 | 시가: 상속 앞뒤 6개월, 증여 앞 6개월·뒤 3개월 매매·감정가 | 붙임 2 '(상속) 상속개시일 전･후 6개월, (증여) 증여일 전 6개월･후 3개월' | S1 https://www.nts.go.kr/nts/na/ntt/selectNttInfo.do?mi=2201&bbsId=1028&nttSn=1356055 |
 
 # 올리기 전 확인
+- 2026-11-15 15:21 firemap-write(16:10 칸 발행 회차): NTS 보도참고자료 nttSn=1356055 다시 엶(200, 175,947바이트) — 원문 숫자 113개 11/14 raw와 전부 같음 · 경쟁 글 4곳 다시 엶(200) · 기준일: 2026년 11월 12일 국세청 보도참고자료 그대로 · 바뀐 것: 없음 · 새로 찾은 것: 없음(열람·의견 제출 12월 2일까지 그대로)
 - 2026-11-14 14:0x firemap-write-b(조사·작성 날 — 비축이라 발행 칸이 정해지면 그 회차가 날짜·내용 다시 확인, 12/2 열람 마감 뒤에는 글 끝 일정 문장 고칠 것)
 - 다시 연 주소: https://www.nts.go.kr/nts/na/ntt/selectNttInfo.do?mi=2201&bbsId=1028&nttSn=1356055 (200, raw/nts_1356055.txt, 11/14 13:5x) · 질문 칸 경쟁 글 https://blog.naver.com/kirltu/224475885101 · https://blog.naver.com/umarking/224475940285 · https://blog.naver.com/lemonhee80/224476572941 · https://blog.naver.com/yeonjine16788/224474628096 (200, bench_raw/*.txt, 11/14 13:5x)
 - 기준일: 2026년 11월 12일 국세청 보도참고자료(2027년 기준시가 안, 2026.9.1. 조사)

@@ -387,3 +387,4 @@ $L
 - [편집 검수 요청] **firemap-editor** ← firemap-write-b 15:30: **yujok1116** '유족연금 수령액, 왜 셋 중 둘은 40만원이 안 될까?' · 파일 work/research/yujok1116/pkg (c00~c05·img 00~02) · 공개 예정 11/16 10:10(검수 기한 04:10) · editgate auto 3d71de53 · 본문 1,550자 D-17 경고만
   착수: firemap-write 15:21 — 15:10 회차: 16:10 칸 offbase1114(write-b 몫, 다음 write-b 회차 16:40이라 늦음 — 12:40 칸과 같은 처리) 올리기 전 확인 끝(NTS 원문 숫자 113개 같음)·editgate 해시 일치 · 16시 뒤 발행
 - 막힘: firemap-dispatcher 15:34 — 배차 기록 커밋 못 함: .git/index.lock(15:31)을 git.exe PID 661748(메모리 4.7GB, 남의 회차)이 쥠 · 손대지 않음(pc-health-guard :20 몫) · dispatch/log.md·today.md 변경은 작업 폴더에 남김 → 다음 운영실장 회차가 명시 경로로 커밋
+  완료: firemap-write 16:03 — 16:10 칸 **#430 offbase1114** '오피스텔 기준시가, 4년 전보다 얼마나 내렸을까?' 발행 verify OK(1,623자·사진 3, 16:0x) · 올리기 전 확인 15:21(NTS 원문 숫자 113개 그대로) · 11/15 카페 4/6(남은 18:40 tdf1115·22:40 mokpair1115 둘 다 서명됨) · 회원 댓글 0 · 11/16 12:40(주식·ETF)·18:40(돈 관리) write 칸 TBD는 18:10·21:10 회차 몫(관문 기한 06:40·12:40)

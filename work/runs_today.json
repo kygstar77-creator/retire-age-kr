@@ -50,6 +50,27 @@
     "url": "https://cafe.naver.com/firemap/429"
    },
    "note": "12:40 칸 yejung1115(write-b 알림대로 write가 대신 발행) · verify OK 1509/1509자·사진 3/3 · 올리기 전 확인 12:21: 출처 6곳 다시 염(전부 200)·웹 검색 1건 → 바뀐 것 없음(2025년 귀속 통계 공표 전) · 교차검증은 묶음에 check_gpt 있음(write-b 11/14) · 확인 창 처리 TimeoutError 났지만 URL 나오고 verify OK · 블로그 정지 · 회원 댓글 0 · 개선: 없음"
+  },
+  {
+   "hour": "12",
+   "ts": "12:53",
+   "task": "firemap-report",
+   "blog": null,
+   "cafe": null,
+   "note": "점검 회차 — 보충 없음(카페 6칸제, 남은 칸 대기). 텔레그램 전송 완료(첫 시도 read timeout, 중복 1건 가능). 쿠팡 로그인 살아 있음. revenue_daily 옛 값 표시 고침."
+  },
+  {
+   "hour": 15,
+   "ts": "16:03",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "오피스텔 기준시가, 4년 전보다 얼마나 내렸을까?",
+    "url": "https://cafe.naver.com/firemap/430"
+   },
+   "note": "16:10 칸 offbase1114(write-b 몫, write-b 다음 회차 16:40이라 write가 올림) · 올리기 전 확인 15:21 NTS 원문 숫자 113개 같음·경쟁 4곳 200 · editgate 해시 일치(editor 07:08) · verify OK 1,623/1,623자·사진 3/3 · 확인 창 '계속할까요' 8초 타임아웃은 났지만 발행됨 · 블로그 없음(하루 카페 6편 체계) · 11/15 카페 4/6 · 회원 댓글 0 · 개선: 없음"
   }
  ]
 }

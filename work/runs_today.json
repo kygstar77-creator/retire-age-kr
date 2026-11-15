@@ -71,6 +71,32 @@
     "url": "https://cafe.naver.com/firemap/430"
    },
    "note": "16:10 칸 offbase1114(write-b 몫, write-b 다음 회차 16:40이라 write가 올림) · 올리기 전 확인 15:21 NTS 원문 숫자 113개 같음·경쟁 4곳 200 · editgate 해시 일치(editor 07:08) · verify OK 1,623/1,623자·사진 3/3 · 확인 창 '계속할까요' 8초 타임아웃은 났지만 발행됨 · 블로그 없음(하루 카페 6편 체계) · 11/15 카페 4/6 · 회원 댓글 0 · 개선: 없음"
+  },
+  {
+   "hour": 18,
+   "ts": "21:23",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "TDF 숫자가 클수록 더 많이 떨어질까?",
+    "url": "https://cafe.naver.com/firemap/431"
+   },
+   "note": "18:10 회차가 발행·verify OK(1,779/1,779자·사진 3/3, verify.txt)까지 하고 기록 전에 끝남(beat 마지막 단계 'tdf1115 cafe 발행') — 21:10 회차가 published.txt·verify.txt 보고 대신 적음. 11/15 카페 5/6"
+  },
+  {
+   "hour": 21,
+   "ts": "21:43",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "발행 없음(21시대 write 칸 없음 — 22:40은 write-b) · 11/16 12:40 칸 semietf1116 관문 통과(editgate auto a3300787, slots gates_ok) · 자료조사: FunETF 9개 상품·구성종목 PDF, 야후 종가 4개 대조, 네이버 ETF 목록, toprank 8편·본문 6편, 웹 검색 3번(비즈니스워치 10/16·아시아경제 10/1 — 원인 설명은 2차라 안 씀) · 교차검증: Gemini 사실 9건 중 반영 4(상품별 짝·지수·고르는 기준·종목 수를 facts에, '셌어요'→'계산했어요')·유지 2(ACE 0% 묶음 지적은 원자료 49.9%라 틀림, 한미반도체 종목명은 PDF에 있음)·나머지는 facts 짝 추가로 풀림, 말투 Gemini 두 번 시간 초과 → selfcheck 사실 0·말투 0 + 원자료 재대조 Agent 확인 55·고침 6 · 이해 시험 3차 9명 통과 · 18:40 #431 tdf1115 기록 보충 · 개선: playbook에 '같은 갈래 ETF는 1·3개월 같이 받아 순서 뒤집힘 먼저 본다'·FunETF 구성종목(PDF) 받는 법"
   }
  ]
 }

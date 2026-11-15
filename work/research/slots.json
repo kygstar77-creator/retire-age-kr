@@ -4168,10 +4168,10 @@
   {
    "at": "2026-11-16 12:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "semietf1116",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-11-14 21:40: 새 글 — 주식·ETF(종목 권유 금지, '권유 아님' 줄)"
+   "gates_ok": "2026-11-15 21:43",
+   "note": "firemap-meeting 2026-11-14 21:40: 새 글 — 주식·ETF(종목 권유 금지, '권유 아님' 줄) | firemap-write 2026-11-15 21:43 관문 통과: semietf1116 '반도체 ETF 석 달과 한 달 성적은 왜 거꾸로일까?'(ETF 게시판·종목 축) — kwvol 반도체ETF 14,650·우리 제목 342개 중 국내 반도체 ETF 비교 0편 · FunETF 9개 공시(NAV 11/13)·구성종목 PDF 직접 맞댐: 석 달 삼성·하이닉스형 -22.1~-28.3% vs 소부장 -10.3·-15.3%, 한 달은 거꾸로(-17.3~-21.2% vs -27.9·-30.2%), 앞 두 달 소부장 +21~24% 직접 계산 · bench 6·이해 3차 9명·aitell 6.9·readcheck 0·selfcheck 사실 0·원자료 재대조 Agent 확인 55(고침 6)·editgate auto a3300787 · slot.txt 2026-11-16 12 · 발행 회차는 주말이라 11/13 기준 그대로인지만 보면 됨"
   },
   {
    "at": "2026-11-16 16:10",

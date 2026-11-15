@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-15 21:36",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "반도체 ETF 9개",
+ "num": "석 달 vs 한 달 순서가 거꾸로",
+ "sub": "석 달: 삼성·하이닉스형 -28.3% · 한 달: 장비·부품형 -30.2%",
+ "label": "11월 13일 기준",
+ "src": "FunETF 상품 정보(운용사 공시)",
+ "icon": "arrow-up-down",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 144,
+ "num_px": 81,
+ "sub_px": 38,
+ "board": [
+  "tdf1115",
+  "offbase1114",
+  "yejung1115",
+  "pentax1115",
+  "sav1115",
+  "exdiv1114",
+  "silson24clm1114",
+  "floor1114",
+  "h4pair1114",
+  "sp500etf1114"
+ ]
+}

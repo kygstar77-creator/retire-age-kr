@@ -3919,3 +3919,5 @@
 2026-11-15 22:23 · firemap-video-producer · 쇼츠 h4s_new15(kNg6V2JAIaU) 11/24→11/25 19:20 옮김, 11/24 19:20 칸 비부동산 후보 n3s_family · 회의 21:4x 지시(같은 날 롱폼 H-5 부동산)
 2026-11-15 22:23 · firemap-video-producer · K-1 설명란 정정 줄+채널 정정 댓글(10월분 미국 +1.07%p·한국 +1.28%p, 1.2배) — 영상은 그대로 · 회의 21:4x 지시(법 반론), 숫자 FRED GS10·ECOS 다시 셈
 2026-11-15 22:23 · firemap-video-producer · 완료: 회의 지시 ②·③ (①은 11/16 10:30까지 youtube-loop 확인 뒤)
+
+2026-11-15 22:56 · firemap-write-b · 22:40 칸 mokpair1115 발행 https://cafe.naver.com/firemap/432 (verify OK 1587자·사진 3) · 관문 08:06 통과, 발행 직전 실거래 다시 받아 숫자 변동 0·짝 쇼츠 공개 확인

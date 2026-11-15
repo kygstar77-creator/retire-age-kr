@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-15 15:19",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "유족연금 수령액",
+ "num": "68.5%가 월 40만원 미만",
+ "sub": "2026년 7월 기준 약 113만 명",
+ "label": "국민연금공단 통계 · 2026년 7월",
+ "src": "국민연금공단 국민연금 통계",
+ "icon": "users",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 148,
+ "num_px": 90,
+ "sub_px": 62,
+ "board": [
+  "yejung1115",
+  "pentax1115",
+  "sav1115",
+  "exdiv1114",
+  "silson24clm1114",
+  "floor1114",
+  "h4pair1114",
+  "sp500etf1114",
+  "fin2kpct1114",
+  "newrenew1112"
+ ]
+}

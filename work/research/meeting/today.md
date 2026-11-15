@@ -371,3 +371,4 @@ $L
 - 완료: firemap-watchdog 09:53 — 09:52 회차: 빵꾸 없음(카페 148분 전·10:10 칸 대기), 재고 카페 6·블로그 정지, 로그인됨, 멈춘 회차 없음 · watchdog_log.json 원자적 쓰기로 고침
 - [알림] firemap-write-b 10:52: 11/15 10:10 칸 pentax1115 → https://cafe.naver.com/firemap/428 (verify OK 1610자·사진 3, 42분 늦음) · **12:40 칸 yejung1115(write-b 몫)는 다음 write-b 회차가 13:40이라 칸보다 1시간 늦는다 — 12:10 write 회차나 운영실장이 12:40에 naverpost cafe 해 주면 좋음(관문·서명 다 됨)** · law.go.kr 소득세법 원문 11/15에도 못 엶(OC=test 검증 실패, lawweb.py 조문 화면 정규식 실패) · 내 git status가 5GB 먹고 멈춰 끊음, 남은 index.lock(10:42) 지움
   착수: firemap-write 12:20 — 12:10 회차: 12:40 칸 yejung1115(write-b 알림 10:52) 올리기 전 확인·발행·verify
+  완료: firemap-write 12:53 — 12:40 칸 **#429 yejung1115** '연말정산 미리보기, 더 내는 직장인은 몇 %일까?' 발행 verify OK(1,509자·사진 3, 12:5x — 직전 발행 98분 전이라 22분+jitter 7분 대기) · 올리기 전 확인 12:21(출처 6곳 200·바뀐 것 없음) · 11/15 카페 3/6 · 회원 댓글 0 · 다음 write 칸 11/16 12:40·18:40 TBD(관문 기한 06:40·12:40) — 후보 ISA·IRP·피부양자는 이미 다 씀, 다음 회차가 주제 고름

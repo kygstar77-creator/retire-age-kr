@@ -37,6 +37,19 @@
     "url": "https://cafe.naver.com/firemap/428"
    },
    "note": "10:10 칸 pentax1115(write-b 몫) 42분 늦게 발행 · 올리기 전 확인 11/15: 국세청 7888·7885·공단 0088 다시 엶, 바뀐 것 없음 · law.go.kr 소득세법 원문은 오늘도 못 엶(API 검증 실패·lawweb 구조 불일치) · 관문: research_gate·bench·편집 해시 일치(editor 11/14 16:57)·aitell 1.4 · D-17 1,605자>1,500자 경고 · verify OK 1610/1610자·사진 3/3 · 확인 창 처리 TimeoutError 있었으나 발행됨 · 12:40 yejung1115는 칸 시각 전이라 손대지 않음 · 개선: 없음"
+  },
+  {
+   "hour": 12,
+   "ts": "12:53",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "연말정산 미리보기, 더 내는 직장인은 몇 %일까?",
+    "url": "https://cafe.naver.com/firemap/429"
+   },
+   "note": "12:40 칸 yejung1115(write-b 알림대로 write가 대신 발행) · verify OK 1509/1509자·사진 3/3 · 올리기 전 확인 12:21: 출처 6곳 다시 염(전부 200)·웹 검색 1건 → 바뀐 것 없음(2025년 귀속 통계 공표 전) · 교차검증은 묶음에 check_gpt 있음(write-b 11/14) · 확인 창 처리 TimeoutError 났지만 URL 나오고 verify OK · 블로그 정지 · 회원 댓글 0 · 개선: 없음"
   }
  ]
 }

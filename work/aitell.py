@@ -322,6 +322,7 @@ def _day_pkgs(day):
     out = []
     for s in sl.get('slots', []):
         if s.get('kind') != 'cafe' or s.get('skip') or not str(s.get('at', '')).startswith(day) or not s.get('item'): continue
+        s = dict(s, item=str(s['item']).split()[0])   # 11/15: item에 '(메모)'가 붙은 칸(sbdep1112 (…))도 묶음을 찾는다
         d = os.path.join(root, 'research', s['item'], 'pkg')
         # 못 나간 칸을 같은 날 뒤 칸으로 옮기면 한 묶음이 두 칸에 남는다(10/8 sanghan1008 08:10·14:10) — 한 번만 센다
         if os.path.exists(os.path.join(d, 'title.txt')) and s['item'] not in [i for i, _ in out]: out.append((s['item'], d))
@@ -438,6 +439,41 @@ def sameday_warn(day, pkg=None):
     for k, v in heads.items():
         if len(v) >= END_SAME_MIN and (not me or me in v):
             out.append(f"소제목 '{k[:30]}' {len(v)}칸({', '.join(v)}) — 같은 날 {END_SAME_MIN}칸 이상 같은 소제목(템플릿 신호)")
+    # 11/15 editor(benchmark-loop 지시 1115 ㉤㉥㉦, 근거 growth/cafe-gap-1115.md)
+    for e in sameday_1115(items, me): out.append(e)
+    return out
+
+
+BOARD_PHRASE = re.compile(r'질문\s*[·ㆍ]\s*고민\s*게시판')
+BOARD_MAX = 3      # ㉤ 하루 3칸 이상이면 걸림(끝 문장이 아니어도) — 11/16 칸부터 gate가 막음
+Q_TITLE_MAX = 5    # ㉥ 제목 물음꼴 하루 5칸 이상이면 경고
+HEAD6_MIN = 3      # ㉦ 소제목 앞 6자 일치 3칸 이상이면 경고
+BOARD_BLOCK_FROM = '2026-11-16'
+
+
+def sameday_board(items, me=None):
+    """㉤ '질문·고민 게시판' 문장이 든 칸. → 경고 줄 목록(칸이 BOARD_MAX 이상일 때)."""
+    hit = [i for i, d in items if BOARD_PHRASE.search(pkg_text(d)[0])]
+    if len(hit) >= BOARD_MAX and (not me or me in hit):
+        return [f"㉤ '질문·고민 게시판' 문장 {len(hit)}칸({', '.join(hit)}) — 하루 {BOARD_MAX - 1}칸까지, 끝 문장이 아니어도 센다(11/16 칸부터 gate가 막음)"]
+    return []
+
+
+def sameday_1115(items, me=None):
+    out = sameday_board(items, me)
+    qs = [i for i, d in items if re.search(r'(까|가|나|니|죠|요)\s*\?\s*$|\?\s*$', open(os.path.join(d, 'title.txt'), encoding='utf-8').read().strip())]
+    if len(qs) >= Q_TITLE_MAX and (not me or me in qs):
+        out.append(f"㉥ 제목 물음꼴 {len(qs)}칸({', '.join(qs)}) — 하루 {Q_TITLE_MAX - 1}칸까지, 시점 글은 날짜 제목")
+    h6 = collections.defaultdict(list)
+    for i, d in items:
+        for k in {h[:6] for h in head_keys(d) if len(h) >= 6}: h6[k].append(i)
+    for k, v in h6.items():
+        if len(v) >= HEAD6_MIN and (not me or me in v):
+            out.append(f"㉦ 소제목 앞 6자 '{k}' {len(v)}칸({', '.join(v)}) — 같은 날 {HEAD6_MIN}칸 이상 앞머리가 같다(템플릿 신호)")
+    # 1115 지시 ③: '놓치기 쉬운 …' 소제목은 하루 1편까지(17/30편) — 소제목 어디에 있어도 2칸부터
+    ns = [i for i, d in items if any(re.search(r'놓치기\s*쉬', h) for h in head_keys(d))]
+    if len(ns) >= 2 and (not me or me in ns):
+        out.append(f"㉦ 소제목 '놓치기 쉬…' {len(ns)}칸({', '.join(ns)}) — 하루 1편까지(1115 지시 ③, 17/30편)")
     return out
 
 
@@ -587,6 +623,11 @@ def gate_pkg(pkg):
             # 10/17 audit: endbad를 [경고]만 찍어 '얼마' 끝말이 하루 5칸 나갔다 — 막는다(10/18 칸부터)
             if endbad and day0 >= END_BLOCK_FROM: return False, '같은 날 끝말 반복 — ' + '; '.join(endbad), endbad
             for e in endbad: print('[경고]', e)
+            if day0 >= BOARD_BLOCK_FROM:
+                it = _day_pkgs(day0); me0 = os.path.basename(os.path.dirname(os.path.abspath(pkg)))
+                if me0 not in [i for i, _ in it]: it.append((me0, pkg))
+                bb = sameday_board(it, me0)
+                if bb: return False, '같은 날 게시판 안내 반복 — ' + '; '.join(bb), bb
             for e in sameday_warn(day0, pkg): print('[경고]', e)
             if day0 >= END_BLOCK_FROM:
                 rb = recent_end_check(pkg)

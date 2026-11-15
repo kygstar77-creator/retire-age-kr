@@ -1,3 +1,7 @@
+## 2026-11-15 23:15 · 야간 회차 — nodo1116 검수 + sameday ㉤㉥㉦
+- nodo1116 pkg: aitell 2.7→2.7(고침 없음), frame 통과, 사실 calc_out 대조 일치 → 편집 통과(pkg.edit.json by firemap-editor). c06 끝 게시판 안내 1줄은 11/16 rcut1116·semietf1116·nodo1116 3칸이라 새 ㉤ gate에 걸림(아래)
+- aitell.py: sameday_warn에 ㉤㉥㉦ 추가, gate_pkg는 11/16 칸부터 ㉤ 막음, _day_pkgs가 item 뒤 메모(sbdep1112 (…))를 떼고 묶음을 찾도록 고침. sameday 11/13 ㉤ 4칸·11/14 ㉥ 6칸·㉦ 걸림
+
 ## 2026-11-15 17:10 · 오후 회차 — 편집 요청 2건(S-1 대본·yujok1116)
 - S-1 say_v3.txt·script.md 재서명(aitell 3.5→3.5, script 80.5→61.7/1,000단어·14%→8% — 앞 숫자는 옛 서명 say_v2 기준): 75행 '이번 발표는 발표 뒤 한 달 동안 어떻게 움직였는지, 조금 뒤에 따로 볼게요.' → '이번 발표 뒤 한 달은 조금 뒤에 따로 볼게요.' · 74·94·95행 숫자 calc_month_1115_out 대조 맞음
 - yujok1116 c02(aitell gate 2.6 전후 같음): '상한은 그분이 실제로 받던 금액이라,' 뺌 — 바로 앞 문장 '실제로 받던 노령연금보다 많이 나오지 않습니다'와 같은 말 · editgate 7572f046

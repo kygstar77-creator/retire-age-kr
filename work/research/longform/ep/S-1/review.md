@@ -1,3 +1,4 @@
+실측(11/15 17:1x editor 재서명): 숫자 61.7/1,000단어 · 2개 이상 문장 8% · aitell script 통과(say_v3 3.5)
 # S-1 대본 심사 (youtube-loop) — 통과선 평균 7(목표 8) · 심사 3명: 제미나이(second_opinion.py 대본)·Claude 심사관(하위 작업자)·레드팀(하위 작업자, redteam-prompt.md)
 원문: review_in_script_v1_대본.md·review_in_script_v2_대본.md(제미나이) · review_claude_v1/v2.md · review_redteam_v1/v2.md · 사실 검증 review_gemini_v1.md(3.5-flash, 막을 1)
 실측(v2.1, 21:10): scriptnum 숫자 50개 중 사실표 밖 5(65만·95%·40%·22%·365만 = 만원 단위·'넘게' 내림, 전부 calc_out 값) · aitell script 0.6 · say_v1.txt 1.8 · 말 47줄 1,168자 약 4분

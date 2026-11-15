@@ -12,6 +12,17 @@ sys.path.insert(0, os.path.join(HERE, '..', 'K-1-shots'))
 from k1boards import (W, H, INK, GREY, OR, KRAFT, FADE, F_B, F_M, F_X, canvas, T, TF, source,
                       hand_ellipse, hand_under, hand_check, hand_arrow, hatch_bar, obj)
 from PIL import ImageDraw
+from k1boards import font as _font
+
+def under(d, xy, s, size, f, seed):
+    x0, y0, x1, y1 = d.textbbox(xy, s, font=_font(f, size), anchor='mm')
+    hand_under(d, x0, x1, y1 + 14, seed=seed)
+
+def ring(d, xy, s, size, f, seed, ex=0.16, ey=0.30):
+    """11/15 17시: 손 동그라미를 글자 실제 폭에 맞춘다 — 고정 상자라 −·+·% 기호에 걸렸음(새 심사관 r02·r09·r10·r12)."""
+    x0, y0, x1, y1 = d.textbbox(xy, s, font=_font(f, size), anchor='mm')
+    w, h = x1 - x0, y1 - y0
+    hand_ellipse(d, (x0 - w * ex - 18, y0 - h * ey - 14, x1 + w * ex + 18, y1 + h * ey + 14), seed=seed)
 
 WORK = os.path.abspath(os.path.join(HERE, '..', '..', '..'))
 EP = os.path.join(WORK, 'research', 'longform', 'ep', 'S-1')
@@ -59,7 +70,7 @@ def s1_100ju(im):          # 0. '내 100주' 조건 카드
     hand_arrow(d, (880, 560), (1040, 560), INK, 8)
     T(d, (1360, 420), '10월 8일', 64, GREY, F_B); T(d, (1360, 560), '2,620만원', 130, INK, F_X)
     T(d, (W // 2, 820), '−65만원', 220, OR, F_X)
-    hand_ellipse(d, (W // 2 - 400, 700, W // 2 + 400, 940), seed=6)
+    ring(d, (W // 2, 820), '−65만원', 220, F_X, 6, ex=0.22, ey=0.16)
     source(d, '종가 268,500원 → 262,000원 × 100주 · KRX 정규장 종가(다음 금융)')
 
 def record_bars(im, hi=(), labels=True, top=300, base=860):
@@ -154,22 +165,22 @@ def s1_top5(im):           # 2. 크게 움직인 다섯 날
         cx = 240 + i * 360
         T(d, (cx, 470), f"{r['day']:+.2f}%", 88, col(r['day']), F_X)
         T(d, (cx, 610), f"{r['date'][:4]}.{int(r['date'][5:7])}", 56, GREY, F_B)
-    hand_ellipse(d, (80, 390, 400, 550), seed=51)
+    under(d, (240, 470), f"{top5[0]['day']:+.2f}%", 88, F_X, 51)   # 칸 사이 30px라 동그라미 대신 밑줄
     T(d, (W // 2, 830), '빨강 넷 · 파랑 하나', 150, INK, F_X)
     source(d, SRC_DART + ' · 전날 종가 대비')
 
-def scale(im, l_top, l_big, r_top, r_big, r_or=True, seed=61):
+def scale(im, l_top, l_big, r_top, r_big, r_or=True, seed=61, mid=True):
     d = ImageDraw.Draw(im)
     obj(im, 'scale', W // 2, 330, 340, rot=0, seed=seed); d = ImageDraw.Draw(im)
     T(d, (480, 560), l_top, 64, GREY, F_B); T(d, (480, 740), l_big, 190, INK, F_X)
     T(d, (1440, 560), r_top, 64, GREY, F_B); T(d, (1440, 740), r_big, 190, OR if r_or else INK, F_X)
-    d.line([(W // 2, 540), (W // 2, 880)], fill=LINE, width=4)
+    if mid: d.line([(W // 2, 540), (W // 2, 880)], fill=LINE, width=4)
     return d
 
 @board
 def s1_scale_day(im):      # 3. 아무 날 vs 발표 날
     d = scale(im, '아무 날 2,634일', '50%', '발표 날 44일', '39%')
-    hand_ellipse(d, (1240, 650, 1640, 840), seed=62)
+    ring(d, (1440, 740), '39%', 190, F_X, 62)
     T(d, (W // 2, 950), '오른 날 비율', 60, INK, F_B)
     source(d, '2016.1.8~2026.10.13 · 50.1% vs 38.6% · KRX 정규장 종가(다음 금융)')
 
@@ -189,24 +200,35 @@ def cells(d, x, y, vals, s=52, g=10):
 
 @board
 def s1_yoy_rows(im):       # 4. 1년 전보다 늘었다 31 · 줄었다 13
-    d = ImageDraw.Draw(im); TF(d, (W // 2, 130), '이익이 늘었는데도 내린 날', 110, INK, F_X)
+    # 11/15 17시 새 심사관 2명 r12 '못함': 제목(늘었는데 내린)과 큰 예시(줄었는데 오른)가 갈려 요지 둘·범례 없음·어느 점인지 없음·−95.75% 없음
+    # → 제목을 대본 4장 끝 문장('늘었는지 줄었는지만 봐서는 … 알 수 없었습니다')으로, 줄 이름표의 '내림·오름·그대로'를 점 색으로 칠해 범례 겸,
+    #   2023.4 점에 손 동그라미 + 그 점에서 화살표, 아래 줄에 대본 자막 값(−95.75%)
+    d = ImageDraw.Draw(im); TF(d, (W // 2, 130), '늘었는지 줄었는지만 봐서는 알 수 없었다', 84, INK, F_X)
     up = [r for r in ROWS if r['op'] > r['prev']]; dn = [r for r in ROWS if r['op'] <= r['prev']]
     up_s = sorted(up, key=lambda r: r['day']); dn_s = sorted(dn, key=lambda r: r['day'])
-    T(d, (170, 330), '1년 전보다 늘었다 31번', 64, INK, F_B, 'lm')
-    T(d, (900, 330), f"내림 {sum(r['day'] < 0 for r in up)} · 오름 {sum(r['day'] > 0 for r in up)}", 64, INK, F_X, 'lm')
+    def tally(y, rs):
+        x = 900
+        for word, n, c in (('내림', sum(r['day'] < 0 for r in rs), BLUE), ('오름', sum(r['day'] > 0 for r in rs), RED),
+                           ('그대로', sum(r['day'] == 0 for r in rs), FADE)):
+            if not n: continue
+            t = f"{word} {n}"; T(d, (x, y), t, 64, c, F_X, 'lm')
+            x += d.textlength(t, font=_font(F_X, 64)) + 50
+    T(d, (170, 330), '이익 늘었다 31번', 64, INK, F_B, 'lm'); tally(330, up)
     cells(d, 170, 400, [r['day'] for r in up_s[:16]]); cells(d, 170, 470, [r['day'] for r in up_s[16:]])
-    T(d, (170, 640), '줄었다 13번', 64, INK, F_B, 'lm')
-    T(d, (900, 640), f"내림 {sum(r['day'] < 0 for r in dn)} · 오름 {sum(r['day'] > 0 for r in dn)}", 64, INK, F_X, 'lm')
+    T(d, (170, 640), '이익 줄었다 13번', 64, INK, F_B, 'lm'); tally(640, dn)
     cells(d, 170, 710, [r['day'] for r in dn_s])
-    r = BYDATE['2023-04-07']
-    T(d, (1520, 800), f"{r['day']:+.2f}%", 160, OR, F_X)
-    T(d, (1520, 930), '2023.4 · 1년 전 14.12조 → 0.6조원', 44, GREY, F_B)
-    hand_ellipse(d, (1300, 700, 1740, 900), seed=81)
+    r = BYDATE['2023-04-07']; k = dn_s.index(r); cx = 170 + k * 62 + 26
+    hand_ellipse(d, (cx - 32, 736 - 32, cx + 32, 736 + 32), width=6, seed=82)
+    hand_arrow(d, (cx + 50, 760), (1220, 840), GREY, 6)
+    T(d, (1860, 850), f"{r['day']:+.2f}%", 170, RED, F_X, 'rm')
+    T(d, (1860, 975), f"2023.4.7 · 이익 {r['prev']:.2f}조 → {r['op']:.1f}조원 (−{abs(r['op'] / r['prev'] - 1) * 100:.2f}%)", 42, INK, F_B, 'rm')
     source(d, SRC_DART)
 
 @board
 def s1_scale_month(im):    # 5. 한 달 뒤 — 저울 수평
-    d = scale(im, '아무 날 → 4주 뒤', '58.2%', '발표 → 4주 뒤', '58.1%', seed=91)
+    # 11/15 17시: 58.1%만 주황이면 '차이'로 읽힘(새 심사관 r13) → 두 숫자 같은 먹색, 답 '같다'는 가운데 주황 손 '=' 하나
+    d = scale(im, '아무 날 → 4주 뒤', '58.2%', '발표 → 4주 뒤', '58.1%', r_or=False, seed=91, mid=False)
+    hand_under(d, W // 2 - 70, W // 2 + 70, 712, seed=92); hand_under(d, W // 2 - 70, W // 2 + 70, 762, seed=93)
     T(d, (W // 2, 950), '한 달 뒤 오른 비율 · 2,615번 vs 43번', 56, INK, F_B)
     source(d, '20거래일 뒤 종가 ÷ 발표 전날 종가 · 이번(2026.10) 발표는 6장에서')
 

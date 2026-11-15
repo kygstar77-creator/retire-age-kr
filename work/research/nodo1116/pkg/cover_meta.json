@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-15 19:54",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "노도강 아파트",
+ "num": "같은 집 1년 새 7.5%",
+ "sub": "서울 다른 구는 15.5%",
+ "label": "국토부 실거래",
+ "src": "국토교통부 아파트 매매 실거래 2024.11~2026.11 계약",
+ "icon": "trending-up",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 168,
+ "num_px": 110,
+ "sub_px": 62,
+ "board": [
+  "tdf1115",
+  "offbase1114",
+  "yejung1115",
+  "pentax1115",
+  "sav1115",
+  "exdiv1114",
+  "silson24clm1114",
+  "floor1114",
+  "h4pair1114",
+  "sp500etf1114"
+ ]
+}

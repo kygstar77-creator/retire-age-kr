@@ -28,3 +28,4 @@
 - 2026-11-11: 유입 출처는 firemap_events session_start props의 utm_source·ref·bot으로 센다(referrer 칸 이름은 'ref'). 봇 70/205라 bot 칸을 꼭 뺀다. 사람 세션 84%는 ref 없음 — 앱 내 브라우저는 referrer를 안 넘기니 utm 없는 링크는 출처가 사라진다.
 - 2026-11-13: 유튜브 utm 세션은 '링크 단 직후 2분 묶음'(편당 2~3건 1~2초 간격, ref m.dcinside·없음, bot 섞임)이면 검사·미리보기다 — 시각 묶음부터 본다. reach CSV는 매 회차 `py -3.12 work/ytreach.py`(정기 호출이 없어 10/24에 멈췄었다). runs_today.json 날짜가 어제면 report.py가 오늘 발행 0으로 찍는다 — today.md 발행 줄로 넘겨 적는다.
 - 2026-11-14: 전날 토큰 표는 work/tokenday.py(세션 jsonl output_tokens, 메시지 id 중복 제거). 이벤트 비율은 건수가 아니라 client_id 고유 수로 — calc_complete는 결과 화면 재표시마다 찍힌다.
+- 11/15: 브라우저 쓰는 명령(check·verify)이 timeout이면 먼저 naverpost cafe 발행 프로세스(Playwright headless)가 프로필을 잡고 있는지 본다 — 끝난 뒤 재시도하면 바로 됨. git status가 5GB 먹고 멈추면 내 프로세스면 끄고 stale index.lock 지운 뒤 pull만. 수익 칸은 inputs.json이 옛 --set 값을 계속 찍으니 '오늘 화면 봄'인지 줄마다 본다.

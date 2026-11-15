@@ -57,7 +57,12 @@ def youtube_subs():
 
 def stale(d, key, today):
     at = str(d.get(key + '_at', ''))[:10]
-    return '' if at == today else (f' ({at} 값)' if at else '')
+    if at == today: return ''
+    if not at: return ''
+    # 2026-11-15 report: 오래된 값이 오늘 값처럼 읽혔다(11/13 줄 '준비중'은 10/8 값 — 10/9 거절 뒤인데도). 날 수와 '오늘 안 봄'을 붙인다.
+    try: days = (datetime.date.fromisoformat(today) - datetime.date.fromisoformat(at)).days
+    except ValueError: days = None
+    return f' ({at} 값' + (f' · {days}일 전, 오늘 화면 안 봄)' if days and days > 1 else ')')
 
 def won(n): return f'{n:,}원'
 

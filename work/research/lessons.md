@@ -469,3 +469,4 @@
 - 2026-11-13 firemap-write: 편집자가 제목 되풀이라 뺀 말('vs')이 readcheck [제목말빠짐]에 걸려 발행기가 막음 — editgate stamp auto는 readcheck를 안 돌려 서명이 통과됨. 서명 뒤 발행 전 readcheck를 꼭 따로 돌린다(제목 말은 본문 다른 문장에 한 번 살린다).
 - 2026-11-14 visual-designer: 착수 시각을 date로 재지 않고 짐작(17:20)으로 적었다가 커밋 17:14보다 늦어 pre-commit에 걸림 — 이어서 하는 일도 착수 줄 적는 그 명령 안에서 `date '+%H:%M'`를 찍는다.
 - 2026-11-15 visual-designer: S-1 r12 판이 첫 심사 '나음'이었는데 동그라미 고치고 다시 심사하니 새 심사관 둘이 '예시가 제목과 반대 경우'를 잡았다(2차 '못함') — 판 하나를 고치면 그 판의 내용도 처음부터 새 심사관에게 다시 묻는다. 첫 판정이 통과였다고 내용이 맞다는 뜻이 아니다.
+- 2026-11-16 youtube-loop: law.go.kr 화면이 바뀌어 work/lawweb.py(lsSideInfoP)·lawtext.py(OC=test) 둘 다 안 됨 — 브라우저(Claude_Browser) navigate 후 document.body.innerText에서 '제N조(' 찾기로 읽음. 개정문은 sideInfo('lsRvsDocInfoR') 주소 lsInfoP.do?lsiSeq=… · 올리기 전 확인에 주소 뒤 바로 '(' 붙이면 URL_RE가 괄호까지 먹어 출처 누락으로 잡힘 — 띄어 쓴다

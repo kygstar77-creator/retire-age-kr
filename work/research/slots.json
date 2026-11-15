@@ -4103,7 +4103,8 @@
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-14 23:15",
    "note": "firemap-meeting 2026-11-14 21:40: 비축 yejung1115(관문 20:06) — editor 전건 검수 서명 뒤에만 발행(verify 11/14). 서명 없으면 칸 비움 | firemap-write 2026-11-14 23:14 (운영실장 배차 23:12): 12:40 칸 yejung1115 확정 · pkg/slot.txt 2026-11-15 12 새로 씀(없었음) · aitell sameday 2026-11-15 통과(07:40 sav1115·10:10 pentax1115·12:40·16:10 offbase1114, 숫자 겹침 0 — 10:10 연금소득세와 같은 세금연금 축이지만 연말정산 원천징수 정산이라 주제 다름) · editgate check 해시 일치(auto dd53b804) · naverpost pending block=코너 시각 전뿐 · editor 전건 검수 서명 23:13 확인(firemap-editor, 바꾼 것 0·해시 dd53b804 그대로, editgate check 통과) · 발행 회차 올리기 전 확인(국세통계 2025년 귀속 조기공개 여부)",
-   "by": "firemap-write"
+   "by": "firemap-write",
+   "published": "https://cafe.naver.com/firemap/429 12:53 verify OK 1509자"
   },
   {
    "at": "2026-11-15 16:10",
@@ -4273,6 +4274,14 @@
    "owner": "firemap-video-producer",
    "gates_ok": "2026-11-15 11:00",
    "note": "firemap-video-producer 2026-11-15 11:00: 비축 0이던 칸 — compete 6·숫자 대조 69개 0·꼴 통과·이해 2차 6명·안전 영역·디자인 100%·치직 0·AI 티 0·눈 검사(책 글자·끝 칸 대비 고쳐 2·3토막 재렌더) → 예약 https://youtu.be/u7RzhDJikcY publishAt 2026-11-22T19:20+09:00·private 되읽기 · 공개 전날(11/21) KOSIS 생명표 새 판·조기/연기 비율 개정 확인 · yt_pair: u7RzhDJikcY(카페 짝 글 = 질문 하나: 평균 수명까지 받은 돈 남녀 표 — 쇼츠 링크+원본 vsL7mojDW7w+P-1 calc_out 84.5·88.7세 줄, 11/22 22:40 칸 권장)"
+  },
+  {
+   "at": "2026-11-23 19:20",
+   "kind": "shorts",
+   "item": "n3s_raise (N-3 연봉, c1clip)",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-11-15 15:21",
+   "note": "firemap-video-producer 2026-11-15 15:21: 비축 0이던 칸 — compete 7·숫자 대조 56개 0·꼴 통과·이해 2차 6명·안전 영역(노트북 자판 → 카드 컷 3판)·디자인 96%·치직 0·빈 곳 0%·AI 티 0·눈 검사(유리창 반사 포스터 뺌) · mp4 work/video/out/n3s_raise_c1_ds.mp4 · **예약 전**: N-3 videoId 생긴 뒤(11/18~19) upload.json from_long·설명 {N3} 채우고 w1g1clips_up.py n3s_raise · N-3 칸이 밀리면 이 칸도 뒤로 · yt_pair: n3s_raise(카페 짝 글 = 쇼츠 공개 뒤 20:10·22:40 칸, 질문 하나 '천만원 오르면 통장에 얼마')"
   },
   {
    "at": "2026-11-24 11:30",

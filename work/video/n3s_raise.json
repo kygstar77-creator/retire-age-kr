@@ -1,0 +1,356 @@
+{
+ "fps": 30,
+ "name": "n3s_raise",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "연봉 천만원 오르면",
+  "통장엔 한 달 얼마 남나?"
+ ],
+ "hot": "얼마",
+ "answer": {
+  "label": "연봉 천만원 오를 때 통장에 남는 돈",
+  "items": [
+   "3천 → 4천: 한 달 +69만원",
+   "7천 → 8천: 한 달 +55만원"
+  ],
+  "arrow": false,
+  "note": "1인 · 식대 비과세 월 20만원 · 2026년 기준"
+ },
+ "base": "소득세법 제55조 · 2026년 근로소득 간이세액표·4대 보험료율 · 1인·식대 비과세 월 20만원 · 파이어맵 계산",
+ "long": null,
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "질문",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "연봉 천만원 오르면",
+      "세전 월급 +83만원",
+      "",
+      83,
+      "ink"
+     ],
+     [
+      "칸 = 천만원씩",
+      "3천→4천 · 4천→5천",
+      "",
+      224,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "연봉 1천만원 인상, 통장엔 한 달에 얼마 남을까요?",
+     "audio": "audio/n3s/cba52572b11895ae.wav",
+     "frames": 83
+    },
+    {
+     "n": 2,
+     "text": "연봉이 천만원 오르면, 세전 월급은 83만원쯤 늘어납니다.",
+     "audio": "audio/n-3/e70203699bdb0fff.wav",
+     "frames": 141
+    },
+    {
+     "n": 3,
+     "text": "그중 통장에 얼마가 남는지 칸마다 셌어요.",
+     "audio": "audio/n-3/cedb9be32f983487.wav",
+     "frames": 85
+    }
+   ],
+   "frames": 309
+  },
+  {
+   "kind": "vs",
+   "label": "3천→4천",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "3천 → 4천",
+      "한 달 +69만원",
+      "",
+      60,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "3천에서 4천으로 오를 때는요.",
+     "audio": "audio/n-3/c5c2b079baa0b45a.wav",
+     "frames": 60
+    },
+    {
+     "n": 5,
+     "text": "69만원 정도가 남아요.",
+     "audio": "audio/n-3/bb148a4f4c227ee2.wav",
+     "frames": 50
+    }
+   ],
+   "frames": 110
+  },
+  {
+   "kind": "vs",
+   "label": "7천까지",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "4천→7천 세 칸",
+      "69만원보다 조금 적게",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "그 위로 7천까지는 칸마다 남는 돈이 거의 같습니다.",
+     "audio": "audio/n-3/d8fa2ed7881251a9.wav",
+     "frames": 109
+    }
+   ],
+   "frames": 109
+  },
+  {
+   "kind": "vs",
+   "label": "7천→8천",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "7천 → 8천",
+      "한 달 +55만원",
+      "",
+      108,
+      "ink"
+     ],
+     [
+      "세전 +83만원 중",
+      "3분의 2만 남음",
+      "",
+      160,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 7,
+     "text": "그런데 7천에서 8천으로 갈 때는 뚝 줄어요.",
+     "audio": "audio/n-3/2ed2521459807b53.wav",
+     "frames": 108
+    },
+    {
+     "n": 8,
+     "text": "55만원 정도만 남습니다.",
+     "audio": "audio/n-3/e56cd4c3849192c8.wav",
+     "frames": 52
+    },
+    {
+     "n": 9,
+     "text": "오른 돈의 삼분의 이 정도만 남는 칸입니다.",
+     "audio": "audio/n-3/da450121a63a0a09.wav",
+     "frames": 78
+    }
+   ],
+   "frames": 238
+  },
+  {
+   "kind": "vs",
+   "label": "이유",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "연봉에서 공제 뺀 돈",
+      "5천만원 넘는 부분",
+      "",
+      61,
+      "ink"
+     ],
+     [
+      "그 부분 세율",
+      "15% → 24%",
+      "",
+      192,
+      "ink"
+     ],
+     [
+      "연봉 7천 → 8천",
+      "이 선을 넘는 칸",
+      "",
+      298,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 10,
+     "text": "이유는 소득세율 계단이에요.",
+     "audio": "audio/n-3/61079e16a1c4fed2.wav",
+     "frames": 61
+    },
+    {
+     "n": 11,
+     "text": "연봉이 아니라, 연봉에서 이것저것 빼고 남은 돈이 5천만원을 넘으면요.",
+     "audio": "audio/n-3/8c5b8d42f085ac38.wav",
+     "frames": 131
+    },
+    {
+     "n": 12,
+     "text": "넘는 부분에만 15% 대신 24%가 붙습니다.",
+     "audio": "audio/n-3/44edda756ae9e53e.wav",
+     "frames": 106
+    },
+    {
+     "n": 13,
+     "text": "바로 이 칸에서, 이것저것 빼고 남은 돈이 그 선을 넘는 거예요.",
+     "audio": "audio/n-3/1f2756a3b0853d34.wav",
+     "frames": 122
+    }
+   ],
+   "frames": 420
+  },
+  {
+   "kind": "vs",
+   "label": "그래서",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "오른 연봉은",
+      "통장 금액으로 보기",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "같은 천만원 인상",
+      "69만 vs 55만원",
+      "",
+      126,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 14,
+     "text": "그래서 연봉 이야기를 할 때는 오른 연봉을 통장 금액으로 바꿔 보세요.",
+     "audio": "audio/n-3/0349c753a2977f02.wav",
+     "frames": 126
+    },
+    {
+     "n": 15,
+     "text": "같은 인상이라도, 어느 칸이냐에 따라 한 달에 10만원 넘게 차이가 납니다.",
+     "audio": "audio/n-3/a17692ba07f8b718.wav",
+     "frames": 140
+    }
+   ],
+   "frames": 332
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/n3s_raise/stock/cut/853830_0_83.mp4",
+   "from": 0,
+   "frames": 83,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_raise/stock/cut/3202364_0_141.mp4",
+   "from": 83,
+   "frames": 141,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_raise/stock/cut/5923592_0_85.mp4",
+   "from": 224,
+   "frames": 85,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_raise/stock/cut/7822029_0_60.mp4",
+   "from": 309,
+   "frames": 60,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_raise/stock/cut/6771533_0_50.mp4",
+   "from": 369,
+   "frames": 50,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_raise/stock/cut/853830_5_109.mp4",
+   "from": 419,
+   "frames": 109,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_raise/stock/cut/4992563_0_108.mp4",
+   "from": 528,
+   "frames": 108,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_raise/stock/cut/7535095_0_52.mp4",
+   "from": 636,
+   "frames": 52,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_raise/stock/cut/5923592_4_78.mp4",
+   "from": 688,
+   "frames": 78,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_raise/stock/cut/8783211_0_61.mp4",
+   "from": 766,
+   "frames": 61,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_raise/stock/cut/6771533_3_131.mp4",
+   "from": 827,
+   "frames": 131,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_raise/stock/cut/8783211_5_106.mp4",
+   "from": 958,
+   "frames": 106,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_raise/stock/cut/3202364_6_122.mp4",
+   "from": 1064,
+   "frames": 122,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_raise/stock/cut/853830_11_126.mp4",
+   "from": 1186,
+   "frames": 126,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_raise/stock/cut/8783211_10_206.mp4",
+   "from": 1312,
+   "frames": 206,
+   "start": 0
+  }
+ ],
+ "credits": "Coverr · Ketut Subiyanto · Max Vakhtbovych · Mikhail Nilov · RDNE Stock project · cottonbro studio"
+}

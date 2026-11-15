@@ -1,0 +1,227 @@
+{
+ "fps": 30,
+ "name": "h4s_new15",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "광명 아파트 15억",
+  "어디서 나온 말?"
+ ],
+ "hot": "15억",
+ "answer": {
+  "label": "광명 2019년 이후 지은 단지 84㎡대 실거래 가운데 값",
+  "items": [
+   "14.71억(24건)",
+   "광명 전체 9.70억"
+  ],
+  "arrow": false,
+  "note": "2026.07~09 계약"
+ },
+ "base": "국토교통부 아파트 매매 실거래가(84㎡대, 계약 2026.07~09) · 파이어맵 계산",
+ "long": "MRQqitzEgDw",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "15억의 출처",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "흔히 듣는 말",
+      "\"광명 15억\"",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "새 단지만",
+      "2019년 이후 지음",
+      "",
+      96,
+      "ink"
+     ],
+     [
+      "최근 몇 년 사이",
+      "새로 지은 단지",
+      "",
+      181,
+      "ink"
+     ],
+     [
+      "새 단지 24건 가운데",
+      "14.71억, 15억 가까이",
+      "",
+      335,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "광명 아파트 15억, 이 말은 어디서 나왔을까요?",
+     "audio": "audio/h4s/ea7ab94e25318701.wav",
+     "frames": 96
+    },
+    {
+     "n": 2,
+     "text": "광명에서 2019년 뒤에 지은 단지만 떼어 봤어요.",
+     "audio": "audio/h-4/3bda03fb27d05794.wav",
+     "frames": 85
+    },
+    {
+     "n": 3,
+     "text": "2019년 뒤라는 건, 최근 몇 년 사이 새로 지은 단지라는 뜻이에요.",
+     "audio": "audio/h-4/8824a027a2d4c46d.wav",
+     "frames": 154
+    },
+    {
+     "n": 4,
+     "text": "가운데 값이 15억 가까이였어요.",
+     "audio": "audio/h-4/c726f51f4ed3c6af.wav",
+     "frames": 65
+    }
+   ],
+   "frames": 400
+  },
+  {
+   "kind": "vs",
+   "label": "서울 줄에 끼우면",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "서울 25개 구 사이",
+      "15곳보다 비쌈",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 5,
+     "text": "이 값을 서울 스물다섯 개 구 사이에 놓으면, 열다섯 곳보다 비싸요.",
+     "audio": "audio/h4s/a3318db31d18eddb.wav",
+     "frames": 117
+    }
+   ],
+   "frames": 117
+  },
+  {
+   "kind": "vs",
+   "label": "착각",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "광명 전체 가운데 값",
+      "9.70억",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "그래서 새 단지 값만 들으면, 동네 전체 값으로 착각하기 쉬워요.",
+     "audio": "audio/h-4/c5a6f7a4eeea00c2.wav",
+     "frames": 111
+    }
+   ],
+   "frames": 111
+  },
+  {
+   "kind": "vs",
+   "label": "이렇게 보기",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "시세 볼 때",
+      "같은 동·같은 크기",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "국토부 실거래가",
+      "1년 가운데 값",
+      "",
+      167,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 7,
+     "text": "그러니 시세를 볼 땐 '광명 평균'이 아니라, 같은 동, 같은 크기의 1년 실거래 가운데 값으로 보시면 됩니다.",
+     "audio": "audio/h-4/7dae9dd415bed8ad.wav",
+     "frames": 167
+    },
+    {
+     "n": 8,
+     "text": "국토교통부 실거래가 공개시스템에서 누구나 볼 수 있어요.",
+     "audio": "audio/h-4/34167310f880db90.wav",
+     "frames": 104
+    }
+   ],
+   "frames": 307
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/h4/cut/17860854_2_r96.mp4",
+   "from": 0,
+   "frames": 96,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/37500921_2_r85.mp4",
+   "from": 96,
+   "frames": 85,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/38259259_2_r154.mp4",
+   "from": 181,
+   "frames": 154,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/35865018_10_r65.mp4",
+   "from": 335,
+   "frames": 65,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/37873585_2_r117.mp4",
+   "from": 400,
+   "frames": 117,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/35865018_2_r111.mp4",
+   "from": 517,
+   "frames": 111,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/38259259_20_r167.mp4",
+   "from": 628,
+   "frames": 167,
+   "start": 0
+  },
+  {
+   "src": "bg/h4/cut/37500921_10_r140.mp4",
+   "from": 795,
+   "frames": 140,
+   "start": 0
+  }
+ ],
+ "credits": "17860854 FREE VIDEO HAPPY · 35865018 Airam Dato-on · 37500921 FREE VIDEO HAPPY · 37873585 Jueon Kim 김주언 · 38259259 vignesh srivatsav (Pexels License)"
+}

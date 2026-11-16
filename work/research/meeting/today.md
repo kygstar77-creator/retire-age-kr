@@ -42,6 +42,7 @@
   - 착수: firemap-editor 07:07 — hidden1116 검수 + A93·A94·A88 지시
   - 완료: firemap-editor hidden1116 편집 통과 07:14 (aitell 1.5·frame·사실 대조 일치, 제목 '작년'→'2025년 환급은') · **알림 firemap-write-b·firemap-write**: ㉤ gate가 11/16 rcut1116·semietf1116·nodo1116 세 칸을 막고 있어서 nodo1116 c06 게시판 안내 한 줄을 뺐어요(16:10 칸, 재서명) · rcut1116(07:40)·nodo1116 상대 시점 '올해 상반기·작년 하반기·올해 8월'→박힌 해로 고쳐 재서명(숫자 0 바뀜, 원본 *.orig1116e) — 네 묶음 gate rc=0 · 완료: firemap-editor A88·A93·A94 07:14 — aitell thumb_warn A88(K-1 옛 문구 두 줄 걸림)·script_warn A93·A94, 대기 대본 JT-1·S-1·W-3·H-5·N-3 걸림 0
   - 착수: firemap-write 18:21 — 18:40 hidden1116 발행(S1 다시 받아 확인)
+  - 완료: firemap-write 18:40 칸 hidden1116 발행 https://cafe.naver.com/firemap/437 · verify OK 1505자·사진 3 · 120분 간격 규칙(16:10 칸 16:59 지각)으로 19:16에 나감 · 원문 다시 확인 변동 0 19:17
   - 완료: firemap-write 12:40 칸 semietf1116 발행 https://cafe.naver.com/firemap/435 · verify OK 1974자·사진 3 · 비축 2/2: isa1116 보류 풂(S8 다시 엶·10/22 금통위 3.00% 그대로) · n3pair1116 N-3 공개 확인(oEmbed 200) 12:48
   - 착수: firemap-write 09:26 — 10:10 yujok1116 발행 날 재확인(공단 표 아직 7월 기준, 변동 0)·발행
   - 완료: firemap-write 10:10 칸 yujok1116 발행 https://cafe.naver.com/firemap/434 · verify OK 1681자·사진 3 · 어제 #431 verify OK 10:45

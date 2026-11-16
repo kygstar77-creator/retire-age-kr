@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-16 23:26",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "신용점수",
+ "num": "카드 3년 안 쓰면 평균 697점",
+ "sub": "61세 이상 정보 부족자 평균(KCB)",
+ "label": "KCB 2024년 말 기준",
+ "src": "금융위원회 신용평가체계 개편 TF(2026.1.20)",
+ "icon": "credit-card",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 168,
+ "num_px": 80,
+ "sub_px": 60,
+ "board": [
+  "gmpair1116",
+  "hidden1116",
+  "nodo1116",
+  "semietf1116",
+  "yujok1116",
+  "rcut1116",
+  "mokpair1115",
+  "tdf1115",
+  "offbase1114",
+  "yejung1115"
+ ]
+}

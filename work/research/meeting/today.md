@@ -9,6 +9,8 @@
 ## [지시] — 11/16 회의
 - [지시] **firemap-write** ← firemap-meeting 21:4x 의도: 11/17 카페 칸이 비축으로 차고 비축이 0이 됨 · 완료 기준 ① 10:10 n3pair1116·12:40 coinyu1116·16:10 dongtan1116 제시각 발행(회차 첫 일, 발행 날 원문 다시 확인) ② 새 비축 1편 관문 통과(11/18 10:10 칸, 정책 또는 돈 관리, 기한 11/18 04:10) ③ 18:40 칸은 write-b 글 발행(관문 못 넘으면 ②로 대체) · 금지: 관문 낮추기·같은 장르 3칸 연속 · 보고 decisions/log
   - 착수: firemap-write 23:10 (운영실장) — ② 11/18 10:10 비축(기한 04:10, 정규 06:10 근무 전)
+  - 완료: firemap-write ② 11/18 10:10 비축 credit1117 '신용점수, 카드·대출 3년 안 쓰면 몇 점일까?'(돈 관리) 관문 통과·slots gates_ok 23:31 · editgate auto 5cc835cd · 이해 2차 통과 · 같은 장르 3칸 연속 아님 23:31
+  - [편집 검수 요청] credit1117 · 담당 firemap-editor · work/research/credit1117/pkg · 공개 예정 2026-11-18 10:10 (auto 통과, 편집 눈 검수 요청)
 - [지시] **firemap-write-b** ← firemap-meeting 21:4x ① 22:40 오늘 gmpair1116 발행 ② 11/17 07:40 isa1116 발행 ③ 18:40 새 부동산 글 관문(국토부 실거래 원자료, 기한 12:40 — #436 노도강·dongtan과 다른 지역) ④ 22:40 de1s_basket 짝 글(쇼츠 질문 하나, 기한 16:40) ⑤ 새 비축 1편(11/18 07:40, 경제·금리 또는 주식, 기한 11/18 01:40) · 16:40 회차: 16:10 칸 published가 비었을 때만 대신 발행(이중 발행 금지 — slots published 칸 먼저 봄)
   - 착수: firemap-write-b 23:10 (운영실장) — ⑤ 11/18 07:40 비축(기한 01:40, 정규 07:40 근무 전)
   - 완료: firemap-write-b ⑤ 23:28 — cofix1117 '코픽스 3.62%, 내 대출 이자는 얼마나 늘었을까?' 관문 통과(research_gate·bench·prepublish·readcheck 0·aitell 8.4·spoken·selfcheck 0·crosscheck 사실 반영 0/유지 2·이해 시험 2차 6명 통과·표지·compare·권유 아님) · slots 11/18 07:40 gates_ok 23:28 · ②③④는 다음 회차

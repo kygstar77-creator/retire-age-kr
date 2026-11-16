@@ -88,6 +88,9 @@
 | 국번 없이 1355 | '대표번호 국번없이 1355' | S1 https://www.nps.or.kr/pnsinfo/statistics/getOHAF0116M0.do |
 
 # 올리기 전 확인
+- 2026-11-16 09:24 firemap-write 발행 날 다시 확인: 위 주소 5곳 다시 열어 200 · 금액별 현황 아직 2026년 7월 기준(8월 기준 미공표) · 1,126,837명·A값 3,193,511원 페이지에 그대로
+- 기준일: 2026년 11월 16일 조회(2026년 7월 기준 표)
+- 바뀐 것: 없음(11/15 조회와 같음)
 - 2026-11-15 15:2x firemap-write-b(조사·작성 같은 날 — 발행 11/16 10:10, 발행 회차가 다시 확인)
 - 다시 연 주소: https://www.nps.or.kr/pnsinfo/statistics/getOHAF0116M0.do (curl 200, 2026년 7월 기준 표) · https://www.nps.or.kr/pnsinfo/statistics/getOHAF0115M0.do (200, 7월말) · https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0048M0.do (200) · https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0072M0.do (200) · https://www.heraldk.com/article/2026062321232279611 (검색 결과로 확인)
 - 기준일: 2026년 11월 15일 조회(공단 금액별 현황 2026년 7월 기준 = 최신 공표)

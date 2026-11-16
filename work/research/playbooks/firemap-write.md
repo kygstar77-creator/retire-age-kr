@@ -270,3 +270,4 @@
 - 2026-11-16 법령 API(OC=test)·lawweb.py가 둘 다 막힐 때: Playwright로 https://www.law.go.kr/법령/<법>/<제N조> 를 열고 frame들 inner_text에서 조문을 찾으면 받아진다(isa1116/raw/art91_18.txt)
 
 - 2026-11-16 n3pair1116: 롱폼 짝 글은 영상 숫자만 옮기면 재탕 — 경쟁이 이미 다루는 "다음 해" 변화를 1차 원문으로 확인(국민연금 부칙 lsInfoR.do?lsiSeq=… curl로 본문 받힘, OC=test API는 막힘)해 새 칸을 만들고, 경쟁이 확정처럼 쓴 정부안(고용보험)은 빼고 그 이유를 적는다. 영상 링크는 frame A36·A83 때문에 끝 "관련 영상" 한 줄만.
+- 2026-11-16 발행은 처음부터 백그라운드: naverpost cafe는 코너 시각 전이면 거부하고 대기(0~17분)도 있어 Bash 2분을 넘는다. `while [ $(date +%H%M) -lt 1000 ]; do sleep 20; done; naverpost cafe …`를 run_in_background로 걸고 완료 알림 뒤 verify·기록·end — 11/15 18:20 회차는 알림 전에 끝나 #431 verify·커밋이 빠졌다.

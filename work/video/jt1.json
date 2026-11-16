@@ -1,0 +1,2074 @@
+{
+ "fps": 30,
+ "scenes": [
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "안녕하세요, 파이어맵입니다. 오늘은 주택연금 이야기입니다.",
+     "audio": "audio/jt-1/f6b194215c59df7f.wav",
+     "frames": 129,
+     "cap": null
+    },
+    {
+     "text": "시세 5억 집으로 계산해 볼게요.",
+     "audio": "audio/jt-1/185ee2c96c4adc92.wav",
+     "frames": 57,
+     "cap": null
+    },
+    {
+     "text": "지금 65세라고 해 볼게요.",
+     "audio": "audio/jt-1/b67c60ab8bc67f7a.wav",
+     "frames": 51,
+     "cap": null
+    }
+   ],
+   "frames": 237,
+   "data": {
+    "src": "bg/jt1/stock/jt1_handnote.mp4",
+    "license": "Pexels 6326847 무료(https://kaboompics.com/)",
+    "say": "주택연금",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "주택연금에 들면, 매달 126만원을 받습니다.",
+     "audio": "audio/jt-1/14283ae06e2aa454.wav",
+     "frames": 95,
+     "cap": null
+    },
+    {
+     "text": "같은 집으로 5년을 기다렸다 들면 어떨까요?",
+     "audio": "audio/jt-1/3848bb9872b3987f.wav",
+     "frames": 86,
+     "cap": null
+    },
+    {
+     "text": "그때 들면 매달 154만원으로 늘어납니다.",
+     "audio": "audio/jt-1/06da6abc035b1560.wav",
+     "frames": 93,
+     "cap": null
+    },
+    {
+     "text": "그럼 기다리는 게 나을까요?",
+     "audio": "audio/jt-1/fbeaa4dac787b46d.wav",
+     "frames": 47,
+     "cap": null
+    },
+    {
+     "text": "기다린 동안은 한 푼도 못 받았잖아요.",
+     "audio": "audio/jt-1/68116e13611b00c7.wav",
+     "frames": 60,
+     "cap": null
+    }
+   ],
+   "frames": 381,
+   "data": {
+    "pic": "bg/jt1/board/jt1_note.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그 못 받은 돈을 매달 더 받는 돈으로 메우면, 몇 살에 받은 돈 합이 같아질까요?",
+     "audio": "audio/jt-1/b03ab8a3834ddc6a.wav",
+     "frames": 141,
+     "cap": null
+    }
+   ],
+   "frames": 141,
+   "data": {
+    "src": "bg/jt1/stock/jt1_6541138.mp4",
+    "license": "Pexels 6541138 무료(Polina ⠀)",
+    "say": "받은 돈 합이 같아지는 나이",
+    "side": "left",
+    "from": 120
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "주택연금 영상 열아홉 편을 찾아봤는데, 이 나이를 계산한 편은 없었습니다.",
+     "audio": "audio/jt-1/829bb78cbb7165d8.wav",
+     "frames": 136,
+     "cap": null
+    },
+    {
+     "text": "그래서 한국주택금융공사가 2026년 3월에 새로 낸 표로 직접 계산해 봤습니다.",
+     "audio": "audio/jt-1/beb202a15488d7f1.wav",
+     "frames": 146,
+     "cap": null
+    }
+   ],
+   "frames": 282,
+   "data": {
+    "src": "bg/jt1/stock/jt1_946148.mp4",
+    "license": "Pexels 946148 무료(Carlos Arribas)",
+    "say": "공사 표로 직접 계산",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그 전에, 누가 들 수 있는지부터 짚을게요.",
+     "audio": "audio/jt-1/2995d04e07235c61.wav",
+     "frames": 66,
+     "cap": null
+    }
+   ],
+   "frames": 66,
+   "data": {
+    "src": "bg/jt1/stock/jt1_8292929.mp4",
+    "license": "Pexels 8292929 무료(RDNE Stock project)",
+    "say": "누가 들 수 있나",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "들 수 있는지는 나이, 집값, 사는 집 이렇게 세 가지로 봐요.",
+     "audio": "audio/jt-1/6f2831cbf8bba296.wav",
+     "frames": 102,
+     "cap": null
+    }
+   ],
+   "frames": 102,
+   "data": {
+    "n": "1장",
+    "q": "누가 들 수 있나"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "나이는 부부 중 한 사람만 55세 이상이면 됩니다.",
+     "audio": "audio/jt-1/d7e09c241e2d625a.wav",
+     "frames": 87,
+     "cap": null
+    },
+    {
+     "text": "집값은 부부가 가진 집을 다 더한 공시가격으로 봐요.",
+     "audio": "audio/jt-1/f5e9647f8c0be0a9.wav",
+     "frames": 86,
+     "cap": null
+    },
+    {
+     "text": "공시가격은 나라가 세금을 매길 때 쓰는 집값이에요.",
+     "audio": "audio/jt-1/f0ebaaa78e10d113.wav",
+     "frames": 93,
+     "cap": null
+    },
+    {
+     "text": "그 합이 12억 이하여야 합니다.",
+     "audio": "audio/jt-1/597bd54692d0de90.wav",
+     "frames": 56,
+     "cap": null
+    },
+    {
+     "text": "집이 두 채여도, 합한 가격이 12억 안에 들었다면 가입할 수 있어요.",
+     "audio": "audio/jt-1/780a6ec6dfa0e091.wav",
+     "frames": 113,
+     "cap": null
+    },
+    {
+     "text": "부부 공동 명의 집도 됩니다.",
+     "audio": "audio/jt-1/ae0c6cc68f394714.wav",
+     "frames": 65,
+     "cap": null
+    }
+   ],
+   "frames": 500,
+   "data": {
+    "pic": "bg/jt1/board/jt1_check3.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그리고 그 집에 실제로 살아야 해요.",
+     "audio": "audio/jt-1/e98d45d32aea56c0.wav",
+     "frames": 79,
+     "cap": null
+    }
+   ],
+   "frames": 79,
+   "data": {
+    "src": "bg/jt1/stock/jt1_8292925.mp4",
+    "license": "Pexels 8292925 무료(RDNE Stock project)",
+    "say": "실제로 사는 집",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "다만 2026년 6월부터는, 입원이나 요양 때문에 집을 비워도 살아야 하는 의무를 면제해 줘요.",
+     "audio": "audio/jt-1/5b2d949f7c11d29d.wav",
+     "frames": 179,
+     "cap": null
+    },
+    {
+     "text": "국민연금이나 공무원연금을 받고 있어도 들 수 있어요.",
+     "audio": "audio/jt-1/12905ece7dd40f6c.wav",
+     "frames": 92,
+     "cap": null
+    }
+   ],
+   "frames": 271,
+   "data": {
+    "src": "bg/jt1/stock/jt1_7578842.mp4",
+    "license": "Pexels 7578842 무료(Kindel Media)",
+    "say": "입원·요양이어도",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "여기서 많이들 헷갈리는 게 있어요.",
+     "audio": "audio/jt-1/bd632b4b8fac9c75.wav",
+     "frames": 54,
+     "cap": null
+    },
+    {
+     "text": "들 수 있는지는 공시가격으로 보는데, 매달 얼마 받는지는 시세로 정합니다.",
+     "audio": "audio/jt-1/a5250c0ebad04c57.wav",
+     "frames": 141,
+     "cap": null
+    },
+    {
+     "text": "보통 시세가 공시가격보다 높으니까, 표는 시세로 읽어야 해요.",
+     "audio": "audio/jt-1/9162525b94aae7a1.wav",
+     "frames": 118,
+     "cap": null
+    }
+   ],
+   "frames": 313,
+   "data": {
+    "pic": "bg/jt1/board/jt1_scale2.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "표에 들어가는 나이도 따로 있어요.",
+     "audio": "audio/jt-1/4f2158311e436465.wav",
+     "frames": 56,
+     "cap": null
+    },
+    {
+     "text": "부부 중 젊은 쪽 나이입니다.",
+     "audio": "audio/jt-1/8aedee815451c78b.wav",
+     "frames": 50,
+     "cap": null
+    },
+    {
+     "text": "남편이 70세여도 아내가 더 젊으면, 아내 나이 줄을 보는 거예요.",
+     "audio": "audio/jt-1/ae47cdd8123bcd0d.wav",
+     "frames": 123,
+     "cap": null
+    }
+   ],
+   "frames": 229,
+   "data": {
+    "src": "bg/jt1/stock/jt1_window.mp4",
+    "license": "Pexels 35161057 무료(Greg Benson)",
+    "say": "부부 중 젊은 쪽 나이",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "공사 표는 나이 여섯 줄, 집값 열두 칸이에요.",
+     "audio": "audio/jt-1/5ae3e0461dc76bac.wav",
+     "frames": 88,
+     "cap": null
+    }
+   ],
+   "frames": 88,
+   "data": {
+    "n": "2장",
+    "q": "내 집값·나이면 매달 얼마"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "나이 줄은 55세부터 시작해요.",
+     "audio": "audio/jt-1/73634152da1d3abf.wav",
+     "frames": 73,
+     "cap": null
+    },
+    {
+     "text": "다섯 살 간격으로 80세까지 있습니다.",
+     "audio": "audio/jt-1/9bd122f97804461d.wav",
+     "frames": 66,
+     "cap": null
+    },
+    {
+     "text": "그 사이 나이는 마지막에 알려 드릴 예상연금조회에 넣어 보면 됩니다.",
+     "audio": "audio/jt-1/30626219ed71214f.wav",
+     "frames": 106,
+     "cap": null
+    },
+    {
+     "text": "먼저 65세 줄을 따라가 볼게요.",
+     "audio": "audio/jt-1/1094e9909a14d450.wav",
+     "frames": 65,
+     "cap": null
+    },
+    {
+     "text": "집값 1억 차이가, 매달 25만원 정도 차이로 이어져요.",
+     "audio": "audio/jt-1/37a070494b6c4f35.wav",
+     "frames": 100,
+     "cap": null
+    },
+    {
+     "text": "그래서 집값이 두 배면, 받는 돈도 거의 두 배입니다.",
+     "audio": "audio/jt-1/d1f6cfb1bf3bb653.wav",
+     "frames": 105,
+     "cap": null
+    }
+   ],
+   "frames": 515,
+   "data": {
+    "pic": "bg/jt1/board/jt1_grid.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "나이 쪽 차이는 더 커요.",
+     "audio": "audio/jt-1/b3f3c547b5b4cad0.wav",
+     "frames": 44,
+     "cap": null
+    },
+    {
+     "text": "5억 집 그대로, 나이만 바꿔 볼게요.",
+     "audio": "audio/jt-1/9dcd09c994877a0d.wav",
+     "frames": 66,
+     "cap": null
+    }
+   ],
+   "frames": 110,
+   "data": {
+    "src": "bg/jt1/stock/jt1_38781079.mp4",
+    "license": "Pexels 38781079 무료(Melike)",
+    "say": "나이만 바꾸면",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "제일 젊은 55세 줄을 보면요.",
+     "audio": "audio/jt-1/b76d87750910ed9e.wav",
+     "frames": 63,
+     "cap": null
+    },
+    {
+     "text": "매달 78만원이에요.",
+     "audio": "audio/jt-1/da3d1ca4ddecc07f.wav",
+     "frames": 51,
+     "cap": null
+    },
+    {
+     "text": "제일 나이 많은 80세 줄로 가면요.",
+     "audio": "audio/jt-1/cf129e39aa34b885.wav",
+     "frames": 57,
+     "cap": null
+    },
+    {
+     "text": "240만원이 넘습니다.",
+     "audio": "audio/jt-1/098c9c102532d79e.wav",
+     "frames": 48,
+     "cap": null
+    }
+   ],
+   "frames": 219,
+   "data": {
+    "pic": "bg/jt1/board/jt1_grid.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그런데 나이가 많은 줄에선 이게 끝까지 가지 않아요.",
+     "audio": "audio/jt-1/ae05ee2ad1695179.wav",
+     "frames": 90,
+     "cap": null
+    }
+   ],
+   "frames": 90,
+   "data": {
+    "src": "bg/jt1/stock/jt1_6781559.mp4",
+    "license": "Pexels 6781559 무료(Artem Podrez)",
+    "say": "끝까지 가지 않는 줄",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "80세 줄을 보면요.",
+     "audio": "audio/jt-1/e7c3bb29b5129b01.wav",
+     "frames": 38,
+     "cap": null
+    },
+    {
+     "text": "시세 9억부터는 매달 받는 돈이 더 늘지 않아요.",
+     "audio": "audio/jt-1/a95eabdd712ceec9.wav",
+     "frames": 88,
+     "cap": null
+    },
+    {
+     "text": "집이 더 비싸도 같은 금액입니다.",
+     "audio": "audio/jt-1/c93e4ce4f98dffe7.wav",
+     "frames": 63,
+     "cap": null
+    },
+    {
+     "text": "70세 줄도 표 맨 끝, 가장 비싼 두 칸은 차이가 거의 없어요.",
+     "audio": "audio/jt-1/3d18702eb8f4ad99.wav",
+     "frames": 125,
+     "cap": null
+    },
+    {
+     "text": "한 달에 3만원이 안 됩니다.",
+     "audio": "audio/jt-1/237ece4ef35ccee7.wav",
+     "frames": 48,
+     "cap": null
+    },
+    {
+     "text": "비싼 집이라도 나이가 많으면, 표 위쪽에서 멈춘다는 뜻이에요.",
+     "audio": "audio/jt-1/3873a305cdbe3690.wav",
+     "frames": 119,
+     "cap": null
+    }
+   ],
+   "frames": 481,
+   "data": {
+    "pic": "bg/jt1/board/jt1_cap.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "이 표는 2026년 3월에 한 번 바뀌었습니다.",
+     "audio": "audio/jt-1/b584b33b1122b794.wav",
+     "frames": 94,
+     "cap": null
+    }
+   ],
+   "frames": 94,
+   "data": {
+    "src": "bg/jt1/stock/jt1_946148.mp4",
+    "license": "Pexels 946148 무료(Carlos Arribas)",
+    "say": "표가 바뀐 날",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "금융위원회는 평균 가입자를 예로 들었어요.",
+     "audio": "audio/jt-1/ed08759e2c4c273c.wav",
+     "frames": 81,
+     "cap": null
+    },
+    {
+     "text": "매달 130만원에서 134만원으로 올랐다고요.",
+     "audio": "audio/jt-1/3facf461e1774198.wav",
+     "frames": 93,
+     "cap": null
+    },
+    {
+     "text": "이건 3월 1일 이후 새로 신청한 분부터예요.",
+     "audio": "audio/jt-1/f7f471889ea126ec.wav",
+     "frames": 76,
+     "cap": null
+    },
+    {
+     "text": "그 전에 든 분 금액도 오른다는 말은 발표 자료에 없습니다.",
+     "audio": "audio/jt-1/0c59cb66dd7d8e7b.wav",
+     "frames": 95,
+     "cap": null
+    }
+   ],
+   "frames": 345,
+   "data": {
+    "pic": "bg/jt1/board/jt1_mar1.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "한 가지 더, 한번 정해진 금액은 끝까지 같아요.",
+     "audio": "audio/jt-1/a042c53bbfa9f3e7.wav",
+     "frames": 79,
+     "cap": null
+    },
+    {
+     "text": "집값이 올라도, 물가가 올라도 그대로입니다.",
+     "audio": "audio/jt-1/0797ebf6b2b4162f.wav",
+     "frames": 84,
+     "cap": null
+    }
+   ],
+   "frames": 163,
+   "data": {
+    "src": "bg/jt1/stock/jt1_6541138.mp4",
+    "license": "Pexels 6541138 무료(Polina ⠀)",
+    "say": "정해진 금액은 그대로",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "공사는 집값이 매년 일정하게 오른다고 보고, 그걸 처음 금액에 이미 넣었다고 설명해요.",
+     "audio": "audio/jt-1/6921349f13198ea9.wav",
+     "frames": 181,
+     "cap": null
+    }
+   ],
+   "frames": 181,
+   "data": {
+    "src": "bg/jt1/stock/jt1_38405960.mp4",
+    "license": "Pexels 38405960 무료(Melike)",
+    "say": "처음 금액에 이미 넣음",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "이 표는 매달 같은 돈을 받는 방식, 정액형 기준이에요.",
+     "audio": "audio/jt-1/21023121e2b86431.wav",
+     "frames": 101,
+     "cap": null
+    },
+    {
+     "text": "처음에 더 받거나, 몇 년마다 늘려 받는 방식도 있는데, 그러면 금액이 달라집니다.",
+     "audio": "audio/jt-1/724c237caba8c80e.wav",
+     "frames": 150,
+     "cap": null
+    },
+    {
+     "text": "방식은 처음 3년 안에 한 번만 바꿀 수 있어요.",
+     "audio": "audio/jt-1/4d969b889c8b6fac.wav",
+     "frames": 82,
+     "cap": null
+    }
+   ],
+   "frames": 333,
+   "data": {
+    "src": "bg/jt1/stock/jt1_946148.mp4",
+    "license": "Pexels 946148 무료(Carlos Arribas)",
+    "say": "정액형 기준",
+    "side": "left",
+    "from": 293
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "이제 처음 질문으로 돌아갈게요.",
+     "audio": "audio/jt-1/41850a55394ef2b3.wav",
+     "frames": 61,
+     "cap": null
+    }
+   ],
+   "frames": 61,
+   "data": {
+    "n": "3장",
+    "q": "늦게 들면 몇 살에 같아지나"
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "표를 보면 같은 집이라도 나이가 많을수록 매달 더 줍니다.",
+     "audio": "audio/jt-1/cd8dbc0fc736b38b.wav",
+     "frames": 107,
+     "cap": null
+    },
+    {
+     "text": "그래서 기다렸다 드는 게 낫다는 말이 나오죠.",
+     "audio": "audio/jt-1/f51c55d3a60c0551.wav",
+     "frames": 93,
+     "cap": null
+    }
+   ],
+   "frames": 200,
+   "data": {
+    "src": "bg/jt1/stock/jt1_6541138.mp4",
+    "license": "Pexels 6541138 무료(Polina ⠀)",
+    "say": "기다렸다 들면",
+    "side": "left",
+    "from": 300
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "같은 집으로 지금 들지 않고, 5년을 기다렸다고 해 볼게요.",
+     "audio": "audio/jt-1/0ee2a23c6b06ad62.wav",
+     "frames": 93,
+     "cap": null
+    },
+    {
+     "text": "그동안 못 받은 돈을 다 더하면, 7,600만원 정도입니다.",
+     "audio": "audio/jt-1/54e28ea2e4c1a117.wav",
+     "frames": 99,
+     "cap": null
+    }
+   ],
+   "frames": 192,
+   "data": {
+    "pic": "bg/jt1/board/jt1_lost.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "대신 70세에 들면 매달 28만원을 더 받아요.",
+     "audio": "audio/jt-1/ef845bfc8cfdc416.wav",
+     "frames": 92,
+     "cap": null
+    }
+   ],
+   "frames": 92,
+   "data": {
+    "pic": "bg/jt1/board/jt1_diff.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "mo",
+   "lines": [
+    {
+     "text": "그럼 못 받은 7,600만원을, 이 돈으로 다 메우는 데 몇 년이 걸릴까요?",
+     "audio": "audio/jt-1/05164141ce918aeb.wav",
+     "frames": 119,
+     "cap": null
+    },
+    {
+     "text": "23년이 걸립니다.",
+     "audio": "audio/jt-1/f67506e5b8545054.wav",
+     "frames": 44,
+     "cap": null
+    },
+    {
+     "text": "그러면 93세가 됩니다.",
+     "audio": "audio/jt-1/b4427c3df9a10253.wav",
+     "frames": 56,
+     "cap": null
+    }
+   ],
+   "frames": 219,
+   "data": {
+    "part": "race",
+    "title": "받은 돈 합 · 65세 vs 70세",
+    "sub": "집값이 그대로라는 가정",
+    "chapter": "3",
+    "source": "주택금융공사 월지급금 표(2026.3.1) · 5억 집 · 월지급금 × 받은 달 수",
+    "p": {
+     "from": 65,
+     "to": 95,
+     "a": {
+      "name": "65세에 든 쪽",
+      "start": 65,
+      "monthly": 126.4
+     },
+     "b": {
+      "name": "70세에 든 쪽",
+      "start": 70,
+      "monthly": 153.9
+     },
+     "yRace": [
+      0,
+      50000
+     ],
+     "yGap": [
+      -2500,
+      9500
+     ],
+     "ticks": [
+      {
+       "v": 20000,
+       "text": "2억"
+      },
+      {
+       "v": 40000,
+       "text": "4억"
+      }
+     ],
+     "seed": "JT-1-race",
+     "ageTicks": [
+      65,
+      70,
+      80,
+      90
+     ],
+     "lam": {
+      "from": 0,
+      "to": 0,
+      "at": 0
+     },
+     "sweep": [
+      0.15,
+      1.6
+     ],
+     "missed": {
+      "text": "70세까지 기다린 5년, 못 받은 7,584만원",
+      "at": 0.45
+     },
+     "years": {
+      "text": "23년",
+      "at": 1.1
+     },
+     "meet": {
+      "text": "93세",
+      "at": 2.05
+     },
+     "slices": [],
+     "after": null
+    }
+   }
+  },
+  {
+   "kind": "mo",
+   "lines": [
+    {
+     "text": "중간을 끊어 보면 더 잘 보여요.",
+     "audio": "audio/jt-1/846ee0452a9322fc.wav",
+     "frames": 60,
+     "cap": null
+    },
+    {
+     "text": "80세가 됐을 때를 보면요.",
+     "audio": "audio/jt-1/ef77c6146ceeb4f7.wav",
+     "frames": 46,
+     "cap": null
+    },
+    {
+     "text": "일찍 든 쪽이 기다린 쪽보다 4,300만원을 더 받았습니다.",
+     "audio": "audio/jt-1/bb1175fd25139b9b.wav",
+     "frames": 119,
+     "cap": null
+    },
+    {
+     "text": "85세에는 그 차이가 2,600만원으로 줄어요.",
+     "audio": "audio/jt-1/890245036792c119.wav",
+     "frames": 95,
+     "cap": null
+    },
+    {
+     "text": "90세에도 차이가 1,000만원 정도 남아 있습니다.",
+     "audio": "audio/jt-1/589d7559d2e70492.wav",
+     "frames": 86,
+     "cap": null
+    },
+    {
+     "text": "그러니 93세보다 오래 사시면 기다린 쪽이 더 받은 게 되고, 그 전이면 일찍 든 쪽이 더 받은 게 돼요.",
+     "audio": "audio/jt-1/d6bdc91fb9a57bd3.wav",
+     "frames": 190,
+     "cap": null
+    }
+   ],
+   "frames": 596,
+   "data": {
+    "part": "gap",
+    "title": "65세에 든 쪽이 더 받은 돈",
+    "sub": "집값이 그대로라는 가정",
+    "chapter": "3",
+    "source": "주택금융공사 월지급금 표(2026.3.1) · 5억 집 · 월지급금 × 받은 달 수",
+    "p": {
+     "from": 65,
+     "to": 95,
+     "a": {
+      "name": "65세에 든 쪽",
+      "start": 65,
+      "monthly": 126.4
+     },
+     "b": {
+      "name": "0선 = 70세에 든 쪽",
+      "start": 70,
+      "monthly": 153.9
+     },
+     "yRace": [
+      0,
+      50000
+     ],
+     "yGap": [
+      -2500,
+      9500
+     ],
+     "ticks": [
+      {
+       "v": 20000,
+       "text": "2억"
+      },
+      {
+       "v": 40000,
+       "text": "4억"
+      }
+     ],
+     "seed": "JT-1-race",
+     "ageTicks": [
+      65,
+      70,
+      80,
+      85,
+      90
+     ],
+     "lam": {
+      "from": 0,
+      "to": 1,
+      "at": 0.15
+     },
+     "sweep": null,
+     "missed": {
+      "text": "7,584만원",
+      "at": -1
+     },
+     "years": null,
+     "meet": {
+      "text": "93세",
+      "at": -1
+     },
+     "slices": [
+      {
+       "age": 80,
+       "text": "4,284만원",
+       "at": 1.3499999999999996
+      },
+      {
+       "age": 85,
+       "text": "2,634만원",
+       "at": 3.3499999999999996
+      },
+      {
+       "age": 90,
+       "text": "984만원",
+       "at": 4.35
+      }
+     ],
+     "after": {
+      "text": "93세 뒤로는 70세 쪽이 더 →",
+      "at": 5.45
+     }
+    }
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "나이를 바꿔서도 계산해 봤어요.",
+     "audio": "audio/jt-1/9c03edfa9e1655f4.wav",
+     "frames": 51,
+     "cap": null
+    }
+   ],
+   "frames": 51,
+   "data": {
+    "src": "bg/jt1/stock/jt1_8292925.mp4",
+    "license": "Pexels 8292925 무료(RDNE Stock project)",
+    "say": "나이를 바꿔서",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "55세에 바로 든 쪽과 65세까지 기다린 쪽의 차이를 볼게요.",
+     "audio": "audio/jt-1/faf396c04daef756.wav",
+     "frames": 104,
+     "cap": null
+    },
+    {
+     "text": "이번엔 81세쯤에 받은 돈 합이 같아집니다.",
+     "audio": "audio/jt-1/245e62f92e69ffc5.wav",
+     "frames": 84,
+     "cap": null
+    },
+    {
+     "text": "앞의 경우보다 같아지는 나이가 10년 넘게 빠릅니다.",
+     "audio": "audio/jt-1/4120837a6fda65ad.wav",
+     "frames": 86,
+     "cap": null
+    },
+    {
+     "text": "기다린 기간이 길면 매달 받는 돈 차이도 커서, 오히려 빨리 메워지는 거예요.",
+     "audio": "audio/jt-1/00a6c7bbecc584df.wav",
+     "frames": 142,
+     "cap": null
+    }
+   ],
+   "frames": 416,
+   "data": {
+    "pic": "bg/jt1/board/jt1_cross81.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "이번엔 60세에 바로 든 쪽을 볼게요.",
+     "audio": "audio/jt-1/1c9f13f746552a65.wav",
+     "frames": 62,
+     "cap": null
+    }
+   ],
+   "frames": 62,
+   "data": {
+    "src": "bg/jt1/stock/jt1_38781079.mp4",
+    "license": "Pexels 38781079 무료(Melike)",
+    "say": "이번엔 더 젊을 때",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "65세까지 기다린 쪽과의 차이는 90세에 메워집니다.",
+     "audio": "audio/jt-1/452c119792466e1c.wav",
+     "frames": 98,
+     "cap": null
+    },
+    {
+     "text": "60세와 65세는 매달 받는 돈 차이가 작아서, 메우는 데 더 오래 걸리는 거예요.",
+     "audio": "audio/jt-1/942b7a3ed80f7870.wav",
+     "frames": 146,
+     "cap": null
+    },
+    {
+     "text": "신기한 게 하나 있어요.",
+     "audio": "audio/jt-1/200b80046e7ba48f.wav",
+     "frames": 48,
+     "cap": null
+    },
+    {
+     "text": "집값을 더 낮게, 더 높게 바꿔도 이 나이가 거의 그대로입니다.",
+     "audio": "audio/jt-1/623b22b37624427a.wav",
+     "frames": 135,
+     "cap": null
+    }
+   ],
+   "frames": 427,
+   "data": {
+    "pic": "bg/jt1/board/jt1_age3.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "같아지는 나이를 정하는 건 집값이 아니라, 몇 살에 드느냐인 거죠.",
+     "audio": "audio/jt-1/5545f5e47f47a913.wav",
+     "frames": 102,
+     "cap": null
+    },
+    {
+     "text": "부부라면 이 나이도 젊은 쪽 나이로 셈해야 맞아요.",
+     "audio": "audio/jt-1/fc2128f7302eb525.wav",
+     "frames": 111,
+     "cap": null
+    }
+   ],
+   "frames": 213,
+   "data": {
+    "src": "bg/jt1/stock/jt1_946148.mp4",
+    "license": "Pexels 946148 무료(Carlos Arribas)",
+    "say": "집값보다 드는 나이",
+    "side": "left",
+    "from": 413
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "다만 이 계산엔 조건이 하나 붙어요.",
+     "audio": "audio/jt-1/52967df2b6c536c1.wav",
+     "frames": 80,
+     "cap": null
+    },
+    {
+     "text": "기다리는 동안 집값이 그대로라는 가정입니다.",
+     "audio": "audio/jt-1/b13d4af68ef2d3ef.wav",
+     "frames": 74,
+     "cap": null
+    },
+    {
+     "text": "매달 받는 돈은 가입할 때 시세로 정하니까, 그 사이 집값이 내리면 늦게 든 쪽 금액도 줄어요.",
+     "audio": "audio/jt-1/2ca54d45f9523032.wav",
+     "frames": 180,
+     "cap": null
+    },
+    {
+     "text": "거꾸로 집값이 오르면 늦게 든 쪽이 더 받을 수 있고요.",
+     "audio": "audio/jt-1/79418256913e8665.wav",
+     "frames": 96,
+     "cap": null
+    }
+   ],
+   "frames": 430,
+   "data": {
+    "pic": "bg/jt1/board/jt1_trap_price.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그러니 이 나이는 정답이 아니라, 기다릴지 고를 때 대 보는 잣대예요.",
+     "audio": "audio/jt-1/ac040da587092dd2.wav",
+     "frames": 128,
+     "cap": null
+    },
+    {
+     "text": "기다리는 동안 생활비를 다른 돈으로 낼 수 있는지도 같이 봐야 하고요.",
+     "audio": "audio/jt-1/f3c8088c91183aea.wav",
+     "frames": 116,
+     "cap": null
+    },
+    {
+     "text": "우리 동네 집값이 어떻게 갈지도 같이 놓고 보셔야 합니다.",
+     "audio": "audio/jt-1/5466b4c154004145.wav",
+     "frames": 114,
+     "cap": null
+    }
+   ],
+   "frames": 358,
+   "data": {
+    "src": "bg/jt1/stock/jt1_6541138.mp4",
+    "license": "Pexels 6541138 무료(Polina ⠀)",
+    "say": "정답이 아니라 잣대",
+    "side": "left",
+    "from": 281
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "주택연금은 이름은 연금이지만, 공사 설명을 보면 집을 맡기고 받는 대출이에요.",
+     "audio": "audio/jt-1/c3a72936cb63d6b8.wav",
+     "frames": 143,
+     "cap": null
+    }
+   ],
+   "frames": 143,
+   "data": {
+    "n": "4장",
+    "q": "받은 돈은 어디에 쌓이나"
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그래서 매달 받는 돈이 빚으로 쌓입니다.",
+     "audio": "audio/jt-1/a2feeecc50533671.wav",
+     "frames": 74,
+     "cap": null
+    }
+   ],
+   "frames": 74,
+   "data": {
+    "src": "bg/jt1/stock/jt1_8292929.mp4",
+    "license": "Pexels 8292929 무료(RDNE Stock project)",
+    "say": "빚으로 쌓이는 돈",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "쌓이는 건 매달 받은 돈, 보증료, 그리고 이자예요.",
+     "audio": "audio/jt-1/2738ca8c299835ee.wav",
+     "frames": 123,
+     "cap": null
+    },
+    {
+     "text": "이렇게 쌓인 빚을 대출 잔액이라고 불러요.",
+     "audio": "audio/jt-1/1c018deb197c1ab6.wav",
+     "frames": 87,
+     "cap": null
+    },
+    {
+     "text": "보증료는 가입할 때 집값의 1%를 한 번 냅니다.",
+     "audio": "audio/jt-1/9344a9b51d0e8fc0.wav",
+     "frames": 102,
+     "cap": null
+    },
+    {
+     "text": "그 뒤로는 매년 잔액의 0.95%가 보증료로 붙어요.",
+     "audio": "audio/jt-1/7167ff7a158c05d3.wav",
+     "frames": 126,
+     "cap": null
+    },
+    {
+     "text": "5억 집이면 처음 보증료가 500만원이에요.",
+     "audio": "audio/jt-1/e4c1d0bfb04a53dc.wav",
+     "frames": 72,
+     "cap": null
+    }
+   ],
+   "frames": 510,
+   "data": {
+    "pic": "bg/jt1/board/jt1_stack.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그런데 이 돈을 현금으로 따로 내지 않습니다.",
+     "audio": "audio/jt-1/1b8d5645fa2b76d9.wav",
+     "frames": 79,
+     "cap": null
+    },
+    {
+     "text": "은행이 대신 내고, 그만큼을 대출 잔액에 더해요.",
+     "audio": "audio/jt-1/c347b659cb362e3c.wav",
+     "frames": 104,
+     "cap": null
+    }
+   ],
+   "frames": 183,
+   "data": {
+    "src": "bg/jt1/stock/jt1_7578842.mp4",
+    "license": "Pexels 7578842 무료(Kindel Media)",
+    "say": "현금으로 따로 안 냄",
+    "side": "left",
+    "from": 138
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "가입할 때 현금으로 드는 건 집 감정평가 수수료 정도예요.",
+     "audio": "audio/jt-1/b44f203f81f8e7ea.wav",
+     "frames": 113,
+     "cap": null
+    }
+   ],
+   "frames": 113,
+   "data": {
+    "src": "bg/jt1/stock/jt1_handnote.mp4",
+    "license": "Pexels 6326847 무료(https://kaboompics.com/)",
+    "say": "가입할 때 드는 돈",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "이자도 매달 갚지 않습니다.",
+     "audio": "audio/jt-1/c2552f5a70cb90c3.wav",
+     "frames": 48,
+     "cap": null
+    },
+    {
+     "text": "잔액에 붙어서, 나중에 한꺼번에 정산해요.",
+     "audio": "audio/jt-1/42deb75e3852518a.wav",
+     "frames": 91,
+     "cap": null
+    },
+    {
+     "text": "금리는 은행들이 대출 금리를 정할 때 쓰는 코픽스라는 기준금리에, 0.85%를 더해요.",
+     "audio": "audio/jt-1/a782e203efdb59b1.wav",
+     "frames": 179,
+     "cap": null
+    },
+    {
+     "text": "기준금리가 6개월마다 바뀌니까, 이자도 같이 바뀌어요.",
+     "audio": "audio/jt-1/d180bd15dff7f846.wav",
+     "frames": 88,
+     "cap": null
+    }
+   ],
+   "frames": 406,
+   "data": {
+    "pic": "bg/jt1/board/jt1_stack.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "이자에 또 이자가 붙으니, 시간이 갈수록 잔액이 빨리 불어납니다.",
+     "audio": "audio/jt-1/93fc7ee8959a569f.wav",
+     "frames": 128,
+     "cap": null
+    },
+    {
+     "text": "잔액이 집값을 넘어도 매달 받는 돈은 끊기지 않아요.",
+     "audio": "audio/jt-1/d996573b5891aeb8.wav",
+     "frames": 96,
+     "cap": null
+    },
+    {
+     "text": "그 집에서 계속 사는 것도 평생 보장되고요.",
+     "audio": "audio/jt-1/1ed29194b4c4ed2c.wav",
+     "frames": 86,
+     "cap": null
+    }
+   ],
+   "frames": 310,
+   "data": {
+    "src": "bg/jt1/stock/jt1_window.mp4",
+    "license": "Pexels 35161057 무료(Greg Benson)",
+    "say": "잔액이 불어나도",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "이게 중간에 그만둘 때 중요해져요.",
+     "audio": "audio/jt-1/8ece4681cbdd470a.wav",
+     "frames": 65,
+     "cap": null
+    },
+    {
+     "text": "받은 돈만 돌려주면 끝나는 게 아닙니다.",
+     "audio": "audio/jt-1/989955ccaf343dfb.wav",
+     "frames": 63,
+     "cap": null
+    },
+    {
+     "text": "보증료와 이자까지 다 갚아야 해지돼요.",
+     "audio": "audio/jt-1/349d6cc3c528f90d.wav",
+     "frames": 68,
+     "cap": null
+    },
+    {
+     "text": "갚는 건 언제든, 일부만 해도 되고 전부 해도 됩니다.",
+     "audio": "audio/jt-1/a16cfb1931c724ee.wav",
+     "frames": 108,
+     "cap": null
+    }
+   ],
+   "frames": 304,
+   "data": {
+    "pic": "bg/jt1/board/jt1_trap_exit.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "이사를 가면 담보로 맡긴 집을 바꿀 수 있어요.",
+     "audio": "audio/jt-1/4665259ffe511bc1.wav",
+     "frames": 86,
+     "cap": null
+    },
+    {
+     "text": "새 집 값에 따라 매달 받는 돈이 늘 수도, 같을 수도, 줄 수도 있습니다.",
+     "audio": "audio/jt-1/ab2ccc9e8c10f634.wav",
+     "frames": 137,
+     "cap": null
+    },
+    {
+     "text": "가입한 뒤에 집을 하나 더 사는 것도 막지는 않아요.",
+     "audio": "audio/jt-1/fc1c9364ce2c5589.wav",
+     "frames": 104,
+     "cap": null
+    }
+   ],
+   "frames": 327,
+   "data": {
+    "src": "bg/jt1/stock/jt1_8292925.mp4",
+    "license": "Pexels 8292925 무료(RDNE Stock project)",
+    "say": "이사를 가면",
+    "side": "left",
+    "from": 80
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "그럼 이 돈으로 생활이 될까요?",
+     "audio": "audio/jt-1/02f3521ad44835cd.wav",
+     "frames": 55,
+     "cap": null
+    }
+   ],
+   "frames": 55,
+   "data": {
+    "n": "5장",
+    "q": "생활비를 얼마나 메우나"
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "국민연금연구원이 50세 넘은 분들에게 노후에 필요한 돈을 물었어요.",
+     "audio": "audio/jt-1/5f9e2b42a66d6af1.wav",
+     "frames": 132,
+     "cap": null
+    },
+    {
+     "text": "부부가 괜찮게 살려면 한 달에 297만원이 든다고 답했습니다.",
+     "audio": "audio/jt-1/967ba3de2e5ffde6.wav",
+     "frames": 117,
+     "cap": null
+    }
+   ],
+   "frames": 249,
+   "data": {
+    "src": "bg/jt1/stock/jt1_market.mp4",
+    "license": "Pexels 8420602 무료(Kampus Production)",
+    "say": "노후에 필요한 돈",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "아주 아껴 쓴다면 217만원이고요.",
+     "audio": "audio/jt-1/2adaefb01da44dda.wav",
+     "frames": 65,
+     "cap": null
+    },
+    {
+     "text": "처음 계산한 126만원은 그 돈의 절반이 안 돼요.",
+     "audio": "audio/jt-1/3819056f91e95358.wav",
+     "frames": 110,
+     "cap": null
+    },
+    {
+     "text": "70세에 들어도 절반을 조금 넘습니다.",
+     "audio": "audio/jt-1/867514858b6cbfbd.wav",
+     "frames": 68,
+     "cap": null
+    },
+    {
+     "text": "혼자 사신다면 사정이 좀 나아요.",
+     "audio": "audio/jt-1/75a6508cc7faa73d.wav",
+     "frames": 56,
+     "cap": null
+    },
+    {
+     "text": "혼자 사는 분이 필요하다고 답한 돈은 192만원이에요.",
+     "audio": "audio/jt-1/e9cd03397b9f7274.wav",
+     "frames": 98,
+     "cap": null
+    },
+    {
+     "text": "126만원이면 그 돈의 셋 중 둘 정도는 채웁니다.",
+     "audio": "audio/jt-1/daf1fabcd113aa24.wav",
+     "frames": 101,
+     "cap": null
+    }
+   ],
+   "frames": 498,
+   "data": {
+    "pic": "bg/jt1/board/jt1_43.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "부부가 주택연금만으로 297만원을 다 채우려면, 집값이 표 맨 끝 칸까지 가야 해요.",
+     "audio": "audio/jt-1/355cc9f4851e4d76.wav",
+     "frames": 173,
+     "cap": null
+    },
+    {
+     "text": "그러니 대부분은 국민연금이나 다른 소득에 보태는 돈으로 보시는 게 맞아요.",
+     "audio": "audio/jt-1/de7b680f5f61a722.wav",
+     "frames": 117,
+     "cap": null
+    }
+   ],
+   "frames": 290,
+   "data": {
+    "src": "bg/jt1/stock/jt1_946148.mp4",
+    "license": "Pexels 946148 무료(Carlos Arribas)",
+    "say": "다른 소득에 보태는 돈",
+    "side": "left",
+    "from": 337
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "이 숫자는 사람들이 필요하다고 답한 돈이지, 실제로 쓴 돈은 아닙니다.",
+     "audio": "audio/jt-1/0dcca1abc07108b4.wav",
+     "frames": 129,
+     "cap": null
+    },
+    {
+     "text": "우리 집 한 달 지출을 먼저 적어 보고 비교해 보세요.",
+     "audio": "audio/jt-1/0fec5e0a2efa0fcf.wav",
+     "frames": 93,
+     "cap": null
+    }
+   ],
+   "frames": 222,
+   "data": {
+    "pic": "bg/jt1/board/jt1_43.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "댓글에서 가장 많이 묻는 건, 집이 자녀에게 어떻게 되느냐예요.",
+     "audio": "audio/jt-1/c0cbddb8f3003a63.wav",
+     "frames": 114,
+     "cap": null
+    }
+   ],
+   "frames": 114,
+   "data": {
+    "n": "6장",
+    "q": "돌아가신 뒤, 그리고 세금·기초연금"
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "집을 맡기는 방식은 두 가지예요.",
+     "audio": "audio/jt-1/dc1e01f79b905ebf.wav",
+     "frames": 57,
+     "cap": null
+    },
+    {
+     "text": "저당권 방식은 내 이름 그대로 두고 집을 담보로 잡히는 거예요.",
+     "audio": "audio/jt-1/8d085cc3c2c8562f.wav",
+     "frames": 107,
+     "cap": null
+    },
+    {
+     "text": "신탁 방식은 집 소유권을 공사에 맡기는 거고요.",
+     "audio": "audio/jt-1/fd96ffd9ec72a3c2.wav",
+     "frames": 95,
+     "cap": null
+    }
+   ],
+   "frames": 259,
+   "data": {
+    "src": "bg/jt1/stock/jt1_8292929.mp4",
+    "license": "Pexels 8292929 무료(RDNE Stock project)",
+    "say": "집을 맡기는 두 방식",
+    "side": "left",
+    "from": 26
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "먼저 부부 중 한 분이 돌아가시면, 남은 분이 그대로 이어 받습니다.",
+     "audio": "audio/jt-1/e8bab8cfded62786.wav",
+     "frames": 99,
+     "cap": null
+    },
+    {
+     "text": "금액도 줄지 않아요.",
+     "audio": "audio/jt-1/b2124347557c7e8b.wav",
+     "frames": 37,
+     "cap": null
+    },
+    {
+     "text": "다만 저당권 방식이면 6개월 안에 이어 받는 절차를 밟아야 해요.",
+     "audio": "audio/jt-1/c61b6c77aa2c8953.wav",
+     "frames": 128,
+     "cap": null
+    },
+    {
+     "text": "신탁 방식은 따로 절차 없이 배우자에게 넘어갑니다.",
+     "audio": "audio/jt-1/1b4fc1882e509c0a.wav",
+     "frames": 112,
+     "cap": null
+    }
+   ],
+   "frames": 376,
+   "data": {
+    "src": "bg/jt1/stock/jt1_6541138.mp4",
+    "license": "Pexels 6541138 무료(Polina ⠀)",
+    "say": "남은 분이 이어 받음",
+    "side": "left",
+    "from": 263
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "두 분 다 돌아가시면 집을 팔아서, 그동안 쌓인 잔액을 정산합니다.",
+     "audio": "audio/jt-1/2332ce04ae879831.wav",
+     "frames": 114,
+     "cap": null
+    },
+    {
+     "text": "집값이 남으면 자녀에게 가요.",
+     "audio": "audio/jt-1/a0a7d867e795c59b.wav",
+     "frames": 67,
+     "cap": null
+    },
+    {
+     "text": "모자라도 자녀에게 따로 청구하지 않습니다.",
+     "audio": "audio/jt-1/9610514755c7d7ff.wav",
+     "frames": 72,
+     "cap": null
+    },
+    {
+     "text": "정산할 때 저당권 방식은 법원 경매로, 신탁 방식은 공매로 집을 팝니다.",
+     "audio": "audio/jt-1/3ec160dcdbb59a1e.wav",
+     "frames": 145,
+     "cap": null
+    }
+   ],
+   "frames": 398,
+   "data": {
+    "pic": "bg/jt1/board/jt1_flow.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그리고 집을 꼭 남기고 싶다면 길이 하나 더 있어요.",
+     "audio": "audio/jt-1/e8400cd19e3aad9d.wav",
+     "frames": 109,
+     "cap": null
+    },
+    {
+     "text": "자녀가 집값과 잔액 중 적은 쪽을 갚으면, 집을 가져올 수 있습니다.",
+     "audio": "audio/jt-1/a051721dec60fc8b.wav",
+     "frames": 121,
+     "cap": null
+    },
+    {
+     "text": "빚이 집값보다 많으면 집값만, 적으면 그 빚만 갚는 거예요.",
+     "audio": "audio/jt-1/0b237b5f5fe9f24e.wav",
+     "frames": 125,
+     "cap": null
+    }
+   ],
+   "frames": 355,
+   "data": {
+    "src": "bg/jt1/stock/jt1_walk.mp4",
+    "license": "Pexels 8794903 무료(Anastasia  Shuraeva)",
+    "say": "집을 남기고 싶다면",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "세금도 하나 줄어요.",
+     "audio": "audio/jt-1/f5a65cfc270bbe9c.wav",
+     "frames": 38,
+     "cap": null
+    },
+    {
+     "text": "집 한 채만 있고 저당권을 잡히는 방식으로 들면, 재산세가 최대 25% 줄어듭니다.",
+     "audio": "audio/jt-1/978ea9b85a23516c.wav",
+     "frames": 152,
+     "cap": null
+    },
+    {
+     "text": "5억보다 비싼 집이면, 5억짜리 집으로 치고 깎아 줘요.",
+     "audio": "audio/jt-1/77eccb02cdce9d0e.wav",
+     "frames": 95,
+     "cap": null
+    },
+    {
+     "text": "이 감면은 2027년 말까지로 정해져 있습니다.",
+     "audio": "audio/jt-1/789794e3bf5041d5.wav",
+     "frames": 83,
+     "cap": null
+    },
+    {
+     "text": "가입할 때 내는 등록면허세도 최대 절반까지 줄여 줘요.",
+     "audio": "audio/jt-1/43515f562b2b468c.wav",
+     "frames": 108,
+     "cap": null
+    }
+   ],
+   "frames": 476,
+   "data": {
+    "pic": "bg/jt1/board/jt1_tax2.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "대출 이자는 소득세를 낼 때 매년 200만원까지 빼 주고요.",
+     "audio": "audio/jt-1/024f626fe28a1887.wav",
+     "frames": 128,
+     "cap": null
+    }
+   ],
+   "frames": 128,
+   "data": {
+    "src": "bg/jt1/stock/jt1_38781079.mp4",
+    "license": "Pexels 38781079 무료(Melike)",
+    "say": "이자도 빼 줌",
+    "side": "left",
+    "from": 175
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "기초연금을 받는 분이라면, 주택연금 때문에 깎이지는 않아요.",
+     "audio": "audio/jt-1/55e497a4e234d535.wav",
+     "frames": 105,
+     "cap": null
+    },
+    {
+     "text": "공사는 매달 받는 돈을 소득으로 보지 않는다고 밝히고 있습니다.",
+     "audio": "audio/jt-1/a9568209a2edb692.wav",
+     "frames": 113,
+     "cap": null
+    }
+   ],
+   "frames": 218,
+   "data": {
+    "pic": "bg/jt1/board/jt1_tax2.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "기초연금을 받고 집값이 낮으면, 표보다 더 주는 우대형이 있어요.",
+     "audio": "audio/jt-1/8198bf16f4ad507a.wav",
+     "frames": 119,
+     "cap": null
+    },
+    {
+     "text": "집값이 낮을수록 더 얹어 주니, 해당되는지 먼저 확인해 보세요.",
+     "audio": "audio/jt-1/aba0507ae6968132.wav",
+     "frames": 107,
+     "cap": null
+    }
+   ],
+   "frames": 226,
+   "data": {
+    "src": "bg/jt1/stock/jt1_38405960.mp4",
+    "license": "Pexels 38405960 무료(Melike)",
+    "say": "우대형 확인",
+    "side": "left",
+    "from": 8
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "지금 들면 126만원에서, 기다렸다 들면 154만원으로 늘어요.",
+     "audio": "audio/jt-1/16c40c8eccd4bf33.wav",
+     "frames": 122,
+     "cap": null
+    }
+   ],
+   "frames": 122,
+   "data": {
+    "n": "7장",
+    "q": "정리"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "기다렸다 들면, 집값이 그대로라는 가정에서 93세에 받은 돈 합이 같아집니다.",
+     "audio": "audio/jt-1/c48237cbb649f7ea.wav",
+     "frames": 161,
+     "cap": null
+    },
+    {
+     "text": "집값이 오르면 그 나이가 앞당겨지고, 내리면 늦춰져요.",
+     "audio": "audio/jt-1/6fbe5847ebecb2a6.wav",
+     "frames": 102,
+     "cap": null
+    },
+    {
+     "text": "그 나이는 집값보다, 몇 살에 드느냐로 정해졌고요.",
+     "audio": "audio/jt-1/004f94c469d2dd31.wav",
+     "frames": 84,
+     "cap": null
+    },
+    {
+     "text": "받은 돈은 보증료, 이자와 함께 잔액으로 쌓이고, 모자라도 자녀에게 청구하지 않습니다.",
+     "audio": "audio/jt-1/be5ebc41eab2399b.wav",
+     "frames": 156,
+     "cap": null
+    }
+   ],
+   "frames": 503,
+   "data": {
+    "pic": "bg/jt1/board/jt1_summary.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "내 집값과 나이로는 한국주택금융공사 누리집의 예상연금조회에서 바로 볼 수 있어요.",
+     "audio": "audio/jt-1/b9ea6b5901aa01e0.wav",
+     "frames": 178,
+     "cap": null
+    },
+    {
+     "text": "전화 상담 예약도 같은 누리집에서 할 수 있어요.",
+     "audio": "audio/jt-1/57ef3110d91c11fb.wav",
+     "frames": 86,
+     "cap": null
+    }
+   ],
+   "frames": 264,
+   "data": {
+    "src": "bg/jt1/stock/jt1_handnote.mp4",
+    "license": "Pexels 6326847 무료(https://kaboompics.com/)",
+    "say": "예상연금조회",
+    "side": "left",
+    "from": 95
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "표는 예시라서, 실제 금액은 감정평가를 받아야 정해집니다.",
+     "audio": "audio/jt-1/b6778e62be6f65d2.wav",
+     "frames": 142,
+     "cap": null
+    }
+   ],
+   "frames": 142,
+   "data": {
+    "pic": "bg/jt1/board/jt1_summary.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "도움이 되셨다면 구독으로 다음 편도 받아 보세요.",
+     "audio": "audio/jt-1/0e3544921fd8fdeb.wav",
+     "frames": 84,
+     "cap": null
+    },
+    {
+     "text": "다음 영상에서 다시 뵙겠습니다.",
+     "audio": "audio/jt-1/c2bffcda9bf2cf50.wav",
+     "frames": 54,
+     "cap": null
+    },
+    {
+     "text": "",
+     "audio": null,
+     "frames": 525,
+     "cap": null
+    }
+   ],
+   "frames": 738,
+   "data": {
+    "pic": "bg/jt1/stock/jt1_window.jpg",
+    "license": "Pexels 35161057 무료(Greg Benson)",
+    "baked": true,
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "cx": 50,
+    "cy": 50
+   }
+  }
+ ],
+ "badge": ""
+}

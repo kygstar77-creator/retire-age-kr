@@ -313,3 +313,4 @@
 
 - 11/16: 녹음 전에도 meta.json(제목·썸네일·publishAt·synthetic·5문항·desc_tpl)은 먼저 만든다 — 렌더 뒤 칸은 chapters·{CAFE}뿐이라 관문 기한 직전 몰림을 줄인다. 빈 메모리 0.24GB면 렌더는 미루고 칸 채우기만.
 - 11/16 첫 댓글 숫자는 영상 대본(say_v1.txt)에 grep해서 0건인 calc_out 절에서 고른다(N-3 §G 간이세액 80·120%). git status는 5GB를 잡으니 회차 중 부르지 않는다.
+- 11/16 18시 JT-1: Chirp 편은 16:00 창을 기다릴 이유가 없다 — editor 서명 확인 즉시 녹음(165줄 5분). retake --takes 8로도 못 넘는 줄은 say.json 쉼 태그('보고, [pause short] 그걸')로 새 소리를 받으면 첫 판 통과. 새 편 화면은 N3.tsx를 sed로 복사(JT1.tsx)+움직이는 판 분기 한 줄, Root.tsx에 jt1.json import를 넣는 순간 다른 편 렌더도 그 파일이 있어야 하니 props를 같은 회차에 만든다. 미리보기 정지 화면은 작은 public(그 편 그림·audio/<편>·sample1017/pad.wav·human/)로 bundle → still(audio·pad.wav 없으면 404로 죽음). 다른 회차 렌더가 'Getting composition'에서 3시간 멈췄으면 .owner 2시간 규칙대로 이어받는다.

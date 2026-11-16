@@ -13,5 +13,17 @@
  "title_review": {
   "understand": "understand.md"
  },
- "cover": "work/research/cardshorts/n3s_family/cover_1116.png"
+ "cover": "work/research/cardshorts/n3s_family/cover_1116.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "dErEFOTuumg",
+ "uploaded_at": "2026-11-16 18:36:25",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-24T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
 }

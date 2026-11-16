@@ -44,6 +44,8 @@ import {H4, H4Props, h4Frames} from './H4';
 import h4 from '../h4.json';
 import {N3, N3Props, n3Frames} from './N3';
 import n3 from '../n3.json';
+import {JT1, JT1Props, jt1Frames} from './JT1';
+import jt1 from '../jt1.json';
 import {P1, P1Props, p1Frames} from './P1';
 import p1 from '../p1.json';
 import {T1, T1Props, t1Frames} from './T1';
@@ -86,6 +88,7 @@ export const Root: React.FC = () => {
   const pp3 = p3 as unknown as P3Props;
   const hh4 = h4 as unknown as H4Props;
   const nn3 = n3 as unknown as N3Props;
+  const jjt1 = jt1 as unknown as JT1Props;
   const pp1 = p1 as unknown as P1Props;
   const tp1 = t1 as unknown as T1Props;
   const np2 = n2 as unknown as N2Props;
@@ -166,6 +169,9 @@ export const Root: React.FC = () => {
     <Composition id="N3" component={N3 as unknown as React.FC<Record<string, unknown>>} durationInFrames={n3Frames(nn3)} fps={nn3.fps}
       width={1920} height={1080} defaultProps={nn3 as unknown as Record<string, unknown>}
       calculateMetadata={({props: pp}) => ({durationInFrames: n3Frames(pp as unknown as N3Props)})} />
+    <Composition id="JT1" component={JT1 as unknown as React.FC<Record<string, unknown>>} durationInFrames={jt1Frames(jjt1)} fps={jjt1.fps}
+      width={1920} height={1080} defaultProps={jjt1 as unknown as Record<string, unknown>}
+      calculateMetadata={({props: pp}) => ({durationInFrames: jt1Frames(pp as unknown as JT1Props)})} />
     <Composition id="P1" component={P1 as unknown as React.FC<Record<string, unknown>>} durationInFrames={p1Frames(pp1)} fps={pp1.fps}
       width={1920} height={1080} defaultProps={pp1 as unknown as Record<string, unknown>}
       calculateMetadata={({props: pp}) => ({durationInFrames: p1Frames(pp as unknown as P1Props)})} />

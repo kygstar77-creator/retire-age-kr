@@ -8,21 +8,21 @@
   "lines": [
    {
     "text": "그럼 못 받은 7,600만원을, 이 돈으로 다 메우는 데 몇 년이 걸릴까요?",
-    "frames": 148,
-    "audio": null
+    "frames": 122,
+    "audio": "audio/jt-1/05164141ce918aeb.wav"
    },
    {
     "text": "23년이 걸립니다.",
-    "frames": 42,
-    "audio": null
+    "frames": 47,
+    "audio": "audio/jt-1/f67506e5b8545054.wav"
    },
    {
     "text": "그러면 93세가 됩니다.",
-    "frames": 53,
-    "audio": null
+    "frames": 59,
+    "audio": "audio/jt-1/b4427c3df9a10253.wav"
    }
   ],
-  "frames": 255,
+  "frames": 240,
   "data": {
    "from": 65,
    "to": 95,
@@ -95,36 +95,36 @@
   "lines": [
    {
     "text": "중간을 끊어 보면 더 잘 보여요.",
-    "frames": 64,
-    "audio": null
+    "frames": 63,
+    "audio": "audio/jt-1/846ee0452a9322fc.wav"
    },
    {
     "text": "80세가 됐을 때를 보면요.",
-    "frames": 58,
-    "audio": null
+    "frames": 49,
+    "audio": "audio/jt-1/ef77c6146ceeb4f7.wav"
    },
    {
     "text": "일찍 든 쪽이 기다린 쪽보다 4,300만원을 더 받았습니다.",
-    "frames": 127,
-    "audio": null
+    "frames": 122,
+    "audio": "audio/jt-1/bb1175fd25139b9b.wav"
    },
    {
     "text": "85세에는 그 차이가 2,600만원으로 줄어요.",
-    "frames": 106,
-    "audio": null
+    "frames": 98,
+    "audio": "audio/jt-1/890245036792c119.wav"
    },
    {
     "text": "90세에도 차이가 1,000만원 정도 남아 있습니다.",
-    "frames": 117,
-    "audio": null
+    "frames": 89,
+    "audio": "audio/jt-1/589d7559d2e70492.wav"
    },
    {
     "text": "그러니 93세보다 오래 사시면 기다린 쪽이 더 받은 게 되고, 그 전이면 일찍 든 쪽이 더 받은 게 돼요.",
-    "frames": 207,
-    "audio": null
+    "frames": 193,
+    "audio": "audio/jt-1/d6bdc91fb9a57bd3.wav"
    }
   ],
-  "frames": 691,
+  "frames": 626,
   "data": {
    "from": 65,
    "to": 95,

@@ -9,6 +9,9 @@
 | 이해 시험 | 2차 6명(40·50·60대) 뜻·할 일·응용 3/3·권유 0/3 · 1차 '4인'·'칸'·'결국 같은 돈?' → 화면·설명 고침 → 2차 '한 해 세금 같음' 3/3 · 2차 '혼자보다' 2/3 → '부양가족 0명보다' | understand.md |
 | AI 티 | 제목·설명 0.0 | aitell |
 | 제목 | '연봉 실수령액, 같은 5천인데 부양가족 따라 한 달 16만원 차이' 해시태그 빼고 33자·숫자 2·검색어 맨 앞(연봉실수령액 월 66,900 vs 부양가족공제 880, kwvol 11/16) | upload.json |
-| 렌더·눈 검사·쉿소리·안전 영역·디자인·치직·표지 | **아직** — 11/16 06:1x 빈 메모리 0.5~0.9GB(렌더 2GB↑ 필요) · render_parts_1116.sh 준비됨 | |
-| 남은 것 | 렌더(render_parts_1116.sh) → deess → safezone·bgcheck·emptyscan·clickscan → 눈 검사 5장↑ → cover_1116.png → w1g1clips_up.py n3s_family(publishAt 11/24 19:20) · 25.0초 — 쇼츠 길이 표본에 한 줄 | |
-판정: 렌더 전 관문 통과(06:25 firemap-video-producer) — 렌더 뒤 관문 남음
+| 렌더 | render_parts_1116.sh 3토막(18:21·18:24·18:26, 15:11 회차가 멈춘 것 이어받음) → concat → deess --chirp-short −17.0 LUFS·TP −1.5 · 25.2초 | run_1116pd2.log |
+| 치직·디자인 | clickscan 0 · bgcheck 배경 실사 100%·자막 기준 100% · 안전 영역·0초 빈 곳은 w1g1clips_up가 올리기 전에 다시 잼 | |
+| 눈 검사 | eye/sheet_1116.png(0~24초 9장)·z9·z21 확대 — 잘림·오타·얼굴·상표 0 · 손 동그라미 선이 주황 글자 위·아래 끝을 살짝 지남(글자는 읽힘, n3s_raise 등 공개 클립과 같은 부품 꼴) → 부품 손질은 backlog | eye/ |
+| 표지 | cover_1116.png(9.5초 '부양가족 0명보다 +16만원'·'한 달 16만원 정도') | upload.json cover |
+| 쇼츠 길이 표본 | 25.2초 — k1s_fix·다른 클립과 48시간 SHORTS 조회 비교용 | |
+판정: 통과 (18:35 firemap-video-producer — 11/24 19:20 칸)

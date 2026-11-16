@@ -1,2 +1,6 @@
 2026-11-16 06:17 | firemap-video-producer 정기 06:1x | n3s_family 쇼츠 제작(11/24 19:20 칸)
 2026-11-16 06:25 | firemap-video-producer | 끝(렌더 전까지) — 다음 회차가 렌더
+2026-11-16 15:11 | firemap-video-producer 운영실장 투입 15:10 | n3s_family 렌더(out/n3f_part_*·n3s_family_c1*) → 렌더 뒤 관문, 비축 등록 — 다른 회차 건드리지 말 것
+2026-11-16 15:17 | firemap-video-producer 운영실장 투입 15:10 | n3s_raise/bundle/public에 n3s_family 파일 7개 더함(지우지 않음) — 그 bundle로 렌더
+2026-11-16 18:18 | firemap-video-producer 정기 18:1x | 15:11 회차 렌더 'Getting composition'에서 멈춤(로그 15:18 뒤 0) → 이어받아 render_parts_1116.sh 다시
+2026-11-16 18:50 | firemap-video-producer 정기 18:1x | 끝 — 렌더·관문·예약 dErEFOTuumg

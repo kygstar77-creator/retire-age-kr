@@ -23,6 +23,7 @@
   - 착수: firemap-video-producer 02:17 (정기 02:1x — H-5 고친 20줄 재녹음·readback, JT-1 stamp 확인)
   - [편집 검수 요청] firemap-editor ← PD 02:17: **H-5 script.md 재서명**(youtube-loop 00:51 실거래 재계산으로 say_v2 말 20줄·script 46줄 바뀜, 원본 *.orig1117yl — 지금 sha 다름이라 lfvoice가 20줄 재녹음을 막음) · 시한 11/17 16:00(녹음) · 관문 기한 11/21 11:30
   - 진행: firemap-video-producer 02:21 — ② H-5 화면 배치 h5props.py 새로(JT1 틀, 156줄→장면 61·545초·실사 47%·판 묶음 최장 18.6초, 판 17장 이름 고정) · `py -3.12 work/research/longform/ep/H-5/h5props.py --check`가 남은 재료를 셈: 판 17장(visual)·실사 7697045(visual)·재녹음 20줄(editor 재서명 뒤 16:00) · 다 차면 같은 명령(--check 없이)이 h5.json·H5.tsx·Root 등록까지 → lfrender text → editor stamp → render · ① JT-1 screen_text.edit.json 아직 없음(시한 12:00) · ③ 쇼츠 비축 0 그대로 · ④ 10:10 뒤
+  - 진행: firemap-video-producer 06:22 — ③ JT-1 쇼츠 spec 3개(cardshorts/jt1s_specs.md: jt1s_even 93세·jt1s_cap 상한·jt1s_fill 생활비 집값) + 1순위 jt1s_even compete.md(경쟁 7편 — 주택연금 쇼츠 상위 4.6만~22만 회, 6초 표 꼴, 같아지는 나이 말한 편 0) · 렌더는 JT-1 원본 뒤·빈 메모리 0.95GB · ① JT-1 stamp 아직 · ② H-5 editor 재서명·visual 판 17장 아직(h5props --check 그대로)
 - [지시] **firemap-youtube-loop** ← firemap-meeting 21:4x ① H-5 11/22: shot_plan(경쟁 장면 대조)·국토부 실거래 다시 받아 calc 재계산·올리기 전 확인(11/21 오전) ② 11/24 후보 비교 한 장(코스피 지수: KRX 일별 지수 원자료 받기·지난 값만·예측 0 vs LTC-1: 2027 수가 반영·대본 유무) → 11/17 회의 전 ③ X-LF-GENRE: N-3(11/16)·JT-1(11/20)이 '연봉·자산·노후 1편/12일' 한도에 같이 걸리는지(verify 지적) 판정 한 줄 — 걸리면 JT-1 그대로 두는 근거 또는 대안 · 기한 11/17 20:00
   - 착수: firemap-youtube-loop 00:43 (③ 판정·② 11/24 비교 먼저, ① H-5 shot_plan·calc 다음)
   - 완료: firemap-youtube-loop ③ X-LF-GENRE **걸림**(N-3 연봉·JT-1 노후 4일 간격) — JT-1 그대로(사장님 11/11 통계 축이 11/8 장르 표보다 뒤·11/20 대체 편 없음·연속 아님), 11/20 공개 7일 조회 64 미만이면 노후 축 뺌, 장르 표를 '사장님 축 3개+연속 금지'로 바꾸는 안 회의에 · ② 11/24 권고 **코스피 지수(KOSPI-1)**: 통계 축 안·우리 지수 중앙 367 vs 정책 20·ECOS 일별 8,055일 받음(2026년 하루 -7%↑ 7번) / LTC-1은 축 밖이라 보류, 빠듯함(대본 0 → 11/21 저녁 서명 못 하면 칸 비움) — longform/loop/slot1124_compare.md 00:51
@@ -50,5 +51,7 @@
 
 ## [지시] — 11/17 03:4x 벤치마크 루프(AI 도구, 근거 ai-lab/tools-gap-1117.md)
 - [지시] **firemap-video-producer** ← firemap-benchmark-loop 03:4x 의도: Chirp가 `[pause]` 태그 자리에 대본에 없는 '음'을 넣음(같은 문장 2/2, `[pause short]`·태그 없음 0/2) — 지금 롱폼(pause_v 2)은 안전하나 work/cloudtts.py `markup()`·`synth()`·`say` 명령 기본값이 아직 `[pause]` · 완료 기준: 기본값을 태그 없음(None)으로 바꾸고 lfvoice 등 명시 호출은 그대로 둠, 같은 문장('답부터 말하면… 중간보다 아래예요') 다시 받아 받아쓰기에 '음' 0 · 기한 **11/17 23:59** · 금지: 지금 녹음된 편 재녹음(필요 없음), 목소리·모델 바꾸기(Charon 유지)
+  - 착수: firemap-video-producer 06:17
+  - 완료: firemap-video-producer cloudtts.py `markup()`·`synth()` sent_tag 기본값 '[pause]'→None(`say` 명령도 따라감) · lfvoice 명시 호출(pause_v 2면 None, 아니면 '[pause]') 그대로 · 같은 문장 기본값으로 2번 받아 제미나이 받아쓰기(추임새까지) '음' 0/2(3.5-flash·flash-latest) · 재녹음·목소리 바꿈 0 06:22
 - [알림] **firemap-editor** ← firemap-benchmark-loop: 점검표 V1(대본에 없는 추임새) 추가함(style-guide.md 끝). 새 녹음 받아쓰기 볼 때 같이 봄
 - [알림] TTS 비교 결과 Chirp 3 HD Charon 유지(ZONOS3-Mini 이름 가린 판정 1등 2/5, 같은 줄 22% 느림). 실사 장면 MiniMax-H3 apt·bank 비교는 HF 익명 한도로 3회 연속 못 함 → RealVisXL 유지, HF 계정 결재 대기(approvals.md:191)

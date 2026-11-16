@@ -1,6 +1,6 @@
 # 구글 클라우드 Text-to-Speech (Chirp 3 HD) — 2026-10-11 사장님 "진짜 돈 나가게 하면 안 된다".
 #   py -3.12 work/cloudtts.py say "<문장>" <출력.wav> [목소리] [--nomark]   # 기본 ko-KR-Chirp3-HD-Charon · 쉼 태그 켬
-#   markup: synth(..., mark=True, 10/19부터 기본) → input.markup에 쉼 태그(쉼표 뒤 [pause short]·줄 안 문장 끝 [pause], 글에 이미 있는 태그는 그대로) — 글자 수 장부는 보내는 글(태그 포함) 길이
+#   markup: synth(..., mark=True, 10/19부터 기본) → input.markup에 쉼 태그(쉼표 뒤 [pause short]·줄 안 문장 끝은 11/17부터 태그 없음 — sent_tag='[pause]' 명시해야 넣음, 글에 이미 있는 태그는 그대로) — 글자 수 장부는 보내는 글(태그 포함) 길이
 #     mark=False면 글 속 태그를 빼고 text로 보낸다(태그를 소리 내 읽지 않게)
 #   py -3.12 work/cloudtts.py usage                              # 이번 달 쓴 글자 수
 # 돈 안 나가게 하는 장치(코드로 막는다):
@@ -29,7 +29,8 @@ def session():
     return AuthorizedSession(service_account.Credentials.from_service_account_file(KEY, scopes=['https://www.googleapis.com/auth/cloud-platform']))
 
 _S = None
-def markup(text, sent_tag='[pause]'):
+def markup(text, sent_tag=None):
+    # 11/17 benchmark-loop [지시]: 기본값 [pause] → None(태그 없음). [pause] 자리에 Chirp가 대본에 없는 '음'을 넣음(같은 문장 2/2, ai-lab/tools-gap-1117.md ③). [pause]가 꼭 필요하면 호출에서 sent_tag='[pause]'로 명시.
     # 10/12 순돌이 [지시·긴급]: Chirp 3 HD markup 쉼 태그 — 쉼표 뒤 [pause short], 줄 안 문장 끝 뒤 [pause](줄 끝 쉼은 lfvoice가 자르고 붙인다)
     # 10/19 voice-naturalness: 글에 이미 쉼 태그가 있으면(korsay.phrase가 넣은 [pause short]) 그 자리엔 더 넣지 않는다 — 넣으면 쉼이 두 번 겹친다.
     # 10/19 사장님 'AI 음성이 아직도 쉼표를 제대로 못 읽는데? 쉼표를 제대로 못 읽으면 차라리 아예 빼던가' — 말할 글에서 쉼표를 뺀다(자막·화면 글은 그대로).
@@ -44,7 +45,7 @@ def plain(text):
     # 쉼 태그를 뺀 글(markup을 안 쓰는 요청·글자 수 비교용)
     return re.sub(r'\s{2,}', ' ', re.sub(r'\s*[,，]\s*', ' ', TAG.sub(' ', text))).strip()   # 10/19 쉼표 뺌(사장님)
 
-def synth(text, voice='ko-KR-Chirp3-HD-Charon', tag='', rate=None, mark=True, sent_tag='[pause]'):
+def synth(text, voice='ko-KR-Chirp3-HD-Charon', tag='', rate=None, mark=True, sent_tag=None):
     """문장 하나 → 24kHz mono int16 PCM bytes. 막히면 예외.
     rate = audioConfig.speakingRate(0.25~2.0, Chirp 3 HD 'pace control' — docs.cloud.google.com/text-to-speech/docs/chirp3-hd 10/11 확인). 글자 수 과금은 같다."""
     global _S

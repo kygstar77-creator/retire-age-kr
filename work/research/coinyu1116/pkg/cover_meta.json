@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-16 17:23",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "코인 과세 2년 유예",
+ "num": "손해 이월되면 138만원 덜",
+ "sub": "제도가 2022년에 있었다면(가정 계산)",
+ "label": "직접 계산",
+ "src": "업비트 비트코인 연말 종가 · 재정경제부 11/5 발표",
+ "icon": "receipt",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 124,
+ "num_px": 89,
+ "sub_px": 60,
+ "board": [
+  "nodo1116",
+  "semietf1116",
+  "yujok1116",
+  "rcut1116",
+  "mokpair1115",
+  "tdf1115",
+  "offbase1114",
+  "yejung1115",
+  "pentax1115",
+  "sav1115"
+ ]
+}

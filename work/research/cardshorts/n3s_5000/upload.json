@@ -1,0 +1,17 @@
+{
+ "name": "n3s_5000",
+ "ep": "N-3",
+ "from_long": "6x35E3vg650",
+ "mp4": "work/video/out/n3s_5000_c1_ds.mp4",
+ "publishAt": null,
+ "publish_plan": "비축(11/25 뒤 쇼츠 칸 — 회의가 칸 정함) · N-3 셋째 클립: 11/23 n3s_raise·11/24 n3s_family 다음이라 같은 롱폼 연속 2편 상한 때문에 11/25 바로는 안 됨, 다른 롱폼 클립 하나 사이에 두고 · 쓸 때 publishAt 정하고 w1g1clips_up.py n3s_5000",
+ "title": "연봉 5천 실수령액, 통장엔 얼마고 직장인 중 몇 번째일까 #shorts",
+ "description": "전체 계산: https://youtu.be/6x35E3vg650 (연봉 3천~1억 5천 칸별 실수령액·줄 위치·부양가족·식대 비과세까지)\n\n연봉 5천만원이면 세금·4대 보험료를 다 떼고 통장에 한 달 357만원쯤 들어와요(부양가족 0명·식대 비과세 월 20만원). 국세청 자료로 직장인을 백 명 줄 세우면 앞에서 33명 안, 상위 33% 안쪽이에요.\n내 자리를 찾을 때는 계약서 연봉이 아니라 원천징수영수증의 '총급여'를 보세요. 국세청은 식대처럼 세금을 안 붙이는 돈을 빼고 줄을 세워서, 연봉 5천(식대 월 20만원)은 총급여 4,760만원으로 섭니다. 위의 '상위 33%'도 이 총급여로 잰 자리예요. 계약서 숫자로 찾으면 실제보다 앞에 선 것처럼 보여요.\n연봉 5천: 통장 월 3,571,586원 · 총급여 4,760만원은 상위 32% 구간 평균 4,837만원과 상위 33% 구간 평균 4,737만원 사이 — 2026년 기준\n\n출처: 2026년 근로소득 간이세액표 · 2026년 4대 보험료율 · 국세청 근로소득 백분위(천분위) 자료 2024년 귀속 · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — Coverr · Ketut Subiyanto · Max Vakhtbovych · RDNE Stock project · cottonbro studio\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n정보 제공용이고, 특정 상품을 사거나 팔라는 권유가 아니에요.\n#shorts #연봉실수령액 #연봉5천",
+ "tags": "연봉 실수령액,연봉 5천 실수령액,연봉 상위,총급여,연봉 순위",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/n3s_5000/cover_1117.png"
+}

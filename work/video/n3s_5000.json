@@ -1,0 +1,258 @@
+{
+ "fps": 30,
+ "name": "n3s_5000",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "연봉 5천 실수령액",
+  "통장엔 한 달 357만원"
+ ],
+ "hot": "357만원",
+ "answer": {
+  "label": "연봉 5천, 세금·보험료 다 뗀 통장",
+  "items": [
+   "한 달 357만원쯤",
+   "직장인 백 명 중 앞에서 33명 안"
+  ],
+  "arrow": false,
+  "note": "부양가족 0명 · 식대 비과세 월 20만원 · 2026년 기준"
+ },
+ "base": "2026년 근로소득 간이세액표·4대 보험료율 · 국세청 근로소득 백분위(2024년 귀속) · 파이어맵 계산",
+ "long": null,
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "질문",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "연봉 5천",
+      "통장엔 한 달 얼마?",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "부양가족 0명 기준",
+      "한 달 357만원쯤",
+      "",
+      99,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "연봉 5천이면, 통장에는 한 달에 얼마가 들어올까요?",
+     "audio": "audio/n-3/33f1e38345aaf869.wav",
+     "frames": 99
+    },
+    {
+     "n": 2,
+     "text": "답은 357만원쯤입니다.",
+     "audio": "audio/n-3/ac080fd238b6e9b8.wav",
+     "frames": 63
+    }
+   ],
+   "frames": 162
+  },
+  {
+   "kind": "vs",
+   "label": "줄",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "직장인 백 명 줄",
+      "연봉 5천은 몇 번째?",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "직장인 백 명 중",
+      "앞에서 33명 안",
+      "",
+      132,
+      "ink"
+     ],
+     [
+      "같은 말로",
+      "상위 33% 안쪽",
+      "",
+      197,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 3,
+     "text": "그럼 우리나라 직장인 백 명을 줄 세우면, 이 연봉은 몇 번째 정도일까요?",
+     "audio": "audio/n-3/cd51214e0856b450.wav",
+     "frames": 132
+    },
+    {
+     "n": 4,
+     "text": "앞에서 서른세 명 안에 들어요.",
+     "audio": "audio/n-3/0592b489a0c88d66.wav",
+     "frames": 65
+    },
+    {
+     "n": 5,
+     "text": "상위 33% 안쪽이라는 뜻이에요.",
+     "audio": "audio/n-3/cce74bca8cd0f9ce.wav",
+     "frames": 73
+    }
+   ],
+   "frames": 270
+  },
+  {
+   "kind": "vs",
+   "label": "식대",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "비과세 식대 월 20만",
+      "한 해 240만원 빠짐",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "33%는 이걸로 잰 값",
+      "총급여 4,760만원",
+      "",
+      140,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "식대를 한 달 20만원 받는 회사라면요.",
+     "audio": "audio/n-3/a54218b2d8f742a4.wav",
+     "frames": 75
+    },
+    {
+     "n": 7,
+     "text": "한 해에 240만원이 빠집니다.",
+     "audio": "audio/n-3/ab9373847381818b.wav",
+     "frames": 65
+    },
+    {
+     "n": 8,
+     "text": "그래서 연봉 5천은 국세청 줄에서 4,760만원으로 섭니다.",
+     "audio": "audio/n-3/9825e19f529d760e.wav",
+     "frames": 118
+    }
+   ],
+   "frames": 258
+  },
+  {
+   "kind": "vs",
+   "label": "총급여",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "내 자리 찾을 때",
+      "원천징수영수증 총급여",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "계약서 연봉으로 보면",
+      "실제보다 앞에 선 듯",
+      "",
+      123,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 9,
+     "text": "내 자리를 찾을 때는 계약서 말고 원천징수영수증의 총급여를 보세요.",
+     "audio": "audio/n-3/ee84b2f72d8c6ef9.wav",
+     "frames": 123
+    },
+    {
+     "n": 10,
+     "text": "계약서 숫자로 찾으면, 실제보다 몇 칸 앞에 서 있는 것처럼 보여요.",
+     "audio": "audio/n-3/0e5e291833df8f83.wav",
+     "frames": 135
+    }
+   ],
+   "frames": 324
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/n3s_5000/stock/cut/7822029_0_99.mp4",
+   "from": 0,
+   "frames": 99,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_5000/stock/cut/853830_0_63.mp4",
+   "from": 99,
+   "frames": 63,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_5000/stock/cut/5923592_0_132.mp4",
+   "from": 162,
+   "frames": 132,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_5000/stock/cut/6771533_0_65.mp4",
+   "from": 294,
+   "frames": 65,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_5000/stock/cut/3202364_0_73.mp4",
+   "from": 359,
+   "frames": 73,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_5000/stock/cut/7535095_0_75.mp4",
+   "from": 432,
+   "frames": 75,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_5000/stock/cut/853830_5_65.mp4",
+   "from": 507,
+   "frames": 65,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_5000/stock/cut/5923592_5_118.mp4",
+   "from": 572,
+   "frames": 118,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_5000/stock/cut/4992563_0_123.mp4",
+   "from": 690,
+   "frames": 123,
+   "start": 0
+  },
+  {
+   "src": "bg/n3s_5000/stock/cut/8783211_0_201.mp4",
+   "from": 813,
+   "frames": 201,
+   "start": 0
+  }
+ ],
+ "credits": "Coverr · Ketut Subiyanto · Max Vakhtbovych · Mikhail Nilov · RDNE Stock project · cottonbro studio"
+}

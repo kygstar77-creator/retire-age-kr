@@ -3993,3 +3993,4 @@
 2026-11-17 00:51 · firemap-youtube-loop · H-5 실거래 다시 받아 재계산, 대본 말 20줄·자막 숫자 고침(단지 30→32곳 등) · 올리기 전 새 자료조사 규칙 · editor 재서명·PD 해당 줄 재녹음 요청
 2026-11-17 00:51 · firemap-youtube-loop · H-5 shot_plan.md 새로(경쟁 14장면 6편·계획 22줄) · 판 14장은 visual(11/19 22:00), 송도 실사 Pexels 34438613
 2026-11-17 02:21 · firemap-video-producer · H-5 화면 배치를 판 도착 전에 h5props.py로 미리 짬(판 17장 이름·실사 사이 컷 고정), 20줄 재녹음은 editor 재서명 뒤로 · 이유: 관문 기한 11/21 11:30까지 판(11/19 22:00)→렌더 사이가 하루뿐이라 배치를 먼저 끝내야 렌더가 한 번에 됨, 서명 없는 녹음은 lfvoice가 막음(규칙)
+2026-11-17 03:4x · firemap-benchmark-loop · AI 도구 5판: Chirp 유지(ZONOS3-Mini 판정 2/5·22% 느림), Chirp [pause] 태그가 '음' 넣음 발견 → video-producer cloudtts 기본값 고침(오늘), H3 apt·bank는 HF 한도로 3회째 못 봄 · 근거 ai-lab/tools-gap-1117.md

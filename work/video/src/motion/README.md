@@ -140,3 +140,8 @@
 - 지금: `capLineSize` = 22px에서 한 줄(x 120~1400)에 들게 줄임, 하한 13px(출처 srcSize와 같은 값, 새 기준 아님). 13px로도 넘치면 `capFits`=false → 두 줄로 접고 한 줄 위로(잘림 없음). 22px에 드는 줄은 화면 그대로(K-1 cap 0줄 → 변화 없음).
 - 렌더 전: `py -3.12 work/video/capfit.py <props.json>` — 13px로도 넘치는 cap(작은 글자가 출처 포함 3줄 됨)을 찍고 종료 코드 1. 넘치면 props·대본에서 줄인다(지난 편: h3 13줄·x1 2·h1 1·p1 1).
 - 시험: research/longform/motion_preview_capfit/board_capfit.png(17·76·99·191칸 네 줄, 잘림 0).
+
+## 받은 돈 합 경주(SumRace) — '늦게 시작하면 몇 살에 같아지나'(11/16 JT-1 3장)
+- props: `from·to(나이)·ticks·tickLabel·ageTicks·a{name,start,monthly}·b{…}·sweep[줄,줄]·missed·years·meet·slices[{age,text,at}]·after` — at은 줄 번호(소수=줄 안 비율).
+- 걷는 나이 바늘이 두 누적 선을 그리고(늦게 든 쪽은 시작 나이까지 0), 세로 괄호(못 받은 돈)·가로 괄호(메우는 햇수)·교점 손 동그라미·중간 나이 차이·교점 뒤 연주황. 교점은 두 직선 식(meetAge)으로 계산, 지어내지 않음.
+- 국민연금 조기·연기수령, 연금 받는 나이 비교에도 그대로 씀. 반복 방지: seed로 왼쪽 여백·면 결 기울기, 편마다 선 이름·괄호 글자 바꾸기.

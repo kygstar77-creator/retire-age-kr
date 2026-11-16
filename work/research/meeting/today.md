@@ -18,6 +18,8 @@
   - 착수: firemap-write 07:07 (운영실장 대리) — ④ 11/17 22:40 de1s_basket 짝 글(관문 기한 16:40, write-b는 07:40 isa1116 발행·③ 18:40 부동산 글 기한 12:40에 집중)
   - 완료: firemap-write ④ 11/17 22:40 de1s_basket 짝 글 de1pair1117 'SCHD와 국내 미국배당다우존스 같이 사면 분산될까?'(ETF) 관문 통과·slots item·gates_ok 07:29 · 새 원문 11/17(슈왑 보유 11/13·네이버 4종) 업종마다 차이 0.3%p 안 · editgate auto 8a8a8686 · 이해 2차 통과 · n3pair1116·gmpair1116과 다른 질문 · 앞 칸 18:40 부동산이라 같은 장르 3칸 연속 아님 · 발행은 22:40 정기 회차(쇼츠 공개 확인 뒤) 07:29
   - [편집 검수 요청] de1pair1117 · 담당 firemap-editor · work/research/de1pair1117/pkg · 공개 예정 2026-11-17 22:40 (auto 서명 있음, 사람 눈 검수 요청)
+  - 착수: firemap-write-b 07:49 — ② 07:40 isa1116 발행(발행 날 원문 다시 확인 끝, 예금 중앙 3.285→3.29% 숫자 5곳 고침·auto 재서명) → ③ 18:40 새 부동산 글
+  - 진행: firemap-write-b 07:54 ② 완료 — isa1116 https://cafe.naver.com/firemap/439 verify OK 1813자·사진 3 · ③ 착수(bundil1117 일산 vs 분당 같은 집 실거래)
 - [편집 검수 요청] firemap-editor ← write-b 23:28: cofix1117 · work/research/cofix1117/pkg · 공개 예정 2026-11-18 07:40(카페, 경제 이야기) · 검수 기한 11/18 01:40
   - 진행: firemap-write-b 22:50 ① 완료 — gmpair1116 https://cafe.naver.com/firemap/438 verify OK 1803자·사진 3 (②~⑤는 다음 회차)
 - [지시] **firemap-video-producer** ← firemap-meeting 21:4x ① JT-1: editor stamp 뒤 렌더·bgcheck·screen → 11/19 올리기 전 확인 뒤 gate·예약(관문 기한 11/19 11:30) ② **H-5 11/22 칸**: meta.json(제목 copy/titles.md 1위·thumb_h5_o1.png)·화면 틀·say_v2.txt 녹음·렌더 — 관문 기한 **11/21 11:30** · 렌더는 JT-1과 같은 밤에 겹치지 않게 ③ 쇼츠 비축 0→2: N-3·JT-1(JT-1은 11/20 공개 뒤)에서 클립 관문(11/25 뒤 칸, 기한 11/23) ④ N-3 설명란 {CAFE}를 n3pair1116 주소로(11/17 10:10 발행 뒤) · 금지: 관문 낮추기
@@ -49,6 +51,7 @@
 - [알림] PD·visual ← youtube-loop 08:55: H-5 화면 ①~④(1장 숫자 같은 모양·2장 단지 이름 불·4장 매매−전세 판 지움·2장 두 단지 글자) — H-5 11/22로 당겨져 기한 11/21
 - [진행] firemap-youtube-loop KOSPI-1(11/24 후보, 회의 확정 전 미리) 04:48: analysis.md(검증 통과 — 코스피 1,200만·서킷브레이커 88,700·지난 값 쇼츠 53만, '폭락' 앞말 금지 10~220)·calc2(2026 하루 -5%↓ **23일** vs 1995~2025 합 57)·facts S1~S10(서킷브레이커 보도 순번 11번째까지, KRX KIND 목록 남음) · 다음: toc 10편·research 8칸(11/18)
 - [진행] firemap-youtube-loop LTC-1(장기요양): 사실표 S1~S13 · 2027 수가 반영·감경 법령 S11·toc 10편·research 8칸 남음
+- [알림] firemap-youtube-loop·firemap-visual-designer ← copywriter 07:55: KOSPI-1(11/24 확정 시) 제목 1위 '코스피 올해 하루 5% 넘게 빠진 날 23번, IMF 때보다 많았다' · 썸네일 '1995년부터 매일 마감 가격으로 셈' / '코스피 하루 5% 하락'+'올해만 23번 나왔다' / 알약 'IMF 외환위기 때 한 해 9번'(알약 크게) · 대본 조건: 첫 30초 '횟수 비교일 뿐 위기 크기 비교 아님'·'하루=전날 마감 대비'·'올해=11/13까지', 남은 궁금증 3/3 '그 뒤 어땠나' → ㉡㉣ 두 쪽 같은 무게 · 근거 copy/kospi1/titles.md
 - 결정 필요(순돌이→사장님): 쇼츠 표지를 스튜디오 데스크톱에서 편마다 고를지, 영상 속 윗줄 키우기만 할지
 
 - [요청] firemap-visual-designer ← PD 22:3x: **H-5 종이 판**(bg/h5/board — JT-1 bg/jt1/board처럼 숫자 박힌 판, 1장 5년 흐름·2장 단지 30곳·3장 잣대 73% vs 82%·4장 전세·6장 정리 표) · youtube-loop H-5 shot_plan·calc 재계산 뒤 숫자로 · H-5 녹음은 11/16 22시 끝(156줄 9.1분) · 시한 11/19 22:00(화면 조립·렌더·editor stamp가 11/21 11:30 관문 전에 들어가야 함)

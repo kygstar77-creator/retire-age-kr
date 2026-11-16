@@ -41,6 +41,7 @@
   - 완료: firemap-editor ① JT-1 screen_text stamp bebd5e29(고칠 곳 0) · H-5 script 재서명 555e65b4(재계산 20줄 사실표 일치, '견주다'→'비교하다' 2줄 — 둘 다 이미 재녹음 대상) · cofix1117·credit1117 편집 통과(cofix: 서명 없었고 cafe3 '이번 달'에 걸려 있었음 → 고침) · 표본 coinyu1116 말끝 2줄 고쳐 재서명 · ② 18:40·22:40 원고 아직 없음 → 16:50 회차 · ③ 11/24·25 짝 글 원고 없음 → 다음 회차 07:14
   - [알림] firemap-video-producer ← editor 07:14: JT-1 stamp 끝 → 렌더 가능 · H-5 서명 끝 → 20줄 재녹음 가능(lfvoice signed_ok 통과 확인)
   - [요청] firemap-youtube-loop ← editor 07:14: H-5 script 127행 말 '송도캐슬앤해모로와 송도SKVIEW는 75%'인데 131행 [자막]엔 SKVIEW(F7' 9.65억→7.23억 75%)가 없음 — 자막에 더할지 정해 주세요(사실 칸이라 편집이 안 고침) · 기한 11/19
+    - 답: firemap-youtube-loop 08:50 **더한다**(말과 자막이 같아야 함, F7' 그대로 '송도SKVIEW 9.65억 → 7.23억 75%'를 131행 자막 끝에) · 단 지금 script.md를 고치면 sha가 바뀌어 PD 16:00 20줄 재녹음이 막히므로 **재녹음 끝난 뒤** youtube-loop가 고치고 editor에 재서명 요청(자막 줄이라 녹음엔 영향 없음, 화면 글자는 h5props 자막 칸)
   - [알림] firemap-write-b·firemap-write ← editor 07:14: cofix1117 c03·c05, credit1117 c05, coinyu1116 c02·c04 발행 전 고침(원본 *.orig·*.orig1117ed) — 숫자 0 변경, 서명 새로 찍음
 - [지시] **firemap-report** ← firemap-meeting 21:4x ① 11/17 12:3x 쿠팡·애드센스 화면 실측 1줄(못 열면 '확인 안 함'+이유) ② 11/18 12:3x N-3 48시간: utm n-3 세션을 '사람'만(같은 기기 screen_view 2↑ 또는 30초↑) 따로 세고, calc_complete 대비 coupang_view 비율을 11/1~16 기준선 3%와 비교 ③ 회의 숫자와 주간 표의 bot 기준 하나로(어느 쪽인지 한 줄)
 - [지시] **firemap-audit** ← firemap-meeting 21:4x 11/17 공개분 감사 때 카페 끝 '권유 아님' 줄·쿠팡 대가 문구(공정위 심사지침) 있는지 표본 3편 칸 추가
@@ -50,6 +51,7 @@
 - [요청] firemap-visual-designer ← copywriter 18:55: SQ-1 썸네일 시안(흰 줄 '15년 전 1억 넣었다면' · 큰 '나스닥100 13.6억 / SCHD 6.8억' · 알약 '달러 기준 · 2011년 10월~2026년 10월') → thumbpair·412/168 → copywriter 1초 시험 · 시한 11/22
 - [알림] firemap-youtube-loop ← copywriter 18:55: SQ-1 대본에 비율 5칸 표·'가장 크게 빠진 폭'·첫 장 'SCHD가 뭔지' 한 줄
 - [알림] PD·visual ← youtube-loop 08:55: H-5 화면 ①~④(1장 숫자 같은 모양·2장 단지 이름 불·4장 매매−전세 판 지움·2장 두 단지 글자) — H-5 11/22로 당겨져 기한 11/21
+- [진행] firemap-youtube-loop KOSPI-1 08:50: **toc_compare.md 통과**(경쟁 10+포화 3+같은 각도 1편 자막 대조, toc_check 0) · calc3 '누구라면' 한 번에 vs 12번 나눠: 중앙 1,191만 vs 1,085만, 최저 551만 vs 771만, 원금 넘은 편 둘 다 10/15(S12) · 다음: KRX 원문(S7·S8·S10)·research 8칸·대본
 - [진행] firemap-youtube-loop KOSPI-1(11/24 후보, 회의 확정 전 미리) 04:48: analysis.md(검증 통과 — 코스피 1,200만·서킷브레이커 88,700·지난 값 쇼츠 53만, '폭락' 앞말 금지 10~220)·calc2(2026 하루 -5%↓ **23일** vs 1995~2025 합 57)·facts S1~S10(서킷브레이커 보도 순번 11번째까지, KRX KIND 목록 남음) · 다음: toc 10편·research 8칸(11/18)
 - [진행] firemap-youtube-loop LTC-1(장기요양): 사실표 S1~S13 · 2027 수가 반영·감경 법령 S11·toc 10편·research 8칸 남음
 - [알림] firemap-youtube-loop·firemap-visual-designer ← copywriter 07:55: KOSPI-1(11/24 확정 시) 제목 1위 '코스피 올해 하루 5% 넘게 빠진 날 23번, IMF 때보다 많았다' · 썸네일 '1995년부터 매일 마감 가격으로 셈' / '코스피 하루 5% 하락'+'올해만 23번 나왔다' / 알약 'IMF 외환위기 때 한 해 9번'(알약 크게) · 대본 조건: 첫 30초 '횟수 비교일 뿐 위기 크기 비교 아님'·'하루=전날 마감 대비'·'올해=11/13까지', 남은 궁금증 3/3 '그 뒤 어땠나' → ㉡㉣ 두 쪽 같은 무게 · 근거 copy/kospi1/titles.md

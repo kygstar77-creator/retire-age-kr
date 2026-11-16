@@ -21,6 +21,8 @@
   착수: firemap-youtube-loop 08:45 — JT-1(주택연금)을 11/20 칸으로: 남은 관문 잼(research strict 0·toc 0·끝맺음 0·이해 시험 대본·제목·썸네일 통과 · 남은 것 = shot_check 16줄·meta·녹음·올리기 전 확인)
   완료(기획 몫): firemap-youtube-loop 08:45 — **JT-1을 11/20 11:30 칸으로**(장기요양은 작업 0이라 11/19 못 맞춤) · 대본 상대 시점 3줄 '올해 3월·올해 6월'→'2026년 3월·6월'(숫자 0 바뀜, 원본 script.md.orig1116yl) → editor 다시 서명 · 남은 일 아래 [지시] 3줄 · 장르 주의: 11/18 S-1이 비면 N-3(연봉)→JT-1(노후) 연달아 = X-LF-GENRE 같은 장르 연속 — 11/18에 H-5(부동산, 11/24) 당기기가 풀이(순돌이 S-1 결정과 같이)
 - [편집 검수 요청] **firemap-editor** ← firemap-youtube-loop 08:45: JT-1 script.md 3줄만(24·41·82행 상대 시점→2026년) 다시 서명 · 시한 11/17 12:00(녹음 11/17 16:00 창 전) · 근거 diff script.md.orig1116yl
+  착수: firemap-editor 15:10 (운영실장) — JT-1 3줄 재서명 + gmpair1116(22:40 칸, 기한 16:40)·n3pair1116·dongtan1116 묶음
+  완료: firemap-editor 15:15 — ① **gmpair1116** 편집 통과(22:40 칸, aitell 9.7·frame·cafe3 막을 것 0·사실표 12줄 대조 일치, 글 안 고침, 서명 해시 8ec03b96, 기한 16:40 안) ② **JT-1 script.md 재서명**(24·41·82행 '올해'→2026년, 숫자·사실 0 바뀜, aitell script 64.1/1,000단어·9%·말 습관·구어 통과, script.md.edit.json 새 sha) → **firemap-video-producer** 11/17 16:00 녹음 가능 ③ **jt1_summary 화면 글자 사전 확인 통과**(권고 1: '내 금액은 공사 예상연금조회'의 '공사'를 대본대로 '한국주택금융공사'가 아니라 줄여 쓴 것이라 건설 공사로 읽힐 수 있음 → '주택금융공사'로 visual-designer가 고치면 좋음, 필수 아님 · screen_text.txt는 jt1.json 아직 없어 lfrender text 불가, PD가 props 만든 뒤 stamp는 렌더 전에 다시 받음) ④ **n3pair1116** 편집 통과(aitell 1.2·frame·사실 대조 일치, 해시 e234d75a) ⑤ **dongtan1116** 편집 통과(aitell 3.4, '올해' 2곳→2026년 고침 *.orig1116e, 재서명) · 공개 전 글 수정은 이 둘뿐(비축)
 - [지시] **firemap-visual-designer** ← firemap-youtube-loop 08:45 JT-1 shot_plan 트랙:C · 완료 기준: research_gate.shot_check(ep/JT-1) 0 — ① 파일 없는 4줄(0 여는 말 손·공책 실사 / 4 장보는 손 실사 / 5 뒷모습 쉼 실사 / 6 끝 창가 실사, Pexels·얼굴 없음·credits.json) ② 12줄 '비교 그림'(경쟁 장면|우리 장면, ep/JT-1/shotcmp/)·'품질 판정'(새 심사관 또는 제미나이, 누가 했는지) · 시한 **11/18 12:00** · 근거 longform/ep/JT-1/shot_plan.md·visual/JT-1-shots/jt1boards.py
   착수: firemap-visual-designer 09:06 (정기 09시) — JT-1 shot_plan 실사 4줄·비교 그림·품질 판정
   완료: firemap-visual-designer 09:22 — JT-1 **research_gate.shot_check 0** · 실사 4줄 video/public/bg/jt1/stock/jt1_handnote·jt1_market·jt1_walk·jt1_window.mp4(Pexels, 얼굴 없음, 출처 visual/JT-1-shots/stock_credits.json desc_line → PD 설명란) · shotcmp 12장·품질 판정 새 심사관(나음 8·같음 4) — 1차 지적 2줄 고쳐 다시 심사: r08 빵 진열대→장바구니 손, r12 jt1_summary에 '내 금액은 공사 예상연금조회 · 1688-8114' 본문 큰 줄·둘째 줄 '70세까지 기다리면 93세에야 받은 돈 합이 같아짐'(대본 258행 뜻 그대로, boardcheck 19/19) · 경쟁 #5·#9 시각 눈으로 고침 · 근거 longform/ep/JT-1/shot_plan.md
@@ -40,6 +42,8 @@
   - 완료: firemap-write 10:10 칸 yujok1116 발행 https://cafe.naver.com/firemap/434 · verify OK 1681자·사진 3 · 어제 #431 verify OK 10:45
   - 착수: firemap-write 06:20 — 카페 비축 1/2(국채·가중평균금리는 발표 전이라 다른 주제)
   - 완료: firemap-write 비축 isa1116 관문 통과 06:49 — 'ISA계좌 비과세 200만원, 예금만 넣으면 다 쓸까?'(연금계좌) · 금투협 ISA 통계 9월 말 직접 계산: 은행 신탁형 예적금 88.9% vs 증권 중개형 6.3%, 예금 3.285%면 3년 200만원 채우는 원금 약 2,029만원 · 이해 3차 9명·editgate auto 4bc132ed·slots reserve 등록(비축 2) · 12월 국채(월말 발표)·10월 가중평균금리(월말 발표)는 발표 날 회차로 넘김 · 07:40 rcut1116 발행 날 재확인(은행연합회 표 11/15와 같음)을 research.md에 적어 둠
+  - 착수: firemap-write 16:58 — 16:10 칸 nodo1116 미발행 발견(15:10 회차 기록 없음) → S1 다시 받아 숫자 같음 확인·지각 발행
+  - 완료: firemap-write 16:10 칸 nodo1116 지각 발행 https://cafe.naver.com/firemap/436 · verify OK 1636자·사진 3 · S1 다시 받아 변동 0 17:00
 - [지시] **firemap-write-b** ← firemap-meeting (21:4x) 11/16 07:40 rcut1116 발행 · 22:40 h4s_rank 짝 글(부동산 둘째 칸) · 11/24 h4s_new15 짝 글은 11/25 22:40으로(쇼츠 옮김)
   착수: firemap-write-b 07:48 — 07:40 rcut1116 발행(D-11 보류 풀려고 은행연합회 표 다시 받아 대조, 바뀐 것 0)
   완료: firemap-write-b 07:58 — 07:40 rcut1116 발행 https://cafe.naver.com/firemap/433 · verify OK 1638자·사진 3 · 표 다시 받아 변동 0 · 22:40 h4s_rank 짝 글은 10:40 회차 몫
@@ -93,6 +97,8 @@
   착수: firemap-youtube-loop 08:46
   완료: firemap-youtube-loop 08:55 — H-5 understand_test.md 대본(장별) 칸 **판정: 통과**: 40·50·60세 새 심사관 5차 15명, 장마다 뜻 맞음·할 일 15/15·대놓고 권유 0 · 고친 곳(숫자 0 바뀜): 9억·바닥을 '1년'으로 묶어 말함(지금 7억 3천5백·바닥 1년 6억 7천5백 → 차 6천만원·9%가 귀로 맞음), 반기 연도, 순수 전세=반전세 뺌, 서른 곳 밖 두 단지 말 지움(모순·추천으로 들림), **매매−전세 차 말 5줄 지움(갭투자로 들림 7/9)**, 0장 73% '최고 한 건과 견주면', 끝 줄 낡은 '토요일 삼성전자'→'다음 영상에서 다시 뵙겠습니다', 상대 시점 '올해 하반기'→'2026년 7월부터 10월까지' · 남은 궁금증 '중간 가격 직접 구하는 법'은 카페 표 · 기록 longform/ep/H-5/understand_test.md·ut1116/judges_script.md
 - [편집 검수 요청] **firemap-editor** ← firemap-youtube-loop 08:55: H-5 script.md 다시 서명(이해 시험 1~5차로 말 줄 26곳 고침·지움, 숫자 0 바뀜 · 차수 판 script.md.ut1~ut4b_1116) · 시한 11/22 12:00(PD 녹음 전) · 근거 longform/ep/H-5/understand_test.md
+  착수: firemap-editor 16:57 (정기 16:50) — H-5 script.md 재서명 + 자동 통과 표본
+  완료: firemap-editor 17:01 — H-5 script.md **재서명**(글 안 고침·바뀐 숫자 facts F4·F6·F7·F10·F15 대조 일치) · 녹음 원고 **say_v2.txt 새로**(say_v1은 10/26 옛 판이라 aitell이 옛 글을 재고 있었음) → 실측 90.7/1,000단어·13% 통과(한도 92 가까움) · 정밀 숫자 경고 2줄(7억 3천5백·6억 7천5백)은 이해 시험 5차가 고른 값이라 둠 → **firemap-video-producer** 11/22 녹음은 say_v2.txt로 · 표본 isa1116 2곳 고쳐 재서명 d036db85(비축, 숫자 0 바뀜)·semietf1116 통과
 - [알림] **firemap-video-producer**·**firemap-visual-designer** ← firemap-youtube-loop 08:55: H-5 화면 — ① 1장 숫자 몰림 3/3: 식 쌓기 판에 '고점 1년 9억 / 가장 낮았던 1년 6억 7천5백 / 지금 7억 3천5백'이 같은 모양으로 남게 ② 2장 단지 이름(더샵 3개) 말할 때 막대에 이름 불 켜기 ③ 4장 '매매−전세 차 막대 30개' 판·자막 지움(말 없앰) ④ 2장 두 단지 판 글자 '고점 9억 6천 / 9억 7천' · 올리기 전 국토부 실거래 다시 받기는 그대로(PD 11/22)
 - [지시] **firemap-video-producer** ← firemap-benchmark-loop 의도: 공개 J-1 NNcjTE0L7yg 썸네일 '늘어'의 '어'가 길이 칸에 걸림(thumblen 988, 한도 30) · 완료 기준: 둘째 줄만 줄인 판 thumblen ≤30 → set_cover, log 한 줄+공개 maxres 다시 잰 값 · 기한 11/14 18:00
   착수: firemap-video-producer 06:17 (정기 06:1x, J-1 썸네일 길이 칸)
@@ -119,3 +125,5 @@
   완료: firemap-youtube-loop 08:45 — 쇼츠 0~9회 3편 원인: **쇼츠 피드가 처음부터 안 띄움**(Analytics 경로별 SHORTS 조회 aW8HfeGCGgw 2·7bBwnLg86-Q 0·jGtx9f6SZKA 0 vs 1천 회대 편 595~1,149, 검색 유입은 aW8 7·다른 편 9~27로 비슷) · 파일·설정 같음(1080×1920·30fps·스테레오·분류 27·아동용 아님·설명 570~1,000자·태그 5, 같은 롱폼 클립 재사용·Pexels 재사용은 잘된 편도 같음 → 원인 아님) · **겹치는 차이 하나 = 길이**: 3편이 가장 짧은 편들(27.2·28·31.4초) vs 잘된 편 37~52초, 예외 HFESFTAD8dU 30.2초 622회 → 짧을수록 피드 시험을 못 받는다는 근거는 4편 중 3편뿐이라 **후보, 원인은 확인 안 함**(유튜브 공식 문서에 길이 기준 없음, 스튜디오 알림은 못 봄) · 다음: k1s_fix(11/14)·h3s_number 길이와 48시간 SHORTS 조회를 같이 적어 표본 늘림 · 근거 Analytics insightTrafficSourceType·videos.list fileDetails 11/14 08:45
 - 결정 필요(순돌이→사장님): 쇼츠 표지를 사장님이 스튜디오 데스크톱에서 편마다 고를지, 영상 속 윗줄 키우기만 할지
   완료: firemap-report 1부 12:49 — 주간 표 growth/site_week_1116.md · N-3 48시간 경로 측정은 11/18 12:3x 회차에 이어서
+
+- [운영실장 15:10] 쇼츠 비축 관문 통과 1/2(p3s_cliff만, h3s_number gates_ok 없음) → 착수: firemap-video-producer 15:10 (운영실장) — 쇼츠 비축 1편 관문 통과- [알림] 순돌이·firemap-meeting ← firemap-youtube-loop 17:01: 11/26 칸 후보 장기요양 = ep/LTC-1 analysis 초안(①②③1편) · 유튜브 '요양원 한 달 비용' 2sYnXIT7ZAc 21.4만회 159.6배 · 사실표는 다음 회차(공단 원문) · 11/24 관문 기한 그대로

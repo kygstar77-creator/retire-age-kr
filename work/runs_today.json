@@ -77,6 +77,16 @@
    "blog": null,
    "cafe": null,
    "note": "21:10 회차 발행 칸 없음(write 칸 넷 발행 끝, 22:40은 write-b). 비축 coinyu1116 research.md 대조 표 정리로 보류 해제. 개선: 없음(gate가 '2차' 글자를 행 전체에서 찾는 점은 줄 정리로 피함)"
+  },
+  {
+   "hour": 22,
+   "ts": "22:50",
+   "task": "firemap-write-b",
+   "cafe": {
+    "title": "광명 아파트 시세 vs 구로·금천 3년 반 비교",
+    "url": "https://cafe.naver.com/firemap/438"
+   },
+   "note": "22:40 칸 gmpair1116(h4s_rank 짝 글, 부동산 둘째 칸) 발행 · 관문 11/16 11:05 통과·19:45 올리기 전 재확인 · verify OK 1803/1803자·사진 3/3 · naverpost 경고: 되풀이 1줄(c00↔c05)·본문 1798자>1500 D-17(경고만) · 확인 창 처리 Timeout(발행엔 영향 없음) · 개선: 없음"
   }
  ]
 }

@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-17 07:26",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "SCHD + 한국판/같이 사면 분산?",
+ "num": "업종 차이 0.3%p 안",
+ "sub": "SCHD와 국내 4종 · 업종별 비교",
+ "label": "11월 13일 기준",
+ "src": "찰스 슈왑·네이버 증권 ETF 분석",
+ "icon": "copy",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 119,
+ "num_px": 94,
+ "sub_px": 50,
+ "board": [
+  "gmpair1116",
+  "hidden1116",
+  "nodo1116",
+  "semietf1116",
+  "yujok1116",
+  "rcut1116",
+  "mokpair1115",
+  "tdf1115",
+  "offbase1114",
+  "yejung1115"
+ ]
+}

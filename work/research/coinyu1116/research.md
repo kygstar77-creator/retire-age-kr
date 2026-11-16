@@ -78,9 +78,10 @@ bench.md 6편 — 전부 일정·확정 여부·세율 예시. 1천만원 이익
 | 629만원 손해→1,706만원 이익: 320만원→182만원, 138만원 | calc_out §2 | S6 https://api.upbit.com/v1/candles/days?market=KRW-BTC |
 | 782만원 손해→979만원 이익: 160만원→0원 | calc_out §2 | S6 https://api.upbit.com/v1/candles/days?market=KRW-BTC |
 | 정부 예시 1천만원 손해·이익 165만원→0원(2차) | SBS 예시 · calc_out §3 | S5 https://biz.sbs.co.kr/amp/article/20000344472 · S4 https://inews24.com/view/2023113 |
-| (본문에서 뺌 — 2차 이해 시험 3/3 '버텨라'로 읽힘) 2026년 약 31% 하락 | calc_out §1·§5 | S6 https://api.upbit.com/v1/candles/days?market=KRW-BTC |
 | 2029년 이후 손해는 다음 3년 이익에서, 2029년 손해면 2032년까지(2차) | 세제실장 설명 | S4 https://inews24.com/view/2023113 · S5 https://biz.sbs.co.kr/amp/article/20000344472 |
 | 이더리움 같은 다른 코인도 같은 방식 | 21조①27호 가상자산 | S3 https://www.law.go.kr/법령/소득세법/제37조 |
+
+- 표에서 뺀 값: 2026년 비트코인 약 31% 하락(S6) — 이해 시험에서 '버텨라'로 읽혀 본문에서 뺌(11/16 21:2x firemap-write)
 
 # 올리기 전 확인
 - 2026-11-16 17:1x firemap-write-b(비축 만든 날 — 발행 회차가 발행 날 다시 확인: 조세소위 의결 여부·공제 상향·기준일)

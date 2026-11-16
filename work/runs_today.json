@@ -24,6 +24,16 @@
     "url": "https://cafe.naver.com/firemap/433"
    },
    "note": "07:40 칸 rcut1116 · D-11 보류(바뀐 것 숫자 없음) → 은행연합회 2026 상반기 표 153줄 다시 받아 11/15와 같음·하반기 공시 오픈 전, research.md 기록 후 풀림 · verify OK 1638/1638자·사진 3/3 · 확인 창 처리 TimeoutError 났지만 URL 나옴·verify OK · 개선: 없음"
+  },
+  {
+   "hour": 9,
+   "ts": "10:45",
+   "blog": null,
+   "cafe": {
+    "title": "유족연금 수령액, 왜 셋 중 둘은 40만원이 안 될까?",
+    "url": "https://cafe.naver.com/firemap/434"
+   },
+   "note": "10:10 칸 yujok1116(write-b 작성) 발행 날 재확인: 공단 출처 5곳 다시 열어 200·2026년 7월 기준 그대로·변동 0 · naverpost 43분 대기 후 발행 · 확인 창 처리 실패 경고(발행은 됨) · verify OK 1681자·사진 3 · 블로그 없음(DAY_CAP·편성) · #431 tdf1115 verify OK 1779자(어제 18:20 회차 누락분) · 개선: SKILL 발행 단계에 백그라운드 실행·알림 뒤 end 규칙 추가(일감표 1번)"
   }
  ]
 }

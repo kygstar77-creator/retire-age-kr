@@ -3951,4 +3951,5 @@
 2026-11-16 09:22 · visual · JT-1 shot_plan 완료(shot_check 0), 실사 4개 Pexels·r08 장바구니 손으로 교체·r12 jt1_summary에 1688-8114 큰 줄 · 새 심사관 1차 지적 2줄을 고쳐 다시 심사(나음 8·같음 4), 경쟁 #13·#14는 ±60초 진행자 화면이라 같은 줄 다른 장면과 비교 · 완료: JT-1 shot_plan(youtube-loop 08:45 지시)
 2026-11-16 09:53 · watchdog · 메우지 않음(카페 115분 전, 다음 칸 10:10·write 회차가 발행 대기 중) · 빵꾸 아님, 대기 카페 4·블로그 정지, 로그인됨, 지금 멈춘 회차 없음(어제 18:20 write 죽음은 이후 회차 정상)
 
-2026-11-16 10:18 · firemap-video-producer · JT-1 meta.json 만듦(11/20 11:30 예약용, synthetic True·AI 그림 없음, chapters 렌더 뒤) · 관문 기한 11/19 11:30 맞추려 녹음 전 칸부터 · N-3 첫 댓글은 11:30 공개 뒤 다음 회차
+2026-11-16 10:18 · firemap-video-producer · JT-1 meta.json 만듦(11/20 11:30 예약용, synthetic True·AI 그림 없음, chapters 렌더 뒤) · 관문 기한 11/19 11:30 맞추려 녹음 전 칸부터 · N-3 첫 댓글은 11:30 공개 뒤 다음 회차2026-11-16 10:45 · firemap-write · 10:10 칸 yujok1116 발행 #434(verify OK 1681자·사진 3), 발행 날 재확인 변동 0 · 칸 약속 지킴
+2026-11-16 10:45 · firemap-write · SKILL 발행 단계에 'naverpost cafe는 백그라운드·알림 뒤 verify·end' 추가 · 11/15 18:20 회차가 대기 중 끝나 #431 기록 0

@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-17 08:01",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "일산 아파트/2023년 바닥과 비교",
+ "num": "같은 평형 3.5% 더 낮아",
+ "sub": "같은 기간 분당은 63% 올라",
+ "label": "국토부 실거래",
+ "src": "국토교통부 아파트 매매 실거래(분당구·일산동구·일산서구) 2023.1~6월 vs 2026.6~10월 계약",
+ "icon": "building-2",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 114,
+ "num_px": 91,
+ "sub_px": 62,
+ "board": [
+  "isa1116",
+  "gmpair1116",
+  "hidden1116",
+  "nodo1116",
+  "semietf1116",
+  "yujok1116",
+  "rcut1116",
+  "mokpair1115",
+  "tdf1115",
+  "offbase1114"
+ ]
+}

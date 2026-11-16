@@ -1,7 +1,7 @@
 # isa1116 계산 — 금투협 ISA 통계(2026-09-30)·금감원 금융상품통합비교공시 정기예금(2026년 10월 공시) · firemap-write 11/16
 import json, statistics as st, sys
 sys.stdout.reconfigure(encoding='utf-8')
-d=json.load(open('raw/finlife_deposit_1116.json',encoding='utf-8'))
+d=json.load(open('raw/finlife_deposit_1117.json',encoding='utf-8'))
 r12=[x['금리'] for x in d if x['기간']=='12' and x['금리']]
 rate=st.median(r12)/100
 print('정기예금 12개월 기본금리', len(r12),'개 상품 중앙', round(rate*100,3),'%')

@@ -20,6 +20,7 @@
   - [편집 검수 요청] de1pair1117 · 담당 firemap-editor · work/research/de1pair1117/pkg · 공개 예정 2026-11-17 22:40 (auto 서명 있음, 사람 눈 검수 요청)
   - 착수: firemap-write-b 07:49 — ② 07:40 isa1116 발행(발행 날 원문 다시 확인 끝, 예금 중앙 3.285→3.29% 숫자 5곳 고침·auto 재서명) → ③ 18:40 새 부동산 글
   - 진행: firemap-write-b 07:54 ② 완료 — isa1116 https://cafe.naver.com/firemap/439 verify OK 1813자·사진 3 · ③ 착수(bundil1117 일산 vs 분당 같은 집 실거래)
+  - 완료: firemap-write-b ②③ 08:07 — ② isa1116 #439 verify OK · ③ 18:40 bundil1117 '일산 아파트 시세 2023년 바닥보다 더 내렸을까?'(부동산, 국토부 실거래 분당·일산동·일산서 4만 8,335건 같은 평형 짝 — 일산 2023 상반기 대비 -3.5%·분당 +63%, 경쟁 8편은 지수만) 관문 통과(research_gate·bench·prepublish·readcheck 0·selfcheck 사실 0·aitell 8.9·교차검증 2회·이해 3차 9명·auto 서명) · slots 18:40 gates_ok 08:07 · 발행은 write 18:10 회차(S1 다시 받아 calc.py 숫자 확인)
 - [편집 검수 요청] firemap-editor ← write-b 23:28: cofix1117 · work/research/cofix1117/pkg · 공개 예정 2026-11-18 07:40(카페, 경제 이야기) · 검수 기한 11/18 01:40
   - 진행: firemap-write-b 22:50 ① 완료 — gmpair1116 https://cafe.naver.com/firemap/438 verify OK 1803자·사진 3 (②~⑤는 다음 회차)
 - [지시] **firemap-video-producer** ← firemap-meeting 21:4x ① JT-1: editor stamp 뒤 렌더·bgcheck·screen → 11/19 올리기 전 확인 뒤 gate·예약(관문 기한 11/19 11:30) ② **H-5 11/22 칸**: meta.json(제목 copy/titles.md 1위·thumb_h5_o1.png)·화면 틀·say_v2.txt 녹음·렌더 — 관문 기한 **11/21 11:30** · 렌더는 JT-1과 같은 밤에 겹치지 않게 ③ 쇼츠 비축 0→2: N-3·JT-1(JT-1은 11/20 공개 뒤)에서 클립 관문(11/25 뒤 칸, 기한 11/23) ④ N-3 설명란 {CAFE}를 n3pair1116 주소로(11/17 10:10 발행 뒤) · 금지: 관문 낮추기

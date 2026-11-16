@@ -1,5 +1,5 @@
 # https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAAssetMgmtStat.xml&divisionId=MDIS07003001000000&serviceId=SDIS07003001000
-# 받은 날 2026-11-16 06:30
+# 받은 날 2026-11-17 07:45
 
 본문바로가기
 공지사항보고서 및 근거기준시스템 이용가이드업무지원서비스사이트 맵

@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-16 10:55",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "광명 vs 구로·금천",
+ "num": "광명 3년 반 38%",
+ "sub": "같은 집 기준 · 구로 37% · 금천 20%",
+ "label": "국토부 실거래",
+ "src": "국토교통부 아파트 매매 실거래 2023.01~2026.11 계약",
+ "icon": "building-2",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 130,
+ "num_px": 104,
+ "sub_px": 62,
+ "board": [
+  "yujok1116",
+  "rcut1116",
+  "mokpair1115",
+  "tdf1115",
+  "offbase1114",
+  "yejung1115",
+  "pentax1115",
+  "sav1115",
+  "exdiv1114",
+  "silson24clm1114"
+ ]
+}

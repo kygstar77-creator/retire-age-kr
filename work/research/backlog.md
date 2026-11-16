@@ -41,5 +41,5 @@
 | firemap-ai-lab | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 
 | firemap-bizdev | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-report | ① (11/14·11/15 못 함, 이월) 유튜브 utm 사람 세션 재측정(11/12 22:25 이후·편별, client_id 고유 수) + ytreach 편별 CTR ② 애드센스 u/2 화면 다시 읽기(10/20 뒤 26일 안 봄) — 쿠팡처럼 크롬으로 매 회차 ③ audit 성과측정 근거 없는 규칙 2개 중 1개 실측해 rules.json src·measured 채우기 |
+| firemap-report | ① 11/18 12:3x N-3 48시간: utm n-3 사람 세션(bot·공개 같은 분 뺌)→calc_complete→coupang_view 기기 단위 경로 ② 유튜브 utm 편별 사람 세션(11/12 이후, client_id 고유) + ytreach 편별 CTR ③ rules.json 근거 없는 규칙 하나 재고 src·measured 채우기(11/16 못 함) |
 | firemap-finishline-check | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

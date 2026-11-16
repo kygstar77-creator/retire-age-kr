@@ -1,0 +1,52 @@
+{
+ "date": "2026-11-16",
+ "runs": [
+  {
+   "hour": 6,
+   "ts": "06:50",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "firemap-write 06:20 — 발행 없음(06시 칸 없음, 07:40 rcut1116은 회의 지시대로 write-b 발행; 발행 날 재확인은 이 회차가 함: 은행연합회 표 11/15와 같음). 카페 비축 isa1116 관문 통과·reserve 등록(비축 2) — 자료조사 원문 8곳(조특법 91조의18·금투협 ISA 통계 4표·계좌이전·제도 개요·금감원 정기예금 공시·국세상담 Q&A)·지식iN 질문 5·경쟁 8편. 교차검증: 사실(gemini-3.6-flash) 7건 중 반영 0·유지 7(조문 ①②⑦·calc.py 전제·지식iN 질문·질문 맺음 — 근거 원문), 말투 13건 중 반영 12(질문 맺음 1 유지 D-14) · selfcheck 사실 0 · readcheck 0 · spoken 통과 · 이해 3차 9명 통과 · editgate auto 4bc132ed. 블로그 없음(STOP_blog·13시 이후). 개선: beat.py 죽은 회차 마지막 생존 시각을 결정 기록으로 보정"
+  },
+  {
+   "hour": 7,
+   "ts": "07:58",
+   "by": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "금리인하요구권, 받아들여지면 이자가 얼마나 줄까?",
+    "url": "https://cafe.naver.com/firemap/433"
+   },
+   "note": "07:40 칸 rcut1116 · D-11 보류(바뀐 것 숫자 없음) → 은행연합회 2026 상반기 표 153줄 다시 받아 11/15와 같음·하반기 공시 오픈 전, research.md 기록 후 풀림 · verify OK 1638/1638자·사진 3/3 · 확인 창 처리 TimeoutError 났지만 URL 나옴·verify OK · 개선: 없음"
+  },
+  {
+   "hour": 9,
+   "ts": "10:45",
+   "blog": null,
+   "cafe": {
+    "title": "유족연금 수령액, 왜 셋 중 둘은 40만원이 안 될까?",
+    "url": "https://cafe.naver.com/firemap/434"
+   },
+   "note": "10:10 칸 yujok1116(write-b 작성) 발행 날 재확인: 공단 출처 5곳 다시 열어 200·2026년 7월 기준 그대로·변동 0 · naverpost 43분 대기 후 발행 · 확인 창 처리 실패 경고(발행은 됨) · verify OK 1681자·사진 3 · 블로그 없음(DAY_CAP·편성) · #431 tdf1115 verify OK 1779자(어제 18:20 회차 누락분) · 개선: SKILL 발행 단계에 백그라운드 실행·알림 뒤 end 규칙 추가(일감표 1번)"
+  },
+  {
+   "hour": 12,
+   "ts": "12:48",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "반도체 ETF 석 달과 한 달 성적은 왜 거꾸로일까?",
+    "url": "https://cafe.naver.com/firemap/435"
+   },
+   "note": "12:40 칸 semietf1116 발행(무작위 대기 24분 37초) · verify OK 1974/1974자·사진 3/3 · 블로그 없음(11/1 빈도 축소 뒤 카페만) · 관문은 전 회차가 끝냄(editgate·research_gate·올리기 전 확인 11/15) · 비축 isa1116 보류 2건 풂(S8 국세상담 문답 다시 엶, 10/22 금통위 3.00% 그대로 ECOS로 확인) · n3pair1116 N-3 공개 oEmbed 200 확인 → 비축 2/2 · 개선: 없음"
+  }
+ ]
+}

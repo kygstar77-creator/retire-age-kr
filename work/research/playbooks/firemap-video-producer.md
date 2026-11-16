@@ -310,3 +310,5 @@
 - 11/15 22시 h4s_new15 옮기기: 예약 영상 publishAt을 videos.update(part=status)로 바꾸면 응답은 바로 새 값인데 videos.list 되읽기는 몇 초 옛 값을 준다 — 20초쯤 뒤 다시 읽어 확인하고, status 전체를 덮으니 STATUS_KEEP 칸+containsSyntheticMedia=True를 같이 보낸다(c1clips_up.fix_synth와 같은 꼴). 공개 영상 정정은 설명란 줄 넣기(snippet 전체 title·tags·categoryId 같이)+정정 댓글(ytcomment.post는 두 번째 댓글을 막으니 직접 insert 뒤 yt_comments.jsonl에 kind:correction)
 - 2026-11-16: 롱폼 videoId를 기다리던 쇼츠는 롱폼 예약 직후 같은 회차에 바로 예약한다(from_long·{N3} 채움) — 이번엔 disclaim 관문이 '권유 아님' 줄 없다고 막았으니, 쇼츠 upload.json을 만들 때 그 롱폼의 editor 서명 면책 문장을 처음부터 넣어 둔다.
 - 11/16: 쇼츠 이해 시험 1차에서 '4인'·'칸'처럼 롱폼 맥락에서만 통하는 말은 3/3이 멈칫한다 — 잘라 쓴 롱폼 녹음은 못 바꾸니 화면 칸 이름에 풀어 쓴다('네 식구라면 → 나·배우자·자녀 2', '나라가 정한 세금표 → 가족 수마다 칸이 따로'). 빈 메모리 1GB 아래면 렌더 전 관문(녹음·숫자·꼴·이해 시험·설명)까지 먼저 끝내 둔다.
+
+- 11/16: 녹음 전에도 meta.json(제목·썸네일·publishAt·synthetic·5문항·desc_tpl)은 먼저 만든다 — 렌더 뒤 칸은 chapters·{CAFE}뿐이라 관문 기한 직전 몰림을 줄인다. 빈 메모리 0.24GB면 렌더는 미루고 칸 채우기만.

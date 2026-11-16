@@ -13,33 +13,34 @@
 | 2 | https://www.youtube.com/watch?v=TX4W8Tpftfg&t=189 | 단희TV | 집값 꺾은선이 오르내려도 월지급금 선은 평평 — 정액형 설명 | 그래프(두 선) | 2026-11-12 |
 | 3 | https://www.youtube.com/watch?v=TX4W8Tpftfg&t=248 | 단희TV | 부부 사망 뒤 정산 흐름도 아이콘(남으면 상속·모자라도 청구 없음) | 흐름도 | 2026-11-12 |
 | 4 | https://www.youtube.com/watch?v=TX4W8Tpftfg&t=395 | 단희TV | 중도 해지 때 갚을 돈 = 받은 연금+이자+보증료 구성식 표 | 판(식) | 2026-11-12 |
-| 5 | https://www.youtube.com/watch?v=TX4W8Tpftfg&t=602 | 단희TV | 실제 공책에 손으로 생활비·부족액을 적는 실사 | 실사(손) | 2026-11-12 |
+| 5 | https://www.youtube.com/watch?v=TX4W8Tpftfg&t=672 | 단희TV | 종이 위 손과 '생활비·부족액' 손글씨 메모(11/16 visual 눈 확인: 602초는 진행자, 672초가 손·메모) | 실사(손) | 2026-11-16 |
 | 6 | https://www.youtube.com/watch?v=TX4W8Tpftfg&t=677 | 단희TV | 상담 때 물을 질문 3가지 체크리스트 표 + 고객센터 번호 자막 | 판(체크리스트) | 2026-11-12 |
 | 7 | https://www.youtube.com/watch?v=4JLMgxk634E&t=0 | 최소한의 경제 | 놀란 노부부 그림 + '이게 다예요?' 큰 자막으로 열기 | AI 일러스트+큰 글 | 2026-11-12 |
 | 8 | https://www.youtube.com/watch?v=4JLMgxk634E&t=280 | 최소한의 경제 | 굴러오며 커지는 눈덩이로 이자가 잔액에 붙는 속도 비유 | AI 일러스트(비유) | 2026-11-12 |
-| 9 | https://www.youtube.com/watch?v=8A9Dm0Gm2cQ&t=326 | 오십의 경제지도 | 월지급금 표에서 한 줄만 하이라이트로 불 켜기 | 표 강조 | 2026-11-12 |
+| 9 | https://www.youtube.com/watch?v=8A9Dm0Gm2cQ&t=346 | 오십의 경제지도 | '정액형' 막대 판에 한 칸만 경고 표시로 강조(11/16 visual 눈 확인: 326초는 일러스트, 346초가 판) | 표 강조 | 2026-11-16 |
 | 10 | https://www.youtube.com/watch?v=8A9Dm0Gm2cQ&t=151 | 오십의 경제지도 | 연도별 잔액 그래프 선이 실시간으로 그려지는 애니메이션 | 그래프(그려지는 선) | 2026-11-12 |
 | 11 | https://www.youtube.com/watch?v=8A9Dm0Gm2cQ&t=421 | 오십의 경제지도 | 집과 현금이 양방향 화살표로 흐르는 흐름도(상속 정산) | 흐름도 애니메이션 | 2026-11-12 |
 | 12 | https://www.youtube.com/watch?v=8A9Dm0Gm2cQ&t=241 | 오십의 경제지도 | 모래시계·장바구니로 시간이 지나며 돈 가치가 줄어드는 그림 | 아이콘 비유 | 2026-11-12 |
-| 13 | https://www.youtube.com/watch?v=vRBgIpV-nPo&t=316 | 돈파는가게 | 지금 가입 vs 5년 뒤 가입 월지급금 비교표(두 칸 금액 나란히) | 판(비교표) | 2026-11-12 |
-| 14 | https://www.youtube.com/watch?v=vRBgIpV-nPo&t=503 | 돈파는가게 | 결론 정리 자막 + 문의 전화번호 상시 노출 | 판(정리) | 2026-11-12 |
+| 13 | https://www.youtube.com/watch?v=vRBgIpV-nPo&t=316 | 돈파는가게 | 지금 가입 vs 5년 뒤 가입 월지급금 비교표(두 칸 금액 나란히) | 판(비교표)  · 11/16 visual 눈 확인: ±60초 모두 진행자+자막 화면(그림 판 없음) — 말·자막으로 보여 줌 | 2026-11-16 |
+| 14 | https://www.youtube.com/watch?v=vRBgIpV-nPo&t=503 | 돈파는가게 | 결론 정리 자막 + 문의 전화번호 상시 노출 | 판(정리)  · 11/16 visual 눈 확인: ±60초 모두 진행자+자막 화면(그림 판 없음) — 말·자막으로 보여 줌 | 2026-11-16 |
 
 # 장면 계획
-| 장 | 대본 줄(요지) | 구상 | 따라 한 경쟁 장면 # | 도구 | 파일 |
-|---|---|---|---|---|---|
-| 0 여는 말 | 5억 집, 65세 126만원 · 70세 154만원 — 기다릴까? | 창가 손이 공책에 '65세 126만 / 70세 154만'을 적다 멈추는 실사 → 큰 글 물음 | 5, 7 | Pexels(손·공책, 얼굴 없음) + Remotion 큰 글 | video/public/bg/jt1/board/jt1_note.png · 실사 만들 것(ep/JT-1/stock/) |
-| 1 조건 | 55세(젊은 쪽)·부부 합산 공시 12억·실거주 · 자격은 공시가, 돈은 시세 | 조건 4칸 체크리스트 판, '공시가 ↔ 시세' 두 저울 칸으로 함정 짚기 | 6 | Remotion TallyFrame(lucide check·scale) | video/public/bg/jt1/board/jt1_check3.png · video/public/bg/jt1/board/jt1_scale2.png |
-| 2 표 읽기 | 2026.3.1 표 · 1억당 65세 약 25만원 · 80세는 9억부터 같음 · 3월 130→134만원 | 나이 6줄×집값 12칸 격자에서 내 칸 하나만 불 켜기, 상한 칸들은 같은 색으로 묶어 '더 안 오름' | 9, 13 | Remotion 격자 판(공사 표를 우리가 다시 그림) | video/public/bg/jt1/board/jt1_grid.png · video/public/bg/jt1/board/jt1_cap.png · video/public/bg/jt1/board/jt1_mar1.png |
-| 3 같아지는 나이 | 65→70세 기다린 5년 7,584만원 · 매달 27.5만원 차 · 93세쯤 / 55→65세 81세쯤 | 받은 돈 합 두 선(일찍·늦게)이 그려지며 93세에서 만나는 그래프, 만나는 점에 손 동그라미 | 10, 1 | Remotion 그려지는 선 그래프 | video/public/bg/jt1/board/jt1_lost.png · video/public/bg/jt1/board/jt1_diff.png · video/public/bg/jt1/board/jt1_cross93.png · video/public/bg/jt1/board/jt1_mid3.png · video/public/bg/jt1/board/jt1_cross81.png · video/public/bg/jt1/board/jt1_age3.png |
-| 3 같아지는 나이(쉼) | 가정: 그 사이 집값 그대로 | 집값 선이 오르내려도 월지급금 선은 평평 — '가입 때 시세로 정해짐' | 2 | Remotion 두 선 | video/public/bg/jt1/board/jt1_trap_price.png |
-| 4 쌓이는 대출 | 월지급금+보증료(1%·0.95%)+이자가 대출잔액, 현금으로 안 냄 | 달마다 막대가 한 칸씩 쌓이는 잔액 막대(세 색: 월지급금·보증료·이자) — 눈덩이 비유 대신 실제 구성 | 8, 4, 10 | Remotion 쌓이는 막대 | video/public/bg/jt1/board/jt1_stack.png |
-| 4 쌓이는 대출 | 중도 해지 때 갚을 돈 = 받은 돈+보증료+이자 | 구성식 판(+ 기호로 칸 하나씩 열기) | 4 | Remotion TallyFrame | video/public/bg/jt1/board/jt1_trap_exit.png |
-| 4 생활비와 견주기 | 5억·65세 126만원 = 부부 적정생활비 297만원의 절반이 안 됨(43%) | 장바구니 든 손 실사 위에 '297만원 중 126만원' 막대 하나 | 12 | Pexels(장보는 손) + Remotion 막대 | video/public/bg/jt1/board/jt1_43.png · 실사 만들 것(ep/JT-1/stock/) |
-| 5 돌아가신 뒤 | 배우자 6개월 안 승계·금액 그대로 · 모자라면 공사 부담·남으면 상속 · 자녀가 적은 돈 갚고 가져오기 | 집 → 정산 → (남음: 자녀 / 모자람: 공사) 갈래 흐름도, 화살표가 흐름 | 3, 11 | Remotion 흐름도 | video/public/bg/jt1/board/jt1_flow.png |
-| 5 돌아가신 뒤(쉼) | 자녀에게 집을 남기고 싶다면 | 창가에서 함께 걷는 두 사람 뒷모습 실사(얼굴 없음) | 3 | Pexels | 만들 것 |
-| 5 세금·기초연금 | 재산세 5억 이하 25% 감면 · 월지급금은 소득 아님 → 기초연금 안 깎임 | 두 칸 판(재산세 −25% / 기초연금 그대로), 출처 줄 공사 주소 | 6 | Remotion TallyFrame | video/public/bg/jt1/board/jt1_tax2.png |
-| 6 끝 | 공사 예상연금조회·1688-8114 · 우대형 확인 · 고정 끝 줄 | 내 숫자 확인 순서 3칸 체크리스트 + 번호 글자(홈페이지 캡처 대신), 숨 쉴 창가 실사 3초 | 6, 14 | Remotion + Pexels | video/public/bg/jt1/board/jt1_summary.png · 실사 만들 것(ep/JT-1/stock/) |
+| 장 | 대본 줄(요지) | 구상 | 따라 한 경쟁 장면 # | 도구 | 파일 | 비교 그림 | 품질 판정 |
+|---|---|---|---|---|---|---|---|
+| 0 여는 말 | 5억 집, 65세 126만원 · 70세 154만원 — 기다릴까? | 창가 손이 공책에 '65세 126만 / 70세 154만'을 적다 멈추는 실사 → 큰 글 물음 | 5, 7 | Pexels(손·공책, 얼굴 없음) + Remotion 큰 글 | bg/jt1/board/jt1_note.png · bg/jt1/stock/jt1_handnote.mp4 | shotcmp/r01.jpg | 같음 — 새 심사관 Agent 11/16 1차(09:16 전)(손글씨 실사와 큰 숫자 물음판이 바로 읽히고 얼굴·AI 티 없음, 경쟁만큼 깔끔) |
+| 1 조건 | 55세(젊은 쪽)·부부 합산 공시 12억·실거주 · 자격은 공시가, 돈은 시세 | 조건 4칸 체크리스트 판, '공시가 ↔ 시세' 두 저울 칸으로 함정 짚기 | 6 | Remotion TallyFrame(lucide check·scale) | bg/jt1/board/jt1_check3.png · bg/jt1/board/jt1_scale2.png | shotcmp/r02.jpg | 나음 — 새 심사관 Agent 11/16 1차(09:16 전)(체크 3줄과 공시가↔시세 두 칸이 큰 글자로 3초에 읽혀 경쟁 판보다 선명) |
+| 2 표 읽기 | 2026.3.1 표 · 1억당 65세 약 25만원 · 80세는 9억부터 같음 · 3월 130→134만원 | 나이 6줄×집값 12칸 격자에서 내 칸 하나만 불 켜기, 상한 칸들은 같은 색으로 묶어 '더 안 오름' | 9, 13 | Remotion 격자 판(공사 표를 우리가 다시 그림) | bg/jt1/board/jt1_grid.png · bg/jt1/board/jt1_cap.png · bg/jt1/board/jt1_mar1.png | shotcmp/r03.jpg | 같음 — 새 심사관 Agent 11/16 1차(09:16 전)(126만원 큰 글자로 뜻은 바로 오나 점 크기=금액은 설명 없이 낯설 수 있음) |
+| 3 같아지는 나이 | 65→70세 기다린 5년 7,584만원 · 매달 27.5만원 차 · 93세쯤 / 55→65세 81세쯤 | 받은 돈 합 두 선(일찍·늦게)이 그려지며 93세에서 만나는 그래프, 만나는 점에 손 동그라미 | 10, 1 | Remotion 그려지는 선 그래프 | bg/jt1/board/jt1_lost.png · bg/jt1/board/jt1_diff.png · bg/jt1/board/jt1_cross93.png · bg/jt1/board/jt1_mid3.png · bg/jt1/board/jt1_cross81.png · bg/jt1/board/jt1_age3.png | shotcmp/r04.jpg | 나음 — 새 심사관 Agent 11/16 1차(09:16 전)(7,584만원·27.5만원·93세/81세 교차 그래프가 크게 읽혀 진행자 화면보다 명확) |
+| 3 같아지는 나이(쉼) | 가정: 그 사이 집값 그대로 | 집값 선이 오르내려도 월지급금 선은 평평 — '가입 때 시세로 정해짐' | 2 | Remotion 두 선 | bg/jt1/board/jt1_trap_price.png | shotcmp/r05.jpg | 나음 — 새 심사관 Agent 11/16 1차(09:16 전)(집값 내리면 금액도 준다는 한 줄이 바로 읽힘, 선에 '집값' 이름표 달면 더 좋음) |
+| 4 쌓이는 대출 | 월지급금+보증료(1%·0.95%)+이자가 대출잔액, 현금으로 안 냄 | 달마다 막대가 한 칸씩 쌓이는 잔액 막대(세 색: 월지급금·보증료·이자) — 눈덩이 비유 대신 실제 구성 | 8, 4, 10 | Remotion 쌓이는 막대 | bg/jt1/board/jt1_stack.png | shotcmp/r06.jpg | 나음 — 새 심사관 Agent 11/16 1차(09:16 전)(세 색 막대와 옆 이름표가 맞물려 잔액에 쌓이는 구성이 한눈에 보임) |
+| 4 쌓이는 대출 | 중도 해지 때 갚을 돈 = 받은 돈+보증료+이자 | 구성식 판(+ 기호로 칸 하나씩 열기) | 4 | Remotion TallyFrame | bg/jt1/board/jt1_trap_exit.png | shotcmp/r07.jpg | 나음 — 새 심사관 Agent 11/16 1차(09:16 전)(받은 돈+보증료+이자 식이 큰 주황 글자로 진행자 화면보다 바로 이해됨) |
+| 4 생활비와 견주기 | 5억·65세 126만원 = 부부 적정생활비 297만원의 절반이 안 됨(43%) | 장바구니 든 손 실사 위에 '297만원 중 126만원' 막대 하나 | 12 | Pexels(장보는 손) + Remotion 막대 | bg/jt1/board/jt1_43.png · bg/jt1/stock/jt1_market.mp4 | shotcmp/r08.jpg | 나음 — 새 심사관 Agent 11/16 2차(09:22 전) — 1차에서 빵 진열대 실사가 말과 안 맞는다는 지적 뒤 장바구니 손(Pexels 8420602)으로 바꿈(실사는 얼굴 없이 장바구니만 보이고, 막대와 43%가 평면 그림보다 한눈에 읽힌다) |
+| 5 돌아가신 뒤 | 배우자 6개월 안 승계·금액 그대로 · 모자라면 공사 부담·남으면 상속 · 자녀가 적은 돈 갚고 가져오기 | 집 → 정산 → (남음: 자녀 / 모자람: 공사) 갈래 흐름도, 화살표가 흐름 | 3, 11 | Remotion 흐름도 | bg/jt1/board/jt1_flow.png | shotcmp/r09.jpg | 나음 — 새 심사관 Agent 11/16 1차(09:16 전)(집→정산→자녀/공사 갈래가 큰 글자로 3초에 읽혀 경쟁 일러스트보다 명확) |
+| 5 돌아가신 뒤(쉼) | 자녀에게 집을 남기고 싶다면 | 창가에서 함께 걷는 두 사람 뒷모습 실사(얼굴 없음) | 3 | Pexels | bg/jt1/stock/jt1_walk.mp4 | shotcmp/r10.jpg | 나음 — 새 심사관 Agent 11/16 1차(09:16 전)(얼굴 없는 두 사람 뒷모습 실사로 쉼 장면 역할을 하고 손·몸 어색함 없음) |
+| 5 세금·기초연금 | 재산세 5억 이하 25% 감면 · 월지급금은 소득 아님 → 기초연금 안 깎임 | 두 칸 판(재산세 −25% / 기초연금 그대로), 출처 줄 공사 주소 | 6 | Remotion TallyFrame | bg/jt1/board/jt1_tax2.png | shotcmp/r11.jpg | 나음 — 새 심사관 Agent 11/16 1차(09:16 전)(재산세 최대 −25%·기초연금 그대로 두 칸이 크게 읽혀 경쟁 판보다 깔끔) |
+| 6 끝 | 공사 예상연금조회·1688-8114 · 우대형 확인 · 고정 끝 줄 | 내 숫자 확인 순서 3칸 체크리스트 + 번호 글자(홈페이지 캡처 대신), 숨 쉴 창가 실사 3초 | 6, 14 | Remotion + Pexels | bg/jt1/board/jt1_summary.png · bg/jt1/stock/jt1_window.mp4 | shotcmp/r12.jpg | 같음 — 새 심사관 Agent 11/16 3차(09:22 전) — 1차 '1688-8114가 작은 출처 줄뿐' 지적 뒤 본문 큰 줄로 올리고 줄 문구를 대본 그대로(글자 크고 깨짐 없으나 93세 줄은 무엇과 같아지는지 비교 대상이 빠짐) |
 
 # 남은 것 (visual-designer 몫, 대본 v1 뒤)
 - 11/13 09시 visual: 판 19장 만듦(visual/JT-1-shots/jt1boards.py, 숫자 calc.py 표·calc_out·script 7eae791b 자막 값만) · `boardcheck.py jt1` 19/19 통과 · 남은 것: 실사 5줄(Pexels) · 경쟁 캡처 shotcmp 비교 그림 · 새 심사관 품질 판정 · 대본 줄(요지) 실제 줄로.
 - 대본 줄 확정 뒤 '대본 줄(요지)' 바꾸기 · 파일 만들기 · shotcmp 비교 그림·품질 판정(새 심사관) · `research_gate.shot_check(ep/JT-1)` 0건.
+- 11/16 09:22 visual: 실사 4줄 Pexels(6326847 손·공책 / 8420602 장바구니 손 / 8794903 노부부 뒷모습 / 35161057 창가 커튼 — 얼굴 없음, -bf 0 다시 인코딩, 출처 visual/JT-1-shots/stock_credits.json desc_line) · 경쟁 #5→672초·#9→346초 눈으로 고침, #13·#14는 ±60초 진행자 화면 · shotcmp 12장(mkcmp_jt1.py) · 새 심사관 1차 10줄 통과·2줄 지적 → r08 실사 교체·r12 jt1_summary 고침(1688-8114 본문 큰 줄, boardcheck 19/19) 뒤 다시 심사 → **shot_check 0**

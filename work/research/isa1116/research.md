@@ -91,7 +91,8 @@
 # 올리기 전 확인
 - 2026-11-16 06:3x firemap-write(조사·작성 날). 비축이라 칸 배정 뒤 발행 날 다시 확인: 예금 금리는 finlife 다시 받아 calc.py, 금투협 표는 10월 말 공시가 새로 올라왔는지
 - 다시 연 주소(11/16 06:2x~06:4x 받음, raw/): https://www.law.go.kr/법령/조세특례제한법/제91조의18 · https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAJoinType.xml&divisionId=MDIS07002002000000&serviceId=SDIS07002002010 · https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAAssetMgmtStat.xml&divisionId=MDIS07003001000000&serviceId=SDIS07003001000 · https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAMMJoinAmt.xml&divisionId=MDIS07002004000000&serviceId=SDIS07002004000 · https://finlife.fss.or.kr/finlife/svings/fdrmDpst/list.do · https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISAAccTransNotice.xml&divisionId=MDIS07001003000000&serviceId=SDIS07001003000 · https://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/isa/DISISANotice.xml&divisionId=MDIS07001001000000&serviceId=SDIS07001001000
+- 2026-11-16 12:21 firemap-write: S8 국세상담센터 금융소득 Q&A 다시 엶 https://call.nts.go.kr/call/qna/selectQnaInfo.do?ctgId=CTG11775&mi=1441 (raw/nts_qna_1116.html, '금융소득 2천만원 초과 종합과세' 문답 그대로)
 - 기준일: 금투협 ISA 통계 2026-09-30 · 정기예금 2026년 10월 공시(11/16 조회) · 조세특례제한법 현행(11/16 조회)
-- 바뀐 것: 없음(오늘 조사) — 기준 금리 3.285%
+- 바뀐 것: 없음(오늘 조사) — 기준 금리 3.285% · 10/22 금통위 기준금리 3.00% 그대로(한국은행 ECOS 722Y001 2026-09 3·2026-10 3, 11/16 12시 조회)
 - 새로 찾은 것: 은행 신탁형 예적금 88.9% · 3년 200만원 채우는 원금 약 2,029만원
 - 조사 뒤 공표: release_calendar 금통위 11/26(기준금리) — 예금 금리 낱말이 걸리므로 11/26 뒤 발행이면 finlife 다시 받아 '바뀐 것:'에 적을 것

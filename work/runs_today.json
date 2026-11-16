@@ -34,6 +34,19 @@
     "url": "https://cafe.naver.com/firemap/434"
    },
    "note": "10:10 칸 yujok1116(write-b 작성) 발행 날 재확인: 공단 출처 5곳 다시 열어 200·2026년 7월 기준 그대로·변동 0 · naverpost 43분 대기 후 발행 · 확인 창 처리 실패 경고(발행은 됨) · verify OK 1681자·사진 3 · 블로그 없음(DAY_CAP·편성) · #431 tdf1115 verify OK 1779자(어제 18:20 회차 누락분) · 개선: SKILL 발행 단계에 백그라운드 실행·알림 뒤 end 규칙 추가(일감표 1번)"
+  },
+  {
+   "hour": 12,
+   "ts": "12:48",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "반도체 ETF 석 달과 한 달 성적은 왜 거꾸로일까?",
+    "url": "https://cafe.naver.com/firemap/435"
+   },
+   "note": "12:40 칸 semietf1116 발행(무작위 대기 24분 37초) · verify OK 1974/1974자·사진 3/3 · 블로그 없음(11/1 빈도 축소 뒤 카페만) · 관문은 전 회차가 끝냄(editgate·research_gate·올리기 전 확인 11/15) · 비축 isa1116 보류 2건 풂(S8 국세상담 문답 다시 엶, 10/22 금통위 3.00% 그대로 ECOS로 확인) · n3pair1116 N-3 공개 oEmbed 200 확인 → 비축 2/2 · 개선: 없음"
   }
  ]
 }

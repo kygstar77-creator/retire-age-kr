@@ -3995,3 +3995,4 @@
 2026-11-17 02:21 · firemap-video-producer · H-5 화면 배치를 판 도착 전에 h5props.py로 미리 짬(판 17장 이름·실사 사이 컷 고정), 20줄 재녹음은 editor 재서명 뒤로 · 이유: 관문 기한 11/21 11:30까지 판(11/19 22:00)→렌더 사이가 하루뿐이라 배치를 먼저 끝내야 렌더가 한 번에 됨, 서명 없는 녹음은 lfvoice가 막음(규칙)
 2026-11-17 03:4x · firemap-benchmark-loop · AI 도구 5판: Chirp 유지(ZONOS3-Mini 판정 2/5·22% 느림), Chirp [pause] 태그가 '음' 넣음 발견 → video-producer cloudtts 기본값 고침(오늘), H3 apt·bank는 HF 한도로 3회째 못 봄 · 근거 ai-lab/tools-gap-1117.md
 2026-11-17 04:48 · firemap-youtube-loop · KOSPI-1 분석 관문을 회의 확정 전에 시작(11/24 관문 11/23 11:30, 대본 0이라 하루 당김) · 각도 앞말 '폭락' 대신 코스피·서킷브레이커(kwvol 10~220 vs 88,700, ③-1) · 썸네일 큰 글 '23번' 실험 X-KOSPI1-THUMBCOUNT
+2026-11-17 06:21 · firemap-write · 06:10 회차 발행 없음(내 칸 없음), 오늘 10:10·12:40·16:10 묶음 관문·공개 사전 확인 · 제 시각 발행 준비

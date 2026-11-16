@@ -126,3 +126,5 @@
  유지) 뒤 editgate stamp·check.
 
 - 11/16 17시: 남이 고친 대본을 재서명할 땐 say_v*.txt가 script.md보다 오래됐는지 먼저 본다 — 옛 서명 say_sha가 남아 있으면 aitell script가 옛 원고(68.9)를 재서 통과로 보인다. 새 say_vN을 뽑아 연결하니 90.7로 한도 바로 밑이었다(H-5).
+
+- 11/17: 재녹음 전 편은 `aitell script <편>`이 옛 voice.json을 쟀다 → 원고가 새것이면 원고를 재도록 고침. '관문 통과' 보고가 있어도 pkg.edit.json이 실제로 있는지 먼저 본다(cofix1117: 보고는 통과, 서명 파일 없음·cafe3 걸림).

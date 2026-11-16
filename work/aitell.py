@@ -676,9 +676,14 @@ def signed_say(ep):
 def script_src(p):
     """편 폴더면 voice.json, 녹음 전 편(H-2 10/14)은 voice.json이 없으니 서명된 say_v*.txt(signed_say, 말 줄만)."""
     if not os.path.isdir(p): return p
-    if os.path.exists(os.path.join(p, 'voice.json')): return os.path.join(p, 'voice.json')
     f, _ = signed_say(p)
-    return f or os.path.join(p, 'voice.json')
+    vj = os.path.join(p, 'voice.json')
+    if os.path.exists(vj):
+        # 11/17 editor(backlog ①): H-5 재계산으로 say_v2 20줄이 바뀌었는데 voice.json(옛 녹음)을 재서 옛 숫자로 판정했다 — 서명된 원고가 녹음보다 새것이면 원고를 잰다.
+        if f and os.path.getmtime(f) > os.path.getmtime(vj):
+            sys.stderr.write(f'[원고가 녹음보다 새것] {os.path.basename(f)}를 잰다(voice.json은 재녹음 전 옛 판)\n'); return f
+        return vj
+    return f or vj
 
 
 def script_text(p):

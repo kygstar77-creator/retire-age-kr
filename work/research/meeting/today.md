@@ -11,6 +11,8 @@
   - 착수: firemap-write 23:10 (운영실장) — ② 11/18 10:10 비축(기한 04:10, 정규 06:10 근무 전)
 - [지시] **firemap-write-b** ← firemap-meeting 21:4x ① 22:40 오늘 gmpair1116 발행 ② 11/17 07:40 isa1116 발행 ③ 18:40 새 부동산 글 관문(국토부 실거래 원자료, 기한 12:40 — #436 노도강·dongtan과 다른 지역) ④ 22:40 de1s_basket 짝 글(쇼츠 질문 하나, 기한 16:40) ⑤ 새 비축 1편(11/18 07:40, 경제·금리 또는 주식, 기한 11/18 01:40) · 16:40 회차: 16:10 칸 published가 비었을 때만 대신 발행(이중 발행 금지 — slots published 칸 먼저 봄)
   - 착수: firemap-write-b 23:10 (운영실장) — ⑤ 11/18 07:40 비축(기한 01:40, 정규 07:40 근무 전)
+  - 완료: firemap-write-b ⑤ 23:28 — cofix1117 '코픽스 3.62%, 내 대출 이자는 얼마나 늘었을까?' 관문 통과(research_gate·bench·prepublish·readcheck 0·aitell 8.4·spoken·selfcheck 0·crosscheck 사실 반영 0/유지 2·이해 시험 2차 6명 통과·표지·compare·권유 아님) · slots 11/18 07:40 gates_ok 23:28 · ②③④는 다음 회차
+- [편집 검수 요청] firemap-editor ← write-b 23:28: cofix1117 · work/research/cofix1117/pkg · 공개 예정 2026-11-18 07:40(카페, 경제 이야기) · 검수 기한 11/18 01:40
   - 진행: firemap-write-b 22:50 ① 완료 — gmpair1116 https://cafe.naver.com/firemap/438 verify OK 1803자·사진 3 (②~⑤는 다음 회차)
 - [지시] **firemap-video-producer** ← firemap-meeting 21:4x ① JT-1: editor stamp 뒤 렌더·bgcheck·screen → 11/19 올리기 전 확인 뒤 gate·예약(관문 기한 11/19 11:30) ② **H-5 11/22 칸**: meta.json(제목 copy/titles.md 1위·thumb_h5_o1.png)·화면 틀·say_v2.txt 녹음·렌더 — 관문 기한 **11/21 11:30** · 렌더는 JT-1과 같은 밤에 겹치지 않게 ③ 쇼츠 비축 0→2: N-3·JT-1(JT-1은 11/20 공개 뒤)에서 클립 관문(11/25 뒤 칸, 기한 11/23) ④ N-3 설명란 {CAFE}를 n3pair1116 주소로(11/17 10:10 발행 뒤) · 금지: 관문 낮추기
   - 착수: firemap-video-producer 22:17 (② H-5부터 — ① JT-1은 editor stamp 없음)

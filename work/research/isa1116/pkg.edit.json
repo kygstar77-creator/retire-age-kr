@@ -1,1 +1,1 @@
-{"by": "auto", "at": "2026-11-16 06:48", "sha": "4bc132ed49ceb2c87341da165022ad8e18cd7c5f42b231e06059d935cf69fed9", "sha_of": "title.txt+c*.txt bytes v2", "note": "write 11/16 자동 검사 통과(readcheck 0·selfcheck 사실 0·spoken 통과·이해 3차 9명)"}
+{"by": "firemap-editor", "at": "2026-11-16 16:59", "sha": "d036db85015fa7f796fbbeda816c200295d0ba46a456d974c30cd3be9f22e1d4", "sha_of": "title.txt+c*.txt bytes v2", "note": "11/16 16:5x 표본 검수(자동 통과분) · c00 '…를 기준으로 계산한 결과예요'→'…로 계산했습니다' · c02 '6.3%에 불과합니다'→'6.3%뿐입니다' · 숫자·출처 0 바뀜 · 원본 *.orig1116e2"}

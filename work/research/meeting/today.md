@@ -19,6 +19,9 @@
 - [지시] **firemap-video-producer** ← firemap-meeting 21:4x ① JT-1: editor stamp 뒤 렌더·bgcheck·screen → 11/19 올리기 전 확인 뒤 gate·예약(관문 기한 11/19 11:30) ② **H-5 11/22 칸**: meta.json(제목 copy/titles.md 1위·thumb_h5_o1.png)·화면 틀·say_v2.txt 녹음·렌더 — 관문 기한 **11/21 11:30** · 렌더는 JT-1과 같은 밤에 겹치지 않게 ③ 쇼츠 비축 0→2: N-3·JT-1(JT-1은 11/20 공개 뒤)에서 클립 관문(11/25 뒤 칸, 기한 11/23) ④ N-3 설명란 {CAFE}를 n3pair1116 주소로(11/17 10:10 발행 뒤) · 금지: 관문 낮추기
   - 착수: firemap-video-producer 22:17 (② H-5부터 — ① JT-1은 editor stamp 없음)
   - 진행: ② H-5 meta.json·녹음(156줄 check 통과) 23:01 — 남은 것 readback 결과 (1차 46줄 걸림·4줄 다시 받음, 11/17 --resume)·화면 조립(shot_plan·종이 판 뒤)·렌더 / ① JT-1 editor stamp 대기 / ③ N-3 셋째 클립 안 만듦(겹침) → JT-1·H-5 클립 / ④ 11/17 10:10 뒤
+  - 착수: firemap-video-producer 02:17 (정기 02:1x — H-5 고친 20줄 재녹음·readback, JT-1 stamp 확인)
+  - [편집 검수 요청] firemap-editor ← PD 02:17: **H-5 script.md 재서명**(youtube-loop 00:51 실거래 재계산으로 say_v2 말 20줄·script 46줄 바뀜, 원본 *.orig1117yl — 지금 sha 다름이라 lfvoice가 20줄 재녹음을 막음) · 시한 11/17 16:00(녹음) · 관문 기한 11/21 11:30
+  - 진행: firemap-video-producer 02:21 — ② H-5 화면 배치 h5props.py 새로(JT1 틀, 156줄→장면 61·545초·실사 47%·판 묶음 최장 18.6초, 판 17장 이름 고정) · `py -3.12 work/research/longform/ep/H-5/h5props.py --check`가 남은 재료를 셈: 판 17장(visual)·실사 7697045(visual)·재녹음 20줄(editor 재서명 뒤 16:00) · 다 차면 같은 명령(--check 없이)이 h5.json·H5.tsx·Root 등록까지 → lfrender text → editor stamp → render · ① JT-1 screen_text.edit.json 아직 없음(시한 12:00) · ③ 쇼츠 비축 0 그대로 · ④ 10:10 뒤
 - [지시] **firemap-youtube-loop** ← firemap-meeting 21:4x ① H-5 11/22: shot_plan(경쟁 장면 대조)·국토부 실거래 다시 받아 calc 재계산·올리기 전 확인(11/21 오전) ② 11/24 후보 비교 한 장(코스피 지수: KRX 일별 지수 원자료 받기·지난 값만·예측 0 vs LTC-1: 2027 수가 반영·대본 유무) → 11/17 회의 전 ③ X-LF-GENRE: N-3(11/16)·JT-1(11/20)이 '연봉·자산·노후 1편/12일' 한도에 같이 걸리는지(verify 지적) 판정 한 줄 — 걸리면 JT-1 그대로 두는 근거 또는 대안 · 기한 11/17 20:00
   - 착수: firemap-youtube-loop 00:43 (③ 판정·② 11/24 비교 먼저, ① H-5 shot_plan·calc 다음)
   - 완료: firemap-youtube-loop ③ X-LF-GENRE **걸림**(N-3 연봉·JT-1 노후 4일 간격) — JT-1 그대로(사장님 11/11 통계 축이 11/8 장르 표보다 뒤·11/20 대체 편 없음·연속 아님), 11/20 공개 7일 조회 64 미만이면 노후 축 뺌, 장르 표를 '사장님 축 3개+연속 금지'로 바꾸는 안 회의에 · ② 11/24 권고 **코스피 지수(KOSPI-1)**: 통계 축 안·우리 지수 중앙 367 vs 정책 20·ECOS 일별 8,055일 받음(2026년 하루 -7%↑ 7번) / LTC-1은 축 밖이라 보류, 빠듯함(대본 0 → 11/21 저녁 서명 못 하면 칸 비움) — longform/loop/slot1124_compare.md 00:51
@@ -36,6 +39,7 @@
 - 결정 필요(순돌이→사장님): 쇼츠 표지를 스튜디오 데스크톱에서 편마다 고를지, 영상 속 윗줄 키우기만 할지
 
 - [요청] firemap-visual-designer ← PD 22:3x: **H-5 종이 판**(bg/h5/board — JT-1 bg/jt1/board처럼 숫자 박힌 판, 1장 5년 흐름·2장 단지 30곳·3장 잣대 73% vs 82%·4장 전세·6장 정리 표) · youtube-loop H-5 shot_plan·calc 재계산 뒤 숫자로 · H-5 녹음은 11/16 22시 끝(156줄 9.1분) · 시한 11/19 22:00(화면 조립·렌더·editor stamp가 11/21 11:30 관문 전에 들어가야 함)
+    - 덧붙임 PD 02:21: 파일 이름은 shot_plan 그대로 bg/h5/board/{search,open82,map,median9,half,count,eq82,rank32,top3,pair,built,dots,ruler,jeonse,ratio,check5,summary}.png(1920x1080, JT-1 board 꼴) + 실사 bg/h5/stock/7697045.mp4와 ep/H-5/stock_credits.json 줄 — 넣은 뒤 h5props.py --check로 빠진 것 0 확인
 
 ## 반론 처리 11/16 (근거 2026-11-16-verify.md)
 - 받아들임: D1 H-5 11/18 당기기 불가(verify — meta·shot_plan·화면 틀·녹음·렌더 없음) → 11/18 비움, H-5는 11/22로 · D2 11/22 빈 칸 위험(레드팀) → H-5로 채움, 11/24는 내일 정함 · D3 비축 다 씀·16:10 같은 담당 지각(레드팀) → 16:10은 비축 글(지을 일 없음)·새 글은 18:40에, 대체 발행은 published 칸 확인 · D6 기준선 없음(레드팀) → 3% 기준선·사람만 세기 · D7 지각 2→3건·원인 진단 없음(verify·레드팀) → 15:10 회차 미실행 사실 기록, '발행 먼저' 규칙 · 측정 기준 하나로(레드팀)

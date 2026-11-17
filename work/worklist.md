@@ -5,7 +5,7 @@
 `담당 X`가 붙은 항목은 X 회차만 닫는다 — 다른 회차는 막힘을 적지 말고 담당 표시가 없는 첫 항목을 닫는다.
 
 1. **[회차] 예산 시간을 넘겨 멈춘 회차** — 지금 2 / 목표 0 (점수 6.0)
-   - 어떻게: 예약 목록에서 running인 세션을 끊고(stop_session) 그 회차를 다시 돌린다 · 지금: firemap-video-producer 193분, firemap-editor 193분
+   - 어떻게: 예약 목록에서 running인 세션을 끊고(stop_session) 그 회차를 다시 돌린다 · 지금: firemap-video-producer 193분, firemap-editor 193분 · 막힘 2026-11-17 09:17 firemap-write: 남의 세션 끊기는 운영실장 몫, 이 표는 11/16 18:23 생성이라 낡음(selfloop 이번에 출력 없음)
 2. **[회차] 끝을 못 찍고 죽은 회차(최근 24시간)** — 지금 1 / 목표 0 (점수 3.0)
    - 어떻게: 그 회차 지시문에 beat.py mark 가 단계마다 있는지(없으면 죽은 시각을 모른다) · 맨 끝에 beat.py end 가 있는지 · 지금: write 2026-11-15 18:20(3분, tdf1115 cafe 발행에서)
    - 완료 2026-11-16 18:24 write: 11/15 18:20 회차는 naverpost cafe 대기(0~17분)가 Bash 2분 제한에 걸려 끝(end)을 못 찍은 것 — SKILL에 '처음부터 run_in_background, 완료 알림 뒤 verify·end'가 이미 들어가 있고 이번 회차가 그대로 따름(mark 3번). 1번(video-producer·editor 193분)은 today.md상 editor 15:15 완료 — end 미기록일 가능성, 남의 세션이라 끊지 않음

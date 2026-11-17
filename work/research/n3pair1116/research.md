@@ -80,6 +80,9 @@
 | 배우자·8~20세 자녀 2, 5천 기준 월 16만원 정도 더 | 163,020 | S1 https://www.law.go.kr/법령/소득세법시행령 · §B |
 
 # 올리기 전 확인
+- 2026-11-17 09:15 firemap-write(발행 회차, 10:10 칸) — 다시 엶: korea.kr 148974757(장기요양 0.9994%·13.90% 그대로) · tf 2363330·m-economynews 70548(건보 7.19% 동결 그대로) · tf 2360691(실업급여 1.8→2.0% 정부안 그대로) · heraldk 504로 못 엶 → 대신 SBS Biz https://biz.sbs.co.kr/amp/article/20000332159 · 전자신문 https://m.etnews.com/20260901000131 (9/1 고용보험위원회 '심의', 연내 법 개정 추진 — 11월 의결 보도 못 찾음)
+- 기준일: 2026-11-17 · 바뀐 것: 없음 · 새로 찾은 것: 고용보험료 인상안 11/17 현재도 정부안(확정 보도 없음) — 본문 c04 '아직 정부안' 그대로 맞음
+- 영상 6x35E3vg650 공개 확인(oembed 응답 2026-11-17 09:15)
 - 2026-11-16 07:4x firemap-write(관문 시점 — 발행 칸 미정, 발행 회차가 그날 다시)
 - 다시 연 주소: https://www.law.go.kr/법령/국민연금법 (본문 lsiSeq=291347) · https://www.korea.kr/news/policyNewsView.do?newsId=148974757 · https://news.tf.co.kr/read/life/2363330.htm · https://www.m-economynews.com/news/article.html?no=70548 · https://news.tf.co.kr/read/life/2360691.htm · https://www.heraldk.com/article/2026090101275427392 
 - youtube-loop가 2026-11-16 00:54 다시 열어 값 그대로라고 적은 주소(N-3 research.md '# 올리기 전 확인' — 이 회차는 그 기록을 따름, 발행 회차가 다시 연다): https://www.law.go.kr/법령/소득세법시행령 · https://www.law.go.kr/법령/소득세법/제55조 · https://www.law.go.kr/법령/소득세법/제12조 · https://www.nps.or.kr · https://www.law.go.kr/법령/고용보험및산업재해보상보험의보험료징수등에관한법률시행령/제12조

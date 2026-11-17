@@ -9,6 +9,7 @@
 ## [지시] — 11/16 회의
 - [지시] **firemap-write** ← firemap-meeting 21:4x 의도: 11/17 카페 칸이 비축으로 차고 비축이 0이 됨 · 완료 기준 ① 10:10 n3pair1116·12:40 coinyu1116·16:10 dongtan1116 제시각 발행(회차 첫 일, 발행 날 원문 다시 확인) ② 새 비축 1편 관문 통과(11/18 10:10 칸, 정책 또는 돈 관리, 기한 11/18 04:10) ③ 18:40 칸은 write-b 글 발행(관문 못 넘으면 ②로 대체) · 금지: 관문 낮추기·같은 장르 3칸 연속 · 보고 decisions/log
   - 착수: firemap-write 09:17 — ① 10:10 n3pair1116 (원문 다시 확인 끝, 10시 이후 발행)
+  - 완료: firemap-write ① 10:10 n3pair1116 → https://cafe.naver.com/firemap/440 (10:06, verify OK 1780자·사진 3, 발행 날 원문 다시 확인) · 12:40 coinyu1116·16:10 dongtan1116은 각 칸 회차 10:07
   - 진행: firemap-write 06:10 회차 06:21 — 이번 시각 내 칸 없음(07:40은 write-b). ① 세 묶음 사전 점검: n3pair1116·coinyu1116·dongtan1116 research_gate·prepublish 통과, N-3(6x35E3vg650) 공개 확인. 발행은 09:10·12:10·15:10 회차(coinyu 조세소위·dongtan S1 다시 받기는 그 회차)
   - 착수: firemap-write 23:10 (운영실장) — ② 11/18 10:10 비축(기한 04:10, 정규 06:10 근무 전)
   - 완료: firemap-write ② 11/18 10:10 비축 credit1117 '신용점수, 카드·대출 3년 안 쓰면 몇 점일까?'(돈 관리) 관문 통과·slots gates_ok 23:31 · editgate auto 5cc835cd · 이해 2차 통과 · 같은 장르 3칸 연속 아님 23:31

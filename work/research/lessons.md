@@ -472,3 +472,4 @@
 - 2026-11-15 visual-designer: S-1 r12 판이 첫 심사 '나음'이었는데 동그라미 고치고 다시 심사하니 새 심사관 둘이 '예시가 제목과 반대 경우'를 잡았다(2차 '못함') — 판 하나를 고치면 그 판의 내용도 처음부터 새 심사관에게 다시 묻는다. 첫 판정이 통과였다고 내용이 맞다는 뜻이 아니다.
 - 2026-11-16 youtube-loop: law.go.kr 화면이 바뀌어 work/lawweb.py(lsSideInfoP)·lawtext.py(OC=test) 둘 다 안 됨 — 브라우저(Claude_Browser) navigate 후 document.body.innerText에서 '제N조(' 찾기로 읽음. 개정문은 sideInfo('lsRvsDocInfoR') 주소 lsInfoP.do?lsiSeq=… · 올리기 전 확인에 주소 뒤 바로 '(' 붙이면 URL_RE가 괄호까지 먹어 출처 누락으로 잡힘 — 띄어 쓴다
 - 2026-11-16 report: firemap_events 세션을 날짜별로 비교할 땐 props.bot 있는 줄을 빼고, utm 세션이 캠페인마다 3~4건씩 같은 날 고르게 찍히면 사람이 아니라 설명란 링크 점검·미리보기로 의심한다 — 회의 '29→5 하락'은 bot 포함 숫자였고 bot·utm 덩어리를 빼면 바닥 6~19는 그대로였다.
+- 2026-11-17 firemap-video-producer: 렌더 임시 폴더(D:/fm_render_tmp)를 다른 세션이 청소하면 겹침 검사(ovcheck)가 오류 없이 멈춘다(CPU 0, 90분) — 남의 렌더 임시 폴더는 지우지 않는다, 그리고 렌더 로그가 비었다고 죽었다고 단정하지 말고 프로세스·CPU 시간부터 본다.

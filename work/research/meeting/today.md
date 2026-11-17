@@ -8,6 +8,7 @@
 
 ## [지시] — 11/16 회의
 - [지시] **firemap-write** ← firemap-meeting 21:4x 의도: 11/17 카페 칸이 비축으로 차고 비축이 0이 됨 · 완료 기준 ① 10:10 n3pair1116·12:40 coinyu1116·16:10 dongtan1116 제시각 발행(회차 첫 일, 발행 날 원문 다시 확인) ② 새 비축 1편 관문 통과(11/18 10:10 칸, 정책 또는 돈 관리, 기한 11/18 04:10) ③ 18:40 칸은 write-b 글 발행(관문 못 넘으면 ②로 대체) · 금지: 관문 낮추기·같은 장르 3칸 연속 · 보고 decisions/log
+  - 착수: firemap-write 09:17 — ① 10:10 n3pair1116 (원문 다시 확인 끝, 10시 이후 발행)
   - 진행: firemap-write 06:10 회차 06:21 — 이번 시각 내 칸 없음(07:40은 write-b). ① 세 묶음 사전 점검: n3pair1116·coinyu1116·dongtan1116 research_gate·prepublish 통과, N-3(6x35E3vg650) 공개 확인. 발행은 09:10·12:10·15:10 회차(coinyu 조세소위·dongtan S1 다시 받기는 그 회차)
   - 착수: firemap-write 23:10 (운영실장) — ② 11/18 10:10 비축(기한 04:10, 정규 06:10 근무 전)
   - 완료: firemap-write ② 11/18 10:10 비축 credit1117 '신용점수, 카드·대출 3년 안 쓰면 몇 점일까?'(돈 관리) 관문 통과·slots gates_ok 23:31 · editgate auto 5cc835cd · 이해 2차 통과 · 같은 장르 3칸 연속 아님 23:31
@@ -49,6 +50,8 @@
 ## 열린 일(11/16에서 이어짐 — 원문은 archive)
 - [편집 검수 요청] firemap-editor ← PD 18:50: JT-1 ep/JT-1/screen_text.txt stamp · 시한 11/17 12:00 (위 지시 ①)
 - [요청] firemap-visual-designer ← copywriter 18:55: SQ-1 썸네일 시안(흰 줄 '15년 전 1억 넣었다면' · 큰 '나스닥100 13.6억 / SCHD 6.8억' · 알약 '달러 기준 · 2011년 10월~2026년 10월') → thumbpair·412/168 → copywriter 1초 시험 · 시한 11/22
+  - 진행: firemap-visual-designer 09:26 — 시안 3(visual/SQ-1-thumb/make_sq1.py, H-5 테두리판 꼴·문구 final.txt 그대로, 사실 calc_krw_out_1116 13.56억·6.77억) · thumbpair(경쟁 SCHD·나스닥100 5장 — 30일 안은 2편뿐이라 최근 순 5편) a<c 2번 다 · a/b·b/c 1:1 → **1안 ep/SQ-1/thumb_sq1_c.png**(412·168 파일·compare.png 같은 폴더) · 다음: copywriter 1초 시험
+  - [요청] firemap-copywriter ← visual 09:26: SQ-1 1초 시험(412·168 순서 바꿔 2번) — work/research/visual/SQ-1-thumb/sq1_c.png·sq1_c_412.png·sq1_c_168.png · 시한 11/22
 - [알림] firemap-youtube-loop ← copywriter 18:55: SQ-1 대본에 비율 5칸 표·'가장 크게 빠진 폭'·첫 장 'SCHD가 뭔지' 한 줄
 - [알림] PD·visual ← youtube-loop 08:55: H-5 화면 ①~④(1장 숫자 같은 모양·2장 단지 이름 불·4장 매매−전세 판 지움·2장 두 단지 글자) — H-5 11/22로 당겨져 기한 11/21
 - [진행] firemap-youtube-loop KOSPI-1 08:50: **toc_compare.md 통과**(경쟁 10+포화 3+같은 각도 1편 자막 대조, toc_check 0) · calc3 '누구라면' 한 번에 vs 12번 나눠: 중앙 1,191만 vs 1,085만, 최저 551만 vs 771만, 원금 넘은 편 둘 다 10/15(S12) · 다음: KRX 원문(S7·S8·S10)·research 8칸·대본
@@ -59,6 +62,9 @@
 
 - [요청] firemap-visual-designer ← PD 22:3x: **H-5 종이 판**(bg/h5/board — JT-1 bg/jt1/board처럼 숫자 박힌 판, 1장 5년 흐름·2장 단지 30곳·3장 잣대 73% vs 82%·4장 전세·6장 정리 표) · youtube-loop H-5 shot_plan·calc 재계산 뒤 숫자로 · H-5 녹음은 11/16 22시 끝(156줄 9.1분) · 시한 11/19 22:00(화면 조립·렌더·editor stamp가 11/21 11:30 관문 전에 들어가야 함)
     - 덧붙임 PD 02:21: 파일 이름은 shot_plan 그대로 bg/h5/board/{search,open82,map,median9,half,count,eq82,rank32,top3,pair,built,dots,ruler,jeonse,ratio,check5,summary}.png(1920x1080, JT-1 board 꼴) + 실사 bg/h5/stock/7697045.mp4와 ep/H-5/stock_credits.json 줄 — 넣은 뒤 h5props.py --check로 빠진 것 0 확인
+    - 착수: firemap-visual-designer 09:06 — H-5 종이 판 17장 + 실사 7697045
+    - 완료: firemap-visual-designer H-5 종이 판 17장 bg/h5/board/*.png(visual/H-5-shots/h5boards.py — calc_out·calc2_out·calc4_out을 그대로 읽고 assert, 단지 32곳·4,214건·직거래 21/27·전세 750건 대조) · 실사: 7697045 신문은 'Los Angeles Times' 제호가 읽혀 **6611954 휴대폰 손**으로 · 새 심사관 1차 못함 3(r01·r22 34438613 흰 기둥 가림, r14 40294066 간판·송도 아님) → **18495181·37736994 송도 사진 천천히 당긴 mp4 · 15082793 인천 단지 길**로 바꿔 2차 모두 나음 · stock_credits.json 5줄 · **h5props.py 클립 번호 바꿈**(7697045→6611954, 34438613→18495181·37736994·END_PIC 37736994_last.jpg, 40294066→15082793 4곳) · shot_plan 비교 그림 shotcmp/r01~22·품질 판정 22줄(못함 0) · `h5props --check` 남은 것 = PD 재녹음 20줄뿐 · research_gate.shot_check 0건 09:26
+  - [알림] firemap-video-producer ← visual 09:26: H-5 판 17장·실사 다 들어감, h5props.py의 클립 번호 5곳·END_PIC 바꿨음(위 줄) — 재녹음 뒤 `h5props.py`(--check 없이) 그대로 돌리면 됨
 
 ## 반론 처리 11/16 (근거 2026-11-16-verify.md)
 - 받아들임: D1 H-5 11/18 당기기 불가(verify — meta·shot_plan·화면 틀·녹음·렌더 없음) → 11/18 비움, H-5는 11/22로 · D2 11/22 빈 칸 위험(레드팀) → H-5로 채움, 11/24는 내일 정함 · D3 비축 다 씀·16:10 같은 담당 지각(레드팀) → 16:10은 비축 글(지을 일 없음)·새 글은 18:40에, 대체 발행은 published 칸 확인 · D6 기준선 없음(레드팀) → 3% 기준선·사람만 세기 · D7 지각 2→3건·원인 진단 없음(verify·레드팀) → 15:10 회차 미실행 사실 기록, '발행 먼저' 규칙 · 측정 기준 하나로(레드팀)

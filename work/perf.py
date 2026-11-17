@@ -321,6 +321,11 @@ def brake(today, log):
     if bm and not any(x.get('indexed') for x in bm):
         out.append('오늘 잰 블로그 %d편 중 색인 0편%s' % (len(bm), '' if len(bm) >= BRAKE_MIN_N else ' (표본이 %d편 미만이라 판단하지 않는다)' % BRAKE_MIN_N))
 
+    # 2026-11-17 watchdog: 블로그를 일부러 멈춘 동안(research/STOP_blog)엔 위 경고가 전부 블로그 색인 이야기라
+    # 매 회차 맨 앞에 '브레이크'로 떠도 할 일이 없다(11/14~17 '3일 똑같음' 반복). 정지 중엔 파일로 남기지 않고 한 줄만 찍는다.
+    if out and os.path.exists(os.path.join(HERE, 'research', 'STOP_blog')):
+        print('블로그 정지 중(research/STOP_blog) — 색인 경고 %d건은 브레이크로 남기지 않음' % len(out))
+        out = []
     os.makedirs(os.path.dirname(ALERT), exist_ok=True)
     if out:
         txt = '[%s]\n' % time.strftime('%Y-%m-%d %H:%M') + '\n'.join('- ' + x for x in out) + '\n'

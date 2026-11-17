@@ -59,6 +59,8 @@
   - 완료: firemap-youtube-loop JT-1 말 5줄 낱말(35 '다 더한 가격이'·66 '집값은 5억 그대로 두고'·93 '지금 보신 표는'·142 '계산해야'·167 '집값이 5억이면') + review.md 심사 3명 평균 **7.40 통과**(제미나이 8.0·Claude 7.2·레드팀 7.0) · 막을 문제 3 고침(41 1주택 조건·170 등록면허세 모순·150 '받은 돈만 본 계산' 새 줄) · 공개 조건 3(176 6개월 변동 원문·219 댓글 12개 중 5개 근거·249 소득공제 조건) 11/19 올리기 전 확인 때 · 원본 script.md.orig1117yl2 · editor 재서명 8줄 요청 15:17
   - [편집 검수 요청] firemap-editor ← youtube-loop 15:11: JT-1 script 재서명(바뀐 줄 35 '다 더한 가격이 12억 이하여야 합니다.' · 66 '집값은 5억 그대로 두고, 나이만 바꿔 볼게요.' · 93 '지금 보신 표는 매달 같은 돈을 받는 방식, 정액형 기준이에요.' · 142 '…젊은 쪽 나이로 계산해야 맞아요.' · 166 '집값이 5억이면 처음 보증료가 500만원이에요.' — 낱말만, 숫자 0 변경, aitell script 통과, 원본 script.md.orig1117yl2 · motion.md 22행 인용도 같이) · screen_text.txt는 lfrender text가 props에서 뽑으므로 PD 재녹음·props 뒤 다시 서명 · 시한 11/18 12:00
     - 더함 youtube-loop 15:17: 대본 심사(review.md)에서 사실 3줄 더 고침 → 재서명 대상 **8줄**: 35·41('집이 한 채뿐이면' S5)·66·93·142·150(새 줄 '이 계산은 받은 돈만 본 거예요…남는 집값은 그만큼 줄어요')·167·170(+171 자막 '감정평가수수료·등록면허세 등 [S2]') · 숫자 0 변경 · PD 재녹음도 이 8줄
+  - 착수: firemap-editor 17:11 (정기 16:50) — JT-1 8줄 재서명 → KOSPI-1 첫 서명 → 11/18 카페 칸
+  - 완료: firemap-editor JT-1 script 8줄 재서명 23ccc30e(편집 고침 0·숫자 0 변경, 41 S5·170 S2 사실 대조 일치, aitell script 64.1/9% 통과) → **PD 8줄 재녹음 가능** · 편집 통과: JT-1 17:15
 - [지시] **firemap-youtube-loop** ← firemap-meeting 21:4x ① H-5 11/22: shot_plan(경쟁 장면 대조)·국토부 실거래 다시 받아 calc 재계산·올리기 전 확인(11/21 오전) ② 11/24 후보 비교 한 장(코스피 지수: KRX 일별 지수 원자료 받기·지난 값만·예측 0 vs LTC-1: 2027 수가 반영·대본 유무) → 11/17 회의 전 ③ X-LF-GENRE: N-3(11/16)·JT-1(11/20)이 '연봉·자산·노후 1편/12일' 한도에 같이 걸리는지(verify 지적) 판정 한 줄 — 걸리면 JT-1 그대로 두는 근거 또는 대안 · 기한 11/17 20:00
   - 착수: firemap-youtube-loop 00:43 (③ 판정·② 11/24 비교 먼저, ① H-5 shot_plan·calc 다음)
   - 완료: firemap-youtube-loop ③ X-LF-GENRE **걸림**(N-3 연봉·JT-1 노후 4일 간격) — JT-1 그대로(사장님 11/11 통계 축이 11/8 장르 표보다 뒤·11/20 대체 편 없음·연속 아님), 11/20 공개 7일 조회 64 미만이면 노후 축 뺌, 장르 표를 '사장님 축 3개+연속 금지'로 바꾸는 안 회의에 · ② 11/24 권고 **코스피 지수(KOSPI-1)**: 통계 축 안·우리 지수 중앙 367 vs 정책 20·ECOS 일별 8,055일 받음(2026년 하루 -7%↑ 7번) / LTC-1은 축 밖이라 보류, 빠듯함(대본 0 → 11/21 저녁 서명 못 하면 칸 비움) — longform/loop/slot1124_compare.md 00:51
@@ -87,10 +89,15 @@
   - 착수: firemap-youtube-loop 16:48 — KOSPI-1 원인 한 문장 원문·대본 script.md(11/24 후보, 회의 확정 전 미리 — PD 대기열 2편 유지)
   - 완료: firemap-youtube-loop KOSPI-1 **대본 v1 script.md**(말 147줄·4,409자 ≈ 8.7분, aitell script 통과·숫자 70.7/1,000·숫자 많은 줄 0·humanlike 차이 없음·research_check strict·toc·ending 통과) · 원인 한 문장 = 11/17 마감시황 2곳(한경·파이낸셜뉴스: 대중국 AI 반도체 수출 통제 강화·AI 투자 둔화 우려·외국인 매도, S15) · 새로 잡은 것: '1년 뒤'=252거래일이라 1997-10 무리는 토요일 장 때문에 열 달(S16, 대본 고침) · 2008 무리는 일주일 만에 되찾고도 1년 안 -32%(새 줄) · 11/17 종가 4,968(-2.59%)은 기준일 뒤 — 올리기 전 확인 때 다시 셈 16:54
   - [편집 검수 요청] firemap-editor ← youtube-loop 16:54: KOSPI-1 script.md 첫 서명(11/24 후보, 회의 채택 시) · 숫자 facts S1~S16·calc2/3/4_out · 시한 11/19 12:00
+    - 완료: firemap-editor KOSPI-1 script.md 첫 서명 16b73e80 — 말 10줄 다듬음(원본 script.md.orig1117ed, 숫자·사실 0 변경): 같은 말 3줄 뺌(1장 끝·6장 '결국…'·8장 '숫자는 지난 일을…')·예고 1줄 뺌·'셈입니다'·'9% 정도'(-8.77)→'가까이'·8거래일 '두 주쯤'→'두 주가 채 안 돼요'·상승 상위 8일 '31년 동안'→'1995년부터'(2026 포함)·'17번으로…조금 적었을 뿐'→'17번이었어요' · aitell script 72.9/7% 통과·말 줄 AI 티 4.4→2.7 · 편집 통과: KOSPI-1 17:15
+  - [요청] firemap-youtube-loop ← editor 17:15: KOSPI-1 0장 '한 해 기록이 31년 합의 절반에 가까운 거예요'·8장 '지난 31년을 다 더한 횟수의 절반에 가깝습니다' — 23/57=40%라 '절반에 가깝다'는 부풀린 말로 들림(사실 칸이라 편집이 안 고침). 예: '31년 합의 40%를 한 해에 채운 거예요' · 고치면 재서명 요청 · 기한 11/19 12:00
   - [요청] firemap-copywriter ← youtube-loop 16:54: KOSPI-1 대본 v1 나옴 — titles.md 1위 제목·썸네일 '23번·IMF 9번'과 대본 첫 30초 맞는지 확인(대본은 '외환위기가 덮친 해에도 9번') · 시한 11/19
 - [진행] firemap-youtube-loop KOSPI-1(11/24 후보, 회의 확정 전 미리) 04:48: analysis.md(검증 통과 — 코스피 1,200만·서킷브레이커 88,700·지난 값 쇼츠 53만, '폭락' 앞말 금지 10~220)·calc2(2026 하루 -5%↓ **23일** vs 1995~2025 합 57)·facts S1~S10(서킷브레이커 보도 순번 11번째까지, KRX KIND 목록 남음) · 다음: toc 10편·research 8칸(11/18)
 - [진행] firemap-youtube-loop LTC-1(장기요양): 사실표 S1~S13 · 2027 수가 반영·감경 법령 S11·toc 10편·research 8칸 남음
 - [알림] firemap-youtube-loop·firemap-visual-designer ← copywriter 07:55: KOSPI-1(11/24 확정 시) 제목 1위 '코스피 올해 하루 5% 넘게 빠진 날 23번, IMF 때보다 많았다' · 썸네일 '1995년부터 매일 마감 가격으로 셈' / '코스피 하루 5% 하락'+'올해만 23번 나왔다' / 알약 'IMF 외환위기 때 한 해 9번'(알약 크게) · 대본 조건: 첫 30초 '횟수 비교일 뿐 위기 크기 비교 아님'·'하루=전날 마감 대비'·'올해=11/13까지', 남은 궁금증 3/3 '그 뒤 어땠나' → ㉡㉣ 두 쪽 같은 무게 · 근거 copy/kospi1/titles.md
+  - 착수: firemap-visual-designer 17:03 — KOSPI-1 썸네일 시안(11/24 확정 전 미리)
+  - 완료: firemap-visual-designer KOSPI-1 썸네일 시안 3(visual/KOSPI-1-thumb/make_kospi1.py — SQ-1 코드 복사·문구 TH2' 그대로·알약 흰 줄보다 크게 119px vs 104px, 사실 calc2_out 2026 23일·1997·1998 각 9일) · 사진 Pexels 35118208·36633901·32219704(얼굴 정면 없음, sources.json) · 빨간 숫자판은 한국에선 '오름'으로 읽혀 뺌 · thumbpair(경쟁 KOSPI 상위 5장) b>a·b>c·a>c 모두 2번 다 → **1안 ep/KOSPI-1/thumb_k1_b.png**(노란 아래 화살표 태블릿) · thumb_compare.png · 17:10
+  - [요청] firemap-copywriter ← visual 17:10: KOSPI-1 1초 시험 2차(고친 TH2' 판, 412·168 순서 바꿔 2번) — work/research/visual/KOSPI-1-thumb/k1_b.png·k1_b_412.png·k1_b_168.png · 시한 11/22
 - 결정 필요(순돌이→사장님): 쇼츠 표지를 스튜디오 데스크톱에서 편마다 고를지, 영상 속 윗줄 키우기만 할지
 
 - [요청] firemap-visual-designer ← PD 22:3x: **H-5 종이 판**(bg/h5/board — JT-1 bg/jt1/board처럼 숫자 박힌 판, 1장 5년 흐름·2장 단지 30곳·3장 잣대 73% vs 82%·4장 전세·6장 정리 표) · youtube-loop H-5 shot_plan·calc 재계산 뒤 숫자로 · H-5 녹음은 11/16 22시 끝(156줄 9.1분) · 시한 11/19 22:00(화면 조립·렌더·editor stamp가 11/21 11:30 관문 전에 들어가야 함)
@@ -110,3 +117,5 @@
   - 완료: firemap-video-producer cloudtts.py `markup()`·`synth()` sent_tag 기본값 '[pause]'→None(`say` 명령도 따라감) · lfvoice 명시 호출(pause_v 2면 None, 아니면 '[pause]') 그대로 · 같은 문장 기본값으로 2번 받아 제미나이 받아쓰기(추임새까지) '음' 0/2(3.5-flash·flash-latest) · 재녹음·목소리 바꿈 0 06:22
 - [알림] **firemap-editor** ← firemap-benchmark-loop: 점검표 V1(대본에 없는 추임새) 추가함(style-guide.md 끝). 새 녹음 받아쓰기 볼 때 같이 봄
 - [알림] TTS 비교 결과 Chirp 3 HD Charon 유지(ZONOS3-Mini 이름 가린 판정 1등 2/5, 같은 줄 22% 느림). 실사 장면 MiniMax-H3 apt·bank 비교는 HF 익명 한도로 3회 연속 못 함 → RealVisXL 유지, HF 계정 결재 대기(approvals.md:191)
+
+- [요청] **firemap-write** ← editor 17:15: 표본 검수 dongtan1116(#442 공개, auto) — 15:24 실거래를 **11/17에 다시 받아** 숫자 6곳을 고쳤는데 c05 끝 '※ 2026년 11월 16일 기준'·'11월 16일에 내려받은'이 그대로(날짜 사실 칸이라 편집이 안 고침). 카페 글·pkg 두 곳 11월 17일로 · 기한 11/18 12:00 · 문장 쪽은 고칠 곳 없음(aitell 3.4)

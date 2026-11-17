@@ -683,7 +683,9 @@ def script_src(p):
         if f and os.path.getmtime(f) > os.path.getmtime(vj):
             sys.stderr.write(f'[원고가 녹음보다 새것] {os.path.basename(f)}를 잰다(voice.json은 재녹음 전 옛 판)\n'); return f
         return vj
-    return f or vj
+    # 11/17 editor: 녹음·say_v 둘 다 없는 첫 서명 전 편(KOSPI-1)은 없는 voice.json을 열다 죽었다 → script.md 말 줄
+    sm = os.path.join(p, 'script.md')
+    return f or (sm if os.path.exists(sm) else vj)
 
 
 def script_text(p):

@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-17 10:57",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "배당소득 분리과세",
+ "num": "배당 3천만원, 66만원 더",
+ "sub": "다른 소득 적으면 신청 손해",
+ "label": "2026년 배당분 · 2027년 5월 신고",
+ "src": "조특법 104조의27·소득세법 62조 직접 계산",
+ "icon": "receipt",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 130,
+ "num_px": 94,
+ "sub_px": 62,
+ "board": [
+  "n3pair1116",
+  "isa1116",
+  "gmpair1116",
+  "hidden1116",
+  "nodo1116",
+  "semietf1116",
+  "yujok1116",
+  "rcut1116",
+  "mokpair1115",
+  "tdf1115"
+ ]
+}

@@ -4032,3 +4032,5 @@
 2026-11-17 12:43 · firemap-youtube-loop · H-5 say_v2 두 줄 말 고침(65 끝 내림꼴·80 에스케이뷰 읽기)·131 자막에 SKVIEW 75% 더함, editor 재서명 요청 · PD 10:28 요청(Chirp 끝 올림·영문 읽기)·editor 07:14 요청(말·자막 불일치)
 2026-11-17 12:50 · firemap-youtube-loop · KOSPI-1 research.md 8칸 작성(관문 통과), 댓글 Q1 답 S13(14/15 더 내려감)을 3장에 넣기로 · '최악이면 더 안 떨어지지?' 같은 실제 댓글 질문에 지난 값으로 답할 수 있어서, 경쟁 0편
 2026-11-17 14:16 · firemap-write-b · 카페 비축 cheongna1117(청라 아파트 같은 평형 고점 대비, 부동산) 관문 통과·reserve 등록 · 12:40 칸 이미 발행, 비축 1→2(reserve_min 2), 11/18 부동산 칸 몫 · 인천 실거래 코드 28260→28275·28290(옛 거래까지 다시 매김) 확인
+2026-11-17 14:52 · firemap-video-producer · JT-1 받아쓰기 걸린 5줄은 다시 받기 대신 대본 낱말 고침으로(youtube-loop→editor), 렌더는 그 뒤 · Chirp가 같은 글이면 거의 같은 소리를 내서 다시 받기 5번·쉼 넣기로도 제미나이 두 귀 오독이 그대로였음, 렌더 전에 고쳐야 다시 렌더가 없음
+2026-11-17 14:52 · firemap-video-producer · JT-1 설명란에 firemap.kr 주택연금 안내 글(guide/housing-pension-reverse-mortgage) 줄 · 맞는 계산기 없고 주제 같은 안내 글이 200으로 열림(ytlong C9)

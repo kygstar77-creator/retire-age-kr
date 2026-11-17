@@ -1,19 +1,59 @@
 [
  {
-  "at": "0:5",
-  "text": "그때 들면 매달 154만원으로 늘어납니다.",
-  "say": "그때 [pause short] 들면, 매달 백오십사만원으로 늘어납니다.",
-  "audio": "audio/jt-1/06da6abc035b1560.wav",
+  "at": "1:4",
+  "text": "그 합이 12억 이하여야 합니다.",
+  "say": "그 합이 십이억 이하여야 합니다.",
+  "audio": "audio/jt-1/597bd54692d0de90.wav",
   "heard": [
-   "그때 들면 매달 154만 원으로 늘어납니다.",
-   "그때 되면 매달 154만 원으로 늘어납니다."
+   "그 합이 10억 이하이어야 합니다.",
+   "그 합의 12억 이하여야 합니다.",
+   "그 합이 10억 이하이어야 합니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small",
+   "gemini-flash-lite-latest"
+  ],
+  "sim": 0.91,
+  "pair": 0.78,
+  "flag": "숫자"
+ },
+ {
+  "at": "2:8",
+  "text": "5억 집 그대로, 나이만 바꿔 볼게요.",
+  "say": "오억 집 그대로, 나이만 바꿔 볼게요.",
+  "audio": "audio/jt-1/9dcd09c994877a0d.wav",
+  "heard": [
+   "욕집 그대로 나이만 바꿀게요.",
+   "5억 집 그대로 나이만 바꿔볼게요.",
+   "욕집 그대로 나이만 바꿀게요."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small",
+   "gemini-flash-lite-latest"
   ],
   "sim": 1.0,
-  "pair": 0.93,
-  "flag": ""
+  "pair": 0.8,
+  "flag": "숫자"
+ },
+ {
+  "at": "4:6",
+  "text": "5억 집이면 처음 보증료가 500만원이에요.",
+  "say": "오억 집이면 처음 보증료가 오백만원이에요.",
+  "audio": "audio/jt-1/e4c1d0bfb04a53dc.wav",
+  "heard": [
+   "목표 치면 처음 보증료가 500만 원이에요.",
+   "5억 집이면 처음 보중류가 500만원이에요.",
+   "목에 집이면 처음 보증료가 500만 원이에요."
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "whisper-small",
+   "gemini-flash-lite-latest"
+  ],
+  "sim": 0.9,
+  "pair": 0.67,
+  "flag": "숫자"
  }
 ]

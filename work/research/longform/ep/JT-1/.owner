@@ -4,3 +4,4 @@
 2026-11-16 18:59 | firemap-video-producer 정기 18:1x | 끝 — 녹음·조립까지, 렌더는 editor 서명 뒤 다음 회차
 2026-11-17 10:17 | firemap-video-producer 정기 10:1x | JT-1 렌더·bgcheck·screen
 2026-11-17 12:05 | firemap-video-producer 정기 10:1x | 끝 — 렌더 0토막(겹침 검사 멈춤, 남은 PID 854852·840836·858736·860708)
+14:52 | firemap-video-producer 정기 14:1x | 끝 — 렌더 0(멈춘 프로세스), 설명·챕터·readback 6줄, 5줄 youtube-loop 요청

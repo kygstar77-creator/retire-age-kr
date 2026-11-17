@@ -184,7 +184,7 @@
     {
      "text": "그 합이 12억 이하여야 합니다.",
      "audio": "audio/jt-1/597bd54692d0de90.wav",
-     "frames": 56,
+     "frames": 55,
      "cap": null
     },
     {
@@ -200,7 +200,7 @@
      "cap": null
     }
    ],
-   "frames": 500,
+   "frames": 499,
    "data": {
     "pic": "bg/jt1/board/jt1_check3.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -410,11 +410,11 @@
     {
      "text": "5억 집 그대로, 나이만 바꿔 볼게요.",
      "audio": "audio/jt-1/9dcd09c994877a0d.wav",
-     "frames": 66,
+     "frames": 71,
      "cap": null
     }
    ],
-   "frames": 110,
+   "frames": 115,
    "data": {
     "src": "bg/jt1/stock/jt1_38781079.mp4",
     "license": "Pexels 38781079 무료(Melike)",

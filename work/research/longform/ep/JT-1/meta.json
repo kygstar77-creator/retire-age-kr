@@ -23,8 +23,8 @@
     "주택연금 계산기",
     "주택연금 5억"
   ],
-  "desc_tpl": "시세 5억 집, 65세에 들면 매달 126만원·70세에 들면 154만원이에요(한국주택금융공사 2026년 3월 예시표, 종신·정액형).\n5년 기다려 더 받으면 받은 돈 합은 93세에 같아져요(집값 그대로 가정). 누가 들 수 있는지, 받은 돈이 어디에 쌓이는지, 돌아가신 뒤 집은 어떻게 되는지도 원문으로 셌습니다.\n\n전체 표와 계산 근거(카페): {CAFE}\n내 집값·나이로 보기: 한국주택금융공사 누리집 → 주택연금 → 예상연금조회 · 고객센터 1688-8114\n\n{CHAPTERS}\n\n출처\n· 월지급금 예시(종신·정액형, 2026.03.01 기준, 부부 중 연소자, 일반주택): 한국주택금융공사 https://www.hf.go.kr/ko/sub03/sub03_01_01_02.do\n· 가입 조건(부부 중 1명 55세 이상·부부합산 공시가격 12억원 이하)·초기보증료 1.0%: 한국주택금융공사 '주택연금이란' https://www.hf.go.kr/ko/sub03/sub03_01_01_01.do\n· 가입자 사망 후 절차(배우자 승계·정산): 한국주택금융공사 https://www.hf.go.kr/ko/sub03/sub03_02_05_07.do\n· 2026년 3월 월지급금 인상·연보증료 0.95%: 금융위원회 보도자료(2026년 2월) https://www.fsc.go.kr/no010101/86211\n· 세제 혜택(재산세·등록면허세): 한국주택금융공사 https://www.hf.go.kr/ko/sub03/sub03_01_01_05.do · 자주하는 질문(소득 미포함·기초연금 등): https://www.hf.go.kr/ko/sub03/sub03_02_05_04.do\n· 노후 적정·최소 생활비: 국민연금연구원 제10차 국민노후보장패널 기초분석보고서(2024)\n계산 가정: '받은 돈 합이 같아지는 나이'는 공사 예시표 월지급금을 그대로 더한 값이고, 집값·금리가 그대로라는 가정이에요. 실제 금액은 감정평가와 가입 시점에 따라 달라집니다.\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이에요. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 정보 제공용이고, 가입하거나 미루라는 권유가 아니에요.\n썸네일 사진: 형길 장 / Pexels (https://www.pexels.com/photo/modern-multistory-building-with-windows-and-balconies-in-city-3736898/) (자르기·어둡게·글자 추가)\n영상 일부: https://kaboompics.com/ / Pexels (https://www.pexels.com/video/person-writing-on-a-notebook-using-a-pen-6326847/)\n영상 일부: Kampus Production / Pexels (https://www.pexels.com/video/a-person-carrying-a-grocery-basket-8420602/)\n영상 일부: Anastasia  Shuraeva / Pexels (https://www.pexels.com/video/a-couple-holding-their-hands-while-walking-8794903/)\n영상 일부: Greg Benson / Pexels (https://www.pexels.com/video/soft-sunlit-curtain-with-tree-shadows-35161057/)",
-  "desc": "",
+  "desc_tpl": "시세 5억 집, 65세에 들면 매달 126만원·70세에 들면 154만원이에요(한국주택금융공사 2026년 3월 예시표, 종신·정액형).\n5년 기다려 더 받으면 받은 돈 합은 93세에 같아져요(집값 그대로 가정). 누가 들 수 있는지, 받은 돈이 어디에 쌓이는지, 돌아가신 뒤 집은 어떻게 되는지도 원문으로 셌습니다.\n\n전체 표와 계산 근거(카페): {CAFE}\n주택연금 가입 조건·장단점 정리(파이어맵): https://firemap.kr/guide/housing-pension-reverse-mortgage?utm_source=youtube&utm_medium=description&utm_campaign=jt-1\n내 집값·나이로 보기: 한국주택금융공사 누리집 → 주택연금 → 예상연금조회 · 고객센터 1688-8114\n\n{CHAPTERS}\n\n출처\n· 월지급금 예시(종신·정액형, 2026.03.01 기준, 부부 중 연소자, 일반주택): 한국주택금융공사 https://www.hf.go.kr/ko/sub03/sub03_01_01_02.do\n· 가입 조건(부부 중 1명 55세 이상·부부합산 공시가격 12억원 이하)·초기보증료 1.0%: 한국주택금융공사 '주택연금이란' https://www.hf.go.kr/ko/sub03/sub03_01_01_01.do\n· 가입자 사망 후 절차(배우자 승계·정산): 한국주택금융공사 https://www.hf.go.kr/ko/sub03/sub03_02_05_07.do\n· 2026년 3월 월지급금 인상·연보증료 0.95%: 금융위원회 보도자료(2026년 2월) https://www.fsc.go.kr/no010101/86211\n· 세제 혜택(재산세·등록면허세): 한국주택금융공사 https://www.hf.go.kr/ko/sub03/sub03_01_01_05.do · 자주하는 질문(소득 미포함·기초연금 등): https://www.hf.go.kr/ko/sub03/sub03_02_05_04.do\n· 노후 적정·최소 생활비: 국민연금연구원 제10차 국민노후보장패널 기초분석보고서(2024)\n계산 가정: '받은 돈 합이 같아지는 나이'는 공사 예시표 월지급금을 그대로 더한 값이고, 집값·금리가 그대로라는 가정이에요. 실제 금액은 감정평가와 가입 시점에 따라 달라집니다.\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이에요. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 정보 제공용이고, 가입하거나 미루라는 권유가 아니에요.\n썸네일 사진: 형길 장 / Pexels (https://www.pexels.com/photo/modern-multistory-building-with-windows-and-balconies-in-city-3736898/) (자르기·어둡게·글자 추가)\n영상 일부: Melike / Pexels (https://www.pexels.com/video/elegant-teacup-and-mirror-on-cozy-setting-38405960/)\n영상 일부: Melike / Pexels (https://www.pexels.com/video/sunlit-curtains-gently-sway-in-the-breeze-38781079/)\n영상 일부: Polina ⠀ / Pexels (https://www.pexels.com/video/a-person-writing-in-the-planner-6541138/)\n영상 일부: Artem Podrez / Pexels (https://www.pexels.com/video/back-view-of-woman-opening-curtain-6781559/)\n영상 일부: Kindel Media / Pexels (https://www.pexels.com/video/key-on-a-person-s-hand-7578842/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/a-person-sticking-a-key-in-a-doorknob-8292925/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/close-up-of-a-person-s-hand-holding-house-keys-8292929/)\n영상 일부: Carlos Arribas / Pexels (https://www.pexels.com/video/person-stirring-drink-946148/)\n영상 일부: https://kaboompics.com/ / Pexels (https://www.pexels.com/video/person-writing-on-a-notebook-using-a-pen-6326847/)\n영상 일부: Kampus Production / Pexels (https://www.pexels.com/video/a-person-carrying-a-grocery-basket-8420602/)\n영상 일부: Anastasia  Shuraeva / Pexels (https://www.pexels.com/video/a-couple-holding-their-hands-while-walking-8794903/)\n영상 일부: Greg Benson / Pexels (https://www.pexels.com/video/soft-sunlit-curtain-with-tree-shadows-35161057/)",
+  "desc": "시세 5억 집, 65세에 들면 매달 126만원·70세에 들면 154만원이에요(한국주택금융공사 2026년 3월 예시표, 종신·정액형).\n5년 기다려 더 받으면 받은 돈 합은 93세에 같아져요(집값 그대로 가정). 누가 들 수 있는지, 받은 돈이 어디에 쌓이는지, 돌아가신 뒤 집은 어떻게 되는지도 원문으로 셌습니다.\n\n전체 표와 계산 근거(카페): https://cafe.naver.com/firemap\n주택연금 가입 조건·장단점 정리(파이어맵): https://firemap.kr/guide/housing-pension-reverse-mortgage?utm_source=youtube&utm_medium=description&utm_campaign=jt-1\n내 집값·나이로 보기: 한국주택금융공사 누리집 → 주택연금 → 예상연금조회 · 고객센터 1688-8114\n\n0:00 예고\n0:36 누가 들 수 있나\n1:26 내 집값·나이면 매달 얼마\n2:54 늦게 들면 몇 살에 같아지나\n4:44 받은 돈은 어디에 쌓이나\n6:03 생활비를 얼마나 메우나\n6:47 돌아가신 뒤, 그리고 세금·기초연금\n8:12 정리\n\n출처\n· 월지급금 예시(종신·정액형, 2026.03.01 기준, 부부 중 연소자, 일반주택): 한국주택금융공사 https://www.hf.go.kr/ko/sub03/sub03_01_01_02.do\n· 가입 조건(부부 중 1명 55세 이상·부부합산 공시가격 12억원 이하)·초기보증료 1.0%: 한국주택금융공사 '주택연금이란' https://www.hf.go.kr/ko/sub03/sub03_01_01_01.do\n· 가입자 사망 후 절차(배우자 승계·정산): 한국주택금융공사 https://www.hf.go.kr/ko/sub03/sub03_02_05_07.do\n· 2026년 3월 월지급금 인상·연보증료 0.95%: 금융위원회 보도자료(2026년 2월) https://www.fsc.go.kr/no010101/86211\n· 세제 혜택(재산세·등록면허세): 한국주택금융공사 https://www.hf.go.kr/ko/sub03/sub03_01_01_05.do · 자주하는 질문(소득 미포함·기초연금 등): https://www.hf.go.kr/ko/sub03/sub03_02_05_04.do\n· 노후 적정·최소 생활비: 국민연금연구원 제10차 국민노후보장패널 기초분석보고서(2024)\n계산 가정: '받은 돈 합이 같아지는 나이'는 공사 예시표 월지급금을 그대로 더한 값이고, 집값·금리가 그대로라는 가정이에요. 실제 금액은 감정평가와 가입 시점에 따라 달라집니다.\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이에요. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 정보 제공용이고, 가입하거나 미루라는 권유가 아니에요.\n썸네일 사진: 형길 장 / Pexels (https://www.pexels.com/photo/modern-multistory-building-with-windows-and-balconies-in-city-3736898/) (자르기·어둡게·글자 추가)\n영상 일부: Melike / Pexels (https://www.pexels.com/video/elegant-teacup-and-mirror-on-cozy-setting-38405960/)\n영상 일부: Melike / Pexels (https://www.pexels.com/video/sunlit-curtains-gently-sway-in-the-breeze-38781079/)\n영상 일부: Polina ⠀ / Pexels (https://www.pexels.com/video/a-person-writing-in-the-planner-6541138/)\n영상 일부: Artem Podrez / Pexels (https://www.pexels.com/video/back-view-of-woman-opening-curtain-6781559/)\n영상 일부: Kindel Media / Pexels (https://www.pexels.com/video/key-on-a-person-s-hand-7578842/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/a-person-sticking-a-key-in-a-doorknob-8292925/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/close-up-of-a-person-s-hand-holding-house-keys-8292929/)\n영상 일부: Carlos Arribas / Pexels (https://www.pexels.com/video/person-stirring-drink-946148/)\n영상 일부: https://kaboompics.com/ / Pexels (https://www.pexels.com/video/person-writing-on-a-notebook-using-a-pen-6326847/)\n영상 일부: Kampus Production / Pexels (https://www.pexels.com/video/a-person-carrying-a-grocery-basket-8420602/)\n영상 일부: Anastasia  Shuraeva / Pexels (https://www.pexels.com/video/a-couple-holding-their-hands-while-walking-8794903/)\n영상 일부: Greg Benson / Pexels (https://www.pexels.com/video/soft-sunlit-curtain-with-tree-shadows-35161057/)",
   "chapter_titles": [
     "예고",
     "누가 들 수 있나",
@@ -35,10 +35,43 @@
     "돌아가신 뒤, 그리고 세금·기초연금",
     "정리"
   ],
-  "chapters": [],
-  "chapters_note": "녹음(11/17 16:00 창)·렌더 뒤 장 시작 초로 채움 → desc_tpl {CHAPTERS}·{CAFE} 채워 desc",
-  "voice": "녹음 전 — Chirp 3 HD Charon 1.1(tts.json), editor 다시 서명(시한 11/17 12:00) 뒤 11/17 16:00 창",
-  "missing": 1,
+  "chapters": [
+    [
+      0,
+      "예고"
+    ],
+    [
+      37,
+      "누가 들 수 있나"
+    ],
+    [
+      87,
+      "내 집값·나이면 매달 얼마"
+    ],
+    [
+      174,
+      "늦게 들면 몇 살에 같아지나"
+    ],
+    [
+      285,
+      "받은 돈은 어디에 쌓이나"
+    ],
+    [
+      364,
+      "생활비를 얼마나 메우나"
+    ],
+    [
+      408,
+      "돌아가신 뒤, 그리고 세금·기초연금"
+    ],
+    [
+      492,
+      "정리"
+    ]
+  ],
+  "chapters_note": "jt1.json 장 카드 시작 프레임(11/17 PD jt1meta.py) — 렌더본 길이 551.5초",
+  "voice": "Chirp 3 HD Charon 1.1 · 165줄 · 552.8초 · 11/17 PD 1:4·2:8·4:6 다시 받음(readback)",
+  "missing": 0,
   "publishAt": "2026-11-20T11:30:00+09:00",
   "privacy": "private",
   "privacy_note": "예약 공개(private+publishAt) — 정해진 시각에 공개로 바뀜",

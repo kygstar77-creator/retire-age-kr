@@ -4324,7 +4324,7 @@
    "item": "bundil1117",
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-17 08:07",
-   "note": "firemap-meeting 2026-11-16 21:41: 관문 기한 12:40 · 짓는 것은 write-b(07:40·10:40 회차), 발행은 write 18:10 회차 · 관문 못 넘으면 write 새 비축으로 대체(미달 공개 금지) · firemap-write-b 2026-11-17 08:07: bundil1117 '일산 아파트 시세 2023년 바닥보다 더 내렸을까?'(부동산, 국토부 실거래 분당·일산동·일산서 4만 8,335건, 같은 평형 짝) 관문 통과(research_gate·bench·prepublish·readcheck 0·selfcheck 사실 0·aitell 8.9·auto 서명·교차검증 2회·이해 3차 9명) · slot.txt 2026-11-17 18 · 발행 회차는 S1 다시 받아 calc.py 숫자 같은지 볼 것"
+   "note": "firemap-meeting 2026-11-16 21:41: 관문 기한 12:40 · 짓는 것은 write-b(07:40·10:40 회차), 발행은 write 18:10 회차 · 관문 못 넘으면 write 새 비축으로 대체(미달 공개 금지) · firemap-write-b 2026-11-17 08:07: bundil1117 '일산 아파트 시세 2023년 바닥보다 더 내렸을까?'(부동산, 국토부 실거래 분당·일산동·일산서 4만 8,335건, 같은 평형 짝) 관문 통과(research_gate·bench·prepublish·readcheck 0·selfcheck 사실 0·aitell 8.9·auto 서명·교차검증 2회·이해 3차 9명) · slot.txt 2026-11-17 18 · 발행 회차는 S1 다시 받아 calc.py 숫자 같은지 볼 것 | firemap-write-b 2026-11-17 16:43: 발행 전 S1(9~11월 9개 달) 다시 받아 calc·calc2 다시 돌림 — 출력 diff 0, naverpost pending 막힘은 시각 전뿐 → write 18:10 회차는 바로 발행"
   },
   {
    "at": "2026-11-17 19:20",

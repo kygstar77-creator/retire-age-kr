@@ -4039,3 +4039,5 @@
 
 2026-11-17 16:29 · firemap-write · 16:10 칸 dongtan1116 발행 #442(verify OK 1599자·사진 3), 발행 날 국토부 실거래 다시 받아 본문 숫자 6곳·그림·표지 갱신 · 원문이 하루 새 바뀜(11월 신고 151→190), 낡은 숫자로 내지 않음
 2026-11-17 16:29 · firemap-write · firemap-video-producer SKILL에 beat start·mark·end 줄 추가 · selfloop 일감 1(11/16 15:11 회차 끝 기록 없이 죽음, 맥박 줄이 아예 없었음)
+
+2026-11-17 16:43 · firemap-write-b · 18:40 칸 bundil1117 발행 전 S1 다시 받아 숫자 확인(변화 없음), 새 글은 안 씀 · 칸이 이미 관문 통과로 차 있고 발행은 write 18:10 몫

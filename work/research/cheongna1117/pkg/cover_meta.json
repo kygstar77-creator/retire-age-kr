@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 매매 실거래 API(인천 28275 청라동·28290 9개 동) 2021.7~12월 vs 2026.6~10월 계약, calc_out.txt — 파이어맵 직접 계산",
+ "made_at": "2026-11-17",
+ "by": "research/cheongna1117/mkimg.py",
+ "out": "img/00.png",
+ "topic": "청라 아파트",
+ "num": "-14% · -17%",
+ "topic_px": 58,
+ "num_px": 44,
+ "follows": "경쟁 1 kyuseokworld/224477708235 표지(실거래 막대 차트)"
+}

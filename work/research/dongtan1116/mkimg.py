@@ -9,9 +9,9 @@ fm.fontManager.addfont(F + r'\pd500.ttf'); fm.fontManager.addfont(F + r'\pd700.t
 plt.rcParams['font.family'] = fm.FontProperties(fname=F + r'\pd500.ttf').get_name()
 def Bs(n): return fm.FontProperties(fname=F + r'\pd700.ttf', size=n)
 BLUE, LBLUE, INK, SUBC, ORG, GRY = '#1D4ED8', '#93C5FD', '#111827', '#6B7280', '#EA580C', '#94A3B8'
-SRC = '국토교통부 아파트 매매 실거래 · 화성시 동탄구(11/16 받음, 취소 거래 뺌) · 파이어맵 계산'
+SRC = '국토교통부 아파트 매매 실거래 · 화성시 동탄구(11/17 받음, 취소 거래 뺌) · 파이어맵 계산'
 ms = ['25.1','2','3','4','5','6','7','8','9','10','11','12','26.1','2','3','4','5','6','7','8','9','10']
-n = [235,359,524,420,503,876,385,347,578,1043,1064,693,961,775,964,953,1256,1913,153,139,246,353]
+n = [235,359,524,420,503,876,385,347,578,1043,1064,693,961,775,964,953,1256,1913,153,139,246,354]
 fig, ax = plt.subplots(figsize=(9, 6.6), dpi=100)
 cols = [GRY]*17 + [ORG] + [BLUE]*4
 bars = ax.bar(range(len(ms)), n, color=cols, width=0.7)
@@ -32,16 +32,16 @@ fig.subplots_adjust(top=0.84, bottom=0.1, left=0.08, right=0.98)
 fig.savefig('pkg/img/01.png', dpi=100); plt.close(fig)
 # 02 같은 집
 lab = ['2026년 6월\n→ 9~11월', '2026년 1~6월\n→ 7~11월', '1년 전 7~11월\n→ 올해 7~11월']
-v = [13.0, 22.2, 31.7]; pairs = [225, 269, 248]
+v = [13.5, 22.4]; pairs = [231, 273]; lab = lab[:2]
 fig, ax = plt.subplots(figsize=(9, 6.4), dpi=100)
 ax.bar(range(2), v, color=[ORG, BLUE], width=0.5)
 for i in range(2):
-    ax.text(i, v[i] + 0.8, f'+{v[i]:.0f}%', ha='center', fontproperties=Bs(20), color=INK)
+    ax.text(i, v[i] + 0.8, f'+{v[i]:g}%', ha='center', fontproperties=Bs(20), color=INK)
     ax.text(i, 1.2, f'{pairs[i]}곳', ha='center', fontproperties=Bs(12.5), color='white')
 ax.set_xticks(range(2)); ax.set_xticklabels(lab, fontsize=13); ax.set_yticks([]); ax.set_ylim(0, 27)
 for s in ('top', 'right', 'left'): ax.spines[s].set_visible(False)
 fig.text(0.04, 0.93, '같은 단지·같은 넓이 집, 규제 뒤 값은', fontproperties=Bs(22), color=INK)
-fig.text(0.04, 0.88, '6월과 9~11월에 모두 팔린 225곳 중 95%가 더 비싸게 팔림', fontsize=13.5, color=SUBC)
+fig.text(0.04, 0.88, '6월과 9~11월에 모두 팔린 231곳 중 95%가 더 비싸게 팔림', fontsize=13.5, color=SUBC)
 fig.text(0.04, 0.025, SRC, fontsize=10.5, color=SUBC)
 fig.subplots_adjust(top=0.82, bottom=0.14, left=0.04, right=0.98)
 fig.savefig('pkg/img/02.png', dpi=100); plt.close(fig)

@@ -38,6 +38,19 @@
     "url": "https://cafe.naver.com/firemap/441"
    },
    "note": "12:40 칸 coinyu1116 발행(12:38). 발행 날 원문 다시 확인: 조세소위 11/11 잠정 합의, 최종 의결 보도 없음 → 본문 그대로(출처 3곳 추가). verify OK 1881/1881자·사진 3/3. 확인 창 처리 실패 경고 났지만 URL·verify 정상. 블로그 없음(하루 상한·색인 문제). 개선: dongtan1116 slot.txt '2026-11-17 16' 추가(서명 밖) — 16:10 칸 전에 다른 회차가 당겨 올리지 못하게."
+  },
+  {
+   "hour": 15,
+   "ts": "16:29",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "동탄 아파트 토허제 넉 달, 값은 내렸을까?",
+    "url": "https://cafe.naver.com/firemap/442"
+   },
+   "note": "16:10 칸(편성 dongtan1116, 부동산). 발행 날 S1 국토부 실거래 2026-08~11 다시 받아 calc 다시 — 숫자 6곳·그림 02·표지 갱신, 출처 5곳 curl 200·문구 확인. 검증 경로: selfcheck(사실 0·말투 0)·readcheck 0·spoken 통과·research_check·prepublish_check 통과·editgate auto 재서명 f8aaf2cd(교차검증은 11/16 관문 때 실행, 이번엔 숫자만 바뀜). verify OK 1599/1599자·사진 3/3. 블로그: 하루 1편 규칙·대기 묶음 전부 보류라 안 올림. 개선: video-producer SKILL 맥박 줄 추가(worklist 1 닫음)."
   }
  ]
 }

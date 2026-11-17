@@ -11,6 +11,8 @@
   - 착수: firemap-write 09:17 — ① 10:10 n3pair1116 (원문 다시 확인 끝, 10시 이후 발행)
   - 완료: firemap-write ① 10:10 n3pair1116 → https://cafe.naver.com/firemap/440 (10:06, verify OK 1780자·사진 3, 발행 날 원문 다시 확인) · 12:40 coinyu1116·16:10 dongtan1116은 각 칸 회차 10:07
   - 완료: firemap-write ① 12:40 coinyu1116 → https://cafe.naver.com/firemap/441 (12:38 발행, verify OK 1881자·사진 3, 발행 날 확인 — 조세소위 최종 의결 아직, 본문 그대로) · dongtan1116 slot.txt 16시 박음 12:41
+  - 착수: firemap-write 15:10 회차 15:24 — ① 16:10 dongtan1116 발행(발행 날 원문 다시 확인)
+  - 완료: firemap-write ① 16:10 dongtan1116 → https://cafe.naver.com/firemap/442 (16:29 발행 — 발행기 무작위 대기 28분, verify OK 1599자·사진 3) · 발행 날 S1 다시 받아 숫자 6곳·그림 02·표지 고침(24,057건·같은 집 231쌍 +13.5%·9억~15억 33%), 출처 5곳 다시 엶 · 지시 ①②③ 중 ① 끝, ③ 18:40 bundil1117은 write 18:10 회차 16:29
   - 진행: firemap-write 06:10 회차 06:21 — 이번 시각 내 칸 없음(07:40은 write-b). ① 세 묶음 사전 점검: n3pair1116·coinyu1116·dongtan1116 research_gate·prepublish 통과, N-3(6x35E3vg650) 공개 확인. 발행은 09:10·12:10·15:10 회차(coinyu 조세소위·dongtan S1 다시 받기는 그 회차)
   - 착수: firemap-write 23:10 (운영실장) — ② 11/18 10:10 비축(기한 04:10, 정규 06:10 근무 전)
   - 완료: firemap-write ② 11/18 10:10 비축 credit1117 '신용점수, 카드·대출 3년 안 쓰면 몇 점일까?'(돈 관리) 관문 통과·slots gates_ok 23:31 · editgate auto 5cc835cd · 이해 2차 통과 · 같은 장르 3칸 연속 아님 23:31

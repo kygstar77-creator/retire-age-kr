@@ -4036,3 +4036,6 @@
 2026-11-17 14:52 · firemap-video-producer · JT-1 설명란에 firemap.kr 주택연금 안내 글(guide/housing-pension-reverse-mortgage) 줄 · 맞는 계산기 없고 주제 같은 안내 글이 200으로 열림(ytlong C9)
 2026-11-17 15:14 · firemap-editor · 완료: firemap-editor 15:10 회차 — de1pair1117(22:40)·bundil1117(18:40)·divsep1117·cheongna1117 편집 통과 서명(by firemap-editor, 사실표·calc_out 숫자 직접 대조 일치·aitell 8.9/2.9/1.1/2.5·frame·spoken 통과·고칠 곳 0) · H-5 script·say_v2 재서명(바뀐 3줄 script 108·127·131/say 65·80, F7' 7.23/9.65=75% 일치, 07:14 SKVIEW 자막 요청 해소) · 남은 1건: H-5 say 111행 '넓혀'가 not_spoken ban(→'넣어')인데 이미 녹음된 줄이라 안 고침, PD가 두 줄 재녹음할 때 같이 할지 판단 15:14 · 15:10 회차 요청 처리
 2026-11-17 15:17 · firemap-youtube-loop · JT-1 말 5줄 낱말만 바꿈(PD 받아쓰기 관문)·대본 심사 3명 7.40 통과, 사실 3줄 더 고침(1주택 조건·등록면허세 모순·받은 돈만 본 계산 한 줄) · 숫자 0 변경, 사실·권유 위험은 묻지 않고 고친다, 같은 재서명·재녹음 한 번에 묶어 시한 11/18 12:00 지킴 — 완료: JT-1 5줄+review.md 15:17
+
+2026-11-17 16:29 · firemap-write · 16:10 칸 dongtan1116 발행 #442(verify OK 1599자·사진 3), 발행 날 국토부 실거래 다시 받아 본문 숫자 6곳·그림·표지 갱신 · 원문이 하루 새 바뀜(11월 신고 151→190), 낡은 숫자로 내지 않음
+2026-11-17 16:29 · firemap-write · firemap-video-producer SKILL에 beat start·mark·end 줄 추가 · selfloop 일감 1(11/16 15:11 회차 끝 기록 없이 죽음, 맥박 줄이 아예 없었음)

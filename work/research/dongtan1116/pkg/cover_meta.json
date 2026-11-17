@@ -1,9 +1,9 @@
 {
- "made_at": "2026-11-16 14:08",
+ "made_at": "2026-11-17 15:25",
  "by": "work/cafecover.py",
  "out": "img\\00.png",
  "topic": "동탄 토허제 넉 달",
- "num": "같은 평형 13% 올라",
+ "num": "같은 평형 13.5% 올라",
  "sub": "거래는 6월의 10분의 1로",
  "label": "국토부 실거래",
  "src": "국토교통부 아파트 매매 실거래(화성시 동탄구) 2026.06 vs 2026.09~11 계약",
@@ -11,18 +11,18 @@
  "icon_license": "Lucide (lucide-react, ISC License)",
  "palette": "blue",
  "topic_px": 136,
- "num_px": 108,
+ "num_px": 104,
  "sub_px": 62,
  "board": [
+  "coinyu1116",
+  "n3pair1116",
+  "isa1116",
+  "gmpair1116",
+  "hidden1116",
+  "nodo1116",
   "semietf1116",
   "yujok1116",
   "rcut1116",
-  "mokpair1115",
-  "tdf1115",
-  "offbase1114",
-  "yejung1115",
-  "pentax1115",
-  "sav1115",
-  "exdiv1114"
+  "mokpair1115"
  ]
 }

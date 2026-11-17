@@ -1,0 +1,137 @@
+{
+ "stack": {
+  "key": "stack",
+  "title": "대출 잔액에 쌓이는 것",
+  "sub": null,
+  "chapter": "4",
+  "source": "주택금융공사 자주하는 질문 · 대출잔액 = 받은 돈 + 보증료 + 이자 · 그림은 모양만(금액 아님)",
+  "lines": [
+   {
+    "text": "쌓이는 건 매달 받은 돈, 보증료, 그리고 이자예요.",
+    "audio": "audio/jt-1/2738ca8c299835ee.wav",
+    "frames": 123,
+    "cap": null
+   },
+   {
+    "text": "이렇게 쌓인 빚을 대출 잔액이라고 불러요.",
+    "audio": "audio/jt-1/1c018deb197c1ab6.wav",
+    "frames": 87,
+    "cap": null
+   },
+   {
+    "text": "보증료는 가입할 때 집값의 1%를 한 번 냅니다.",
+    "audio": "audio/jt-1/9344a9b51d0e8fc0.wav",
+    "frames": 102,
+    "cap": null
+   },
+   {
+    "text": "그 뒤로는 매년 잔액의 0.95%가 보증료로 붙어요.",
+    "audio": "audio/jt-1/7167ff7a158c05d3.wav",
+    "frames": 126,
+    "cap": null
+   },
+   {
+    "text": "5억 집이면 처음 보증료가 500만원이에요.",
+    "audio": "audio/jt-1/e4c1d0bfb04a53dc.wav",
+    "frames": 72,
+    "cap": null
+   }
+  ],
+  "frames": 510,
+  "data": {
+   "seed": "jt1s",
+   "bars": 6,
+   "names": {
+    "pay": "받은 돈",
+    "fee": "보증료",
+    "int": "이자"
+   },
+   "build": [
+    0.0,
+    1.6
+   ],
+   "focus": [
+    {
+     "layer": null,
+     "at": 0
+    },
+    {
+     "layer": "fee",
+     "at": 2
+    }
+   ],
+   "balance": {
+    "text": "대출 잔액",
+    "at": 1.2
+   },
+   "first": {
+    "text": "500만원",
+    "at": 4.15
+   },
+   "wobble": null,
+   "foot": null
+  }
+ },
+ "rate": {
+  "key": "rate",
+  "title": "이자도 잔액에 붙어요",
+  "sub": null,
+  "chapter": "4",
+  "source": "주택금융공사 자주하는 질문 · 대출잔액 = 받은 돈 + 보증료 + 이자 · 그림은 모양만(금액 아님)",
+  "lines": [
+   {
+    "text": "이자도 매달 갚지 않습니다.",
+    "audio": "audio/jt-1/c2552f5a70cb90c3.wav",
+    "frames": 48,
+    "cap": null
+   },
+   {
+    "text": "잔액에 붙어서, 나중에 한꺼번에 정산해요.",
+    "audio": "audio/jt-1/42deb75e3852518a.wav",
+    "frames": 91,
+    "cap": null
+   },
+   {
+    "text": "금리는 은행들이 대출 금리를 정할 때 쓰는 코픽스라는 기준금리에, 0.85%를 더해요.",
+    "audio": "audio/jt-1/a782e203efdb59b1.wav",
+    "frames": 179,
+    "cap": null
+   },
+   {
+    "text": "기준금리가 6개월마다 바뀌니까, 이자도 같이 바뀌어요.",
+    "audio": "audio/jt-1/d180bd15dff7f846.wav",
+    "frames": 88,
+    "cap": null
+   }
+  ],
+  "frames": 406,
+  "data": {
+   "seed": "jt1r",
+   "bars": 6,
+   "names": {
+    "pay": "받은 돈",
+    "fee": "보증료",
+    "int": "이자"
+   },
+   "build": null,
+   "focus": [
+    {
+     "layer": "int",
+     "at": 0
+    }
+   ],
+   "balance": {
+    "text": "대출 잔액",
+    "at": -1
+   },
+   "first": null,
+   "wobble": {
+    "at": 3.1
+   },
+   "foot": {
+    "text": "현금으로 내지 않고 잔액에 더해요",
+    "at": 1.2
+   }
+  }
+ }
+}

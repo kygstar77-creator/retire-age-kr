@@ -12,3 +12,16 @@ shot_plan 3장 줄 '받은 돈 합 두 선이 그려지며 93세에서 만나는
 - 미리보기: motion_preview/jt1_race.mp4(31.5초, 어림 길이) · 줄별 스틸 board_race.png·board_gap.png(jt1_st/) · U5 최장 6.0초·8초 넘는 곳 0 · UI 상자 0/9.
 - 쓰는 법(PD, 11/17 녹음 뒤): ① `py -3.12 work/research/longform/ep/JT-1/motion_preview/jt1props.py`(voice.json 있으면 그 길이로, 줄 바뀌면 assert로 멈춤 → cut() 시작·끝 문구만 고침) ② JT1.tsx 장면 kind 'race'·'gap'에 `<SumRace {...s.data} beats={tallyStarts(s.lines)} />`(TallyFrame 자식, title·source는 jt1_motion.json) ③ 렌더 뒤 그 구간 lfrender screen·overlap. 부품 안 글자는 screen_text 밖 → 편집 서명 때 jt1_st/ 스틸을 같이 본다. 미리보기 렌더는 `jt1render.py`(작은 public — C: 남은 자리 8GB, public 11GB 통째 복사는 ENOSPC).
 - 심사(motion_preview/review_jt1.md): 제미나이 race 9·gap 9 / Claude 새 심사관 1차 7·6 → 고침 → 2차 8·7 → 마지막 지적(뒤 칸 글자 자리) 고침. 통과선 6.
+
+# JT-1 4장 — 쌓이는 잔액(StackGrow) (2026-11-17 motion)
+
+지금 4장 두 장면(jt1.json 37번 510프레임 17초 · 40번 406프레임 13.5초)은 같은 정지 판 jt1_stack.png에 1.00→1.04 다가가기만 있다. 같은 판을 움직이는 부품으로 만들어 미리보기를 둔다. **JT-1 본편에 넣을지는 PD가 고른다** — 본편 렌더가 막 다시 걸릴 참이고(관문 11/19 11:30) 부품 안 글자는 편집 서명 밖이라, 넣으면 editor 스틸 확인이 한 번 더 든다. 안 넣으면 다음 대출·연금 편(LTC-1·주택연금 쇼츠)에 쓴다.
+
+| 장면 | 말 줄 | 무엇이 움직이나 |
+|---|---|---|
+| stack '대출 잔액에 쌓이는 것' | '쌓이는 건 매달 받은 돈, 보증료, 그리고 이자예요' ~ '5억 집이면 처음 보증료가 500만원이에요' 5줄 | 막대 6개가 왼쪽부터 아래에서 차오름(층 순서 받은 돈 → 보증료 → 이자, 이름표가 층이 처음 찰 때 옆에서 찍힘) → 2줄 '대출 잔액' 마지막 막대 세로 괄호 → 3·4줄 보증료 층만 진하게(나머지 0.3) → 5줄 첫 막대 보증료 칸 손 동그라미 + 주황 '500만원' |
+| rate '이자도 잔액에 붙어요' | '이자도 매달 갚지 않습니다' ~ '이자도 같이 바뀌어요' 4줄 | 막대 다 선 채로 이자 층만 진하게 → 2줄 주황 아래 줄 '현금으로 내지 않고 잔액에 더해요'(정지 판 그 문구) → 4줄 '6개월마다 바뀌니까'에서 이자 층 높이가 ±9% 천천히 출렁 + '↕ 변동' |
+
+- 숫자: '500만원' 하나(calc_out §4 '5억 → 500만원', 대본 5줄 같은 말) — jt1stack.py가 assert. 막대 높이는 금액이 아님(출처 줄 '그림은 모양만(금액 아님)'), 1%·0.95%·0.85%는 말로만.
+- 반복 방지: SumRace와 들어오는 법이 다름(바늘 걷기 vs 아래에서 차오름), seed로 x 여백·면 결 기울기·이자 층 두께 비율.
+- 미리보기: **아직 없음**(11/17 12:20 — PC 빈 메모리 0.65GB·커밋 25.8/29.3GB에서 세 번 다 실패: 1회 프레임은 다 그렸으나 C: Temp 이어붙이기 폴더가 사라짐, 2·3회 브라우저 연결 25초 초과·시간 초과). 다음 회차 메모리 2GB↑일 때 `TEMP=D:/fm_render_tmp/motion1117 py -3.12 stackrender.py` → jt1_stack.mp4·board_stack.png·board_rate.png·U5 → judge_stack.py(제미나이)·새 심사관. tsc 새 오류 0 · props jt1_stack_motion.json(jt1stack.py)

@@ -28,6 +28,7 @@ import {DaysOver, DaysOverProps} from '../DaysOver';
 import {CrossOver, CrossOverProps} from '../CrossOver';
 import {SameDirDots, SameDirDotsProps} from '../SameDirDots';
 import {SumRace, SumRaceProps} from '../SumRace';
+import {StackGrow, StackGrowProps} from '../StackGrow';
 
 type P = {scene: RScene; zoom: ZoomOutOpenProps};
 const OpenZoom: React.FC<P> = ({scene, zoom}) => (
@@ -164,6 +165,15 @@ const JT1Motion: React.FC<P18> = ({race, gap}) => (
   </Series>
 );
 
+// JT-1 4장 쌓이는 잔액(11/17 motion) — stack(쌓이는 것 5줄) · rate(이자 4줄)
+type P19 = {stack: V3S<Omit<StackGrowProps, 'beats'>>; rate: V3S<Omit<StackGrowProps, 'beats'>>};
+const JT1Stack: React.FC<P19> = ({stack, rate}) => (
+  <Series>
+    <Series.Sequence durationInFrames={stack.frames}>{v3Frame(stack, <StackGrow {...stack.data} beats={tallyStarts(stack.lines)} />)}</Series.Sequence>
+    <Series.Sequence durationInFrames={rate.frames}>{v3Frame(rate, <StackGrow {...rate.data} beats={tallyStarts(rate.lines)} />)}</Series.Sequence>
+  </Series>
+);
+
 // K-1 움직이는 판 셋(11/3 motion) — over DaysOver · cross CrossOver · dots SameDirDots
 type P17 = {over: V3S<Omit<DaysOverProps, 'beats'>>; cross: V3S<Omit<CrossOverProps, 'beats'>>; dots: V3S<Omit<SameDirDotsProps, 'beats'>>};
 const K1Motion: React.FC<P17> = ({over, cross, dots}) => (
@@ -230,6 +240,9 @@ export const PreviewRoot: React.FC = () => (
   <Composition id="JT1Motion" component={JT1Motion as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => { const q = props as unknown as P18; return {durationInFrames: q.race.frames + q.gap.frames}; }} />
+  <Composition id="JT1Stack" component={JT1Stack as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => { const q = props as unknown as P19; return {durationInFrames: q.stack.frames + q.rate.frames}; }} />
   <Composition id="K1Motion" component={K1Motion as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => { const q = props as unknown as P17; return {durationInFrames: q.over.frames + q.cross.frames + q.dots.frames}; }} />

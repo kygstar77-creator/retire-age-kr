@@ -145,3 +145,8 @@
 - props: `from·to(나이)·ticks·tickLabel·ageTicks·a{name,start,monthly}·b{…}·sweep[줄,줄]·missed·years·meet·slices[{age,text,at}]·after` — at은 줄 번호(소수=줄 안 비율).
 - 걷는 나이 바늘이 두 누적 선을 그리고(늦게 든 쪽은 시작 나이까지 0), 세로 괄호(못 받은 돈)·가로 괄호(메우는 햇수)·교점 손 동그라미·중간 나이 차이·교점 뒤 연주황. 교점은 두 직선 식(meetAge)으로 계산, 지어내지 않음.
 - 국민연금 조기·연기수령, 연금 받는 나이 비교에도 그대로 씀. 반복 방지: seed로 왼쪽 여백·면 결 기울기, 편마다 선 이름·괄호 글자 바꾸기.
+
+## 쌓이는 잔액 막대(StackGrow) — '대출 잔액에 무엇이 쌓이나'(11/17 JT-1 4장)
+- props: `seed·bars(4~8)·names{pay,fee,int}·build[줄,줄]|null·focus[{layer|null,at}]·balance{text,at}|null·first{text,at}|null·wobble{at}|null·foot{text,at}|null` — at은 줄 번호(소수=줄 안 비율, 음수=처음부터).
+- 금액 축 없는 모양 그림: 막대가 왼쪽부터 아래에서 차오르고 층(받은 돈 → 보증료 → 이자, 이자는 뒤로 갈수록 두꺼움)이 쌓임 · focus 층만 진하게 · 마지막 막대 '대출 잔액' 세로 괄호 · first = 첫 막대 보증료 칸 손 동그라미 + 주황 값 · wobble = 이자 층 출렁 + '↕ 변동' · foot = 판 아래 주황 한 줄.
+- 숫자 글자는 first.text 하나만(편 props 스크립트가 calc assert). 출처 줄에 '그림은 모양만(금액 아님)'을 꼭 넣는다. 주택연금·역모기지·마이너스 통장·장기요양 본인부담 누적처럼 '현금 대신 빚에 쌓이는' 이야기에 씀. 반복 방지: seed로 x 여백·면 결 기울기·이자 층 비율.

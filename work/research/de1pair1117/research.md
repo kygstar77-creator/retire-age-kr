@@ -6,8 +6,8 @@
 - 짝 영상: 쇼츠 yX3f9ESewcg(11/17 19:20 공개 예정, cardshorts/de1s_basket/upload.json) — 질문 '둘 다 담으면 나눠 담은 걸까' 하나. n3pair1116(연봉 실수령액)·gmpair1116(광명 시세)과 다른 질문
 
 ## 원문
-- S1 찰스 슈왑 SCHD 상품 페이지·보유 종목 파일(Export All Holdings, As-Of 2026-11-13, 102줄·Sector 칸) 2026-11-17 받음 https://www.schwabassetmanagement.com/products/schd → raw/schwab_SCHD_holdings_20261117.csv · raw/SCHD_page_20261117.txt('Total Expense Ratio 0.060%')
-- S2 네이버 증권 ETF 분석 TIGER 미국배당다우존스(458730) 2026-11-17 받음(기준 2026.11.13) https://m.stock.naver.com/api/stock/458730/etfAnalysis → raw/etf_458730_20261117.json — sectorPortfolioList·etfTop10MajorConstituentAssets·navPerformanceList·totalFee·dividend·etfSummary('환헤지를 하지 않으므로 기초지수의 원화환산 수익률에 연동')
+- S1 찰스 슈왑 SCHD 상품 페이지·보유 종목 파일(Export All Holdings, As-Of 2026-11-13, 102줄·Sector 칸) 2026-11-17 받음 https://www.schwabassetmanagement.com/products/schd → raw/schwab_SCHD_holdings_20261117.csv · raw/SCHD_page_20261117.txt('Total Expense Ratio 0.060%') · 2026-11-19 다시 받음(As-Of 2026-11-17) raw/schwab_SCHD_holdings_20261119.csv
+- S2 네이버 증권 ETF 분석 TIGER 미국배당다우존스(458730) 2026-11-17 받음(기준 2026.11.13) https://m.stock.naver.com/api/stock/458730/etfAnalysis → raw/etf_458730_20261117.json — sectorPortfolioList·etfTop10MajorConstituentAssets·navPerformanceList·totalFee·dividend·etfSummary('환헤지를 하지 않으므로 기초지수의 원화환산 수익률에 연동') · 2026-11-19 다시 받음(기준 2026.11.17) raw/etf_*_20261119.json
 - S3 같은 API SOL(446720)·ACE(402970)·KODEX(489250) 2026-11-17 받음 https://m.stock.naver.com/api/stock/446720/etfAnalysis · https://m.stock.naver.com/api/stock/402970/etfAnalysis · https://m.stock.naver.com/api/stock/489250/etfAnalysis → raw/etf_*_20261117.json (ACE etfSummary '10년 연속 배당금을 지급한 미국상장 종목 중 우량 펀더멘털 … 상위 100종')
 - S4 야후 파이낸스 SCHD 분배 기록 1년 2026-11-17 받음 https://query1.finance.yahoo.com/v8/finance/chart/SCHD?range=1y&interval=1mo&events=div → raw/yahoo_SCHD_div_20261117.json (2025-12·2026-03·06·09 네 번)
 - S5 파이어맵 카페 #245 'SCHD 배당금 ISA나 연금저축에서 받으면 미국 세금 얼마나 빠질까'(schdacct1007, 계좌·세금) https://cafe.naver.com/firemap/245
@@ -59,12 +59,12 @@
 |---|---|---|
 | 다섯 상품 같은 지수 'Dow Jones U.S. Dividend 100' | etfBaseIndex 'Dow Jones U.S. Dividend 100 Price Return Index' 4종 · SCHD 상품 페이지 | S2 https://m.stock.naver.com/api/stock/458730/etfAnalysis · S1 https://www.schwabassetmanagement.com/products/schd |
 | 10년 넘게 배당을 준 미국 회사 중 재무 탄탄한 100곳 | ACE '10년 연속 배당금을 지급한 미국상장 종목 중 우량 펀더멘털 … 상위 100종' | S3 https://m.stock.naver.com/api/stock/402970/etfAnalysis |
-| SCHD 보유 종목 102줄, 11월 13일 기준 | As-Of-Date 2026-11-13, 102줄 | S1 https://www.schwabassetmanagement.com/products/schd |
+| SCHD 보유 종목 102줄, 11월 17일 기준 | As-Of-Date 2026-11-17, 102줄(11/19 다시 받음) | S1 https://www.schwabassetmanagement.com/products/schd |
 | 국내 4종이 주식 수로 가장 많이 담은 10종목 포드·컴캐스트·버라이즌, 열 곳 모두 SCHD에도 | etfTop10MajorConstituentAssets 4종 같음 · SCHD 파일에 10/10 | S2 https://m.stock.naver.com/api/stock/458730/etfAnalysis · S1 · calc_out.txt |
-| 필수소비재 SCHD 20.4%, 국내 4종 20.1~20.2% | 20.39 / 20.11~20.16 | S1 · S2 https://m.stock.naver.com/api/stock/458730/etfAnalysis · calc_out.txt |
-| 세 업종 합 SCHD 54.1%, 국내 53.5~53.7% | 54.09 / 53.53~53.66 | S1 · S3 https://m.stock.naver.com/api/stock/446720/etfAnalysis · calc_out.txt |
-| 업종 10개 모두 차이 0.3%p 안, 가장 큰 IT 0.29%p | 업종별 최대 차 IT 12.10 vs 12.35~12.39 → 0.29 | S1 · S2 · calc_out.txt |
-| 국내 4종 1년 수익률 23.4~23.7%, 차이 0.4%p 안 | navPerformanceList Y1 ACE 23.55·SOL 23.37·TIGER 23.42·KODEX 23.74 (차 0.37) | S2 https://m.stock.naver.com/api/stock/458730/etfAnalysis · S3 https://m.stock.naver.com/api/stock/489250/etfAnalysis |
+| 필수소비재 SCHD 20.7%, 국내 4종 20.6% | 20.67 / 20.57~20.62 (11/17 기준) | S1 · S2 https://m.stock.naver.com/api/stock/458730/etfAnalysis · calc_out.txt |
+| 세 업종 합 SCHD 54.1%, 국내 53.9~54.1% | 54.12 / 53.94~54.12 (11/17 기준) | S1 · S3 https://m.stock.naver.com/api/stock/446720/etfAnalysis · calc_out.txt |
+| 업종 10개 모두 차이 0.3%p 안 | 업종별 최대 차 0.23(산업재 11.97 vs 11.74, 금융 8.91 vs 8.68) (11/17 기준) | S1 · S2 · calc_out.txt |
+| 국내 4종 1년 수익률 23.9~24.2%, 차이 0.4%p 안 | navPerformanceList Y1 ACE 24.04·SOL 23.86·TIGER 23.90·KODEX 24.22 (차 0.36, 11/17 기준) | S2 https://m.stock.naver.com/api/stock/458730/etfAnalysis · S3 https://m.stock.naver.com/api/stock/489250/etfAnalysis |
 | TIGER 환헤지 안 함, 원화로 바꾼 지수 수익률 따라감 | etfSummary '환헤지를 하지 않으므로 기초지수의 원화환산 수익률에 연동' | S2 https://m.stock.naver.com/api/stock/458730/etfAnalysis |
 | SCHD 지난 1년 3·6·9·12월 네 번 | 분배 2025-12·2026-03·06·09 | S4 https://query1.finance.yahoo.com/v8/finance/chart/SCHD?range=1y&interval=1mo&events=div |
 | 국내 4종 올해 10~11번 분배 | dividendCountThisYear TIGER·SOL 10, ACE·KODEX 11 | S2 · S3 https://m.stock.naver.com/api/stock/402970/etfAnalysis |
@@ -78,3 +78,8 @@
 - 바뀐 것: 쇼츠(11/13 네이버) 국내 4종 세 업종 합 53.32~53.56% → 11/17 받은 값(기준 11/13) 53.53~53.66%, 에너지 14.69~14.76 → 14.94~14.97 · SCHD 세 업종 합 55.0%(10/15 보유) → 54.09%(11/13 보유) — 쇼츠 '절반 넘게'는 그대로 맞음
 - 새로 찾은 것: SCHD 11/13 보유로 업종 10개 맞댐(최대 차 0.29%p) · 국내 4종 1년 수익률 차 0.37%p · 국내 상위 10종목 SCHD에 10/10
 - 22:40 발행 회차: 쇼츠 yX3f9ESewcg 공개(19:20) 확인 뒤 발행, 네이버 기준일이 11/14 이후로 바뀌었으면 calc.py 다시 돌려 숫자 확인
+- 2026-11-19 07:5x firemap-write-b(발행 당일 다시 확인 — 11/17 22:40 칸 PC 꺼짐으로 못 나가 11/19 07:40 칸)
+- 다시 연 주소: https://www.schwabassetmanagement.com/products/schd (보유 파일 다시 받음, As-Of 2026-11-17) · https://m.stock.naver.com/api/stock/458730/etfAnalysis · https://m.stock.naver.com/api/stock/446720/etfAnalysis · https://m.stock.naver.com/api/stock/402970/etfAnalysis · https://m.stock.naver.com/api/stock/489250/etfAnalysis · https://query1.finance.yahoo.com/v8/finance/chart/SCHD?range=1y&interval=1mo&events=div · https://cafe.naver.com/firemap/245
+- 기준일: 업종 비중 2026-11-17(SCHD 슈왑 As-Of · 네이버 기준) · 1년 수익률 2026-11-17 · 조회 2026-11-19
+- 바뀐 것: 필수소비재 SCHD 20.39→20.67, 국내 20.11~20.16→20.57~20.62 · 세 업종 합 SCHD 54.09→54.12, 국내 53.53~53.66→53.94~54.12 · 업종별 최대 차 0.29(IT)→0.23(산업재·금융) · 1년 NAV 23.37~23.74→23.86~24.22(차 0.37→0.36) · 분배 횟수(10·11)·SCHD 분배 네 번·총보수 0.060%·0.01 그대로 — 본문 c00·c02·c03·c05와 그림 00(기준일)·01·02를 11/17 값으로 고침, '0.3%p 안'·'0.4%p 안'·'절반 넘게' 결론 그대로
+- 새로 찾은 것: 11/17 보유에선 IT 비중이 SCHD 11.95 · 국내 11.87~11.91로 11/13(국내가 더 높음)과 순서가 바뀜 — 업종 차가 날마다 0.1~0.3%p 안에서 오르내림(calc_out.txt ↔ calc_out_1119.txt)

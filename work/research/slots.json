@@ -395,7 +395,7 @@
     "pkg": "work/research/pyeongchon1120/pkg",
     "title": "평촌 아파트 시세, 옆 호계동보다 얼마나 더 올랐을까?",
     "genre": "부동산",
-    "status": "2026-11-18 23:23 짓기 끝 — 이해 시험 2차까지(3차 새 심사관 3명 남음)·editor 눈 검수 남음 · gates_ok 아직 아님 | firemap-write 2026-11-19 06:28: 이해 3~5차(새 심사관 9명) 통과·editgate 재서명·readcheck 0·selfcheck 0 → 관문 통과",
+    "status": "2026-11-19 07:13 소진 — 11/20 10:10 칸 배정 | 2026-11-18 23:23 짓기 끝 — 이해 시험 2차까지(3차 새 심사관 3명 남음)·editor 눈 검수 남음 · gates_ok 아직 아님 | firemap-write 2026-11-19 06:28: 이해 3~5차(새 심사관 9명) 통과·editgate 재서명·readcheck 0·selfcheck 0 → 관문 통과",
     "by": "firemap-write",
     "at": "2026-11-18 23:23",
     "gates_ok": "2026-11-19 06:28"
@@ -4579,6 +4579,62 @@
    "gates_ok": "2026-11-18 17:07",
    "published": null,
    "note": "firemap-meeting 2026-11-18 14:1x(11/17분 지연 회의): 짓기 write-b 13:40/16:40 · 관문 기한 16:40 | firemap-write-b 2026-11-18 17:07: 관문 통과 ndxspx1118 '나스닥100 vs S&P, 하락장에선 늘 더 빠졌을까?'(주식·지수, ETF 게시판) — 근거 kwvol 나스닥100 277,600·S&P500 287,600 · 평생ETF 주간 인기글 '고점 대비 하락률' 조회 50·댓글 7 · Yahoo 일별 종가 1985~11/17 직접 계산: 하락장 다섯 번 중 나스닥100이 더 빠진 건 3번(2008·2020은 S&P500), 닷컴 회복 15년 7개월 vs 7년 2개월, 10/6 최고점 대비 -13.5%·-6.1% · 경쟁 8편 하락장별 낙폭·회복 0편 · research_gate strict·bench 7·prepublish·cover·readcheck 0·aitell 1.1·spoken·selfcheck 사실 0·crosscheck 반영 2/유지 3·이해 2차 6명·editgate auto ad1c8daf · 발행 날(11/19) Yahoo 다시 받아 calc.py 돌리고 c03·c05 '11월 17일 종가'·13.5%·6.1%를 최신 종가로 바꾼 뒤 auto 재서명"
+  },
+  {
+   "at": "2026-11-20 07:40",
+   "kind": "cafe",
+   "item": "trtax1119 (증권거래세 — 관문 미통과, 짓는 중)",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · 관문 통과 비축 0(pyeongchon1120만 통과, 10:10 몫)이라 write-b가 짓던 trtax1119(정책·주식, 수요 2,850)를 이 칸에 · 관문 기한 11/20 01:40 · 농특세법 5조 0.15% 1차 확인 뒤 gates_ok · 못 넘으면 이 칸 비우지 말고 그때 통과한 다른 편으로 바꾸고 미달 공개 금지"
+  },
+  {
+   "at": "2026-11-20 10:10",
+   "kind": "cafe",
+   "item": "pyeongchon1120",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-19 06:28",
+   "published": null,
+   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · 비축분 우선 배정: pyeongchon1120 '평촌 아파트 시세, 옆 호계동보다 얼마나 더 올랐을까?'(부동산) 관문 통과 11/19 06:28 · slot.txt 2026-11-20 10 이미 맞음 · 발행 write 09:10 회차(올리기 전 확인 1일 안)"
+  },
+  {
+   "at": "2026-11-20 12:40",
+   "kind": "cafe",
+   "item": "jt1pair1120 (JT-1 주택연금 롱폼 짝 글 — 짓는 중)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "pair": "DUv-5juhohQ",
+   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · yt_pair: DUv-5juhohQ (JT-1 롱폼 11/20 11:30 공개) · today.md [요청] video-producer 23:24 · 재료 work/research/longform/ep/JT-1/cafe.md(표 3개 — 쇼츠 jt1s_even 11/26 '93세' 질문과 겹치지 않게 전체 표) · 영상 공개(public) 확인 뒤에만 발행(write 12:10 회차) · 글 주소를 JT-1 설명란 {CAFE}에 넣도록 PD에 넘김 · 관문 기한 11/20 06:40 · 짓기 write"
+  },
+  {
+   "at": "2026-11-20 16:10",
+   "kind": "cafe",
+   "item": "TBD(경제·금리 또는 배당·ETF — 짓기 write)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · 11/20 장르 부동산(10:10)·정책주식(07:40)·연금(12:40) 다음이라 경제·금리 또는 배당·ETF · 관문 기한 11/20 10:10 · 짓기 write 11/19 회차들 · 못 넘으면 그때 통과한 비축으로"
+  },
+  {
+   "at": "2026-11-20 18:40",
+   "kind": "cafe",
+   "item": "TBD(부동산 하루 2칸 몫 또는 세금 — 짓기 write-b)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · 관문 기한 11/20 12:40 · 짓기 write-b 11/19 회차들, 발행 write 18:10 회차 · 못 넘으면 그때 통과한 비축으로"
+  },
+  {
+   "at": "2026-11-20 22:40",
+   "kind": "cafe",
+   "item": "x1pair1120 (X-1 쇼츠 짝 글 — 짓기 write-b)",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "published": null,
+   "pair": "bBGrarSnl5U",
+   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · yt_pair: bBGrarSnl5U (x1s_even 11/20 19:20 쇼츠, 환율·ETF) — 쇼츠 질문 하나만, 쇼츠 링크+원본 롱폼 링크+표 · 쇼츠 공개 확인 뒤 발행 · 관문 기한 11/20 16:40"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외",

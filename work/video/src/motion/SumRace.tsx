@@ -61,6 +61,8 @@ export const SumRace: React.FC<SumRaceProps> = (p) => {
   const xsA = ages(needle), xsB = xsA;
   const peak = p.b.start;   // 차가 가장 큰 나이(= b 시작)
   const nameO = g(f, at(p.sweep ? p.sweep[0] : 0) + 10, 12);
+  // 11/18 PD(JT-1 겹침 검사 3:18 '70세' 눈금 ← '70세에 든 쪽'): race에서 늦게 든 쪽 선이 아직 바닥(0)이면 이름표가 바닥선 아래 나이 눈금에 앉았다 → 바닥선 위로 올리고, 먼저 든 쪽 이름표는 그보다 56px 위
+  const bTop = needle < cross ? Math.min(Y(vB(needle)) + 8, base - 54) : Y(vB(needle)) - 70;
   return (
     <div style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080, transform: `scale(${push})`, transformOrigin: '45% 60%'}}>
       <svg style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080}}>
@@ -95,8 +97,8 @@ export const SumRace: React.FC<SumRaceProps> = (p) => {
       {p.ticks.map((tk) => <div key={tk.v} style={lab({left: X0 - 150, top: Y(tk.v) - 17, width: 120, textAlign: 'right', fontWeight: 500, fontSize: 30, color: T.ink3, opacity: g(f, 4, 12) * (1 - L)})}>{tk.text}</div>)}
       {p.ageTicks.map((a) => <div key={a} style={lab({left: X(a) - 70, top: YB + 14, width: 140, textAlign: 'center', fontWeight: a === p.a.start || a === p.b.start ? 800 : 500, fontSize: 32, color: a === p.a.start || a === p.b.start ? T.ink : T.ink3, opacity: g(f, 6, 12)})}>{a}세</div>)}
       {/* 선 이름: race는 바늘 끝, gap은 왼쪽 위(언덕)·바닥선 왼쪽 */}
-      <div style={lab({left: (1 - L) * (X(needle) + 24) + L * (X(peak) + 30), top: (1 - L) * (Y(vA(needle)) - (needle < cross ? 66 : -14)) + L * (Y(vA(peak)) - 70), fontWeight: 800, fontSize: 40, color: T.ink, opacity: nameO * (1 - 0.6 * mO * L)})}>{p.a.name}</div>
-      <div style={lab({left: (1 - L) * (X(needle) + 24) + L * (X0 + 10), top: (1 - L) * (Y(vB(needle)) + (needle < cross ? 8 : -70)) + L * (base + 14), fontWeight: 800, fontSize: 40, color: T.ink2, opacity: nameO})}>{p.b.name}</div>
+      <div style={lab({left: (1 - L) * (X(needle) + 24) + L * (X(peak) + 30), top: (1 - L) * (needle < cross ? Math.min(Y(vA(needle)) - 66, bTop - 56) : Y(vA(needle)) + 14) + L * (Y(vA(peak)) - 70), fontWeight: 800, fontSize: 40, color: T.ink, opacity: nameO * (1 - 0.6 * mO * L)})}>{p.a.name}</div>
+      <div style={lab({left: (1 - L) * (X(needle) + 24) + L * (X0 + 10), top: (1 - L) * bTop + L * (base + 14), fontWeight: 800, fontSize: 40, color: T.ink2, opacity: nameO})}>{p.b.name}</div>
       {p.missed ? <div style={lab({left: (1 - L) * (X0 - 170) + L * (X(peak) - 440), top: (1 - L) * (Y(vA(peak)) - 250) + L * (Y(vA(peak)) - 26), width: (1 - L) * 900 + L * 410, textAlign: L > 0.5 ? 'right' : 'left', fontWeight: 800, fontSize: 46, color: T.ink, opacity: mO * (1 - 0.5 * g(f, at(p.slices[0]?.at ?? 1e6), 12))})}>{p.missed.text}</div> : null}
       {p.years ? <div style={lab({left: (X(p.b.start) + cx) / 2 - 200, top: YB + 80, width: 400, textAlign: 'center', fontWeight: 800, fontSize: 48, color: T.ink, opacity: yO})}>{p.years.text}</div> : null}
       <div style={lab({left: X(needle) - 60, top: Y(vA(needle)) - 190, width: 120, textAlign: 'center', fontWeight: 900, fontSize: 84, color: T.ink2, opacity: qO})}>?</div>

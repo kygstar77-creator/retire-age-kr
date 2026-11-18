@@ -33,7 +33,7 @@
 [scenes.6.lines.0.text] 나이는 부부 중 한 사람만 55세 이상이면 됩니다.
 [scenes.6.lines.1.text] 집값은 부부가 가진 집을 다 더한 공시가격으로 봐요.
 [scenes.6.lines.2.text] 공시가격은 나라가 세금을 매길 때 쓰는 집값이에요.
-[scenes.6.lines.3.text] 그 합이 12억 이하여야 합니다.
+[scenes.6.lines.3.text] 합친 공시가격이 12억 원 이하여야 합니다.
 [scenes.6.lines.4.text] 집이 두 채여도, 합한 가격이 12억 안에 들었다면 가입할 수 있어요.
 [scenes.6.lines.5.text] 부부 공동 명의 집도 됩니다.
 [scenes.6.data.license] 파이어맵 자체 제작 판(출처는 판 안)
@@ -41,7 +41,7 @@
 [scenes.7.data.license] Pexels 8292925 무료(RDNE Stock project)
 [scenes.7.data.say] 실제로 사는 집
 [scenes.7.data.side] left
-[scenes.8.lines.0.text] 다만 2026년 6월부터는, 입원이나 요양 때문에 집을 비워도 살아야 하는 의무를 면제해 줘요.
+[scenes.8.lines.0.text] 다만 2026년 6월부터는, 집이 한 채뿐이면 입원이나 요양 때문에 집을 비워도 살아야 하는 의무를 면제해 줘요.
 [scenes.8.lines.1.text] 국민연금이나 공무원연금을 받고 있어도 들 수 있어요.
 [scenes.8.data.license] Pexels 7578842 무료(Kindel Media)
 [scenes.8.data.say] 입원·요양이어도
@@ -67,7 +67,7 @@
 [scenes.12.lines.5.text] 그래서 집값이 두 배면, 받는 돈도 거의 두 배입니다.
 [scenes.12.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.13.lines.0.text] 나이 쪽 차이는 더 커요.
-[scenes.13.lines.1.text] 5억 집 그대로, 나이만 바꿔 볼게요.
+[scenes.13.lines.1.text] 집값은 5억 그대로 두고, 나이만 바꿔 볼게요.
 [scenes.13.data.license] Pexels 38781079 무료(Melike)
 [scenes.13.data.say] 나이만 바꾸면
 [scenes.13.data.side] left
@@ -105,7 +105,7 @@
 [scenes.20.data.license] Pexels 38405960 무료(Melike)
 [scenes.20.data.say] 처음 금액에 이미 넣음
 [scenes.20.data.side] left
-[scenes.21.lines.0.text] 이 표는 매달 같은 돈을 받는 방식, 정액형 기준이에요.
+[scenes.21.lines.0.text] 지금 보신 표는 매달 같은 돈을 받는 방식, 정액형 기준이에요.
 [scenes.21.lines.1.text] 처음에 더 받거나, 몇 년마다 늘려 받는 방식도 있는데, 그러면 금액이 달라집니다.
 [scenes.21.lines.2.text] 방식은 처음 3년 안에 한 번만 바꿀 수 있어요.
 [scenes.21.data.license] Pexels 946148 무료(Carlos Arribas)
@@ -179,7 +179,7 @@
 [scenes.31.lines.3.text] 집값을 더 낮게, 더 높게 바꿔도 이 나이가 거의 그대로입니다.
 [scenes.31.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.32.lines.0.text] 같아지는 나이를 정하는 건 집값이 아니라, 몇 살에 드느냐인 거죠.
-[scenes.32.lines.1.text] 부부라면 이 나이도 젊은 쪽 나이로 셈해야 맞아요.
+[scenes.32.lines.1.text] 부부라면 이 나이도 젊은 쪽 나이로 계산해야 맞아요.
 [scenes.32.data.license] Pexels 946148 무료(Carlos Arribas)
 [scenes.32.data.say] 집값보다 드는 나이
 [scenes.32.data.side] left
@@ -189,141 +189,145 @@
 [scenes.33.lines.3.text] 거꾸로 집값이 오르면 늦게 든 쪽이 더 받을 수 있고요.
 [scenes.33.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.34.lines.0.text] 그러니 이 나이는 정답이 아니라, 기다릴지 고를 때 대 보는 잣대예요.
-[scenes.34.lines.1.text] 기다리는 동안 생활비를 다른 돈으로 낼 수 있는지도 같이 봐야 하고요.
-[scenes.34.lines.2.text] 우리 동네 집값이 어떻게 갈지도 같이 놓고 보셔야 합니다.
 [scenes.34.data.license] Pexels 6541138 무료(Polina ⠀)
 [scenes.34.data.say] 정답이 아니라 잣대
 [scenes.34.data.side] left
-[scenes.35.lines.0.text] 주택연금은 이름은 연금이지만, 공사 설명을 보면 집을 맡기고 받는 대출이에요.
-[scenes.35.data.n] 4장
-[scenes.35.data.q] 받은 돈은 어디에 쌓이나
-[scenes.36.lines.0.text] 그래서 매달 받는 돈이 빚으로 쌓입니다.
-[scenes.36.data.license] Pexels 8292929 무료(RDNE Stock project)
-[scenes.36.data.say] 빚으로 쌓이는 돈
-[scenes.36.data.side] left
-[scenes.37.lines.0.text] 쌓이는 건 매달 받은 돈, 보증료, 그리고 이자예요.
-[scenes.37.lines.1.text] 이렇게 쌓인 빚을 대출 잔액이라고 불러요.
-[scenes.37.lines.2.text] 보증료는 가입할 때 집값의 1%를 한 번 냅니다.
-[scenes.37.lines.3.text] 그 뒤로는 매년 잔액의 0.95%가 보증료로 붙어요.
-[scenes.37.lines.4.text] 5억 집이면 처음 보증료가 500만원이에요.
-[scenes.37.data.license] 파이어맵 자체 제작 판(출처는 판 안)
-[scenes.38.lines.0.text] 그런데 이 돈을 현금으로 따로 내지 않습니다.
-[scenes.38.lines.1.text] 은행이 대신 내고, 그만큼을 대출 잔액에 더해요.
-[scenes.38.data.license] Pexels 7578842 무료(Kindel Media)
-[scenes.38.data.say] 현금으로 따로 안 냄
-[scenes.38.data.side] left
-[scenes.39.lines.0.text] 가입할 때 현금으로 드는 건 집 감정평가 수수료 정도예요.
-[scenes.39.data.license] Pexels 6326847 무료(https://kaboompics.com/)
-[scenes.39.data.say] 가입할 때 드는 돈
+[scenes.35.lines.0.text] 이 계산은 받은 돈만 본 거예요. 일찍 들면 이자도 더 오래 붙어서, 나중에 남는 집값은 그만큼 줄어요.
+[scenes.35.lines.1.text] 기다리는 동안 생활비를 다른 돈으로 낼 수 있는지도 같이 봐야 하고요.
+[scenes.35.lines.2.text] 우리 동네 집값이 어떻게 갈지도 같이 놓고 보셔야 합니다.
+[scenes.35.data.license] Pexels 8794903 무료(Anastasia Shuraeva)
+[scenes.35.data.say] 받은 돈만 본 계산
+[scenes.35.data.side] left
+[scenes.36.lines.0.text] 주택연금은 이름은 연금이지만, 공사 설명을 보면 집을 맡기고 받는 대출이에요.
+[scenes.36.data.n] 4장
+[scenes.36.data.q] 받은 돈은 어디에 쌓이나
+[scenes.37.lines.0.text] 그래서 매달 받는 돈이 빚으로 쌓입니다.
+[scenes.37.data.license] Pexels 8292929 무료(RDNE Stock project)
+[scenes.37.data.say] 빚으로 쌓이는 돈
+[scenes.37.data.side] left
+[scenes.38.lines.0.text] 쌓이는 건 매달 받은 돈, 보증료, 그리고 이자예요.
+[scenes.38.lines.1.text] 이렇게 쌓인 빚을 대출 잔액이라고 불러요.
+[scenes.38.lines.2.text] 보증료는 가입할 때 집값의 1%를 한 번 냅니다.
+[scenes.38.lines.3.text] 그 뒤로는 매년 잔액의 0.95%가 보증료로 붙어요.
+[scenes.38.lines.4.text] 집값이 5억이면 처음 보증료가 500만원이에요.
+[scenes.38.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.39.lines.0.text] 그런데 이 돈을 현금으로 따로 내지 않습니다.
+[scenes.39.lines.1.text] 은행이 대신 내고, 그만큼을 대출 잔액에 더해요.
+[scenes.39.data.license] Pexels 7578842 무료(Kindel Media)
+[scenes.39.data.say] 현금으로 따로 안 냄
 [scenes.39.data.side] left
-[scenes.40.lines.0.text] 이자도 매달 갚지 않습니다.
-[scenes.40.lines.1.text] 잔액에 붙어서, 나중에 한꺼번에 정산해요.
-[scenes.40.lines.2.text] 금리는 은행들이 대출 금리를 정할 때 쓰는 코픽스라는 기준금리에, 0.85%를 더해요.
-[scenes.40.lines.3.text] 기준금리가 6개월마다 바뀌니까, 이자도 같이 바뀌어요.
-[scenes.40.data.license] 파이어맵 자체 제작 판(출처는 판 안)
-[scenes.41.lines.0.text] 이자에 또 이자가 붙으니, 시간이 갈수록 잔액이 빨리 불어납니다.
-[scenes.41.lines.1.text] 잔액이 집값을 넘어도 매달 받는 돈은 끊기지 않아요.
-[scenes.41.lines.2.text] 그 집에서 계속 사는 것도 평생 보장되고요.
-[scenes.41.data.license] Pexels 35161057 무료(Greg Benson)
-[scenes.41.data.say] 잔액이 불어나도
-[scenes.41.data.side] left
-[scenes.42.lines.0.text] 이게 중간에 그만둘 때 중요해져요.
-[scenes.42.lines.1.text] 받은 돈만 돌려주면 끝나는 게 아닙니다.
-[scenes.42.lines.2.text] 보증료와 이자까지 다 갚아야 해지돼요.
-[scenes.42.lines.3.text] 갚는 건 언제든, 일부만 해도 되고 전부 해도 됩니다.
-[scenes.42.data.license] 파이어맵 자체 제작 판(출처는 판 안)
-[scenes.43.lines.0.text] 이사를 가면 담보로 맡긴 집을 바꿀 수 있어요.
-[scenes.43.lines.1.text] 새 집 값에 따라 매달 받는 돈이 늘 수도, 같을 수도, 줄 수도 있습니다.
-[scenes.43.lines.2.text] 가입한 뒤에 집을 하나 더 사는 것도 막지는 않아요.
-[scenes.43.data.license] Pexels 8292925 무료(RDNE Stock project)
-[scenes.43.data.say] 이사를 가면
-[scenes.43.data.side] left
-[scenes.44.lines.0.text] 그럼 이 돈으로 생활이 될까요?
-[scenes.44.data.n] 5장
-[scenes.44.data.q] 생활비를 얼마나 메우나
-[scenes.45.lines.0.text] 국민연금연구원이 50세 넘은 분들에게 노후에 필요한 돈을 물었어요.
-[scenes.45.lines.1.text] 부부가 괜찮게 살려면 한 달에 297만원이 든다고 답했습니다.
-[scenes.45.data.license] Pexels 8420602 무료(Kampus Production)
-[scenes.45.data.say] 노후에 필요한 돈
-[scenes.45.data.side] left
-[scenes.46.lines.0.text] 아주 아껴 쓴다면 217만원이고요.
-[scenes.46.lines.1.text] 처음 계산한 126만원은 그 돈의 절반이 안 돼요.
-[scenes.46.lines.2.text] 70세에 들어도 절반을 조금 넘습니다.
-[scenes.46.lines.3.text] 혼자 사신다면 사정이 좀 나아요.
-[scenes.46.lines.4.text] 혼자 사는 분이 필요하다고 답한 돈은 192만원이에요.
-[scenes.46.lines.5.text] 126만원이면 그 돈의 셋 중 둘 정도는 채웁니다.
-[scenes.46.data.license] 파이어맵 자체 제작 판(출처는 판 안)
-[scenes.47.lines.0.text] 부부가 주택연금만으로 297만원을 다 채우려면, 집값이 표 맨 끝 칸까지 가야 해요.
-[scenes.47.lines.1.text] 그러니 대부분은 국민연금이나 다른 소득에 보태는 돈으로 보시는 게 맞아요.
-[scenes.47.data.license] Pexels 946148 무료(Carlos Arribas)
-[scenes.47.data.say] 다른 소득에 보태는 돈
-[scenes.47.data.side] left
-[scenes.48.lines.0.text] 이 숫자는 사람들이 필요하다고 답한 돈이지, 실제로 쓴 돈은 아닙니다.
-[scenes.48.lines.1.text] 우리 집 한 달 지출을 먼저 적어 보고 비교해 보세요.
-[scenes.48.data.license] 파이어맵 자체 제작 판(출처는 판 안)
-[scenes.49.lines.0.text] 댓글에서 가장 많이 묻는 건, 집이 자녀에게 어떻게 되느냐예요.
-[scenes.49.data.n] 6장
-[scenes.49.data.q] 돌아가신 뒤, 그리고 세금·기초연금
-[scenes.50.lines.0.text] 집을 맡기는 방식은 두 가지예요.
-[scenes.50.lines.1.text] 저당권 방식은 내 이름 그대로 두고 집을 담보로 잡히는 거예요.
-[scenes.50.lines.2.text] 신탁 방식은 집 소유권을 공사에 맡기는 거고요.
-[scenes.50.data.license] Pexels 8292929 무료(RDNE Stock project)
-[scenes.50.data.say] 집을 맡기는 두 방식
-[scenes.50.data.side] left
-[scenes.51.lines.0.text] 먼저 부부 중 한 분이 돌아가시면, 남은 분이 그대로 이어 받습니다.
-[scenes.51.lines.1.text] 금액도 줄지 않아요.
-[scenes.51.lines.2.text] 다만 저당권 방식이면 6개월 안에 이어 받는 절차를 밟아야 해요.
-[scenes.51.lines.3.text] 신탁 방식은 따로 절차 없이 배우자에게 넘어갑니다.
-[scenes.51.data.license] Pexels 6541138 무료(Polina ⠀)
-[scenes.51.data.say] 남은 분이 이어 받음
+[scenes.40.lines.0.text] 가입할 때 현금으로 드는 건 감정평가 수수료와 등록면허세 같은 비용이에요.
+[scenes.40.data.license] Pexels 6326847 무료(https://kaboompics.com/)
+[scenes.40.data.say] 가입할 때 드는 돈
+[scenes.40.data.side] left
+[scenes.41.lines.0.text] 이자도 매달 갚지 않습니다.
+[scenes.41.lines.1.text] 잔액에 붙어서, 나중에 한꺼번에 정산해요.
+[scenes.41.lines.2.text] 금리는 은행들이 대출 금리를 정할 때 쓰는 코픽스라는 기준금리에, 0.85%를 더해요.
+[scenes.41.lines.3.text] 기준금리가 6개월마다 바뀌니까, 이자도 같이 바뀌어요.
+[scenes.41.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.42.lines.0.text] 이자에 또 이자가 붙으니, 시간이 갈수록 잔액이 빨리 불어납니다.
+[scenes.42.lines.1.text] 잔액이 집값을 넘어도 매달 받는 돈은 끊기지 않아요.
+[scenes.42.lines.2.text] 그 집에서 계속 사는 것도 평생 보장되고요.
+[scenes.42.data.license] Pexels 35161057 무료(Greg Benson)
+[scenes.42.data.say] 잔액이 불어나도
+[scenes.42.data.side] left
+[scenes.43.lines.0.text] 이게 중간에 그만둘 때 중요해져요.
+[scenes.43.lines.1.text] 받은 돈만 돌려주면 끝나는 게 아닙니다.
+[scenes.43.lines.2.text] 보증료와 이자까지 다 갚아야 해지돼요.
+[scenes.43.lines.3.text] 갚는 건 언제든, 일부만 해도 되고 전부 해도 됩니다.
+[scenes.43.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.44.lines.0.text] 이사를 가면 담보로 맡긴 집을 바꿀 수 있어요.
+[scenes.44.lines.1.text] 새 집 값에 따라 매달 받는 돈이 늘 수도, 같을 수도, 줄 수도 있습니다.
+[scenes.44.lines.2.text] 가입한 뒤에 집을 하나 더 사는 것도 막지는 않아요.
+[scenes.44.data.license] Pexels 8292925 무료(RDNE Stock project)
+[scenes.44.data.say] 이사를 가면
+[scenes.44.data.side] left
+[scenes.45.lines.0.text] 그럼 이 돈으로 생활이 될까요?
+[scenes.45.data.n] 5장
+[scenes.45.data.q] 생활비를 얼마나 메우나
+[scenes.46.lines.0.text] 국민연금연구원이 50세 넘은 분들에게 노후에 필요한 돈을 물었어요.
+[scenes.46.lines.1.text] 부부가 괜찮게 살려면 한 달에 297만원이 든다고 답했습니다.
+[scenes.46.data.license] Pexels 8420602 무료(Kampus Production)
+[scenes.46.data.say] 노후에 필요한 돈
+[scenes.46.data.side] left
+[scenes.47.lines.0.text] 아주 아껴 쓴다면 217만원이고요.
+[scenes.47.lines.1.text] 처음 계산한 126만원은 그 돈의 절반이 안 돼요.
+[scenes.47.lines.2.text] 70세에 들어도 절반을 조금 넘습니다.
+[scenes.47.lines.3.text] 혼자 사신다면 사정이 좀 나아요.
+[scenes.47.lines.4.text] 혼자 사는 분이 필요하다고 답한 돈은 192만원이에요.
+[scenes.47.lines.5.text] 126만원이면 그 돈의 셋 중 둘 정도는 채웁니다.
+[scenes.47.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.48.lines.0.text] 부부가 주택연금만으로 297만원을 다 채우려면, 집값이 표 맨 끝 칸까지 가야 해요.
+[scenes.48.lines.1.text] 그러니 대부분은 국민연금이나 다른 소득에 보태는 돈으로 보시는 게 맞아요.
+[scenes.48.data.license] Pexels 946148 무료(Carlos Arribas)
+[scenes.48.data.say] 다른 소득에 보태는 돈
+[scenes.48.data.side] left
+[scenes.49.lines.0.text] 이 숫자는 사람들이 필요하다고 답한 돈이지, 실제로 쓴 돈은 아닙니다.
+[scenes.49.lines.1.text] 우리 집 한 달 지출을 먼저 적어 보고 비교해 보세요.
+[scenes.49.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.50.lines.0.text] 댓글에서 가장 많이 나오는 얘기는, 집이 자녀에게 어떻게 되느냐예요.
+[scenes.50.data.n] 6장
+[scenes.50.data.q] 돌아가신 뒤, 그리고 세금·기초연금
+[scenes.51.lines.0.text] 집을 맡기는 방식은 두 가지예요.
+[scenes.51.lines.1.text] 저당권 방식은 내 이름 그대로 두고 집을 담보로 잡히는 거예요.
+[scenes.51.lines.2.text] 신탁 방식은 집 소유권을 공사에 맡기는 거고요.
+[scenes.51.data.license] Pexels 8292929 무료(RDNE Stock project)
+[scenes.51.data.say] 집을 맡기는 두 방식
 [scenes.51.data.side] left
-[scenes.52.lines.0.text] 두 분 다 돌아가시면 집을 팔아서, 그동안 쌓인 잔액을 정산합니다.
-[scenes.52.lines.1.text] 집값이 남으면 자녀에게 가요.
-[scenes.52.lines.2.text] 모자라도 자녀에게 따로 청구하지 않습니다.
-[scenes.52.lines.3.text] 정산할 때 저당권 방식은 법원 경매로, 신탁 방식은 공매로 집을 팝니다.
-[scenes.52.data.license] 파이어맵 자체 제작 판(출처는 판 안)
-[scenes.53.lines.0.text] 그리고 집을 꼭 남기고 싶다면 길이 하나 더 있어요.
-[scenes.53.lines.1.text] 자녀가 집값과 잔액 중 적은 쪽을 갚으면, 집을 가져올 수 있습니다.
-[scenes.53.lines.2.text] 빚이 집값보다 많으면 집값만, 적으면 그 빚만 갚는 거예요.
-[scenes.53.data.license] Pexels 8794903 무료(Anastasia Shuraeva)
-[scenes.53.data.say] 집을 남기고 싶다면
-[scenes.53.data.side] left
-[scenes.54.lines.0.text] 세금도 하나 줄어요.
-[scenes.54.lines.1.text] 집 한 채만 있고 저당권을 잡히는 방식으로 들면, 재산세가 최대 25% 줄어듭니다.
-[scenes.54.lines.2.text] 5억보다 비싼 집이면, 5억짜리 집으로 치고 깎아 줘요.
-[scenes.54.lines.3.text] 이 감면은 2027년 말까지로 정해져 있습니다.
-[scenes.54.lines.4.text] 가입할 때 내는 등록면허세도 최대 절반까지 줄여 줘요.
-[scenes.54.data.license] 파이어맵 자체 제작 판(출처는 판 안)
-[scenes.55.lines.0.text] 대출 이자는 소득세를 낼 때 매년 200만원까지 빼 주고요.
-[scenes.55.data.license] Pexels 38781079 무료(Melike)
-[scenes.55.data.say] 이자도 빼 줌
-[scenes.55.data.side] left
-[scenes.56.lines.0.text] 기초연금을 받는 분이라면, 주택연금 때문에 깎이지는 않아요.
-[scenes.56.lines.1.text] 공사는 매달 받는 돈을 소득으로 보지 않는다고 밝히고 있습니다.
-[scenes.56.data.license] 파이어맵 자체 제작 판(출처는 판 안)
-[scenes.57.lines.0.text] 기초연금을 받고 집값이 낮으면, 표보다 더 주는 우대형이 있어요.
-[scenes.57.lines.1.text] 집값이 낮을수록 더 얹어 주니, 해당되는지 먼저 확인해 보세요.
-[scenes.57.data.license] Pexels 38405960 무료(Melike)
-[scenes.57.data.say] 우대형 확인
-[scenes.57.data.side] left
-[scenes.58.lines.0.text] 지금 들면 126만원에서, 기다렸다 들면 154만원으로 늘어요.
-[scenes.58.data.n] 7장
-[scenes.58.data.q] 정리
-[scenes.59.lines.0.text] 기다렸다 들면, 집값이 그대로라는 가정에서 93세에 받은 돈 합이 같아집니다.
-[scenes.59.lines.1.text] 집값이 오르면 그 나이가 앞당겨지고, 내리면 늦춰져요.
-[scenes.59.lines.2.text] 그 나이는 집값보다, 몇 살에 드느냐로 정해졌고요.
-[scenes.59.lines.3.text] 받은 돈은 보증료, 이자와 함께 잔액으로 쌓이고, 모자라도 자녀에게 청구하지 않습니다.
-[scenes.59.data.license] 파이어맵 자체 제작 판(출처는 판 안)
-[scenes.60.lines.0.text] 내 집값과 나이로는 한국주택금융공사 누리집의 예상연금조회에서 바로 볼 수 있어요.
-[scenes.60.lines.1.text] 전화 상담 예약도 같은 누리집에서 할 수 있어요.
-[scenes.60.data.license] Pexels 6326847 무료(https://kaboompics.com/)
-[scenes.60.data.say] 예상연금조회
-[scenes.60.data.side] left
-[scenes.61.lines.0.text] 표는 예시라서, 실제 금액은 감정평가를 받아야 정해집니다.
-[scenes.61.data.license] 파이어맵 자체 제작 판(출처는 판 안)
-[scenes.62.lines.0.text] 도움이 되셨다면 구독으로 다음 편도 받아 보세요.
-[scenes.62.lines.1.text] 다음 영상에서 다시 뵙겠습니다.
-[scenes.62.data.license] Pexels 35161057 무료(Greg Benson)
+[scenes.52.lines.0.text] 먼저 부부 중 한 분이 돌아가시면, 남은 분이 그대로 이어 받습니다.
+[scenes.52.lines.1.text] 금액도 줄지 않아요.
+[scenes.52.lines.2.text] 다만 저당권 방식이면 6개월 안에 이어 받는 절차를 밟아야 해요.
+[scenes.52.lines.3.text] 신탁 방식은 따로 절차 없이 배우자에게 넘어갑니다.
+[scenes.52.data.license] Pexels 6541138 무료(Polina ⠀)
+[scenes.52.data.say] 남은 분이 이어 받음
+[scenes.52.data.side] left
+[scenes.53.lines.0.text] 두 분 다 돌아가시면 집을 팔아서, 그동안 쌓인 잔액을 정산합니다.
+[scenes.53.lines.1.text] 집값이 남으면 자녀에게 가요.
+[scenes.53.lines.2.text] 모자라도 자녀에게 따로 청구하지 않습니다.
+[scenes.53.lines.3.text] 정산할 때 저당권 방식은 법원 경매로, 신탁 방식은 공매로 집을 팝니다.
+[scenes.53.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.54.lines.0.text] 그리고 집을 꼭 남기고 싶다면 길이 하나 더 있어요.
+[scenes.54.lines.1.text] 자녀가 집값과 잔액 중 적은 쪽을 갚으면, 집을 가져올 수 있습니다.
+[scenes.54.lines.2.text] 빚이 집값보다 많으면 집값만, 적으면 그 빚만 갚는 거예요.
+[scenes.54.data.license] Pexels 8794903 무료(Anastasia Shuraeva)
+[scenes.54.data.say] 집을 남기고 싶다면
+[scenes.54.data.side] left
+[scenes.55.lines.0.text] 세금도 하나 줄어요.
+[scenes.55.lines.1.text] 집 한 채만 있고 저당권을 잡히는 방식으로 들면, 재산세가 최대 25% 줄어듭니다.
+[scenes.55.lines.2.text] 5억보다 비싼 집이면, 5억짜리 집으로 치고 깎아 줘요.
+[scenes.55.lines.3.text] 이 감면은 2027년 말까지로 정해져 있습니다.
+[scenes.55.lines.4.text] 가입할 때 내는 등록면허세도 최대 절반까지 줄여 줘요.
+[scenes.55.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.56.lines.0.text] 연금소득이 있다면, 대출 이자를 매년 200만원까지 연금소득에서 빼 주고요.
+[scenes.56.data.license] Pexels 38781079 무료(Melike)
+[scenes.56.data.say] 이자도 빼 줌
+[scenes.56.data.side] left
+[scenes.57.lines.0.text] 기초연금을 받는 분이라면, 주택연금 때문에 깎이지는 않아요.
+[scenes.57.lines.1.text] 공사는 매달 받는 돈을 소득으로 보지 않는다고 밝히고 있습니다.
+[scenes.57.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.58.lines.0.text] 기초연금을 받고 집값이 낮으면, 표보다 더 주는 우대형이 있어요.
+[scenes.58.lines.1.text] 집값이 낮을수록 더 얹어 주니, 해당되는지 먼저 확인해 보세요.
+[scenes.58.data.license] Pexels 38405960 무료(Melike)
+[scenes.58.data.say] 우대형 확인
+[scenes.58.data.side] left
+[scenes.59.lines.0.text] 지금 들면 126만원에서, 기다렸다 들면 154만원으로 늘어요.
+[scenes.59.data.n] 7장
+[scenes.59.data.q] 정리
+[scenes.60.lines.0.text] 기다렸다 들면, 집값이 그대로라는 가정에서 93세에 받은 돈 합이 같아집니다.
+[scenes.60.lines.1.text] 집값이 오르면 그 나이가 앞당겨지고, 내리면 늦춰져요.
+[scenes.60.lines.2.text] 그 나이는 집값보다, 몇 살에 드느냐로 정해졌고요.
+[scenes.60.lines.3.text] 받은 돈은 보증료, 이자와 함께 잔액으로 쌓이고, 모자라도 자녀에게 청구하지 않습니다.
+[scenes.60.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.61.lines.0.text] 내 집값과 나이로는 한국주택금융공사 누리집의 예상연금조회에서 바로 볼 수 있어요.
+[scenes.61.lines.1.text] 전화 상담 예약도 같은 누리집에서 할 수 있어요.
+[scenes.61.data.license] Pexels 6326847 무료(https://kaboompics.com/)
+[scenes.61.data.say] 예상연금조회
+[scenes.61.data.side] left
+[scenes.62.lines.0.text] 표는 예시라서, 실제 금액은 감정평가를 받아야 정해집니다.
+[scenes.62.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.63.lines.0.text] 도움이 되셨다면 구독으로 다음 편도 받아 보세요.
+[scenes.63.lines.1.text] 다음 영상에서 다시 뵙겠습니다.
+[scenes.63.data.license] Pexels 35161057 무료(Greg Benson)
 
 ## 화면 코드: video/src/JT1.tsx
 [JT1.tsx] 달러로

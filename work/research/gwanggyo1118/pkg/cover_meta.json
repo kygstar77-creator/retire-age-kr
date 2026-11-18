@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 매매 실거래 API(경기 수원 영통구 41117 이의동·하동·영통동) 2021.7~12월 vs 2026.6~10월 계약, calc_out.txt — 파이어맵 직접 계산",
+ "made_at": "2026-11-18",
+ "by": "research/gwanggyo1118/mkimg.py",
+ "out": "img/00.png",
+ "topic": "광교 아파트",
+ "num": "+5% · +5%",
+ "topic_px": 58,
+ "num_px": 44,
+ "follows": "경쟁 1 lifeforwhat_/224477796556 시세 요약 그림 · 3 dealright2022 글자 카드"
+}

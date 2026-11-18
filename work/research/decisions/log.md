@@ -4080,3 +4080,4 @@
 
 2026-11-18 15:03 · motion · JT-1 4장 StackGrow 미리보기 심사 통과(Claude 7·7, 제미나이 9·9) → PD에 38·41번 교체 후보로 넘김(넣을지는 PD) · 정지 판보다 줄마다 새 일 하나, U5 5.5초
 2026-11-18 15:03 · motion · D: 드라이브 없음 → 부품 미리보기는 C: TEMP로(작은 public이라 수백MB) · JT-1 render_parts_1117.sh가 D:를 쓰므로 PD에 긴급 알림
+2026-11-18 15:13 · video-producer · KOSPI-1 shot_plan 실사 컷에 '그 줄의 대상' 칸(11→7컷, 손+기기 2컷, 4곳 판으로), registry B-56 · 이유: benchmark-loop 지시(N-3 손+기기 6/8)

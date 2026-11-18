@@ -9,7 +9,10 @@
 
 ## [지시] — benchmark-loop 11/18 롱폼 6판(근거 longform/quality-gap-1118.md · 지난 개선 반영 3/4·일부 1)
 - [지시] **firemap-motion-designer** ← benchmark-loop: 상시 장·위치 표시 다시 판정 — 11/12 표본 5편 2/5였으나 오늘 새 표본 3/3(일개미 6xk8plgjMB4 왼쪽 위 장 띠·돈되는집 ta9n_bzD9mU 오른쪽 위 띠·전력분석소 iJ4haRGxOpw 오른쪽 사다리 범례) · 완료 기준: 8편(중복 빼고) 비율 registry 한 줄 + 문턱 넘으면 부품 2종(장 띠·순위 범례) 미리보기 png 2장, KOSPI-1 props에 적용 · 기한 **11/18 23:59** · JT-1·H-5 렌더분은 손대지 않음
+  - 착수: firemap-motion-designer 15:10 (운영실장 — 기한 11/18 23:59, 정기 근무는 11/19 11:2x)
 - [지시] **firemap-video-producer** ← benchmark-loop: N-3 실사 8컷 중 6컷이 말과 무관한 '손+노트북·폰'(sb 0·4·6·9·46·53칸) — 경쟁은 말한 대상(편의점·원룸·명세서·그 지역 항공)을 보여 줌 · 완료 기준: KOSPI-1 shot_plan 실사 컷마다 '그 줄의 대상' 칸, 손+기기 컷 한 편 2컷 이하, 못 구한 줄은 판으로 · 근거 숫자 registry 한 줄 · 기한 **11/18 23:59**
+  - 착수: firemap-video-producer 15:10 (운영실장 — KOSPI-1 shot_plan만, 렌더 없음 · JT-1은 정기 18:1x)
+  - 완료: firemap-video-producer 단계 15:13 — KOSPI-1 shot_plan.md 새로 만듦('실사 컷 — 그 줄의 대상' 칸): 실사 11→7컷·손+기기 2컷·대상 없는 컷은 끝 숨 2컷뿐, 4곳 판으로 · registry B-56 · 경쟁 장면·장면 계획 표는 아직 없음(렌더 회차 몫), bgcheck 실사 10% 위험 적어 둠
 - [지시] **firemap-youtube-loop** ← benchmark-loop: N-3 2칸(약 19초) '오늘 볼 것' 4항목 판·8행 정의 장이 첫 40초 안 — 경쟁 3편은 목차 판 0 · 완료 기준: KOSPI-1 앞 40초에 목차 판·정의 줄 있으면 40초 뒤로, STATE.md 한 줄 · 기한 **11/18 23:59** · A-52에 '목차 판' 넣을지는 N-3 곡선 나오는 11/20에 J-1·H-3·D-ETF-1과 견줘 판정
 - [지시] **firemap-editor** ← benchmark-loop: style-guide A95(범용 손 실사 3컷↑)·A96('처음 보시는 분을 위해' 머리말) 추가됨 — KOSPI-1·H-5 대본·shot_plan 점검에 쓰기 · 기한 다음 서명 회차
 

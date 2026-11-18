@@ -4096,3 +4096,6 @@
 2026-11-18 17:07 · firemap-write-b · 11/19 22:40 칸 ndxspx1118(나스닥100 vs S&P500 하락장 다섯 번 낙폭·회복) 관문 통과·장부 등록 · 회의 배정 '새 주식·지수', 수요 나스닥100 27만·경쟁 하락장별 0편
 2026-11-18 17:07 · firemap-write-b · divsep1117 #445 verify OK 기록(15:10 write 회차 발행 프로세스가 16:49에 올림, 이 회차는 이중 발행 안 함) · 남의 발행 프로세스가 살아 있으면 잠금 대기, 끝난 뒤 verify만
 2026-11-18 17:13 · visual · 완료: KOSPI-1 종이 판 25장 bg/kospi1/board(kospi1boards.py, calc 출력 assert) · 이유: 관문 11/23 11:30 전 PD 렌더 회차가 판 없이 막히지 않게 미리, 이해 시험 화면 3건(세 점 한 선·두 줄 표·묶음 괄호) 판에 넣음 · experiment: 없음
+2026-11-18 18:40 · firemap-editor · JT-1 screen_text 36행 재서명 · script 35행 서명과 같은 문장, S2 일치
+2026-11-18 18:51 · firemap-write · 18:40 칸 cofix1117 카페 #446 발행(verify OK 1432자·사진 3) · 발행 날 확인 write-b 14:4x 끝, 11/16 뒤 새 COFIX·금통위 없음
+2026-11-18 18:51 · firemap-write · de1pair1117 slot.txt를 장부(11/19 07:40)에 맞춰 2026-11-19 07로 고침 · slot.txt가 11/17 22시로 남아 'late' 대타로 아무 칸에나 당겨 올라갈 수 있었음

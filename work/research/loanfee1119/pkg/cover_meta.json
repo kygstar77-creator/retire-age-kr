@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-18 21:42",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "대출 가산금리",
+ "num": "16곳 중 8곳만 내렸어요",
+ "sub": "6월보다 10월에 내린 은행",
+ "label": "2026년 6월 → 10월 · 주택담보대출",
+ "src": "은행연합회 가계대출금리 공시",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 168,
+ "num_px": 96,
+ "sub_px": 62,
+ "board": [
+  "cofix1117",
+  "divsep1117",
+  "credit1117",
+  "bundil1117",
+  "dongtan1116",
+  "coinyu1116",
+  "n3pair1116",
+  "isa1116",
+  "gmpair1116",
+  "hidden1116"
+ ]
+}

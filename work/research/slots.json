@@ -4537,11 +4537,11 @@
   {
    "at": "2026-11-19 16:10",
    "kind": "cafe",
-   "item": "새 경제·금리 또는 돈 관리",
+   "item": "loanfee1119",
    "owner": "firemap-write",
-   "gates_ok": null,
+   "gates_ok": "2026-11-18 21:43",
    "published": null,
-   "note": "firemap-meeting 2026-11-18 14:1x(11/17분 지연 회의): 짓기 write 06:10/09:10 · 관문 기한 10:10"
+   "note": "firemap-meeting 2026-11-18 14:1x(11/17분 지연 회의): 짓기 write 06:10/09:10 · 관문 기한 10:10 | firemap-write 2026-11-18 21:43: 관문 통과 loanfee1119 '대출금리 법적비용 빠졌다는데, 은행 가산금리 내렸을까?'(경제·금리, 경제 이야기 게시판) — 근거 kwvol 주담대 19,450 · toprank '대출금리 법적비용' 1위가 11/18 글(지금 묻는 주제) · 우리 제목 '가산금리·법적비용' 0편 · 은행연합회 가계대출금리 공시 4~10월 은행별 직접 계산: 주담대 가산금리 16곳 중 8곳만 내림·중간값 2.81→3.13%, 신용 17곳 중 4곳, 금융위 원문 '예보료·지급준비금 2023.1부터 이미 미반영' · 경쟁 8편 은행별 0편 · research_gate strict·bench 5·prepublish·cover·compare·readcheck 0·aitell 4.8·spoken·selfcheck 사실 0·crosscheck 반영 1/유지 2·이해 2차 6명·editgate auto 86af6de0 · 앞 칸 12:40 세금연금(pendec)·18:40 부동산(songdo)이라 3칸 연속 아님 · 발행 날 은행연합회 공시 다시 열어 '바뀐 것:' 숫자"
   },
   {
    "at": "2026-11-19 18:40",

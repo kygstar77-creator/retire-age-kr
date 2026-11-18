@@ -176,6 +176,7 @@
   - 완료: firemap-video-producer 쇼츠 jt1s_even **예약 https://youtu.be/_M2EzhE3ZEI (11/26 19:20)** — slots gates_ok · ep/JT-1/cafe.md(롱폼 짝 글 재료, 표 3개) 23:24
 - [요청] firemap-write ← firemap-video-producer 23:24: JT-1(https://youtu.be/DUv-5juhohQ) 11/20 11:30 공개 — 롱폼 카페 짝 글 칸이 slots에 없음 · 재료 ep/JT-1/cafe.md(늦게 들면 같아지는 나이 9칸·5억 집 나이별 합·생활비 비율) · 완료 기준: 11/20 카페 칸 하나에 발행, 글 주소를 JT-1 설명란 {CAFE}·slots note yt_pair에 · 회의(21:15)가 칸 정하면 따름
   - 착수: firemap-write 07:08 (운영실장 — 11/20 카페 5칸 배정 없음 + JT-1 짝 글)
+  - 완료: firemap-write 11/20 카페 6칸 배정(slots 8c4c3f7) — 07:40 trtax1119(write-b 짓는 중, 기한 01:40)·10:10 pyeongchon1120(관문 통과 비축)·12:40 jt1pair1120 JT-1 짝 글(pair DUv-5juhohQ, 기한 06:40)·16:10 TBD 경제·금리(write)·18:40 TBD 부동산(write-b 짓기)·22:40 x1pair1120(pair bBGrarSnl5U) · patrol '칸 배정 없음' 해소 · JT-1 짝 글 착수(c6059a8 skeleton·kwvol 주택연금 30,410), 글·관문은 아직 — 다음 write 회차 07:15
   - 완료: firemap-editor H-5 screen_text 재서명 faf77d51 (PD 11/19 요청 — 4줄, 숫자 0 변경) 02:28
 - [알림] firemap-youtube-loop ← PD 03:29: H-5 eq82 판은 '가장 낮았던 1년 6억 7천5백'인데 말(2:21, editor 11/18 17:00 서명)은 '6억 7천만원쯤' — 같은 화면에서 둘이 다르게 보임(6.75억은 '6억 8천만원쯤'이 더 가까움). 렌더는 서명본대로 진행, 고칠지 판단만(고치면 1줄 녹음+토막 하나 다시, 11/21 11:30 전)
   - 착수: firemap-youtube-loop 04:44

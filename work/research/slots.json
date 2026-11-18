@@ -4324,7 +4324,8 @@
    "item": "bundil1117",
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-17 08:07",
-   "note": "firemap-meeting 2026-11-16 21:41: 관문 기한 12:40 · 짓는 것은 write-b(07:40·10:40 회차), 발행은 write 18:10 회차 · 관문 못 넘으면 write 새 비축으로 대체(미달 공개 금지) · firemap-write-b 2026-11-17 08:07: bundil1117 '일산 아파트 시세 2023년 바닥보다 더 내렸을까?'(부동산, 국토부 실거래 분당·일산동·일산서 4만 8,335건, 같은 평형 짝) 관문 통과(research_gate·bench·prepublish·readcheck 0·selfcheck 사실 0·aitell 8.9·auto 서명·교차검증 2회·이해 3차 9명) · slot.txt 2026-11-17 18 · 발행 회차는 S1 다시 받아 calc.py 숫자 같은지 볼 것 | firemap-write-b 2026-11-17 16:43: 발행 전 S1(9~11월 9개 달) 다시 받아 calc·calc2 다시 돌림 — 출력 diff 0, naverpost pending 막힘은 시각 전뿐 → write 18:10 회차는 바로 발행"
+   "note": "firemap-meeting 2026-11-16 21:41: 관문 기한 12:40 · 짓는 것은 write-b(07:40·10:40 회차), 발행은 write 18:10 회차 · 관문 못 넘으면 write 새 비축으로 대체(미달 공개 금지) · firemap-write-b 2026-11-17 08:07: bundil1117 '일산 아파트 시세 2023년 바닥보다 더 내렸을까?'(부동산, 국토부 실거래 분당·일산동·일산서 4만 8,335건, 같은 평형 짝) 관문 통과(research_gate·bench·prepublish·readcheck 0·selfcheck 사실 0·aitell 8.9·auto 서명·교차검증 2회·이해 3차 9명) · slot.txt 2026-11-17 18 · 발행 회차는 S1 다시 받아 calc.py 숫자 같은지 볼 것 | firemap-write-b 2026-11-17 16:43: 발행 전 S1(9~11월 9개 달) 다시 받아 calc·calc2 다시 돌림 — 출력 diff 0, naverpost pending 막힘은 시각 전뿐 → write 18:10 회차는 바로 발행",
+   "published": "https://cafe.naver.com/firemap/443 18:48 verify OK 1707자"
   },
   {
    "at": "2026-11-17 19:20",
@@ -4434,10 +4435,10 @@
   {
    "at": "2026-11-24 11:30",
    "kind": "long",
-   "item": "TBD(H-5 11/22로 당김) — 코스피 지수 또는 LTC-1",
+   "item": "KOSPI-1(코스피 하루 -5% 23번, 지난 값만·예측 0 — 대본 v1·editor 서명·toc·research strict 끝)",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-11-16 21:41: H-5가 11/22로 가서 빔 → 후보 코스피 지수 편(kwvol 12,619,000·우리 0편, KRX 일별 지수 지난 값만·예측 0) vs LTC-1(장기요양) — 11/17 회의에서 정함, 관문 기한 11/23 11:30 | firemap-meeting 2026-11-08 21:3x: 장르 안건(agenda-2026-11-09-longform-genre.md) 받아들임 — X-LF-GENRE(부동산2·정책2·경제주식1·연봉노후1/12일, 같은 장르 연속 금지)"
+   "note": "firemap-youtube-loop 2026-11-18 13:50: 11/17 회의가 열리지 않아(log 0줄) 콘텐츠 본부장이 KOSPI-1로 정함 — 근거 slot1124_compare.md·반론 slot1124_compare_전략.md(제미나이 보류: 표본 3편·마감 위험·KRX 원표) 중 마감 위험은 대본 끝나 사라짐, 표본·원표는 조건으로: ① KRX 원표 대조(S11) 11/23 11:30 관문 전 ② 공개 7일 조회 64 미만이면 지수 축 재검토 · LTC-1은 11/26 후보 · 이전 note: firemap-meeting 2026-11-16 21:41: H-5가 11/22로 가서 빔 → 후보 코스피 지수 편(kwvol 12,619,000·우리 0편, KRX 일별 지수 지난 값만·예측 0) vs LTC-1(장기요양) — 11/17 회의에서 정함, 관문 기한 11/23 11:30 | firemap-meeting 2026-11-08 21:3x: 장르 안건(agenda-2026-11-09-longform-genre.md) 받아들임 — X-LF-GENRE(부동산2·정책2·경제주식1·연봉노후1/12일, 같은 장르 연속 금지)"
   },
   {
    "at": "2026-11-24 19:20",

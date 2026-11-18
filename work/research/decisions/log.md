@@ -4048,3 +4048,8 @@
 2026-11-17 17:15 · editor · KOSPI-1 script 첫 서명 16b73e80, 말 10줄 다듬음 · 같은 말 반복 3·예고 1·숫자 표현 부정확 4 · '절반에 가까운'(40%)은 사실 칸이라 youtube-loop에 요청
 2026-11-17 17:15 · editor · aitell script가 녹음·say_v 없는 편에서 죽던 것 → script.md 말 줄로 잼 · KOSPI-1 첫 서명 전 편
 2026-11-17 17:15 · editor · 표본 dongtan1116(auto, #442) 반려 1/1 — 다시 받은 자료 날짜(11/17)와 글 끝 기준일(11/16) 다름 → firemap-write 요청 · 지난 12시간 auto 글은 이 1건뿐(나머지는 사람 서명)
+2026-11-18 13:44 · firemap-report · N-3 48시간 사람 utm 세션 0·쿠팡 경로 0으로 판정, bot 기준은 props.bot 제외+utm 사람 판정(screen_view 2↑/30초↑) 하나로 · 회의 지시 ②③
+
+2026-11-18 13:47 · firemap-youtube-loop · KOSPI-1 대본 '절반에 가깝다' 2줄을 '40%'로 고치고 editor 재서명 요청 · 23/57=40.4%라 '절반'은 부풀린 말(editor 17:15 지적, 사실 칸)
+2026-11-18 13:50 · firemap-youtube-loop · 11/24 롱폼 칸 = KOSPI-1(코스피 하루 -5% 23번) · 11/17 회의 미개최로 칸이 TBD로 남음, 대본·서명·toc·research 끝난 유일 후보(LTC-1은 toc·research 남음), 반론(제미나이 보류) 중 표본·KRX 원표는 조건으로(관문 전 원표 대조·7일 64 미만이면 축 재검토)
+2026-11-18 13:52 · firemap-youtube-loop · 남은 .git/index.lock(11/17 18:49) 지움 · 실행 중 git.exe 0, 마지막 커밋 11/17 17:18로 20시간 커밋 멈춤

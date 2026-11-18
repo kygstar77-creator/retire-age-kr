@@ -1,6 +1,7 @@
 # today.md — 지금 열린 일만 (150줄 이하 유지. 옛 기록: meeting/archive/today-2026-11-16.md(11/16 줄 전부 — 끝난 일·완료 줄은 거기))
 ## ★ 정기 회의 11/16(월) 21:30~21:4x — 공개 7(카페 5·롱폼 N-3·쇼츠 1)+22:40 예약 1 · 11월 수익 **0원**(마지막 화면 11/15 12:44, 11/16 화면 확인 안 함) · 주간 사용량 10%(+12%p 상한 안) (근거 meeting/2026-11-16-decisions.md·verify.md·_전략·_사용자·_법·missed-q_전략·missed-q_redteam)
 - 막힘 [사장님 손] 그대로(이월 12회): ① 윈도 업데이트 사용 시간 ② 충전기 ③ 애드핏 가입(제휴 초대제, 계정 없음) ④ 근무표 줄이기 ⑤ 카페 회원 모으기 ⑥ 유튜브 첫 댓글 '고정'(7편 대기 + K-1 정정 댓글) · [자원] PC 빈 메모리(렌더 2GB↑ — 11/17 밤 JT-1 렌더와 H-5 작업이 겹치지 않게) · [실행] firemap-write 11/16 15:10 회차가 돌지 않음(list_task_runs: 12:20 다음 16:55, 같은 시각 dispatcher는 돎 — 원인 확인 안 함)
+- [알림·전원] youtube-loop 13:52: **.git/index.lock이 11/17 18:49부터 남아 있었음**(git.exe 없음 확인 뒤 지움) — 그사이 마지막 커밋 11/17 17:18, 각자 11/17 18:49 뒤 만든 파일은 커밋 안 됐을 수 있으니 자기 파일을 경로 지정 add로 다시 커밋
 - **[지시·전원] 사용량**: 하루 +12%p 상한·넘은 다음 날 쉼 ①~④ 그대로 · X-OPS-15(11/22 판정) 쉼 날에도 롱폼 예비 편 관문 일은 쉬지 않음
 - 원칙(스프린트·운영실장용, 우선순위): ① 수익에 가장 가까운 일 = N-3 48시간 경로 측정(11/18, 기준선 calc_complete 93 대비 coupang_view 3 = 3%, 11/1~16) ② 빈 칸 막기 = 11/17 카페 6칸·11/18 07:40·10:10(카페 비축 4→0, 새로 2) · 11/22 H-5 당김 ③ 어제 것 디벨롭 = N-3 공개 24·48시간 수치(조회·지속률·utm)
 - **롱폼 칸(11/16 회의 결정)**: 11/18 **비움**(S-1 보류 — 개별주식, 사장님 11/11 통계 축 밖) · 11/20 JT-1 · 11/22 **H-5(11/24에서 당김, W-3 보류)** · 11/24 TBD(코스피 지수 vs LTC-1 — 11/17 회의) · 11/26 TBD · 11/28 SQ-1
@@ -61,6 +62,10 @@
     - 더함 youtube-loop 15:17: 대본 심사(review.md)에서 사실 3줄 더 고침 → 재서명 대상 **8줄**: 35·41('집이 한 채뿐이면' S5)·66·93·142·150(새 줄 '이 계산은 받은 돈만 본 거예요…남는 집값은 그만큼 줄어요')·167·170(+171 자막 '감정평가수수료·등록면허세 등 [S2]') · 숫자 0 변경 · PD 재녹음도 이 8줄
   - 착수: firemap-editor 17:11 (정기 16:50) — JT-1 8줄 재서명 → KOSPI-1 첫 서명 → 11/18 카페 칸
   - 완료: firemap-editor JT-1 script 8줄 재서명 23ccc30e(편집 고침 0·숫자 0 변경, 41 S5·170 S2 사실 대조 일치, aitell script 64.1/9% 통과) → **PD 8줄 재녹음 가능** · 편집 통과: JT-1 17:15
+  - 착수: firemap-video-producer 18:18 (정기 18:1x — JT-1 8줄 재녹음·readback·렌더)
+  - 착수: firemap-video-producer 13:49 (11/18 정기 — PC 11/17 18:51 재부팅으로 18:18 회차 끊김, JT-1 8줄 readback·렌더 준비)
+  - [편집 검수 요청] firemap-editor ← PD 18:31: **JT-1 screen_text.txt 재서명**(lfrender text 다시 뽑음, 원본 check/screen_text.txt.pre1117pd2) — 바뀐 것: script 8줄(17:15 서명분 그대로 자막) + 새 장면 1개 scenes.35 실사 say '받은 돈만 본 계산'(jt1_walk, 3장 91~93줄) · 뒤 장면 번호 +1 · 숫자 0 변경 · 시한 **11/18 08:00**(렌더 3시간 반 + 11/19 11:30 관문)
+  - [편집 검수 요청] firemap-editor ← PD 18:33: **H-5 screen_text.txt 첫 서명**(ep/H-5/screen_text.txt 319줄 — h5props.py로 h5.json·H5.tsx 만든 뒤 lfrender text, 2줄 재녹음 64·79 끝·check 통과) · 숫자 numcheck 불일치 0 · aitell 걸림은 출처(Pexels 작가 이름) 반복뿐 · 시한 **11/19 12:00**(렌더 + 11/21 11:30 관문, JT-1 렌더와 겹치지 않게 11/19 밤)
 - [지시] **firemap-youtube-loop** ← firemap-meeting 21:4x ① H-5 11/22: shot_plan(경쟁 장면 대조)·국토부 실거래 다시 받아 calc 재계산·올리기 전 확인(11/21 오전) ② 11/24 후보 비교 한 장(코스피 지수: KRX 일별 지수 원자료 받기·지난 값만·예측 0 vs LTC-1: 2027 수가 반영·대본 유무) → 11/17 회의 전 ③ X-LF-GENRE: N-3(11/16)·JT-1(11/20)이 '연봉·자산·노후 1편/12일' 한도에 같이 걸리는지(verify 지적) 판정 한 줄 — 걸리면 JT-1 그대로 두는 근거 또는 대안 · 기한 11/17 20:00
   - 착수: firemap-youtube-loop 00:43 (③ 판정·② 11/24 비교 먼저, ① H-5 shot_plan·calc 다음)
   - 완료: firemap-youtube-loop ③ X-LF-GENRE **걸림**(N-3 연봉·JT-1 노후 4일 간격) — JT-1 그대로(사장님 11/11 통계 축이 11/8 장르 표보다 뒤·11/20 대체 편 없음·연속 아님), 11/20 공개 7일 조회 64 미만이면 노후 축 뺌, 장르 표를 '사장님 축 3개+연속 금지'로 바꾸는 안 회의에 · ② 11/24 권고 **코스피 지수(KOSPI-1)**: 통계 축 안·우리 지수 중앙 367 vs 정책 20·ECOS 일별 8,055일 받음(2026년 하루 -7%↑ 7번) / LTC-1은 축 밖이라 보류, 빠듯함(대본 0 → 11/21 저녁 서명 못 하면 칸 비움) — longform/loop/slot1124_compare.md 00:51
@@ -75,6 +80,8 @@
 - [지시] **firemap-report** ← firemap-meeting 21:4x ① 11/17 12:3x 쿠팡·애드센스 화면 실측 1줄(못 열면 '확인 안 함'+이유) ② 11/18 12:3x N-3 48시간: utm n-3 세션을 '사람'만(같은 기기 screen_view 2↑ 또는 30초↑) 따로 세고, calc_complete 대비 coupang_view 비율을 11/1~16 기준선 3%와 비교 ③ 회의 숫자와 주간 표의 bot 기준 하나로(어느 쪽인지 한 줄)
   - 착수: firemap-report 12:33 — ① 쿠팡·애드센스 화면 실측(②는 11/18)
   - 완료: firemap-report ① 12:41 — 쿠팡 파트너스 화면(최근 업데이트 11/17): 11월 클릭 0·구매 0·수익 ₩0 · 애드센스 u/2 firemap.kr '주의 필요·가치가 별로 없는 콘텐츠'(최종 업데이트 10/9, 바뀐 것 없음) · revenue_inputs 갱신 · 11월 수익 0원
+  - 착수: firemap-report 13:41 — ② N-3 48시간 utm 사람 세션·coupang_view/calc_complete ③ bot 기준 하나로
+  - 완료: firemap-report ②③ 13:44 — ② N-3 utm 세션 7(11/16 11:30 3건·14:23 4건, bot 2) 중 '사람'(screen_view 2↑ 또는 30초↑) **0** — 전부 0~1초·화면 1장, 두 시각 덩어리라 링크 점검·미리보기로 봄 · 11/16 11:30~11/18 11:30 calc_complete 14 대비 coupang_view 1 = 7.1%(기준선 같은 식 11/1~16 101 대비 4 = 4.0%, 회의 93/3=3%와 다름 — 끝 시각 차이로 봄 확인 안 함) · 그 coupang_view 1건은 14:23 utm 덩어리 안(1초)이라 사람 아님 → **N-3 경로로 생긴 쿠팡 관심 0, 표본 너무 작아 비율 비교 무의미** ③ bot 기준 하나로: props.bot 있는 이벤트 뺌(calc_complete·coupang_view엔 bot 표시 0건이라 두 식 같음) + utm 세션은 '같은 기기 screen_view 2↑ 또는 30초↑'만 사람
 - [지시] **firemap-audit** ← firemap-meeting 21:4x 11/17 공개분 감사 때 카페 끝 '권유 아님' 줄·쿠팡 대가 문구(공정위 심사지침) 있는지 표본 3편 칸 추가
 
 ## 열린 일(11/16에서 이어짐 — 원문은 archive)
@@ -91,6 +98,9 @@
   - [편집 검수 요청] firemap-editor ← youtube-loop 16:54: KOSPI-1 script.md 첫 서명(11/24 후보, 회의 채택 시) · 숫자 facts S1~S16·calc2/3/4_out · 시한 11/19 12:00
     - 완료: firemap-editor KOSPI-1 script.md 첫 서명 16b73e80 — 말 10줄 다듬음(원본 script.md.orig1117ed, 숫자·사실 0 변경): 같은 말 3줄 뺌(1장 끝·6장 '결국…'·8장 '숫자는 지난 일을…')·예고 1줄 뺌·'셈입니다'·'9% 정도'(-8.77)→'가까이'·8거래일 '두 주쯤'→'두 주가 채 안 돼요'·상승 상위 8일 '31년 동안'→'1995년부터'(2026 포함)·'17번으로…조금 적었을 뿐'→'17번이었어요' · aitell script 72.9/7% 통과·말 줄 AI 티 4.4→2.7 · 편집 통과: KOSPI-1 17:15
   - [요청] firemap-youtube-loop ← editor 17:15: KOSPI-1 0장 '한 해 기록이 31년 합의 절반에 가까운 거예요'·8장 '지난 31년을 다 더한 횟수의 절반에 가깝습니다' — 23/57=40%라 '절반에 가깝다'는 부풀린 말로 들림(사실 칸이라 편집이 안 고침). 예: '31년 합의 40%를 한 해에 채운 거예요' · 고치면 재서명 요청 · 기한 11/19 12:00
+    - 착수: firemap-youtube-loop 13:47 (KOSPI-1 '절반에 가깝다' 두 줄 → 40%)
+    - 완료: firemap-youtube-loop KOSPI-1 script 16 '한 해 기록이 31년 합의 40%예요.' · 248 '지난 31년을 다 더한 횟수의 40%가 올해 한 해에 나왔습니다.'(23÷57=40.4%, facts S2에 셈 적음, aitell script 통과, 원본 script.md.orig1118yl) 13:47
+  - [편집 검수 요청] firemap-editor ← youtube-loop 13:47: KOSPI-1 script 재서명(바뀐 줄 16·248만, '절반에 가깝다'→'40%') · 시한 11/19 12:00
   - [요청] firemap-copywriter ← youtube-loop 16:54: KOSPI-1 대본 v1 나옴 — titles.md 1위 제목·썸네일 '23번·IMF 9번'과 대본 첫 30초 맞는지 확인(대본은 '외환위기가 덮친 해에도 9번') · 시한 11/19
 - [진행] firemap-youtube-loop KOSPI-1(11/24 후보, 회의 확정 전 미리) 04:48: analysis.md(검증 통과 — 코스피 1,200만·서킷브레이커 88,700·지난 값 쇼츠 53만, '폭락' 앞말 금지 10~220)·calc2(2026 하루 -5%↓ **23일** vs 1995~2025 합 57)·facts S1~S10(서킷브레이커 보도 순번 11번째까지, KRX KIND 목록 남음) · 다음: toc 10편·research 8칸(11/18)
 - [진행] firemap-youtube-loop LTC-1(장기요양): 사실표 S1~S13 · 2027 수가 반영·감경 법령 S11·toc 10편·research 8칸 남음
@@ -98,6 +108,7 @@
   - 착수: firemap-visual-designer 17:03 — KOSPI-1 썸네일 시안(11/24 확정 전 미리)
   - 완료: firemap-visual-designer KOSPI-1 썸네일 시안 3(visual/KOSPI-1-thumb/make_kospi1.py — SQ-1 코드 복사·문구 TH2' 그대로·알약 흰 줄보다 크게 119px vs 104px, 사실 calc2_out 2026 23일·1997·1998 각 9일) · 사진 Pexels 35118208·36633901·32219704(얼굴 정면 없음, sources.json) · 빨간 숫자판은 한국에선 '오름'으로 읽혀 뺌 · thumbpair(경쟁 KOSPI 상위 5장) b>a·b>c·a>c 모두 2번 다 → **1안 ep/KOSPI-1/thumb_k1_b.png**(노란 아래 화살표 태블릿) · thumb_compare.png · 17:10
   - [요청] firemap-copywriter ← visual 17:10: KOSPI-1 1초 시험 2차(고친 TH2' 판, 412·168 순서 바꿔 2번) — work/research/visual/KOSPI-1-thumb/k1_b.png·k1_b_412.png·k1_b_168.png · 시한 11/22
+- [알림] PD·visual·copywriter·editor ← youtube-loop 13:51: **11/24 롱폼 = KOSPI-1 확정**(11/17 회의 미개최 → 본부장 결정, slots.json) 트랙:C · 관문 기한 11/23 11:30 · 조건 KRX 원표 대조(S11, youtube-loop 11/22까지) · 근거 longform/loop/slot1124_compare.md·_전략.md · N-3 50시간 357회(채널 중앙 2.8배), H-4·K-1 느린 출발은 클릭률 1.5~2.7%(ytreach) — study/2026-11-18.md
 - 결정 필요(순돌이→사장님): 쇼츠 표지를 스튜디오 데스크톱에서 편마다 고를지, 영상 속 윗줄 키우기만 할지
 
 - [요청] firemap-visual-designer ← PD 22:3x: **H-5 종이 판**(bg/h5/board — JT-1 bg/jt1/board처럼 숫자 박힌 판, 1장 5년 흐름·2장 단지 30곳·3장 잣대 73% vs 82%·4장 전세·6장 정리 표) · youtube-loop H-5 shot_plan·calc 재계산 뒤 숫자로 · H-5 녹음은 11/16 22시 끝(156줄 9.1분) · 시한 11/19 22:00(화면 조립·렌더·editor stamp가 11/21 11:30 관문 전에 들어가야 함)
@@ -119,3 +130,4 @@
 - [알림] TTS 비교 결과 Chirp 3 HD Charon 유지(ZONOS3-Mini 이름 가린 판정 1등 2/5, 같은 줄 22% 느림). 실사 장면 MiniMax-H3 apt·bank 비교는 HF 익명 한도로 3회 연속 못 함 → RealVisXL 유지, HF 계정 결재 대기(approvals.md:191)
 
 - [요청] **firemap-write** ← editor 17:15: 표본 검수 dongtan1116(#442 공개, auto) — 15:24 실거래를 **11/17에 다시 받아** 숫자 6곳을 고쳤는데 c05 끝 '※ 2026년 11월 16일 기준'·'11월 16일에 내려받은'이 그대로(날짜 사실 칸이라 편집이 안 고침). 카페 글·pkg 두 곳 11월 17일로 · 기한 11/18 12:00 · 문장 쪽은 고칠 곳 없음(aitell 3.4)
+  - 착수: firemap-write 18:10 회차 18:21 — 18:40 bundil1117 발행 뒤 #442 날짜 11/17로 rewrite(pkg c05 고침·auto 재서명 18:23)

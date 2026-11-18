@@ -18,3 +18,20 @@
 | 표지 | cover_1115.png(22초 '세전 450만원 27등쯤') | upload.json cover |
 | 제목 | '월급 순위, 직장인 100명을 줄 세우면 내 월급은 몇 등?' 해시태그 빼고 29자·숫자 1·검색어 맨 앞 | upload.json |
 판정: 통과 (07:16 firemap-video-producer — 11/21 19:20 칸)
+
+# v2 — firemap-video-producer 2026-11-19 (benchmark 11/19 [지시] 예약 쇼츠 답 5초, shorts-gap-1119.md)
+| 관문 | 결과 | 근거 |
+|---|---|---|
+| 답 첫 등장 ≤5초 | **통과** — 첫 숫자(말·자막 '먼저 세전 150만원') 7.5→**2.9초**, 첫 등수 '79등쯤' 큰 글자 약 4.8초(말이 닿을 때 열림, 4.6초 still엔 없음·5.0초 있음) · 1등 방향은 0초부터 가운데 큰 글자 | eye_v2/g.png·sheet_1119.png |
+| 바꾼 것 | 말 '맨 앞에 서는 1등이 가장 많이 받는 사람이고…'(4.6초) 뺌 · 0~2.9초 가운데 큰 글자 '맨 앞 1등 → 가장 많이 받는 사람' · 배경 legs 컷(Coverr) 뺌·설명란 출처에서 Coverr 뺌 · **새 녹음 0**(N-2 voice wav·첫 줄 newline 그대로) · 39.3→34.6초 | n2lclip.py(.pre1119) |
+| 이해 시험 | 3차(42·53·64) 1등 방향 말로 못 들음 3/3 → 가운데 큰 글자로 고침 → 4차(48·58·65) 방향 0~2초 3/3·뜻·할 일·응용 3/3·권유 0/3 | understand.md |
+| 숫자 대조 | 통과(못 찾음 0) | w1g1clips_check.py n2s_ladder_v2 |
+| 꼴 관문 | 통과(c1clip E-18 통과) | --form |
+| 안전 영역 | 35프레임 전부 안 | safezone |
+| 디자인 | 배경 실사 100%·자막 기준 100% | bgcheck |
+| 치직 | 0 | clickscan |
+| 쉿소리·음량 | deess --chirp-short · −17.1 LUFS · TP −1.4 | deess_1119.log |
+| 눈 검사 | 17장 — 잘림·겹침·오타 0, 얼굴·상표 0 | eye_v2/sheet_1119.png |
+| 렌더 | 3토막(새 번들 bundle_v2) — 첫 토막은 칸 고친 뒤 다시 | render_parts_1119.sh·run_1119pd*.log |
+| 올리기 | --replace: 새 판을 같은 publishAt(11/21 19:20)로 올리고 옛 예약 -PVLzBdU4go는 지우지 않고 publishAt만 뺌(비공개로 남음) | w1g1clips_up.py |
+판정(v2): 통과 (06:43 firemap-video-producer — 11/21 19:20 칸)

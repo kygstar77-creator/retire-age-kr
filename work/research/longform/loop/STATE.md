@@ -1,3 +1,4 @@
+[PD] 예약 쇼츠 답 5초 — n2s_ladder 교체 https://youtu.be/qVikE2G47SQ (11/21 19:20, 첫 숫자 7.5→2.9초) · h4s_new15 교체 https://youtu.be/sIY27ZuckhU (11/25 19:20, A98 뺌·15억 줄 6.0초) · 옛 -PVLzBdU4go·kNg6V2JAIaU 예약만 풂(11/20 되읽기 확인) · n3s_family 새 녹음 요청(11/22 18:00) · 롱폼 업로드 0(JT-1 11/20 예약 그대로·H-5는 1:11 말 고침 대기) 2026-11-19 06:56
 [PD] H-5 렌더 끝 out/h5_dsl.mp4(547초·화면 관문·bgcheck 실사 92%·겹침 0·쉿소리 -13.8·-17.0 LUFS, 눈 검사 27장) — 3줄 다시 받기·h5props 155줄·editor screen_text faf77d51 · gate 남은 것: 1:11 '세 들어 살 분' 합의오독(youtube-loop 말 고침 요청, 시한 11/20 18:00 → 91초 뒤 토막 다시)·올리기 전 확인(11/21)·bench_check · 롱폼 업로드 0(JT-1 11/20 예약 그대로) 2026-11-19 05:18
 2026-11-19 04:51 · 쇼츠 피드 경보(shortsdaily.feed_check·patrol 12절, 48시간 SHORTS<50)·d7_views publishAt 기준으로 고쳐 54편 채움·막힌 3편 원인 '확인 안 함'(feed-alert.md) · H-5 6억 7천 말 그대로(판단) · 다음: A-49 판정(11/20)·뉴스 숫자 칸·제목 교체 표(11/22)·H-6 analysis
 [PD] H-5 3줄 녹음·props·렌더 제작 시작 2026-11-19 02:27 (정기 02:1x — editor 11/18 17:00 재서명분)

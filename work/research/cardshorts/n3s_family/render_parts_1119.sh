@@ -1,0 +1,21 @@
+# n3s_family v2 11/19 PD(답 5초 판): render_parts_1116.sh 사본
+set -u
+R=C:/Users/강영준/Documents/GitHub/retire-age-kr; D=$R/work/research/cardshorts/n3s_family; OUT=$R/work/video/out
+cd $R/work/video
+B=$R/work/research/cardshorts/n2s_ladder/bundle_v2   # 11/19 같은 c1s_index 새 번들
+[ -f $B/index.html ] || npx remotion bundle src/c1s_index.ts --out-dir=$B > $D/bundle.log 2>&1 || { echo BUNDLE_FAIL; exit 1; }
+END=$(( $(PYTHONIOENCODING=utf-8 py -3.12 -c "import json;p=json.load(open('n3s_family_v2.json',encoding='utf-8'));print(sum(s['frames'] for s in p['scenes']))") - 1 ))
+LIST="0-299 300-599 600-$END"
+for rg in $LIST; do
+  [ -f out/n3f2_part_$rg.mp4 ] && { echo "skip $rg"; continue; }
+  for t in 1 2 3 4 5 6 7 8; do
+    npx remotion render $B C1S out/n3f2_part_$rg.mp4 --props=n3s_family_v2.json --frames=$rg --pixel-format=yuv420p --concurrency=1 --timeout=120000 --offthreadvideo-cache-size-in-bytes=67108864 --offthreadvideo-video-threads=1 > $D/render1119_part_${rg}_$t.log 2>&1 && break
+    rm -f out/n3f2_part_$rg.mp4; echo "retry $rg $t"
+  done
+  [ -f out/n3f2_part_$rg.mp4 ] || { echo "PART_FAIL $rg"; exit 1; }
+  echo "part $rg $(date +%H:%M)"
+done
+: > out/n3f2_parts.txt; for rg in $LIST; do echo "file 'n3f2_part_$rg.mp4'" >> out/n3f2_parts.txt; done
+cd out && $R/work/video/node_modules/@remotion/compositor-win32-x64-msvc/ffmpeg.exe -y -hide_banner -loglevel error -f concat -safe 0 -i n3f2_parts.txt -c copy n3s_family_v2.mp4 && echo "CONCAT OK"
+cd .. && PYTHONIOENCODING=utf-8 py -3.12 $R/work/video/deess.py out/n3s_family_v2.mp4 out/n3s_family_v2_ds.mp4 --chirp-short > $D/deess_1119.log 2>&1; tail -3 $D/deess_1119.log
+echo "N3F2_DONE $(date +%H:%M)"

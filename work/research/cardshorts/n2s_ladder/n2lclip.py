@@ -50,8 +50,8 @@ def sc(label, lines, data, pad=0):
 NEW = json.loads(open(os.path.join(HERE, 'newline.json'), encoding='utf-8').read())
 BYTEXT[NEW['text']] = NEW
 scenes = [
-    sc('질문', ['내 월급, 직장인 100명을', '맨 앞에 서는 1등이'],
-       {'tiles': [['직장인 100명', '월급 순서로 한 줄', '', 0, 'ink'], ['맨 앞 1등', '가장 많이 받는 사람', '', NEW['frames'], 'ink']]}),
+    sc('질문', ['내 월급, 직장인 100명을'],   # 11/19 v2(benchmark 11/19 답 5초): 말 '맨 앞에 서는 1등이…'(4.6초) 뺌 — 첫 숫자 7.5→2.9초, 뜻은 위 질문 둘째 줄 '1등 = 가장 많이 받는 사람'·칸으로
+       {'tiles': [['맨 앞 1등', '가장 많이 받는 사람', '', 0, 'ink']]}),   # 11/19 3차 이해 시험(42·53·64) 3/3 '1등 방향을 말로 못 들음, 윗줄은 작음' → 가운데 큰 글자를 방향으로 · 11/19: 두 칸을 0에 같이 두면 뒤 칸만 보여 위 질문 둘째 줄과 같은 말이 겹침 → 말과 맞는 첫 칸 하나
     sc('150', ['먼저 세전 150만원'], {'tiles': [['세전 150만원', '79등쯤', '', 0, 'ink']]}),
     sc('250', ['다음은 세전 250만원'], {'tiles': [['세전 250만원', '59등쯤', '', 0, 'ink']]}),
     sc('350', ['세전 350만원. 38등'], {'tiles': [['세전 350만원', '38등쯤', '', 0, 'ink']]}),
@@ -65,7 +65,7 @@ for s_ in scenes:
 for x in ('79.4%', '58.5%', '38.4%', '26.7%', '4.3%', '| 150만원 | 79.4% | 79등', '| 450만원 | 26.7% | 27등'): assert x in SRC, f'원문에 없음 {x}'
 assert all(len(t[0]) <= 12 for s_ in scenes for t in s_['data']['tiles']), '칸 이름 12자 넘음'
 scenes[-1]['frames'] += TAIL
-BG = [('platform', 0), ('legs', 1), ('cross', 0), ('suit', 0), ('glass', 1), ('calc', 1), ('night', 15), ('road', 1), ('sky', 1)]   # 11/15 렌더 safezone: 28~29초 책상 전화기 버튼 글자(FLASH·REDIAL)가 오른쪽 버튼 줄에 걸림 → 글자 없는 항공 도로 컷
+BG = [('platform', 0), ('cross', 0), ('suit', 0), ('glass', 1), ('calc', 1), ('night', 15), ('road', 1), ('sky', 1)]   # 11/15 렌더 safezone: 28~29초 책상 전화기 버튼 글자(FLASH·REDIAL)가 오른쪽 버튼 줄에 걸림 → 글자 없는 항공 도로 컷
 allines = [dict(l, _pad=(s['_pad'] if j == len(s['lines']) - 1 else 0)) for s in scenes for j, l in enumerate(s['lines'])]
 assert len(allines) == len(BG), (len(allines), len(BG))
 bg = []; at = 0
@@ -83,11 +83,11 @@ for k, ((name, st), l) in enumerate(zip(BG, allines)):
     bg.append({'src': cut, 'from': at, 'frames': fr, 'start': 0}); at += fr
 credits = ' · '.join(sorted({CR[str(STOCK[nm])]['author'].strip() for nm, _ in BG}))
 for s_ in scenes: s_.pop('_pad')
-p = {'fps': 30, 'name': 'n2s_ladder', 'v': 1, 'look': 'live', 'question': ['직장인 100명 중 내 월급 몇 등?', '1등 = 가장 많이 받는 사람'], 'hot': '몇 등',
+p = {'fps': 30, 'name': 'n2s_ladder', 'v': 2, 'look': 'live', 'question': ['직장인 100명 중 내 월급 몇 등?', '1등 = 가장 많이 받는 사람'], 'hot': '몇 등',
      'answer': {'label': '세전 월급 → 100명 중 몇 등', 'items': ['150만원 79등 · 250만원 59등', '350만원 38등 · 450만원 27등'], 'arrow': False, 'note': '2024년 12월 세전 월 보수 · 일자리 기준'},
      'base': '국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」 · 2024년 12월 세전 · 파이어맵 계산', 'long': 'kXnAKjC-84Q',
      'scenes': scenes, 'bg': bg, 'credits': credits}
-json.dump(p, open(os.path.join(VID, 'n2s_ladder.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+json.dump(p, open(os.path.join(VID, 'n2s_ladder_v2.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 fr = sum(s['frames'] for s in scenes)
 print(f'n2s_ladder: {fr} 프레임 = {fr / 30:.1f}초 · 장면 {len(scenes)} · 배경 {len(bg)}컷')
 print('credits:', credits)

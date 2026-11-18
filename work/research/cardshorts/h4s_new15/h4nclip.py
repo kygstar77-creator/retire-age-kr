@@ -46,8 +46,8 @@ def sc(label, lines, data):
 
 
 scenes = [
-    sc('15억의 출처', [Q1, '광명에서 2019년 뒤에 지은', '2019년 뒤라는 건', '가운데 값이 15억 가까이'],
-       {'tiles': [['흔히 듣는 말', '"광명 15억"', '', 0, 'ink'], ['새 단지만', '2019년 이후 지음', '', 0, 'ink'], ['최근 몇 년 사이', '새로 지은 단지', '', 0, 'ink'], ['새 단지 24건 가운데', '14.71억, 15억 가까이', '', 0, 'ink']]}),
+    sc('15억의 출처', [Q1, '광명에서 2019년 뒤에 지은', '가운데 값이 15억 가까이'],   # 11/19 v2(benchmark 11/19 답 5초·A98): '2019년 뒤라는 건 … 새로 지은 단지라는 뜻'(5.2초, 앞 줄 되풀이) 뺌 — 출처 답 3.2초·15억 줄 11.2→6.0초, 새 녹음 0
+       {'tiles': [['흔히 듣는 말', '"광명 15억"', '', 0, 'ink'], ['새 단지만', '2019년 이후 지음', '', 0, 'ink'], ['새 단지 24건 가운데', '14.71억, 15억 가까이', '', 0, 'ink']]}),
     sc('서울 줄에 끼우면', [Q2],
        {'tiles': [['서울 25개 구 사이', '15곳보다 비쌈', '', 0, 'ink']]}),
     sc('착각', ['그래서 새 단지 값만'],
@@ -65,8 +65,8 @@ need = ['14.71억', '14.30억', '15.00억', '9.70억', '24건']
 for x in need: assert x in SRC, f'원문에 없음 {x}'
 scenes[-1]['frames'] += TAIL
 # 배경: H-4 롱폼 Pexels 풀(bg/h4/stock) 중 앞 클립에서 눈 검사 통과한 7개만 — 안 쓰는 것 6964247·7651886·31907490·28803181·37527858·8478946·9431584·29354411(얼굴·간판)
-BG = [(1, '17860854', 2), (2, '37500921', 2), (3, '38259259', 2), (4, '35865018', 10), (5, '37873585', 2), (6, '35865018', 2),
-      (7, '38259259', 20), (8, '37500921', 10)]   # 11/15 눈 검사: 40294066 아파트 외벽 상표 글자(브랜드 로고) → 4·8줄 바꿈   # 11/15 safezone 23~24초: 17860854 12초~ 간판·전화번호 현수막 → 항공 실사
+BG = [(1, '17860854', 2), (2, '37500921', 2), (3, '35865018', 10), (4, '37873585', 2), (5, '35865018', 2),
+      (6, '38259259', 20), (7, '37500921', 10)]   # 11/19 v2: 뺀 줄 몫 38259259_2 컷 뺌, 번호 당김   # 11/15 눈 검사: 40294066 아파트 외벽 상표 글자(브랜드 로고) → 4·8줄 바꿈   # 11/15 safezone 23~24초: 17860854 12초~ 간판·전화번호 현수막 → 항공 실사
 allines = [l for s in scenes for l in s['lines']]
 assert len(allines) == len(BG), (len(allines), len(BG))
 bg = []; at = 0
@@ -81,11 +81,11 @@ for (k, cid, st), l in zip(BG, allines):
         subprocess.run([FF, '-y', '-v', 'error', '-ss', str(st), '-i', src, '-t', f'{fr / 30 + 0.5:.2f}', '-an', '-r', '30', '-c:v', 'libx264', '-g', '10', '-bf', '0', '-crf', '18', '-pix_fmt', 'yuv420p', cp], check=True)
     bg.append({'src': cut, 'from': at, 'frames': fr, 'start': 0}); at += fr
 credits = ' · '.join(sorted({f"{c} {CRED[c].get('author', '').strip()}" for _, c, _ in BG})) + ' (Pexels License)'
-p = {'fps': 30, 'name': 'h4s_new15', 'v': 1, 'look': 'live', 'question': ['광명 아파트 15억', '어디서 나온 말?'], 'hot': '15억',
+p = {'fps': 30, 'name': 'h4s_new15', 'v': 2, 'look': 'live', 'question': ['광명 아파트 15억', '어디서 나온 말?'], 'hot': '15억',
      'answer': {'label': '광명 2019년 이후 지은 단지 84㎡대 실거래 가운데 값', 'items': ['14.71억(24건)', '광명 전체 9.70억'], 'arrow': False, 'note': '2026.07~09 계약'},
      'base': '국토교통부 아파트 매매 실거래가(84㎡대, 계약 2026.07~09) · 파이어맵 계산', 'long': 'MRQqitzEgDw',
      'scenes': scenes, 'bg': bg, 'credits': credits}
-json.dump(p, open(os.path.join(VID, p['name'] + '.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+json.dump(p, open(os.path.join(VID, p['name'] + '_v2.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 fr = sum(s['frames'] for s in scenes)
 print(f"{p['name']}: {fr} 프레임 = {fr / 30:.1f}초 · 장면 {len(scenes)} · 최장 장면 {max(s['frames'] for s in scenes) / 30:.1f}초 · 배경 {len(bg)}컷(최장 {max(b['frames'] for b in bg) / 30:.1f}초)")
 print('credits:', credits)

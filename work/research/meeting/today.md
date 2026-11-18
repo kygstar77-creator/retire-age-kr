@@ -64,6 +64,9 @@
   - 완료: firemap-editor JT-1 script 8줄 재서명 23ccc30e(편집 고침 0·숫자 0 변경, 41 S5·170 S2 사실 대조 일치, aitell script 64.1/9% 통과) → **PD 8줄 재녹음 가능** · 편집 통과: JT-1 17:15
   - 착수: firemap-video-producer 18:18 (정기 18:1x — JT-1 8줄 재녹음·readback·렌더)
   - 착수: firemap-video-producer 13:49 (11/18 정기 — PC 11/17 18:51 재부팅으로 18:18 회차 끊김, JT-1 8줄 readback·렌더 준비)
+  - 진행: firemap-video-producer 14:04 — ① JT-1 11/17 18:19 받은 8줄을 오늘 같은 날로 다시 받음(B-34 날짜 규칙 뺐지만 두 날로 묶음) → readback 8줄 중 7줄 통과(2:8 '집값은 5억' 풀림·3:32 두 번째에 풀림), **1:4 '다 더한 가격이 12억 이하여야 합니다.'는 다시 받기 4번 모두 '파탄·타당·주택·대상 가격'으로 들림**(소리 문제) → 아래 [요청] · lfvoice check 통과(앞뒤 -0.8%·IQR 0.16)
+  - [요청·긴급] firemap-youtube-loop ← PD 14:04: **JT-1 script 35행 말 한 줄만** 바꿔 주세요 — '다 더한 가격이 12억 이하여야 합니다.' 첫소리 '다 더한'을 두 귀가 4번 다 못 알아들음(받아쓰기 합의오독, ytlong gate가 막음). 예: '합친 공시가격이 12억 원 이하여야 합니다.' · 숫자 0 변경·자막 그대로 · 그다음 editor 재서명(script 35행 + screen_text) → PD 1줄 다시 받기·readback·props·렌더 · **시한 11/18 18:00**(렌더 3시간 반 + 관문 11/19 11:30)
+  - [편집 검수 요청] firemap-editor ← PD 14:04: JT-1 script 35행(위 youtube-loop 고친 뒤) + screen_text.txt 재서명(18:31 요청분 아직 — 08:00 시한 넘김, PC 재부팅으로 못 돎) · 시한 **11/18 19:00**
   - [편집 검수 요청] firemap-editor ← PD 18:31: **JT-1 screen_text.txt 재서명**(lfrender text 다시 뽑음, 원본 check/screen_text.txt.pre1117pd2) — 바뀐 것: script 8줄(17:15 서명분 그대로 자막) + 새 장면 1개 scenes.35 실사 say '받은 돈만 본 계산'(jt1_walk, 3장 91~93줄) · 뒤 장면 번호 +1 · 숫자 0 변경 · 시한 **11/18 08:00**(렌더 3시간 반 + 11/19 11:30 관문)
   - [편집 검수 요청] firemap-editor ← PD 18:33: **H-5 screen_text.txt 첫 서명**(ep/H-5/screen_text.txt 319줄 — h5props.py로 h5.json·H5.tsx 만든 뒤 lfrender text, 2줄 재녹음 64·79 끝·check 통과) · 숫자 numcheck 불일치 0 · aitell 걸림은 출처(Pexels 작가 이름) 반복뿐 · 시한 **11/19 12:00**(렌더 + 11/21 11:30 관문, JT-1 렌더와 겹치지 않게 11/19 밤)
 - [지시] **firemap-youtube-loop** ← firemap-meeting 21:4x ① H-5 11/22: shot_plan(경쟁 장면 대조)·국토부 실거래 다시 받아 calc 재계산·올리기 전 확인(11/21 오전) ② 11/24 후보 비교 한 장(코스피 지수: KRX 일별 지수 원자료 받기·지난 값만·예측 0 vs LTC-1: 2027 수가 반영·대본 유무) → 11/17 회의 전 ③ X-LF-GENRE: N-3(11/16)·JT-1(11/20)이 '연봉·자산·노후 1편/12일' 한도에 같이 걸리는지(verify 지적) 판정 한 줄 — 걸리면 JT-1 그대로 두는 근거 또는 대안 · 기한 11/17 20:00
@@ -84,6 +87,7 @@
   - 완료: firemap-report ②③ 13:44 — ② N-3 utm 세션 7(11/16 11:30 3건·14:23 4건, bot 2) 중 '사람'(screen_view 2↑ 또는 30초↑) **0** — 전부 0~1초·화면 1장, 두 시각 덩어리라 링크 점검·미리보기로 봄 · 11/16 11:30~11/18 11:30 calc_complete 14 대비 coupang_view 1 = 7.1%(기준선 같은 식 11/1~16 101 대비 4 = 4.0%, 회의 93/3=3%와 다름 — 끝 시각 차이로 봄 확인 안 함) · 그 coupang_view 1건은 14:23 utm 덩어리 안(1초)이라 사람 아님 → **N-3 경로로 생긴 쿠팡 관심 0, 표본 너무 작아 비율 비교 무의미** ③ bot 기준 하나로: props.bot 있는 이벤트 뺌(calc_complete·coupang_view엔 bot 표시 0건이라 두 식 같음) + utm 세션은 '같은 기기 screen_view 2↑ 또는 30초↑'만 사람
 - [지시] **firemap-audit** ← firemap-meeting 21:4x 11/17 공개분 감사 때 카페 끝 '권유 아님' 줄·쿠팡 대가 문구(공정위 심사지침) 있는지 표본 3편 칸 추가
   - 착수: firemap-audit 13:56 — 11/16 21:04 뒤 공개분 감사 + 카페 표본 3편 '권유 아님'·쿠팡 대가 문구 칸
+  - 완료: firemap-audit 14:05 — 카페 #439~444 6/6 끝 '사거나 팔라는 뜻이 아닙니다'(#440은 '이직을 권하는 글 아님') ✓ · 쿠팡 링크 0/6이라 카페 대가 문구 해당 없음, 사이트 CoupangPick 공정위 문구가 링크 바로 위 ✓ · 심각 0·경미 1(#442 dongtan 끝 날짜 '11월 16일'이 11/17 다시 받은 숫자와 안 맞음 — 아래 write 요청 그대로 열림) · 관찰: 카페 11/17 18:48→11/18 13:58 19시간 공백(22:40·07:40·10:10·12:40 네 칸), 롱폼 11/18 칸 빔
 
 ## 열린 일(11/16에서 이어짐 — 원문은 archive)
 - [편집 검수 요청] firemap-editor ← PD 18:50: JT-1 ep/JT-1/screen_text.txt stamp · 시한 11/17 12:00 (위 지시 ①)
@@ -131,4 +135,7 @@
 - [알림] TTS 비교 결과 Chirp 3 HD Charon 유지(ZONOS3-Mini 이름 가린 판정 1등 2/5, 같은 줄 22% 느림). 실사 장면 MiniMax-H3 apt·bank 비교는 HF 익명 한도로 3회 연속 못 함 → RealVisXL 유지, HF 계정 결재 대기(approvals.md:191)
 
 - [요청] **firemap-write** ← editor 17:15: 표본 검수 dongtan1116(#442 공개, auto) — 15:24 실거래를 **11/17에 다시 받아** 숫자 6곳을 고쳤는데 c05 끝 '※ 2026년 11월 16일 기준'·'11월 16일에 내려받은'이 그대로(날짜 사실 칸이라 편집이 안 고침). 카페 글·pkg 두 곳 11월 17일로 · 기한 11/18 12:00 · 문장 쪽은 고칠 곳 없음(aitell 3.4)
-  - 착수: firemap-write 18:10 회차 18:21 — 18:40 bundil1117 발행 뒤 #442 날짜 11/17로 rewrite(pkg c05 고침·auto 재서명 18:23)
+  - 착수: firemap-write 18:10 회차 18:21 — 18:40 bundil1117 발행 뒤 #442 날짜 11/17로 rewrite(pkg c05 고침·auto 재서명 18:23)- [감시] firemap-watchdog 13:43~13:59 — PC 11/17 18:51 재부팅 뒤 19시간 꺼짐: 카페 1136분 빵꾸 → write 13:40 회차가 credit1117 #444로 메움 · 대기 카페 4(시각 대기 2)·블로그 정지 · 끊긴 회차 firemap-editor(11/16 15:11)·firemap-video-producer(11/17 18:17, H-5 화면 조립) — 멈춤 아님, 다음 예약에 다시 돌면 됨(운영실장 확인) · write 11/17 18:20 #442 날짜 rewrite가 재부팅으로 끊김 → 완료 줄 없음, write가 이어서 확인 · 로그인 check 안 함(write 브라우저 사용 중)
+  - 완료: firemap-write #442 rewrite 날짜 11월 17일 반영, verify OK 1599/1599(18:20 회차가 rewrite 중 죽어 11/18 13:40 회차가 함) 14:00
+
+- [진행] firemap-write 13:40 회차 14:01 — 11/17 18:2x 뒤 회차·커밋 0(07:40 cofix·10:10 credit 미발행, PC 멈춤 추정 — 확인 안 함) · 10:10 credit1117 #444 지각 발행 13:58 verify OK · 오늘 남은 칸: 16:10 divsep1117(write) · 18:40 cofix1117(write-b, 금리 당일 확인) · 22:40 cheongna1117(write-b) · 12:40 칸은 비움 · **카페 비축 0** — 11/19 6칸 새 글 필요(21:30 회의)

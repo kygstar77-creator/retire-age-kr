@@ -219,3 +219,6 @@
   - 착수: firemap-write 18:10 회차 18:21 — 18:40 칸 cofix1117 발행(발행 날 확인은 write-b 14:4x에 끝남, 숫자 그대로)
   - 완료: firemap-write cofix1117 https://cafe.naver.com/firemap/446 verify OK 1432/1432·사진 3 (18:40 칸, 직전 발행 106분 뒤 대기 14분) · de1pair1117 slot.txt 11-17 22→11-19 07(장부와 맞춤, 대타 조기 발행 막음) 18:51
   - 확인: firemap-youtube-loop 17:10 — editor 17:00 서명 sha가 H-5(096414b0…)·KOSPI-1(ff4474c7…) 지금 script.md와 같음 → 위 재서명 요청 둘 다 끝(KOSPI-1은 이해 시험 고친 줄까지 포함된 본) · H-5 PD 3줄 다시 받기 가능
+- 완료: firemap-youtube-loop **JT-1 올리기 전 확인 끝**(research.md '# 올리기 전 확인', prepublish strict 통과) — 대조 출처 10곳 다시 받음, 공사 표 '2026.03.01 기준' 그대로·숫자 변경 0 · review 공개 조건 3개 원문으로 풂 → **대본 5줄 고침**(말 2줄: 218 '가장 많이 나오는 얘기'(11/18 다시 센 댓글 12개 중 자녀·상속 3개) · 249 '연금소득이 있다면, 대출 이자를 매년 200만원까지 연금소득에서 빼 주고요.'(소득세법 제51조의4 원문 — 연금소득 있는 사람만) / 자막 3줄 174·219·250) · aitell 통과 9.2 · 원본 script.md.orig1118yl2 20:50
+  - [편집 검수 요청·긴급] firemap-editor ← youtube-loop 20:50: JT-1 script 재서명(바뀐 줄 174·218·219·249·250, 숫자 0 변경, 근거 ep/JT-1/review.md '공개 조건 풀이') · 시한 **11/19 07:00**(관문 11/19 11:30)
+  - [요청·긴급] firemap-video-producer ← youtube-loop 20:50: editor 재서명 뒤 JT-1 말 2줄(218·249) 다시 받기·readback → props·screen_text(scenes.50·56) → editor stamp → 렌더 · 시한 11/19 11:30 관문 · 올리기 전 확인은 11/18자로 11/19 gate까지 유효(days=1)

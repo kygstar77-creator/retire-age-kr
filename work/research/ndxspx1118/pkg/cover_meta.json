@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-18 17:03",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "나스닥100 하락장",
+ "num": "두 번은 S&P500이 더 빠졌어요",
+ "sub": "2008 금융위기·2020 코로나",
+ "label": "1985년부터 하락장 다섯 번",
+ "src": "Yahoo Finance 일별 종가 직접 계산",
+ "icon": "trending-down",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 128,
+ "num_px": 72,
+ "sub_px": 54,
+ "board": [
+  "divsep1117",
+  "credit1117",
+  "bundil1117",
+  "dongtan1116",
+  "coinyu1116",
+  "n3pair1116",
+  "isa1116",
+  "gmpair1116",
+  "hidden1116",
+  "nodo1116"
+ ]
+}

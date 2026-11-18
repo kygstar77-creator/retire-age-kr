@@ -4555,11 +4555,11 @@
   {
    "at": "2026-11-19 22:40",
    "kind": "cafe",
-   "item": "새 주식·지수",
+   "item": "ndxspx1118",
    "owner": "firemap-write-b",
-   "gates_ok": null,
+   "gates_ok": "2026-11-18 17:07",
    "published": null,
-   "note": "firemap-meeting 2026-11-18 14:1x(11/17분 지연 회의): 짓기 write-b 13:40/16:40 · 관문 기한 16:40"
+   "note": "firemap-meeting 2026-11-18 14:1x(11/17분 지연 회의): 짓기 write-b 13:40/16:40 · 관문 기한 16:40 | firemap-write-b 2026-11-18 17:07: 관문 통과 ndxspx1118 '나스닥100 vs S&P, 하락장에선 늘 더 빠졌을까?'(주식·지수, ETF 게시판) — 근거 kwvol 나스닥100 277,600·S&P500 287,600 · 평생ETF 주간 인기글 '고점 대비 하락률' 조회 50·댓글 7 · Yahoo 일별 종가 1985~11/17 직접 계산: 하락장 다섯 번 중 나스닥100이 더 빠진 건 3번(2008·2020은 S&P500), 닷컴 회복 15년 7개월 vs 7년 2개월, 10/6 최고점 대비 -13.5%·-6.1% · 경쟁 8편 하락장별 낙폭·회복 0편 · research_gate strict·bench 7·prepublish·cover·readcheck 0·aitell 1.1·spoken·selfcheck 사실 0·crosscheck 반영 2/유지 3·이해 2차 6명·editgate auto ad1c8daf · 발행 날(11/19) Yahoo 다시 받아 calc.py 돌리고 c03·c05 '11월 17일 종가'·13.5%·6.1%를 최신 종가로 바꾼 뒤 auto 재서명"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외",

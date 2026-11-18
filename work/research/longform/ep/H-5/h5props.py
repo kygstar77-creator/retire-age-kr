@@ -20,7 +20,7 @@ SCRIPT = open(os.path.join(EP, 'script.md'), encoding='utf-8').read()
 SRCDOC = SCRIPT + ''.join(open(os.path.join(EP, f), encoding='utf-8').read() for f in ('facts.txt', 'calc_out.txt', 'calc2_out.txt', 'calc4_out.txt', 'research.md'))
 V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
 ALL = [l for s in V['sections'] for l in s['lines']]
-assert len(ALL) == 156, len(ALL)
+assert len(ALL) == 155, len(ALL)   # 11/19 PD: editor 11/18 17:00이 say_v2 13행('처음 보시는 분을…')을 뺌 → 155줄, 그 뒤 번호 한 칸씩 당김
 assert abs(V.get('speakingRate', 0) - 1.1) < 1e-9 and V['voice'] == 'ko-KR-Chirp3-HD-Charon'
 SAY = [s.strip() for s in open(os.path.join(EP, 'say_v2.txt'), encoding='utf-8').read().split('\n') if s.strip() and not s.lstrip().startswith(('[', '#'))]
 HEADS = [re.sub(r'^\[?\d+\.\s*|\]$', '', h).strip() for h in re.findall(r'^## (.+)$', SCRIPT, re.M)]
@@ -70,6 +70,11 @@ def S(kind, idx, **data):
 def ask(ch, idx): return S('ask', idx, n='기초' if ch == 1 else f'{ch - 1}장', q=HEADS[ch])
 
 
+def silent_ask(ch, fr=36):   # 11/19 PD: 기초 장 카드에 붙던 말('처음 보시는 분을…')이 빠져 말 없이 1.2초 — 띠링이 쉬는 틈에 울림
+    return {'kind': 'ask', 'lines': [{'text': '', 'audio': None, 'frames': fr, 'cap': None, 'i': None}], 'frames': fr,
+            'data': {'n': '기초' if ch == 1 else f'{ch - 1}장', 'q': HEADS[ch]}}
+
+
 def board(f, idx, z=(1.0, 1.04)):
     if not os.path.exists(os.path.join(PUB, 'bg', 'h5', 'board', f + '.png')): MISSING.append(f'판 bg/h5/board/{f}.png')
     return S('pic', idx, pic=f'bg/h5/board/{f}.png', license='파이어맵 자체 제작 판(출처는 판 안)', baked=True, inset=0.80, dark=True, zoom=list(z), cx=50, cy=45)
@@ -96,33 +101,33 @@ scenes += [broll('18495181', [0, 1], '송도 아파트 실거래가'), broll('37
            board('search', [3, 4]), board('open82', [5]), broll('15082793', [6], '단지마다 달랐다'),
            broll('31907490', [7, 8], '반값 거래는 몇 건?'), board('ruler', [9]), broll('37873585', [10, 11], '내 단지도 직접')]
 # 기초 (12~24)
-scenes += [ask(1, [12]), board('map', [13, 14, 15]), broll('6964247', [16, 17, 18], '같은 크기끼리만'),
-           broll('9057559', [19, 20], '신고된 실제 거래만'), board('median9', [21, 22, 23]), broll('37873585', [24], '사는 분도 세 들 분도')]
+scenes += [silent_ask(1), board('map', [12, 13, 14]), broll('6964247', [15, 16, 17], '같은 크기끼리만'),
+           broll('9057559', [18, 19], '신고된 실제 거래만'), board('median9', [20, 21, 22]), broll('37873585', [23], '사는 분도 세 들 분도')]
 # 1 5년 흐름 (25~59)
-scenes += [ask(2, [25]), board('half', [26, 27, 28, 29, 30, 31]), broll('37873585', [32, 33], '그 뒤로는 비슷한 값'),
-           board('count', [34, 35, 36, 37, 38]), broll('7651886', [39], '가장 최근 넉 달'), board('eq82', [40, 41, 42, 43, 44]),
-           broll('38259259', [45], '가장 낮았던 한 해'), board('eq82', [46, 47, 48, 49]),
-           broll('7317305', [50, 51, 52, 53], '이유는 자료에 없다'), broll('37873585', [54, 55, 56, 57], '고점에 샀다면'),
-           broll('15082793', [58, 59], '바닥에 샀다면')]
+scenes += [ask(2, [24]), board('half', [25, 26, 27, 28, 29, 30]), broll('37873585', [31, 32], '그 뒤로는 비슷한 값'),
+           board('count', [33, 34, 35, 36, 37]), broll('7651886', [38], '가장 최근 넉 달'), board('eq82', [39, 40, 41, 42, 43]),
+           broll('38259259', [44], '가장 낮았던 한 해'), board('eq82', [45, 46, 47, 48]),
+           broll('7317305', [49, 50, 51, 52], '이유는 자료에 없다'), broll('37873585', [53, 54, 55, 56], '고점에 샀다면'),
+           broll('15082793', [57, 58], '바닥에 샀다면')]
 # 2 단지 서른두 곳 (60~96)
-scenes += [ask(3, [60]), board('rank32', [61, 62, 63, 64, 65, 66]), broll('38259259', [67, 68, 69, 70], '고점을 다시 넘은 곳은?'),
-           board('top3', [71, 72, 73, 74, 75]), broll('15082793', [76, 77, 78, 79], '덜 돌아온 쪽'), board('pair', [80, 81, 82]),
-           broll('7651886', [83], '새 아파트일수록?'), board('built', [84, 85, 86, 87]), broll('9057559', [88, 89], '내 단지의 두 숫자'),
-           broll('15082793', [90, 91, 92], '거래 서너 건뿐인 단지'), broll('37873585', [93, 94, 95, 96], '셈에서 빠진 단지')]
+scenes += [ask(3, [59]), board('rank32', [60, 61, 62, 63, 64, 65]), broll('38259259', [66, 67, 68, 69], '고점을 다시 넘은 곳은?'),
+           board('top3', [70, 71, 72, 73, 74]), broll('15082793', [75, 76, 77, 78], '덜 돌아온 쪽'), board('pair', [79, 80, 81]),
+           broll('7651886', [82], '새 아파트일수록?'), board('built', [83, 84, 85, 86]), broll('9057559', [87, 88], '내 단지의 두 숫자'),
+           broll('15082793', [89, 90, 91], '거래 서너 건뿐인 단지'), broll('37873585', [92, 93, 94, 95], '셈에서 빠진 단지')]
 # 3 '반값'과 '6~70%' (97~128)
-scenes += [ask(4, [97]), broll('6611954', [98, 99, 100, 101], '오피스텔·경매 물건'), board('dots', [102, 103, 104, 105, 106]),
-           broll('6964247', [107, 108, 109], '직거래란'), board('dots', [110, 111, 112, 113, 114]), broll('7317305', [115, 116], '직거래 표시만 있다'),
-           broll('38259259', [117, 118, 119], '무엇으로 나눴나'), board('ruler', [120, 121, 122]), broll('7651886', [123], '훨씬 낮게 나온다'),
-           board('ruler', [124, 125, 126]), broll('9057559', [127, 128], '최고 한 건인지부터')]
+scenes += [ask(4, [96]), broll('6611954', [97, 98, 99, 100], '오피스텔·경매 물건'), board('dots', [101, 102, 103, 104, 105]),
+           broll('6964247', [106, 107, 108], '직거래란'), board('dots', [109, 110, 111, 112, 113]), broll('7317305', [114, 115], '직거래 표시만 있다'),
+           broll('38259259', [116, 117, 118], '무엇으로 나눴나'), board('ruler', [119, 120, 121]), broll('7651886', [122], '훨씬 낮게 나온다'),
+           board('ruler', [123, 124, 125]), broll('9057559', [126, 127], '최고 한 건인지부터')]
 # 4 전세 (129~138)
-scenes += [ask(5, [129]), broll('7205591', [130], '전세는 얼마'), board('jeonse', [131, 132, 133, 134]),
-           broll('7205591', [135], '단지마다 전세 비율'), board('ratio', [136, 137, 138])]
+scenes += [ask(5, [128]), broll('7205591', [129], '전세는 얼마'), board('jeonse', [130, 131, 132, 133]),
+           broll('7205591', [134], '단지마다 전세 비율'), board('ratio', [135, 136, 137])]
 # 5 직접 확인 (139~149)
-scenes += [ask(6, [139]), broll('31907490', [140], '실거래가 공개시스템'), board('check5', [141, 142, 143, 144]),
-           broll('6964247', [145, 146, 147], '이번 달 거래는 덜 들어옴'), board('check5', [148, 149])]
+scenes += [ask(6, [138]), broll('31907490', [139], '실거래가 공개시스템'), board('check5', [140, 141, 142, 143]),
+           broll('6964247', [144, 145, 146], '이번 달 거래는 덜 들어옴'), board('check5', [147, 148])]
 # 6 정리 (150~155)
-scenes += [ask(7, [150]), board('summary', [151, 152, 153]), broll('37736994', [154], '전체 표는 카페에'),
-           S('pic', [155], pic=END_PIC, license=f"Pexels 37736994 무료({CR['37736994']['author']})", baked=True, zoom=[1.0, 1.10], cx=50, cy=50)]
+scenes += [ask(7, [149]), board('summary', [150, 151, 152]), broll('37736994', [153], '전체 표는 카페에'),
+           S('pic', [154], pic=END_PIC, license=f"Pexels 37736994 무료({CR['37736994']['author']})", baked=True, zoom=[1.0, 1.10], cx=50, cy=50)]
 scenes[-1]['frames'] += END_PAD
 scenes[-1]['lines'].append({'text': '', 'audio': None, 'frames': END_PAD, 'cap': None, 'i': None})
 

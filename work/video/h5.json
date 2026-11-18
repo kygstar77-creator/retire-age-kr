@@ -1,0 +1,1859 @@
+{
+ "fps": 30,
+ "scenes": [
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "안녕하세요, 파이어맵입니다. 오늘은 송도 아파트 실거래가 이야기입니다.",
+     "audio": "audio/h-5/fff6920a6d062ae7.wav",
+     "frames": 130,
+     "cap": null
+    },
+    {
+     "text": "송도 아파트, 2021년 최고 때의 몇 %까지 돌아왔을까요?",
+     "audio": "audio/h-5/1c0914821afdf7a0.wav",
+     "frames": 105,
+     "cap": null
+    }
+   ],
+   "frames": 235,
+   "data": {
+    "src": "bg/h5/stock/18495181.mp4",
+    "license": "Pexels 18495181 무료(Gije Cho)",
+    "say": "송도 아파트 실거래가",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "같은 넓이 거래 6천 건을 전부 모아 봤어요.",
+     "audio": "audio/h-5/f14d66c1fde16545.wav",
+     "frames": 92,
+     "cap": null
+    }
+   ],
+   "frames": 92,
+   "data": {
+    "src": "bg/h4/stock/37873585.mp4",
+    "license": "Pexels 37873585 무료(Jueon Kim 김주언)",
+    "say": "같은 넓이 거래 전부",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "검색창에 송도 집값을 치면 폭락이라는 말이 먼저 따라 나옵니다.",
+     "audio": "audio/h-5/73c120060ab70e22.wav",
+     "frames": 112,
+     "cap": null
+    },
+    {
+     "text": "고점보다 한참 아래, 60~70%라는 영상도 있고요.",
+     "audio": "audio/h-5/455ece9ee02d96f4.wav",
+     "frames": 118,
+     "cap": null
+    }
+   ],
+   "frames": 230,
+   "data": {
+    "pic": "bg/h5/board/search.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "같은 넓이끼리, 같은 방법으로 세어 보니 82%였어요.",
+     "audio": "audio/h-5/04ffe598b31fdb6e.wav",
+     "frames": 122,
+     "cap": null
+    }
+   ],
+   "frames": 122,
+   "data": {
+    "pic": "bg/h5/board/open82.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "단지 서른두 곳을 따로 보면, 가장 덜 돌아온 곳이 71% 정도였고요.",
+     "audio": "audio/h-5/eb1ab91508daca43.wav",
+     "frames": 146,
+     "cap": null
+    }
+   ],
+   "frames": 146,
+   "data": {
+    "src": "bg/h5/stock/15082793.mp4",
+    "license": "Pexels 15082793 무료(Lucas Park)",
+    "say": "단지마다 달랐다",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "반값에 팔린 아파트가 몇 건이었는지도 셌습니다.",
+     "audio": "audio/h-5/52c0d261058cbfa5.wav",
+     "frames": 90,
+     "cap": null
+    },
+    {
+     "text": "중개사를 거치지 않은 직거래가 거기 어떻게 섞여 있었는지도요.",
+     "audio": "audio/h-5/3d92540307ebbbae.wav",
+     "frames": 105,
+     "cap": null
+    }
+   ],
+   "frames": 195,
+   "data": {
+    "src": "bg/h4/stock/31907490.mp4",
+    "license": "Pexels 31907490 무료(Esra Afşar)",
+    "say": "반값 거래는 몇 건?",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그런데 고점 때 가장 비싸게 팔린 한 건과 비교하면, 같은 거래가 74%로 내려가 보여요.",
+     "audio": "audio/h-5/69254aca6aa5d88c.wav",
+     "frames": 176,
+     "cap": null
+    }
+   ],
+   "frames": 176,
+   "data": {
+    "pic": "bg/h5/board/ruler.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "어디서 갈리는지 보시면, 내 단지도 직접 세어 보실 수 있습니다.",
+     "audio": "audio/h-5/7da0f943e9af9d07.wav",
+     "frames": 107,
+     "cap": null
+    },
+    {
+     "text": "전세는 얼마인지도 마지막에 볼게요.",
+     "audio": "audio/h-5/b365fa2b34718f61.wav",
+     "frames": 60,
+     "cap": null
+    }
+   ],
+   "frames": 167,
+   "data": {
+    "src": "bg/h4/stock/37873585.mp4",
+    "license": "Pexels 37873585 무료(Jueon Kim 김주언)",
+    "say": "내 단지도 직접",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "",
+     "audio": null,
+     "frames": 36,
+     "cap": null
+    }
+   ],
+   "frames": 36,
+   "data": {
+    "n": "기초",
+    "q": "처음 보시는 분을 위해"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "송도는 인천 연수구에 있는 동네예요.",
+     "audio": "audio/h-5/62cc962b52a7fe48.wav",
+     "frames": 78,
+     "cap": null
+    },
+    {
+     "text": "오늘은 송도동 한 곳만 봅니다. 청라나 영종, 연수구의 다른 동은 빼고요.",
+     "audio": "audio/h-5/1ba47f6f75c83fff.wav",
+     "frames": 113,
+     "cap": null
+    },
+    {
+     "text": "오래된 단지와 새 단지가 섞여 있어서, 뒤에서 지은 해로도 나눠 볼게요.",
+     "audio": "audio/h-5/5c61897e1215fe07.wav",
+     "frames": 129,
+     "cap": null
+    }
+   ],
+   "frames": 320,
+   "data": {
+    "pic": "bg/h5/board/map.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "넓이는 집 안 넓이, 전용면적으로 84㎡ 안팎만 셉니다.",
+     "audio": "audio/h-5/8b62b747580f3f6d.wav",
+     "frames": 122,
+     "cap": null
+    },
+    {
+     "text": "흔히 국민평형, 34평이라 부르는 집인데, 집 안 넓이로만 재면 25평 정도예요.",
+     "audio": "audio/h-5/c855aa83fba3af11.wav",
+     "frames": 162,
+     "cap": null
+    },
+    {
+     "text": "큰 평형이나 작은 평형은 흐름이 다를 수 있어서, 같은 크기끼리만 비교합니다.",
+     "audio": "audio/h-5/83bfd61128df81ea.wav",
+     "frames": 140,
+     "cap": null
+    }
+   ],
+   "frames": 424,
+   "data": {
+    "src": "bg/h4/stock/6964247.mp4",
+    "license": "Pexels 6964247 무료(Mikhail Nilov)",
+    "say": "같은 크기끼리만",
+    "side": "left",
+    "x": 70,
+    "from": 0
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "숫자는 전부 국토교통부에 신고된 실제 거래예요.",
+     "audio": "audio/h-5/ed2ffbf2435fdba6.wav",
+     "frames": 97,
+     "cap": null
+    },
+    {
+     "text": "계약이 취소돼 해제라고 적힌 거래와, 공공기관이 산 거래는 뺐습니다.",
+     "audio": "audio/h-5/53ee82ebb6a81d09.wav",
+     "frames": 119,
+     "cap": null
+    }
+   ],
+   "frames": 216,
+   "data": {
+    "src": "bg/h4/stock/9057559.mp4",
+    "license": "Pexels 9057559 무료(SHVETS production)",
+    "say": "신고된 실제 거래만",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그리고 중간 가격이라는 말을 자주 쓸 텐데요.",
+     "audio": "audio/h-5/13ae3b18c287ecf7.wav",
+     "frames": 91,
+     "cap": null
+    },
+    {
+     "text": "거래를 가격 순서로 줄 세웠을 때 한가운데 오는 가격이에요.",
+     "audio": "audio/h-5/47804ccb0bcf9307.wav",
+     "frames": 111,
+     "cap": null
+    },
+    {
+     "text": "아주 비싼 한 건이나 아주 싼 한 건에 덜 흔들려서, 오늘은 이걸로 비교합니다.",
+     "audio": "audio/h-5/0db9dc18ddc63877.wav",
+     "frames": 142,
+     "cap": null
+    }
+   ],
+   "frames": 344,
+   "data": {
+    "pic": "bg/h5/board/median9.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "이미 산 분, 사려는 분, 세 들어 살 분 모두 쓰실 숫자예요.",
+     "audio": "audio/h-5/f2dd4645f3f4acc4.wav",
+     "frames": 104,
+     "cap": null
+    }
+   ],
+   "frames": 104,
+   "data": {
+    "src": "bg/h4/stock/37873585.mp4",
+    "license": "Pexels 37873585 무료(Jueon Kim 김주언)",
+    "say": "사는 분도 세 들 분도",
+    "side": "left",
+    "from": 300
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "먼저 송도동 전체 흐름이에요.",
+     "audio": "audio/h-5/c69476818bc189e4.wav",
+     "frames": 63,
+     "cap": null
+    }
+   ],
+   "frames": 63,
+   "data": {
+    "n": "1장",
+    "q": "5년 흐름, 고점·바닥·지금"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "가격이 가장 높았던 건 2021년 하반기였습니다.",
+     "audio": "audio/h-5/e24a47fbef56db2a.wav",
+     "frames": 96,
+     "cap": null
+    },
+    {
+     "text": "같은 넓이 중간 가격이 9억이었어요.",
+     "audio": "audio/h-5/39961e908ab5d947.wav",
+     "frames": 66,
+     "cap": null
+    },
+    {
+     "text": "2022년 상반기도 가격은 거의 같았는데, 거래가 확 줄었어요.",
+     "audio": "audio/h-5/1db0f8c05afe3bde.wav",
+     "frames": 129,
+     "cap": null
+    },
+    {
+     "text": "반년 동안 백 건이 안 됐습니다.",
+     "audio": "audio/h-5/8ed82abe1ea844de.wav",
+     "frames": 50,
+     "cap": null
+    },
+    {
+     "text": "그리고 2022년 하반기에 가격이 7억 아래로 내려갑니다.",
+     "audio": "audio/h-5/ef77cc27ba7b577a.wav",
+     "frames": 111,
+     "cap": null
+    },
+    {
+     "text": "2023년 상반기가 가장 낮았어요.",
+     "audio": "audio/h-5/45689c945d65c860.wav",
+     "frames": 79,
+     "cap": null
+    }
+   ],
+   "frames": 531,
+   "data": {
+    "pic": "bg/h5/board/half.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그때는 거래가 오히려 많았어요. 반년에 8백 건이 넘었습니다.",
+     "audio": "audio/h-5/b1d0e050c6681cbf.wav",
+     "frames": 116,
+     "cap": null
+    },
+    {
+     "text": "그 뒤로는 해마다 7억 안팎에서 움직였어요.",
+     "audio": "audio/h-5/4a1e691cb082ee3a.wav",
+     "frames": 69,
+     "cap": null
+    }
+   ],
+   "frames": 185,
+   "data": {
+    "src": "bg/h4/stock/37873585.mp4",
+    "license": "Pexels 37873585 무료(Jueon Kim 김주언)",
+    "say": "그 뒤로는 비슷한 값",
+    "side": "left",
+    "from": 450
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "거래 건수도 같이 볼게요.",
+     "audio": "audio/h-5/51e3ecef49597fdc.wav",
+     "frames": 42,
+     "cap": null
+    },
+    {
+     "text": "고점이던 2021년엔 거래가 많았는데요.",
+     "audio": "audio/h-5/6703ee300a4f95de.wav",
+     "frames": 78,
+     "cap": null
+    },
+    {
+     "text": "2022년엔 앞 해의 절반도 안 됐어요.",
+     "audio": "audio/h-5/58a68857c26d5117.wav",
+     "frames": 81,
+     "cap": null
+    },
+    {
+     "text": "2023년부터는 다시 해마다 천 건이 넘었습니다.",
+     "audio": "audio/h-5/9e96c71eda8f4619.wav",
+     "frames": 96,
+     "cap": null
+    },
+    {
+     "text": "거래가 적은 해의 숫자는 몇 건에 더 크게 흔들린다는 것도 기억해 두세요.",
+     "audio": "audio/h-5/fb8f58c6e74dabb7.wav",
+     "frames": 118,
+     "cap": null
+    }
+   ],
+   "frames": 415,
+   "data": {
+    "pic": "bg/h5/board/count.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "가장 최근, 2026년 7월부터 10월까지 거래를 볼게요.",
+     "audio": "audio/h-5/5056e9a879132aa1.wav",
+     "frames": 102,
+     "cap": null
+    }
+   ],
+   "frames": 102,
+   "data": {
+    "src": "bg/h4/stock/7651886.mp4",
+    "license": "Pexels 7651886 무료(Kindel Media)",
+    "say": "가장 최근 넉 달",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "중간 가격이 7억 4천만원쯤입니다.",
+     "audio": "audio/h-5/4f47b2d20200ca7f.wav",
+     "frames": 74,
+     "cap": null
+    },
+    {
+     "text": "이제 같은 잣대로 비교해 볼게요.",
+     "audio": "audio/h-5/08056da87ff124ad.wav",
+     "frames": 54,
+     "cap": null
+    },
+    {
+     "text": "고점은 가장 비싸게 팔린 한 건이 아니에요.",
+     "audio": "audio/h-5/e214a11d9e768c99.wav",
+     "frames": 74,
+     "cap": null
+    },
+    {
+     "text": "2021년 하반기부터 2022년 상반기까지, 가장 비쌌던 1년의 중간 가격으로 잡았습니다.",
+     "audio": "audio/h-5/3a9498d43fbc9e78.wav",
+     "frames": 180,
+     "cap": null
+    },
+    {
+     "text": "이 1년도 9억이었어요.",
+     "audio": "audio/h-5/46e278971fe5ec4b.wav",
+     "frames": 42,
+     "cap": null
+    }
+   ],
+   "frames": 424,
+   "data": {
+    "pic": "bg/h5/board/eq82.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "가장 낮았던 1년도 같은 식으로 잡으면, 2022년 하반기부터 2023년 상반기까지예요.",
+     "audio": "audio/h-5/681744cbedf96a60.wav",
+     "frames": 187,
+     "cap": null
+    }
+   ],
+   "frames": 187,
+   "data": {
+    "src": "bg/h4/stock/38259259.mp4",
+    "license": "Pexels 38259259 무료(vignesh srivatsav)",
+    "say": "가장 낮았던 한 해",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그 1년 중간 가격이 6억 7천만원쯤이었습니다.",
+     "audio": "audio/h-5/9566afcba69f1f61.wav",
+     "frames": 96,
+     "cap": null
+    },
+    {
+     "text": "지금 가격을 고점과 비교하면 82%입니다.",
+     "audio": "audio/h-5/05560986420e9b15.wav",
+     "frames": 92,
+     "cap": null
+    },
+    {
+     "text": "열 중 여덟 조금 넘게 돌아온 거예요.",
+     "audio": "audio/h-5/365d84a0908534ef.wav",
+     "frames": 73,
+     "cap": null
+    },
+    {
+     "text": "가장 낮았던 1년보다는 10% 높고요.",
+     "audio": "audio/h-5/375a85f8c487850b.wav",
+     "frames": 95,
+     "cap": null
+    }
+   ],
+   "frames": 356,
+   "data": {
+    "pic": "bg/h5/board/eq82.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그럼 왜 2021년에 가장 높았고, 그 뒤 내려갔을까요.",
+     "audio": "audio/h-5/64d0c40c1ed01c09.wav",
+     "frames": 117,
+     "cap": null
+    },
+    {
+     "text": "그 이유는 이 자료에 나오지 않습니다.",
+     "audio": "audio/h-5/272661e3f6112e41.wav",
+     "frames": 71,
+     "cap": null
+    },
+    {
+     "text": "실거래 신고엔 가격과 넓이 같은 건 있어도, 이유는 적혀 있지 않거든요.",
+     "audio": "audio/h-5/aee837b988422a2f.wav",
+     "frames": 107,
+     "cap": null
+    },
+    {
+     "text": "앞으로 오를지 내릴지도 말씀드리지 않아요. 지난 거래만 셌습니다.",
+     "audio": "audio/h-5/0cdb58a0fe423a21.wav",
+     "frames": 124,
+     "cap": null
+    }
+   ],
+   "frames": 419,
+   "data": {
+    "src": "bg/h4/stock/7317305.mp4",
+    "license": "Pexels 7317305 무료(MART  PRODUCTION)",
+    "say": "이유는 자료에 없다",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그래서 2021년 하반기에 산 분이라면 이렇게 보시면 돼요.",
+     "audio": "audio/h-5/677673f879a18c70.wav",
+     "frames": 114,
+     "cap": null
+    },
+    {
+     "text": "동네 전체 중간 가격으로는, 그때보다 1억 6천만원 낮은 거예요.",
+     "audio": "audio/h-5/d7a9711c87cf3a35.wav",
+     "frames": 112,
+     "cap": null
+    },
+    {
+     "text": "다만 이건 송도 전체를 한데 모은 숫자예요. 내 단지 숫자를 따로 보셔야 합니다.",
+     "audio": "audio/h-5/d76016dff5e5bc16.wav",
+     "frames": 144,
+     "cap": null
+    },
+    {
+     "text": "단지마다 차이가 꽤 컸거든요.",
+     "audio": "audio/h-5/4987f1d62449a14d.wav",
+     "frames": 50,
+     "cap": null
+    }
+   ],
+   "frames": 420,
+   "data": {
+    "src": "bg/h4/stock/37873585.mp4",
+    "license": "Pexels 37873585 무료(Jueon Kim 김주언)",
+    "say": "고점에 샀다면",
+    "side": "left",
+    "from": 552
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "가장 쌀 때 산 분이라면, 지금 중간 가격이 그때보다 조금 높은 쪽입니다.",
+     "audio": "audio/h-5/e571e7acae61ef96.wav",
+     "frames": 127,
+     "cap": null
+    },
+    {
+     "text": "가장 낮았던 1년 중간 가격보다 6천5백만원 정도 위예요.",
+     "audio": "audio/h-5/c9fc2401e9d13ac0.wav",
+     "frames": 125,
+     "cap": null
+    }
+   ],
+   "frames": 252,
+   "data": {
+    "src": "bg/h5/stock/15082793.mp4",
+    "license": "Pexels 15082793 무료(Lucas Park)",
+    "say": "바닥에 샀다면",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "이제 단지별로 볼게요.",
+     "audio": "audio/h-5/cc8fa249b19bca0a.wav",
+     "frames": 42,
+     "cap": null
+    }
+   ],
+   "frames": 42,
+   "data": {
+    "n": "2장",
+    "q": "단지 서른두 곳, 얼마나 돌아왔나"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "고점 때와 최근에 각각 세 건 이상 거래된 곳만 셌어요.",
+     "audio": "audio/h-5/5ec447800700c43c.wav",
+     "frames": 101,
+     "cap": null
+    },
+    {
+     "text": "그런 단지가 서른두 곳이었습니다.",
+     "audio": "audio/h-5/bb885d6781463df7.wav",
+     "frames": 63,
+     "cap": null
+    },
+    {
+     "text": "단지마다 같은 잣대, 중간 가격끼리 비교했어요.",
+     "audio": "audio/h-5/b9546dc15831ff17.wav",
+     "frames": 80,
+     "cap": null
+    },
+    {
+     "text": "서른두 곳을 줄 세우면 한가운데가 84%입니다.",
+     "audio": "audio/h-5/0b7d9339256266dc.wav",
+     "frames": 98,
+     "cap": null
+    },
+    {
+     "text": "송도 전체로 본 82%와 비슷한 수준이에요.",
+     "audio": "audio/h-5/57b3fed7b01655e5.wav",
+     "frames": 87,
+     "cap": null
+    },
+    {
+     "text": "가장 많이 돌아온 곳은 97%였고요.",
+     "audio": "audio/h-5/9a6130f13787a3b1.wav",
+     "frames": 83,
+     "cap": null
+    }
+   ],
+   "frames": 512,
+   "data": {
+    "pic": "bg/h5/board/rank32.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "가장 덜 돌아온 곳은 71%였어요.",
+     "audio": "audio/h-5/54728b1eefcf2626.wav",
+     "frames": 84,
+     "cap": null
+    },
+    {
+     "text": "이 서른두 곳 중엔 고점을 다시 넘은 단지가 없었어요.",
+     "audio": "audio/h-5/601cc67fec120bbc.wav",
+     "frames": 90,
+     "cap": null
+    },
+    {
+     "text": "90%를 넘은 곳도 있긴 했습니다.",
+     "audio": "audio/h-5/3ddb670360636b5b.wav",
+     "frames": 67,
+     "cap": null
+    },
+    {
+     "text": "여섯 곳이요.",
+     "audio": "audio/h-5/16f7252fa32cb78b.wav",
+     "frames": 28,
+     "cap": null
+    }
+   ],
+   "frames": 269,
+   "data": {
+    "src": "bg/h4/stock/38259259.mp4",
+    "license": "Pexels 38259259 무료(vignesh srivatsav)",
+    "say": "고점을 다시 넘은 곳은?",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "많이 돌아온 쪽부터 볼게요.",
+     "audio": "audio/h-5/b2c418d7339c690f.wav",
+     "frames": 51,
+     "cap": null
+    },
+    {
+     "text": "송도더샵하버뷰와 송도더샵센트럴시티는 고점 바로 아래까지 왔어요.",
+     "audio": "audio/h-5/65e31e683a55c4ea.wav",
+     "frames": 128,
+     "cap": null
+    },
+    {
+     "text": "송도글로벌파크베르디움도 거의 비슷했고요.",
+     "audio": "audio/h-5/95fd4cf667252e70.wav",
+     "frames": 86,
+     "cap": null
+    },
+    {
+     "text": "하버뷰는 고점 때 8억 8천만원에서 지금 8억 5천만원으로, 거의 그대로예요.",
+     "audio": "audio/h-5/e1048b5ae63a884f.wav",
+     "frames": 130,
+     "cap": null
+    },
+    {
+     "text": "다만 하버뷰는 최근 거래가 서너 건뿐이라, 한 건에 숫자가 많이 흔들려요.",
+     "audio": "audio/h-5/8134e676ca763252.wav",
+     "frames": 147,
+     "cap": null
+    }
+   ],
+   "frames": 542,
+   "data": {
+    "pic": "bg/h5/board/top3.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "덜 돌아온 쪽은 힐스테이트레이크송도예요.",
+     "audio": "audio/h-5/f96140b4bb61b021.wav",
+     "frames": 83,
+     "cap": null
+    },
+    {
+     "text": "이 단지는 1단지와 2단지로 나뉘는데요.",
+     "audio": "audio/h-5/c7e04e51e3f718e6.wav",
+     "frames": 87,
+     "cap": null
+    },
+    {
+     "text": "둘 다 71%였습니다.",
+     "audio": "audio/h-5/c287b29e310d57a0.wav",
+     "frames": 54,
+     "cap": null
+    },
+    {
+     "text": "송도캐슬앤해모로와 송도에스케이뷰는 75%였고요.",
+     "audio": "audio/h-5/7b036ca5c45fa180.wav",
+     "frames": 111,
+     "cap": null
+    }
+   ],
+   "frames": 335,
+   "data": {
+    "src": "bg/h5/stock/15082793.mp4",
+    "license": "Pexels 15082793 무료(Lucas Park)",
+    "say": "덜 돌아온 쪽",
+    "side": "left",
+    "from": 300
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "고점 1년 중간 가격은 센트럴시티가 9억 6천만원쯤, 힐스테이트레이크송도가 9억 7천만원쯤으로 비슷했어요.",
+     "audio": "audio/h-5/50ab73d2adc2dfde.wav",
+     "frames": 200,
+     "cap": null
+    },
+    {
+     "text": "지금은 센트럴시티 9억 2천만원쯤과 힐스테이트레이크송도 6억 9천만원쯤으로 차이가 벌어졌습니다.",
+     "audio": "audio/h-5/0c6594837256e588.wav",
+     "frames": 173,
+     "cap": null
+    },
+    {
+     "text": "같은 송도, 같은 84㎡인데도 단지에 따라 이만큼 갈렸습니다.",
+     "audio": "audio/h-5/b915f7030d97db12.wav",
+     "frames": 129,
+     "cap": null
+    }
+   ],
+   "frames": 502,
+   "data": {
+    "pic": "bg/h5/board/pair.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그럼 새 아파트일수록 덜 빠졌을까요?",
+     "audio": "audio/h-5/ef44431d2bfa9545.wav",
+     "frames": 67,
+     "cap": null
+    }
+   ],
+   "frames": 67,
+   "data": {
+    "src": "bg/h4/stock/7651886.mp4",
+    "license": "Pexels 7651886 무료(Kindel Media)",
+    "say": "새 아파트일수록?",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "지은 해로 나눠 봤더니, 별 차이가 없었어요.",
+     "audio": "audio/h-5/e28215303ddbf827.wav",
+     "frames": 81,
+     "cap": null
+    },
+    {
+     "text": "2010년 이전, 2011년부터 2016년, 2017년 이후, 세 묶음 모두 80%대였습니다.",
+     "audio": "audio/h-5/5520c88141aaaec4.wav",
+     "frames": 193,
+     "cap": null
+    },
+    {
+     "text": "그래서 이 서른두 곳 안에서는, 새 아파트라 덜 빠졌다고 말하기 어려워요.",
+     "audio": "audio/h-5/442a7c28c24737d5.wav",
+     "frames": 127,
+     "cap": null
+    },
+    {
+     "text": "단지마다 왜 갈렸는지도 실거래 자료로는 알 수 없어요.",
+     "audio": "audio/h-5/703bc2f621c22a11.wav",
+     "frames": 112,
+     "cap": null
+    }
+   ],
+   "frames": 513,
+   "data": {
+    "pic": "bg/h5/board/built.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "결국 보실 건 하나예요.",
+     "audio": "audio/h-5/d6a8291bbff793fb.wav",
+     "frames": 43,
+     "cap": null
+    },
+    {
+     "text": "송도 전체 숫자 말고, 내 단지의 고점 때 중간 가격과 최근 중간 가격입니다.",
+     "audio": "audio/h-5/57e372931ce0ca61.wav",
+     "frames": 154,
+     "cap": null
+    }
+   ],
+   "frames": 197,
+   "data": {
+    "src": "bg/h4/stock/9057559.mp4",
+    "license": "Pexels 9057559 무료(SHVETS production)",
+    "say": "내 단지의 두 숫자",
+    "side": "left",
+    "from": 130
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "하나 조심하실 게 있어요.",
+     "audio": "audio/h-5/59fd457ae4039484.wav",
+     "frames": 45,
+     "cap": null
+    },
+    {
+     "text": "하버뷰 말고도 최근 거래가 서너 건뿐인 단지가 더 있습니다.",
+     "audio": "audio/h-5/5cc381bb9efceca1.wav",
+     "frames": 111,
+     "cap": null
+    },
+    {
+     "text": "그런 곳은 한 건만 더 들어와도 숫자가 크게 흔들려요.",
+     "audio": "audio/h-5/11fc73a959b3fdd8.wav",
+     "frames": 98,
+     "cap": null
+    }
+   ],
+   "frames": 254,
+   "data": {
+    "src": "bg/h5/stock/15082793.mp4",
+    "license": "Pexels 15082793 무료(Lucas Park)",
+    "say": "거래 서너 건뿐인 단지",
+    "side": "left",
+    "from": 450
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그리고 서른두 곳에 못 든 단지가 더 많아요.",
+     "audio": "audio/h-5/63d9d7c379840997.wav",
+     "frames": 92,
+     "cap": null
+    },
+    {
+     "text": "고점 때나 최근에 거래가 세 건이 안 된 곳이라, 같은 잣대로 비교하기 어려워 뺐습니다.",
+     "audio": "audio/h-5/78e6e5b92281eb88.wav",
+     "frames": 161,
+     "cap": null
+    },
+    {
+     "text": "그중엔 고점 무렵이나 그 뒤에 지은 새 단지들도 있어요.",
+     "audio": "audio/h-5/cefb49bca9db1143.wav",
+     "frames": 111,
+     "cap": null
+    },
+    {
+     "text": "그러니 서른두 곳 결과가 송도 모든 단지에 그대로 맞는다고 보시면 안 돼요.",
+     "audio": "audio/h-5/7f654c4c7c8766f4.wav",
+     "frames": 131,
+     "cap": null
+    }
+   ],
+   "frames": 495,
+   "data": {
+    "src": "bg/h4/stock/37873585.mp4",
+    "license": "Pexels 37873585 무료(Jueon Kim 김주언)",
+    "say": "셈에서 빠진 단지",
+    "side": "left",
+    "from": 476
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "이제 흔히 듣는 말 두 개를 숫자로 확인해 볼게요.",
+     "audio": "audio/h-5/b26bb34916d05ea3.wav",
+     "frames": 74,
+     "cap": null
+    }
+   ],
+   "frames": 74,
+   "data": {
+    "n": "3장",
+    "q": "'반값'과 '6~70%'는 어디서 나왔나"
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "먼저, 송도 새 집이 2억대라는 영상이 있었어요.",
+     "audio": "audio/h-5/32acd7898805362c.wav",
+     "frames": 89,
+     "cap": null
+    },
+    {
+     "text": "댓글엔 경매 값을 실제 시세로 알면 안 된다는 지적도 달렸고요.",
+     "audio": "audio/h-5/0adbe4163eda9126.wav",
+     "frames": 105,
+     "cap": null
+    },
+    {
+     "text": "그 영상의 물건은 오피스텔과 경매 물건이었습니다.",
+     "audio": "audio/h-5/7678bd129bcd7998.wav",
+     "frames": 108,
+     "cap": null
+    },
+    {
+     "text": "둘 다 오늘 보는 아파트 매매 실거래와는 따로 봐야 하는 물건이에요.",
+     "audio": "audio/h-5/51acd898fb28c662.wav",
+     "frames": 123,
+     "cap": null
+    }
+   ],
+   "frames": 425,
+   "data": {
+    "src": "bg/h5/stock/6611954.mp4",
+    "license": "Pexels 6611954 무료(Tima Miroshnichenko)",
+    "say": "오피스텔·경매 물건",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그럼 아파트 중에 반값에 팔린 거래는 얼마나 될까요?",
+     "audio": "audio/h-5/7b679e1cacc506ca.wav",
+     "frames": 95,
+     "cap": null
+    },
+    {
+     "text": "가격이 내려간 2022년 하반기부터 지금까지, 아까 그 단지 서른두 곳의 같은 넓이 거래를 봤어요.",
+     "audio": "audio/h-5/05adb93588bec5c3.wav",
+     "frames": 193,
+     "cap": null
+    },
+    {
+     "text": "4천 건이 넘습니다.",
+     "audio": "audio/h-5/6fe89353b8e5c5d6.wav",
+     "frames": 40,
+     "cap": null
+    },
+    {
+     "text": "거래마다 그 단지의 고점 무렵 중간 가격과 비교했어요.",
+     "audio": "audio/h-5/92173022eaac02e2.wav",
+     "frames": 99,
+     "cap": null
+    },
+    {
+     "text": "절반 이하로 팔린 건, 두 건이었습니다.",
+     "audio": "audio/h-5/510e83217aec04a4.wav",
+     "frames": 64,
+     "cap": null
+    }
+   ],
+   "frames": 491,
+   "data": {
+    "pic": "bg/h5/board/dots.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그리고 그 두 건 모두 중개사를 거치지 않은 직거래였어요.",
+     "audio": "audio/h-5/9da65d443d12367c.wav",
+     "frames": 108,
+     "cap": null
+    },
+    {
+     "text": "직거래는 공인중개사 없이, 사는 사람과 파는 사람이 직접 계약하고 신고한 거래예요.",
+     "audio": "audio/h-5/b993611df0f496b2.wav",
+     "frames": 148,
+     "cap": null
+    },
+    {
+     "text": "실거래 자료엔 거래마다 중개 거래인지 직거래인지 표시가 붙어 있습니다.",
+     "audio": "audio/h-5/e925d4e344ca96bd.wav",
+     "frames": 123,
+     "cap": null
+    }
+   ],
+   "frames": 379,
+   "data": {
+    "src": "bg/h4/stock/6964247.mp4",
+    "license": "Pexels 6964247 무료(Mikhail Nilov)",
+    "say": "직거래란",
+    "side": "left",
+    "x": 70,
+    "from": 44
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "이번엔 고점의 60% 아래로 팔린 거래까지 늘려서 세어 볼게요.",
+     "audio": "audio/h-5/dca364ffe34ed909.wav",
+     "frames": 123,
+     "cap": null
+    },
+    {
+     "text": "그래도 스물일곱 건뿐이었어요.",
+     "audio": "audio/h-5/962decc7ac408fa3.wav",
+     "frames": 53,
+     "cap": null
+    },
+    {
+     "text": "그중 스물한 건이 직거래였습니다.",
+     "audio": "audio/h-5/f45bcbdca74b09b6.wav",
+     "frames": 61,
+     "cap": null
+    },
+    {
+     "text": "직거래는 전체 거래에선 3% 정도예요.",
+     "audio": "audio/h-5/610bffffee587267.wav",
+     "frames": 84,
+     "cap": null
+    },
+    {
+     "text": "그런데 싼 거래 쪽에 몰려 있었던 거죠.",
+     "audio": "audio/h-5/c3d764a88234a3c5.wav",
+     "frames": 63,
+     "cap": null
+    }
+   ],
+   "frames": 384,
+   "data": {
+    "pic": "bg/h5/board/dots.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "직거래가 왜 쌌는지는 자료에 없어요.",
+     "audio": "audio/h-5/8f1cdf24d11b2c8e.wav",
+     "frames": 62,
+     "cap": null
+    },
+    {
+     "text": "거래 상대가 가족인지도 나오지 않습니다. 직거래라는 표시만 있어요.",
+     "audio": "audio/h-5/f8cc4d05dad38ec0.wav",
+     "frames": 122,
+     "cap": null
+    }
+   ],
+   "frames": 184,
+   "data": {
+    "src": "bg/h4/stock/7317305.mp4",
+    "license": "Pexels 7317305 무료(MART  PRODUCTION)",
+    "say": "직거래 표시만 있다",
+    "side": "left",
+    "from": 150
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "다음은, 고점보다 한참 아래라는 말이에요.",
+     "audio": "audio/h-5/140b52a37c335a62.wav",
+     "frames": 66,
+     "cap": null
+    },
+    {
+     "text": "어떤 영상은 고점보다 한참 아래인 60~70%라고 했는데요.",
+     "audio": "audio/h-5/9ffd7f831e43ae46.wav",
+     "frames": 141,
+     "cap": null
+    },
+    {
+     "text": "무엇을 무엇으로 나눴는지는 나오지 않았어요.",
+     "audio": "audio/h-5/abb739f6c713a8a5.wav",
+     "frames": 90,
+     "cap": null
+    }
+   ],
+   "frames": 297,
+   "data": {
+    "src": "bg/h4/stock/38259259.mp4",
+    "license": "Pexels 38259259 무료(vignesh srivatsav)",
+    "say": "무엇으로 나눴나",
+    "side": "left",
+    "from": 300
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "그래서 저희가 다른 잣대로도 나눠 봤습니다.",
+     "audio": "audio/h-5/e5f2f7d224a1c1e1.wav",
+     "frames": 89,
+     "cap": null
+    },
+    {
+     "text": "고점 때 가장 비싼 한 건과 지금 중간 가격을 비교하는 방법이 있어요.",
+     "audio": "audio/h-5/73956eb03a8a771a.wav",
+     "frames": 132,
+     "cap": null
+    },
+    {
+     "text": "같은 서른두 곳을 이렇게 나누면, 중간이 74%로 내려갑니다.",
+     "audio": "audio/h-5/f02d168c108bde6f.wav",
+     "frames": 120,
+     "cap": null
+    }
+   ],
+   "frames": 341,
+   "data": {
+    "pic": "bg/h5/board/ruler.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "같은 서른두 곳을 중간 가격끼리 비교한 84%보다 훨씬 낮게 나오죠.",
+     "audio": "audio/h-5/b2db022f35857fde.wav",
+     "frames": 135,
+     "cap": null
+    }
+   ],
+   "frames": 135,
+   "data": {
+    "src": "bg/h4/stock/7651886.mp4",
+    "license": "Pexels 7651886 무료(Kindel Media)",
+    "say": "훨씬 낮게 나온다",
+    "side": "left",
+    "from": 183
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "더샵송도마리나베이가 그 예예요.",
+     "audio": "audio/h-5/c052abfa71a26a4d.wav",
+     "frames": 59,
+     "cap": null
+    },
+    {
+     "text": "최고 한 건으로 비교하면 52%, 거의 반값으로 보입니다.",
+     "audio": "audio/h-5/fc66537f91fd280b.wav",
+     "frames": 114,
+     "cap": null
+    },
+    {
+     "text": "중간 가격끼리 비교하면 80%예요.",
+     "audio": "audio/h-5/5560902c38ee3f98.wav",
+     "frames": 68,
+     "cap": null
+    }
+   ],
+   "frames": 241,
+   "data": {
+    "pic": "bg/h5/board/ruler.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "같은 단지, 같은 거래인데 잣대만 바꿔도 이렇게 달라집니다.",
+     "audio": "audio/h-5/fc8559def8c300c0.wav",
+     "frames": 117,
+     "cap": null
+    },
+    {
+     "text": "그래서 고점과 비교한 숫자를 보시면, 최고 한 건과 비교했는지부터 확인해 보세요.",
+     "audio": "audio/h-5/95e5601ffe1392ef.wav",
+     "frames": 146,
+     "cap": null
+    }
+   ],
+   "frames": 263,
+   "data": {
+    "src": "bg/h4/stock/9057559.mp4",
+    "license": "Pexels 9057559 무료(SHVETS production)",
+    "say": "최고 한 건인지부터",
+    "side": "left",
+    "from": 63
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "이번엔 전세로 살 분을 위한 숫자예요.",
+     "audio": "audio/h-5/da2a9f847e030dbd.wav",
+     "frames": 68,
+     "cap": null
+    }
+   ],
+   "frames": 68,
+   "data": {
+    "n": "4장",
+    "q": "전세는 매매의 몇 %"
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "검색창에 송도 전세를 치면 4억이 따라 나옵니다.",
+     "audio": "audio/h-5/c086308e9a5fa304.wav",
+     "frames": 87,
+     "cap": null
+    }
+   ],
+   "frames": 87,
+   "data": {
+    "src": "bg/h4/stock/7205591.mp4",
+    "license": "Pexels 7205591 무료(SHVETS production)",
+    "say": "전세는 얼마",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "2026년 7월부터 10월까지 84㎡ 전세 거래를 봤어요. 월세가 섞인 반전세는 뺐습니다.",
+     "audio": "audio/h-5/cbe7e32b59766b16.wav",
+     "frames": 183,
+     "cap": null
+    },
+    {
+     "text": "7백 건이 넘습니다.",
+     "audio": "audio/h-5/bdca0bc494f40246.wav",
+     "frames": 38,
+     "cap": null
+    },
+    {
+     "text": "중간은 4억 1천만원 정도였어요.",
+     "audio": "audio/h-5/44337bd861d8d1d6.wav",
+     "frames": 71,
+     "cap": null
+    },
+    {
+     "text": "가격대로 나눠 보면 4억대 초반 전세가 가장 많았습니다.",
+     "audio": "audio/h-5/103b3d3e4f8d1e8e.wav",
+     "frames": 111,
+     "cap": null
+    }
+   ],
+   "frames": 403,
+   "data": {
+    "pic": "bg/h5/board/jeonse.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "전세가 매매의 몇 %인지도 단지마다 봤어요.",
+     "audio": "audio/h-5/04496657fcdc78be.wav",
+     "frames": 93,
+     "cap": null
+    }
+   ],
+   "frames": 93,
+   "data": {
+    "src": "bg/h4/stock/7205591.mp4",
+    "license": "Pexels 7205591 무료(SHVETS production)",
+    "say": "단지마다 전세 비율",
+    "side": "left",
+    "from": 65
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "중간이 57%였습니다.",
+     "audio": "audio/h-5/2390e843a9f1a97f.wav",
+     "frames": 63,
+     "cap": null
+    },
+    {
+     "text": "낮은 곳은 40%였고요.",
+     "audio": "audio/h-5/36647ff36d4158a2.wav",
+     "frames": 50,
+     "cap": null
+    },
+    {
+     "text": "높은 곳은 70%였습니다.",
+     "audio": "audio/h-5/2a3a06e2a44ff579.wav",
+     "frames": 59,
+     "cap": null
+    }
+   ],
+   "frames": 172,
+   "data": {
+    "pic": "bg/h5/board/ratio.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "내 단지는 직접 세어 보실 수 있어요.",
+     "audio": "audio/h-5/4bb6a5fd08320c62.wav",
+     "frames": 69,
+     "cap": null
+    }
+   ],
+   "frames": 69,
+   "data": {
+    "n": "5장",
+    "q": "직접 확인하는 법"
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "국토교통부 실거래가 공개시스템에서 단지와 넓이, 기간을 고르면 거래가 줄줄이 나와요.",
+     "audio": "audio/h-5/289ca3d2c117c86c.wav",
+     "frames": 155,
+     "cap": null
+    }
+   ],
+   "frames": 155,
+   "data": {
+    "src": "bg/h4/stock/31907490.mp4",
+    "license": "Pexels 31907490 무료(Esra Afşar)",
+    "say": "실거래가 공개시스템",
+    "side": "left",
+    "from": 79
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "먼저, 그게 아파트 매매 거래인지 봅니다. 오피스텔이나 경매 물건은 따로 보셔야 해요.",
+     "audio": "audio/h-5/20bb4e45ac6ceaee.wav",
+     "frames": 144,
+     "cap": null
+    },
+    {
+     "text": "다음은 같은 넓이끼리만 봅니다.",
+     "audio": "audio/h-5/22382c2d7ab91d30.wav",
+     "frames": 57,
+     "cap": null
+    },
+    {
+     "text": "유난히 싼 한 건이 있으면, 직거래였는지도 확인해 보세요.",
+     "audio": "audio/h-5/0bb5bb8652b6249a.wav",
+     "frames": 116,
+     "cap": null
+    },
+    {
+     "text": "고점과 비교할 땐 그때 최고가 한 건 말고, 2021년 하반기부터 2022년 상반기까지 1년 거래의 중간 가격을 쓰세요.",
+     "audio": "audio/h-5/0a04152ce5f43639.wav",
+     "frames": 238,
+     "cap": null
+    }
+   ],
+   "frames": 555,
+   "data": {
+    "pic": "bg/h5/board/check5.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "해제라고 적힌 거래는 빼시고요. 취소된 계약이에요.",
+     "audio": "audio/h-5/11100d33085c24f3.wav",
+     "frames": 93,
+     "cap": null
+    },
+    {
+     "text": "그리고 이번 달 거래는 덜 들어와 있습니다.",
+     "audio": "audio/h-5/3e24ecd4b7ecd505.wav",
+     "frames": 82,
+     "cap": null
+    },
+    {
+     "text": "신고 기한이 계약하고 30일이라서, 다음 달에 숫자가 바뀔 수 있어요.",
+     "audio": "audio/h-5/c71fcd27f9a7d94e.wav",
+     "frames": 113,
+     "cap": null
+    }
+   ],
+   "frames": 288,
+   "data": {
+    "src": "bg/h4/stock/6964247.mp4",
+    "license": "Pexels 6964247 무료(Mikhail Nilov)",
+    "say": "이번 달 거래는 덜 들어옴",
+    "side": "left",
+    "x": 70,
+    "from": 135
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "마지막으로, 오늘 숫자는 84㎡만이에요.",
+     "audio": "audio/h-5/26a68ebfc8ac5f19.wav",
+     "frames": 96,
+     "cap": null
+    },
+    {
+     "text": "더 큰 평형이나 작은 평형을 가지신 분은, 같은 방법으로 그 넓이만 따로 세어 보셔야 합니다.",
+     "audio": "audio/h-5/6c6211c68d41dfd0.wav",
+     "frames": 158,
+     "cap": null
+    }
+   ],
+   "frames": 254,
+   "data": {
+    "pic": "bg/h5/board/check5.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "같은 동네 숫자도 무엇과 비교하느냐에 따라 전혀 다르게 보입니다.",
+     "audio": "audio/h-5/de103375750b362b.wav",
+     "frames": 123,
+     "cap": null
+    }
+   ],
+   "frames": 123,
+   "data": {
+    "n": "6장",
+    "q": "정리"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "오늘 하실 건 하나예요.",
+     "audio": "audio/h-5/43bb599bcb58eb7a.wav",
+     "frames": 38,
+     "cap": null
+    },
+    {
+     "text": "실거래가 공개시스템에서 내 단지, 같은 넓이를 고르세요.",
+     "audio": "audio/h-5/0e14a5dfb14fc064.wav",
+     "frames": 90,
+     "cap": null
+    },
+    {
+     "text": "고점 1년 중간 가격과 최근 넉 달 중간 가격을 적고, 최근 값을 고점 값으로 나눠 보세요.",
+     "audio": "audio/h-5/06d1d41914ab3294.wav",
+     "frames": 166,
+     "cap": null
+    }
+   ],
+   "frames": 294,
+   "data": {
+    "pic": "bg/h5/board/summary.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "서른두 곳 전체 표는 파이어맵 카페에 올려 둘게요.",
+     "audio": "audio/h-5/29f99eedae8a01fb.wav",
+     "frames": 96,
+     "cap": null
+    }
+   ],
+   "frames": 96,
+   "data": {
+    "src": "bg/h5/stock/37736994.mp4",
+    "license": "Pexels 37736994 무료(Nurlan Hasanov)",
+    "say": "전체 표는 카페에",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "다음 영상에서 다시 뵙겠습니다.",
+     "audio": "audio/h-5/c2bffcda9bf2cf50.wav",
+     "frames": 58,
+     "cap": null
+    },
+    {
+     "text": "",
+     "audio": null,
+     "frames": 525,
+     "cap": null
+    }
+   ],
+   "frames": 658,
+   "data": {
+    "pic": "bg/h5/stock/37736994_last.jpg",
+    "license": "Pexels 37736994 무료(Nurlan Hasanov)",
+    "baked": true,
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "cx": 50,
+    "cy": 50
+   }
+  }
+ ],
+ "badge": ""
+}

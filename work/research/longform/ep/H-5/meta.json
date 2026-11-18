@@ -95,6 +95,6 @@
   },
   "made_by": "firemap-video-producer",
   "made_at": "2026-11-16",
-  "video": "",
+  "video": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/out/h5_dsl.mp4",
   "todo": "11/16 22시 PD: meta(②)·녹음 · 남은 것: 화면 틀(H5.tsx — youtube-loop shot_plan·calc 재계산 뒤 숫자 확정) → lfrender text → editor screen_text stamp → 렌더(JT-1 렌더 밤과 겹치지 않게) → bgcheck·screen → youtube-loop 올리기 전 확인(11/21 오전) → gate → up(관문 기한 11/21 11:30) · cafe_url"
 }

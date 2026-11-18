@@ -1,0 +1,32 @@
+{
+  "_note": "11/18 motion — KOSPI-1 상시 장 띠·순위 범례 props(registry B-57). PD props 스크립트가 이 파일을 읽어 편 props의 strip·legend 칸에 넣는다. 숫자는 calc2_out.txt 무리 첫날 16줄·script.md 장 제목만.",
+  "strip": {
+    "topic": "코스피 크게 빠진 날, 그 뒤",
+    "side": "right",
+    "chapters": [
+      {"n": 1, "name": "올해 코스피"},
+      {"n": 2, "name": "서킷브레이커와 사이드카"},
+      {"n": 3, "name": "지난 31년, 크게 빠진 날 그 뒤"},
+      {"n": 4, "name": "전날 값을 되찾기까지"},
+      {"n": 5, "name": "크게 빠진 해엔 크게 오른 날도"},
+      {"n": 6, "name": "1천만원을 넣었다면"},
+      {"n": 7, "name": "함정"},
+      {"n": 8, "name": "정리"}
+    ],
+    "starts_rule": "각 장 카드 장면(script.md '## n.' 첫 장면) 시작 프레임. 0. 여는 말에는 띠 없음. 실사(bg) 장면에서는 dark=true. 띠를 켜면 TallyFrame chapter 칸은 비운다(같은 글자 두 번 금지)"
+  },
+  "legend": {
+    "chapter": 3,
+    "title": "첫날 하락률 순",
+    "items": [
+      {"label": "2001-09-12", "value": "−12.02%"},
+      {"label": "2024-08-05", "value": "−8.77%"},
+      {"label": "2020-03-19", "value": "−8.39%"},
+      {"label": "2002-06-26", "value": "−7.15%"},
+      {"label": "2007-08-16", "value": "−6.93%"},
+      {"label": "2000-01-05", "value": "−6.87%"}
+    ],
+    "on_rule": "3장 '미국에서 테러가 난 다음 날…12%' 줄 시작 → 0번, '코로나가 번지던 때도…' 줄 → 2번, '그 뒤로도 하루 9% 가까이…' 줄 → 1번. 표 16줄 판·15칸 점 판에서는 끈다(판 오른쪽 여백 겹침). 3장 밖에서는 쓰지 않는다"
+  },
+  "preview": ["motion_preview/strip_chapter.png", "motion_preview/strip_legend.png"]
+}

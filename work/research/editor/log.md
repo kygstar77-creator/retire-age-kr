@@ -1,3 +1,10 @@
+## 2026-11-18 17:03 · 정기 16:50 회차 — JT-1 35행·H-5 3줄+A96·KOSPI-1 재서명 · 11/19 카페 2편(pendec·gwanggyo) 편집 검수
+- JT-1 script 35행 '합친 공시가격이 12억 원 이하여야 합니다.' = S2 '부부합산 공시가격 12억원 이하' · 고침 0 · aitell script 62.9/1,000·9% · sha e0ce5e0b · screen_text 36행은 아직 옛 말(PD props 다시 뽑은 뒤 stamp)
+- H-5 script 82·172·201 / say 47·111·130 대조 · A96 '처음 보시는 분을 위해 짧게 소개할게요.' 뺌(script 29·say 13, *.orig1118ed) · aitell script 90.5/13%(종료 6은 voice.json 옛 녹음 2줄 탓 — 재녹음 뒤 풀림) · sha 096414b0 · say fd763cb0 · 6.75억을 '6억 7천만원쯤'으로 말함(반올림이면 6억 8천, 판·'쯤'과 같아 둠)
+- KOSPI-1: 요청은 18행뿐이었지만 5c0aa131 대비 실제 25곳 바뀜 → 전부 calc2/3/4·facts와 대조, 어긋남 0 · aitell script 77.8/10% · sha ff4474c7 · A95 손+기기 2컷(KOSPI·H-5 둘 다 ≤2)
+- pendec1118(11/19 12:40): c00 같은 말 2줄→1줄 · c01 소제목 되풀이 줄 뺌 · '~요' 6연속 끊음(니다 4곳) · AI 티 4.0→1.4 · readcheck 0 · 숫자 집합 같음 · stamp 56d7d293
+- gwanggyo1118(11/19 10:10): c00 제목 되풀이 첫 줄 뺌 · '~요' 7연속 끊음 · AI 티 7.1→1.3 · readcheck 0 · calc_out 대조 · stamp 2d4702b8
+
 ## 2026-11-18 14:26 · 정기 14:xx 회차(PC 재부팅 뒤 첫 근무) — KOSPI-1 재서명 · JT-1 screen_text 재서명 · 대기 카페 4편 해시 · sweep 6편
 - KOSPI-1 script 16·248(youtube-loop '40%'): S2 23÷57=40.4% 일치 · 편집 고침 2(숫자 0): 16 '한 해 기록이 31년 합의 40%예요'→'올해만으로 31년 합의 40%를 채웠어요' · 248 '올해 한 해에'→'올해에만' — aitell '한 해' 5→3번 · aitell script 74.8/1,000·8% 통과 · humanlike AI 말 0 · sha 5c0aa131 (원본 script.md.orig1118ed, CRLF 유지)
 - JT-1 screen_text(PD 18:31분): pre1117pd2 대비 = 17:15 서명 script 8줄 자막 + 새 장면 scenes.35 '받은 돈만 본 계산' · 장면 번호 +1 · 숫자 0 → stamp d7af75b1 · 35행은 youtube-loop 새 말(18:00 시한) 나오면 script·screen_text 그 한 줄만

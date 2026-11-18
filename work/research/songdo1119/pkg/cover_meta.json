@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 전월세·매매 실거래 API(인천 연수구 28185 송도동) 2025.6~10월 vs 2026.6~10월 계약, calc_out.txt — 파이어맵 직접 계산",
+ "made_at": "2026-11-18",
+ "by": "research/songdo1119/mkimg.py",
+ "out": "img/00.png",
+ "topic": "송도 아파트 전세",
+ "num": "+17% · +3%",
+ "topic_px": 58,
+ "num_px": 40,
+ "follows": "경쟁 2 songdo-life/224473471539 기간별 보증금 표·차트 · 1 flalspwlq 글자 카드"
+}

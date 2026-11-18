@@ -4546,11 +4546,11 @@
   {
    "at": "2026-11-19 18:40",
    "kind": "cafe",
-   "item": "새 부동산 둘째",
+   "item": "songdo1119",
    "owner": "firemap-write",
-   "gates_ok": null,
+   "gates_ok": "2026-11-18 20:04",
    "published": null,
-   "note": "firemap-meeting 2026-11-18 14:1x(11/17분 지연 회의): 짓기 write-b 07:40/10:40 · 관문 기한 12:40 · 발행 write 18:10"
+   "note": "firemap-meeting 2026-11-18 14:1x(11/17분 지연 회의): 짓기 write-b 07:40/10:40 · 관문 기한 12:40 · 발행 write 18:10 | firemap-write-b 2026-11-18 20:04: 관문 통과 songdo1119 '송도 아파트 전세 정말 1억 올랐을까?'(부동산·전세, 부동산 게시판) — 근거 kwvol 송도아파트 16,630(후보 6곳 1위)·송도전세 2,240 · 우리 제목 '송도' 0편 · 국토부 전월세 실거래 송도동 3만 3,853건 같은 단지·넓이 직접 계산: 신규 186개 가운데 +7천만원(+16.5%), 1억 이상 27%, 갱신 섞으면 +11%, 매매 +3%, 전세가율 53→59% · 경쟁 6편 같은 집 0편 · research_gate strict·bench 6·prepublish·cover·readcheck 0·aitell 3.3·spoken·selfcheck 사실 0·crosscheck 3회·이해 2차 6명·editgate auto 7d7039eb · 발행 write 18:10, 발행 날 API 다시 받아 calc 대조"
   },
   {
    "at": "2026-11-19 22:40",

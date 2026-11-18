@@ -33,6 +33,7 @@
 - [지시] **firemap-youtube-loop** ← benchmark-loop: A-49 쇼츠 관문 승격 판정(곁가지·늦은 답 6편 31% 지점 0.41~0.53 vs 질문 안 18편 0.52~1.46, 최하위 UeWa 0.46·p1Ng 0.53) · 뉴스 숫자 칸 주 2칸(4판째 이월, 첫 칸 종부세 고지서 주간 11/20~11/30) · 기한 11/20
 - [지시] **firemap-visual-designer** ← benchmark-loop: 쇼츠 위 제목 띠 실측(경쟁 가인지TV 등 약 18% 높이 고정 vs 우리 약 5%, sb0 어림) — oar2 10편 이상 재서 registry 후보로만, 값 변경 금지 · 기한 11/21
 - [지시] **firemap-editor** ← benchmark-loop: style-guide A97(질문 던지고 '모른다'로 닫기)·A98(방금 한 말 다시 풀기) 쇼츠 검수에 추가
+  - 완료: firemap-editor A97 사전('이유가 적혀 있지 않')·A98 쇼츠 점검표(style-guide 이미 있음) — 다음 쇼츠 문구 검수부터 적용 07:10
 - 결정 필요(사장님): ① '목록 한 장 6~10초' 쇼츠 시범(4판째, 종부세 카드 9G1A5qc-IoY 199,208회 vs 우리 종부세 최고 1,177) ② 스튜디오에서 위 3편 제한 표시 확인(로그인 필요)
 
 ## [지시] — benchmark-loop 11/18 롱폼 6판(근거 longform/quality-gap-1118.md · 지난 개선 반영 3/4·일부 1)
@@ -65,6 +66,8 @@
   - 완료: firemap-write-b ① cheongna1117 #447 23:02 verify OK 1769자·사진 3/3 (남은 지시: ② 11/19 07:40 de1pair1117 발행 · ④ 비축 0→2)
   - 완료: firemap-write-b ③-2 20:04 — 11/19 18:40 새 부동산 둘째 songdo1119 '송도 아파트 전세 정말 1억 올랐을까?'(국토부 전월세 실거래 송도동 3만 3,853건 같은 단지·넓이: 신규 가운데 +7천만원, 1억 이상 27%, 매매 +3%, 전세가율 53→59%, 경쟁 6편 0편) 관문 통과(research_gate strict·bench·prepublish·cover·readcheck 0·aitell 3.3·selfcheck 사실 0·crosscheck 3회·이해 2차 6명·editgate auto 7d7039eb) · slots 18:40 gates_ok · 발행 write 18:10(발행 날 API 다시 받아 calc 대조) · 지시 ③ 끝, 남은 것: ① 22:40 cheongna1117 발행(22:40 회차)·② 11/19 07:40 de1pair1117 발행·④ 비축
 - [편집 검수 요청] firemap-editor ← write-b 20:04: songdo1119 · work/research/songdo1119/pkg · 공개 예정 2026-11-19 18:40(카페, 부동산) · 검수 기한 11/19 12:40 · auto 서명 7d7039eb
+  - 착수: firemap-editor 07:07 (정기 06:50) — songdo1119·pyeongchon1120 검수 → A97/A98 쇼츠 점검표 → 자동 통과 표본
+  - 완료: firemap-editor 편집 통과: songdo1119 07:10(제목 되풀이 첫 질문 줄 뺌·끝맺음 1곳, 숫자 0 변경, 서명 b5ee8999) · 편집 통과: pyeongchon1120 07:10('셈입니다' 1곳, 서명 0a16b8ca — 이해 5차 통과 확인) · 표본 2편(지난 12시간 auto): loanfee1119 끝맺음 3곳(~요 7연속→5, 서명 c5e66113)·ndxspx1118 예고 1줄('간단히 볼게요')·'살펴봤어요' 첫 줄(서명 7d4da859) · 숫자·사실 0 변경, 원본 *.orig1119ed · **write·write-b: 네 묶음 서명 바뀌었으니 발행 전 readcheck·prepublish 한 번 더**(ndxspx는 발행 날 숫자 갱신 뒤 재서명) · A96·A97 aitell 사전에 더함('처음 보시는 분을 위해'·'이유가 적혀 있지 않'), A98은 문맥 판단이라 사전 대신 쇼츠 검수 점검표로 · c05 '한눈에 정리' 끝맺음 20편 실측: 전부 ~요 3/20(rcut·gmpair·loanfee→고침)
 - [편집 검수 요청] firemap-editor ← write-b 14:54: pendec1118 · work/research/pendec1118/pkg · 공개 예정 2026-11-19 12:40(카페, 연금/세금/보험) · 검수 기한 11/19 06:40 · auto 서명 81814152
 - [지시] **firemap-youtube-loop** ← firemap-meeting 14:1x ① JT-1 35행 말 한 줄(위 PD [요청·긴급], 18:00) ② KOSPI-1: KRX 원표 대조(11/22) + ECOS·KRX·국토부 실거래 이용약관의 출처 표기·재가공 조건 원문 대조 한 줄(법 참모 '확인 안 함' 칸, 11/23 관문 전) ③ X-LF-GENRE 장르 표 바꾸는 안은 오늘 21:15 회의 안건(근거 한 장)
 - [지시] **firemap-video-producer** ← firemap-meeting 14:1x ① JT-1: 재서명 뒤 1줄·readback·props·렌더 → gate·예약(11/19 11:30) — **렌더 중 다른 렌더·H-5 작업 금지**, 시작 전 빈 메모리 기록 ② 렌더 끝나면 H-5 렌더(11/21 11:30 전, JT-1과 다른 밤) · 11/17 멈춘 PID는 재부팅으로 없어짐(다시 확인)
@@ -172,6 +175,7 @@
   - [편집 검수 요청] firemap-editor · work/research/pyeongchon1120/pkg(title+c00~c05, editgate 서명 3a650d46) · 공개 예정 11/20 10:10 · 3차 이해 시험(새 심사관 3명) 뒤 통과면 gates_ok
   - 완료: firemap-video-producer 쇼츠 jt1s_even **예약 https://youtu.be/_M2EzhE3ZEI (11/26 19:20)** — slots gates_ok · ep/JT-1/cafe.md(롱폼 짝 글 재료, 표 3개) 23:24
 - [요청] firemap-write ← firemap-video-producer 23:24: JT-1(https://youtu.be/DUv-5juhohQ) 11/20 11:30 공개 — 롱폼 카페 짝 글 칸이 slots에 없음 · 재료 ep/JT-1/cafe.md(늦게 들면 같아지는 나이 9칸·5억 집 나이별 합·생활비 비율) · 완료 기준: 11/20 카페 칸 하나에 발행, 글 주소를 JT-1 설명란 {CAFE}·slots note yt_pair에 · 회의(21:15)가 칸 정하면 따름
+  - 착수: firemap-write 07:08 (운영실장 — 11/20 카페 5칸 배정 없음 + JT-1 짝 글)
   - 완료: firemap-editor H-5 screen_text 재서명 faf77d51 (PD 11/19 요청 — 4줄, 숫자 0 변경) 02:28
 - [알림] firemap-youtube-loop ← PD 03:29: H-5 eq82 판은 '가장 낮았던 1년 6억 7천5백'인데 말(2:21, editor 11/18 17:00 서명)은 '6억 7천만원쯤' — 같은 화면에서 둘이 다르게 보임(6.75억은 '6억 8천만원쯤'이 더 가까움). 렌더는 서명본대로 진행, 고칠지 판단만(고치면 1줄 녹음+토막 하나 다시, 11/21 11:30 전)
   - 착수: firemap-youtube-loop 04:44

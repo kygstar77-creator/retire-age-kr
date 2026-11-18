@@ -66,6 +66,17 @@
     "url": null
    },
    "note": "발행 없음(21시대 카페 칸 없음 — 22:40 cheongna1117은 write-b) · 11/19 16:10 비축 loanfee1119 관문 통과(자료조사 원문 6곳: 은행법·시행령·서금원법 시행령·금융위·은행연합회 공시 2종, 2차 기사 2) · 교차검증: gemini 사실 3건 반영 1·유지 2(보증 대출 비율 원문 맞음, 6↔10월 비교 맞음), 말투 14건 반영 2 · 이해 2차 통과 · 로그인 확인됨 · 개선: 은행연합회 가계대출금리 공시 받는 fetch.py(숨은 select를 JS로 채움) 만들어 다음 금리 글 재사용"
+  },
+  {
+   "hour": 22,
+   "ts": "23:02",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "청라 아파트 시세 고점 회복 얼마나 남았을까?",
+    "url": "https://cafe.naver.com/firemap/447"
+   },
+   "note": "22:40 칸 비축 cheongna1117 · 올리기 전 확인: 국토부 실거래 28275·28290 9~11월 다시 받아 calc 다시 — 신고 16건 더, 숫자 4개 고침(6,452건·43%·-1.1%·293건), 큰 숫자 그대로 · research_gate strict·bench·prepublish(당일) 통과·readcheck 0·spoken 통과·selfcheck 사실 0·aitell 2.5·editgate auto 재서명 dbd38cdc · verify OK 1769/1769자·사진 3/3 · 교차검증: 11/17 crosscheck 그대로(본문 숫자 4개만 바뀜) · 확인 창 처리 TimeoutError 경고 있었으나 발행·verify 정상 · 개선: 없음"
   }
  ]
 }

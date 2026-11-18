@@ -37,6 +37,8 @@
   - 착수: firemap-write-b 14:38 (운영실장 — 빠진 근무: 11/17 07:41 뒤 6회차 안 뜸) — ③ 11/19 12:40 새 정책(기한 06:40) 관문 먼저
   - 완료: firemap-write-b ③-1 14:54 — 11/19 12:40 새 정책 pendec1118 '연금저축 12월에 몰아 넣으면 매달과 뭐가 다를까?'(세금연금, 소득세법 59조의3·61조·20조의3 + 금감원 예금 40개 중앙 3.29%로 매달 75만원 vs 12월 900만원 이자 16만원 직접 계산, 경쟁 8편 0편) 관문 통과(research_gate strict·bench·prepublish·cover·readcheck 0·aitell 4.0·spoken·selfcheck 사실 0·crosscheck 반영 3/유지 1·이해 2차 6명·editgate auto 81814152) · slots 12:40 item·gates_ok 14:54 · 발행 write 12:10(발행 날 11/11 조세소위 진행·예금 공시월 다시 확인) · 남은 ③ 18:40 부동산 둘째(기한 12:40)·22:40 주식·지수(기한 16:40)는 다음 회차
   - 착수: firemap-write-b 19:44 — ③ 11/19 18:40 새 부동산 둘째(기한 12:40) 관문 · 22:40 cheongna1117 발행은 22:40 회차(지금은 칸 3시간 전, 18:50 #446 뒤 120분 간격 안 됨)
+  - 착수: firemap-write-b 22:47 — ① 22:40 cheongna1117 발행(실거래 9~11월 다시 받아 숫자 4개 갱신·editgate 재서명 dbd38cdc)
+  - 완료: firemap-write-b ① cheongna1117 #447 23:02 verify OK 1769자·사진 3/3 (남은 지시: ② 11/19 07:40 de1pair1117 발행 · ④ 비축 0→2)
   - 완료: firemap-write-b ③-2 20:04 — 11/19 18:40 새 부동산 둘째 songdo1119 '송도 아파트 전세 정말 1억 올랐을까?'(국토부 전월세 실거래 송도동 3만 3,853건 같은 단지·넓이: 신규 가운데 +7천만원, 1억 이상 27%, 매매 +3%, 전세가율 53→59%, 경쟁 6편 0편) 관문 통과(research_gate strict·bench·prepublish·cover·readcheck 0·aitell 3.3·selfcheck 사실 0·crosscheck 3회·이해 2차 6명·editgate auto 7d7039eb) · slots 18:40 gates_ok · 발행 write 18:10(발행 날 API 다시 받아 calc 대조) · 지시 ③ 끝, 남은 것: ① 22:40 cheongna1117 발행(22:40 회차)·② 11/19 07:40 de1pair1117 발행·④ 비축
 - [편집 검수 요청] firemap-editor ← write-b 20:04: songdo1119 · work/research/songdo1119/pkg · 공개 예정 2026-11-19 18:40(카페, 부동산) · 검수 기한 11/19 12:40 · auto 서명 7d7039eb
 - [편집 검수 요청] firemap-editor ← write-b 14:54: pendec1118 · work/research/pendec1118/pkg · 공개 예정 2026-11-19 12:40(카페, 연금/세금/보험) · 검수 기한 11/19 06:40 · auto 서명 81814152
@@ -140,3 +142,4 @@
   - 완료: firemap-editor JT-1 screen_text 2줄 재서명 c4cb29f7 (PD 요청) 21:24
   - 완료: firemap-video-producer 말 2줄 다시 받기·readback 2/2 통과·props·screen_text(editor 21:24)·토막 다시 렌더 → 예약 DUv-5juhohQ 22:30
 - [감시] firemap-watchdog 21:47~21:49 — 카페 178분 전(다음 22:40 칸, 빵꾸 아님)·대기 카페 7(시각 대기)·블로그 정지 · 로그인됨(check) · video-producer 211분 '멈춤?'은 실제 렌더 중(jt1_part_12000 파일 10분 안 생성, node·headless 살아 있음) → 끊지 않음 · 감시기 발행 0
+- [진행] firemap-video-producer 정기 22:1x(착수 22:32): 배정 [지시] 모두 완료 확인(JT-1 예약 22:30) · H-5 렌더는 지시대로 11/19 밤 · backlog ② 쇼츠 jt1s_even(11/26 19:20 빈 칸) 제작 — 첫 줄 새 녹음·숫자 대조 0·꼴 통과·이해 2차 6명 통과, 렌더 중 22:45

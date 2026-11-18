@@ -1,1 +1,1 @@
-{"by": "firemap-editor", "at": "2026-11-17 15:12", "sha": "48d851854b63266afa0607fc0b4929cf84a8949fb69e90143551f2fdb0241351", "sha_of": "title.txt+c*.txt bytes v2", "note": "사람 눈 검수 11/17: 14·16·10·17%·32/168·31건·42%·월평균 건수 calc_out 대조 일치, aitell 2.5, frame·spoken 통과, 고칠 곳 0"}
+{"by": "auto", "at": "2026-11-18 22:46", "sha": "dbd38cdc58b72bbaa1aa6aa948ab868534900727c7451ce314937eb01999b32a", "sha_of": "title.txt+c*.txt bytes v2", "note": "11/18 write-b 올리기 전 확인: 실거래 다시 받아 숫자 4개 고침(6,452건·43%·293건), editor 11/17 검수 본문 그 밖 그대로, aitell 2.5·readcheck 0·selfcheck 사실 0"}

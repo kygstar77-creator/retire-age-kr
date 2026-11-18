@@ -23,6 +23,8 @@
 
 ## [지시] — benchmark-loop 11/19 쇼츠 6판(근거 cardshorts/shorts-gap-1119.md · 지난 개선 반영 5/6, 뉴스 숫자 안 됨)
 - [지시] **firemap-youtube-loop** ← benchmark-loop: 쇼츠 3편 피드 배포 0 — aW8HfeGCGgw 9회·7bBwnLg86-Q 2회·jGtx9f6SZKA 2회(같은 주 c1clip 8편은 쇼츠 피드 589~1,233). 공개 48시간 쇼츠 유입 50 미만 경보를 patrol에 넣고 log.jsonl d7_views 측정 고침 · 완료: 경보 코드+세 편 판정 줄(원인 모르면 '확인 안 함') · 기한 11/19 21시 회의 전
+  - 착수: firemap-youtube-loop 04:44
+  - 완료: firemap-youtube-loop **경보 코드** shortsdaily.feed_check(공개 3~14일 편의 첫 48시간 SHORTS 유입 <50, 분석 0인데 공개 조회 50↑이면 '측정 지연'으로 넘김) → patrol 12절 위반 줄 · 첫 실행 정확히 세 편만 걸림(aW8 2/8·7bB 0/1·jGt 0/2) · **세 편 판정: 원인 확인 안 함** — Data API 칸(공개·아동용·라이선스·처리·카테고리·언어·태그·설명·공개 시각·목소리 방식) 형제 편과 전부 같음, 길이 28~32초도 31·33초 형제가 잘돼 설명 안 됨, 첫 노출부터 거의 0(반응 꺾임 아님) → 스튜디오 '제한' 표시 확인은 사장님 로그인 몫(결정 필요 ②) · **d7_views 고침**: 예약 편을 올린 날(at)로 재던 것 → publishAt, 비공개는 0 안 적음, 공개 54편 채움 · 근거 research/cardshorts/feed-alert.md 04:51
 - [지시] **firemap-video-producer + firemap-copywriter** ← benchmark-loop: 예약 쇼츠 답 5초 넘음 — n2s_ladder(11/21, 첫 숫자 7.5초)·n3s_family(11/24, 7.0초)·h4s_new15(11/25, 11.2초 + A98 줄 6.0초) 줄 순서·자르기로 당김(새 녹음 없이부터) · 완료: review.md '답 첫 등장 ≤5초' · 기한 각 공개 24시간 전
 - [지시] **firemap-youtube-loop** ← benchmark-loop: A-49 쇼츠 관문 승격 판정(곁가지·늦은 답 6편 31% 지점 0.41~0.53 vs 질문 안 18편 0.52~1.46, 최하위 UeWa 0.46·p1Ng 0.53) · 뉴스 숫자 칸 주 2칸(4판째 이월, 첫 칸 종부세 고지서 주간 11/20~11/30) · 기한 11/20
 - [지시] **firemap-visual-designer** ← benchmark-loop: 쇼츠 위 제목 띠 실측(경쟁 가인지TV 등 약 18% 높이 고정 vs 우리 약 5%, sb0 어림) — oar2 10편 이상 재서 registry 후보로만, 값 변경 금지 · 기한 11/21
@@ -166,3 +168,5 @@
 - [요청] firemap-write ← firemap-video-producer 23:24: JT-1(https://youtu.be/DUv-5juhohQ) 11/20 11:30 공개 — 롱폼 카페 짝 글 칸이 slots에 없음 · 재료 ep/JT-1/cafe.md(늦게 들면 같아지는 나이 9칸·5억 집 나이별 합·생활비 비율) · 완료 기준: 11/20 카페 칸 하나에 발행, 글 주소를 JT-1 설명란 {CAFE}·slots note yt_pair에 · 회의(21:15)가 칸 정하면 따름
   - 완료: firemap-editor H-5 screen_text 재서명 faf77d51 (PD 11/19 요청 — 4줄, 숫자 0 변경) 02:28
 - [알림] firemap-youtube-loop ← PD 03:29: H-5 eq82 판은 '가장 낮았던 1년 6억 7천5백'인데 말(2:21, editor 11/18 17:00 서명)은 '6억 7천만원쯤' — 같은 화면에서 둘이 다르게 보임(6.75억은 '6억 8천만원쯤'이 더 가까움). 렌더는 서명본대로 진행, 고칠지 판단만(고치면 1줄 녹음+토막 하나 다시, 11/21 11:30 전)
+  - 착수: firemap-youtube-loop 04:44
+  - 완료: firemap-youtube-loop H-5 eq82 **그대로 둠**(다시 녹음 없음) — 규칙 '정밀 숫자는 화면, 말은 ~쯤'대로 판 6억 7천5백·자막 6.75억·말 '6억 7천만원쯤'은 같은 값의 앞자리 읽기라 서로 어긋나지 않음, '6억 8천만원쯤'으로 바꾸면 화면 7천5백과 오히려 더 달라 보이고 11/21 관문 전 녹음·서명·토막 렌더 위험만 늚 · facts F4 '6억 7천'과도 같음 04:51

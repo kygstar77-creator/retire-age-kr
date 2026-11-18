@@ -176,6 +176,13 @@ try:
 except Exception as e:
     print('지표 · 유튜브 확인 안 됨:', str(e)[:80])
 
+# 12. 쇼츠 피드 배포(11/19 benchmark-loop 지시): 공개 48시간 쇼츠 피드 유입 50 미만이면 위반 — 원인 모르면 '확인 안 함'으로 판정 줄을 남긴다
+try:
+    sys.path.insert(0, HERE); import shortsdaily
+    for vid, sh, tot, t in shortsdaily.feed_check(14): bad.append(f'쇼츠 피드 배포 없음 · {vid} 48시간 쇼츠 피드 {sh}회(전체 {tot}) — {t} · 판정 줄은 research/cardshorts/feed-alert.md')
+except Exception as e:
+    bad.append(f'쇼츠 피드 점검 못 돌림: {str(e)[:80]}')
+
 # 11. 시각 관문(10/2 대역): today.md·decisions/log.md 새 줄의 기록 시각이 커밋보다 5분 넘게 늦으면 위반, today.md 줄에 표시
 try:
     sys.path.insert(0, HERE); import timecheck

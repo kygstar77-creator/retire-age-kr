@@ -3,6 +3,7 @@
 #   py -3.12 work/shortsdaily.py check   <spec.json>          숫자 대조·글 길이만 본다(만들지 않음)
 #   py -3.12 work/shortsdaily.py whole   <spec.json>          렌더 + 전체 영상 점검 5개(소리·빈 곳 40%·멈춤 5초·제목 숫자·눈 점검) + 3초 판
 #   py -3.12 work/shortsdaily.py publish <spec.json>          대조 → 영상 → 전체 영상 점검 → 유튜브 공개 → 기록
+#   py -3.12 work/shortsdaily.py feed [일수=14]              공개 48시간 쇼츠 피드 유입 50 미만 편(11/19)
 #   py -3.12 work/shortsdaily.py d7                          편별 공개 뒤 7일 조회·구독 증가를 log.jsonl에 채운다(ytanalytics 토큰)
 #
 # 왜 하루 3편까지인가(work/research/shorts-research.md):
@@ -278,6 +279,45 @@ def publish(sp):
     open(LOG, 'a', encoding='utf-8').write(json.dumps(row, ensure_ascii=False) + '\n')
     print('기록', json.dumps(row, ensure_ascii=False))
 
+def pub_date(r):
+    """공개일(한국 날짜). 예약 편은 publishAt, 바로 공개한 편은 at."""
+    pa = r.get('publishAt')
+    return datetime.date.fromisoformat(pa[:10]) if pa else datetime.date.fromisoformat(r['at'][:10])
+
+FEED_MIN = 50   # 11/19 benchmark-loop 지시: 공개 48시간 쇼츠 피드(SHORTS) 유입 50 미만이면 경보 — 같은 주 c1clip 8편 589~1,233 vs 막힌 3편 0~2
+
+def feed_check(days=14):
+    """공개 3~days일 지난 쇼츠의 첫 48시간(공개일·다음날) 쇼츠 피드 유입 조회. 분석 API는 2~3일 늦어 3일 전 편부터 본다.
+    분석이 0인데 공개 조회수가 50 이상이면 '측정 지연'으로 넘긴다(경보 아님). 돌려주는 값: [(id, 피드조회, 전체, 제목)] 경보 대상."""
+    import ytanalytics, ytupload
+    today = datetime.date.today(); cand = []
+    for r in log_rows():
+        if not r.get('id'): continue
+        pub = pub_date(r)
+        if 3 <= (today - pub).days <= days: cand.append((r, pub))
+    if not cand: return []
+    y = ytupload.service(); vc = {}
+    ids = [r['id'] for r, _ in cand]
+    for i in range(0, len(ids), 50):
+        for v in y.videos().list(part='status,statistics', id=','.join(ids[i:i+50])).execute()['items']:
+            if v['status']['privacyStatus'] == 'public': vc[v['id']] = int(v['statistics'].get('viewCount', 0))
+    out = []
+    for r, pub in cand:
+        if r['id'] not in vc: continue
+        rep = ytanalytics.q('views', dims='insightTrafficSourceType', filters='video==' + r['id'], start=pub.isoformat(), end=(pub + datetime.timedelta(days=1)).isoformat())
+        d = {k: int(x) for k, x in rep.get('rows', [])}
+        tot = sum(d.values()); sh = d.get('SHORTS', 0)
+        if tot == 0 and vc[r['id']] >= FEED_MIN: continue   # 분석 아직 안 참
+        if sh < FEED_MIN: out.append((r['id'], sh, tot, r.get('title', '')[:30]))
+    return out
+
+def is_public(vid, _c={}):
+    if vid not in _c:
+        import ytupload
+        it = ytupload.service().videos().list(part='status', id=vid).execute()['items']
+        _c[vid] = bool(it) and it[0]['status']['privacyStatus'] == 'public'
+    return _c[vid]
+
 def d7():
     """2026-09-30 전체 회의 배정: 편별 7일 성과 기준선. 공개일~+6일(7일) 조회·구독 증가를 YouTube Analytics로 잰다.
     분석 API는 2~3일 늦게 차므로 공개 뒤 10일이 지난 편만 채운다(덜 찬 값을 7일치로 적지 않으려고). 채운 편은 다시 안 잰다."""
@@ -285,8 +325,9 @@ def d7():
     rows = log_rows(); today = datetime.date.today(); n = 0
     for r in rows:
         if r.get('d7_views') is not None or not r.get('id'): continue
-        pub = datetime.date.fromisoformat(r['at'][:10])
+        pub = pub_date(r)   # 11/19: 예약 공개 편은 올린 날(at)이 아니라 공개일(publishAt) — at으로 재면 공개 전 0을 7일치로 적었다
         if (today - pub).days < 10: print('  아직', r['at'][:10], r['id'], f'({(today - pub).days}일째)'); continue
+        if not is_public(r['id']): continue   # 11/19: 비공개(옛 틀 46편 등)는 0을 7일치로 적지 않는다
         rep = ytanalytics.q('views,subscribersGained', filters='video==' + r['id'], start=pub.isoformat(), end=(pub + datetime.timedelta(days=6)).isoformat())
         v, sub = (rep.get('rows') or [[0, 0]])[0]
         r['d7_views'], r['d7_subs'], r['d7_at'] = int(v), int(sub), today.isoformat(); n += 1
@@ -312,3 +353,5 @@ if __name__ == '__main__':
         d = build_desc(json.load(open(sys.argv[2], encoding='utf-8'))); links = re.findall(r'https?://\S+', d)
         print(d); print('---\n링크', len(links), '개:', links)
     elif cmd == 'd7': d7()
+    elif cmd == 'feed':
+        for x in feed_check(int(sys.argv[2]) if len(sys.argv) > 2 else 14): print('쇼츠 피드 48시간 50 미만:', *x)

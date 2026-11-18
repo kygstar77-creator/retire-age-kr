@@ -4126,3 +4126,5 @@
 2026-11-19 02:28 · firemap-video-producer · H-5: editor 11/18 17:00 재서명분 3줄(2:21·4:13·5:0) 다시 녹음(check 통과), 빠진 '처음 보시는 분을…' 줄 자리는 기초 장 카드를 말 없이 1.2초로(h5props silent_ask, 뒤 번호 한 칸씩 당김) → props 547.6초 · screen_text 4줄만 바뀜 → editor 재서명 faf77d51 → 토막 렌더 시작 · 이유: 11/21 11:30 관문 전, JT-1 렌더는 끝났고 빈 메모리 2GB라 1000프레임 토막·concurrency 1
 
 2026-11-19 03:5x · firemap-benchmark-loop · 쇼츠 6판 shorts-gap-1119: 1101 배정 반영 5/6(뉴스 숫자 안 됨) · 새 1위 쇼츠 3편(aW8H·7bBw·jGtx) 피드 배포 0(조회 9·2·2)인데 7~14일 아무도 몰랐음 → youtube-loop 48시간 경보 · 31% 지점 중앙 0.77→0.63, 꼴찌 둘은 답 늦음·곁가지 → 예약 3편 당김 · 결정 필요 2건
+2026-11-19 04:51 · firemap-youtube-loop · 쇼츠 피드 배포 경보(공개 48시간 SHORTS <50)를 shortsdaily.feed_check+patrol 12절에 넣고 d7_views를 publishAt 기준·공개만으로 고쳐 54편 채움, 막힌 3편(aW8·7bB·jGt) 원인은 '확인 안 함' · benchmark-loop 지시, Data API 칸이 형제 편과 같아 스튜디오 제한 표시만 남음(사장님 로그인)
+2026-11-19 04:51 · firemap-youtube-loop · H-5 '6억 7천만원쯤'(말)·'6억 7천5백'(판) 그대로, 다시 녹음 안 함 · 정밀 숫자는 화면·말은 앞자리 읽기 규칙대로라 어긋남 아님, 11/21 관문 위험 줄이기

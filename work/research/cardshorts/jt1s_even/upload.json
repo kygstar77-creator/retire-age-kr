@@ -1,0 +1,29 @@
+{
+ "name": "jt1s_even",
+ "ep": "JT-1",
+ "from_long": "DUv-5juhohQ",
+ "mp4": "work/video/out/jt1s_even_c1_ds.mp4",
+ "publishAt": "2026-11-26T19:20:00+09:00",
+ "publish_plan": "11/26 19:20 쇼츠 칸(11/25까지 참, 첫 빈 칸) · 노후·연금 축 — 같은 날 11:30 롱폼은 '아파트 실거래 또는 상위 몇%'(TBD)라 다름 · 원본 JT-1 11/20 11:30 공개 뒤 6일 · JT-1 첫 클립",
+ "title": "주택연금 기다렸다 들면? 받은 돈 합은 93세에 같아요 #shorts",
+ "description": "전체 계산: https://youtu.be/DUv-5juhohQ (집값·나이별 매달 받는 돈, 55·60세에 든 경우, 생활비 채우려면 집값 몇 억인지까지)\n\n주택연금은 집에 계속 살면서 그 집을 담보로 매달 연금을 받는 제도예요(한국주택금융공사).\n5억 집으로 65세에 바로 든 쪽과 5년 기다려 70세에 든 쪽, 받은 돈을 다 더하면 93세가 돼야 같아져요. 70세에 들면 매달 28만원쯤 더 받지만, 기다린 5년 동안 못 받은 7,600만원쯤을 그 돈으로 메우는 데 23년이 걸려서예요(65세에 들면 매달 126만원, 70세에 들면 154만원쯤). 80세까지 보면 일찍 든 쪽이 4,300만원쯤 더 받았어요.\n기다리는 동안 집값이 그대로라는 가정이에요. 매달 받는 돈은 가입할 때 시세로 정해서, 그 사이 집값이 내리면 늦게 든 쪽 금액도 줄고 오르면 늘어요. 보증료·이자는 빼고 받은 돈만 더한 계산이고, 일찍 들면 이자도 더 오래 붙어 나중에 남는 집값은 그만큼 줄어요. 부부라면 젊은 쪽 나이로 계산해요.\n5억 집 매달 받는 돈(정액형): 65세 1,264천원 · 70세 1,539천원 · 2026년 3월 1일 이후 신청 기준\n\n출처: 한국주택금융공사 주택연금 월지급금 표(2026.3.1) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — Artem Podrez · Carlos Arribas · Kindel Media · Melike · Polina · RDNE Stock project\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n정보 제공용이고, 특정 상품에 가입하라는 권유가 아니에요.\n#shorts #주택연금 #주택연금가입나이",
+ "tags": "주택연금,주택연금 가입 나이,주택연금 월지급금,주택연금 언제 가입,노후 생활비",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/jt1s_even/cover_1118.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "_M2EzhE3ZEI",
+ "uploaded_at": "2026-11-18 23:24:35",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-26T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

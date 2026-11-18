@@ -1,0 +1,313 @@
+{
+ "fps": 30,
+ "name": "jt1s_even",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "주택연금 기다렸다 들면?",
+  "받은 돈 합 93세에 같아짐"
+ ],
+ "hot": "93세",
+ "answer": {
+  "label": "5억 집, 65세에 바로 vs 70세에 들면",
+  "items": [
+   "70세: 매달 28만원 더",
+   "못 받은 7,600만원 메우는 데 23년 → 93세"
+  ],
+  "arrow": false,
+  "note": "집값 그대로 가정 · 정액형 · 2026년 3월 1일 이후 신청 기준"
+ },
+ "base": "한국주택금융공사 주택연금 월지급금 표(2026.3.1) · 파이어맵 계산",
+ "long": null,
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "질문",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "5억 집 · 65세",
+      "지금 들까, 70세에 들까",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "못 받는 5년치",
+      "매달 126만원 × 5년",
+      "",
+      105,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "주택연금, 지금 바로 들까요, 5년 기다렸다 들까요?",
+     "audio": "audio/jt1s/f3bff5a1c5abb300.wav",
+     "frames": 105
+    },
+    {
+     "n": 2,
+     "text": "그동안 못 받은 돈을 다 더하면, 7,600만원 정도입니다.",
+     "audio": "audio/jt-1/54e28ea2e4c1a117.wav",
+     "frames": 102
+    }
+   ],
+   "frames": 207
+  },
+  {
+   "kind": "vs",
+   "label": "더 받음",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "70세에 들면",
+      "매달 154만원 · 28만원 더",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "메우는 데 몇 년?",
+      "못 받은 7,600만원",
+      "",
+      95,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 3,
+     "text": "대신 70세에 들면 매달 28만원을 더 받아요.",
+     "audio": "audio/jt-1/ef845bfc8cfdc416.wav",
+     "frames": 95
+    },
+    {
+     "n": 4,
+     "text": "그럼 못 받은 7,600만원을, 이 돈으로 다 메우는 데 몇 년이 걸릴까요?",
+     "audio": "audio/jt-1/05164141ce918aeb.wav",
+     "frames": 122
+    }
+   ],
+   "frames": 217
+  },
+  {
+   "kind": "vs",
+   "label": "답",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "23년 걸림",
+      "매달 28만원씩 메우면",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "93세",
+      "받은 돈 합이 같아짐",
+      "",
+      47,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 5,
+     "text": "23년이 걸립니다.",
+     "audio": "audio/jt-1/f67506e5b8545054.wav",
+     "frames": 47
+    },
+    {
+     "n": 6,
+     "text": "그러면 93세가 됩니다.",
+     "audio": "audio/jt-1/b4427c3df9a10253.wav",
+     "frames": 59
+    }
+   ],
+   "frames": 106
+  },
+  {
+   "kind": "vs",
+   "label": "80세",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "80세까지 받은 돈",
+      "일찍 든 쪽 4,300만원 더",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 7,
+     "text": "80세가 됐을 때를 보면요.",
+     "audio": "audio/jt-1/ef77c6146ceeb4f7.wav",
+     "frames": 49
+    },
+    {
+     "n": 8,
+     "text": "일찍 든 쪽이 기다린 쪽보다 4,300만원을 더 받았습니다.",
+     "audio": "audio/jt-1/bb1175fd25139b9b.wav",
+     "frames": 122
+    }
+   ],
+   "frames": 171
+  },
+  {
+   "kind": "vs",
+   "label": "갈림",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "93세보다 오래 살면",
+      "기다린 쪽이 더 받음",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 9,
+     "text": "그러니 93세보다 오래 사시면 기다린 쪽이 더 받은 게 되고, 그 전이면 일찍 든 쪽이 더 받은 게 돼요.",
+     "audio": "audio/jt-1/d6bdc91fb9a57bd3.wav",
+     "frames": 193
+    }
+   ],
+   "frames": 193
+  },
+  {
+   "kind": "vs",
+   "label": "가정",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "집값 그대로 가정",
+      "가입 때 집값으로 다시 정함",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "집값이 오르면",
+      "늦게 든 쪽이 더 받을 수도",
+      "",
+      260,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 10,
+     "text": "기다리는 동안 집값이 그대로라는 가정입니다.",
+     "audio": "audio/jt-1/b13d4af68ef2d3ef.wav",
+     "frames": 77
+    },
+    {
+     "n": 11,
+     "text": "매달 받는 돈은 가입할 때 시세로 정하니까, 그 사이 집값이 내리면 늦게 든 쪽 금액도 줄어요.",
+     "audio": "audio/jt-1/2ca54d45f9523032.wav",
+     "frames": 183
+    },
+    {
+     "n": 12,
+     "text": "거꾸로 집값이 오르면 늦게 든 쪽이 더 받을 수 있고요.",
+     "audio": "audio/jt-1/79418256913e8665.wav",
+     "frames": 99
+    }
+   ],
+   "frames": 425
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/jt1s_even/stock/cut/8292929_3_105.mp4",
+   "from": 0,
+   "frames": 105,
+   "start": 0
+  },
+  {
+   "src": "bg/jt1s_even/stock/cut/6541138_5_102.mp4",
+   "from": 105,
+   "frames": 102,
+   "start": 0
+  },
+  {
+   "src": "bg/jt1s_even/stock/cut/7578842_0_95.mp4",
+   "from": 207,
+   "frames": 95,
+   "start": 0
+  },
+  {
+   "src": "bg/jt1s_even/stock/cut/946148_0_122.mp4",
+   "from": 302,
+   "frames": 122,
+   "start": 0
+  },
+  {
+   "src": "bg/jt1s_even/stock/cut/38781079_0_47.mp4",
+   "from": 424,
+   "frames": 47,
+   "start": 0
+  },
+  {
+   "src": "bg/jt1s_even/stock/cut/38781079_3_59.mp4",
+   "from": 471,
+   "frames": 59,
+   "start": 0
+  },
+  {
+   "src": "bg/jt1s_even/stock/cut/6781559_0_49.mp4",
+   "from": 530,
+   "frames": 49,
+   "start": 0
+  },
+  {
+   "src": "bg/jt1s_even/stock/cut/6541138_12_122.mp4",
+   "from": 579,
+   "frames": 122,
+   "start": 0
+  },
+  {
+   "src": "bg/jt1s_even/stock/cut/946148_8_193.mp4",
+   "from": 701,
+   "frames": 193,
+   "start": 0
+  },
+  {
+   "src": "bg/jt1s_even/stock/cut/8292929_0_77.mp4",
+   "from": 894,
+   "frames": 77,
+   "start": 0
+  },
+  {
+   "src": "bg/jt1s_even/stock/cut/38405960_0_183.mp4",
+   "from": 971,
+   "frames": 183,
+   "start": 0
+  },
+  {
+   "src": "bg/jt1s_even/stock/cut/946148_15_165.mp4",
+   "from": 1154,
+   "frames": 165,
+   "start": 0
+  }
+ ],
+ "credits": "Artem Podrez · Carlos Arribas · Kindel Media · Melike · Polina ⠀ · RDNE Stock project"
+}

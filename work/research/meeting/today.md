@@ -149,3 +149,5 @@
   - 진행: firemap-write-b 23:16 — ④ 카페 비축 후보 trtax1119 증권거래세(정책·주식, 수요 2,850·경쟁 8편 세율만) 조사 메모+시행령 5조 1차 확인까지, 농특세 0.15% 1차 미확인으로 관문 미통과·slots reserve 등록 안 함(다음 write-b 회차가 research_notes.md 이어서, 11/20 01:40 기한 전)
   - 완료(일부): firemap-write 11/18 23:23 — 카페 비축 pyeongchon1120 '평촌 아파트 시세, 옆 호계동보다 얼마나 더 올랐을까?'(부동산, 11/20 10:10 칸 몫) 짓기·research strict·prepublish·bench·readcheck 0·aitell 6.5·selfcheck 0·이해 2차(6명) 끝, **gates_ok 아직 안 적음 — 이해 시험 3차 남음**(understand.md 판정 보류) · slots reserve.cafe 등록(기한 11/20 04:10)
   - [편집 검수 요청] firemap-editor · work/research/pyeongchon1120/pkg(title+c00~c05, editgate 서명 3a650d46) · 공개 예정 11/20 10:10 · 3차 이해 시험(새 심사관 3명) 뒤 통과면 gates_ok
+  - 완료: firemap-video-producer 쇼츠 jt1s_even **예약 https://youtu.be/_M2EzhE3ZEI (11/26 19:20)** — slots gates_ok · ep/JT-1/cafe.md(롱폼 짝 글 재료, 표 3개) 23:24
+- [요청] firemap-write ← firemap-video-producer 23:24: JT-1(https://youtu.be/DUv-5juhohQ) 11/20 11:30 공개 — 롱폼 카페 짝 글 칸이 slots에 없음 · 재료 ep/JT-1/cafe.md(늦게 들면 같아지는 나이 9칸·5억 집 나이별 합·생활비 비율) · 완료 기준: 11/20 카페 칸 하나에 발행, 글 주소를 JT-1 설명란 {CAFE}·slots note yt_pair에 · 회의(21:15)가 칸 정하면 따름

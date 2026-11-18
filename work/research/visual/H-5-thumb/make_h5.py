@@ -64,6 +64,11 @@ if __name__ == '__main__' and sys.argv[1:] == ['top']:
     # 11/15 copywriter 요청: o1에 흰 줄·알약 뒤만 짙은 그라데이션(위 덮개, 띠·상자 아님) — 아래 덮개 0·테두리 그대로
     make('h5_o3.png', 'songdo_park_canal_18495181.jpg', 0.25, band=0, tshade=(400, 170), sw=15, tsw=9)
     sys.exit()
+if __name__ == '__main__' and sys.argv[1:] == ['fix1118']:
+    # 11/18 PD: 국토부 11/17 다시 받기로 최근 중앙 7.35억→7.40억(facts F4' calc2 §1, 말 say_v2 41행 '7억 4천만원쯤') — o1과 같은 꼴, 주황 줄 숫자만
+    BIG[1] = '지금 7억 4,000만원'
+    make('h5_o1n.png', 'songdo_park_canal_18495181.jpg', 0.25, band=0, tshade=(380, 0), sw=15, tsw=9)
+    sys.exit()
 if __name__ == '__main__' and sys.argv[1:] == ['outline']:
     # 11/14 benchmark 지시(thumb-gap-1114 2위): 검정 테두리 8~10px(1280 기준) + 덮개 걷은 사진. 1920에서 그려 1280으로 줄이므로 ×1.5
     make('h5_o1.png', 'songdo_park_canal_18495181.jpg', 0.25, band=0, tshade=(380, 0), sw=15, tsw=9)    # 덮개 0, 테두리 10px

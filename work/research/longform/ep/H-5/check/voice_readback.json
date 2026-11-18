@@ -77,17 +77,16 @@
   "say": "고점보다 한참 아래, 육십퍼센트에서 칠십퍼센트라는 영상도 있고요.",
   "audio": "audio/h-5/455ece9ee02d96f4.wav",
   "heard": [
-   "구조견보다 한참 아래 60%에서 70%라는 영상도 있고요.",
-   "고점보다한참아래60%에서70%라는영상도있고요"
+   "거점보다 한참 아래 60%에서 70%라는 영상도 있고요.",
+   "고점보다 한참 아래 60%에서 70%라는 영상도 있고요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.94,
-  "pair": 0.86,
-  "flag": "합의오독(0.86/0.94 ·→에서/에서)",
-  "batch2": true
+  "sim": 1.0,
+  "pair": 0.94,
+  "flag": ""
  },
  {
   "at": "0:5",
@@ -1844,17 +1843,16 @@
   "say": "그럼 아파트 중에 반값에 팔린 거래는 얼마나 될까요?",
   "audio": "audio/h-5/7b679e1cacc506ca.wav",
   "heard": [
-   "그럼 아파트 중에 반값에 팔린 거래는 얼마나 될까요?",
-   null
+   "그 아파트 중에 반값에 팔린 거래는 얼마나 될까요?",
+   "그럼 아파트 중에 반값에 팔린 거래는 얼마나 될까요?"
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.98,
+  "flag": ""
  },
  {
   "at": "4:6",
@@ -1862,17 +1860,16 @@
   "say": "가격이 내려간 이천이십이년 하반기부터 지금까지, 아까 그 단지 서른두 곳의 같은 넓이 거래를 봤어요.",
   "audio": "audio/h-5/05adb93588bec5c3.wav",
   "heard": [
-   "가격이 내려간 2022년 하반기부터 지금까지 아파트 32곳에 같은 넓이 거래를 봤어요.",
-   null
+   "가격이 내려간 2022년 하반기부터 지금까지 아까 그 단지 32곳에 같은 넓이 거래를 봤어요.",
+   "가격이 내려간 2022년 하반기부터 지금까지 아까 그 단지 32곳의 같은 넓이 거래를 봤어요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.87,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 0.96,
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "4:7",
@@ -1880,17 +1877,18 @@
   "say": "사천 건이 넘습니다.",
   "audio": "audio/h-5/6fe89353b8e5c5d6.wav",
   "heard": [
-   "4천건이 넘습니다.",
-   null
+   "4,000건이 넘습니다.",
+   "사천권이 넘습니다.",
+   "4,000 건이 넘습니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small",
+   "gemini-3.5-transcribe"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 0.92,
+  "pair": 0.71,
+  "flag": ""
  },
  {
   "at": "4:8",
@@ -1899,16 +1897,15 @@
   "audio": "audio/h-5/92173022eaac02e2.wav",
   "heard": [
    "거래마다 그 단지의 고점 무려 중간 가격과 비교했어요.",
-   null
+   "거래마다 그 단체 고점 무렵 중간 가격과 비교했어요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.88,
+  "flag": ""
  },
  {
   "at": "4:9",
@@ -1917,16 +1914,15 @@
   "audio": "audio/h-5/510e83217aec04a4.wav",
   "heard": [
    "절반 이하로 팔린 건 두 건이었습니다.",
-   null
+   "절반 이하로 팔린 건 2건이었습니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.97,
+  "flag": ""
  },
  {
   "at": "4:10",
@@ -1934,17 +1930,16 @@
   "say": "그리고 그 두 건 모두 중개사를 거치지 않은 직거래였어요.",
   "audio": "audio/h-5/9da65d443d12367c.wav",
   "heard": [
-   "그리고 그 두 건 모두 중개사를 거치지 않은 직거래였어요.",
-   null
+   "그리고 그 두",
+   "그리고 그 두 건 모두 중개사를 거치지 않은 직거리였어요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 0.96,
+  "pair": 0.36,
+  "flag": ""
  },
  {
   "at": "4:11",
@@ -1953,16 +1948,15 @@
   "audio": "audio/h-5/b993611df0f496b2.wav",
   "heard": [
    "직거래는 공인중개사 없이 사는 사람과 파는 사람이 직접 계약하고 신고한 거래예요.",
-   null
+   "직거래는 공인 중계사 없이 사는 사람과 파는 사람이 직접 계약하고 신고한 거래예요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "4:12",
@@ -1971,16 +1965,15 @@
   "audio": "audio/h-5/e925d4e344ca96bd.wav",
   "heard": [
    "실거래 자료엔 거래마다 중개거래인지 직거래인지 표시가 붙어 있습니다.",
-   null
+   "실거래 자료에는 거래마다 중개거레인지, 직거레인지 표시가 붙어있습니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.95,
+  "flag": ""
  },
  {
   "at": "4:13",
@@ -1989,16 +1982,15 @@
   "audio": "audio/h-5/588c442a97e38adb.wav",
   "heard": [
    "이번엔 고점의 60% 아래로 팔린 거래까지 넓혀 살게요.",
-   null
+   "이번엔 고점의 60% 아래로 팔린 거래까지 넓혀 살게요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": "합의오독(1.00/0.95 셀→살/살)"
  },
  {
   "at": "4:14",
@@ -2006,17 +1998,16 @@
   "say": "그래도 스물일곱 건뿐이었어요.",
   "audio": "audio/h-5/962decc7ac408fa3.wav",
   "heard": [
-   "그렇게 스물일곱 권뿐이었어요.",
-   null
+   "그래도 27권뿐이었어요.",
+   "그래도 스물 일곱 건 뿐이었어요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.77,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 1.0,
+  "pair": 0.73,
+  "flag": ""
  },
  {
   "at": "4:15",
@@ -2024,17 +2015,16 @@
   "say": "그중 스물한 건이 직거래였습니다.",
   "audio": "audio/h-5/f45bcbdca74b09b6.wav",
   "heard": [
-   "그중 21건이 직거래였습니다.",
-   null
+   "그중 스물한 건이 직거래였습니다.",
+   "그중 21건이 직거래였습니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.88,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 1.0,
+  "pair": 0.88,
+  "flag": ""
  },
  {
   "at": "4:16",
@@ -2042,17 +2032,16 @@
   "say": "직거래는 전체 거래에선 삼퍼센트 정도예요.",
   "audio": "audio/h-5/610bffffee587267.wav",
   "heard": [
-   "직거래는 전체 거래에선 3% 정도예요.",
-   null
+   "직거래는 전체 거래에서 3% 정도예요.",
+   "직거래는 전체 거래에선 3% 정도예요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.93,
+  "flag": ""
  },
  {
   "at": "4:17",
@@ -2061,16 +2050,15 @@
   "audio": "audio/h-5/c3d764a88234a3c5.wav",
   "heard": [
    "그런데 싼 거래 쪽에 몰려 있었던 거죠.",
-   null
+   "그런데 싼 거래쪽에 몰려 있었던 거죠."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "4:18",
@@ -2078,17 +2066,16 @@
   "say": "직거래가 왜 쌌는지는 자료에 없어요.",
   "audio": "audio/h-5/8f1cdf24d11b2c8e.wav",
   "heard": [
-   "직거래가 왜 쌌는지는 자료에 없어요.",
-   null
+   "집거래가 왜 쌌는지는 자료에 없어요.",
+   "직거래가 왜 쌓는지는 자료에 없어요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 0.93,
+  "pair": 0.87,
+  "flag": ""
  },
  {
   "at": "4:19",
@@ -2096,17 +2083,16 @@
   "say": "거래 상대가 가족인지도 나오지 않습니다. [pause short] 직거래라는 표시만 있어요.",
   "audio": "audio/h-5/f8cc4d05dad38ec0.wav",
   "heard": [
-   "거래 상대가 가족인지도 나오지 않습니다. 직거래라는 표시만 있어요.",
-   null
+   "거래 상대가 가족인지도 나오지 않습니다 직거래라는 표시만 있어요",
+   "거래 상대가 가족인지도 나오지 않습니다. 직거래라는 표시만 있어요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "4:20",
@@ -2115,16 +2101,15 @@
   "audio": "audio/h-5/140b52a37c335a62.wav",
   "heard": [
    "다음 고점보다 한참 아래라는 말이에요.",
-   null
+   "다음은 고점보다 한참 아래라는 말이에요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 1.0,
+  "pair": 0.97,
+  "flag": ""
  },
  {
   "at": "4:21",
@@ -2132,17 +2117,16 @@
   "say": "어떤 영상은 고점보다 한참 아래인 육십퍼센트에서 칠십퍼센트라고 했는데요.",
   "audio": "audio/h-5/9ffd7f831e43ae46.wav",
   "heard": [
-   "어떤 영상은 고점보다 한참 아래인 60%에서 70% 라고 했는데요.",
-   null
+   "어떤 영상은 고점보다 한참 아래인 60%에서 70%라고 했는데요.",
+   "어떤 영상은 고점보다 한참 아래인 60%에서 70%라고 했는데요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "4:22",
@@ -2151,16 +2135,15 @@
   "audio": "audio/h-5/abb739f6c713a8a5.wav",
   "heard": [
    "무엇 무엇으로 나눴는지는 나오지 않았어요.",
-   null
+   "무엇으로 나눴는지는 나오지 않았어요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.94,
+  "flag": ""
  },
  {
   "at": "4:23",
@@ -2168,17 +2151,16 @@
   "say": "그래서 저희가 다른 잣대로도 나눠 봤습니다.",
   "audio": "audio/h-5/e5f2f7d224a1c1e1.wav",
   "heard": [
-   "그래서 저희가 다른 잡들로도 나눠봤습니다.",
-   null
+   "그리고 저희가 다른 잡기로도 나눠봤습니다.",
+   "그래서 저희가 다른 잣대로도 나눠 봤습니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.89,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 1.0,
+  "pair": 0.78,
+  "flag": ""
  },
  {
   "at": "4:24",
@@ -2187,16 +2169,15 @@
   "audio": "audio/h-5/73956eb03a8a771a.wav",
   "heard": [
    "고점대 가장 비싼 한건과 지금 중간 가격을 비교하는 방법이 있어요.",
-   null
+   "고점 때 가장 비싼 건과 지금 중간 가격을 비교하는 방법이 있어요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 0.98,
+  "pair": 0.94,
+  "flag": ""
  },
  {
   "at": "4:25",
@@ -2204,17 +2185,16 @@
   "say": "같은 서른두 곳을 이렇게 나누면, 중간이 칠십사퍼센트로 내려갑니다.",
   "audio": "audio/h-5/f02d168c108bde6f.wav",
   "heard": [
-   "같은 사른 도곳을 이렇게 나누면 중간이 74%로 내려갑니다.",
-   null
+   "같은 사는 곳을 이렇게 나누면 중간이 74%로 내려갑니다.",
+   "같은 32곳을 이렇게 나누면 중간이 74%로 내려갑니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.91,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 0.93,
+  "pair": 0.95,
+  "flag": ""
  },
  {
   "at": "4:26",
@@ -2223,16 +2203,15 @@
   "audio": "audio/h-5/b2db022f35857fde.wav",
   "heard": [
    "같은 32곳을 중간 가격끼리 비교한 84%보다 훨씬 낮게 나오죠.",
-   null
+   "같은 서른들 곳을 중간 가격끼리 비교한 84%보다 훨씬 낮게 나오죠."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 0.96,
+  "pair": 0.94,
+  "flag": ""
  },
  {
   "at": "4:27",
@@ -2240,17 +2219,16 @@
   "say": "더샵송도마리나베이가 그 예예요.",
   "audio": "audio/h-5/c052abfa71a26a4d.wav",
   "heard": [
-   "포샵송도마리나베이가 그예요.",
-   null
+   "포챕송도 마리나 베이가 그예요.",
+   "더샵 송도 마리나베이가 그예요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.89,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 0.96,
+  "pair": 0.85,
+  "flag": ""
  },
  {
   "at": "4:28",
@@ -2259,16 +2237,15 @@
   "audio": "audio/h-5/fc66537f91fd280b.wav",
   "heard": [
    "최고 한 건으로 비교하면 52% 거의 반값으로 보입니다.",
-   null
+   "최고 한 건으로 비교하면 52% 거의 반값으로 보입니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "4:29",
@@ -2277,16 +2254,15 @@
   "audio": "audio/h-5/5560902c38ee3f98.wav",
   "heard": [
    "중간 가격끼리 비교하면 80%예요.",
-   null
+   "중간 가격끼리 비교하면 80%예요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "4:30",
@@ -2294,17 +2270,16 @@
   "say": "같은 단지, 같은 거래인데 잣대만 바꿔도 이렇게 달라집니다.",
   "audio": "audio/h-5/fc8559def8c300c0.wav",
   "heard": [
-   "같은 단지 같은 거란데 잣대만 바꿔도 이렇게 달라집니다.",
-   null
+   "같은 난지 같은 거리인데 잣대만 바꿔도 이렇게 달라집니다.",
+   "같은 단지 같은 거래인데, 잣대만 바꿔도 이렇게 달라집니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 1.0,
+  "pair": 0.92,
+  "flag": ""
  },
  {
   "at": "4:31",
@@ -2312,17 +2287,16 @@
   "say": "그래서 고점과 비교한 숫자를 보시면, 최고 한 건과 비교했는지부터 확인해 보세요.",
   "audio": "audio/h-5/95e5601ffe1392ef.wav",
   "heard": [
-   "그래서 고점과 비교한 숫자를 보시면 최고 항건과 비교했는지부터 확인해 보세요.",
-   null
+   "그래서 고점과 비교한 숫자를 보시면 최고 항공과 비교했는지부터 확인해 보세요.",
+   "그래서 고점과 비교한 숫자를 보시면 최고한 건과 비교했는지부터 확인해 보세요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 1.0,
+  "pair": 0.94,
+  "flag": ""
  },
  {
   "at": "5:0",
@@ -2330,17 +2304,16 @@
   "say": "이번엔 세 들어 살려는 분을 위한 숫자예요.",
   "audio": "audio/h-5/8d5092984d1ee02c.wav",
   "heard": [
-   "이번엔 새로 살려는 분을 위한 숫자예요.",
-   null
+   "이번엔 새에 들어서려는 분을 위한 숫자예요.",
+   "이번엔 새해들어 살려는 분을 위한 숫자예요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.91,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 0.97,
+  "pair": 0.89,
+  "flag": "합의오독(0.89/0.97 ·→에/헤 살→서/헤)"
  },
  {
   "at": "5:1",
@@ -2349,16 +2322,15 @@
   "audio": "audio/h-5/c086308e9a5fa304.wav",
   "heard": [
    "검색창에 송도 전세를 치면 4억이 따라 나옵니다.",
-   null
+   "검색창의 송도 전세를 지면 4억이 따라 나옵니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.95,
+  "flag": ""
  },
  {
   "at": "5:2",
@@ -2367,34 +2339,32 @@
   "audio": "audio/h-5/cbe7e32b59766b16.wav",
   "heard": [
    "2026년 7월부터 10월까지 84M 전세 거래 봤어요. 월세가 섞인 반전세는 뺐습니다.",
-   null
+   "2026년 7월부터 10월까지 84M 전세 거를 봤어요. 월세가 섞인 반전세는 뺐습니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.96,
+  "flag": ""
  },
  {
   "at": "5:3",
-  "text": "6백 건이 넘습니다.",
-  "say": "육백 건이 넘습니다.",
-  "audio": "audio/h-5/5e04264b9caa4928.wav",
+  "text": "7백 건이 넘습니다.",
+  "say": "칠백 건이 넘습니다.",
+  "audio": "audio/h-5/bdca0bc494f40246.wav",
   "heard": [
-   "600건이 넘습니다.",
-   null
+   "700건이 넘습니다.",
+   "700건이 넘습니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "5:4",
@@ -2403,16 +2373,15 @@
   "audio": "audio/h-5/44337bd861d8d1d6.wav",
   "heard": [
    "중간은 4억 천만 원 정도였어요.",
-   null
+   "중간은 4억 천만원 정도였어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "5:5",
@@ -2420,17 +2389,16 @@
   "say": "가격대로 나눠 보면 사억대 초반 전세가 가장 많았습니다.",
   "audio": "audio/h-5/103b3d3e4f8d1e8e.wav",
   "heard": [
-   "가격대로 나눠보면 4억 대 초반 전세가 가장 많았습니다.",
-   null
+   "가격대로 나눠보면 4억대 초반 전세가 가장 많았습니다.",
+   "가격대로 나눠보면 4억대 초반 전세가 가장 많았습니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "5:6",
@@ -2439,16 +2407,15 @@
   "audio": "audio/h-5/04496657fcdc78be.wav",
   "heard": [
    "전세가 매매의 몇인지도 단지마다 봤어요.",
-   null
+   "전세가 매매인 몇 인지도 단지 받아 봤어요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.82,
+  "flag": ""
  },
  {
   "at": "5:7",
@@ -2457,16 +2424,15 @@
   "audio": "audio/h-5/2390e843a9f1a97f.wav",
   "heard": [
    "중간이 57%였습니다.",
-   null
+   "중간이 57%였습니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "5:8",
@@ -2474,35 +2440,33 @@
   "say": "낮은 곳은 사십퍼센트였고요.",
   "audio": "audio/h-5/36647ff36d4158a2.wav",
   "heard": [
-   "낮은 것은 40%였고요,",
-   null
+   "낮은 곳은 40%였고요.",
+   "낮은 곳은 40%였고요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.86,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "5:9",
-  "text": "높은 곳은 71%였습니다.",
-  "say": "높은 곳은 칠십일퍼센트였습니다.",
-  "audio": "audio/h-5/1e5c3d28c9aab964.wav",
+  "text": "높은 곳은 70%였습니다.",
+  "say": "높은 곳은 칠십퍼센트였습니다.",
+  "audio": "audio/h-5/2a3a06e2a44ff579.wav",
   "heard": [
-   "높은 곳은 71%였습니다.",
-   null
+   "높은 곳은 70%였습니다.",
+   "높은 곳은 70%였습니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "6:0",
@@ -2511,16 +2475,15 @@
   "audio": "audio/h-5/4bb6a5fd08320c62.wav",
   "heard": [
    "네 단지는 직접 세어 보실 수 있어요.",
-   null
+   "4단지는 직접 세워보실 수 있어요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.89,
+  "flag": ""
  },
  {
   "at": "6:1",
@@ -2600,17 +2563,16 @@
   "say": "고점과 비교할 땐 그때 최고가 한 건 말고, 이천이십일년 하반기부터 이천이십이년 상반기까지 일년 거래의 중간 가격을 쓰세요.",
   "audio": "audio/h-5/0a04152ce5f43639.wav",
   "heard": [
-   "고점과 비교할 땐 그때의 최고가 한 거 말고 2021년 하반기부터 2022년 상반기까지 1년 거래의 중간 가격을 쓰세요.",
-   "고점과비교할땐그때의최고가한건말고2021년하반기부터2022년상반기까지1년거래의중간가격을쓰세요"
+   "고점과 비교할 땐 그때 최고가 한 건 말고 2021년 하반기부터 2022년 상반기까지 1년 거래의 중간 가격을 쓰세요.",
+   "고점과 비교할 때는 그때 최고가 한 건 말고 2021년 하반기부터 2022년 상반기까지 1년 거래의 중간 가격을 쓰세요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-flash-latest"
+   "whisper-small"
   ],
-  "sim": 0.96,
-  "pair": 0.98,
-  "flag": "합의오독(0.98/0.96 ·→에/에 건→거/검)",
-  "batch2": true
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": ""
  },
  {
   "at": "6:6",

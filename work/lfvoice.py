@@ -850,6 +850,9 @@ def readback(ep, only=None, resume=False, batch=False, offline=False):
             if offline and not (o and o.get('text') == l['text'] and o.get('audio') == l['audio']): continue
             # 10/19 PD: 예고 줄 끝 '(재사용 N장)'은 대본 머리말대로 읽지 않는 메모 — 대조 글에서 뺀다(H-2 0:2~0:4가 '2·3'을 못 들었다고 숫자 표시)
             spoken = re.sub(r'\s*\(재사용 \d+장\)', '', l['text'])
+            # 11/18 PD: 대본 글 '60~70%'를 말(say)은 '육십퍼센트에서 칠십퍼센트'로 읽는다 — 두 귀가 다 '60%에서 70%'로 맞게 들어도 '~'↔'에서'가 합의오독으로 잡히던 것(H-5 0:4·4:21)
+            if '에서' in l.get('say', ''):
+                spoken = re.sub(r'(\d)\s*~\s*(\d+)\s*%', r'\1%에서 \2%', spoken); spoken = re.sub(r'(\d)\s*~\s*(\d)', r'\1에서 \2', spoken)
             fn = os.path.join(PUB, l['audio'].replace('/', os.sep)); want = num(spoken)
             # 10/19 PD: 첫 귀 3.5-flash-lite가 하루 한도(500)면 3.1-flash-lite로 — 첫 귀만 바꾸고 둘째 귀·판정은 그대로(쓴 모델 이름은 models에 남는다)
             m1 = ((o or {}).get('models') or [FIRST[0]])[0] if offline else next((m for m in FIRST if m not in _DEAD), FIRST[-1]); h1 = tx(fn, m1)   # offline은 저장된 첫 귀 그대로

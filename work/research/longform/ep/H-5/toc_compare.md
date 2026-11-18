@@ -77,7 +77,7 @@
 
 정리: 잘된 끝은 ① 오늘 숫자 한두 줄 → ② 그 주제에서 바로 쓰는 한 가지(당부·확인법) → ③ 다음 편 한 줄. 홍보·잡담·권유는 빼는 쪽이 낫다(3번이 6.6분으로 1.54배).
 
-우리: 따라 한 것 — 3번(https://www.youtube.com/watch?v=6mwoQqj77J8&t=362)처럼 다음 편 한 줄로 짧게, 9번(https://www.youtube.com/watch?v=ZQjOiB4F_b0&t=350)처럼 마지막 당부 하나는 '반값 말을 보면 아파트인지·같은 면적인지·직거래인지 먼저 보기'와 '실거래가 공개시스템에서 같은 면적 1년 치'. 숫자 요약은 말로 두 줄(동 전체 82%·단지 71~97%). 파이어맵 안내는 '단지 서른 곳 전체 표는 카페에'(영상 속 표의 약속을 지키는 것, 억지 끼워 넣기 아님). 뺀 것: 구독 부탁 여러 번(브랜드 끝 줄 앞 한 문장까지만)·단톡방·전망. 마지막 20초는 최종 화면 자리(answer/6388789) — 고정 끝 줄 뒤 숨 쉴 실사 3초.
+우리: 따라 한 것 — 3번(https://www.youtube.com/watch?v=6mwoQqj77J8&t=362)처럼 다음 편 한 줄로 짧게, 9번(https://www.youtube.com/watch?v=ZQjOiB4F_b0&t=350)처럼 마지막 당부 하나는 '반값 말을 보면 아파트인지·같은 면적인지·직거래인지 먼저 보기'와 '실거래가 공개시스템에서 같은 면적 1년 치'. 숫자 요약은 말로 두 줄(동 전체 82%·단지 71~97%). 파이어맵 안내는 '단지 서른두 곳 전체 표는 카페에'(영상 속 표의 약속을 지키는 것, 억지 끼워 넣기 아님). 뺀 것: 구독 부탁 여러 번(브랜드 끝 줄 앞 한 문장까지만)·단톡방·전망. 마지막 20초는 최종 화면 자리(answer/6388789) — 고정 끝 줄 뒤 숨 쉴 실사 3초.
 
 # 우리 목차
 
@@ -88,7 +88,14 @@
 | 결론부터 | 처음 30초 질문·약속(answer/9314415) — 경쟁이 쓰는 말로 연다: https://www.youtube.com/watch?v=6mwoQqj77J8&t=16 '전고점 대비 6~70%' · 자동완성 '송도 집값 폭락' https://ac.search.naver.com/nx/ac?q=%EC%86%A1%EB%8F%84%20%EC%A7%91%EA%B0%92 |
 | 기초, 처음 보시는 분을 위해 | 다들 첫머리에 송도가 어떤 곳인지 깐다 https://www.youtube.com/watch?v=6mwoQqj77J8&t=0 · https://www.youtube.com/watch?v=aNM5_ahBDBM&t=261 — 우리는 '송도동·84㎡·국토부 신고 자료'만 |
 | 5년 흐름, 고점·바닥·지금 | 고점 대비 숫자 5/10 https://www.youtube.com/watch?v=6mwoQqj77J8&t=16 · 댓글 Q4 '21년에 그 돈으로' https://www.youtube.com/watch?v=ZQjOiB4F_b0&lc=UgxVRSC62WMQVbTWbTt4AaABAg · Q5 https://www.youtube.com/watch?v=6mwoQqj77J8&lc=UgwgYw1Uvc8SURdOqfR4AaABAg |
-| 단지 서른 곳, 얼마나 돌아왔나 | 단지별 시세 5/10 https://www.youtube.com/watch?v=aNM5_ahBDBM&t=330 · https://www.youtube.com/watch?v=XdmVjZLmJgo&t=495 — 같은 잣대 비교는 0편(빈칸 2) |
+| 단지 서른두 곳, 얼마나 돌아왔나 | 단지별 시세 5/10 https://www.youtube.com/watch?v=aNM5_ahBDBM&t=330 · https://www.youtube.com/watch?v=XdmVjZLmJgo&t=495 — 같은 잣대 비교는 0편(빈칸 2) |
 | '반값'과 '6~70%'는 어디서 나왔나 | 경매·오피스텔 사례 https://www.youtube.com/watch?v=QmHIrynkyiA&t=0 · 댓글 Q2·Q3 https://www.youtube.com/watch?v=QmHIrynkyiA&lc=Ugye4V2qT_vOMJlQXyB4AaABAg · https://www.youtube.com/watch?v=QmHIrynkyiA&lc=UgzJWuRpBWehHOPfi7Z4AaABAg |
 | 전세는 매매의 몇 % | 전세 2/10 https://www.youtube.com/watch?v=XdmVjZLmJgo&t=495 · 자동완성 '송도 전세 4억' https://ac.search.naver.com/nx/ac?q=%EC%86%A1%EB%8F%84%20%EC%A0%84%EC%84%B8 |
 | 직접 확인하는 법 | 끝맺음 당부형 https://www.youtube.com/watch?v=ZQjOiB4F_b0&t=350 · 국토부 공개시스템 https://rt.molit.go.kr |
+
+# 경쟁 비교 3줄
+
+(PD 11/18 — compete.md 15~18행과 위 '빈칸' 칸을 11/17 국토부 다시 받기 숫자(facts F1'·F5')로 옮김, ytlong gate가 이 칸을 읽음)
+- 경쟁이 잘하는 것: 첫 문장 반전('인천의 강남인데…'), 3~5초 화면 전환, 지도 비중, 끝에 캡처할 정리 표.
+- 우리가 따라갈 것: 흔한 말('폭락'·'6~70%')로 열기, 판과 실사 번갈아 빠른 전환, 끝에 단지 표는 카페로(영상 속 약속).
+- 우리가 다르게 할 것: 한두 건 '반값' 사례 대신 송도동 84㎡대 거래 6,422건 전부로 단지 32곳의 고점 1년→최근 중간 가격을 같은 잣대로 센다(경쟁 13편 중 0편), 같은 거래가 '최고 한 건' 잣대면 74%로 보이는 차이까지.

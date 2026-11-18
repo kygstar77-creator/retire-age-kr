@@ -1,0 +1,38 @@
+송도 아파트 84㎡, 실거래 전부 세어 보니 지금 값은 고점의 82%
+
+송도동 아파트 84㎡대 실거래를 같은 잣대(중간 가격)로 세어 보니, 고점 1년(2021년 7월~2022년 6월) 9억에서 2026년 7~10월 7억 4천만원, 고점의 82%예요.
+단지 32곳은 71~97%였고, 가장 낮았던 1년보다는 10% 높아요. '반값'·'6~70%'라는 말이 어디서 나왔는지, 전세는 매매의 몇 %인지도 국토교통부 원자료로 셌습니다.
+
+단지 32곳 전체 표와 계산 근거(카페): https://cafe.naver.com/firemap
+파이어맵: https://firemap.kr/?utm_source=youtube&utm_medium=description&utm_campaign=h-5
+내 단지 직접 보기: 국토교통부 실거래가 공개시스템 https://rt.molit.go.kr → 단지·전용면적 고르고 1년 치
+
+0:00 결론부터
+0:45 처음 보시는 분을 위해
+1:34 5년 흐름, 고점·바닥·지금
+3:26 단지 서른두 곳, 얼마나 돌아왔나
+5:31 '반값'과 '6~70%'는 어디서 나왔나
+7:17 전세는 매매의 몇 %
+7:45 직접 확인하는 법
+8:29 정리
+
+출처
+· 아파트 매매 실거래(인천 연수구 송도동, 2021년 1월~2026년 10월 계약, 해제·공공기관 매수 제외, 중개/직거래 구분): 국토교통부 아파트 매매 실거래 상세 자료(공공데이터포털 RTMSDataSvcAptTradeDev) · 국토교통부 실거래가 공개시스템 https://rt.molit.go.kr
+· 아파트 전월세 실거래(2025년 11월~2026년 10월 계약, 순수전세): 국토교통부 아파트 전월세 실거래 자료(공공데이터포털 RTMSDataSvcAptRent)
+· 거래 신고 기한(계약일부터 30일): 「부동산 거래신고 등에 관한 법률」 제3조 https://www.law.go.kr/법령/부동산거래신고등에관한법률/제3조
+영상 일부: Lucas Park / Pexels (https://www.pexels.com/photo/snow-covered-pathway-15082793/)
+영상 일부: Gije Cho / Pexels (https://www.pexels.com/photo/a-river-in-a-city-18495181/)
+영상 일부: Esra Afşar / Pexels (https://www.pexels.com/video/browsing-real-estate-listings-on-mobile-phone-31907490/)
+영상 일부: Nurlan Hasanov / Pexels (https://www.pexels.com/photo/modern-incheon-skyline-reflected-in-canal-37736994/)
+영상 일부: Jueon Kim 김주언 / Pexels (https://www.pexels.com/video/urban-sunset-over-high-rise-buildings-37873585/)
+영상 일부: vignesh srivatsav / Pexels (https://www.pexels.com/video/aerial-view-of-dense-urban-landscape-at-dusk-38259259/)
+영상 일부: Tima Miroshnichenko / Pexels (https://www.pexels.com/video/man-scrolling-on-mobile-phone-screen-6611954/)
+영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/man-using-calculator-6964247/)
+영상 일부: SHVETS production / Pexels (https://www.pexels.com/video/a-person-taping-a-box-7205591/)
+영상 일부: MART  PRODUCTION / Pexels (https://www.pexels.com/video/glass-panels-window-on-the-building-exterior-7317305/)
+영상 일부: Kindel Media / Pexels (https://www.pexels.com/video/a-person-computing-using-a-calculator-7651886/)
+영상 일부: SHVETS production / Pexels (https://www.pexels.com/video/a-person-marking-on-calendar-9057559/)
+계산 가정: 84㎡대 = 전용 80~86㎡ · 값은 거래를 가격 순서로 줄 세운 중간 가격(가운데 값) · 고점 1년 = 2021년 7월~2022년 6월 · 최근 = 2026년 7~10월 계약(10월 계약은 신고 기한 30일이라 덜 들어와 있음) · 직거래는 중개사를 거치지 않았다는 표시일 뿐, 거래 상대는 자료에 없어요.
+
+내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이에요. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 지나간 거래 값이고, 특정 단지를 사거나 팔라는 뜻이 아닙니다.
+썸네일 사진: Gije Cho / Pexels (https://www.pexels.com/photo/a-river-in-a-city-18495181/)

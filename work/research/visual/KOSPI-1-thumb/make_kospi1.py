@@ -7,7 +7,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 O = os.path.dirname(os.path.abspath(__file__)); H = os.path.join(O, 'photo'); WORK = os.path.abspath(os.path.join(O, '..', '..', '..'))
 FONT = os.path.join(WORK, 'fonts'); W, HH = 1920, 1080; X0 = 80
 ORANGE, WHITE, INK = (255, 90, 0), (255, 255, 255), (10, 11, 14)
-BIG = ['코스피 하루 5% 하락', '올해만 23번 나왔다']
+BIG = ['코스피 5% 넘게 빠진 날', '올해만 23번 나왔다']   # 11/18 copywriter 1초 시험 2차: '하루 5% 하락'은 딱 5%로 읽힘 → 첫 줄 고침(11자, 합 19자)
 TOP = '1995년부터 매일 마감 가격으로 셈'
 PILL = 'IMF 외환위기 때 한 해 9번'
 
@@ -61,6 +61,10 @@ def make(out, pic, ya, xa=0.5, zoom=1.0, band=235, tshade=(380, 210), targets=(0
 
 
 if __name__ == '__main__':
-    make('k1_a.png', 'candle_down_35118208.jpg', 0.15, band=150, tshade=(400, 150), sw=13, tsw=8)
-    make('k1_b.png', 'arrows_tablet_36633901.jpg', 0.0, band=170, tshade=(400, 150), sw=13, tsw=8)
-    make('k1_c.png', 'hands_phone_32219704.jpg', 0.2, band=190, tshade=(400, 160), sw=13, tsw=8)
+    # 11/17 시안 a·b·c(옛 첫 줄 '코스피 하루 5% 하락') — 1안 k1_b는 그대로 두고 비교 기준으로 씀
+    # make('k1_a.png', 'candle_down_35118208.jpg', 0.15, band=150, tshade=(400, 150), sw=13, tsw=8)
+    # make('k1_b.png', 'arrows_tablet_36633901.jpg', 0.0, band=170, tshade=(400, 150), sw=13, tsw=8)
+    # make('k1_c.png', 'hands_phone_32219704.jpg', 0.2, band=190, tshade=(400, 160), sw=13, tsw=8)
+    # 11/18 고친 판: 노란 아래 화살표 3개가 '예측·공포'로 읽힘(2/3) → 사진 속 화살표는 지우면 태블릿 가장자리가 깨져(cv2 inpaint 시험, 버림) 화살표 없는 사진으로
+    make('k1_d.png', 'worried_desk_5717791.jpg', 0.25, xa=0.5, band=170, tshade=(400, 150), sw=13, tsw=8)
+    make('k1_e.png', 'trader_mouth_36755611.jpg', 0.2, band=170, tshade=(400, 150), sw=13, tsw=8)

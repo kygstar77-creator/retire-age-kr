@@ -2,14 +2,15 @@
 #   문구 research/copy/sq1/final.txt 그대로(copywriter 11/16 18:55 요청): 흰 줄 '15년 전 1억 넣었다면' / 큰 흰 '나스닥100 13.6억' / 큰 주황 'SCHD 6.8억' · 알약 '달러 기준 · 2011년 10월~2026년 10월'
 #   사실 ep/SQ-1/calc_krw_out_1116.txt 15년: 달러 1억 → SCHD 0% 13.56억 · SCHD 100% 6.77억(ECOS 20111031~20261030). 사진 Pexels(photo/sources.json) — 얼굴 없음(손만)
 import os, sys
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 sys.stdout.reconfigure(encoding='utf-8')
 O = os.path.dirname(os.path.abspath(__file__)); H = os.path.join(O, 'photo'); WORK = os.path.abspath(os.path.join(O, '..', '..', '..'))
 FONT = os.path.join(WORK, 'fonts'); W, HH = 1920, 1080; X0 = 80
 ORANGE, WHITE, INK = (255, 90, 0), (255, 255, 255), (10, 11, 14)
 BIG = ['나스닥100 13.6억', 'SCHD 6.8억']
-TOP = '15년 전 1억 넣었다면'
-PILL = '달러 기준 · 2011년 10월~2026년 10월'
+TOP = '15년 전 1억원 넣었다면'   # 11/18 copywriter 1초 시험 반려: '달러 기준'을 '13.6억 달러'로 오해 → 알약 바꿈, '1억원'
+PILL = '가장 크게 빠진 폭은 나스닥100이 더 컸다'   # 사실 ep/SQ-1/calc_mix_out_1112.txt 최대낙폭 SCHD 0% -32.6% vs 100% -21.5% · 권유 한 방향(3/3) 막기
+# 기간·'달러로 넣고 배당 재투자·원화 환산'은 설명 첫 줄로(youtube-loop)
 
 
 def f(size, w='700'):
@@ -37,8 +38,10 @@ def fit(d, t, size, w, maxw, floor=40):
     return size
 
 
-def make(out, pic, ya, xa=0.5, zoom=1.0, band=235, tshade=(380, 210), targets=(0.86, 0.80), ls=1.10, hmax=0.45, top_size=104, sw=6, tsw=5):
-    im = photo(pic, y_anchor=ya, x_anchor=xa, zoom=zoom); d0 = ImageDraw.Draw(im)
+def make(out, pic, ya, xa=0.5, zoom=1.0, band=235, tshade=(380, 210), targets=(0.86, 0.80), ls=1.10, hmax=0.45, top_size=104, sw=6, tsw=5, blur=0, pk=0.80):
+    im = photo(pic, y_anchor=ya, x_anchor=xa, zoom=zoom)
+    if blur: im = im.filter(ImageFilter.GaussianBlur(blur))   # 11/18: 배경 모니터 숫자가 답 숫자와 섞여 읽힘 → 흐리게
+    d0 = ImageDraw.Draw(im)
     sizes = [fit(d0, t, 320, 'black', maxw=int(W * tg)) for t, tg in zip(BIG, targets)]
     hb = sum(int(s * ls) for s in sizes)
     if hb > HH * hmax: k = HH * hmax / hb; sizes = [int(s * k) for s in sizes]; hb = sum(int(s * ls) for s in sizes)
@@ -48,7 +51,7 @@ def make(out, pic, ya, xa=0.5, zoom=1.0, band=235, tshade=(380, 210), targets=(0
     ty = 36
     d.text((X0, ty), TOP, font=f(ts, '700'), fill=WHITE, stroke_width=tsw, stroke_fill=INK); ty += int(ts * 1.30)
     # 알약: 주황 바탕 흰 글(답 숫자 아님 — 기준 시점 한 줄, copy v2)
-    ps = int(ts * 0.80); pf = f(ps, '700'); tw = d.textlength(PILL, font=pf); px, py = 28, 12
+    ps = fit(d0, PILL, int(ts * pk), '700', maxw=int(W * 0.84)); pf = f(ps, '700'); tw = d.textlength(PILL, font=pf); px, py = 28, 12
     d.rounded_rectangle((X0, ty, X0 + tw + 2 * px, ty + ps + 2 * py + 6), radius=(ps + 2 * py) // 2, fill=ORANGE)
     d.text((X0 + px, ty + py - int(ps * 0.08)), PILL, font=pf, fill=WHITE)
     widths = []
@@ -61,6 +64,10 @@ def make(out, pic, ya, xa=0.5, zoom=1.0, band=235, tshade=(380, 210), targets=(0
 
 
 if __name__ == '__main__':
-    make('sq1_a.png', 'chart_point_5833757.jpg', 0.2, band=0, tshade=(380, 120), sw=15, tsw=9)
-    make('sq1_b.png', 'laptop_chart_6172578.jpg', 0.3, band=0, tshade=(380, 120), sw=15, tsw=9)
-    make('sq1_c.png', 'chart_point_5833757.jpg', 0.2, band=150, tshade=(380, 120), sw=13, tsw=8)
+    # 11/17 시안 a·b·c(옛 알약 '달러 기준 · …') — 1안 sq1_c는 비교 기준으로 그대로 둠
+    # make('sq1_a.png', 'chart_point_5833757.jpg', 0.2, band=0, tshade=(380, 120), sw=15, tsw=9)
+    # make('sq1_b.png', 'laptop_chart_6172578.jpg', 0.3, band=0, tshade=(380, 120), sw=15, tsw=9)
+    # make('sq1_c.png', 'chart_point_5833757.jpg', 0.2, band=150, tshade=(380, 120), sw=13, tsw=8)
+    # 11/18 고친 판(copywriter 14:26): 새 알약·흰 줄 '1억원'·배경 흐리게 — d는 흐림 8, e는 흐림 14+알약 조금 크게
+    make('sq1_d.png', 'chart_point_5833757.jpg', 0.2, band=150, tshade=(380, 120), sw=13, tsw=8, blur=8)
+    make('sq1_e.png', 'chart_point_5833757.jpg', 0.2, band=170, tshade=(380, 140), sw=13, tsw=8, blur=14, pk=0.92)

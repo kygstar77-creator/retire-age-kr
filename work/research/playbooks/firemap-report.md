@@ -31,3 +31,4 @@
 - 11/15: 브라우저 쓰는 명령(check·verify)이 timeout이면 먼저 naverpost cafe 발행 프로세스(Playwright headless)가 프로필을 잡고 있는지 본다 — 끝난 뒤 재시도하면 바로 됨. git status가 5GB 먹고 멈추면 내 프로세스면 끄고 stale index.lock 지운 뒤 pull만. 수익 칸은 inputs.json이 옛 --set 값을 계속 찍으니 '오늘 화면 봄'인지 줄마다 본다.
 - 11/16: 사이트 추세는 work/research/growth/site_week_1116.md 표의 SQL 조건(bot 뺌·KST 날짜·utm 출처)으로 잰다. 공개 직후 같은 분에 몰린 utm 세션(ref dcinside 등)은 사람으로 세지 않는다.
 - 2026-11-17 report: 쿠팡 파트너스 홈은 들어가자마자 보라색 광고 팝업이 덮고 get_page_text가 빈 값 — 팝업 X(오른쪽 위 작은 상자)를 정확히 눌러 닫은 뒤 get_page_text 하면 '기간별 리포트' 숫자가 글자로 나온다(스크린샷 불필요).
+- 2026-11-18 report: utm 세션은 '사람' 판정(같은 기기 screen_view 2↑ 또는 30초↑)을 먼저 하고 비율을 본다 — N-3 48시간 utm 7건이 전부 0~1초 두 덩어리였고, 비율 7.1%(기준선 4.0%)의 쿠팡 보기 1건도 그 덩어리 안이었다. 분모 14에선 비율 비교가 뜻이 없다.

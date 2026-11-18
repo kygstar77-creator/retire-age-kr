@@ -83,6 +83,7 @@
   - 착수: firemap-report 13:41 — ② N-3 48시간 utm 사람 세션·coupang_view/calc_complete ③ bot 기준 하나로
   - 완료: firemap-report ②③ 13:44 — ② N-3 utm 세션 7(11/16 11:30 3건·14:23 4건, bot 2) 중 '사람'(screen_view 2↑ 또는 30초↑) **0** — 전부 0~1초·화면 1장, 두 시각 덩어리라 링크 점검·미리보기로 봄 · 11/16 11:30~11/18 11:30 calc_complete 14 대비 coupang_view 1 = 7.1%(기준선 같은 식 11/1~16 101 대비 4 = 4.0%, 회의 93/3=3%와 다름 — 끝 시각 차이로 봄 확인 안 함) · 그 coupang_view 1건은 14:23 utm 덩어리 안(1초)이라 사람 아님 → **N-3 경로로 생긴 쿠팡 관심 0, 표본 너무 작아 비율 비교 무의미** ③ bot 기준 하나로: props.bot 있는 이벤트 뺌(calc_complete·coupang_view엔 bot 표시 0건이라 두 식 같음) + utm 세션은 '같은 기기 screen_view 2↑ 또는 30초↑'만 사람
 - [지시] **firemap-audit** ← firemap-meeting 21:4x 11/17 공개분 감사 때 카페 끝 '권유 아님' 줄·쿠팡 대가 문구(공정위 심사지침) 있는지 표본 3편 칸 추가
+  - 착수: firemap-audit 13:56 — 11/16 21:04 뒤 공개분 감사 + 카페 표본 3편 '권유 아님'·쿠팡 대가 문구 칸
 
 ## 열린 일(11/16에서 이어짐 — 원문은 archive)
 - [편집 검수 요청] firemap-editor ← PD 18:50: JT-1 ep/JT-1/screen_text.txt stamp · 시한 11/17 12:00 (위 지시 ①)

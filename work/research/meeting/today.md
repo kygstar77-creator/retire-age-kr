@@ -112,6 +112,7 @@
     - 완료: firemap-youtube-loop H-5 말 3줄 script·say_v2 같이 — 47 '6억 7천만원쯤'(F4 6.75억, facts 말 칸 '6억 7천' 그대로) · 111 '…거래까지 늘려서 세어 볼게요.' · 130 '이번엔 전세로 살 분을 위한 숫자예요.' · aitell 통과(AI 티 10.2·구어 아닌 말·정밀 숫자 통과) · 원본 *.orig1118yl · SKVIEW 자막(127↔131)은 이미 들어가 있음 16:48
   - [요청] firemap-copywriter ← PD 14:42: H-5 썸네일 **숫자만** 바뀐 thumb_h5_o1n.png 확인(o1 '지금 7억 3,500만원' → '7억 4,000만원', 11/17 국토부 다시 받기 F4' 7.40억·말 41행 '7억 4천만원쯤' — 꼴·사진·글자 수 같음) · 1초 시험 다시 할지 판단 한 줄 · meta.json thumb은 o1n으로 바꿔 둠 · 시한 11/20 22:00
     - 착수: firemap-copywriter 18:51 — H-5 o1n 숫자만 바뀐 썸네일 확인
+    - 완료: firemap-copywriter H-5 thumb_h5_o1n **확인 통과·1초 시험 다시 안 함**(o1과 꼴·사진·글자 수 같고 숫자 자리만 3,500→4,000, F4' 7.40억 ✓ · 9억=F4 고점 9.00억 그대로 ✓ · 제목 '고점의 82%' F4' ✓ · 설명 첫 줄 7억 4천만원·32곳·10% ✓) 18:55
 - [지시] **firemap-youtube-loop** ← firemap-meeting 21:4x ① H-5 11/22: shot_plan(경쟁 장면 대조)·국토부 실거래 다시 받아 calc 재계산·올리기 전 확인(11/21 오전) ② 11/24 후보 비교 한 장(코스피 지수: KRX 일별 지수 원자료 받기·지난 값만·예측 0 vs LTC-1: 2027 수가 반영·대본 유무) → 11/17 회의 전 ③ X-LF-GENRE: N-3(11/16)·JT-1(11/20)이 '연봉·자산·노후 1편/12일' 한도에 같이 걸리는지(verify 지적) 판정 한 줄 — 걸리면 JT-1 그대로 두는 근거 또는 대안 · 기한 11/17 20:00
   - 착수: firemap-youtube-loop 00:43 (③ 판정·② 11/24 비교 먼저, ① H-5 shot_plan·calc 다음)
   - 완료: firemap-youtube-loop ③ X-LF-GENRE **걸림**(N-3 연봉·JT-1 노후 4일 간격) — JT-1 그대로(사장님 11/11 통계 축이 11/8 장르 표보다 뒤·11/20 대체 편 없음·연속 아님), 11/20 공개 7일 조회 64 미만이면 노후 축 뺌, 장르 표를 '사장님 축 3개+연속 금지'로 바꾸는 안 회의에 · ② 11/24 권고 **코스피 지수(KOSPI-1)**: 통계 축 안·우리 지수 중앙 367 vs 정책 20·ECOS 일별 8,055일 받음(2026년 하루 -7%↑ 7번) / LTC-1은 축 밖이라 보류, 빠듯함(대본 0 → 11/21 저녁 서명 못 하면 칸 비움) — longform/loop/slot1124_compare.md 00:51
@@ -144,6 +145,8 @@
     - 완료: firemap-visual-designer SQ-1 흰 줄 '15년 전 1억원 넣었다면' · 알약 '가장 크게 빠진 폭은 나스닥100이 더 컸다'(calc_mix_out_1112 -32.6% vs -21.5% 대조) · 배경 흐리게 → thumbpair sq1_c vs d·e 둘 다 새판 2번 다 이김, d vs e 1:1(우열 없음) → 알약 168 지적이라 알약 큰 **1안 ep/SQ-1/thumb_sq1_e.png**(흐림 14·알약 95px) · 14:36
       - [요청] firemap-copywriter ← visual 14:36: SQ-1 1초 시험 3차 — visual/SQ-1-thumb/sq1_e.png·sq1_e_412.png·sq1_e_168.png · 시한 11/21
         - 착수: firemap-copywriter 18:51 — SQ-1 1초 시험 3차
+        - 완료: firemap-copywriter SQ-1 1초 시험 3차 **반려**(주제 3/3, 그러나 412에서 권유 한 방향 3/3 — 정도는 '약간'으로 줄음 · 알약 168 안 읽힘 3/3 · 레드팀 '섞기'가 썸네일에 없음) · 근거 copy/sq1/judges.md 3차 18:55
+      - [요청] firemap-visual-designer ← copywriter 18:55: SQ-1 sq1_e 큰 글 두 줄을 '섞기'로 — 흰 '나스닥100만 13.6억'(12자) · 주황 '반반 섞으면 10.1억'(10자, 합 22) · 알약 '가장 크게 빠진 폭 -33% → -24%'(calc_mix_out_1112 0%·50%) · 흰 줄 그대로 → thumbpair(sq1_e 대 새판) 뒤 copywriter 4차 · 시한 11/21
 - [알림] firemap-youtube-loop ← copywriter 18:55: SQ-1 대본에 비율 5칸 표·'가장 크게 빠진 폭'·첫 장 'SCHD가 뭔지' 한 줄
 - [알림] PD·visual ← youtube-loop 08:55: H-5 화면 ①~④(1장 숫자 같은 모양·2장 단지 이름 불·4장 매매−전세 판 지움·2장 두 단지 글자) — H-5 11/22로 당겨져 기한 11/21
 - [진행] firemap-youtube-loop KOSPI-1 08:50: **toc_compare.md 통과**(경쟁 10+포화 3+같은 각도 1편 자막 대조, toc_check 0) · calc3 '누구라면' 한 번에 vs 12번 나눠: 중앙 1,191만 vs 1,085만, 최저 551만 vs 771만, 원금 넘은 편 둘 다 10/15(S12) · 다음: KRX 원문(S7·S8·S10)·research 8칸·대본
@@ -174,6 +177,7 @@
     - 완료: firemap-visual-designer KOSPI-1 큰 글 첫 줄 '코스피 5% 넘게 빠진 날'(합 19자) · 노란 화살표는 사진 속이라 지우면 태블릿 가장자리가 깨져(cv2 시험, 버림) **화살표 없는 사진 Pexels 5717791(머리 감싼 뒷모습, 얼굴 안 보임)**로 → thumbpair k1_b vs k1_d 새판 2번 다 이김(k1_e 1:1 버림) → **1안 ep/KOSPI-1/thumb_k1_d.png** · 14:36
       - [요청] firemap-copywriter ← visual 14:36: KOSPI-1 1초 시험 3차 — visual/KOSPI-1-thumb/k1_d.png·k1_d_412.png·k1_d_168.png · 시한 11/21
         - 착수: firemap-copywriter 18:51 — KOSPI-1 1초 시험 3차
+        - 완료: firemap-copywriter KOSPI-1 1초 시험 3차 **통과**(k1_d, 주제 3/3·두 순서·168 큰 글로 통함, 권유 아니오 2·약간 1 — 한 방향 아님) · understand_test.md 제목·썸네일 칸 적고 판정 줄 '썸네일 보류' 지움 · 사진 교체 안 함 · 근거 copy/kospi1/titles.md 3차 18:55
 - [알림] PD·visual·copywriter·editor ← youtube-loop 13:51: **11/24 롱폼 = KOSPI-1 확정**(11/17 회의 미개최 → 본부장 결정, slots.json) 트랙:C · 관문 기한 11/23 11:30 · 조건 KRX 원표 대조(S11, youtube-loop 11/22까지) · 근거 longform/loop/slot1124_compare.md·_전략.md · N-3 50시간 357회(채널 중앙 2.8배), H-4·K-1 느린 출발은 클릭률 1.5~2.7%(ytreach) — study/2026-11-18.md
 - 결정 필요(순돌이→사장님): 쇼츠 표지를 스튜디오 데스크톱에서 편마다 고를지, 영상 속 윗줄 키우기만 할지
 

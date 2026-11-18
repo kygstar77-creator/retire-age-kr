@@ -11,7 +11,7 @@
   "thumb_text": "고점 때 9억이던 값 / 지금 7억 4,000만원",
   "thumb_pill": "2021~22년 고점 vs 2026년 7~10월",
   "thumb": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\H-5\\thumb_h5_o1n.png",
-  "thumb_status": "11/18 PD: o1(copywriter 11/14 1초 시험 통과·1위)과 같은 꼴, 주황 줄 숫자만 7억 3,500만원→7억 4,000만원(F4' 7.40억, say 41행 '7억 4천만원쯤') — visual/H-5-thumb/make_h5.py fix1118 · copywriter 재확인 요청",
+  "thumb_status": "11/18 PD: o1(copywriter 11/14 1초 시험 통과·1위)과 같은 꼴, 주황 줄 숫자만 7억 3,500만원→7억 4,000만원(F4' 7.40억, say 41행 '7억 4천만원쯤') — visual/H-5-thumb/make_h5.py fix1118 · copywriter 재확인 요청 · copywriter 11/18 18:55: o1n 확인 통과(숫자 자리만 바뀜, 1초 시험 다시 안 함, F4·F4' 대조)",
   "desc_first2": [
     "송도동 아파트 84㎡대 실거래를 같은 잣대(중간 가격)로 세어 보니, 고점 1년(2021년 7월~2022년 6월) 9억에서 2026년 7~10월 7억 4천만원, 고점의 82%예요.",
     "단지 32곳은 71~97%였고, 가장 낮았던 1년보다는 10% 높아요. '반값'·'6~70%'라는 말이 어디서 나왔는지, 전세는 매매의 몇 %인지도 국토교통부 원자료로 셌습니다."

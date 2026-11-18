@@ -80,6 +80,10 @@
 | 다음 공시 12월 15일 오후 3시 | '다음 공시일 : 2026. 12. 15.' · '공시일 오후 3시에 공시' | S1 https://portal.kfb.or.kr/fingoods/cofix.php |
 
 # 올리기 전 확인
+- 2026-11-18 14:4x firemap-write-b(발행 날 다시 확인, 칸 11/18 18:40). 바뀐 것: 그대로 — 은행연합회 2026.11.16 공시(10월분) 신규 3.62%·잔액 3.26%·신잔액 2.93%, 다음 공시 12/15 · 한국은행 기준금리 3.00%(ECOS 722Y001 2026.10 값, 다음 금통위 11/26) · 단기 COFIX 11/18 공시는 글에 안 씀
+- 다시 연 주소(11/18, 모두 HTTP 200): https://portal.kfb.or.kr/fingoods/cofix.php · https://portal.kfb.or.kr/fingoods/cofix_excel_jan.php?BasicYear=2026 · https://portal.kfb.or.kr/fingoods/cofix_excel_jan.php?BasicYear=2025 · https://portal.kfb.or.kr/compare/cofix_overview.php · https://portal.kfb.or.kr/compare/loan.php · https://ecos.bok.or.kr
+- 기준일: 은행연합회 COFIX 2026.11.16 공시(2026년 10월분) · 한국은행 기준금리 2026.11.18 조회 3.00%
+- 새로 찾은 것: 없음(11/16 뒤 새 COFIX 공시·금통위 없음, 숫자 그대로 발행)
 - 2026-11-16 23:1x firemap-write-b(조사·작성 날, 발행 11/18 07:40). 금리 글이라 발행 회차가 당일 S1·S2를 다시 열고 '바뀐 것:'에 숫자를 적을 것(코픽스 월별 다음 공시 12/15 · 금통위 다음 11/26 — 둘 다 발행 뒤)
 - 다시 연 주소: https://portal.kfb.or.kr/fingoods/cofix.php · https://portal.kfb.or.kr/fingoods/cofix_excel_jan.php?BasicYear=2026 · https://portal.kfb.or.kr/fingoods/cofix_excel_jan.php?BasicYear=2025 · https://portal.kfb.or.kr/compare/cofix_overview.php · https://portal.kfb.or.kr/compare/loan.php · https://ecos.bok.or.kr (722Y001 apis.ecos, 23:2x)
 - 기준일: 은행연합회 COFIX 2026.11.16 공시(2026년 10월분) · 한국은행 기준금리 2026.11.16 조회 3.00%

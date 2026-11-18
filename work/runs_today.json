@@ -10,6 +10,13 @@
     "url": "https://cafe.naver.com/firemap/444"
    },
    "note": "10:10 칸 credit1117 지각 발행(13:58, 어제 18:20 회차 뒤로 회차·커밋 0 — PC 멈춤 추정, 확인 안 함). 올리기 전 확인 11/18: fsc 86084 HTTP 200·앱스토어 열림·개편안 최종 발표 검색 없음 → 숫자 그대로. verify OK 1645/1645·사진 3/3. #442 dongtan 날짜 11/16→11/17 rewrite verify OK 1599/1599(editor 11/17 요청, 기한 12:00 넘김). 칸: 16:10 divsep1117·18:40 cofix1117(write-b, 금리 당일 확인)·22:40 cheongna1117 slot.txt. 비축 0 남음. 개선: 없음"
+  },
+  {
+   "hour": 14,
+   "ts": "14:44",
+   "blog": null,
+   "cafe": null,
+   "note": "write-b 14:40 회차: 맡은 :40 칸 = 18:40 cofix1117(07:40 지각분). 발행 안 함 — 직전 발행 13:58, 카페 간격 120분·16:10 divsep 칸 때문. 올리기 전 확인 당일 끝(KFB COFIX 5개 주소 HTTP 200·값 그대로, ECOS 기준금리 3.00%), slot.txt 18시로 맞춤, prepublish_check 통과. 개선: 없음"
   }
  ]
 }

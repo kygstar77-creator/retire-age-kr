@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-18 14:46",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "연금저축 12월 납입",
+ "num": "공제는 같고, 이자 16만원 차이",
+ "sub": "매달 넣기 vs 한 번에",
+ "label": "2026년분 · 12월 31일까지",
+ "src": "소득세법 59조의3·금감원 예금 공시 직접 계산",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 120,
+ "num_px": 76,
+ "sub_px": 57,
+ "board": [
+  "credit1117",
+  "bundil1117",
+  "dongtan1116",
+  "coinyu1116",
+  "n3pair1116",
+  "isa1116",
+  "gmpair1116",
+  "hidden1116",
+  "nodo1116",
+  "semietf1116"
+ ]
+}

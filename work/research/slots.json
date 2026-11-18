@@ -4506,6 +4506,60 @@
    "gates_ok": "관문 통과(비축)",
    "published": null,
    "note": "firemap-write 2026-11-18 14:01: 11/17 회의 배정 없어 비축으로 채움 — 장르 돈관리(13:58)·세금·금리·부동산 순"
+  },
+  {
+   "at": "2026-11-19 07:40",
+   "kind": "cafe",
+   "item": "de1pair1117",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-17 07:29",
+   "published": null,
+   "note": "firemap-meeting 2026-11-18 14:1x(11/17분 지연 회의): 관문 통과(11/17 07:29, 22:40 칸 PC 꺼짐으로 못 나감) — 발행 날 원문 다시 확인 · yt_pair: de1s_basket"
+  },
+  {
+   "at": "2026-11-19 10:10",
+   "kind": "cafe",
+   "item": "새 부동산(국토부 실거래, 일산·청라·동탄·노도강·분당 아닌 곳)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-18 14:1x(11/17분 지연 회의): 짓기 write 11/18 21:10 · 관문 기한 11/19 04:10"
+  },
+  {
+   "at": "2026-11-19 12:40",
+   "kind": "cafe",
+   "item": "새 정책(연금·건보료)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-18 14:1x(11/17분 지연 회의): 짓기 write-b 11/18 22:40 · 관문 기한 06:40 · 발행 write 12:10"
+  },
+  {
+   "at": "2026-11-19 16:10",
+   "kind": "cafe",
+   "item": "새 경제·금리 또는 돈 관리",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-18 14:1x(11/17분 지연 회의): 짓기 write 06:10/09:10 · 관문 기한 10:10"
+  },
+  {
+   "at": "2026-11-19 18:40",
+   "kind": "cafe",
+   "item": "새 부동산 둘째",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-18 14:1x(11/17분 지연 회의): 짓기 write-b 07:40/10:40 · 관문 기한 12:40 · 발행 write 18:10"
+  },
+  {
+   "at": "2026-11-19 22:40",
+   "kind": "cafe",
+   "item": "새 주식·지수",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-18 14:1x(11/17분 지연 회의): 짓기 write-b 13:40/16:40 · 관문 기한 16:40"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외",

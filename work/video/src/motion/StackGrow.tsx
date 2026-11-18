@@ -17,11 +17,15 @@ export type StackGrowProps = {
   bars: number;                                        // 4~8
   names: {pay: string; fee: string; int: string};
   build: [number, number] | null;                      // 막대가 서는 박자 구간(소수 박자), null = 처음부터 다 서 있음
-  focus: {layer: Layer | null; at: number}[];          // 박자마다 진하게 할 층(null = 모두)
+  focus: {layer: Layer | null; at: number; bars?: 'first' | 'rest'}[];   // 박자마다 진하게 할 층(null = 모두) · bars: 그 층 중 첫 막대만/나머지만(11/18 '가입 때 한 번' vs '매년')
   balance: Mark | null;
   first: Mark | null;
   wobble: {at: number} | null;
   foot: Mark | null;
+  note?: Mark | null;                                  // 11/18 먹 한 줄(대본 자막에 있는 식만, 예 '코픽스 + 0.85%') — 주황 아님
+  wobAmp?: number;                                     // 출렁 크기(기본 0.09)
+  origin?: string;                                     // 다가가는 중심(기본 '42% 70%' · 이자 층이 주인공이면 오른쪽 위)
+  pushTo?: number;                                     // 다가가기 끝 배율(기본 1.06)
   beats: number[];
 };
 
@@ -52,16 +56,19 @@ export const StackGrow: React.FC<StackGrowProps> = (p) => {
   const barT = (i: number) => p.build ? bStart + (bEnd - bStart) * (i / Math.max(1, n - 1)) * 0.85 : -100;
   const fill = (i: number, k: number) => g(f, barT(i) + k * 9, 16, io);   // k = 0 받은 돈, 1 보증료, 2 이자
   // 지금 진한 층
-  let cur: Layer | null = null; for (const fo of p.focus) if (f >= at(fo.at)) cur = fo.layer;
   const fo0 = p.focus.filter((fo) => f >= at(fo.at)); const lastAt = fo0.length ? at(fo0[fo0.length - 1].at) : -100;
-  const prev = fo0.length > 1 ? fo0[fo0.length - 2].layer : null;
+  const curF = fo0.length ? fo0[fo0.length - 1] : null, prevF = fo0.length > 1 ? fo0[fo0.length - 2] : null;
+  const cur: Layer | null = curF ? curF.layer : null;
   const ease = g(f, lastAt, 12);
-  const opOf = (L: Layer) => { const now = cur === null || cur === L ? 1 : 0.3; const was = prev === null || prev === L ? 1 : 0.3; return was + (now - was) * ease; };
+  const lit = (fo: typeof curF, L: Layer, i: number) => fo === null || fo.layer === null || (fo.layer === L && (!fo.bars || (fo.bars === 'first' ? i === 0 : i > 0)));
+  const opOf = (L: Layer, i = -1) => { const ok = (fo: typeof curF) => i < 0 ? (fo === null || fo.layer === null || fo.layer === L) : lit(fo, L, i);
+    const now = ok(curF) ? 1 : 0.3; const was = ok(prevF) ? 1 : 0.3; return was + (now - was) * ease; };
   // 금리 변동: 이자 층 높이가 천천히 출렁(±9%) — 모양만
-  const wob = p.wobble && f >= at(p.wobble.at) ? Math.sin((f - at(p.wobble.at)) / 11) * 0.09 * g(f, at(p.wobble.at), 20) : 0;
+  const wob = p.wobble && f >= at(p.wobble.at) ? Math.sin((f - at(p.wobble.at)) / 11) * (p.wobAmp ?? 0.09) * g(f, at(p.wobble.at), 20) : 0;
   const tilt = 36 + Math.round(r('t') * 22);
   const endF = (B[B.length - 1] ?? 0) + 150;
-  const push = interpolate(f, [0, endF], [1, 1.03], CL);
+  // 11/18 U5: 1.03은 느려서 같은 화면 9.0초·8.5초(층 강조만 바뀌는 줄) — EqRow처럼 1.06 + 왼쪽으로 조금 흐름
+  const push = interpolate(f, [0, endF], [1, p.pushTo ?? 1.06], CL), drift = interpolate(f, [0, endF], [0, -28], CL);
   const jit = (i: number, k: string) => (r(`j${i}${k}`) - 0.5) * 5;   // 손떨림 꼭짓점
   const quad = (x: number, y0: number, y1: number, w: number, i: number, k: string) =>
     `${x + jit(i, k + 'a')},${y0 + jit(i, k + 'b')} ${x + w + jit(i, k + 'c')},${y0 + jit(i, k + 'd')} ${x + w + jit(i, k + 'e')},${y1} ${x + jit(i, k + 'f')},${y1}`;
@@ -78,7 +85,7 @@ export const StackGrow: React.FC<StackGrowProps> = (p) => {
   const ly: Record<Layer, number> = {int: 330, fee: 470, pay: 610};
   const g0 = geo[0];
   return (
-    <div style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080, transform: `scale(${push})`, transformOrigin: '42% 70%'}}>
+    <div style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080, transform: `translateX(${drift}px) scale(${push})`, transformOrigin: p.origin ?? '42% 70%'}}>
       <svg style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080}}>
         <defs>
           {(['pay', 'fee', 'int'] as Layer[]).map((L, k) => (
@@ -88,9 +95,9 @@ export const StackGrow: React.FC<StackGrowProps> = (p) => {
         </defs>
         <line x1={X0 - 30} x2={X1 + 30} y1={YB + 2} y2={YB + 2 + jit(0, 'base')} stroke={T.ink} strokeWidth={4} strokeLinecap="round" />
         {geo.map((q, i) => (fill(i, 0) <= 0 ? null : <g key={i}>
-          <polygon points={quad(q.x, q.yPay, YB, bw, i, 'p')} fill={`url(#sgpay${p.seed})`} stroke={COL.pay} strokeWidth={5} strokeLinejoin="round" opacity={opOf('pay')} />
-          {fill(i, 1) > 0 ? <polygon points={quad(q.x, q.yFee, q.yPay, bw, i, 'f')} fill={`url(#sgfee${p.seed})`} stroke={COL.fee} strokeWidth={5} strokeLinejoin="round" opacity={opOf('fee')} /> : null}
-          {fill(i, 2) > 0 ? <polygon points={quad(q.x, q.yInt, q.yFee, bw, i, 'i')} fill={`url(#sgint${p.seed})`} stroke={COL.int} strokeWidth={5} strokeLinejoin="round" opacity={opOf('int')} /> : null}
+          <polygon points={quad(q.x, q.yPay, YB, bw, i, 'p')} fill={`url(#sgpay${p.seed})`} stroke={COL.pay} strokeWidth={5} strokeLinejoin="round" opacity={opOf('pay', i)} />
+          {fill(i, 1) > 0 ? <polygon points={quad(q.x, q.yFee, q.yPay, bw, i, 'f')} fill={`url(#sgfee${p.seed})`} stroke={COL.fee} strokeWidth={5} strokeLinejoin="round" opacity={opOf('fee', i)} /> : null}
+          {fill(i, 2) > 0 ? <polygon points={quad(q.x, q.yInt, q.yFee, bw, i, 'i')} fill={`url(#sgint${p.seed})`} stroke={COL.int} strokeWidth={5} strokeLinejoin="round" opacity={opOf('int', i)} /> : null}
         </g>))}
         {/* 대출 잔액: 마지막 막대 오른쪽 세로 괄호 */}
         <path d={`M${last.x + bw + 18} ${YB} h20 V${last.yInt} h-20`} fill="none" stroke={T.ink} strokeWidth={5} strokeLinejoin="round" opacity={balO} />
@@ -105,8 +112,10 @@ export const StackGrow: React.FC<StackGrowProps> = (p) => {
       })}
       {p.balance ? <div style={lab({left: last.x + bw + 50, top: (YB + last.yInt) / 2 - 150, width: 60, fontWeight: 800, fontSize: 46, color: T.ink, opacity: balO, writingMode: 'vertical-rl', letterSpacing: 6})}>{p.balance.text}</div> : null}
       {p.first ? <div style={lab({left: g0.x + bw / 2 + 70, top: g0.yFee - 250, fontWeight: 900, fontSize: 96, color: T.accent, opacity: firO, transform: `scale(${0.85 + 0.15 * firO})`, transformOrigin: '0% 100%'})}>{p.first.text}</div> : null}
-      {p.wobble ? <div style={lab({left: LX, top: ly.int - 74, fontWeight: 800, fontSize: 40, color: TAN, opacity: g(f, at(p.wobble.at), 12)})}>↕ 변동</div> : null}
-      {p.foot ? <div style={lab({left: 0, top: YB + 40, width: 1920, textAlign: 'center', fontWeight: 800, fontSize: 56, color: T.accent, opacity: footO})}>{p.foot.text}</div> : null}
+      {p.wobble ? <div style={lab({left: LX, top: ly.int - 92, fontWeight: 800, fontSize: 58, color: TAN, opacity: g(f, at(p.wobble.at), 12)})}>↕ 변동</div> : null}
+      {p.note ? (() => { const o = g(f, at(p.note.at), 22, io); return <div style={lab({left: X0, top: 350, fontWeight: 800, fontSize: 62, color: T.ink, opacity: Math.min(1, o * 2) * (1 - 0.75 * firO), clipPath: `inset(0 ${(1 - o) * 100}% 0 0)`})}>{p.note.text}</div>; })() : null}
+      {/* 11/18: 판 아래(YB+40)는 자막 띠와 겹쳤음 → 왼쪽 위 빈 자리(앞 막대가 낮은 곳), 써지듯 왼쪽부터 */}
+      {p.foot ? <div style={lab({left: X0, top: 270, fontWeight: 800, fontSize: 54, color: T.accent, opacity: footO, clipPath: `inset(0 ${(1 - footO) * 100}% 0 0)`})}>{p.foot.text}</div> : null}
     </div>
   );
 };

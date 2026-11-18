@@ -31,13 +31,13 @@
     "cap": null
    },
    {
-    "text": "5억 집이면 처음 보증료가 500만원이에요.",
-    "audio": "audio/jt-1/e4c1d0bfb04a53dc.wav",
-    "frames": 72,
+    "text": "집값이 5억이면 처음 보증료가 500만원이에요.",
+    "audio": "audio/jt-1/10400ecd3a03712b.wav",
+    "frames": 107,
     "cap": null
    }
   ],
-  "frames": 510,
+  "frames": 545,
   "data": {
    "seed": "jt1s",
    "bars": 6,
@@ -57,7 +57,18 @@
     },
     {
      "layer": "fee",
-     "at": 2
+     "at": 2,
+     "bars": "first"
+    },
+    {
+     "layer": "fee",
+     "at": 3,
+     "bars": "rest"
+    },
+    {
+     "layer": "fee",
+     "at": 4,
+     "bars": "first"
     }
    ],
    "balance": {
@@ -69,7 +80,11 @@
     "at": 4.15
    },
    "wobble": null,
-   "foot": null
+   "foot": null,
+   "note": {
+    "text": "매년 잔액의 0.95%",
+    "at": 3.15
+   }
   }
  },
  "rate": {
@@ -131,7 +146,14 @@
    "foot": {
     "text": "현금으로 내지 않고 잔액에 더해요",
     "at": 1.2
-   }
+   },
+   "note": {
+    "text": "코픽스 + 0.85%",
+    "at": 2.35
+   },
+   "wobAmp": 0.22,
+   "origin": "78% 22%",
+   "pushTo": 1.08
   }
  }
 }

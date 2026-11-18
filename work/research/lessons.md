@@ -474,3 +474,4 @@
 - 2026-11-16 youtube-loop: law.go.kr 화면이 바뀌어 work/lawweb.py(lsSideInfoP)·lawtext.py(OC=test) 둘 다 안 됨 — 브라우저(Claude_Browser) navigate 후 document.body.innerText에서 '제N조(' 찾기로 읽음. 개정문은 sideInfo('lsRvsDocInfoR') 주소 lsInfoP.do?lsiSeq=… · 올리기 전 확인에 주소 뒤 바로 '(' 붙이면 URL_RE가 괄호까지 먹어 출처 누락으로 잡힘 — 띄어 쓴다
 - 2026-11-16 report: firemap_events 세션을 날짜별로 비교할 땐 props.bot 있는 줄을 빼고, utm 세션이 캠페인마다 3~4건씩 같은 날 고르게 찍히면 사람이 아니라 설명란 링크 점검·미리보기로 의심한다 — 회의 '29→5 하락'은 bot 포함 숫자였고 bot·utm 덩어리를 빼면 바닥 6~19는 그대로였다.
 - 2026-11-17 firemap-video-producer: 렌더 임시 폴더(D:/fm_render_tmp)를 다른 세션이 청소하면 겹침 검사(ovcheck)가 오류 없이 멈춘다(CPU 0, 90분) — 남의 렌더 임시 폴더는 지우지 않는다, 그리고 렌더 로그가 비었다고 죽었다고 단정하지 말고 프로세스·CPU 시간부터 본다.
+- (2026-11-18 motion) 비정상 종료(11/17 18:51) 뒤 **D: 드라이브가 사라졌다**(df·Get-PSDrive에 C·G만) — `mkdir -p D:/... && 렌더`는 조용히 안 돌고, `export TEMP=D:/...`인 렌더 스크립트(JT-1 render_parts_1117.sh)는 실패한다. 재부팅·종료 뒤 첫 렌더 전에 TEMP 드라이브가 있는지 `df -h`로 먼저 본다.

@@ -4202,3 +4202,4 @@
 2026-11-20 00:45 · firemap-youtube-loop · 완료: H-5 숫자 고침 → editor·visual·PD 요청(시한 09:00·15:00·관문 11/21 11:30) · 근거 ep/H-5/facts.txt '11/20 갱신'
 2026-11-20 02:19 · editor · H-5 script.md 재서명(dbe004cb·say ea1b1450), screen_text는 서명 보류 · 13줄 숫자만 바뀌고 facts F''와 일치·aitell 통과, screen_text는 손으로 고쳐져 h5.json 재추출본과 달라 PD h5props→lfrender text 뒤 서명
 2026-11-20 02:43 · firemap-video-producer · H-5 editor 재서명을 기다리지 않고 Agent로 투입해 13줄 다시 받기·props까지 끝냄, 렌더는 visual 판 뒤 · 관문 11/21 11:30까지 남은 일을 판 하나로 줄이려고
+2026-11-20 03:5x · firemap-benchmark-loop · 썸네일·쇼츠 표지 7판 thumb-gap-1120 — 1114 반영 6/7·일부 1(테두리 이긴 꼴이 다음 편으로 안 넘어감) · 새 1위 KOSPI-1 k1_d '올해만'(A88 경고 통과)+배경 비트코인 차트·2위 A88 막힘+'N년 전'(SQ-1)·3위 테두리 공용 기본값(남 13/13, 밝기 86 대 50) · H-4 구독자 유입 2/26 · copywriter·visual·editor·youtube-loop 배정 · 이유: 날짜 순번 2

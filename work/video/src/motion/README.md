@@ -150,3 +150,11 @@
 - props: `seed·bars(4~8)·names{pay,fee,int}·build[줄,줄]|null·focus[{layer|null,at}]·balance{text,at}|null·first{text,at}|null·wobble{at}|null·foot{text,at}|null` — at은 줄 번호(소수=줄 안 비율, 음수=처음부터).
 - 금액 축 없는 모양 그림: 막대가 왼쪽부터 아래에서 차오르고 층(받은 돈 → 보증료 → 이자, 이자는 뒤로 갈수록 두꺼움)이 쌓임 · focus 층만 진하게 · 마지막 막대 '대출 잔액' 세로 괄호 · first = 첫 막대 보증료 칸 손 동그라미 + 주황 값 · wobble = 이자 층 출렁 + '↕ 변동' · foot = 판 아래 주황 한 줄.
 - 숫자 글자는 first.text 하나만(편 props 스크립트가 calc assert). 출처 줄에 '그림은 모양만(금액 아님)'을 꼭 넣는다. 주택연금·역모기지·마이너스 통장·장기요양 본인부담 누적처럼 '현금 대신 빚에 쌓이는' 이야기에 씀. 반복 방지: seed로 x 여백·면 결 기울기·이자 층 비율.
+
+## ChapterStrip · RankLegend · StripOver (11/18·11/19)
+- ChapterStrip: 오른쪽 위 상시 장 띠('3장 이름 3/8' + 손 밑줄). `top`·`fs`로 한 줄 작게(11/19 추가).
+- RankLegend: 오른쪽 세로 범례, 말하는 칸에 주황 점·손 밑줄.
+- StripOver: 편 컴포넌트를 고치지 않고 위 둘을 얹는 겉싸개. `<StripOver inner={편} p={props} strip={...} legend={...} />`.
+  장 시작은 ask 장면 data.n 'N장'에서 자동, 장 카드·실사(broll·live)는 흰 글자, pic 판은 한 줄 20px(판 윗변 피함), 범례는 pic·ask·table·grid·rows에서 끈다.
+  미리보기: `npx remotion still src/stripover_index.ts StripOverPreview out.png --props=<json> --frame=N` (H-5 장면 틀로 시험).
+- 같은 틀 반복 막기: 편마다 side(left/right)·topic 유무를 바꾼다.

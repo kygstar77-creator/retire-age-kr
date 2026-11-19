@@ -11,8 +11,8 @@ import {HandUnderline} from '../parts/human';
 
 export type StripChapter = {n: number; name: string};
 const SH = '0 2px 6px rgba(0,0,0,0.75)';
-export const ChapterStrip: React.FC<{chapters: StripChapter[]; starts: number[]; total?: number; dark?: boolean; side?: 'right' | 'left'; topic?: string | null}> =
-  ({chapters, starts, total, dark = false, side = 'right', topic = null}) => {
+export const ChapterStrip: React.FC<{chapters: StripChapter[]; starts: number[]; total?: number; dark?: boolean; side?: 'right' | 'left'; topic?: string | null; top?: number; fs?: number}> =
+  ({chapters, starts, total, dark = false, side = 'right', topic = null, top = 10, fs = 24}) => {
   const f = useCurrentFrame();
   let k = -1; starts.forEach((a, i) => { if (f >= a) k = i; });
   if (k < 0) return null;
@@ -23,14 +23,14 @@ export const ChapterStrip: React.FC<{chapters: StripChapter[]; starts: number[];
   const ink = dark ? '#ffffff' : T.ink2;
   const w = Math.round([...ch.name].reduce((a, c) => a + (/[ㄱ-힝]/.test(c) ? 24 : /\s/.test(c) ? 7 : 14), 0));
   return (
-    <div style={{position: 'absolute', top: 10, [side]: 120, display: 'flex', flexDirection: 'column', alignItems: side === 'right' ? 'flex-end' : 'flex-start'}}>
+    <div style={{position: 'absolute', top, [side]: 120, display: 'flex', flexDirection: 'column', alignItems: side === 'right' ? 'flex-end' : 'flex-start'}}>
       <style>{FONT_CSS}</style>
       {topic ? <div style={{...F, fontWeight: 500, fontSize: 18, color: dark ? '#e8eaee' : T.ink3, textShadow: dark ? SH : undefined, marginBottom: 2}}>{topic}</div> : null}
       <div style={{display: 'flex', alignItems: 'baseline', gap: 10, whiteSpace: 'nowrap', clipPath: `inset(-10px ${(1 - reveal) * 100}% -24px -10px)`}}>
-        <span style={{...F, fontWeight: 700, fontSize: 24, color: dark ? T.daccent : T.accent, textShadow: dark ? SH : undefined}}>{ch.n}장</span>
-        <span style={{...F, position: 'relative', fontWeight: 700, fontSize: 24, color: ink, textShadow: dark ? SH : undefined}}>{ch.name}
-          <HandUnderline x={0} y={30} w={w} p={line} stroke={4} seed={k + 3} color={dark ? T.daccent : T.accent} /></span>
-        <span style={{...F, fontWeight: 500, fontSize: 18, color: dark ? '#e8eaee' : T.ink3, textShadow: dark ? SH : undefined}}>{ch.n}/{n}</span>
+        <span style={{...F, fontWeight: 700, fontSize: fs, color: dark ? T.daccent : T.accent, textShadow: dark ? SH : undefined}}>{ch.n}장</span>
+        <span style={{...F, position: 'relative', fontWeight: 700, fontSize: fs, color: ink, textShadow: dark ? SH : undefined}}>{ch.name}
+          <HandUnderline x={0} y={fs + 6} w={Math.round(w * fs / 24)} p={line} stroke={4} seed={k + 3} color={dark ? T.daccent : T.accent} /></span>
+        <span style={{...F, fontWeight: 500, fontSize: Math.round(fs * 0.75), color: dark ? '#e8eaee' : T.ink3, textShadow: dark ? SH : undefined}}>{ch.n}/{n}</span>
       </div>
     </div>
   );

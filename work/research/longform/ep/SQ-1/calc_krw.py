@@ -26,3 +26,22 @@ for lbl,st in [('15년',(2011,10)),('최근 10년',(2016,10)),('최근 5년',(20
         yrs=(2026-st[0])
         vk=v*fx
         print(f'  SCHD {int(w*100):>3}%: 달러 1억→{v:.2f}억 · 원화 1억→{vk:.2f}억 (연 {(vk**(1/yrs)-1)*100:.2f}%) · 환율 몫 {(vk-v):+.2f}억')
+# 11/20 copywriter 요청: 원화로 잰 최대 낙폭 — 달마다 (달러 평가액 × 그 달 마지막 영업일 매매기준율), 달러 낙폭과 같은 월말 간격
+def run_krw(w, start=(2011,10), end=(2026,10)):
+    ms=[m for m in cm.months if start<=m<=end]
+    fx0=me[ms[0]][1]
+    a=w; b=1-w; v=1.0; vk=1.0; peak=1.0; mdd=0.0; at=None; pk_m=ms[0]; pk_at=None
+    for p,m in zip(ms,ms[1:]):
+        a*=cm.S[m]/cm.S[p]; b*=cm.Q[m]/cm.Q[p]; v=a+b
+        vk=v*me[m][1]/fx0
+        if vk>peak: peak=vk; pk_m=m
+        dd=vk/peak-1
+        if dd<mdd: mdd=dd; at=(pk_m,m)
+        if m[1]==10: a=v*w; b=v*(1-w)
+    return vk, mdd, at
+print('원화 최대 낙폭(월말 평가액×월말 매매기준율, 1억원을 넣는 날 환율로 달러 전환)')
+for lbl,st in [('15년',(2011,10)),('최근 10년',(2016,10)),('최근 5년',(2021,10))]:
+    for w in [1.0,0.5,0.0]:
+        vk,mdd,at=run_krw(w,start=st)
+        _,_,mu,_=cm.run(w,start=st)
+        print(f'  {lbl} SCHD {int(w*100):>3}%: 원화 끝값 {vk:.2f}억 · 원화 최대낙폭 {mdd*100:.1f}% (고점 {at[0][0]}-{at[0][1]:02d} → 바닥 {at[1][0]}-{at[1][1]:02d}) · 달러 최대낙폭 {mu*100:.1f}%')

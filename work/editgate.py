@@ -291,6 +291,14 @@ if __name__ == '__main__':
             # 11/10 editor(backlog ①): auto 서명이 cafe3를 안 돌려 A53('글이 종종 올라오죠', stkded1109)이 서명을 지나 발행기에서야 걸렸다 — 찍을 때 막는다.
             c3, _ = aitell.cafe3_check(pk)
             if c3: print('안 찍음 · cafe3 — ' + '; '.join(c3)); sys.exit(1)
+            # 11/19 write: 같은 날 칸 5개가 각자 '질문·고민 게시판' 안내를 달고 auto로 찍혀, 10:10 gwanggyo1118이 발행 순간에야 ㉤(하루 2칸)에 막혔다 — 찍을 때 본다.
+            sp0 = os.path.join(pk, 'slot.txt')
+            day0 = open(sp0, encoding='utf-8').read().strip()[:10] if os.path.exists(sp0) else ''
+            if day0 and day0 >= getattr(aitell, 'BOARD_BLOCK_FROM', '9999'):
+                it0 = aitell._day_pkgs(day0); me0 = os.path.basename(os.path.dirname(pk))
+                if me0 not in [i for i, _ in it0]: it0.append((me0, pk))
+                bb0 = aitell.sameday_board(it0, me0)
+                if bb0: print('안 찍음 · 같은 날 게시판 안내 반복(발행기 ㉤) — ' + '; '.join(bb0)); sys.exit(1)
             cb = compare_check(pk)
             if cb: print('안 찍음 · 경쟁 비교 없음 — ' + '; '.join(cb)); sys.exit(1)
             pb = premise_check(pk)

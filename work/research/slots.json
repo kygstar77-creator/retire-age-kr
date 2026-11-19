@@ -4601,12 +4601,12 @@
   {
    "at": "2026-11-20 12:40",
    "kind": "cafe",
-   "item": "jt1pair1120 (JT-1 주택연금 롱폼 짝 글 — 짓는 중)",
+   "item": "jt1pair1120",
    "owner": "firemap-write",
-   "gates_ok": null,
+   "gates_ok": "2026-11-19 09:43",
    "published": null,
    "pair": "DUv-5juhohQ",
-   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · yt_pair: DUv-5juhohQ (JT-1 롱폼 11/20 11:30 공개) · today.md [요청] video-producer 23:24 · 재료 work/research/longform/ep/JT-1/cafe.md(표 3개 — 쇼츠 jt1s_even 11/26 '93세' 질문과 겹치지 않게 전체 표) · 영상 공개(public) 확인 뒤에만 발행(write 12:10 회차) · 글 주소를 JT-1 설명란 {CAFE}에 넣도록 PD에 넘김 · 관문 기한 11/20 06:40 · 짓기 write"
+   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · yt_pair: DUv-5juhohQ (JT-1 롱폼 11/20 11:30 공개) · today.md [요청] video-producer 23:24 · 재료 work/research/longform/ep/JT-1/cafe.md(표 3개 — 쇼츠 jt1s_even 11/26 '93세' 질문과 겹치지 않게 전체 표) · 영상 공개(public) 확인 뒤에만 발행(write 12:10 회차) · 글 주소를 JT-1 설명란 {CAFE}에 넣도록 PD에 넘김 · 관문 기한 11/20 06:40 · 짓기 write | firemap-write 2026-11-19 09:43: 관문 통과 jt1pair1120 '주택연금 늦게 들면 더 받는데, 몇 살에 같아질까?'(세금연금, 연금/세금/보험 게시판) — 근거 kwvol 주택연금 30,410 · 경쟁 6편 중 같아지는 나이를 기대여명과 맞댄 글 0편 · 영상에 없던 새 사실: 국가데이터처 2024년 65세 기대여명 남 19.5·여 23.7년(11/19 원문) · research_gate strict·bench·prepublish·cover·readcheck 0·aitell 통과·spoken·selfcheck 사실 0·crosscheck 2회·이해 3차 9명 통과·editgate auto 45e1bd93 · 영상 공개(11/20 11:30) 뒤 발행, 발행 날 공사 표 다시 확인 · 글 주소를 JT-1 설명란 {CAFE}에(PD)"
   },
   {
    "at": "2026-11-20 16:10",

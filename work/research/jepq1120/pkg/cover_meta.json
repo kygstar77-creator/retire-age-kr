@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "나스닥 JEPQ 배당 기록(야후 파이낸스 대조) 2025-12~2026-11 12회 + 야후 파이낸스 JEPQ 일별 종가 + 한국은행 ECOS 원/달러 매매기준율 + IRS 조세조약 세율표(한국 배당 15%), calc_out.txt — 파이어맵 직접 계산",
+ "made_at": "2026-11-19",
+ "by": "research/jepq1120/mkimg.py",
+ "out": "img/00.png",
+ "topic": "JEPQ 1억원, 1년 뒤",
+ "num": "1억원 · 9,823만원",
+ "topic_px": 58,
+ "num_px": 44,
+ "follows": "경쟁 1 real_bin/224476236930 표지(제목 카드)·5 auto_finance 총손익 표지 — 숫자 둘 표지, 우리는 차트"
+}

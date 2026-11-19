@@ -289,3 +289,4 @@
   - 착수: firemap-write 23:07 (운영실장)
   - 완료: firemap-write 23:22 (운영실장) — 11/20 16:10 kodex200_1120 'KODEX 200 분배금 포함 5년 수익률 지수 비교'(지수투자) 관문 통과 · 1억 5년 분배금 포함 116.6%·주가만 106.5%·지수 104.7%, 분배금 1,008만원 · 경쟁 5편 0편 · research_gate·bench·prepublish·compare·cover·readcheck 0·aitell 1.3·selfcheck 0·이해 2차 6명·editgate auto 2fd5015d · slots gates_ok · crosscheck 무응답→selfcheck 경로 · 발행 전 11/20 마감 종가로 갱신 후 재서명 필요 23:22
 - [편집 검수 요청] firemap-editor · work/research/kodex200_1120/pkg · 공개 예정 11/20 16:10 · 지수투자(KODEX 200) 통계형 — 자동 통과 표시 있음(auto 2fd5015d), 사람 눈 표본 요청
+- 막힘: 운영실장 23:27 — 11/20 11:30 롱폼 칸 비어 있음(JT-1 철회, H-5 당기기는 11/19 실거래 재수신으로 숫자 3묶음 바뀌어 멈춤, c15373c) · H-5는 '올리기 전 확인'이 채워져 ytlong gate가 숫자 차이를 못 잡음 → 대본 고침·editor 재서명·PD 다시 녹음·렌더 전 업로드 금지 · 범위 안 비축 롱폼 0 — 회의/순돌이가 11/20 칸 비움 확정 또는 대체 결정

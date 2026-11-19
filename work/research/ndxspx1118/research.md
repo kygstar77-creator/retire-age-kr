@@ -18,7 +18,7 @@
 ## 질문
 1. 나스닥100과 S&P500 중 어떤 지수가 더 유리할까? — https://blog.naver.com/nmnpvv/224475364330 ('어떤 지수가 더 유리할까?') → 답: c03(10년 5.6배 vs 3.4배)·c04(다음 하락장은 모름)
 2. 하락장에서 나스닥이 S&P500보다 더 빠지나? — https://blog.naver.com/18alsrb/224479650986 ('시장이 하락하면 알게된다') → 답: c00·c01(다섯 번 중 세 번)
-3. 지금 고점 대비 얼마나 빠졌나? — https://cafe.naver.com/ca-fe/cafes/31097286/articles/13619 ('고점 대비 하락률(KOSPI, S&P, NASDAQ)') → 답: c03(13.5%·6.1%)
+3. 지금 고점 대비 얼마나 빠졌나? — https://cafe.naver.com/ca-fe/cafes/31097286/articles/13619 ('고점 대비 하락률(KOSPI, S&P, NASDAQ)') → 답: c03(11/18 종가 13.2%·6.3%)
 4. 수익률만 보고 고르면 안 되는 이유는? — https://blog.naver.com/leemujeok/224474059614 ('수익률만 보고 선택하면 안 되는 이유') → 답: c02(회복 15년 7개월)·c04
 
 ## 왜
@@ -66,14 +66,19 @@
 | 관세 충격 23%·19% | 22,176→17,090 · 6,144→4,983 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC (calc_out.txt) |
 | 회복 15년 7개월·7년 2개월 / 3년 2개월·5년 5개월 / 3개월 반·6개월 / 2년 1개월·2년 / 4개월·4개월 | 2015-11-03·2007-05-30 / 2011-01-03·2013-03-28 / 2020-06-05·2020-08-18 / 2023-12-15·2024-01-19 / 2025-06-24·2025-06-27 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC (calc_out.txt) |
 | 1천만원 → 171만원·509만원 | -82.9% · -49.1% | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX (calc_out.txt) |
-| 11월 17일 종가 최고점보다 13.5%·6.1% 아래 | 27,002 / 31,224(10/6) · 7,341 / 7,819(10/6) | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC (calc_out.txt) |
+| 11월 18일 종가 최고점보다 13.2%·6.3% 아래 | 27,116 / 31,224(10/6) · 7,324 / 7,819(10/6) — 11/19 다시 받음 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC (calc_out.txt) |
 | 10년 5.6배·3.4배 | 5.59 · 3.36 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC (calc_out.txt) |
-| 1985년 10월부터 241배·40배 | 240.8 · 39.7 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC (calc_out.txt) |
+| 1985년 10월부터 242배·40배 | 241.8 · 39.6 (11/19 다시 받음) | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC (calc_out.txt) |
 | 매달 적립 2001년 10월 51% 손실, 2004년 12월 본전, 2009년 3월 31% 아래, 8월 회복 | -50.6% · 2004-12-01 · -31.1% · 2009-08-03 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX (calc_out.txt) |
 | 2008년은 주택담보대출 부실이 은행·금융시장을 흔든 위기 | 'losses on mortgage-related financial assets began to cause strains in global financial markets' | S3 https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath |
 | (H) = 환율 변동을 막아 둔 환헤지형 | '환헤지형으로서 원달러 환율변동율을 헤지' | S4 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7448300004 |
 
 # 올리기 전 확인
+- 2026-11-19 22:43 firemap-write-b(발행 날 다시 확인)
+- 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC (다시 받아 calc.py 다시 돌림, 11/18 받은 것 raw/1118/) · https://indexes.nasdaqomx.com/docs/Methodology_NDX.pdf (200, 'non-financial companies' 그대로 — raw/1118/ndx_method_1119.pdf) · https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath (200) · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7448300004 (200, '환헤지형' 문구 그대로) · S5 etfshopping(2차, 대조 칸에 안 씀)은 429로 못 엶
+- 기준일: Yahoo ^NDX·^GSPC 2026-11-18 종가(11/19 22:43 받음 — 11/19 미국 장은 아직 열리기 전)
+- 바뀐 것: 최고점 대비 나스닥100 13.5→13.2%(27,002→27,116), S&P500 6.1→6.3%(7,341→7,324) · 전체 나스닥100 240.8→241.8배(글 241→242배) · 10년 5.6·3.4배와 하락장 다섯 번 낙폭·회복·적립 숫자는 그대로 · c00·c03·c05 날짜 11월 17일→18일, 출처 '11월 19일 받음', 01.png 기간 줄
+- 새로 찾은 것: 10/6 최고점은 11/18까지 그대로(새 최고점 없음)
 - 2026-11-18 17:03 firemap-write-b(조사·작성 날, 발행 전날 — 발행 회차가 11/19 다시 열 것)
 - 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC · https://indexes.nasdaqomx.com/docs/Methodology_NDX.pdf · https://www.federalreservehistory.org/essays/great-recession-and-its-aftermath · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7448300004 · https://etfshopping.com/lab/hedged-vs-unhedged
 - 기준일: Yahoo ^NDX·^GSPC 2026-11-17 종가(11/18 16:51 받음)

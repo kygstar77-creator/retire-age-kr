@@ -21,7 +21,7 @@ def base(title, foot):
     ax.spines['left'].set_color(LG); ax.set_xticks([])
     return fig, ax
 # 01: 하락장 다섯 번, 고점에서 바닥까지
-fig, ax = base('하락장 다섯 번, 고점에서 바닥까지 몇 % 빠졌나', 'Yahoo Finance 일별 종가(배당 뺀 가격 지수) · 1985년 10월~2026년 11월 17일 · 직접 계산')
+fig, ax = base('하락장 다섯 번, 고점에서 바닥까지 몇 % 빠졌나', 'Yahoo Finance 일별 종가(배당 뺀 가격 지수) · 1985년 10월~2026년 11월 18일 · 직접 계산')
 for i, (n, (a, b)) in enumerate(zip(EP, DD)):
     y = (4 - i) * 1.0
     ax.barh(y + 0.19, a, color=ORG, height=0.36); ax.barh(y - 0.19, b, color=BLU, height=0.36)

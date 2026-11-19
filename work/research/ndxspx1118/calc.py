@@ -1,5 +1,5 @@
 # 나스닥100(^NDX) vs S&P500(^GSPC) 하락장 비교 — Yahoo chart API 일별 종가(가격 지수, 배당 뺌)
-# 원자료: raw/%5ENDX.json, raw/%5EGSPC.json (2026-11-18 16:51 받음, 마지막 거래일 2026-11-17)
+# 원자료: raw/%5ENDX.json, raw/%5EGSPC.json (2026-11-19 22:43 다시 받음, 마지막 거래일 2026-11-18 — 11/18 받은 것은 raw/1118/)
 import json, datetime as dt
 
 def load(t):

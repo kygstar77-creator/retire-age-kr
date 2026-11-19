@@ -80,6 +80,17 @@
     "url": null
    },
    "note": "발행 없음(22:40 ndxspx는 write-b 몫, 이 회차 칸 아님) · 11/20 12:40 jepq1120 짓기·관문 통과(원문 4곳: 나스닥 배당·야후 종가·ECOS 환율·IRS 조약표 · WebSearch 2건) · 검증 경로: crosscheck(Gemini 사실 5건 반영 2·유지 2, 말투 쪽 시간 초과→selfcheck 0·aitell 1.3) · 이해 2차 6명 통과 · 개선: 없음(crosscheck 첫 실행이 timeout 300에 잘려 출력 없이 끝남 — 백그라운드로 다시 돌려 해결, 스크립트 변경 없음)"
+  },
+  {
+   "hour": 22,
+   "ts": "23:03",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "나스닥100 vs S&P, 하락장에선 늘 더 빠졌을까?",
+    "url": "https://cafe.naver.com/firemap/453"
+   },
+   "note": "22:40 칸(지수투자, 범위 안) · 발행 날 다시 확인: Yahoo ^NDX·^GSPC 11/18 종가 다시 받아 calc.py — 최고점 대비 13.5→13.2%·6.1→6.3%, 전체 241→242배, 날짜 11/18 · Nasdaq 방법론·연준·미래에셋 다시 엶(etfshopping 2차는 429) · 첫 발행 시도가 readcheck 'vs' 1건에 막혀 c01 첫 줄에 'vs' 넣음 · readcheck 0·aitell 1.1·spoken·selfcheck 사실 0(crosscheck 재실행 안 함 — 숫자 갱신만)·research_gate strict·prepublish·editgate auto 6cab0136 · verify OK 1952/1952자·사진 3/3 · 경고: 제목 물음꼴 하루 6칸(한도 4)·되풀이 1·본문 1952자 · 개선: 없음"
   }
  ]
 }

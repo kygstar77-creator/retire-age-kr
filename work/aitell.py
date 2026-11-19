@@ -912,10 +912,18 @@ def thumb_warn(lines):
     out = []
     if lines and len(re.findall(r'\s[·ㆍ・]\s|[·ㆍ・]', lines[0])) >= 2:
         out.append(f'A65 윗줄 가운뎃점 나열: {lines[0]} — 문장 한 줄이나 꼬리표 하나로(남 상위 0/16)')
-    # A88(11/14 thumb-gap-1114 ③, editor 11/16): 상대 시점 — 썸네일은 몇 년 노출되니 박힌 해로. 같은 줄에 네 자리 연도가 있으면 통과
+    return out
+
+
+def thumb_relative(lines):
+    """A88(11/14 thumb-gap-1114 ③)·A101(11/20 thumb-gap-1120): 상대 시점 — 썸네일은 몇 년 노출되니 박힌 해로.
+    11/20 경고→막힘(editor, benchmark-loop 지시): 경고로 두 번 나감(K-1 '작년 9월 vs 올해 9월'·KOSPI-1 k1_d '올해만 23번 나왔다').
+    A101 'N년 전'(SQ-1 '15년 전 달러로 1억' — 내년엔 16년 전). 같은 줄에 네 자리 연도가 있으면 통과."""
+    out = []
     for l in lines:
-        m = re.search(r'올해|작년|이번\s*달|지난\s*달|최근|요즘', l)
-        if m and not re.search(r'\d{4}', l): out.append(f'A88 상대 시점 "{m.group(0)}": {l} — "2025년 9월 vs 2026년 9월"처럼 박힌 해로')
+        m = re.search(r'올해|작년|이번\s*달|지난\s*달|최근|요즘|\d+\s*년\s*전', l)
+        if m and not re.search(r'\d{4}', l):
+            out.append(f'{"A101" if "전" in m.group(0) else "A88"} 상대 시점 "{m.group(0)}": {l} — "2025년 9월 vs 2026년 9월"·"2011년 달러로"처럼 박힌 해로')
     return out
 
 
@@ -940,9 +948,9 @@ def main(a):
     if a[0] == 'text':
         val, hits, n = score(' '.join(a[1:]), SKIP); print(f'AI 티 {val} ({n}자)'); [print('  ', h) for h in hits]; return 0
     if a[0] == 'thumb':
-        bad = thumb_check(a[1:])
+        bad = thumb_check(a[1:]) + thumb_relative(a[1:])
         for w in thumb_warn(a[1:]): print('  [경고]', w)
-        if not bad: print('썸네일 글자 A30·A31·A33·A52 통과 (A32 그리다 만 화면은 눈으로)'); return 0
+        if not bad: print('썸네일 글자 A30·A31·A33·A52·A88·A101 통과 (A32 그리다 만 화면은 눈으로)'); return 0
         print('썸네일 글자 AI 티'); [print('  ', b) for b in bad]; return 5
     if a[0] == 'script':
         ok, per, multi, n, bad = script_check(script_text(a[1]))

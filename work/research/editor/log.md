@@ -1,3 +1,9 @@
+## 2026-11-20 07:10 · 정기 06:50 회차 — A88·A101 막힘 · kodex200·jamsilpair 표본
+- aitell.thumb_relative 새로(A88+A101 '\d+년 전'), `aitell thumb`·ytlong gate 막힘. 시험 2/2 막힘·박힌 해 통과 · 기존 meta 걸림 4편 전부 공개 끝 · humanlike --ref 정상
+- kodex200_1120(16:10): c00 '오늘까지' 뺌·c02 되풀이 줄 뺌 · AI 티 1.3→1.3 · humanlike 연속 3·AI 말 0 · stamp 306b8906
+- jamsilpair1120(22:40, auto 표본): 올해·작년 4곳→2025·2026년 · c01 괄호 기간(숫자 5개 readcheck 걸림) 뺌 · AI 티 2.5→3.8(글자 줄어 비율) · readcheck 0 · stamp 7f4fa4dd
+- 표본 반려율 2/2(문장만, 사실 0) — 둘 다 '상대 시점' 한 갈래. 카페 원고에 '올해·작년·오늘' 검사(cafe3 상대 날짜)가 날짜 없는 것만 잡아 '올해 7월 1일'은 통과함 → 다음 회차 후보
+
 - 2026-11-20 02:32 · H-5 screen_text 서명 3759b096(PD h5props·lfrender text 재추출 뒤, 재추출본=현재 파일, orig1120yl 대비 14줄 숫자만, script dbe004cb와 일치) · 이전 02bee9d2 *.pre1120
 - 2026-11-20 02:19 · H-5 재서명(PD 투입, youtube-loop 00:45 요청): say_v2 13줄·script 같은 줄+자막 숫자 diff *.orig1120yl 대비 요청 목록뿐·facts '11/20 갱신' 일치 · aitell script 90.2/1000·13% 통과·말 습관·spoken ban 0 · 말 고침 0 · CRLF→LF(내용 같음) · sha dbe004cb say ea1b1450(이전 f8ddd78a/d2424fca, *.pre1120) · lfvoice signed_ok 빈 값 · screen_text 서명 안 함: video/h5.json이 아직 옛 말(서른두·7백·40%)이라 lfrender text 재추출과 다름 → PD가 h5props 뒤 lfrender text 하면 그때 서명
 ## 2026-11-19 17:09 · 정기 16:50 회차 — 범위 축소(배당·지수·부동산) 반영 · hanam1120 사람 눈 표본 · ndxspx1118 표본

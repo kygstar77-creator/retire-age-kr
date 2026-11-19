@@ -281,6 +281,14 @@ def gate(ep):
         # A-15(근거 바꿈): 8분 = 유튜브 중간 광고 자격 "8 minutes or longer"(answer/6175006) + 경쟁 28편 중앙 19.4분·사분위 14~31분. 길이는 내용에 맞게(141805) — 채우려고 늘리지 않는다.
         if len(a_) / sr_ < 8 * 60: bad.append(f'롱폼 길이 {len(a_)/sr_/60:.1f}분 — 8분 이상(중간 광고 자격, 경쟁 중앙 19분). research.md 질문·함정·누구라면을 대본에 더 담는다(억지로 채우지 않음)')
         if fb: bad.append('완성 영상 치직 의심 ' + ', '.join(f'{s/sr_:.1f}초' for s, _, _ in fb[:8]) + ' — 그 자리 1초를 들어 보고(제미나이 듣기 또는 사람) 말소리가 아니면 문장 wav를 고쳐 다시 렌더')
+    # A88·A101 썸네일 상대 시점 막힘(11/20 editor, benchmark-loop 지시 — 경고로 K-1·KOSPI-1 두 번 나감): meta thumb_text* 칸을 줄마다 본다
+    try:
+        import aitell as _ai2
+        tl = [x.strip() for k, v in m.items() if (k.startswith('thumb_text') or k == 'thumb_pill') and not re.search(r'_(prev|by|tags)', k) and isinstance(v, str) for x in v.split('/')]
+        rel = _ai2.thumb_relative([x for x in tl if x])
+        if rel: bad.append('썸네일 글자 ' + ' · '.join(rel[:3]) + ' — py -3.12 work/aitell.py thumb "<줄>"')
+    except Exception as e:
+        bad.append(f'썸네일 상대 시점 검사 못 돌림({e})')
     # 목소리 한결같음 — 10/3 22시 사장님 "뒤쪽에 다른 목소리". f0 ±12%·빠르기 1.0·한 날 녹음(lfvoice check 규칙 3·4)
     if os.path.exists(os.path.join(ep, 'voice.json')):
         import io, contextlib, importlib; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); lfv = importlib.import_module('lfvoice')

@@ -1,0 +1,29 @@
+{
+ "name": "h2s_jamsil",
+ "ep": "H-2",
+ "from_long": "_fTgGr0dR0I",
+ "mp4": "work/video/out/h2s_jamsil_c1_ds.mp4",
+ "publishAt": "2026-11-20T19:20:00+09:00",
+ "publish_plan": "11/19 사장님 범위(배당·지수·부동산) 뒤 빈 11/20 19:20 칸 — 범위 안 미공개 쇼츠 0편이라 공개된 H-2 롱폼에서 새로 자름 · 부동산 축 · 앞뒤 칸 비어 있음, 11/25 h4s_new15와 닷새 띄움",
+ "title": "잠실주공5단지, 새 아파트 리센츠보다 한 채 9억 비쌌다 #shorts",
+ "description": "전체 계산: https://youtu.be/_fTgGr0dR0I (잠실·대치·반포 오래된 단지와 새 아파트 실거래가)\n\n잠실동 84㎡대 1년 실거래 가운데 값으로 보면, 1978년에 지은 주공5단지가 한 채 약 43억, 2008년에 지은 리센츠가 약 34억이었어요. 같은 넓이(평)당 값으로는 5단지가 30% 넘게 높았어요.\n5단지 집이 82㎡쯤으로 리센츠 85㎡보다 조금 작아서, 한 채 값 차이는 30%가 안 돼요. 달마다 봐도 5단지 거래가 더 비쌌고, 5단지는 1~3층도 42억쯤이었어요. 왜 이렇게 값이 매겨졌는지 적은 정부 자료는 없어요. 지나간 거래 값이고, 사거나 팔라는 권유가 아닙니다.\n\n출처: 국토교통부 아파트 매매 실거래가(계약 2025.11~2026.10, 2026-11-19 다시 받아 같은 값 확인) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — Altaf Shah · PUWOOK Kwak · Roman Skrypnyk · Site Engine · what doidonow\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #잠실주공5단지 #리센츠",
+ "tags": "잠실주공5단지,리센츠,잠실 아파트 실거래가,잠실 5단지,잠실 아파트 시세",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/h2s_jamsil/cover_1119.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "nMVEVTbVYtk",
+ "uploaded_at": "2026-11-19 19:11:59",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-20T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

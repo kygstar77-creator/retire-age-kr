@@ -77,6 +77,13 @@
 | 11월 국회 조세소위 심사 중, 통과 전 | 11/11 조세소위 '최종 의결은 조세소위 마지막 날' · 9/3 이전 정기국회 제출 | 2차 S7 https://www.koreancenter.or.kr/news/articleView.html?idxno=1438059 · S6 https://www.lawtimes.co.kr/news/articleView.html?idxno=224469 |
 
 # 올리기 전 확인
+- 2026-11-19 12:24 firemap-write(발행 날, 12:40 칸)
+- 다시 연 주소: https://www.law.go.kr/법령/소득세법/제59조의3 (시행 2026.7.1, 600만·900만·12/15%·③④ ISA 전환 10%·300만원 본문 그대로) · https://finlife.fss.or.kr/finlife/svings/fdrmDpst/list.do (10월 공시 그대로, 11월 공시 아직) · https://www.etoday.co.kr/news/view/2647056 · https://view.asiae.co.kr/article/2026111210462086412 (조세소위 최종 의결은 '마지막 날' 예정, 11/19까지 의결 보도 없음)
+- 기준일: 2026-11-19 (소득세법 시행 2026.7.1 본문 · 예금 10월 공시)
+- 바뀐 것: 없음 — 한도·공제율·예금 중앙 3.29% 그대로, 조세소위 아직 의결 전(11/19 검색). c05 기준일만 11월 18일→19일
+- 새로 찾은 것: 조세소위원장 '최종 의결은 조세소위 마지막 날'(이투데이·아시아경제 11/12) — 본문 '아직 통과 전' 유지 근거
+
+# 올리기 전 확인(작성 날)
 - 2026-11-18 14:5x firemap-write-b(조사·작성 날, 발행 전날 — 발행 회차 write 12:10이 다시 열 것)
 - 다시 연 주소: https://www.law.go.kr/법령/소득세법/제59조의3 · https://www.law.go.kr/법령/소득세법/제61조 · https://www.law.go.kr/법령/소득세법/제20조의3 · https://finlife.fss.or.kr/finlife/svings/fdrmDpst/list.do · https://www.taxtimes.co.kr/mobile/article.html?no=276259 · https://www.lawtimes.co.kr/news/articleView.html?idxno=224469 · https://www.koreancenter.or.kr/news/articleView.html?idxno=1438059 · https://blog.naver.com/cta_yeongjin/224478819317 · https://blog.naver.com/ha_kaug/224480135440
 - 기준일: 국가법령정보센터 소득세법(시행 2026.7.1) 2026-11-18 조회 · 금감원 정기예금 2026년 10월 공시(11/18 받음)

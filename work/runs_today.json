@@ -37,6 +37,16 @@
     "url": "https://cafe.naver.com/firemap/449"
    },
    "note": "10:10 칸 gwanggyo1118 — 발행 날 국토부 실거래 6개월 다시 받아 calc diff(광교 숫자 변화 0, 영통동 +2건만) 날짜 2곳 11/19로 · 첫 시도 10:00 발행기 ㉤(질문·고민 게시판 안내 하루 2칸, 오늘 5칸)에 막혀 gwanggyo·songdo 문장 뺌·ndxspx 고르기 질문으로 바꿔 재서명 → 10:41 #449 verify OK 1650/1650·사진 3/3 · 블로그 정지(DAY_CAP·9/24 무색인) · 다음 칸 준비: jt1pair1120(11/20 12:40 JT-1 짝 글) 관문 통과 — 원문 5곳 11/19 다시 받음·국가데이터처 기대여명 새로 확인, 경쟁 6편, crosscheck 2회(Gemini, 사실 지적 6 중 반영 3·유지 3, 말투 반영 12), selfcheck 사실 0, 이해 3차 9명 통과 · 개선: editgate stamp가 같은 날 게시판 안내 반복(㉤)을 찍을 때 막도록 추가"
+  },
+  {
+   "hour": 12,
+   "ts": "12:50",
+   "blog": null,
+   "cafe": {
+    "title": "연금저축 12월에 몰아 넣으면 매달과 뭐가 다를까?",
+    "url": "https://cafe.naver.com/firemap/450"
+   },
+   "note": "12:40 칸 pendec1118 · 올리기 전 확인 11/19: 소득세법 59조의3 본문 브라우저로 다시 엶(lawweb·DRF 막힘)·조세소위 의결 보도 없음(검색 2회)·숫자 변화 0, 기준일만 11/19 · aitell 1.4·readcheck 0·editgate auto 4c7570d8 · verify OK 1575/1575·사진 3/3 · 블로그 정지 · 11/20 16:10 TBD 주제 검증 1차 slots note · 개선: 없음(lawweb 구조 바뀜은 tools 기록)"
   }
  ]
 }

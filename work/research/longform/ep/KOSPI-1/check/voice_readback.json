@@ -5,17 +5,16 @@
   "say": "안녕하세요, 파이어맵입니다. [pause short] 오늘은 코스피 이야기입니다.",
   "audio": "audio/kospi-1/ae258d0f92d3fd5d.wav",
   "heard": [
-   "안녕하세요 타이어맵입니다 오늘은 코스피 이야기입니다",
-   null
+   "안녕하세요. 타이어맵입니다. 오늘은 코스피 이야기입니다.",
+   "안녕하세요타임맵입니다오늘은코스피이야기입니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.94,
+  "flag": "합의오독(0.94/0.96 파→타/타임)"
  },
  {
   "at": "0:1",
@@ -24,16 +23,15 @@
   "audio": "audio/kospi-1/a067fc3a288ee05e.wav",
   "heard": [
    "올해 코스피가 하루에 5% 넘게 빠진 날 몇 번이었을까요?",
-   null
+   "올해코스피가하루에5%넘게빠진날몇번이었을까요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "0:2",
@@ -42,16 +40,15 @@
   "audio": "audio/kospi-1/8da58153716f9ba5.wav",
   "heard": [
    "23번입니다.",
-   null
+   "23번입니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.73,
-  "pair": null,
-  "flag": "밀림의심(0.73) 받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": "밀림의심(0.73)"
  },
  {
   "at": "0:3",
@@ -60,16 +57,15 @@
   "audio": "audio/kospi-1/a782b54e97a3a296.wav",
   "heard": [
    "1995년부터 작년까지 기록을 다 뒤져봤어요.",
-   null
+   "1995년부터작년까지기록을다뒤져봤어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "0:4",
@@ -78,16 +74,15 @@
   "audio": "audio/kospi-1/2704c618b6b4f433.wav",
   "heard": [
    "그 기간을 다 더한 게 57번이었습니다.",
-   null
+   "그기간을다더한게57번이었습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "0:5",
@@ -96,16 +91,15 @@
   "audio": "audio/kospi-1/1e2a2a0ffa8e7d54.wav",
   "heard": [
    "31년 동안은 한 해에 두 번이 채 안 되던 일이에요.",
-   null
+   "31년동안은한해에2번이채안되던일이에요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.97,
+  "flag": ""
  },
  {
   "at": "0:6",
@@ -114,16 +108,15 @@
   "audio": "audio/kospi-1/841b97c56c562a9e.wav",
   "heard": [
    "IMF 외환위기가 덮친 해에도 9번이었습니다.",
-   null
+   "외환위기가덮친해에도9번이었습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "0:7",
@@ -132,16 +125,15 @@
   "audio": "audio/kospi-1/a1b3fa3c1567bc8a.wav",
   "heard": [
    "먼저 두 가지를 짚을게요.",
-   null
+   "먼저2가지를짚을게요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.95,
+  "flag": ""
  },
  {
   "at": "0:8",
@@ -150,16 +142,15 @@
   "audio": "audio/kospi-1/c427cca27f22ca8f.wav",
   "heard": [
    "여기서 하루는 전날 장이 끝난 숫자와 그날 장이 끝난 숫자를 비교한 거예요.",
-   null
+   "여기서하루는전날장이끝난숫자와그날장이끝난숫자를비교한거예요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "0:9",
@@ -167,17 +158,16 @@
   "say": "그리고 이건 몇 번이었나를 센 거지, 위기가 얼마나 컸나를 잰 게 아닙니다.",
   "audio": "audio/kospi-1/59153ddfc9e665e6.wav",
   "heard": [
-   "그리고 이건 몇 번째였나를 센 거지 위기가 얼마나 컸나를 센 게 아닙니다.",
-   null
+   "그리고 이건 몇 번이었나를 센 거지 위기가 얼마나 컸나를 센 게 아닙니다.",
+   "그리고이건몇번이었나를센거지위기가얼마나컸나를젠게아닙니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.9,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 0.97,
+  "pair": 0.93,
+  "flag": ""
  },
  {
   "at": "0:10",
@@ -186,16 +176,15 @@
   "audio": "audio/kospi-1/2d4a9909233613a7.wav",
   "heard": [
    "오늘은 지난 기록만 봅니다.",
-   null
+   "오늘은지난기록만봅니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "0:11",
@@ -204,16 +193,15 @@
   "audio": "audio/kospi-1/9f912ac89de15c65.wav",
   "heard": [
    "예측은 안 해요. 그건 누구나 맞출 수 없으니까요.",
-   null
+   "예측은안해요그건누구도맞출수없으니까요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.89,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 0.95,
+  "pair": 0.95,
+  "flag": "합의오독(0.95/0.95 도→나/출 힐→출/출)"
  },
  {
   "at": "0:12",
@@ -222,16 +210,15 @@
   "audio": "audio/kospi-1/21854ecd29e3fa5a.wav",
   "heard": [
    "대신 매일 장 마감 숫자 8,000일이 넘는 기록을 하나하나 썼어요.",
-   null
+   "대신매일장마감숫자8000일이넘는기록을하나하나셌어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.91,
+  "flag": ""
  },
  {
   "at": "0:13",
@@ -240,16 +227,15 @@
   "audio": "audio/kospi-1/a0eb63744b0298df.wav",
   "heard": [
    "그리고 웃습니다. 이렇게 크게 빠진 다음엔 실제로 어떻게 됐을까요?",
-   null
+   "그리고묻습니다이렇게크게빠진다음엔실제로어떻게됐을까요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": ""
  },
  {
   "at": "1:0",
@@ -258,16 +244,15 @@
   "audio": "audio/kospi-1/f092946abbc0ce5c.wav",
   "heard": [
    "올해 코스피는 4,300 정도에서 시작했어요.",
-   null
+   "올해코스피는4300정도에서시작했어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "1:1",
@@ -276,16 +261,15 @@
   "audio": "audio/kospi-1/c6b7bf317dad6212.wav",
   "heard": [
    "그러다 6월 22일에 가장 높았어요.",
-   null
+   "그러다6월22일에가장높았어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "1:2",
@@ -293,17 +277,16 @@
   "say": "구천백을 넘었습니다.",
   "audio": "audio/kospi-1/4646d2c5b774d06a.wav",
   "heard": [
-   "9,100을 넘었습니다.",
-   null
+   "9100을 넘었습니다.",
+   "9100을넘었습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "1:3",
@@ -312,16 +295,15 @@
   "audio": "audio/kospi-1/7985e98f678b30a2.wav",
   "heard": [
    "그리고 11월 13일 마감은 5,290이었어요.",
-   null
+   "그리고11월13일마감은5290이었어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "1:4",
@@ -330,16 +312,15 @@
   "audio": "audio/kospi-1/1686e741fcb67256.wav",
   "heard": [
    "꼭대기에서 보면 42% 빠진 자리에요.",
-   null
+   "꼭대기에서보면42%빠진자리예요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "1:5",
@@ -348,16 +329,15 @@
   "audio": "audio/kospi-1/766d24be76090f6f.wav",
   "heard": [
    "그런데 같은 값을 연초에서 보면 23% 오른 자리입니다.",
-   null
+   "그런데같은값을연초에서보면23%오른자리입니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "1:6",
@@ -365,7 +345,7 @@
   "say": "댓글에 이런 질문이 있었어요. [pause short] 코스피 오천도 꿈 같던 게 작년인데, 지금도 많이 오른 거 아니냐고요.",
   "audio": "audio/kospi-1/392cb203b428a1eb.wav",
   "heard": [
-   "댓글에 이런 질문이 있었어요. 코스피 5000도 꿈 같던 게 작년인데 지금도 많이 오른 거 아니냐고요.",
+   "댓글에 이런 질문이 있었어요. 코스피 5000도 꿈 같던 게 작년인데지금도 많이 오른 거 아니냐고요.",
    null
   ],
   "models": [
@@ -374,8 +354,7 @@
   ],
   "sim": 0.99,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "1:7",
@@ -383,17 +362,16 @@
   "say": "어디서 재느냐에 따라 답이 정반대가 됩니다.",
   "audio": "audio/kospi-1/93e4311a82237065.wav",
   "heard": [
-   "어디서 재느냐에 따라 답이 정반대가 됩니다.",
+   "어디",
    null
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 1.0,
+  "sim": 0.2,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "밀림의심(0.20) 받아쓰기 실패"
  },
  {
   "at": "1:8",
@@ -410,8 +388,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "1:9",
@@ -419,17 +396,16 @@
   "say": "올해 스물세번은, 그전에 가장 많았던 이천년의 열한번보다도 두 배가 넘어요.",
   "audio": "audio/kospi-1/c6624eb341de2922.wav",
   "heard": [
-   "올해 스물세 번은 그전에 가장 많았던 2000년의 열한 번보다도 두 배가 넘어요.",
+   "올해 23은 그 전에 가장 많았던 2000년의 11번보다도 두 배가 넘어요.",
    null
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.97,
+  "sim": 0.98,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "1:10",
@@ -437,7 +413,7 @@
   "say": "기준을 더 세게 잡아 볼게요. [pause short] 하루 팔퍼센트 이상 빠진 날만 셉니다.",
   "audio": "audio/kospi-1/9e9a014945622072.wav",
   "heard": [
-   "기준을 더 세게 잡아볼게요. 하루 8% 이상 빠진 날만 셉니다.",
+   "기준을 더 세게 잡아 볼게요. 하루 8% 이상 빠진 날만 셉니다.",
    null
   ],
   "models": [
@@ -446,8 +422,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "1:11",
@@ -455,17 +430,16 @@
   "say": "올해만 다섯번이에요.",
   "audio": "audio/kospi-1/40a2fec7175f6b97.wav",
   "heard": [
-   "올해만 다섯 번째에요.",
+   "올해만 다섯 번이에요.",
    null
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.89,
+  "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "1:12",
@@ -482,8 +456,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "1:13",
@@ -500,8 +473,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "1:14",
@@ -518,8 +490,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "1:15",
@@ -527,17 +498,16 @@
   "say": "원인 이야기는 여기까지만 할게요.",
   "audio": "audio/kospi-1/c6285f52ea31a3a8.wav",
   "heard": [
-   "어린 이야기는 여기까지 만 할게요.",
+   "원인 이야기는 여기까지 만 할게요.",
    null
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.86,
+  "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:0",
@@ -545,17 +515,16 @@
   "say": "올해 뉴스에 자주 나온 말이 있죠. [pause short] 서킷브레이커입니다.",
   "audio": "audio/kospi-1/c0282b56b6485817.wav",
   "heard": [
-   "올해 뉴스에 자주 나오는 말이 있죠? 서킷 브레이커입니다.",
+   "올해 뉴스에 자주 나온 말이 있죠. 서킷브레이커입니다.",
    null
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.93,
+  "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:1",
@@ -572,8 +541,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:2",
@@ -590,8 +558,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:3",
@@ -608,8 +575,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:4",
@@ -626,8 +592,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:5",
@@ -644,8 +609,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:6",
@@ -653,17 +617,18 @@
   "say": "이 이십분 동안은 주문을 넣어도 거래가 이뤄지지 않아요.",
   "audio": "audio/kospi-1/a20001ac1793fadc.wav",
   "heard": [
-   "이 20분 동안은 주문을 넣어도 거래가 이루어지지 않아요.",
-   null
+   "이 이십 분 동안은 주문을 넣어도 거래가 이루어지지 않아요.",
+   null,
+   "이 20분 동안은 주문을 넣어도 거래가 이루어지지 않아요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
-  "sim": 0.93,
+  "sim": 0.94,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:7",
@@ -671,7 +636,7 @@
   "say": "급할수록 생각할 시간을 벌어 주려는 장치입니다.",
   "audio": "audio/kospi-1/6bfc3c23817dfe30.wav",
   "heard": [
-   "급할수록 생각할 시간을 벌어주려는 장치입니다.",
+   "급할수록 생각할 시간을 벌어 주려는 장치입니다.",
    null
   ],
   "models": [
@@ -680,8 +645,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:8",
@@ -689,25 +653,7 @@
   "say": "비슷한 말로 사이드카가 있어요.",
   "audio": "audio/kospi-1/4e57a613180bc3a3.wav",
   "heard": [
-   "비스타 말로 사이드카가 있어요.",
-   null
-  ],
-  "models": [
-   "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
-  ],
-  "sim": 0.85,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
- },
- {
-  "at": "2:9",
-  "text": "이건 시장 전체가 아니라, 컴퓨터가 자동으로 내는 주문만 5분 동안 묶어 두는 장치예요.",
-  "say": "이건 시장 전체가 아니라, 컴퓨터가 자동으로 내는 주문만 오분 동안 묶어 두는 장치예요.",
-  "audio": "audio/kospi-1/69ba5537db2befcf.wav",
-  "heard": [
-   "이건 시장 전체가 아니라 컴퓨터가 자동으로 내는 주문만 5분 동안 묶어 두는 장치예요.",
+   "비슷한 말로 사이드카가 있어요.",
    null
   ],
   "models": [
@@ -716,8 +662,24 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
+ },
+ {
+  "at": "2:9",
+  "text": "이건 시장 전체가 아니라, 컴퓨터가 자동으로 내는 주문만 5분 동안 묶어 두는 장치예요.",
+  "say": "이건 시장 전체가 아니라, 컴퓨터가 자동으로 내는 주문만 오분 동안 묶어 두는 장치예요.",
+  "audio": "audio/kospi-1/69ba5537db2befcf.wav",
+  "heard": [
+   "이건 시상 전체가 아니라 컴퓨터가 자동으로 내는 주문만 5분 동안 묶어 두는 장치예요.",
+   null
+  ],
+  "models": [
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
+  ],
+  "sim": 0.97,
+  "pair": null,
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:10",
@@ -734,8 +696,7 @@
   ],
   "sim": 0.94,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:11",
@@ -752,8 +713,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:12",
@@ -770,8 +730,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:13",
@@ -779,17 +738,18 @@
   "say": "제도가 생긴 뒤 모두 합쳐 열일곱번째였고요.",
   "audio": "audio/kospi-1/470cb6b53bf12c25.wav",
   "heard": [
-   "제도가 생긴 뒤 모두 합쳐 17번째였고요.",
-   null
+   "제도가 생긴 뒤 모두 합쳐 1",
+   null,
+   "제도가 생긴 뒤 모두 합쳐 17번째였고요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:14",
@@ -806,8 +766,7 @@
   ],
   "sim": 0.86,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:15",
@@ -824,8 +783,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:16",
@@ -833,17 +791,16 @@
   "say": "서킷브레이커는 장이 열려 있는 동안의 숫자로 걸리고, 우리가 센 건 마감 숫자입니다.",
   "audio": "audio/kospi-1/b80f8ceb948383f7.wav",
   "heard": [
-   "서키프레이크는 장이 열려 있는 동안의 숫자로 걸리고 우리가 센 건 마감 숫자입니다.",
+   "서킷 브레이커는 장이 열려 있는 동안에 숫자로 걸리고 우리가 센 건 마감 숫자입니다.",
    null
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.91,
+  "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:17",
@@ -853,17 +810,16 @@
   "heard": [
    "그날 아침 서킷 브레이커가 걸릴 때 코스피는 8.5% 빠진 상태였어요.",
    null,
-   "그날 아침 서킷 브레이커가 걸릴 때 코스피는 8.5% 빠진 상태였어요."
+   "그날 아침 서킷브레이커가 걸릴 때 코스피는 8.5% 빠진 상태였어요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash",
-   "gemini-flash-lite-latest"
+   "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "숫자 받아쓰기 실패",
-  "batch2": true
+  "flag": "숫자 받아쓰기 실패"
  },
  {
   "at": "2:18",
@@ -880,8 +836,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:19",
@@ -898,8 +853,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:20",
@@ -916,8 +870,7 @@
   ],
   "sim": 0.84,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:21",
@@ -934,8 +887,7 @@
   ],
   "sim": 0.94,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:22",
@@ -952,8 +904,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:23",
@@ -970,8 +921,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "2:24",
@@ -988,8 +938,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:0",
@@ -1006,8 +955,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:1",
@@ -1024,8 +972,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:2",
@@ -1042,8 +989,7 @@
   ],
   "sim": 0.22,
   "pair": null,
-  "flag": "밀림의심(0.22) 받아쓰기 실패",
-  "batch2": true
+  "flag": "밀림의심(0.22) 받아쓰기 실패"
  },
  {
   "at": "3:3",
@@ -1060,8 +1006,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:4",
@@ -1078,8 +1023,7 @@
   ],
   "sim": 0.89,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:5",
@@ -1096,8 +1040,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:6",
@@ -1114,8 +1057,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:7",
@@ -1132,8 +1074,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:8",
@@ -1150,8 +1091,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:9",
@@ -1168,8 +1108,7 @@
   ],
   "sim": 0.96,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:10",
@@ -1186,8 +1125,7 @@
   ],
   "sim": 0.85,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:11",
@@ -1204,8 +1142,7 @@
   ],
   "sim": 0.97,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:12",
@@ -1224,8 +1161,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:13",
@@ -1242,8 +1178,7 @@
   ],
   "sim": 0.89,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:14",
@@ -1262,8 +1197,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "숫자 받아쓰기 실패",
-  "batch2": true
+  "flag": "숫자 받아쓰기 실패"
  },
  {
   "at": "3:15",
@@ -1280,8 +1214,7 @@
   ],
   "sim": 0.8,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:16",
@@ -1298,8 +1231,7 @@
   ],
   "sim": 0.97,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:17",
@@ -1316,8 +1248,7 @@
   ],
   "sim": 0.89,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:18",
@@ -1334,8 +1265,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:19",
@@ -1352,8 +1282,7 @@
   ],
   "sim": 0.84,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:20",
@@ -1370,8 +1299,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:21",
@@ -1390,8 +1318,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:22",
@@ -1408,8 +1335,7 @@
   ],
   "sim": 0.94,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:23",
@@ -1428,8 +1354,7 @@
   ],
   "sim": 0.9,
   "pair": null,
-  "flag": "숫자 받아쓰기 실패",
-  "batch2": true
+  "flag": "숫자 받아쓰기 실패"
  },
  {
   "at": "3:24",
@@ -1446,8 +1371,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:25",
@@ -1464,8 +1388,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "3:26",
@@ -1482,8 +1405,7 @@
   ],
   "sim": 0.97,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "4:0",
@@ -1500,8 +1422,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "4:1",
@@ -1518,8 +1439,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "4:2",
@@ -1536,8 +1456,7 @@
   ],
   "sim": 0.94,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "4:3",
@@ -1554,8 +1473,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "4:4",
@@ -1572,8 +1490,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "4:5",
@@ -1590,8 +1507,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "4:6",
@@ -1608,8 +1524,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "4:7",
@@ -1626,8 +1541,7 @@
   ],
   "sim": 0.94,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "4:8",
@@ -1644,8 +1558,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "4:9",
@@ -1662,8 +1575,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "4:10",
@@ -1680,8 +1592,7 @@
   ],
   "sim": 0.95,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "4:11",
@@ -1698,8 +1609,7 @@
   ],
   "sim": 0.97,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "4:12",
@@ -1716,8 +1626,7 @@
   ],
   "sim": 0.96,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "5:0",
@@ -1734,8 +1643,7 @@
   ],
   "sim": 0.74,
   "pair": null,
-  "flag": "밀림의심(0.74) 받아쓰기 실패",
-  "batch2": true
+  "flag": "밀림의심(0.74) 받아쓰기 실패"
  },
  {
   "at": "5:1",
@@ -1752,8 +1660,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "5:2",
@@ -1770,8 +1677,7 @@
   ],
   "sim": 0.93,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "5:3",
@@ -1788,8 +1694,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "5:4",
@@ -1806,8 +1711,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "5:5",
@@ -1824,8 +1728,7 @@
   ],
   "sim": 0.91,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "5:6",
@@ -1842,8 +1745,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "5:7",
@@ -1860,8 +1762,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:0",
@@ -1878,8 +1779,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:1",
@@ -1896,8 +1796,7 @@
   ],
   "sim": 0.88,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:2",
@@ -1914,8 +1813,7 @@
   ],
   "sim": 0.87,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:3",
@@ -1932,8 +1830,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:4",
@@ -1950,8 +1847,7 @@
   ],
   "sim": 0.93,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:5",
@@ -1968,8 +1864,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:6",
@@ -1986,8 +1881,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:7",
@@ -2004,8 +1898,7 @@
   ],
   "sim": 0.95,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:8",
@@ -2022,8 +1915,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:9",
@@ -2040,8 +1932,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:10",
@@ -2058,8 +1949,7 @@
   ],
   "sim": 0.83,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:11",
@@ -2076,8 +1966,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:12",
@@ -2094,8 +1983,7 @@
   ],
   "sim": 0.86,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:13",
@@ -2112,8 +2000,7 @@
   ],
   "sim": 0.77,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:14",
@@ -2130,8 +2017,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:15",
@@ -2148,8 +2034,7 @@
   ],
   "sim": 0.86,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:16",
@@ -2166,8 +2051,7 @@
   ],
   "sim": 0.78,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:17",
@@ -2184,8 +2068,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:18",
@@ -2202,8 +2085,7 @@
   ],
   "sim": 0.82,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "6:19",
@@ -2220,8 +2102,7 @@
   ],
   "sim": 0.94,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "7:0",
@@ -2238,8 +2119,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "7:1",
@@ -2256,8 +2136,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "7:2",
@@ -2274,8 +2153,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "7:3",
@@ -2292,8 +2170,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "7:4",
@@ -2310,8 +2187,7 @@
   ],
   "sim": 0.86,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "7:5",
@@ -2328,8 +2204,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "7:6",
@@ -2346,8 +2221,7 @@
   ],
   "sim": 0.91,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "7:7",
@@ -2364,8 +2238,7 @@
   ],
   "sim": 0.93,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "7:8",
@@ -2382,8 +2255,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "8:0",
@@ -2400,8 +2272,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "8:1",
@@ -2420,8 +2291,7 @@
   ],
   "sim": 0.95,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "8:2",
@@ -2438,8 +2308,7 @@
   ],
   "sim": 0.96,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "8:3",
@@ -2456,8 +2325,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "8:4",
@@ -2474,8 +2342,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "8:5",
@@ -2492,8 +2359,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "8:6",
@@ -2510,8 +2376,7 @@
   ],
   "sim": 0.93,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "8:7",
@@ -2528,8 +2393,7 @@
   ],
   "sim": 0.95,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "8:8",
@@ -2546,8 +2410,7 @@
   ],
   "sim": 0.95,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "8:9",
@@ -2564,8 +2427,7 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  },
  {
   "at": "8:10",
@@ -2582,7 +2444,6 @@
   ],
   "sim": 1.0,
   "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "flag": "받아쓰기 실패"
  }
 ]

@@ -7,9 +7,9 @@ sys.stdout.reconfigure(encoding='utf-8')
 O = os.path.dirname(os.path.abspath(__file__)); H = os.path.join(O, 'photo'); WORK = os.path.abspath(os.path.join(O, '..', '..', '..'))
 FONT = os.path.join(WORK, 'fonts'); W, HH = 1920, 1080; X0 = 80
 ORANGE, WHITE, INK = (255, 90, 0), (255, 255, 255), (10, 11, 14)
-BIG = ['나스닥100 13.6억', 'SCHD 6.8억']
-TOP = '15년 전 1억원 넣었다면'   # 11/18 copywriter 1초 시험 반려: '달러 기준'을 '13.6억 달러'로 오해 → 알약 바꿈, '1억원'
-PILL = '가장 크게 빠진 폭은 나스닥100이 더 컸다'   # 사실 ep/SQ-1/calc_mix_out_1112.txt 최대낙폭 SCHD 0% -32.6% vs 100% -21.5% · 권유 한 방향(3/3) 막기
+BIG = ['나스닥100만 13.6억', '반반 섞으면 10.1억']   # 11/19 4차(copywriter 11/18 18:55): '섞기' — calc_mix_out_1112 SCHD 0% 13.56억 · 50% 10.10억 (d·e판 옛 글: '나스닥100 13.6억'/'SCHD 6.8억')
+TOP = '15년 전 1억 넣었다면 · 환율 빼고'   # 11/19 copywriter 07:54: 13.6억은 달러 1억 결과라 '1억원' 취소 (옛 '15년 전 1억원 넣었다면')   # 11/18 copywriter 1초 시험 반려: '달러 기준'을 '13.6억 달러'로 오해 → 알약 바꿈, '1억원'
+PILL = '가장 크게 빠진 폭 -33% → -24%'   # 11/19 4차: calc_mix_out_1112 최대낙폭 0% -32.6% → 50% -24.0% (옛 '가장 크게 빠진 폭은 나스닥100이 더 컸다')   # 사실 ep/SQ-1/calc_mix_out_1112.txt 최대낙폭 SCHD 0% -32.6% vs 100% -21.5% · 권유 한 방향(3/3) 막기
 # 기간·'달러로 넣고 배당 재투자·원화 환산'은 설명 첫 줄로(youtube-loop)
 
 
@@ -69,5 +69,9 @@ if __name__ == '__main__':
     # make('sq1_b.png', 'laptop_chart_6172578.jpg', 0.3, band=0, tshade=(380, 120), sw=15, tsw=9)
     # make('sq1_c.png', 'chart_point_5833757.jpg', 0.2, band=150, tshade=(380, 120), sw=13, tsw=8)
     # 11/18 고친 판(copywriter 14:26): 새 알약·흰 줄 '1억원'·배경 흐리게 — d는 흐림 8, e는 흐림 14+알약 조금 크게
-    make('sq1_d.png', 'chart_point_5833757.jpg', 0.2, band=150, tshade=(380, 120), sw=13, tsw=8, blur=8)
-    make('sq1_e.png', 'chart_point_5833757.jpg', 0.2, band=170, tshade=(380, 140), sw=13, tsw=8, blur=14, pk=0.92)
+    # make('sq1_d.png', 'chart_point_5833757.jpg', 0.2, band=150, tshade=(380, 120), sw=13, tsw=8, blur=8)
+    # make('sq1_e.png', 'chart_point_5833757.jpg', 0.2, band=170, tshade=(380, 140), sw=13, tsw=8, blur=14, pk=0.92)
+    # 11/19 4차: 섞기 문구 — f는 e 그대로, g는 알약 더 크게(168 안 읽힘 3/3), h는 다른 사진
+    make('sq1_f.png', 'chart_point_5833757.jpg', 0.2, band=170, tshade=(380, 140), sw=13, tsw=8, blur=14, pk=0.92)
+    make('sq1_g.png', 'chart_point_5833757.jpg', 0.2, band=170, tshade=(420, 150), sw=13, tsw=8, blur=14, pk=1.12, top_size=96)
+    make('sq1_h.png', 'laptop_chart_6172578.jpg', 0.3, band=170, tshade=(420, 150), sw=13, tsw=8, blur=10, pk=1.12, top_size=96)

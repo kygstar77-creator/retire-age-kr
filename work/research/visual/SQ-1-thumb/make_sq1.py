@@ -38,7 +38,8 @@ def fit(d, t, size, w, maxw, floor=40):
     return size
 
 
-def make(out, pic, ya, xa=0.5, zoom=1.0, band=235, tshade=(380, 210), targets=(0.86, 0.80), ls=1.10, hmax=0.45, top_size=104, sw=6, tsw=5, blur=0, pk=0.80):
+def make(out, pic, ya, xa=0.5, zoom=1.0, band=235, tshade=(380, 210), targets=(0.86, 0.80), ls=1.10, hmax=0.45, top_size=104, sw=6, tsw=5, blur=0, pk=0.80, top=None):
+    TOP = top or globals()['TOP']
     im = photo(pic, y_anchor=ya, x_anchor=xa, zoom=zoom)
     if blur: im = im.filter(ImageFilter.GaussianBlur(blur))   # 11/18: 배경 모니터 숫자가 답 숫자와 섞여 읽힘 → 흐리게
     d0 = ImageDraw.Draw(im)
@@ -72,6 +73,11 @@ if __name__ == '__main__':
     # make('sq1_d.png', 'chart_point_5833757.jpg', 0.2, band=150, tshade=(380, 120), sw=13, tsw=8, blur=8)
     # make('sq1_e.png', 'chart_point_5833757.jpg', 0.2, band=170, tshade=(380, 140), sw=13, tsw=8, blur=14, pk=0.92)
     # 11/19 4차: 섞기 문구 — f는 e 그대로, g는 알약 더 크게(168 안 읽힘 3/3), h는 다른 사진
-    make('sq1_f.png', 'chart_point_5833757.jpg', 0.2, band=170, tshade=(380, 140), sw=13, tsw=8, blur=14, pk=0.92)
-    make('sq1_g.png', 'chart_point_5833757.jpg', 0.2, band=170, tshade=(420, 150), sw=13, tsw=8, blur=14, pk=1.12, top_size=96)
-    make('sq1_h.png', 'laptop_chart_6172578.jpg', 0.3, band=170, tshade=(420, 150), sw=13, tsw=8, blur=10, pk=1.12, top_size=96)
+    # make('sq1_f.png', 'chart_point_5833757.jpg', 0.2, band=170, tshade=(380, 140), sw=13, tsw=8, blur=14, pk=0.92)
+    # make('sq1_g.png', 'chart_point_5833757.jpg', 0.2, band=170, tshade=(420, 150), sw=13, tsw=8, blur=14, pk=1.12, top_size=96)
+    # make('sq1_h.png', 'laptop_chart_6172578.jpg', 0.3, band=170, tshade=(420, 150), sw=13, tsw=8, blur=10, pk=1.12, top_size=96)
+    # 11/19 5차(copywriter 15:14 — 4차 반려: 13.6억이 원으로 읽힘 3/3·'환율 빼고' 뜻 제각각): 흰 줄만 바꿈, 큰 글·알약 f 그대로
+    #   i = 1위 '15년 전 달러로 1억 넣었다면' · j = 2위 '15년 전 1억 달러 넣었다면' · k = i 문구 + 알약 큰 판(g 크기, 168 안 읽힘 대비)
+    make('sq1_i.png', 'chart_point_5833757.jpg', 0.2, band=170, tshade=(380, 140), sw=13, tsw=8, blur=14, pk=0.92, top='15년 전 달러로 1억 넣었다면')
+    make('sq1_j.png', 'chart_point_5833757.jpg', 0.2, band=170, tshade=(380, 140), sw=13, tsw=8, blur=14, pk=0.92, top='15년 전 1억 달러 넣었다면')
+    make('sq1_k.png', 'chart_point_5833757.jpg', 0.2, band=170, tshade=(420, 150), sw=13, tsw=8, blur=14, pk=1.12, top_size=96, top='15년 전 달러로 1억 넣었다면')

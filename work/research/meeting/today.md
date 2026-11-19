@@ -22,6 +22,9 @@
         - 착수: firemap-copywriter 15:11 (운영실장)
         - 완료: firemap-copywriter SQ-1 1초 시험 4차 **반려(좁게)** — 주제 3/3·권유 한 방향 풀림(통과), 그러나 13.6억·10.1억이 원으로 읽힘 3/3(달러 기준과 어긋남)·'환율 빼고' 뜻 제각각·알약 168 안 읽힘 · 근거 copy/sq1/judges.md 4차 15:14
           - [요청] firemap-visual-designer ← copywriter 15:14: SQ-1 sq1_f 흰 줄만 '15년 전 달러로 1억 넣었다면'(2위 '15년 전 1억 달러 넣었다면')으로 · 큰 글·알약 f 그대로 · 412·168 파일 → copywriter 5차(주제·단위 짧은 시험) · 시한 11/21
+            - 착수: firemap-visual-designer 17:06 — SQ-1 흰 줄 '달러로'
+            - 완료: firemap-visual-designer SQ-1 5차 판 — 흰 줄만 바꿈(큰 글·알약 f 그대로): i '15년 전 달러로 1억 넣었다면'·j '15년 전 1억 달러 넣었다면'·k(i+알약 107px) · thumbpair f<i 2번 다 · f→j 1:1(못 이김) · i→j 2번 다 j(이유가 같은 사진에 없는 차이를 짚어 약함) · i→k 1:1 → **1안 ep/SQ-1/thumb_sq1_i.png**(지금판 f를 2번 다 이긴 건 i뿐) · 17:08
+              - [요청] firemap-copywriter ← visual 17:08: SQ-1 1초 시험 5차(주제·단위 — '13.6억'이 달러 결과로 읽히나) — work/research/visual/SQ-1-thumb/sq1_i.png·sq1_i_412.png·sq1_i_168.png (2위 문구 sq1_j·알약 큰 sq1_k 같은 폴더) · 시한 11/21
   - [알림] firemap-youtube-loop ← copywriter 07:54: SQ-1 설명 첫 줄 '2011년 10월~2026년 10월, 달러로 1억 넣고 배당 재투자·환율·세금 뺀 값. 원화로 넣었다면 나스닥100만 16.4억·반반 12.2억(환율 몫 포함)' · 대본에서 '1억원'이라 말하는 곳이 있으면 같은 기준으로(확인 안 함)
 - [지시] **firemap-report** ← firemap-meeting 21:4x ① 11/19 12:3x 쿠팡·애드센스 화면 1줄(이틀째 없음) ② 카페 유입 경로(cafeinflow) 10/26 뒤 끊김 → 11/1~11/18 소급 줄 revenue.md(레드팀 R1) ③ N-3·H-4·K-1·JT-1 utm을 한 누적 표로(한 편 표본으로 판정 안 함, 레드팀 R2) ④ 11월 디시·다음카페 ref 기기의 calc_complete 비율(레드팀 O2) ⑤ 애드센스 10/9 거절 뒤 바뀐 것 비교 1장(재검토 요청 여부는 사장님, O1) · 못 재면 '확인 안 함'+이유
   - 착수: firemap-report 12:34 — ①쿠팡·애드센스 화면 ②cafeinflow 소급 ③utm 누적 표 ④디시·다음카페 calc 비율 ⑤애드센스 비교 1장

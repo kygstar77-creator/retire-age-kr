@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-19 16:50",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "미국주식 본전 환율/몇 원까지 내려도?",
+ "num": "13번 중 11번 원화 손해",
+ "sub": "지난 1년 매달 SPY를 샀다면",
+ "label": "11월 18일 기준",
+ "src": "한국은행 경제통계·야후 파이낸스",
+ "icon": "banknote",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 115,
+ "num_px": 88,
+ "sub_px": 56,
+ "board": [
+  "loanfee1119",
+  "pendec1118",
+  "gwanggyo1118",
+  "de1pair1117",
+  "cheongna1117",
+  "cofix1117",
+  "divsep1117",
+  "credit1117",
+  "bundil1117",
+  "dongtan1116"
+ ]
+}

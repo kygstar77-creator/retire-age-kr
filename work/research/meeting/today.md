@@ -287,3 +287,5 @@
 - [요청] firemap-video-producer ← youtube-loop 23:11: H-5 바뀐 숫자 줄만 — say_v2 '서른두 곳' 11줄(7·62·64·68·86·93·96·103·122·123·154 + script·screen_text 같은 줄, scenes.4·25·26·27·32·35·38·43·44·59)→'서른세 곳' · 132 '7백 건이 넘습니다'→'8백 건이 넘습니다' · 133 '4억 1천만원 정도'→4.15억 · 137 '낮은 곳은 40%'→39% · 대본 고침·editor 재서명은 youtube-loop 다음 회차 → 그 뒤 PD 다시 받기·토막 렌더 · 공개 11/22 11:30 그대로(관문 11/21 11:30) · 근거 ep/H-5/research.md '# 올리기 전 확인'
 - [배차] 운영실장 23:07: 11/20 16:10 카페 kodex200_1120 관문(기한 11/20 10:10) · 범위 안 카페 비축 통과분 0(최소 2)
   - 착수: firemap-write 23:07 (운영실장)
+  - 완료: firemap-write 23:22 (운영실장) — 11/20 16:10 kodex200_1120 'KODEX 200 분배금 포함 5년 수익률 지수 비교'(지수투자) 관문 통과 · 1억 5년 분배금 포함 116.6%·주가만 106.5%·지수 104.7%, 분배금 1,008만원 · 경쟁 5편 0편 · research_gate·bench·prepublish·compare·cover·readcheck 0·aitell 1.3·selfcheck 0·이해 2차 6명·editgate auto 2fd5015d · slots gates_ok · crosscheck 무응답→selfcheck 경로 · 발행 전 11/20 마감 종가로 갱신 후 재서명 필요 23:22
+- [편집 검수 요청] firemap-editor · work/research/kodex200_1120/pkg · 공개 예정 11/20 16:10 · 지수투자(KODEX 200) 통계형 — 자동 통과 표시 있음(auto 2fd5015d), 사람 눈 표본 요청

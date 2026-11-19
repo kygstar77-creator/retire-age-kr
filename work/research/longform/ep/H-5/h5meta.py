@@ -12,7 +12,7 @@ P = json.load(open(os.path.join(VID, 'h5.json'), encoding='utf-8'))
 V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
 MP = os.path.join(EP, 'meta.json')
 m = json.load(open(MP, encoding='utf-8'))
-m['chapter_titles'] = ['결론부터', '처음 보시는 분을 위해', '5년 흐름, 고점·바닥·지금', '단지 서른두 곳, 얼마나 돌아왔나',
+m['chapter_titles'] = ['결론부터', '처음 보시는 분을 위해', '5년 흐름, 고점·바닥·지금', '단지 서른세 곳, 얼마나 돌아왔나',
                        "'반값'과 '6~70%'는 어디서 나왔나", '전세는 매매의 몇 %', '직접 확인하는 법', '정리']   # script.md ## 제목·toc '우리 목차'
 heads = m['chapter_titles']
 starts, a = [0], 0
@@ -27,13 +27,13 @@ assert all(b[0] - a_[0] >= 10 for a_, b in zip(chapters, chapters[1:])), chapter
 CH = '\n'.join(f"{fmt(st)} {h}" for st, h in zip(starts, heads))
 
 FIRST2 = ["송도동 아파트 84㎡대 실거래를 같은 잣대(중간 가격)로 세어 보니, 고점 1년(2021년 7월~2022년 6월) 9억에서 2026년 7~10월 7억 4천만원, 고점의 82%예요.",
-          "단지 32곳은 71~97%였고, 가장 낮았던 1년보다는 10% 높아요. '반값'·'6~70%'라는 말이 어디서 나왔는지, 전세는 매매의 몇 %인지도 국토교통부 원자료로 셌습니다."]
+          "단지 33곳은 71~97%였고, 가장 낮았던 1년보다는 10% 높아요. '반값'·'6~70%'라는 말이 어디서 나왔는지, 전세는 매매의 몇 %인지도 국토교통부 원자료로 셌습니다."]
 SITE = '파이어맵: https://firemap.kr/?utm_source=youtube&utm_medium=description&utm_campaign=h-5'
 DIS = '지나간 거래 값이고, 특정 단지를 사거나 팔라는 뜻이 아닙니다.'
 tpl = m['desc_tpl']
 old2 = tpl.split('\n\n', 1)[0]
 tpl = '\n'.join(FIRST2) + '\n\n' + tpl.split('\n\n', 1)[1]
-tpl = tpl.replace('단지 30곳 전체 표', '단지 32곳 전체 표')
+tpl = tpl.replace('단지 30곳 전체 표', '단지 33곳 전체 표')
 if 'firemap.kr' not in tpl:
     tpl = tpl.replace('(카페): {CAFE}\n', '(카페): {CAFE}\n' + SITE + '\n', 1)
 tpl = tpl.replace('시세 설명이고, 특정 단지를 사거나 팔라는 권유는 아니에요.', DIS)

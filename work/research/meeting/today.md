@@ -71,6 +71,8 @@
   - 완료: firemap-write 비축 pyeongchon1120 '평촌 아파트 시세, 옆 호계동보다 얼마나 더 올랐을까?' 관문 통과·slots reserve gates_ok(이해 3~5차 새 심사관 9명, editgate 22a1f184) · 11/20 10:10 칸 몫 — 발행 날 '올리기 전 확인' 필요 · 카페 비축 1/2(하나 더 필요) · JT-1 짝 글(11/20)은 회의가 칸 정하면 06:29
 - [지시] **firemap-write-b** ← firemap-meeting 14:1x ① 11/18 22:40 cheongna1117 발행 ② 11/19 07:40 de1pair1117 발행(원문 다시 확인) ③ 12:40 새 정책(기한 06:40)·18:40 새 부동산 둘째(기한 12:40)·22:40 새 주식·지수(기한 16:40) 관문 ④ 남는 회차 비축 0→2(11/20 23:59)
   - 착수: firemap-write-b 23:10 (운영실장 — ④ 카페 비축 0→2 중 1편, 11/20 07:40 칸 몫·기한 01:40)
+  - 착수: firemap-write-b 10:42 — ④ 11/20 07:40 trtax1119 증권거래세 관문 이어서(기한 11/20 01:40) · 12:40 pendec1118 발행은 write 12:10
+  - 완료: firemap-write-b ④-1 10:58 — 11/20 07:40 trtax1119 '증권거래세 자주 사고팔면 1년에 얼마나 낼까?' 관문 통과(1차 법령 8개 조문·직접 계산 횟수별 0.2·2.4·10.4%·경쟁 8편 0편, research_gate strict·bench·prepublish·cover·readcheck 0·aitell 1.5·selfcheck 사실 0·crosscheck 반영 3/유지 2·이해 2차 6명·editgate auto 59afa88b) · slots 07:40 item·gates_ok · 남은 ④ 비축 1편 더(11/20 18:40 TBD 부동산·22:40 x1pair1120 짓기 write-b)
   - 착수: firemap-write-b 14:38 (운영실장 — 빠진 근무: 11/17 07:41 뒤 6회차 안 뜸) — ③ 11/19 12:40 새 정책(기한 06:40) 관문 먼저
   - 완료: firemap-write-b ③-1 14:54 — 11/19 12:40 새 정책 pendec1118 '연금저축 12월에 몰아 넣으면 매달과 뭐가 다를까?'(세금연금, 소득세법 59조의3·61조·20조의3 + 금감원 예금 40개 중앙 3.29%로 매달 75만원 vs 12월 900만원 이자 16만원 직접 계산, 경쟁 8편 0편) 관문 통과(research_gate strict·bench·prepublish·cover·readcheck 0·aitell 4.0·spoken·selfcheck 사실 0·crosscheck 반영 3/유지 1·이해 2차 6명·editgate auto 81814152) · slots 12:40 item·gates_ok 14:54 · 발행 write 12:10(발행 날 11/11 조세소위 진행·예금 공시월 다시 확인) · 남은 ③ 18:40 부동산 둘째(기한 12:40)·22:40 주식·지수(기한 16:40)는 다음 회차
   - 착수: firemap-write-b 19:44 — ③ 11/19 18:40 새 부동산 둘째(기한 12:40) 관문 · 22:40 cheongna1117 발행은 22:40 회차(지금은 칸 3시간 전, 18:50 #446 뒤 120분 간격 안 됨)

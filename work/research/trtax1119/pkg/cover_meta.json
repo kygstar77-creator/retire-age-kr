@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-11-19 10:56",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "증권거래세 0.20%",
+ "num": "일주일 한 번씩 1년 104만원",
+ "sub": "주가 그대로 1천만원 사고팔면",
+ "label": "2026년 세율",
+ "src": "증권거래세법 시행령 · 직접 계산",
+ "icon": "receipt",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 122,
+ "num_px": 83,
+ "sub_px": 62,
+ "board": [
+  "gwanggyo1118",
+  "de1pair1117",
+  "cheongna1117",
+  "cofix1117",
+  "divsep1117",
+  "credit1117",
+  "bundil1117",
+  "dongtan1116",
+  "coinyu1116",
+  "n3pair1116"
+ ]
+}

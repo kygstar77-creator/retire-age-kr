@@ -1,0 +1,29 @@
+{
+ "name": "h2s_banpo",
+ "ep": "H-2",
+ "from_long": "_fTgGr0dR0I",
+ "mp4": "work/video/out/h2s_banpo_c1_ds.mp4",
+ "publishAt": "2026-11-23T19:20:00+09:00",
+ "publish_plan": "11/20 07:2x PD: 11/23 19:20 TBD 칸(관문 기한 11/23 07:20) — 회의 11/19 21:5x 지시 · 11/21·22가 D-ETF-1 연속 2편이라 배당 축(D-ETF-1) 3편째는 안 됨 → 부동산 축 H-2 · h2s_renew(11/4)와 19일, h2s_jamsil(11/20)과 사흘 띄움 · 다른 질문(낙폭·분배율 ↔ 같은 달 거래 값 차이)",
+ "title": "래미안원베일리 84㎡, 같은 달 거래가 18억 차이 났다 #shorts",
+ "description": "전체 계산: https://youtu.be/_fTgGr0dR0I (잠실·대치·반포 오래된 단지와 새 아파트 실거래가)\n\n반포 래미안원베일리 84㎡대는 2026년 5월 한 달에 11건이 거래됐어요. 가장 싼 거래 53억 5천만원(6층·2층)과 가장 비싼 거래 71억 5천만원(13층)은 18억 차이입니다.\n같은 6층끼리도 53억 5천만원과 60억 3천만원으로 갈렸고, 11건 모두 중개사를 거친 거래였죠. 1년(19건) 한가운데 값은 한 채 약 59억. 신고 자료에는 층과 날짜만 있고, 그 값을 낸 사정을 적는 칸은 없어요. 지나간 거래 값이고, 사거나 팔라는 권유가 아닙니다.\n\n출처: 국토교통부 아파트 매매 실거래가(계약 2025.11~2026.10, 2026년 5월분 2026-11-20 다시 받아 같은 값 확인) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — PUWOOK Kwak · Site Engine · what doidonow\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #래미안원베일리 #반포아파트",
+ "tags": "래미안원베일리,원베일리 실거래가,반포 아파트 실거래가,반포 아파트 시세,원베일리",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/h2s_banpo/cover_1120.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "-ryA9w8FDXk",
+ "uploaded_at": "2026-11-20 07:52:44",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-23T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

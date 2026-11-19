@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 매매 실거래 API(경기 하남시 41450) 2025.6~10월 vs 2026.6~10월 계약, calc_out.txt — 파이어맵 직접 계산",
+ "made_at": "2026-11-19",
+ "by": "research/hanam1120/mkimg.py",
+ "out": "img/00.png",
+ "topic": "하남 아파트 시세",
+ "num": "+24% · +18%",
+ "topic_px": 58,
+ "num_px": 44,
+ "follows": "경쟁 2 phillius9/224480717756 월별 평균가·평당가 표 · 4 kokoko9ko 단지 사진"
+}

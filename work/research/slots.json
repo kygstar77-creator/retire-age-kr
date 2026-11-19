@@ -4542,12 +4542,11 @@
   {
    "at": "2026-11-20 22:40",
    "kind": "cafe",
-   "item": "x1pair1120",
+   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: x1pair1120)",
    "owner": "firemap-write-b",
-   "gates_ok": "2026-11-19 17:00",
+   "gates_ok": null,
    "published": null,
-   "pair": "bBGrarSnl5U",
-   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · yt_pair: bBGrarSnl5U (x1s_even 11/20 19:20 쇼츠, 환율·ETF) — 쇼츠 질문 하나만, 쇼츠 링크+원본 롱폼 링크+표 · 쇼츠 공개 확인 뒤 발행 · 관문 기한 11/20 16:40 | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(x1pair1120 (X-1 쇼츠 짝 글 — 짓기 write-b)) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함) | firemap-write-b 2026-11-19 16:5x: 짓는 중 x1pair1120 '미국주식 환율 몇 원까지 내려가도 본전일까?'(ETF 게시판) — 한국은행 매매기준율·SPY 종가로 지난 1년 매달 첫 거래일 13번 직접 계산(원화 손해 11번, 7/1 -15.3%), 쇼츠 예 본전 1,220→1,290원(11/18 종가) · 관문 통과 17:00: research_gate strict·bench 5·prepublish·cover·compare·readcheck 0·aitell 1.5·spoken·selfcheck 사실 0·crosscheck 반영 3/유지 2·이해 2차 6명(응용 계산 6/6)·editgate auto 16971225 · 발행 write-b 22:40: 쇼츠 bBGrarSnl5U 공개 확인 뒤, calc.py를 11/19 종가·최신 매매기준율로 다시 돌려 숫자 바뀌면 고치고 재서명"
+   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · yt_pair: bBGrarSnl5U (x1s_even 11/20 19:20 쇼츠, 환율·ETF) — 쇼츠 질문 하나만, 쇼츠 링크+원본 롱폼 링크+표 · 쇼츠 공개 확인 뒤 발행 · 관문 기한 11/20 16:40 | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(x1pair1120 (X-1 쇼츠 짝 글 — 짓기 write-b)) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함) | firemap-write-b 2026-11-19 16:5x: 짓는 중 x1pair1120 '미국주식 환율 몇 원까지 내려가도 본전일까?'(ETF 게시판) — 한국은행 매매기준율·SPY 종가로 지난 1년 매달 첫 거래일 13번 직접 계산(원화 손해 11번, 7/1 -15.3%), 쇼츠 예 본전 1,220→1,290원(11/18 종가) · 관문 통과 17:00: research_gate strict·bench 5·prepublish·cover·compare·readcheck 0·aitell 1.5·spoken·selfcheck 사실 0·crosscheck 반영 3/유지 2·이해 2차 6명(응용 계산 6/6)·editgate auto 16971225 · 발행 write-b 22:40: 쇼츠 bBGrarSnl5U 공개 확인 뒤, calc.py를 11/19 종가·최신 매매기준율로 다시 돌려 숫자 바뀌면 고치고 재서명 | firemap-write-b 2026-11-19 17:02: 정정 — 17:00에 x1pair1120(환율, 범위 밖)을 이 칸에 다시 적어 순돌이 16:5x TBD를 덮었음. 사장님 11/19 16:4x 범위대로 TBD 복구, 묶음은 order.txt.withdrawn1119(짝 쇼츠 bBGrarSnl5U 비공개 유지)"
   },
   {
    "at": "2026-11-21 19:20",

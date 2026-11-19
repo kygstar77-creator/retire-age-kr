@@ -1,0 +1,29 @@
+{
+ "name": "de1s_drop2022",
+ "ep": "D-ETF-1",
+ "from_long": "mkAxQPGaDqc",
+ "mp4": "work/video/out/de1s_drop2022_c1_ds.mp4",
+ "publishAt": "2026-11-21T19:20:00+09:00",
+ "publish_plan": "11/21 19:20 쇼츠 칸(11/19 회의 21:5x — 배당 축 먼저) · 11/20 h2s_jamsil(H-2 부동산) 다음, 다른 롱폼·다른 축 · D-ETF-1 클립은 11/17 de1s_basket 뒤 나흘",
+ "title": "배당 ETF 덜 빠질까? 코로나 땐 SCHD도 33.4% 빠졌다 #shorts",
+ "description": "전체 계산: https://youtu.be/mkAxQPGaDqc (배당 ETF 16개 비교)\n\n주가가 크게 빠진 2022년엔 미국 배당 ETF SCHD가 고점에서 바닥까지 16.8% 빠져 S&P500(24.5%)보다 덜 빠졌고, JEPI는 13.7%였어요.\n2020년 코로나 때는 SCHD도 33.4%로 S&P500(33.7%)만큼 빠졌고, 배당 ETF SPYD는 46.4%로 더 빠졌어요. 배당 ETF라서 늘 덜 빠지는 건 아니었어요.\n낙폭은 받은 배당을 다시 넣었다고 놓고 달러로 잰 값이에요. 지나간 값이고, 특정 상품을 사거나 팔라는 뜻이 아닙니다.\n\n출처: 야후 파이낸스 주가·배당 기록(2026-10-16 마감) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — cottonbro studio · Pedro Augspach · Polina\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #SCHD #배당ETF",
+ "tags": "배당 ETF,SCHD,SCHD 하락,배당 ETF 하락장,JEPI",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/de1s_drop2022/cover_1119.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "mOrYhIcsQ40",
+ "uploaded_at": "2026-11-19 22:49:50",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-21T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

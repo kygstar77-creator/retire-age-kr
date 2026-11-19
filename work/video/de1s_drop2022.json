@@ -1,0 +1,158 @@
+{
+ "fps": 30,
+ "name": "de1s_drop2022",
+ "v": 2,
+ "look": "live",
+ "question": [
+  "2022년·코로나 하락장",
+  "배당 ETF는 덜 빠졌을까"
+ ],
+ "hot": "덜 빠졌을까",
+ "answer": {
+  "label": "SCHD가 고점에서 바닥까지 빠진 폭",
+  "items": [
+   "2022년 SCHD -16.8%",
+   "코로나 SCHD -33.4%"
+  ],
+  "arrow": false,
+  "note": "코로나 SCHD -33.4%"
+ },
+ "base": "야후 파이낸스 주가·배당 기록(2026-10-16 마감) · 파이어맵 계산",
+ "long": "mkAxQPGaDqc",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "2022년",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "2022년 미국 지수",
+      "S&P500 -24.5%",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "배당 ETF SCHD",
+      "-16.8%",
+      "",
+      83,
+      "ink"
+     ],
+     [
+      "배당 ETF JEPI",
+      "-13.7%",
+      "",
+      147,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "S&P500은 25% 가까이 빠졌는데,",
+     "audio": "audio/de1s_drop2022/drop_a.wav",
+     "frames": 83
+    },
+    {
+     "n": 2,
+     "text": "SCHD는 17% 정도였어요.",
+     "audio": "audio/de1s_drop2022/drop_b.wav",
+     "frames": 64
+    },
+    {
+     "n": 3,
+     "text": "JEPI는 그보다 덜 빠졌고요.",
+     "audio": "audio/de1s_drop2022/drop_c.wav",
+     "frames": 60
+    }
+   ],
+   "frames": 207
+  },
+  {
+   "kind": "vs",
+   "label": "코로나 때",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "코로나 때 SCHD",
+      "-33.4% · 시장만큼",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "그런데 늘 덜 빠지는 건 아니에요. 코로나로 시장이 무너졌을 땐 SCHD도 S&P500만큼 빠졌습니다.",
+     "audio": "audio/d-etf-1/4ba0bdbe76f455da.wav",
+     "frames": 206
+    }
+   ],
+   "frames": 206
+  },
+  {
+   "kind": "vs",
+   "label": "더 빠진 것도",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "배당 ETF SPYD",
+      "-46.4% · 시장보다 더",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 5,
+     "text": "코로나 때 SPYD는 S&P500보다 더 많이 빠졌고요. 그러니 배당이라서 덜 빠진다고 믿기보다, 고른 ETF가 실제로 어땠는지를 봐야 합니다.",
+     "audio": "audio/d-etf-1/2209f2d26e5b924e.wav",
+     "frames": 260
+    }
+   ],
+   "frames": 296
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/detf/stock/7118320.mp4",
+   "from": 0,
+   "frames": 83,
+   "start": 0
+  },
+  {
+   "src": "bg/detf/stock/7118320.mp4",
+   "from": 83,
+   "frames": 64,
+   "start": 2.77
+  },
+  {
+   "src": "bg/detf/stock/7118320.mp4",
+   "from": 147,
+   "frames": 60,
+   "start": 4.9
+  },
+  {
+   "src": "bg/detf/stock/27791953.mp4",
+   "from": 207,
+   "frames": 206,
+   "start": 5
+  },
+  {
+   "src": "bg/detf/stock/5546876.mp4",
+   "from": 413,
+   "frames": 296,
+   "start": 1
+  }
+ ],
+ "credits": "27791953 Pedro Augspach · 5546876 Polina ⠀ · 7118320 cottonbro studio (Pexels License)"
+}

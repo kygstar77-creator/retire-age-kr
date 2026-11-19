@@ -61,6 +61,11 @@ def upload(path, title, desc, privacy='private', tags='', paid=False, cover=None
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', 'cardshorts')); import emptyscan
     ok_f0, msg_f0 = emptyscan.gate_fade0(path); print(msg_f0)
     if not ok_f0: print('올리지 않는다: 0초 글자 관문'); sys.exit(14)
+    # A-49 쇼츠 관문(11/19 판정, registry A-49): 세로 영상은 review.md 'A-49: 답 첫 등장 N초 · 곁가지 N줄' — 답 ≤5초·곁가지 0(또는 'A-49 예외:')
+    if safezone.is_vertical(path):
+        import shortsdaily
+        ok_49, msg_49 = shortsdaily.a49_check(path); print(msg_49)
+        if not ok_49: print('올리지 않는다: A-49 관문'); sys.exit(15)
     # 디자인 관문(work/bgcheck.py): 쇼츠 = v3(10/16) 실사 배경 + 자막 한 줄 72px 기준 · 롱폼 = 10/17 기준(실사 10%↑·컷 분당 3↑·같은 판 20초↓·판 큰 글자 9%↑·판 8줄↓, visual-gap-1017)
     import bgcheck
     ok_bg, msg_bg = bgcheck.gate(path)

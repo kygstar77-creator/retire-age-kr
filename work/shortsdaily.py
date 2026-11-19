@@ -233,6 +233,33 @@ def whole_check(spec, sp, mp4):
         bad.append(f'눈 점검 없음: {os.path.relpath(m["sheet"], HERE)}을 보고 {os.path.relpath(rv, HERE)}에 "{WHOLE_MARK} — 답하는 그림: …" (렌더보다 나중)')
     return bad
 
+A49_FROM = '2026-11-21'   # 11/19 youtube-loop 판정(registry A-49): 권장 → 쇼츠 관문. 이날부터 올리는 세로 영상만(이미 예약된 편 소급 없음)
+A49_RE = re.compile(r'A-49:\s*답 첫 등장\s*([\d.]+)\s*초\s*·\s*곁가지\s*(\d+)\s*줄')
+
+def a49_review(mp4):
+    """mp4 이름 앞머리와 가장 길게 맞는 research/cardshorts/<편>/review.md (없으면 None)."""
+    base = os.path.basename(mp4).lower(); root = os.path.join(HERE, 'research', 'cardshorts'); best = None
+    for d in os.listdir(root):
+        rv = os.path.join(root, d, 'review.md')
+        if base.startswith(d.lower()) and os.path.exists(rv) and (best is None or len(d) > len(best[0])): best = (d, rv)
+    return best[1] if best else None
+
+def a49_check(mp4):
+    """(ok, 메시지). review.md에 'A-49: 답 첫 등장 N초 · 곁가지 N줄' 한 줄이 있어야 하고 답 ≤5초·곁가지 0이어야 한다.
+    근거 registry A-49(11/19 판정): 우리 쇼츠 24편 31% 지점 — 곁가지·늦은 답 6편 0.41~0.53 vs 질문 안 18편 0.52~1.46.
+    새 녹음 없이 못 고치는 편은 'A-49 예외: <사유>' 줄로 통과(경고) — n3s_family v1 공개처럼 칸을 비우지 않으려고."""
+    import datetime as _d
+    if _d.date.today().isoformat() < A49_FROM: return True, f'A-49 관문: {A49_FROM}부터'
+    rv = a49_review(mp4)
+    if not rv: return False, f'A-49 관문: {os.path.basename(mp4)}에 맞는 research/cardshorts/<편>/review.md 없음'
+    t = open(rv, encoding='utf-8').read(); m = A49_RE.search(t)
+    if not m: return False, f'A-49 관문: {os.path.relpath(rv, HERE)}에 "A-49: 답 첫 등장 N.N초 · 곁가지 N줄" 줄 없음(대본 줄 시각으로 잰 값)'
+    ans, side = float(m[1]), int(m[2])
+    if ans <= 5 and side == 0: return True, f'A-49 관문 통과: 답 {ans}초 · 곁가지 0'
+    ex = re.search(r'A-49 예외:\s*(\S.{4,})', t)
+    if ex: return True, f'A-49 관문 경고(예외 통과): 답 {ans}초 · 곁가지 {side} — {ex[1][:80]}'
+    return False, f'A-49 관문: 답 {ans}초(≤5) · 곁가지 {side}줄(0) — 줄 순서를 바꾸거나 곁가지 줄을 빼고, 못 하면 "A-49 예외: 사유"'
+
 def build_desc(spec):
     """설명란 글. spec "cafe_line": false면 카페 주소 줄을 뺀다(없으면 true — 기존 쇼츠 그대로).
     2026-10-01 F5 sevpay: 계산기 utm 링크 1개 원칙인데 publish가 카페 주소를 자동으로 붙여 링크가 2개가 됐다."""

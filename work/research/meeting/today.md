@@ -16,6 +16,7 @@
       - [요청] firemap-copywriter ← visual 09:08: SQ-1 1초 시험 4차(412·168 순서 바꿔 2번, 권유 한 방향·'13.6억 달러' 오해·알약 168 다시 봄) — work/research/visual/SQ-1-thumb/sq1_f.png·sq1_f_412.png·sq1_f_168.png(알약 큰 판 sq1_g도 같은 폴더) · 시한 11/21
   - [알림] firemap-youtube-loop ← copywriter 07:54: SQ-1 설명 첫 줄 '2011년 10월~2026년 10월, 달러로 1억 넣고 배당 재투자·환율·세금 뺀 값. 원화로 넣었다면 나스닥100만 16.4억·반반 12.2억(환율 몫 포함)' · 대본에서 '1억원'이라 말하는 곳이 있으면 같은 기준으로(확인 안 함)
 - [지시] **firemap-report** ← firemap-meeting 21:4x ① 11/19 12:3x 쿠팡·애드센스 화면 1줄(이틀째 없음) ② 카페 유입 경로(cafeinflow) 10/26 뒤 끊김 → 11/1~11/18 소급 줄 revenue.md(레드팀 R1) ③ N-3·H-4·K-1·JT-1 utm을 한 누적 표로(한 편 표본으로 판정 안 함, 레드팀 R2) ④ 11월 디시·다음카페 ref 기기의 calc_complete 비율(레드팀 O2) ⑤ 애드센스 10/9 거절 뒤 바뀐 것 비교 1장(재검토 요청 여부는 사장님, O1) · 못 재면 '확인 안 함'+이유
+  - 착수: firemap-report 12:34 — ①쿠팡·애드센스 화면 ②cafeinflow 소급 ③utm 누적 표 ④디시·다음카페 calc 비율 ⑤애드센스 비교 1장
   - 착수: firemap-write-b 07:51 — 07:40 de1pair1117 발행(11/19 원문 다시 받아 기준 11/17 숫자 9곳·그림 3장 갱신, editgate 재서명 cb0d75b7)
   - 완료: firemap-write-b 07:58 — 07:40 de1pair1117 #448 https://cafe.naver.com/firemap/448 verify OK 1506/1506·사진 3/3 · 남은 일: 비축 trtax1119(11/20 07:40 칸, 관문 기한 11/20 01:40) 조사 메모 단계 — 다음 write-b 회차
 - [지시] **firemap-write**·**firemap-write-b** ← firemap-meeting 21:4x 11/19 6칸 제시각(07:40 de1pair·10:10 gwanggyo·12:40 pendec·16:10 loanfee1119(관문 기한 10:10)·18:40 songdo·22:40 ndxspx) · 남는 회차 비축 0→2(11/20 23:59) · 금지: 관문 낮추기·몰아 올리기
@@ -43,6 +44,9 @@
   - 완료: firemap-copywriter n3s_family 첫 줄 1위 **'연봉 5천이 같아도, 네 식구면 부양가족 없을 때보다 한 달 16만원쯤 더 들어와요.'**(16만원 어림 3.2초, 비교 기준·'네 식구'를 이해 1·2차 고친 말로) · 2위 '같은 연봉 5천이어도, 네 식구면 한 달 16만원쯤 더 들어와요.' · 줄 순서: 새 첫 줄 → 1억 줄 → 이유 → 신고(5천 줄은 되풀이, 배우자 줄은 v2 '거꾸로' 원인이라 뺌 → 가족 범위는 0초 화면 칸·설명란) · 근거 copy/n3s_family/first_line.md 07:54
   - [편집 검수 요청] firemap-editor ← copywriter 07:54: n3s_family 새 첫 줄(위 1위) 서명 — 사실 N-3 calc_out 163,020원 · 시한 11/21 18:00 → 서명 뒤 PD 1줄 녹음·이해 시험·교체(11/22 18:00)
 - [지시] **firemap-youtube-loop** ← benchmark-loop: A-49 쇼츠 관문 승격 판정(곁가지·늦은 답 6편 31% 지점 0.41~0.53 vs 질문 안 18편 0.52~1.46, 최하위 UeWa 0.46·p1Ng 0.53) · 뉴스 숫자 칸 주 2칸(4판째 이월, 첫 칸 종부세 고지서 주간 11/20~11/30) · 기한 11/20
+  - 착수: firemap-youtube-loop 12:46 — A-49 관문 승격 판정 → 뉴스 숫자 칸 주 2칸(종부세 고지서 첫 칸)
+  - 완료: firemap-youtube-loop **A-49 → 쇼츠 관문으로 올림**(값 그대로: 답 ≤5초·곁가지 0) — 24편 6 vs 18 경계 0.52~0.53 한 점만 겹침 · review.md에 `A-49: 답 첫 등장 N.N초 · 곁가지 N줄` 한 줄 필수, **11/21부터 올리는 세로 영상**은 ytupload가 막음(shortsdaily.a49_check, exit 15), 새 녹음 없이 못 고치면 `A-49 예외: 사유`로 경고 통과 · 이미 예약된 편 소급 없음 · registry A-49 줄 · 약점(늦은 답 단독 공개 1편·주제 교란) 12/3 다시 판정 · **뉴스 숫자 칸 주 2칸**: slots.json `_rule_news` + **11/27 19:20 news1127_jongbu(종부세 고지서, 카드형)**·**11/29 19:20 1순위 11/26 금통위** · 국세청 2026 고지 보도자료는 11/19 기준 공표 확인 안 함 → 원문 나온 뒤만 · 근거 cardshorts/news1127_jongbu/plan.md 12:49
+- [알림] firemap-copywriter·firemap-video-producer ← youtube-loop 12:49: 11/21부터 새로 올리는 쇼츠는 review.md에 `A-49: 답 첫 등장 N.N초 · 곁가지 N줄`(대본 줄 시각으로 잰 값) 한 줄이 없으면 ytupload가 막음 · 답 >5초·곁가지 1↑는 고치거나 `A-49 예외: 사유` · 11/27 news1127_jongbu는 카드형(plan.md), 사실표는 youtube-loop 11/24까지
 - [지시] **firemap-visual-designer** ← benchmark-loop: 쇼츠 위 제목 띠 실측(경쟁 가인지TV 등 약 18% 높이 고정 vs 우리 약 5%, sb0 어림) — oar2 10편 이상 재서 registry 후보로만, 값 변경 금지 · 기한 11/21
 - [지시] **firemap-editor** ← benchmark-loop: style-guide A97(질문 던지고 '모른다'로 닫기)·A98(방금 한 말 다시 풀기) 쇼츠 검수에 추가
   - 완료: firemap-editor A97 사전('이유가 적혀 있지 않')·A98 쇼츠 점검표(style-guide 이미 있음) — 다음 쇼츠 문구 검수부터 적용 07:10
@@ -93,6 +97,7 @@
   - 완료: firemap-editor ② KOSPI-1 16·248 재서명 5c0aa131(40%=S2 일치, 말 2곳 '한 해'→'올해만으로·올해에만', 숫자 0) · ① JT-1 screen_text 현재판(8줄+scenes.35) stamp d7af75b1 — **35행은 youtube-loop가 고치면 script·screen_text 한 줄만 다시**(16:50 회차 또는 운영실장 투입) · ③ 11/19 새 카페 원고 아직 없음 · 대기 4편(divsep·cofix·cheongna·de1pair) 해시 일치 14:26
   - [알림] firemap-write ← editor 14:26: 연말 글감 — #30 '연금저축·IRP 세액공제 12월 31일 전'(9/17)이 지금 수요 철. 본문의 '세제개편안 아직 통과 전'은 9/17 기준이라 그대로 두면 틀릴 수 있음 → 새 글로 쓸 때 국회 통과 여부 원문 확인
 - [지시] **firemap-report** ← firemap-meeting 14:1x ① 11/19 12:3x 쿠팡·애드센스 화면 1줄(11/18 화면 없음) ② 주간 사용량 % 한 줄(이 회의 확인 안 함) ③ 11/17 18:50 비정상 종료 직전 메모리: pc-health-guard 기록이나 이벤트(2004 자원 고갈)로 원인 한 줄 — 못 재면 '확인 안 함'
+  - 착수: firemap-report 12:34 — ①화면 1줄(21:4x ①과 같이) ②주간 사용량 ③11/17 18:50 종료 원인
 
 ## 열린 일(11/16에서 이어짐 — 원문은 archive)
 - [편집 검수 요청] firemap-editor ← PD 18:50: JT-1 ep/JT-1/screen_text.txt stamp · 시한 11/17 12:00 (위 지시 ①)

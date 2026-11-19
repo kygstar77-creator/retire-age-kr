@@ -4462,10 +4462,10 @@
   {
    "at": "2026-11-19 19:20",
    "kind": "shorts",
-   "item": "p1s_born (P-1 정책, c1clip)",
+   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: p1s_born (P-1 정책, c1clip))",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-14 18:36",
-   "note": "firemap-video-producer 2026-11-14 14:43: p1s_born(P-1 국민연금 수령나이, 정책 축) — compete 7·숫자 대조 0·꼴 ⓐ~ⓓ 통과·이해 4차 12명 통과·68세 법 개정 없음(11/14 검색)·첫 줄만 Charon 1.1 새로 받음 · 남은 것: 렌더(빈 메모리 1.25GB라 못 함, render_parts_1114.sh)·deess·안전 영역·디자인·치직·눈 검사·표지 → w1g1clips_up · 관문 기한 11/19 07:20 · 2026-11-14 18:36 PD 정기 18:1x: 렌더 3토막 1번에 통과·deess·안전 영역·디자인 100%·치직 0·눈 검사·표지 → 예약 r5VPQEOjRHU(11/19 19:20) · 공개 전날 68세 법 개정 여부 다시 확인"
+   "gates_ok": null,
+   "note": "firemap-video-producer 2026-11-14 14:43: p1s_born(P-1 국민연금 수령나이, 정책 축) — compete 7·숫자 대조 0·꼴 ⓐ~ⓓ 통과·이해 4차 12명 통과·68세 법 개정 없음(11/14 검색)·첫 줄만 Charon 1.1 새로 받음 · 남은 것: 렌더(빈 메모리 1.25GB라 못 함, render_parts_1114.sh)·deess·안전 영역·디자인·치직·눈 검사·표지 → w1g1clips_up · 관문 기한 11/19 07:20 · 2026-11-14 18:36 PD 정기 18:1x: 렌더 3토막 1번에 통과·deess·안전 영역·디자인 100%·치직 0·눈 검사·표지 → 예약 r5VPQEOjRHU(11/19 19:20) · 공개 전날 68세 법 개정 여부 다시 확인 | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(p1s_born (P-1 정책, c1clip)) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
   },
   {
    "at": "2026-11-19 22:40",
@@ -4479,11 +4479,11 @@
   {
    "at": "2026-11-20 07:40",
    "kind": "cafe",
-   "item": "trtax1119",
+   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: trtax1119)",
    "owner": "firemap-write-b",
-   "gates_ok": "2026-11-19 10:58",
+   "gates_ok": null,
    "published": null,
-   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · 관문 통과 비축 0(pyeongchon1120만 통과, 10:10 몫)이라 write-b가 짓던 trtax1119(정책·주식, 수요 2,850)를 이 칸에 · 관문 기한 11/20 01:40 · 농특세법 5조 0.15% 1차 확인 뒤 gates_ok · 못 넘으면 이 칸 비우지 말고 그때 통과한 다른 편으로 바꾸고 미달 공개 금지 | firemap-write-b 2026-11-19 10:58: 관문 통과 trtax1119 '증권거래세 자주 사고팔면 1년에 얼마나 낼까?'(정책·주식, 연금/세금/보험 게시판) — 근거 kwvol 증권거래세 2,850 · 우리 제목 0편 · 1차 증권거래세법 2·7조·시행령 1·5조·농특세법 5조·시행령 5조·소득세법 103·104조 · 직접 계산 1천만원 1년 1·12·52번 2만·24만·104만원(0.2·2.4·10.4%), 1~9월 세수 9조 9천억원(2차) · 경쟁 8편 0편 · research_gate strict·bench·prepublish·cover·readcheck 0·aitell 1.5·spoken·selfcheck 사실 0·crosscheck 반영 3/유지 2·이해 2차 6명·editgate auto 59afa88b · 발행 회차가 11/20 07:40 전 재정경제부 10월 국세수입 발표 여부·시행령 다시 확인"
+   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · 관문 통과 비축 0(pyeongchon1120만 통과, 10:10 몫)이라 write-b가 짓던 trtax1119(정책·주식, 수요 2,850)를 이 칸에 · 관문 기한 11/20 01:40 · 농특세법 5조 0.15% 1차 확인 뒤 gates_ok · 못 넘으면 이 칸 비우지 말고 그때 통과한 다른 편으로 바꾸고 미달 공개 금지 | firemap-write-b 2026-11-19 10:58: 관문 통과 trtax1119 '증권거래세 자주 사고팔면 1년에 얼마나 낼까?'(정책·주식, 연금/세금/보험 게시판) — 근거 kwvol 증권거래세 2,850 · 우리 제목 0편 · 1차 증권거래세법 2·7조·시행령 1·5조·농특세법 5조·시행령 5조·소득세법 103·104조 · 직접 계산 1천만원 1년 1·12·52번 2만·24만·104만원(0.2·2.4·10.4%), 1~9월 세수 9조 9천억원(2차) · 경쟁 8편 0편 · research_gate strict·bench·prepublish·cover·readcheck 0·aitell 1.5·spoken·selfcheck 사실 0·crosscheck 반영 3/유지 2·이해 2차 6명·editgate auto 59afa88b · 발행 회차가 11/20 07:40 전 재정경제부 10월 국세수입 발표 여부·시행령 다시 확인 | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(trtax1119) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
   },
   {
    "at": "2026-11-20 10:10",
@@ -4497,30 +4497,30 @@
   {
    "at": "2026-11-20 11:30",
    "kind": "long",
-   "item": "JT-1(주택연금 — 5억 집 매달 얼마·93세에 같아짐 · shot 파일·녹음·올리기 전 확인 남음)",
+   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: JT-1(주택연금 — 5억 집 매달 얼마·93세에 같아)",
    "owner": "firemap-youtube-loop",
-   "note": "firemap-video-producer 2026-11-18 22:30: ytlong gate 통과·예약 DUv-5juhohQ | firemap-youtube-loop 2026-11-16 08:45: JT-1을 11/20으로(대본·이해 시험·toc·research strict 끝, 장기요양은 작업 0) · 남은: visual shot 11/18 12:00·editor 재서명 11/17 12:00·녹음 11/17 16:00·올리기 전 확인 11/19 · 관문 11/19 11:30 · 장르: 11/18 비면 N-3→JT-1 연속, H-5 당기기 검토 | firemap-video-producer 2026-11-16 02:22: N-3를 11/16으로 당김 → 예비 편 몫(회의 지시: 노후 생활비+주택연금 또는 장기요양, 관문 11/19 11:30) | firemap-youtube-loop 2026-11-12 04:50: 통계로 고름(longform/loop/topic_stats_1112.md) — 상위 몇% 축 우리 N-1 2,746(롱폼 1편; N-2 81은 약 2분짜리)·연봉실수령액 kwvol 70,200·경쟁 4편 배수 중앙 7.56 · 대본 v1.2 앞머리 예고 5줄→1줄(A-52) 편집 재서명 뒤 녹음 · 관문 11/19 11:30 | firemap-meeting 2026-11-06 21:37: 한 칸씩 뒤로 | youtube-loop 2026-11-02 00:48: 이틀 주기 새 칸(회의 11/1 [지시]) | 순돌이 11/12 01:3x 사장님 11/11 \"이미 만들었다고 올리지 말자 · 뭐든 결정할 때 추측하지 말고 통계를 보고\" → 세금정책·국민연금 주제는 우리 롱폼 중앙 20(5편)이라 뺌",
-   "gates_ok": "2026-11-18 22:30",
+   "note": "firemap-video-producer 2026-11-18 22:30: ytlong gate 통과·예약 DUv-5juhohQ | firemap-youtube-loop 2026-11-16 08:45: JT-1을 11/20으로(대본·이해 시험·toc·research strict 끝, 장기요양은 작업 0) · 남은: visual shot 11/18 12:00·editor 재서명 11/17 12:00·녹음 11/17 16:00·올리기 전 확인 11/19 · 관문 11/19 11:30 · 장르: 11/18 비면 N-3→JT-1 연속, H-5 당기기 검토 | firemap-video-producer 2026-11-16 02:22: N-3를 11/16으로 당김 → 예비 편 몫(회의 지시: 노후 생활비+주택연금 또는 장기요양, 관문 11/19 11:30) | firemap-youtube-loop 2026-11-12 04:50: 통계로 고름(longform/loop/topic_stats_1112.md) — 상위 몇% 축 우리 N-1 2,746(롱폼 1편; N-2 81은 약 2분짜리)·연봉실수령액 kwvol 70,200·경쟁 4편 배수 중앙 7.56 · 대본 v1.2 앞머리 예고 5줄→1줄(A-52) 편집 재서명 뒤 녹음 · 관문 11/19 11:30 | firemap-meeting 2026-11-06 21:37: 한 칸씩 뒤로 | youtube-loop 2026-11-02 00:48: 이틀 주기 새 칸(회의 11/1 [지시]) | 순돌이 11/12 01:3x 사장님 11/11 \"이미 만들었다고 올리지 말자 · 뭐든 결정할 때 추측하지 말고 통계를 보고\" → 세금정책·국민연금 주제는 우리 롱폼 중앙 20(5편)이라 뺌 | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(JT-1(주택연금 — 5억 집 매달 얼마·93세에 같아짐 · shot 파) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)",
+   "gates_ok": null,
    "published": "https://youtu.be/DUv-5juhohQ (11/20 11:30 예약)"
   },
   {
    "at": "2026-11-20 12:40",
    "kind": "cafe",
-   "item": "jt1pair1120",
+   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: jt1pair1120)",
    "owner": "firemap-write",
-   "gates_ok": "2026-11-19 09:43",
+   "gates_ok": null,
    "published": null,
    "pair": "DUv-5juhohQ",
-   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · yt_pair: DUv-5juhohQ (JT-1 롱폼 11/20 11:30 공개) · today.md [요청] video-producer 23:24 · 재료 work/research/longform/ep/JT-1/cafe.md(표 3개 — 쇼츠 jt1s_even 11/26 '93세' 질문과 겹치지 않게 전체 표) · 영상 공개(public) 확인 뒤에만 발행(write 12:10 회차) · 글 주소를 JT-1 설명란 {CAFE}에 넣도록 PD에 넘김 · 관문 기한 11/20 06:40 · 짓기 write | firemap-write 2026-11-19 09:43: 관문 통과 jt1pair1120 '주택연금 늦게 들면 더 받는데, 몇 살에 같아질까?'(세금연금, 연금/세금/보험 게시판) — 근거 kwvol 주택연금 30,410 · 경쟁 6편 중 같아지는 나이를 기대여명과 맞댄 글 0편 · 영상에 없던 새 사실: 국가데이터처 2024년 65세 기대여명 남 19.5·여 23.7년(11/19 원문) · research_gate strict·bench·prepublish·cover·readcheck 0·aitell 통과·spoken·selfcheck 사실 0·crosscheck 2회·이해 3차 9명 통과·editgate auto 45e1bd93 · 영상 공개(11/20 11:30) 뒤 발행, 발행 날 공사 표 다시 확인 · 글 주소를 JT-1 설명란 {CAFE}에(PD)"
+   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · yt_pair: DUv-5juhohQ (JT-1 롱폼 11/20 11:30 공개) · today.md [요청] video-producer 23:24 · 재료 work/research/longform/ep/JT-1/cafe.md(표 3개 — 쇼츠 jt1s_even 11/26 '93세' 질문과 겹치지 않게 전체 표) · 영상 공개(public) 확인 뒤에만 발행(write 12:10 회차) · 글 주소를 JT-1 설명란 {CAFE}에 넣도록 PD에 넘김 · 관문 기한 11/20 06:40 · 짓기 write | firemap-write 2026-11-19 09:43: 관문 통과 jt1pair1120 '주택연금 늦게 들면 더 받는데, 몇 살에 같아질까?'(세금연금, 연금/세금/보험 게시판) — 근거 kwvol 주택연금 30,410 · 경쟁 6편 중 같아지는 나이를 기대여명과 맞댄 글 0편 · 영상에 없던 새 사실: 국가데이터처 2024년 65세 기대여명 남 19.5·여 23.7년(11/19 원문) · research_gate strict·bench·prepublish·cover·readcheck 0·aitell 통과·spoken·selfcheck 사실 0·crosscheck 2회·이해 3차 9명 통과·editgate auto 45e1bd93 · 영상 공개(11/20 11:30) 뒤 발행, 발행 날 공사 표 다시 확인 · 글 주소를 JT-1 설명란 {CAFE}에(PD) | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(jt1pair1120) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
   },
   {
    "at": "2026-11-20 16:10",
    "kind": "cafe",
-   "item": "fedhike1120 (짓는 중 — 씨앗 seed.md)",
+   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: fedhike1120 (짓는 중 — 씨앗 seed.md)",
    "owner": "firemap-write",
    "gates_ok": null,
    "published": null,
-   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · 11/20 장르 부동산(10:10)·정책주식(07:40)·연금(12:40) 다음이라 경제·금리 또는 배당·ETF · 관문 기한 11/20 10:10 · 짓기 write 11/19 회차들 · 못 넘으면 그때 통과한 비축으로 | firemap-write 2026-11-19 12:3x: 주제 검증 1차 — kwvol 원달러환율 418,800·예금금리 105,400·국채금리 101,900·달러예금 1,510·기준금리/금통위 10(검색어 아님) · 우리 제목 국채·국고채 13편·코픽스 4편·파킹 2편이라 재탕 위험 · 남은 후보: 원달러환율 축(우리 fx 글은 시황 코너뿐) — 다음 write 회차(15:10)가 toprank·경쟁 3편 뒤 확정 | firemap-write 2026-11-19 15:4x: 주제 확정 — 미국금리 58,600(경제·금리), 환율 축은 같은 날 22:40 X-1 짝 글과 겹쳐 뺌 · 씨앗 work/research/fedhike1120/seed.md(연준 10월 의사록 11/18 공개 원문·FRED) · 짓기 write 21:10/06:10"
+   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · 11/20 장르 부동산(10:10)·정책주식(07:40)·연금(12:40) 다음이라 경제·금리 또는 배당·ETF · 관문 기한 11/20 10:10 · 짓기 write 11/19 회차들 · 못 넘으면 그때 통과한 비축으로 | firemap-write 2026-11-19 12:3x: 주제 검증 1차 — kwvol 원달러환율 418,800·예금금리 105,400·국채금리 101,900·달러예금 1,510·기준금리/금통위 10(검색어 아님) · 우리 제목 국채·국고채 13편·코픽스 4편·파킹 2편이라 재탕 위험 · 남은 후보: 원달러환율 축(우리 fx 글은 시황 코너뿐) — 다음 write 회차(15:10)가 toprank·경쟁 3편 뒤 확정 | firemap-write 2026-11-19 15:4x: 주제 확정 — 미국금리 58,600(경제·금리), 환율 축은 같은 날 22:40 X-1 짝 글과 겹쳐 뺌 · 씨앗 work/research/fedhike1120/seed.md(연준 10월 의사록 11/18 공개 원문·FRED) · 짓기 write 21:10/06:10 | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(fedhike1120 (짓는 중 — 씨앗 seed.md)) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
   },
   {
    "at": "2026-11-20 18:40",
@@ -4534,28 +4534,28 @@
   {
    "at": "2026-11-20 19:20",
    "kind": "shorts",
-   "item": "x1s_even (X-1 환율·ETF, c1clip)",
+   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: x1s_even (X-1 환율·ETF, c1clip))",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-14 23:13",
-   "note": "firemap-video-producer 2026-11-14 23:13: 비축 0이던 칸 — compete 6·숫자 대조 0·꼴 통과·이해 3차 9명·안전 영역·디자인 100%·치직 0·빈 곳 0%·AI 티 0·눈 검사(계산기 상표 → 금화 컷 재렌더) → 예약 https://youtu.be/bBGrarSnl5U publishAt 2026-11-20T19:20+09:00·private 되읽기 · yt_pair: bBGrarSnl5U(카페 짝 글 = 질문 하나: 본전 환율 셈법, 쇼츠 링크+원본 WcBOePkyOOQ+X-1 calc_out §8 표, 11/20 22:40 칸 권장)"
+   "gates_ok": null,
+   "note": "firemap-video-producer 2026-11-14 23:13: 비축 0이던 칸 — compete 6·숫자 대조 0·꼴 통과·이해 3차 9명·안전 영역·디자인 100%·치직 0·빈 곳 0%·AI 티 0·눈 검사(계산기 상표 → 금화 컷 재렌더) → 예약 https://youtu.be/bBGrarSnl5U publishAt 2026-11-20T19:20+09:00·private 되읽기 · yt_pair: bBGrarSnl5U(카페 짝 글 = 질문 하나: 본전 환율 셈법, 쇼츠 링크+원본 WcBOePkyOOQ+X-1 calc_out §8 표, 11/20 22:40 칸 권장) | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(x1s_even (X-1 환율·ETF, c1clip)) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
   },
   {
    "at": "2026-11-20 22:40",
    "kind": "cafe",
-   "item": "x1pair1120 (X-1 쇼츠 짝 글 — 짓기 write-b)",
+   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: x1pair1120 (X-1 쇼츠 짝 글 — 짓기 wr)",
    "owner": "firemap-write-b",
    "gates_ok": null,
    "published": null,
    "pair": "bBGrarSnl5U",
-   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · yt_pair: bBGrarSnl5U (x1s_even 11/20 19:20 쇼츠, 환율·ETF) — 쇼츠 질문 하나만, 쇼츠 링크+원본 롱폼 링크+표 · 쇼츠 공개 확인 뒤 발행 · 관문 기한 11/20 16:40"
+   "note": "firemap-write 2026-11-19 07:13: 운영실장 07:08 배차(patrol '칸 배정 없음' 11/20 카페) — 11/20 회의 배정 없어 직접 채움 · yt_pair: bBGrarSnl5U (x1s_even 11/20 19:20 쇼츠, 환율·ETF) — 쇼츠 질문 하나만, 쇼츠 링크+원본 롱폼 링크+표 · 쇼츠 공개 확인 뒤 발행 · 관문 기한 11/20 16:40 | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(x1pair1120 (X-1 쇼츠 짝 글 — 짓기 write-b)) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
   },
   {
    "at": "2026-11-21 19:20",
    "kind": "shorts",
-   "item": "n2s_ladder (N-2 연봉·자산, c1clip)",
+   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: n2s_ladder (N-2 연봉·자산, c1clip))",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-19 06:44",
-   "note": "firemap-video-producer 2026-11-19 06:44: v2 교체 https://youtu.be/qVikE2G47SQ (답 5초 — 첫 숫자 7.5→2.9초, 새 녹음 0, 이해 4차 통과) · 옛 -PVLzBdU4go publishAt 뺌(비공개 유지) · yt_pair: qVikE2G47SQ · firemap-video-producer 2026-11-15 07:18: 비축 0이던 칸 — compete 6·숫자 대조 0·꼴 통과·이해 2차 6명·안전 영역(전화기 버튼 글자 → 배경 교체 재렌더)·디자인 98%·치직 0·AI 티 0·눈 검사 → 예약 https://youtu.be/-PVLzBdU4go publishAt 2026-11-21T19:20+09:00·private 되읽기 · 공개 전날(11/20) 국가데이터처 새 판 여부 확인 · yt_pair: -PVLzBdU4go(카페 짝 글 = 질문 하나: 통장 금액으로 내 월급 등수 찾기 — 쇼츠 링크+원본 kXnAKjC-84Q+N-2 숫자 표 150~1,000만원, 11/21 22:40 칸 권장)"
+   "gates_ok": null,
+   "note": "firemap-video-producer 2026-11-19 06:44: v2 교체 https://youtu.be/qVikE2G47SQ (답 5초 — 첫 숫자 7.5→2.9초, 새 녹음 0, 이해 4차 통과) · 옛 -PVLzBdU4go publishAt 뺌(비공개 유지) · yt_pair: qVikE2G47SQ · firemap-video-producer 2026-11-15 07:18: 비축 0이던 칸 — compete 6·숫자 대조 0·꼴 통과·이해 2차 6명·안전 영역(전화기 버튼 글자 → 배경 교체 재렌더)·디자인 98%·치직 0·AI 티 0·눈 검사 → 예약 https://youtu.be/-PVLzBdU4go publishAt 2026-11-21T19:20+09:00·private 되읽기 · 공개 전날(11/20) 국가데이터처 새 판 여부 확인 · yt_pair: -PVLzBdU4go(카페 짝 글 = 질문 하나: 통장 금액으로 내 월급 등수 찾기 — 쇼츠 링크+원본 kXnAKjC-84Q+N-2 숫자 표 150~1,000만원, 11/21 22:40 칸 권장) | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(n2s_ladder (N-2 연봉·자산, c1clip)) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
   },
   {
    "at": "2026-11-22 11:30",
@@ -4568,18 +4568,18 @@
   {
    "at": "2026-11-22 19:20",
    "kind": "shorts",
-   "item": "p1s_avg (P-1 정책·국민연금, c1clip)",
+   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: p1s_avg (P-1 정책·국민연금, c1clip))",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-15 11:00",
-   "note": "firemap-video-producer 2026-11-15 11:00: 비축 0이던 칸 — compete 6·숫자 대조 69개 0·꼴 통과·이해 2차 6명·안전 영역·디자인 100%·치직 0·AI 티 0·눈 검사(책 글자·끝 칸 대비 고쳐 2·3토막 재렌더) → 예약 https://youtu.be/u7RzhDJikcY publishAt 2026-11-22T19:20+09:00·private 되읽기 · 공개 전날(11/21) KOSIS 생명표 새 판·조기/연기 비율 개정 확인 · yt_pair: u7RzhDJikcY(카페 짝 글 = 질문 하나: 평균 수명까지 받은 돈 남녀 표 — 쇼츠 링크+원본 vsL7mojDW7w+P-1 calc_out 84.5·88.7세 줄, 11/22 22:40 칸 권장)"
+   "gates_ok": null,
+   "note": "firemap-video-producer 2026-11-15 11:00: 비축 0이던 칸 — compete 6·숫자 대조 69개 0·꼴 통과·이해 2차 6명·안전 영역·디자인 100%·치직 0·AI 티 0·눈 검사(책 글자·끝 칸 대비 고쳐 2·3토막 재렌더) → 예약 https://youtu.be/u7RzhDJikcY publishAt 2026-11-22T19:20+09:00·private 되읽기 · 공개 전날(11/21) KOSIS 생명표 새 판·조기/연기 비율 개정 확인 · yt_pair: u7RzhDJikcY(카페 짝 글 = 질문 하나: 평균 수명까지 받은 돈 남녀 표 — 쇼츠 링크+원본 vsL7mojDW7w+P-1 calc_out 84.5·88.7세 줄, 11/22 22:40 칸 권장) | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(p1s_avg (P-1 정책·국민연금, c1clip)) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
   },
   {
    "at": "2026-11-23 19:20",
    "kind": "shorts",
-   "item": "n3s_raise (N-3 연봉, c1clip)",
+   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: n3s_raise (N-3 연봉, c1clip))",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-15 15:21",
-   "note": "firemap-video-producer 2026-11-16 02:24: 예약 rYt3KuJlxJU publishAt 11/23 19:20(from_long 6x35E3vg650·권유 아님 줄 더함) | yt_pair: rYt3KuJlxJU | firemap-video-producer 2026-11-15 15:21: 비축 0이던 칸 — compete 7·숫자 대조 56개 0·꼴 통과·이해 2차 6명·안전 영역(노트북 자판 → 카드 컷 3판)·디자인 96%·치직 0·빈 곳 0%·AI 티 0·눈 검사(유리창 반사 포스터 뺌) · mp4 work/video/out/n3s_raise_c1_ds.mp4 · **예약 전**: N-3 videoId 생긴 뒤(11/18~19) upload.json from_long·설명 {N3} 채우고 w1g1clips_up.py n3s_raise · N-3 칸이 밀리면 이 칸도 뒤로 · yt_pair: n3s_raise(카페 짝 글 = 쇼츠 공개 뒤 20:10·22:40 칸, 질문 하나 '천만원 오르면 통장에 얼마')"
+   "gates_ok": null,
+   "note": "firemap-video-producer 2026-11-16 02:24: 예약 rYt3KuJlxJU publishAt 11/23 19:20(from_long 6x35E3vg650·권유 아님 줄 더함) | yt_pair: rYt3KuJlxJU | firemap-video-producer 2026-11-15 15:21: 비축 0이던 칸 — compete 7·숫자 대조 56개 0·꼴 통과·이해 2차 6명·안전 영역(노트북 자판 → 카드 컷 3판)·디자인 96%·치직 0·빈 곳 0%·AI 티 0·눈 검사(유리창 반사 포스터 뺌) · mp4 work/video/out/n3s_raise_c1_ds.mp4 · **예약 전**: N-3 videoId 생긴 뒤(11/18~19) upload.json from_long·설명 {N3} 채우고 w1g1clips_up.py n3s_raise · N-3 칸이 밀리면 이 칸도 뒤로 · yt_pair: n3s_raise(카페 짝 글 = 쇼츠 공개 뒤 20:10·22:40 칸, 질문 하나 '천만원 오르면 통장에 얼마') | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(n3s_raise (N-3 연봉, c1clip)) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
   },
   {
    "at": "2026-11-24 11:30",
@@ -4592,10 +4592,10 @@
   {
    "at": "2026-11-24 19:20",
    "kind": "shorts",
-   "item": "n3s_family (N-3 부양가족 16만원, c1clip) dErEFOTuumg",
+   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: n3s_family (N-3 부양가족 16만원, c1c)",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-16 18:36",
-   "note": "firemap-video-producer 2026-11-16 18:36: 예약 https://youtu.be/dErEFOTuumg publishAt 11/24 19:20(관문 전부·표지 cover_1116) · yt_pair: dErEFOTuumg · firemap-video-producer 2026-11-15 22:19: h4s_new15를 11/25로 옮긴 빈 칸 · 관문 기한 11/24 07:20 · 비부동산(주식·연금·월급 축) | firemap-video-producer 2026-11-16 06:2x: n3s_family 렌더 전 관문 통과(첫 줄 새 녹음·숫자 대조 0·꼴·이해 2차 6명·AI 티 0) — 렌더·눈 검사·표지·예약 남음(빈 메모리 부족), gates_ok는 렌더 뒤"
+   "gates_ok": null,
+   "note": "firemap-video-producer 2026-11-16 18:36: 예약 https://youtu.be/dErEFOTuumg publishAt 11/24 19:20(관문 전부·표지 cover_1116) · yt_pair: dErEFOTuumg · firemap-video-producer 2026-11-15 22:19: h4s_new15를 11/25로 옮긴 빈 칸 · 관문 기한 11/24 07:20 · 비부동산(주식·연금·월급 축) | firemap-video-producer 2026-11-16 06:2x: n3s_family 렌더 전 관문 통과(첫 줄 새 녹음·숫자 대조 0·꼴·이해 2차 6명·AI 티 0) — 렌더·눈 검사·표지·예약 남음(빈 메모리 부족), gates_ok는 렌더 뒤 | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(n3s_family (N-3 부양가족 16만원, c1clip) dErEF) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
   },
   {
    "at": "2026-11-25 19:20",
@@ -4616,18 +4616,18 @@
   {
    "at": "2026-11-26 19:20",
    "kind": "shorts",
-   "item": "jt1s_even (JT-1 주택연금 93세, c1clip) _M2EzhE3ZEI",
+   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: jt1s_even (JT-1 주택연금 93세, c1cl)",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-18 23:24",
-   "note": "firemap-video-producer 2026-11-18 23:24: 예약 https://youtu.be/_M2EzhE3ZEI publishAt 11/26 19:20(from_long DUv-5juhohQ JT-1 3장, 44.2초) — compete 7·숫자 대조 59개 0·꼴 통과·이해 2차 6명·안전 영역(열쇠고리 글자 컷 바꿈)·디자인 100%·치직 0 · 근거 cardshorts/jt1s_even/review.md"
+   "gates_ok": null,
+   "note": "firemap-video-producer 2026-11-18 23:24: 예약 https://youtu.be/_M2EzhE3ZEI publishAt 11/26 19:20(from_long DUv-5juhohQ JT-1 3장, 44.2초) — compete 7·숫자 대조 59개 0·꼴 통과·이해 2차 6명·안전 영역(열쇠고리 글자 컷 바꿈)·디자인 100%·치직 0 · 근거 cardshorts/jt1s_even/review.md | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(jt1s_even (JT-1 주택연금 93세, c1clip) _M2Ezh) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
   },
   {
    "at": "2026-11-27 19:20",
    "kind": "shorts",
-   "item": "news1127_jongbu (뉴스 숫자 칸 1 — 종부세 고지서 주간, 카드형·롱폼 자르기 아님)",
+   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: news1127_jongbu (뉴스 숫자 칸 1 — 종)",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "firemap-youtube-loop 2026-11-19: 뉴스 숫자 칸 주 2칸(benchmark-loop 지시 4판째, shorts-gap-1119 N4) 첫 칸 · 사실표 youtube-loop(국세청 2026 고지 보도자료 공표 뒤 원문만 — 11/19 기준 공표 확인 안 됨) → copywriter 첫 줄 → editor → PD · 관문 기한 11/27 07:20 · 근거 cardshorts/news1127_jongbu/plan.md · 못 맞추면 비축분"
+   "note": "firemap-youtube-loop 2026-11-19: 뉴스 숫자 칸 주 2칸(benchmark-loop 지시 4판째, shorts-gap-1119 N4) 첫 칸 · 사실표 youtube-loop(국세청 2026 고지 보도자료 공표 뒤 원문만 — 11/19 기준 공표 확인 안 됨) → copywriter 첫 줄 → editor → PD · 관문 기한 11/27 07:20 · 근거 cardshorts/news1127_jongbu/plan.md · 못 맞추면 비축분 | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(news1127_jongbu (뉴스 숫자 칸 1 — 종부세 고지서 주간,) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
   },
   {
    "at": "2026-11-28 11:30",
@@ -4639,10 +4639,10 @@
   {
    "at": "2026-11-29 19:20",
    "kind": "shorts",
-   "item": "뉴스 숫자 칸 2 (그 주 공표 숫자 — 1순위 후보: 11/26 금통위 기준금리 결정(release_calendar) — 우리 대출·예금 한 사람 돈으로)",
+   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: 뉴스 숫자 칸 2 (그 주 공표 숫자 — 1순위 후보:)",
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
-   "note": "firemap-youtube-loop 2026-11-19: 주제는 11/26 회차가 release_calendar·그 주 뉴스로 정함 · 못 맞추면 비축분"
+   "note": "firemap-youtube-loop 2026-11-19: 주제는 11/26 회차가 release_calendar·그 주 뉴스로 정함 · 못 맞추면 비축분 | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(뉴스 숫자 칸 2 (그 주 공표 숫자 — 1순위 후보: 11/26 금통위) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
   },
   {
    "at": "2026-11-30 11:30",

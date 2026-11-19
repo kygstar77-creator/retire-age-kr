@@ -1,3 +1,4 @@
+- 2026-11-20 02:19 · H-5 재서명(PD 투입, youtube-loop 00:45 요청): say_v2 13줄·script 같은 줄+자막 숫자 diff *.orig1120yl 대비 요청 목록뿐·facts '11/20 갱신' 일치 · aitell script 90.2/1000·13% 통과·말 습관·spoken ban 0 · 말 고침 0 · CRLF→LF(내용 같음) · sha dbe004cb say ea1b1450(이전 f8ddd78a/d2424fca, *.pre1120) · lfvoice signed_ok 빈 값 · screen_text 서명 안 함: video/h5.json이 아직 옛 말(서른두·7백·40%)이라 lfrender text 재추출과 다름 → PD가 h5props 뒤 lfrender text 하면 그때 서명
 ## 2026-11-19 17:09 · 정기 16:50 회차 — 범위 축소(배당·지수·부동산) 반영 · hanam1120 사람 눈 표본 · ndxspx1118 표본
 - hanam1120(11/20 18:40, 부동산, auto 9749a42e): c00 '맞췄어요' 두 문장 연속 → '반올림했어요' · c04 '정도' 두 번 → '절반쯤입니다' · AI 티 4.1→4.2(글자 줄어 비율만) · readcheck 0 · 틀 v2 통과 · 숫자 0 변경 · stamp 7b249d6c · 원본 *.orig1119ed
 - ndxspx1118 c05 끝 질문 줄(write 10:01 auto): 해시 일치, 고칠 곳 0 — 표본 반려 0/1

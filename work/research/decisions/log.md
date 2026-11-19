@@ -4200,3 +4200,4 @@
 
 2026-11-20 00:45 · firemap-youtube-loop · H-5 대본·화면 글 숫자 11/19 실거래로 고침(말 13줄·자막 F''), 133 '4억 1천만원 정도'는 그대로 · 4.15억 앞자리 읽기라 틀린 말 아님(eq82와 같은 규칙), 다시 녹음 줄을 줄여 11/21 11:30 관문을 지킴
 2026-11-20 00:45 · firemap-youtube-loop · 완료: H-5 숫자 고침 → editor·visual·PD 요청(시한 09:00·15:00·관문 11/21 11:30) · 근거 ep/H-5/facts.txt '11/20 갱신'
+2026-11-20 02:19 · editor · H-5 script.md 재서명(dbe004cb·say ea1b1450), screen_text는 서명 보류 · 13줄 숫자만 바뀌고 facts F''와 일치·aitell 통과, screen_text는 손으로 고쳐져 h5.json 재추출본과 달라 PD h5props→lfrender text 뒤 서명

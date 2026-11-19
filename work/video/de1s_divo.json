@@ -1,0 +1,189 @@
+{
+ "fps": 30,
+ "name": "de1s_divo",
+ "v": 2,
+ "look": "live",
+ "question": [
+  "분배율 6%대 배당 ETF",
+  "정말 6%일까"
+ ],
+ "hot": "정말 6%일까",
+ "answer": {
+  "label": "DIVO 분배율(1년 분배 ÷ 주가)",
+  "items": [
+   "12개월 그대로 6.78%",
+   "12월 한 번 빼면 4.64%"
+  ],
+  "arrow": false,
+  "note": "12월 한 번 빼면 4.64%"
+ },
+ "base": "야후 파이낸스 분배·가격(2026-11-19 마감) · 파이어맵 계산",
+ "long": "mkAxQPGaDqc",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "6%로 보여도",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "미국 배당 DIVO",
+      "1년 분배율 6.78%",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "DIVO는 6%로 보이지만, 한 달이 유난히 튀었어요.",
+     "audio": "audio/de1s_divo/divo_a.wav",
+     "frames": 94
+    }
+   ],
+   "frames": 94
+  },
+  {
+   "kind": "vs",
+   "label": "12월 한 번",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "2025년 12월 분배",
+      "0.953달러 · 평소 0.19달러",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 2,
+     "text": "작년 12월에 평소 달의 다섯 배 정도를 한 번에 줬습니다.",
+     "audio": "audio/d-etf-1/eb1cdc1cf8232e22.wav",
+     "frames": 111
+    }
+   ],
+   "frames": 111
+  },
+  {
+   "kind": "vs",
+   "label": "빼면",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "12월 빼면",
+      "분배율 4.64%",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "12월에 준 돈은",
+      "배당? 팔아 생긴 이익?",
+      "",
+      60,
+      "ink"
+     ],
+     [
+      "팔아 생긴 이익이면",
+      "해마다 나온단 보장 없음",
+      "",
+      171,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 3,
+     "text": "그 한 번을 빼면 4%대 중반이에요.",
+     "audio": "audio/de1s_divo/drop_b1n.wav",
+     "frames": 60
+    },
+    {
+     "n": 4,
+     "text": "그 한 번이 배당에서 나온 돈인지, 주식을 팔아 생긴 이익을 나눈 건지는 운용사 공시로 확인해야 합니다.",
+     "audio": "audio/de1s_divo/drop_b2a.wav",
+     "frames": 111
+    },
+    {
+     "n": 5,
+     "text": "팔아 생긴 이익이면 해마다 나온다는 보장이 없거든요.",
+     "audio": "audio/de1s_divo/drop_b2b.wav",
+     "frames": 151
+    }
+   ],
+   "frames": 322
+  },
+  {
+   "kind": "vs",
+   "label": "그래서",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "분배율 볼 때",
+      "튀는 달 있는지 같이",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "그래서 분배율은 1년 치를 다 더해서 보고, 유난히 튀는 달이 있는지 같이 봐야 해요.",
+     "audio": "audio/d-etf-1/1a89d06477ff458c.wav",
+     "frames": 154
+    }
+   ],
+   "frames": 190
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/detf/stock/7118320.mp4",
+   "from": 0,
+   "frames": 94,
+   "start": 0
+  },
+  {
+   "src": "bg/detf/stock/27791953.mp4",
+   "from": 94,
+   "frames": 111,
+   "start": 5
+  },
+  {
+   "src": "bg/detf/stock/cut/5981346_20b.mp4",
+   "from": 205,
+   "frames": 60,
+   "start": 0
+  },
+  {
+   "src": "bg/detf/stock/cut/5981346_20b.mp4",
+   "from": 265,
+   "frames": 111,
+   "start": 2.1000000000000014
+  },
+  {
+   "src": "bg/detf/stock/cut/5981346_20b.mp4",
+   "from": 376,
+   "frames": 151,
+   "start": 5.899999999999999
+  },
+  {
+   "src": "bg/detf/stock/5546876.mp4",
+   "from": 527,
+   "frames": 190,
+   "start": 1
+  }
+ ],
+ "credits": "27791953 Pedro Augspach · 5546876 Polina ⠀ · 5981346 https://kaboompics.com/ · 7118320 cottonbro studio (Pexels License)"
+}

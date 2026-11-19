@@ -1,0 +1,88 @@
+# de1s_divo — D-ETF-1 롱폼 1장 끝(1:12~1:15, DIVO 12월 한 번 튄 분배)을 자른 세로 쇼츠 props · c1clip 틀(C1S live) (firemap-video-producer 2026-11-20, de1s_drop2022/de1sclip.py 복사 — 줄·장면·배경만)
+#   py -3.12 work/research/cardshorts/de1s_divo/de1sclip.py   → work/video/de1s_divo.json
+# 목소리 = D-ETF-1 voice.json 문장 wav 그대로(새 녹음 0) · 1:12 앞 '조심할 것도 하나 있어요.'는 답을 미는 도입이라 쉼(1.17~1.50초) 뒤 1.40초부터(A-49)
+# 화면 숫자 = 올리기 전 확인(prepub_1120.txt, 야후 11/19 마감): 12개월 분배율 6.78% · 12월 0.953달러 빼면 4.64% (롱폼 10/16 값 6.31·4.32에서 종가 하락으로 바뀜)
+import os, re, json, sys
+sys.stdout.reconfigure(encoding='utf-8')
+HERE = os.path.dirname(os.path.abspath(__file__))
+WORK = os.path.normpath(os.path.join(HERE, '..', '..', '..'))
+VID = os.path.join(WORK, 'video')
+EP = os.path.join(WORK, 'research', 'longform', 'ep', 'D-ETF-1')
+V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
+BYTEXT = {l['text']: l for s in V['sections'] for l in s['lines']}
+SRC = ''.join(open(os.path.join(EP, f), encoding='utf-8').read() for f in ('research.md', 'calc_out.txt', 'facts.txt') if os.path.exists(os.path.join(EP, f)))
+SRC += open(os.path.join(HERE, 'prepub_1120.txt'), encoding='utf-8').read()
+CRED = {str(c['id']): c for c in json.load(open(os.path.join(VID, 'public', 'bg', 'detf', 'stock', 'credits.json'), encoding='utf-8'))}
+TAIL = 36
+# 꼴 관문: 1:12 앞 도입 잘라 냄 · 1:14(345프레임)는 쉼(2.41~2.68초) 가운데 2.55초에서 둘로 — 칸 두 개를 줄 시작에 맞추려고
+SPLIT = {'조심할 것도 하나 있어요.': [('DIVO는 6%로 보이지만, 한 달이 유난히 튀었어요.', 'audio/de1s_divo/divo_a.wav', 94)],
+         '그 한 번을 빼면 4% 정도거든요.': [('그 한 번을 빼면 4% 정도거든요.', 'audio/de1s_divo/drop_b1.wav', 77),
+                                    ('그 한 번이 배당에서 나온 돈인지, 주식을 팔아 생긴 이익을 나눈 건지는 운용사 공시로 확인해야 합니다. 팔아 생긴 이익이면 해마다 나온다는 보장이 없거든요.', 'audio/de1s_divo/drop_b2.wav', 262)]}
+n = 0
+
+
+def L(t):
+    global n
+    hit = [k for k in BYTEXT if k.startswith(t)]; assert len(hit) == 1, (t, hit)
+    l = BYTEXT[hit[0]]; assert l.get('audio') and os.path.exists(os.path.join(VID, 'public', l['audio'])), t
+    n += 1
+    return {'n': n, 'text': l['text'], 'audio': l['audio'], 'frames': l['frames']}
+
+
+def Ls(t):
+    global n
+    if t not in SPLIT: return [L(t)]
+    out = []
+    for txt, au, fr in SPLIT[t]:
+        assert os.path.exists(os.path.join(VID, 'public', au)), au
+        n += 1; out.append({'n': n, 'text': txt, 'audio': au, 'frames': fr})
+    return out
+
+
+def sc(label, lines, data):
+    ls = [x for t in lines for x in Ls(t)]
+    spoken = ' '.join(l['text'] for l in ls)
+    strs = []
+    walk = lambda x: [walk(y) for y in x] if isinstance(x, list) else ([walk(y) for y in x.values()] if isinstance(x, dict) else (strs.append(x) if isinstance(x, str) else None))
+    walk(data)
+    for d in re.findall(r'\d[\d,.]*', ' '.join(strs)):
+        d = d.rstrip('.,')
+        assert d in spoken or d in SRC, f'숫자 {d} — 말 줄·D-ETF-1 원문·올리기 전 확인에 없음'
+    return {'kind': 'vs', 'label': label, 'source': None, 'data': data, 'lines': ls, 'frames': sum(l['frames'] for l in ls)}
+
+
+scenes = [
+    sc('6%로 보여도', ['조심할 것도 하나 있어요.'],
+       {'tiles': [['배당 ETF DIVO', '1년 분배율 6.78%', '', 0, 'ink']]}),
+    sc('12월 한 번', ['작년 12월에 평소 달의'],
+       {'tiles': [['2025년 12월 분배', '0.953달러 · 평소 달 5배', '', 0, 'ink']]}),
+    sc('빼면', ['그 한 번을 빼면 4% 정도거든요.'],
+       {'tiles': [['12월 빼면', '분배율 4.64%', '', 0, 'ink'], ['12월 돈의 성격', '운용사 공시로 확인', '', 77, 'ink']]}),
+    sc('그래서', ['그래서 분배율은 1년 치를'],
+       {'tiles': [['분배율 볼 때', '튀는 달 있는지 같이', '', 0, 'ink']]}),
+]
+for s_ in scenes:
+    st = [sum(l['frames'] for l in s_['lines'][:i]) for i in range(len(s_['lines']))]
+    assert all(t[3] in st for t in s_['data']['tiles']), (s_['label'], st)
+for x in ('2025-12-30 0.953', '= 6.78%', '= 4.64%', '[Y4] DIVO 2025-12-30 분배 0.953달러(다른 달 0.17~0.21)'): assert x in SRC, f'원문에 없음 {x}'
+assert all(len(t[0].split('·')[0].strip()) <= 12 for s_ in scenes for t in s_['data']['tiles']), '칸 이름 12자 넘음'
+scenes[-1]['frames'] += TAIL
+# 배경(B-56 그 줄의 대상): 1줄 '6%' 유리병에 동전 넣는 손(분배금) · 2줄 '작년 12월' 넘기는 달력 · 3·4줄 '빼면·공시 확인' 계산하며 적는 손 · 5줄 '1년 치 다 더해서' 공책에 적는 손 — 모두 de1s 앞 편 눈 검사·밝기 통과 구간
+BG = [(1, '7118320', 0), (2, '27791953', 5), (3, '5981346', 20), (4, '5981346', 22.6), (5, '5546876', 1)]
+allines = [l for s in scenes for l in s['lines']]
+assert len(allines) == len(BG), (len(allines), len(BG))
+bg = []; at = 0
+for (k, cid, st), l in zip(BG, allines):
+    fr = l['frames'] + (TAIL if k == len(BG) else 0)
+    assert os.path.exists(os.path.join(VID, 'public', 'bg', 'detf', 'stock', cid + '.mp4')), cid
+    assert CRED[cid]['sec'] - st >= fr / 30 + 0.3, (cid, CRED[cid]['sec'], fr / 30)
+    bg.append({'src': f'bg/detf/stock/{cid}.mp4', 'from': at, 'frames': fr, 'start': st}); at += fr
+credits = ' · '.join(sorted({f"{c} {CRED[c]['author'].strip()}" for _, c, _ in BG})) + ' (Pexels License)'
+p = {'fps': 30, 'name': 'de1s_divo', 'v': 2, 'look': 'live', 'question': ['분배율 6%대 배당 ETF', '정말 6%일까'], 'hot': '정말 6%일까',
+     'answer': {'label': 'DIVO 최근 12개월 분배율', 'items': ['그대로 6.78%', '12월 한 번 빼면 4.64%'], 'arrow': False, 'note': '12월 한 번 빼면 4.64%'},
+     'base': '야후 파이낸스 분배·가격(2026-11-19 마감) · 파이어맵 계산', 'long': 'mkAxQPGaDqc',
+     'scenes': scenes, 'bg': bg, 'credits': credits}
+json.dump(p, open(os.path.join(VID, 'de1s_divo.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+fr = sum(s['frames'] for s in scenes)
+print(f'de1s_divo: {fr} 프레임 = {fr / 30:.1f}초 · 장면 {len(scenes)} · 최장 장면 {max(s["frames"] for s in scenes) / 30:.1f}초 · 배경 {len(bg)}컷(최장 {max(b["frames"] for b in bg) / 30:.1f}초)')
+print('credits:', credits)

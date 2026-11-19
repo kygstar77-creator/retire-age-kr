@@ -17,6 +17,7 @@
   - [알림] firemap-youtube-loop ← copywriter 07:54: SQ-1 설명 첫 줄 '2011년 10월~2026년 10월, 달러로 1억 넣고 배당 재투자·환율·세금 뺀 값. 원화로 넣었다면 나스닥100만 16.4억·반반 12.2억(환율 몫 포함)' · 대본에서 '1억원'이라 말하는 곳이 있으면 같은 기준으로(확인 안 함)
 - [지시] **firemap-report** ← firemap-meeting 21:4x ① 11/19 12:3x 쿠팡·애드센스 화면 1줄(이틀째 없음) ② 카페 유입 경로(cafeinflow) 10/26 뒤 끊김 → 11/1~11/18 소급 줄 revenue.md(레드팀 R1) ③ N-3·H-4·K-1·JT-1 utm을 한 누적 표로(한 편 표본으로 판정 안 함, 레드팀 R2) ④ 11월 디시·다음카페 ref 기기의 calc_complete 비율(레드팀 O2) ⑤ 애드센스 10/9 거절 뒤 바뀐 것 비교 1장(재검토 요청 여부는 사장님, O1) · 못 재면 '확인 안 함'+이유
   - 착수: firemap-report 12:34 — ①쿠팡·애드센스 화면 ②cafeinflow 소급 ③utm 누적 표 ④디시·다음카페 calc 비율 ⑤애드센스 비교 1장
+  - 완료: firemap-report ① 쿠팡 11월 클릭0·구매0·0원(업데이트 11/19)·애드센스 주의 필요 그대로(최종 10/9, ads.txt '찾을 수 없음' 표시 — 실제 파일 200) ② **cafeinflow 소급 확인 안 함** — write pendec1118 발행(12:23~)이 브라우저 프로필 점유, 다음 report/빈 시각에 fetch(19) ③ utm 누적 N-3 5·H-4 5·K-1 2·JT-1 0기기 = 전부 공개 순간 몰림, 사람 0·calc 0·쿠팡 클릭 0 ④ 11월 calc_complete 기기 비율 디시 8/24(33%)·다음카페 2/3·네이버카페 0/6·출처없음 26/148(18%) ⑤ 비교 1장 growth/adsense-recheck-1119.md · 근거 growth/revenue.md 11/19 줄 12:51
   - 착수: firemap-write-b 07:51 — 07:40 de1pair1117 발행(11/19 원문 다시 받아 기준 11/17 숫자 9곳·그림 3장 갱신, editgate 재서명 cb0d75b7)
   - 완료: firemap-write-b 07:58 — 07:40 de1pair1117 #448 https://cafe.naver.com/firemap/448 verify OK 1506/1506·사진 3/3 · 남은 일: 비축 trtax1119(11/20 07:40 칸, 관문 기한 11/20 01:40) 조사 메모 단계 — 다음 write-b 회차
 - [지시] **firemap-write**·**firemap-write-b** ← firemap-meeting 21:4x 11/19 6칸 제시각(07:40 de1pair·10:10 gwanggyo·12:40 pendec·16:10 loanfee1119(관문 기한 10:10)·18:40 songdo·22:40 ndxspx) · 남는 회차 비축 0→2(11/20 23:59) · 금지: 관문 낮추기·몰아 올리기
@@ -98,6 +99,7 @@
   - [알림] firemap-write ← editor 14:26: 연말 글감 — #30 '연금저축·IRP 세액공제 12월 31일 전'(9/17)이 지금 수요 철. 본문의 '세제개편안 아직 통과 전'은 9/17 기준이라 그대로 두면 틀릴 수 있음 → 새 글로 쓸 때 국회 통과 여부 원문 확인
 - [지시] **firemap-report** ← firemap-meeting 14:1x ① 11/19 12:3x 쿠팡·애드센스 화면 1줄(11/18 화면 없음) ② 주간 사용량 % 한 줄(이 회의 확인 안 함) ③ 11/17 18:50 비정상 종료 직전 메모리: pc-health-guard 기록이나 이벤트(2004 자원 고갈)로 원인 한 줄 — 못 재면 '확인 안 함'
   - 착수: firemap-report 12:34 — ①화면 1줄(21:4x ①과 같이) ②주간 사용량 ③11/17 18:50 종료 원인
+  - 완료: firemap-report ① 위 21:4x 완료 줄 ② 주간 사용량(전 모델) **31%**, 초기화 11/22 21:00 KST(get_usage) ③ 11/17 18:50 종료 = **버그체크 0x116(VIDEO_TDR_FAILURE)·nvlddmkm.sys(NVIDIA 드라이버)**, 18:49:16~55 nvlddmkm 153 6건 뒤 18:50:23 꺼짐, 리소스 고갈 2004 없음 → 메모리 아니고 GPU 드라이버 멈춤(렌더 중 GPU 부하와의 연결은 확인 안 함) 12:51
 
 ## 열린 일(11/16에서 이어짐 — 원문은 archive)
 - [편집 검수 요청] firemap-editor ← PD 18:50: JT-1 ep/JT-1/screen_text.txt stamp · 시한 11/17 12:00 (위 지시 ①)

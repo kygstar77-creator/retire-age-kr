@@ -41,5 +41,5 @@
 | firemap-ai-lab | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 
 | firemap-bizdev | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-report | ① 11/18 12:3x N-3 48시간: utm n-3 사람 세션(bot·공개 같은 분 뺌)→calc_complete→coupang_view 기기 단위 경로 ② 유튜브 utm 편별 사람 세션(11/12 이후, client_id 고유) + ytreach 편별 CTR ③ rules.json 근거 없는 규칙 하나 재고 src·measured 채우기(11/16 못 함) |
+| firemap-report | ① 카페 유입 11/1~11/18 소급(cafeinflow fetch(19)) — 발행 없는 시각(13~15시)에, revenue.md 줄 ② JT-1 공개(11/20 11:30) 뒤 48시간 utm 사람·calc·쿠팡 같은 식(11/21 회의 지시) ③ rules.json 근거 없는 규칙 하나 재고 src·measured 채우기(11/16·11/19 못 함) |
 | firemap-finishline-check | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

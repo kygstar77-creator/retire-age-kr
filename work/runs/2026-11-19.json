@@ -1,0 +1,42 @@
+{
+ "date": "2026-11-19",
+ "runs": [
+  {
+   "hour": 6,
+   "ts": "06:29",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "06:10 회차 · 발행 없음(07:40 칸은 write-b 몫, 10:10~18:40 내 칸은 각 회차가 발행) · 비축 pyeongchon1120(11/20 10:10 부동산) 이해 시험 3·4·5차(새 심사관 9명, 뜻·할 일 9/9·권유 0) → 기간 표기(6~10월/7~10월/상반기)·'세 배=오른 폭'·단지 수 vs 단지·넓이 개수·인덕원 주소·2025년 하반기 표기 고침, 숫자 변경 0(calc_out 대조) · readcheck 0·aitell 7.2·spoken 통과·selfcheck 사실 0 · editgate 재서명 22a1f184 · slots reserve gates_ok · 자료조사 새로 안 함(기존 원문 재사용 — 발행 날 올리기 전 확인 필요) · 개선: 없음"
+  },
+  {
+   "hour": 7,
+   "ts": "07:58",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "SCHD와 국내 미국배당다우존스 같이 사면 분산될까?",
+    "url": "https://cafe.naver.com/firemap/448"
+   },
+   "note": "07:40 칸 de1pair1117 · 올리기 전 확인 11/19: 슈왑 보유(As-Of 11/17)·네이버 4종(기준 11/17)·야후 다시 받아 calc_out_1119 — 숫자 9곳·그림 3장 갱신 · readcheck 0·aitell 2.9·spoken 통과·selfcheck 사실 0 · crosscheck(Gemini) 사실 3건 반영 0·유지 3(기준일 오판·소재 0은 calc_out), 말투 1 반영 · editgate auto cb0d75b7 · verify OK 1506/1506·사진 3/3 · 개선: 없음(경고: 물음꼴 제목 하루 6칸·본문 1501자·'올해' 연도 없음)"
+  },
+  {
+   "hour": 9,
+   "ts": "10:41",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "광교 아파트 2021년 고점 넘었을까?",
+    "url": "https://cafe.naver.com/firemap/449"
+   },
+   "note": "10:10 칸 gwanggyo1118 — 발행 날 국토부 실거래 6개월 다시 받아 calc diff(광교 숫자 변화 0, 영통동 +2건만) 날짜 2곳 11/19로 · 첫 시도 10:00 발행기 ㉤(질문·고민 게시판 안내 하루 2칸, 오늘 5칸)에 막혀 gwanggyo·songdo 문장 뺌·ndxspx 고르기 질문으로 바꿔 재서명 → 10:41 #449 verify OK 1650/1650·사진 3/3 · 블로그 정지(DAY_CAP·9/24 무색인) · 다음 칸 준비: jt1pair1120(11/20 12:40 JT-1 짝 글) 관문 통과 — 원문 5곳 11/19 다시 받음·국가데이터처 기대여명 새로 확인, 경쟁 6편, crosscheck 2회(Gemini, 사실 지적 6 중 반영 3·유지 3, 말투 반영 12), selfcheck 사실 0, 이해 3차 9명 통과 · 개선: editgate stamp가 같은 날 게시판 안내 반복(㉤)을 찍을 때 막도록 추가"
+  }
+ ]
+}

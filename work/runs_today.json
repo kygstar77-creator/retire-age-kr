@@ -1,96 +1,15 @@
 {
- "date": "2026-11-19",
+ "date": "2026-11-20",
  "runs": [
   {
    "hour": 6,
-   "ts": "06:29",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "06:10 회차 · 발행 없음(07:40 칸은 write-b 몫, 10:10~18:40 내 칸은 각 회차가 발행) · 비축 pyeongchon1120(11/20 10:10 부동산) 이해 시험 3·4·5차(새 심사관 9명, 뜻·할 일 9/9·권유 0) → 기간 표기(6~10월/7~10월/상반기)·'세 배=오른 폭'·단지 수 vs 단지·넓이 개수·인덕원 주소·2025년 하반기 표기 고침, 숫자 변경 0(calc_out 대조) · readcheck 0·aitell 7.2·spoken 통과·selfcheck 사실 0 · editgate 재서명 22a1f184 · slots reserve gates_ok · 자료조사 새로 안 함(기존 원문 재사용 — 발행 날 올리기 전 확인 필요) · 개선: 없음"
-  },
-  {
-   "hour": 7,
-   "ts": "07:58",
-   "task": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "SCHD와 국내 미국배당다우존스 같이 사면 분산될까?",
-    "url": "https://cafe.naver.com/firemap/448"
-   },
-   "note": "07:40 칸 de1pair1117 · 올리기 전 확인 11/19: 슈왑 보유(As-Of 11/17)·네이버 4종(기준 11/17)·야후 다시 받아 calc_out_1119 — 숫자 9곳·그림 3장 갱신 · readcheck 0·aitell 2.9·spoken 통과·selfcheck 사실 0 · crosscheck(Gemini) 사실 3건 반영 0·유지 3(기준일 오판·소재 0은 calc_out), 말투 1 반영 · editgate auto cb0d75b7 · verify OK 1506/1506·사진 3/3 · 개선: 없음(경고: 물음꼴 제목 하루 6칸·본문 1501자·'올해' 연도 없음)"
-  },
-  {
-   "hour": 9,
-   "ts": "10:41",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "광교 아파트 2021년 고점 넘었을까?",
-    "url": "https://cafe.naver.com/firemap/449"
-   },
-   "note": "10:10 칸 gwanggyo1118 — 발행 날 국토부 실거래 6개월 다시 받아 calc diff(광교 숫자 변화 0, 영통동 +2건만) 날짜 2곳 11/19로 · 첫 시도 10:00 발행기 ㉤(질문·고민 게시판 안내 하루 2칸, 오늘 5칸)에 막혀 gwanggyo·songdo 문장 뺌·ndxspx 고르기 질문으로 바꿔 재서명 → 10:41 #449 verify OK 1650/1650·사진 3/3 · 블로그 정지(DAY_CAP·9/24 무색인) · 다음 칸 준비: jt1pair1120(11/20 12:40 JT-1 짝 글) 관문 통과 — 원문 5곳 11/19 다시 받음·국가데이터처 기대여명 새로 확인, 경쟁 6편, crosscheck 2회(Gemini, 사실 지적 6 중 반영 3·유지 3, 말투 반영 12), selfcheck 사실 0, 이해 3차 9명 통과 · 개선: editgate stamp가 같은 날 게시판 안내 반복(㉤)을 찍을 때 막도록 추가"
-  },
-  {
-   "hour": 12,
-   "ts": "12:50",
-   "blog": null,
-   "cafe": {
-    "title": "연금저축 12월에 몰아 넣으면 매달과 뭐가 다를까?",
-    "url": "https://cafe.naver.com/firemap/450"
-   },
-   "note": "12:40 칸 pendec1118 · 올리기 전 확인 11/19: 소득세법 59조의3 본문 브라우저로 다시 엶(lawweb·DRF 막힘)·조세소위 의결 보도 없음(검색 2회)·숫자 변화 0, 기준일만 11/19 · aitell 1.4·readcheck 0·editgate auto 4c7570d8 · verify OK 1575/1575·사진 3/3 · 블로그 정지 · 11/20 16:10 TBD 주제 검증 1차 slots note · 개선: 없음(lawweb 구조 바뀜은 tools 기록)"
-  },
-  {
-   "hour": 15,
-   "ts": "16:07",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "대출금리 법적비용 빠졌다는데, 은행 가산금리 내렸을까?",
-    "url": "https://cafe.naver.com/firemap/451"
-   },
-   "note": "블로그 정지(하루 상한·무색인 방침) · 카페 16:10 칸 · 발행 날 다시 확인: 은행연합회 10월분 같음·은행법 30조의3 원문 그대로 · 검증: 관문 통과본(crosscheck 11/18, editgate 해시 일치) · verify OK 1780/1780·사진 3 · 다음 칸 fedhike1120 씨앗(원문 4·ECOS 계산) · 개선: lawweb.py Playwright 대체"
-  },
-  {
-   "hour": 18,
-   "ts": "18:31",
-   "blog": null,
-   "cafe": {
-    "title": "송도 아파트 전세 정말 1억 올랐을까?",
-    "url": "https://cafe.naver.com/firemap/452"
-   },
-   "note": "발행 날 확인: 국토부 전월세·매매 9~11월 재조회(전세 33,853→33,869, 핵심 숫자 그대로)·주택임대차보호법 7조·부동산거래신고법 6조의2 재확인 · readcheck 0·aitell 3.4·selfcheck 사실 0 · verify OK 1613/1613·사진 3 · 블로그 정지 유지 · 11/20 12:40 jepq1120·16:10 kodex200_1120 주제 확정·씨앗 · 개선: 없음"
-  },
-  {
-   "hour": 21,
-   "ts": "21:38",
+   "ts": "06:40",
    "blog": null,
    "cafe": {
     "title": null,
     "url": null
    },
-   "note": "발행 없음(22:40 ndxspx는 write-b 몫, 이 회차 칸 아님) · 11/20 12:40 jepq1120 짓기·관문 통과(원문 4곳: 나스닥 배당·야후 종가·ECOS 환율·IRS 조약표 · WebSearch 2건) · 검증 경로: crosscheck(Gemini 사실 5건 반영 2·유지 2, 말투 쪽 시간 초과→selfcheck 0·aitell 1.3) · 이해 2차 6명 통과 · 개선: 없음(crosscheck 첫 실행이 timeout 300에 잘려 출력 없이 끝남 — 백그라운드로 다시 돌려 해결, 스크립트 변경 없음)"
-  },
-  {
-   "hour": 22,
-   "ts": "23:03",
-   "task": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "나스닥100 vs S&P, 하락장에선 늘 더 빠졌을까?",
-    "url": "https://cafe.naver.com/firemap/453"
-   },
-   "note": "22:40 칸(지수투자, 범위 안) · 발행 날 다시 확인: Yahoo ^NDX·^GSPC 11/18 종가 다시 받아 calc.py — 최고점 대비 13.5→13.2%·6.1→6.3%, 전체 241→242배, 날짜 11/18 · Nasdaq 방법론·연준·미래에셋 다시 엶(etfshopping 2차는 429) · 첫 발행 시도가 readcheck 'vs' 1건에 막혀 c01 첫 줄에 'vs' 넣음 · readcheck 0·aitell 1.1·spoken·selfcheck 사실 0(crosscheck 재실행 안 함 — 숫자 갱신만)·research_gate strict·prepublish·editgate auto 6cab0136 · verify OK 1952/1952자·사진 3/3 · 경고: 제목 물음꼴 하루 6칸(한도 4)·되풀이 1·본문 1952자 · 개선: 없음"
+   "note": "발행 없음 — 이번 시각 카페 칸 없음(07:40은 write-b mkifrec1120). 일: 11/21 6칸 축 배정 + jamsilpair1120 짓기·관문 통과(22:40 칸). 자료조사: 국토부 실거래 매매 83개월·전월세 12개월 다시 받음, WebSearch 6건(SBS Biz·헤럴드경제·MTN 7/1·MTN 11/14·토허제·리센츠 시세), 도시정비법 74·81조 원문. 교차검증: crosscheck 2회(Gemini) 사실 지적 5건 중 반영 1·유지 4(1곳 출처·우리 영상·공식 조회 주소·법령), 말투 9건 중 5 반영. 이해 시험 3차 9명 통과. 개선: 없음(관문이 잡은 쉼표 제목·끝말 반복·영상 주소 위치를 바로 고침)"
   }
  ]
 }

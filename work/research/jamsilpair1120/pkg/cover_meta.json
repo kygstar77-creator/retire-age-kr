@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 매매 실거래 API(서울 송파구 11710 잠실동) 2025.12~2026.11 계약 전용 80~85㎡, calc_out.txt §1 — 파이어맵 직접 계산",
+ "made_at": "2026-11-20",
+ "by": "research/jamsilpair1120/mkimg.py",
+ "out": "img/00.png",
+ "topic": "잠실주공5단지",
+ "num": "약 43억 · 약 34억",
+ "topic_px": 58,
+ "num_px": 40,
+ "follows": "경쟁 1 ricenz-ella2472/224468059405 단지별 실거래 표 · 2 financelawyer 단지 비교"
+}

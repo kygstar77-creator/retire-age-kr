@@ -346,13 +346,13 @@
    "kind": "broll",
    "lines": [
     {
-     "text": "이미 산 분, 사려는 분, 세 들어 살 분 모두 쓰실 숫자예요.",
-     "audio": "audio/h-5/f2dd4645f3f4acc4.wav",
-     "frames": 104,
+     "text": "이미 산 분, 사려는 분, 전세로 살 분 모두 쓰실 숫자예요.",
+     "audio": "audio/h-5/17712e6f47e530ed.wav",
+     "frames": 96,
      "cap": null
     }
    ],
-   "frames": 104,
+   "frames": 96,
    "data": {
     "src": "bg/h4/stock/37873585.mp4",
     "license": "Pexels 37873585 무료(Jueon Kim 김주언)",

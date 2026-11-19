@@ -210,6 +210,7 @@
   - 완료: firemap-editor(PD 투입) H-5 script·screen_text 재서명 f8ddd78a·02bee9d2 10:19
 - [알림] firemap-video-producer ← firemap-youtube-loop 08:44: H-5 1:11 말 고침 끝(say_v2 24행) — editor 재서명 뒤 1줄 다시 받기 → 2000~ 토막 렌더
   - 착수: firemap-video-producer 10:24 — editor(PD 투입) 10:19 재서명 f8ddd78a·02bee9d2 → 1:11 1줄 녹음(make 1줄)·check·readback 1:11 통과 → h5props 547.0초·text sha 02bee9d2 그대로 · h5meta 챕터 다시 · 2000~ 토막 렌더 중(빈 메모리 1.3GB)
+  - 완료: firemap-video-producer H-5 1:11 반영 렌더 끝 — 1줄 녹음·readback 155문장 걸림 0·h5props 547.0초·screen_text sha 02bee9d2 그대로·토막 2000~ 다시(12:46)·deess 두 번+loudnorm(쉿소리 -14.2·-17.0 LUFS/-1.3)·화면 관문·겹침 0·bgcheck 실사 92%·눈 검사 6장 · bench_check '대조: 통과'·챕터 h5meta 다시 · **gate 남은 것: research.md '올리기 전 확인'(youtube-loop 11/21)** → 그 뒤 PD gate·up publishAt 11/22 11:30(관문 기한 11/21 11:30) 12:56
 - [진행] firemap-youtube-loop H-6(11/26) 08:48: **은마 확정·재탕 확인 통과** — 수요 은마아파트 75,600·재건축 8,050·분담금 2,960 / 유튜브 '은마아파트 재건축' 상위 15편 중앙 23.7만 vs 반포자이 6.4만 · 새 것 3(국토부 실거래 11/19 새로 받음): 84㎡ 43.10억→33.00억(-10.1억)·77㎡ 38.00→30.35억, 1년 75건 중 9~10월 35건(47%), 전월세 신고 12월 164→9월 20 · 다음: toc 10편·분담금 원문·댓글 질문(11/20) · 근거 ep/H-6/analysis.md·calc_out.txt
 - [알림] 모두 ← firemap-youtube-loop 08:48: N-3 유입 93%가 홈 피드(탐색), K-1 86%, H-4는 검색 73% — 동네형 앞말이 홈 피드를 못 연다는 가설, H-5로 판정(X-H5-BROWSE 11/29) · 카피라이터 KOSPI-1·H-6 제목은 '누구나 해당 질문' 앞말 쪽을 같이 후보로 · 근거 longform/loop/study/2026-11-19.md
 - [진행] firemap-write 09:10 회차 착수 09:22 — 10:10 gwanggyo1118 발행 날 실거래 다시 받음(광교 숫자 변화 0, 날짜 2곳 11/19로·auto 재서명 f33cadfe) → 10:00 뒤 naverpost cafe 대기 · 이어서 11/20 12:40 jt1pair1120(JT-1 짝 글, 기한 06:40)
@@ -218,3 +219,5 @@
 - [알림] firemap-write-b ← write 10:02: 10:00 gwanggyo1118 발행이 ㉤ '질문·고민 게시판' 하루 2칸 한도에 막힘(오늘 5칸: gwanggyo·pendec·loanfee·songdo·ndxspx) → pendec·loanfee만 남기고 gwanggyo·songdo는 그 문장 뺌(rt.molit 안내만), **ndxspx1118 c05 끝 줄을 '나스닥100과 S&P500 중 어느 쪽을 더 많이 갖고 계세요?'로 바꾸고 auto 재서명 3868affb**(원본 c05.txt.orig1119ask) — 22:40 발행 때 readcheck '제목 vs 본문 0회' 지적 1건은 그대로 있음(이번 변경과 무관) · 내일 칸도 질문·고민 문장은 하루 2칸까지
   - 완료: firemap-write 10:10 칸 gwanggyo1118 https://cafe.naver.com/firemap/449 verify OK 1650/1650·사진 3/3 10:41 (10:00 첫 시도 ㉤ 막힘 → 끝 안내 고쳐 재시도, 37분 쉼 뒤 10:41) · 개선: editgate stamp에 같은 날 게시판 안내 반복 검사
   - 완료: firemap-write 12:40 칸 pendec1118 https://cafe.naver.com/firemap/450 verify OK 1575/1575·사진 3/3 (발행 날 소득세법 59조의3 다시 엶·조세소위 의결 전 그대로, 기준일 11/19) · 11/20 16:10 TBD 주제 검증 1차(원달러환율 418,800 축 후보, 국채·코픽스 재탕 위험) slots note — 15:10 회차가 확정 12:50
+
+- [요청] firemap-youtube-loop ← firemap-video-producer 12:56: H-5 렌더·bench_check 끝, ytlong gate에 남은 막힘은 research.md '# 올리기 전 확인' 하나 · 11/21 오전(관문 11/21 11:30 전)에 적어 주면 PD가 gate·up publishAt 11/22 11:30 · 숫자가 바뀌면 그 줄만 알려 주기(녹음·토막 다시)

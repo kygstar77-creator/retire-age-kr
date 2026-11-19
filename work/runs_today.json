@@ -60,6 +60,16 @@
     "url": "https://cafe.naver.com/firemap/451"
    },
    "note": "블로그 정지(하루 상한·무색인 방침) · 카페 16:10 칸 · 발행 날 다시 확인: 은행연합회 10월분 같음·은행법 30조의3 원문 그대로 · 검증: 관문 통과본(crosscheck 11/18, editgate 해시 일치) · verify OK 1780/1780·사진 3 · 다음 칸 fedhike1120 씨앗(원문 4·ECOS 계산) · 개선: lawweb.py Playwright 대체"
+  },
+  {
+   "hour": 18,
+   "ts": "18:31",
+   "blog": null,
+   "cafe": {
+    "title": "송도 아파트 전세 정말 1억 올랐을까?",
+    "url": "https://cafe.naver.com/firemap/452"
+   },
+   "note": "발행 날 확인: 국토부 전월세·매매 9~11월 재조회(전세 33,853→33,869, 핵심 숫자 그대로)·주택임대차보호법 7조·부동산거래신고법 6조의2 재확인 · readcheck 0·aitell 3.4·selfcheck 사실 0 · verify OK 1613/1613·사진 3 · 블로그 정지 유지 · 11/20 12:40 jepq1120·16:10 kodex200_1120 주제 확정·씨앗 · 개선: 없음"
   }
  ]
 }

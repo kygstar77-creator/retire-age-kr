@@ -14,6 +14,9 @@
     - 착수: firemap-visual-designer 09:06 — SQ-1 4차 판(큰 글 섞기·흰 줄 '환율 빼고')
     - 완료: firemap-visual-designer SQ-1 4차 판 — 흰 줄 '15년 전 1억 넣었다면 · 환율 빼고' · 큰 흰 '나스닥100만 13.6억'·주황 '반반 섞으면 10.1억'(합 21자) · 알약 '가장 크게 빠진 폭 -33% → -24%'(calc_mix_out_1112 0% 13.56억·-32.6% / 50% 10.10억·-24.0%) · 시안 f(e 꼴 그대로)·g(알약 107px)·h(노트북 사진) → thumbpair e<f·e<g·e<h 모두 2번 다 새판 · f>g 2:0·g>h 2:0 → **1안 ep/SQ-1/thumb_sq1_f.png**(f·g 차이 작아 판정 이유 약함 — 1초 시험으로 가름) · 09:08
       - [요청] firemap-copywriter ← visual 09:08: SQ-1 1초 시험 4차(412·168 순서 바꿔 2번, 권유 한 방향·'13.6억 달러' 오해·알약 168 다시 봄) — work/research/visual/SQ-1-thumb/sq1_f.png·sq1_f_412.png·sq1_f_168.png(알약 큰 판 sq1_g도 같은 폴더) · 시한 11/21
+        - 착수: firemap-copywriter 15:11 (운영실장)
+        - 완료: firemap-copywriter SQ-1 1초 시험 4차 **반려(좁게)** — 주제 3/3·권유 한 방향 풀림(통과), 그러나 13.6억·10.1억이 원으로 읽힘 3/3(달러 기준과 어긋남)·'환율 빼고' 뜻 제각각·알약 168 안 읽힘 · 근거 copy/sq1/judges.md 4차 15:14
+          - [요청] firemap-visual-designer ← copywriter 15:14: SQ-1 sq1_f 흰 줄만 '15년 전 달러로 1억 넣었다면'(2위 '15년 전 1억 달러 넣었다면')으로 · 큰 글·알약 f 그대로 · 412·168 파일 → copywriter 5차(주제·단위 짧은 시험) · 시한 11/21
   - [알림] firemap-youtube-loop ← copywriter 07:54: SQ-1 설명 첫 줄 '2011년 10월~2026년 10월, 달러로 1억 넣고 배당 재투자·환율·세금 뺀 값. 원화로 넣었다면 나스닥100만 16.4억·반반 12.2억(환율 몫 포함)' · 대본에서 '1억원'이라 말하는 곳이 있으면 같은 기준으로(확인 안 함)
 - [지시] **firemap-report** ← firemap-meeting 21:4x ① 11/19 12:3x 쿠팡·애드센스 화면 1줄(이틀째 없음) ② 카페 유입 경로(cafeinflow) 10/26 뒤 끊김 → 11/1~11/18 소급 줄 revenue.md(레드팀 R1) ③ N-3·H-4·K-1·JT-1 utm을 한 누적 표로(한 편 표본으로 판정 안 함, 레드팀 R2) ④ 11월 디시·다음카페 ref 기기의 calc_complete 비율(레드팀 O2) ⑤ 애드센스 10/9 거절 뒤 바뀐 것 비교 1장(재검토 요청 여부는 사장님, O1) · 못 재면 '확인 안 함'+이유
   - 착수: firemap-report 12:34 — ①쿠팡·애드센스 화면 ②cafeinflow 소급 ③utm 누적 표 ④디시·다음카페 calc 비율 ⑤애드센스 비교 1장
@@ -49,6 +52,7 @@
   - 완료: firemap-youtube-loop **A-49 → 쇼츠 관문으로 올림**(값 그대로: 답 ≤5초·곁가지 0) — 24편 6 vs 18 경계 0.52~0.53 한 점만 겹침 · review.md에 `A-49: 답 첫 등장 N.N초 · 곁가지 N줄` 한 줄 필수, **11/21부터 올리는 세로 영상**은 ytupload가 막음(shortsdaily.a49_check, exit 15), 새 녹음 없이 못 고치면 `A-49 예외: 사유`로 경고 통과 · 이미 예약된 편 소급 없음 · registry A-49 줄 · 약점(늦은 답 단독 공개 1편·주제 교란) 12/3 다시 판정 · **뉴스 숫자 칸 주 2칸**: slots.json `_rule_news` + **11/27 19:20 news1127_jongbu(종부세 고지서, 카드형)**·**11/29 19:20 1순위 11/26 금통위** · 국세청 2026 고지 보도자료는 11/19 기준 공표 확인 안 함 → 원문 나온 뒤만 · 근거 cardshorts/news1127_jongbu/plan.md 12:49
 - [알림] firemap-copywriter·firemap-video-producer ← youtube-loop 12:49: 11/21부터 새로 올리는 쇼츠는 review.md에 `A-49: 답 첫 등장 N.N초 · 곁가지 N줄`(대본 줄 시각으로 잰 값) 한 줄이 없으면 ytupload가 막음 · 답 >5초·곁가지 1↑는 고치거나 `A-49 예외: 사유` · 11/27 news1127_jongbu는 카드형(plan.md), 사실표는 youtube-loop 11/24까지
 - [지시] **firemap-visual-designer** ← benchmark-loop: 쇼츠 위 제목 띠 실측(경쟁 가인지TV 등 약 18% 높이 고정 vs 우리 약 5%, sb0 어림) — oar2 10편 이상 재서 registry 후보로만, 값 변경 금지 · 기한 11/21
+  - 착수: firemap-visual-designer 15:11 (운영실장)
 - [지시] **firemap-editor** ← benchmark-loop: style-guide A97(질문 던지고 '모른다'로 닫기)·A98(방금 한 말 다시 풀기) 쇼츠 검수에 추가
   - 완료: firemap-editor A97 사전('이유가 적혀 있지 않')·A98 쇼츠 점검표(style-guide 이미 있음) — 다음 쇼츠 문구 검수부터 적용 07:10
 - 결정 필요(사장님): ① '목록 한 장 6~10초' 쇼츠 시범(4판째, 종부세 카드 9G1A5qc-IoY 199,208회 vs 우리 종부세 최고 1,177) ② 스튜디오에서 위 3편 제한 표시 확인(로그인 필요)

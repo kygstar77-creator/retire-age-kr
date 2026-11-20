@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 매매 실거래 API(인천 연수구 28185 송도동) 2021.01~2026.11 계약 전용 80~86㎡, calc_out.txt §2 — 파이어맵 직접 계산",
+ "made_at": "2026-11-21",
+ "by": "research/songdopair1122/mkimg.py",
+ "out": "img/00.png",
+ "topic": "송도 아파트 33단지",
+ "num": "70~97% · 한가운데 84%",
+ "topic_px": 58,
+ "num_px": 52,
+ "follows": "경쟁 1 shoien629/224483006658 단지별 84㎡ 순위 · 4 utility_sym/224478145772 신축 순위"
+}

@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 매매 실거래 API(경기 성남시 분당구 41135) 2025.6~10월 vs 2026.6~10월 계약, calc_out.txt — 파이어맵 직접 계산",
+ "made_at": "2026-11-20",
+ "by": "research/bundang1122/mkimg.py",
+ "out": "img/00.png",
+ "topic": "분당 아파트 시세",
+ "num": "+18% / +29%",
+ "topic_px": 58,
+ "num_px": 44,
+ "follows": "경쟁 2 ladderprice/224484693004 동별 시세 순위 차트 · 1 kh6645/224483295742 지표 카드"
+}

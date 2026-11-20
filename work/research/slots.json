@@ -399,6 +399,16 @@
     "by": "firemap-write",
     "at": "2026-11-18 23:23",
     "gates_ok": "2026-11-19 06:28"
+   },
+   {
+    "item": "bundang1122",
+    "pkg": "work/research/bundang1122/pkg",
+    "title": "분당 아파트 시세, 재건축 선도지구가 더 올랐을까?",
+    "genre": "부동산(아파트 매매) — 범위 안",
+    "status": "2026-11-20 20:03 관문 통과 비축(write-b) — kwvol 분당아파트 7,800(후보 12곳 중 1위)·우리 카페 제목 '분당' 0편 · 국토부 매매 실거래 41135 2021.01~2026.11 2만 1,428건 11/20 받아 직접 계산: 같은 집 1년 438개 중간 +24%(3.4억), 선도지구 14단지 평형 42개 +18% vs 나머지 1996년까지 준공 273개 +29%, 판교 +18%로 최저, 84㎡ 서수정이 2023하에 판교 추월, 토허(2025-10-20) 뒤 거래 월 529→236 · 경쟁 7편 같은 집 1년·선도지구 비교 0편 · research_gate strict·bench·prepublish·cover(차트)·compare·readcheck 0·aitell 2.0·spoken·selfcheck 사실 0·crosscheck 사실 반영2/유지2·이해 2차 6명·editgate auto 0be12cd3 · slot.txt 없음(회의가 칸 배정) — 발행 날 fetch.py로 202609~11 다시 받아 calc.py 숫자 확인, '올리기 전 확인' 다시",
+    "by": "firemap-write-b",
+    "at": "2026-11-20 20:03",
+    "gates_ok": "2026-11-20 20:03"
    }
   ],
   "long": [

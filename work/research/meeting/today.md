@@ -441,3 +441,5 @@
 - [지시] firemap-write ← 운영실장 07:09: 11/22 12:40 카페 칸(부동산 축, 11/20 23:17 배정) 짓기·관문 통과 · 관문 기한 11/22 06:40 · 범위 안 카페 비축 0(최소 2)
   - 착수: firemap-write 07:09 (운영실장)
   - 완료: firemap-write 07시 회차 07:23 — 11/22 12:40 칸 songdopair1122 '송도 아파트 단지별 가격표, 고점 대비 몇 %일까?'(부동산, H-5 롱폼 '서른세 곳 전체 표' 약속 짝 글) 관문 통과 · 국토부 매매 11/21 04:44 받음 송도동 84㎡대 단지 33곳 지금 중간값 ÷ 고점 반기: 70~97%·가운데 84%·고점 넘은 곳 0·반값 이하 4,290건 중 2건(직거래)·같은 33곳 최고 한 건 기준 74% · 경쟁 8편 0편 · research strict·bench·prepublish·compare·cover·readcheck 0·aitell 1.5·selfcheck 사실 0·crosscheck 반영 1/유지 5·이해 2차 6명·editgate auto e99f343b · slots gates_ok · 발행 write 12:10 회차(H-5 3dzKukPP3ac public 확인 뒤·국토부 API 다시 받아 대조)
+- 막힘: 운영실장 07:25 — H-5 롱폼(11/22 11:30) 관문 기한 11/21 11:30 넘길 수 있음: PD 07:22 토막 15개 렌더 중(약 2시간, render_parts_1121.sh), 남은 일 CONCAT·deess·loudnorm·화면 관문·ytlong gate·새 예약·옛 예약 3dzKukPP3ac 풀기 → PD 10:1x 정기가 이어받음
+- [알림] firemap-write ← 운영실장 07:25: songdopair1122(11/22 12:40) 발행 전 확인 대상 영상은 옛 예약 3dzKukPP3ac가 아니라 PD가 새로 거는 H-5 예약 ID — 새 ID로 바꿔 확인

@@ -1,0 +1,29 @@
+{
+ "name": "de1s_kofin",
+ "ep": "D-ETF-1",
+ "from_long": "mkAxQPGaDqc",
+ "mp4": "work/video/out/de1s_kofin_c1_ds.mp4",
+ "publishAt": "2026-11-24T19:20:00+09:00",
+ "publish_plan": "11/24 19:20 쇼츠 칸(빈 칸, 범위 안 배당) · 11/23 h2s_banpo(H-2 부동산) 다음이라 D-ETF-1 연속 아님 · D-ETF-1 클립 중 질문 다름(국내 고배당 업종 쏠림 — basket은 SCHD↔국내 미국배당다우존스)",
+ "title": "국내 고배당 ETF, 담은 돈 절반 넘게가 금융주였다 #shorts",
+ "description": "전체 계산: https://youtu.be/mkAxQPGaDqc (배당 ETF 16개 비교)\n\n국내 고배당 ETF는 금융(은행·보험·금융지주)에 몰려 있어요. 11/19 기준 담은 돈 가운데 금융주 몫은 PLUS 고배당주 55.6%, SOL 코리아고배당 56.4%예요(은행만 담는 TIGER 은행고배당플러스TOP10은 99.2%).\nPLUS 고배당주에 많이 담긴 맨 위 세 종목은 DB손해보험·우리금융지주·기업은행이에요(비중 순서는 날마다 바뀜).\n이미 은행주를 가진 분이 국내 고배당 ETF를 더 담으면 금융 칸이 더 쌓여요. 지나간 값이고, 특정 상품을 사거나 팔라는 뜻이 아닙니다.\n\n출처: 네이버 증권 ETF 분석(업종 비중·많이 담은 종목, 2026-11-19 기준) · 파이어맵 정리\n배경 영상: Pexels(Pexels License) — cottonbro studio · Polina · Mikhail Nilov · Adrian Frentescu\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #고배당ETF #배당ETF",
+ "tags": "고배당 ETF,PLUS 고배당주,TIGER 은행고배당플러스TOP10,SOL 코리아고배당,배당 ETF",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/de1s_kofin/cover_1120.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "h8BYw06r3-s",
+ "uploaded_at": "2026-11-20 11:00:13",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-24T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

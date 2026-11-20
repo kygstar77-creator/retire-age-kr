@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 chart API ^SP500TR 일별 1988-01-04~2026-11-20(SPY 수정 종가·FRED SP500과 대조), 거래일마다 산 경우 보유 기간별 손해 비율 — calc_out.txt 파이어맵 직접 계산",
+ "made_at": "2026-11-21",
+ "by": "research/spx10y1122/mkimg.py",
+ "out": "img/00.png",
+ "topic": "S&P500 10년 보유",
+ "num": "손해 본 경우 6.5%",
+ "topic_px": 58,
+ "num_px": 44,
+ "follows": "경쟁 7 julyasd/224484368469 흰 바탕·검은 큰 제목·빨간 숫자 한 줄·아래 선 그림 (장식 선 대신 실제 기간별 막대)"
+}

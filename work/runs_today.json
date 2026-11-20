@@ -1,79 +1,15 @@
 {
- "date": "2026-11-20",
+ "date": "2026-11-21",
  "runs": [
   {
    "hour": 6,
-   "ts": "06:40",
+   "ts": "06:31",
    "blog": null,
    "cafe": {
     "title": null,
     "url": null
    },
-   "note": "발행 없음 — 이번 시각 카페 칸 없음(07:40은 write-b mkifrec1120). 일: 11/21 6칸 축 배정 + jamsilpair1120 짓기·관문 통과(22:40 칸). 자료조사: 국토부 실거래 매매 83개월·전월세 12개월 다시 받음, WebSearch 6건(SBS Biz·헤럴드경제·MTN 7/1·MTN 11/14·토허제·리센츠 시세), 도시정비법 74·81조 원문. 교차검증: crosscheck 2회(Gemini) 사실 지적 5건 중 반영 1·유지 4(1곳 출처·우리 영상·공식 조회 주소·법령), 말투 9건 중 5 반영. 이해 시험 3차 9명 통과. 개선: 없음(관문이 잡은 쉼표 제목·끝말 반복·영상 주소 위치를 바로 고침)"
-  },
-  {
-   "hour": 9,
-   "ts": "10:20",
-   "blog": null,
-   "cafe": {
-    "title": "평촌 아파트 시세, 옆 호계동보다 얼마나 더 올랐을까?",
-    "url": "https://cafe.naver.com/firemap/455"
-   },
-   "note": "firemap-write 09:10 회차 · 10:10 칸 pyeongchon1120(부동산) · 발행 날 국토부 실거래 2026-05~11 다시 받아 calc diff: 10,883→10,936건·2023 대비 약 55→56%·84㎡ 11.20→11.25억·인덕원대우 12.18억·11월 6·67건 고침(핵심 +22%·+7% 그대로) · 출처 4(국토부 API·법령·경쟁 블로그·rt.molit) · 교차검증: 11/18 crosscheck 그대로, 이번 고침은 selfcheck 사실 0·readcheck 0·aitell 5.5·spoken 통과 · research strict·prepublish·bench 통과 · editgate auto 1817eb78 · verify OK 1963/1963·사진 3/3 · 블로그 정지(범위·하루 상한) · 개선: 없음(발행기 '올해·작년' 상대 시점 경고 5건 — 발행 당해라 맞음, 다음 묶음부터 박힌 해로) · 다음 칸 준비: 11/21 10:10 kdiv1121 PLUS 고배당주 vs 같은 갈래 분배금 씨앗"
-  },
-  {
-   "hour": 12,
-   "ts": "12:48",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "JEPQ에 1억 넣었다면 분배금 받고 얼마 남았을까?",
-    "url": "https://cafe.naver.com/firemap/456"
-   },
-   "note": "12:40 칸 · 발행 날 다시 확인(나스닥 분배·야후 11/19 종가 53.63·ECOS 11/20 1,330.8·IRS 표 같음) 숫자 갱신 · verify OK 1659/1659·사진 3/3 · 검증 경로 selfcheck 사실 0(발행 전날 crosscheck 반영 2/유지 2) · readcheck 0 · 블로그 없음(하루 상한 정책) · kdiv1121 2차 2곳 대조·계산 끝 · 개선: 없음(그림 02 글자 겹침은 xlim 고침)"
-  },
-  {
-   "hour": 15,
-   "ts": "16:43",
-   "blog": null,
-   "cafe": {
-    "title": "KODEX 200 분배금 포함 수익률 지수와 비교",
-    "url": "https://cafe.naver.com/firemap/457"
-   },
-   "note": "16:10 칸 kodex200_1120 발행(16:4x, 무작위 대기 뒤) verify OK 1663/1663·사진 3/3 · 발행 날 11/20 마감 종가(네이버 76,210·지수 755.34, 하루 -5.5%)로 5년 105.3/95.2/93.4%·1년 36.1/34.6/33.9% 갱신, 차이 11.8%p 그대로 · readcheck 6건(옛 원고 숫자과다·제목 숫자 둘·설명 없음) 고침→0 · 같은 날 반복 소제목·끝 문장 바꿈 · 검증 경로 selfcheck(사실 0) · 자료조사: 야후·네이버 KPI200·069500 다시 받음 · 11/21 10:10 kdiv1121 관문 통과(이해 2차 6명, crosscheck 두 번 무응답→selfcheck 0) · 개선: 발행 날 갱신 뒤 readcheck 다시 돌리기를 교본에 더함"
-  },
-  {
-   "hour": 18,
-   "ts": "18:47",
-   "blog": null,
-   "cafe": {
-    "title": "하남 아파트 시세, 1년 새 어느 동네가 더 올랐을까?",
-    "url": "https://cafe.naver.com/firemap/458"
-   },
-   "note": "firemap-write 18:10 회차 · 발행 날 국토부 API 2곳·법령 1곳 다시 엶 · verify OK 1591/1591 사진 3/3 · readcheck 0·selfcheck 0·research strict·prepublish 통과 · 블로그 없음(방침) · 다음 칸 ndx1121 씨앗 · 개선: 없음"
-  },
-  {
-   "hour": 21,
-   "ts": "21:34",
-   "blog": null,
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "발행 없음 — 이번 시각 대기 카페 없음(22:40 jamsilpair1120은 write-b 몫, 나머지는 코너 시각 전). 11/21 18:40 ndx1121 짓기 관문 통과·auto e412340c · 자료조사 출처 7(야후 ^NDX·FRED NASDAQ100·야후 133690·KRW=X·FRED DEXKOUS·FEDFUNDS·네이버 증권 133690)+경쟁 5편 · 검증 경로 crosscheck(Gemini) 사실 4건 반영 3·유지 1, 말투 7건 반영 2·유지 5(합치면 숫자 3개+) · selfcheck 사실 0 · 이해 2차 6명 · 개선: 없음(bench 사진 비교 칸은 파일 경로만 — 괄호 설명 넣으면 관문이 못 찾음, playbook에 적음)"
-  },
-  {
-   "hour": 22,
-   "ts": "22:58",
-   "task": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "잠실주공5단지 시세는 새 리센츠보다 비쌀까?",
-    "url": "https://cafe.naver.com/firemap/459"
-   },
-   "note": "22:40 칸 jamsilpair1120(부동산, 쇼츠 nMVEVTbVYtk 짝 글) · 올리기 전 확인: 국토부 매매·전월세 2026-09~11 다시 받아 calc 전 줄 같음 · 쇼츠 공개 oembed 200 · 관문 naverpost 통과(AI 티 3.8·편집 해시 일치) · verify OK 1692/1692·사진 3/3 · 경고: 본문 1687자>1500(D-17), '계속할까요' 확인 창 대기 초과(발행은 됨) · 개선: 없음"
+   "note": "발행 칸 없음(07:40 guri1121은 write-b, 10:10 kdiv1121은 09:10 회차) · 11/22 10:10 칸 spx10y1122 짓기·관문 통과 · 자료조사 출처 5(야후 ^SP500TR·^GSPC·SPY, FRED DEXKOUS·SP500)+경쟁 5편 · 검증 경로 crosscheck(Gemini) 사실 5건 반영 3·유지 2(계산·운용사 사실표 추가), 말투 11건 반영 4 · selfcheck 사실 2건 고침→0 · 이해 시험 2차 6명 통과 · verify 해당 없음(발행 안 함) · 개선: 야후 1970년 전 타임스탬프가 윈도우 fromtimestamp에서 OSError — calc.py에서 epoch+timedelta로 바꿈(1928년 자료 쓰는 글에 같은 틀)"
   }
  ]
 }

@@ -47,7 +47,7 @@ frame(fig, '2021년 하반기 값보다 지금 얼마나 높나', '같은 단지
 fig.subplots_adjust(top=0.82, bottom=0.12, left=0.04, right=0.98); fig.savefig('pkg/img/01.png', dpi=100); plt.close(fig)
 # 02 월평균 거래 건수
 fig, ax = plt.subplots(figsize=(9, 6.4), dpi=100)
-labs = ['2024년\n6~10월', '2025년\n6~10월', '2025년 11월\n~2026년 3월', '2026년\n6~10월']; v = [364, 492, 247, 258]
+labs = ['2024년\n6~10월', '2025년\n6~10월', '2025년 11월\n~2026년 3월', '2026년\n6~10월']; v = [364, 492, 247, 259]
 ax.bar(range(4), v, color=['#93C5FD', BLUE, '#93C5FD', ORG], width=0.6)
 for i, x in enumerate(v): ax.text(i, x + 8, f'{x}건', ha='center', va='bottom', fontproperties=Bs(22), color=INK)
 ax.set_xticks(range(4)); ax.set_xticklabels(labs, fontproperties=Bs(14)); ax.tick_params(axis='x', length=0, pad=8)

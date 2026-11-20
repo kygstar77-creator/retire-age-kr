@@ -17,11 +17,11 @@ WORK = os.path.abspath(os.path.join(HERE, '..', '..', '..'))
 EP = os.path.join(WORK, 'research', 'longform', 'ep', 'KOSPI-1')
 OUT = os.path.join(WORK, 'video', 'public', 'bg', 'kospi1', 'board')
 LINE = (206, 198, 186)
-SRC = '한국은행 경제통계시스템(ECOS) 코스피 일별 종가 1995.01.03~2026.11.13 · 하루 = 전날 종가 대비 종가'
+SRC = '한국은행 경제통계시스템(ECOS) 코스피 일별 종가 1995.01.03~2026.11.20 · 하루 = 전날 종가 대비 종가'
 rd = lambda fn: open(os.path.join(EP, fn), encoding='utf-8').read()
 
 # ── calc 출력에서 그대로 읽기 ─────────────────────────────────────────
-_c2, _c3, _cd = rd('calc2_out.txt'), rd('calc3_out.txt'), rd('calc4_out.txt')
+_c2, _c3, _cd = rd('calc2_out_1120.txt'), rd('calc3_out_1120.txt'), rd('calc4_out_1120.txt')  # 11/20 visual: 11/20 종가 더한 판(youtube-loop 16:47)
 YEAR5 = {int(k): v for k, v in eval(re.search(r'하루 -5% 이하 날 수\(0인 해 생략\): (\{.*?\})', _c2).group(1)).items()}
 GRP = [dict(d=d, drop=float(dr), y1=(float(y1) if y1 else None), rec=int(rc))
        for d, dr, y1, rc in re.findall(r'(\d{8}) (-[\d.]+)% 종가 [\d,.]+ \| 1년 뒤 ([+-][\d.]+)?%? ?\| 3년 뒤 [^|]*\| 전날 값 되찾기 (\d+)거래일', _c2)]
@@ -32,15 +32,15 @@ m = re.search(r'한 번에: 최저 (\d+) 중앙 (\d+) 최고 (\d+) 원금 넘은
 m = re.search(r'나눠 넣기: 최저 (\d+) 중앙 (\d+) 최고 (\d+) 원금 넘은 편 (\d+)', _c3); SPL = [int(x) for x in m.groups()]
 SPLIT_WIN = int(re.search(r'나눠 넣기가 더 많은 편 (\d+) / 15', _c3).group(1))
 DAILY = json.load(open(os.path.join(EP, 'kospi_daily_ecos.json'), encoding='utf-8'))
-assert YEAR5[2026] == 23 and sum(v for k, v in YEAR5.items() if k <= 2025) == 57 and YEAR5[1997] == YEAR5[1998] == 9 and YEAR5[2000] == 11
-assert len(GRP) == 16 and len(LOW) == 15 and len(UP8) == 8 and PM5 == 40
+assert YEAR5[2026] == 24 and sum(v for k, v in YEAR5.items() if k <= 2025) == 57 and YEAR5[1997] == YEAR5[1998] == 9 and YEAR5[2000] == 11
+assert len(GRP) == 16 and len(LOW) == 15 and len(UP8) == 8 and PM5 == 41
 done = [g for g in GRP if g['y1'] is not None]
 assert len(done) == 15 and sum(g['y1'] > 0 for g in done) == 10 and st.median(g['y1'] for g in done) == 19.1
 assert sum(v < 0 for v in LOW.values()) == 14 and st.median(LOW.values()) == -11.8
 assert st.median(g['rec'] for g in GRP[:15]) == 8 and max(g['rec'] for g in GRP) == 1367
 assert ONE == [5506998, 11914250, 26712009, 10] and SPL == [7714515, 10852500, 17673118, 10] and SPLIT_WIN == 5
 CL = {t: v for t, v in DAILY}
-assert CL['20260102'] == 4309.63 and CL['20260622'] == 9114.55 and CL['20261113'] == 5290.53
+assert CL['20260102'] == 4309.63 and CL['20260622'] == 9114.55 and CL['20261120'] == 4869.96
 
 def man(v): return f'{round(v / 10000):,}만'          # 5506998 → '551만'
 def ymd(d): return f'{d[:4]}.{d[4:6]}.{d[6:]}'
@@ -62,8 +62,8 @@ def qa(im, q, a, sub=None, src=SRC, asize=330):   # 공책 판 — 질문 위, �
 # ── 0. 여는 말 ───────────────────────────────────────────────────────
 @board
 def open23(im):            # '하루 -5% 넘게 빠진 날, 올해 몇 번?' → 23번
-    qa(im, '하루 5% 넘게 빠진 날, 올해 몇 번?', '23번', 'IMF 외환위기 때는 한 해 9번',
-       SRC + ' · 2026.01.02~11.13 · 1997·1998 각 9일')
+    qa(im, '하루 5% 넘게 빠진 날, 올해 몇 번?', f'{YEAR5[2026]}번', 'IMF 외환위기 때는 한 해 9번',
+       SRC + ' · 2026.01.02~11.20 · 1997·1998 각 9일')
 
 # ── 1. 올해 코스피 ──────────────────────────────────────────────────
 def _line(im, box, a, b, marks):
@@ -86,27 +86,27 @@ def _line(im, box, a, b, marks):
 
 @board
 def line2026(im):          # 올해 선 — 4,309 · 9,114 · 5,290 세 점이 한 선 위에(이해 시험: 세 점 계속) · -42%
-    d, P = _line(im, (230, 230, 1700, 900), '20260102', '20261113', ('20260102', '20260622', '20261113'))
+    d, P = _line(im, (230, 230, 1700, 900), '20260102', '20261120', ('20260102', '20260622', '20261120'))
     TF(d, (W // 2, 100), '올해 코스피, 하루 마감 숫자', 84, INK, F_X)
-    (ax, ay), (px, py), (ex, ey) = P['20260102'], P['20260622'], P['20261113']
+    (ax, ay), (px, py), (ex, ey) = P['20260102'], P['20260622'], P['20261120']
     T(d, (ax + 30, ay + 70), '1월 4,309', 56, INK, F_X, 'lm')
     T(d, (px, py - 60), '6월 꼭대기 9,114', 56, INK, F_X)
-    T(d, (ex - 10, ey + 80), '지금 5,290', 56, INK, F_X, 'rm')
+    T(d, (ex - 10, ey + 80), '지금 4,870', 56, INK, F_X, 'rm')
     hand_arrow(d, (px + 60, py + 20), (ex - 10, ey - 40), OR, 8)
-    T(d, (1560, 330), '-42%', 150, OR, F_X)
-    source(d, 'ECOS 코스피 일별 종가 · 2026.01.02 4,309.63 · 06.22 9,114.55 · 11.13 5,290.53 · 세로축 0부터')
+    T(d, (1560, 330), '-47%', 150, OR, F_X)
+    source(d, 'ECOS 코스피 일별 종가 · 2026.01.02 4,309.63 · 06.22 9,114.55 · 11.20 4,869.96 · 세로축 0부터')
 
 @board
 def arrows3(im):           # 한 점(지금 5,290)에서 세 화살표 — 작년 첫날 +120% · 올해 첫날 +23% · 6월 꼭대기 -42%
     d = ImageDraw.Draw(im)
-    TF(d, (W // 2, 110), '지금 5,290 — 어디서부터 재느냐에 따라', 80, INK, F_X)
+    TF(d, (W // 2, 110), '지금 4,870 — 어디서부터 재느냐에 따라', 80, INK, F_X)
     cx, cy = 360, 560
     d.ellipse((cx - 30, cy - 30, cx + 30, cy + 30), fill=INK); T(d, (cx, cy + 80), '지금', 56, INK, F_X)
-    rows = (('작년 첫날부터', '+120%', INK, 330), ('올해 첫날부터', '+23%', INK, 560), ('6월 꼭대기부터', '-42%', OR, 790))
+    rows = (('작년 첫날부터', '+103%', INK, 330), ('올해 첫날부터', '+13%', INK, 560), ('6월 꼭대기부터', '-47%', OR, 790))
     for lab, v, c, y in rows:
         hand_arrow(d, (cx + 50, cy), (900, y), c, 7)
         T(d, (940, y), lab, 64, GREY, F_B, 'lm'); T(d, (1740, y), v, 130, c, F_X, 'rm')
-    source(d, SRC + ' · 2025.01.02 2,398.94 · 2026.01.02 4,309.63 · 06.22 9,114.55 → 11.13 5,290.53')
+    source(d, SRC + ' · 2025.01.02 2,398.94 · 2026.01.02 4,309.63 · 06.22 9,114.55 → 11.20 4,869.96')
 
 @board
 def yearbars(im):          # 해마다 하루 -5% 넘게 빠진 날 — 2026만 주황(23), 1997·1998 9 · 2000 11 · 2008 8 이름
@@ -121,7 +121,7 @@ def yearbars(im):          # 해마다 하루 -5% 넘게 빠진 날 — 2026만 
         T(d, (x + bw / 2, base + 40), f"'{str(y)[2:]}", 36, OR if y == 2026 else INK, F_B)
     d.line([(x0 - 10, base), (x1 + 10, base)], fill=GREY, width=4)
     T(d, (W // 2, 980), '1995~2025년 31년을 다 더하면 57번', 58, INK, F_B)
-    source(d, SRC + ' · 0인 해는 뺌 · 2026 = 11.13까지')
+    source(d, SRC + ' · 0인 해는 뺌 · 2026 = 11.20까지')
 
 # ── 2. 서킷브레이커와 사이드카 ────────────────────────────────────────
 @board
@@ -281,8 +281,8 @@ def pair2008(im):          # 금융위기: 일주일 만에 되찾음 · 그 뒤
 # ── 5. 오른 날 ─────────────────────────────────────────────────────
 @board
 def up17(im):              # 올해 오른 날 17 vs 빠진 날 23 — 점
-    d = ImageDraw.Draw(im); TF(d, (W // 2, 120), '올해, 하루 5% 넘게 움직인 날 40번', 84, INK, F_X)
-    for row, (lab, n, c) in enumerate((('빠진 날', 23, INK), ('오른 날', PM5 - 23, OR))):
+    d = ImageDraw.Draw(im); TF(d, (W // 2, 120), f'올해, 하루 5% 넘게 움직인 날 {PM5}번', 84, INK, F_X)
+    for row, (lab, n, c) in enumerate((('빠진 날', YEAR5[2026], INK), ('오른 날', PM5 - YEAR5[2026], OR))):
         y = 400 + row * 260; T(d, (330, y), lab, 70, c, F_X, 'rm')
         for i in range(n):
             x = 410 + i * 54
@@ -290,7 +290,7 @@ def up17(im):              # 올해 오른 날 17 vs 빠진 날 23 — 점
             else: d.ellipse((x - 20, y - 20, x + 20, y + 20), outline=INK, width=6)
         T(d, (410 + n * 54 + 30, y), f'{n}', 100, c, F_X, 'lm')
     T(d, (W // 2, 920), '하루에 가장 많이 오른 날 8개 중 5개가 올해', 60, INK, F_X)
-    source(d, SRC + ' · 2026.01.02~11.13 · 하루 +5% 이상 17일 · -5% 이하 23일')
+    source(d, SRC + ' · 2026.01.02~11.20 · 하루 +5% 이상 17일 · -5% 이하 24일')
 
 @board
 def up8(im):               # 상승 상위 8일 표 — 2026 줄만 주황
@@ -350,7 +350,7 @@ def trap2(im):
 @board
 def summary(im):           # 정리 표 4줄
     d = ImageDraw.Draw(im); T(d, (W // 2, 120), '한 장 정리', 110, INK, F_X)
-    rows = (('올해', '하루 5% 넘게 빠진 날 23번 · 31년 합 57번'), ('서킷브레이커', '걸린 날 ≠ 마감으로 크게 빠진 날'),
+    rows = (('올해', '하루 5% 넘게 빠진 날 24번 · 31년 합 57번'), ('서킷브레이커', '걸린 날 ≠ 마감으로 크게 빠진 날'),
             ('그 뒤 1년', '더 내려간 적 14/15 · 오른 편 10/15'), ('되찾기', '가운데 8거래일 · 가장 길게 5년 넘게'))
     for i, (a, b) in enumerate(rows):
         y = 300 + i * 160

@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 chart API ^NDX 일별 종가 1985-10~2026-11-19(FRED NASDAQ100과 대조), 직전 최고 대비 처음 -15% 닿은 날 1년 뒤 등락 — calc_out.txt 파이어맵 직접 계산",
+ "made_at": "2026-11-20",
+ "by": "research/ndx1121/mkimg.py",
+ "out": "img/00.png",
+ "topic": "나스닥100 -15%",
+ "num": "13번 오름 · 중간 +30.9%",
+ "topic_px": 56,
+ "num_px": 46,
+ "follows": "경쟁 1 jpo03664/224480364227 짙은 남색 바탕·하락 차트 위 큰 글자 표지 (캐릭터 대신 실제 막대)"
+}

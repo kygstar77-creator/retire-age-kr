@@ -53,6 +53,16 @@
     "url": "https://cafe.naver.com/firemap/458"
    },
    "note": "firemap-write 18:10 회차 · 발행 날 국토부 API 2곳·법령 1곳 다시 엶 · verify OK 1591/1591 사진 3/3 · readcheck 0·selfcheck 0·research strict·prepublish 통과 · 블로그 없음(방침) · 다음 칸 ndx1121 씨앗 · 개선: 없음"
+  },
+  {
+   "hour": 21,
+   "ts": "21:34",
+   "blog": null,
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "발행 없음 — 이번 시각 대기 카페 없음(22:40 jamsilpair1120은 write-b 몫, 나머지는 코너 시각 전). 11/21 18:40 ndx1121 짓기 관문 통과·auto e412340c · 자료조사 출처 7(야후 ^NDX·FRED NASDAQ100·야후 133690·KRW=X·FRED DEXKOUS·FEDFUNDS·네이버 증권 133690)+경쟁 5편 · 검증 경로 crosscheck(Gemini) 사실 4건 반영 3·유지 1, 말투 7건 반영 2·유지 5(합치면 숫자 3개+) · selfcheck 사실 0 · 이해 2차 6명 · 개선: 없음(bench 사진 비교 칸은 파일 경로만 — 괄호 설명 넣으면 관문이 못 찾음, playbook에 적음)"
   }
  ]
 }

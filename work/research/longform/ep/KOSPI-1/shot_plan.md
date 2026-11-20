@@ -46,38 +46,39 @@
 | 17 | https://www.youtube.com/watch?v=88p_CERJ_a4&t=298 | SBS 뉴스 | 반등 신호 4가지 글 요약 | 판(목록) | 2026-11-19 |
 
 # 장면 계획
+- 영상 챕터 ↔ 이 표의 장(11/20 PD, 설명란 챕터 = script.md ## 제목·kospi1meta.py): 여는 말 = 0 · 올해 코스피 = 1 · 서킷브레이커와 사이드카 = 2 · 지난 31년, 크게 빠진 날 그 뒤 = 3 · 전날 값을 되찾기까지 = 4 · 크게 빠진 해엔 크게 오른 날도 = 5 · 1천만원을 넣었다면 = 6 · 함정 = 7 · 정리 = 8
 (2026-11-20 18:2x PD — 실사 7개 받음·눈 확인(3장씩): bg/kospi1/stock/credits.json. 끝 숨 = 8495394 강변 벤치. 화면 배치 kospi1props.py(68장면·실사 32.1%). 비교 그림·품질 판정은 아직 대기 — 렌더본으로 새 심사관이 매김)
 (2026-11-19 PD — 판 25장은 visual 11/18 kospi1boards.py, 실사 7컷은 위 '그 줄의 대상' 표 후보에서 받을 것. 비교 그림·품질 판정은 렌더 회차에 새 심사관이 매김 — 지금 비어 있어 shot_check가 막는 게 맞음)
 | 장 | 대본 줄(요지) | 구상 | 따라 한 경쟁 장면 # | 도구 | 파일 | 비교 그림 | 품질 판정 |
 |---|---|---|---|---|---|---|---|
-| 0. 여는 말 | 8 올해 5% 넘게 빠진 날 | 빨간 캔들 증권 앱 휴대폰 든 손(실사, 앱 상표 안 읽힘) | 8 | Pexels | bg/kospi1/stock/39494572.mp4 | 대기 | 대기 |
-| 0. 여는 말 | 11 몇 번? | 공책 판 답 자리 ? → 23 | 9 | Python 판+Remotion 열기 | bg/kospi1/board/open23.png | 대기 | 대기 |
-| 1. 올해 코스피 | 30 4,300에서 시작 | 시세 차트 화면(실사, 종목명 안 읽힘 — 38905686은 상표 읽혀 뺌) | 7 | Pexels | bg/kospi1/stock/38557069.mp4 · 7578632.mp4 | 대기 | 대기 |
-| 1. 올해 코스피 | 33~39 올해 선 | 선이 그려지며 4,309·9,114·5,290 세 점 한 선 | 4·2 | Python 판+Remotion | bg/kospi1/board/line2026.png | 대기 | 대기 |
-| 1. 올해 코스피 | 48 세 화살표 | 한 점에서 세 기준 화살표 | 1 | Python 판 | bg/kospi1/board/arrows3.png | 대기 | 대기 |
-| 1. 올해 코스피 | 50 해마다 막대 | 하루 -5% 날 수 해마다 막대(23 vs 9) | 6·11 | Python 판 | bg/kospi1/board/yearbars.png | 대기 | 대기 |
-| 2. 서킷브레이커와 사이드카 | 65 시장 전체 멈춤 | 비상 정지 버튼 누르는 손(실사) | 7 | Pexels | bg/kospi1/stock/4957783.mp4 | 대기 | 대기 |
-| 2. 서킷브레이커와 사이드카 | 67 계단 세 칸 | 8%·15%·20% 계단 | 9 | Python 판 | bg/kospi1/board/breaker3.png | 대기 | 대기 |
-| 2. 서킷브레이커와 사이드카 | 76 사이드카 | 프로그램 주문만 5분 | 16 | Python 판 | bg/kospi1/board/sidecar.png | 대기 | 대기 |
-| 2. 서킷브레이커와 사이드카 | 81 몇 번째 | ? → 11번째 | 9 | Python 판 | bg/kospi1/board/cb11.png | 대기 | 대기 |
-| 2. 서킷브레이커와 사이드카 | 87 11/6 | 아침 -8.55% vs 마감 -6.02% 두 칸 | 1 | Python 판 | bg/kospi1/board/nov6.png | 대기 | 대기 |
-| 2. 서킷브레이커와 사이드카 | 96 체크 두 칸 | 신용·미수/레버리지 체크 | 5·17 | Python 판 | bg/kospi1/board/check2.png | 대기 | 대기 |
-| 3. 지난 31년 | 104 31년 기록 | 쌓인 종이·책 더미(글자 안 읽힘 — 신문 12345283은 제호 읽혀 뺌) | 7 | Pexels | bg/kospi1/stock/5224014.mp4 | 대기 | 대기 |
-| 3. 지난 31년 | 110 첫날 표 16줄 | 표 한 줄씩 불 켜기 | 11 | Python 판 | bg/kospi1/board/table16.png | 대기 | 대기 |
-| 3. 지난 31년 | 112 이름표 네 장 | 외환위기·테러·금융위기·올해 | 11 | Python 판 | bg/kospi1/board/names4.png | 대기 | 대기 |
-| 3. 지난 31년 | 묶음 | 2008 가을 8날 한 괄호 | 12 | Python 판 | bg/kospi1/board/group2008.png | 대기 | 대기 |
-| 3. 지난 31년 | 124 더 내려간 적 | ? /15 | 2 | Python 판 | bg/kospi1/board/q14.png | 대기 | 대기 |
-| 3. 지난 31년 | 137 15칸 점 | 오른 칸이 하나씩 켜짐 → 10/15 | 12 | Python 판+Remotion | bg/kospi1/board/dots15.png | 대기 | 대기 |
-| 4. 전날 값을 되찾기까지 | 156 열다섯 막대 | 되찾기까지 거래일, 가운데 8 | 11 | Python 판 | bg/kospi1/board/recover15.png | 대기 | 대기 |
-| 4. 전날 값을 되찾기까지 | 163 5년 넘게 | 화면 밖까지 이어지는 막대 | 11 | Python 판 | bg/kospi1/board/long1367.png | 대기 | 대기 |
-| 4. 전날 값을 되찾기까지 | 166 2008 두 막대 | 일주일 만에 되찾음 → 그 뒤 더 내려감 | 4 | Python 판 | bg/kospi1/board/pair2008.png | 대기 | 대기 |
-| 5. 크게 빠진 해엔 크게 오른 날도 | 180 오른 날 17 | 17칸 점 | 12 | Python 판 | bg/kospi1/board/up17.png | 대기 | 대기 |
-| 5. 크게 빠진 해엔 크게 오른 날도 | 185 상승 상위 8일 | 표 8줄 | 14 | Python 판 | bg/kospi1/board/up8.png | 대기 | 대기 |
-| 6. 1천만원을 넣었다면 | 195 1천만원 | 지폐 계수기에 지폐 넣는 손(실사, 얼굴·상표 없음) | 13 | Pexels | bg/kospi1/stock/5909916.mp4 | 대기 | 대기 |
-| 6. 1천만원을 넣었다면 | 200 두 줄 표 | 한 번에/열두 번 나눠 — 말하는 동안 떠 있음 | 13 | Python 판 | bg/kospi1/board/split2.png | 대기 | 대기 |
-| 6. 1천만원을 넣었다면 | 219 저울 | 위아래 흔들림 비교 저울 | 10 | Python 판 | bg/kospi1/board/scale.png | 대기 | 대기 |
-| 7. 함정 | 232 지수≠내 계좌 | 함정 판 1 | 10 | Python 판 | bg/kospi1/board/trap1.png | 대기 | 대기 |
-| 7. 함정 | 236 지난 값≠앞날 | 함정 판 2 | 10 | Python 판 | bg/kospi1/board/trap2.png | 대기 | 대기 |
-| 8. 정리 | 244 정리 표 4줄 | 끝 요약 표 | 14·5 | Python 판 | bg/kospi1/board/summary.png | 대기 | 대기 |
-| 8. 정리 | 249 ECOS 찾는 길 | 한국은행 경제통계시스템 경로 판 | 2 | Python 판 | bg/kospi1/board/ecos.png | 대기 | 대기 |
-| 8. 정리 | 255~256 끝 숨 | 강변 벤치 3초(실사) | 5 | Pexels | (받기 전) | 대기 | 대기 |
+| 0. 여는 말 | 8 올해 5% 넘게 빠진 날 | 빨간 캔들 증권 앱 휴대폰 든 손(실사, 앱 상표 안 읽힘) | 8 | Pexels | bg/kospi1/stock/39494572.mp4 | shotcmp/r01.jpg | 같음 — 새 심사관 Agent 11/20 21시(PD 아님, 손+앱 깔끔하나 'CFDs on Gold' 글자·녹색 상승봉) |
+| 0. 여는 말 | 11 몇 번? | 공책 판 답 자리 ? → 23 | 9 | Python 판+Remotion 열기 | bg/kospi1/board/open23.png | shotcmp/r02.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 24번 크게·질문·출처 한눈에) |
+| 1. 올해 코스피 | 30 4,300에서 시작 | 시세 차트 화면(실사, 종목명 안 읽힘 — 38905686은 상표 읽혀 뺌) | 7 | Pexels | bg/kospi1/stock/38557069.mp4 · bg/kospi1/stock/7578632.mp4 | shotcmp/r03.jpg | 못함 — 새 심사관 Agent 11/20 21시(PD 아님, 4,300 안 보임·$23.30 외화 숫자 → 컷 빼고 지수 판으로) |
+| 1. 올해 코스피 | 33~39 올해 선 | 선이 그려지며 4,309·9,114·5,290 세 점 한 선 | 4·2 | Python 판+Remotion | bg/kospi1/board/line2026.png | shotcmp/r04.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 선·꼭대기·-47% 한눈에) |
+| 1. 올해 코스피 | 48 세 화살표 | 한 점에서 세 기준 화살표 | 1 | Python 판 | bg/kospi1/board/arrows3.png | shotcmp/r05.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 세 기준 화살표·숫자 큼직) |
+| 1. 올해 코스피 | 50 해마다 막대 | 하루 -5% 날 수 해마다 막대(23 vs 9) | 6·11 | Python 판 | bg/kospi1/board/yearbars.png | shotcmp/r06.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 해마다 막대·24 강조 명확) |
+| 2. 서킷브레이커와 사이드카 | 65 시장 전체 멈춤 | 비상 정지 버튼 누르는 손(실사) | 7 | Pexels | bg/kospi1/stock/4957783.mp4 | shotcmp/r07.jpg | 못함 — 새 심사관 Agent 11/20 21시(PD 아님, 어둡고 탁한 버튼, 시장 멈춤 안 읽힘 → 밝은 클립) |
+| 2. 서킷브레이커와 사이드카 | 67 계단 세 칸 | 8%·15%·20% 계단 | 9 | Python 판 | bg/kospi1/board/breaker3.png | shotcmp/r08.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 8·15·20% 계단 직관적) |
+| 2. 서킷브레이커와 사이드카 | 76 사이드카 | 프로그램 주문만 5분 | 16 | Python 판 | bg/kospi1/board/sidecar.png | shotcmp/r09.jpg | 같음 — 새 심사관 Agent 11/20 21시(PD 아님, 글자만, 읽히나 그림 없음) |
+| 2. 서킷브레이커와 사이드카 | 81 몇 번째 | ? → 11번째 | 9 | Python 판 | bg/kospi1/board/cb11.png | shotcmp/r10.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 11번째 크게·날짜·출처) |
+| 2. 서킷브레이커와 사이드카 | 87 11/6 | 아침 -8.55% vs 마감 -6.02% 두 칸 | 1 | Python 판 | bg/kospi1/board/nov6.png | shotcmp/r11.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 두 숫자 대비 선명) |
+| 2. 서킷브레이커와 사이드카 | 96 체크 두 칸 | 신용·미수/레버리지 체크 | 5·17 | Python 판 | bg/kospi1/board/check2.png | shotcmp/r12.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 체크 두 칸 간결) |
+| 3. 지난 31년, 크게 빠진 날 그 뒤 | 104 31년 기록 | 쌓인 종이·책 더미(글자 안 읽힘 — 신문 12345283은 제호 읽혀 뺌) | 7 | Pexels | bg/kospi1/stock/5224014.mp4 | shotcmp/r13.jpg | 같음 — 새 심사관 Agent 11/20 21시(PD 아님, 책 더미 은유, 어수선) |
+| 3. 지난 31년, 크게 빠진 날 그 뒤 | 110 첫날 표 16줄 | 표 한 줄씩 불 켜기 | 11 | Python 판 | bg/kospi1/board/table16.png | shotcmp/r14.jpg | 못함 — 새 심사관 Agent 11/20 21시(PD 아님, 16줄×4칸 빽빽·강조 줄 없음 → 줄 강조·열 줄이기) |
+| 3. 지난 31년, 크게 빠진 날 그 뒤 | 112 이름표 네 장 | 외환위기·테러·금융위기·올해 | 11 | Python 판 | bg/kospi1/board/names4.png | shotcmp/r15.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 네 사건·날짜·하락률 큼직) |
+| 3. 지난 31년, 크게 빠진 날 그 뒤 | 묶음 | 2008 가을 8날 한 괄호 | 12 | Python 판 | bg/kospi1/board/group2008.png | shotcmp/r16.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 8점 한 괄호 직관적) |
+| 3. 지난 31년, 크게 빠진 날 그 뒤 | 124 더 내려간 적 | ? /15 | 2 | Python 판 | bg/kospi1/board/q14.png | shotcmp/r17.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 14/15 크게 한눈에) |
+| 3. 지난 31년, 크게 빠진 날 그 뒤 | 137 15칸 점 | 오른 칸이 하나씩 켜짐 → 10/15 | 12 | Python 판+Remotion | bg/kospi1/board/dots15.png | shotcmp/r18.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 15점·10/15 명확) |
+| 4. 전날 값을 되찾기까지 | 156 열다섯 막대 | 되찾기까지 거래일, 가운데 8 | 11 | Python 판 | bg/kospi1/board/recover15.png | shotcmp/r19.jpg | 같음 — 새 심사관 Agent 11/20 21시(PD 아님, 8 강조 좋으나 잘린 막대 표시 약함) |
+| 4. 전날 값을 되찾기까지 | 163 5년 넘게 | 화면 밖까지 이어지는 막대 | 11 | Python 판 | bg/kospi1/board/long1367.png | shotcmp/r20.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 화면 넘는 막대로 길이 실감) |
+| 4. 전날 값을 되찾기까지 | 166 2008 두 막대 | 일주일 만에 되찾음 → 그 뒤 더 내려감 | 4 | Python 판 | bg/kospi1/board/pair2008.png | shotcmp/r21.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 5거래일→-32.4% 대비 명확) |
+| 5. 크게 빠진 해엔 크게 오른 날도 | 180 오른 날 17 | 17칸 점 | 12 | Python 판 | bg/kospi1/board/up17.png | shotcmp/r22.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 24 vs 17 점 비교 직관적) |
+| 5. 크게 빠진 해엔 크게 오른 날도 | 185 상승 상위 8일 | 표 8줄 | 14 | Python 판 | bg/kospi1/board/up8.png | shotcmp/r23.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 8줄·올해 주황 구분 깔끔) |
+| 6. 1천만원을 넣었다면 | 195 1천만원 | 지폐 계수기에 지폐 넣는 손(실사, 얼굴·상표 없음) | 13 | Pexels | bg/kospi1/stock/5909916.mp4 | shotcmp/r24.jpg | 못함 — 새 심사관 Agent 11/20 21시(PD 아님, 빈 계수기뿐, 1천만원 안 보임 → 손·지폐 구간·글자) |
+| 6. 1천만원을 넣었다면 | 200 두 줄 표 | 한 번에/열두 번 나눠 — 말하는 동안 떠 있음 | 13 | Python 판 | bg/kospi1/board/split2.png | shotcmp/r25.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 두 줄 표 숫자 큼직) |
+| 6. 1천만원을 넣었다면 | 219 저울 | 위아래 흔들림 비교 저울 | 10 | Python 판 | bg/kospi1/board/scale.png | shotcmp/r26.jpg | 같음 — 새 심사관 Agent 11/20 21시(PD 아님, 저울 평형이라 흔들림 차이 안 보임) |
+| 7. 함정 | 232 지수≠내 계좌 | 함정 판 1 | 10 | Python 판 | bg/kospi1/board/trap1.png | shotcmp/r27.jpg | 같음 — 새 심사관 Agent 11/20 21시(PD 아님, 글자만, 명확하나 단조) |
+| 7. 함정 | 236 지난 값≠앞날 | 함정 판 2 | 10 | Python 판 | bg/kospi1/board/trap2.png | shotcmp/r28.jpg | 같음 — 새 심사관 Agent 11/20 21시(PD 아님, 글자만, 명확하나 단조) |
+| 8. 정리 | 244 정리 표 4줄 | 끝 요약 표 | 14·5 | Python 판 | bg/kospi1/board/summary.png | shotcmp/r29.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 네 줄 요약 숫자 큼직) |
+| 8. 정리 | 249 ECOS 찾는 길 | 한국은행 경제통계시스템 경로 판 | 2 | Python 판 | bg/kospi1/board/ecos.png | shotcmp/r30.jpg | 나음 — 새 심사관 Agent 11/20 21시(PD 아님, 찾는 길 단순 명확) |
+| 8. 정리 | 255~256 끝 숨 | 강변 벤치 3초(실사) | 5 | Pexels | bg/kospi1/stock/8495394.mp4 | shotcmp/r31.jpg | 같음 — 새 심사관 Agent 11/20 21시(PD 아님, 차분한 끝 숨) |

@@ -1,0 +1,38 @@
+# https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A7%80%EB%B0%A9%EC%84%B8%EB%B2%95/%EC%A0%9C92%EC%A1%B0
+# 표(Playwright HTML) 받은 날 2026-11-21 08:45
+
+=== FRAME https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%A7%80%EB%B0%A9%EC%84%B8%EB%B2%95/%EC%A0%9C92%EC%A1%B0
+IMG /LSW/flDownload.do?flSeq=125878371
+IMG /LSW/flDownload.do?flSeq=54609809
+IMG /LSW/flDownload.do?flSeq=22166274
+IMG /LSW/flDownload.do?flSeq=27913948
+IMG /LSW/flDownload.do?flSeq=125883797
+IMG /LSW/flDownload.do?flSeq=125883799
+IMG /LSW/flDownload.do?flSeq=125883801
+IMG /LSW/flDownload.do?flSeq=32879833
+IMG /LSW/flDownload.do?flSeq=91335675
+IMG /LSW/flDownload.do?flSeq=39569236
+IMG /LSW/flDownload.do?flSeq=125883799
+IMG /LSW/flDownload.do?flSeq=125883801
+IMG /LSW/flDownload.do?flSeq=32879833
+IMG /LSW/flDownload.do?flSeq=91335675
+IMG /LSW/flDownload.do?flSeq=39569236
+IMG /LSW/flDownload.do?flSeq=160224293
+IMG /LSW/flDownload.do?flSeq=160224329
+IMG /LSW/flDownload.do?flSeq=125884155
+IMG /LSW/flDownload.do?flSeq=22166334
+IMG /LSW/flDownload.do?flSeq=22166363
+IMG /LSW/flDownload.do?flSeq=22166364
+IMG /LSW/flDownload.do?flSeq=91335679
+IMG /LSW/flDownload.do?flSeq=22166370
+IMG /LSW/flDownload.do?flSeq=22166374
+IMG /LSW/flDownload.do?flSeq=22166338
+IMG /LSW/flDownload.do?flSeq=22166379
+IMG /LSW/flDownload.do?flSeq=22166385
+IMG /LSW/flDownload.do?flSeq=22166855
+IMG /LSW/flDownload.do?flSeq=22166420
+IMG /LSW/flDownload.do?flSeq=160224573
+IMG /LSW/flDownload.do?flSeq=160224575
+IMG /LSW/flDownload.do?flSeq=22166421
+IMG /LSW/flDownload.do?flSeq=22847221
+

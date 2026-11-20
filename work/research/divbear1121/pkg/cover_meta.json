@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 chart API 일별 adjclose(배당 재투자) SPY·SCHD 2022년 안 최대 낙폭, calc_out.txt — 파이어맵 직접 계산",
+ "made_at": "2026-11-20",
+ "by": "research/divbear1121/mkimg.py",
+ "out": "img/00.png",
+ "topic": "배당 ETF 하락장",
+ "num": "-24.5% · -16.8%",
+ "topic_px": 56,
+ "num_px": 46,
+ "follows": "경쟁 1 etflab_us/224480895309 막대 그림 위 큰 숫자 표지"
+}

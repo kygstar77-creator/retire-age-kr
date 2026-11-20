@@ -1,0 +1,51 @@
+">
+배당금을 받으면 하락을 견디기 쉬울 수 있지만, 높은 배당수익률만으로 계좌의 낙폭을 예상하기는 어렵습니다. VYM·HDV·SPYD의 구성 방식부터 보고, 실제 방어 효과를 비교할 때 필요한 기준을 정리했습니다.
+1. 대표 고배당 ETF의 선별 방식
+VYM은 배당수익률이 높은 미국 주식에 폭넓게 투자합니다. HDV는 배당과 재무건전성을 함께 보고, SPYD는 S&P 500 안에서 배당수익률이 높은 종목을 골라 균등가중합니다.
+세 상품 모두 주식 ETF입니다. 상위 종목과 업종이 어디에 집중돼 있는지 최신 보유 내역에서 확인하세요.
+2. 왜 방어적으로 느껴질까요?
+일부 배당 기업은 사업과 현금흐름이 비교적 안정적입니다. 지급금이 있는 기간에는 생활비로 쓰거나 하락 중인 자산을 덜 팔 수 있습니다. 다만 기업이 배당을 줄이면 이 효과도 작아질 수 있습니다.
+3. 업종과 금리가 결과를 바꿀 수 있습니다
+고배당 종목을 모아도 특정 업종의 비중이 커질 수 있습니다. 배당수익률이 높은 이유가 주가 하락인 경우도 있습니다. 금리가 오르면 일부 배당 업종이 영향을 받을 수 있으며, 성장주 강세장에서는 상대 수익률이 낮아질 수 있습니다.
+방어 효과는 실제 최대 낙폭과 회복 기간으로 확인
+해 보세요. 시장 ETF와 같은 기간, 같은 통화에서 비교하는 것이 중요합니다.
+4. 배당 성장형은 다른 선별 기준을 사용합니다
+SCHD는 배당 지급 이력과 성장, 재무 지표를 함께 봅니다. VIG의 현재 기초지수인 S&P U.S. Dividend Growers Index는 10년 이상 연속 배당 증가 이력을 살핍니다.
+어느 유형이 하락을 덜 겪는지는 당시 구성 종목과 시장 상황에 따라 달라집니다.
+5. 현금흐름과 하락 방어를 따로 점검하세요
+생활비가 목적이라면
+실제 분배액과 감액 가능성
+을 확인하세요. 하락 방어가 목적이라면 시장 ETF 대비 최대 낙폭, 회복 기간과 업종 비중을 같이 확인하면 됩니다.
+고배당형과 배당 성장형을 비교한 원문의 표는 티스토리에서 확인하실 수 있습니다.
+티스토리 원문 보러가기
+​
+고배당 ETF는 정말 방어적인가
+고배당 ETF는 흔히 “방어적인 투자”로 알려져 있습니다.실제로 많은 투자자들이 시장 변동성이 커질 때 고배당 ETF를 찾습니다.하지만 고배당 ETF가 항상 방어적인 것은 아닙니다. 구성 방식과 업종 구조에 따라 결과는 달라질 수 있습니다.이번 글에서는 고배당 ETF의 실제 구조를 살펴보겠습니다.고배당 ETF는 ‘무조건 방어’가 아니다 1. 대표적인 고배당 ETF고배당 ETF는 현재 배당 수익률이 높은 기업을 중심으로 구성됩니다.ETF운용사전략 유형핵심 선별 기준특징VYMVanguard대형 고배당주 중심예상 배당수익률안정적 대형주 ...
+dividendnote.tistory.com
+참고 자료
+Vanguard VYM
+VYM-Vanguard High Dividend Yield ETF | Vanguard
+Vanguard High Dividend Yield ETF (VYM) - Find objective, share price, performance, expense ratio, holding, and risk details.
+investor.vanguard.com
+​
+iShares HDV
+​
+iShares Core High Dividend ETF | HDV | US Class
+The iShares Core High Dividend ETF seeks to track an index composed of high dividend yielding U.S. stocks. The fund offers a low-cost way to seek income through U.S. equities. Prospectus PDF, opens in a new tab Financial and Legal Documents opens in a new tab Data Download Excel, opens in a new tab
+www.ishares.com
+State Street SPYD
+​
+SPYD: State Street® SPDR® Portfolio S&P 500® High Dividend ETF
+The State Street® SPDR® Portfolio S&P 500® High Dividend ETF seeks to provide investment results that, before fees and expenses, correspond generally to...
+www.ssga.com
+Dow Jones U.S. Dividend 100 Index
+​
+Dow Jones U.S. Dividend 100 Index | S&P Dow Jones Indices
+The Dow Jones U.S. Dividend 100 Index is designed to measure the performance of high-dividend-yielding stocks in the U.S. with a record of consistently paying dividends, selected for fundamental
+www.spglobal.com
+S&P DJI · VIG 현행 기초지수
+​
+S&P U.S. Dividend Growers Index | S&P Dow Jones Indices
+The S&P U.S. Dividend Growers Index is designed to measure the performance of U.S. companies that have followed a policy of consistently increasing dividends every year for at least 10
+www.spglobal.com
+​

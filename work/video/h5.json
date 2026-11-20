@@ -105,13 +105,13 @@
    "kind": "broll",
    "lines": [
     {
-     "text": "단지 서른세 곳을 따로 보면, 가장 덜 돌아온 곳이 71% 정도였고요.",
-     "audio": "audio/h-5/d109202de24971ba.wav",
-     "frames": 146,
+     "text": "단지 서른세 곳을 따로 보면, 가장 덜 돌아온 곳이 70% 정도였고요.",
+     "audio": "audio/h-5/57d9cf44506f5ecd.wav",
+     "frames": 138,
      "cap": null
     }
    ],
-   "frames": 146,
+   "frames": 138,
    "data": {
     "src": "bg/h5/stock/15082793.mp4",
     "license": "Pexels 15082793 무료(Lucas Park)",
@@ -810,9 +810,9 @@
    "kind": "broll",
    "lines": [
     {
-     "text": "가장 덜 돌아온 곳은 71%였어요.",
-     "audio": "audio/h-5/54728b1eefcf2626.wav",
-     "frames": 84,
+     "text": "가장 덜 돌아온 곳은 70%였어요.",
+     "audio": "audio/h-5/d49d7578e4cdf2b8.wav",
+     "frames": 72,
      "cap": null
     },
     {
@@ -834,7 +834,7 @@
      "cap": null
     }
    ],
-   "frames": 278,
+   "frames": 266,
    "data": {
     "src": "bg/h4/stock/38259259.mp4",
     "license": "Pexels 38259259 무료(vignesh srivatsav)",
@@ -908,9 +908,9 @@
      "cap": null
     },
     {
-     "text": "둘 다 71%였습니다.",
-     "audio": "audio/h-5/c287b29e310d57a0.wav",
-     "frames": 54,
+     "text": "둘 다 70% 남짓이었습니다.",
+     "audio": "audio/h-5/b9d27e67ad6a7a36.wav",
+     "frames": 61,
      "cap": null
     },
     {
@@ -920,7 +920,7 @@
      "cap": null
     }
    ],
-   "frames": 335,
+   "frames": 342,
    "data": {
     "src": "bg/h5/stock/15082793.mp4",
     "license": "Pexels 15082793 무료(Lucas Park)",

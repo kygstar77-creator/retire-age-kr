@@ -1,1 +1,1 @@
-{"by": "firemap-editor", "at": "2026-11-21 07:09", "sha": "2732ded2b9c0f40f26c0e613d9e383c66b9e62731415f8433beb4c19d857e8be", "sha_of": "title.txt+c*.txt bytes v2", "note": "표본: c00 근거 없는 '말이 많죠'(A53)·'살펴봤습니다' 겹문장 합침, c04 소제목 실제 내용으로 — 숫자 0 변경"}
+{"by": "auto", "at": "2026-11-21 07:50", "sha": "3cafebb9b71b5f08de431f21bb39b93553dd37a8b68c75beaf5b48e1e60ea57e", "sha_of": "title.txt+c*.txt bytes v2", "note": "write-b 11/21 올리기 전 확인 — 전월세·매매 API 다시 받아 c00 건수·금액·날짜, c02 오른 개수, c05 기준일만 고침(firemap-editor 07:09 서명 뒤 숫자 갱신)"}

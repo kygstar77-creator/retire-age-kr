@@ -439,6 +439,15 @@ def sameday_warn(day, pkg=None):
     for k, v in heads.items():
         if len(v) >= END_SAME_MIN and (not me or me in v):
             out.append(f"소제목 '{k[:30]}' {len(v)}칸({', '.join(v)}) — 같은 날 {END_SAME_MIN}칸 이상 같은 소제목(템플릿 신호)")
+    # 11/21 editor(registry D-19 재판정, 근거 criteria/D19-endname-1121.md): ㉧ 끝 정리 소제목 글자가 같은 날 END_SAME_MIN칸 이상 같으면 — '한눈에 정리' 33/33편
+    ends = collections.defaultdict(list)
+    for i, d in items:
+        text = pkg_text(d)[0]
+        for h in {' '.join(re.sub(r'^\s*(##+|■|◆)\s*', '', ln).split()) for ln in text.splitlines() if re.match(r'\s*(##\s|■|◆)', ln)}:
+            if h and HEAD_SKIP.search(h): ends[h].append(i)
+    for k, v in ends.items():
+        if len(v) >= END_SAME_MIN and (not me or me in v):
+            out.append(f"㉧ 끝 정리 소제목 '{k[:20]}' {len(v)}칸({', '.join(v)}) — 정리 문단은 두고 이름은 그 글 주제로(D-19 11/21 재판정)")
     # 11/15 editor(benchmark-loop 지시 1115 ㉤㉥㉦, 근거 growth/cafe-gap-1115.md)
     for e in sameday_1115(items, me): out.append(e)
     return out
@@ -449,6 +458,9 @@ BOARD_MAX = 3      # ㉤ 하루 3칸 이상이면 걸림(끝 문장이 아니어
 Q_TITLE_MAX = 5    # ㉥ 제목 물음꼴 하루 5칸 이상이면 경고
 HEAD6_MIN = 3      # ㉦ 소제목 앞 6자 일치 3칸 이상이면 경고
 BOARD_BLOCK_FROM = '2026-11-16'
+# 11/21 editor(benchmark-loop 지시 1121, 근거 growth/cafe-gap-1121.md): 경고뿐인 ㉥·㉦은 다시 넘었다(물음꼴 11/19 6/6·11/20 5/6, '놓치기 쉬운' 11/19·20 각 2편)
+#   → ㉥ 제목 물음꼴 하루 Q_TITLE_MAX칸·㉦ '놓치기 쉬…' 소제목 하루 2칸을 이날 칸부터 막는다(앞 6자 일치 ㉦은 경고 그대로)
+QN_BLOCK_FROM = '2026-11-22'
 
 
 def sameday_board(items, me=None):
@@ -459,21 +471,30 @@ def sameday_board(items, me=None):
     return []
 
 
-def sameday_1115(items, me=None):
-    out = sameday_board(items, me)
+def sameday_qn(items, me=None):
+    """㉥ 제목 물음꼴 Q_TITLE_MAX칸 이상 · ㉦ '놓치기 쉬…' 소제목 2칸 이상. → 걸림 줄 목록(QN_BLOCK_FROM 칸부터 gate·서명이 막음)."""
+    out = []
     qs = [i for i, d in items if re.search(r'(까|가|나|니|죠|요)\s*\?\s*$|\?\s*$', open(os.path.join(d, 'title.txt'), encoding='utf-8').read().strip())]
     if len(qs) >= Q_TITLE_MAX and (not me or me in qs):
-        out.append(f"㉥ 제목 물음꼴 {len(qs)}칸({', '.join(qs)}) — 하루 {Q_TITLE_MAX - 1}칸까지, 시점 글은 날짜 제목")
+        out.append(f"㉥ 제목 물음꼴 {len(qs)}칸({', '.join(qs)}) — 하루 {Q_TITLE_MAX - 1}칸까지, 시점 글은 날짜 제목({QN_BLOCK_FROM} 칸부터 막음)")
+    # 1115 지시 ③: '놓치기 쉬운 …' 소제목은 하루 1편까지(17/30편) — 소제목 어디에 있어도 2칸부터
+    ns = [i for i, d in items if any(re.search(r'놓치기\s*쉬', h) for h in head_keys(d))]
+    if len(ns) >= 2 and (not me or me in ns):
+        out.append(f"㉦ 소제목 '놓치기 쉬…' {len(ns)}칸({', '.join(ns)}) — 하루 1편까지, 칸 이름은 그 칸 실제 내용으로(A102, {QN_BLOCK_FROM} 칸부터 막음)")
+    return out
+
+
+def sameday_1115(items, me=None):
+    out = sameday_board(items, me)
+    qn = sameday_qn(items, me)
+    out += [x for x in qn if x.startswith('㉥')]
     h6 = collections.defaultdict(list)
     for i, d in items:
         for k in {h[:6] for h in head_keys(d) if len(h) >= 6}: h6[k].append(i)
     for k, v in h6.items():
         if len(v) >= HEAD6_MIN and (not me or me in v):
             out.append(f"㉦ 소제목 앞 6자 '{k}' {len(v)}칸({', '.join(v)}) — 같은 날 {HEAD6_MIN}칸 이상 앞머리가 같다(템플릿 신호)")
-    # 1115 지시 ③: '놓치기 쉬운 …' 소제목은 하루 1편까지(17/30편) — 소제목 어디에 있어도 2칸부터
-    ns = [i for i, d in items if any(re.search(r'놓치기\s*쉬', h) for h in head_keys(d))]
-    if len(ns) >= 2 and (not me or me in ns):
-        out.append(f"㉦ 소제목 '놓치기 쉬…' {len(ns)}칸({', '.join(ns)}) — 하루 1편까지(1115 지시 ③, 17/30편)")
+    out += [x for x in qn if x.startswith('㉦')]
     return out
 
 
@@ -576,6 +597,7 @@ ABS_DATE = re.compile(r'\d{1,2}\s*월\s*\d{1,2}\s*일|(?<![\d.])\d{1,2}/\d{1,2}(
 REL_YEAR = re.compile(r'(?<![가-힣])(작년|올해|지난해|내년|재작년|지난달|다음 달)')
 YEAR_ABS = re.compile(r'\d{4}\s*년')
 A53_RE = re.compile(r'(댓글|글|질문|뉴스|기사|얘기|이야기|말)[이가은도]?\s*(?:요즘\s*|올해\s*|부쩍\s*|자주\s*|많이\s*|종종\s*)+(보|올라|나오|들리|눈에)'
+                    r'|(?:다는|단|라는|란)\s*말[이도]\s*(?:많|적지|자주|종종|들려|나와|돌)'  # 11/21 editor: guri1121 '보증금만 올랐다는 말이 많죠'(근거 주소 없음)
                     r'|카페마다|(?:가장|제일|자주|많이)\s*묻는|(?:묻는|궁금해하는|아는|헷갈리는|모르는|걱정하는|(?:갖고|들고|가지고)\s*계신)\s*분[들이]*\s*(?:이\s*)?(?:많|적지)')  # 10/27 editor: '갖고 계신 분들 많으시죠'(공개 #58 첫 문장)
 A53_SRC = re.compile(r'https?://(?:m\.)?(?:cafe\.naver\.com/(?!firemap)|kin\.naver\.com|(?:n\.)?news\.naver\.com|[^\s)]*youtube\.com/[^\s)]*lc=)')
 
@@ -628,6 +650,11 @@ def gate_pkg(pkg):
                 if me0 not in [i for i, _ in it]: it.append((me0, pkg))
                 bb = sameday_board(it, me0)
                 if bb: return False, '같은 날 게시판 안내 반복 — ' + '; '.join(bb), bb
+            if day0 >= QN_BLOCK_FROM:
+                it = _day_pkgs(day0); me0 = os.path.basename(os.path.dirname(os.path.abspath(pkg)))
+                if me0 not in [i for i, _ in it]: it.append((me0, pkg))
+                qb = sameday_qn(it, me0)
+                if qb: return False, '같은 날 제목 물음꼴·소제목 틀 반복 — ' + '; '.join(qb), qb
             for e in sameday_warn(day0, pkg): print('[경고]', e)
             if day0 >= END_BLOCK_FROM:
                 rb = recent_end_check(pkg)

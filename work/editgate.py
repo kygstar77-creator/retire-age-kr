@@ -299,6 +299,12 @@ if __name__ == '__main__':
                 if me0 not in [i for i, _ in it0]: it0.append((me0, pk))
                 bb0 = aitell.sameday_board(it0, me0)
                 if bb0: print('안 찍음 · 같은 날 게시판 안내 반복(발행기 ㉤) — ' + '; '.join(bb0)); sys.exit(1)
+            # 11/21 editor(지시 1121): ㉥ 제목 물음꼴·㉦ '놓치기 쉬…'도 11/22 칸부터 발행기가 막으니 찍을 때 본다
+            if day0 and day0 >= getattr(aitell, 'QN_BLOCK_FROM', '9999'):
+                it1 = aitell._day_pkgs(day0); me1 = os.path.basename(os.path.dirname(pk))
+                if me1 not in [i for i, _ in it1]: it1.append((me1, pk))
+                qb0 = aitell.sameday_qn(it1, me1)
+                if qb0: print('안 찍음 · 같은 날 제목 물음꼴·소제목 틀 반복(발행기 ㉥㉦) — ' + '; '.join(qb0)); sys.exit(1)
             cb = compare_check(pk)
             if cb: print('안 찍음 · 경쟁 비교 없음 — ' + '; '.join(cb)); sys.exit(1)
             pb = premise_check(pk)

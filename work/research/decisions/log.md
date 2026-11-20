@@ -4234,3 +4234,6 @@
 2026-11-20 11:10 · firemap-write-b · 11/21 07:40 부동산 칸 주제 구리 아파트 전세(guri1121) 확정·관문 통과 · kwvol 구리아파트 6,540 1위·우리 0편, 매매 각도는 경쟁 econokong이 포화라 전월세 같은 집 비교로(경쟁 0편) · 이 회차 발행 칸 없음(12:40 write·22:40 jamsilpair 통과분은 22:40 회차)
 2026-11-20 12:09 · motion · H-6 2장 실거래 장면을 대본 전에 부품으로(DealDots, 26건 전부 점 + 최고가 한 건 + 묶음 가운데 값 계단 + 인가 전 몫) · 경쟁 4편은 한두 건·막대 5개, 우리 몫은 '골라 뽑지 않음'. 심사 6.5/6/6 → 고침 뒤 재심사 6, motioncheck·U5 6.5초·ui_boxes 최대 1 통과
 2026-11-20 12:09 · motion · 완료: H-6 DealDots 미리보기 ep/H-6/motion_preview/h6_deals.mp4·board_deals.png·cmp_deals.png, motion.md(PD 끼우는 법), README · KOSPI-1 띠 스틸은 PD props 없음(대기), H-5 겹침은 overlap.json errors 0으로 해소 확인
+
+2026-11-20 12:43 · report · 범위 축소 기준값 표 만듦(scope_baseline_1120.md) — 쇼츠 부동산 944≈범위 밖 954, 롱폼·배당·지수는 표본 1~3편이라 순위 매기지 않음 · 회의 21:5x 지시, 판정은 12/3
+2026-11-20 12:43 · report · 1b 보충 안 함 — 카페는 write 회차가 12:40 칸 발행 중(겹치기 금지), 블로그 정지 중

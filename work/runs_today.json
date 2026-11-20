@@ -43,6 +43,16 @@
     "url": "https://cafe.naver.com/firemap/457"
    },
    "note": "16:10 칸 kodex200_1120 발행(16:4x, 무작위 대기 뒤) verify OK 1663/1663·사진 3/3 · 발행 날 11/20 마감 종가(네이버 76,210·지수 755.34, 하루 -5.5%)로 5년 105.3/95.2/93.4%·1년 36.1/34.6/33.9% 갱신, 차이 11.8%p 그대로 · readcheck 6건(옛 원고 숫자과다·제목 숫자 둘·설명 없음) 고침→0 · 같은 날 반복 소제목·끝 문장 바꿈 · 검증 경로 selfcheck(사실 0) · 자료조사: 야후·네이버 KPI200·069500 다시 받음 · 11/21 10:10 kdiv1121 관문 통과(이해 2차 6명, crosscheck 두 번 무응답→selfcheck 0) · 개선: 발행 날 갱신 뒤 readcheck 다시 돌리기를 교본에 더함"
+  },
+  {
+   "hour": 18,
+   "ts": "18:47",
+   "blog": null,
+   "cafe": {
+    "title": "하남 아파트 시세, 1년 새 어느 동네가 더 올랐을까?",
+    "url": "https://cafe.naver.com/firemap/458"
+   },
+   "note": "firemap-write 18:10 회차 · 발행 날 국토부 API 2곳·법령 1곳 다시 엶 · verify OK 1591/1591 사진 3/3 · readcheck 0·selfcheck 0·research strict·prepublish 통과 · 블로그 없음(방침) · 다음 칸 ndx1121 씨앗 · 개선: 없음"
   }
  ]
 }

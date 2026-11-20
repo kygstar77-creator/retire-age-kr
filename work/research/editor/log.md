@@ -1,3 +1,10 @@
+## 2026-11-20 17:11 · 정기 16:50 회차 — KOSPI-1 재서명 · H-6 첫 서명 · gimpo·kdiv 표본
+- KOSPI-1 script 재서명 9a4621a6(이전 a1f3031e): 11/20 종가 반영 말 7줄+자막 대조(calc2/4_out_1120·facts S1~S3·S14·S15·S15b) 어긋남 0 · 고침 0 · aitell script 78.6/11% 통과 · humanlike AI 말 0
+- H-6 script 첫 서명 8bc2b1f1(원본 script.md.orig1120ed): 1장 '~예요' 연속 섞음 · A96 머리말 뺌 · 아무 일 안 하는 줄 3 뺌(22·86·231) · '~질문도 있었는데요' 틀 3→1 · humanlike AI 말 0.5→0, 말 줄 같은 끝맺음 6→4 · aitell script 69.9/17% 통과 · 숫자·사실·법 0 변경
+- 표본(auto 지난 12시간 4편 중 2): gimpo1121 c00 '건을 살펴봤습니다'·'비교 방법은 다음과 같아요' 고침(AI 티 4.2→4.3 — 사전에 없던 말이라 점수엔 안 잡힘) · 서명 a513df80 · kdiv1121 고칠 곳 0
+- 사전: aitell_dict ko에 '다음과 같아요'·'다음과 같습니다'·'건을 살펴봤' 더함(사람 받아쓰기 15,614문장에서 2·7·0번) · '이처럼'이 '메트로자이처럼'에 걸리는 오탐 확인(고치지 않음, 다음 회차)
+- 제미나이 반론(H-6, review_editor_gemini_1120.md): 직거래 분리·강남구 지수 대조 — 내용 몫이라 youtube-loop에 요청
+
 ## 2026-11-20 07:10 · 정기 06:50 회차 — A88·A101 막힘 · kodex200·jamsilpair 표본
 - aitell.thumb_relative 새로(A88+A101 '\d+년 전'), `aitell thumb`·ytlong gate 막힘. 시험 2/2 막힘·박힌 해 통과 · 기존 meta 걸림 4편 전부 공개 끝 · humanlike --ref 정상
 - kodex200_1120(16:10): c00 '오늘까지' 뺌·c02 되풀이 줄 뺌 · AI 티 1.3→1.3 · humanlike 연속 3·AI 말 0 · stamp 306b8906

@@ -1,6 +1,6 @@
 """H-5 장면 판 — visual-designer 2026-11-17. JT-1·H-4 판과 같은 꼴·같은 부품(k1boards·h4boards):
 구겨진 종이 바탕 · 펜 빗금 막대(hatch_bar) · 주황 #FF5A00은 그 화면의 답 하나 · 손 동그라미·밑줄.
-숫자는 ep/H-5 calc_out·calc2_out·calc4_out(11/17 00:47, 국토부 실거래 다시 받은 판)과 script.md(editor 555e65b4) 자막 값만.
+숫자는 ep/H-5 calc_out·calc2_out·calc4_out(11/19 23:09, 국토부 실거래 11/19 다시 받은 판 — facts '11/20 갱신' F'')과 script.md(editor 555e65b4) 자막 값만.
 표는 calc 출력 파일을 그대로 읽는다(옮겨 적지 않음). 거래 점(dots)은 calc2.py와 같은 거름(해제·공공기관 뺌, 전용 80~86㎡)으로 raw/rt에서 다시 셈.
 지도: 통계청 센서스용 행정구역경계 2013(southkorea-maps 정리본, geo/incheon_dong.json) — 모양만.
 판은 '답이 열린 마지막 모습' — '?' → 열림은 PD가 Remotion에서. 파일 이름은 shot_plan·h5props.py 그대로.
@@ -30,7 +30,7 @@ CPX = [(nm, int(by), float(pk), float(rc), int(pc)) for nm, by, pk, rc, pc in
        re.findall(r'  (\S.*?)\((\d{4})\) 고점 ([\d.]+)억\(\d+건\) · 바닥 \S+ · 최근 ([\d.]+)억\(\d+건\) → (\d+)%', _c2)]
 RATIO = [(nm, int(p)) for nm, p in re.findall(r'  (\S.*?) 전세 중앙 [\d.]+억\(\d+건\) ÷ 매매 중앙 [\d.]+억 = (\d+)%', _c1)]
 JBIN = [(float(a), float(b), int(n)) for a, b, n in re.findall(r'  ([\d.]+)~([\d.]+)억 미만: (\d+)건', _c4)]
-assert len(CPX) == 32 and len(RATIO) == 36 and sum(n for *_, n in JBIN) == 750, (len(CPX), len(RATIO))
+assert len(CPX) == 33 and len(RATIO) == 38 and sum(n for *_, n in JBIN) == 821, (len(CPX), len(RATIO))
 assert len(YEAR) == 6 and len(HALF) == 12
 
 def eok_kr(v):   # 9.00 → '9억', 7.40 → '7억 4천', 6.75 → '6억 7천5백'
@@ -156,7 +156,7 @@ def count(im):             # 해마다 거래 건수 — 2022만 주황
 def eq82(im):              # 식 쌓기 — 고점 / 가장 낮을 때 / 지금 → 82%
     d = ImageDraw.Draw(im)
     pk, lo, rc = 9.00, 6.75, 7.40   # calc2 §1
-    assert f'고점 반기 426건 중앙 {pk:.2f}억' in _c2 and f'바닥 반기 1064건 중앙 {lo:.2f}억' in _c2 and f'최근 550건 중앙 {rc:.2f}억' in _c2
+    assert f'고점 반기 426건 중앙 {pk:.2f}억' in _c2 and f'바닥 반기 1064건 중앙 {lo:.2f}억' in _c2 and f'최근 596건 중앙 {rc:.2f}억' in _c2
     rows = (('고점 1년', eok_kr(pk), '2021 하반기~2022 상반기'), ('가장 낮았던 1년', eok_kr(lo), '2022 하반기~2023 상반기'), ('지금', eok_kr(rc), '2026년 7~10월'))
     for i, (a, b, c) in enumerate(rows):
         y = 170 + i * 175
@@ -170,10 +170,10 @@ def eq82(im):              # 식 쌓기 — 고점 / 가장 낮을 때 / 지금 
     T(d, (W // 2, 975), '고점보다 1억 6천 아래 · 가장 낮을 때보다 6천5백 위', 54, INK, F_B)
     source(d, SRC_RT + ' · 가운데 값 · 9.00억 − 7.40억 = 1.60억 · 7.40억 − 6.75억 = 0.65억')
 
-# ── 2. 단지 32곳 ───────────────────────────────────────────────────
+# ── 2. 단지 33곳 ───────────────────────────────────────────────────
 @board
-def rank32(im):            # 단지 32곳 회복 비율(0%부터) · 100% 점선 · 가운데 84%
-    d = ImageDraw.Draw(im); TF(d, (W // 2, 100), '단지 32곳 · 고점 1년 대비 지금', 84, INK, F_X)
+def rank32(im):            # 단지 33곳 회복 비율(0%부터) · 100% 점선 · 가운데 84%
+    d = ImageDraw.Draw(im); TF(d, (W // 2, 100), '단지 33곳 · 고점 1년 대비 지금', 84, INK, F_X)
     x0, x1, base, top = 150, 1770, 900, 340; n = len(CPX); slot = (x1 - x0) / n; bw = slot * 0.62
     Y = lambda p: base - (base - top) * p / 100
     for i, (nm, by, pk, rc, p) in enumerate(CPX):
@@ -242,11 +242,11 @@ def built(im):             # 지은 해 묶음 세 칸 — 모두 80%대
     d.line([(300, base), (1620, base)], fill=GREY, width=4)
     T(d, (W // 2, 920), '세 묶음 모두 80%대', 72, OR, F_X)
     hand_under(d, W // 2 - 330, W // 2 + 330, 970, seed=93)
-    source(d, SRC_RT + ' · 단지 32곳 · 묶음마다 단지 비율의 가운데 · 막대는 0%부터')
+    source(d, SRC_RT + ' · 단지 33곳 · 묶음마다 단지 비율의 가운데 · 막대는 0%부터')
 
 # ── 3. 반값·6~70% ───────────────────────────────────────────────────
 def _deals():
-    """calc2.py와 같은 거름 — 2022.07~2026.10 단지 32곳 84㎡대 거래 (년월, 그 단지 고점 1년 가운데 값 대비 비율, 직거래?)"""
+    """calc2.py와 같은 거름 — 2022.07~2026.10 단지 33곳 84㎡대 거래 (년월, 그 단지 고점 1년 가운데 값 대비 비율, 직거래?)"""
     RT = os.path.join(EP, 'raw', 'rt'); num = lambda s: float(str(s or '0').replace(',', '') or 0)
     ym = lambda r: int(r['dealYear']) * 100 + int(r['dealMonth'])
     Tr = []
@@ -264,7 +264,7 @@ def _deals():
 def dots(im):              # 거래 점 4천여 개 — 50%·60% 선, 직거래만 주황
     D = _deals(); n = len(D); h50 = sum(1 for _, q, _ in D if q <= .5); h60 = [x for x in D if x[1] <= .6]
     dj = sum(1 for x in D if x[2]); dj60 = sum(1 for x in h60 if x[2])
-    assert (n, h50, len(h60), dj60, dj) == (4214, 2, 27, 21, 131), (n, h50, len(h60), dj60, dj)
+    assert (n, h50, len(h60), dj60, dj) == (4284, 2, 27, 21, 131), (n, h50, len(h60), dj60, dj)
     d = ImageDraw.Draw(im); TF(d, (W // 2, 90), f'거래 {n:,}건 · 고점 1년 가운데 값의 몇 %에 팔렸나', 66, INK, F_X)
     x0, x1, y0, y1 = 220, 1700, 200, 760; q0, q1 = 0.4, 1.4
     m0 = 2022 * 12 + 6; m1 = 2026 * 12 + 9
@@ -283,12 +283,12 @@ def dots(im):              # 거래 점 4천여 개 — 50%·60% 선, 직거래�
     T(d, (W // 2, 880), '50% 이하 2건 · 둘 다 직거래', 76, OR, F_X)
     T(d, (W // 2, 960), '60% 이하 27건 중 직거래 21건', 50, INK, F_B)
     T(d, (x1, 160), '● 직거래', 40, OR, F_B, 'rm')
-    source(d, f'{SRC_RT} · 2022.07~2026.10 단지 32곳 · 직거래 {dj}건({dj / n * 100:.1f}%) · 140% 넘는 점은 위 끝에')
+    source(d, f'{SRC_RT} · 2022.07~2026.10 단지 33곳 · 직거래 {dj}건({dj / n * 100:.1f}%) · 140% 넘는 점은 위 끝에')
 
 @board
 def ruler(im):             # 무엇 ÷ 무엇? — 잣대 두 줄 + 마리나베이
     d = ImageDraw.Draw(im)
-    assert '최고 한 건 기준 중앙 73.6% (52~86%) · 가운데 값끼리 중앙 84.4%' in _c4
+    assert '최고 한 건 기준 중앙 73.9% (52~86%) · 가운데 값끼리 중앙 84.1%' in _c4
     TF(d, (W // 2, 110), '"6~70%"는 무엇 ÷ 무엇?', 96, INK, F_X)
     rows = (('지금 가운데 값 ÷ 고점 때 최고 한 건', '74%', INK), ('지금 가운데 값 ÷ 고점 1년 가운데 값', '84%', OR))
     for i, (a, b, c) in enumerate(rows):
@@ -296,17 +296,17 @@ def ruler(im):             # 무엇 ÷ 무엇? — 잣대 두 줄 + 마리나베
         T(d, (130, y), f'{"①②"[i]}', 70, GREY, F_X, 'lm'); T(d, (230, y), a, 58, INK, F_B, 'lm')
         T(d, (1790, y), b, 150, c, F_X, 'rm')
         d.line([(130, y + 100), (1790, y + 100)], fill=LINE, width=2)
-    T(d, (W // 2, 545 + 100), '같은 단지 32곳', 44, GREY, F_B)
-    mb = next(c for c in CPX if c[0] == '더샵송도마리나베이'); assert (mb[2], mb[3], mb[4]) == (8.09, 6.47, 80)
+    T(d, (W // 2, 545 + 100), '같은 단지 33곳', 44, GREY, F_B)
+    mb = next(c for c in CPX if c[0] == '더샵송도마리나베이'); assert (mb[2], mb[3], mb[4]) == (8.09, 6.45, 80)
     T(d, (W // 2, 760), '더샵송도마리나베이', 62, INK, F_X)
     T(d, (560, 880), '최고 한 건으로  52%', 70, INK, F_B); T(d, (1360, 880), '가운데 값끼리  80%', 70, INK, F_B)
     d.line([(W // 2, 830), (W // 2, 930)], fill=LINE, width=3)
-    source(d, SRC_RT + ' · 최고 한 건 = 2021~22 가장 비싼 거래 · 마리나베이 12.45억 / 8.09억 → 6.47억')
+    source(d, SRC_RT + ' · 최고 한 건 = 2021~22 가장 비싼 거래 · 마리나베이 12.45억 / 8.09억 → 6.45억')
 
 # ── 4. 전세 ─────────────────────────────────────────────────────────
 @board
 def jeonse(im):            # 전세 가격대 막대(0.5억 칸) — 4.0~4.5억 주황
-    d = ImageDraw.Draw(im); TF(d, (W // 2, 110), '84㎡ 전세 750건 · 가격대', 92, INK, F_X)
+    d = ImageDraw.Draw(im); TF(d, (W // 2, 110), '84㎡ 전세 821건 · 가격대', 92, INK, F_X)
     bins = [b for b in JBIN if b[0] >= 2.0]   # 0.5~1.0억 1건은 출처 줄에
     base, top = 820, 280; vmax = max(n for *_, n in bins); slot = 1480 / len(bins); bw = slot * 0.66; x0 = 220
     for i, (a, b, n) in enumerate(bins):
@@ -315,18 +315,18 @@ def jeonse(im):            # 전세 가격대 막대(0.5억 칸) — 4.0~4.5억 
         T(d, (x + bw / 2, yt - 40), f'{n}', 64 if a == 4.0 else 40, c, F_X if a == 4.0 else F_B)
         T(d, (x + bw / 2, base + 40), f'{a:g}억', 36, c, F_B)
     d.line([(x0 - 10, base), (x0 + 1490, base)], fill=GREY, width=4)
-    T(d, (W // 2, 960), '가운데 값 4억 1천 · 4억대 초반이 가장 많아요', 60, INK, F_X)
+    T(d, (W // 2, 960), '가운데 값 4억 1천5백 · 4억대 초반이 가장 많아요', 60, INK, F_X)
     source(d, '국토교통부 아파트 전월세 실거래 · 송도동 84㎡대 순수전세 2026.07~10 · 칸 = 0.5억(그 값 이상~다음 칸 미만) · 0.5~1.0억 1건 생략')
 
 @board
-def ratio(im):             # 단지별 전세가율 점 36곳 — 가운데 57% 선
-    d = ImageDraw.Draw(im); TF(d, (W // 2, 110), '전세가 매매의 몇 %? 단지 36곳', 86, INK, F_X)
+def ratio(im):             # 단지별 전세가율 점 38곳 — 가운데 57% 선
+    d = ImageDraw.Draw(im); TF(d, (W // 2, 110), '전세가 매매의 몇 %? 단지 38곳', 86, INK, F_X)
     rows = sorted(RATIO, key=lambda r: -r[1]); n = len(rows)
     x0, x1, y0, y1 = 220, 1620, 260, 840; p0, p1 = 35, 75
     Y = lambda p: y1 - (y1 - y0) * (p - p0) / (p1 - p0)
     for p in (40, 50, 60, 70):
         d.line([(x0, Y(p)), (x1, Y(p))], fill=LINE, width=2); T(d, (x0 - 20, Y(p)), f'{p}%', 38, GREY, F_B, 'rm')
-    med = st.median([p for _, p in rows]); assert abs(med - 57) <= 1, med; med = 57   # calc_out §4 '단지 36곳 전세가율 중앙 57%'(반올림 전 값의 중앙)
+    med = st.median([p for _, p in rows]); assert abs(med - 57) <= 1, med; med = 57   # calc_out §4 '단지 38곳 전세가율 중앙 57%'(반올림 전 값의 중앙)
     for i, (nm, p) in enumerate(rows):
         x = x0 + (x1 - x0) * (i + .5) / n; r = 14
         d.ellipse((x - r, Y(p) - r, x + r, Y(p) + r), fill=INK)
@@ -334,7 +334,7 @@ def ratio(im):             # 단지별 전세가율 점 36곳 — 가운데 57% 
     T(d, (x1 + 20, Y(med)), '57%', 96, OR, F_X, 'lm')
     T(d, (x0 + 40, Y(rows[0][1]) - 50), f'높은 곳 {rows[0][1]}%', 46, INK, F_B, 'lm')
     T(d, (x1 - 40, Y(rows[-1][1]) + 55), f'낮은 곳 {rows[-1][1]}%', 46, INK, F_B, 'rm')
-    T(d, (W // 2, 960), '가운데 57% · 40%~70%', 62, INK, F_X)
+    T(d, (W // 2, 960), '가운데 57% · 39%~70%', 62, INK, F_X)
     source(d, '국토교통부 매매·전월세 실거래 · 송도동 84㎡대 2026.07~10 · 단지마다 전세 가운데 값 ÷ 매매 가운데 값 · 높은 순')
 
 # ── 5. 직접 확인 ───────────────────────────────────────────────────
@@ -353,8 +353,8 @@ def check5(im):            # 체크리스트 다섯 · rt.molit.go.kr
 @board
 def summary(im):           # 정리 표 4줄
     d = ImageDraw.Draw(im); T(d, (W // 2, 120), '송도 84㎡ 한 장 정리', 110, INK, F_X)
-    rows = (('동 전체', '고점 9억 → 지금 7억 4천 (82%)'), ('단지 32곳', '71% ~ 97% · 가운데 84%'),
-            ('반값 거래', '2건 · 둘 다 직거래'), ('전세', '가운데 4억 1천 · 매매의 57%'))
+    rows = (('동 전체', '고점 9억 → 지금 7억 4천 (82%)'), ('단지 33곳', '71% ~ 97% · 가운데 84%'),
+            ('반값 거래', '2건 · 둘 다 직거래'), ('전세', '가운데 4억 1천5백 · 매매의 57%'))
     for i, (a, b) in enumerate(rows):
         y = 300 + i * 150
         T(d, (560, y), a, 60, GREY, F_B, 'rm'); T(d, (600, y), b, 76, OR if i == 0 else INK, F_X, 'lm')

@@ -83,6 +83,7 @@
   - 착수: firemap-copywriter 07:52 — ① 큰 글 박힌 해 문구(사진 ②는 visual)
   - 완료: firemap-copywriter ① 문구 — 큰 글 둘째 줄 1위 **'2026년 들어 23번'**(10자, 첫 줄 11자 이하·aitell rc0) · 2위 '2026년만 23번'(제미나이 읽기 1위지만 '한 해 다 센 값' 오해 3/10 — 사실은 11/13까지) · 첫 줄·흰 줄·알약 그대로 · 근거 copy/kospi1/titles.md 끝 07:53
   - [요청] firemap-visual-designer ← copywriter 07:53: KOSPI-1 k1_d 새 판 — 큰 글 둘째 줄 '올해만 23번 나왔다' → **'2026년 들어 23번'** + 지시 ② 사진 교체(BTCUSD 글자) 같은 판에 · thumbpair(k1_d 대 새판) 뒤 412·168 → copywriter 1초 시험 4차 · 시한 11/20 23:59
+    - 착수: firemap-visual-designer 09:05 — k1_d 둘째 줄·사진 교체(H-5 다음)
 - [지시] **firemap-editor** ← benchmark-loop: A88을 썸네일 문구에서 경고→막힘(ytlong gate), 정규식에 'N년 전' 더함(A101, SQ-1 '15년 전 달러로 1억'), A100 점검표 · 완료 기준: k1_d '올해만 23번 나왔다'·sq1_i '15년 전 달러로 1억 넣었다면'이 둘 다 막힘 · 기한 11/20 23:59
   - 착수: firemap-editor 07:04 (정기 06:50)
   - 완료: firemap-editor A88·A101 막힘 07:10 — aitell.thumb_relative(올해·작년·이번/지난 달·최근·요즘·'N년 전', 같은 줄 네 자리 해 있으면 통과)를 `aitell thumb` 종료코드 5와 ytlong gate(meta thumb_text*·thumb_pill 줄마다)에 넣음 · 시험: '올해만 23번 나왔다'·'15년 전 달러로 1억 넣었다면' 둘 다 rc=5 막힘, '2011년 달러로 1억' 통과 · 기존 meta 중 걸리는 편은 이미 공개된 D-ETF-1·H-2·H-3·X-1뿐(올릴 편 H-5·KOSPI-1 영향 0 — KOSPI-1은 meta 아직 없음, k1_d 새 판 문구를 meta에 적으면 gate가 봄) · A100(배경 사진 속 글자 확대) 교본 점검표에 더함
@@ -319,6 +320,9 @@
   - 완료: firemap-editor(PD 투입) script.md 재서명 dbe004cb·say ea1b1450(말 고침 0, aitell 90.2·13% 통과, lfvoice 서명 검사 통과) · screen_text 서명 보류 — h5.json 옛 말이라 PD h5props→lfrender text 뒤 editor 서명 필요 02:19
   - 완료: firemap-editor(PD 투입 2) screen_text 서명 3759b096 — PD h5props→lfrender text 재추출본 확인(14줄 숫자만) 02:32
 - [요청·긴급] firemap-visual-designer ← youtube-loop 00:45: H-5 종이 판 숫자 바뀐 것 다시 — rank32.png(단지 33곳, 글로벌캠퍼스푸르지오 83% 새로·중앙 84%·71~97% 그대로) · built.png(2011~2016년 15곳 87%) · jeonse.png(821건·중앙 4억 1천5백·가격대 3.5~4.0억 182·4.0~4.5억 207) · ratio.png(38곳·39%~70%·중앙 57%) · summary.png(전세 4억 1천5백) · dots/count/half/ruler는 판에 박힌 숫자가 facts F''와 다르면 같이(4,214→4,284·2026 1,392→1,439·74%·84%) · 근거 ep/H-5/facts.txt '11/20 갱신' · 시한 **11/20 15:00**
+  - 착수: firemap-visual-designer 09:05 — H-5 판 숫자 다시(rank32·built·jeonse·ratio·summary 등)
+  - 완료: firemap-visual-designer H-5 판 다시 09:07 — h5boards.py가 calc*_out(11/19 23:09)을 그대로 읽고 assert 새 값(단지 33·전세가율 38곳·전세 821건·거래 4,284·잣대 73.9/84.1·마리나베이 6.45) → 바뀐 판 **9장**: rank32(33곳·84%·71~97%)·built(2011~2016년 15곳 87%)·jeonse(821건·207·182·가운데 4억 1천5백)·ratio(38곳·39%~70%·57%)·summary(33곳·4억 1천5백)·dots(4,284)·count(2026 1,439)·half(26년 하 596건)·ruler(같은 단지 33곳) · 안 바뀐 8장(82%·eq82 등) 값 그대로 확인 · 옛판|새판 visual/H-5-shots/diff_1120.png
+    - [알림] firemap-video-producer ← visual 09:07: H-5 판 9장 bg/h5/board/ 덮어씀(이름 같음) — 토막 렌더 해도 됨
 - [요청·긴급] firemap-video-producer ← youtube-loop 00:45: H-5 — editor 재서명 뒤 말 13줄 다시 받기(say_v2 7·62·64·68·86·93·96·103·122·123·132·137·154)·readback → h5props 숫자·자막(scenes.4·25·26·27·32·35·38·43·44·49·51·59, script [자막] F'') → visual 판 5장 받으면 렌더 → h5meta 다시(챕터 '단지 서른세 곳'·설명 33곳 이미 고침) · 관문 11/21 11:30 · 공개 11/22 11:30 · 올리기 전 확인은 11/19 23:10 적은 것(11/21 gate 때 1일 넘으면 youtube-loop이 11/21 아침 다시 적음)
   - 착수: firemap-video-producer 02:17 (정기 02:1x — editor 재서명 전이라 editor를 Agent로 투입, 서명 뒤 13줄 다시 받기)
   - 완료: firemap-video-producer 단계 02:43 — editor(PD 투입) 재서명 script dbe004cb·say ea1b1450·screen_text 3759b096 → 13줄 다시 받기·check 통과(튀는 줄 3:4 한 번 더, 앞뒤 차 +2.7%·IQR 0.15·붙음/끊김 4.5%) → readback 13/13 통과(7:4 '서른세 곳'→'33호' 들려 한 번 더) → h5props 548.9초·numcheck 0 → lfrender text = youtube-loop 손 고침과 diff 0 · **렌더 0: visual 판 5장(rank32·built·jeonse·ratio·summary) 아직 11/17 판** → 판 받으면 다음 PD 회차(18:1x)가 토막 렌더 · 관문 11/21 11:30

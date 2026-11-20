@@ -38,5 +38,31 @@
   "url": "https://www.pexels.com/photo/stock-trader-analyzing-market-data-on-screen-36755611/",
   "alt": "A stock trader intensely analyzing financial market data displayed on multiple screens in a modern office.",
   "license": "Pexels License(무료·상업 이용 가능·출처 표기 의무 없음)"
+ },
+ "frustrated_monitors_5831256.jpg": {
+  "site": "Pexels",
+  "id": 5831256,
+  "by": "AlphaTradeZone",
+  "url": "https://www.pexels.com/photo/stressed-man-monitoring-charts-5831256/",
+  "alt": "Frustrated man monitoring multiple trading graphs on computer screens in an office setting.",
+  "license": "Pexels License(무료·상업 이용 가능·출처 표기 의무 없음)"
+ },
+ "worried_desk_kospi_n1.jpg": {
+  "site": "Pexels",
+  "id": 5717791,
+  "by": "https://kaboompics.com/",
+  "url": "https://www.pexels.com/photo/man-with-laptop-on-desk-terrified-by-stock-market-chart-5717791/",
+  "alt": "Stressed man at desk looking at declining stock charts on laptop, indicating financial loss.",
+  "license": "Pexels License(무료·상업 이용 가능·출처 표기 의무 없음)",
+  "note": "5717791 노트북 화면을 우리 코스피 2026 일별 종가 선(ECOS)으로 덮음 — make_k1n.py"
+ },
+ "worried_desk_blur_n2.jpg": {
+  "site": "Pexels",
+  "id": 5717791,
+  "by": "https://kaboompics.com/",
+  "url": "https://www.pexels.com/photo/man-with-laptop-on-desk-terrified-by-stock-market-chart-5717791/",
+  "alt": "Stressed man at desk looking at declining stock charts on laptop, indicating financial loss.",
+  "license": "Pexels License(무료·상업 이용 가능·출처 표기 의무 없음)",
+  "note": "5717791 노트북 화면만 흐리게 — make_k1n.py"
  }
 }

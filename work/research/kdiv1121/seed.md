@@ -19,3 +19,12 @@
 - 삼성 KODEX 고배당주(279530) fId = **2ETF96**(product.do?pageNo=1~13 목록, raw/samsung_products.json) — divid-info.do?id=2ETF96은 09:30 연속 요청 뒤 Cloudflare 'Just a moment' 막힘 → 다음 회차는 Playwright로 한 번만(tigersp1121/fetch_dist.py 꼴) · KODEX 코리아배당성장 2ETF46 · 주주환원고배당주 2ETFT8 도 같은 갈래 후보
 - 경쟁 본문 5편 받음(bench_fetch.py, bench_raw/): hwakseye1 댓글 35(32%·한 달 -9.3%·1년 총수익 17.4%, 목차 5개·3줄 요약 표지) · wisefather1113 3(1년 +6.41% vs KODEX 200 +42.44%, 6개월 -18.20% vs -31.87%) · 8509113 0(SOL 코리아고배당과 1,000만원당) · wisefather1113 2(11월 103원 예정) · okor22 2(코드 104530 오기) → **같은 갈래 4~5개 분배금 증가율 줄 세우기 0편** 확인
 - 09:33 fetch_peers.py: TIGER 466940 ksdFund=KR7466940009 → 표 빈 페이지(코드 틀렸을 수 있음, '검색 결과가 없습니다') · 삼성 www.samsungfund.com/etf/product/view.do?id=2ETF96 → 60초 시간 초과(아까 Cloudflare 뒤) — 다음 회차는 시간 두고 다시, 안 되면 2차 2곳(야후+네이버 ETF 분배금)
+
+## 12:3x 진행 (firemap-write 12:10 회차)
+- 삼성 KODEX 고배당주(2ETF96) 상품 페이지는 Playwright(창 띄움)로도 Cloudflare '잠시만 기다리십시오' — 1차 못 받음(fetch_kodex2.py, raw/kodex_2ETF96_1120.txt 426자) → 2차 2곳 대조로 감
+- **2차 2곳 대조 끝(cmp_ttm.py → raw/cmp_ttm_1120.txt)**: 야후 분배 이벤트 최근 12번 합 = 네이버 증권 etfAnalysis 'dividendPerShareTtm' 5개 모두 같음 — PLUS 고배당주 1,084원 · KODEX 고배당주 777원 · KIWOOM 코리아고배당 895원 · TIGER 은행고배당플러스TOP10 1,060원 · SOL 코리아고배당 721원(네이버 TTM 분배율 5.01·4.96·5.88·4.55·6.55%, 보수 0.23·0.30·0.19·0.30·0.15%)
+- 2025-10 → 2026-10 월 분배(야후): PLUS 78→103 · KODEX 고배당주 53→76 · KIWOOM 40→80(2025-10-14 → 2026-10-14) · TIGER 은행 72→104 · SOL 2025-11-13 95(첫 달) 뒤 61·60 고정
+  - KODEX는 2026-01 45원까지 줄었다가 다시 늘어남(50→45→47→65) — '줄곧 늘었다' 아님, 이유는 원문 없음 → '확인 안 함'
+- 남은 일(15:10 회차): ① 1억 기준 월 분배금(최근 10월분 × 1억/종가, 세전·15.4%) ② 같은 기간 주가(야후 종가) ③ research.md 8칸·bench.md·compare·표지·이해 시험·editgate · 기한 11/21 04:10
+- 12:4x calc.py → calc_out.txt(11/19 종가 기준, 최근 12번 합/종가 = 네이버 TTM 분배율 5개 모두 같음): 1억 넣으면 최근 달 분배금으로 월 세후(15.4%) — SOL 46.1만(60원, 1년 전 비교 없음) · KIWOOM 44.4만(40→80 +100%) · KODEX 41.0만(53→76 +43%) · PLUS 40.3만(78→103 +32%) · TIGER 은행 37.7만(72→104 +44%) · 주가 1년 KODEX +14.3%·TIGER +12.4%·SOL +5.2%·PLUS +4.4%·KIWOOM -1.4%
+  - 각도: '가장 유명한 PLUS가 분배금 증가율·1억 월 분배금 모두 다섯 중 1등이 아니다' — 사라·팔라 금지, 분배 재원·지수 차이는 운용사 원문 있는 것만

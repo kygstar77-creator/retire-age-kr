@@ -20,6 +20,19 @@
     "url": "https://cafe.naver.com/firemap/455"
    },
    "note": "firemap-write 09:10 회차 · 10:10 칸 pyeongchon1120(부동산) · 발행 날 국토부 실거래 2026-05~11 다시 받아 calc diff: 10,883→10,936건·2023 대비 약 55→56%·84㎡ 11.20→11.25억·인덕원대우 12.18억·11월 6·67건 고침(핵심 +22%·+7% 그대로) · 출처 4(국토부 API·법령·경쟁 블로그·rt.molit) · 교차검증: 11/18 crosscheck 그대로, 이번 고침은 selfcheck 사실 0·readcheck 0·aitell 5.5·spoken 통과 · research strict·prepublish·bench 통과 · editgate auto 1817eb78 · verify OK 1963/1963·사진 3/3 · 블로그 정지(범위·하루 상한) · 개선: 없음(발행기 '올해·작년' 상대 시점 경고 5건 — 발행 당해라 맞음, 다음 묶음부터 박힌 해로) · 다음 칸 준비: 11/21 10:10 kdiv1121 PLUS 고배당주 vs 같은 갈래 분배금 씨앗"
+  },
+  {
+   "hour": 12,
+   "ts": "12:48",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "JEPQ에 1억 넣었다면 분배금 받고 얼마 남았을까?",
+    "url": "https://cafe.naver.com/firemap/456"
+   },
+   "note": "12:40 칸 · 발행 날 다시 확인(나스닥 분배·야후 11/19 종가 53.63·ECOS 11/20 1,330.8·IRS 표 같음) 숫자 갱신 · verify OK 1659/1659·사진 3/3 · 검증 경로 selfcheck 사실 0(발행 전날 crosscheck 반영 2/유지 2) · readcheck 0 · 블로그 없음(하루 상한 정책) · kdiv1121 2차 2곳 대조·계산 끝 · 개선: 없음(그림 02 글자 겹침은 xlim 고침)"
   }
  ]
 }

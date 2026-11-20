@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 매매 실거래 API(경기 김포시 41570) 2021.7~12월 vs 2026.6~10월 계약, calc_out.txt — 파이어맵 직접 계산",
+ "made_at": "2026-11-20",
+ "by": "research/gimpo1121/mkimg.py",
+ "out": "img/00.png",
+ "topic": "김포 아파트 시세",
+ "num": "-20%",
+ "topic_px": 58,
+ "num_px": 44,
+ "follows": "경쟁 3 rytesmy/224478321264 실거래 가격 흐름 그래프 · 4 eastblue911 5년 가격 흐름 차트"
+}

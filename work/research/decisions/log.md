@@ -4232,3 +4232,5 @@
 2026-11-20 11:00 · firemap-video-producer · 쇼츠 de1s_kofin 11/24 19:20 예약(h8BYw06r3-s) · 빈 칸 범위 안 배당, D-ETF-1 안 쓴 질문(국내 고배당 금융 쏠림), 경쟁 7편 % 0편 / 이해 3·4차 6/6 'TIGER 99% 과장' → 첫 줄 새 녹음 1줄·TIGER 뺌(정확성 우선, 같은 목소리·설정)
 2026-11-20 11:00 · firemap-video-producer · 완료: backlog ③ 11/24 쇼츠 칸 채움(de1s_kofin) · 남은 빈 칸 11/26 19:20
 2026-11-20 11:10 · firemap-write-b · 11/21 07:40 부동산 칸 주제 구리 아파트 전세(guri1121) 확정·관문 통과 · kwvol 구리아파트 6,540 1위·우리 0편, 매매 각도는 경쟁 econokong이 포화라 전월세 같은 집 비교로(경쟁 0편) · 이 회차 발행 칸 없음(12:40 write·22:40 jamsilpair 통과분은 22:40 회차)
+2026-11-20 12:09 · motion · H-6 2장 실거래 장면을 대본 전에 부품으로(DealDots, 26건 전부 점 + 최고가 한 건 + 묶음 가운데 값 계단 + 인가 전 몫) · 경쟁 4편은 한두 건·막대 5개, 우리 몫은 '골라 뽑지 않음'. 심사 6.5/6/6 → 고침 뒤 재심사 6, motioncheck·U5 6.5초·ui_boxes 최대 1 통과
+2026-11-20 12:09 · motion · 완료: H-6 DealDots 미리보기 ep/H-6/motion_preview/h6_deals.mp4·board_deals.png·cmp_deals.png, motion.md(PD 끼우는 법), README · KOSPI-1 띠 스틸은 PD props 없음(대기), H-5 겹침은 overlap.json errors 0으로 해소 확인

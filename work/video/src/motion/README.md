@@ -158,3 +158,10 @@
   장 시작은 ask 장면 data.n 'N장'에서 자동, 장 카드·실사(broll·live)는 흰 글자, pic 판은 한 줄 20px(판 윗변 피함), 범례는 pic·ask·table·grid·rows에서 끈다.
   미리보기: `npx remotion still src/stripover_index.ts StripOverPreview out.png --props=<json> --frame=N` (H-5 장면 틀로 시험).
 - 같은 틀 반복 막기: 편마다 side(left/right)·topic 유무를 바꾼다.
+
+## 실거래 점 줄(DealDots) — '한 단지 1년 실거래, 얼마 내렸나'(11/20 H-6 은마 84㎡)
+- props: `seed·deals[{d,v,fl}]·from·to·min·max·ticks·unit·months[{d,text}]·dropAt·peak{i,text,at}·last{i,text,at,gap,gapAt}·steps[{a,b,v,text}]·stepsAt·stepGap{text,at}·mark{d,text,at}·before{text,at}` — at은 줄 번호(소수=줄 안 비율).
+- 점이 날짜 순서로 떨어짐(첫 줄 내내, 카메라가 왼쪽에서 물러남) → 최고 한 건 동그라미·높이 점선(다가감) → 마지막 한 건·두 높이 사이 띠·차 괄호 → 묶음 가운데 값 계단 + 아래 면 → 고시일 세로 점선, 그 앞 계단 면만 진해지고 앞 몫 괄호 주황.
+- 규칙: 축은 0원이 아니면 바닥 물결 + 눈금 글자 늘 보임 · 한 건(최고 대비)과 가운데 값을 꼭 같이(골라 뽑기 오해 막기) · '때문에' 인과 글자 금지(앞 몫만) · 주황은 지금 답 하나.
+- bgcheck ⑥: 면 위에 눈금 선이 지나가면 칸이 상자로 잡힌다 → 면이 오면 눈금 선을 뺀다. 네모 면(rect)으로 구간을 칠하지 말고 데이터 면을 잘라 쓴다.
+- 예: research/longform/ep/H-6/motion_preview/h6props.py(calc_out 직접 읽기·assert) · h6render.py. 아파트 실거래 편(H-2·H-4·H-5류)에 그대로 씀. 반복 방지: seed로 왼쪽 여백·떨어지는 빠르기, 편마다 묶음 길이·고시일 대신 다른 사건(규제·금리 날짜).

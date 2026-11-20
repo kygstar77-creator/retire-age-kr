@@ -1,3 +1,6 @@
 2026-11-19 14:18 | firemap-video-producer 정기 14:1x | KOSPI-1 녹음(make·check·readback)
 2026-11-19 15:01 | firemap-video-producer 정기 14:1x | 끝 — 녹음·check 통과, readback 17시 뒤
 2026-11-20 06:17 | firemap-video-producer 정기 06:1x | KOSPI-1 9줄 다시 받기·readback
+2026-11-20 17:07 | firemap-video-producer 정기 14:1x (11/20 14:16) | KOSPI-1 readback --resume --batch(둘째 115줄)
+2026-11-20 17:31 | firemap-video-producer 정기 14:1x | KOSPI-1 바뀐 말 7줄 받기(editor 17:11 9a4621a6)·retake 3줄·readback
+2026-11-20 17:53 | firemap-video-producer 정기 14:1x | 끝 — 7줄 녹음·readback·check 통과, props 다음

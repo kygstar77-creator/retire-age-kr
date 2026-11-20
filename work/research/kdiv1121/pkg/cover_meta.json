@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 분배 events + 네이버페이 증권 ETF 분석 + 한화자산운용 PLUS 고배당주 분배금 지급현황, calc_out.txt — 파이어맵 직접 계산",
+ "made_at": "2026-11-20",
+ "by": "research/kdiv1121/mkimg.py",
+ "out": "img/00.png",
+ "topic": "고배당 ETF 5개 월 분배금",
+ "num": "100% · 32%",
+ "topic_px": 46,
+ "num_px": 36,
+ "follows": "경쟁 3 wisefather1113/224479160003 기간별 성적표(표·숫자 비교) — 같은 종류 차트, 다섯 개를 한 잣대로"
+}

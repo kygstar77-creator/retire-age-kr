@@ -1,11 +1,11 @@
 {
  "type": "chart",
  "source": "삼성자산운용 KODEX 200 분배금 현황·상품 정보 API + 야후 파이낸스 069500.KS 일별 종가 + 네이버 코스피200 지수 일별, calc_out.txt — 파이어맵 직접 계산",
- "made_at": "2026-11-19",
+ "made_at": "2026-11-20",
  "by": "research/kodex200_1120/mkimg.py",
  "out": "img/00.png",
  "topic": "KODEX 200 1억원, 5년 뒤",
- "num": "2억 474만 · 2억 1,658만",
+ "num": "1억 9,341만 · 2억 526만",
  "topic_px": 46,
  "num_px": 34,
  "follows": "경쟁 4 nmnpvv/224461073089 3년 전 1억 표지·1 wisefather1113 총수익 비교 표지 — 숫자 막대, 우리는 지수·종가만·분배금 포함 셋을 나란히"

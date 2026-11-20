@@ -63,6 +63,17 @@
     "url": null
    },
    "note": "발행 없음 — 이번 시각 대기 카페 없음(22:40 jamsilpair1120은 write-b 몫, 나머지는 코너 시각 전). 11/21 18:40 ndx1121 짓기 관문 통과·auto e412340c · 자료조사 출처 7(야후 ^NDX·FRED NASDAQ100·야후 133690·KRW=X·FRED DEXKOUS·FEDFUNDS·네이버 증권 133690)+경쟁 5편 · 검증 경로 crosscheck(Gemini) 사실 4건 반영 3·유지 1, 말투 7건 반영 2·유지 5(합치면 숫자 3개+) · selfcheck 사실 0 · 이해 2차 6명 · 개선: 없음(bench 사진 비교 칸은 파일 경로만 — 괄호 설명 넣으면 관문이 못 찾음, playbook에 적음)"
+  },
+  {
+   "hour": 22,
+   "ts": "22:58",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "잠실주공5단지 시세는 새 리센츠보다 비쌀까?",
+    "url": "https://cafe.naver.com/firemap/459"
+   },
+   "note": "22:40 칸 jamsilpair1120(부동산, 쇼츠 nMVEVTbVYtk 짝 글) · 올리기 전 확인: 국토부 매매·전월세 2026-09~11 다시 받아 calc 전 줄 같음 · 쇼츠 공개 oembed 200 · 관문 naverpost 통과(AI 티 3.8·편집 해시 일치) · verify OK 1692/1692·사진 3/3 · 경고: 본문 1687자>1500(D-17), '계속할까요' 확인 창 대기 초과(발행은 됨) · 개선: 없음"
   }
  ]
 }

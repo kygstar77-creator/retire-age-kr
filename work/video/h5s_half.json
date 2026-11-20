@@ -1,0 +1,227 @@
+{
+ "fps": 30,
+ "name": "h5s_half",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "송도 아파트 반값 거래",
+  "4천 건 중 몇 건이었을까?"
+ ],
+ "hot": "반값",
+ "answer": {
+  "label": "송도동 33개 단지 84㎡대 · 2022.07~2026.10 거래",
+  "items": [
+   "고점 절반 이하 2건 — 둘 다 직거래",
+   "고점 60% 아래 27건 — 21건 직거래"
+  ],
+  "arrow": false,
+  "note": "직거래는 전체의 약 3% · 보통 거래 값은 지금 고점의 82%쯤"
+ },
+ "base": "국토교통부 아파트 매매 실거래(송도동 84㎡대, 2026-11-20 다시 받아 같은 값 확인) · 고점 = 단지별 2021.07~2022.06 거래의 보통 값 · 파이어맵 계산",
+ "long": "3dzKukPP3ac",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "4천 건 중",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "33개 단지 84㎡대",
+      "4천 건 넘게",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "21~22년 고점의 반",
+      "그 아래 2건",
+      "",
+      79,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "4천 건이 넘습니다.",
+     "audio": "audio/h-5/6fe89353b8e5c5d6.wav",
+     "frames": 43
+    },
+    {
+     "n": 2,
+     "text": "절반 이하로 팔린 건, 두 건이었습니다.",
+     "audio": "audio/h-5/510e83217aec04a4.wav",
+     "frames": 67
+    }
+   ],
+   "frames": 110
+  },
+  {
+   "kind": "vs",
+   "label": "그 두 건은",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "2건 모두",
+      "직거래",
+      "",
+      77,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 3,
+     "text": "그리고 그 두 건 모두 중개사를 거치지 않은 직거래였어요.",
+     "audio": "audio/h-5/9da65d443d12367c.wav",
+     "frames": 111
+    }
+   ],
+   "frames": 111
+  },
+  {
+   "kind": "vs",
+   "label": "60% 아래로 넓히면",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "넓혀서 세면",
+      "고점의 60% 아래",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "그래도",
+      "27건",
+      "",
+      130,
+      "ink"
+     ],
+     [
+      "그중 직거래",
+      "21건",
+      "",
+      191,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "이번엔 고점의 60% 아래로 팔린 거래까지 늘려서 세어 볼게요.",
+     "audio": "audio/h-5/dca364ffe34ed909.wav",
+     "frames": 126
+    },
+    {
+     "n": 5,
+     "text": "그래도 스물일곱 건뿐이었어요.",
+     "audio": "audio/h-5/962decc7ac408fa3.wav",
+     "frames": 56
+    },
+    {
+     "n": 6,
+     "text": "그중 스물한 건이 직거래였습니다.",
+     "audio": "audio/h-5/f45bcbdca74b09b6.wav",
+     "frames": 64
+    }
+   ],
+   "frames": 246
+  },
+  {
+   "kind": "vs",
+   "label": "직거래는",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "4천여 건 중 직거래",
+      "약 3%",
+      "",
+      53,
+      "ink"
+     ],
+     [
+      "왜 쌌는지",
+      "신고 자료에 없음",
+      "",
+      94,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 7,
+     "text": "직거래는 전체 거래에선 3% 정도예요.",
+     "audio": "audio/h-5/610bffffee587267.wav",
+     "frames": 87
+    },
+    {
+     "n": 8,
+     "text": "직거래가 왜 쌌는지는 자료에 없어요.",
+     "audio": "audio/h-5/8f1cdf24d11b2c8e.wav",
+     "frames": 65
+    }
+   ],
+   "frames": 188
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/h5/cut/18495181_1_r43.mp4",
+   "from": 0,
+   "frames": 43,
+   "start": 0
+  },
+  {
+   "src": "bg/h5/cut/37736994_1_r67.mp4",
+   "from": 43,
+   "frames": 67,
+   "start": 0
+  },
+  {
+   "src": "bg/h5/cut/8293504_1_r111.mp4",
+   "from": 110,
+   "frames": 111,
+   "start": 0
+  },
+  {
+   "src": "bg/h5/cut/37873585_15_r126.mp4",
+   "from": 221,
+   "frames": 126,
+   "start": 0
+  },
+  {
+   "src": "bg/h5/cut/37873585_2_r56.mp4",
+   "from": 347,
+   "frames": 56,
+   "start": 0
+  },
+  {
+   "src": "bg/h5/cut/37736994_9_r64.mp4",
+   "from": 403,
+   "frames": 64,
+   "start": 0
+  },
+  {
+   "src": "bg/h5/cut/18495181_5_r87.mp4",
+   "from": 467,
+   "frames": 87,
+   "start": 0
+  },
+  {
+   "src": "bg/h5/cut/18495181_9_r101.mp4",
+   "from": 554,
+   "frames": 101,
+   "start": 0
+  }
+ ],
+ "credits": "Gije Cho · Jueon Kim 김주언 · Nurlan Hasanov · RDNE Stock project (Pexels License)"
+}

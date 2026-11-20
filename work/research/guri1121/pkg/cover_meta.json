@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 전월세 실거래 API(경기 구리시 41310) 신규 전세 2026.1~6월·2025.7~10월 vs 2026.7~10월 계약, calc_rent_out.txt — 파이어맵 직접 계산",
+ "made_at": "2026-11-20",
+ "by": "research/guri1121/mkimg.py",
+ "out": "img/00.png",
+ "topic": "구리 아파트 전세",
+ "num": "+9% · +17%",
+ "topic_px": 58,
+ "num_px": 44,
+ "follows": "경쟁 4 econokong/224467986904 거래 건수 막대 차트 표지"
+}

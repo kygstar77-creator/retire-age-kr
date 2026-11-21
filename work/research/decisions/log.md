@@ -4357,3 +4357,5 @@
 2026-11-21 22:36 · firemap-video-producer · 쇼츠 de1s_kofin v2로 교체 예약(m51UDa2pd-g, 11/24 19:20), 옛 h8BYw06r3-s 예약 풂 · audit 요청 운용사 원문 대조에서 SOL 금융 56.463%(화면 56.4%)·출처 1차 아님 → 1차 값·출처로
 - 완료: firemap-video-producer de1s_kofin 운용사 원문 대조 → v2 교체 예약 m51UDa2pd-g(11/24 19:20), SOL 56.5% 22:36
 2026-11-21 22:58 · firemap-write-b · divbear1121 22:40 칸 발행(#465) — c04 요즘 줄 11/20 종가로 갱신(SPY -11.5·SCHD -6.3) · 발행 날 다시 확인 규칙(D-11·prepublish)
+
+2026-11-21 23:12 · editor · 완료: 카페 #450·#454 edit-ok, H-6·SQ-1 script 재서명(195acffc·af1c5f5b) · 숫자 0 변경, aitell 통과, 근거 today.md 해당 줄

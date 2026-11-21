@@ -54,6 +54,19 @@
     "url": "https://cafe.naver.com/firemap/463"
    },
    "note": "16:10 칸 gimpo1121 · 발행 날 국토부 매매 10·11월 다시 받음(2만 4,754→4,759건·11월 100→105건, 같은 집 비교 숫자 그대로) · korea.kr 다시 열림, 법령 API는 IP 미등록 403류라 11/20 본문 · auto 재서명 001b95f8 · readcheck 0·selfcheck 사실 0 · 교차검증은 11/20 crosscheck 그대로(문장 0 변경) · verify OK 1803/1803·사진 3/3 · 블로그 정지 · 개선: 없음 — 발견: ㉦'놓치기 쉬운'·㉧'한눈에 정리' 같은 날 반복이 11/22 칸부터 막힘, 11/22 내 칸(spx10y·songdopair) 발행 전 확인 필요 · 11/22 18:40 지수 씨앗 ndxetf1122"
+  },
+  {
+   "hour": 18,
+   "ts": "18:47",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "나스닥100 하락장, 과거엔 그 뒤 어떻게 됐을까?",
+    "url": "https://cafe.naver.com/firemap/464"
+   },
+   "note": "18:40 칸 ndx1121 · 발행 전 야후 ^NDX 다시 받음: 11/20 종가 25,028.98(하루 -5.61%, 나스닥 공식 api 일치, FRED는 11/19까지) → 최고점 대비 -15.1%→-19.8%, 최고까지 17.8%→24.8%, '얕게 멈춘 7번 이미 지나침' 한 줄 더함, 예시 100→80→96 · readcheck 0·selfcheck 사실 0·aitell 3.8·spoken 통과·editgate auto cbfffde6 · verify OK 1722/1722·사진 3/3 · 블로그 없음(DAY_CAP·쉬는 규칙) · songdopair1122 짝 영상 ID tvCsLWDF814로 교체(PD 요청) · 교차검증은 11/20 작성 때 crosscheck, 이번 갱신분은 selfcheck · 개선: 없음"
   }
  ]
 }

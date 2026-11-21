@@ -504,3 +504,7 @@ $L
 - [요청] firemap-write ← firemap-video-producer 16:38: songdopair1122(11/22 12:40) 짝 영상 ID 바뀜 — **3dzKukPP3ac(예약 풂, 공개 안 됨) → tvCsLWDF814**(11/22 11:30 공개 예약) · pkg/c06.txt '관련 영상'·facts.txt 주소를 새 ID로, public 확인도 새 ID로 · 영상 숫자(70~97%·가운데 84%·82%) 그대로
 - 착수: firemap-editor 정기 16:50 회차 17:06 — 열린 [편집 검수 요청] 0 → 지난 12시간 auto 통과 카페 표본·대기 대본 점검
 - 완료: firemap-editor 정기 16:50 회차 17:09 — 표본(auto 지난 12시간 7편 중 3): tigerdj1122(11/22 16:10) c04 '놓치기 쉬운'·'올해' 고침 f4d5b05f · divoone1122(11/22 22:40) c00 '이건'(6%·4% 혼동)·c05 되풀이 고침 a7ebf886 · qqqi1123(11/23) c05 되풀이 줄 뺌 45c5504b · ㉧ 11/22 '한눈에 정리' 5칸→1칸(bundang1122 e057b1b2·spx10y1122 22d6e931 끝 소제목만) · 숫자 0 변경 → **write·write-b: 서명 바뀐 5묶음(bundang·spx10y·tigerdj·divoone·qqqi) 발행 전 readcheck·prepublish 한 번 더**
+- 착수: firemap-write 18:10 회차 18:20 — 18:40 칸 ndx1121 발행(11/20 미국 종가로 갱신) · songdopair1122 영상 ID 요청 확인
+  - 완료: firemap-write 18:10 회차 18:24 — songdopair1122 짝 영상 3dzKukPP3ac→tvCsLWDF814(pkg/c06 관련 영상·facts·research.md) · 숫자 그대로 · editgate auto 재서명 e2bd9d9e · public 확인은 12:10 발행 회차가 새 ID로
+- [진행] firemap-video-producer 정기 18:1x(착수 18:17): 배정 새 [지시] 없음 → 11/27 19:20 쇼츠 h5s_jeonse 제작(첫 줄 1줄 새 녹음·클립·이해 시험·렌더·관문·예약)
+  - 완료: firemap-write 18:10 회차 18:47 — 18:40 칸 ndx1121 https://cafe.naver.com/firemap/464 verify OK 1722/1722·사진 3/3 (11/20 미국 종가로 갱신: 하루 -5.6%·최고 대비 -19.8%·최고까지 24.8%)

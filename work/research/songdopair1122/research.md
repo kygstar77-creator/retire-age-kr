@@ -3,7 +3,7 @@
 ## 검증
 - 수요: work/kwvol.py 11/21 — 송도아파트 16,060(PC 2,860·모바일 13,200) · 송도아파트전세 1,510 · 송도집값 1,390 · 송도아파트시세 650 · 송도아파트가격 200
 - 경쟁에서 터진 증거: '송도 아파트 시세' 블로그 탭 상위 8편 중 6편이 이번 주 글(toprank 11/21 07:12) — 단지 순위·거래량 글로 몰림
-- 우리 실측: H-5 롱폼(3dzKukPP3ac, 11/22 11:30 공개 예약)이 대본 끝에서 '서른세 곳 전체 표는 파이어맵 카페에 올려 둘게요'라고 약속 · 우리 카페 제목 '송도'는 #452(전세 가운데 값) 1편 — 이 글은 매매 단지별이라 각도 다름
+- 우리 실측: H-5 롱폼(tvCsLWDF814, 11/22 11:30 공개 예약)이 대본 끝에서 '서른세 곳 전체 표는 파이어맵 카페에 올려 둘게요'라고 약속 · 우리 카페 제목 '송도'는 #452(전세 가운데 값) 1편 — 이 글은 매매 단지별이라 각도 다름
 - 칸: 11/22 12:40(slots.json, 관문 기한 06:40) · 앞 칸 10:10 spx10y1122 지수 → 같은 장르 연속 아님 · 범위(부동산 투자) 안
 
 ## 원문
@@ -71,11 +71,11 @@
 | 전세 낀 차이 가장 작은 곳 금호어울림 1억 7,500만원 · 가장 큰 곳 퍼스트파크 F13-1BL 6억 1,000만원 · 가운데 3억 800만원 | 1.75억 · 6.10억 · 3.08억 | S1·S2·S3 calc_out.txt §5 |
 | 2026년 11월 계약 54건만 신고, 지금 값은 11월 19일 계약까지 | 11월 84㎡대 54건 · 마지막 계약일 19일 | S1 https://www.data.go.kr/data/15126469/openapi.do |
 | 표 33줄 고점·지금·% | calc_out.txt §2 33줄 그대로 | S1·S3 calc_out.txt §2 |
-| 영상이 약속한 '서른세 곳 전체 표' | H-5 대본 끝 '33곳 전체표는 파이어맵 카페에 올려둘게요' | H-5 영상 https://youtu.be/3dzKukPP3ac (받아쓰기 longform/ep/H-5/check/nat_words/039f7f5082bcf8b9_small.json, 공개 뒤 다시 확인) |
+| 영상이 약속한 '서른세 곳 전체 표' | H-5 대본 끝 '33곳 전체표는 파이어맵 카페에 올려둘게요' | H-5 영상 https://youtu.be/tvCsLWDF814 (받아쓰기 longform/ep/H-5/check/nat_words/039f7f5082bcf8b9_small.json, 공개 뒤 다시 확인) |
 
 # 올리기 전 확인
 - 2026-11-21 07:18 firemap-write(조사·작성 날, 발행 날 12:40 발행 회차가 다시 열 것)
-- 다시 연 주소: https://www.data.go.kr/data/15126469/openapi.do (API 11/21 04:44 받음) · https://www.data.go.kr/data/15126474/openapi.do · https://rt.molit.go.kr · https://ac.search.naver.com/nx/ac?q=%EC%86%A1%EB%8F%84%20%EC%95%84%ED%8C%8C%ED%8A%B8%20%EC%8B%9C%EC%84%B8 · https://youtu.be/3dzKukPP3ac
+- 다시 연 주소: https://www.data.go.kr/data/15126469/openapi.do (API 11/21 04:44 받음) · https://www.data.go.kr/data/15126474/openapi.do · https://rt.molit.go.kr · https://ac.search.naver.com/nx/ac?q=%EC%86%A1%EB%8F%84%20%EC%95%84%ED%8C%8C%ED%8A%B8%20%EC%8B%9C%EC%84%B8 · https://youtu.be/tvCsLWDF814
 - 기준일: 국토교통부 실거래 2026-11-21 04:44 조회(계약 2021-01~2026-11, 마지막 계약일 11/19)
 - 바뀐 것: 처음 조사 — H-5 calc2_out_1121과 같은 값(diff 0줄)
 - 새로 찾은 것: 33곳 전체 고점·지금·% 표, 같은 33곳 최고 한 건 기준 74%, 빠진 34곳과 그중 3곳 — 영상에 없던 값

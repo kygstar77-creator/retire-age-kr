@@ -62,15 +62,15 @@
 | 금리가 빠르게 오르던 때 | FEDFUNDS 0.08 → 4.10 | S6 |
 | 바닥 중간 22.9% 아래 · 20% 이상 8번 · 30% 이상 4번(1987·1990·2000·2022) · 17% 안 4번 | -22.9 · 8 · 4 · 4 | S1·S3 calc_out.txt |
 | 회복 중간 130일(넉 달 정도) · 12번 1년 안 · 2000년 15년 넘게 | 130 · 12 · 5,685일 | S1·S3 calc_out.txt |
-| 최고점까지 17.8% | 31,224.47/26,517.05-1 = 17.75 | S1·S3, S2 |
+| 최고점보다 19.8% 낮음 · 11/20 하루 5.6% · 최고점까지 24.8% · 얕게 멈춘 7번 지나침 | 25,028.98/31,224.47-1=-19.8 · -5.61 · 31,224.47/25,028.98-1=24.75 · 7 | S1(11/21 다시 받음)·https://api.nasdaq.com/api/quote/NDX/info?assetclass=index · calc_out_1121.txt |
 | TIGER 미국나스닥100 11/20 최고가보다 25.3% 낮음 · 최고 7월 1일 | 155,220 / 207,780 = -25.3 · 2026-07-01 | 2차 S4 calc_out.txt · https://finance.naver.com/item/sise.naver?code=133690 (올리기 전 확인에서 다시 봄) |
 | 달러값 1,550원대 → 1,330원대 | 야후 1,551.8(07-01)·1,330.4(11-19) · FRED 1,555.96(06-05)·1,336.58(11-13) | S4·S5 |
 | 지난 글 「나스닥 vs S&P, 하락장에선 늘 더 빠졌을까?」 | #453 제목 | S7 |
 
 # 올리기 전 확인
 - 2026-11-20 21:3x firemap-write(조사·작성 날 — 발행 날 11/21 18:10 write 회차가 야후·FRED 다시 받아 11/20 미국 종가로 '지금' 숫자(-15.1%·16번째·+17.8%·TIGER) 갱신)
-- 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX (11/20 18:2x) · https://fred.stlouisfed.org/series/NASDAQ100 (11/20 21:2x) · https://query1.finance.yahoo.com/v8/finance/chart/133690.KS (21:2x) · https://fred.stlouisfed.org/series/DEXKOUS (21:2x) · https://fred.stlouisfed.org/series/FEDFUNDS (11/20) · https://cafe.naver.com/firemap/453 (11/20) · https://finance.naver.com/item/sise.naver?code=133690
-- 기준일: 나스닥100 2026-11-19 종가 · TIGER 미국나스닥100 2026-11-20 종가
-- 바뀐 것: 처음 조사 — 없음
+- 다시 연 주소(11/21 18:2x): https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX · https://api.nasdaq.com/api/quote/NDX/info?assetclass=index · https://fred.stlouisfed.org/series/NASDAQ100(11/19까지) · https://query1.finance.yahoo.com/v8/finance/chart/133690.KS · KRW=X · 이전: https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX (11/20 18:2x) · https://fred.stlouisfed.org/series/NASDAQ100 (11/20 21:2x) · https://query1.finance.yahoo.com/v8/finance/chart/133690.KS (21:2x) · https://fred.stlouisfed.org/series/DEXKOUS (21:2x) · https://fred.stlouisfed.org/series/FEDFUNDS (11/20) · https://cafe.naver.com/firemap/453 (11/20) · https://finance.naver.com/item/sise.naver?code=133690
+- 기준일: 나스닥100 2026-11-20 종가(11/21 갱신) · TIGER 미국나스닥100 2026-11-20 종가
+- 바뀐 것: 2026-11-21 18:2x 다시 받음 — 기준일 나스닥100 11/19 → 11/20 종가 25,028.98(하루 -5.61%, 나스닥 공식과 일치). 최고점 대비 -15.1% → -19.8%, 최고까지 17.8% → 24.8%. 첫 -15% 날(11/19)·16번째·과거 15번 숫자는 그대로. TIGER 155,220(11/20)·달러값 1,334.8 그대로 범위
 - 새로 찾은 것: 처음 -15% 16번째·1년 뒤 13/15 오름 중간 +30.9% · 그 뒤 바닥 중간 -22.9%·8번 -20% 이상 · 회복 중간 130일 · TIGER 원화 -25.3% · 경쟁 글 0편
 - 조사 뒤 공표: data/release_calendar.json — 지수 매일, 발행 날 다시 받음

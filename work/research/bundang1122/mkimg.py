@@ -46,10 +46,10 @@ fig.subplots_adjust(top=0.82, bottom=0.08, left=0.36, right=0.96); fig.savefig('
 fig, ax = plt.subplots(figsize=(9, 6.4), dpi=100)
 xs = ['21상', '21하', '22상', '22하', '23상', '23하', '24상', '24하', '25상', '25하', '26상', '26하']
 pg = [15.20, 15.60, 15.40, 11.65, 12.65, 13.28, 13.70, 14.22, 14.85, 14.96, 15.20, 18.00]
-sj = [14.03, 14.40, 14.07, 10.35, 12.00, 13.53, 14.07, 14.70, 15.39, 18.32, 19.70, 21.70]
+sj = [14.03, 14.40, 14.07, 10.35, 12.00, 13.53, 14.07, 14.70, 15.39, 18.32, 19.70, 21.60]
 ax.plot(range(12), pg, color=BLUE, lw=3, marker='o'); ax.plot(range(12), sj, color=ORG, lw=3, marker='o')
 ax.text(11.2, pg[-1], '판교\n약 18억', va='center', fontproperties=Bs(16), color=BLUE)
-ax.text(11.2, sj[-1], '서현·수내·정자\n약 21억 7천', va='center', fontproperties=Bs(16), color=ORG)
+ax.text(11.2, sj[-1], '서현·수내·정자\n약 21억 6천', va='center', fontproperties=Bs(16), color=ORG)
 ax.set_xticks(range(12)); ax.set_xticklabels(xs, fontsize=12); ax.set_yticks([10, 15, 20]); ax.set_yticklabels(['10억', '15억', '20억'], fontsize=12)
 ax.set_xlim(-0.4, 14.2); ax.set_ylim(9, 23)
 for s in ('top', 'right'): ax.spines[s].set_visible(False)

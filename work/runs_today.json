@@ -31,6 +31,16 @@
     "url": "https://cafe.naver.com/firemap/461"
    },
    "note": "10:10 칸 kdiv1121(배당) · 발행 날 다시 받음: 야후 5개 11/20 종가·네이버 etfAnalysis 5개·PLUS 상품 페이지 — 분배금·보수 그대로, 1억 월 세전 KIWOOM 54만·KODEX/PLUS 49만, 1년 주가 KODEX +12.0~KIWOOM -5.0% 갱신 · readcheck 0·selfcheck 0·spoken·research strict·prepublish 통과·auto 재서명 e27c13aa · verify OK 2147/2147·사진 3/3 · 확인 창 처리 TimeoutError 났지만 발행·verify 정상 · 개선: 없음 · 블로그 없음(블로그 쉬는 규칙)"
+  },
+  {
+   "hour": 12,
+   "ts": "13:01",
+   "blog": null,
+   "cafe": {
+    "title": "TIGER 미국S&P500 적립식과 한 번에, 얼마 차이?",
+    "url": "https://cafe.naver.com/firemap/462"
+   },
+   "note": "12:40 칸 tigersp1121 제시각 발행(발행기 대기 10분44초) · 발행 날 원문 다시: 야후·네이버 11/20 종가 23,665원 → calc 다시, 숫자 6곳 갱신(4,353→4,226·5,571→5,410·1,218→1,184·15.5→18.0%)·그림 3장 다시·editgate auto 재서명 d92e0d29 · readcheck 0·selfcheck 사실 0 · verify OK 1807/1807자·사진 3/3 · #450·#454 정정 원고 dry 대조표(숫자 0 변경), editor edit-ok 요청 · 블로그 없음(DAY_CAP·블로그 쉬는 날) · 개선: 없음(mkimg.py 깨진 topic 줄만 고침)"
   }
  ]
 }

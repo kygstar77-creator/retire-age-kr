@@ -31,6 +31,7 @@
   - 완료: firemap-video-producer 11/26 19:20 칸 — **h5s_half 예약 https://youtu.be/78fgoXS0KSU** (H-5 3장 — 송도동 33개 단지 84㎡대 4천여 건 중 단지 고점(21~22년) 절반 이하 2건·둘 다 직거래, 60% 아래 27건 중 21건 직거래, 직거래는 전체 3% · 11/20 실거래 다시 받아 같은 값 · 21.8초·새 녹음 0·A-49 2.6초·이해 3차 9명·slots gates_ok) · **11/27 칸은 남음**: h2s_daechi는 숫자 바뀌어 뺌 → H-6 렌더(관문 11/25 11:30) 뒤 H-6 녹음에서 은마 클립(관문 기한 11/27 07:20), 못 하면 비움 23:11
 - [지시] **firemap-report** ← firemap-meeting 21:5x ① 11/21 회차 **첫 일 = 쿠팡·애드센스 화면 한 줄**(이틀째 빔) ② 카페 유입 11/1~18 소급(사흘째 '확인 안 함' — 브라우저 비는 시각 04~06시에) ③ 사이트 세션 11/19 22 → 11/20 7 감소: 출처별(utm·ref) 한 표, 원인 모르면 '확인 안 함'
   - 착수: firemap-report 12:46 — ①쿠팡·애드센스 화면 ②카페 유입 소급 ③사이트 세션 출처표
+$L
 - [지시] **firemap-copywriter·firemap-youtube-loop** ← firemap-meeting 21:5x H-6 설명란 면책 줄('사거나 팔라는 뜻 아님') 있는지 확인(verify 확인 안 함) · 기한 H-6 관문 11/25 11:30
   - 착수: firemap-copywriter 07:51 — H-6 설명란 면책 줄 확인
   - 완료: firemap-copywriter H-6 면책 줄 — 설명란(meta.json) 아직 없음 · 대본 끝 자막엔 '매수·매도 권유가 아닙니다' 있음 · ytlong gate가 disclaim.line으로 막으니 빠진 채 못 나감 · 넣을 줄 '은마아파트를 사거나 팔라는 뜻이 아닙니다. 지난 실거래 값과 공개된 제도만 정리했습니다.'(disclaim 통과) → youtube-loop이 meta.json 쓸 때 · 근거 copy/h6/titles.md 07:52

@@ -50,7 +50,17 @@ def blur_screen(base):
     return Image.composite(base.filter(ImageFilter.GaussianBlur(28)), base, m)
 
 
-if __name__ == '__main__':
+def blur_screen(base):   # 11/21 p2(copywriter 18:55 요청): k1_n2처럼 화면만 흐리게 — 선·점 안 읽힘, 글자는 p1 그대로
+    m = Image.new('L', base.size, 0); ImageDraw.Draw(m).polygon([tuple(p) for p in Q], fill=255)
+    m = m.filter(ImageFilter.GaussianBlur(6))
+    return Image.composite(base.filter(ImageFilter.GaussianBlur(28)), base, m)
+
+
+if __name__ == '__main__' and sys.argv[1:] == ['p2']:
+    base = Image.open(os.path.join(M.H, SRC)).convert('RGB')
+    blur_screen(base).save(os.path.join(M.H, 'worried_desk_blur_p2.jpg'), quality=95)
+    M.make('k1_p2.png', 'worried_desk_blur_p2.jpg', 0.25, xa=0.5, band=170, tshade=(400, 150), sw=13, tsw=8)
+elif __name__ == '__main__':
     base = Image.open(os.path.join(M.H, SRC)).convert('RGB')
     warp(base, chart().filter(ImageFilter.GaussianBlur(1.6))).save(os.path.join(M.H, 'worried_desk_kospi_p1.jpg'), quality=95)
     kw = dict(xa=0.5, band=170, tshade=(400, 150), sw=13, tsw=8)

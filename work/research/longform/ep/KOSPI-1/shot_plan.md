@@ -64,7 +64,7 @@
 | 2. 서킷브레이커와 사이드카 | 87 11/6 | 아침 -8.55% vs 마감 -6.02% 두 칸 | 1 | Python 판 | bg/kospi1/board/nov6.png | shotcmp/r11.jpg | 나음 — 새 심사관 Agent 11/20 20시대(PD 아님, 두 숫자 대비 선명) |
 | 2. 서킷브레이커와 사이드카 | 96 체크 두 칸 | 신용·미수/레버리지 체크 | 5·17 | Python 판 | bg/kospi1/board/check2.png | shotcmp/r12.jpg | 나음 — 새 심사관 Agent 11/20 20시대(PD 아님, 체크 두 칸 간결) |
 | 3. 지난 31년, 크게 빠진 날 그 뒤 | 104 31년 기록 | 쌓인 종이·책 더미(글자 안 읽힘 — 신문 12345283은 제호 읽혀 뺌) | 7 | Pexels | bg/kospi1/stock/5224014.mp4 | shotcmp/r13.jpg | 같음 — 새 심사관 Agent 11/20 20시대(PD 아님, 책 더미 은유, 어수선) |
-| 3. 지난 31년, 크게 빠진 날 그 뒤 | 110 첫날 표 16줄 | 표 한 줄씩 불 켜기 | 11 | Python 판 | bg/kospi1/board/table16.png | shotcmp/r14.jpg | 못함 — 새 심사관 Agent 11/20 20시대(PD 아님, 16줄×4칸 빽빽·강조 줄 없음 → 줄 강조·열 줄이기) |
+| 3. 지난 31년, 크게 빠진 날 그 뒤 | 110 첫날 표 16줄 | 표 한 줄씩 불 켜기 | 11 | Python 판 | bg/kospi1/board/table16.png | shotcmp/r14.jpg | 나음 — 새 심사관 Agent 11/21 09:08(visual 아님, 11/21 판: 두 칸·8줄×2단·올해 줄 주황 동그라미, 말 '열여섯 묶음·올해 것까지'와 맞음 · 지적 2곳(동그라미 여백·'그날'→'그날 하락') 고쳐 다시 그림) |
 | 3. 지난 31년, 크게 빠진 날 그 뒤 | 112 이름표 네 장 | 외환위기·테러·금융위기·올해 | 11 | Python 판 | bg/kospi1/board/names4.png | shotcmp/r15.jpg | 나음 — 새 심사관 Agent 11/20 20시대(PD 아님, 네 사건·날짜·하락률 큼직) |
 | 3. 지난 31년, 크게 빠진 날 그 뒤 | 묶음 | 2008 가을 8날 한 괄호 | 12 | Python 판 | bg/kospi1/board/group2008.png | shotcmp/r16.jpg | 나음 — 새 심사관 Agent 11/20 20시대(PD 아님, 8점 한 괄호 직관적) |
 | 3. 지난 31년, 크게 빠진 날 그 뒤 | 124 더 내려간 적 | ? /15 | 2 | Python 판 | bg/kospi1/board/q14.png | shotcmp/r17.jpg | 나음 — 새 심사관 Agent 11/20 20시대(PD 아님, 14/15 크게 한눈에) |

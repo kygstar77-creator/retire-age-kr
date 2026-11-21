@@ -195,19 +195,21 @@ def group2008(im):         # '묶음' 뜻 — 2008년 가을 하루 -5% 날 8개
     source(d, SRC + ' · 2008.09.16~11.20 하루 -5% 이하 8일')
 
 @board
-def table16(im):           # 무리 첫날 표 16줄 — 첫날 하락률 · 1년 뒤 · 1년 안 최저
-    d = ImageDraw.Draw(im); T(d, (W // 2, 70), '묶음 열여섯 — 첫날 그 뒤', 64, INK, F_X)
-    cols = (520, 880, 1260, 1640); y = 150
-    for x, h in zip(cols, ('첫날', '그날 하락', '1년 뒤', '1년 안 가장 낮을 때')):
-        T(d, (x, y), h, 36, GREY, F_B)
-    d.line([(300, y + 30), (1820, y + 30)], fill=LINE, width=3)
-    for i, g in enumerate(GRP):
-        y = 205 + i * 50
-        T(d, (cols[0], y), ymd(g['d']), 36, INK, F_B)
-        T(d, (cols[1], y), f"{g['drop']:.2f}%", 36, INK, F_B)
-        T(d, (cols[2], y), pct(g['y1']) if g['y1'] is not None else '1년 안 됨', 38 if g['y1'] is not None else 32, INK if g['y1'] is not None else GREY, F_X if g['y1'] is not None else F_B)
-        lo = LOW.get(g['d']); T(d, (cols[3], y), pct(lo) if lo is not None else '—', 38, INK if lo is not None else GREY, F_X)
-    source(d, SRC + ' · 60거래일 안은 한 묶음 · 1년 뒤 = 252거래일 뒤 종가 · 첫날 종가 대비')
+def table16(im):           # 묶음 열여섯 — 첫날·그날 하락 두 칸만, 8줄×2단 · 올해 묶음 주황(11/21 PD 심사 '못함' 16줄×4칸 → 열 줄이기·강조 줄)
+    d = ImageDraw.Draw(im); TF(d, (W // 2, 110), '크게 빠진 묶음, 1995년부터 열여섯', 76, INK, F_X)
+    assert GRP[-1]['d'].startswith('2026')
+    for half, cx in ((GRP[:8], 520), (GRP[8:], 1400)):
+        T(d, (cx - 30, 250), '묶음 첫날', 38, GREY, F_B, 'rm'); T(d, (cx + 50, 250), '그날 하락', 38, GREY, F_B, 'lm')
+        d.line([(cx - 380, 290), (cx + 330, 290)], fill=LINE, width=3)
+        for i, g in enumerate(half):
+            y = 345 + i * 82 + (14 if g is GRP[-1] else 0); me = g is GRP[-1]; c = OR if me else INK
+            T(d, (cx - 30, y), ymd(g['d']), 54, c, F_X if me else F_B, 'rm')
+            T(d, (cx + 50, y), f"{g['drop']:.1f}%", 54, c, F_X, 'lm')
+            if me:
+                hand_ellipse(d, (cx - 432, y - 52, cx + 300, y + 60), seed=16)
+                T(d, (cx + 330, y), "올해", 50, OR, F_X, "lm")
+    d.line([(W // 2 + 20, 240), (W // 2 + 20, 870)], fill=LINE, width=2)
+    source(d, SRC + ' · 60거래일 안은 한 묶음 · 묶음 첫날 하락')
 
 @board
 def names4(im):            # 묶음 첫날 이름표 네 장

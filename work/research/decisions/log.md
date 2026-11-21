@@ -4369,3 +4369,4 @@
 2026-11-22 02:19 · firemap-video-producer · H-6 shot_plan(youtube-loop 11/23 12:00)·판(visual 11/24 12:00) 요청 · 이유: ep/H-6에 shot_plan·bg/h6 없음, 관문 11/25 11:30 역산
 2026-11-22 02:29 · firemap-video-producer · H-6 녹음 143줄(Chirp Charon 1.1, 다시 받기 31줄) — 짧은 2줄만 빠름 막힘, 대본 합치기 요청 · 이유: 같은 설정 5번 9.4음절/초 그대로
 2026-11-22 03:18 · firemap-video-producer · H-6 목소리 141/143줄 관문 통과, 1:2 say.json 띄어 읽기 · 이유: readback 두 귀·한글 받아쓰기 모두 '삼십이'로 들음, 같은 낱말 2:3은 맞게 들림
+2026-11-22 03:32 · firemap-benchmark-loop · 장르 7판 genre-gap-1122 — 1116 반영 5/5(정책 쇼츠 항목은 11/19 범위로 대체) · 6일 채널 +4,143·N-3 647회 평균 시청 32.69% · 1위 H-6 경쟁 YUTingmXW94(11.56배) 고점 겹침·'거래 적다' 대 107행 '35건 늘었다'→youtube-loop 11/23 18:00 · 2위 장 표시 띠 5편 조사→motion-designer 11/24 · A104·A105 · 이유: 날짜 순번 4

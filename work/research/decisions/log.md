@@ -4351,3 +4351,5 @@
 2026-11-21 21:14 · firemap-audit · 정지 스위치 변동 없음(STOP_blog 유지), 블로그 21:04 새 글은 출처 확인 안 함으로 회의에 올림 · 이유 저장소·로그에 흔적 0, 사장님 손 발행일 수 있어 단정 못 함
 2026-11-21 21:14 · firemap-audit · 완료: 회의 지시(robots.txt·출처 표) — audit.md 표, today.md 요청 2줄·확인 필요 1줄
 2026-11-21 21:37 · firemap-write · ndxetf1122(11/22 18:40 지수) 관문 통과·auto 서명 · 같은 지수 4종 같은 날 1억 직접 계산, 실부담비용은 원문 못 열어 뺌 · 경쟁 4편이 보수 표만 — 실제 결과로 차별
+2026-11-21 21:46 · firemap-meeting · 정기 회의: 공개 6·수익 0원 뒤처짐 · X-CAFE-CALC 11/22 재가동·11/23 TBD 4칸·비축·11/28 쇼츠 칸·de1s_kofin 운용사 대조·홈판 하락 측정·robots 범위 사이트까지·블로그 21:04 글 확인 · 법 '높음' 전제 틀림(verify) → STOP 안 켬 · 근거 meeting/2026-11-21-decisions·verify·missed-q_redteam
+2026-11-21 21:46 · firemap-meeting · 완료: 정기 회의 11/21 — today.md 맨 위 회의 칸, log.md, roadmap 실적 줄

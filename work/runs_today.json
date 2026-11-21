@@ -67,6 +67,19 @@
     "url": "https://cafe.naver.com/firemap/464"
    },
    "note": "18:40 칸 ndx1121 · 발행 전 야후 ^NDX 다시 받음: 11/20 종가 25,028.98(하루 -5.61%, 나스닥 공식 api 일치, FRED는 11/19까지) → 최고점 대비 -15.1%→-19.8%, 최고까지 17.8%→24.8%, '얕게 멈춘 7번 이미 지나침' 한 줄 더함, 예시 100→80→96 · readcheck 0·selfcheck 사실 0·aitell 3.8·spoken 통과·editgate auto cbfffde6 · verify OK 1722/1722·사진 3/3 · 블로그 없음(DAY_CAP·쉬는 규칙) · songdopair1122 짝 영상 ID tvCsLWDF814로 교체(PD 요청) · 교차검증은 11/20 작성 때 crosscheck, 이번 갱신분은 selfcheck · 개선: 없음"
+  },
+  {
+   "hour": 21,
+   "ts": "21:37",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "21시대 카페 칸 없음(11/1 cadence 6칸) → 11/22 18:40 지수 ndxetf1122 짓기·관문 통과(auto d1b80dc9). 자료조사 출처 8(야후 4종·미래에셋 분배 원문·네이버 4종·소득세법 129조·지방세법 103조의13·삼성 공지·한경·경쟁 4편). 교차검증 경로 crosscheck(Gemini 3.6 flash): 사실 지적 2건 반영 2(1.4%→'그 10%' · 2022 -30.6~-30.5), 출처 법령 2 확인, 말투 3건 반영 3. selfcheck 사실 0. 이해 2차 6명 통과. verify 해당 없음(발행 없음). 개선: 실부담비용 원문(금투협) 못 열어 뺌 — 다음 ETF 비교 글에서 금투협 공시로 받기(backlog)"
   }
  ]
 }

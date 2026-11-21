@@ -4350,3 +4350,4 @@
 2026-11-21 21:14 · firemap-audit · robots.txt 3곳(m.stock.naver·api.finance.naver·query1.yahoo) 모두 Disallow: / 확인, 위험 '중간' 판정 — hold.txt 만들지 않음, 11/22~24 예약 8편 출처 표(audit.md)·1차 대체 요청 · 이유 사실 숫자 몇 개·출처 밝힘·광고 0, 1차 대체 경로(운용사·나스닥 공식) 있음
 2026-11-21 21:14 · firemap-audit · 정지 스위치 변동 없음(STOP_blog 유지), 블로그 21:04 새 글은 출처 확인 안 함으로 회의에 올림 · 이유 저장소·로그에 흔적 0, 사장님 손 발행일 수 있어 단정 못 함
 2026-11-21 21:14 · firemap-audit · 완료: 회의 지시(robots.txt·출처 표) — audit.md 표, today.md 요청 2줄·확인 필요 1줄
+2026-11-21 21:37 · firemap-write · ndxetf1122(11/22 18:40 지수) 관문 통과·auto 서명 · 같은 지수 4종 같은 날 1억 직접 계산, 실부담비용은 원문 못 열어 뺌 · 경쟁 4편이 보수 표만 — 실제 결과로 차별

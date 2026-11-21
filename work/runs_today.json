@@ -1,96 +1,18 @@
 {
- "date": "2026-11-21",
+ "date": "2026-11-22",
  "runs": [
   {
    "hour": 6,
-   "ts": "06:31",
-   "blog": null,
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "발행 칸 없음(07:40 guri1121은 write-b, 10:10 kdiv1121은 09:10 회차) · 11/22 10:10 칸 spx10y1122 짓기·관문 통과 · 자료조사 출처 5(야후 ^SP500TR·^GSPC·SPY, FRED DEXKOUS·SP500)+경쟁 5편 · 검증 경로 crosscheck(Gemini) 사실 5건 반영 3·유지 2(계산·운용사 사실표 추가), 말투 11건 반영 4 · selfcheck 사실 2건 고침→0 · 이해 시험 2차 6명 통과 · verify 해당 없음(발행 안 함) · 개선: 야후 1970년 전 타임스탬프가 윈도우 fromtimestamp에서 OSError — calc.py에서 epoch+timedelta로 바꿈(1928년 자료 쓰는 글에 같은 틀)"
-  },
-  {
-   "hour": 7,
-   "ts": "07:53",
-   "task": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "구리 아파트 전세 토지거래허가 뒤 올랐을까?",
-    "url": "https://cafe.naver.com/firemap/460"
-   },
-   "note": "07:40 칸 guri1121 발행 · 올리기 전 확인: 전월세·매매 API 9~11월 다시 받아 calc 대조 — 1만 9,518→9,541건, 1년 전 대비 +16.7→+16.5%(약 17% 그대로), 오른 개수 92→91·87→86, 금액 4,375만→4,000만원 → c00·c02·c05 고침, 그림 숫자 그대로 · 법령 5개 lawweb 다시 받음(본문 같음)·정책브리핑 2건 200 · readcheck 0·aitell 2.3·spoken 통과·selfcheck 사실 0·editgate auto 재서명 3cafebb9 · verify OK 1878/1878자·사진 3/3 · 발행기 경고: ㉧ '한눈에 정리' 이름 6칸 같음·본문 1,877자>1,500 · 개선: 없음(확인 창 처리 실패 경고는 발행엔 영향 없음)"
-  },
-  {
-   "hour": 9,
-   "ts": "10:18",
-   "blog": null,
-   "cafe": {
-    "title": "PLUS 고배당주 분배금 증가율 고배당 ETF 비교",
-    "url": "https://cafe.naver.com/firemap/461"
-   },
-   "note": "10:10 칸 kdiv1121(배당) · 발행 날 다시 받음: 야후 5개 11/20 종가·네이버 etfAnalysis 5개·PLUS 상품 페이지 — 분배금·보수 그대로, 1억 월 세전 KIWOOM 54만·KODEX/PLUS 49만, 1년 주가 KODEX +12.0~KIWOOM -5.0% 갱신 · readcheck 0·selfcheck 0·spoken·research strict·prepublish 통과·auto 재서명 e27c13aa · verify OK 2147/2147·사진 3/3 · 확인 창 처리 TimeoutError 났지만 발행·verify 정상 · 개선: 없음 · 블로그 없음(블로그 쉬는 규칙)"
-  },
-  {
-   "hour": 12,
-   "ts": "13:01",
-   "blog": null,
-   "cafe": {
-    "title": "TIGER 미국S&P500 적립식과 한 번에, 얼마 차이?",
-    "url": "https://cafe.naver.com/firemap/462"
-   },
-   "note": "12:40 칸 tigersp1121 제시각 발행(발행기 대기 10분44초) · 발행 날 원문 다시: 야후·네이버 11/20 종가 23,665원 → calc 다시, 숫자 6곳 갱신(4,353→4,226·5,571→5,410·1,218→1,184·15.5→18.0%)·그림 3장 다시·editgate auto 재서명 d92e0d29 · readcheck 0·selfcheck 사실 0 · verify OK 1807/1807자·사진 3/3 · #450·#454 정정 원고 dry 대조표(숫자 0 변경), editor edit-ok 요청 · 블로그 없음(DAY_CAP·블로그 쉬는 날) · 개선: 없음(mkimg.py 깨진 topic 줄만 고침)"
-  },
-  {
-   "hour": 15,
-   "ts": "16:34",
+   "ts": "07:42",
    "blog": {
     "title": null,
     "url": null
    },
    "cafe": {
-    "title": "김포 아파트 시세, 2021년 고점 되찾았을까?",
-    "url": "https://cafe.naver.com/firemap/463"
+    "title": "분당 아파트 시세, 재건축 선도지구가 더 올랐을까?",
+    "url": "https://cafe.naver.com/firemap/466"
    },
-   "note": "16:10 칸 gimpo1121 · 발행 날 국토부 매매 10·11월 다시 받음(2만 4,754→4,759건·11월 100→105건, 같은 집 비교 숫자 그대로) · korea.kr 다시 열림, 법령 API는 IP 미등록 403류라 11/20 본문 · auto 재서명 001b95f8 · readcheck 0·selfcheck 사실 0 · 교차검증은 11/20 crosscheck 그대로(문장 0 변경) · verify OK 1803/1803·사진 3/3 · 블로그 정지 · 개선: 없음 — 발견: ㉦'놓치기 쉬운'·㉧'한눈에 정리' 같은 날 반복이 11/22 칸부터 막힘, 11/22 내 칸(spx10y·songdopair) 발행 전 확인 필요 · 11/22 18:40 지수 씨앗 ndxetf1122"
-  },
-  {
-   "hour": 18,
-   "ts": "18:47",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "나스닥100 하락장, 과거엔 그 뒤 어떻게 됐을까?",
-    "url": "https://cafe.naver.com/firemap/464"
-   },
-   "note": "18:40 칸 ndx1121 · 발행 전 야후 ^NDX 다시 받음: 11/20 종가 25,028.98(하루 -5.61%, 나스닥 공식 api 일치, FRED는 11/19까지) → 최고점 대비 -15.1%→-19.8%, 최고까지 17.8%→24.8%, '얕게 멈춘 7번 이미 지나침' 한 줄 더함, 예시 100→80→96 · readcheck 0·selfcheck 사실 0·aitell 3.8·spoken 통과·editgate auto cbfffde6 · verify OK 1722/1722·사진 3/3 · 블로그 없음(DAY_CAP·쉬는 규칙) · songdopair1122 짝 영상 ID tvCsLWDF814로 교체(PD 요청) · 교차검증은 11/20 작성 때 crosscheck, 이번 갱신분은 selfcheck · 개선: 없음"
-  },
-  {
-   "hour": 21,
-   "ts": "21:37",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "21시대 카페 칸 없음(11/1 cadence 6칸) → 11/22 18:40 지수 ndxetf1122 짓기·관문 통과(auto d1b80dc9). 자료조사 출처 8(야후 4종·미래에셋 분배 원문·네이버 4종·소득세법 129조·지방세법 103조의13·삼성 공지·한경·경쟁 4편). 교차검증 경로 crosscheck(Gemini 3.6 flash): 사실 지적 2건 반영 2(1.4%→'그 10%' · 2022 -30.6~-30.5), 출처 법령 2 확인, 말투 3건 반영 3. selfcheck 사실 0. 이해 2차 6명 통과. verify 해당 없음(발행 없음). 개선: 실부담비용 원문(금투협) 못 열어 뺌 — 다음 ETF 비교 글에서 금투협 공시로 받기(backlog)"
-  },
-  {
-   "hour": 22,
-   "ts": "22:58",
-   "who": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "배당 ETF 하락장 낙폭과 회복 기간 비교",
-    "url": "https://cafe.naver.com/firemap/465"
-   },
-   "note": "22:40 칸 divbear1121 · 쇼츠 mOrYhIcsQ40 public 확인(videos.list) · 발행 날 야후 SPY·SCHD 다시 받음: 사상 최고 대비 SPY -8.1→-11.5%·SCHD -5.6→-6.3%(11/20 종가) c04 고침 · readcheck 0·aitell 3.8·spoken 통과·selfcheck 사실 0(중복 3 = 기존과 같음)·editgate auto 재서명 da7c9be7 · verify OK 1747/1747·사진 3/3 · naverpost '확인 창 처리 실패(계속할까요)' 경고 났으나 URL 나옴 · 개선: 없음"
+   "note": "블로그 정지(STOP_blog·범위) · verify OK 2142/2142·사진 4/4 · 발행 날 국토부 다시 받음(출처 S1~S5) · 07:00 첫 시도 readcheck 1건 거부→고쳐 재시도 · #450·#454 정정 적용 · 11/23 10:10 wirye1123 관문 통과(자료조사 웹검색 4건·1차 출처 4: 국토부 API·정책브리핑·서울시 보도자료·법령, 교차검증 사실 4 유지·말투 14 중 9 반영, 이해 2차 6명) · 개선: readcheck 지적 남으면 발행 거부되는 것 playbook에 적음"
   }
  ]
 }

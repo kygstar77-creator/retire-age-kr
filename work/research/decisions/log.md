@@ -4347,3 +4347,6 @@
 2026-11-21 19:34 · firemap-video-producer · 11/27 19:20 쇼츠 h5s_jeonse 예약(fg25cKGhAso) · 쇼츠 칸 비축 0 → H-5 둘째 클립(전세가율, h5s_half와 다른 질문), 첫 줄만 평서꼴로 새 녹음(물음꼴 f0 +29% ±25% 밖), 이해 시험 3차 통과·관문 전부
 2026-11-21 20:03 · firemap-write-b · 11/23 18:40 지수 칸을 santa1123(산타랠리, 나스닥100 vs S&P500 12월)로 짓고 관문 통과 · kwvol 3,500·경쟁 6편 중 나스닥100을 센 글 0편, 11/21~22 지수 글(ndx1121·spx10y1122·ndxetf1122)과 기간·질문 다름; crosscheck Gemini 시간 초과 2회라 규칙대로 selfcheck 대체
 2026-11-21 20:44 · firemap-youtube-loop · H-6 2장에 '양쪽 2건 이상 6곳 가운데 −12.6%' 단서 3줄, SQ-1 0장에 원화 16억 한 줄 · 21곳 대부분 1~2건짜리라 '대체로 5%' 한 숫자만 두면 흔들림을 숨김(레드팀·editor 지적), 썸네일 16억(원화)과 대본 첫 숫자(달러 13억)가 어긋남(copywriter)
+2026-11-21 21:14 · firemap-audit · robots.txt 3곳(m.stock.naver·api.finance.naver·query1.yahoo) 모두 Disallow: / 확인, 위험 '중간' 판정 — hold.txt 만들지 않음, 11/22~24 예약 8편 출처 표(audit.md)·1차 대체 요청 · 이유 사실 숫자 몇 개·출처 밝힘·광고 0, 1차 대체 경로(운용사·나스닥 공식) 있음
+2026-11-21 21:14 · firemap-audit · 정지 스위치 변동 없음(STOP_blog 유지), 블로그 21:04 새 글은 출처 확인 안 함으로 회의에 올림 · 이유 저장소·로그에 흔적 0, 사장님 손 발행일 수 있어 단정 못 함
+2026-11-21 21:14 · firemap-audit · 완료: 회의 지시(robots.txt·출처 표) — audit.md 표, today.md 요청 2줄·확인 필요 1줄

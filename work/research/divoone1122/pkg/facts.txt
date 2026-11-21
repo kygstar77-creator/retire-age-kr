@@ -1,0 +1,23 @@
+[오늘 찾은 것]
+2026-11-21 · 야후 파이낸스 chart API 분배 기록·종가 DIVO·JEPI·JEPQ·QYLD·XYLD·SCHD·SPYD·VYM·HDV·DGRO(range=2y) 새로 받음 · raw/*_chart_20261121.json · https://query1.finance.yahoo.com/v8/finance/chart/DIVO
+2026-11-21 · 야후 DIVO 분배 기록 10년(range=10y) 새로 받음 · raw/DIVO_10y_20261121.json · 해마다 12월 vs 다른 달 평균 calc2_out.txt
+2026-11-21 · Amplify 19a-1 통지문(DIVO, 2025-12-31 지급) 원문 PDF · raw/doc_6vovvs.txt · https://amplifyetfs.com/wp-content/uploads/files/19a-1_Notice_12-31-25_DIVO.pdf
+2026-11-21 · Amplify 2025 Year-End Distribution Estimates(per share as of 12/12/2025) 원문 PDF · raw/doc_kyjwiz.txt · https://amplifyetfs.com/wp-content/uploads/files/2025_Year_End_Distributions.pdf
+2026-11-21 · BOX Exchange 공지 207477(2025-12-30) 원문 PDF · raw/doc_e1xjm4.txt · https://boxexchange.com/assets/BOXOnnMemo207477.pdf
+2026-11-21 · 경쟁 블로그 6편('DIVO 분배율' 블로그 탭 상위 8편 중) 본문 받음 · bench.md
+
+[사실표]
+1. DIVO 최근 12회 분배(배당락 2025-11-26~2026-10-29) 합 3.026달러 · 11/20 종가 43.98 → 6.88% — calc_out.txt
+2. 2025-12-30 배당락 0.953달러 · 나머지 11회 0.179~0.214달러(0.18~0.21) · 0.953 ÷ 다른 회 평균 0.18845 = 5.1배('다섯 배쯤') — calc_out.txt
+3. 12월 빼면 2.073 ÷ 43.98 = 4.71% · 12월을 다른 회 평균(0.18845 ≈ 0.19)으로 바꾸면 2.2615 ÷ 43.98 = 5.14%('5.1%쯤') · 차이 1.74%포인트 — calc_out.txt
+4. 쇼츠 값 6.78%(11/19 종가 44.66) — cardshorts/de1s_divo/prepub_1120.txt
+5. 운용사 분배율 = 최근 분배 연환산, 4%대(4.85% 10/31 기준 — 2차: blog.naver.com/royal23-/224483947359 · blog.naver.com/dividendwhisky/224467524365 '분배율은 최근 지급액을 연환산한 지표')
+6. Amplify '2025 Year-End Distribution Estimates per share as of 12/12/2025' DIVO Income Distributions 0.97$ · Total 0.97$ — raw/doc_kyjwiz.txt
+7. 19a-1: monthly dividend $0.9534 payable 2025-12-31, record 2025-12-30 · Estimated Return of Capital $0.8928 94% · Net Investment Income $0.0606 6% · estimates on a book basis, not for tax reporting · Form 1099-DIV — raw/doc_6vovvs.txt
+8. BOX 207477: DIVO short-term capital gains distribution $0.58672, ex 2025-12-30, payable 2025-12-31 — raw/doc_e1xjm4.txt
+9. 해마다 12월(열두 번 다 준 2019~2025): 2019 1.004(다른 달 평균 0.1365의 7.4배) · 2025 0.953(0.1738의 5.5배) · 2020 0.149 · 2021 0.153 · 2022 0.144 · 2023 0.146 · 2024 0.165(0.14~0.17, 다른 달의 1.0~1.1배) — calc2_out.txt
+10. 가장 큰 한 번을 다른 회 평균으로 바꾸면 내려가는 폭(11/20 종가): DIVO 1.74 · JEPQ 0.27 · XYLD 0.16 · JEPI 0.14 · DGRO 0.13 · SPYD 0.09 · SCHD 0.06 · VYM 0.05 · QYLD 0.04 %포인트 — calc_out.txt
+11. SCHD·VYM·SPYD·DGRO 최근 12개월 4회(분기) — 한 번 빼면 약 4분의 1 줄어듦(SCHD 3.11→2.29%) — calc_out.txt
+12. HDV 분배 기록 2026-07-15부터 매달(07-15·08-19·09-16·10-21·11-18), 그전 분기 — calc_out.txt
+13. 쇼츠 https://youtu.be/S-bh4F6JB-k (de1s_divo 11/22 19:20 공개 예약) · 롱폼 https://youtu.be/mkAxQPGaDqc (D-ETF-1 10/30 공개) — slots.json 11/22 22:40 note
+14. 자료 기간: 분배 기록 10년 치(range=10y), 공지 3건(S4·S5·S6), 비교 ETF 8개(DIVO 빼고 JEPI·JEPQ·QYLD·XYLD·SCHD·SPYD·VYM·DGRO) · 2019~2025 7년

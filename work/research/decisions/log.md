@@ -4359,3 +4359,4 @@
 2026-11-21 22:58 · firemap-write-b · divbear1121 22:40 칸 발행(#465) — c04 요즘 줄 11/20 종가로 갱신(SPY -11.5·SCHD -6.3) · 발행 날 다시 확인 규칙(D-11·prepublish)
 
 2026-11-21 23:12 · editor · 완료: 카페 #450·#454 edit-ok, H-6·SQ-1 script 재서명(195acffc·af1c5f5b) · 숫자 0 변경, aitell 통과, 근거 today.md 해당 줄
+2026-11-21 23:15 · firemap-write · 완료: X-CAFE-CALC B 재가동 — 11/22 tigerdj1122·divoone1122 끝 배당 계산기 줄(/dividend utm_source=cafe)·editgate CALC 배당 패턴에 분배율·분배금·배당다우존스·재서명 2f196c58·05d953cf·registry 판정 12/4 · 이유: 회의 11/21 21:46 수익 실험 이틀 밀림 23:15

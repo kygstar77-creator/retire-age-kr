@@ -1,4 +1,5 @@
 [오늘 찾은 것]
+2026-11-21 · 발행 날 야후 chart API SPY·SCHD 다시 받음(raw/*_chart_20261121.json, 11/20 종가까지) — 사상 최고 대비 SPY -11.5%·SCHD -6.3% · fetch1121_out.txt · https://query1.finance.yahoo.com/v8/finance/chart/SPY
 2026-11-20 · 야후 파이낸스 chart API 일별 가격·배당 재투자 값(adjclose) SPY·SCHD·JEPI·HDV·SPYD·VYM·DGRO·VIG·402970.KS 2019-01~2026-11-19 새로 받음 · raw/*_chart_20261120.json · https://query1.finance.yahoo.com/v8/finance/chart/SCHD
 2026-11-20 · 같은 자료로 직접 계산: 2022년 안 최대 낙폭·2022년 한 해 수익·2020 코로나 낙폭·바닥 뒤 하락 전 고점 회복일·사상 최고 대비 지금 · calc_out.txt
 2026-11-20 · D-ETF-1 calc_out.txt(10/19)와 대조: 2022 낙폭 SPY -24.5·SCHD -16.8·JEPI -13.7·HDV -15.4·SPYD -20.3, 2020~ 낙폭 SCHD -33.4·SPY -33.7·HDV -37.0·SPYD -46.4 모두 같음
@@ -15,7 +16,7 @@
 7. SCHD 회복이 SPY보다 15일 늦음(12-13→12-28)[계산] · HDV·SPYD 코로나 회복 SPY보다 6.5달 넘게 늦음[계산 11.1-4.6=6.5]
 8. JEPI 첫 거래일 2020-05-21 — 야후 meta
 9. ACE 미국배당다우존스(402970.KS, 원화) 2022년 안 낙폭 -9.5%(01-07→02-24) — calc_out.txt
-10. 사상 최고 대비 11/19 종가: SPY -8.1%(최고 2026-10-06) · SCHD -5.6%(최고 2026-11-04) — calc_out.txt
+10. 사상 최고 대비 11/20 종가: SPY -11.5%(최고 2026-10-06, 종가 689.81) · SCHD -6.3%(최고 2026-11-04, 종가 33.94) — fetch1121_out.txt (11/19 종가 기준은 -8.1·-5.6, calc_out.txt)
 11. SCHD 기초지수 Dow Jones U.S. Dividend 100(100곳), SPYD = S&P 500 High Dividend Index 균등가중 — D-ETF-1 facts·운용사 · 경쟁 3 dividendwhisky가 인용한 S&P DJI
 12. 2022년 미국 금리 인상(FEDFUNDS 0.08%(2022-01) → 4.10%(2022-12)) — FRED FEDFUNDS
 13. 쇼츠 https://youtu.be/mOrYhIcsQ40 (de1s_drop2022, 11/21 19:20 공개 예약 — 발행 전 공개 확인) — research.md S5

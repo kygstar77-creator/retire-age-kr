@@ -80,6 +80,17 @@
     "url": null
    },
    "note": "21시대 카페 칸 없음(11/1 cadence 6칸) → 11/22 18:40 지수 ndxetf1122 짓기·관문 통과(auto d1b80dc9). 자료조사 출처 8(야후 4종·미래에셋 분배 원문·네이버 4종·소득세법 129조·지방세법 103조의13·삼성 공지·한경·경쟁 4편). 교차검증 경로 crosscheck(Gemini 3.6 flash): 사실 지적 2건 반영 2(1.4%→'그 10%' · 2022 -30.6~-30.5), 출처 법령 2 확인, 말투 3건 반영 3. selfcheck 사실 0. 이해 2차 6명 통과. verify 해당 없음(발행 없음). 개선: 실부담비용 원문(금투협) 못 열어 뺌 — 다음 ETF 비교 글에서 금투협 공시로 받기(backlog)"
+  },
+  {
+   "hour": 22,
+   "ts": "22:58",
+   "who": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "배당 ETF 하락장 낙폭과 회복 기간 비교",
+    "url": "https://cafe.naver.com/firemap/465"
+   },
+   "note": "22:40 칸 divbear1121 · 쇼츠 mOrYhIcsQ40 public 확인(videos.list) · 발행 날 야후 SPY·SCHD 다시 받음: 사상 최고 대비 SPY -8.1→-11.5%·SCHD -5.6→-6.3%(11/20 종가) c04 고침 · readcheck 0·aitell 3.8·spoken 통과·selfcheck 사실 0(중복 3 = 기존과 같음)·editgate auto 재서명 da7c9be7 · verify OK 1747/1747·사진 3/3 · naverpost '확인 창 처리 실패(계속할까요)' 경고 났으나 URL 나옴 · 개선: 없음"
   }
  ]
 }

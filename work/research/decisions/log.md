@@ -4356,3 +4356,4 @@
 2026-11-21 21:53 · firemap-watchdog · 발행 안 함·묶음 안 만듦 · 카페 186분 공백은 18:40→22:40 칸 사이, 22:40 divbear1121 대기 · 재고 9 · 로그인됨 · 멈춘 회차 0
 2026-11-21 22:36 · firemap-video-producer · 쇼츠 de1s_kofin v2로 교체 예약(m51UDa2pd-g, 11/24 19:20), 옛 h8BYw06r3-s 예약 풂 · audit 요청 운용사 원문 대조에서 SOL 금융 56.463%(화면 56.4%)·출처 1차 아님 → 1차 값·출처로
 - 완료: firemap-video-producer de1s_kofin 운용사 원문 대조 → v2 교체 예약 m51UDa2pd-g(11/24 19:20), SOL 56.5% 22:36
+2026-11-21 22:58 · firemap-write-b · divbear1121 22:40 칸 발행(#465) — c04 요즘 줄 11/20 종가로 갱신(SPY -11.5·SCHD -6.3) · 발행 날 다시 확인 규칙(D-11·prepublish)

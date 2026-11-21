@@ -19,7 +19,7 @@
 ## 질문
 1. 하락장에 배당 ETF는 정말 덜 빠지나 — https://blog.naver.com/dividendwhisky/224467744889 (제목 '고배당 ETF는 하락장에서 정말 방어적일까요?') → 답: 2022년엔 SCHD 16.8%·JEPI 13.7%로 S&P500 24.5%보다 덜, 코로나 땐 SCHD 33.4%로 시장만큼·SPYD 46.4%로 더
 2. 배당 ETF는 하락 뒤 얼마 만에 회복했나 — https://youtu.be/mOrYhIcsQ40 (쇼츠 이해 시험 3차 '남은 궁금증: 회복 기간', cardshorts/de1s_drop2022/understand.md) → 답: 2022년 SCHD 14.9달·HDV 2.0달·SPYD 21.4달, 코로나 SCHD 약 5달·HDV·SPYD 11달 넘게
-3. 요즘 하락장에 배당 ETF가 선방하나 — https://blog.naver.com/etflab_us/224480895309 (제목 'QQQ 7.9% 빠진 한 달, 6.5% 오른 미국배당다우존스') → 답: 11/19 종가로 SPY 최고 대비 -8.1%, SCHD -5.6%
+3. 요즘 하락장에 배당 ETF가 선방하나 — https://blog.naver.com/etflab_us/224480895309 (제목 'QQQ 7.9% 빠진 한 달, 6.5% 오른 미국배당다우존스') → 답: 11/20 종가로 SPY 최고 대비 -11.5%, SCHD -6.3%(11/19는 -8.1·-5.6)
 4. 국내 상장 미국배당다우존스도 같나 — https://blog.naver.com/bini1976/224483924166 (제목 '… 총수익률 -15.5%와 SOL 미국배당다우존스') → 답: 원화라 환율이 섞임, ACE 미국배당다우존스 2022년 안 최대 낙폭 9.5%
 
 ## 왜
@@ -64,7 +64,7 @@
 | 코로나 회복 SPY 4.6달·SCHD 5.4달·HDV 11.5달·SPYD 11.1달 | 4.6 · 5.4 · 11.5 · 11.1달 | S1·S2 calc_out.txt |
 | SCHD가 SPY보다 보름 늦게 | 12-13 → 12-28, 15일 | S1·S2 calc_out.txt |
 | ACE 미국배당다우존스 2022년 안 9.5%·두 달 안 돼 고점 되찾음 | -9.5(01-07→02-24) · 회복 04-20 | S1·S2 calc_out.txt |
-| 11/19 SPY 최고점보다 8.1%·SCHD 5.6% 아래 | -8.1(최고 10-06) · -5.6(최고 11-04) | S1·S2 calc_out.txt |
+| 11/20 SPY 최고점보다 11.5%·SCHD 6.3% 아래 | -11.5(최고 10-06, 689.81) · -6.3(최고 11-04, 33.94) | S1 https://query1.finance.yahoo.com/v8/finance/chart/SPY · fetch1121_out.txt |
 | 2022년 미국 금리 빠르게 오름 | FEDFUNDS 0.08 → 4.10 | S4 https://fred.stlouisfed.org/series/FEDFUNDS |
 
 # 올리기 전 확인
@@ -74,3 +74,9 @@
 - 바뀐 것: 처음 조사 — 없음
 - 새로 찾은 것: 바닥 뒤 회복 기간(2022 SCHD 14.9달·HDV 2.0달·SPYD 21.4달, 코로나 SCHD 5.4달·SPYD 11.1달) · 국내 ACE 미국배당다우존스 2022 낙폭 -9.5% · 지금 SPY -8.1%·SCHD -5.6% · 경쟁 글 회복 기간 센 글 0편
 - 조사 뒤 공표: data/release_calendar.json — 가격은 매일, 발행 날 다시 받아 '지금' 줄 갱신
+
+- 2026-11-21 22:45 firemap-write-b(발행 날 다시 확인)
+- 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/SPY · https://query1.finance.yahoo.com/v8/finance/chart/SCHD (11/21 22:45 받음, raw/*_chart_20261121.json) · https://youtu.be/mOrYhIcsQ40 (videos.list privacyStatus=public, 11/21 10:20 UTC 공개) · https://fred.stlouisfed.org/series/FEDFUNDS(2022 월값, 바뀔 일 없음)
+- 기준일: 야후 2026-11-20 종가(11/21 조회) — 역사 계산(2022·코로나 낙폭·회복)은 11/19까지 받은 값 그대로(과거 값이라 하루 더해도 같음)
+- 바뀐 것: 사상 최고 대비 SPY -8.1% → -11.5%(11/20 하루 -3.6%, 종가 715.87→689.81) · SCHD -5.6% → -6.3%(34.20→33.94) · c04 '요즘' 줄·c05 기준일 줄 고침
+- 새로 찾은 것: 11/20 SPY 하루 -3.6% — 본문에 더하지 않음(하루 등락은 글 주제 밖)

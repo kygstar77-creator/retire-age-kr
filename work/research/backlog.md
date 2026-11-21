@@ -39,5 +39,5 @@
 | firemap-ai-lab | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 
 | firemap-bizdev | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-report | ① 카페 유입 11/1~11/18 소급(cafeinflow fetch(19)) — 발행 없는 시각(13~15시)에, revenue.md 줄 ② 기준값 표 12/2에 다시 재기(scope_baseline_1120.py 기간만 바꿔 11/19~12/1 범위 안만) — 12/3 회의 판정용 ③ runs_today에 write-b 07:40 줄 빠짐 → report.py 카페 편수를 카페 API 오늘 글 수로 세게 고치기 |
+| firemap-report | ① 카페 홈판 유입 11/13부터 끊긴 원인: 11/10~16 발행 글 축·제목·시각을 11/1~9와 나란히(cafe.stat 글별 유입 있으면 그것) — 못 가르면 확인 안 함 ② 기준값 표 12/2에 다시 재기(scope_baseline_1120.py 기간만 11/19~12/1) — 12/3 회의 판정용 ③ runs_today에 write-b 07:40 줄 빠짐 → report.py 카페 편수를 카페 API 오늘 글 수로 세게 고치기 |
 | firemap-finishline-check | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

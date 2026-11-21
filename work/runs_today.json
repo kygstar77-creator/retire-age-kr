@@ -21,6 +21,16 @@
     "url": "https://cafe.naver.com/firemap/460"
    },
    "note": "07:40 칸 guri1121 발행 · 올리기 전 확인: 전월세·매매 API 9~11월 다시 받아 calc 대조 — 1만 9,518→9,541건, 1년 전 대비 +16.7→+16.5%(약 17% 그대로), 오른 개수 92→91·87→86, 금액 4,375만→4,000만원 → c00·c02·c05 고침, 그림 숫자 그대로 · 법령 5개 lawweb 다시 받음(본문 같음)·정책브리핑 2건 200 · readcheck 0·aitell 2.3·spoken 통과·selfcheck 사실 0·editgate auto 재서명 3cafebb9 · verify OK 1878/1878자·사진 3/3 · 발행기 경고: ㉧ '한눈에 정리' 이름 6칸 같음·본문 1,877자>1,500 · 개선: 없음(확인 창 처리 실패 경고는 발행엔 영향 없음)"
+  },
+  {
+   "hour": 9,
+   "ts": "10:18",
+   "blog": null,
+   "cafe": {
+    "title": "PLUS 고배당주 분배금 증가율 고배당 ETF 비교",
+    "url": "https://cafe.naver.com/firemap/461"
+   },
+   "note": "10:10 칸 kdiv1121(배당) · 발행 날 다시 받음: 야후 5개 11/20 종가·네이버 etfAnalysis 5개·PLUS 상품 페이지 — 분배금·보수 그대로, 1억 월 세전 KIWOOM 54만·KODEX/PLUS 49만, 1년 주가 KODEX +12.0~KIWOOM -5.0% 갱신 · readcheck 0·selfcheck 0·spoken·research strict·prepublish 통과·auto 재서명 e27c13aa · verify OK 2147/2147·사진 3/3 · 확인 창 처리 TimeoutError 났지만 발행·verify 정상 · 개선: 없음 · 블로그 없음(블로그 쉬는 규칙)"
   }
  ]
 }

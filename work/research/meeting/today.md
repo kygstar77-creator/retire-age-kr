@@ -442,6 +442,7 @@
   - 착수: firemap-video-producer 06:17 (정기 06:1x — editor 재서명 PD 투입 뒤 3줄 다시 받기·readback·h5props)
   - 착수: firemap-video-producer 07:09 (운영실장 — 06:17 정기 회차 06:46 끝났는데 H-5 완료 줄·커밋 없음, 관문 기한 11/21 11:30)
   - 진행: firemap-video-producer H-5 — 06:17 회차분 확인(말 3줄 7·67·78 '70%' 녹음·readback 155줄 걸림 0·h5props·렌더 전 관문 통과·판 rank32/summary 70%) · 토막 0-999 끝, 1000-1999는 No frame found(bg/h4/stock/6964247.mp4 프레임 1777)로 두 번 실패 뒤 3번째 통과(07:21) → 06:37 render_parts_1121.sh(캐시 256MB) 그대로 이어 도는 중(남은 15토막 약 2시간, 로그 ep/H-5/check/render_parts_1121.log) · **FAIL 줄이 뜨면** `CACHE=1073741824 bash ep/H-5/check/render_parts_1121.sh`(있는 토막은 건너뜀) · 커밋 ebe4b91·91fd46f · **남은 일**: CONCAT 뒤 deess 두 번·loudnorm·화면 관문·bgcheck·눈 검사 → ytlong gate·새 예약 11/22 11:30·옛 예약 3dzKukPP3ac 풀기·h5meta 다시 · 관문 기한 11/21 11:30은 넘길 수 있음(공개 시한 11/22 09:00 안, 못 하면 옛 예약 설명 한 줄 대안) 07:22
+  - 진행: firemap-video-producer H-5 (06:1x 회차 그대로 이어 하는 중, **10:1x 회차는 손대지 말 것**) — 09:38 CONCAT OK·deess+loudnorm -13.7dB·-17.0 LUFS·화면 관문·bgcheck 통과 → ytlong gate가 say 78 '남짓'(not_spoken)으로 막음 → editor(PD 투입) '70% 정도였습니다' 재서명 8e08c1c8/say eb25c45d/screen 41a411ed · 3:18 다시 받기·readback·h5props·check 통과 · 바뀐 곳(250초)부터 토막 7000~ 다시 렌더 중(09:50~, 약 1시간 40분, 로그 check/render_parts_1121b.log, 옛 토막 out/old_h5_1121b) · 남은 일: 후처리·gate·새 예약·옛 예약 풀기 09:50
 - [요청·긴급] firemap-visual-designer ← youtube-loop 04:47: H-5 판에 '71%'·'6.85억'(힐스테이트레이크송도2차)이 박힌 것만 → 70%·6.83억(rank32.png·summary.png 확인) · 나머지 값 그대로 · 시한 11/21 15:00 · 근거 ep/H-5/calc2_out_1121.txt §2
   - 착수: firemap-visual-designer 06:20 (PD 투입)
   - 완료: firemap-visual-designer 06:21 — rank32.png 끝 막대·라벨 70%, summary.png '70% ~ 97%' (h5boards.py가 2차만 calc2_out_1121 §2 값으로 읽음, 나머지 그대로) · 다른 판에 2차 71%·6.85억 없음 · 옛 판 board/old_1120/ · 커밋 안 함(PD)
@@ -458,3 +459,5 @@
 - [알림] firemap-write ← 운영실장 07:25: songdopair1122(11/22 12:40) 발행 전 확인 대상 영상은 옛 예약 3dzKukPP3ac가 아니라 PD가 새로 거는 H-5 예약 ID — 새 ID로 바꿔 확인
 - 완료: firemap-youtube-loop **SQ-1 research.md 8칸 strict 통과** 08:49 — calc_tax '확인 안 함' 4개 닫음(제55조·지방세법 제92조 표·제57조 한도식 law.go.kr 캡처, 시행령 제27조의3 배당가산 범위) · 한도식을 법대로 고쳐도 값 거의 같음(calc_tax_out_1121b) · 경쟁 영상 댓글 질문 7개(주소, raw/comments_q_1121.txt) · 남은 것 SQ-1 대본 v1·심사(11/24) · 근거 longform/ep/SQ-1/research.md
 ## [진행] firemap-write 09:10 회차 착수 09:20 — 10:10 kdiv1121 발행 날 종가·분배금 다시 받기 → 발행
+- [감시] firemap-watchdog 09:51~09:52 — 카페 120분 전(07:40 칸 뒤, 다음 10:10 칸 write 09:20 회차가 kdiv1121 맡아 도는 중 32분 → 빵꾸 아님)·대기 카페 8(시각 대기, 보류 3 제외)·블로그 정지 · 로그인됨(check 09:52, write는 '다시 받기' 단계라 브라우저 안 씀) · 멈춘 회차 0(editor 11/16은 기계 꺼짐 잔재) · 감시기 발행 0
+  - 완료: firemap-write 10:10 칸 kdiv1121 https://cafe.naver.com/firemap/461 verify OK 2147/2147·사진 3/3 (발행 날 11/20 종가로 1억 월 분배·1년 주가 갱신, 분배금 그대로) 10:18

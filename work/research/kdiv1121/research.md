@@ -41,7 +41,7 @@
 ## 함정
 - 이름 비슷한 ETF 코드 혼동(경쟁 2위 글이 PLUS를 104530으로 씀)
 - 비교하는 달을 고르면 증가율이 커 보임(KODEX 1월 45원)
-- 분배금 늘어도 주가는 내릴 수 있음(KIWOOM 1년 -1.4%)
+- 분배금 늘어도 주가는 내릴 수 있음(KIWOOM 1년 -5.0%)
 
 ## 한계
 - KODEX·KIWOOM·TIGER·SOL은 운용사 1차 분배 내역을 못 받음(삼성 Cloudflare 막힘) — 야후+네이버 2차 2곳이 같은 값이라 씀
@@ -64,13 +64,14 @@
 | PLUS 2012년 상장, 예상 배당수익률 상위 30종목 | 2012.08.29 · '유동시가총액 상위 200 종목 중 … 상위 30종목' | S1 |
 | PLUS 분배 재원은 보유 종목 배당금, 103원은 예상치로 결정 | '보유 종목에서 발생한 주식 배당금만을 분배 재원' | S2 |
 | PLUS 2월분 86원 중 과세표준 44원 | 2026.02.27 기준 86 · 44 | S1 |
-| 1억 월 세전 SOL 약 55만·KIWOOM 53만·KODEX 48만·PLUS 48만·TIGER 45만 | 545,160 · 525,200 · 484,956 · 476,375 · 446,056 | S5 calc_out.txt (S3 종가) |
-| 1년 주가 KODEX +14.3·TIGER +12.4·SOL +5.2·PLUS +4.4·KIWOOM -1.4% | 같음 | S5 calc_out.txt (S3 종가) |
+| 1억 월 세전 SOL 약 55만·KIWOOM 54만·KODEX 49만·PLUS 49만·TIGER 45만 | 554,760 · 541,040 · 494,076 · 490,383 · 450,216 | S5 calc_out.txt (S3 종가) |
+| 1년 주가 KODEX +12.0·TIGER +11.5·SOL +3.7·PLUS +1.4·KIWOOM -5.0% | 같음 | S5 calc_out.txt (S3 종가) |
 
 # 올리기 전 확인
+- 2026-11-21 09:3x firemap-write 발행 날 다시 받음: 야후 5개 chart(11/20 종가)·네이버 etfAnalysis 5개(_1121)·PLUS 상품 페이지 다시 엶 — 위 주소 전부
 - 2026-11-20 15:3x firemap-write(조사·작성 날, 발행 날 11/21 10:10 회차가 야후·네이버·PLUS 페이지 다시 받아 종가·분배금 갱신)
 - 다시 연 주소(11/20): https://www.plusetf.co.kr/product/detail?n=006273 · https://www.plusetf.co.kr/insight/report/detail?n=1910 · https://query1.finance.yahoo.com/v8/finance/chart/161510.KS · https://query1.finance.yahoo.com/v8/finance/chart/279530.KS · https://query1.finance.yahoo.com/v8/finance/chart/104530.KS · https://query1.finance.yahoo.com/v8/finance/chart/466940.KS · https://query1.finance.yahoo.com/v8/finance/chart/0105E0.KS · https://m.stock.naver.com/api/stock/161510/etfAnalysis · https://m.stock.naver.com/api/stock/279530/etfAnalysis · https://m.stock.naver.com/api/stock/104530/etfAnalysis · https://m.stock.naver.com/api/stock/466940/etfAnalysis · https://m.stock.naver.com/api/stock/0105E0/etfAnalysis
-- 기준일: 야후 2026-11-19 종가 · 분배금 2026-10~11월 지급분
-- 바뀐 것: 처음 조사 — 없음
+- 기준일: 야후 2026-11-20 종가 · 분배금 2026-10~11월 지급분
+- 바뀐 것: 11/21 발행 날 다시 받음 — 기준일 11/19→11/20 종가(하루 0.9~2.9% 내림), 1억 월 세전 KIWOOM 53→54만·KODEX 48→49만·PLUS 48→49만(4,625→4,761주), 1년 환산 5.4~6.5→5.4~6.7%, 1년 주가 KODEX +14.3→+12.0·TIGER +12.4→+11.5·SOL +5.2→+3.7·PLUS +4.4→+1.4·KIWOOM -1.4→-5.0% · 분배금·보수·네이버 TTM 주당 분배 그대로
 - 새로 찾은 것: 5개 월 분배 1년 증가율(KIWOOM 두 배·TIGER 44%·KODEX 43%·PLUS 32%) · KODEX 1월 45원으로 줄었다 다시 늘어남 · PLUS 2월분 과세표준 44원 · 경쟁 글 5개 줄 세운 글 0편
 - 조사 뒤 공표: data/release_calendar.json — 분배금은 매달 말 공지, 발행 날 다시 받아 확인

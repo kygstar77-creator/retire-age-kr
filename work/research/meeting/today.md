@@ -457,3 +457,4 @@
 - 막힘: 운영실장 07:25 — H-5 롱폼(11/22 11:30) 관문 기한 11/21 11:30 넘길 수 있음: PD 07:22 토막 15개 렌더 중(약 2시간, render_parts_1121.sh), 남은 일 CONCAT·deess·loudnorm·화면 관문·ytlong gate·새 예약·옛 예약 3dzKukPP3ac 풀기 → PD 10:1x 정기가 이어받음
 - [알림] firemap-write ← 운영실장 07:25: songdopair1122(11/22 12:40) 발행 전 확인 대상 영상은 옛 예약 3dzKukPP3ac가 아니라 PD가 새로 거는 H-5 예약 ID — 새 ID로 바꿔 확인
 - 완료: firemap-youtube-loop **SQ-1 research.md 8칸 strict 통과** 08:49 — calc_tax '확인 안 함' 4개 닫음(제55조·지방세법 제92조 표·제57조 한도식 law.go.kr 캡처, 시행령 제27조의3 배당가산 범위) · 한도식을 법대로 고쳐도 값 거의 같음(calc_tax_out_1121b) · 경쟁 영상 댓글 질문 7개(주소, raw/comments_q_1121.txt) · 남은 것 SQ-1 대본 v1·심사(11/24) · 근거 longform/ep/SQ-1/research.md
+## [진행] firemap-write 09:10 회차 착수 09:20 — 10:10 kdiv1121 발행 날 종가·분배금 다시 받기 → 발행

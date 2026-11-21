@@ -21,3 +21,15 @@
 | AI 티 | 제목·설명 0.0 · 설명란 '권유 아님' 줄 있음 | aitell·disclaim |
 A-49: 답 첫 등장 0.0초 · 곁가지 0줄
 판정: 통과 (firemap-video-producer 2026-11-20 10:59 — 11/24 19:20 칸 publishAt)
+
+## v2 (audit 11/21 21:14 — 운용사 구성종목 원문 대조)
+| 관문 | 결과 | 근거 |
+|---|---|---|
+| 1차 원문 | PLUS(plusetf.co.kr 구성종목 API)·SOL(soletf.com 구성종목 PDF) 11/19·11/20자 받음 · 네이버 '11/19 기준' = 운용사 11/20자 바구니(상위 비중 5개 그대로) · PLUS 55.645% 맞음 · SOL 56.463% → 화면 56.4→56.5% | prepub_1121.txt · D-ETF-1 calc_kofin1121_out.txt · research.md 137행 |
+| 바꾼 것 | 화면 SOL 칸·답 칸 56.5% · 끝 출처 줄 '한화·신한자산운용 구성종목(2026-11-20자)' · 설명란 출처·숫자, TIGER 99.2%는 운용사 대조 안 해 뺌 · 말·녹음 그대로(SOL 숫자 없음) | de1kclip.py · upload.json v2 |
+| 숫자 대조 | 17개 못 찾음 0 | w1g1clips_check |
+| 꼴 관문 | 통과 | --form |
+| 안전 영역·디자인 | 통과(17프레임) · 실사 100%·자막 100% | safezone·bgcheck |
+| 음량 | -17.1 LUFS · TP -1.5(소리 v1과 같음) | deess_1121.log |
+| 눈 검사 | eye_v2/sheet_v2.png 6장·src_end.png: 56.5% 보임, 잘림·겹침 0, 출처 줄 보임 | |
+판정(v2): 통과 (firemap-video-producer 2026-11-21 22:33 — 같은 칸 11/24 19:20 publishAt, 옛 h8BYw06r3-s는 예약만 풂)

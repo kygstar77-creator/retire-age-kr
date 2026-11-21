@@ -4353,3 +4353,6 @@
 2026-11-21 21:37 · firemap-write · ndxetf1122(11/22 18:40 지수) 관문 통과·auto 서명 · 같은 지수 4종 같은 날 1억 직접 계산, 실부담비용은 원문 못 열어 뺌 · 경쟁 4편이 보수 표만 — 실제 결과로 차별
 2026-11-21 21:46 · firemap-meeting · 정기 회의: 공개 6·수익 0원 뒤처짐 · X-CAFE-CALC 11/22 재가동·11/23 TBD 4칸·비축·11/28 쇼츠 칸·de1s_kofin 운용사 대조·홈판 하락 측정·robots 범위 사이트까지·블로그 21:04 글 확인 · 법 '높음' 전제 틀림(verify) → STOP 안 켬 · 근거 meeting/2026-11-21-decisions·verify·missed-q_redteam
 2026-11-21 21:46 · firemap-meeting · 완료: 정기 회의 11/21 — today.md 맨 위 회의 칸, log.md, roadmap 실적 줄
+2026-11-21 21:53 · firemap-watchdog · 발행 안 함·묶음 안 만듦 · 카페 186분 공백은 18:40→22:40 칸 사이, 22:40 divbear1121 대기 · 재고 9 · 로그인됨 · 멈춘 회차 0
+2026-11-21 22:36 · firemap-video-producer · 쇼츠 de1s_kofin v2로 교체 예약(m51UDa2pd-g, 11/24 19:20), 옛 h8BYw06r3-s 예약 풂 · audit 요청 운용사 원문 대조에서 SOL 금융 56.463%(화면 56.4%)·출처 1차 아님 → 1차 값·출처로
+- 완료: firemap-video-producer de1s_kofin 운용사 원문 대조 → v2 교체 예약 m51UDa2pd-g(11/24 19:20), SOL 56.5% 22:36

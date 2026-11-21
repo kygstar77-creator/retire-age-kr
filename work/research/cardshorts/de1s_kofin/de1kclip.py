@@ -2,6 +2,7 @@
 #   py -3.12 work/research/cardshorts/de1s_kofin/de1kclip.py   → work/video/de1s_kofin.json
 # 목소리 = D-ETF-1 voice.json 문장 wav를 쉼(silencedetect -40dB)에서 자른 것(새 녹음 0): 3:7 → 5.37초에서 둘 · 3:8 앞 '보면 바로 이해가 돼요'(곁가지) 빼고 3.30초부터 · 3:9 앞 지식인 두 문장 빼고 5.50초부터 · 3:14 앞 '조심할 곳도 있어요.' 빼고 1.33초부터
 # 화면 숫자 = 올리기 전 확인(prepub_1120.txt, 네이버 증권 ETF 분석 기준일 11/19): PLUS 금융 55.6% · TIGER 은행 99.2% · SOL 56.4%
+# 11/21 v2(audit 21:14): 운용사 구성종목 원문(prepub_1121.txt, 네이버 '11/19 기준'과 같은 바구니인 11/20자 파일) — PLUS 55.645 그대로 55.6% · SOL 56.463 → 56.5% · 출처 줄 운용사로
 import os, re, json, sys
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -10,7 +11,7 @@ VID = os.path.join(WORK, 'video')
 EP = os.path.join(WORK, 'research', 'longform', 'ep', 'D-ETF-1')
 V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
 BYTEXT = {l['text']: l for s in V['sections'] for l in s['lines']}
-SRC = open(os.path.join(HERE, 'prepub_1120.txt'), encoding='utf-8').read()
+SRC = open(os.path.join(HERE, 'prepub_1120.txt'), encoding='utf-8').read() + open(os.path.join(HERE, 'prepub_1121.txt'), encoding='utf-8').read()   # 11/21 v2: 운용사 구성종목 원문(audit 21:14)
 CRED = {str(c['id']): c for c in json.load(open(os.path.join(VID, 'public', 'bg', 'detf', 'stock', 'credits.json'), encoding='utf-8'))}
 TAIL = 36
 # 11/20 이해 2차(46·57·66세) 뜻·% 뜻·할 일 3/3·권유 0/3 · 걸림: TIGER는 이름이 은행이라 99%가 당연·부풀린 느낌 2/3 → 값 '이름대로 99.2%가 금융' · '지주' 2/3 → '금융지주'
@@ -56,14 +57,14 @@ scenes = [
     sc('PLUS', ['NEW@', 'PLUS 고배당주에 많이 담긴'],
        {'tiles': [['PLUS 고배당주', '담은 돈의 55.6% 금융', '', 0, 'ink'], ['PLUS 많이 담은 셋', 'DB손보 · 기업은행 · 우리금융', '', 118, 'ink']]}),
     sc('SOL', ['지식인에도 국내 배당'],
-       {'tiles': [['SOL 코리아고배당도', '담은 돈의 56.4% 금융', '', 0, 'ink']]}),
+       {'tiles': [['SOL 코리아고배당도', '담은 돈의 56.5% 금융', '', 0, 'ink']]}),
     sc('조심', ['조심할 곳도 있어요. 이미 은행주'],
        {'tiles': [['은행주 이미 있다면', '금융 비중이 더 커짐', '', 0, 'ink']]}),
 ]
 for s_ in scenes:
     st = [sum(l['frames'] for l in s_['lines'][:i]) for i in range(len(s_['lines']))]
     assert all(t[3] in st for t in s_['data']['tiles']), (s_['label'], st)
-for x in ('금융 55.57', '금융 56.40', '기준일 2026.11.19'): assert x in SRC, f'원문에 없음 {x}'
+for x in ('금융 55.645', '금융 56.463', '11/20자'): assert x in SRC, f'원문에 없음 {x}'
 assert all(len(t[0].split('·')[0].strip()) <= 12 for s_ in scenes for t in s_['data']['tiles']), '칸 이름 12자 넘음'
 scenes[-1]['frames'] += TAIL
 # 배경(B-56 그 줄의 대상): 1줄 'PLUS 금융 55%' 휴대폰 주식 화면(11/20 이해 1차: 장바구니 뜻 모름 1/3) · 2줄 '종목' 휴대폰 주식 화면 · 3줄 '이름 달라도' 진열대 · 4줄 '은행 거의 100%' 동전 · 5줄 '금융 칸이 더 쌓임' 동전 쌓기 — 모두 de1s 앞 편 눈 검사 통과 클립
@@ -80,8 +81,8 @@ for (k, cid, st), l in zip(BG, allines):
     bg.append({'src': src, 'from': at, 'frames': fr, 'start': st}); at += fr
 credits = ' · '.join(sorted({f"{c} {CRED[c]['author'].strip()}" for _, c, _ in BG})) + ' (Pexels License)'
 p = {'fps': 30, 'name': 'de1s_kofin', 'v': 2, 'look': 'live', 'question': ['국내 고배당 ETF', '담은 돈은 어디에 있을까'], 'hot': '어디에 있을까',
-     'answer': {'label': '담은 돈 중 금융주(은행·보험·금융지주)', 'items': ['PLUS 고배당주 55.6%', 'SOL 코리아고배당 56.4%'], 'arrow': False, 'note': 'SOL 코리아고배당 56.4%'},
-     'base': '네이버 증권 ETF 분석(2026-11-19 기준) · 파이어맵 정리', 'long': 'mkAxQPGaDqc',
+     'answer': {'label': '담은 돈 중 금융주(은행·보험·금융지주)', 'items': ['PLUS 고배당주 55.6%', 'SOL 코리아고배당 56.5%'], 'arrow': False, 'note': 'SOL 코리아고배당 56.5%'},
+     'base': '한화·신한자산운용 구성종목(2026-11-20자) · 파이어맵 정리', 'long': 'mkAxQPGaDqc',
      'scenes': scenes, 'bg': bg, 'credits': credits}
 json.dump(p, open(os.path.join(VID, 'de1s_kofin.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 fr = sum(s['frames'] for s in scenes)

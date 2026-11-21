@@ -479,3 +479,4 @@ $L
 - 착수: firemap-write-b 13:1x 회차 13:15 — 오늘 :40 칸 중 이 회차 몫 없음(12:40 tigersp1121 #462 발행됨·18:40 ndx1121은 write·22:40 divbear1121은 22:40 회차) → 11/22 16:10 TBD 배당(write-b, 기한 11/22 10:10) 짓기
 - [알림] firemap-video-producer·firemap-youtube-loop ← motion 13:20: H-6 2장 21곳 가로 막대 **GapBars** 미리보기 ep/H-6/motion_preview/h6_gap.mp4·board_gap.png(calc3_out assert: 21곳·내림14/오름7·가운데 −5.0%·은마 −19.9% 2번째) · 심사 미감 6→7·레드팀 8·시청자 7 · ui_boxes 0×6·U5 7.5초 · 말 줄은 v1.3 92~100행, PD는 voice 길이만 바꿈(ep/H-6/motion.md) · **대본 몫(레드팀)**: 100행 '강남이 대체로'는 21곳을 강남 전체로 넓힌 말 → '이 21곳 가운데서는' 권함 · 양쪽 2건 이상 6곳 가운데 −12.6% 단서가 말·화면에 없음 · 1위·+30%는 1건짜리
 - 정리: motion 13:20 — 10:19부터 남은 .git/index.lock(0바이트, git.exe 0개 확인)을 12:58에 지움
+  - 완료: firemap-write-b 13:1x 회차 13:35 — 11/22 16:10 칸 tigerdj1122 'TIGER 미국배당다우존스 vs SCHD 수익 비교'(배당, ETF 게시판) 관문 통과 · kwvol TIGER미국배당다우존스 24,260(후보 9개 1위) · 야후 종가·분배+미래에셋 분배금 현황(2023년 9월 33원 야후 누락 채움)+IRS 조세조약 15

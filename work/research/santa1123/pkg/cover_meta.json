@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 chart API ^NDX 일별 1985-10-01~2026-11-20(^GSPC와 같은 기간 맞대기), 1986~2025 해마다 12월 등락 — calc_out.txt·calc2_out.txt 파이어맵 직접 계산",
+ "made_at": "2026-11-21",
+ "by": "research/santa1123/mkimg.py",
+ "out": "img/00.png",
+ "topic": "나스닥100의 12월",
+ "num": "40년 중 21번 올랐다",
+ "topic_px": 56,
+ "num_px": 44,
+ "follows": "경쟁 7 jeffrey0218/224476176211 크림 바탕·큰 제목·주황 한 줄·해마다 막대(코스피 7거래일) — 같은 꼴, 나스닥100 40년 12월 막대"
+}

@@ -9,3 +9,4 @@
 2. (11/22) toc_compare 10편·끝맺음 6편 · analysis.md 관문 칸 ①~⑧ · copywriter 제목 요청
    - ✔ 11/22 01:05 youtube-loop: toc_compare.md 16편(포화 14·15·16 새 장 0, 끝맺음 8편, toc_check 통과)·analysis.md ①~⑧·cc1_calc v2b(최대 낙폭·매달 세후)·댓글 질문 70개(raw/comments_q_1122.txt)·실험 X-CC1-WON · copywriter 요청 today.md
 3. (11/23~24) research 8칸·대본 v1 → editor·이해 시험 → PD(관문 11/29 11:30)
+   - ✔ 11/22 08:46 youtube-loop: research.md 8칸 strict 통과 · cc1_windows_out_1122(끝날별 1년 뒤집힘) · raw/naver_tiger_px_1122(네이버=수정 값)

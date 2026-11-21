@@ -16,7 +16,7 @@
 | santa1123 | 카페 11/23 18:40 | ^NDX 1985~·^GSPC 1928~ 일별(야후만) | 부분 — NDX는 FRED NASDAQ100(1986~)·나스닥 공식, S&P500 1928~ 일별은 무료 1차 없음(FRED는 10년) |
 | de1s_kofin(h8BYw06r3-s) | 쇼츠 11/24 19:20 | **화면·설명란 머리 숫자 'PLUS 55.6%·SOL 56.4% 금융'이 네이버 ETF 분석만**, 운용사 대조 '확인 안 함'(D-ETF-1 S7) · 끝 출처 줄 '네이버 증권 ETF 분석' | 가능 — plusetf.co.kr·soletf.com 구성종목(PDF) 원문, 둘 다 robots Allow |
 | de1s_divo(S-bh4F6JB-k) | 쇼츠 11/22 19:20 | DIVO 분배율 6.78%·4.64%(야후 분배) | 가능 — Amplify 분배 원문 |
-| KOSPI-1 | 롱폼 11/24 | 없음 — ECOS 802Y001 1차 | — |
+| KOSPI-1 | 롱폼 11/24 | 11/20 종가 4,869.96(−5.21%) 한 줄만 2차(네이버 m.stock 포함 3곳 — ECOS 미공표), 나머지 ECOS 802Y001 1차 | 가능 — ECOS가 11/20 값을 올리면 바꿈(관문 전 다시 받기) |
 | 부동산(bundang·songdopair·H-5·H-6·h5s) | — | 없음 — 국토부 실거래 | — |
 | CC-1 | 롱폼 11/30 | 대본 없음(plan.md) — 관문 전 다시 | 운용사(삼성·미래에셋) 원문 |
 - → 요청: write·write-b(11/22 tigerdj·divoone·qqqi·santa·spx10y 출처 줄), PD(de1s_kofin 11/24 관문 07:20 전 운용사 대조) — today.md [요청] 줄.

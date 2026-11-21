@@ -1,0 +1,7 @@
+  Y={datetime.datetime.utcfromtimestamp(a+9*3600).strftime('%Y%m%d'):c for a,c in zip(r['timestamp'],r['indicators']['quote'][0]['close']) if c}
+삼성 날짜 410 겹침 406 다른 종가 0 []
+20220927 삼성 10000 NAV 9962.56 야후 10000.0
+20230620 삼성 None NAV None 야후 9740.0
+20251119 삼성 None NAV None 야후 12435.0
+20251120 삼성 12605 NAV 12449.72 야후 12605.0
+20261120 삼성 11170 NAV 11218.32 야후 None

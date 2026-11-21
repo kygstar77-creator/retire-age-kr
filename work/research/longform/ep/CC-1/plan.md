@@ -5,5 +5,7 @@
 
 ## 다음
 1. (11/20~21) 운용사 분배금 공시(삼성 KODEX·미래에셋 TIGER)·KRX 종가 원문으로 S1~ 사실표, Yahoo 값 대조
+   - ✔ 11/22 00:56 youtube-loop: facts_1122.md — KODEX 분배·종가 삼성 원문 대조(분배 49/50달 같음, 2023-09 53원 야후 누락 채움 · 종가 406일 0원 차이), TIGER 분배 미래에셋 연간 합(2023-09 33원 채움)·11/20 종가 원문, TIGER 다른 날 종가는 야후뿐(확인 안 함) · 1년: KODEX 9,654만 vs TIGER 1억 1,793만
 2. (11/22) toc_compare 10편·끝맺음 6편 · analysis.md 관문 칸 ①~⑧ · copywriter 제목 요청
+   - ✔ 11/22 01:05 youtube-loop: toc_compare.md 16편(포화 14·15·16 새 장 0, 끝맺음 8편, toc_check 통과)·analysis.md ①~⑧·cc1_calc v2b(최대 낙폭·매달 세후)·댓글 질문 70개(raw/comments_q_1122.txt)·실험 X-CC1-WON · copywriter 요청 today.md
 3. (11/23~24) research 8칸·대본 v1 → editor·이해 시험 → PD(관문 11/29 11:30)

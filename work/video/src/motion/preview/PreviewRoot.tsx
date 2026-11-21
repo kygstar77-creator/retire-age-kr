@@ -4,6 +4,7 @@ import {TallyFrame, TallyLine} from '../TallyFrame';
 import {ZoomOutOpen, ZoomOutOpenProps} from '../ZoomOutOpen';
 import type {RScene} from '../../R1';
 import {DealDots, type DealDotsProps} from '../DealDots';
+import {GapBars, type GapBarsProps} from '../GapBars';
 import {ReverseAsk, ReverseAskProps} from '../ReverseAsk';
 import {BuyDateOpen, BuyDateOpenProps} from '../BuyDateOpen';
 import {WaterfallPieces, WaterfallPiecesProps} from '../WaterfallPieces';
@@ -190,6 +191,8 @@ const CapFitTest: React.FC<{title: string; source: string; lines: TallyLine[]}> 
 
 // H-6 은마 실거래 점 줄(11/20 motion) — 재료 ep/H-6/motion_preview/h6_motion.json(h6props.py)
 type P20 = {deals: V3S<Omit<DealDotsProps, 'beats'>>};
+type P21 = {gap: V3S<Omit<GapBarsProps, 'beats'>>};
+const H6Gap: React.FC<P21> = ({gap}) => v3Frame(gap, <GapBars {...gap.data} beats={tallyStarts(gap.lines)} />);
 const H6Deals: React.FC<P20> = ({deals}) => v3Frame(deals, <DealDots {...deals.data} beats={tallyStarts(deals.lines)} />);
 
 export const PreviewRoot: React.FC = () => (
@@ -254,6 +257,9 @@ export const PreviewRoot: React.FC = () => (
   <Composition id="H6Deals" component={H6Deals as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P20).deals.frames})} />
+  <Composition id="H6Gap" component={H6Gap as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P21).gap.frames})} />
   <Composition id="CapFitTest" component={CapFitTest as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => ({durationInFrames: ((props as unknown as {lines: TallyLine[]}).lines).reduce((a, l) => a + l.frames, 0)})} />

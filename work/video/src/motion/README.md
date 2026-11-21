@@ -165,3 +165,9 @@
 - 규칙: 축은 0원이 아니면 바닥 물결 + 눈금 글자 늘 보임 · 한 건(최고 대비)과 가운데 값을 꼭 같이(골라 뽑기 오해 막기) · '때문에' 인과 글자 금지(앞 몫만) · 주황은 지금 답 하나.
 - bgcheck ⑥: 면 위에 눈금 선이 지나가면 칸이 상자로 잡힌다 → 면이 오면 눈금 선을 뺀다. 네모 면(rect)으로 구간을 칠하지 말고 데이터 면을 잘라 쓴다.
 - 예: research/longform/ep/H-6/motion_preview/h6props.py(calc_out 직접 읽기·assert) · h6render.py. 아파트 실거래 편(H-2·H-4·H-5류)에 그대로 씀. 반복 방지: seed로 왼쪽 여백·떨어지는 빠르기, 편마다 묶음 길이·고시일 대신 다른 사건(규제·금리 날짜).
+
+## 단지별 변화 가로 막대(GapBars) — '여러 단지 중 이 단지는 몇 번째로 내렸나'(11/21 H-6 강남구 21곳)
+- props: `seed·rows[{name,v,n0,n1}](변화 오름차순)·min·max·ticks·hi·mid·countText·downText·upText·hiText·hiRank·midText·countAt·growAt·midAt·hiAt·backAt` — at은 줄 번호.
+- ① 0선 + 막대가 위→아래로 자람 ② 'N곳' 찍기 ③ 내림·오름 색 갈라짐 + 수 ④ 가운데 값 세로 점선·밑줄 ⑤ 그 단지 주황·끝 동그라미·순위·거래 건수 ⑥ 그 단지 막대 중 가운데 값 몫을 회색으로 덮어 넘친 몫만 주황.
+- 규칙: 막대 두께 18px 이하(bgcheck ⑥ 852폭 16px 문턱) · 눈금은 글자만, 세로 눈금 선 없음 · 이름표는 주인공·가운데 둘만 · 다가가기 크게 하지 않음(제목·출처 줄에 닿음) · 주황 위 주황 화살은 안 보임.
+- 예: research/longform/ep/H-6/motion_preview/h6gapprops.py(calc3_out assert) · h6gaprender.py. 반복 방지: seed로 색 갈라지는 순서.

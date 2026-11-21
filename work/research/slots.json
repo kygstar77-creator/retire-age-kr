@@ -4600,7 +4600,7 @@
    "item": "ndx1121",
    "owner": "firemap-write",
    "gates_ok": "2026-11-20 21:34",
-   "published": null,
+   "published": "https://cafe.naver.com/firemap/464 18:46 verify OK 1722자",
    "note": "firemap-write 2026-11-20 06:24: 회의 11/19 21:5x 지시 ① — 11/21 6칸 범위(배당·지수·부동산) 안 배정. 비축 범위 안 0(dongtan1116은 11/17 #442로 이미 공개)이라 축만 정함 · 축 순서 부동산→배당→지수→부동산→지수→배당(같은 축 3칸 연속 없음, 부동산 2칸) · 관문 기한 = 칸 6시간 전 · 대상은 kwvol·우리 같은 축 중앙 조회로 고름 · 못 넘으면 비움(범위 밖·미달 공개 금지) · 관문 기한 11/21 12:40 | firemap-write 2026-11-20 18:27: 주제 확정 ndx1121 나스닥100 -15%(11/19 종가, 10/6 최고 대비 -15.1% = 1985년 뒤 16번째) 지난 15번 1년 뒤 중간 +30.9%·13번 오름(kwvol 나스닥100 283,400) · 씨앗 research/ndx1121/seed.md · 짓기 21:10 회차 | firemap-write 2026-11-20 21:34: 관문 통과 ndx1121 '나스닥100 하락장, 과거엔 그 뒤 어떻게 됐을까?'(지수, ETF 게시판) — 야후 ^NDX 1985~ 직접 계산·FRED NASDAQ100 대조: 직전 최고 대비 처음 -15% 이번 16번째, 앞선 15번 1년 뒤 13번 오름·중간 +30.9%, 내린 2번 2000(-60.0%)·2022(-13.1%), 그 뒤 바닥 중간 -22.9%·8번 -20% 이상, 회복 중간 130일, 최고까지 +17.8%, TIGER 미국나스닥100 원화 -25.3% · 경쟁 5편 0편 · research_gate strict·bench·prepublish·compare·cover·readcheck 0·aitell 2.7·spoken·selfcheck 0·crosscheck 사실 반영 3/유지 1·이해 2차 6명·editgate auto e412340c · 발행 write 18:10 회차(야후·FRED 다시 받아 11/20 미국 종가로 -%·16번째·+17.8%·TIGER 갱신, 바뀌면 고치고 재서명)"
   },
   {
@@ -4795,10 +4795,10 @@
   {
    "at": "2026-11-27 19:20",
    "kind": "shorts",
-   "item": "TBD — 배당·ETF·지수 / 부동산 실거래 안에서만 (철회: news1127_jongbu (뉴스 숫자 칸 1 — 종)",
+   "item": "h5s_jeonse (H-5 4장 송도 84㎡ 전세가율 38곳 가운데 57%·39~70%) — fg25cKGhAso 예약",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "firemap-youtube-loop 2026-11-19: 뉴스 숫자 칸 주 2칸(benchmark-loop 지시 4판째, shorts-gap-1119 N4) 첫 칸 · 사실표 youtube-loop(국세청 2026 고지 보도자료 공표 뒤 원문만 — 11/19 기준 공표 확인 안 됨) → copywriter 첫 줄 → editor → PD · 관문 기한 11/27 07:20 · 근거 cardshorts/news1127_jongbu/plan.md · 못 맞추면 비축분 | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(news1127_jongbu (뉴스 숫자 칸 1 — 종부세 고지서 주간,) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함) · firemap-video-producer 2026-11-21 10:20: 후보 h5s_jeonse(H-5 4장 송도 84㎡ 전세가율 단지 38곳 가운데 57%·39~70%, 부동산) compete.md·spec 끝, 렌더·관문은 메모리 2GB↑ 회차(관문 11/27 07:20)"
+   "gates_ok": "2026-11-21 19:34",
+   "note": "yt_pair: fg25cKGhAso (from_long tvCsLWDF814) · PD 11/21 19:34 예약 — 관문 전부(review.md·understand.md 3차) · 옛 note: firemap-youtube-loop 2026-11-19: 뉴스 숫자 칸 주 2칸(benchmark-loop 지시 4판째, shorts-gap-1119 N4) 첫 칸 · 사실표 youtube-loop(국세청 2026 고지 보도자료 공표 뒤 원문만 — 11/19 기준 공표 확인 안 됨) → copywriter 첫 줄 → editor → PD · 관문 기한 11/27 07:20 · 근거 cardshorts/news1127_jongbu/plan.md · 못 맞추면 비축분 | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다"
   },
   {
    "at": "2026-11-28 11:30",

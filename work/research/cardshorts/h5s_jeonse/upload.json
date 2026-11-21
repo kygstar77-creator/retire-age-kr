@@ -1,0 +1,29 @@
+{
+ "name": "h5s_jeonse",
+ "ep": "H-5",
+ "from_long": "tvCsLWDF814",
+ "mp4": "work/video/out/h5s_jeonse_c1_ds.mp4",
+ "publishAt": "2026-11-27T19:20:00+09:00",
+ "publish_plan": "11/21 18:2x PD: 11/27 19:20 칸(관문 기한 11/27 07:20) — 회의 11/20 '11/26·27 부동산 먼저' · 11/26 h5s_half(H-5 3장 반값·직거래)와 같은 롱폼이지만 다른 질문(전세가 매매값의 몇 %) — 같은 롱폼 연속 2편까지 허용 안 · 첫 줄 새 녹음 1줄",
+ "title": "송도 아파트 전세가율, 단지 38곳 가운데 57%였어요 #shorts",
+ "description": "전체 계산: https://youtu.be/tvCsLWDF814 (송도 아파트 84㎡ 실거래 전부 세어 보니 지금 값은 고점의 82%)\n\n송도동 84㎡대 아파트 단지 38곳의 2026년 7~10월 순수 전세 거래 8백여 건을 단지마다 매매 거래와 견줘 보니, 전세금이 매매값의 몇 %인지(전세가율)는 38곳을 줄 세운 가운데가 57%, 가장 낮은 곳 39%, 가장 높은 곳 70%였어요.\n전세 금액의 가운데 값은 4억 1천만원쯤이었고, 월세가 섞인 반전세는 뺐어요. 내 단지는 국토교통부 실거래가 공개시스템에서 단지·넓이·기간을 골라 직접 세어 볼 수 있어요. 지나간 거래를 센 숫자이고, 전세를 들라거나 집을 사거나 팔라는 권유가 아닙니다.\n\n출처: 국토교통부 아파트 전월세·매매 실거래(송도동 84㎡대, 2026-11-21 내려받음) · 전세가율 = 단지별 전세 가운데 값 ÷ 매매 가운데 값 · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — Gije Cho · Jueon Kim 김주언 · Nurlan Hasanov · RDNE Stock project\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #송도아파트 #송도전세",
+ "tags": "송도 아파트,송도 전세,송도 전세가율,전세가율,아파트 실거래가",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/h5s_jeonse/cover_1121.png",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "cover_set": true,
+ "id": "fg25cKGhAso",
+ "uploaded_at": "2026-11-21 19:34:05",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-11-27T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

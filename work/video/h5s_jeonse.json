@@ -1,0 +1,246 @@
+{
+ "fps": 30,
+ "name": "h5s_jeonse",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "송도 84㎡ 전세",
+  "매매값의 몇 %일까?"
+ ],
+ "hot": "몇 %",
+ "answer": {
+  "label": "송도동 84㎡대 단지 38곳 · 2026.07~10 순수 전세",
+  "items": [
+   "가운데 57%",
+   "낮은 곳 39% · 높은 곳 70%"
+  ],
+  "arrow": false,
+  "note": "전세 보통 값 4억 1천만원쯤 · 8백 건 넘게"
+ },
+ "base": "국토교통부 아파트 전월세·매매 실거래(송도동 84㎡대, 2026-11-21 내려받음) · 전세가율 = 단지별 전세 보통 값 ÷ 매매 보통 값 · 파이어맵 계산",
+ "long": "tvCsLWDF814",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "단지마다",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "전세가율이란",
+      "전세금이 집값의 몇 %",
+      "",
+      5,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "송도 84㎡ 전세, 매매값의 몇 %인지 세어 봤어요.",
+     "audio": "audio/h5s/4c3f2e11dfdaee71.wav",
+     "frames": 118
+    }
+   ],
+   "frames": 118
+  },
+  {
+   "kind": "vs",
+   "label": "38곳 가운데",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "38곳 줄 세운 가운데",
+      "57%",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "가장 낮은 곳",
+      "39%",
+      "",
+      65,
+      "ink"
+     ],
+     [
+      "가장 높은 곳",
+      "70%",
+      "",
+      125,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 2,
+     "text": "중간이 57%였습니다.",
+     "audio": "audio/h-5/2390e843a9f1a97f.wav",
+     "frames": 66
+    },
+    {
+     "n": 3,
+     "text": "낮은 곳은 39%였고요.",
+     "audio": "audio/h-5/93133ff9787f3d5e.wav",
+     "frames": 60
+    },
+    {
+     "n": 4,
+     "text": "높은 곳은 70%였습니다.",
+     "audio": "audio/h-5/2a3a06e2a44ff579.wav",
+     "frames": 62
+    }
+   ],
+   "frames": 188
+  },
+  {
+   "kind": "vs",
+   "label": "어떤 거래",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "7~10월 84㎡대",
+      "월세 낀 거래 뺌",
+      "",
+      14,
+      "ink"
+     ],
+     [
+      "거래",
+      "8백 건 넘게",
+      "",
+      188,
+      "ink"
+     ],
+     [
+      "전세 금액 가운데",
+      "4억 1천만원쯤",
+      "",
+      227,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 5,
+     "text": "2026년 7월부터 10월까지 84㎡ 전세 거래를 봤어요. 월세가 섞인 반전세는 뺐습니다.",
+     "audio": "audio/h-5/cbe7e32b59766b16.wav",
+     "frames": 186
+    },
+    {
+     "n": 6,
+     "text": "8백 건이 넘습니다.",
+     "audio": "audio/h-5/0320e7567d56017d.wav",
+     "frames": 39
+    },
+    {
+     "n": 7,
+     "text": "중간은 4억 1천만원 정도였어요.",
+     "audio": "audio/h-5/44337bd861d8d1d6.wav",
+     "frames": 74
+    }
+   ],
+   "frames": 299
+  },
+  {
+   "kind": "vs",
+   "label": "내 단지는",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "내 단지는",
+      "직접 세어 보기",
+      "",
+      11,
+      "ink"
+     ],
+     [
+      "검색: 국토부 실거래가",
+      "단지·넓이·기간 고르기",
+      "",
+      75,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 8,
+     "text": "내 단지는 직접 세어 보실 수 있어요.",
+     "audio": "audio/h-5/4bb6a5fd08320c62.wav",
+     "frames": 72
+    },
+    {
+     "n": 9,
+     "text": "국토교통부 실거래가 공개시스템에서 단지와 넓이, 기간을 고르면 거래가 줄줄이 나와요.",
+     "audio": "audio/h-5/289ca3d2c117c86c.wav",
+     "frames": 158
+    }
+   ],
+   "frames": 266
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/h5/cut/18495181_1_r118.mp4",
+   "from": 0,
+   "frames": 118,
+   "start": 0
+  },
+  {
+   "src": "bg/h5/cut/37873585_2_r66.mp4",
+   "from": 118,
+   "frames": 66,
+   "start": 0
+  },
+  {
+   "src": "bg/h5/cut/37736994_1_r60.mp4",
+   "from": 184,
+   "frames": 60,
+   "start": 0
+  },
+  {
+   "src": "bg/h5/cut/37873585_15_r62.mp4",
+   "from": 244,
+   "frames": 62,
+   "start": 0
+  },
+  {
+   "src": "bg/h5/cut/18495181_7_r186.mp4",
+   "from": 306,
+   "frames": 186,
+   "start": 0
+  },
+  {
+   "src": "bg/h5/cut/8293504_1_r39.mp4",
+   "from": 492,
+   "frames": 39,
+   "start": 0
+  },
+  {
+   "src": "bg/h5/cut/37736994_14_r74.mp4",
+   "from": 531,
+   "frames": 74,
+   "start": 0
+  },
+  {
+   "src": "bg/h5/cut/37736994_9_r72.mp4",
+   "from": 605,
+   "frames": 72,
+   "start": 0
+  },
+  {
+   "src": "bg/h5/cut/18495181_12_r194.mp4",
+   "from": 677,
+   "frames": 194,
+   "start": 0
+  }
+ ],
+ "credits": "Gije Cho · Jueon Kim 김주언 · Nurlan Hasanov · RDNE Stock project (Pexels License)"
+}

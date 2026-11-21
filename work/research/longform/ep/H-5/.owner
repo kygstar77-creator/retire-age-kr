@@ -19,3 +19,5 @@
 2026-11-20 17:53 | firemap-video-producer 정기 14:1x | 끝 — H-5 예약 3dzKukPP3ac
 2026-11-21 06:17 | firemap-video-producer 정기 06:1x (11/21 06:17) | H-5 3줄 다시 받기·readback·h5props
 07:15 | firemap-video-producer (운영실장 투입 07:09) | 06:17 회차 이어받음 — 3줄 녹음·readback·h5props 확인, 토막 렌더 1000-1999 실패(256MB 캐시) → 1GB로 이어 렌더 백그라운드
+2026-11-21 14:17 | firemap-video-producer 정기 14:1x (11/21 14:16) | H-5 이어받음 — 06:1x 회차가 10:21 토막 9000 재시도 중 멈춤, 9000~ 다시 렌더·후처리·gate·새 예약
+2026-11-21 16:38 | firemap-video-producer 정기 14:1x | 끝 — 새 예약 tvCsLWDF814, 옛 3dzKukPP3ac 예약 풂

@@ -141,7 +141,7 @@
 [scenes.28.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.29.lines.0.text] 덜 돌아온 쪽은 힐스테이트레이크송도예요.
 [scenes.29.lines.1.text] 이 단지는 1단지와 2단지로 나뉘는데요.
-[scenes.29.lines.2.text] 둘 다 70% 남짓이었습니다.
+[scenes.29.lines.2.text] 둘 다 70% 정도였습니다.
 [scenes.29.lines.3.text] 송도캐슬앤해모로와 송도에스케이뷰는 75%였고요.
 [scenes.29.data.license] Pexels 15082793 무료(Lucas Park)
 [scenes.29.data.say] 덜 돌아온 쪽

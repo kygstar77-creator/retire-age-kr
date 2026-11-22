@@ -36,6 +36,9 @@ def sents(t):
         if not line: continue
         # 출처 주소만 있는 줄은 문장이 아니다. meta0927에서 IR 주소 한 줄이 '130자 한 문장'으로 잡혔다(2026-09-27).
         if re.fullmatch(r'https?://\S+', line): continue
+        # '배당 계산기: https://…utm_campaign=tigerdj1122'처럼 이름표 뒤 주소 속 숫자를 [사실]로 잡았다(2026-11-22) — 주소는 문장에서 뺀다.
+        line = re.sub(r'https?://\S+', '', line).strip()
+        if not line: continue
         for s in re.split(r'(?<=[.!?])\s+|(?<=다\.)\s*', line):
             if len(s.strip()) > 4: out.append(s.strip())
     return out

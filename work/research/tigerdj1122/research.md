@@ -13,6 +13,7 @@
 - S4 미국 국세청 Tax Treaty Table 1(Rev. May 2023) Korea, South 배당 15%, 11/21 받음(raw/irs_treaty_table1_1121.txt): https://www.irs.gov/pub/irs-lbi/tax-treaty-table-1.pdf
 - S5 (2차②) FRED DEXKOUS 원달러 일별(apis.fred, 11/21 받음 raw/fred_DEXKOUS_20261121.json): https://fred.stlouisfed.org/series/DEXKOUS
 - S6 S1·S2로 직접 계산(calc.py → calc_out.txt) — 원자료 S1, 분배 합 S2와 대조, 기간 수익률 S3과 대조
+- S8 (2차③) FunETF 458730 상품 페이지 '총보수 0.0100%, 합성총보수 0.0600%, 실부담비용 0.1058%', 2026-11-22 받음(raw/funetf_458730_1122.html) — 미래에셋 상세 페이지는 headless에서 총보수 칸이 빈 값(raw/tiger_page_1122.txt, fetch_tiger5.py), 운용사 2023-07-19 0.03→0.01% 인하 발표는 매체 기사로만 봄: https://www.funetf.co.kr/product/etf/view/KR7458730009
 - S7 찰스 슈왑 SCHD 총보수 0.06%(de1pair1117 research.md 11/19 확인): https://www.schwabassetmanagement.com/products/schd
 
 ## 경쟁
@@ -65,7 +66,7 @@
 | TIGER 월 26~48원 · SCHD 3·6·9·12월 | 26(2025-04)·48(2024-11) · 배당 달 | S1 raw events, S2 |
 | 2026년 SCHD 달러 27.3%·환율 1,443.6→1,334.8원·원화 17.7%·TIGER 17.0% | 같음 | S1·S6 calc_out.txt |
 | 미국 배당 원천징수 15% | Korea, South dividends 15 | S4 https://www.irs.gov/pub/irs-lbi/tax-treaty-table-1.pdf |
-| TIGER 환헤지 안 함·총보수 0.01% | '환헤지를 하지 않으므로' · totalFee 0.01 | S3 |
+| TIGER 환헤지 안 함·총보수 0.01% | '환헤지를 하지 않으므로' · totalFee 0.01 · FunETF 총보수 0.0100% | S3 · S8 (2차 2곳) |
 | SCHD 총보수 0.06% | 0.06% | S7 · 경쟁 6 korjap9633 |
 
 # 올리기 전 확인
@@ -74,4 +75,7 @@
 - 기준일: TIGER 2026-11-20 종가 · SCHD 2026-11-19 미국 종가 · 운용사 분배 표 2026.11.19 기준 · 네이버 2026.11.19 기준
 - 바뀐 것: 처음 조사 — 없음
 - 새로 찾은 것: 상장 뒤 같은 날 1억 두 계좌 3년 5개월 63.2% vs 61.7% · 해마다 이긴 쪽 바뀜(한 해 2%포인트 안) · 야후 2023년 9월 분배 33원 빠짐(운용사 합으로 확인) · 경쟁 글 실제 결과 센 글 0편
+- 2026-11-22 15:23 firemap-write(발행 날): 야후 458730.KS·SCHD·KRW=X 다시 받음(raw/*_chart_20261122.json, fetch1122.py) → calc1122.py 결과 calc_out_1122.txt가 calc_out.txt와 숫자 전부 같음(TIGER 최신 종가 11/20 금요일, 짝 SCHD 11/19 그대로) · 미래에셋 상세 Playwright 다시(fetch_tiger5.py, XHR까지) — 총보수 칸 여전히 빈 값 · FunETF 458730 총보수 0.0100% 확인(S8) · FRED는 이번에 시간 초과(환율 계산은 야후 KRW=X, FRED는 대조용 11/21 값)
+- 기준일: TIGER 2026-11-20 종가 · SCHD 2026-11-19 미국 종가 (발행 날 다시 확인, 바뀜 없음)
+- 바뀐 것: 숫자 바뀜 없음(63.2%·61.7%·1억 6,317만·1억 6,168만·439원·3.03%·3.08% 그대로) · 출처 줄에 FunETF(총보수) 더함
 - 조사 뒤 공표: data/release_calendar.json — 가격은 매일, TIGER 11월 분배(11월 말 기준) 발행 뒤 · 발행 날 종가 다시 받아 숫자 갱신

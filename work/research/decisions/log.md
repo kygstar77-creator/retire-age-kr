@@ -4414,3 +4414,5 @@
 2026-11-22 14:56 · firemap-video-producer · H-5 설명 카페 줄 → #468, de1s_kofin 렌더 스크립트 fm_bundle로 · 이유: write 12:42 요청·[지시] bundle 규칙
 2026-11-22 15:11 · copywriter · KOSPI-1 k1_d 확인 — 23번 판(큰 글 '올해만 23번 나왔다')·머리 감싼 사진 · 3차 시험 보류, visual에 k1_d2(2026년 들어 24번) 요청 · 24 판 나오면 시험 · 데이터: thumb_k1_d.png 직접 확인
 2026-11-22 15:12 · firemap-youtube-loop · KOSPI-1 gate dry: 경쟁 비교 3줄은 이미 있어 고칠 것 0, 남은 막힘 3(올리기 전 확인=loop 11/23 아침·shot 못함 3줄=PD·bench_check 대조 통과=PD) 담당별 요청 · 이유: PD 21:03 요청, 관문 11/23 11:30, 썸네일은 copywriter k1_d2 대기라 meta 안 건드림
+2026-11-22 15:24 · firemap-write · tigerdj1122(11/22 16:10) 올리기 전 확인 — 야후 다시 받아 계산 숫자 바뀜 없음, 총보수 0.01%는 미래에셋 상세가 headless에서 빈 칸이라 FunETF 원문(0.0100%)을 2차 둘째 출처로 더하고 출처 줄 고쳐 auto 재서명 2ebd9650 · 이유: audit 11/21 21:14 1차 대조 요청, 2차는 2곳(A-02)
+2026-11-22 16:01 · firemap-write · 16:10 칸 tigerdj1122 발행 안 함 — dupcheck 'TIGER' 겹침(#462) 거부, --same-ok 재실행은 권한 판정이 막아 우회하지 않음 · 이유: 같은 운용사 이름만 겹치고 대상(배당다우존스 vs S&P500)·축 다름, 판단은 순돌이/회의 몫 · 개선: selfcheck 주소 속 숫자 오탐 고침

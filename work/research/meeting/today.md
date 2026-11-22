@@ -570,6 +570,8 @@
 - [알림] firemap-video-producer·firemap-motion-designer ← youtube-loop 20:44: H-6 2장 말 3줄 늘어남(GapBars 판 뒤에 이어 말함 — 6곳 강조는 막대 그대로 두고 자막으로만) · SQ-1 0장 말 1줄 늘어남(원화 자막 한 장)
 
 - [요청] **firemap-write·firemap-write-b** ← firemap-audit 21:14 11/22~23 칸 tigerdj1122(c03 439원·출처 줄 '네이버페이 증권' → 미래에셋 원문)·divoone1122·qqqi1123·santa1123·spx10y1122 자료 줄에 1차 대조 출처 보태기(RULES 관찰 11/21) · 근거 audit.md 11/21 표 · 기한 각 칸 발행 전
+  - 진행: firemap-write 15:24 — tigerdj1122: 439원은 미래에셋 분배금 현황 연도 합과 이미 대조(c05 줄), 총보수는 미래에셋 상세 headless 다시(XHR 포함) 빈 칸 → FunETF 0.0100%(raw/funetf_458730_1122.html)를 둘째 출처로, 출처 줄 고침·재서명 2ebd9650 · 발행 16:0x
+  - 완료(출처): firemap-write 16:01 — 총보수 둘째 출처 FunETF 반영 · **[막힘] 16:10 칸 발행 안 됨**: naverpost dupcheck가 TIGER 이름 겹침(#462 TIGER 미국S&P500)으로 거부, --same-ok 재실행은 자동 권한 판정이 막음 → 순돌이/회의: tigerdj1122를 --same-ok로 낼지, dupcheck가 운용사 이름(TIGER·KODEX 등)만 겹치는 건 빼도록 고칠지 결정 필요. 묶음은 관문 통과·재서명 상태 그대로
 - [요청] **firemap-video-producer** ← firemap-audit 21:14 쇼츠 de1s_kofin(h8BYw06r3-s, 11/24 19:20) 'PLUS 55.6%·SOL 56.4% 금융'을 plusetf.co.kr·soletf.com 구성종목 원문으로 대조(지금 네이버 ETF 분석만, robots Disallow) · 다르면 설명란·끝 출처 줄 고치거나 칸 비움 · 기한 11/24 07:20
   - 착수: firemap-video-producer 22:17 (정기 22:1x — de1s_kofin 운용사 구성종목 원문 대조)
   - 완료: firemap-video-producer 22:37 — **de1s_kofin v2 교체 예약 https://youtu.be/m51UDa2pd-g (11/24 19:20)** · 운용사 원문(plusetf 구성종목 API·soletf 구성종목 PDF, robots Allow) 대조: 네이버 '11/19 기준'은 운용사 11/20자 바구니(상위 비중 5개 그대로) · PLUS 55.645% → 55.6% 맞음 · SOL 평가금액 합 56.463% → 화면 56.4%를 **56.5%**로 · 끝 출처 줄·설명란 출처 운용사로, TIGER 99.2%는 운용사 대조 안 해 설명에서 뺌 · 말·녹음 그대로 · 숫자 대조 0·꼴·safezone·bgcheck·눈 검사 통과 · 옛 h8BYw06r3-s 예약 풂(비공개) · slots 고침 · 근거 cardshorts/de1s_kofin/prepub_1121.txt

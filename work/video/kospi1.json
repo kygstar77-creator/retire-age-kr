@@ -93,8 +93,8 @@
    ],
    "frames": 125,
    "data": {
-    "src": "bg/kospi1/stock/7578632.mp4",
-    "license": "Pexels 7578632 무료(Tima Miroshnichenko)",
+    "src": "bg/kospi1/stock/3945008.mp4",
+    "license": "Pexels 3945008 무료(Oleg Gamulinskii)",
     "say": "먼저 짚을 두 가지",
     "side": "left",
     "from": 0
@@ -135,13 +135,13 @@
      "cap": null
     },
     {
-     "text": "예측은 안 해요. 그건 누구도 맞힐 수 없으니까요.",
-     "audio": "audio/kospi-1/9f912ac89de15c65.wav",
-     "frames": 81,
+     "text": "예측은 안 해요. 그건 누구도 알 수 없으니까요.",
+     "audio": "audio/kospi-1/4055e65b066af5eb.wav",
+     "frames": 83,
      "cap": null
     }
    ],
-   "frames": 131,
+   "frames": 133,
    "data": {
     "src": "bg/kospi1/stock/5224014.mp4",
     "license": "Pexels 5224014 무료(Pavel Danilyuk)",
@@ -168,11 +168,11 @@
    ],
    "frames": 198,
    "data": {
-    "src": "bg/kospi1/stock/7578632.mp4",
-    "license": "Pexels 7578632 무료(Tima Miroshnichenko)",
+    "src": "bg/kospi1/stock/3945008.mp4",
+    "license": "Pexels 3945008 무료(Oleg Gamulinskii)",
     "say": "하나하나 셌어요",
     "side": "left",
-    "from": 87
+    "from": 90
    }
   },
   {
@@ -235,7 +235,7 @@
    }
   },
   {
-   "kind": "broll",
+   "kind": "pic",
    "lines": [
     {
      "text": "그런데 같은 값을 연초에서 보면 13% 오른 자리입니다.",
@@ -246,22 +246,41 @@
    ],
    "frames": 104,
    "data": {
-    "src": "bg/kospi1/stock/38557069.mp4",
-    "license": "Pexels 38557069 무료(Rafael Minguet Delgado)",
-    "say": "연초에서 보면",
-    "side": "left",
-    "from": 90
+    "pic": "bg/kospi1/board/line2026b.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
    }
   },
   {
-   "kind": "pic",
+   "kind": "broll",
    "lines": [
     {
      "text": "댓글에 이런 질문이 있었어요. 코스피 5천도 꿈 같던 게 작년인데, 지금도 많이 오른 거 아니냐고요.",
      "audio": "audio/kospi-1/392cb203b428a1eb.wav",
      "frames": 171,
      "cap": null
-    },
+    }
+   ],
+   "frames": 171,
+   "data": {
+    "src": "bg/kospi1/stock/6186015.mp4",
+    "license": "Pexels 6186015 무료(K)",
+    "say": "댓글로 온 질문",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
     {
      "text": "어디서 재느냐에 따라 답이 정반대가 됩니다.",
      "audio": "audio/kospi-1/93e4311a82237065.wav",
@@ -269,7 +288,7 @@
      "cap": null
     }
    ],
-   "frames": 255,
+   "frames": 84,
    "data": {
     "pic": "bg/kospi1/board/arrows3.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -327,11 +346,11 @@
    ],
    "frames": 116,
    "data": {
-    "src": "bg/kospi1/stock/7578632.mp4",
-    "license": "Pexels 7578632 무료(Tima Miroshnichenko)",
+    "src": "bg/kospi1/stock/3945008.mp4",
+    "license": "Pexels 3945008 무료(Oleg Gamulinskii)",
     "say": "기준을 더 세게",
     "side": "left",
-    "from": 169
+    "from": 180
    }
   },
   {
@@ -402,19 +421,9 @@
     {
      "text": "올해 뉴스에 자주 나온 말이 있죠. 서킷브레이커입니다.",
      "audio": "audio/kospi-1/c0282b56b6485817.wav",
-     "frames": 103,
+     "frames": 98,
      "cap": null
-    }
-   ],
-   "frames": 103,
-   "data": {
-    "n": "2장",
-    "q": "서킷브레이커와 사이드카"
-   }
-  },
-  {
-   "kind": "broll",
-   "lines": [
+    },
     {
      "text": "지수가 너무 빨리 떨어질 때, 시장 전체를 잠깐 멈추는 장치예요.",
      "audio": "audio/kospi-1/be6ca53de09314c3.wav",
@@ -422,13 +431,10 @@
      "cap": null
     }
    ],
-   "frames": 114,
+   "frames": 212,
    "data": {
-    "src": "bg/kospi1/stock/4957783.mp4",
-    "license": "Pexels 4957783 무료(Tima Miroshnichenko)",
-    "say": "시장 전체를 잠깐 멈춰요",
-    "side": "left",
-    "from": 0
+    "n": "2장",
+    "q": "서킷브레이커와 사이드카"
    }
   },
   {
@@ -449,11 +455,11 @@
     {
      "text": "이 20분 동안은 주문을 넣어도 거래가 이뤄지지 않아요.",
      "audio": "audio/kospi-1/a20001ac1793fadc.wav",
-     "frames": 98,
+     "frames": 99,
      "cap": null
     }
    ],
-   "frames": 304,
+   "frames": 305,
    "data": {
     "pic": "bg/kospi1/board/breaker3.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -511,11 +517,11 @@
    ],
    "frames": 75,
    "data": {
-    "src": "bg/kospi1/stock/7578632.mp4",
-    "license": "Pexels 7578632 무료(Tima Miroshnichenko)",
+    "src": "bg/kospi1/stock/3945008.mp4",
+    "license": "Pexels 3945008 무료(Oleg Gamulinskii)",
     "say": "올해 몇 번 걸렸나",
     "side": "left",
-    "from": 210
+    "from": 270
    }
   },
   {
@@ -573,11 +579,11 @@
    ],
    "frames": 62,
    "data": {
-    "src": "bg/kospi1/stock/4957783.mp4",
-    "license": "Pexels 4957783 무료(Tima Miroshnichenko)",
+    "src": "bg/kospi1/stock/6442796.mp4",
+    "license": "Pexels 6442796 무료(ArtHouse Studio)",
     "say": "많이 헷갈리는 것",
     "side": "left",
-    "from": 90
+    "from": 0
    }
   },
   {
@@ -590,9 +596,9 @@
      "cap": null
     },
     {
-     "text": "그날 아침 서킷브레이커가 걸릴 때, 코스피는 8.55% 빠진 상태였어요.",
-     "audio": "audio/kospi-1/29751b5a43d560ea.wav",
-     "frames": 125,
+     "text": "그날 아침 서킷브레이커가 걸릴 때, 코스피는 8.5% 넘게 빠진 상태였어요.",
+     "audio": "audio/kospi-1/a926ff19d1166c1f.wav",
+     "frames": 152,
      "cap": null
     },
     {
@@ -608,7 +614,7 @@
      "cap": null
     }
    ],
-   "frames": 499,
+   "frames": 526,
    "data": {
     "pic": "bg/kospi1/board/nov6.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -639,7 +645,7 @@
     "license": "Pexels 38557069 무료(Rafael Minguet Delgado)",
     "say": "뉴스와 내 계좌는 따로",
     "side": "left",
-    "from": 270
+    "from": 180
    }
   },
   {
@@ -844,11 +850,11 @@
    ],
    "frames": 102,
    "data": {
-    "src": "bg/kospi1/stock/7578632.mp4",
-    "license": "Pexels 7578632 무료(Tima Miroshnichenko)",
+    "src": "bg/kospi1/stock/3945008.mp4",
+    "license": "Pexels 3945008 무료(Oleg Gamulinskii)",
     "say": "올해 묶음은 빼고",
     "side": "left",
-    "from": 183
+    "from": 360
    }
   },
   {
@@ -875,11 +881,11 @@
     {
      "text": "더 내려간 폭을 크기대로 줄 세우면, 한가운데가 12% 정도였어요.",
      "audio": "audio/kospi-1/2bfbdd25b2ba7c31.wav",
-     "frames": 117,
+     "frames": 118,
      "cap": null
     }
    ],
-   "frames": 488,
+   "frames": 489,
    "data": {
     "pic": "bg/kospi1/board/q14.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -960,7 +966,7 @@
     "license": "Pexels 38557069 무료(Rafael Minguet Delgado)",
     "say": "한 해가 지난 뒤엔",
     "side": "left",
-    "from": 308
+    "from": 270
    }
   },
   {
@@ -1012,11 +1018,11 @@
    ],
    "frames": 93,
    "data": {
-    "src": "bg/kospi1/stock/7578632.mp4",
-    "license": "Pexels 7578632 무료(Tima Miroshnichenko)",
+    "src": "bg/kospi1/stock/3945008.mp4",
+    "license": "Pexels 3945008 무료(Oleg Gamulinskii)",
     "say": "닷컴 거품이 꺼질 때",
     "side": "left",
-    "from": 192
+    "from": 450
    }
   },
   {
@@ -1025,7 +1031,7 @@
     {
      "text": "1년 뒤에도 첫날보다 43%나 낮았습니다.",
      "audio": "audio/kospi-1/a840847c6eeae865.wav",
-     "frames": 86,
+     "frames": 80,
      "cap": null
     },
     {
@@ -1041,7 +1047,7 @@
      "cap": null
     }
    ],
-   "frames": 278,
+   "frames": 272,
    "data": {
     "pic": "bg/kospi1/board/dots15.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1103,7 +1109,7 @@
     {
      "text": "중간은 8거래일이었습니다. 두 주가 채 안 돼요.",
      "audio": "audio/kospi-1/8bb81395d83bfb13.wav",
-     "frames": 101,
+     "frames": 90,
      "cap": null
     },
     {
@@ -1113,7 +1119,7 @@
      "cap": null
     }
    ],
-   "frames": 322,
+   "frames": 311,
    "data": {
     "pic": "bg/kospi1/board/recover15.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1227,11 +1233,11 @@
    ],
    "frames": 83,
    "data": {
-    "src": "bg/kospi1/stock/7578632.mp4",
-    "license": "Pexels 7578632 무료(Tima Miroshnichenko)",
+    "src": "bg/kospi1/stock/3945008.mp4",
+    "license": "Pexels 3945008 무료(Oleg Gamulinskii)",
     "say": "외환위기 때도",
     "side": "left",
-    "from": 202
+    "from": 540
    }
   },
   {
@@ -1306,7 +1312,7 @@
     {
      "text": "가장 크게 오른 날은 7월 31일이었어요.",
      "audio": "audio/kospi-1/7352d444b6302a62.wav",
-     "frames": 71,
+     "frames": 80,
      "cap": null
     },
     {
@@ -1322,7 +1328,7 @@
      "cap": null
     }
    ],
-   "frames": 234,
+   "frames": 243,
    "data": {
     "pic": "bg/kospi1/board/up8.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1355,11 +1361,11 @@
    ],
    "frames": 192,
    "data": {
-    "src": "bg/kospi1/stock/7578632.mp4",
-    "license": "Pexels 7578632 무료(Tima Miroshnichenko)",
+    "src": "bg/kospi1/stock/3945008.mp4",
+    "license": "Pexels 3945008 무료(Oleg Gamulinskii)",
     "say": "하루 숫자만 보면",
     "side": "left",
-    "from": 92
+    "from": 630
    }
   },
   {
@@ -1379,7 +1385,7 @@
    }
   },
   {
-   "kind": "broll",
+   "kind": "pic",
    "lines": [
     {
      "text": "크게 빠진 첫날 마감 가격에 1천만원을 넣었다고 해 보죠.",
@@ -1390,22 +1396,9 @@
     {
      "text": "지수 값만으로 셌어요. 배당이나 세금, 수수료는 뺐습니다.",
      "audio": "audio/kospi-1/20133326530c54af.wav",
-     "frames": 110,
+     "frames": 105,
      "cap": null
-    }
-   ],
-   "frames": 217,
-   "data": {
-    "src": "bg/kospi1/stock/5909916.mp4",
-    "license": "Pexels 5909916 무료(cottonbro studio)",
-    "say": "첫날 마감에 넣었다면",
-    "side": "left",
-    "from": 0
-   }
-  },
-  {
-   "kind": "pic",
-   "lines": [
+    },
     {
      "text": "한 번에 다 넣고 1년을 기다렸다고 해 볼게요.",
      "audio": "audio/kospi-1/bc14783f0f595837.wav",
@@ -1431,7 +1424,7 @@
      "cap": null
     }
    ],
-   "frames": 361,
+   "frames": 573,
    "data": {
     "pic": "bg/kospi1/board/split2.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1468,7 +1461,7 @@
     "license": "Pexels 5909916 무료(cottonbro studio)",
     "say": "열두 번에 나눠",
     "side": "left",
-    "from": 90
+    "from": 0
    }
   },
   {
@@ -1518,19 +1511,19 @@
    "kind": "broll",
    "lines": [
     {
-     "text": "차이는 흔들린 폭에 있었습니다.",
-     "audio": "audio/kospi-1/93f4bd949f4d69e5.wav",
-     "frames": 59,
+     "text": "차이는 오르내린 폭에 있었습니다.",
+     "audio": "audio/kospi-1/02c3261e74498288.wav",
+     "frames": 57,
      "cap": null
     }
    ],
-   "frames": 59,
+   "frames": 57,
    "data": {
     "src": "bg/kospi1/stock/5909916.mp4",
     "license": "Pexels 5909916 무료(cottonbro studio)",
     "say": "차이는 흔들린 폭",
     "side": "left",
-    "from": 180
+    "from": 90
    }
   },
   {
@@ -1582,7 +1575,7 @@
     {
      "text": "매달 월급에서 떼어 넣는 분이라면, 이미 나눠 넣고 있는 거예요.",
      "audio": "audio/kospi-1/26792665edcf7c36.wav",
-     "frames": 114,
+     "frames": 110,
      "cap": null
     },
     {
@@ -1592,13 +1585,13 @@
      "cap": null
     }
    ],
-   "frames": 243,
+   "frames": 239,
    "data": {
     "src": "bg/kospi1/stock/5909916.mp4",
     "license": "Pexels 5909916 무료(cottonbro studio)",
     "say": "월급에서 떼어 넣는 분",
     "side": "left",
-    "from": 270
+    "from": 180
    }
   },
   {
@@ -1666,11 +1659,11 @@
    ],
    "frames": 78,
    "data": {
-    "src": "bg/kospi1/stock/7578632.mp4",
-    "license": "Pexels 7578632 무료(Tima Miroshnichenko)",
+    "src": "bg/kospi1/stock/3945008.mp4",
+    "license": "Pexels 3945008 무료(Oleg Gamulinskii)",
     "say": "지난 기록일 뿐",
     "side": "left",
-    "from": 207
+    "from": 720
    }
   },
   {
@@ -1683,9 +1676,9 @@
      "cap": null
     },
     {
-     "text": "닷컴 거품 때처럼 5년 이상 못 돌아온 때가 실제로 있었어요.",
-     "audio": "audio/kospi-1/54b20c9ae332493a.wav",
-     "frames": 109,
+     "text": "실제로 닷컴 거품 때처럼, 5년 이상 못 돌아온 때가 있었어요.",
+     "audio": "audio/kospi-1/c3d9d49017c6376b.wav",
+     "frames": 114,
      "cap": null
     },
     {
@@ -1701,7 +1694,7 @@
      "cap": null
     }
    ],
-   "frames": 481,
+   "frames": 486,
    "data": {
     "pic": "bg/kospi1/board/trap2.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1825,11 +1818,11 @@
     {
      "text": "흔들리는 날이 많은 해일수록, 내가 견딜 수 있는 폭부터 아는 게 먼저 아닐까요.",
      "audio": "audio/kospi-1/aee641f4a051ef54.wav",
-     "frames": 127,
+     "frames": 126,
      "cap": null
     }
    ],
-   "frames": 127,
+   "frames": 126,
    "data": {
     "src": "bg/kospi1/stock/8495394.mp4",
     "license": "Pexels 8495394 무료(Thirdman)",

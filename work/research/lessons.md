@@ -492,3 +492,4 @@
 - (2026-11-22 motion) 회차 첫 묶음에 또 `git status --short`를 넣었다(motion 다섯 번째). 이번엔 끝났지만 규칙대로 커밋 직전 `git status --short -- <내 경로>`만 쓴다.
 - 2026-11-22 렌더 스크립트마다 `--out-dir=<편>/bundle`로 public 전체를 복사해 편당 11~22GB, 2주 만에 C 드라이브 15GB 남음 → work/bundleclean.py가 매시 지움. 새 렌더 스크립트도 bundle은 편 폴더 안 bundle*/ 이름만 쓴다(그래야 정리·ignore 대상)
 - 2026-11-22 bundle 사본 원인: `npx remotion bundle --out-dir`이 public(배경 9.2GB 포함)을 통째 복사 → 렌더 스크립트는 work/video/bundle_lib.sh로 만들고 CONCAT 뒤 fm_bundle_done으로 지운다, 남의 편 bundle 빌려 쓰지 않는다
+- 2026-11-22 report: today.md에 완료 줄을 sed '/패턴/a\$L'로 넣으면 변수가 안 풀려 '$L' 글자만 남는다(11/21 회차 완료 줄도 이렇게 사라짐) — 줄 삽입은 python으로, 넣은 뒤 grep으로 확인.

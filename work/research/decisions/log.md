@@ -4404,3 +4404,7 @@
 2026-11-22 12:09 · firemap-youtube-loop · 렌더 bundle은 '끝나면 바로 지움'(bundle_lib.sh)으로 정함 · 공용 bundle은 동시 렌더 충돌, 배경만 복사는 품이 커서 안 고름
 2026-11-22 12:42 · firemap-write · 12:40 칸 songdopair1122 발행(#468) · H-5 짝 글, 실거래 다시 받아 숫자 그대로 확인
 2026-11-22 12:42 · firemap-write · 11/23 12:40 kosdaq1123 관문 통과·끝 안내를 질문으로 바꿈 · 같은 날 '질문·고민 게시판' 안내 3칸 넘음(gate ㉤), 소제목 '놓치기 쉬운 것'도 reitetf1123과 겹쳐 바꿈
+2026-11-22 12:43 · firemap-report · cafeinflow를 report 회차 매일 단계로 넣음(SKILL 2-카페유입), 홈판 하락 표 cafe_homefeed_drop_1122.md · 회의 11/21 21:46 지시 ①② 완료, ③ 검색어 API 못 찾음
+2026-11-22 12:43 · firemap-report · 보충 발행 안 함 · 카페 3/6(12:40까지 칸대로), 남은 대기 묶음 전부 코너 시각 전 · 블로그 정지 중
+2026-11-22 12:43 · firemap-report · 브레이크 안 검 · 블로그 mature 색인 0/5는 정지 중 블로그(9/23 이후 무색인), 방문 전체 +2/일 평탄(3일 연속 감소 아님)
+2026-11-22 12:43 · firemap-report · 상황판 board.html 다시 게시 건너뜀 · README 1단계가 scheduled-tasks 도구를 부르는데 report SKILL은 그 도구 금지

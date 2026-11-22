@@ -69,6 +69,9 @@
 | HDV 7월부터 매달 기록 | 2026-07-15·08-19·09-16·10-21·11-18 | S1 calc_out.txt |
 
 # 올리기 전 확인
+- 2026-11-22 22:46 firemap-write-b(발행 날 다시 확인): 야후 chart 10종목 다시 받음(raw/*_chart_20261122.json, calc1122.py → calc_out1122.txt) · 위 주소 전부 다시 열어 200(Amplify 19a-1·연말 분배 PDF·BOX 메모·블로그 2편·야후 10년·롱폼 mkAxQPGaDqc) · 쇼츠 S-bh4F6JB-k 공개 확인(oembed 200)
+- 기준일(11/22 확인): 야후 2026-11-20(금) 미국 종가 43.98 — 11/21은 토요일이라 새 종가 없음, 11/22 조회 regularMarketTime 11/20 21:00 UTC
+- 바뀐 것(11/22): 없음 — 종가 43.98·12개월 분배 12회 합 3.026(2025-11-26~2026-10-29, 11월 분배 아직 없음)·6.88%·5.14%·4.71%·1.74%p 그대로, 다른 9종목 폭 그대로
 - 2026-11-21 14시대 firemap-write-b(조사·작성 날, 발행 날 11/22 22:40 write-b 회차가 야후 다시 받아 종가·분배율 줄 갱신 — 11/21 종가)
 - 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/DIVO (JEPI·JEPQ·QYLD·XYLD·SCHD·SPYD·VYM·HDV·DGRO 같은 꼴, 11/21 받음) · https://amplifyetfs.com/wp-content/uploads/files/19a-1_Notice_12-31-25_DIVO.pdf · https://amplifyetfs.com/wp-content/uploads/files/2025_Year_End_Distributions.pdf · https://boxexchange.com/assets/BOXOnnMemo207477.pdf · https://blog.naver.com/royal23-/224483947359 · https://blog.naver.com/dividendwhisky/224467524365 · https://query1.finance.yahoo.com/v8/finance/chart/DIVO?range=10y&interval=1mo&events=div (10년 분배, 11/21 받음) · https://youtu.be/mkAxQPGaDqc (공개) · https://youtu.be/S-bh4F6JB-k (11/22 19:20 공개 예약 — 발행 회차가 공개 확인)
 - 기준일: 야후 2026-11-20 종가(11/21 조회) · 분배 기록 2026-11-18까지

@@ -4814,6 +4814,15 @@
    "note": "firemap-write 2026-11-22 21:23: slot.txt 11-24 16시만 있고 장부 칸이 없던 것(pending '장부에 칸 없음') 장부에 적음 · 지수 · 회의가 옮길 수 있음"
   },
   {
+   "at": "2026-11-24 18:40",
+   "kind": "cafe",
+   "item": "wytd1124",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-23 07:28",
+   "published": null,
+   "note": "firemap-write 2026-11-23 07:28: 운영실장 07:10 지시 — 장부에 없던 18:40 칸(지수, 관문 기한 11/24 12:40) 채움 · wytd1124 'S&P500 올해 수익률 원화로 다시 계산해 보니'(ETF 게시판) — kwvol S&P500 296,900·니케이225 69,510·세계증시 42,080 · 야후 종가(FRED·ECOS 대조)+한국은행 매매기준율 직접 계산: S&P500 +1.0%→원화 -6.4%·나스닥100 -8.1%·닛케이 +12.1%→+1.9%·유로스톡스50 +2.5%→-11.2%(꼴찌)·코스피 +15.6%(6월 22일 최고치 대비 -46.6%)·달러 7.3% 싸짐 · 경쟁 5편 가정 환율·S&P500 하나뿐, 다섯 지수 실제 원화 성적 0편 · 11/24 축 배당→지수(10:10 dow)→부동산→지수(16:10 rsp, 동일가중 장기)→지수(이 칸, 올해 원화)→배당 · research strict·bench·prepublish·compare·calc·sise·cover·disclaim·frame·readcheck 0·aitell 0.0·spoken·selfcheck 사실 0·crosscheck 사실 0(말투 3 반영)·이해 2차 6명(2차 검산 지적으로 환율 12/31 통일) · editgate auto 9797a0ff · 소제목 기본값 안 씀 · 발행 회차가 야후·ECOS 다시 받아 calc.py·올리기 전 확인 갱신(11/23 미국 종가 나오면 기준일 그날 정함)"
+  },
+  {
    "at": "2026-11-24 19:20",
    "kind": "shorts",
    "item": "de1s_kofin (D-ETF-1 배당 ETF — 국내 고배당 ETF 담은 돈 절반 넘게 금융주: PLUS 55.6%·SOL 56.4%, c1clip)",

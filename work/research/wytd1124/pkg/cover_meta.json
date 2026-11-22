@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 ^KS11·^N225·^GSPC·^NDX·^STOXX50E 종가, 한국은행 ECOS 731Y001 매매기준율, calc_out.txt",
+ "made_at": "2026-11-23",
+ "by": "research/wytd1124/mkimg.py",
+ "out": "img/00.png",
+ "topic": "올해 지수 성적, 원화로",
+ "num": "+15.6%·-6.4%",
+ "topic_px": 50,
+ "num_px": 0,
+ "follows": "경쟁 1 winnerking/224475984112 표·경쟁 5 joyuldrama/224469529724 칠판 표 — 가정 환율 대신 실제 다섯 지수"
+}

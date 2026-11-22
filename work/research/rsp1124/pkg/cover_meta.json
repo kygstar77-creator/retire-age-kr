@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 chart API RSP·SPY 일별 수정 종가(11/22 받음)로 보유 기간별 앞선 비율 직접 계산, calc_out.txt",
+ "made_at": "2026-11-22",
+ "by": "research/rsp1124/mkimg.py",
+ "out": "img/00.png",
+ "topic": "S&P500 동일가중",
+ "num": "44%·45%·45%·46%",
+ "topic_px": 54,
+ "num_px": 40,
+ "follows": "경쟁 5 read_sijang/224473157319 SPY·VOO vs RSP 비교 표지(표·숫자) + 경쟁 3 neighbormrbear 비교 인포그래픽"
+}

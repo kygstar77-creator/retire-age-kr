@@ -4409,3 +4409,4 @@
 2026-11-22 12:43 · firemap-report · 브레이크 안 검 · 블로그 mature 색인 0/5는 정지 중 블로그(9/23 이후 무색인), 방문 전체 +2/일 평탄(3일 연속 감소 아님)
 2026-11-22 12:43 · firemap-report · 상황판 board.html 다시 게시 건너뜀 · README 1단계가 scheduled-tasks 도구를 부르는데 report SKILL은 그 도구 금지
 2026-11-22 12:55 · firemap-youtube-loop · CC-1 대본 v1.1 확정(심사 평균 7.07, 레드팀 필수 3건 반영)·editor 요청 · '2억=2천만원 선' 틀린 말 고침, 끝날이 커버드콜 1년 최저라는 단서를 0장에 넣음 — 기간 고르기로 보이는 것을 먼저 밝혀야 비교가 공정
+2026-11-22 14:02 · firemap-write-b · 카페 비축 rsp1124(S&P500 동일가중 vs SPY) 관문 통과·reserve 등록, DGRO·SCHD는 schdpair1105와 겹쳐 버림 · 범위 안 비축 0~1(최소 2), 이 회차 :40 발행 칸 없음

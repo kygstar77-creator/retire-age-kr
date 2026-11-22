@@ -1,0 +1,21 @@
+[오늘 찾은 것]
+2026-11-22 · 야후 파이낸스 chart API RSP·SPY 일별 종가·수정 종가·분배 events 2003-05-01~2026-11-20 새로 받음 · raw/RSP.json·raw/SPY.json · https://query1.finance.yahoo.com/v8/finance/chart/RSP · https://query1.finance.yahoo.com/v8/finance/chart/SPY
+2026-11-22 · Invesco RSP 상품 페이지: Total expense ratio 0.20% · "RSP and the Index are rebalanced quarterly" · Inception date 04/24/2003 · # of holdings 505(11/19/2026) · Market value $98.53B(11/20/2026) · SEC 30-day yield 1.53%(11/19) · raw/invesco_rsp.txt · https://www.invesco.com/us/en/etf/sp-500-equal-weight-rsp.html
+2026-11-22 · State Street SPY 상품 페이지: Gross Expense Ratio 0.0945% · Inception Jan 22 1993 · raw/ssga_spy.html · https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy
+2026-11-22 · State Street SPY 보유 종목 파일(As of 19-Nov-2026): 상위 10개 비중 합 36.9%(애플 8.2·마이크로소프트 6.0·엔비디아 5.7 …), 종목 줄 505 · raw/spy_holdings_1119.xlsx · https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx
+2026-11-22 · 미래에셋 TIGER 미국S&P500동일가중(488500) 상품 페이지: 상장일 2024.07.23 · 총보수 연 0.2% · 분기 리밸런싱(3·6·9·12월) · 환헤지를 하지 아니함 · 순자산 1,109억원 · 수익률(2026.11.20 기준, 분배금 재투자 세전) 기준가격 1년 7.78%·상장이후 24.87% · raw/tiger_488500.txt · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7488500000
+2026-11-22 · 미래에셋 TIGER 미국S&P500(360750) 상품 페이지: 총보수 연 0.0068% · 환헤지를 하지 않음 · 수익률(2026.11.20 기준) 기준가격 1년 1.78% · raw/tiger_360750.txt · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7360750004
+2026-11-22 · toprank 'S&P500 동일가중' 블로그 탭 상위 8편 날짜: 2026.11.22 두 편·1일 전·2일 전·2주 전 네 편(8위 제목 26.11.08) — 모두 11월 글 · toprank.txt
+2026-11-22 · 경쟁 블로그 6편('S&P500 동일가중' 블로그 탭 상위 8편 중) 본문 받음 · bench.md
+
+[계산 — calc.py → calc_out.txt, 야후 수정 종가(분배 재투자·세전·달러), 기준일 2026-11-20]
+상장 뒤(2003-05-01~2026-11-20, 23.6년) 연평균 RSP 11.0% · SPY 10.9%
+보유 기간별 시작일(거래일마다) 동일가중 앞선 비율: 1년 5,678개 중 44% · 3년 5,176개 중 45% · 5년 4,674개 중 45% · 10년 3,415개 중 46%
+누적 수익 차이(RSP−SPY) 중간값: 5년 보유 −3.0%p · 10년 보유 −10.0%p
+달력 해 2004~2025 22번: RSP 앞선 해 10 · SPY 12 · 2009 +18.3%p · 2022 +6.6%p · 2023 −12.5%p · 2024 −12.1%p
+올해(2025-12-31~2026-11-20): RSP +9.6% · SPY +1.9%
+하락장 고점 대비 최대 하락: 2008(07~09) RSP −59.9% · SPY −55.2% · 2020 RSP −39.0% · SPY −33.7% · 2022 RSP −21.4% · SPY −24.5%
+전 고점 회복까지: 2008 RSP 43달(2007-07-19→2011-02-08) · SPY 58달(2007-10-09→2012-08-16) · 2020 RSP 9달 · SPY 6달 · 2022 RSP 25달 · SPY 23달
+보유 종목 0.2%쯤 = 100 ÷ 505
+보수 배수 0.2 ÷ 0.0068 = 29.4 → 약 30배
+488500 과세내용(운용사 페이지): 매매차익·분배금 배당소득세 15.4%(Min(매매차익·분배금, 과표증분) × 15.4%) · raw/tiger_488500.txt

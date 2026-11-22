@@ -67,7 +67,7 @@
 - 기준일 2026-11-20 종가 하나 — 11/23 이후 종가·12월 분배로 숫자가 바뀜(올리기 전 확인에서 다시 셈)
 
 # 대조
-대본 v1(2026-11-22 13시) 말 값 · 정확한 값은 대본 [자막] 줄에 원값 그대로.
+대본 v1(2026-11-22 13시) 말 값 + v1.2 말 늘리기(2026-11-23 youtube-loop, 표 끝 10줄) · 정확한 값은 대본 [자막] 줄에 원값 그대로.
 | 원문 | 원값 | 대본 값 | 출처 |
 |---|---|---|---|
 | KODEX 1년 분배(주당 12번) | 1,181원 | 말 '가격 내린 폭보다 적었고요' · 자막 1,181원 | S1 https://m.samsungfund.com/api/v1/kodex/divid-info.do?id=2ETFH4 |
@@ -90,3 +90,13 @@
 | 2,000만원 닿는 원금 | 약 2억 1,300만 vs 5억 7,500만 | 말 '2억 1천만원쯤부터'·'그 두 배를 훌쩍 넘게' · 자막 원값 | S1 https://m.samsungfund.com/api/v1/kodex/divid-info.do?id=2ETFH4 · S3 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7458730008 |
 | 네이버 수정 값 vs 원 종가 2025-11-20 | 11,520 vs 12,605원 | 말 '11,000원대'·'12,000원대' · 자막 원값 | S5 https://api.finance.naver.com/siseJson.naver?symbol=441640&requestType=1&startTime=20251119&endTime=20251121&timeframe=day · S2 https://m.samsungfund.com/api/v1/kodex/product-earning/2ETFH4.do?srchTerm=0 |
 | 주당 분배 7월 → 11월 | 103 → 92원 | 말 '여름보다 가을에 줄었습니다' · 자막 원값 | S1 https://m.samsungfund.com/api/v1/kodex/divid-info.do?id=2ETFH4 |
+| 2023-06-20부터 세후 분배금 | KODEX 3,056만 vs TIGER 1,220만(2.50배) | 말 '일반형의 2.5배' | cc1_calc_out_1122 · S1 https://m.samsungfund.com/api/v1/kodex/divid-info.do?id=2ETFH4 · S3 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7458730008 |
+| 상장일부터 주당 분배 합 | 50번 3,934원(상장가 10,000원의 39.3%) | 말 '3,900원이 넘어요'·'40% 정도' · 자막 원값 | S1 https://m.samsungfund.com/api/v1/kodex/divid-info.do?id=2ETFH4 |
+| 상장일부터 다시 넣음 | 1억 4,921만 | 말 '1억 5천만원에 조금 못 미쳤고요' | cc1_calc_out_1122 · S2 https://m.samsungfund.com/api/v1/kodex/product-earning/2ETFH4.do?srchTerm=0 |
+| 연도 주당 분배 합 | 2023 634·2024 934·2025 1,130·2026(11번) 1,083원 | 말 '2년 사이 1.8배'(1,130÷634=1.78) · 자막 원값 | S1 https://m.samsungfund.com/api/v1/kodex/divid-info.do?id=2ETFH4 |
+| 2023-06-20부터 최대 낙폭 | 합계 −13.3% vs −12.6% · 가격만 −19.3% vs −14.1% | 말 '둘 다 13% 안팎'·'19% 넘게, 14%쯤' · 자막 원값 | cc1_calc_out_1122 · S2 https://m.samsungfund.com/api/v1/kodex/product-earning/2ETFH4.do?srchTerm=0 · S4 https://query1.finance.yahoo.com/v8/finance/chart/458730.KS (2차) |
+| 1억 매달 세후 가장 많은/적은 달 | KODEX 69.1만(2026-07)/61.7만(2026-11), 차 7.4만 · TIGER 30.2만(2026-06)/20.1만(2026-08) | 말 '7만원 정도'·'30만원, 20만원 정도' · 자막 원값 | cc1_calc_out_1122 · S1 https://m.samsungfund.com/api/v1/kodex/divid-info.do?id=2ETFH4 · S3 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7458730008 |
+| 1억 1년 분배 세금 | KODEX 7,933주×1,181원=936.9만×15.4%=144.3만 · TIGER 7,927주×439원=348.0만×15.4%=53.6만(세후 792.6만·294.4만 = cc1_calc 793만·294만) | 말 '140만원 넘게'·'50만원대' · 자막 원값 | S1 https://m.samsungfund.com/api/v1/kodex/divid-info.do?id=2ETFH4 · S6 https://www.law.go.kr/법령/소득세법/제129조 |
+| 댓글 중 계좌 이야기 | 상위 70줄 중 17줄(24%) | 말 '네 개 중 하나꼴' | raw/comments_q_1122.txt · Q1 https://www.youtube.com/watch?v=yXQ-EMTEQ-k&lc=Ugwxu8rNphH0QOjuL2F4AaABAg · Q4 https://www.youtube.com/watch?v=amc8B8SxwgY&lc=UgxE189kNw5pkxpwodl4AaABAg (2차 — 댓글 셈은 우리 셈) |
+| 1년 끝날 2026-06-05·2024-12-06 (2차) | 35.8% vs 44.7%(차 8.9%p) · 35.2% vs 32.5% | 말 '일반형이 9%포인트 정도 앞섰고요'·'둘 다 크게 올라 차이가 크지 않았습니다' · 자막(7장) 원값 | cc1_windows_out_1122 · S4 https://query1.finance.yahoo.com/v8/finance/chart/441640.KS |
+| 1년 다시 넣음 vs 받아 씀 | KODEX 9,580만 < 9,654만 | 말 '다시 넣은 쪽이 오히려 덜 남은 해도 있었으니' | cc1_calc_out_1122 · S1 https://m.samsungfund.com/api/v1/kodex/divid-info.do?id=2ETFH4 · S2 https://m.samsungfund.com/api/v1/kodex/product-earning/2ETFH4.do?srchTerm=0 |

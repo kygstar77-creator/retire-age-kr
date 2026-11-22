@@ -92,3 +92,13 @@
 | 2000-01 무리 되찾은 날 | 2005-07-14 · 1,367거래일 | 2005년 7월 · 5년 반 | S1(S16) |
 | 2008-09 무리 되찾기·1년 안 최저 | 5거래일 · -32.4% | 일주일 · 30% 이상 | S1 |
 | 최근 하락 원인(보도) | 대중국 AI 반도체 수출 통제 강화·AI 투자 둔화 우려·외국인 매도 | 한 문장 | 2차 S15 https://www.hankyung.com/article/202611172322i https://www.fnnews.com/news/202611171542143994 https://www.etoday.co.kr/news/view/2651045 https://m.sedaily.com/article/20117003 (11/20 S15b) |
+
+# 올리기 전 확인 (youtube-loop 2026-11-23 00:5x · 공개 2026-11-24 11:30)
+- 날짜: 2026-11-23 · ECOS 802Y001/0001000 Open API 다시 받음(https://ecos.bok.or.kr/api/) — 8,060일, 1995-01-03~2026-11-20, 마지막 4,869.96 · 11/20 받은 파일과 바이트까지 같음(kospi_daily_ecos_pre1123.json) · calc_drop·calc2·calc3·calc4 다시 돌림 → *_out_1123.txt 가 *_out_1120.txt 와 한 줄도 안 다름(24번·57번·15번 중 10번/14번·중앙 8거래일·1,367거래일·551만/771만·+103.0% 그대로)
+- 기준일: 코스피 숫자 전부 2026-11-20 15:30 종가(금) 기준 · 11/21·22는 휴장 · ECOS가 11/20까지 공표(StatisticItemList END_TIME 20261120)
+- 출처 칸: ECOS StatisticTableList 802Y001 '1.5.1.1. 주식시장(일)' ORG_NAME = 한국거래소 → 설명란 출처 줄을 'ECOS 802Y001(원자료 한국거래소)'로 고치고, 'ECOS 공표 전이라 보도로 확인'은 '보도와도 같음'으로(terms_1121.md 확인 안 함 1개 닫음)
+- 대조 칸 출처 다시 연 주소(11/23, 전부 200 — 제목 확인): https://m.sedaily.com/article/20117003 https://www.etoday.co.kr/news/view/2651045 https://www.market-ink.co.kr/news/articleView.html?idxno=15652 (11/20 4,869.96·-5.2% 그대로) · https://www.newsis.com/view/NISX20260306_0003538163 https://www.tossbank.com/articles/circuit-breaker (8%·1분·20분 그대로) · https://foxcg.com/kospi-sidecar-guide/ (선물 5%·1분·프로그램매매 5분 그대로) · https://www.khan.co.kr/article/202611060908001 https://www.asiae.co.kr/article/2026110610032663847 https://www.khan.co.kr/article/202607291244001 · https://www.hankyung.com/article/202611172322i https://www.fnnews.com/news/202611171542143994 · https://rule.krx.co.kr (열림, 조문은 이번에도 안 봄)
+- 못 연 주소: https://sgsg.hankyung.com/article/2022072222051 — 403(자동 접근 막힘, 11/17 읽은 본 그대로) · 사이드카 5%·5분은 foxcg에서 다시 확인했으니 대본 값 그대로
+- 조사 뒤 공표: release_calendar 11/17~11/23 사이 걸린 공표 없음(research_gate.release_hits 0)
+- 바뀐 것: 없음(숫자 0) · 설명란 출처 줄 한 곳만 — '(원자료 한국거래소)' 더함·'공표 전' 문구를 '보도와도 같음'으로(meta.json·kospi1meta.py·desc_1120.txt, 원본 meta.json.pre1123yl)
+- 새로 찾은 것: 11/20 뒤 새 거래일 없음 · 남은 위험 1 — 11/23(월) 15:30 종가가 공개(11/24 11:30) 전에 나옴: 그날 -5% 이하로 빠지면 '24번'이 틀린 말이 됨 → youtube-loop 11/23 16:4x 회차가 11/23 종가(보도·ECOS)를 보고 -5% 이하면 예약 풀고 25로 고침(제목·썸네일·대본 23행대), 아니면 '기준일 11/20' 그대로(설명 첫 줄에 기간 적혀 있음)

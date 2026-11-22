@@ -39,7 +39,7 @@ tpl = '\n'.join(FIRST2) + '''
 {CHAPTERS}
 
 출처
-· 코스피 일별 종가(1995-01-03~2026-11-19): 한국은행 경제통계시스템 ECOS 802Y001 · 2026-11-20 종가 4,869.96(-5.21%)은 ECOS 공표 전이라 보도로 확인(이투데이 https://www.etoday.co.kr/news/view/2651045 · 서울경제 https://m.sedaily.com/article/20117003)
+· 코스피 일별 종가(1995-01-03~2026-11-20): 한국은행 경제통계시스템 ECOS 802Y001(원자료 한국거래소) · 2026-11-20 종가 4,869.96(-5.21%)은 보도와도 같음(이투데이 https://www.etoday.co.kr/news/view/2651045 · 서울경제 https://m.sedaily.com/article/20117003)
 · 서킷브레이커(지수 8%·15%·20%)·사이드카(코스피200 선물 5%) 기준: 뉴시스 https://www.newsis.com/view/NISX20260306_0003538163 · 한경 생글 https://sgsg.hankyung.com/article/2022072222051
 · 2026-11-06 서킷브레이커 '올해 11번째·역대 17번째'(보도 기준): 아시아경제 https://www.asiae.co.kr/article/2026110610032663847 · 경향신문 https://www.khan.co.kr/article/202611060908001
 {STOCK}

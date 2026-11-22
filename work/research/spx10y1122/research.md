@@ -51,6 +51,8 @@
 - FRED DEXKOUS 마지막 값 11/13 — 그 뒤 날짜는 11/13 환율 그대로 씀(10년 뒤 끝 날 2026-11-13 이후 구간만 영향)
 - 전망 안 함
 
+- S&P 다우존스 인디시즈 공식 지수 페이지(https://www.spglobal.com/spdji/en/indices/equity/sp-500/) 연환산 수익률로 대조하려 했으나 11/22 403 거부 — 장기 일별 토탈리턴은 야후(2차)·최근 값은 FRED SP500(원출처 S&P DJI)과만 맞춤 (audit 11/21 요청)
+
 ## 대조
 | 글 값 | 원문 값 | 출처 |
 |---|---|---|
@@ -72,6 +74,7 @@
 - 2026-11-21 06:2x firemap-write(조사·작성 날 — 발행 날 11/22 09:10 write 회차가 야후·FRED 다시 받아 '11월 20일 종가'·-11.6% 그대로인지(주말이라 새 종가 없음) 확인, 지난 글 tigersp1121 주소 붙임)
 - 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/%5ESP500TR (11/21 06:2x) · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC (06:2x) · https://query1.finance.yahoo.com/v8/finance/chart/SPY (06:2x) · https://fred.stlouisfed.org/series/DEXKOUS (06:2x) · https://fred.stlouisfed.org/series/SP500 (06:2x)
 - 기준일: 2026-11-20 미국 종가 · 원·달러 FRED 2026-11-13
-- 바뀐 것: 처음 조사 — 없음
+- 2026-11-22 09:28 firemap-write(발행 날): 야후 ^GSPC·^SP500TR 다시 받음 — 마지막 종가 2026-11-20 6,910.39, 최고 10/6 7,818.93, -11.62% 그대로(주말 새 종가 없음) · 지난 글 tigersp1121(#462)은 제목만(본문 URL은 링크 카드 — readcheck)
+- 바뀐 것: 없음(-11.6%·11월 20일 종가 그대로)
 - 새로 찾은 것: 보유 기간별 손해 비율(1·5·10·15·20년), 10년 손해 시작일이 닷컴 꼭대기 앞뒤 2년에 몰림, 원화 7.4%·가격만 11.0% · 경쟁 글 0편
 - 조사 뒤 공표: data/release_calendar.json — 지수 매일, 11/22는 일요일이라 새 미국 종가 없음

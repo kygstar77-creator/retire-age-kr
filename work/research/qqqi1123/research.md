@@ -68,9 +68,9 @@
 | 상장 2024년 1월 30일 종가 기준 | Fund Inception 1/29/2024 · 야후 첫 종가 2024-01-30 49.84 | S1·S2 |
 
 # 올리기 전 확인
-- 2026-11-21 17시대 firemap-write-b(조사·작성 날). 발행 날 11/23 07:40 회차가 야후·NEOS 다시 받아 11/20 종가 줄(45.58·10/6 뒤 하락폭·1만 달러)을 그 전 거래일 종가(11/21 미국 장)로 갱신
-- 다시 연 주소: https://neosfunds.com/qqqi/ (11/21 받음) · https://query1.finance.yahoo.com/v8/finance/chart/QQQI (QQQ·JEPQ 같은 꼴, 11/21 받음) · https://blog.naver.com/poslee777/224483985591 · https://blog.naver.com/ggonnip100/224481179799 · https://cafe.naver.com/divclub/68515 · https://cafe.naver.com/divclub/68789(제목·반응만, 본문 회원 전용) · https://youtu.be/mkAxQPGaDqc (공개 롱폼)
-- 기준일: 야후 2026-11-20 종가(11/21 조회) · NEOS 분배 기록 2026-11-18까지(12월 빈칸)
-- 바뀐 것: 11/19 종가 48.14 → 11/20 45.58(하루 -5.3%), QQQ 645.04 → 608.45 — 10/6 뒤 하락폭이 이틀 새 커짐(QQQ 분배 포함 -19.9%). 발행 날 다시 셈
-- 새로 찾은 것: 34번 분배금 비율 1.14~1.25%(25번 1.16~1.19%) · 33번 중 26번 주가와 같은 방향 · 2025-04 감소 뒤 5월 회복 · 상장 뒤 1만 달러 세 ETF 비교
+- 2026-11-23 07:44~07:50 firemap-write-b(발행 날 당일 확인). 야후 3종목 다시 받음(yahoo_*_1123.json) · NEOS는 curl이 Cloudflare에 막혀 Playwright로 다시 받음(neos_qqqi_1123.txt, 2026 탭 11번)
+- 다시 연 주소: https://neosfunds.com/qqqi/ (11/23 받음 — 2026 분배 11번 11/21 표와 같음, 12/16 분배락 금액 아직 빈칸, 'as of 11/20/2026' NAV) · https://query1.finance.yahoo.com/v8/finance/chart/QQQI (QQQ·JEPQ 같은 꼴, 11/23 받음) · https://blog.naver.com/poslee777/224483985591 · https://blog.naver.com/ggonnip100/224481179799 · https://cafe.naver.com/divclub/68515 · https://cafe.naver.com/divclub/68789(제목·반응만, 본문 회원 전용) · https://youtu.be/mkAxQPGaDqc (공개 롱폼)
+- 기준일: 야후 2026-11-20(금) 종가(11/23 조회 — 11/21·22는 주말이라 최신 그대로) · NEOS 분배 기록 2026-11-18까지(12월 빈칸)
+- 바뀐 것: 없음 — 최신 종가 11/20 QQQI 45.58·QQQ 608.45·JEPQ 50.84 그대로, calc.py·calc2.py 11/23 자료로 다시 돌려 숫자 0개 변경(상장 뒤 값 -8.5%/분배 포함 +36.9%, 10/6 뒤 QQQI -19.6%·QQQ -19.9%, 1만 달러 13,384·14,493·13,131, 11월 분배율 14.14%) → mkimg.py 입력 같아 그림 그대로
+- 새로 찾은 것: 34번 분배금 비율 1.14~1.25%(25번 1.16~1.19%) · 33번 중 26번 주가와 같은 방향 · 2025-04 감소 뒤 5월 회복 · 상장 뒤 1만 달러 세 ETF 비교 · (11/23) NEOS 12월 분배 금액 아직 발표 전
 - 조사 뒤 공표: data/release_calendar.json — 가격 매일 · QQQI 12월 분배 발표 12/15(미국) — 발행(11/23) 전이라 바뀔 것 없음

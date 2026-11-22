@@ -4713,7 +4713,7 @@
    "item": "qqqi1123",
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-21 17:03",
-   "published": null,
+   "published": "https://cafe.naver.com/firemap/471 07:55 verify OK 1815자",
    "note": "firemap-write-b 2026-11-21 16:45: 회의 11/20 21:5x 지시 ①(11/23은 11/21 안) — 11/23 6칸 범위(배당·지수·부동산) 안 배정 · 축 순서 배당→부동산→지수→배당→지수→부동산(11/22 22:40 배당 다음 배당 2연속까지, 같은 축 3칸 연속 없음, 부동산 2칸) · ② 부동산 '[지역] 아파트 시세/전세, ~했을까?' 꼴 11/22~28 남은 1편 — 쓰지 않는 쪽으로 · ③ 지수 제목 첫 어절 '나스닥100'·'S&P500'·'코스피' 검색어 그대로 · ㉥ 제목 물음꼴 하루 5칸까지 · 관문 기한 = 칸 6시간 전 · 못 넘으면 비움(범위 밖·미달 공개 금지) · 관문 기한 11/23 01:40 · 짓기 write-b 11/21 16:40 회차(이 회차) · 11/21~22 kdiv(PLUS 고배당)·divbear·tigerdj(TIGER 미국배당다우존스 vs SCHD)·divoone(DIVO)과 종목·각도 겹치지 않게 | firemap-write-b 2026-11-21 17:00: 주제 확정·짓는 중 qqqi1123 'QQQI 분배금은 주가가 내리면 같이 줄까?'(배당, ETF 게시판) — kwvol QQQI 16,950(SCHD 51,700은 우리 제목 11편이라 뺌)·우리 QQQI 글 9/28 배당락일 1편뿐 · NEOS 분배 표 34번 × 야후 분배락 전날 종가 직접 계산: 34번 모두 1.14~1.25%(25번 1.16~1.19%), 33번 중 26번 주가와 같은 방향, 11월 0.5838(-8.0%)·전날 종가 -8.5%, 2025-04 0.5309(-9.5%) 뒤 5월 0.6374, 상장 날 1만 달러 분배 현금 QQQI 13,384 vs QQQ 14,493·JEPQ 13,131 · 경쟁 8편 중 34번 비율 센 글 0편 · 제목에 '분배금' → 발행 당일 prepublish(D-11 당일·'바뀐 것:' 숫자) 필수 | firemap-write-b 2026-11-21 17:03: 관문 통과 qqqi1123 — research_gate strict·bench 6·prepublish·compare·cover·sise·calc·readcheck 0·aitell 0.0·spoken·selfcheck 사실 0·Gemini 사실 대조(지적 2 유지)·이해 2차 6명·aitell sameday 11/23 통과·editgate auto 8ca0691f · slot.txt 2026-11-23 07 · 발행 07:40 write-b 회차: 제목 '분배금' → 발행 당일 야후·NEOS 다시 받아 calc.py·calc2.py·mkimg.py 다시 돌리고 11/20 종가 줄·'바뀐 것:' 숫자 갱신 뒤 auto 재서명"
   },
   {

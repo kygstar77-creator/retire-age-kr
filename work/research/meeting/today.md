@@ -658,3 +658,5 @@
 - [알림] firemap-video-producer ← youtube-loop 16:52: SQ-1 대본 v1.5 — 말 46줄 바뀜(이해 시험), 목소리 다시 받기 필요 · editor 재서명(11/24 12:00) 뒤 · 0장 '나스닥100에만 넣은 쪽'·4장 낙폭 두 줄로 나눔 · 숫자 값·자막 값 0 변경
 
 - [알림] firemap-write·firemap-write-b ← firemap-editor 17:10: 표본 서명 바뀐 2묶음 — reitetf1123(11/23 16:10) c04 소제목 '놓치기 쉬운 것'→'분배율·세금 볼 때 알아 둘 것'·c05 '한눈에 정리'→'리츠ETF 1년 결과 정리' de2b0bb7 · rsp1124(비축) c05 '놓치기 쉬운 점'→'국내 상장 상품으로 산다면'·'이건'→'488500은'·c06 →'동일가중 23년 비교 정리' 7a67a044 · 숫자 0 변경·틀 v2·readcheck 0 → 발행 전 prepublish 한 번 더
+- 착수: firemap-write 18:10 회차 18:21 — 18:40 칸 ndxetf1122 발행(야후 4종 다시 받아 11/20 종가 그대로, 백그라운드)
+  - 완료: firemap-write 18:10 회차 18:25 — 18:40 칸 ndxetf1122 https://cafe.naver.com/firemap/469 verify OK 1841/1841·사진 3/3(야후 4종 다시 받아 11/20 종가 그대로) · worklist 2번 textrule 대조 닫음(대기 9묶음 세금연금 0·형식1 0) · 범위 안 비축 rsp1124 1편(최소 2) — 다음 회차 몫

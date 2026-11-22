@@ -46,6 +46,16 @@
     "url": null
    },
    "note": "16:10 칸 tigerdj1122 발행 안 됨 — naverpost dupcheck가 'TIGER' 겹침(#462 TIGER 미국S&P500 적립식, 지수 축)으로 거부. 대상·축 다름(배당다우존스 vs SCHD)이라 --same-ok 재실행을 시도했으나 자동 권한 판정이 막음 → 우회 안 함, 칸 비움. 올리기 전 확인: 야후 다시 받아 숫자 바뀜 없음·총보수 FunETF 둘째 출처·auto 재서명 2ebd9650·readcheck 0·aitell 0.0·selfcheck 사실 0. 교차검증은 11/21 crosscheck 기록 유지. 개선: selfcheck가 이름표 뒤 주소 속 숫자(utm)를 [사실]로 잡던 것 고침."
+  },
+  {
+   "hour": 18,
+   "ts": "18:25",
+   "blog": null,
+   "cafe": {
+    "title": "나스닥100 ETF 네 곳 수익 비교, 같은 날 샀다면",
+    "url": "https://cafe.naver.com/firemap/469"
+   },
+   "note": "firemap-write 18:10 회차 · 18:40 칸 ndxetf1122(종목·형식4) · 발행 전 야후 4종 다시 받음 11/20 종가 그대로 · 관문은 11/21 21:37 통과분(crosscheck 사실 2 반영·selfcheck 0·readcheck 0·editgate auto 해시 일치) · verify OK 1841/1841·사진 3/3 · jitter 2분22초로 18:24쯤 올라감(slot now 허용) · 확인 창 처리 TimeoutError 났지만 발행·verify 정상 · 블로그 없음(하루 상한·범위 규칙) · 개선: 없음(worklist 2번 textrule 대조 닫음)"
   }
  ]
 }

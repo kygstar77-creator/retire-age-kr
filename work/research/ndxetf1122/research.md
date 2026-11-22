@@ -71,6 +71,7 @@
 - 2026-11-21 21:3x firemap-write(조사·작성 날, 주말이라 11/20 종가가 최신 — 발행 날 11/22 18:40 회차가 야후 다시 받아 같은지 확인)
 - 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/379810.KS (네 종목 같은 꼴, 11/21) · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7133690008 (11/21) · https://m.stock.naver.com/api/stock/379810/etfAnalysis (4종 11/21) · https://www.law.go.kr/법령/소득세법/제129조 (11/21) · https://www.law.go.kr/법령/지방세법/제103조의13 (11/21) · https://www.samsungfund.com/etf/lounge/notice-view.do?no=67815 (11/21) · https://magazine.hankyung.com/business/article/202501223967b (seed 11/21) · https://blog.naver.com/cndtlr1221/224484911136 (경쟁 1, 11/21 본문 받음)
 - 기준일: 2026-11-20 종가 · 운용사 분배 표 2026.11.19 기준 · 네이버 2026.11.19 기준
-- 바뀐 것: 처음 조사 — 없음
+- 2026-11-22 18:21 firemap-write(발행 회차): 야후 4종(133690·379810·367380·368590) 다시 받음 — 마지막 종가 11/20 그대로(155,220·23,180·26,680·25,875원), 새 분배 없음
+- 바뀐 것: 처음 조사 — 없음 · 11/22 다시 받아도 같음
 - 새로 찾은 것: 네 곳 같은 날 1억 5년 7개월 189만원 차이·한 해 0.7%p 안 · 세후 227만원 · KODEX 2025년 4월 전 분배 0 · 경쟁 글 네 곳 결과 센 글 0편
 - 조사 뒤 공표: data/release_calendar.json — 가격은 거래일마다(다음 11/23 월), 분배 다음 기준일 2027-01 말(RISE 12월 말) — 발행 날 11/22(일)은 새 종가 없음

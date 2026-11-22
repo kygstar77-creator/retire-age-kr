@@ -48,6 +48,8 @@ import {JT1, JT1Props, jt1Frames} from './JT1';
 import jt1 from '../jt1.json';
 import {H5, H5Props, h5Frames} from './H5';
 import h5 from '../h5.json';
+import {H6, H6Props, h6Frames} from './H6';
+import h6 from '../h6.json';
 import {KOSPI1, KOSPI1Props, kospi1Frames} from './KOSPI1';
 import kospi1 from '../kospi1.json';
 import {P1, P1Props, p1Frames} from './P1';
@@ -94,6 +96,7 @@ export const Root: React.FC = () => {
   const nn3 = n3 as unknown as N3Props;
   const jjt1 = jt1 as unknown as JT1Props;
   const hh5 = h5 as unknown as H5Props;
+  const hh6 = h6 as unknown as H6Props;
   const kk1 = kospi1 as unknown as KOSPI1Props;
   const pp1 = p1 as unknown as P1Props;
   const tp1 = t1 as unknown as T1Props;
@@ -178,6 +181,9 @@ export const Root: React.FC = () => {
     <Composition id="KOSPI1" component={KOSPI1 as unknown as React.FC<Record<string, unknown>>} durationInFrames={kospi1Frames(kk1)} fps={kk1.fps}
       width={1920} height={1080} defaultProps={kk1 as unknown as Record<string, unknown>}
       calculateMetadata={({props: pp}) => ({durationInFrames: kospi1Frames(pp as unknown as KOSPI1Props)})} />
+    <Composition id="H6" component={H6 as unknown as React.FC<Record<string, unknown>>} durationInFrames={h6Frames(hh6)} fps={hh6.fps}
+      width={1920} height={1080} defaultProps={hh6 as unknown as Record<string, unknown>}
+      calculateMetadata={({props: pp}) => ({durationInFrames: h6Frames(pp as unknown as H6Props)})} />
     <Composition id="H5" component={H5 as unknown as React.FC<Record<string, unknown>>} durationInFrames={h5Frames(hh5)} fps={hh5.fps}
       width={1920} height={1080} defaultProps={hh5 as unknown as Record<string, unknown>}
       calculateMetadata={({props: pp}) => ({durationInFrames: h5Frames(pp as unknown as H5Props)})} />

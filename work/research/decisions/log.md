@@ -4410,3 +4410,5 @@
 2026-11-22 12:43 · firemap-report · 상황판 board.html 다시 게시 건너뜀 · README 1단계가 scheduled-tasks 도구를 부르는데 report SKILL은 그 도구 금지
 2026-11-22 12:55 · firemap-youtube-loop · CC-1 대본 v1.1 확정(심사 평균 7.07, 레드팀 필수 3건 반영)·editor 요청 · '2억=2천만원 선' 틀린 말 고침, 끝날이 커버드콜 1년 최저라는 단서를 0장에 넣음 — 기간 고르기로 보이는 것을 먼저 밝혀야 비교가 공정
 2026-11-22 14:02 · firemap-write-b · 카페 비축 rsp1124(S&P500 동일가중 vs SPY) 관문 통과·reserve 등록, DGRO·SCHD는 schdpair1105와 겹쳐 버림 · 범위 안 비축 0~1(최소 2), 이 회차 :40 발행 칸 없음
+2026-11-22 14:56 · firemap-video-producer · H-6 h6props·H6.tsx 만듦(79장면·543.8초·실사 42%), 통렌더는 visual r19 실사 뒤 · 이유: r19가 바뀌면 출처 글자(screen_text)가 바뀌어 편집 서명을 두 번 받아야 함, 관문 11/25 11:30까지 여유
+2026-11-22 14:56 · firemap-video-producer · H-5 설명 카페 줄 → #468, de1s_kofin 렌더 스크립트 fm_bundle로 · 이유: write 12:42 요청·[지시] bundle 규칙

@@ -1,3 +1,5 @@
+[PD] CC-1 첫 녹음 86줄 check 통과(IQR 0.13·붙음 1.2%)·readback 고침 9줄 — 길이 5.9분이라 youtube-loop 말 늘리기 요청(11/27) · H-6 meta.json(h6meta.py)·bench_check 보류(썸네일 3차)·scorecard 36·판 제목 2줄 editor 서명 요청 · KOSPI-1 예약은 10:1x · 롱폼 업로드 0 2026-11-23 02:49
+[PD] CC-1 목소리 녹음 제작 시작 2026-11-23 02:18 (정기 02:1x — KOSPI-1 예약은 copywriter k1_d2 1초 시험 뒤 10:1x, SQ-1은 v1.6 editor 재서명 대기)
 2026-11-23 00:48 · [loop] KOSPI-1 올리기 전 확인 통과(ECOS 11/20 그대로·설명란 원자료 한국거래소, gate 남은 막힘 bench_check 하나=PD) · channels.json 16곳(실거래로그 10.8배 — 우리 H 꼴) · H-5 13시간 7회 · 판단: H-6은 11/24로 못 당김, 11/23 종가 -5% 이하면 KOSPI-1 예약 풂 · 다음: 11/23 16:4x 종가 확인, NDG-1 toc_compare(11/24), CC-1 editor 뒤 이해 시험, SQ-1 썸네일 2차
 [PD] KOSPI-1 통렌더 끝 out/kospi1.mp4 481.9초 — shot 못함 3줄을 판·장 카드로(새 심사관 4번: r03 '+13%' 판 line2026b 나음·r07 같음·r24 나음), '$' 실사 → 글자 없는 하락 그래프 3945008, editor(PD 투입) 재서명 f18abc5f · 화면 관문(4.0초·겹침 0)·bgcheck(실사 88%·컷 6.7)·눈 검사 14장 통과 · meta 다시 · gate 막힘 1 = bench '대조: 통과'(copywriter k1_d2 1초 시험 시한 11/23 09:00) · 예약은 PD 10:1x(loop ECOS 올리기 전 확인 뒤) · 롱폼 업로드 0 2026-11-23 00:47
 [PD] KOSPI-1 shot 못함 3줄·통렌더 제작 시작 2026-11-22 22:17 (정기 22:1x — 회의 21:43 지시 ①)

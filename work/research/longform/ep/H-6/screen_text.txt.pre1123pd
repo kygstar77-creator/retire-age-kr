@@ -1,0 +1,440 @@
+# 화면 글자 — H-6 (lfrender.py text가 만듦. 여기를 고치지 말고 대본·props·tsx를 고친 뒤 다시 뽑는다)
+# 그래프 제목·부제·출처·자막(lines.text)·막대 이름·코드에 박힌 글자. 썸네일 문구는 그림이라 안 들어간다.
+
+## props: video/h6.json
+[scenes.0.lines.0.text] 안녕하세요, 파이어맵입니다. 오늘은 은마아파트 재건축 이야기입니다.
+[scenes.0.data.license] Pexels 30975009 무료(Stephen Leonardi)
+[scenes.0.data.say] 은마아파트 재건축
+[scenes.0.data.side] left
+[scenes.1.lines.0.text] 은마아파트 34평, 전용 84㎡ 실거래가 1년 사이 얼마나 내렸을까요?
+[scenes.1.data.license] Pexels 37873585 무료(Jueon Kim 김주언)
+[scenes.1.data.say] 한 해 사이 얼마나?
+[scenes.1.data.side] left
+[scenes.2.lines.0.text] 거래를 값 순서로 줄 세워 한가운데 값으로 보면, 1년 전 43억 가까이였는데 요즘은 34억을 조금 넘어요.
+[scenes.2.lines.1.text] 8억 5천만원이 빠진 겁니다.
+[scenes.2.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.3.lines.0.text] 신고된 실제 거래만 셌습니다. 호가나 매물 이야기는 넣지 않았어요.
+[scenes.3.data.license] Pexels 6964247 무료(Mikhail Nilov)
+[scenes.3.data.say] 신고된 실제 거래만
+[scenes.3.data.side] left
+[scenes.4.lines.0.text] 그런데 이 하락의 거의 절반은, 재건축 인가가 나기 전에 이미 와 있었습니다.
+[scenes.4.data.license] Pexels 38259259 무료(vignesh srivatsav)
+[scenes.4.data.say] 인가가 나기 전에
+[scenes.4.data.side] left
+[scenes.5.lines.0.text] 거래가 갑자기 몰린 두 달이 있었고,
+[scenes.5.lines.1.text] 전세·월세 계약 신고도 1년 전보다 크게 줄었어요.
+[scenes.5.data.license] Pexels 15082793 무료(Lucas Park)
+[scenes.5.data.say] 몰린 두 달, 줄어든 신고
+[scenes.5.data.side] left
+[scenes.6.lines.0.text] 조합원 앞에는 큰 숙제도 셋 있습니다. 새 집을 받으려 더 내는 분담금, 나라가 거둬 가는 재초환, 그리고 이주예요.
+[scenes.6.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.7.lines.0.text] 끝까지 보시면, 내 평형 값을 직접 세는 법과 재초환 평균을 내 몫으로 잘못 읽지 않는 법을 가져가실 수 있어요.
+[scenes.7.data.license] Pexels 6611954 무료(Tima Miroshnichenko)
+[scenes.7.data.say] 직접 세는 법
+[scenes.7.data.side] left
+[scenes.8.data.n] 1장
+[scenes.8.data.q] 은마는 지금 어디까지
+[scenes.9.lines.0.text] 은마아파트는 1979년 대치동에 지어졌어요.
+[scenes.9.data.license] Pexels 8103672 무료(MART PRODUCTION)
+[scenes.9.data.say] 대치동 은마아파트
+[scenes.9.data.side] left
+[scenes.10.lines.0.text] 4천 세대가 넘는 큰 단지죠.
+[scenes.10.lines.1.text] 평형은 흔히 31평, 34평이라고 부르는 두 가지가 있고요,
+[scenes.10.lines.2.text] 전용면적으로 치면 77㎡와 84㎡입니다.
+[scenes.10.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.11.lines.0.text] 재건축은 계단을 하나씩 오르듯 단계를 밟는데요,
+[scenes.11.data.license] Pexels 30975009 무료(Stephen Leonardi)
+[scenes.11.data.say] 계단을 오르듯
+[scenes.11.data.side] left
+[scenes.12.lines.0.text] 은마는 조합을 세운 뒤, 올해 여름 사업시행계획인가를 받았습니다.
+[scenes.12.lines.1.text] 무엇을 어떻게 지을지 구청이 허락한 단계예요.
+[scenes.12.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.13.lines.0.text] 계획대로라면 49층까지 올라갑니다.
+[scenes.13.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.14.lines.0.text] 다음 단계는 분양신청인데, 보도로는 지난 10월 30일까지 받는다고 했어요. 마감됐는지는 확인하지 못했습니다.
+[scenes.14.lines.1.text] 그 뒤로 관리처분, 이주, 착공이 남았습니다.
+[scenes.14.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.15.lines.0.text] 다른 영상 댓글에도 착공이 언제냐는 질문이 있었는데요,
+[scenes.15.lines.1.text] 조합이 세운 목표는 2028년이에요.
+[scenes.15.lines.2.text] 이주도 내년쯤을 목표로 한다는 보도만 있고, 공식 일정은 아직 없습니다.
+[scenes.15.data.license] Pexels 15082793 무료(Lucas Park)
+[scenes.15.data.say] 착공은 언제?
+[scenes.15.data.side] left
+[scenes.16.lines.0.text] 이제 값을 볼게요.
+[scenes.16.data.n] 2장
+[scenes.16.data.q] 1년 실거래, 평형별
+[scenes.17.lines.0.text] 국토교통부에 신고된 은마 매매는 지난 1년 동안 75건이었어요.
+[scenes.17.lines.1.text] 계약이 취소돼 해제라고 적힌 거래는 뺐습니다.
+[scenes.17.lines.2.text] 그중 31평이 34평보다 두 배 가까이 많이 팔렸어요.
+[scenes.17.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.18.lines.0.text] 34평부터요.
+[scenes.18.data.license] Pexels 7651886 무료(Kindel Media)
+[scenes.18.data.say] 큰 평형부터
+[scenes.18.data.side] left
+[scenes.19.lines.0.text] 1년 중 가장 비싸게 팔린 한 건은 43억이 넘었습니다.
+[scenes.19.lines.1.text] 그로부터 1년 뒤, 비슷한 높은 층은 35억에 팔렸고요.
+[scenes.19.lines.2.text] 둘 사이가 8억 정도예요.
+[scenes.19.data.part] deals
+[scenes.19.data.p.seed] h6
+[scenes.19.data.p.unit] 억
+[scenes.19.data.p.peak.text] 최고가 43.1억 · 13층
+[scenes.19.data.p.last.text] 35.0억 · 14층
+[scenes.19.data.p.last.gap] −8.1억
+[scenes.19.data.p.steps.0.text] 42.8억
+[scenes.19.data.p.steps.1.text] 38.8억
+[scenes.19.data.p.steps.2.text] 37.1억
+[scenes.19.data.p.steps.3.text] 34.3억
+[scenes.19.data.p.stepGap.text] −8.5억
+[scenes.19.data.p.mark.text] 사업시행인가 7/2
+[scenes.19.data.p.before.text] 인가 전 −4.0억 · 낙폭 8.5억 중 47%
+[scenes.19.data.title] 은마 84㎡ 실거래 26건
+[scenes.19.data.source] 국토교통부 실거래가 공개시스템 · 계약 2025.10~2026.11 · 해제 거래 뺌
+[scenes.19.data.chapter] 2. 1년 실거래
+[scenes.20.lines.0.text] 그런데 한 건끼리 비교하면, 어느 두 건을 붙이느냐에 따라 차이가 4억이 안 되게도 10억이 넘게도 보여요.
+[scenes.20.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.21.lines.0.text] 그래서 인가 전과 뒤로 기간을 나눠 묶고, 묶음마다 가운데 값을 봤습니다.
+[scenes.21.lines.1.text] 가운데 값은 거래를 값 순서로 줄 세웠을 때 한가운데 오는 값이에요.
+[scenes.21.lines.2.text] 비싼 한 건, 싼 한 건에 덜 흔들립니다.
+[scenes.21.data.license] Pexels 6964247 무료(Mikhail Nilov)
+[scenes.21.data.say] 가운데 값으로 본다
+[scenes.21.data.side] left
+[scenes.22.lines.0.text] 첫 묶음은 43억에 가까웠어요.
+[scenes.22.lines.1.text] 요즘 묶음은 34억을 조금 넘어요.
+[scenes.22.lines.2.text] 값의 5분의 1쯤이 빠진 거죠.
+[scenes.22.data.part] deals
+[scenes.22.data.p.seed] h6
+[scenes.22.data.p.unit] 억
+[scenes.22.data.p.peak.text] 최고가 43.1억 · 13층
+[scenes.22.data.p.last.text] 35.0억 · 14층
+[scenes.22.data.p.last.gap] −8.1억
+[scenes.22.data.p.steps.0.text] 42.8억
+[scenes.22.data.p.steps.1.text] 38.8억
+[scenes.22.data.p.steps.2.text] 37.1억
+[scenes.22.data.p.steps.3.text] 34.3억
+[scenes.22.data.p.stepGap.text] −8.5억
+[scenes.22.data.p.mark.text] 사업시행인가 7/2
+[scenes.22.data.p.before.text] 인가 전 −4.0억 · 낙폭 8.5억 중 47%
+[scenes.22.data.title] 은마 84㎡ 실거래 26건
+[scenes.22.data.source] 국토교통부 실거래가 공개시스템 · 계약 2025.10~2026.11 · 해제 거래 뺌
+[scenes.22.data.chapter] 2. 1년 실거래
+[scenes.23.lines.0.text] 다만 첫 묶음은 거래가 세 건뿐이에요. 그래서 높은 층 한 건끼리 비교해 봐도 8억 정도로 비슷하다는 걸 같이 봐 주세요.
+[scenes.23.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.24.lines.0.text] 31평은 같은 방법으로 보면 6억 정도 내렸어요.
+[scenes.24.data.license] Pexels 9057559 무료(SHVETS production)
+[scenes.24.data.say] 작은 평형도 같은 방법으로
+[scenes.24.data.side] left
+[scenes.25.lines.0.text] 인가가 난 건 여름인데,
+[scenes.25.lines.1.text] 34평은 인가 전 반년 거래만 모아도 가운데 값이 벌써 4억 가까이 내려 있었어요.
+[scenes.25.lines.2.text] 하락의 절반쯤은, 인가가 나기도 전에 온 거예요.
+[scenes.25.data.part] deals
+[scenes.25.data.p.seed] h6
+[scenes.25.data.p.unit] 억
+[scenes.25.data.p.peak.text] 최고가 43.1억 · 13층
+[scenes.25.data.p.last.text] 35.0억 · 14층
+[scenes.25.data.p.last.gap] −8.1억
+[scenes.25.data.p.steps.0.text] 42.8억
+[scenes.25.data.p.steps.1.text] 38.8억
+[scenes.25.data.p.steps.2.text] 37.1억
+[scenes.25.data.p.steps.3.text] 34.3억
+[scenes.25.data.p.stepGap.text] −8.5억
+[scenes.25.data.p.mark.text] 사업시행인가 7/2
+[scenes.25.data.p.before.text] 인가 전 −4.0억 · 낙폭 8.5억 중 47%
+[scenes.25.data.title] 은마 84㎡ 실거래 26건
+[scenes.25.data.source] 국토교통부 실거래가 공개시스템 · 계약 2025.10~2026.11 · 해제 거래 뺌
+[scenes.25.data.chapter] 2. 1년 실거래
+[scenes.26.lines.0.text] 31평도 모양이 같아요.
+[scenes.26.lines.1.text] 인가 전 반년에 이미 2억 5천만원 넘게 내려 있었습니다.
+[scenes.26.lines.2.text] 그러니 인가가 나서 값이 꺾였다고 말하기는 어렵습니다.
+[scenes.26.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.27.lines.0.text] 그럼 은마만 내렸을까요?
+[scenes.27.data.license] Pexels 38259259 무료(vignesh srivatsav)
+[scenes.27.data.say] 은마만 내렸을까?
+[scenes.27.data.side] left
+[scenes.28.lines.0.text] 같은 강남구에서 34평 크기 거래가 1년 전에도, 요즘에도 있는 단지를 다 찾아봤어요.
+[scenes.28.lines.1.text] 스물한 곳이었고, 그중 열네 곳이 내렸어요.
+[scenes.28.lines.2.text] 내린 폭 순서로 줄 세우면, 한가운데 단지는 5% 정도 내렸어요.
+[scenes.28.lines.3.text] 은마는 20% 가까이 내려서, 두 번째로 많이 빠졌습니다.
+[scenes.28.data.part] gaps
+[scenes.28.data.p.seed] h6g
+[scenes.28.data.p.rows.0.name] 대치동 한보미도맨션1
+[scenes.28.data.p.rows.1.name] 대치동 은마
+[scenes.28.data.p.rows.2.name] 압구정동 현대14차(203,204,205,206동)
+[scenes.28.data.p.rows.3.name] 개포동 개포자이프레지던스
+[scenes.28.data.p.rows.4.name] 개포동 래미안블레스티지
+[scenes.28.data.p.rows.5.name] 개포동 디에이치아너힐즈
+[scenes.28.data.p.rows.6.name] 수서동 삼성
+[scenes.28.data.p.rows.7.name] 삼성동 현대힐스테이트2단지
+[scenes.28.data.p.rows.8.name] 논현동 동현아파트1~6
+[scenes.28.data.p.rows.9.name] 삼성동 롯데캐슬프레미어
+[scenes.28.data.p.rows.10.name] 개포동 개포래미안포레스트
+[scenes.28.data.p.rows.11.name] 도곡동 도곡렉슬
+[scenes.28.data.p.rows.12.name] 삼성동 삼성동힐스테이트1단지
+[scenes.28.data.p.rows.13.name] 도곡동 현대그린1
+[scenes.28.data.p.rows.14.name] 논현동 아크로힐스논현
+[scenes.28.data.p.rows.15.name] 논현동 신동아(22)
+[scenes.28.data.p.rows.16.name] 수서동 강남데시앙포레
+[scenes.28.data.p.rows.17.name] 삼성동 래미안삼성1차(105-0)
+[scenes.28.data.p.rows.18.name] 자곡동 강남자곡아이파크
+[scenes.28.data.p.rows.19.name] 자곡동 강남한양수자인(4단지)
+[scenes.28.data.p.rows.20.name] 자곡동 강남자곡힐스테이트
+[scenes.28.data.p.countText] 21곳
+[scenes.28.data.p.downText] 내림 14
+[scenes.28.data.p.upText] 오름 7
+[scenes.28.data.p.hiText] 은마 −19.9%
+[scenes.28.data.p.hiRank] 21곳 중 2번째 · 거래 3건 → 9건
+[scenes.28.data.p.midText] 가운데 단지 −5.0%
+[scenes.28.data.title] 강남구 34평 단지 21곳 · 1년 변화
+[scenes.28.data.source] 국토교통부 실거래 2026-11-19 받음 · 전용 80~86㎡ · 2025.10~12 ↔ 2026.10~11 가운데 값 · 해제·직거래 뺌 · 단지마다 거래 1~9건
+[scenes.28.data.chapter] 2. 1년 실거래
+[scenes.29.lines.0.text] 다만 단지 대부분은 거래가 한두 건뿐이에요.
+[scenes.29.data.license] Pexels 7317305 무료(MART PRODUCTION)
+[scenes.29.data.say] 거래가 적은 단지들
+[scenes.29.data.side] left
+[scenes.30.lines.0.text] 1년 전과 요즘 모두 두 건 이상 팔린 여섯 곳만 추리면, 한가운데가 13% 가까이 내렸어요.
+[scenes.30.lines.1.text] 은마는 그 여섯 곳 중에서도 가장 많이 빠졌고요.
+[scenes.30.lines.2.text] 이 스물한 곳은 대체로 조금 내릴 때, 은마는 더 많이 내린 거예요.
+[scenes.30.data.part] gaps
+[scenes.30.data.p.seed] h6g
+[scenes.30.data.p.rows.0.name] 대치동 한보미도맨션1
+[scenes.30.data.p.rows.1.name] 대치동 은마
+[scenes.30.data.p.rows.2.name] 압구정동 현대14차(203,204,205,206동)
+[scenes.30.data.p.rows.3.name] 개포동 개포자이프레지던스
+[scenes.30.data.p.rows.4.name] 개포동 래미안블레스티지
+[scenes.30.data.p.rows.5.name] 개포동 디에이치아너힐즈
+[scenes.30.data.p.rows.6.name] 수서동 삼성
+[scenes.30.data.p.rows.7.name] 삼성동 현대힐스테이트2단지
+[scenes.30.data.p.rows.8.name] 논현동 동현아파트1~6
+[scenes.30.data.p.rows.9.name] 삼성동 롯데캐슬프레미어
+[scenes.30.data.p.rows.10.name] 개포동 개포래미안포레스트
+[scenes.30.data.p.rows.11.name] 도곡동 도곡렉슬
+[scenes.30.data.p.rows.12.name] 삼성동 삼성동힐스테이트1단지
+[scenes.30.data.p.rows.13.name] 도곡동 현대그린1
+[scenes.30.data.p.rows.14.name] 논현동 아크로힐스논현
+[scenes.30.data.p.rows.15.name] 논현동 신동아(22)
+[scenes.30.data.p.rows.16.name] 수서동 강남데시앙포레
+[scenes.30.data.p.rows.17.name] 삼성동 래미안삼성1차(105-0)
+[scenes.30.data.p.rows.18.name] 자곡동 강남자곡아이파크
+[scenes.30.data.p.rows.19.name] 자곡동 강남한양수자인(4단지)
+[scenes.30.data.p.rows.20.name] 자곡동 강남자곡힐스테이트
+[scenes.30.data.p.countText] 21곳
+[scenes.30.data.p.downText] 내림 14
+[scenes.30.data.p.upText] 오름 7
+[scenes.30.data.p.hiText] 은마 −19.9%
+[scenes.30.data.p.hiRank] 21곳 중 2번째 · 거래 3건 → 9건
+[scenes.30.data.p.midText] 가운데 단지 −5.0%
+[scenes.30.data.title] 강남구 34평 단지 21곳 · 1년 변화
+[scenes.30.data.source] 국토교통부 실거래 2026-11-19 받음 · 전용 80~86㎡ · 2025.10~12 ↔ 2026.10~11 가운데 값 · 해제·직거래 뺌 · 단지마다 거래 1~9건
+[scenes.30.data.chapter] 2. 1년 실거래
+[scenes.31.lines.0.text] 왜 내렸는지는 이 자료에 나오지 않아요.
+[scenes.31.lines.1.text] 실거래 신고엔 값과 날짜, 층만 있고 이유는 적혀 있지 않거든요.
+[scenes.31.data.license] Pexels 37873585 무료(Jueon Kim 김주언)
+[scenes.31.data.say] 이유는 자료에 없다
+[scenes.31.data.side] left
+[scenes.32.lines.0.text] 그럼 거래는 언제 많았을까요?
+[scenes.32.data.n] 3장
+[scenes.32.data.q] 거래는 언제 몰렸나
+[scenes.33.lines.0.text] 한 달에 많아야 여섯 건이던 거래가,
+[scenes.33.data.license] Pexels 38259259 무료(vignesh srivatsav)
+[scenes.33.data.say] 한 달에 몇 건씩
+[scenes.33.data.side] left
+[scenes.34.lines.0.text] 9월과 10월 두 달 동안 갑자기 서른다섯 건으로 늘었어요.
+[scenes.34.lines.1.text] 1년 거래의 거의 절반이 그 두 달에 몰린 겁니다.
+[scenes.34.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.35.lines.0.text] 같은 두 달, 강남구 아파트 매매 전체는 한 달 140건 정도로 1년 평균 215건보다 적었어요.
+[scenes.35.data.license] Pexels 15082793 무료(Lucas Park)
+[scenes.35.data.say] 강남구 전체는
+[scenes.35.data.side] left
+[scenes.36.lines.0.text] 10월 마지막 날 하루에 계약된 34평 거래만 다섯 건이 올라와 있었고요.
+[scenes.36.lines.1.text] 인가가 나고 두세 달 뒤인 건 맞지만, 사람들이 왜 그때 사고팔았는지까지는 알 수 없어요.
+[scenes.36.lines.2.text] 이번 달 거래는 아직 몇 건 안 되는데요,
+[scenes.36.lines.3.text] 거래 신고는 계약하고 한 달 안에 하면 되니까, 이번 달과 지난달 숫자는 더 늘어날 수 있어요.
+[scenes.36.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.37.lines.0.text] 다른 영상에서 말하는 매물이 몇 배라는 숫자는, 중개 사이트에 올라온 매물 수예요.
+[scenes.37.lines.1.text] 실제로 팔린 건수와는 다른 숫자입니다.
+[scenes.37.data.license] Pexels 31907490 무료(Esra Afşar)
+[scenes.37.data.say] 매물 수와 거래 수
+[scenes.37.data.side] left
+[scenes.38.lines.0.text] 거래가 얼마나 되는지 보려면, 매물 수 말고 신고된 거래 건수를 달마다 세 보시면 됩니다.
+[scenes.38.data.license] Pexels 6611954 무료(Tima Miroshnichenko)
+[scenes.38.data.say] 신고된 거래를 세기
+[scenes.38.data.side] left
+[scenes.39.lines.0.text] 이제 조합원 앞에 놓인 숙제를 하나씩 볼게요.
+[scenes.39.data.n] 4장
+[scenes.39.data.q] 세 가지 숙제
+[scenes.40.lines.0.text] 먼저 분담금입니다.
+[scenes.40.lines.1.text] 새 아파트를 받으려면, 내 헌 집 몫을 넘는 만큼 조합원이 더 내는 돈이에요.
+[scenes.40.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.41.lines.0.text] 34평을 내고 같은 넓이를 받는다면, 보도마다 숫자가 갈려요.
+[scenes.41.lines.1.text] 세 곳은 3억 2천만원 안팎이라고 썼어요.
+[scenes.41.lines.2.text] 다른 한 곳은 4억이 넘는다고 썼고요.
+[scenes.41.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.42.lines.0.text] 조합 공식 문서는 이번에 확인하지 못했어요. 그래서 어느 쪽이 맞는지는 말씀드리지 않겠습니다.
+[scenes.42.lines.1.text] 왜 올랐는지는 두 곳 보도 모두 공사비가 많이 올랐다고 했어요.
+[scenes.42.data.license] Pexels 6964247 무료(Mikhail Nilov)
+[scenes.42.data.say] 조합 원문은 확인 못 함
+[scenes.42.data.side] left
+[scenes.43.lines.0.text] 한 신문 보도로는, 34평 분담금 추정이 2023년보다 세 배 가까이 됐어요.
+[scenes.43.data.license] Pexels 7651886 무료(Kindel Media)
+[scenes.43.data.say] 공사비
+[scenes.43.data.side] left
+[scenes.44.lines.0.text] 두 번째는 이름은 비슷하지만 전혀 다른 돈, 재초환이라고 부르는 재건축 부담금입니다.
+[scenes.44.lines.1.text] 재건축으로 오른 값의 일부를 나라가 거둬 가는 거예요.
+[scenes.44.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.45.lines.0.text] 조합원 한 사람에게 돌아가는 평균 이익이 8천만원을 넘지 않으면, 단지 전체가 내지 않아요.
+[scenes.45.lines.1.text] 이익이 클수록 거두는 비율이 높아지고, 가장 높을 땐 넘는 이익의 절반이에요.
+[scenes.45.data.license] Pexels 9057559 무료(SHVETS production)
+[scenes.45.data.say] 이익이 클수록
+[scenes.45.data.side] left
+[scenes.46.lines.0.text] 강남구가 이번 가을 은마 조합에 예정액을 통지했어요.
+[scenes.46.lines.1.text] 조합원 한 사람 평균 4억 6천만원 정도입니다.
+[scenes.46.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.47.lines.0.text] 왜 하필 이때 통지가 왔을까요?
+[scenes.47.lines.1.text] 법이 순서를 정해 두었어요. 인가가 나면 몇 달 안에 구청이 예정액을 알려야 하거든요.
+[scenes.47.lines.2.text] 여름에 인가가 났으니, 가을 통지는 법 순서대로 온 겁니다.
+[scenes.47.data.license] Pexels 7317305 무료(MART PRODUCTION)
+[scenes.47.data.say] 왜 이때 통지가?
+[scenes.47.data.side] left
+[scenes.48.lines.0.text] 여기엔 조건이 붙어 있어요.
+[scenes.48.lines.1.text] 다 짓는 때를 2035년으로 가정한 추정치고요,
+[scenes.48.lines.2.text] 집을 오래 가진 사람이 받는 감면도 아직 빼지 않은 평균입니다.
+[scenes.48.lines.3.text] 그리고 이 예정액은 다 지을 때까지 해마다 1월에 다시 통지돼요.
+[scenes.48.lines.4.text] 그때마다 숫자가 달라질 수 있습니다.
+[scenes.48.lines.5.text] 그러니까 이 숫자는 내 몫이 아니라, 모두를 나눈 평균이에요.
+[scenes.48.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.49.lines.0.text] 이주하는 동안 드는 돈은 빼 주느냐고 물으신 분도 있었어요.
+[scenes.49.lines.1.text] 어떤 비용을 빼 주는지는 이번에 법을 확인하지 못해서, 숫자로 답하지 않겠습니다.
+[scenes.49.data.license] Pexels 38259259 무료(vignesh srivatsav)
+[scenes.49.data.say] 이주 비용은?
+[scenes.49.data.side] left
+[scenes.50.lines.0.text] 마지막 숙제는 이주입니다. 공사 동안 나가 살 곳을 구하는 일이에요.
+[scenes.50.lines.1.text] 공식 일정이 아직 없어서, 이주비를 어떤 조건으로 받는지도 확인된 게 없어요.
+[scenes.50.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.51.lines.0.text] 세입자 쪽 숫자는 어땠을까요?
+[scenes.51.data.n] 5장
+[scenes.51.data.q] 세입자 계약 신고
+[scenes.52.lines.0.text] 은마 전세와 월세 신고 건수를 달마다 세 봤어요.
+[scenes.52.data.license] Pexels 29303349 무료(성창 남)
+[scenes.52.data.say] 세입자 쪽 숫자
+[scenes.52.data.side] left
+[scenes.53.lines.0.text] 가장 많던 지난 12월엔 160건이 넘었어요.
+[scenes.53.lines.1.text] 9월엔 스무 건이었습니다.
+[scenes.53.lines.2.text] 가장 많던 달의 열 건 중 한 건 정도인 거죠.
+[scenes.53.lines.3.text] 10월은 아직 세 건만 올라와 있는데, 말일 쪽 계약은 아직 신고 기한 안이라 조금 더 들어올 수 있어요.
+[scenes.53.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.54.lines.0.text] 그런데 이 줄어듦도 여름에 갑자기 시작된 게 아니에요.
+[scenes.54.data.license] Pexels 15082793 무료(Lucas Park)
+[scenes.54.data.say] 여름에 갑자기?
+[scenes.54.data.side] left
+[scenes.55.lines.0.text] 인가 전인 2월부터 6월까지도, 한 달 50~70건대로 이미 줄어 있었어요.
+[scenes.55.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.56.lines.0.text] 줄어든 이유는 신고 자료에 없습니다.
+[scenes.56.lines.1.text] 은마가 이주를 앞둔 단지라는 것까지만 사실이에요.
+[scenes.56.data.license] Pexels 37873585 무료(Jueon Kim 김주언)
+[scenes.56.data.say] 이유는 자료에 없다
+[scenes.56.data.side] left
+[scenes.57.lines.0.text] 그럼 나는 무엇을 확인해야 할까요. 처지별로 나눠 볼게요.
+[scenes.57.data.n] 6장
+[scenes.57.data.q] 누구라면
+[scenes.58.lines.0.text] 계속 갖고 있을 조합원이라면, 재초환 감면부터 보세요.
+[scenes.58.data.license] Pexels 6143908 무료(cottonbro studio)
+[scenes.58.data.say] 계속 가질 조합원
+[scenes.58.data.side] left
+[scenes.59.lines.0.text] 집이 한 채뿐이고 오래 가졌을수록 많이 줄어듭니다.
+[scenes.59.lines.1.text] 가장 길게, 스무 해 넘게 가졌다면 70%까지요.
+[scenes.59.lines.2.text] 평균 예정액에서 감면하면, 낼 돈이 1억 4천만원 정도로 줄어요.
+[scenes.59.lines.3.text] 내 몫이 아니라, 감면이 얼마나 큰지 가늠해 보는 숫자예요.
+[scenes.59.lines.4.text] 6년만 가졌다면 10%만 줄어서, 낼 돈이 4억 2천만원 정도예요.
+[scenes.59.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.60.lines.0.text] 준공 때 한 세대에 집이 두 채 이상이면 이 감면은 없습니다.
+[scenes.60.data.license] Pexels 7651886 무료(Kindel Media)
+[scenes.60.data.say] 집이 두 채라면
+[scenes.60.data.side] left
+[scenes.61.lines.0.text] 그럼 보유 기간은 착공까지 셀까요, 준공까지 셀까요?
+[scenes.61.lines.1.text] 법은 준공한 날에서 거슬러 올라가며 셉니다.
+[scenes.61.data.license] Pexels 9057559 무료(SHVETS production)
+[scenes.61.data.say] 보유 기간 세는 법
+[scenes.61.data.side] left
+[scenes.62.lines.0.text] 나이 든 분이 이 돈을 어떻게 내느냐는 댓글도 있었죠.
+[scenes.62.lines.1.text] 준공 때 60세 이상이고 한 세대에 집이 한 채면, 담보를 내고 신청해서 내는 때를 미룰 수 있어요.
+[scenes.62.lines.2.text] 이건 재초환 이야기고요, 분담금을 미뤄 주는 제도는 이번 조사에서 찾지 못했어요.
+[scenes.62.data.license] Pexels 38259259 무료(vignesh srivatsav)
+[scenes.62.data.say] 나이 든 조합원
+[scenes.62.data.side] left
+[scenes.63.lines.0.text] 분양신청 기간은 통지를 받은 날부터 한두 달 사이로 법에 정해져 있어요.
+[scenes.63.lines.1.text] 보도로는 은마가 바뀐 설계를 반영한 뒤, 이주와 철거 기간에 신청을 다시 받을 계획이라고 해요.
+[scenes.63.data.license] Pexels 37873585 무료(Jueon Kim 김주언)
+[scenes.63.data.say] 분양신청 기간
+[scenes.63.data.side] left
+[scenes.64.lines.0.text] 분양신청을 하지 않은 조합원은, 새 집 대신 돈으로 받는 현금청산 쪽으로 갑니다.
+[scenes.64.lines.1.text] 보상 금액은 조합과 협의하고, 협의가 안 되면 법원 절차로 넘어갑니다.
+[scenes.64.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.65.lines.0.text] 팔 생각을 하고 계신다면, 같은 평형 요즘 거래가 어땠는지 실거래로 먼저 확인하세요.
+[scenes.65.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.66.lines.0.text] 사려는 분은 하나 더 보셔야 해요.
+[scenes.66.lines.1.text] 투기과열지구 재건축은 조합을 세운 뒤에 사면, 새 집을 받을 조합원 자격이 함께 넘어오지 않을 수 있습니다.
+[scenes.66.lines.2.text] 예외도 있어서, 은마가 어디에 해당하는지는 조합과 구청에 먼저 확인하세요.
+[scenes.66.data.license] Pexels 15082793 무료(Lucas Park)
+[scenes.66.data.say] 사려는 분이라면
+[scenes.66.data.side] left
+[scenes.67.lines.0.text] 전세를 구하는 분이라면, 계약 기간과 이주 공고를 같이 보셔야 합니다.
+[scenes.67.data.license] Pexels 30975009 무료(Stephen Leonardi)
+[scenes.67.data.say] 전세를 구한다면
+[scenes.67.data.side] left
+[scenes.68.lines.0.text] 은마 숫자를 볼 때 걸리기 쉬운 함정이 있어요.
+[scenes.68.data.n] 7장
+[scenes.68.data.q] 함정과 직접 확인
+[scenes.69.lines.0.text] 비싼 한 건과 싼 한 건을 붙이는 것. 어느 날, 어느 층을 고르느냐에 따라 4억이 안 되던 차이가 10억으로 보입니다.
+[scenes.69.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.70.lines.0.text] 이번 달 거래 숫자를 다 들어온 숫자로 읽는 것.
+[scenes.70.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.71.lines.0.text] 재초환 평균을 내 몫으로 읽는 것.
+[scenes.71.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.72.lines.0.text] 그리고 매물 수를 팔린 건수처럼 읽는 것이요.
+[scenes.72.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.73.lines.0.text] 직접 보시는 방법은 간단해요.
+[scenes.73.data.license] Pexels 31907490 무료(Esra Afşar)
+[scenes.73.data.say] 직접 보는 법
+[scenes.73.data.side] left
+[scenes.74.lines.0.text] 국토교통부 실거래가 공개시스템에서 은마, 같은 면적, 지난 1년을 고르세요.
+[scenes.74.lines.1.text] 해제라고 적힌 거래는 빼시고요.
+[scenes.74.lines.2.text] 인가가 난 7월 앞뒤로 나눠 가운데 값을 적으면, 오늘 숫자를 다시 세실 수 있습니다.
+[scenes.74.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.75.lines.0.text] 지난 실거래는 지난 일을 말해 줄 뿐이고, 재초환 평균은 내 몫을 말해 주지 않습니다.
+[scenes.75.data.n] 8장
+[scenes.75.data.q] 정리
+[scenes.76.lines.0.text] 설명란에 링크한 파이어맵 카페 글에 75건 표를 올려 뒀어요.
+[scenes.76.lines.1.text] 거기서 내 평형 줄만 찾아 가운데 값을 한 번 세 보세요.
+[scenes.76.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.77.data.license] Pexels 38259256 무료(vignesh srivatsav)
+[scenes.77.data.side] left
+[scenes.78.lines.0.text] 토요일 오전 11시 반에는 ETF 이야기입니다. 그때 뵙겠습니다.
+[scenes.78.data.license] Pexels 38259256 무료(vignesh srivatsav)
+
+## 화면 코드: video/src/H6.tsx
+[H6.tsx] 달러로
+[H6.tsx] 1달러 값
+[H6.tsx] 원화로
+[H6.tsx] live: license 칸 비었음
+[H6.tsx] live: say에 숫자 금지
+[H6.tsx] 파이어맵
+[H6.tsx] 파이어맵
+[H6.tsx] 파이어맵
+[H6.tsx] pic: license 칸 비었음
+[H6.tsx] 파이어맵
+[H6.tsx] PD 글꼴
+
+## 화면 코드: video/src/parts/human.tsx
+
+## 화면 코드: video/src/parts/fm.tsx
+[fm.tsx] ${e}억 ${r.toLocaleString()}만원
+[fm.tsx] ${e}억원
+[fm.tsx] ${r.toLocaleString()}만원
+[fm.tsx] 1년 뒤 남은 돈
+[fm.tsx] 원금
+[fm.tsx] 떨어진 해
+[fm.tsx] 세금·건보료
+[fm.tsx] 월 100만원 원금
+[fm.tsx] 파이어맵
+[fm.tsx] 파이어맵
+
+## 화면 코드: video/src/parts/t1kit.tsx

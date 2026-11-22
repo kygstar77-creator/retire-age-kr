@@ -114,7 +114,7 @@
 [scenes.22.data.p.stepGap.text] −8.5억
 [scenes.22.data.p.mark.text] 사업시행인가 7/2
 [scenes.22.data.p.before.text] 인가 전 −4.0억 · 낙폭 8.5억 중 47%
-[scenes.22.data.title] 은마 84㎡ 실거래 26건
+[scenes.22.data.title] 은마 84㎡ 묶음별 가운데 값
 [scenes.22.data.source] 국토교통부 실거래가 공개시스템 · 계약 2025.10~2026.11 · 해제 거래 뺌
 [scenes.22.data.chapter] 2. 1년 실거래
 [scenes.23.lines.0.text] 다만 첫 묶음은 거래가 세 건뿐이에요. 그래서 높은 층 한 건끼리 비교해 봐도 8억 정도로 비슷하다는 걸 같이 봐 주세요.
@@ -139,7 +139,7 @@
 [scenes.25.data.p.stepGap.text] −8.5억
 [scenes.25.data.p.mark.text] 사업시행인가 7/2
 [scenes.25.data.p.before.text] 인가 전 −4.0억 · 낙폭 8.5억 중 47%
-[scenes.25.data.title] 은마 84㎡ 실거래 26건
+[scenes.25.data.title] 은마 84㎡ 인가 전과 뒤
 [scenes.25.data.source] 국토교통부 실거래가 공개시스템 · 계약 2025.10~2026.11 · 해제 거래 뺌
 [scenes.25.data.chapter] 2. 1년 실거래
 [scenes.26.lines.0.text] 31평도 모양이 같아요.

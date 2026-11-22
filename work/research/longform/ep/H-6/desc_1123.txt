@@ -1,0 +1,46 @@
+은마아파트 재건축 인가 났는데, 34평 실거래는 1년 새 8억 넘게 내렸다
+
+국토부 실거래 기준 은마아파트 84㎡ 가운데 값 — 2025년 10~12월 계약 42.80억(3건) → 2026년 10~11월 계약 34.30억(9건), 해제 거래 뺌.
+하락의 거의 절반은 7월 사업시행인가 전에 이미 와 있었고, 9~10월 두 달에 1년 거래 75건 중 35건이 몰렸어요. 전세·월세 계약 신고, 분담금·재초환(조합원 평균 예정액 4억 6천만원, 감면 전)·이주까지 국토교통부·강남구·법제처 원문으로 정리했습니다.
+은마아파트를 사거나 팔라는 뜻이 아닙니다. 지난 실거래 값과 공개된 제도만 정리했습니다.
+
+은마 1년 실거래 75건 전체 표(카페): https://cafe.naver.com/firemap
+파이어맵: https://firemap.kr/?utm_source=youtube&utm_medium=description&utm_campaign=h-6
+직접 보기: 국토교통부 실거래가 공개시스템 https://rt.molit.go.kr → 아파트 → 서울 강남구 대치동 은마 → 면적·기간
+
+0:00 여는 말
+0:45 은마는 지금 어디까지
+1:31 1년 실거래, 평형별
+3:24 거래는 언제 몰렸나
+4:12 세 가지 숙제
+5:54 세입자 계약 신고
+6:24 누구라면
+7:55 함정과 직접 확인
+8:25 정리
+
+출처
+· 매매 실거래: 국토교통부 아파트 매매 실거래 상세(공공데이터포털 RTMSDataSvcAptTradeDev, 강남구 2025.10~2026.11, 2026-11-19·11-22 받음, 해제 거래 뺌)
+· 전월세 실거래: 국토교통부 아파트 전월세 실거래(RTMSDataSvcAptRent, 은마 896건, 2026-11-19 받음)
+· 신고 기한: 부동산 거래신고 등에 관한 법률 제3조① https://www.law.go.kr/법령/부동산거래신고등에관한법률/제3조
+· 사업시행계획인가 2026-07-02: 강남구 보도자료 https://www.gangnam.go.kr/board/B_000031/1075184/view.do · 강남구 고시 제2026-130호 https://news.seoul.go.kr/citybuild/archives/541084
+· 재초환 예정액(총액·1인당 평균): 강남구 보도자료 https://www.gangnam.go.kr/board/B_000031/1075588/view.do · 머니투데이 https://www.mt.co.kr/article/2026110614422041034
+· 재초환 부과율·감경·납부유예: 재건축초과이익 환수에 관한 법률 제8조·제12조·제14조의2·제17조의2 https://www.law.go.kr/법령/재건축초과이익환수에관한법률
+· 분담금 보도: 중앙일보 https://v.daum.net/v/20260530070229266 · 비즈니스워치 https://news.bizwatch.co.kr/article/real_estate/2026/09/24/0002 (조합 공식 문서는 확인 못 함)
+· 분양신청·현금청산: 도시 및 주거환경정비법 제72조·제73조 https://www.law.go.kr/법령/도시및주거환경정비법/제73조
+영상 일부: Lucas Park / Pexels (https://www.pexels.com/photo/snow-covered-pathway-15082793/)
+영상 일부: 성창 남 / Pexels (https://www.pexels.com/video/29303349/)
+영상 일부: Stephen Leonardi / Pexels (https://www.pexels.com/video/aerial-view-of-urban-skyline-with-mountain-backdrop-30975009/)
+영상 일부: Esra Afşar / Pexels (https://www.pexels.com/video/browsing-real-estate-listings-on-mobile-phone-31907490/)
+영상 일부: Jueon Kim 김주언 / Pexels (https://www.pexels.com/video/urban-sunset-over-high-rise-buildings-37873585/)
+영상 일부: vignesh srivatsav / Pexels (https://www.pexels.com/ko-kr/video/38259256/)
+영상 일부: vignesh srivatsav / Pexels (https://www.pexels.com/video/aerial-view-of-dense-urban-landscape-at-dusk-38259259/)
+영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/person-touching-a-paper-6143908/)
+영상 일부: Tima Miroshnichenko / Pexels (https://www.pexels.com/video/man-scrolling-on-mobile-phone-screen-6611954/)
+영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/man-using-calculator-6964247/)
+영상 일부: MART  PRODUCTION / Pexels (https://www.pexels.com/video/glass-panels-window-on-the-building-exterior-7317305/)
+영상 일부: Kindel Media / Pexels (https://www.pexels.com/video/a-person-computing-using-a-calculator-7651886/)
+영상 일부: MART  PRODUCTION / Pexels (https://www.pexels.com/video/man-carrying-guitar-case-8103672/)
+영상 일부: SHVETS production / Pexels (https://www.pexels.com/video/a-person-marking-on-calendar-9057559/)
+계산 가정: 가운데 값 = 그 기간 거래를 값 순서로 줄 세운 한가운데 값 · 계약일 기준 · 최근 두 달은 신고 기한(30일) 안이라 건수가 늘 수 있음
+
+내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이에요. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.

@@ -4447,3 +4447,5 @@
 2026-11-23 00:48 · firemap-youtube-loop · KOSPI-1 올리기 전 확인 통과(ECOS 11/20 그대로, 숫자 0 변경)·설명란 출처 '(원자료 한국거래소)' · H-6 11/24로 못 당김(meta·썸네일·11/25 다시 셈 남음) · 11/23 종가 -5% 이하면 16:4x 회차가 예약 풂 · 이유: 관문 11/23 11:30, 남은 막힘은 썸네일 대조 하나
 2026-11-23 00:48 · firemap-youtube-loop · channels.json 11→16(실거래로그·부티플·김범곤의 연금수업·1분 투자 하이젠버그·위키타카, 범위 안만) · 빼기는 판정 못 함(outliers 스캔 11/20 한 번뿐) · 이유: 월요일 경쟁 채널 갱신, 실거래로그가 우리 H 꼴로 10.8배
 2026-11-23 00:48 · firemap-youtube-loop · H-5 13시간 7회 기록(기준선 250.5) · 원인 확인 안 함(중복 업로드 3dzKukPP3ac 영향은 공식 근거 못 찾음) · 11/25 72시간 판정 그대로
+2026-11-23 02:49 · firemap-video-producer · CC-1 첫 녹음 86줄 check 통과, 길이 5.9분이라 youtube-loop에 말 늘리기 요청(장면 늘이기 안 함) · 이유: ytlong 8분 바닥(중간 광고 자격), 이미 받은 86줄은 그대로 씀
+2026-11-23 02:49 · firemap-video-producer · H-6 meta.json 첫 판(h6meta.py)·bench_check 보류·scorecard 36, DealDots 판 제목 2줄 바꿈(editor 서명 요청) · 이유: 관문 11/25 11:30 전 PD 몫을 미리, gate dry에서 aitell A47 걸림

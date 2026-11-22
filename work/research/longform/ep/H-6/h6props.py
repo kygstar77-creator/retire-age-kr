@@ -106,11 +106,11 @@ for f, k in (('h6_motion.json', 'deals'), ('h6_gap.json', 'gap')):
 
 def mo(key, idx, **at):
     """motion 부품 한 토막. at: 박자 칸 이름 → 이 토막 안 줄 번호(소수 = 줄 안 비율, -1 = 앞 토막에서 이미 끝남, 99 = 이 토막에선 안 일어남)."""
-    m = MO[key]; p = json.loads(json.dumps(m['data']))
+    m = MO[key]; p = json.loads(json.dumps(m['data'])); title = at.pop('title', m['title'])   # 11/23 PD: 토막마다 판 제목(aitell A47 같은 판 제목 3장)
     for name, v in at.items():
         if '.' in name: a, b = name.split('.'); p[a][b] = v
         else: p[name] = v
-    s = S('mo', idx, part='deals' if key == 'deals' else 'gaps', p=p, title=m['title'], sub=m['sub'], source=m['source'], chapter=m['chapter'])
+    s = S('mo', idx, part='deals' if key == 'deals' else 'gaps', p=p, title=title, sub=m['sub'], source=m['source'], chapter=m['chapter'])
     return s
 
 
@@ -128,9 +128,9 @@ scenes += [silent_ask(1), broll('8103672', [10], '대치동 은마아파트'), b
 scenes += [ask(2, [23]), board('count75', [24, 25, 26]), broll('7651886', [27], '큰 평형부터'),
            mo('deals', [28, 29, 30], dropAt=0.0, **{'peak.at': 0.45, 'last.at': 1.1, 'last.gapAt': 1.6}, stepsAt=NEVER, **{'stepGap.at': NEVER, 'mark.at': NEVER, 'before.at': NEVER}),
            board('pairs', [31]), broll('6964247', [32, 33, 34], '가운데 값으로 본다'),
-           mo('deals', [35, 36, 37], dropAt=DONE, **{'peak.at': DONE, 'last.at': DONE, 'last.gapAt': DONE}, stepsAt=0.1, **{'stepGap.at': 2.0, 'mark.at': NEVER, 'before.at': NEVER}),
+           mo('deals', [35, 36, 37], dropAt=DONE, **{'peak.at': DONE, 'last.at': DONE, 'last.gapAt': DONE}, stepsAt=0.1, **{'stepGap.at': 2.0, 'mark.at': NEVER, 'before.at': NEVER}, title='은마 84㎡ 묶음별 가운데 값'),
            board('pairs_2', [38]), broll('9057559', [39], '작은 평형도 같은 방법으로'),
-           mo('deals', [40, 41, 42], dropAt=DONE, **{'peak.at': DONE, 'last.at': DONE, 'last.gapAt': DONE}, stepsAt=DONE, **{'stepGap.at': DONE, 'mark.at': 0.1, 'before.at': 1.3}),
+           mo('deals', [40, 41, 42], dropAt=DONE, **{'peak.at': DONE, 'last.at': DONE, 'last.gapAt': DONE}, stepsAt=DONE, **{'stepGap.at': DONE, 'mark.at': 0.1, 'before.at': 1.3}, title='은마 84㎡ 인가 전과 뒤'),
            board('m77', [43, 44, 45]), broll('38259259', [46], '은마만 내렸을까?'),
            mo('gap', [47, 48, 49, 50], countAt=1.0, growAt=1.5, midAt=2.1, hiAt=3.1, backAt=NEVER),
            broll('7317305', [51], '거래가 적은 단지들'),

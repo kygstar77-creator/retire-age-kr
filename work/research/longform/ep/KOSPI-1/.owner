@@ -9,3 +9,4 @@
 2026-11-21 02:33 | firemap-video-producer 정기 02:1x | 끝 — 다시 받기·readback, 렌더는 말 2줄·table16·ECOS 뒤
 2026-11-21 06:44 | firemap-video-producer 정기 06:1x | 끝 — 2줄 다시 받기·readback·check 통과, 렌더는 11/23
 2026-11-22 22:23 | firemap-video-producer 정기 22:1x | 실사 3컷 교체·통렌더(render_parts_1122.sh)
+2026-11-23 00:47 | firemap-video-producer 정기 22:1x | 끝 — 통렌더·관문 통과, 예약은 썸네일 1초 시험 뒤 10:1x

@@ -1,0 +1,8 @@
+{
+ "id": "KOSPI1",
+ "props": "kospi1.json",
+ "every_frames": 30,
+ "checked_frames": 482,
+ "errors": 0,
+ "hits": []
+}

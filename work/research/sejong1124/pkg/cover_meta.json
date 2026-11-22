@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 매매 실거래 API(세종특별자치시 36110) 2021.1~6월·2025.6~10월 vs 2026.6~10월 계약, calc_out.txt — 파이어맵 직접 계산",
+ "made_at": "2026-11-22",
+ "by": "research/sejong1124/mkimg.py",
+ "out": "img/00.png",
+ "topic": "세종 아파트 시세",
+ "num": "-26.5% / -0.6%",
+ "topic_px": 58,
+ "num_px": 44,
+ "follows": "경쟁 4 ladderprice/224484586049 동별 시세 순위 차트 · 1 noonesejong/224484897012 실거래 표 그림"
+}

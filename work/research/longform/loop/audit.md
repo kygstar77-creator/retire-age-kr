@@ -1,5 +1,25 @@
 # 감사 기록 (firemap-audit, 최신이 위)
 
+2026-11-22 21:10 · 본 것 16건(블로그 RSS item·글 본문 날짜·사이트 pg_cron 5개·firemap_market 4행·fetch-market/dividends 코드·src 읽는 곳·미래에셋 TIGER 분배 원문·야후 4종 분배·나스닥 공식 NDX 10년·santa1123 머리 숫자·bundang 국토부 71개월 다시 셈·카페 #465~469 5편·유튜브 최근 15편 videos.list·H-5 영상 출처·naverpost 설정) · 심각 0 · 경미 1 · 켠/끈 스위치 없음(STOP_blog 유지)
+
+## 2026-11-22 21:10 회차 (범위 11/21 21:13~지금)
+- **회의 지시 ① 블로그 '정지 중 새 글' = 오보(내 11/21 회차 실수)**: 글 224426534410 「도곡동 아파트 실거래가…」 본문 날짜 **2026. 9. 30. 1:14**(m.blog 글 화면 직접), RSS <item> pubDate도 Wed, 30 Sep 2026 01:14:49. 11/21에 적은 '21:04'는 RSS **채널** pubDate(피드를 만든 시각, 오늘은 21:00:53)를 글 시각으로 읽은 것. 글 번호도 9/30 00:18 글(224426500870) 바로 다음. 주제도 planner.py 248행 B10 '도곡동 아파트 실거래가'(9/29 c30e42a) 그대로 → STOP_blog(9/30~) 전 우리 무인 발행분. **새 글 0, 사장님 결정 필요 없음**. 막힘 ⑪ 닫음.
+- **회의 지시 ② 사이트 수집(위험 다시 판정)**: pg_cron(파이어맵 cvhskxdwqubmshdgkzhj, 읽기 SQL만) 활성 5개 — fetch-market이 **두 번**(firemap-market-daily 22:00 UTC·fetch-market-daily 22:50 UTC, 같은 함수) · **fetch-dividends는 예약 없음·firemap_dividends 테이블 없음**(42P01). firemap_market 4행(^spx·^ndq·^kospi·usdkrw) 모두 source=yahoo, 마지막 11/21 22:00 UTC. **src/ 안에서 firemap_market·firemap_dividends를 읽는 코드 0**(cafePosts.js 주석 1줄뿐, DividendLifeCalc는 주석만 'fetch-dividends로만'·실제 조회 없음) → 받은 값이 어떤 화면에도 안 나감 · 판정 **낮음**(쿠팡 칸 화면에 이 숫자 없음, 공개 0) · hold.txt 없음. 다만 안 쓰는 수집이 Disallow 주소를 매일 두 번 부름 → 권고: 두 job 끄기(사이트 개발 10/6 중단이라 product-dev/회의 결정, 나는 안 건드림).
+
+| 계열 | 지금 | 1차 대체 | 비고 |
+|---|---|---|---|
+| ^GSPC S&P500 | 야후 query1(Disallow) | FRED SP500 csv — 코드에 이미 폴백 | FRED는 이 PC에서 오늘도 응답 없음(Supabase 쪽은 확인 안 함) |
+| ^IXIC 나스닥 종합 | 야후 | api.nasdaq.com 공식 historical(오늘 NDX로 응답 ✓) | |
+| ^KS11 KOSPI | 야후, 폴백 m.stock 네이버(Disallow) | ECOS 802Y001(하루 늦게 공표)·KRX 정보데이터 | |
+| KRW=X 환율 | 야후, 폴백 open.er-api | ECOS 731Y001 매매기준율 | |
+| 미국 ETF 배당 7종 | (예약 없음) | 운용사·NYSE/나스닥 공시 | 지금 안 돎 |
+- **회의 지시 ③ 1차 대조**: ndxetf1122(#469 공개 18:25) — 미래에셋 TIGER 분배 원문(raw/tiger_dist_page_1121.txt 870행): 2026 935·2025 888·2024 722·2023 430·**2022 280** vs 야후 내 셈 2026~2023 같음·**2022 290**(야후에 2022-10-27 100·10-28 45 두 줄, 7월 줄 없음 — KODEX200 때와 같은 날짜 밀림). facts.txt '야후 연도 합과 같음'은 2022에서 틀림. 본문 영향: 분배 재투자 10원×약 1,400주 ≈ 1.4만원(2.31억의 0.006%), 2억 3,115만 표시·순위 그대로 → 정정 불필요 · 경미 1. KODEX·ACE·RISE는 운용사 원문 대조 못 함(research.md 50행 그대로). santa1123(11/23 18:40 예정) — 나스닥 공식 NDX: 10/30 28,384.85→11/20 25,028.98 = **−11.8%** ✓, 2016~2025 12월 등락 10해 야후와 **10/10 같음**(2018 −8.91·2022 −9.06 등) · 1986~2015·S&P500 1928~ 은 1차 대조 못 함(무료 1차 없음, FRED 무응답) → 자료 줄에 '최근 10년 나스닥 공식 시세와 대조' 보탤 수 있음(write 요청).
+- **새 공개**: 카페 #465 divbear(11/21 22:57)·#466 bundang(07:39)·#467 spx10y(10:39)·#468 songdopair(12:40)·#469 ndxetf(18:25) → 11/22 4편(16:10 tigerdj는 가드 막힘·22:40 divoone 남음), 간격 180·121·345분, 정각 몰림 없음, 범위 5/5 안. 롱폼 H-5 tvCsLWDF814(11/22 11:30 public, 9분 9초, 조회 6) — 영상 Pexels 10줄 출처·meta veo false → 합성 표시 대상 아님. 쇼츠 S-bh4F6JB-k DIVO(11/22 19:20 public, 조회 264) 하루 1편 ✓. 예약 쇼츠 5편 설명란 'AI 음성'·면책 5/5. 옛 h8BYw06r3-s·3dzK는 private·publishAt 없음(중복 공개 안 됨). naverpost.py AutomationControlled 74행 주석뿐.
+- 사실(3): ① bundang #466 — 국토부 raw 71개월 내 코드로 따로 셈: 해제 뺀 매매 **21,430건·194단지** ✓(해제 1,137), 선도지구 +18.0%·나머지 옛 단지 +29.3% = calc_out_1122 472·477행 ✓. ② ndxetf #469 TIGER 1년 분배 935원 = 미래에셋 원문 ✓(2022만 위 경미). ③ santa1123 위 ✓.
+- 권유·금지 말투: 5편 0건, 끝 줄 '사거나 팔' 5/5, 부동산 앱 0. bench.md·compare.md 5/5.
+- 관찰: 11/22 제목 '~까?' 4편 중 3(bundang·spx10y·songdopair) — QN_BLOCK 하루 5칸 안. 20:52 youtube-loop가 naverpost 중복 가드에서 운용사 상표 12개를 뺌(tigerdj 풀려고) — 가드 완화라 다음 회차에 같은 상품 겹침 글 생기는지 본다.
+- 배운 것: 블로그 RSS 채널 pubDate 실수를 교본에 적어 두고도(11/18·19) 11/21에 또 했다 — 새 글 판정은 **글 화면 날짜**까지 봐야 끝난다. 회의에 올리기 전 두 곳(item pubDate·글 화면) 맞대기.
+
 2026-11-21 21:13 · 본 것 14건(robots.txt 7곳 직접·11/22 이후 예약 카페 8편 pkg 출처 줄·쇼츠 de1s_kofin prepub·D-ETF-1 facts·카페 #459~464 pkg 6편·나스닥 공식 NDX 시세·#462 calc_out_1121 손셈·SCHD 2020 낙폭 raw 직접 재계산·유튜브 최근 15편 videos.list·블로그 RSS·blog 글 본문·naverpost 설정) · 심각 0 · 경미 1 · 켠/끈 스위치 없음(STOP_blog 유지)
 
 ## 2026-11-21 21:13 회차 (범위 11/20 21:07~지금)

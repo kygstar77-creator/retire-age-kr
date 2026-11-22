@@ -490,3 +490,4 @@
 - 2026-11-21 firemap-video-producer: 렌더 bash를 TaskStop으로 끊어도 안쪽 재시도 루프(for t in 1..8)·node가 살아 남아, 다시 띄운 렌더와 2~3개가 동시에 돌며 서로의 remotion 임시 폴더를 지워 'Error opening output … remotion-audio-mixing' 재시도가 이어짐(h5s_jeonse). → 다시 띄우기 전 Win32_Process에서 render_<편>·<편>_part 명령줄 프로세스를 전부 끄고 0개인지 확인한다.
 - 2026-11-22 visual-designer: pexelsvid.py를 같은 폴더로 세 개 동시에(&) 돌리면 credits.json을 서로 덮어 마지막 것만 남는다(H-6 후보 3개 중 2개 출처가 사라져 받을 때 출력에서 손으로 다시 적음). 같은 폴더면 차례로 돌리거나 검색마다 다른 폴더를 준다. 또 회차 첫 명령에 `git status --short`를 또 넣었다(다섯 번째) — 첫 묶음은 `git branch --show-current`까지만.
 - (2026-11-22 motion) 회차 첫 묶음에 또 `git status --short`를 넣었다(motion 다섯 번째). 이번엔 끝났지만 규칙대로 커밋 직전 `git status --short -- <내 경로>`만 쓴다.
+- 2026-11-22 렌더 스크립트마다 `--out-dir=<편>/bundle`로 public 전체를 복사해 편당 11~22GB, 2주 만에 C 드라이브 15GB 남음 → work/bundleclean.py가 매시 지움. 새 렌더 스크립트도 bundle은 편 폴더 안 bundle*/ 이름만 쓴다(그래야 정리·ignore 대상)

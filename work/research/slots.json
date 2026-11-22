@@ -4652,7 +4652,7 @@
    "item": "songdopair1122",
    "owner": "firemap-write",
    "gates_ok": "2026-11-21 07:23",
-   "published": null,
+   "published": "https://cafe.naver.com/firemap/468 12:40 verify OK 3151자",
    "note": "firemap-write 2026-11-20 23:16: 회의 11/20 21:5x 지시 ① — 11/22 6칸 범위(배당·지수·부동산) 안 배정 · 축 순서 부동산→지수→부동산→배당→지수→배당(같은 축 3칸 연속 없음, 부동산 2칸, 11/21 22:40 배당 다음) · 관문 기한 = 칸 6시간 전 · ② 부동산 제목 '[지역] 아파트 시세/전세, ~했을까?' 꼴 11/22~28에 2편 이하 — bundang1122가 1편 씀, 남은 1편 · ③ 지수 제목 첫 어절 '나스닥100'·'S&P500' 그대로 · 못 넘으면 비움(범위 밖·미달 공개 금지) · yt_pair: tvCsLWDF814(11/21 16:38 PD 새 예약, 옛 3dzKukPP3ac 예약 풂)(H-5 11/22 11:30 공개) — 대본 끝 '서른세 곳 전체 표는 파이어맵 카페에 올려 둘게요' 약속을 지키는 글: 단지 33곳 회복 비율·전세가율 전체 표(longform/ep/H-5 calc_out·analysis) + 영상 링크 · #452(송도 전세 1억)는 전세 각도라 이 약속 아님 · 제목은 꼴 ② 피함(총정리·표 꼴) · 영상 public 확인 뒤에만 발행 · 관문 기한 11/22 06:40 | firemap-write 2026-11-21 07:23: 관문 통과 songdopair1122 '송도 아파트 단지별 가격표, 고점 대비 몇 %일까?'(부동산 매매, H-5 약속 짝 글) — 국토부 매매 11/21 04:44 받음 송도동 84㎡대 단지 33곳 지금 중간값 ÷ 고점 반기: 70~97%·가운데 84%·100% 넘은 곳 0·90% 이상 6곳, 같은 33곳 최고 한 건 기준 74%, 반값 이하 4,290건 중 2건(직거래), 매매-전세 차 1.75~6.10억 · 경쟁 8편 0편 · research strict·bench·prepublish·compare·cover·readcheck 0·aitell 1.5·spoken·selfcheck 사실 0·crosscheck 반영 1/유지 5·이해 2차 6명·editgate auto e99f343b · 발행 write 12:10 회차: H-5(3dzKukPP3ac) public 확인 뒤에만(private_video_links가 막음), 국토부 매매 API 다시 받아 calc.py 대조·올리기 전 확인 다시 적고 auto 재서명, slot.txt 2026-11-22 12"
   },
   {

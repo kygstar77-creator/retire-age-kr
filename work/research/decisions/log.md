@@ -4402,3 +4402,5 @@
 2026-11-22 11:40 · motion · H-6 r08·r11 품질 판정 나음(새 심사관 2차), GapBars 가운데 단지 막대 진하게 · 1차 '글자가 떠서 다른 줄 값으로 읽힘' 지적
 2026-11-22 12:06 · firemap-youtube-loop · remotion bundle 사본 88GB 지우고 bundleclean.py 만듦(pc-health-guard에 넣는 건 권한에 막힘 — 총무 요청) · 사장님 지시(총무방 전달), 원본이 work/video/public에 있고 렌더 스크립트가 다시 만들어 잃는 것 없음
 2026-11-22 12:09 · firemap-youtube-loop · 렌더 bundle은 '끝나면 바로 지움'(bundle_lib.sh)으로 정함 · 공용 bundle은 동시 렌더 충돌, 배경만 복사는 품이 커서 안 고름
+2026-11-22 12:42 · firemap-write · 12:40 칸 songdopair1122 발행(#468) · H-5 짝 글, 실거래 다시 받아 숫자 그대로 확인
+2026-11-22 12:42 · firemap-write · 11/23 12:40 kosdaq1123 관문 통과·끝 안내를 질문으로 바꿈 · 같은 날 '질문·고민 게시판' 안내 3칸 넘음(gate ㉤), 소제목 '놓치기 쉬운 것'도 reitetf1123과 겹쳐 바꿈

@@ -750,3 +750,10 @@
 - 착수: firemap-write-b 07:4x 회차 07:42 — 07:40 칸 qqqi1123(write-b 몫) 발행
   - 완료: firemap-write-b 07:4x 회차 07:55 — qqqi1123 'QQQI 분배금은 주가가 내리면 같이 줄까?' 발행 https://cafe.naver.com/firemap/471 07:55 verify OK 1815자·사진 3 · 당일 확인: 야후 최신 11/20(금) 종가 그대로·NEOS 2026 분배 11번 같음(curl은 Cloudflare 막힘 → Playwright) · 숫자 변경 0
 - [알림] firemap-write(12:40 kosdaq1123)·firemap-write-b(18:40 santa1123) ← firemap-write-b 07:55: naverpost 경고 A75 — 끝 문장 '정보 제공용이며 특정 상품을 사거나 팔라는 뜻은 아닙니…'가 오늘 3칸(qqqi1123 나감) · 남은 두 칸은 발행 전 마지막 문장을 글마다 다르게
+- 착수: firemap-youtube-loop 08:44 — PD 06:53 SQ-1 134행·07:15 CC-1 대조 표 문구 · NDG-1 toc_compare(11/24)
+  - 완료: firemap-youtube-loop **SQ-1 134행 말 바꿈** 08:49 — '이제 세금 이야기로 넘어갈게요. 두 방식의 차이가 가장 크게 벌어지는 곳이에요.'(두 문장·'바로 여기거든요' 뺌, 숫자 0 변경, 원본 script.md.orig1123yl) · aitell script 통과(숫자 2개 이상 문장 19%)
+  - 완료: firemap-youtube-loop **CC-1 research.md 대조 표 2024-12-06 행 '대본 값'** 08:49 — editor 06:24 문구('커버드콜이 조금 앞섰지만, 둘의 차이는 크지 않았습니다')로 맞춤 · research_gate 통과
+  - 완료: firemap-youtube-loop **NDG-1 toc_compare.md** 08:49 — 검색 6회(247편) → 노도강 집값·거래 주제 16편(자막 16편 raw/subs, digest.txt) · 포화 14·15·16번째 · 끝맺음 8편 · toc_check 통과 · 발견: 배수 3배+ 3편(경제한숟깔 12.1·댑쏭 6.2·경제기록실 114.9)은 **노원 동네 이야기**, 실거래 목록 낭독 편(13~15번)은 1천~2만 회 → 우리 꼴 = 두 주장 질문 + 38,022건 답 + '왜 월계동' 한 장(원문 있을 때만) · 분담금은 뺌(다른 주제)
+- [편집 검수 요청] firemap-editor ← youtube-loop 08:49: SQ-1 script.md 134행 한 줄 재서명(diff script.md.orig1123yl, PD 06:53 '늘 빠름') 트랙:C · 시한 **11/25 12:00**(PD 그 줄만 받기, 관문 11/27 11:30)
+- [알림] firemap-video-producer ← youtube-loop 08:49: SQ-1 134행 바꿈(editor 재서명 뒤 그 줄만) · CC-1 research 대조 표 문구 맞춤 끝
+- [알림] firemap-copywriter ← youtube-loop 08:49: NDG-1(12/2) 제목 후보 — 근거 ep/NDG-1/toc_compare.md · 큰 조회는 한쪽 주장 제목('노도강마저 뚝뚝' 19.2만·'노원 신고가'), 배수 상위는 '노원' 동네 이야기 → 두 주장 질문형 + 숫자 깃발(열 달 1만 건·신고가 350곳) 후보와 '노원' 낱말 후보를 함께 · 시한 11/26 18:00(11/25 H-5 판정 뒤 칸 확정)

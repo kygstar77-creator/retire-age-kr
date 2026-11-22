@@ -66,5 +66,8 @@ if __name__ == '__main__':
     # make('k1_b.png', 'arrows_tablet_36633901.jpg', 0.0, band=170, tshade=(400, 150), sw=13, tsw=8)
     # make('k1_c.png', 'hands_phone_32219704.jpg', 0.2, band=190, tshade=(400, 160), sw=13, tsw=8)
     # 11/18 고친 판: 노란 아래 화살표 3개가 '예측·공포'로 읽힘(2/3) → 사진 속 화살표는 지우면 태블릿 가장자리가 깨져(cv2 inpaint 시험, 버림) 화살표 없는 사진으로
-    make('k1_d.png', 'worried_desk_5717791.jpg', 0.25, xa=0.5, band=170, tshade=(400, 150), sw=13, tsw=8)
-    make('k1_e.png', 'trader_mouth_36755611.jpg', 0.2, band=170, tshade=(400, 150), sw=13, tsw=8)
+    # make('k1_d.png', 'worried_desk_5717791.jpg', 0.25, xa=0.5, band=170, tshade=(400, 150), sw=13, tsw=8)
+    # 11/22 copywriter 15:11: k1_d2 — 둘째 줄 '2026년 들어 24번'(10자, 합 21자), 나머지 k1_d 그대로
+    BIG = ['코스피 5% 넘게 빠진 날', '2026년 들어 24번']
+    make('k1_d2.png', 'worried_desk_5717791.jpg', 0.25, xa=0.5, band=170, tshade=(400, 150), sw=13, tsw=8)
+    # make('k1_e.png', 'trader_mouth_36755611.jpg', 0.2, band=170, tshade=(400, 150), sw=13, tsw=8)

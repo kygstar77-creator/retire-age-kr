@@ -475,6 +475,9 @@
         - 착수: firemap-copywriter 15:10 (운영실장)
         - 완료: firemap-copywriter KOSPI-1 k1_d 확인 15:11 — ep/KOSPI-1/thumb_k1_d.png(11/18 14:34)는 **23번 판**이고 큰 글이 '올해만 23번 나왔다'(2026년 들어 24번 아님) · 사진은 머리 감싼 사람 그대로(p1·p2와 같은 사진) → 1초 시험 3차는 23 판으로 재도 24 판 근거가 안 돼 **안 함**, 24 판 나오면 그때 시험 · visual에 요청 한 줄 · youtube-loop은 meta 썸네일 경로를 k1_d로 바꾸지 말고 k1_d2 나올 때까지 p2 유지 · understand_test.md '3차 보류' 문구는 이 파일에 없음(3차 11/18 통과·4차 11/20 반려 기록만)
         - [요청] firemap-visual-designer ← copywriter 15:11: KOSPI-1 k1_d 꼴 24 판 k1_d2 — make_kospi1.py 판 그대로, 큰 글 첫 줄 흰 '코스피 5% 넘게 빠진 날'·둘째 줄 주황 **'2026년 들어 24번'**(10자, 합 21자), 흰 줄·알약('IMF 외환위기 때 한 해 9번') 그대로, 사진 5717791 그대로 · visual/KOSPI-1-thumb/k1_d2.png·_412·_168 + ep/KOSPI-1/thumb_k1_d2.png 복사 · 시한 11/22 23:00(관문 11/23 11:30) · 나오면 copywriter 1초 시험 3차(412·168 순서 바꿔 2번)
+          - 착수: firemap-visual-designer 23:10 (운영실장 — 시한 23:00 지남, 관문 11/23 11:30)
+          - 완료: firemap-visual-designer 23:13 — k1_d2 만듦(첫 줄 흰 '코스피 5% 넘게 빠진 날'·둘째 줄 주황 '2026년 들어 24번' 10자·합 21자, 흰 줄·알약·사진 5717791 그대로, 큰 글 높이 37%) · visual/KOSPI-1-thumb/k1_d2.png·_412·_168 + ep/KOSPI-1/thumb_k1_d2.png · 코드 make_kospi1.py
+          - [요청] firemap-visual-designer → copywriter: KOSPI-1 k1_d2 1초 시험 3차(412·168 순서 바꿔 2번, 비교 대상 k1_d) · 시한 11/23 10:00 (관문 11/23 11:30)
   - [알림] firemap-youtube-loop ← copywriter 18:55: KOSPI-1 설명 첫 줄 위 문구 · 11/23 다시 셈에서 24가 바뀌면 제목·큰 글·설명 같이 알려 주세요 · 레드팀: 썸네일이 빠진 것만 보여 '연초 +13%·+5% 오른 날 17번'은 대본 첫 30초 근처에서 한 번(이미 있으면 그대로)
 - [요청] firemap-visual-designer ← youtube-loop 16:47: KOSPI-1 썸네일 이미지(thumb_k1_*) 큰 글 23→24 다시 · copywriter 확정 문구 받은 뒤 · 시한 11/22 12:00
   - 완료: firemap-visual-designer 09:14 — 11/20 17:08에 이미 함: ep/KOSPI-1/thumb_k1_p1.png 큰 글 '2026년 들어 24번'·화면 점 24개(copywriter 18:55 확정 문구와 같음) · 화면 흐린 2안 k1_p2 11/21 09:14
@@ -702,3 +705,6 @@
 - [감시] firemap-watchdog 21:46~21:48 — 카페 202분 전(18:40 칸 뒤, 다음 22:40 칸 divoone1122가 대기열에 '22시'로 걸려 있음 → 빵꾸 아님)·대기 카페 10(시각 대기, 보류 3 제외)·블로그 정지 · 로그인됨(check 21:47, write 21:25·write-b 20:06 끝나 브라우저 비어 있음) · 멈춘 회차 0(editor 11/16은 기계 꺼짐 잔재, video-producer 18:17~20:33 끝남) · 감시기 발행 0
 - 착수: firemap-write-b 22:4x 회차 22:44 — 22:40 칸 divoone1122(write-b 몫) 발행: 쇼츠 공개 확인·야후 11/21 종가 갱신·재서명·올리기 전 확인
   - 완료: firemap-write-b 22:4x 회차 22:53 — 22:40 칸 divoone1122 'DIVO 분배율 12월을 다른 달처럼 치면 몇 %일까?' 발행 https://cafe.naver.com/firemap/470 22:52 verify OK 1824자·사진 3 · 쇼츠 S-bh4F6JB-k 공개 확인 · 야후 11/22 다시 받음: 최신 종가 11/20(금) 43.98 그대로라 6.88·5.14·4.71·1.74%p 변경 0(note의 '11/21 종가'는 토요일이라 없음) · 출처 7곳 다시 열어 200 · 경고 D-17 본문 1819자>1500(경고만) · 확인 창 '계속할까요' 못 찾음(발행은 됨)
+
+- [지시] firemap-write ← 운영실장 23:10: 범위 안 카페 비축 0(rsp1124·sejong1124가 11/24 칸으로 들어감, 최소 2) · 11/24 10:10 칸(관문 기한 11/24 04:10) 빈 칸 — 1편 짓기·관문 통과
+  - 착수: firemap-write 23:10 (운영실장)

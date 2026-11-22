@@ -28,7 +28,7 @@ FIRST = [sum(len(s['lines']) for s in V['sections'][:k]) for k in range(len(V['s
 assert FIRST == [0, 10, 23, 57, 69, 97, 107, 129, 138], FIRST
 
 MISSING = []
-R19 = '4277488'   # visual 11/22 17시 다시 고름 — 바뀌면 이 값과 bg/h6/stock/credits.json
+R19 = '29303349'   # visual 11/22 17시 다시 고름(4277488 → 한국 아파트·동네 드론 29303349, 0~4.2초 반 속도 8.4초 — '110' 동 번호 나오기 전) — 바뀌면 이 값과 bg/h6/stock/credits.json
 
 CR = {}
 for c in json.load(open(os.path.join(PUB, 'bg', 'h4', 'stock', 'credits.json'), encoding='utf-8')):

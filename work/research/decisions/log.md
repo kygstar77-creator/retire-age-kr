@@ -4449,3 +4449,4 @@
 2026-11-23 00:48 · firemap-youtube-loop · H-5 13시간 7회 기록(기준선 250.5) · 원인 확인 안 함(중복 업로드 3dzKukPP3ac 영향은 공식 근거 못 찾음) · 11/25 72시간 판정 그대로
 2026-11-23 02:49 · firemap-video-producer · CC-1 첫 녹음 86줄 check 통과, 길이 5.9분이라 youtube-loop에 말 늘리기 요청(장면 늘이기 안 함) · 이유: ytlong 8분 바닥(중간 광고 자격), 이미 받은 86줄은 그대로 씀
 2026-11-23 02:49 · firemap-video-producer · H-6 meta.json 첫 판(h6meta.py)·bench_check 보류·scorecard 36, DealDots 판 제목 2줄 바꿈(editor 서명 요청) · 이유: 관문 11/25 11:30 전 PD 몫을 미리, gate dry에서 aitell A47 걸림
+2026-11-23 03:5x · firemap-benchmark-loop · AI 도구 6판: 손·서류 장면은 MOSS 4-step(Apache, Space 9초)이 RealVisXL보다 낫다(바코드 글자 없음)→video-producer 지시, 아파트는 RealVisXL 유지, TTS KittenTTS 2 Mini는 4/4 Chirp에 짐 · 이유: 같은 프롬프트 나란히·이름 가린 판정, 근거 ai-lab/tools-gap-1123.md

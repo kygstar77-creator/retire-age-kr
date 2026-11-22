@@ -83,3 +83,10 @@ if __name__ == '__main__':
       'p_41136594.jpg': {'site': 'Pexels', 'id': 41136594, 'by': 'FREE VIDEO HAPPY', 'url': 'https://www.pexels.com/photo/high-rise-apartment-view-in-goyang-si-41136594/', 'license': 'Pexels License', 'face': '없음'},
       'p_41136598.jpg': {'site': 'Pexels', 'id': 41136598, 'by': 'FREE VIDEO HAPPY', 'url': 'https://www.pexels.com/photo/high-rise-residential-apartments-in-goyang-si-41136598/', 'license': 'Pexels License', 'face': '없음'},
     }, open(os.path.join(H, 'sources.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+
+
+# 11/22 copywriter 1초 시험 1차: '43억이/34억으로'가 3명 모두 '9억'으로 읽힘(실제 가운데 값 차 8.50억) → BIG만 정밀 숫자로(소수점판은 aitell A31) · TOP·사진 a 그대로
+def make_a2():
+    global BIG
+    BIG = ['같은 평형 42억 8천이', '1년 뒤 34억 3천으로']
+    make('h6_a2.png', 'p_3736898.jpg', 0.3, band=190, tshade=(330, 160), sw=13, tsw=8)

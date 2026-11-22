@@ -75,7 +75,7 @@
 - 기준일: TIGER 2026-11-20 종가 · SCHD 2026-11-19 미국 종가 · 운용사 분배 표 2026.11.19 기준 · 네이버 2026.11.19 기준
 - 바뀐 것: 처음 조사 — 없음
 - 새로 찾은 것: 상장 뒤 같은 날 1억 두 계좌 3년 5개월 63.2% vs 61.7% · 해마다 이긴 쪽 바뀜(한 해 2%포인트 안) · 야후 2023년 9월 분배 33원 빠짐(운용사 합으로 확인) · 경쟁 글 실제 결과 센 글 0편
-- 2026-11-22 15:23 firemap-write(발행 날): 야후 458730.KS·SCHD·KRW=X 다시 받음(raw/*_chart_20261122.json, fetch1122.py) → calc1122.py 결과 calc_out_1122.txt가 calc_out.txt와 숫자 전부 같음(TIGER 최신 종가 11/20 금요일, 짝 SCHD 11/19 그대로) · 미래에셋 상세 Playwright 다시(fetch_tiger5.py, XHR까지) — 총보수 칸 여전히 빈 값 · FunETF 458730 총보수 0.0100% 확인(S8) · FRED는 이번에 시간 초과(환율 계산은 야후 KRW=X, FRED는 대조용 11/21 값)
+- 2026-11-22 15:23 firemap-write(발행 날): 야후 458730.KS·SCHD·KRW=X 다시 받음(raw/*_chart_20261122.json, fetch1122.py) → calc1122.py 결과 calc_out_1122.txt가 calc_out.txt와 숫자 전부 같음(TIGER 최신 종가 11/20 금요일, 짝 SCHD 11/19 그대로) · 미래에셋 상세 Playwright 다시(fetch_tiger5.py, XHR까지) — 총보수 칸 여전히 빈 값 · FunETF 458730 총보수 0.0100% 확인(S8) — 다시 연 주소: https://www.funetf.co.kr/product/etf/view/KR7458730009 (raw/funetf_458730_1122.html 11/22 15:23 받음) · FRED는 이번에 시간 초과(환율 계산은 야후 KRW=X, FRED는 대조용 11/21 값)
 - 기준일: TIGER 2026-11-20 종가 · SCHD 2026-11-19 미국 종가 (발행 날 다시 확인, 바뀜 없음)
 - 바뀐 것: 숫자 바뀜 없음(63.2%·61.7%·1억 6,317만·1억 6,168만·439원·3.03%·3.08% 그대로) · 출처 줄에 FunETF(총보수) 더함
 - 조사 뒤 공표: data/release_calendar.json — 가격은 매일, TIGER 11월 분배(11월 말 기준) 발행 뒤 · 발행 날 종가 다시 받아 숫자 갱신

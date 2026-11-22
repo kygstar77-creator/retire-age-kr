@@ -66,9 +66,9 @@ export const GapBars: React.FC<GapBarsProps> = (p) => {
           const split = g(f, grA + di * 3, 18);         // ③ 내림·오름 색이 갈라짐
           const w = (X(q.v) - X0) * s;
           const dot = g(f, 10 + i * dotGap, 8, Easing.out(Easing.back(2)));
-          const isHi = i === p.hi, isMid = i === p.mid;
+          const isHi = i === p.hi, isMid = i === p.mid;   // 11/22 심사: 은마 줄에서 가운데 단지 막대까지 옅어지면 '가운데 단지 −5.0%' 글자가 떠 보여 다른 줄 값으로 읽힘 → 가운데 막대는 진하게 남겨 글자·막대·점선을 한 줄로 잇는다
           const col = isHi && accHi ? T.accent : isMid && accMid ? T.accent : down ? (split > 0.5 ? T.ink2 : T.ink3) : T.ink3;
-          const dim = accHi && !isHi ? (down ? 0.55 : 0.3) - 0.2 * arrow : down ? 1 : 1 - 0.45 * split;   // 오른 곳은 옅게 — 은마보다 눈을 끌지 않게   // 마지막 줄엔 더 옅게 — 화살이 읽히게
+          const dim = accHi && !isHi && !isMid ? (down ? 0.55 : 0.3) - 0.2 * arrow : down ? 1 : 1 - 0.45 * split;   // 오른 곳은 옅게 — 은마보다 눈을 끌지 않게   // 마지막 줄엔 더 옅게 — 화살이 읽히게
           return <g key={k}>
             <circle cx={X0} cy={Yc(i)} r={6} fill={T.ink2} opacity={dot * (1 - s)} />
             {s > 0 ? <rect x={Math.min(X0, X0 + w)} y={Yc(i) - BH / 2} width={Math.abs(w)} height={BH} rx={3} fill={col} opacity={dim} /> : null}

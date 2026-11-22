@@ -1,0 +1,42 @@
+{
+ "_note": "2026-11-22 11:37 motion — SQ-1 상시 장 띠 props(registry B-57, 11/22 재판정 5편 4/5). PD props 스크립트가 이 파일을 읽어 편 props의 strip 칸에 넣는다. 장 이름은 script.md '## [n. 제목]' 그대로(기계로 읽음). 왼쪽은 still에서 채널 꼬리표 '파이어맵'과 겹쳐(motion_preview/strip_chapter_left.png는 버린 시안) 오른쪽 — KOSPI-1과 같은 자리라 편 차이는 topic 글자로만 남음.",
+ "strip": {
+  "topic": "나스닥100과 SCHD",
+  "side": "right",
+  "chapters": [
+   {
+    "n": 1,
+    "name": "나스닥100은 어떻게 갈아 끼우나"
+   },
+   {
+    "n": 2,
+    "name": "SCHD는 무엇을 담나"
+   },
+   {
+    "n": 3,
+    "name": "섞는 비율별 지난 15년과 5년"
+   },
+   {
+    "n": 4,
+    "name": "원화로 다시 보면"
+   },
+   {
+    "n": 5,
+    "name": "매달 들어오는 돈"
+   },
+   {
+    "n": 6,
+    "name": "직접 사나, 국내 상장으로 사나"
+   },
+   {
+    "n": 7,
+    "name": "함정"
+   },
+   {
+    "n": 8,
+    "name": "끝"
+   }
+  ],
+  "starts_rule": "각 장 카드 장면(script.md '## n.' 첫 장면) 시작 프레임. 0. 여는 말에는 띠 없음. 실사(bg) 장면에서는 dark=true. 띠를 켜면 TallyFrame chapter 칸은 비운다(같은 글자 두 번 금지). 왼쪽 위 채널 꼬리표와 겹치면 top을 내린다(still로 확인)."
+ }
+}

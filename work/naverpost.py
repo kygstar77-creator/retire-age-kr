@@ -450,6 +450,9 @@ _STOP = set('서울 아파트 오피스텔 전세 월세 배당 실거래 매매
 # 약어는 대상이 아니다. 이걸 안 빼면 'ISA 연금저축'과 'ISA 배당'이 같은 대상으로 잡힌다.
 _NOTICKER = {'ETF', 'API', 'GDP', 'CPI', 'PPI', 'FOMC', 'EPS', 'PER', 'PBR', 'ROE', 'ISA', 'IRP',
              'DSR', 'LTV', 'DTI', 'REIT', 'IPO', 'ETN', 'TDF', 'MMF', 'CMA', 'FED', 'EU', 'US'}
+# 2026-11-22 youtube-loop(콘텐츠 본부장, write-b 16:45 결정 요청): 운용사 상표는 티커가 아니다 — 'TIGER 미국배당다우존스'가
+# 'TIGER 미국S&P500'(#462)과 같은 대상으로 막혔다. 상품 이름이 같으면 head_key·already_up이 따로 잡는다.
+_NOTICKER |= {'TIGER', 'KODEX', 'ACE', 'RISE', 'SOL', 'PLUS', 'HANARO', 'KOSEF', 'KIWOOM', 'ARIRANG', 'KBSTAR', 'TIMEFOLIO'}
 
 def subject_keys(title):
     """제목에서 '같은 대상'으로 볼 만한 말만 뽑는다 — 아파트 단지명과 종목 티커.

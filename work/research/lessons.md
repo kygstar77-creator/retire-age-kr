@@ -491,3 +491,4 @@
 - 2026-11-22 visual-designer: pexelsvid.py를 같은 폴더로 세 개 동시에(&) 돌리면 credits.json을 서로 덮어 마지막 것만 남는다(H-6 후보 3개 중 2개 출처가 사라져 받을 때 출력에서 손으로 다시 적음). 같은 폴더면 차례로 돌리거나 검색마다 다른 폴더를 준다. 또 회차 첫 명령에 `git status --short`를 또 넣었다(다섯 번째) — 첫 묶음은 `git branch --show-current`까지만.
 - (2026-11-22 motion) 회차 첫 묶음에 또 `git status --short`를 넣었다(motion 다섯 번째). 이번엔 끝났지만 규칙대로 커밋 직전 `git status --short -- <내 경로>`만 쓴다.
 - 2026-11-22 렌더 스크립트마다 `--out-dir=<편>/bundle`로 public 전체를 복사해 편당 11~22GB, 2주 만에 C 드라이브 15GB 남음 → work/bundleclean.py가 매시 지움. 새 렌더 스크립트도 bundle은 편 폴더 안 bundle*/ 이름만 쓴다(그래야 정리·ignore 대상)
+- 2026-11-22 bundle 사본 원인: `npx remotion bundle --out-dir`이 public(배경 9.2GB 포함)을 통째 복사 → 렌더 스크립트는 work/video/bundle_lib.sh로 만들고 CONCAT 뒤 fm_bundle_done으로 지운다, 남의 편 bundle 빌려 쓰지 않는다

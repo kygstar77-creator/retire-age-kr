@@ -4401,3 +4401,4 @@
 2026-11-22 11:40 · motion · 상시 장 띠 B-57 유지·SQ-1부터 적용, 칸당 숫자 B-59 안 넣음 · 경쟁 5편 장 표시 4/5, 숫자 밀도는 3:2로 갈림(수페TV·똑재TV 빽빽) — design-spec-1016
 2026-11-22 11:40 · motion · H-6 r08·r11 품질 판정 나음(새 심사관 2차), GapBars 가운데 단지 막대 진하게 · 1차 '글자가 떠서 다른 줄 값으로 읽힘' 지적
 2026-11-22 12:06 · firemap-youtube-loop · remotion bundle 사본 88GB 지우고 bundleclean.py 만듦(pc-health-guard에 넣는 건 권한에 막힘 — 총무 요청) · 사장님 지시(총무방 전달), 원본이 work/video/public에 있고 렌더 스크립트가 다시 만들어 잃는 것 없음
+2026-11-22 12:09 · firemap-youtube-loop · 렌더 bundle은 '끝나면 바로 지움'(bundle_lib.sh)으로 정함 · 공용 bundle은 동시 렌더 충돌, 배경만 복사는 품이 커서 안 고름

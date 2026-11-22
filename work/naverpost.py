@@ -490,14 +490,60 @@ def head_key(title, n=8):
     s = re.sub(r'[\s\d,%·\-~]+', '', body)
     return s[:n]
 
+# 2026-11-23 회의 11/22 21:43 지시(verify R3): 운용사 상표를 _NOTICKER로 뺀 뒤로는 같은 상품을 어순만 바꾼 제목
+# ('KODEX 미국배당커버드콜액티브 분배금 …' ↔ '분배금 … KODEX 미국배당커버드콜액티브')을 못 잡는다(head_key는 앞 8글자만).
+# 상표 + 바로 뒤 상품 이름 전체를 열쇠로 지난 30일 글과 견준다. 'TIGER 미국S&P500'과 'TIGER 미국배당다우존스'는 다른 열쇠다.
+_BRANDS = ('TIGER', 'KODEX', 'ACE', 'RISE', 'SOL', 'PLUS', 'HANARO', 'KOSEF', 'KIWOOM', 'ARIRANG', 'KBSTAR', 'TIMEFOLIO')
+
+def product_keys(title):
+    """제목 속 국내 ETF 상품 이름 전체('KODEX미국배당커버드콜액티브'). 상표만 있고 뒤 이름이 없으면 넣지 않는다."""
+    ks = set()
+    for m in re.finditer(r'(?<![A-Za-z])(' + '|'.join(_BRANDS) + r')\s*([가-힣A-Za-z0-9&]+)', title or ''):
+        name = re.sub(r'(은|는|이|가|을|를|의|와|과|도|만|으로|로)$', '', m.group(2))
+        if len(name) >= 3: ks.add(m.group(1) + name)
+    return ks
+
+def _raw_recent_days(kind, days=30, pages=4):
+    """카페 지난 <days>일 글 (제목, URL). 블로그는 _raw_recent 그대로."""
+    if kind != 'cafe': return _raw_recent(kind)
+    key = ('cafe-days', days)
+    if key in _RECENT_CACHE: return _RECENT_CACHE[key]
+    import urllib.request
+    out, cut = [], (time.time() - days * 86400) * 1000
+    try:
+        for p in range(1, pages + 1):
+            u = (f'https://apis.naver.com/cafe-web/cafe2/ArticleListV2dot1.json?search.clubid={CAFE_ID}'
+                 f'&search.queryType=lastArticle&search.page={p}&search.perPage=50')
+            arts = json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20))['message']['result']['articleList']
+            for a in arts:
+                if (a.get('writeDateTimestamp') or 0) >= cut:
+                    out.append((a.get('subject', ''), f'https://cafe.naver.com/ca-fe/cafes/{CAFE_ID}/articles/{a.get("articleId")}'))
+            if not arts or (arts[-1].get('writeDateTimestamp') or 0) < cut: break
+    except Exception as e: print('지난 30일 글 읽기 실패:', repr(e)[:120])
+    if out: _RECENT_CACHE[key] = out
+    return out
+
+def same_product_30d(kind, title, recent=None):
+    """지난 30일 글 중 같은 ETF 상품 이름이 든 것 [(제목, URL, [겹친 것])]. recent는 시험용."""
+    mine = product_keys(title)
+    if not mine: return []
+    hits = []
+    for raw, url in (recent if recent is not None else _raw_recent_days(kind)):
+        if norm(raw) == norm(title): continue
+        both = mine & product_keys(raw)
+        if both: hits.append((raw, url, ['같은 상품 ' + ', '.join(sorted(both))]))
+    return hits
+
 def same_subject_today(kind, title):
     """최근 글 중 같은 대상·같은 주제를 다룬 것. 있으면 [(제목, URL, 겹친 것)]."""
     corner, _ = strip_corner(title)
     mine = subject_keys(title)
     hk = head_key(title)
-    hits = []
+    hits = list(same_product_30d(kind, title))
+    seen_urls = {u for _, u, _ in hits}
     for raw, url in _raw_recent(kind):
         if norm(raw) == norm(title): continue      # 같은 글(재발행)은 already_up이 따로 잡는다
+        if url in seen_urls: continue
         if corner and strip_corner(raw)[0] == corner:
             continue                                # 같은 매일 코너는 매일 나가는 게 정상이다
         both = mine & subject_keys(raw)

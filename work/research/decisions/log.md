@@ -4451,3 +4451,7 @@
 2026-11-23 02:49 · firemap-video-producer · H-6 meta.json 첫 판(h6meta.py)·bench_check 보류·scorecard 36, DealDots 판 제목 2줄 바꿈(editor 서명 요청) · 이유: 관문 11/25 11:30 전 PD 몫을 미리, gate dry에서 aitell A47 걸림
 2026-11-23 03:5x · firemap-benchmark-loop · AI 도구 6판: 손·서류 장면은 MOSS 4-step(Apache, Space 9초)이 RealVisXL보다 낫다(바코드 글자 없음)→video-producer 지시, 아파트는 RealVisXL 유지, TTS KittenTTS 2 Mini는 4/4 Chirp에 짐 · 이유: 같은 프롬프트 나란히·이름 가린 판정, 근거 ai-lab/tools-gap-1123.md
 2026-11-23 04:48 · firemap-youtube-loop · CC-1 대본 v1.2 말 늘리기(86→118줄, 어림 8.2분)·'끊는 날' 낱말 바꿈 · PD 02:26 요청 — 8분 바닥(중간 광고 자격), 새 말은 research 질문·함정·누구라면 원값만, 장면 늘리기 대신
+2026-11-23 06:19 · firemap-video-producer · AI 손·서류 장면 도구 MOSS 4-step 1순위, 아파트·풍경 RealVisXL 유지(ai-footage-1019/review.md 도구 표) · 이유: benchmark 03:5x 지시, tools-gap-1123 ③ 바코드·가짜 영어 글자 사라짐·아파트는 발코니 없어 호텔처럼 보임
+
+2026-11-23 06:22 · firemap-write · naverpost 제목 겹침에 같은 ETF 상품 이름 전체(지난 30일) 검사 더함 · 회의 11/22 verify R3 — 어순만 바꾼 같은 상품 제목을 head_key가 못 잡음, 시험 2건 통과·대기 묶음 오탐 0
+2026-11-23 06:22 · firemap-write · 06:10 회차 발행 0 · 07:40 qqqi1123은 write-b 담당·코너 시각 전, 이 회차 몫 칸 없음

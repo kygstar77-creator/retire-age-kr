@@ -1,74 +1,15 @@
 {
- "date": "2026-11-22",
+ "date": "2026-11-23",
  "runs": [
   {
    "hour": 6,
-   "ts": "07:42",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "분당 아파트 시세, 재건축 선도지구가 더 올랐을까?",
-    "url": "https://cafe.naver.com/firemap/466"
-   },
-   "note": "블로그 정지(STOP_blog·범위) · verify OK 2142/2142·사진 4/4 · 발행 날 국토부 다시 받음(출처 S1~S5) · 07:00 첫 시도 readcheck 1건 거부→고쳐 재시도 · #450·#454 정정 적용 · 11/23 10:10 wirye1123 관문 통과(자료조사 웹검색 4건·1차 출처 4: 국토부 API·정책브리핑·서울시 보도자료·법령, 교차검증 사실 4 유지·말투 14 중 9 반영, 이해 2차 6명) · 개선: readcheck 지적 남으면 발행 거부되는 것 playbook에 적음"
-  },
-  {
-   "hour": 9,
-   "ts": "10:39",
+   "ts": "06:22",
    "blog": null,
    "cafe": {
-    "title": "S&P500 오래 들고 있으면 손해 본 적 있을까?",
-    "url": "https://cafe.naver.com/firemap/467"
-   },
-   "note": "슬롯 10:10 spx10y1122 · 올리기 전 확인 야후 ^GSPC·^SP500TR 재받음(변동 없음) · 검증 경로: 관문 통과분(11/21 crosscheck·selfcheck) + readcheck 0·editgate auto 재서명 · verify OK 1707/1707·사진 3/3 · S&P DJI 1차 대조 403 · 블로그 없음(카페만 운영) · 개선: 없음(본문 URL은 readcheck가 이미 잡음)"
-  },
-  {
-   "hour": 12,
-   "ts": "12:42",
-   "blog": {
     "title": null,
     "url": null
    },
-   "cafe": {
-    "title": "송도 아파트 단지별 가격표, 고점 대비 몇 %일까?",
-    "url": "https://cafe.naver.com/firemap/468"
-   },
-   "note": "write 12:10 회차 · 12:40 칸 songdopair1122(H-5 짝 글) verify OK 3151/3151·사진 3/3 · 발행 전 국토부 연수구 2026-07~11 매매 다시 받아 대조(새 거래 0·빠진 거래 0) · 블로그 없음(하루 1편 원칙·대기 블로그는 보류분뿐) · 덤: 11/23 12:40 kosdaq1123 관문 통과(ECOS 직접 계산 3종·경쟁 5편·crosscheck 사실 5 유지·말투 15 중 12 반영·selfcheck 0·readcheck 0·이해 2차 6명·editgate auto 1a343458) · 개선: 없음"
-  },
-  {
-   "hour": 15,
-   "ts": "16:01",
-   "blog": null,
-   "cafe": {
-    "title": "TIGER 미국배당다우존스 vs SCHD 수익 비교",
-    "url": null
-   },
-   "note": "16:10 칸 tigerdj1122 발행 안 됨 — naverpost dupcheck가 'TIGER' 겹침(#462 TIGER 미국S&P500 적립식, 지수 축)으로 거부. 대상·축 다름(배당다우존스 vs SCHD)이라 --same-ok 재실행을 시도했으나 자동 권한 판정이 막음 → 우회 안 함, 칸 비움. 올리기 전 확인: 야후 다시 받아 숫자 바뀜 없음·총보수 FunETF 둘째 출처·auto 재서명 2ebd9650·readcheck 0·aitell 0.0·selfcheck 사실 0. 교차검증은 11/21 crosscheck 기록 유지. 개선: selfcheck가 이름표 뒤 주소 속 숫자(utm)를 [사실]로 잡던 것 고침."
-  },
-  {
-   "hour": 18,
-   "ts": "18:25",
-   "blog": null,
-   "cafe": {
-    "title": "나스닥100 ETF 네 곳 수익 비교, 같은 날 샀다면",
-    "url": "https://cafe.naver.com/firemap/469"
-   },
-   "note": "firemap-write 18:10 회차 · 18:40 칸 ndxetf1122(종목·형식4) · 발행 전 야후 4종 다시 받음 11/20 종가 그대로 · 관문은 11/21 21:37 통과분(crosscheck 사실 2 반영·selfcheck 0·readcheck 0·editgate auto 해시 일치) · verify OK 1841/1841·사진 3/3 · jitter 2분22초로 18:24쯤 올라감(slot now 허용) · 확인 창 처리 TimeoutError 났지만 발행·verify 정상 · 블로그 없음(하루 상한·범위 규칙) · 개선: 없음(worklist 2번 textrule 대조 닫음)"
-  },
-  {
-   "hour": 21,
-   "ts": "21:24",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "21:10 회차 발행 0 — 이 회차 몫 카페 칸 없음(22:40은 write-b). tigerdj1122(가드 풀림)는 지금 내면 간격 120분 규칙으로 22:40 코너가 밀려 11/24 07:40 칸으로 배정, rsp1124 11/24 16:10 장부 등록. 자료조사·교차검증·verify 해당 없음. 개선: 장부 칸 없는 비축(rsp1124) 정리"
+   "note": "firemap-write 06:10 — 발행 0(07:40 qqqi1123 write-b 몫, 코너 시각 전). 로그인됨. 회의 지시 verify R3 완료: naverpost same_product_30d. 개선: 같은 상품 어순 바꿈 제목 검사. 11/24 18:40·22:40 카페 칸 장부에 없음 — 다음 회차 몫"
   }
  ]
 }

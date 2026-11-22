@@ -1,6 +1,6 @@
 # KOSPI-1 잘된 영상 대조 (bench_check) — firemap-video-producer 2026-11-20 21시대 (렌더 뒤)
 대상: 11/24 월 11:30 칸 KOSPI-1 · 제목 meta.json '코스피 올해 하루 5% 넘게 빠진 날 24번, IMF 때보다 많았다' · 썸네일 thumb_k1_p1.png(자리, p2 대기)
-근거 파일: toc_compare.md(경쟁 목차 13편·포화) · analysis.md ②③ · copy/kospi1/titles.md·final.txt · visual/KOSPI-1-thumb/gemini_1s_k1_p1.md · understand_test.md · review.md · shot_plan.md · facts.txt · 렌더본 out/kospi1_dsl.mp4
+근거 파일: toc_compare.md(경쟁 목차 13편·포화) · analysis.md ②③ · copy/kospi1/titles.md·final.txt · visual/KOSPI-1-thumb/gemini_1s_k1_p1.md · understand_test.md · review.md · shot_plan.md · facts.txt · 렌더본 out/kospi1_dsl1123.mp4(11/23 07:1x PD — 11/22 통렌더 kospi1.mp4에 deess --chirp·loudnorm, 11/20 kospi1_dsl.mp4는 옛 실사판)
 
 ## 제목
 | 잘된 예 ID · 근거 파일 | 우리 편 | 맞춤/안 맞춤 |
@@ -49,4 +49,11 @@
 ## 11/22 22:49 PD 다시 대조
 - 실사 '$' 글자: 풀림(위 표). shot_plan 못함 3줄(r03·r07·r24) → 나음·같음·나음(새 심사관 Agent, research_gate.shot_check 0건).
 - 썸네일: 아직 안 맞춤 — copywriter 5차 결론 k1_d, 그런데 k1_d는 23번·'올해만' 옛 판이라 visual k1_d2('2026년 들어 24번') 대기(copywriter 11/22 15:11 요청). 판이 나오고 1초 시험 권유 '아니오'면 PD가 '대조: 통과'를 단다.
+대조: 보류 — 썸네일 k1_d2 하나만 남음.
+
+
+## 11/23 07:18 PD 다시 대조(운영실장 07:10 지시)
+- 렌더본 바뀜: meta.json video가 11/20 kospi1_dsl.mp4(옛 실사 '$' 판)를 가리키고 있었음 → 11/22 통렌더 kospi1.mp4(실사 3컷·r03 판 교체본)에 deess --chirp·loudnorm → **out/kospi1_dsl1123.mp4**(쉿소리 -10.6→-12.0dB·통합 -17.0 LUFS·참 피크 -1.1 · 8:02 · 장 시작 9개 kospi1.json과 같음) · meta.json·kospi1meta.py 경로 고침(원본 meta.json.pre1123pd)
+- ytlong gate(새 파일): 쉿소리·음량·쉼·bgcheck·치직·자리표시자·중복 모두 통과, 막힘은 이 줄 하나뿐
+- 썸네일: 아직 — copywriter k1_d2 1초 시험 3차(07:4x) 뒤 meta.thumb(지금 k1_p1)·kospi1meta.py THUMB 바꾸고 PD가 '대조: 통과'
 대조: 보류 — 썸네일 k1_d2 하나만 남음.

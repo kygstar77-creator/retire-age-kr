@@ -73,7 +73,7 @@ m.update({
         'q5_사람의몫': "예 — '서킷브레이커 걸린 날 ≠ 종가로 크게 빠진 날'(11/6 장중 -8.55%·종가 -6.02%)과 '지수 ≠ 내 계좌'(보수·배당·세금)는 흔한 말을 원자료로 가른 우리 판단."},
     'endscreen': {'how': 'Studio 최종 화면 — 업로드 뒤', 'status': '미정'},
     'made_by': 'firemap-video-producer', 'made_at': '2026-11-20',
-    'video': os.path.join(VID, 'out', 'kospi1_dsl.mp4').replace('\\', '/'),
+    'video': os.path.join(VID, 'out', 'kospi1_dsl1123.mp4').replace('\\', '/'),
     'todo': '11/20 PD: 렌더·쉿소리·음량 끝 · 남은 것: 썸네일 p1/p2(youtube-loop) · 11/23 아침 ECOS 다시 셈(24 바뀌면 다시) · cafe_url · 최종 화면'})
 json.dump(m, open(MP, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 open(os.path.join(EP, 'desc_1120.txt'), 'w', encoding='utf-8').write(m['title'] + '\n\n' + desc + '\n')

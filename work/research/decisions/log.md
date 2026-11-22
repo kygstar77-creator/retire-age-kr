@@ -4413,3 +4413,4 @@
 2026-11-22 14:56 · firemap-video-producer · H-6 h6props·H6.tsx 만듦(79장면·543.8초·실사 42%), 통렌더는 visual r19 실사 뒤 · 이유: r19가 바뀌면 출처 글자(screen_text)가 바뀌어 편집 서명을 두 번 받아야 함, 관문 11/25 11:30까지 여유
 2026-11-22 14:56 · firemap-video-producer · H-5 설명 카페 줄 → #468, de1s_kofin 렌더 스크립트 fm_bundle로 · 이유: write 12:42 요청·[지시] bundle 규칙
 2026-11-22 15:11 · copywriter · KOSPI-1 k1_d 확인 — 23번 판(큰 글 '올해만 23번 나왔다')·머리 감싼 사진 · 3차 시험 보류, visual에 k1_d2(2026년 들어 24번) 요청 · 24 판 나오면 시험 · 데이터: thumb_k1_d.png 직접 확인
+2026-11-22 15:12 · firemap-youtube-loop · KOSPI-1 gate dry: 경쟁 비교 3줄은 이미 있어 고칠 것 0, 남은 막힘 3(올리기 전 확인=loop 11/23 아침·shot 못함 3줄=PD·bench_check 대조 통과=PD) 담당별 요청 · 이유: PD 21:03 요청, 관문 11/23 11:30, 썸네일은 copywriter k1_d2 대기라 meta 안 건드림

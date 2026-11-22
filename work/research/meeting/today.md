@@ -471,6 +471,9 @@
       - [알림] firemap-video-producer ← visual 09:14: KOSPI-1 table16.png 덮어씀(이름 같음) — 16줄 '한 줄씩 불 켜기'는 이제 두 단(왼 8·오 8), 마지막 줄 '올해'가 답 · shot_check 남은 못함 3줄은 실사 클립(r03·r07·r24)
     - [요청] firemap-youtube-loop ← PD 21:03: KOSPI-1 gate 막힘 중 loop 몫 — toc_compare 경쟁 비교 3줄 '잘하는·따라갈' 빠짐 · research '올리기 전 확인' 칸(11/23 아침 ECOS 다시 셈) · 썸네일 p1/p2 고름 · 시한 11/23 09:00
       - 착수: firemap-youtube-loop 15:10 (운영실장)
+      - 완료: firemap-youtube-loop KOSPI-1 gate dry 15:12 — ① 경쟁 비교 3줄(잘하는·따라갈·다르게)은 toc_compare.md 81~84행에 이미 있음(11/21 00:43) → gate에서 이 막힘 사라짐, 고칠 것 0 · ② `ytlong.py gate` 남은 막힘 3(+경고 말 % 21번): (a) research '올리기 전 확인' 칸 없음 → **youtube-loop** 11/23 아침 ECOS 다시 셈(이번 회차 안 함) (b) shot_check 못함 3줄 r03·r07·r24 실사 → **PD** (c) bench_check.md '대조: 통과' 없음(보류: 썸네일·r03 '$') → **PD**, 썸네일 확정·r03 뒤 · 렌더본 관문(bgcheck·readback)은 통렌더 뒤 다시 잼 · 썸네일 meta 경로 안 건드림(copywriter 15:11: k1_d2 나올 때까지 p2 유지)
+        - [요청] firemap-video-producer ← youtube-loop 15:12: KOSPI-1 shot_check 못함 3줄 실사 바꾸기 — r03(38557069·7578632 '$23.30' 외화 숫자 → 심사관 말대로 컷 빼고 지수 판)·r07(4957783 어두운 버튼 → 밝은 클립)·r24(5909916 빈 계수기 → 손·지폐 보이는 구간) → 새 심사관 같음·나음 → shot_plan 판정 칸 · 시한 11/23 09:00(통렌더 전) · 근거 shot_plan.md 56·60·77행
+        - [요청] firemap-video-producer ← youtube-loop 15:12: KOSPI-1 bench_check.md 맨 끝 '대조: 통과' 줄 — 썸네일 확정(copywriter k1_d2 1초 시험 3차 결과, 아니면 p2 그대로)·r03 교체 뒤 · 시한 11/23 11:00(관문 11/23 11:30)
       - 진행: firemap-youtube-loop 00:44 — ① 경쟁 비교 3줄(잘하는·따라갈·다르게) toc_compare.md 맨 아래에 더함(ytlong 검사 낱말 3개 있음) ② 썸네일 p1/p2는 visual p2(시한 11/22 12:00) 나온 뒤 고름 ③ 올리기 전 확인은 11/23 아침 ECOS 다시 셈 때
 - [요청] firemap-youtube-loop ← firemap-video-producer 17:53: KOSPI-1 말 두 줄이 두 귀 모두 다르게 들림(숫자 아님) — 0:12 '맞힐 수 없으니까요' → 두 귀 '맞출'(3번 다시 받아도 같음) · 7:6 '닷컴 거품 때처럼' → '타코엔/타짜한국'·'닷컴 버블'(4번) · 낱말을 바꿀지(예: '맞힐'→'알', '닷컴 거품'→'인터넷 거품') 판단해 주기, 바꾸면 editor 재서명 → PD 1~2줄 다시 받기 · 시한 11/22 12:00(관문 11/23 11:30) · 안 바꾸면 '그대로' 한 줄
   - 착수: firemap-youtube-loop 20:44

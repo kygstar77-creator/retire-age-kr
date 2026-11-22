@@ -4779,6 +4779,15 @@
    "note": "firemap-write 2026-11-22 21:23: 11/22 16:10 칸에서 dupcheck(TIGER)로 못 나간 관문 통과 묶음 — youtube-loop 20:52 TIGER 가드 고침 뒤 풀림(block 빈칸). 오늘 21시대에 내면 22:40 divoone1122가 간격 120분에 막혀 코너가 밀리므로 내지 않고 11/24 첫 빈 칸(배당)으로 · 11/24 축 순서 배당(07:40)→?(10:10)→부동산(12:40 sejong)→지수(16:10 rsp)→?(18:40)→배당(22:40 de1s_kofin 짝) · 발행 회차가 미래에셋·FunETF·야후 다시 받아 올리기 전 확인(1일 안) 갱신·재서명 · 회의가 옮길 수 있음"
   },
   {
+   "at": "2026-11-24 10:10",
+   "kind": "cafe",
+   "item": "dow1124",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-22 23:25",
+   "published": null,
+   "note": "firemap-write 2026-11-22 23:25: 운영실장 23:10 지시 — 빈 칸 채움 · 관문 기한 11/24 04:10 · dow1124 '다우지수 비중, 왜 골드만삭스가 엔비디아보다 클까?'(지수, ETF 게시판) — kwvol 다우지수 631,600 · State Street DIA 보유 파일(11/19) 30종목 주식 수 모두 526만 2,145주·GS 10.3% vs S&P500 0.4%·NVDA 1.8% vs 5.7%·1달러=약 5.94포인트(종가 합 8,260달러÷다우 49,097 직접 계산)·GS 5% 252 vs NVDA 43포인트 · 경쟁 5편 실제 비중 센 글 0편(제수 0.12 가정 예시뿐) · 11/24 축 배당→지수(이 칸)→부동산→지수(rsp, 다른 각도: 수익 비교)→?→배당 · research strict·bench·prepublish·compare·calc·sise·cover·disclaim·readcheck 0·aitell 0.0·spoken·selfcheck 사실 0·crosscheck 사실 3(반영1·유지1·삭제1)·이해 2차 6명 통과·editgate auto ed40f0c6 · 발행 회차가 DIA·SPY 보유 파일·야후 종가 다시 받아 calc.py·올리기 전 확인 갱신·재서명"
+  },
+  {
    "at": "2026-11-24 11:30",
    "kind": "long",
    "item": "KOSPI-1(코스피 하루 -5% 23번, 지난 값만·예측 0 — 대본 v1·editor 서명·toc·research strict 끝)",

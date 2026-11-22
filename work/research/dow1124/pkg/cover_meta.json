@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "State Street DIA·SPY 보유 종목 파일(As of 19-Nov-2026) 비중, calc_out.txt",
+ "made_at": "2026-11-22",
+ "by": "research/dow1124/mkimg.py",
+ "out": "img/00.png",
+ "topic": "다우지수 비중",
+ "num": "10.3%·1.8%",
+ "topic_px": 54,
+ "num_px": 40,
+ "follows": "경쟁 1 joaijoa1/224473009068·경쟁 6 dlfdjdl/224474884006 계산 방식 설명 그림(표·숫자) — 가정 숫자 대신 실제 비중"
+}

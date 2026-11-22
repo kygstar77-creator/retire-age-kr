@@ -1,0 +1,21 @@
+[오늘 찾은 것]
+2026-11-22 · State Street DIA 보유 종목 파일(As of 19-Nov-2026): 30종목 모두 Shares Held 5,262,145 · 비중 GS 10.245464·CAT 6.496059·MSFT 6.023757·AMGN 5.274263·V 4.862645 … NVDA 1.764696 · NKE 0.415002 · raw/dia_holdings.xlsx · https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-dia.xlsx
+2026-11-22 · State Street SPY 보유 종목 파일(As of 19-Nov-2026): GS 0.40·CAT 0.40·MSFT 5.97·AAPL 8.22·AMZN 4.08·NVDA 5.70 · 상위 10 AAPL·MSFT·NVDA·AMZN·AVGO·GOOGL·META·GOOG·LLY·BRK.B · raw/spy_holdings.xlsx · https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx
+2026-11-22 · State Street DIA 상품 페이지: Gross Expense Ratio 0.16% · Inception Date Jan 14 1998 · Number of Holdings 30 · "The DJIA is a price-weighted index of 30 component common stocks" · raw/ssga_dia.txt · https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-dow-jones-industrial-average-etf-trust-dia
+2026-11-22 · 야후 파이낸스 chart API 30종목·^DJI 11/19 종가(raw/q_*.json), ^DJI·^GSPC 2년 일별(raw/DJI.json·GSPC.json) · https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC
+2026-11-22 · S&P 다우존스 지수 방법론 PDF(methodology-dj-averages.pdf) 403 — 못 엶, 주가 가중은 DIA 상품 페이지 문장으로 확인
+2026-11-22 · toprank '다우지수 계산 방법' 블로그 상위 8편, 본문 5편(bench_raw) — 제수를 0.12 등으로 가정한 예시뿐, 실제 비중·1달러당 포인트 센 글 0편
+
+[계산 — calc.py → calc_out.txt]
+11/19 다우 49,097.06 · 30종목 종가 합 8,260.49달러 · 제수(계산) 0.168248 · 1달러 = 5.94포인트
+주가 비중(계산) = DIA 비중과 0.05%p 안에서 같음(GS 10.26 vs 10.25)
+5% 오르면: GS 252 · CAT 160 · MSFT 148 · AMGN 130 · V 120 · AAPL 104 · NVDA 43 · NKE 10 포인트 · GS/NVDA 252/43 = 5.9배
+종가: GS 847.53 · NVDA 145.98 · NKE 34.33
+DIA 비중: CAT 6.496 · MSFT 6.024 · AAPL 4.221 · AMZN 3.111 · AMGN 5.274 · V 4.863
+다우 상위 5 비중 합 32.9% · SPY 안 다우 30종목 비중 합 38.5%
+1년(2025-11-20~2026-11-20) 가격: 다우 +5.2% · S&P500 +5.7%
+반올림(본문 값): GS 10.3% · CAT 6.5% · MSFT 6.0% · AAPL 4.2% · AMZN 3.1% · NVDA 1.8% · NKE 0.4% · 1주 약 848달러(847.53) · 146달러(145.98) · 34달러(34.33)
+SPY 보유 종목 파일 종목 줄 504(미국 대형주 500여 곳) · 49,097.06 ÷ 8,260.49 = 5.94배
+제수 0.168248 → 약 0.17(1보다 작음)
+2026-11-22 · Invesco RSP 상품 페이지(rsp1124 11/22 받은 것 다시 봄, raw/invesco_rsp_1122.txt): "the market-cap-weighted S&P 500 Index" — S&P500은 시가총액 가중 · https://www.invesco.com/us/en/etf/sp-500-equal-weight-rsp.html
+SPY 상위 10(11/19): AAPL 8.22·MSFT 5.97·NVDA 5.70·AMZN 4.08·AVGO 2.66·GOOGL 2.58·META 2.12·GOOG 2.08·LLY 1.74·BRK.B 1.72 — 다우 상위 5(GS·CAT·MSFT·AMGN·V) 중 들어간 건 MSFT 하나(GS 0.40·CAT 0.40·AMGN 0.38·V 1.11)

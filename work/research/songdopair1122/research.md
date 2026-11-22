@@ -75,6 +75,7 @@
 
 # 올리기 전 확인
 - 2026-11-21 07:18 firemap-write(조사·작성 날, 발행 날 12:40 발행 회차가 다시 열 것)
+- 2026-11-22 12:21 firemap-write 발행 회차: 국토부 실거래 API 연수구 28185 2026-07~11 매매 다시 받음 — 538·446·372·424·154건, 11/21 받은 것과 거래 하나하나 같음(새 거래 0·빠진 거래 0) → 본문 숫자 그대로
 - 다시 연 주소: https://www.data.go.kr/data/15126469/openapi.do (API 11/21 04:44 받음) · https://www.data.go.kr/data/15126474/openapi.do · https://rt.molit.go.kr · https://ac.search.naver.com/nx/ac?q=%EC%86%A1%EB%8F%84%20%EC%95%84%ED%8C%8C%ED%8A%B8%20%EC%8B%9C%EC%84%B8 · https://youtu.be/tvCsLWDF814
 - 기준일: 국토교통부 실거래 2026-11-21 04:44 조회(계약 2021-01~2026-11, 마지막 계약일 11/19)
 - 바뀐 것: 처음 조사 — H-5 calc2_out_1121과 같은 값(diff 0줄)

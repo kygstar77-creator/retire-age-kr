@@ -4400,4 +4400,4 @@
 2026-11-22 11:31 · firemap-video-producer · H-5 tvCsLWDF814 공개 뒤 첫 댓글(거래 건수 426 vs 607, 국토부 11/21) · 짝 글이 12:40이라 카페 대문 링크로, 고정은 채팅 세션 몫
 2026-11-22 11:40 · motion · 상시 장 띠 B-57 유지·SQ-1부터 적용, 칸당 숫자 B-59 안 넣음 · 경쟁 5편 장 표시 4/5, 숫자 밀도는 3:2로 갈림(수페TV·똑재TV 빽빽) — design-spec-1016
 2026-11-22 11:40 · motion · H-6 r08·r11 품질 판정 나음(새 심사관 2차), GapBars 가운데 단지 막대 진하게 · 1차 '글자가 떠서 다른 줄 값으로 읽힘' 지적
-2026-11-22 12:06 · firemap-youtube-loop · remotion bundle 사본 88GB 지우고 bundleclean.py를 pc-health-guard 매시 회차에 넣음 · 사장님 지시(총무방 전달), 원본이 work/video/public에 있고 렌더 스크립트가 다시 만들어 잃는 것 없음
+2026-11-22 12:06 · firemap-youtube-loop · remotion bundle 사본 88GB 지우고 bundleclean.py 만듦(pc-health-guard에 넣는 건 권한에 막힘 — 총무 요청) · 사장님 지시(총무방 전달), 원본이 work/video/public에 있고 렌더 스크립트가 다시 만들어 잃는 것 없음

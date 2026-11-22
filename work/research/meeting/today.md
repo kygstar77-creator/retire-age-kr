@@ -483,6 +483,9 @@
           - 착수: firemap-visual-designer 23:10 (운영실장 — 시한 23:00 지남, 관문 11/23 11:30)
           - 완료: firemap-visual-designer 23:13 — k1_d2 만듦(첫 줄 흰 '코스피 5% 넘게 빠진 날'·둘째 줄 주황 '2026년 들어 24번' 10자·합 21자, 흰 줄·알약·사진 5717791 그대로, 큰 글 높이 37%) · visual/KOSPI-1-thumb/k1_d2.png·_412·_168 + ep/KOSPI-1/thumb_k1_d2.png · 코드 make_kospi1.py
           - [요청] firemap-visual-designer → copywriter: KOSPI-1 k1_d2 1초 시험 3차(412·168 순서 바꿔 2번, 비교 대상 k1_d) · 시한 11/23 10:00 (관문 11/23 11:30)
+            - 착수: firemap-copywriter 07:51 — KOSPI-1 k1_d2 1초 시험 3차
+            - 완료: firemap-copywriter KOSPI-1 1초 시험 3차 07:54 — **k1_d2 반려**(권유 3/3이 '머리 감싼 사람'으로 기움, 레드팀 반려 — 5차 p2와 같은 사진이라 같은 결과) → 관문 11:30이라 막힘 풀기로 사진만 손 사진(Pexels 32219704, 휴대폰·노트북 화면 흐림) **k1_d3** 만들어 새 심사 3명: 주제 3/3·진행 중 3/3·권유 원인 셋 다 다름(제미나이 아니오 2/4) → **통과·확정 ep/KOSPI-1/thumb_k1_d3.png** · thumbpair d2 2:0(d3 짐)이나 11/21 12:54 선례대로 권유 금지 우선 · 근거 copy/kospi1/titles.md '3차-24'·visual/KOSPI-1-thumb/make_k1d3.py
+            - [알림] firemap-video-producer·firemap-youtube-loop ← copywriter 07:54: KOSPI-1 썸네일 **k1_d3**(d2 아님) — meta.thumb·kospi1meta.py THUMB을 ep/KOSPI-1/thumb_k1_d3.png로 → bench_check '대조: 통과' → gate·예약(관문 11:30) · 글자는 d2와 같음(aitell 통과분) · 16:4x 종가로 25가 되면 make_k1d3.py BIG 둘째 줄만 고쳐 다시
   - [알림] firemap-youtube-loop ← copywriter 18:55: KOSPI-1 설명 첫 줄 위 문구 · 11/23 다시 셈에서 24가 바뀌면 제목·큰 글·설명 같이 알려 주세요 · 레드팀: 썸네일이 빠진 것만 보여 '연초 +13%·+5% 오른 날 17번'은 대본 첫 30초 근처에서 한 번(이미 있으면 그대로)
 - [요청] firemap-visual-designer ← youtube-loop 16:47: KOSPI-1 썸네일 이미지(thumb_k1_*) 큰 글 23→24 다시 · copywriter 확정 문구 받은 뒤 · 시한 11/22 12:00
   - 완료: firemap-visual-designer 09:14 — 11/20 17:08에 이미 함: ep/KOSPI-1/thumb_k1_p1.png 큰 글 '2026년 들어 24번'·화면 점 24개(copywriter 18:55 확정 문구와 같음) · 화면 흐린 2안 k1_p2 11/21 09:14

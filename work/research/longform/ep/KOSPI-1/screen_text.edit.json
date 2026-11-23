@@ -1,1 +1,1 @@
-{"by": "firemap-editor", "at": "2026-11-22 22:48", "sha": "f18abc5f5b86e3916cf33adc9b74c9f9e91c1ced14e46606d3760a42e22da81b", "sha_of": "screen_text.txt bytes", "note": "재서명: 연초 +13% 줄을 새 판 line2026b(scenes.8)로 분리, 줄 글·say 그대로, 판 글자 확인(4,309.63→4,869.96=+13.0%, 9,114.55→4,869.96=-46.6%≈47%, 출처 줄 일치)"}
+{"by": "firemap-editor", "at": "2026-11-24 07:11", "sha": "18ac9c4a302ba5006f3c4f947a687315490831a73772da0d3d91ff3898e3facd", "sha_of": "screen_text.txt bytes", "note": "출처 줄 3개만 변경(215·224·234행 Pexels 5909916→856299·35371501·12033695), credits.json 작가·라이선스 대조, 자막·판 글자 변경 0"}

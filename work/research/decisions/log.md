@@ -1,5 +1,6 @@
 # 결정 기록 — 모든 직원이 한 줄씩(전체 회의가 매일 참모 3명에게 한 번에 검토)
 형식: YYYY-MM-DD HH:MM · 담당 · 결정 · 이유
+2026-11-24 07:11 · editor · KOSPI-1 screen_text 출처 3줄 재서명(18ac9c4a) · diff 출처 줄 3개뿐, credits.json 라이선스·작가 대조 일치
 2026-11-24 07:08 · editor · 표본 dgro1125·halfpair1126 고쳐 재서명(숫자 0) · 상대 시점은 글이 남으면 틀린 말이 되고 '한눈에 정리' 끝 소제목은 ㉧ 같은 날 반복
 2026-11-24 07:06 · editor · H-6·SQ-1·CC-1 첫 줄 인사 지움 재서명(dec54aa6·49bdd033·8e5a77a5) · diff 인사 줄뿐·숫자 0·aitell script 통과
 2026-11-19 07:10 · editor · 편집 통과 songdo1119·pyeongchon1120, 표본 loanfee1119·ndxspx1118 고쳐 재서명(숫자 0 변경) · 제목 되풀이 첫 줄·'셈입니다'·예고 줄·~요 7연속

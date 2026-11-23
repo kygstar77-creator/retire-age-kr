@@ -68,7 +68,7 @@ export const GapBars: React.FC<GapBarsProps> = (p) => {
           const dot = g(f, 10 + i * dotGap, 8, Easing.out(Easing.back(2)));
           const isHi = i === p.hi, isMid = i === p.mid;   // 11/22 심사: 은마 줄에서 가운데 단지 막대까지 옅어지면 '가운데 단지 −5.0%' 글자가 떠 보여 다른 줄 값으로 읽힘 → 가운데 막대는 진하게 남겨 글자·막대·점선을 한 줄로 잇는다
           const col = isHi && accHi ? T.accent : isMid && accMid ? T.accent : down ? (split > 0.5 ? T.ink2 : T.ink3) : T.ink3;
-          const dim = accHi && !isHi && !isMid ? (down ? 0.55 : 0.3) - 0.2 * arrow : down ? 1 : 1 - 0.45 * split;   // 오른 곳은 옅게 — 은마보다 눈을 끌지 않게   // 마지막 줄엔 더 옅게 — 화살이 읽히게
+          const dim = accHi && !isHi && !isMid ? (down ? 0.55 - 0.2 * arrow : 0.75) : down ? 1 : 1 - 0.45 * split;   // 오른 곳은 옅게 — 은마보다 눈을 끌지 않게   // 마지막 줄엔 더 옅게 — 화살이 읽히게
           return <g key={k}>
             <circle cx={X0} cy={Yc(i)} r={6} fill={T.ink2} opacity={dot * (1 - s)} />
             {s > 0 ? <rect x={Math.min(X0, X0 + w)} y={Yc(i) - BH / 2} width={Math.abs(w)} height={BH} rx={3} fill={col} opacity={dim} /> : null}
@@ -77,9 +77,9 @@ export const GapBars: React.FC<GapBarsProps> = (p) => {
         {/* 가운데 값 — 세로 점선이 위→아래 */}
         <line x1={mx} x2={mx} y1={YT - 30} y2={YT - 30 + (YB - YT + 24) * midO} stroke={accMid ? T.accent : T.ink} strokeWidth={4} strokeDasharray="12 9" opacity={midO > 0 ? 1 : 0} />
         {/* 은마 끝 손 동그라미 */}
-        <HandCircle cx={hx + 2} cy={hy} rx={40} ry={28} p={g(f, hA + 8, 20, Easing.inOut(Easing.quad))} color={T.ink} />
+        <HandCircle cx={hx + 2} cy={hy + 4} rx={40} ry={15} p={g(f, hA + 8, 20, Easing.inOut(Easing.quad))} color={T.ink} />
         {/* 마지막 줄: 가운데 선 → 은마 끝 화살(숫자 더하지 않음) */}
-        <rect x={mx} y={hy - BH / 2 - 1} width={(X0 - mx) * arrow} height={BH + 2} rx={3} fill={T.ink3} />   {/* 마지막 줄: 은마 막대 중 '가운데 단지만큼'은 먹회색, 넘친 몫만 주황으로 남음(화살은 주황 막대에 묻혀 안 보였음) */}
+        <rect x={mx} y={hy - BH / 2 - 1} width={(X0 - mx) * arrow} height={BH + 2} rx={3} fill={T.ink3} opacity={0.6} />   {/* 마지막 줄: 은마 막대 중 '가운데 단지만큼'은 먹회색, 넘친 몫만 주황으로 남음(화살은 주황 막대에 묻혀 안 보였음) */}
       </svg>
       <HandUnderline x={X0 + 24} y={Yc(p.mid) + 26} w={300} p={g(f, mA + 18, 18, io) * (1 - g(f, hA, 12))} color={T.accent} seed={3} stroke={6} />
       {/* 축 끝 글자 — 0선 위 */}

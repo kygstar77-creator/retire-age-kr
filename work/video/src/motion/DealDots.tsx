@@ -101,9 +101,16 @@ export const DealDots: React.FC<DealDotsProps> = (p) => {
       <div style={lab({left: X(ls.d) - 470, top: Y(ls.v) + 34 + (1 - g(f, lA + 10, 12)) * 10, width: 430, textAlign: 'right', fontWeight: 800, fontSize: 46, color: T.ink, opacity: g(f, lA + 10, 12) * (1 - dim)})}>{p.last.text}</div>
       <div style={lab({left: X1 + 66, top: (Y(pk.v) + Y(ls.v)) / 2 - 40, fontWeight: 800, fontSize: 64, letterSpacing: -1, color: accGap ? T.accent : T.ink, opacity: gapO})}>{p.last.gap}</div>
       {/* 계단 값 — 묶음마다 선 위 */}
-      {p.steps.map((s, k) => <div key={s.a} style={lab({left: (X(s.a) + X(s.b)) / 2 - 120, top: Y(s.v) - 66, width: 240, textAlign: 'center', fontWeight: 800, fontSize: 38, color: T.ink, opacity: g(f, sA + 10 + k * 16, 12)})}>{s.text}</div>)}
+      {/* 끝 묶음 값은 선 위가 점·세로 선과 겹침(11/22 심사 ①) → 그 묶음 가장 낮은 점 아래, 오른쪽으로 */}
+      {p.steps.map((s, k) => { const lastK = k === p.steps.length - 1; const lo = Math.min(s.v, ...p.deals.filter((q) => day(q.d) >= day(s.a) && day(q.d) <= day(s.b)).map((q) => q.v));
+        return <div key={s.a} style={lab({left: (X(s.a) + X(s.b)) / 2 - 120 + (lastK ? 40 : 0), top: lastK ? Y(lo) + 16 : Y(s.v) - 66, width: 240, textAlign: 'center', fontWeight: 800, fontSize: 38, color: T.ink, opacity: g(f, sA + 10 + k * 16, 12)})}>{s.text}</div>; })}
       <div style={lab({left: brR ? bx + 34 : bx - 300, top: (Y(s0.v) + Y(sN.v)) / 2 - 10, width: 260, textAlign: brR ? 'left' : 'right', fontWeight: 800, fontSize: 52, color: accStep ? T.accent : T.ink, opacity: g(f, sgA + 6, 12)})}>{p.stepGap.text}</div>
-      <div style={lab({left: mx - 900, top: YT - 100, width: 860, textAlign: 'right', fontWeight: 800, fontSize: 52, color: T.accent, opacity: g(f, bA + 12, 12)})}>{p.before.text}</div>
+      {/* 인가 앞 몫: 앞말(인가 전 −4.0억)은 주황 괄호 토막 오른쪽 그 높이에(왼쪽은 인가 뒤 회색 칸이라 인가 뒤 값으로 읽힘 — 11/23 심사), 뒷말(낙폭 중 몇 %)은 위에(11/22 심사 ② — 숫자와 괄호가 떨어져 있었음). 글자는 props 그대로 ' · '에서 나눔 */}
+      {(() => { const [b1, ...bR] = p.before.text.split(' · '); const b2 = bR.join(' · ');
+        return <>
+          <div style={lab({left: bx + 34, top: (Y(s0.v) + Y(preV)) / 2 - 58, fontWeight: 800, fontSize: 46, color: T.accent, opacity: g(f, bA + 12, 12)})}>{b1}</div>
+          {b2 ? <div style={lab({left: mx - 900, top: YT - 100, width: 860, textAlign: 'right', fontWeight: 800, fontSize: 52, color: T.accent, opacity: g(f, bA + 12, 12)})}>{b2}</div> : null}
+        </>; })()}
     </div>
   );
 };

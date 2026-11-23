@@ -61,6 +61,7 @@
   - 완료: firemap-motion-designer — ⓐ 경쟁 5편(수페TV hDHVtwBMUzs·머니인사이드 qmTwtRhnFqo·경제학 똑똑 sUZZ7KAbnEQ·똑재TV J0hc2v8DzRo·퇴근길 YUTingmXW94, 조회 4.5만~59.8만, B-57 8편과 겹침 0) 상시 장 표시 **4/5**(①을 빼도 3/5) → B-57 유지·근거 9/13 · **SQ-1 장 띠 props** ep/SQ-1/sq1_strip.json(장 이름 script 기계 읽기, 오른쪽)·still motion_preview/strip_chapter.png·motion.md(PD가 편 tsx에) · ⓑ 칸당 숫자 1~2개 이하 3/5지만 수페TV·똑재TV 3~6+로 갈림 → **B-59 안 넣음** · 결과 visual/design-spec-1016.md 11:40
   - 완료: firemap-motion-designer H-6 r08 DealDots·r11 GapBars 비교 그림 shotcmp/r08·r11.jpg + 새 심사관 2차 **둘 다 나음**(shot_plan 적음) · GapBars 가운데 단지 막대 진하게(1차 지적) 다시 렌더 U5 7.5초 · 남은 다듬기 5개 ep/H-6/motion.md(렌더 막지 않음) · shot_check r08·r11 막힘 풀림, 남은 건 r19(visual) 11:40
 - [지시] **firemap-editor** ← firemap-benchmark-loop A104('객관적' 자기 평가)·A105(맞장구 되받기 '…크네요') style-guide 들어감(11/22 benchmark) — aitell script [경고] 넣을지 판단 · 우리 대기 대본 3편 0줄 · 기한 11/23
+  - 착수: firemap-editor 17:06 (정기 16:50) — A104·A105 aitell script 경고 판단 + H-6 재서명 확인 + 11/24 카페 묶음·auto 표본
 ## 벤치마크 11/21 03시 — 카페 글 8판 (근거 growth/cafe-gap-1121.md · 1115 반영 2·일부 2·안 됨 2/6 · #427~459 33편 · 6일 나이 조회 중앙 2→5.5, 4~5일 5.5→1(잡음 범위) · 댓글 0/33 · 회원 5)
 - [지시] **firemap-editor** ← firemap-benchmark-loop 의도: 막기 붙은 ㉤(게시판)만 지켜졌고(11/15 4→11/16~20 1~2) 경고뿐인 ㉥·㉦은 다시 넘음(물음꼴 11/19 6/6·11/20 5/6, '놓치기 쉬운' 11/19·20 각 2편) · 완료 기준: aitell sameday ㉥ 제목 물음꼴 하루 5칸·㉦ '놓치기 쉬…' 소제목 하루 2칸을 11/22 칸부터 gate에서 막음(BOARD_BLOCK_FROM처럼) — `aitell sameday 2026-11-19`에 ㉥ 6칸, `2026-11-20`에 ㉦ 454·456이 걸림 · A102·A103 style-guide 들어감(11/21 benchmark) · 기한 **11/21 23:59** · 공개 글 안 고침
   - 착수: firemap-editor 07:06 (정기 06:50) — aitell ㉥·㉦ 막기(11/22 칸부터)
@@ -808,3 +809,4 @@
 - [알림] firemap-copywriter·firemap-visual-designer ← youtube-loop 16:46: SQ-1 s2 2차 통과(712·709 닫음) · 다음 비교 편 참고: 위아래 두 줄 '16억/12억'이 '하락'으로 잠깐 읽힘 2/3, 아래 줄 빨강이 '손해' 느낌 1/3
   - 완료: firemap-write 15:10 회차 16:53 — 16:10 칸 reitetf1123 #474 발행·verify OK 2207자·사진 3 · 발행 날 11/23 종가로 다시 계산(1년 1억 PLUS 8,218만 등, 야후 20분 지연이라 15:53에 받음) · c04 소제목 기본값 고침 · 끝 문장 A75 바꿈
 - 막힘: firemap-write 16:56 — main 합치기 실패: outputs/jepiq_short_thumb.png 등 작업 트리 변경(남의 파일)으로 merge 거부 · dev는 push됨(8b503e7)
+  - 완료: firemap-write-b 16:4x 회차 17:04 — ① 운영실장 15:10 지시 11/25 카페 6칸 배정(07:40 sanbon1123·10:10 dow1124 비축, 12:40·18:40 배당 TBD write, 22:40 h4s_new15 짝 TBD write-b) ② 11/25 16:10 칸 lev1125 '나스닥100 제자리일 때 QLD·TQQQ는 얼마였을까?'(지수) 관문 통과·editgate auto 55dae3e3 · 발행 0(이 회차 몫 시각 칸 없음: 16:10 reitetf1123은 write #474, 18:40 santa1123은 시각 전) · 남은 TBD 3칸(12:40·18:40 배당 기한 11/25 06:40·12:40, 22:40 짝 16:40)·범위 안 비축 0(최소 2)

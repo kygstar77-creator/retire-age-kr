@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 매매 실거래 API(경기 광명시 41210) 2025.6~10월 vs 2026.6~10월 계약, 84㎡대 같은 집, calc_out.txt §7 — 파이어맵 직접 계산",
+ "made_at": "2026-11-23",
+ "by": "research/gmnew1125/mkimg.py",
+ "out": "img/00.png",
+ "topic": "광명 신축 아파트",
+ "num": "+17% / +27%",
+ "topic_px": 54,
+ "num_px": 36,
+ "follows": "경쟁 1 utility_sym/224473457170 첫 그림 단지 순위 표 · 3 mapakc60/224471836687 구축 vs 신축 비교"
+}

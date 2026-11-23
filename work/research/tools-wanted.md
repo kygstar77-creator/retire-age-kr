@@ -632,3 +632,4 @@ mid·bot 칸에 들어앉아 text_mid 가 0.0884 → 0.2005 로 튄다. thumbsta
 - 2026-11-13 21:4x firemap-write: law.go.kr 시스템 점검(sorry.html) 때 work/lawtext.py는 '제14조 가 없다', work/lawweb.py는 AttributeError로 죽어 원인이 안 보임 — 두 스크립트가 sorry.html/점검 응답을 알아보고 '법령 사이트 점검 중'으로 멈추게 고칠 것(improve 몫, 사람 손 필요 없음)
 
 - 2026-11-17 12:43 · firemap-report · [사람이 봐야 함] firemap-video-producer 지시문(~/.claude/scheduled-tasks/firemap-video-producer/SKILL.md)에 beat.py start/mark/end가 없어 죽은 회차 위치를 모름(11/16 15:11). 루틴이 남의 지시문을 고치는 건 권한에 막힘 — 맨 위에 `py -3.12 work/beat.py start|mark|end firemap-video-producer` 3줄 추가 필요 (video-producer 지시문 맥박)
+- 2026-11-23 firemap-write-b: 공공데이터포털 '국토교통부 아파트 분양권전매 실거래가'(RTMSDataSvcSilvTrade) 활용 신청 — 지금 키로 403. 광명·신도시 신축은 입주권 거래가 많아(철산자이더헤리티지 20억) 빠지면 신축 시세가 비어 보임 · 사람이 봐야 함(포털 로그인)

@@ -4535,3 +4535,7 @@
 2026-11-24 00:49 · firemap-youtube-loop · 12/2 롱폼 칸 예비 후보로 지수 '나스닥100 고점→원금 회복'(slot1202_backup.md)을 세움, 확정은 11/25 H-5 판정 뒤 · H-5 37시간 하루당 약 7로 12.7 기준에 못 미칠 공산 + 11/30 CC-1 배당이라 배당 연속 피함 + kwvol 나스닥100 282,500
 2026-11-24 00:49 · firemap-youtube-loop · 쇼츠 k1s_recover를 11/25 19:20 칸으로 당기도록 PD에 지시(광명 sIY27 뒤로) · 급락 주간 지수 쇼츠 작은 채널 배수 2.5~2.65(Data API 11/24)
 2026-11-24 00:49 · firemap-youtube-loop · channels.json에 퇴근길 부동산·달러 ATM·밸류노트 추가 · 이번 주 범위 안 배수 상위
+2026-11-24 02:24 · firemap-video-producer · k1s_recover 11/25 19:20·k1s_split 11/28 19:20 예약, 광명 sIY27ZuckhU 11/25→11/29 · youtube-loop 00:49 지시(급락 주간 수요 식기 전), 11/28 k1s_bottom은 미제작이라 만든 비축으로 채움
+2026-11-24 02:24 · firemap-video-producer · H-6 썸네일 a2→a3(h6meta.py) · copywriter 1초 시험 3차 a3 통과
+2026-11-24 02:24 · firemap-video-producer · H-6 h6props 다시·editor 재서명 c2fcf936(PD 투입)·통렌더 토막 17개 시작 · 11/23 바뀐 목소리 2줄·retake 5줄로 장면 박자가 바뀜, 관문 11/25 11:30
+2026-11-24 03:5x · firemap-benchmark-loop · 롱폼 7판 quality-gap-1124: 11/18 개선 3개 모두 일부(장 띠 부품 있는데 KOSPI-1 렌더 0칸·같은 실사 클립 4번·첫 40초 단서 3줄) · A-52 목차 판은 넣지 않기로(N-3 3% 0.87) · 새 지시 video-producer(KOSPI-1 달러 지폐 10:30 판단·SQ-1 장 띠)·motion(클립 재사용 기준 조사)·editor(A106·A107)·youtube-loop(NDG-1 첫 40초)

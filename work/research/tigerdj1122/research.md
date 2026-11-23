@@ -56,18 +56,18 @@
 | 글 값 | 원문 값 | 출처 |
 |---|---|---|
 | TIGER 상장 2023년 6월 20일 | listedDate 20230620 · firstTradeDate 2023-06-20 | S3 raw/naver_etfan_458730_1121.json · S1 |
-| 3년 5개월 TIGER 63.2%·SCHD 61.7% | +63.2 · +61.7(15% 뗌) | S1·S6 calc_out.txt, 대조 S3 3년 연평균 18.14 vs 계산 18.16 |
-| 1억 → 1억 6,317만원·1억 6,168만원 | 16,317만 · 16,168만 | S1·S6 calc_out.txt |
+| 3년 5개월 TIGER 63.6%·SCHD 61.3% | +63.6 · +61.3(15% 뗌) | S1·S6 calc_out_1124.txt, 대조 S3 3년 연평균 18.14 vs 계산 18.16 |
+| 1억 → 1억 6,356만원·1억 6,133만원 | 16,356만 · 16,133만 | S1·S6 calc_out_1124.txt |
 | TIGER 분배 40번·SCHD 배당 14번 | 40 · 14 | S1·S2(연간 합 같음) calc_out.txt |
-| 2024년 25.6 vs 27.1 · 2025년 2.6 vs 1.7 · 2026년 17.0 vs 17.7 | 같음 | S1·S6 calc_out.txt |
-| FRED 시작 환율 1,280.21원 → SCHD 62.6%·차이 0.6%포인트 | 1280.21 · 계산 | S5 raw/fred_DEXKOUS_20261121.json, S6 |
-| 최근 1년 분배 439원 ÷ 14,505원 = 3.03% · 1억 월 25만원 | 439 · 3.03 · 25.2만 | S1·S6 calc_out.txt, S3 dividendPerShareTtm 439·dividendYieldTtm 3.0 |
-| SCHD 최근 4번 1.055달러 ÷ 34.20 = 3.08% | 1.0550 · 3.08 | S1·S6 calc_out.txt |
+| 2024년 25.6 vs 27.1 · 2025년 2.6 vs 1.7 · 2026년 17.3 vs 17.4 | 같음 | S1·S6 calc_out_1124.txt |
+| FRED 시작 환율 1,280.21원 → SCHD 62.3%·차이 1.3%포인트 | 1280.21 · 계산 | S5 raw/fred_DEXKOUS_20261124.csv, S6 calc_out_1124.txt |
+| 최근 1년 분배 439원 ÷ 14,540원 = 3.02% · 1억 월 25만원 | 439 · 3.02 · 25.2만 | S1·S6 calc_out_1124.txt, S3 dividendPerShareTtm 439·dividendYieldTtm 3.0 |
+| SCHD 최근 4번 1.055달러 ÷ 33.94 = 3.11% | 1.0550 · 3.11 | S1·S6 calc_out_1124.txt |
 | TIGER 월 26~48원 · SCHD 3·6·9·12월 | 26(2025-04)·48(2024-11) · 배당 달 | S1 raw events, S2 |
-| 2026년 SCHD 달러 27.3%·환율 1,443.6→1,334.8원·원화 17.7%·TIGER 17.0% | 같음 | S1·S6 calc_out.txt |
+| 2026년 SCHD 달러 26.3%·환율 1,443.6→1,342.1원·원화 17.4%·TIGER 17.3% | 같음 | S1·S6 calc_out_1124.txt |
 | 미국 배당 원천징수 15% | Korea, South dividends 15 | S4 https://www.irs.gov/pub/irs-lbi/tax-treaty-table-1.pdf |
 | TIGER 환헤지 안 함·총보수 0.01% | '환헤지를 하지 않으므로' · totalFee 0.01 · FunETF 총보수 0.0100% | S3 · S8 (2차 2곳) |
-| SCHD 총보수 0.06% | 0.06% | S7 · 경쟁 6 korjap9633 |
+| SCHD 총보수 0.06% | 0.06% | S7 · stockanalysis.com/etf/schd expenseRatio 0.06%(11/24) · 경쟁 6 korjap9633 |
 
 # 올리기 전 확인
 - 2026-11-21 14:3x firemap-write-b(조사·작성 날, 발행 날 11/22 16:10 회차가 야후 다시 받아 11/21 종가로 갱신 여부 확인)
@@ -79,3 +79,9 @@
 - 기준일: TIGER 2026-11-20 종가 · SCHD 2026-11-19 미국 종가 (발행 날 다시 확인, 바뀜 없음)
 - 바뀐 것: 숫자 바뀜 없음(63.2%·61.7%·1억 6,317만·1억 6,168만·439원·3.03%·3.08% 그대로) · 출처 줄에 FunETF(총보수) 더함
 - 조사 뒤 공표: data/release_calendar.json — 가격은 매일, TIGER 11월 분배(11월 말 기준) 발행 뒤 · 발행 날 종가 다시 받아 숫자 갱신
+- 2026-11-24 07:46 firemap-write-b(발행 날): 야후 458730.KS·SCHD·KRW=X 다시 받음(raw/*_chart_20261124.json, fetch1124.py) → calc1124.py 결과 calc_out_1124.txt
+- 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/458730.KS (SCHD·KRW=X 같은 꼴, 11/24 07:43) · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7458730008 (200, 11/24) · https://m.stock.naver.com/api/stock/458730/etfAnalysis (439·3.03·totalFee 0.0100, 11/24) · https://www.funetf.co.kr/product/etf/view/KR7458730009 (총보수 0.0100%, 11/24) · https://www.irs.gov/pub/irs-lbi/tax-treaty-table-1.pdf (200, 11/24) · https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXKOUS (2023-06-20 1,280.21·11/20 1,342.41, 11/24) · https://www.schwabassetmanagement.com/products/schd (403 — 대신 https://stockanalysis.com/etf/schd/ expenseRatio 0.06%, 11/24)
+- 기준일: TIGER 2026-11-23 종가 · SCHD 2026-11-20 미국 종가(바로 전 미국 거래일)
+- 바뀐 것: 상장 뒤 63.2%·61.7% → 63.6%·61.3% · 1억 1억 6,317만·1억 6,168만 → 1억 6,356만·1억 6,133만(차이 150만→220만원쯤) · 2026년 17.0·17.7 → 17.3·17.4(SCHD 0.7%포인트 앞섬 → 거의 같음) · SCHD 달러 27.3→26.3%·환율 1,334.8→1,342.1원 · FRED 시작 환율로 바꾸면 62.6→62.3%·차이 0.6→1.3%포인트 · 분배율 TIGER 3.03→3.02%·SCHD 3.08→3.11% · 1억 연 303→302만원 · 그림 00·01 다시(mkimg.py) · 결론(해마다 이긴 쪽 바뀜·한 해 2%포인트 안) 그대로
+- 새로 찾은 것: 11/23 하루에 상장 뒤 차이가 1.49→2.24%포인트로 벌어짐 — 환율(1,334.8→1,342.1원)과 SCHD 11/20 하락이 겹침, 이 정도는 며칠 새 오감
+- 조사 뒤 공표: data/release_calendar.json — 가격은 매일, TIGER 11월 분배(11월 말 기준) 발행 뒤

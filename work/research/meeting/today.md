@@ -2,6 +2,7 @@
 - ★★ **순돌이 11/24 04:0x — 사장님 "영상을 애초에 잘 만들면 조회가 잘 나오겠지"** · 근거 quality/longform-gap-1124.md · 새 기준 C-36~39(registry)
   - [지시] **firemap-copywriter(07:40)·firemap-video-producer(06:05)** — 오늘 11:30 KOSPI-1(khvIhE8Sf-s) 제목 "…24번, IMF 때보다 많았다"는 답을 건 제목(C-36 위반). 10:30까지 질문형 제목·결론 숫자 없는 썸네일로 바꾸고 C-39 짝 비교 통과. 첫 문장 인사(C-37)는 재녹음 없이 앞 인사 구간만 잘라 낼 수 있으면 자름, 못 하면 그대로 두고 다음 편부터. 10:30까지 못 하면 원래대로 공개(칸 비우지 않음).
     - 착수: firemap-video-producer 정기 06:1x 06:17 — 인사 구간 자르기·새 제목/썸네일 적용(copywriter 뒤)
+    - 착수: firemap-copywriter 07:50 — KOSPI-1 질문형 제목·결론 숫자 없는 썸네일 문구·C-39 짝 비교
   - [지시] **firemap-youtube-loop·video-producer** — 11/26 H-6·11/28 ETF부터 대본 첫 문장·제목·썸네일을 C-36~39로 처음부터. 범위 안에서 'X면 상위 몇 %일까' 꼴 후보(예: 배당금·아파트 값)도 kwvol로 재서 11/28·11/30 후보에 넣음.
     - 착수: firemap-youtube-loop 04:44 · 완료 05:02 — **H-6·SQ-1·CC-1 대본 첫 줄 인사 지움**(셋 다 둘째 줄이 조건 질문이라 그대로 첫 문장, 원본 script.md.orig1124yl, 숫자 0 변경, aitell 통과) · **H-6 제목 '은마아파트 34평, 1년 전에 샀다면 지금 얼마일까?'**·썸네일 글 '1년 전에 샀다면 / 지금은 얼마일까?' 고름(근거 ep/H-6/c36/decision.md — AI 짝 비교는 결론 숫자 제목을 2/2로 골라 C-36 판정에 못 씀, 금지 안 후보끼리 1:1, C-38 실측으로 조건 꼴) · 경쟁 썸네일 8장 c36/comp_*.jpg · **C-36 위반 더 찾음: SQ-1 썸네일 s2 '나스닥100에만 16억/반반 섞으면 12억'·CC-1 제목 '…1년 뒤 9,654만원'** → 아래 [지시] · 'X면 상위 몇 %일까' 후보 kwvol은 다음 회차(11/25 H-5 판정과 같이)
   - [순돌이] H-5 송도(12회) 지시(위 02:2x)는 이 보고서로 원인 1차 확인 — 노출 클릭률 표는 그대로 18:00.
@@ -21,6 +22,7 @@
   - 완료: firemap-write 06:23 — 11/24 B군 글은 07:40 tigerdj1122 하나(나머지 11/24 칸 5편은 계산기 줄 없음): c05 끝 줄 /dividend → 'https://firemap.kr/?utm_source=cafe&utm_medium=post&utm_campaign=tigerdj1122'·'내 은퇴 나이 계산'(firemap.kr 첫 화면 title '파이어 가능 나이 계산기' 확인) · editgate calc_check가 배당 제목에 /dividend만 받던 것을 '/'도 받게 고침 · readcheck 0·aitell 0.0·calc 통과·auto 재서명 99f19bcb · 사이트 코드 0 변경
 - [지시] **firemap-write** ← firemap-meeting 21:38 11/25 18:40 배당 칸 TBD → 범위 안 배당 묶음 관문 통과·gates_ok(기한 11/25 12:40) · 같은 날 12:40 vig1125와 상품 겹치지 않게 · 주제 고를 때 kwvol 값을 slots note에 적기(verify O3, 하한은 근거 조사 전이라 안 정함)
 - [지시] **firemap-write-b** ← firemap-meeting 21:38 ① lev1125 c04:9 '1억→201억' 한 줄: 기간·기준일·'과거 셈, 앞으로 아님' 붙이거나 빼기(verify — 권유 문장 0이나 큰 숫자 하나만 튐) · 기한 11/25 10:10(칸 6시간 전) ② 범위 안 카페 비축 0→2(11/25 23:59)
+  - 완료: firemap-write-b ① 07:50 — lev1125 c04 '1억→약 201억' 줄에 '기간은 TQQQ가 상장한 2010년 2월부터 11월 20일 종가까지'·'지나간 16년을 센 값이고, 앞으로도 그렇게 된다는 뜻은 아니에요' 붙임(숫자 0 변경, 원본 c04.txt.orig1124wb) · readcheck 0·aitell 0.0·spoken·selfcheck 사실 0 · editgate auto 재서명 523fd31a · ② 비축은 아직(이번 회차 07:40 발행 몫)
 - [지시] **firemap-video-producer** ← firemap-meeting 21:38 범위 안 쇼츠 비축 0→2(H-6·SQ-1·KOSPI-1 클립, 11/25 23:59) — reserve.shorts의 n3s_5000(연봉)·p3s_cliff·h3s_number는 비축으로 세지 않음 · 보고 decisions/log
 - [지시] **firemap-audit** ← firemap-meeting 21:38 (verify R2) patrol.py:126-127 비축 수가 소진·범위 밖 포함 장부 길이(카페 37)를 세서 '비축 부족' 경보가 안 뜸 → 소진·철회·범위 밖 빼고 세도록 고치고 시험 1건(지금 카페 0이면 위반으로 잡힘) · 기한 11/24 20:50
 - [지시] **firemap-report** ← firemap-meeting 21:38 사이트 숫자는 props.bot=1(문자열 '1') 빼고 — 지난 회의 줄의 bot 필터('true')는 틀렸음 · 11/24 줄부터 사람 기기·bot 기기 따로

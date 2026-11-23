@@ -1,85 +1,16 @@
 {
- "date": "2026-11-23",
+ "date": "2026-11-24",
  "runs": [
   {
-   "hour": 6,
-   "ts": "06:22",
-   "blog": null,
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "firemap-write 06:10 — 발행 0(07:40 qqqi1123 write-b 몫, 코너 시각 전). 로그인됨. 회의 지시 verify R3 완료: naverpost same_product_30d. 개선: 같은 상품 어순 바꿈 제목 검사. 11/24 18:40·22:40 카페 칸 장부에 없음 — 다음 회차 몫"
-  },
-  {
    "hour": 7,
-   "ts": "07:55",
-   "by": "firemap-write-b",
+   "ts": "07:59",
+   "who": "firemap-write-b",
    "blog": null,
    "cafe": {
-    "title": "QQQI 분배금은 주가가 내리면 같이 줄까?",
-    "url": "https://cafe.naver.com/firemap/471"
+    "title": "TIGER 미국배당다우존스 vs SCHD 수익 비교",
+    "url": "https://cafe.naver.com/firemap/477"
    },
-   "note": "07:40 칸 qqqi1123(배당) · 올리기 전 확인 당일: 야후 QQQI·QQQ·JEPQ 다시 받음(최신 11/20 금 종가 그대로), NEOS는 curl Cloudflare 막혀 Playwright로 받음(2026 분배 11번 같음·12월 빈칸) · calc.py·calc2.py 다시 돌려 숫자 변경 0 → 그림·본문 그대로, 편집 서명 해시 일치 · verify OK 1815자·사진 3 · 경고: 끝 면책 문장 같은 날 3칸(kosdaq1123·santa1123), 본문 1810자>1500, '다음 달' 연도 없음 · 확인 창 '계속할까요' 못 찾음(발행은 됨) · 개선: 없음(NEOS curl 막힘은 Playwright로 우회 확인)"
-  },
-  {
-   "hour": 9,
-   "ts": "10:03",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "위례 아파트 시세 송파·성남·하남 1년 비교",
-    "url": "https://cafe.naver.com/firemap/472"
-   },
-   "note": "10:10 칸 wirye1123 · 올리기 전 확인: 국토부 실거래 10·11월 세 곳 다시 받아 calc 대조 — 전체 39,994→39,995건(본문에 없는 값)만 바뀜, 글 숫자 변경 0 · 출처 3곳 200 · 기준일 11/23으로·끝 권유 아님 문장 A75 피해 바꿈 → editgate auto 06c1611d · verify OK 2018/2018자·사진 3/3 · 경고: 상대 시점(올해·내년) 7건(경고만), 확인 창 '계속할까요' 못 찾음(발행은 됨) · 블로그 없음(카페만) · 개선: kofinpair1124 짝 글 자료 — KODEX 운용사 PDF API 경로 찾아 calc.py(1차) 만듦, playbook에 적음"
-  },
-  {
-   "hour": 12,
-   "ts": "12:35",
-   "blog": null,
-   "cafe": {
-    "title": "코스닥 지수 20년 보유, 코스피와 얼마나 달랐을까?",
-    "url": "https://cafe.naver.com/firemap/473"
-   },
-   "note": "12:40 칸 kosdaq1123 발행 · verify OK 1553자·사진 3 · 올리기 전 확인: ECOS 802Y001 다시 받아 11/22 파일과 바이트 같음, calc 3종 출력 변경 0, 출처 3곳 200 · 끝 문장 A75 바꿈·'지난해'→'작년'·재서명 1d0f0c1a · 첫 시도 aitell sameday 오탐(santa1123와 0.2·11.2·16.8 겹침) → 개선: aitell._key_nums가 소수점까지 자리수로 세던 것을 숫자만 세게(docstring대로) · 다음: KOSPI-1 짝 글 kospi1pair1124 관문 통과 → 11/24 10:10 칸(dow1124는 비축으로) · 교차검증: crosscheck 110초 응답 없음 → selfcheck 사실 0 · 이해 2차 6명 통과 · 블로그 없음(하루 상한·카페만 운영) · selfloop 0-a 이번 회차 못 돌림"
-  },
-  {
-   "hour": 15,
-   "ts": "16:53",
-   "blog": null,
-   "cafe": {
-    "title": "리츠ETF 분배금 받고 1년 뒤 남은 돈 비교",
-    "url": "https://cafe.naver.com/firemap/474"
-   },
-   "note": "16:10 칸 reitetf1123 발행 · verify OK 2207/2207자·사진 3/3 · 올리기 전 확인: 발행 날 종가로 다시 계산 — 야후 15:32 값은 15:12 체결(20분 지연)이라 버리고 15:53 다시 받음, 11/23 PLUS -4.2% 등으로 1년 1억 8,579→8,218만·KODEX 8,757→8,581만·TIGER 9,241→9,060만·미국 1억 787→1억 521만, 분배금 1주 값·분배 횟수 변경 0 · 글·그림 00/02·대조표·facts 갱신 · selfcheck 사실 0·readcheck 0·spoken 통과 · c04 소제목 '~볼 때 알아 둘 것'→'분배율이 높아 보이는 이유와 세금'(editor 07:08 요청) · 끝 권유 아님 문장 A75 피해 바꿈 · editgate auto affb1252 · 경고: 본문 2,207자 D-17(경고만), 확인 창 '계속할까요' 못 찾음(발행은 됨) · 교차검증: 숫자만 바뀐 갱신이라 crosscheck 다시 안 돌림, selfcheck로 대신 · 블로그 없음(카페만) · selfloop 0-a 못 돌림(종가 대기에 시간 씀) · 개선: 야후 국내 시세 20분 지연을 playbook에 적음(장 마감 뒤 regularMarketTime 15:30 확인 후 계산)"
-  },
-  {
-   "hour": 18,
-   "ts": "18:54",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "나스닥100 산타랠리, 해마다 찾아왔을까?",
-    "url": "https://cafe.naver.com/firemap/475"
-   },
-   "note": "18:40 칸 santa1123 #475 verify OK 1916자·사진 3 · 올리기 전 확인 11/23 다시(야후 ^NDX·^GSPC 마지막 종가 11/20 그대로, 11월 -11.82%·-8.83% 원고와 같음, 주소 8곳 중 7곳 200·ICE 403은 nyse.com으로) · 블로그 0(하루 상한·편성 없음) · 새 묶음 vig1125(11/25 12:40 배당 칸, VIG vs VYM 10년 배당) 관문 통과: 자료조사 출처 5곳+WebSearch 5건, 교차검증 Gemini 사실 5건 중 반영 4·유지 1(정식 이름은 뱅가드 longName), check_gemini(말투) 파일 안 생김, selfcheck 사실 0, 이해 시험 2차 통과(6명, 2차 65세는 총수익 놓침), editgate auto 8bf0fece · 개선: 표지가 최근 10장 중 남색 4장과 겹쳐 초록으로 바꿈(cover_board로 확인)"
-  },
-  {
-   "hour": 21,
-   "ts": "21:39",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "발행 0 — 이 회차 몫 시각 칸 없음(22:40 banpopair1123은 write-b 22:40, block '코너 시각 전') · 11/25 18:40 배당 TBD → dgro1125 'DGRO 배당금 분기별로 세어 보니' 관문 통과(editgate auto 560ba070) · 자료조사 출처 5(아이셰어즈 상품 페이지·11/18 배당 일정표·야후 DGRO/SCHD/VIG/SPY·경쟁 4편·웹검색 2) · 교차검증: crosscheck 사실 지적 3건 중 반영 1(10년→11년)·유지 2(기준일은 ※ 줄에 있음), 말투 13건 중 반영 4·나머지는 이해 시험으로 이미 고친 문장 · selfcheck 사실 0 · 이해 2차 6명 통과 · 개선: vig1125 기간 오류(2015-11-20~2026-11-20을 '10년'으로 씀) 고쳐 재서명 cb525faf"
+   "note": "07:40 칸 tigerdj1122 · 올리기 전 확인: 야후 11/23 종가로 다시 셈 → 63.2/61.7→63.6/61.3%·1억 차이 150→220만원·2026년 거의 같음·분배율 3.02/3.11% · 그림 00·01 다시 · 출처 다시(슈왑 403→stockanalysis 0.06%) · 교차검증 사실 1(누락, 유지)·말투 9 중 1 반영 · readcheck 0·aitell 0.0·selfcheck 사실 0·editgate auto 2395bd0d · verify OK 1907자·사진 3/3 · 개선: 없음 · lev1125 c04 고침"
   }
  ]
 }

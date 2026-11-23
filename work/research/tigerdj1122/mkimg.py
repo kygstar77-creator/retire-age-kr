@@ -10,24 +10,24 @@ plt.rcParams['font.family'] = fm.FontProperties(fname=F + r'\pd500.ttf').get_nam
 def Bs(n): return fm.FontProperties(fname=F + r'\pd700.ttf', size=n)
 INK, SUBC, ORG, GRAY, BLUE = '#111827', '#6B7280', '#EA580C', '#9CA3AF', '#2563EB'
 SRC = '야후 파이낸스 일별 가격(배당 다시 넣은 값, 11/20 받음) · 파이어맵 계산'
-SRC = '야후 파이낸스 일별 종가·분배·환율(11/21 받음) · 미래에셋 분배금 현황 · 파이어맵 계산'
+SRC = '야후 파이낸스 일별 종가·분배·환율(11/24 받음) · 미래에셋 분배금 현황 · 파이어맵 계산'
 TOPIC_PX, NUM_PX = 60, 50
 import numpy as np, datetime as dt
 fig = plt.figure(figsize=(9, 9), dpi=100); fig.patch.set_facecolor('#3B1F4A')
 fig.text(0.07, 0.86, 'TIGER vs SCHD', fontproperties=Bs(TOPIC_PX), color='white')
 fig.text(0.07, 0.775, '미국배당다우존스 3년 5개월 수익', fontproperties=Bs(34), color='#E9D5FF')
 ax = fig.add_axes([0.06, 0.17, 0.88, 0.52]); ax.set_facecolor('#3B1F4A')
-vals = [63.2, 61.7]; labs = ['TIGER 미국배당다우존스', 'SCHD 직접(원화)']
+vals = [63.6, 61.3]; labs = ['TIGER 미국배당다우존스', 'SCHD 직접(원화)']
 ax.bar(range(2), vals, color=['#FB923C', '#94A3B8'], width=0.5)
 for i, v in enumerate(vals):
     ax.text(i, v + 1.5, f'+{v}%', ha='center', va='bottom', fontproperties=Bs(NUM_PX), color='white')
     ax.text(i, -2, labs[i], ha='center', va='top', fontproperties=Bs(24), color='white')
 ax.set_ylim(-18, 85); ax.set_xlim(-0.7, 1.7); ax.axis('off')
-fig.text(0.07, 0.1, '1억원이면 차이 150만원쯤', fontproperties=Bs(27), color='white')
-fig.text(0.07, 0.045, '2023.6.20~2026.11.20 · 받은 분배금으로 다시 산 값 · 한국 세금 떼기 전', fontsize=17, color='#E9D5FF')
+fig.text(0.07, 0.1, '1억원이면 차이 220만원쯤', fontproperties=Bs(27), color='white')
+fig.text(0.07, 0.045, '2023.6.20~2026.11.23 · 받은 분배금으로 다시 산 값 · 한국 세금 떼기 전', fontsize=17, color='#E9D5FF')
 fig.savefig('pkg/img/00.png', dpi=100, facecolor=fig.get_facecolor()); plt.close(fig)
-json.dump({'type': 'chart', 'source': '야후 파이낸스 chart API 458730.KS·SCHD·KRW=X 일별 종가·분배 events(11/21 받음)로 상장 뒤 총수익 직접 계산, calc_out.txt',
-           'made_at': '2026-11-21', 'by': 'research/tigerdj1122/mkimg.py', 'out': 'img/00.png', 'topic': 'TIGER vs SCHD', 'num': '+63.2% · +61.7%',
+json.dump({'type': 'chart', 'source': '야후 파이낸스 chart API 458730.KS·SCHD·KRW=X 일별 종가·분배 events(11/24 받음)로 상장 뒤 총수익 직접 계산, calc_out_1124.txt',
+           'made_at': '2026-11-24', 'by': 'research/tigerdj1122/mkimg.py', 'out': 'img/00.png', 'topic': 'TIGER vs SCHD', 'num': '+63.6% · +61.3%',
            'topic_px': TOPIC_PX, 'num_px': NUM_PX, 'follows': '경쟁 6 korjap9633/224477771227 SCHD vs TIGER 글자 카드 표지 + 경쟁 divbear 막대 위 큰 숫자'},
           open('pkg/cover_meta.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 def frame(fig, title, sub):
@@ -36,8 +36,8 @@ def frame(fig, title, sub):
     fig.text(0.04, 0.025, SRC, fontsize=10, color=SUBC)
 from matplotlib.patches import Patch
 # 01 해마다
-yrs = ['2024년', '2025년', '2026년\n(11/20까지)', '3년 5개월\n전체']
-tv = [25.6, 2.6, 17.0, 63.2]; sv = [27.1, 1.7, 17.7, 61.7]
+yrs = ['2024년', '2025년', '2026년\n(11/23까지)', '3년 5개월\n전체']
+tv = [25.6, 2.6, 17.3, 63.6]; sv = [27.1, 1.7, 17.4, 61.3]
 fig, ax = plt.subplots(figsize=(9, 6.6), dpi=100); x = np.arange(4); wd = 0.36
 for i in range(4):
     ax.bar(x[i] - wd/2, tv[i], wd, color=ORG); ax.text(x[i] - wd/2, tv[i] + 1, f'{tv[i]}', ha='center', fontproperties=Bs(15), color=INK)
@@ -49,7 +49,7 @@ ax.legend(handles=[Patch(color=ORG, label='TIGER 미국배당다우존스'), Pat
 frame(fig, '해마다 수익(%) — 이긴 쪽이 해마다 바뀜', '분배금·배당 받은 날 다시 삼 · 한국 세금 빼기 전 · 원화')
 fig.subplots_adjust(top=0.83, bottom=0.14, left=0.04, right=0.98); fig.savefig('pkg/img/01.png', dpi=100); plt.close(fig)
 # 02 TIGER 월 분배금
-d = json.load(open('raw/458730.KS_chart_20261121.json'))['chart']['result'][0]['events']['dividends']
+d = json.load(open('raw/458730.KS_chart_20261124.json'))['chart']['result'][0]['events']['dividends']
 ev = {dt.datetime.fromtimestamp(int(k), dt.UTC).date(): v['amount'] for k, v in d.items()}; ev[dt.date(2023, 9, 26)] = 33.0
 ks = sorted(ev); vs = [ev[k] for k in ks]
 fig, ax = plt.subplots(figsize=(9, 6.6), dpi=100)

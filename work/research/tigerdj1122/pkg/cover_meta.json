@@ -1,11 +1,11 @@
 {
  "type": "chart",
- "source": "야후 파이낸스 chart API 458730.KS·SCHD·KRW=X 일별 종가·분배 events(11/21 받음)로 상장 뒤 총수익 직접 계산, calc_out.txt",
- "made_at": "2026-11-21",
+ "source": "야후 파이낸스 chart API 458730.KS·SCHD·KRW=X 일별 종가·분배 events(11/24 받음)로 상장 뒤 총수익 직접 계산, calc_out_1124.txt",
+ "made_at": "2026-11-24",
  "by": "research/tigerdj1122/mkimg.py",
  "out": "img/00.png",
  "topic": "TIGER vs SCHD",
- "num": "+63.2% · +61.7%",
+ "num": "+63.6% · +61.3%",
  "topic_px": 60,
  "num_px": 50,
  "follows": "경쟁 6 korjap9633/224477771227 SCHD vs TIGER 글자 카드 표지 + 경쟁 divbear 막대 위 큰 숫자"

@@ -317,3 +317,4 @@
 - 2026-11-23 짝 글 자료: 네이버 ETF 분석은 2차 1곳 — 운용사 PDF가 1차. KODEX는 m.samsungfund.com/api/v1/kodex/product-pdf/<fId>.do?gijunYMD=YYYYMMDD(fId는 FunETF 상세 frm의 fid), FunETF zeroinstock은 curl·헤드리스 모두 빈 값.
 - 11/23 kospi1pair1124: '첫날 전날 마감 수준'처럼 날을 가리키는 말이 겹치면 6명 중 4명이 헷갈림 → '크게 빠지기 직전 값'처럼 한 말로. 정리 칸에 처음 나오는 숫자(8거래일)는 본문에 먼저 두고 '2주'처럼 사람 단위로.
 - 11/23 aitell sameday가 짧은 퍼센트(0.2·11.2)로 다른 주제 글을 같은 예시로 막으면 겹친 숫자가 본문 어디인지 grep 먼저 — 오탐이면 그 회차에 도구를 고친다.
+- (11/23) 야후 chart API 국내 종목은 약 20분 늦다(15:32에 받은 값의 regularMarketTime 15:12). 발행 날 종가로 다시 셀 땐 15:50 넘어 받고 meta.regularMarketTime 15:30을 확인한다. 하루에 -4% 움직여 1억 결과가 360만원 바뀐 일이 있었다(reitetf1123).

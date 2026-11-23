@@ -55,12 +55,12 @@
 ## 대조
 | 글 값 | 원문 값 | 출처 |
 |---|---|---|
-| 1년 1억 → PLUS 8,579만·KODEX 8,757만·TIGER 리츠 9,241만·미국MSCI리츠 1억 787만 | 8,579 · 8,757 · 9,241 · 10,787 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/329200.KS |
-| 분배금 703만·782만·759만·298만 | 같음 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/329200.KS |
-| 주가 -21.2·-20.3·-15.2·+4.9% | 같음 | S1 https://query1.finance.yahoo.com/v8/finance/chart/329200.KS |
-| 2년 1억 334만·1억 205만·9,648만·9,558만 | 같음 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/329200.KS |
-| 3년 TIGER 리츠 +8.1%·미국MSCI리츠 +27.2% | 같음 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/329200.KS |
-| 고점 대비 PLUS -46.5%·TIGER -43.2% | 10,225→5,470 · 6,590→3,745 | S1 https://query1.finance.yahoo.com/v8/finance/chart/329200.KS |
+| 1년 1억 → PLUS 8,218만·KODEX 8,581만·TIGER 리츠 9,060만·미국MSCI리츠 1억 521만 | 8,218 · 8,581 · 9,060 · 10,521 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/329200.KS |
+| 분배금 700만·782만·759만·292만 | 같음 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/329200.KS |
+| 주가 -24.8·-22.0·-17.0·+2.3% | 같음 | S1 https://query1.finance.yahoo.com/v8/finance/chart/329200.KS |
+| 2년 1억 156만·1억 64만·9,429만·9,125만 | 같음 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/329200.KS |
+| 3년 TIGER 리츠 +6.9%·미국MSCI리츠 +25.7% | 같음 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/329200.KS |
+| 고점 대비 PLUS -48.8%·TIGER -44.4% | 10,225→5,240 · 6,590→3,665 | S1 https://query1.finance.yahoo.com/v8/finance/chart/329200.KS |
 | TIGER 리츠 매달 33원 · 2026년 330원·2025년 379원 | 33 · 330 · 379 | S2 https://investments.miraeasset.com/tigeretf/ko/distribution/annual/list.do |
 | 미국MSCI리츠 월 10~50원 · 2026년 369원 | 10(26.02)·50 · 369 | S2 https://investments.miraeasset.com/tigeretf/ko/distribution/annual/list.do |
 | KODEX 8월 29원·9~11월 60원 | 29 · 60 · 60 · 60 | S3 https://www.samsungfund.com/etf/lounge/notice-view.do?no=80913 |
@@ -68,8 +68,8 @@
 | 특별배당 9~12월 네 번(KODEX·PLUS) | 9~12월 4차례 | 2차 S4 https://core.asiae.co.kr/article/2026091009351213312 · S5 https://core.asiae.co.kr/article/2026100108595682684 |
 | 코람코더원리츠 하나증권빌딩 매각 1주 8,900원 | 8,900원 | 2차 S5 https://core.asiae.co.kr/article/2026100108595682684 · S6 https://biz.heraldcorp.com/article/10890694 |
 | 분리과세 5천만원·3년·9.9% | 같음 | 2차 S4 https://core.asiae.co.kr/article/2026091009351213312 · S5 https://core.asiae.co.kr/article/2026100108595682684 |
-| 분배율 KODEX 11.6%→9.1%·PLUS 10.5%→6.0%·TIGER 9.0→10.6% | 같음 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/476800.KS |
-| 1억 세후 월 PLUS 74만(42만)·KODEX 82만(64만)·TIGER 75만 | 74.4 · 42.3 · 81.8 · 64.2 · 74.5 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/476800.KS |
+| 분배율 KODEX 11.8%→9.3%·PLUS 11.0%→6.3%·TIGER 9.0→10.8% | 같음 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/476800.KS |
+| 1억 세후 월 PLUS 78만(44만)·KODEX 84만(66만)·TIGER 76만 2천 | 77.6 · 44.1 · 83.5 · 65.6 · 76.2 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/476800.KS |
 
 # 올리기 전 확인
 - 2026-11-22 11:0x firemap-write-b(조사·작성 날, 발행 날 11/23 16:10 회차가 야후·분배 공지 다시 받아 11/21 이후 종가로 갱신 여부 확인)
@@ -78,3 +78,7 @@
 - 바뀐 것: 처음 조사(11/22) — 기준일 2026-11-20 종가 · 분배금 TIGER 리츠 33원(10월)·KODEX 60원(11월)·PLUS 122원(10월)·TIGER 미국MSCI리츠 41원(10월) · 발행 날(11/23) 회차가 야후·Kodex 공지 다시 받아 이 줄을 그날 숫자로 고친다(D-11 당일)
 - 새로 찾은 것: 국내 리츠 ETF 셋 1년 1억 → 8,579만~9,241만원(분배금보다 주가 더 빠짐) · KODEX·PLUS 최근 분배에 특별배당(9~12월) · 특별배당 빼면 분배율 9.1%·6.0% · 경쟁 글 실제 결과 센 글 0편
 - 조사 뒤 공표: data/release_calendar.json — 가격은 매일, 11월 말 분배(TIGER·PLUS 11/27 전후) 뒤 · 발행 날 종가 다시 받아 숫자 갱신
+- 2026-11-23 15:53 firemap-write(발행 날 확인): 야후 chart 4종 다시 받음(장 마감 뒤 — 15:32 받은 값은 15:12 체결로 20분 늦어 버리고 15:53에 다시, 329200·476800·182480 regularMarketTime 15:30, 429740은 15:15 마지막 체결 5,240) · 분배 events 수 그대로(37·58·32·64, 새 분배 없음) · 기간을 2025-11-24→2026-11-23(2년 11/25, 3년 11/23 시작)으로 옮겨 calc.py 다시(calc_out_1120.txt가 옛 값)
+- 기준일: 2026-11-23 종가
+- 바뀐 것: 11/23 하루에 PLUS 5,470→5,240(-4.2%)·TIGER 리츠 3,745→3,665·KODEX 3,820→3,740·미국MSCI리츠 13,085→12,990 → 1년 1억 PLUS 8,579→8,218만·KODEX 8,757→8,581만·TIGER 9,241→9,060만·미국 1억 787→1억 521만 · 주가 하락 폭 15~21%→17~25% · 12번 분배율 KODEX 11.8·PLUS 11.0·TIGER 10.8% · 분배금 1주 값은 변경 0 · 글·그림 00·02·대조표 모두 이 값으로
+- 새로 찾은 것: 발행 날 하루에 PLUS가 4% 넘게 빠져 1년 손실 폭이 3.6%p 커짐 — 기준일을 미리 박아 둔 글은 발행 날 종가로 다시 세야 한다

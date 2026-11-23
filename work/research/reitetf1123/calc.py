@@ -1,4 +1,4 @@
-# 리츠 ETF 1억 넣었다면 — 분배금(세후 15.4% 뗌, 재투자 안 함)+남은 평가액. 야후 raw/*.json(fetch.py 11/22 받음).
+# 리츠 ETF 1억 넣었다면 — 분배금(세후 15.4% 뗌, 재투자 안 함)+남은 평가액. 야후 raw/*.json(fetch.py 11/22 받음, 11/23 장 마감 뒤 다시 받음).
 # 사용: py -3.12 calc.py > calc_out.txt
 import json,datetime,sys
 sys.stdout.reconfigure(encoding='utf-8')
@@ -18,7 +18,7 @@ def run(t,start,tax=0.154,amt=1e8):
     gross=sum(a for _,a in got)*sh; net=gross*(1-tax)
     val=sh*e[1]
     return dict(t=t,start=s[0],sp=s[1],end=e[0],ep=e[1],price_pct=(e[1]/s[1]-1)*100,n=len(got),per_share=sum(a for _,a in got),net=net,gross=gross,val=val,total=val+net,total_pct=(val+net)/amt*100-100,yld=sum(a for _,a in got)/s[1]*100)
-for label,start in [('1년',datetime.date(2025,11,20)),('2년',datetime.date(2024,11,20)),('3년',datetime.date(2023,11,20))]:
+for label,start in [('1년',datetime.date(2025,11,23)),('2년',datetime.date(2024,11,23)),('3년',datetime.date(2023,11,23))]:
     print('##',label,'시작',start)
     for t in NAMES:
         if t=='476800.KS' and start<datetime.date(2024,3,7): continue

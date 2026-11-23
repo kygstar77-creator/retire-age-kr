@@ -1,11 +1,11 @@
 {
  "type": "chart",
- "source": "야후 파이낸스 chart API 429740.KS·329200.KS·476800.KS·182480.KS 일별 종가·분배 events(11/22 받음)로 1억 1년 결과 직접 계산, calc_out.txt",
- "made_at": "2026-11-22",
+ "source": "야후 파이낸스 chart API 429740.KS·329200.KS·476800.KS·182480.KS 일별 종가·분배 events(11/23 장 마감 뒤 다시 받음)로 1억 1년 결과 직접 계산, calc_out.txt",
+ "made_at": "2026-11-23",
  "by": "research/reitetf1123/mkimg.py",
  "out": "img/00.png",
  "topic": "리츠ETF 1억, 1년 뒤",
- "num": "0.86억·0.92억·0.88억·1.08억",
+ "num": "0.82억·0.91억·0.86억·1.05억",
  "topic_px": 58,
  "num_px": 32,
  "follows": "경쟁 4 jysherpa/224474861645 리츠 ETF 비교 표지(차트·1억원 질문) + 경쟁 6 agrowingseason 상품명·60원 큰 글자"

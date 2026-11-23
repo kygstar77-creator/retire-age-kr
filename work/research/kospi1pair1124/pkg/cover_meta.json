@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "한국은행 ECOS 802Y001 코스피 일별 종가(원자료 한국거래소), longform/ep/KOSPI-1 calc2·calc3·calc4(11/23 다시 셈)",
+ "made_at": "2026-11-23",
+ "by": "research/kospi1pair1124/mkimg.py",
+ "out": "img/00.png",
+ "topic": "크게 빠진 뒤 1년",
+ "num": "15번",
+ "topic_px": 50,
+ "num_px": 0,
+ "follows": "경쟁 3 5073step/224486714245 실사+큰 글자·경쟁 4 kusi1004/224487257488 시세판 사진 — 오늘 숫자 대신 지난 15번 막대"
+}

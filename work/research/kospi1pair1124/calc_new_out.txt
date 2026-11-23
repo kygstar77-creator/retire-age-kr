@@ -1,0 +1,8 @@
+2/2 close 4949.67 prev 5224.36 chg -5.26%
+last 20261120 4869.96 vs 2/2 close -1.6% vs prev -6.8%
+min after 20261120 4869.96 -1.6%
+recover 20260203 1 trading days
+trading days since 2/2: 195
+2026 -5% days 24
+next-day count 23 up 14 down 9 next +5%+ 6 median +0.73%
+consecutive -5% next 4

@@ -339,7 +339,8 @@ def _key_nums(pkg):
         x = x.replace(',', '').rstrip('.')
         # 10/17 editor: 입주 연도(2016·2018·2024)만 같은 고덕동 글과 상도동 글이 '같은 예시'로 막혔다 — 연도는 예시 값이 아니다(docstring대로 1950~2030 전부 뺌)
         if re.fullmatch(r'(19[5-9]\d|20[0-2]\d|2030)', x): continue
-        if len(x) >= 3 and not x.endswith('0') and x not in ('15.4', '16.5', '22.0'): out.add(x)
+        # 11/23 write: '0.2'처럼 소수점까지 세어 3자리로 친 값이 kosdaq1123(코스피 10년 손해 0.2%)·santa1123(2008 -0.2)을 같은 예시로 막았다 — docstring대로 숫자만 센다
+        if len(x.replace('.', '')) >= 3 and not x.endswith('0') and x not in ('15.4', '16.5', '22.0'): out.add(x)
     return out
 
 

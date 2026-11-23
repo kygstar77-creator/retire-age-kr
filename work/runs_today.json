@@ -34,6 +34,16 @@
     "url": "https://cafe.naver.com/firemap/472"
    },
    "note": "10:10 칸 wirye1123 · 올리기 전 확인: 국토부 실거래 10·11월 세 곳 다시 받아 calc 대조 — 전체 39,994→39,995건(본문에 없는 값)만 바뀜, 글 숫자 변경 0 · 출처 3곳 200 · 기준일 11/23으로·끝 권유 아님 문장 A75 피해 바꿈 → editgate auto 06c1611d · verify OK 2018/2018자·사진 3/3 · 경고: 상대 시점(올해·내년) 7건(경고만), 확인 창 '계속할까요' 못 찾음(발행은 됨) · 블로그 없음(카페만) · 개선: kofinpair1124 짝 글 자료 — KODEX 운용사 PDF API 경로 찾아 calc.py(1차) 만듦, playbook에 적음"
+  },
+  {
+   "hour": 12,
+   "ts": "12:35",
+   "blog": null,
+   "cafe": {
+    "title": "코스닥 지수 20년 보유, 코스피와 얼마나 달랐을까?",
+    "url": "https://cafe.naver.com/firemap/473"
+   },
+   "note": "12:40 칸 kosdaq1123 발행 · verify OK 1553자·사진 3 · 올리기 전 확인: ECOS 802Y001 다시 받아 11/22 파일과 바이트 같음, calc 3종 출력 변경 0, 출처 3곳 200 · 끝 문장 A75 바꿈·'지난해'→'작년'·재서명 1d0f0c1a · 첫 시도 aitell sameday 오탐(santa1123와 0.2·11.2·16.8 겹침) → 개선: aitell._key_nums가 소수점까지 자리수로 세던 것을 숫자만 세게(docstring대로) · 다음: KOSPI-1 짝 글 kospi1pair1124 관문 통과 → 11/24 10:10 칸(dow1124는 비축으로) · 교차검증: crosscheck 110초 응답 없음 → selfcheck 사실 0 · 이해 2차 6명 통과 · 블로그 없음(하루 상한·카페만 운영) · selfloop 0-a 이번 회차 못 돌림"
   }
  ]
 }

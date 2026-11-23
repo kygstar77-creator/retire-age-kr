@@ -75,3 +75,8 @@
 - 바뀐 것: 처음 조사
 - 새로 찾은 것: 2006년부터 한 번에·나눠 넣기·10년 보유 손해 비율(코스닥 7.9% vs 코스피 0.2%) — 경쟁 0편
 - 조사 뒤 공표: data/release_calendar.json — 지수 매일, 11/20(금)이 마지막 거래일 — 11/23(월) 장 마감 전 발행이라 기준일 그대로
+- 2026-11-23 12:22 firemap-write(발행 날) — ECOS 802Y001 다시 받음(raw_ecos.json, 11/22 파일 raw_ecos_1122.json과 바이트 같음) · calc.py·calc2.py·calc_dca.py 다시 돌려 출력 변경 0
+- 다시 연 주소: https://ecos.bok.or.kr 200 · https://query1.finance.yahoo.com/v8/finance/chart/%5EKQ11 200 · https://query1.finance.yahoo.com/v8/finance/chart/229200.KS 200 (11/23 12:22)
+- 기준일: 2026-11-20 종가(코스닥 645.68·코스피 4,869.96) — 11/23(월) 장 마감 전 발행이라 그대로
+- 바뀐 것: 숫자 0 · 끝 문장만 A75(같은 문장 하루 3칸)로 바꿈 · 자료 줄 '11월 22일 내려받음'→'11월 23일 다시 받아 확인'
+- 새로 찾은 것: 없음(11/20 뒤 새 종가 없음)

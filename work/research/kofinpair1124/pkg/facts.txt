@@ -1,0 +1,35 @@
+[오늘 찾은 것]
+2026-11-23 · 미래에셋 TIGER 코스피고배당(210780) 구성종목 11/20자 · raw/tiger_210780_20261120.json · https://investments.miraeasset.com/tigeretf/ko/product/chart/prdct-item-list.ajax?ksdFund=KR7210780003&prfPrd=Week01&fixDate=20261120&listCnt=100
+2026-11-23 · 한국투자 ACE 고배당주(0139P0) 구성종목(PDF) 11/23자·업종 구성 · raw/ace_0139P0_20261123.json · https://papi.aceetf.co.kr/api/funds/K55101EQ7660/pdf?size=50
+2026-11-23 · KB RISE 대형고배당10TR(315960)·RISE 고배당(266160) 구성종목 11/20자 · raw/rise_315960_20261120.json·raw/rise_266160_20261120.json · https://kbam.co.kr/api/products/etfs/4494/holdings?base_dt=20261120 · https://kbam.co.kr/api/products/etfs/4454/holdings?base_dt=20261120
+2026-11-23 · 삼성 KODEX 고배당주(279530) 구성종목 11/20자(firemap-write 09:3x) · raw/kodex_279530_20261120.json · https://m.samsungfund.com/api/v1/kodex/product-pdf/2ETF96.do?gijunYMD=20261120
+2026-11-23 · 네이버 증권 ETF 분석 10종 업종 비중(대조용 2차) · raw/etf_*.json · https://m.stock.naver.com/api/stock/315960/etfAnalysis
+2026-11-23 · 지수 규칙: RISE 상품 화면(WISE 대형고배당10TR '유통시가총액*현금배당총액' 상위 10종목) raw/pw/rise_4494.txt https://kbam.co.kr/products/4494 · ACE 상품 화면(KRX-Akros 고배당주20, 배당락 회복률) raw/pw/ace_0139P0.txt https://www.aceetf.co.kr/fund/K55101EQ7660
+2026-11-23 · 경쟁 블로그 6편('고배당 ETF 비교' 블로그 탭 상위 8 중) 본문 · bench.md
+
+[사실표]
+1. 금융 = 은행·보험·증권·카드·금융지주·재보험(cardshorts/de1s_kofin/prepub_1121.txt와 같은 기준) — 한국자산신탁(부동산 신탁)·다우기술·일반 지주는 넣지 않음
+2. SOL 코리아고배당 금융 56.463%(56.5) · PLUS 고배당주 55.645%(55.6) — 운용사 11/20자, cardshorts/de1s_kofin/prepub_1121.txt
+3. KODEX 고배당주 금융 10종목 52.49%(52.5) — 11/20자, calc_out.txt
+4. ACE 고배당주 20종목 · 금융 7종목 37.36%(37.4) · 키움증권 6.46+NH투자증권 6.39+삼성증권 6.13 = 18.98(19.0) · 삼성전자 5.94 — 11/23자, calc2_out.txt · 운용사 업종 구성 금융 0.3737
+5. TIGER 코스피고배당 50종목(+원화예금) · 금융 18종목 32.56%(32.6) · 가장 큰 종목 한일시멘트 3.67%(3.7) — 11/20자, calc2_out.txt
+6. RISE 대형고배당10TR 10종목(+원화예금 0.2) · 삼성전자 26.55(26.6) · SK하이닉스 23.72(23.7) · 둘 합 50.27(50.3) · 금융 5곳(KB금융·삼성생명·신한지주·하나금융지주·우리금융지주) 32.17(32.2) — 11/20자, calc2_out.txt
+7. RISE 고배당 전체 80종목 중 운용사 화면 상위 30종목 비중 합 93.33 · 나머지 50종목 6.67(6.7) · 상위 30 안 금융 15종목 27.98(28.0) · 삼성전자 24.67+SK하이닉스 22.01 = 46.68(46.7) — 11/20자, calc2_out.txt
+8. 금융 절반 넘는 것 7개 중 3개(SOL·PLUS·KODEX 고배당주) · 나머지 4개 28.0~37.4%(3분의 1 안팎)
+9. 가장 큰 한 종목 비중: TIGER 3.67 · SOL 6.35(KT&G, prepub_1121) · PLUS 5.92(우리금융지주, prepub_1121) · ACE 6.81 · KODEX 9.15 · RISE 대형 26.55 · RISE 고배당 24.67 → TIGER가 가장 작음
+10. WISE 대형고배당10TR 지수: 유통시가총액×현금배당총액 점수 상위 10종목 — 운용사 화면 raw/pw/rise_4494.txt
+11. ACE 고배당주: KRX-Akros 고배당주20 지수, 배당락 회복률을 핵심 기준 — 운용사 화면 raw/pw/ace_0139P0.txt
+12. 운용사 6곳 = 한화(PLUS)·신한(SOL)·삼성(KODEX)·미래에셋(TIGER)·한국투자(ACE)·KB(RISE)
+13. 쇼츠 https://youtu.be/m51UDa2pd-g (de1s_kofin, 11/24 19:20 공개 예약 — 발행 회차가 공개 확인)
+14. 그림 01 값: 56.5·55.6·52.5·37.4·32.6·32.2·28.0(금융), 50.3·46.7(반도체 둘) — 위 2~7과 같음
+15. TR = 배당금 재투자(나눠 주지 않음) — KB 상품 화면 "배당금 재투자로 총수익 추구" raw/pw/rise_4494.txt https://kbam.co.kr/products/4494
+16. 금융 다섯 곳 32.17 < 반도체 둘 50.27
+17. RISE 고배당 실제 금융 상한 27.98+6.67 = 34.65 → "35%를 넘진 않음"(나머지 50종목이 다 금융일 때) — calc2_out.txt
+18. ACE 삼성전자 5.94(5.9) — calc2_out.txt
+19. TR 상품은 분배금 안 나옴 — 2차: blog.naver.com/money_info_999/224475934017 "TR은 배당금을 자체적으로 재투자하는 상품이라 분배금을 지급하지 않는다" + KB 화면 "배당금 재투자로 총수익 추구"
+20. 배당락 = 배당 받을 권리가 끝나는 날(그날 주가가 배당만큼 내림)
+21. TIGER 금융 18종목 중 가장 큰 DB손해보험 3.00 — calc2_out.txt
+22. 여는 말("고배당 ETF를 사면 결국 은행주") 근거 — 경쟁 6 adam6899 "금융 업종 비중이 높다…고배당주 ETF는 대부분 비슷한 모습", 경쟁 4 everythinginsight "은행·금융주 집중형"
+23. ACE 은행·금융지주 BNK 5.51+우리 4.62+JB 4.48 = 14.61 < 증권 셋 18.98 — calc2_out.txt 원자료 ace_0139P0_20261123.json
+24. 비중은 주가 따라 날마다 바뀜 — RISE 대형 삼성전자 네이버 11/19 기준 25.84 vs 운용사 11/20자 26.55, de1s_kofin/prepub_1121.txt "비중 순서는 날마다 바뀜"
+25. 보유 주식과 겹침(은행주→SOL·PLUS·KODEX 금융 절반 넘음, 삼성전자·SK하이닉스→RISE 두 개 46.7~50.3) — 위 2·3·6·7에서 나온 산수

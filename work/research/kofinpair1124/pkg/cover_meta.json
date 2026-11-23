@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "운용사 6곳 구성종목 파일(한화 PLUS·신한 SOL·삼성 KODEX·미래에셋 TIGER 11/20자, 한국투자 ACE 11/23자, KB RISE 11/20자) — calc2_out.txt·calc_out.txt·cardshorts/de1s_kofin/prepub_1121.txt, 파이어맵 직접 합산",
+ "made_at": "2026-11-23",
+ "by": "research/kofinpair1124/mkimg.py",
+ "out": "img/00.png",
+ "topic": "고배당 ETF 금융주 비중",
+ "num": "7개 중 3개 · 56.5~28.0%",
+ "topic_px": 54,
+ "num_px": 44,
+ "follows": "경쟁 1 money_info_999/224475934017 남색 바탕 큰 글자 카드·경쟁 6 adam6899/224473556520 남색 바탕 큰 글자+차트 → 남색 바탕 큰 글자 아래 7개 막대(절반 선)"
+}

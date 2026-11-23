@@ -178,11 +178,11 @@
     {
      "text": "끝까지 보시면, 내 평형 값을 직접 세는 법과 재초환 평균을 내 몫으로 잘못 읽지 않는 법을 가져가실 수 있어요.",
      "audio": "audio/h-6/b24049159a4bb7cb.wav",
-     "frames": 201,
+     "frames": 194,
      "cap": null
     }
    ],
-   "frames": 201,
+   "frames": 194,
    "data": {
     "src": "bg/h5/stock/6611954.mp4",
     "license": "Pexels 6611954 무료(Tima Miroshnichenko)",
@@ -395,7 +395,7 @@
     {
      "text": "조합이 세운 목표는 2028년이에요.",
      "audio": "audio/h-6/ee58a7dff9def7c5.wav",
-     "frames": 72,
+     "frames": 75,
      "cap": null
     },
     {
@@ -405,7 +405,7 @@
      "cap": null
     }
    ],
-   "frames": 301,
+   "frames": 304,
    "data": {
     "src": "bg/h5/stock/15082793.mp4",
     "license": "Pexels 15082793 무료(Lucas Park)",
@@ -490,9 +490,9 @@
    "kind": "mo",
    "lines": [
     {
-     "text": "1년 중 가장 비싸게 팔린 한 건은 43억이 넘었습니다.",
-     "audio": "audio/h-6/93c8af6d13dd2202.wav",
-     "frames": 104,
+     "text": "1년 중 가장 비싸게 팔린 거래는 43억이 넘었습니다.",
+     "audio": "audio/h-6/5cf1c039a57b4878.wav",
+     "frames": 95,
      "cap": null
     },
     {
@@ -508,7 +508,7 @@
      "cap": null
     }
    ],
-   "frames": 259,
+   "frames": 250,
    "data": {
     "part": "deals",
     "p": {
@@ -744,11 +744,11 @@
     {
      "text": "그런데 한 건끼리 비교하면, 어느 두 건을 붙이느냐에 따라 차이가 4억이 안 되게도 10억이 넘게도 보여요.",
      "audio": "audio/h-6/5b1a7c2da063491c.wav",
-     "frames": 202,
+     "frames": 204,
      "cap": null
     }
    ],
-   "frames": 202,
+   "frames": 204,
    "data": {
     "pic": "bg/h6/board/pairs.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -769,7 +769,7 @@
     {
      "text": "그래서 인가 전과 뒤로 기간을 나눠 묶고, 묶음마다 가운데 값을 봤습니다.",
      "audio": "audio/h-6/8395ade0b7a2e9b0.wav",
-     "frames": 141,
+     "frames": 128,
      "cap": null
     },
     {
@@ -785,13 +785,13 @@
      "cap": null
     }
    ],
-   "frames": 338,
+   "frames": 325,
    "data": {
     "src": "bg/h4/stock/6964247.mp4",
     "license": "Pexels 6964247 무료(Mikhail Nilov)",
     "say": "가운데 값으로 본다",
     "side": "left",
-    "from": 84
+    "from": 97
    }
   },
   {
@@ -1803,11 +1803,11 @@
     {
      "text": "실거래 신고엔 값과 날짜, 층만 있고 이유는 적혀 있지 않거든요.",
      "audio": "audio/h-6/98bbeda2b72a649e.wav",
-     "frames": 110,
+     "frames": 111,
      "cap": null
     }
    ],
-   "frames": 180,
+   "frames": 181,
    "data": {
     "src": "bg/h4/stock/37873585.mp4",
     "license": "Pexels 37873585 무료(Jueon Kim 김주언)",
@@ -2295,7 +2295,7 @@
     {
      "text": "이주하는 동안 드는 돈은 빼 주느냐고 물으신 분도 있었어요.",
      "audio": "audio/h-6/53a8f9bc035c629f.wav",
-     "frames": 96,
+     "frames": 99,
      "cap": null
     },
     {
@@ -2305,7 +2305,7 @@
      "cap": null
     }
    ],
-   "frames": 231,
+   "frames": 234,
    "data": {
     "src": "bg/h4/stock/38259259.mp4",
     "license": "Pexels 38259259 무료(vignesh srivatsav)",
@@ -2390,9 +2390,9 @@
      "cap": null
     },
     {
-     "text": "9월엔 스무 건이었습니다.",
-     "audio": "audio/h-6/3d9635f11329ca50.wav",
-     "frames": 44,
+     "text": "9월에는 스무 건까지 줄었습니다.",
+     "audio": "audio/h-6/c4ef27e7ee857042.wav",
+     "frames": 63,
      "cap": null
     },
     {
@@ -2408,7 +2408,7 @@
      "cap": null
     }
    ],
-   "frames": 400,
+   "frames": 419,
    "data": {
     "pic": "bg/h6/board/rent.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -2601,7 +2601,7 @@
     {
      "text": "그럼 보유 기간은 착공까지 셀까요, 준공까지 셀까요?",
      "audio": "audio/h-6/553766aa01492b96.wav",
-     "frames": 144,
+     "frames": 131,
      "cap": null
     },
     {
@@ -2611,13 +2611,13 @@
      "cap": null
     }
    ],
-   "frames": 234,
+   "frames": 221,
    "data": {
     "src": "bg/h4/stock/9057559.mp4",
     "license": "Pexels 9057559 무료(SHVETS production)",
     "say": "보유 기간 세는 법",
     "side": "left",
-    "from": 93
+    "from": 106
    }
   },
   {
@@ -2750,17 +2750,17 @@
     {
      "text": "예외도 있어서, 은마가 어디에 해당하는지는 조합과 구청에 먼저 확인하세요.",
      "audio": "audio/h-6/e8106b69ef5350e4.wav",
-     "frames": 149,
+     "frames": 131,
      "cap": null
     }
    ],
-   "frames": 386,
+   "frames": 368,
    "data": {
     "src": "bg/h5/stock/15082793.mp4",
     "license": "Pexels 15082793 무료(Lucas Park)",
     "say": "사려는 분이라면",
     "side": "left",
-    "from": 499
+    "from": 517
    }
   },
   {
@@ -2893,11 +2893,11 @@
     {
      "text": "그리고 매물 수를 팔린 건수처럼 읽는 것이요.",
      "audio": "audio/h-6/03aafee97e4a1fd8.wav",
-     "frames": 83,
+     "frames": 107,
      "cap": null
     }
    ],
-   "frames": 83,
+   "frames": 107,
    "data": {
     "pic": "bg/h6/board/traps_4.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",

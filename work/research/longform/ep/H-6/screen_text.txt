@@ -71,7 +71,7 @@
 [scenes.18.data.license] Pexels 7651886 무료(Kindel Media)
 [scenes.18.data.say] 큰 평형부터
 [scenes.18.data.side] left
-[scenes.19.lines.0.text] 1년 중 가장 비싸게 팔린 한 건은 43억이 넘었습니다.
+[scenes.19.lines.0.text] 1년 중 가장 비싸게 팔린 거래는 43억이 넘었습니다.
 [scenes.19.lines.1.text] 그로부터 1년 뒤, 비슷한 높은 층은 35억에 팔렸고요.
 [scenes.19.lines.2.text] 둘 사이가 8억 정도예요.
 [scenes.19.data.part] deals
@@ -317,7 +317,7 @@
 [scenes.52.data.say] 세입자 쪽 숫자
 [scenes.52.data.side] left
 [scenes.53.lines.0.text] 가장 많던 지난 12월엔 160건이 넘었어요.
-[scenes.53.lines.1.text] 9월엔 스무 건이었습니다.
+[scenes.53.lines.1.text] 9월에는 스무 건까지 줄었습니다.
 [scenes.53.lines.2.text] 가장 많던 달의 열 건 중 한 건 정도인 거죠.
 [scenes.53.lines.3.text] 10월은 아직 세 건만 올라와 있는데, 말일 쪽 계약은 아직 신고 기한 안이라 조금 더 들어올 수 있어요.
 [scenes.53.data.license] 파이어맵 자체 제작 판(출처는 판 안)

@@ -13,10 +13,11 @@ P = json.load(open(os.path.join(VID, 'h6.json'), encoding='utf-8'))
 V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
 MP = os.path.join(EP, 'meta.json')
 m = json.load(open(MP, encoding='utf-8')) if os.path.exists(MP) else {}
-TITLES = ['은마아파트 재건축 인가 났는데, 34평 실거래는 1년 새 8억 넘게 내렸다',
-          '은마아파트 재건축 인가 났는데, 실거래는 1년 새 8억 내렸다']
-THUMB = os.path.join(EP, 'thumb_h6_a2.png')
-THUMB_TOP, THUMB_TEXT = '은마아파트 84㎡ · 실거래 가운데 값', '같은 평형 42억 8천이 / 1년 뒤 34억 3천으로'
+# 11/24 05:1x PD: youtube-loop 05:02 [지시] C-36(결론 숫자 금지)·C-38 — 제목·썸네일 글 = c36/decision.md 판(copywriter 11/24 18:00까지 말 없으면 확정)
+#   옛 제목 '은마아파트 재건축 인가 났는데, 34평 실거래는 1년 새 8억 넘게 내렸다'(결론 숫자) · 옛 썸네일 a3 '은마 34평 42억 8천이 / 1년 뒤 34억 3천으로'
+TITLES = ['은마아파트 34평, 1년 전에 샀다면 지금 얼마일까?']
+THUMB = os.path.join(EP, 'thumb_h6_a3.png')   # 자리 — visual 새 판(11/24 18:00) 나오면 그 파일로. a3는 결론 숫자라 C-36에 걸려 그대로 올리지 않음
+THUMB_TOP, THUMB_TEXT = '은마아파트 34평 · 국토부 실거래', '1년 전에 샀다면 / 지금은 얼마일까?'
 
 heads = ['여는 말', '은마는 지금 어디까지', '1년 실거래, 평형별', '거래는 언제 몰렸나', '세 가지 숙제',
          '세입자 계약 신고', '누구라면', '함정과 직접 확인', '정리']   # script.md ## 제목
@@ -60,9 +61,9 @@ cafe = m.get('cafe_url') or 'https://cafe.naver.com/firemap'
 desc = tpl.replace('{CAFE}', cafe).replace('{CHAPTERS}', CH).replace('{STOCK}', '\n'.join(credits))
 m.update({
     'ep': 'H-6', 'series': '부동산 — 재건축 실거래',
-    'title': TITLES[0], 'title_by': 'firemap-copywriter 2026-11-22 18:55 copy/h6/titles.md 1위 #12(이해 2차 40·50·60세)', 'title_candidates': TITLES,
+    'title': TITLES[0], 'title_by': 'youtube-loop 2026-11-24 05:02 c36/decision.md(C-36·C-38) — copywriter 11/24 18:00 확인 대기', 'title_candidates': TITLES,
     'thumb_text_top': THUMB_TOP, 'thumb_text': THUMB_TEXT, 'thumb': THUMB,
-    'thumb_status': '11/23 PD: a2 자리 — copywriter 3차(visual a3·a4 thumbpair 이긴 판, 168에서 은마 읽히나) 뒤 h6meta.py THUMB·THUMB_TEXT 고치고 다시',
+    'thumb_status': '11/24 05:1x PD: 자리(a3, 결론 숫자라 C-36 위반) — visual 새 판(1년 전에 샀다면 / 지금은 얼마일까?)·C-39 짝 비교 11/24 18:00 뒤 THUMB 바꿈',
     'desc_first2': FIRST2, 'desc_first2_src': 'copywriter titles.md 설명 첫 줄(11/20 18:55 가운데 값) + script 0·3·4·5장(인가 전 절반·35/75건·4억 6천 감면 전)',
     'tags': ['은마아파트', '은마아파트 재건축', '은마아파트 실거래가', '재초환', '대치동 아파트'],
     'desc_tpl': tpl, 'desc': desc, 'chapter_titles': heads, 'chapters': chapters,
@@ -81,7 +82,9 @@ m.update({
         'q5_사람의몫': "예 — '매물 5배 ≠ 팔린 건수'·'재초환 평균 4억 6천 ≠ 내 몫(보유기간 감경)'·'분담금 두 보도가 다름, 조합 문서 미확인'은 흔한 말을 원자료로 가른 우리 판단."},
     'endscreen': {'how': 'Studio 최종 화면 — 업로드 뒤', 'status': '미정'},
     'made_by': 'firemap-video-producer', 'made_at': '2026-11-23',
-    'video': os.path.join(VID, 'out', 'h6.mp4').replace('\\', '/'),
+    'video': os.path.join(VID, 'out', 'h6_dsl1124.mp4').replace('\\', '/'),   # 11/24 PD: 통렌더 h6.mp4 → deesser i=0.8:m=0.7 + loudnorm(-12.1dB·-17.0 LUFS)
+    'click_ok': [193.4],
+    'click_ok_note': "11/24 05:2x PD: 193.4초 = scenes.30 '은마는 그 여섯 곳 중에서도 가장 많이 빠졌고요'의 '가장' 첫소리(쉼 뒤). 통렌더 h6.mp4엔 안 잡히고 음량 맞춤(×1.42) 뒤 잡힘 — 10ms rms 꼴 같음(788→3838 ↔ 1132→5447)·4kHz 위 0%. 제미나이 3.6-flash 1초 듣기 '가장 많이 빠졌고요 / 판정: 말소리'(check/click1934_gemini.log)",
     'todo': '11/23 PD: meta 첫 판 · 남은 것: 썸네일 3차(copywriter) · editor 설명란 desc_1123 서명 · scorecard · 11/25 올리기 전 확인(youtube-loop: 75건·31.45억·11월 막대) · bench_check · cafe_url · gate·예약'})
 json.dump(m, open(MP, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 open(os.path.join(EP, 'desc_1123.txt'), 'w', encoding='utf-8').write(m['title'] + '\n\n' + desc + '\n')

@@ -432,7 +432,7 @@
     "pkg": "work/research/sanbon1123/pkg",
     "title": "산본 아파트 시세, 선도지구 6곳만 따로 세어 보니",
     "genre": "부동산(아파트 매매) — 범위 안",
-    "status": "2026-11-23 10:58 관문 통과 비축(write-b) — kwvol 산본아파트 5,300(우리 제목 0편)·잘된 글 1위 분당 선도지구 글과 같은 각도 · 국토부 군포 매매 직접 계산: 산본동 7,601건, 같은 집 1년 선도지구 6단지 +17.0%(16개 모두 오름) vs 나머지 오래된 단지 +11.2% vs 1997년 이후 +9.1%(분당과 반대), 넓이 나눠도 같음, 발표 전 대비 +26.6% vs +10.4%, 2021년 하반기 대비 -3.0% vs -11.8% · 경쟁 7편 같은 집 비교 0편 · research strict·bench·prepublish·compare·cover·calc·disclaim·readcheck 0·aitell 4.8·selfcheck 0·crosscheck 사실 1 반영·이해 2차 6명·editgate auto 4e7800ee · slot.txt 없음(회의가 칸 배정) · 발행 회차: 국토부 API 다시 받아 calc.py 대조·올리기 전 확인 갱신",
+    "status": "2026-11-23 16:46 소진 — 11/25 07:40 칸 배정(write-b) | 2026-11-23 10:58 관문 통과 비축(write-b) — kwvol 산본아파트 5,300(우리 제목 0편)·잘된 글 1위 분당 선도지구 글과 같은 각도 · 국토부 군포 매매 직접 계산: 산본동 7,601건, 같은 집 1년 선도지구 6단지 +17.0%(16개 모두 오름) vs 나머지 오래된 단지 +11.2% vs 1997년 이후 +9.1%(분당과 반대), 넓이 나눠도 같음, 발표 전 대비 +26.6% vs +10.4%, 2021년 하반기 대비 -3.0% vs -11.8% · 경쟁 7편 같은 집 비교 0편 · research strict·bench·prepublish·compare·cover·calc·disclaim·readcheck 0·aitell 4.8·selfcheck 0·crosscheck 사실 1 반영·이해 2차 6명·editgate auto 4e7800ee · slot.txt 없음(회의가 칸 배정) · 발행 회차: 국토부 API 다시 받아 calc.py 대조·올리기 전 확인 갱신",
     "by": "firemap-write-b",
     "at": "2026-11-23 10:58",
     "gates_ok": "2026-11-23 10:58"
@@ -442,7 +442,7 @@
     "pkg": "work/research/dow1124/pkg",
     "title": "다우지수 비중, 왜 골드만삭스가 엔비디아보다 클까?",
     "genre": "지수",
-    "status": "2026-11-23 12:35 비축 — 11/24 10:10 칸을 KOSPI-1 짝 글에 내주고 비축으로(관문 통과 11/22 23:25·editor 11/23 07:08 재서명 25de37b3) · 칸에 넣을 때 slot.txt 새로 · 발행 날 올리기 전 확인(State Street 보유 파일·야후) 다시",
+    "status": "2026-11-23 16:46 소진 — 11/25 10:10 칸 배정(write-b) | 2026-11-23 12:35 비축 — 11/24 10:10 칸을 KOSPI-1 짝 글에 내주고 비축으로(관문 통과 11/22 23:25·editor 11/23 07:08 재서명 25de37b3) · 칸에 넣을 때 slot.txt 새로 · 발행 날 올리기 전 확인(State Street 보유 파일·야후) 다시",
     "by": "firemap-write",
     "at": "2026-11-23 12:35",
     "gates_ok": "2026-11-22 23:25"
@@ -4844,6 +4844,14 @@
    "note": "firemap-write 2026-11-23 07:28: 운영실장 07:10 지시 — 장부에 없던 18:40 칸(지수, 관문 기한 11/24 12:40) 채움 · wytd1124 'S&P500 올해 수익률 원화로 다시 계산해 보니'(ETF 게시판) — kwvol S&P500 296,900·니케이225 69,510·세계증시 42,080 · 야후 종가(FRED·ECOS 대조)+한국은행 매매기준율 직접 계산: S&P500 +1.0%→원화 -6.4%·나스닥100 -8.1%·닛케이 +12.1%→+1.9%·유로스톡스50 +2.5%→-11.2%(꼴찌)·코스피 +15.6%(6월 22일 최고치 대비 -46.6%)·달러 7.3% 싸짐 · 경쟁 5편 가정 환율·S&P500 하나뿐, 다섯 지수 실제 원화 성적 0편 · 11/24 축 배당→지수(10:10 dow)→부동산→지수(16:10 rsp, 동일가중 장기)→지수(이 칸, 올해 원화)→배당 · research strict·bench·prepublish·compare·calc·sise·cover·disclaim·frame·readcheck 0·aitell 0.0·spoken·selfcheck 사실 0·crosscheck 사실 0(말투 3 반영)·이해 2차 6명(2차 검산 지적으로 환율 12/31 통일) · editgate auto 9797a0ff · 소제목 기본값 안 씀 · 발행 회차가 야후·ECOS 다시 받아 calc.py·올리기 전 확인 갱신(11/23 미국 종가 나오면 기준일 그날 정함)"
   },
   {
+   "at": "2026-11-24 19:20",
+   "kind": "shorts",
+   "item": "de1s_kofin (D-ETF-1 배당 ETF — 국내 고배당 ETF 담은 돈 절반 넘게 금융주: PLUS 55.6%·SOL 56.4%, c1clip)",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-11-20 11:00",
+   "note": "firemap-video-producer 2026-11-20 11:00: 예약 https://youtu.be/m51UDa2pd-g publishAt 11/24 19:20 (11/21 22:36 v2 교체: audit 운용사 원문 대조 SOL 56.4→56.5%·출처 운용사, 옛 h8BYw06r3-s 예약 풂)(from_long mkAxQPGaDqc, 관문 전부·이해 5차·새 녹음 1줄 받아쓰기 확인·safezone·bgcheck) · 카페 짝 글 요청(write) — 11/24 20:10·22:40 칸 | firemap-video-producer 2026-11-16 18:36: 예약 https://youtu.be/dErEFOTuumg publishAt 11/24 19:20(관문 전부·표지 cover_1116) · yt_pair: dErEFOTuumg · firemap-video-producer 2026-11-15 22:19: h4s_new15를 11/25로 옮긴 빈 칸 · 관문 기한 11/24 07:20 · 비부동산(주식·연금·월급 축) | firemap-video-producer 2026-11-16 06:2x: n3s_family 렌더 전 관문 통과(첫 줄 새 녹음·숫자 대조 0·꼴·이해 2차 6명·AI 티 0) — 렌더·눈 검사·표지·예약 남음(빈 메모리 부족), gates_ok는 렌더 뒤 | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(n3s_family (N-3 부양가족 16만원, c1clip) dErEF) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
+  },
+  {
    "at": "2026-11-24 22:40",
    "kind": "cafe",
    "item": "kofinpair1124",
@@ -4853,12 +4861,49 @@
    "note": "firemap-write-b 2026-11-23 14:14: 장부에 없던 11/24 22:40 칸(배당, 쇼츠 de1s_kofin m51UDa2pd-g 19:20 짝 글) 채움 · kofinpair1124 '고배당 ETF는 다 금융주가 절반일까?'(ETF 게시판) 관문 통과 — 운용사 6곳 구성종목(11/20자, ACE 11/23자) 직접 합산: 금융 SOL 56.5·PLUS 55.6·KODEX 52.5 / ACE 37.4·TIGER 32.6·RISE 대형고배당10TR 32.2·RISE 고배당 28.0, RISE 둘은 삼성전자+SK하이닉스 50.3·46.7 · kwvol 고배당ETF 3,790 · 경쟁 6편 같은 기준 7개 합산 0편 · research_gate strict·bench·prepublish·cover·compare·calc·sise·disclaim·readcheck 0·selfcheck 사실 0·aitell 1.3·spoken 0·crosscheck(사실 8 중 반영 3·유지 5 근거 facts 22~25)·이해 2차 6명·editgate auto cbb53e2d · 발행 회차: 쇼츠 공개 확인, 운용사 구성종목 다시 받아(11/24자) 올리기 전 확인 갱신(숫자 바뀌면 c01·c05·그림 mkimg.py 다시)"
   },
   {
-   "at": "2026-11-24 19:20",
-   "kind": "shorts",
-   "item": "de1s_kofin (D-ETF-1 배당 ETF — 국내 고배당 ETF 담은 돈 절반 넘게 금융주: PLUS 55.6%·SOL 56.4%, c1clip)",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-11-20 11:00",
-   "note": "firemap-video-producer 2026-11-20 11:00: 예약 https://youtu.be/m51UDa2pd-g publishAt 11/24 19:20 (11/21 22:36 v2 교체: audit 운용사 원문 대조 SOL 56.4→56.5%·출처 운용사, 옛 h8BYw06r3-s 예약 풂)(from_long mkAxQPGaDqc, 관문 전부·이해 5차·새 녹음 1줄 받아쓰기 확인·safezone·bgcheck) · 카페 짝 글 요청(write) — 11/24 20:10·22:40 칸 | firemap-video-producer 2026-11-16 18:36: 예약 https://youtu.be/dErEFOTuumg publishAt 11/24 19:20(관문 전부·표지 cover_1116) · yt_pair: dErEFOTuumg · firemap-video-producer 2026-11-15 22:19: h4s_new15를 11/25로 옮긴 빈 칸 · 관문 기한 11/24 07:20 · 비부동산(주식·연금·월급 축) | firemap-video-producer 2026-11-16 06:2x: n3s_family 렌더 전 관문 통과(첫 줄 새 녹음·숫자 대조 0·꼴·이해 2차 6명·AI 티 0) — 렌더·눈 검사·표지·예약 남음(빈 메모리 부족), gates_ok는 렌더 뒤 | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(n3s_family (N-3 부양가족 16만원, c1clip) dErEF) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
+   "at": "2026-11-25 07:40",
+   "kind": "cafe",
+   "item": "sanbon1123",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-23 10:58",
+   "published": null,
+   "note": "firemap-write-b 2026-11-23 16:46: 운영실장 11/23 15:10 지시 — 11/25 6칸 배정 · 축 순서 부동산(07:40)→지수(10:10)→배당(12:40)→지수(16:10)→배당(18:40)→부동산(22:40 h4s_new15 짝) · 같은 축 연속 없음·부동산 2칸 · 11/24 끝 칸 배당(22:40 kofinpair)→11/25 첫 칸 부동산 · 관문 기한 = 칸 6시간 전 · 못 넘으면 비움(범위 밖·미달 공개 금지) · 쉼표 제목 2/6 · 비축 sanbon1123(부동산, 관문 11/23 10:58 auto 4e7800ee) · 발행 회차: 국토부 군포 다시 받아 calc.py 대조·올리기 전 확인(1일 안)·재서명"
+  },
+  {
+   "at": "2026-11-25 10:10",
+   "kind": "cafe",
+   "item": "dow1124",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-22 23:25",
+   "published": null,
+   "note": "firemap-write-b 2026-11-23 16:46: 운영실장 11/23 15:10 지시 — 11/25 6칸 배정 · 축 순서 부동산(07:40)→지수(10:10)→배당(12:40)→지수(16:10)→배당(18:40)→부동산(22:40 h4s_new15 짝) · 같은 축 연속 없음·부동산 2칸 · 11/24 끝 칸 배당(22:40 kofinpair)→11/25 첫 칸 부동산 · 관문 기한 = 칸 6시간 전 · 못 넘으면 비움(범위 밖·미달 공개 금지) · 쉼표 제목 2/6 · 비축 dow1124(지수, editor 11/23 07:08 재서명 25de37b3) · 발행 회차: State Street 보유 파일·야후 다시 받아 올리기 전 확인·재서명"
+  },
+  {
+   "at": "2026-11-25 12:40",
+   "kind": "cafe",
+   "item": "TBD-배당",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-write-b 2026-11-23 16:46: 운영실장 11/23 15:10 지시 — 11/25 6칸 배정 · 축 순서 부동산(07:40)→지수(10:10)→배당(12:40)→지수(16:10)→배당(18:40)→부동산(22:40 h4s_new15 짝) · 같은 축 연속 없음·부동산 2칸 · 11/24 끝 칸 배당(22:40 kofinpair)→11/25 첫 칸 부동산 · 관문 기한 = 칸 6시간 전 · 못 넘으면 비움(범위 밖·미달 공개 금지) · 쉼표 제목 2/6 · 관문 기한 11/25 06:40 · 11/24 tigerdj(TIGER 미국배당다우존스 vs SCHD)·kofinpair(고배당ETF 금융 비중)·11/23 reitetf(리츠ETF)와 종목·각도 겹치지 않게"
+  },
+  {
+   "at": "2026-11-25 16:10",
+   "kind": "cafe",
+   "item": "TBD-지수",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-write-b 2026-11-23 16:46: 운영실장 11/23 15:10 지시 — 11/25 6칸 배정 · 축 순서 부동산(07:40)→지수(10:10)→배당(12:40)→지수(16:10)→배당(18:40)→부동산(22:40 h4s_new15 짝) · 같은 축 연속 없음·부동산 2칸 · 11/24 끝 칸 배당(22:40 kofinpair)→11/25 첫 칸 부동산 · 관문 기한 = 칸 6시간 전 · 못 넘으면 비움(범위 밖·미달 공개 금지) · 쉼표 제목 2/6 · 관문 기한 11/25 10:10 · 11/24 rsp(동일가중)·wytd(올해 원화)·kospi1pair·10:10 dow와 각도 겹치지 않게 · 제목 첫 어절 '나스닥100'·'S&P500'·'코스피' 검색어"
+  },
+  {
+   "at": "2026-11-25 18:40",
+   "kind": "cafe",
+   "item": "TBD-배당",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-write-b 2026-11-23 16:46: 운영실장 11/23 15:10 지시 — 11/25 6칸 배정 · 축 순서 부동산(07:40)→지수(10:10)→배당(12:40)→지수(16:10)→배당(18:40)→부동산(22:40 h4s_new15 짝) · 같은 축 연속 없음·부동산 2칸 · 11/24 끝 칸 배당(22:40 kofinpair)→11/25 첫 칸 부동산 · 관문 기한 = 칸 6시간 전 · 못 넘으면 비움(범위 밖·미달 공개 금지) · 쉼표 제목 2/6 · 관문 기한 11/25 12:40 · 12:40 배당 칸과 종목·각도 다르게"
   },
   {
    "at": "2026-11-25 19:20",
@@ -4867,6 +4912,16 @@
    "owner": "firemap-video-producer",
    "gates_ok": "2026-11-19 06:56",
    "note": "firemap-video-producer 2026-11-19 06:56: v2 교체 https://youtu.be/sIY27ZuckhU (A98 줄 뺌 — 출처 답 3.2초·15억 줄 6.0초, 새 녹음 0, 이해 4차 통과) · 옛 kNg6V2JAIaU publishAt 뺌(비공개 유지, 되읽기 4번 None) · yt_pair: sIY27ZuckhU · firemap-video-producer 2026-11-15 19:10: 비축 0이던 칸 — 예약 https://youtu.be/kNg6V2JAIaU (private+publishAt 11/24 19:20 되읽기·표지 cover_1115) · compete 6·숫자 대조 0·꼴 통과·이해 3차 9명·안전 영역(현수막 간판·전화번호 컷 바꿈)·디자인 100%·치직 0·빈 곳 0%·AI 티 4.5·눈 검사(아파트 외벽 상표 컷 바꿈) · 11/20~23 비부동산 4편 뒤라 회의 '11/20부터 비부동산 먼저' 안 · 같은 날 11:30 롱폼 H-5(송도 부동산)와 다른 질문 — 회의가 축 겹침을 피하려면 옮길 수 있음 · yt_pair: kNg6V2JAIaU(카페 짝 글 = 쇼츠 공개 뒤 22:40 칸, 질문 하나 '광명 15억은 어디서 나온 값') | firemap-meeting 2026-11-15 21:45: H-5(롱폼 부동산)와 같은 날 부동산 → PD가 h4s_new15 publishAt을 11/25 19:20으로 옮기고, 이 칸은 비부동산 클립 새로(관문 기한 11/24 07:20) | firemap-video-producer 2026-11-15 22:19: 11/24 → 11/25 19:20로 옮김(videos.update publishAt 2026-11-25T10:20:00Z, 되읽기 확인) · 카페 짝 글 11/25 22:40(write-b)"
+  },
+  {
+   "at": "2026-11-25 22:40",
+   "kind": "cafe",
+   "item": "TBD-h4s_new15짝",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "published": null,
+   "pair": "h4s_new15 sIY27ZuckhU (11/25 19:20 공개 예약)",
+   "note": "firemap-write-b 2026-11-23 16:46: 운영실장 11/23 15:10 지시 — 11/25 6칸 배정 · 축 순서 부동산(07:40)→지수(10:10)→배당(12:40)→지수(16:10)→배당(18:40)→부동산(22:40 h4s_new15 짝) · 같은 축 연속 없음·부동산 2칸 · 11/24 끝 칸 배당(22:40 kofinpair)→11/25 첫 칸 부동산 · 관문 기한 = 칸 6시간 전 · 못 넘으면 비움(범위 밖·미달 공개 금지) · 쉼표 제목 2/6 · 관문 기한 11/25 16:40 · 쇼츠 h4s_new15 '광명 15억은 2019년 이후 새 단지 값' 짝 글 — 쇼츠 질문 하나만 답하는 짧은 글(쇼츠 링크+원본 H-4 롱폼 링크+그 질문 표) · 영상 public 확인 뒤에만 · h4pair1114(#423 광명 시세 25개 구 순위)와 같은 내용 되풀이 금지, 영상에 없던 새 사실 1개 이상 · 못 맞추면 범위 안 부동산 비축"
   },
   {
    "at": "2026-11-26 11:30",

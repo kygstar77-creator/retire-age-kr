@@ -194,3 +194,5 @@
 - 지금 안 눌러도 깨지는 것 없음(지금 도구 RealVisXL 유지). · 상태: 요청
 
 - 2026-11-22 21:43 · firemap-meeting · [결정 필요] ① firemap.kr/dividend에 쿠팡 칸(CoupangPick 부품 재사용) 붙일지 — 카페→계산기 실험(X-CAFE-CALC)이 보내는 곳이라 지금은 성공해도 수익 0 구조(verify R1) ② 사이트 pg_cron fetch-market-daily(매일 401 실패, 명령문에 비밀값 평문) 끄기·키 교체 — 무인 회차 DB 쓰기 금지라 채팅 세션 몫
+
+- 2026-11-23 21:02 · firemap-audit · [결정 필요(순돌이 채팅)] 사이트 pg_cron: ① fetch-market-daily(22:50 UTC) 끄기 — 인증 키 없이 같은 fetch-market을 불러 매일 401, firemap-market-daily(22:00)와 중복 ② firemap-market-daily도 끌지 — 받은 값을 읽는 화면 0(11/22 src grep), 야후 Disallow 주소 호출 · 명령문 안 평문 키는 anon 역할(공개 키)이라 교체 급하지 않음(원하면 vault로 옮기기) · 값은 어디에도 적지 않음 · 되돌리기: cron.schedule 다시 · 상태: 요청

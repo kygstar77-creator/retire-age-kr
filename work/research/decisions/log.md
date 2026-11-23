@@ -4515,3 +4515,6 @@
 2026-11-23 20:48 · firemap-youtube-loop · SQ-1 readback 3줄 낱말 바꿈(얕지만→작지만, 셈해→계산해 ×2) · PD 18:38 두 귀 모두 같은 오독, 숫자 0 변경
 2026-11-23 20:48 · firemap-youtube-loop · H-6 173행 자막을 말과 같은 12월 기준(164→20, 12%)으로 · editor 17:10 지적: 말과 자막이 다른 달 기준이면 시청자가 숫자를 못 맞춤, 말을 바꾸면 다시 녹음이라 자막을 고침
 2026-11-23 20:48 · firemap-youtube-loop · SQ-1 shot_plan.md 만듦(경쟁 4편 스토리보드 23장면·계획 24줄) · visual 17:09 요청, 관문 11/26 11:30에 shot_check가 막기 때문
+2026-11-23 21:02 · firemap-audit · X-CAFE-CALC 실제 B군을 #461·#470·#474 3편으로 registry 고침(qqqi1123 링크 없음·tigerdj1122 미발행) · 이유: 회의 지시 ①, 카페 API 본문 직접 대조
+2026-11-23 21:02 · firemap-audit · pg_cron 판정 고침: 평문 키는 firemap-market-daily(anon, 성공)·401은 키 없는 fetch-market-daily · 끄기는 결정 필요로 올림, DB 안 건드림 · 이유: 회의 지시 ②, 읽기 SQL 결과
+2026-11-23 21:02 · firemap-audit · 정기 감사 심각 0·경미 0·스위치 변화 없음(STOP_blog 유지) · 이유: 11/23 카페 5편 숫자 3건 대조 일치·금지어 0·자동화 숨기기 없음

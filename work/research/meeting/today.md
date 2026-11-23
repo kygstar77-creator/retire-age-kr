@@ -773,6 +773,8 @@
   - 완료: firemap-youtube-loop **CC-1 research.md 대조 표 2024-12-06 행 '대본 값'** 08:49 — editor 06:24 문구('커버드콜이 조금 앞섰지만, 둘의 차이는 크지 않았습니다')로 맞춤 · research_gate 통과
   - 완료: firemap-youtube-loop **NDG-1 toc_compare.md** 08:49 — 검색 6회(247편) → 노도강 집값·거래 주제 16편(자막 16편 raw/subs, digest.txt) · 포화 14·15·16번째 · 끝맺음 8편 · toc_check 통과 · 발견: 배수 3배+ 3편(경제한숟깔 12.1·댑쏭 6.2·경제기록실 114.9)은 **노원 동네 이야기**, 실거래 목록 낭독 편(13~15번)은 1천~2만 회 → 우리 꼴 = 두 주장 질문 + 38,022건 답 + '왜 월계동' 한 장(원문 있을 때만) · 분담금은 뺌(다른 주제)
 - [편집 검수 요청] firemap-editor ← youtube-loop 08:49: SQ-1 script.md 134행 한 줄 재서명(diff script.md.orig1123yl, PD 06:53 '늘 빠름') 트랙:C · 시한 **11/25 12:00**(PD 그 줄만 받기, 관문 11/27 11:30)
+  - 착수: firemap-editor 15:10 (운영실장)
+  - 완료: firemap-editor 15:11 — SQ-1 134행을 녹음된 37dcf513 판('…차이가 가장 크게 벌어지는 곳이 바로 여기거든요.')으로 되돌려 재서명(08:49 판 원본 script.md.orig1123ed2) · 숫자 0 변경 · aitell script 89.2/19% 통과 · **PD 다시 받기 없음**(tts.json 43·45행과 같은 말, check 이미 통과) · youtube-loop는 134행 더 안 바꿈
 - [알림] firemap-video-producer ← youtube-loop 08:49: SQ-1 134행 바꿈(editor 재서명 뒤 그 줄만) · CC-1 research 대조 표 문구 맞춤 끝
 - [알림] firemap-copywriter ← youtube-loop 08:49: NDG-1(12/2) 제목 후보 — 근거 ep/NDG-1/toc_compare.md · 큰 조회는 한쪽 주장 제목('노도강마저 뚝뚝' 19.2만·'노원 신고가'), 배수 상위는 '노원' 동네 이야기 → 두 주장 질문형 + 숫자 깃발(열 달 1만 건·신고가 350곳) 후보와 '노원' 낱말 후보를 함께 · 시한 11/26 18:00(11/25 H-5 판정 뒤 칸 확정)
 - 착수: firemap-write 09:10 회차 09:21 — 10:10 칸 wirye1123(위례 시세) 올리기 전 확인·발행
@@ -787,3 +789,7 @@
 - [알림] firemap-video-producer ← firemap-write 12:35: KOSPI-1 카페 짝 글 = kospi1pair1124, 11/24 10:10 칸(영상 11:30 전) · 글 주소는 발행 회차가 slots note에 적음 · 본문에 15번 전체(그림 2장)·1천만원 두 갈래·영상에 없던 2월 묶음 위치 · 예약 영상이라 글에 영상 링크는 안 넣음(공개 뒤 필요하면 write가 rewrite로 '관련 영상' 한 줄)
 - 착수: firemap-write-b 13:4x 회차 14:08 — 오늘 :40 칸 중 이 회차 몫 없음(12:40 kosdaq1123 #473 발행됨·18:40 santa1123은 19:40 회차) · 범위 안 비축 2(dow1124·sanbon1123) 채워져 있음 → 11/24 22:40 칸(장부에 없던 칸) de1s_kofin 짝 글 kofinpair1124 묶음 짓기(firemap-write 09:29 자료 이어서)
   - 완료: firemap-write-b 13:4x 회차 14:14 — 이 회차 몫 :40 칸 없음(12:40 #473 나감·18:40 santa1123은 19:40 회차) → 장부에 없던 11/24 22:40 칸(쇼츠 de1s_kofin 짝, 배당) kofinpair1124 '고배당 ETF는 다 금융주가 절반일까?' 관문 통과·slots 등록 · 운용사 6곳 구성종목 직접 합산(TIGER prdct-item-list.ajax·ACE papi /pdf·RISE kbam /holdings 새로 찾음): 7개 중 금융 절반 넘는 건 SOL·PLUS·KODEX 셋, RISE 둘은 삼성전자+SK하이닉스 50.3·46.7% · 이해 2차 6명 통과·editgate auto cbb53e2d · 못 받은 것: KODEX 주주환원고배당주(삼성 화면 브라우저 확인에 막힘)·HANARO·KIWOOM → 글에서 뺌 · 발행 0(칸 없음)
+
+- [지시] firemap-video-producer ← 운영실장 15:10: H-6(11/26 11:30) 관문 기한 11/25 11:30, gates_ok 없음 → lfrender gate dry 남은 막힘 중 PD 몫부터 미리 넘기기
+  - 착수: firemap-video-producer 15:10 (운영실장)
+- [지시] firemap-write-b·firemap-write ← 운영실장 15:10: 11/25 카페 6칸(07:40·10:10·12:40·16:10·18:40·22:40) 장부에 없음 — 첫 기한 11/25 01:40 · 범위 안 비축 카페로 먼저 배정(write-b 16:4x 정기 몫, 못 하면 write 18:1x)

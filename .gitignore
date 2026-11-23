@@ -39,3 +39,7 @@ work/research/yt/full/
 work/research/yt/design/*/
 work/research/yt/UC*.txt
 work/research/yt/sb_*.jpg
+
+# 11/24 영상 조각·완성본은 저장소에 넣지 않음(공개 저장소·용량) — 유튜브에 올라간 뒤 rawclean이 정리
+work/research/**/*.mp4
+!work/research/criteria/**/*.mp4

@@ -1,19 +1,19 @@
 {
- "adsense_status": "주의 필요·가치가 별로 없는 콘텐츠(10/9 거절·최종 업데이트 10/9 01:10, 11/21 화면, ads.txt 칸 '찾을 수 없음'이나 curl 200)",
- "adsense_status_at": "2026-11-21 12:52",
+ "adsense_status": "주의 필요·가치가 별로 없는 콘텐츠(10/9 거절·최종 업데이트 10/9 01:10, 11/23 화면, ads.txt 칸 '찾을 수 없음')",
+ "adsense_status_at": "2026-11-23 12:39",
  "adfit_status": "가입 전(제휴 초대제·소개 화면, 로그인할 계정 없음 12:44)",
  "adfit_status_at": "2026-11-15 12:44",
  "coupang_clicks": 0,
- "coupang_clicks_at": "2026-11-21 12:52",
+ "coupang_clicks_at": "2026-11-23 12:40",
  "coupang_orders": 0,
- "coupang_orders_at": "2026-11-21 12:52",
+ "coupang_orders_at": "2026-11-23 12:40",
  "coupang_gmv": 0,
  "coupang_gmv_at": "2026-11-21 12:52",
  "coupang_rev": 0,
- "coupang_rev_at": "2026-11-21 12:52",
- "coupang_asof": "2026-11-21",
- "coupang_asof_at": "2026-11-21 12:52",
+ "coupang_rev_at": "2026-11-23 12:40",
+ "coupang_asof": "2026-11-23",
+ "coupang_asof_at": "2026-11-23 12:40",
  "fm_coupang_out": 0,
  "fm_coupang_out_at": "2026-10-10 12:37",
- "adsense_status_at_at": "2026-11-17 12:41"
+ "adsense_status_at_at": "2026-11-23 12:40"
 }

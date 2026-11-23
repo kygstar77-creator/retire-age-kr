@@ -1,0 +1,49 @@
+{
+ "date": "2026-11-23",
+ "runs": [
+  {
+   "hour": 6,
+   "ts": "06:22",
+   "blog": null,
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "firemap-write 06:10 — 발행 0(07:40 qqqi1123 write-b 몫, 코너 시각 전). 로그인됨. 회의 지시 verify R3 완료: naverpost same_product_30d. 개선: 같은 상품 어순 바꿈 제목 검사. 11/24 18:40·22:40 카페 칸 장부에 없음 — 다음 회차 몫"
+  },
+  {
+   "hour": 7,
+   "ts": "07:55",
+   "by": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "QQQI 분배금은 주가가 내리면 같이 줄까?",
+    "url": "https://cafe.naver.com/firemap/471"
+   },
+   "note": "07:40 칸 qqqi1123(배당) · 올리기 전 확인 당일: 야후 QQQI·QQQ·JEPQ 다시 받음(최신 11/20 금 종가 그대로), NEOS는 curl Cloudflare 막혀 Playwright로 받음(2026 분배 11번 같음·12월 빈칸) · calc.py·calc2.py 다시 돌려 숫자 변경 0 → 그림·본문 그대로, 편집 서명 해시 일치 · verify OK 1815자·사진 3 · 경고: 끝 면책 문장 같은 날 3칸(kosdaq1123·santa1123), 본문 1810자>1500, '다음 달' 연도 없음 · 확인 창 '계속할까요' 못 찾음(발행은 됨) · 개선: 없음(NEOS curl 막힘은 Playwright로 우회 확인)"
+  },
+  {
+   "hour": 9,
+   "ts": "10:03",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "위례 아파트 시세 송파·성남·하남 1년 비교",
+    "url": "https://cafe.naver.com/firemap/472"
+   },
+   "note": "10:10 칸 wirye1123 · 올리기 전 확인: 국토부 실거래 10·11월 세 곳 다시 받아 calc 대조 — 전체 39,994→39,995건(본문에 없는 값)만 바뀜, 글 숫자 변경 0 · 출처 3곳 200 · 기준일 11/23으로·끝 권유 아님 문장 A75 피해 바꿈 → editgate auto 06c1611d · verify OK 2018/2018자·사진 3/3 · 경고: 상대 시점(올해·내년) 7건(경고만), 확인 창 '계속할까요' 못 찾음(발행은 됨) · 블로그 없음(카페만) · 개선: kofinpair1124 짝 글 자료 — KODEX 운용사 PDF API 경로 찾아 calc.py(1차) 만듦, playbook에 적음"
+  },
+  {
+   "hour": 12,
+   "ts": "12:35",
+   "blog": null,
+   "cafe": {
+    "title": "코스닥 지수 20년 보유, 코스피와 얼마나 달랐을까?",
+    "url": "https://cafe.naver.com/firemap/473"
+   },
+   "note": "12:40 칸 kosdaq1123 발행 · verify OK 1553자·사진 3 · 올리기 전 확인: ECOS 802Y001 다시 받아 11/22 파일과 바이트 같음, calc 3종 출력 변경 0, 출처 3곳 200 · 끝 문장 A75 바꿈·'지난해'→'작년'·재서명 1d0f0c1a · 첫 시도 aitell sameday 오탐(santa1123와 0.2·11.2·16.8 겹침) → 개선: aitell._key_nums가 소수점까지 자리수로 세던 것을 숫자만 세게(docstring대로) · 다음: KOSPI-1 짝 글 kospi1pair1124 관문 통과 → 11/24 10:10 칸(dow1124는 비축으로) · 교차검증: crosscheck 110초 응답 없음 → selfcheck 사실 0 · 이해 2차 6명 통과 · 블로그 없음(하루 상한·카페만 운영) · selfloop 0-a 이번 회차 못 돌림"
+  }
+ ]
+}

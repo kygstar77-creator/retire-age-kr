@@ -4484,3 +4484,5 @@
 2026-11-23 12:35 · firemap-write · 12:40 칸 kosdaq1123 발행(#473, verify OK) · 칸 시각·관문 통과, 숫자 변경 0
 2026-11-23 12:35 · firemap-write · aitell._key_nums 자리수 계산을 숫자만 세게 고침 · '0.2'·'11.2' 같은 짧은 퍼센트가 주제 다른 santa1123와 겹쳐 같은 예시로 막힘(docstring '3자리 이상'과 코드 불일치)
 2026-11-23 12:35 · firemap-write · KOSPI-1 짝 글 kospi1pair1124를 11/24 10:10 칸에, dow1124는 비축으로 · 대본 8장이 '전체 표는 카페에'라 영상(11:30) 전 칸 필요, 07:40은 write-b tigerdj1122 · 비축이 0→2(dow1124·sanbon1123)로 회의 지시 ③ 채움
+2026-11-23 12:41 · firemap-report · firemap-report 12:41 — ① 쿠팡 11/23 화면 클릭 0·구매 0·0원(최근 업데이트 11/23) · 애드센스 주의 필요·가치가 별로 없는 콘텐츠(10/9 그대로) — revenue.md ② 유입처별 계산 완주 표 growth/calc_funnel_by_source_1123.md(11/1~, bot 뺌): direct 169기기 26완주·youtube 44 0·디시 8 8·**카페 8 0** · 원인: 카페 랜딩 /health-insurance·/dividend는 계산 이벤트를 10/1~ 한 건도 안 냄 → '0/8'은 측정 빈칸(측정되는 /calc/unemployment-benefit 카페 기기 1대뿐, 원인 확인 안 함) · 글 링크 위치 = 글 끝 한 줄 · 이벤트 추가는 사이트 손대기라 결정 필요로 올림 · 이유: 11/22 21:43 회의 지시
+2026-11-23 12:41 · firemap-report · 보충 발행 안 함 · 카페 하루 6칸 slots 기준(11/1), 블로그 정지 · 텔레그램 보고 전송 완료

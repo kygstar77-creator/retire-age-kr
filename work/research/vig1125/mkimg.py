@@ -18,7 +18,7 @@ def ann(t):
     return a
 BG = '#14532D'; TOPIC_PX, NUM_PX = 58, 44
 fig = plt.figure(figsize=(9, 9), dpi=100); fig.patch.set_facecolor(BG)
-fig.text(0.07, 0.86, 'VIG 배당, 10년 뒤', fontproperties=Bs(TOPIC_PX), color='white')
+fig.text(0.07, 0.86, 'VIG 배당, 11년 뒤', fontproperties=Bs(TOPIC_PX), color='white')
 fig.text(0.07, 0.785, '2015년 11월에 산 값 대비 지금 1년 배당', fontproperties=Bs(27), color='#BBF7D0')
 ax = fig.add_axes([0.1, 0.17, 0.8, 0.55]); ax.set_facecolor(BG)
 vals = [(2.3, 4.6), (3.2, 5.4)]
@@ -32,7 +32,7 @@ ax.set_ylim(-1.2, 6.8); ax.set_xlim(-0.6, 1.8); ax.axis('off')
 fig.text(0.07, 0.045, '달러 기준 · 세전 · 2026.11.20 종가', fontsize=17, color='#BBF7D0')
 fig.savefig('pkg/img/00.png', dpi=100, facecolor=fig.get_facecolor()); plt.close(fig)
 json.dump({'type': 'chart', 'source': '야후 파이낸스 chart API VIG·VYM 일별 종가·배당 events(11/23 받음)로 직접 계산, calc_out.txt',
-           'made_at': '2026-11-23', 'by': 'research/vig1125/mkimg.py', 'out': 'img/00.png', 'topic': 'VIG 배당, 10년 뒤', 'num': '4.6%·5.4%',
+           'made_at': '2026-11-23', 'by': 'research/vig1125/mkimg.py', 'out': 'img/00.png', 'topic': 'VIG 배당, 11년 뒤', 'num': '4.6%·5.4%',
            'topic_px': TOPIC_PX, 'num_px': NUM_PX, 'follows': '경쟁 4 jeunkim/224480264482 차트형 표지 + 경쟁 1 campcodemoney 상품명 큰 글자'},
           open('pkg/cover_meta.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 def frame(fig, title, sub):
@@ -59,6 +59,6 @@ ax.axhline(10000, color=INK, lw=1.5, ls='--'); ax.text(1.32, 10300, '넣은 돈\
 ax.set_xticks(x); ax.set_xticklabels(['VIG', 'VYM'], fontproperties=Bs(18)); ax.tick_params(axis='x', length=0); ax.set_yticks([])
 for s_ in ('top', 'right', 'left'): ax.spines[s_].set_visible(False)
 ax.set_xlim(-0.6, 1.7); ax.set_ylim(0, 37000)
-frame(fig, '10년 전 1만 달러 — 지금 평가액 + 받은 배당', '2015.11.20 → 2026.11.20 · 배당은 다시 안 삼 · 세전')
+frame(fig, '11년 전 1만 달러 — 지금 평가액 + 받은 배당', '2015.11.20 → 2026.11.20 · 배당은 다시 안 삼 · 세전')
 fig.subplots_adjust(top=0.83, bottom=0.13, left=0.04, right=0.98); fig.savefig('pkg/img/02.png', dpi=100); plt.close(fig)
 print('ok')

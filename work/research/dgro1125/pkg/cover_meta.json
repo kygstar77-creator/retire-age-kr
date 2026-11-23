@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "아이셰어즈 DGRO 배당 기록·야후 파이낸스 chart API DGRO 배당 events(11/23 받음)로 직접 계산, calc_out.txt",
+ "made_at": "2026-11-23",
+ "by": "research/dgro1125/mkimg.py",
+ "out": "img/00.png",
+ "topic": "DGRO 배당금",
+ "num": "38번 중 4번",
+ "topic_px": 58,
+ "num_px": 44,
+ "follows": "경쟁 3 real_bin/224465288342 상품명 큰 글자 표지 + vig1125 차트형 표지"
+}

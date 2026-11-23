@@ -67,6 +67,19 @@
     "url": "https://cafe.naver.com/firemap/475"
    },
    "note": "18:40 칸 santa1123 #475 verify OK 1916자·사진 3 · 올리기 전 확인 11/23 다시(야후 ^NDX·^GSPC 마지막 종가 11/20 그대로, 11월 -11.82%·-8.83% 원고와 같음, 주소 8곳 중 7곳 200·ICE 403은 nyse.com으로) · 블로그 0(하루 상한·편성 없음) · 새 묶음 vig1125(11/25 12:40 배당 칸, VIG vs VYM 10년 배당) 관문 통과: 자료조사 출처 5곳+WebSearch 5건, 교차검증 Gemini 사실 5건 중 반영 4·유지 1(정식 이름은 뱅가드 longName), check_gemini(말투) 파일 안 생김, selfcheck 사실 0, 이해 시험 2차 통과(6명, 2차 65세는 총수익 놓침), editgate auto 8bf0fece · 개선: 표지가 최근 10장 중 남색 4장과 겹쳐 초록으로 바꿈(cover_board로 확인)"
+  },
+  {
+   "hour": 21,
+   "ts": "21:39",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "발행 0 — 이 회차 몫 시각 칸 없음(22:40 banpopair1123은 write-b 22:40, block '코너 시각 전') · 11/25 18:40 배당 TBD → dgro1125 'DGRO 배당금 분기별로 세어 보니' 관문 통과(editgate auto 560ba070) · 자료조사 출처 5(아이셰어즈 상품 페이지·11/18 배당 일정표·야후 DGRO/SCHD/VIG/SPY·경쟁 4편·웹검색 2) · 교차검증: crosscheck 사실 지적 3건 중 반영 1(10년→11년)·유지 2(기준일은 ※ 줄에 있음), 말투 13건 중 반영 4·나머지는 이해 시험으로 이미 고친 문장 · selfcheck 사실 0 · 이해 2차 6명 통과 · 개선: vig1125 기간 오류(2015-11-20~2026-11-20을 '10년'으로 씀) 고쳐 재서명 cb525faf"
   }
  ]
 }

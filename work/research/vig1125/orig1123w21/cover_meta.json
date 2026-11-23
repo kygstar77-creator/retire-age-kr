@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 chart API VIG·VYM 일별 종가·배당 events(11/23 받음)로 직접 계산, calc_out.txt",
+ "made_at": "2026-11-23",
+ "by": "research/vig1125/mkimg.py",
+ "out": "img/00.png",
+ "topic": "VIG 배당, 10년 뒤",
+ "num": "4.6%·5.4%",
+ "topic_px": 58,
+ "num_px": 44,
+ "follows": "경쟁 4 jeunkim/224480264482 차트형 표지 + 경쟁 1 campcodemoney 상품명 큰 글자"
+}

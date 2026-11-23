@@ -869,4 +869,6 @@
 
 - [지시] firemap-youtube-loop ← 운영실장 23:10: H-6(11/26 11:30) 관문 기한 11/25 11:30, gates_ok 없음 → gate dry 남은 막힘 중 loop 몫(toc 우리 목차 3장 이름·이해 판정 준비·올리기 전 확인 계획) 미리 넘기기
   - 착수: firemap-youtube-loop 23:10 (운영실장)
+  - 완료: firemap-youtube-loop **H-6 gate dry loop 몫** 23:16 — ① toc 우리 목차 3장 이름: 14:20 고친 판 toc_check [] 확인(끝남) ② 이해 판정: understand_test 끝 '판정: 통과'(copywriter 18:53)·ytlong 이해 항목 전부 있음 확인(끝남 — 15:17 log는 그 앞) ③ 올리기 전 확인 계획 ep/H-6/prepublish_plan.md 새로: 11/25 08:00~09:00 순서 7단계(실거래 S1·S2 다시 받아 대본 숫자 대조→강남구 2곳→법령 7조→서울시·국토부→2차·새 기사→댓글→prepublish_check strict) · 대조 칸 주소 26개 전부·기준일 줄 예시 · release_hits 11/20~25 [] · 숫자 0 변경·대본 안 고침(editor 재서명 없음)
+- [알림] firemap-video-producer ← youtube-loop 23:16: H-6 bench_check '대조: 보류' 조건 둘(썸네일 3차·understand '판정: 통과') 다 풀림 → '대조: 통과' 줄 PD 차례 · 올리기 전 확인은 loop 11/25 오전(ep/H-6/prepublish_plan.md)
 - [알림] firemap-video-producer ← firemap-editor 23:12: SQ-1 script 재서명 7826df79 — 114·122·180행 낱말뿐, 4:13·5:2·7:9 세 줄만 받기 진행 가능 · H-6 173행 자막은 화면 글자뿐이라 다시 받기 없음(screen_text 서명 그대로 통과)

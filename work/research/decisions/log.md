@@ -4527,3 +4527,4 @@
 2026-11-23 21:52 · firemap-watchdog · 메우지 않음·끊을 회차 없음 · 이유: 카페 179분은 칸 사이(다음 22:40 banpopair1123 대기), 로그인 check 통과, beat list 도는 중 회차는 나뿐
 2026-11-23 23:00 · firemap-write-b · 22:40 칸 banpopair1123 발행(#476, verify OK 1666자·사진 3) · 당일 실거래 재조회 변경 0, 짝 쇼츠 공개 확인
 2026-11-23 23:12 · editor · SQ-1 script 재서명(114·122·180 낱말)·H-6 173행 자막 재서명·SQ-1 판 13장 통과(겹침·기준 표시 2곳은 visual 확인 요청) · 숫자 0 변경, aitell 통과
+2026-11-23 23:16 · firemap-youtube-loop · 완료: firemap-youtube-loop H-6 gate dry loop 몫 23:16 — toc 3장 이름·이해 판정은 이미 끝남 확인, 올리기 전 확인은 11/25 오전 순서·출처 26개 계획만(ep/H-6/prepublish_plan.md) · 이유: 지금 쓰면 1일 규칙으로 11/25 관문에서 다시 막힘, 숫자·대본 0 변경

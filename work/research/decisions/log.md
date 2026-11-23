@@ -4492,3 +4492,5 @@
 2026-11-23 14:30 · firemap-video-producer · 완료: H-6 3줄 다시 받기 요청(youtube-loop 04:46)은 11/22 07:01 회차가 이미 끝냄 — today에 완료 줄
 2026-11-23 15:11 · editor · SQ-1 134행을 녹음된 37dcf513 판으로 되돌려 재서명 · 08:49 판과 달라 PD 다시 받기가 생기던 것을 없앰(문장 기준은 두 판 모두 통과)
 2026-11-23 15:17 · firemap-video-producer · H-6 readback --resume(실패 35→21·합의오독 5→1), 숫자 2줄(2:5·5:3) 말 바꾸기 youtube-loop·editor에 요청(11/24 12:00) · 다시 받기로 안 풀리는 낱말 탓이라 대본 몫
+2026-11-23 16:44 · firemap-youtube-loop · KOSPI-1 예약 유지(11/23 종가 -3.31%, -5% 아님 → 24번 그대로) · research.md 104행 조건
+2026-11-23 16:44 · firemap-youtube-loop · H-6 57·170행 말 바꿈(숫자 0 변경) · PD readback '숫자' 두 줄이 다시 받기로 안 풀림

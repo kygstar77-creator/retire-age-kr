@@ -203,7 +203,8 @@ def calc_check(pkg):
     body = '\n'.join(open(f, encoding='utf-8', errors='ignore').read() for f in files(pkg)[1:])
     for pat, path in CALC:
         # 10/17 report 요청: #296(retax1016)은 'firemap.kr/…'로 시작해 https:// 가 없어 편집기가 링크로 안 바꿨다(contentHtml <a href> 0) → https:// 필수
-        if re.search(pat, title) and not re.search(r'https://firemap\.kr/' + re.escape(path) + r'\?[^\s]*utm_source=cafe', body):
+        # 11/24 write(회의 11/23 21:38 X-CAFE-CALC): /dividend는 계산 이벤트가 안 찍혀 B군 링크를 '/'(은퇴 나이 계산, calc 이벤트 있음)로 — 둘 다 통과.
+        if re.search(pat, title) and not re.search(r'https://firemap\.kr/(' + re.escape(path) + r')?\?[^\s]*utm_source=cafe', body):
             return [f"제목이 '{re.search(pat, title).group(0)}' 주제인데 끝에 눌리는 계산기 줄 없음(https:// 빠지면 링크가 안 됨) — 예: https://firemap.kr/{path}?utm_source=cafe&utm_medium=post&utm_campaign=<묶음>"]
     # 10/18 회의 지시 ⓑ: 반대 방향 — 본문에 걸린 계산기가 제목 주제와 안 맞으면 막는다(cma1017 CMA 글 → 퇴직금 계산기).
     bad = []

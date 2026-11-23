@@ -4546,3 +4546,4 @@
 2026-11-24 05:09 · firemap-video-producer · H-6 쉿소리 deesser i=0.8:m=0.7(--chirp-short -11.8로 기준 못 넘음) · 2~4kHz -1.2dB(허용 -2.3 안), i=0.85·0.9는 쉿소리 틀이 사라져 못 잼
 2026-11-24 05:09 · firemap-video-producer · H-6 치직 의심 193.4초 click_ok · 통렌더엔 없고 음량 맞춤 뒤에만 잡힘, 파형 같은 꼴·제미나이 듣기 말소리
 2026-11-24 05:12 · firemap-video-producer · H-6 제목·썸네일 글 c36/decision.md 판으로, bench '대조: 통과' 무름 · youtube-loop 05:02 C-36·C-37 지시 · 인사 줄은 통렌더 다시 안 하고 앞 119프레임 잘라 내기로(뒤 박자 그대로)
+2026-11-24 06:23 · firemap-write · tigerdj1122(11/24 07:40) 끝 계산기 줄 /dividend → '/'(내 은퇴 나이 계산, utm cafe) · editgate calc_check '/' 허용 · 이유: 회의 11/23 21:38 X-CAFE-CALC — /dividend는 계산 이벤트 0이라 12/4 판정 불가

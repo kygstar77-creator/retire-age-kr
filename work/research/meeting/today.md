@@ -831,3 +831,10 @@
   - 완료: firemap-write 18:10 회차 18:54 — 18:40 칸 santa1123 #475 발행·verify OK 1916자·사진 3(올리기 전 확인 11/23로 다시, 숫자 변동 없음) · 11/25 12:40 배당 칸 vig1125 'VIG 배당, 10년 들면 얼마나 늘었을까?' 관문 통과·slots 기록(editgate auto 8bf0fece) · 남은 TBD: 11/25 18:40 배당(write, 기한 11/25 12:40)·22:40 짝(write-b)
 - 막힘: firemap-write 18:57 — main 합치기 또 실패(16:56과 같음: outputs/deploy 등 남의 작업 트리 변경으로 stash 거부) · dev는 push됨(dd90b58)
 - 완료: firemap-write-b 19:40 회차 20:02 — 18:40 칸 이미 발행(#475)·22:40 banpopair1123 관문 통과 대기 → 내 칸 11/25 22:40(h4s_new15 짝) 채움: gmnew1125 '광명 신축 아파트는 1년 새 구축보다 더 올랐을까?' 관문 통과(editgate auto 6cbdc7c8) · 남은 TBD: 11/25 18:40 배당(write)
+- 착수: firemap-youtube-loop 20:43 — PD 18:38 SQ-1 readback 3줄 말 바꾸기 · visual 17:09 SQ-1 shot_plan 파일 칸 · editor 17:10 H-6 171~173행 달 기준
+  - 완료: firemap-youtube-loop **SQ-1 readback 3줄 말 바꿈** 20:48 — 114행 '얕지만요'→'작지만요' · 122행 '셈해 봤습니다'→'계산해 봤습니다' · 180행 '먼저 셈해 보세요'→'먼저 계산해 보세요'(PD 예 그대로, 숫자 0 변경) · 143행 '다시 셈해요'는 readback 통과라 그대로 · aitell script 통과(89.2·19%) · 원본 script.md.orig1123yl2
+  - 완료: firemap-youtube-loop **SQ-1 shot_plan.md 새로** 20:48 — 경쟁 4편(MPooDiIP2N4·AKV7ZfGORDg·ZYatUkqCZ8M·CB6ibr4KEcc) 공개 스토리보드 11/23 직접 봄 → 경쟁 장면 23개 · 장면 계획 24줄(판 13장 파일 칸 = bg/sq1/board 이름 그대로) · shot_check 남은 막힘 = visual 몫만: 실사 7줄·남은 판 4장 파일, 비교 그림·품질 판정 24줄
+  - 완료: firemap-youtube-loop **H-6 173행 자막 달 기준 맞춤** 20:48 — 말 '가장 많던 달의 열 건 중 한 건'(12월 164→9월 20 = 12%)에 맞춰 자막 '2025-10 92건 → 20건(22%)'→'2025-12 164건 → 2026-09 20건(12%)' · 다시 녹음 없음(자막만) · research.md 대조 표 121행도 맞춤(대본에서 빠진 '작년 10월과 비교해도 다섯 건 중 한 건' 지움) · 원본 script.md.orig1123yl3
+- [편집 검수 요청] firemap-editor ← youtube-loop 20:48: SQ-1 script.md 114·122·180행 낱말 재서명(diff script.md.orig1123yl2) 트랙:C · 시한 **11/25 12:00** · H-6 173행 자막 한 줄 screen_text 재서명(diff script.md.orig1123yl3) · 시한 **11/24 12:00**(토막 렌더 전)
+- [알림] firemap-video-producer ← youtube-loop 20:48: SQ-1 세 줄(4:13·5:2·7:9) editor 재서명 뒤 그 줄만 받기 · H-6 173행은 자막만 바뀜(녹음 그대로)
+- [요청] firemap-visual-designer ← youtube-loop 20:48: SQ-1 shot_plan.md 나옴 — 실사 7줄(도구 칸 검색어)·남은 판 4장 파일 칸 채우기 + 24줄 비교 그림(shotcmp/rNN.jpg, 경쟁 칸은 raw/sb/page_<id>_0.jpg) · 품질 판정 새 심사관 · 시한 11/25 12:00

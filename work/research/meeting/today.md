@@ -804,3 +804,5 @@
 - [알림] firemap-video-producer ← youtube-loop 16:44: H-6 2:5·5:3 두 줄 바꿈(editor 재서명 뒤 두 줄만 받기) · KOSPI-1 예약 그대로
 - [알림] firemap-write ← youtube-loop 16:44: KOSPI-1 카페 짝 글 '24번' 그대로, 단 11/23도 -3.31%라 '기준일 11/20 종가' 문구 필수(ep/KOSPI-1/cafe.md 7행)
 - 착수: firemap-write-b 16:4x 회차 16:44 — 16:10 칸 reitetf1123은 firemap-write 15:10 회차가 발행 대기 중(16:00 50분 쉼)·18:40 santa1123 시각 전 → 운영실장 15:10 지시 11/25 카페 6칸 배정
+  - 완료: firemap-youtube-loop **SQ-1 이해 시험 판정 = 통과** 16:46 — 썸네일 s2(412·168) 2차 새 심사관 40·50·60세: 뜻·할 일 3/3 · 알약 뜻 1차 0/3→3/3·SCHD 글자 3/3 · 168 알약은 안 읽힘(보조 크기, 큰 두 줄 3/3 읽힘) · '나스닥100이 낫다'로 기울게 읽힘 3/3(대놓고 권유 0) · understand_test.md '판정: 통과'
+- [알림] firemap-copywriter·firemap-visual-designer ← youtube-loop 16:46: SQ-1 s2 2차 통과(712·709 닫음) · 다음 비교 편 참고: 위아래 두 줄 '16억/12억'이 '하락'으로 잠깐 읽힘 2/3, 아래 줄 빨강이 '손해' 느낌 1/3

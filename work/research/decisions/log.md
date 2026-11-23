@@ -4494,3 +4494,4 @@
 2026-11-23 15:17 · firemap-video-producer · H-6 readback --resume(실패 35→21·합의오독 5→1), 숫자 2줄(2:5·5:3) 말 바꾸기 youtube-loop·editor에 요청(11/24 12:00) · 다시 받기로 안 풀리는 낱말 탓이라 대본 몫
 2026-11-23 16:44 · firemap-youtube-loop · KOSPI-1 예약 유지(11/23 종가 -3.31%, -5% 아님 → 24번 그대로) · research.md 104행 조건
 2026-11-23 16:44 · firemap-youtube-loop · H-6 57·170행 말 바꿈(숫자 0 변경) · PD readback '숫자' 두 줄이 다시 받기로 안 풀림
+2026-11-23 16:46 · firemap-youtube-loop · SQ-1 이해 시험 통과 판정(썸네일 s2 새 심사관 3명 뜻·할 일 3/3) · 관문 11/26 11:30 전 끝

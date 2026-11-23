@@ -1,0 +1,50 @@
+[gemini-3.6-flash 2026-11-23 18:32 — OpenAI 키 없어 Gemini가 사실 대조]
+### 출처 대조 (URL 확인)
+- 야후 파이낸스 chart API (https://query1.finance.yahoo.com/v8/finance/chart/VIG): **확인 불가**
+- 뱅가드 상품 정보 API Profile (https://investor.vanguard.com/vmf/api/VIG/profile): **확인 불가**
+- 뱅가드 상품 정보 API Distribution (https://investor.vanguard.com/vmf/api/VIG/distribution): **확인 불가**
+- S&P DJI 배당성장 지수 방법론 (https://spglobal.com/spdji/zh/documents/methodologies/methodology-sp-dividend-growers-index-series.pdf): **확인 불가**
+- 뱅가드 VIG 팩트시트 (https://workplace.vanguard.com/iippdf/pdfs/FS920R.pdf): **확인 불가**
+- 인베즈 VIG·SCHD 보도 (https://invezz.com/news/2026/09/01/schd-nears-title-of-biggest-dividend-etf-but-technical-risks-loom/): **확인 불가**
+- 바차트 트럼프 재산 공개 보도 (https://www.barchart.com/story/news/4150833/trump-made-big-trades-in-this-dividend-growth-etf-you-probably-shouldnt): **확인 불가**
+
+---
+
+### 틀림 / 사실표에 없음 / 오해 소지 항목
+
+1. **[틀림]**
+   - **원문 문장**: 매달 받는 배당이 먼저인지, 10년 뒤 총액이 먼저인지 어느 쪽이세요?
+   - **문제**: VIG와 VYM은 분기 배당 ETF이므로 '매달 받는 배당'은 사실과 다름.
+   - **근거**: 사실표 '분기 배당'
+   - **고친 문장**: 분기마다 받는 배당이 먼저인지, 10년 뒤 총액이 먼저인지 어느 쪽이세요?
+
+2. **[사실표에 없음 (주장/텍스트)]**
+   - **원문 문장**: 정식 이름은 Vanguard Dividend Appreciation ETF이고 총보수는 연 0.04%입니다.
+   - **문제**: 'Vanguard Dividend Appreciation ETF'라는 정식 명칭은 사실표에 적혀 있지 않음.
+   - **근거**: 사실표에는 'VIG 설정 2006-04-21·총보수 0.04%'만 명시됨.
+   - **고친 문장**: 총보수는 연 0.04%입니다.
+
+3. **[사실표에 없음 (숫자)]**
+   - **원문 문장**: 배당은 3·6·9·12월에 주고, 지난 9월에는 1주에 0.93달러를 줬어요.
+   - **문제**: 사실표에 '분기 배당'으로만 표기되어 있고 '3·6·9·12월'이라는 구체적 월 숫자는 없음.
+   - **근거**: 사실표 '분기 배당, VIG 9월 0.9295달러'
+   - **고친 문장**: 배당은 분기마다 주고, 지난 9월에는 1주에 0.93달러를 줬어요.
+
+4. **[오해 소지]**
+   - **원문 문장**: 이 지수는 10년 넘게 해마다 배당을 늘린 미국 회사만 담아요.
+   - **문제**: '10년 넘게'는 최소 11년 이상으로 오해를 부를 수 있으나 지수 기준은 '10년 연속'임.
+   - **근거**: 사실표 '10년 연속 배당 증가'
+   - **고친 문장**: 이 지수는 10년 연속 해마다 배당을 늘린 미국 회사만 담아요.
+
+5. **[오해 소지]**
+   - **원문 문장**: 빠질 때 폭도 달라요. 2021년 이후 고점에서 가장 크게 빠진 폭은 VIG 20.4%, VYM 15.8%였어요.
+   - **문제**: 배당 재투자가 반영된 수정 종가(adjclose) 기준 낙폭이라는 조건이 누락되어 일반 주가 낙폭으로 오해할 수 있음.
+   - **근거**: 사실표 '2021년 이후 최대 낙폭(adjclose): VIG -20.4% · VYM -15.8%'
+   - **고친 문장**: 빠질 때 폭도 달라요. 2021년 이후 고점에서 가장 크게 빠진 폭(배당 재투자 반영 수정 종가 기준)은 VIG 20.4%, VYM 15.8%였어요.
+
+---
+
+### AI가 쓴 것 같은 어색한 문장
+- "정말 그랬는지 2015년 11월 20일에 둘 다 샀다고 치고 직접 세어 봤어요."
+- "주가가 빠져서 배당률만 높아 보이는 회사를 거르려는 장치예요."
+- "매달 받는 배당이 먼저인지, 10년 뒤 총액이 먼저인지 어느 쪽이세요?"

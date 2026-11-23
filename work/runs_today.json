@@ -54,6 +54,19 @@
     "url": "https://cafe.naver.com/firemap/474"
    },
    "note": "16:10 칸 reitetf1123 발행 · verify OK 2207/2207자·사진 3/3 · 올리기 전 확인: 발행 날 종가로 다시 계산 — 야후 15:32 값은 15:12 체결(20분 지연)이라 버리고 15:53 다시 받음, 11/23 PLUS -4.2% 등으로 1년 1억 8,579→8,218만·KODEX 8,757→8,581만·TIGER 9,241→9,060만·미국 1억 787→1억 521만, 분배금 1주 값·분배 횟수 변경 0 · 글·그림 00/02·대조표·facts 갱신 · selfcheck 사실 0·readcheck 0·spoken 통과 · c04 소제목 '~볼 때 알아 둘 것'→'분배율이 높아 보이는 이유와 세금'(editor 07:08 요청) · 끝 권유 아님 문장 A75 피해 바꿈 · editgate auto affb1252 · 경고: 본문 2,207자 D-17(경고만), 확인 창 '계속할까요' 못 찾음(발행은 됨) · 교차검증: 숫자만 바뀐 갱신이라 crosscheck 다시 안 돌림, selfcheck로 대신 · 블로그 없음(카페만) · selfloop 0-a 못 돌림(종가 대기에 시간 씀) · 개선: 야후 국내 시세 20분 지연을 playbook에 적음(장 마감 뒤 regularMarketTime 15:30 확인 후 계산)"
+  },
+  {
+   "hour": 18,
+   "ts": "18:54",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "나스닥100 산타랠리, 해마다 찾아왔을까?",
+    "url": "https://cafe.naver.com/firemap/475"
+   },
+   "note": "18:40 칸 santa1123 #475 verify OK 1916자·사진 3 · 올리기 전 확인 11/23 다시(야후 ^NDX·^GSPC 마지막 종가 11/20 그대로, 11월 -11.82%·-8.83% 원고와 같음, 주소 8곳 중 7곳 200·ICE 403은 nyse.com으로) · 블로그 0(하루 상한·편성 없음) · 새 묶음 vig1125(11/25 12:40 배당 칸, VIG vs VYM 10년 배당) 관문 통과: 자료조사 출처 5곳+WebSearch 5건, 교차검증 Gemini 사실 5건 중 반영 4·유지 1(정식 이름은 뱅가드 longName), check_gemini(말투) 파일 안 생김, selfcheck 사실 0, 이해 시험 2차 통과(6명, 2차 65세는 총수익 놓침), editgate auto 8bf0fece · 개선: 표지가 최근 10장 중 남색 4장과 겹쳐 초록으로 바꿈(cover_board로 확인)"
   }
  ]
 }

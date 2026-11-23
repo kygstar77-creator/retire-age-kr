@@ -1,0 +1,27 @@
+[오늘 찾은 것]
+- 2026-11-23 야후 파이낸스 chart API VIG·VYM·DGRO·SCHD·SPY 2010~ 일별 종가·배당(raw/*.json) — 마지막 종가 2026-11-20 VIG 235.69·VYM 153.87·SPY 689.81달러 https://query1.finance.yahoo.com/v8/finance/chart/VIG
+- 2026-11-23 뱅가드 상품 정보 API — 정식 이름 Vanguard Dividend Appreciation ETF(longName) · VIG 설정 2006-04-21·총보수 0.04%(2026-05-28 기준), VYM 설정 2006-11-10·총보수 0.04%(2026-02-27 기준), 분기 배당, VIG 9월 0.9295달러(기준일 9/28), VYM 9월 0.8869달러 https://investor.vanguard.com/vmf/api/VIG/profile · https://investor.vanguard.com/vmf/api/VIG/distribution
+- 2026-11-23 S&P DJI 배당성장 지수 방법론 — 10년 연속 배당 증가, 배당률 상위 25% 제외(수익률 함정 회피) https://spglobal.com/spdji/zh/documents/methodologies/methodology-sp-dividend-growers-index-series.pdf
+- 2026-11-23 뱅가드 VIG 팩트시트(2026-06-30) — 기술 업종 약 26%로 가장 큼, 1위 브로드컴 4.5% https://workplace.vanguard.com/iippdf/pdfs/FS920R.pdf
+- 2026-11-23 VIG·SCHD 운용자산 경쟁 보도(인베즈 2026-09-01, SCHD 약 1,120억·VIG 약 1,130억 달러) — 글에는 안 씀 https://invezz.com/news/2026/09/01/schd-nears-title-of-biggest-dividend-etf-but-technical-risks-loom/
+- 2026-11-23 트럼프 대통령 재산 공개에 VIG 거래(500만~2,500만 달러 구간) 보도 — 매수(쿼버퀀트·247월스트)·매도(벤징가)로 엇갈리고 정부윤리청 원문 안 열어 글에는 안 씀 https://www.barchart.com/story/news/4150833/trump-made-big-trades-in-this-dividend-growth-etf-you-probably-shouldnt
+
+[계산 — calc.py → calc_out.txt]
+- 1주당 연 배당 2015→2025: VIG 1.819→3.558달러(1.96배, 연 6.9%) · VYM 2.149→3.501(1.63배, 연 5.0%)
+- 최근 1년 배당(2025-11-21~2026-11-20): VIG 3.646 · VYM 3.676달러 → 11/20 종가 대비 VIG 1.55% · VYM 2.39%
+- 2015-11-20 종가 VIG 78.94 · VYM 68.16 → 지금 1년 배당 ÷ 산 값: VIG 4.62% · VYM 5.39% / 2015년 배당 ÷ 산 값: VIG 2.30% · VYM 3.15%
+- 10년 받은 배당/주: VIG 29.23(산 값 37.0%) · VYM 33.16(48.6%) → 1만 달러면 3,703 · 4,865달러
+- 1만 달러 평가액: VIG 29,857 · VYM 22,575달러(가격 +198.6% · +125.7%)
+- 10년 총수익(adjclose, 배당 재투자): VIG 268.2% · VYM 215.3% · SPY 294.2%
+- 1년 총수익: VIG 12.4% · VYM 13.9%
+- 2021년 이후 최대 낙폭(adjclose): VIG -20.4% · VYM -15.8%
+- 2020년 1주당 배당: VIG 2.134→2.297 · VYM 2.842→2.906(줄지 않음)
+- 뱅가드 기록 2026년 배당 합 VIG 2.7617 · VYM 2.7281 = 야후 2.762 · 2.729(대조 OK)
+
+[글에 쓴 반올림 값]
+- VIG 9월 배당 0.9295 → 0.93달러 · VYM 산 가격 대비 5.39 → 5.4%
+- 1만 달러: VIG 배당 3,703 → 약 3,700달러, 평가액 29,857 → 약 2만 9,900달러(29900) · VYM 배당 4,865 → 약 4,900달러(4900), 평가액 22,575 → 약 2만 2,600달러(22600, 2600)
+- 10년 총수익으로 1만 달러: VIG 10000×3.682 = 36,820 → 약 3만 6,800달러(36800, 6800) · VYM 10000×3.153 = 31,530 → 약 3만 1,500달러(31500, 1500)
+- 총보수 0.04% × 1,000만원 = 4,000원
+- SPY 10000×3.942 = 39,420 → 약 3만 9,400달러(39400, 9400), 약 3.9배 · VIG 3.682 → 약 3.7배 · VYM 3.153 → 약 3.2배
+- 최근 1년 = 2025-11-21~2026-11-20 배당 합(VIG 3.646·VYM 3.676)

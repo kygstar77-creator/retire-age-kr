@@ -68,9 +68,10 @@
 | S&P500 2023년부터 3년 내리 산타 없음 · 2024·2025 한 해 오름 | -0.9·-0.5·-0.1 · +23.3·+16.4 | S2·S6 calc_out.txt·calc3_out.txt · 2차 https://blog.naver.com/te6632/224470783095 (2025 6,909.79→6,902.05) |
 
 # 올리기 전 확인
+- 2026-11-23 18:21 firemap-write(발행 날 다시 확인) — 야후 ^NDX·^GSPC 2mo 다시 받음: 마지막 종가 11/20(금, 미국 월요일 장 아직 안 열림) NDX 25,028.98·10월 말 28,384.85 → 11월 -11.82%, GSPC 6,910.39·7,580.07 → -8.83%(원고 11.8%·8.8% 그대로) · 다시 연 주소 https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX (200) · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC (200) · https://query1.finance.yahoo.com/v8/finance/chart/%5ESP500TR (200) · https://www.nyse.com/markets/hours-calendars (200, 휴장일) · https://stocktradersalmanac.com/Alert/20210105.aspx (200) · https://en.wikipedia.org/wiki/Santa_Claus_rally (200) · https://blog.naver.com/te6632/224470783095 (200) · https://ir.theice.com/press/news-details/2025/NYSE-Group-Announces-2026-2027-and-2028-Holiday-and-Early-Closings-Calendar/ (403, 같은 휴장일은 nyse.com에서 확인)
 - 2026-11-21 19:5x firemap-write-b(조사·작성 날 — 발행 날 11/23 18:4x write-b 회차가 야후 다시 받아 11월 등락 갱신)
 - 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX (11/21 19:4x) · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC (19:4x) · https://query1.finance.yahoo.com/v8/finance/chart/%5ESP500TR (19:4x) · https://ir.theice.com/press/news-details/2025/NYSE-Group-Announces-2026-2027-and-2028-Holiday-and-Early-Closings-Calendar/ (19:5x 검색) · https://www.nyse.com/markets/hours-calendars (19:5x 검색) · https://stocktradersalmanac.com/Alert/20210105.aspx (19:5x 검색) · https://en.wikipedia.org/wiki/Santa_Claus_rally (19:5x 검색) · https://blog.naver.com/te6632/224470783095 (19:4x)
 - 기준일: 2026-11-20 미국 종가(11/20 뉴욕 마감)
-- 바뀐 것: 처음 조사 — 없음
+- 바뀐 것: 11/23 다시 확인 — 새 종가 없음(마지막 2026-11-20 종가 그대로), 11월 등락 나스닥100 -11.82%·S&P500 -8.83% 그대로 · (11/21 처음 조사)
 - 새로 찾은 것: 나스닥100 12월 40년 중 21번(S&P500 29번), 산타 기간 62.5%(아무 7거래일 58.7%와 4%p), 11월 -3% 이하 다섯 해의 12월, '산타 안 오면 곰'이 나스닥100엔 반대 · 경쟁 글 0편
 - 조사 뒤 공표: data/release_calendar.json — 지수 매일, 발행 날 11/23(월) 앞 종가는 11/20(금)

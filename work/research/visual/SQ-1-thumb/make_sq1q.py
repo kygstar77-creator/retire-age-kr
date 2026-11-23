@@ -18,3 +18,11 @@ if __name__ == '__main__':
     S.BIG = ['나스닥100만 16억', '반반 섞으면 12억']
     S.PILL = '가장 큰 하락 나스닥100만 -28% · 반반 -14%'
     S.make('sq1_s.png', 'chart_point_5833757.jpg', 0.2, pk=0.92, **dict(KW, top='2011년 1억원, 나스닥100과 SCHD에 넣었다면'))
+
+
+# s2(11/23, copywriter 이해 2차 18:55): 168에서 '나스닥100만'이 '100만 원'으로 읽힘 1/3 → 첫 줄만 '나스닥100에만 16억' · 나머지 s 그대로
+def make_s2():
+    S.BIG = ['나스닥100에만 16억', '반반 섞으면 12억']
+    assert sum(len(t.replace(' ', '')) for t in S.BIG) <= 24 and all(len(t.replace(' ', '')) <= 12 for t in S.BIG)
+    S.PILL = '가장 큰 하락 나스닥100만 -28% · 반반 -14%'
+    S.make('sq1_s2.png', 'chart_point_5833757.jpg', 0.2, pk=0.92, **dict(KW, top='2011년 1억원, 나스닥100과 SCHD에 넣었다면'))

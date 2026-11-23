@@ -100,6 +100,24 @@
     "by": "firemap-video-producer",
     "at": "2026-11-17 07:29",
     "gates_ok": "2026-11-17 07:29"
+   },
+   {
+    "item": "k1s_recover",
+    "ep": "work/research/cardshorts/k1s_recover",
+    "layout": "c1clip",
+    "status": "2026-11-23 23:24 관문 통과(compete 6·숫자 대조 26개 0·꼴·이해 3차 3/3·aitell 0.0·안전 영역·디자인·치직 0·-17.0 LUFS·눈 검사 3차) · 미업로드 — KOSPI-1 롱폼(khvIhE8Sf-s) 11/24 11:30 공개 뒤에만 칸·publishAt · 32.7초 · 지수 축 · 같은 롱폼 k1s_bottom(11/28)·k1s_split과 연속 2편까지 · mp4 work/video/out/k1s_recover_c1_ds.mp4 · 근거 cardshorts/k1s_recover/review.md",
+    "by": "firemap-video-producer",
+    "at": "2026-11-23 23:24",
+    "gates_ok": "2026-11-23 23:24"
+   },
+   {
+    "item": "k1s_split",
+    "ep": "work/research/cardshorts/k1s_split",
+    "layout": "c1clip",
+    "status": "2026-11-23 23:41 관문 통과(compete 6·숫자 대조 39개 0·꼴·이해 3차 3/3·aitell 0.0·안전 영역·디자인·치직 0·-17.0 LUFS·눈 검사 2차) · 미업로드 — KOSPI-1 롱폼(khvIhE8Sf-s) 11/24 11:30 공개 뒤에만 칸·publishAt · 46.3초 · 지수 축 · k1s_recover와 같은 날 금지(같은 롱폼 연속 2편까지) · mp4 work/video/out/k1s_split_c1_ds.mp4 · 근거 cardshorts/k1s_split/review.md",
+    "by": "firemap-video-producer",
+    "at": "2026-11-23 23:41",
+    "gates_ok": "2026-11-23 23:41"
    }
   ],
   "cafe": [

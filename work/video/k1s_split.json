@@ -1,0 +1,308 @@
+{
+ "fps": 30,
+ "name": "k1s_split",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "코스피 -5% 날 1천만원",
+  "한 번에 vs 나눠서, 1년 뒤?"
+ ],
+ "hot": "1년 뒤",
+ "answer": {
+  "label": "1995~2026 하루 5% 넘게 빠진 첫날 15번 · 1년 뒤",
+  "items": [
+   "가운데 1,191만원 vs 1,085만원",
+   "가장 나쁨 551만원 vs 771만원"
+  ],
+  "arrow": false,
+  "note": "원금 넘은 횟수는 둘 다 10/15"
+ },
+ "base": "한국은행 ECOS 코스피 일별 종가(원자료 한국거래소, 1995-01-03~2026-11-20, 2026-11-23 내려받음) · 지수 값만(배당·보수·세금·수수료 뺌) · 나눠 넣기 = 첫날부터 21거래일마다 1/12씩 · 파이어맵 계산",
+ "long": "khvIhE8Sf-s",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "1천만원",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "배당·수수료 뺌",
+      "지수 값만으로 셈",
+      "",
+      5,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "1천만원을 코스피가 5% 넘게 빠진 날, 한 번에 넣었다면요.",
+     "audio": "audio/k1s/ef4df8504a4f808f.wav",
+     "frames": 118
+    }
+   ],
+   "frames": 118
+  },
+  {
+   "kind": "vs",
+   "label": "한 번에",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "한 번에 · 가운데",
+      "1년 뒤 1,191만원",
+      "",
+      11,
+      "ink"
+     ],
+     [
+      "한 번에 · 최악",
+      "1년 뒤 551만원",
+      "",
+      171,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 2,
+     "text": "열다섯 번의 결과를 줄 세우면, 가운데가 1,191만원이었어요.",
+     "audio": "audio/kospi-1/36139a1438ffc429.wav",
+     "frames": 116
+    },
+    {
+     "n": 3,
+     "text": "가장 나빴던 때는 551만원으로 줄었습니다.",
+     "audio": "audio/kospi-1/d09675cce84e2489.wav",
+     "frames": 93
+    }
+   ],
+   "frames": 209
+  },
+  {
+   "kind": "vs",
+   "label": "열두 번 나눠",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "약 한 달마다 1/12",
+      "12번 나눠",
+      "",
+      43,
+      "ink"
+     ],
+     [
+      "나눠서 · 가운데",
+      "1년 뒤 1,085만원",
+      "",
+      148,
+      "ink"
+     ],
+     [
+      "나눠서 · 최악",
+      "1년 뒤 771만원",
+      "",
+      239,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "이번엔 같은 돈을 열두 번에 나눠 넣었다고 해 볼게요.",
+     "audio": "audio/kospi-1/aa5abbbb2cc6edd7.wav",
+     "frames": 108
+    },
+    {
+     "n": 5,
+     "text": "그러면 중간은 1,085만원이었어요.",
+     "audio": "audio/kospi-1/f12df5047b2c4c50.wav",
+     "frames": 73
+    },
+    {
+     "n": 6,
+     "text": "가장 나빴던 때는 771만원이었습니다.",
+     "audio": "audio/kospi-1/3e0a1d0e64b462bd.wav",
+     "frames": 98
+    }
+   ],
+   "frames": 279
+  },
+  {
+   "kind": "vs",
+   "label": "갈린 곳",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "원금 넘은 횟수",
+      "둘 다 10/15",
+      "",
+      70,
+      "ink"
+     ],
+     [
+      "한 번에",
+      "더 벌고 더 잃음",
+      "",
+      184,
+      "ink"
+     ],
+     [
+      "나눠서",
+      "덜 벌고 덜 잃음",
+      "",
+      298,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 7,
+     "text": "원금보다 불어난 횟수는 두 방법 모두 열다섯 번 중 열 번으로 같았어요.",
+     "audio": "audio/kospi-1/881f087d50e46ab2.wav",
+     "frames": 140
+    },
+    {
+     "n": 8,
+     "text": "한 번에 넣으면 오를 때 더 벌고, 더 빠질 때 더 잃었어요.",
+     "audio": "audio/kospi-1/31183ae759be19af.wav",
+     "frames": 110
+    },
+    {
+     "n": 9,
+     "text": "나눠 넣으면 반대로, 덜 벌고 덜 잃었습니다.",
+     "audio": "audio/kospi-1/5b88248c476b5bd8.wav",
+     "frames": 120
+    }
+   ],
+   "frames": 370
+  },
+  {
+   "kind": "vs",
+   "label": "나눠서가 더",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "나눠서가 더 남음",
+      "15번 중 5번",
+      "",
+      63,
+      "ink"
+     ],
+     [
+      "빠진 날 종가 대비",
+      "1년 안 -20% 넘게",
+      "",
+      161,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 10,
+     "text": "나눠 넣은 쪽이 더 많이 남은 건 열다섯 번 중 다섯 번이었어요.",
+     "audio": "audio/kospi-1/531400e87c4b8389.wav",
+     "frames": 105
+    },
+    {
+     "n": 11,
+     "text": "다섯 번 모두, 1년 안에 첫날보다 20% 넘게 더 빠졌던 때입니다.",
+     "audio": "audio/kospi-1/657fd99be076a5e5.wav",
+     "frames": 141
+    },
+    {
+     "n": 12,
+     "text": "어느 쪽이 맞다고 말씀드리려는 게 아니라, 지난 기록은 이렇게 갈렸다는 겁니다.",
+     "audio": "audio/kospi-1/bbd660c55bd965f1.wav",
+     "frames": 132
+    }
+   ],
+   "frames": 414
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/kospi1/cut/5909916_1_r118.mp4",
+   "from": 0,
+   "frames": 118,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/6326929_1_r116.mp4",
+   "from": 118,
+   "frames": 116,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/3945008_4_r93.mp4",
+   "from": 234,
+   "frames": 93,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/6186015_2_r108.mp4",
+   "from": 327,
+   "frames": 108,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/6326929_7_r73.mp4",
+   "from": 435,
+   "frames": 73,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/3945008_9_r98.mp4",
+   "from": 508,
+   "frames": 98,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/5224014_7_r140.mp4",
+   "from": 606,
+   "frames": 140,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/3945008_16_r110.mp4",
+   "from": 746,
+   "frames": 110,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/6186015_9_r120.mp4",
+   "from": 856,
+   "frames": 120,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/5224014_13_r105.mp4",
+   "from": 976,
+   "frames": 105,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/5224014_1_r141.mp4",
+   "from": 1081,
+   "frames": 141,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/3945008_22_r168.mp4",
+   "from": 1222,
+   "frames": 168,
+   "start": 0
+  }
+ ],
+ "credits": "K · Oleg Gamulinskii · Pavel Danilyuk · cottonbro studio · kaboompics (Pexels License)"
+}

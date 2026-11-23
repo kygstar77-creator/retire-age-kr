@@ -1,0 +1,239 @@
+{
+ "fps": 30,
+ "name": "k1s_recover",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "코스피 하루 -5% 뒤",
+  "전날 값 되찾기 며칠?"
+ ],
+ "hot": "며칠",
+ "answer": {
+  "label": "1995~2026 하루 5% 넘게 빠진 날 16번(석 달 안쪽으로 이어진 날은 한 번으로)",
+  "items": [
+   "가운데 8거래일",
+   "가장 길게 1,367거래일"
+  ],
+  "arrow": false,
+  "note": "2008년 9월: 5거래일 만에 되찾고도 1년 안 빠진 날보다 -32.4%"
+ },
+ "base": "한국은행 ECOS 코스피 일별 종가(원자료 한국거래소, 1995-01-03~2026-11-20, 2026-11-23 내려받음) · 되찾기 = 빠지기 전날 종가를 다시 넘은 첫 거래일 · 파이어맵 계산",
+ "long": "khvIhE8Sf-s",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "되찾기란",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "되찾기란",
+      "빠지기 전날 종가 다시 넘기",
+      "",
+      5,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "코스피 하루 5% 넘게 빠진 날, 며칠 만에 되찾았는지 셌어요.",
+     "audio": "audio/k1s/4b7f918fde7dadc6.wav",
+     "frames": 105
+    }
+   ],
+   "frames": 105
+  },
+  {
+   "kind": "vs",
+   "label": "며칠 걸렸나",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "보통 · 가운데 값",
+      "8거래일",
+      "",
+      32,
+      "ink"
+     ],
+     [
+      "가장 짧게",
+      "1거래일",
+      "",
+      127,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 2,
+     "text": "중간은 8거래일이었습니다. 두 주가 채 안 돼요.",
+     "audio": "audio/kospi-1/8bb81395d83bfb13.wav",
+     "frames": 93
+    },
+    {
+     "n": 3,
+     "text": "짧게는 하루 만에 되찾은 때도 있었어요.",
+     "audio": "audio/kospi-1/5fd2f2277d244e81.wav",
+     "frames": 77
+    }
+   ],
+   "frames": 170
+  },
+  {
+   "kind": "vs",
+   "label": "가장 길게",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "가장 길게",
+      "1,367거래일",
+      "",
+      64,
+      "ink"
+     ],
+     [
+      "날짜로",
+      "5년 반",
+      "",
+      135,
+      "ink"
+     ],
+     [
+      "2000년 1월부터",
+      "2005년 7월",
+      "",
+      266,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "그런데 가장 길었던 건 1,367거래일이었습니다.",
+     "audio": "audio/kospi-1/0ef120f19c8bf398.wav",
+     "frames": 117
+    },
+    {
+     "n": 5,
+     "text": "날짜로 치면 5년 반이에요.",
+     "audio": "audio/kospi-1/d27e870c5a674082.wav",
+     "frames": 63
+    },
+    {
+     "n": 6,
+     "text": "닷컴 거품 때 빠지기 전 숫자를 다시 넘은 건, 2005년 7월이었어요.",
+     "audio": "audio/kospi-1/f75509b222b95d0f.wav",
+     "frames": 144
+    }
+   ],
+   "frames": 324
+  },
+  {
+   "kind": "vs",
+   "label": "빨리 되찾아도",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "2008년 9월",
+      "5거래일(일주일)",
+      "",
+      49,
+      "ink"
+     ],
+     [
+      "빠진 날 종가 대비",
+      "1년 안 -32.4%",
+      "",
+      155,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 7,
+     "text": "반대로 금융위기 때는 일주일 만에 전날 숫자를 되찾았어요.",
+     "audio": "audio/kospi-1/eae85563ec806485.wav",
+     "frames": 110
+    },
+    {
+     "n": 8,
+     "text": "그런데 그 뒤 1년 안에, 첫날보다 30% 이상 더 내려갔습니다.",
+     "audio": "audio/kospi-1/ae19b1cbbc5b895d.wav",
+     "frames": 114
+    },
+    {
+     "n": 9,
+     "text": "빨리 되찾았다고 해서, 그걸로 끝났다는 뜻은 아니었던 거죠.",
+     "audio": "audio/kospi-1/6a7edf7feca03d30.wav",
+     "frames": 120
+    }
+   ],
+   "frames": 380
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/kospi1/cut/6186015_5_r105.mp4",
+   "from": 0,
+   "frames": 105,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/3945008_2_r93.mp4",
+   "from": 105,
+   "frames": 93,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/6186015_1_r77.mp4",
+   "from": 198,
+   "frames": 77,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/5224014_1_r117.mp4",
+   "from": 275,
+   "frames": 117,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/5224014_8_r63.mp4",
+   "from": 392,
+   "frames": 63,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/8495394_1_r144.mp4",
+   "from": 455,
+   "frames": 144,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/3945008_14_r110.mp4",
+   "from": 599,
+   "frames": 110,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/5224014_13_r114.mp4",
+   "from": 709,
+   "frames": 114,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/3945008_24_r156.mp4",
+   "from": 823,
+   "frames": 156,
+   "start": 0
+  }
+ ],
+ "credits": "K · Oleg Gamulinskii · Pavel Danilyuk · Thirdman (Pexels License)"
+}

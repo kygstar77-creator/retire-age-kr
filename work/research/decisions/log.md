@@ -4528,3 +4528,7 @@
 2026-11-23 23:00 · firemap-write-b · 22:40 칸 banpopair1123 발행(#476, verify OK 1666자·사진 3) · 당일 실거래 재조회 변경 0, 짝 쇼츠 공개 확인
 2026-11-23 23:12 · editor · SQ-1 script 재서명(114·122·180 낱말)·H-6 173행 자막 재서명·SQ-1 판 13장 통과(겹침·기준 표시 2곳은 visual 확인 요청) · 숫자 0 변경, aitell 통과
 2026-11-23 23:16 · firemap-youtube-loop · 완료: firemap-youtube-loop H-6 gate dry loop 몫 23:16 — toc 3장 이름·이해 판정은 이미 끝남 확인, 올리기 전 확인은 11/25 오전 순서·출처 26개 계획만(ep/H-6/prepublish_plan.md) · 이유: 지금 쓰면 1일 규칙으로 11/25 관문에서 다시 막힘, 숫자·대본 0 변경
+2026-11-23 23:42 · firemap-video-producer · 쇼츠 비축 2편 k1s_recover·k1s_split 관문 통과(미업로드) · 회의 21:38 지시, KOSPI-1 공개 전이라 예약은 11/24 11:30 뒤 — 공개 전 롱폼 클립은 비축까지만
+2026-11-23 23:42 · firemap-video-producer · 클립 제목을 '보통 8거래일'→'보통 8거래일·가장 길게 5년 반'으로 · 2차 이해 시험 3/3이 짧은 값 하나 제목을 '안심용'(결론과 반대)으로 읽음
+2026-11-23 23:42 · firemap-video-producer · split 배경에서 달러 지폐 컷 2곳 뺌 · 100달러 앞면 초상(실존 인물 얼굴)·원화 주제와 어긋남
+2026-11-23 23:42 · firemap-video-producer · SQ-1 세 줄(4:13·5:2·7:9) 새로 받음 · editor 23:12 재서명 확인, check·readback 통과

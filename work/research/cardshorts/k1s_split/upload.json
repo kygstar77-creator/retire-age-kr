@@ -1,0 +1,17 @@
+{
+ "name": "k1s_split",
+ "ep": "KOSPI-1",
+ "from_long": "khvIhE8Sf-s",
+ "mp4": "work/video/out/k1s_split_c1_ds.mp4",
+ "publishAt": null,
+ "publish_plan": "11/23 22:1x PD: 비축(회의 11/23 21:38 '범위 안 쇼츠 비축 0→2', 기한 11/25 23:59) · KOSPI-1 롱폼(11/24 11:30) 공개 뒤에만 칸 배정·예약 · k1s_bottom(3장)·k1s_recover(4장)와 다른 질문(6장 한 번에 vs 나눠) · 같은 롱폼 연속 2편까지 · 첫 줄 새 녹음 1줄",
+ "title": "코스피 폭락한 날 1천만원, 한 번에 vs 나눠서 1년 뒤 #shorts",
+ "description": "전체 계산: https://youtu.be/khvIhE8Sf-s\n\n1995년부터 코스피가 하루 5% 넘게 빠진 첫날 15번, 1천만원을 그날 한 번에 넣은 경우와 약 한 달(21거래일)마다 12번 나눠 넣은 경우를 둘 다 첫날로부터 1년 뒤 종가로 셌어요(나눠 넣은 마지막 몫은 약 한 달만 굴렀고, 넣기 전 기다린 돈에 예금 이자는 붙이지 않았어요). 가운데 1,191만원 vs 1,085만원, 가장 나빴던 때(1997년 10월 외환위기) 551만원 vs 771만원, 원금 넘은 횟수는 둘 다 15번 중 10번.\n나눠 넣은 쪽이 더 남은 5번은 모두 1년 안에 첫날보다 20% 넘게 더 빠졌던 때였어요. 지수 값만 센 지난 기록이고, 어느 방법이 낫다거나 사고팔라는 권유가 아닙니다.\n\n출처: 한국은행 ECOS 코스피 일별 종가(원자료 한국거래소, 1995-01-03~2026-11-20, 2026-11-23 내려받음) · 지수 값만(배당·보수·세금·수수료 뺌) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — K · Oleg Gamulinskii · Pavel Danilyuk · cottonbro studio · kaboompics\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #코스피 #분할매수",
+ "tags": "코스피,분할매수,거치식 적립식,코스피 폭락,지수투자",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/k1s_split/cover_1123.png"
+}

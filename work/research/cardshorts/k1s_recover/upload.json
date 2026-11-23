@@ -1,0 +1,17 @@
+{
+ "name": "k1s_recover",
+ "ep": "KOSPI-1",
+ "from_long": "khvIhE8Sf-s",
+ "mp4": "work/video/out/k1s_recover_c1_ds.mp4",
+ "publishAt": null,
+ "publish_plan": "11/23 22:1x PD: 비축(회의 11/23 21:38 '범위 안 쇼츠 비축 0→2', 기한 11/25 23:59) · KOSPI-1 롱폼(11/24 11:30) 공개 뒤에만 칸 배정·예약 · 11/28 k1s_bottom(같은 롱폼 3장)과 다른 질문(4장 전날 값 되찾기) · 첫 줄 새 녹음 1줄",
+ "title": "코스피 폭락 뒤 회복, 보통 8거래일·가장 길게 5년 반 #shorts",
+ "description": "전체 계산: https://youtu.be/khvIhE8Sf-s\n\n1995년부터 코스피가 하루 5% 넘게 빠진 16번(석 달 안쪽으로 이어진 날은 한 번으로 셈)을 보니, 빠지기 전날 마감 숫자를 다시 넘기까지 16번을 줄 세운 가운데 값이 8거래일(16번 중 11번이 8거래일 안), 1년 넘게 걸린 건 2번(1997년 10월 348거래일·2000년 1월), 가장 길게는 1,367거래일(5년 반)이었어요. 2020년 3월 코로나 때는 3거래일.\n2008년 9월에는 5거래일 만에 전날 값을 되찾고도 그 뒤 1년 안에 빠진 날 종가보다 32.4% 더 내려갔어요. 지수 값만 센 지난 기록이고, 사거나 팔라는 권유나 앞날 전망이 아닙니다.\n\n출처: 한국은행 ECOS 코스피 일별 종가(원자료 한국거래소, 1995-01-03~2026-11-20, 2026-11-23 내려받음) · 되찾기 = 빠지기 전날 종가를 다시 넘은 첫 거래일 · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — K · Oleg Gamulinskii · Pavel Danilyuk · Thirdman\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #코스피 #코스피폭락",
+ "tags": "코스피,코스피 폭락,코스피 회복,폭락장 회복 기간,지수투자",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/k1s_recover/cover_1123.png"
+}

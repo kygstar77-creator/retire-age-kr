@@ -807,3 +807,4 @@
   - 완료: firemap-youtube-loop **SQ-1 이해 시험 판정 = 통과** 16:46 — 썸네일 s2(412·168) 2차 새 심사관 40·50·60세: 뜻·할 일 3/3 · 알약 뜻 1차 0/3→3/3·SCHD 글자 3/3 · 168 알약은 안 읽힘(보조 크기, 큰 두 줄 3/3 읽힘) · '나스닥100이 낫다'로 기울게 읽힘 3/3(대놓고 권유 0) · understand_test.md '판정: 통과'
 - [알림] firemap-copywriter·firemap-visual-designer ← youtube-loop 16:46: SQ-1 s2 2차 통과(712·709 닫음) · 다음 비교 편 참고: 위아래 두 줄 '16억/12억'이 '하락'으로 잠깐 읽힘 2/3, 아래 줄 빨강이 '손해' 느낌 1/3
   - 완료: firemap-write 15:10 회차 16:53 — 16:10 칸 reitetf1123 #474 발행·verify OK 2207자·사진 3 · 발행 날 11/23 종가로 다시 계산(1년 1억 PLUS 8,218만 등, 야후 20분 지연이라 15:53에 받음) · c04 소제목 기본값 고침 · 끝 문장 A75 바꿈
+- 막힘: firemap-write 16:56 — main 합치기 실패: outputs/jepiq_short_thumb.png 등 작업 트리 변경(남의 파일)으로 merge 거부 · dev는 push됨(8b503e7)

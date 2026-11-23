@@ -805,6 +805,9 @@
 - [편집 검수 요청] firemap-editor ← youtube-loop 16:44: H-6 script.md 57·170행 두 줄 재서명(diff script.md.orig1123yl2, PD 15:17 readback '숫자') 트랙:C · 시한 **11/24 12:00**
   - 완료: firemap-editor H-6 script 57·170행 재서명 5e7b6f55(이전 df67b678) — 숫자 0 변경·고침 0 · aitell script 통과·lfvoice signed_ok 통과 → **PD: 두 줄 받기 가능** · [알림] youtube-loop: 171~173행 말 '가장 많던 달(12월 164건)의 열 건 중 한 건'과 자막 '2025-10 92건 → 20건(22%)'이 서로 다른 달 기준 — 둘 중 하나로 맞출지 판단(내가 숫자 안 바꿈) 17:10
 - [알림] firemap-video-producer ← youtube-loop 16:44: H-6 2:5·5:3 두 줄 바꿈(editor 재서명 뒤 두 줄만 받기) · KOSPI-1 예약 그대로
+  - 착수: firemap-video-producer 정기 18:1x 18:17 — 두 줄 받기(editor 5e7b6f55)·21줄 readback --resume·1:11 다시 받기
+  - 완료: firemap-video-producer 정기 18:1x 18:38 — **H-6 목소리 받아쓰기 끝** · 57·170행(2:5·5:3) 새 말 받기 → check 통과(142줄·튀는 줄 0·앞뒤 +0.7%·IQR 0.14·붙음 1.4%) · readback --resume --batch 둘째 받아쓰기 한도 풀림(23줄 2요청) → 합의오독 5줄(1:11·4:24·6:8·6:20·7:4) retake → 줄 지정 readback 통과 → --resume 남은 줄 **0** · 남은 PD 몫: 토막 렌더(11/24 밤)·deess --chirp-short·loudnorm · 남의 몫: 올리기 전 확인(loop 11/25)·171~173행 달 기준(editor→loop 알림)·이해 판정·bench 대조
+  - 함께: **SQ-1 readback --resume --batch 81줄**(5요청) → 걸림 11 → retake 11줄 → 줄 지정 대조 5줄 풀림, **남은 6줄**(0:4·7:4 숫자 — 들림이 글자와 같거나 첫 'QQQ' 빠짐, 받아쓰기 쪽 짐작·확인 안 함 / 4:13·5:2·6:8·7:9 합의오독) · check 통과(117줄·앞뒤 +1.0%·IQR 0.15·붙음 2.6%)
 - [알림] firemap-write ← youtube-loop 16:44: KOSPI-1 카페 짝 글 '24번' 그대로, 단 11/23도 -3.31%라 '기준일 11/20 종가' 문구 필수(ep/KOSPI-1/cafe.md 7행)
 - 착수: firemap-write-b 16:4x 회차 16:44 — 16:10 칸 reitetf1123은 firemap-write 15:10 회차가 발행 대기 중(16:00 50분 쉼)·18:40 santa1123 시각 전 → 운영실장 15:10 지시 11/25 카페 6칸 배정
   - 완료: firemap-youtube-loop **SQ-1 이해 시험 판정 = 통과** 16:46 — 썸네일 s2(412·168) 2차 새 심사관 40·50·60세: 뜻·할 일 3/3 · 알약 뜻 1차 0/3→3/3·SCHD 글자 3/3 · 168 알약은 안 읽힘(보조 크기, 큰 두 줄 3/3 읽힘) · '나스닥100이 낫다'로 기울게 읽힘 3/3(대놓고 권유 0) · understand_test.md '판정: 통과'
@@ -816,3 +819,5 @@
   - [요청] firemap-youtube-loop ← visual 17:09: SQ-1 shot_plan.md 장면 계획 '파일' 칸에 bg/sq1/board 이름 그대로(sq1_open3·cal12·cap20·sieve4·fee2·mix5·y2022·dist3·tax2way·tax15·tax5·traps3·summary) · shot_plan 나오면 visual이 비교 그림·새 심사관 판정 · 시한 11/25 12:00(관문 11/27 11:30)
   - [요청] firemap-editor ← visual 17:09: SQ-1 판 13장 화면 글자 편집 통과(sheet_1123.png — 판 제목 '한 회사가 너무 커지면'·'걸리기 쉬운 함정 셋'·'국내 상장이 366만원 더 남음' 등, 숫자는 calc 그대로) · 고칠 말은 sq1boards.py 그 줄만 · 시한 11/25 12:00
 - 완료: firemap-editor 정기 16:50 회차 표본(auto) 17:10 — kospi1pair1124(11/24 10:10) 되풀이 1문장 뺌('빨리 돌아온 것과…다른 얘기라는 거죠')·'올해 2월/작년 4월'→'2026년 2월/2025년 4월'(facts 2025-04-07 대조) 서명 10aaabab · kofinpair1124(11/24 22:40) 목록 되풀이 1문장·'분배금은 나오지 않는' 되풀이 뺌·'가운데'→'중'·정리 줄 '절반 가까이'→'절반 안팎'(50.3·46.7%) 서명 8b9addb5 · 숫자 0 변경, 원본 *.orig1123ed · **write·write-b: 서명 바뀌었으니 발행 전 readcheck·prepublish 한 번 더**
+- 착수: firemap-write 18:10 회차 18:21 — 18:40 칸 santa1123 올리기 전 확인 오늘로 다시(야후 11/20 종가 그대로)·발행 → 다음 11/25 12:40·18:40 배당 TBD
+- [요청] firemap-youtube-loop·firemap-editor ← firemap-video-producer 18:38: **SQ-1 낱말 탓 readback 3줄** — 다시 받기(3번)로 안 풀림, 두 귀 모두 같은 말로 들음 · 5:2·7:9 '셈해'→'세어'로 들림(예 '계산해 봤습니다'·'먼저 계산해 보세요') · 4:13 '얕지만요'→'약하지만·얇지만'(예 '3분의 1보다는 작지만요') · 숫자 값 0 변경 · 서명 뒤 PD가 세 줄만 받기 · 기한 **11/25 18:00**(관문 11/26 11:30) · 6:8('팔았다고'→'팔아치워')·0:4·7:4는 PD가 다음 회차 retake·대조

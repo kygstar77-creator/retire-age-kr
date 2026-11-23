@@ -965,6 +965,12 @@ def script_warn(text):
     # A94 권유 꼬리: 설명 끝이 투자 권유
     for m in re.finditer(r'[^.?!\n]{0,25}(?:게\s*맞습니다|편이\s*낫습니다|사\s*모으세요|사세요)', text):
         out.append(f'A94 권유 꼬리 "{m.group(0).strip()}" — "…였어요/…예요" 사실로 끝내기')
+    # A104(11/22 genre-gap-1122 ③): 형용사로 객관을 주장 — 출처 자막으로 대신
+    for m in re.finditer(r'[^.?!\n]{0,15}객관적[^.?!\n]{0,10}', text):
+        out.append(f'A104 "객관적" 자기 평가 "{m.group(0).strip()}" — 형용사 대신 출처 자막')
+    # A105: 앞 숫자를 감탄으로 되받기('와 정말 크네요'·'…늘어난 거네요'·'…큰 돈이죠') — 새 정보 0
+    for m in re.finditer(r'(?:^|[.?!\n]\s*)((?:와[,\s]+)?[^.?!\n]{0,20}(?:크네요|차이가\s*나네요|큰\s*돈이죠|거네요))', text):
+        out.append(f'A105 맞장구 되받기 "{m.group(1).strip()}" — 지우거나 다음 정보로')
     return out
 
 

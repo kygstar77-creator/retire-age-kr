@@ -62,6 +62,7 @@
   - 완료: firemap-motion-designer H-6 r08 DealDots·r11 GapBars 비교 그림 shotcmp/r08·r11.jpg + 새 심사관 2차 **둘 다 나음**(shot_plan 적음) · GapBars 가운데 단지 막대 진하게(1차 지적) 다시 렌더 U5 7.5초 · 남은 다듬기 5개 ep/H-6/motion.md(렌더 막지 않음) · shot_check r08·r11 막힘 풀림, 남은 건 r19(visual) 11:40
 - [지시] **firemap-editor** ← firemap-benchmark-loop A104('객관적' 자기 평가)·A105(맞장구 되받기 '…크네요') style-guide 들어감(11/22 benchmark) — aitell script [경고] 넣을지 판단 · 우리 대기 대본 3편 0줄 · 기한 11/23
   - 착수: firemap-editor 17:06 (정기 16:50) — A104·A105 aitell script 경고 판단 + H-6 재서명 확인 + 11/24 카페 묶음·auto 표본
+  - 완료: firemap-editor A104·A105 **aitell script [경고]에 넣음**(막지 않음) — '객관적'·맞장구 되받기('…크네요'·'차이가 나네요'·'…거네요'·'큰 돈이죠') · 경쟁 예문 6개 중 6 걸림·'생각나네요' 안 걸림 · 대기·공개 대본 6편(H-6·KOSPI-1·SQ-1·CC-1·H-5·N-3) 0건 · humanlike --ref 정상 17:10
 ## 벤치마크 11/21 03시 — 카페 글 8판 (근거 growth/cafe-gap-1121.md · 1115 반영 2·일부 2·안 됨 2/6 · #427~459 33편 · 6일 나이 조회 중앙 2→5.5, 4~5일 5.5→1(잡음 범위) · 댓글 0/33 · 회원 5)
 - [지시] **firemap-editor** ← firemap-benchmark-loop 의도: 막기 붙은 ㉤(게시판)만 지켜졌고(11/15 4→11/16~20 1~2) 경고뿐인 ㉥·㉦은 다시 넘음(물음꼴 11/19 6/6·11/20 5/6, '놓치기 쉬운' 11/19·20 각 2편) · 완료 기준: aitell sameday ㉥ 제목 물음꼴 하루 5칸·㉦ '놓치기 쉬…' 소제목 하루 2칸을 11/22 칸부터 gate에서 막음(BOARD_BLOCK_FROM처럼) — `aitell sameday 2026-11-19`에 ㉥ 6칸, `2026-11-20`에 ㉦ 454·456이 걸림 · A102·A103 style-guide 들어감(11/21 benchmark) · 기한 **11/21 23:59** · 공개 글 안 고침
   - 착수: firemap-editor 07:06 (정기 06:50) — aitell ㉥·㉦ 막기(11/22 칸부터)
@@ -802,6 +803,7 @@
   - 완료: firemap-youtube-loop **KOSPI-1 11/23 종가 = 4,708.54(-3.31%)** 16:44 — -5% 위라 '24번' 그대로, **예약 11/24 11:30 유지** · ECOS는 11/20까지라 네이버 증권 값 · research 올리기 전 확인·cafe.md 적음(카페 글은 '기준일 11/20' 명시 — write)
   - 완료: firemap-youtube-loop **H-6 2:5·5:3 말 바꿈** 16:44 — 57행 '가장 비싸게 팔린 한 건은'→'가장 비싸게 팔린 거래는'(PD 예 그대로) · 170행 '9월엔 스무 건이었습니다'→'9월에는 스무 건까지 줄었습니다'(8월 31→9월 20, calc 값 그대로) · 숫자 값 0 변경 · aitell script 통과(19%) · 원본 script.md.orig1123yl2
 - [편집 검수 요청] firemap-editor ← youtube-loop 16:44: H-6 script.md 57·170행 두 줄 재서명(diff script.md.orig1123yl2, PD 15:17 readback '숫자') 트랙:C · 시한 **11/24 12:00**
+  - 완료: firemap-editor H-6 script 57·170행 재서명 5e7b6f55(이전 df67b678) — 숫자 0 변경·고침 0 · aitell script 통과·lfvoice signed_ok 통과 → **PD: 두 줄 받기 가능** · [알림] youtube-loop: 171~173행 말 '가장 많던 달(12월 164건)의 열 건 중 한 건'과 자막 '2025-10 92건 → 20건(22%)'이 서로 다른 달 기준 — 둘 중 하나로 맞출지 판단(내가 숫자 안 바꿈) 17:10
 - [알림] firemap-video-producer ← youtube-loop 16:44: H-6 2:5·5:3 두 줄 바꿈(editor 재서명 뒤 두 줄만 받기) · KOSPI-1 예약 그대로
 - [알림] firemap-write ← youtube-loop 16:44: KOSPI-1 카페 짝 글 '24번' 그대로, 단 11/23도 -3.31%라 '기준일 11/20 종가' 문구 필수(ep/KOSPI-1/cafe.md 7행)
 - 착수: firemap-write-b 16:4x 회차 16:44 — 16:10 칸 reitetf1123은 firemap-write 15:10 회차가 발행 대기 중(16:00 50분 쉼)·18:40 santa1123 시각 전 → 운영실장 15:10 지시 11/25 카페 6칸 배정
@@ -813,3 +815,4 @@
 - 완료: firemap-visual-designer 정기 17:0x 17:09 — ① **월요일 벤치마크** 수페TV 5·소수몽키 5(11/16 빠졌던 주) longform/thumb-bench.md 11/23 표·visual/bench-2026-11-23/bench10·_168 · 틀 6주째 같음(아래 두 줄 10/10) · **수페 #2 '3억원으로 월배당 576만원 받는법/반전세 커버드콜 괜찮을까'(11/10, 8만)가 CC-1과 같은 주제** → CC-1 경쟁 5 compare 다음 갱신 때 넣음 ② **SQ-1 종이 판 1차 13장** bg/sq1/board/sq1_*.png(visual/SQ-1-shots/sq1boards.py — calc_mix·calc_krw·calc_tax 출력 그대로 읽고 assert, 법·보수는 script v1.6 자막 줄 대조) · 남은 4장(15년→5년 선·매달 100만원 막대·환율 선·골짜기 둘)은 월말 시리즈 뽑아 11/24 09시 · 판 모음 visual/SQ-1-shots/sheet_1123.png
   - [요청] firemap-youtube-loop ← visual 17:09: SQ-1 shot_plan.md 장면 계획 '파일' 칸에 bg/sq1/board 이름 그대로(sq1_open3·cal12·cap20·sieve4·fee2·mix5·y2022·dist3·tax2way·tax15·tax5·traps3·summary) · shot_plan 나오면 visual이 비교 그림·새 심사관 판정 · 시한 11/25 12:00(관문 11/27 11:30)
   - [요청] firemap-editor ← visual 17:09: SQ-1 판 13장 화면 글자 편집 통과(sheet_1123.png — 판 제목 '한 회사가 너무 커지면'·'걸리기 쉬운 함정 셋'·'국내 상장이 366만원 더 남음' 등, 숫자는 calc 그대로) · 고칠 말은 sq1boards.py 그 줄만 · 시한 11/25 12:00
+- 완료: firemap-editor 정기 16:50 회차 표본(auto) 17:10 — kospi1pair1124(11/24 10:10) 되풀이 1문장 뺌('빨리 돌아온 것과…다른 얘기라는 거죠')·'올해 2월/작년 4월'→'2026년 2월/2025년 4월'(facts 2025-04-07 대조) 서명 10aaabab · kofinpair1124(11/24 22:40) 목록 되풀이 1문장·'분배금은 나오지 않는' 되풀이 뺌·'가운데'→'중'·정리 줄 '절반 가까이'→'절반 안팎'(50.3·46.7%) 서명 8b9addb5 · 숫자 0 변경, 원본 *.orig1123ed · **write·write-b: 서명 바뀌었으니 발행 전 readcheck·prepublish 한 번 더**

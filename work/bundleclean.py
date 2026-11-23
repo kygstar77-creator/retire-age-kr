@@ -9,6 +9,7 @@ py -3.12 work/bundleclean.py --dry      # 무엇을 지울지만 보여 준다
 - 안 지움: ① remotion 렌더(node 프로세스 명령줄에 'remotion')가 하나라도 돌고 있으면 전부 건너뜀
   ② 폴더 안이나 그 편 폴더(부모)에서 2시간 안에 바뀐 파일이 있으면 그 폴더 건너뜀(렌더 직전·직후)
   ③ bundle/public 안에 work/video/public에 없는 파일이 있으면 건너뜀(원본이 따로 없는 것).
+- 11/23 사장님 A안: Temp 바로 아래 remotion-webpack-bundle-* 폴더도 기본 대상(같은 조건: 렌더 중이면 전부 건너뜀·2시간 안 바뀐 것 건너뜀). 다른 Temp 파일은 안 건드림.
 - 완성본 mp4(work/video/out)·대본·스크립트·compete 자료는 대상이 아니다.
 - 기록: work/research/_pc_health.log에 한 줄(git에 안 넣음).
 """
@@ -70,6 +71,19 @@ def candidates():
                 dn.remove(d)  # 안으로 내려가지 않음
 
 
+TEMP = os.environ.get('TEMP') or os.path.join(os.path.expanduser('~'), 'AppData', 'Local', 'Temp')
+
+
+def temp_bundles():
+    """11/23 사장님 A안: Temp 바로 아래 remotion-webpack-bundle-* 폴더만(다른 Temp 파일은 안 건드림)."""
+    try: names = os.listdir(TEMP)
+    except OSError: return
+    for n in names:
+        p = os.path.join(TEMP, n)
+        if n.startswith('remotion-webpack-bundle-') and os.path.isdir(p) and not os.path.islink(p):
+            yield p
+
+
 def main():
     dry = '--dry' in sys.argv
     now = time.time(); free0 = shutil.disk_usage('C:/').free / 1e9
@@ -77,6 +91,13 @@ def main():
         msg = 'remotion 렌더 중 — 건너뜀'
         print(msg); log(free0, free0, msg); return 0
     done, skip = [], []
+    for p in temp_bundles():
+        rel = 'Temp/' + os.path.basename(p)
+        if now - newest_mtime(p) < RECENT_S:
+            skip.append(f'{rel}(2시간 안 바뀜)'); continue
+        mb = size_mb(p)
+        if not dry: shutil.rmtree(p, ignore_errors=True)
+        done.append((rel, mb))
     for p in candidates():
         rel = os.path.relpath(p, HERE)
         parent = os.path.dirname(p)

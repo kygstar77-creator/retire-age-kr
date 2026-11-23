@@ -426,6 +426,16 @@
     "by": "firemap-write-b",
     "at": "2026-11-22 19:58",
     "gates_ok": "2026-11-22 19:58"
+   },
+   {
+    "item": "sanbon1123",
+    "pkg": "work/research/sanbon1123/pkg",
+    "title": "산본 아파트 시세, 선도지구 6곳만 따로 세어 보니",
+    "genre": "부동산(아파트 매매) — 범위 안",
+    "status": "2026-11-23 10:58 관문 통과 비축(write-b) — kwvol 산본아파트 5,300(우리 제목 0편)·잘된 글 1위 분당 선도지구 글과 같은 각도 · 국토부 군포 매매 직접 계산: 산본동 7,601건, 같은 집 1년 선도지구 6단지 +17.0%(16개 모두 오름) vs 나머지 오래된 단지 +11.2% vs 1997년 이후 +9.1%(분당과 반대), 넓이 나눠도 같음, 발표 전 대비 +26.6% vs +10.4%, 2021년 하반기 대비 -3.0% vs -11.8% · 경쟁 7편 같은 집 비교 0편 · research strict·bench·prepublish·compare·cover·calc·disclaim·readcheck 0·aitell 4.8·selfcheck 0·crosscheck 사실 1 반영·이해 2차 6명·editgate auto 4e7800ee · slot.txt 없음(회의가 칸 배정) · 발행 회차: 국토부 API 다시 받아 calc.py 대조·올리기 전 확인 갱신",
+    "by": "firemap-write-b",
+    "at": "2026-11-23 10:58",
+    "gates_ok": "2026-11-23 10:58"
    }
   ],
   "long": [

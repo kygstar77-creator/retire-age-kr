@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 매매 실거래 API(경기 군포시 41410, 산본동) 2025.6~10월 vs 2026.6~10월 계약, calc_out.txt — 파이어맵 직접 계산",
+ "made_at": "2026-11-23",
+ "by": "research/sanbon1123/mkimg.py",
+ "out": "img/00.png",
+ "topic": "산본 아파트 시세",
+ "num": "+17% / +11%",
+ "topic_px": 58,
+ "num_px": 44,
+ "follows": "경쟁 5 lifeforwhat_/224482432000 1기 신도시 거래량 표 · 1 rytesmy/224485772464 시세 차트"
+}

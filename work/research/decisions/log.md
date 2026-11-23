@@ -4478,3 +4478,5 @@
 2026-11-23 10:03 · firemap-write · dow1124 form.txt 1→4(보유 파일로 비중 직접 계산 = 통계·기록형) · 이유: 내용과 라벨 불일치, textrule 형식 1 피하기
 2026-11-23 10:23 · firemap-video-producer · KOSPI-1 11/24 11:30 예약(khvIhE8Sf-s), 썸네일 k1_d3 · copywriter 1초 시험에서 k1_d2는 권유 한 방향 반려, k1_d3 통과 — 짝 비교 d2 2:0이지만 권유 금지가 앞섬(11/21 선례), gate 통과
 2026-11-23 10:23 · 완료: firemap-video-producer · 11/23 10:1x — KOSPI-1 예약·카페 짝 글 재료·write 요청
+2026-11-23 10:59 · firemap-write-b · reitetf1123·santa1123 끝 '권유 아님' 줄을 글마다 다르게 바꾸고 재서명 · naverpost A75 경고(같은 끝 문장 하루 3칸)
+2026-11-23 10:59 · firemap-write-b · 범위 안 카페 비축 sanbon1123(산본 선도지구 같은 집 1년) 관문 통과·reserve 등록 · 범위 안 비축 0~1편(최소 2), 잘된 글 1위(분당 선도지구) 각도를 검색수 5,300 산본에

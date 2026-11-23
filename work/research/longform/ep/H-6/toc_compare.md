@@ -60,10 +60,10 @@
 | 1 은마는 지금 어디까지 | 0:40 | 처음 보는 분용 기초: 1979년 준공·28개동 4,424가구·76/84㎡ 두 평형 → 2026-07-02 사업시행인가 고시(49층) → 남은 단계(분양신청·관리처분·이주·착공, 목표일은 보장 아님) · 상가 한 줄 | https://www.youtube.com/watch?v=4ZVXEgEFqj4 · https://www.youtube.com/watch?v=9RbVwBCMgWc (단계 표) |
 | 2 1년 실거래, 평형별 | 2:30 | 국토부 실거래 75건(해제 6건 뺌): 84㎡ 43.10억(2025-10-31) → 33.00억(2026-10-31) · 77㎡ 38.00억 → 30.35억 · 중앙값 흐름 · '8억 폭락'은 어느 평형 말인가 | https://www.youtube.com/watch?v=RvCiGDtCqn8 (호가 30억 아래) · https://www.youtube.com/watch?v=WzQebWiEi14 (실거래 흐름, 배수 7.2) |
 | 3 거래는 언제 몰렸나 | 4:30 | 75건 중 2026년 9·10월 35건(47%) — 인가(7/2) 뒤 두 달 · 매물 수가 아니라 신고된 거래 건수로 | https://www.youtube.com/watch?v=RvCiGDtCqn8 (경쟁은 '매물 5배' 민간 매물 자료 — 우리는 실거래 건수로 빈칸) |
-| 4 세 가지 청구서 | 6:00 | ① 분담금(같은 평형 받을 때, 조합 추정 원문) ② 재초환 예정액(1인당 평균, 강남구 통지 원문 — 평균≠내 몫) ③ 이주 비용(이주비 대출 조건 원문 확인 뒤) · 분담금이 왜 올랐나 한 줄 | https://www.youtube.com/watch?v=68VI4ox2oCA (배수 13.7) · https://www.youtube.com/watch?v=ZpZ0wMix_Bk (배수 12.0) · https://www.youtube.com/watch?v=8703jbHnKYI |
-| 5 세입자 계약이 사라졌다 | 9:00 | 은마 전월세 신고 2025-12 164건 → 2026-09 20건(10월은 신고 기한 30일 안이라 11/30 뒤 다시 셈) · 이주 앞둔 단지의 전월세 | https://www.youtube.com/watch?v=ShE7Z9ndi5M · https://www.youtube.com/watch?v=JJbfh4rz25o (이주 물량 표 — 우리는 은마 한 단지 신고 건수) |
+| 4 세 가지 숙제(청구서) | 6:00 | ① 분담금(같은 평형 받을 때, 조합 추정 원문) ② 재초환 예정액(1인당 평균, 강남구 통지 원문 — 평균≠내 몫) ③ 이주 비용(이주비 대출 조건 원문 확인 뒤) · 분담금이 왜 올랐나 한 줄 | https://www.youtube.com/watch?v=68VI4ox2oCA (배수 13.7) · https://www.youtube.com/watch?v=ZpZ0wMix_Bk (배수 12.0) · https://www.youtube.com/watch?v=8703jbHnKYI |
+| 5 세입자 계약 신고(세입자 계약이 사라졌다) | 9:00 | 은마 전월세 신고 2025-12 164건 → 2026-09 20건(10월은 신고 기한 30일 안이라 11/30 뒤 다시 셈) · 이주 앞둔 단지의 전월세 | https://www.youtube.com/watch?v=ShE7Z9ndi5M · https://www.youtube.com/watch?v=JJbfh4rz25o (이주 물량 표 — 우리는 은마 한 단지 신고 건수) |
 | 6 누구라면 | 10:30 | 계속 갖고 있을 분(분양신청 기한·재초환 1주택 장기보유 감면·60세 이상 납부유예) / 팔 분(이번 1년 실거래 범위) / 분양신청 안 할 분(현금청산) — 기한·제도만, 권유 없음 | https://www.youtube.com/watch?v=68VI4ox2oCA (12:58 갈림길) · https://www.youtube.com/watch?v=ZpZ0wMix_Bk (07:17 감면·10:29 유예) |
-| 7 함정 | 12:00 | 호가 ≠ 실거래 · 최근 달 신고는 30일 늦게 다 잡힘 · 평균 부담금 ≠ 내 몫 · 지난 값은 앞날을 말하지 않음 | https://www.youtube.com/watch?v=ZpZ0wMix_Bk (06:27 평균일 뿐) · https://www.youtube.com/watch?v=RvCiGDtCqn8 (호가) |
+| 7 함정과 직접 확인 | 12:00 | 호가 ≠ 실거래 · 최근 달 신고는 30일 늦게 다 잡힘 · 평균 부담금 ≠ 내 몫 · 지난 값은 앞날을 말하지 않음 | https://www.youtube.com/watch?v=ZpZ0wMix_Bk (06:27 평균일 뿐) · https://www.youtube.com/watch?v=RvCiGDtCqn8 (호가) |
 | 8 끝 | 13:00 | 세 숫자 한 번 · 마음으로 닫는 한 줄 · 고정 끝 줄 | https://www.youtube.com/watch?v=8703jbHnKYI&t=787 · https://www.youtube.com/watch?v=k6rNq3JPsAo&t=762 |
 
 # 경쟁 비교 3줄

@@ -57,3 +57,10 @@
 - ytlong gate(새 파일): 쉿소리·음량·쉼·bgcheck·치직·자리표시자·중복 모두 통과, 막힘은 이 줄 하나뿐
 - 썸네일: 아직 — copywriter k1_d2 1초 시험 3차(07:4x) 뒤 meta.thumb(지금 k1_p1)·kospi1meta.py THUMB 바꾸고 PD가 '대조: 통과'
 대조: 보류 — 썸네일 k1_d2 하나만 남음.
+
+
+## 11/23 10:18 PD 다시 대조(정기 10:1x)
+- 썸네일: copywriter 07:54 1초 시험 3차-24 — k1_d2 권유 한 방향(사람 사진) 반려 → **k1_d3(손+흐린 휴대폰·노트북, Pexels 32219704) 통과**(주제 3/3·두 순서·권유 원인 셋 다 다름). thumbpair d2 2:0이지만 권유 금지가 앞섬(youtube-loop 11/21 12:54 선례). PD 눈 확인: 큰 글 두 줄·흰 줄·알약 잘림 없음, 시계 상표 안 읽힘, 휴대폰·노트북 화면 숫자 안 읽힘.
+- meta.json thumb → thumb_k1_d3.png(kospi1meta.py THUMB 고침, 원본 meta.json.pre1123pd2)
+- 경쟁 대비 나머지 칸(위 표)은 07:18 그대로.
+대조: 통과

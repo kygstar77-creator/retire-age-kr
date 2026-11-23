@@ -13,7 +13,7 @@ V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
 MP = os.path.join(EP, 'meta.json')
 m = json.load(open(MP, encoding='utf-8')) if os.path.exists(MP) else {}
 TITLES = [l.strip() for l in open(os.path.join(ROOT, 'work', 'research', 'copy', 'kospi1', 'final.txt'), encoding='utf-8') if l.strip()]
-THUMB = os.path.join(EP, 'thumb_k1_p1.png')
+THUMB = os.path.join(EP, 'thumb_k1_d3.png')
 
 heads = ['여는 말', '올해 코스피', '서킷브레이커와 사이드카', '지난 31년, 크게 빠진 날 그 뒤', '전날 값을 되찾기까지',
          '크게 빠진 해엔 크게 오른 날도', '1천만원을 넣었다면', '함정', '정리']   # script.md ## 제목
@@ -54,7 +54,7 @@ m.update({
     'title': TITLES[0], 'title_by': 'firemap-copywriter 2026-11-20 18:54 copy/kospi1/final.txt 1위 T8(23→24 고침)', 'title_candidates': TITLES,
     'thumb_text_top': '코스피 5% 넘게 빠진 날', 'thumb_text': '2026년 들어 24번',
     'thumb': THUMB,
-    'thumb_status': "11/20 PD: visual k1_p1 자리. copywriter 4차(11/20 18:54) 주제 3/3 통과·권유 반려(좁게, 노트북 화면 꺾이는 선) → visual p2(화면 흐림) → thumbpair → youtube-loop 고름. 바뀌면 kospi1meta.py THUMB 고치고 ytlong thumb",
+    'thumb_status': "11/23 PD 10:1x: k1_d3 확정(copywriter 07:54 1초 시험 3차-24 — k1_d2 권유 한 방향 반려, k1_d3 손 사진 통과·주제 3/3). 만든 코드 visual/KOSPI-1-thumb/make_k1d3.py",
     'desc_first2': FIRST2, 'desc_first2_src': 'copywriter titles.md 설명 첫 줄(11/20) + script 0장(57번·IMF 9번) · analysis ② 검색어 코스피·코스피지수·서킷브레이커',
     'tags': ['코스피', '코스피지수', '코스피 폭락', '서킷브레이커', '사이드카'],
     'desc_tpl': tpl, 'desc': desc, 'chapter_titles': heads, 'chapters': chapters,
@@ -74,7 +74,7 @@ m.update({
     'endscreen': {'how': 'Studio 최종 화면 — 업로드 뒤', 'status': '미정'},
     'made_by': 'firemap-video-producer', 'made_at': '2026-11-20',
     'video': os.path.join(VID, 'out', 'kospi1_dsl1123.mp4').replace('\\', '/'),
-    'todo': '11/20 PD: 렌더·쉿소리·음량 끝 · 남은 것: 썸네일 p1/p2(youtube-loop) · 11/23 아침 ECOS 다시 셈(24 바뀌면 다시) · cafe_url · 최종 화면'})
+    'todo': '11/23 PD 10:1x: 렌더(kospi1_dsl1123)·올리기 전 확인(loop 00:48)·썸네일 k1_d3 끝 · 남은 것: 예약 뒤 11/23 15:30 종가 확인(loop 16:4x, -5% 이하면 예약 풂·25로) · 카페 짝 글 주소 · 고정 댓글'})
 json.dump(m, open(MP, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 open(os.path.join(EP, 'desc_1120.txt'), 'w', encoding='utf-8').write(m['title'] + '\n\n' + desc + '\n')
 print(CH); print(f'설명 {len(desc)}자 · 실사 출처 {len(credits)}줄 · missing {m["missing"]} · 제목 {len(m["title"])}자')

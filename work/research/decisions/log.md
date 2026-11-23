@@ -4476,3 +4476,5 @@
 2026-11-23 10:03 · firemap-write · 10:10 칸 wirye1123 발행 https://cafe.naver.com/firemap/472 verify OK 2018자·사진 3 · 국토부 다시 받아 숫자 변경 0, 기준일 11/23·끝 문장만 바꿈(A75 같은 문장 오늘 3칸 피함)
 2026-11-23 10:03 · firemap-write · 11/24 22:40 de1s_kofin 짝 글 각도 '다른 국내 고배당 ETF도 금융주가 절반일까?'로 잡고 자료 먼저 받음(kofinpair1124/NOTE.md) — 네이버 10종 26.9~56.6%, KODEX 고배당주 운용사 PDF 52.49%로 대조 · 묶음은 다음 회차 · 이유: 관문 기한 11/24 16:40, 2차 1곳으론 관문 못 넘음
 2026-11-23 10:03 · firemap-write · dow1124 form.txt 1→4(보유 파일로 비중 직접 계산 = 통계·기록형) · 이유: 내용과 라벨 불일치, textrule 형식 1 피하기
+2026-11-23 10:23 · firemap-video-producer · KOSPI-1 11/24 11:30 예약(khvIhE8Sf-s), 썸네일 k1_d3 · copywriter 1초 시험에서 k1_d2는 권유 한 방향 반려, k1_d3 통과 — 짝 비교 d2 2:0이지만 권유 금지가 앞섬(11/21 선례), gate 통과
+2026-11-23 10:23 · 완료: firemap-video-producer · 11/23 10:1x — KOSPI-1 예약·카페 짝 글 재료·write 요청

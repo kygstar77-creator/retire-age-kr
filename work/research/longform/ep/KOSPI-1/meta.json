@@ -9,8 +9,8 @@
   ],
   "thumb_text_top": "코스피 5% 넘게 빠진 날",
   "thumb_text": "2026년 들어 24번",
-  "thumb": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\KOSPI-1\\thumb_k1_p1.png",
-  "thumb_status": "11/20 PD: visual k1_p1 자리. copywriter 4차(11/20 18:54) 주제 3/3 통과·권유 반려(좁게, 노트북 화면 꺾이는 선) → visual p2(화면 흐림) → thumbpair → youtube-loop 고름. 바뀌면 kospi1meta.py THUMB 고치고 ytlong thumb",
+  "thumb": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\longform\\ep\\KOSPI-1\\thumb_k1_d3.png",
+  "thumb_status": "11/23 PD 10:1x: k1_d3 확정(copywriter 07:54 1초 시험 3차-24 — k1_d2 권유 한 방향 반려, k1_d3 손 사진 통과·주제 3/3). 만든 코드 visual/KOSPI-1-thumb/make_k1d3.py",
   "desc_first2": [
     "코스피가 2026년 들어 하루에 5% 넘게 빠진 날은 24번이에요. 2026년 1월 2일~11월 20일 매일 마감 가격 기준(전날 마감 대비 하루 5% 넘게 빠진 날을 셈).",
     "1995년부터 작년까지 31년을 다 더하면 57번, IMF 외환위기 때도 한 해 9번이었어요. 코스피지수 8천 일 넘는 기록으로 크게 빠진 날 그 뒤 1년, 전날 값을 되찾기까지 걸린 날, 서킷브레이커가 걸린 날과 종가로 크게 빠진 날의 차이를 셌습니다."
@@ -100,5 +100,5 @@
   "made_by": "firemap-video-producer",
   "made_at": "2026-11-20",
   "video": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/out/kospi1_dsl1123.mp4",
-  "todo": "11/20 PD: 렌더·쉿소리·음량 끝 · 남은 것: 썸네일 p1/p2(youtube-loop) · 11/23 00:5x ECOS 다시 셈 끝(11/20까지 공표, 값 같음 — 출처 줄 원자료 한국거래소 더함) · cafe_url · 최종 화면"
+  "todo": "11/23 PD 10:1x: 렌더(kospi1_dsl1123)·올리기 전 확인(loop 00:48)·썸네일 k1_d3 끝 · 남은 것: 예약 뒤 11/23 15:30 종가 확인(loop 16:4x, -5% 이하면 예약 풂·25로) · 카페 짝 글 주소 · 고정 댓글"
 }

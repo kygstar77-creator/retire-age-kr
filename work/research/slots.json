@@ -4790,10 +4790,10 @@
   {
    "at": "2026-11-24 11:30",
    "kind": "long",
-   "item": "KOSPI-1(코스피 하루 -5% 23번, 지난 값만·예측 0 — 대본 v1·editor 서명·toc·research strict 끝)",
+   "item": "KOSPI-1(코스피 2026년 들어 하루 5% 넘게 빠진 날 24번 — 예약 https://youtu.be/khvIhE8Sf-s)",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "firemap-youtube-loop 2026-11-18 13:50: 11/17 회의가 열리지 않아(log 0줄) 콘텐츠 본부장이 KOSPI-1로 정함 — 근거 slot1124_compare.md·반론 slot1124_compare_전략.md(제미나이 보류: 표본 3편·마감 위험·KRX 원표) 중 마감 위험은 대본 끝나 사라짐, 표본·원표는 조건으로: ① KRX 원표 대조(S11) 11/23 11:30 관문 전 ② 공개 7일 조회 64 미만이면 지수 축 재검토 · LTC-1은 11/26 후보 · 이전 note: firemap-meeting 2026-11-16 21:41: H-5가 11/22로 가서 빔 → 후보 코스피 지수 편(kwvol 12,619,000·우리 0편, KRX 일별 지수 지난 값만·예측 0) vs LTC-1(장기요양) — 11/17 회의에서 정함, 관문 기한 11/23 11:30 | firemap-meeting 2026-11-08 21:3x: 장르 안건(agenda-2026-11-09-longform-genre.md) 받아들임 — X-LF-GENRE(부동산2·정책2·경제주식1·연봉노후1/12일, 같은 장르 연속 금지)"
+   "gates_ok": "2026-11-23 10:23",
+   "note": "firemap-video-producer 2026-11-23 10:23: 예약 khvIhE8Sf-s publishAt 11/24 11:30 · 썸네일 k1_d3(copywriter 07:54) · gate 통과 · 남은 위험: 11/23 마감 -5% 이하면 24→25(youtube-loop 16:4x, 예약 풂) · yt_pair: KOSPI-1 카페 짝 글(ep/KOSPI-1/cafe.md, 영상보다 먼저 11/24 07:40·10:10 칸) · 이전 note: firemap-youtube-loop 2026-11-18 13:50: 11/17 회의가 열리지 않아(log 0줄) 콘텐츠 본부장이 KOSPI-1로 정함 — 근거 slot1124_compare.md·반론 slot1124_compare_전략.md(제미나이 보류: 표본 3편·마감 위험·KRX 원표) 중 마감 위험은 대본 끝나 사라짐, 표본·원표는 조건으로: ① KRX 원표 대조(S11) 11/23 11:30 관문 전 ② 공개 7일 조회 64 미만이면 지수 축 재검토 · LTC-1은 11/26 후보 · 이전 note: firemap-mee"
   },
   {
    "at": "2026-11-24 12:40",

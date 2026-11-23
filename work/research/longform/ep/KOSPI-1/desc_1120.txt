@@ -1,4 +1,4 @@
-코스피 올해 하루 5% 넘게 빠진 날 24번, IMF 때보다 많았다
+코스피 올해 하루 5% 넘게 빠진 날은 몇 번일까? IMF 때와 그 뒤 1년까지 세어 봤다
 
 코스피가 2026년 들어 하루에 5% 넘게 빠진 날은 24번이에요. 2026년 1월 2일~11월 20일 매일 마감 가격 기준(전날 마감 대비 하루 5% 넘게 빠진 날을 셈).
 1995년부터 작년까지 31년을 다 더하면 57번, IMF 외환위기 때도 한 해 9번이었어요. 코스피지수 8천 일 넘는 기록으로 크게 빠진 날 그 뒤 1년, 전날 값을 되찾기까지 걸린 날, 서킷브레이커가 걸린 날과 종가로 크게 빠진 날의 차이를 셌습니다.
@@ -8,14 +8,14 @@
 직접 보기: 한국은행 경제통계시스템(ECOS) https://ecos.bok.or.kr → 통계검색 → 802Y001 주식시장(일) → KOSPI 지수
 
 0:00 여는 말
-0:45 올해 코스피
-1:38 서킷브레이커와 사이드카
-2:49 지난 31년, 크게 빠진 날 그 뒤
-4:20 전날 값을 되찾기까지
-5:04 크게 빠진 해엔 크게 오른 날도
-5:28 1천만원을 넣었다면
-6:33 함정
-7:05 정리
+0:41 올해 코스피
+1:34 서킷브레이커와 사이드카
+2:45 지난 31년, 크게 빠진 날 그 뒤
+4:16 전날 값을 되찾기까지
+5:00 크게 빠진 해엔 크게 오른 날도
+5:24 1천만원을 넣었다면
+6:29 함정
+7:01 정리
 
 출처
 · 코스피 일별 종가(1995-01-03~2026-11-20): 한국은행 경제통계시스템 ECOS 802Y001(원자료 한국거래소) · 2026-11-20 종가 4,869.96(-5.21%)은 보도와도 같음(이투데이 https://www.etoday.co.kr/news/view/2651045 · 서울경제 https://m.sedaily.com/article/20117003)
@@ -25,10 +25,12 @@
 영상 일부: Oleg Gamulinskii / Pexels (https://www.pexels.com/video/waves-on-graph-and-arrows-falling-down-3945008/)
 영상 일부: Hamim Rony / Pexels (https://www.pexels.com/video/close-up-of-stock-market-analysis-on-smartphone-39494572/)
 영상 일부: Pavel Danilyuk / Pexels (https://www.pexels.com/video/stacks-of-books-in-a-shelf-5224014/)
-영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/a-person-counting-bank-notes-5909916/)
 영상 일부: K / Pexels (https://www.pexels.com/video/close-up-of-hands-holding-a-smartphone-6186015/)
 영상 일부: ArtHouse Studio / Pexels (https://www.pexels.com/video/person-operating-button-panel-6442796/)
 영상 일부: Thirdman / Pexels (https://www.pexels.com/video/people-and-the-sunset-by-the-lake-8495394/)
+영상 일부: Pixabay / Pexels (https://www.pexels.com/video/saving-the-date-856299/)
+영상 일부: 정규송 Nui MALAMA / Pexels (https://www.pexels.com/video/dynamic-ocean-waves-in-coastal-landscape-35371501/)
+영상 일부: Towfiqu barbhuiya / Pexels (https://www.pexels.com/video/pulling-coins-out-of-jar-12033695/)
 계산 가정: 하루 = 전날 마감 대비 그날 마감 · 횟수를 센 것이지 위기 크기를 잰 게 아님 · 지수만 계산(ETF·펀드 보수, 배당, 세금은 빠짐)
 
 내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이에요. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 지난 값이고, 앞으로를 예측하거나 사고팔라는 뜻이 아닙니다.

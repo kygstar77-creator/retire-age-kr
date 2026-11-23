@@ -13,7 +13,8 @@ V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
 MP = os.path.join(EP, 'meta.json')
 m = json.load(open(MP, encoding='utf-8')) if os.path.exists(MP) else {}
 TITLES = [l.strip() for l in open(os.path.join(ROOT, 'work', 'research', 'copy', 'kospi1', 'final.txt'), encoding='utf-8') if l.strip()]
-THUMB = os.path.join(EP, 'thumb_k1_d3.png')
+THUMB = os.path.join(EP, 'thumb_k1_qc.png')   # 11/24 PD: copywriter copy/kospi1/c36/decision.md(08:12) — C-36 결론 숫자 없는 썸네일·C-39 경쟁 1위 짝 비교 2/2
+TITLES = ['코스피 올해 하루 5% 넘게 빠진 날은 몇 번일까? IMF 때와 그 뒤 1년까지 세어 봤다'] + TITLES   # 11/24 copywriter c36 고른 제목(C-36 질문형)
 
 heads = ['여는 말', '올해 코스피', '서킷브레이커와 사이드카', '지난 31년, 크게 빠진 날 그 뒤', '전날 값을 되찾기까지',
          '크게 빠진 해엔 크게 오른 날도', '1천만원을 넣었다면', '함정', '정리']   # script.md ## 제목
@@ -23,6 +24,9 @@ for s in P['scenes']:
     a += s['frames']
 fps = P.get('fps', 30)
 assert len(starts) == len(heads) == 9, (len(starts), len(heads))
+# 11/24 PD: C-37 첫 인사 장면(scenes.0, TRIM 프레임)을 렌더본 앞에서 잘라 냄 → 챕터를 TRIM만큼 당김(첫 장은 0 그대로)
+TRIM = P['scenes'][0]['frames'] if os.environ.get('KOSPI1_CUT') else 0
+starts = [0] + [st - TRIM for st in starts[1:]]
 chapters = [[round(st / fps), h] for st, h in zip(starts, heads)]
 assert all(b[0] - a_[0] >= 10 for a_, b in zip(chapters, chapters[1:])), chapters
 fmt = lambda f: f"{int(f / fps) // 60}:{int(f / fps) % 60:02d}"
@@ -51,8 +55,8 @@ cafe = m.get('cafe_url') or 'https://cafe.naver.com/firemap'
 desc = tpl.replace('{CAFE}', cafe).replace('{CHAPTERS}', CH).replace('{STOCK}', '\n'.join(credits))
 m.update({
     'ep': 'KOSPI-1', 'series': '지수 — 코스피 지난 기록',
-    'title': TITLES[0], 'title_by': 'firemap-copywriter 2026-11-20 18:54 copy/kospi1/final.txt 1위 T8(23→24 고침)', 'title_candidates': TITLES,
-    'thumb_text_top': '코스피 5% 넘게 빠진 날', 'thumb_text': '2026년 들어 24번',
+    'title': TITLES[0], 'title_by': 'firemap-copywriter 2026-11-24 08:12 copy/kospi1/c36/decision.md 제목 C(C-36 질문형, 옛 T8 결론 숫자 제목 대신)', 'title_candidates': TITLES,
+    'thumb_text_top': '1995년부터 매일 마감 가격으로 셈', 'thumb_text': '코스피 5% 넘게 빠진 날 / 그 뒤 1년은 어땠을까?',
     'thumb': THUMB,
     'thumb_status': "11/23 PD 10:1x: k1_d3 확정(copywriter 07:54 1초 시험 3차-24 — k1_d2 권유 한 방향 반려, k1_d3 손 사진 통과·주제 3/3). 만든 코드 visual/KOSPI-1-thumb/make_k1d3.py",
     'desc_first2': FIRST2, 'desc_first2_src': 'copywriter titles.md 설명 첫 줄(11/20) + script 0장(57번·IMF 9번) · analysis ② 검색어 코스피·코스피지수·서킷브레이커',
@@ -73,7 +77,7 @@ m.update({
         'q5_사람의몫': "예 — '서킷브레이커 걸린 날 ≠ 종가로 크게 빠진 날'(11/6 장중 -8.55%·종가 -6.02%)과 '지수 ≠ 내 계좌'(보수·배당·세금)는 흔한 말을 원자료로 가른 우리 판단."},
     'endscreen': {'how': 'Studio 최종 화면 — 업로드 뒤', 'status': '미정'},
     'made_by': 'firemap-video-producer', 'made_at': '2026-11-20',
-    'video': os.path.join(VID, 'out', 'kospi1_dsl1123.mp4').replace('\\', '/'),
+    'video': os.path.join(VID, 'out', 'kospi1_cut1124p.mp4' if os.environ.get('KOSPI1_CUT') else 'kospi1_dsl1123.mp4').replace('\\', '/'),
     'todo': '11/23 PD 10:1x: 렌더(kospi1_dsl1123)·올리기 전 확인(loop 00:48)·썸네일 k1_d3 끝 · 남은 것: 예약 뒤 11/23 15:30 종가 확인(loop 16:4x, -5% 이하면 예약 풂·25로) · 카페 짝 글 주소 · 고정 댓글'})
 json.dump(m, open(MP, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 open(os.path.join(EP, 'desc_1120.txt'), 'w', encoding='utf-8').write(m['title'] + '\n\n' + desc + '\n')

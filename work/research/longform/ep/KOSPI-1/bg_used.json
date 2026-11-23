@@ -24,12 +24,6 @@
   "desc_line": "영상 일부: Pavel Danilyuk / Pexels (https://www.pexels.com/video/stacks-of-books-in-a-shelf-5224014/)"
  },
  {
-  "id": "5909916",
-  "file": "bg/kospi1/stock/5909916.mp4",
-  "used": 3,
-  "desc_line": "영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/a-person-counting-bank-notes-5909916/)"
- },
- {
   "id": "6186015",
   "file": "bg/kospi1/stock/6186015.mp4",
   "used": 1,
@@ -46,5 +40,23 @@
   "file": "bg/kospi1/stock/8495394.mp4",
   "used": 1,
   "desc_line": "영상 일부: Thirdman / Pexels (https://www.pexels.com/video/people-and-the-sunset-by-the-lake-8495394/)"
+ },
+ {
+  "id": "856299",
+  "file": "bg/kospi1/stock/856299.mp4",
+  "used": 1,
+  "desc_line": "영상 일부: Pixabay / Pexels (https://www.pexels.com/video/saving-the-date-856299/)"
+ },
+ {
+  "id": "35371501",
+  "file": "bg/kospi1/stock/35371501.mp4",
+  "used": 1,
+  "desc_line": "영상 일부: 정규송 Nui MALAMA / Pexels (https://www.pexels.com/video/dynamic-ocean-waves-in-coastal-landscape-35371501/)"
+ },
+ {
+  "id": "12033695",
+  "file": "bg/kospi1/stock/12033695.mp4",
+  "used": 1,
+  "desc_line": "영상 일부: Towfiqu barbhuiya / Pexels (https://www.pexels.com/video/pulling-coins-out-of-jar-12033695/)"
  }
 ]

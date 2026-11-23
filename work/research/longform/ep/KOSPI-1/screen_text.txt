@@ -212,7 +212,7 @@
 [scenes.51.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.52.lines.0.text] 이번엔 같은 돈을 열두 번에 나눠 넣었다고 해 볼게요.
 [scenes.52.lines.1.text] 한 달에 한 번 정도씩 나눠서요.
-[scenes.52.data.license] Pexels 5909916 무료(cottonbro studio)
+[scenes.52.data.license] Pexels 856299 무료(Pixabay)
 [scenes.52.data.say] 열두 번에 나눠
 [scenes.52.data.side] left
 [scenes.53.lines.0.text] 그러면 중간은 1,085만원이었어요.
@@ -221,7 +221,7 @@
 [scenes.53.lines.3.text] 원금보다 불어난 횟수는 두 방법 모두 열다섯 번 중 열 번으로 같았어요.
 [scenes.53.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.54.lines.0.text] 차이는 오르내린 폭에 있었습니다.
-[scenes.54.data.license] Pexels 5909916 무료(cottonbro studio)
+[scenes.54.data.license] Pexels 35371501 무료(정규송 Nui MALAMA)
 [scenes.54.data.say] 차이는 흔들린 폭
 [scenes.54.data.side] left
 [scenes.55.lines.0.text] 한 번에 넣으면 오를 때 더 벌고, 더 빠질 때 더 잃었어요.
@@ -231,7 +231,7 @@
 [scenes.55.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.56.lines.0.text] 매달 월급에서 떼어 넣는 분이라면, 이미 나눠 넣고 있는 거예요.
 [scenes.56.lines.1.text] 어느 쪽이 맞다고 말씀드리려는 게 아니라, 지난 기록은 이렇게 갈렸다는 겁니다.
-[scenes.56.data.license] Pexels 5909916 무료(cottonbro studio)
+[scenes.56.data.license] Pexels 12033695 무료(Towfiqu barbhuiya)
 [scenes.56.data.say] 월급에서 떼어 넣는 분
 [scenes.56.data.side] left
 [scenes.57.lines.0.text] 이 숫자를 볼 때 놓치기 쉬운 게 두 가지 있어요.

@@ -33,3 +33,9 @@ work/research/cardshorts/*/bundle_*/
 work/research/**/bundle/
 work/research/**/bundle2/
 work/research/**/bundle_v2/
+
+# 11/24 경쟁 영상 원본 캡처(분석 끝나면 지움 — 보고서·spec.json만 남김)
+work/research/yt/full/
+work/research/yt/design/*/
+work/research/yt/UC*.txt
+work/research/yt/sb_*.jpg

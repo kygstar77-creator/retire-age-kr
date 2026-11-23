@@ -74,6 +74,9 @@
 | 11월 계약 계산에서 뺌 | 11월 8건 | S1·S2 calc_out.txt |
 
 # 올리기 전 확인
+- 2026-11-23 09:22 firemap-write(발행 날) — fetch.py로 2026-10·11월 세 곳 다시 받음 → calc.py 다시 돌려 calc_out 대조: 세 곳 전체 39,994→39,995건(1건)만 바뀌고 위례 3,512건·같은 집 1년 27·24·23%·2021 대비·대출 한도 줄 모두 그대로 · S3·S4·data.go.kr 주소 다시 열어 200
+- 기준일: 국토교통부 실거래 2026-11-23 조회 · 본문 '11월 23일 기준'으로 고침
+- 바뀐 것: 세 곳 전체 매매 1건 늘어남(본문에 안 쓰는 값) — 글 숫자 변경 0
 - 2026-11-22 06:32 firemap-write(조사·작성 날) — 발행 회차(11/23 09:10)가 API 다시 받아 calc.py 대조
 - 다시 연 주소: https://www.data.go.kr/data/15126469/openapi.do (API 11/22 06:2x 받음) · https://www.korea.kr/news/policyNewsView.do?newsId=148950973 (11/20 받은 사본, 11/22 대조) · https://www.seoul.go.kr/news/news_report.do?nttNo=468981 (11/22 받음) · https://kin.naver.com/search/list.naver?query=%EC%9C%84%EB%A1%80%EC%84%A0+%ED%8A%B8%EB%9E%A8+%EA%B0%9C%ED%86%B5 (11/22 질문 확인) · https://kin.naver.com/search/list.naver?query=%EC%9C%84%EB%A1%80+%ED%86%A0%EC%A7%80%EA%B1%B0%EB%9E%98%ED%97%88%EA%B0%80 (11/22 질문 확인)
 - 기준일: 국토교통부 실거래 2026-11-22 06:2x 조회(계약 2021-01~2026-11) · 트램 2026-10-28 보도자료

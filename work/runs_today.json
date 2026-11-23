@@ -21,6 +21,19 @@
     "url": "https://cafe.naver.com/firemap/471"
    },
    "note": "07:40 칸 qqqi1123(배당) · 올리기 전 확인 당일: 야후 QQQI·QQQ·JEPQ 다시 받음(최신 11/20 금 종가 그대로), NEOS는 curl Cloudflare 막혀 Playwright로 받음(2026 분배 11번 같음·12월 빈칸) · calc.py·calc2.py 다시 돌려 숫자 변경 0 → 그림·본문 그대로, 편집 서명 해시 일치 · verify OK 1815자·사진 3 · 경고: 끝 면책 문장 같은 날 3칸(kosdaq1123·santa1123), 본문 1810자>1500, '다음 달' 연도 없음 · 확인 창 '계속할까요' 못 찾음(발행은 됨) · 개선: 없음(NEOS curl 막힘은 Playwright로 우회 확인)"
+  },
+  {
+   "hour": 9,
+   "ts": "10:03",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "위례 아파트 시세 송파·성남·하남 1년 비교",
+    "url": "https://cafe.naver.com/firemap/472"
+   },
+   "note": "10:10 칸 wirye1123 · 올리기 전 확인: 국토부 실거래 10·11월 세 곳 다시 받아 calc 대조 — 전체 39,994→39,995건(본문에 없는 값)만 바뀜, 글 숫자 변경 0 · 출처 3곳 200 · 기준일 11/23으로·끝 권유 아님 문장 A75 피해 바꿈 → editgate auto 06c1611d · verify OK 2018/2018자·사진 3/3 · 경고: 상대 시점(올해·내년) 7건(경고만), 확인 창 '계속할까요' 못 찾음(발행은 됨) · 블로그 없음(카페만) · 개선: kofinpair1124 짝 글 자료 — KODEX 운용사 PDF API 경로 찾아 calc.py(1차) 만듦, playbook에 적음"
   }
  ]
 }

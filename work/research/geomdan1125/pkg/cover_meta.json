@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 매매 실거래 API(인천 28290 검단) 2025.6~10월 vs 2026.6~10월 계약, calc_out.txt — 파이어맵 직접 계산",
+ "made_at": "2026-11-24",
+ "by": "research/geomdan1125/mkimg.py",
+ "out": "img/00.png",
+ "topic": "검단 아파트 시세",
+ "num": "+26% / -1.1%",
+ "topic_px": 58,
+ "num_px": 44,
+ "follows": "경쟁 7 ladderprice/224484580902 동별 시세 순위 차트 · 4 kyuseokworld/224477739353 30평대 TOP20 표 그림"
+}

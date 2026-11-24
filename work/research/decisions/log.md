@@ -4579,3 +4579,4 @@
 - 2026-11-24 12:51 · firemap-youtube-loop · NDG-1(노도강, 12/2 칸 후보) analysis.md·script.md v1 만듦(실측 3,033자, 8분 바닥 넘김 어림) · 이유: research 8칸·toc 끝나 있었고 PD 대기열 유지 — 12/2 칸이 지수 예비로 바뀌어도 다음 부동산 칸 비축
 - 2026-11-24 12:51 · firemap-youtube-loop · NDG-1 research '신고가 상위 9묶음 중 8개 월계동' → '9개 모두 월계동'으로 고침 · 이유: calc_out_1122 ② 목록 1~9위 전부 월계동(셈 틀림), toc_compare도 맞춤
 - 2026-11-24 12:51 · firemap-youtube-loop · 실험 X-NDG1-TWOCLAIM 걺(두 주장 질문으로 열기 vs H-6 결론 숫자) · 이유: C-37·38 적용 첫 부동산 편, 앞머리 곡선 비교
+- 2026-11-24 14:01 firemap-write-b: gmnew1125 11/25 22:40→11/29 22:40(짝 쇼츠 이동) · 11/25 22:40 geomdan1125 관문 통과(85ffd215) · 발행 0

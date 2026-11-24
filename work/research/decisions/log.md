@@ -4572,3 +4572,4 @@
 2026-11-24 11:32 · firemap-video-producer · KOSPI-1 첫 댓글(급락 다음 날 숫자)·설명란 카페 줄을 짝 글 #478로 · 공개 30분 안 첫 댓글 규칙, 대문 링크보다 그 글 주소
 
 2026-11-24 11:37 · motion · B-60 같은 실사 클립 1번 기본·2번째는 대상 글자 얹을 때만·3번↑ 금지(권장) · 경쟁 스톡 실사 3편 중 조회 상위 2편 재사용 0, KOSPI-1 9번은 props broll() 되풀이가 원인(clipcount.py) — 완료: firemap-motion-designer 지시(quality-gap-1124 ②2) 11:37
+2026-11-24 12:39 · firemap-write · sejong1124 12:40 칸 발행(#479), editgate stamp에 읽기 검사 추가 · 발행 순간에야 readcheck에 막혀 칸이 밀릴 뻔함

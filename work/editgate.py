@@ -320,6 +320,11 @@ if __name__ == '__main__':
             if sb: print('안 찍음 · ' + '; '.join(sb)); sys.exit(1)
             vb = cover_check(pk)
             if vb: print('안 찍음 · 표지 관문 — ' + '; '.join(vb)); sys.exit(1)
+            # 11/24 write: sejong1124가 check_read.txt 지적 1건을 단 채 auto로 찍혀 12:24 발행 순간에야 naverpost 읽기 검사에 막혔다 — 찍을 때 본다(같은 기준).
+            rp0 = os.path.join(pk, 'check_read.txt')
+            if os.path.exists(rp0):
+                rb0 = [l for l in open(rp0, encoding='utf-8').read().splitlines() if l.strip() and not l.startswith('지적 없음')]
+                if rb0: print(f'안 찍음 · 읽기 검사 지적 {len(rb0)}건 — readcheck.py로 고친 뒤 다시: ' + rb0[0].replace('\t', ' · ')[:100]); sys.exit(1)
             # 10/22 write: kospidd1022가 15:48 auto로 찍혔는데 같은 날 끝말 '몇' 3칸이라 21:2x 발행 때서야 막혔다 — 찍을 때 본다.
             sp = os.path.join(pk, 'slot.txt')
             day = open(sp, encoding='utf-8').read().strip()[:10] if os.path.exists(sp) else ''

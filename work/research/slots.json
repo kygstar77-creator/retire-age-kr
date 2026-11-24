@@ -4850,7 +4850,7 @@
    "item": "sejong1124",
    "owner": "firemap-write",
    "gates_ok": "2026-11-22 19:58",
-   "published": null,
+   "published": "https://cafe.naver.com/firemap/479 12:38 verify OK 2215자",
    "note": "firemap-write-b 2026-11-22 19:58: 비축 sejong1124 '세종 아파트 실거래가 2021년 고점 대비 동네별 정리'(부동산, 부동산 게시판) 관문 통과 — slot.txt 11/24 12시(회의가 옮길 수 있음) · kwvol 세종아파트 7,390(후보 중 1위, 판교·광교·일산은 이미 씀) · 국토부 세종 매매 3만 3,532건 직접 계산: 같은 집 2021년 상반기 대비 -26.5%·되찾으려면 +36%·넘은 평형 6%·1년 -0.6%, 나성 -10.9%~고운 -31.8% · 경쟁 7편 같은 집 고점 비교 0편 · 이해 2차 6명·crosscheck 사실 1 반영·readcheck 0·aitell 0.0·selfcheck 0 · 제목 쉼표 0·'[지역] 아파트 시세, ~했을까?' 꼴 아님 · 발행 회차가 API 다시 받아 calc.py 대조"
   },
   {

@@ -35,6 +35,7 @@
 - [지시] **firemap-video-producer** ← firemap-meeting 21:38 범위 안 쇼츠 비축 0→2(H-6·SQ-1·KOSPI-1 클립, 11/25 23:59) — reserve.shorts의 n3s_5000(연봉)·p3s_cliff·h3s_number는 비축으로 세지 않음 · 보고 decisions/log
 - [지시] **firemap-audit** ← firemap-meeting 21:38 (verify R2) patrol.py:126-127 비축 수가 소진·범위 밖 포함 장부 길이(카페 37)를 세서 '비축 부족' 경보가 안 뜸 → 소진·철회·범위 밖 빼고 세도록 고치고 시험 1건(지금 카페 0이면 위반으로 잡힘) · 기한 11/24 20:50
 - [지시] **firemap-report** ← firemap-meeting 21:38 사이트 숫자는 props.bot=1(문자열 '1') 빼고 — 지난 회의 줄의 bot 필터('true')는 틀렸음 · 11/24 줄부터 사람 기기·bot 기기 따로
+  - 착수: firemap-report 12:33 — 사이트 숫자 사람·bot 기기 따로(props.bot='1')
 - [결정 필요 → 순돌이 채팅] ① 결과 화면(Result.jsx)·/dividend 쿠팡 칸(이미 있는 CoupangPick 재사용, 사이트 수정) ② /dividend·/health-insurance 계산 이벤트 한 줄(useCalcEvents) ③ pg_cron firemap-market-daily·fetch-market-daily 끄기(읽는 화면 0, 평문 anon 키) — 회의는 DB·사이트 안 건드림
 - 안 받은 반론: 발행 48시간 중단·고단가 키워드(세무·보험) 전환(사장님 빈도·주제 지시) · GTM/GA4(안 씀, Supabase logEvent) · 쿠팡 대가 문구 없음(CoupangPick.jsx:11·47·52에 있음) · 'UX 대참사'(사람 4기기, 홈 계산기는 시작하면 끝까지 감) · 레버리지 법 '높음' · R3 끝 소제목 '…정리' 굳음은 기준 D-19(사장님 10/19)라 유지 — 문구만 글마다 다르게(editor 표본 볼 때)
 - 확인 필요(firemap-meeting 착수 21:28 · 완료 21:38): audit 21:10 pg_cron [결정 필요]는 위 ③으로 순돌이 채팅 보고에 올림
@@ -948,3 +949,4 @@
 - 착수: firemap-write-b 10:4x 회차 10:42 — 오늘 :40 칸 중 이 회차 몫 없음(10:10 kospi1pair1124 #478 발행됨·12:40 sejong1124는 write 12:10 회차) · 범위 안 카페 비축 0(rsp·sejong 오늘 칸 배정) → 장부에 없던 11/26 07:40 칸(지수) 묶음 짓기
   - 완료: firemap-write-b 10:4x 회차 11:04 — 11/26 07:40 칸 k200etf1126 '코스피200 ETF 비교, 오래 들고 있었다면 남은 돈'(지수, ETF 게시판) 관문 통과·slots 등록 · 잘된 글 1위 ndxetf1122(27.7회/일) 틀 · kwvol 코덱스200 135,200·KODEX200 98,900·TIGER200 21,500 · 야후 일별 종가·분배 직접 계산(11/23 종가): 2011-10-20 1억 → TIGER 4억 1,597만~KODEX 4억 363만, 차이 1,234만원(세후 991만원)·해마다 폭 0.19~0.91%p·현금으로 쓰면 RISE 1위·최근 1년 분배금 TIGER 1,508 vs KODEX 845원 · 네이버 NAV 1·5·10년과 0.1%p 안 · 경쟁 8편 이 셈 0편 · 이해 2차 6명 통과·crosscheck 사실 1·말투 10 반영·editgate auto e32ce1c4 · 발행 0(이 회차 몫 시각 칸 없음) · 남은 11/26 TBD: 10:10·12:40·16:10·18:40 · **발행 회차: 야후 4종 다시 받아 calc.py·mkimg.py 다시 돌리고 바뀐 숫자 반영 뒤 재서명**
 - 완료: firemap-video-producer 정기 10:1x 11:32 — KOSPI-1 bBoh8J1Ru_4 공개 뒤 **첫 댓글 Ugz9HQ_I0a1lsmKfwnd4AaABAg**(영상에 없던 숫자: 올해 -5% 24번의 다음 거래일 14번 오름·10번 내림·이어서 -5% 4번, 11/23 마감까지 ECOS, 카페 #478 주소) · 설명란 카페 줄 대문 → https://cafe.naver.com/firemap/478 · **고정 대기: bBoh8J1Ru_4**(채팅 세션 Chrome)
+- 완료: firemap-write 12:10 회차 12:39 — 12:40 칸 sejong1124 https://cafe.naver.com/firemap/479 verify OK 2215자·사진 3 · 국토부 API 다시 받아 대조(건수만 +44, 나머지 그대로) · readcheck 지적 1 고침·재서명 aea38fa7 · 개선: editgate stamp 읽기 검사 지적 있으면 거부

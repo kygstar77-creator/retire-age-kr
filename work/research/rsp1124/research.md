@@ -54,24 +54,32 @@
 ## 대조
 | 글 값 | 원문 값 | 출처 |
 |---|---|---|
-| 5년 보유 앞선 45% · 1년 44% · 3년 45% · 10년 46% · 시작일 5,678개 | 45 · 44 · 45 · 46 · 5,678 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/RSP |
+| 5년 보유 앞선 45% · 1년 44% · 3년 45% · 10년 46% · 시작일 5,679개 | 45 · 44 · 45 · 46 · 5,679 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/RSP |
 | 10년 보유 누적 차이 중간값 10%p 뒤짐 | −10.0%p | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/SPY |
-| 23년 연평균 11.0% vs 10.9% | 11.0 · 10.9 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/RSP |
+| 23년 연평균 11.1% vs 11.1% | 11.1 · 11.1 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/RSP |
 | 22해 중 10해 · 2009 +18.3%p · 2022 +6.6%p · 2023·2024 12%p 넘게 뒤짐 | 10 · 18.3 · 6.6 · −12.5 · −12.1 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/RSP |
-| 올해 9.6% vs 1.9% | 9.6 · 1.9 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/SPY |
+| 올해 12.4% vs 6.7%(11/23) | 12.4 · 6.7 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/SPY |
 | 낙폭 2008 59.9·55.2 · 2020 39.0·33.7 · 2022 21.4·24.5 | 같음 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/RSP |
 | 회복 43·58달 · 9·6달 · 25·23달 | 같음 | S1·S7 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/SPY |
-| 상위 10개 36.9%(11/19) | 36.9 | S4 https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx |
+| 상위 10개 36.4%(11/20) | 36.4 | S4 https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx |
 | RSP 보수 0.20%·석 달마다 다시 맞춤 · 0.2% 정도씩 | 0.20% · quarterly · 505종목 | S2 https://www.invesco.com/us/en/etf/sp-500-equal-weight-rsp.html |
 | SPY 보수 0.0945% | 0.0945% | S3 https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy |
-| 488500 총보수 0.2% · 환헤지 안 함 · 1년 7.78% | 0.2 · 환헤지를 하지 아니함 · 7.78 | S5 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7488500000 |
-| TIGER 미국S&P500 총보수 0.0068% · 1년 1.78% | 0.0068 · 1.78 | S6 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7360750004 |
+| 488500 총보수 0.2% · 환헤지 안 함 · 1년 4.96%(11/24 기준) | 0.2 · 환헤지를 하지 아니함 · 4.96 | S5 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7488500000 |
+| TIGER 미국S&P500 총보수 0.0068% · 1년 -2.80%(11/24 기준) | 0.0068 · -2.80 | S6 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7360750004 |
 | 보수 약 30배 | 0.2 ÷ 0.0068 = 29.4 | S5·S6 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7360750004 |
 | 일반 계좌 분배금·매매차익 배당소득세 15.4% | 과세내용 15.4% | S5 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7488500000 |
 | TIGER 미국S&P500도 환헤지 안 함 | 환헤지를 하지 않으므로 | S6 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7360750004 |
 | 상위 8편 모두 이번 달(11월) 글 | 8/8 (11.22·1일 전·2일 전·2주 전) | toprank.txt(네이버 블로그 탭 11/22) https://blog.naver.com/annalife_/224486045247 |
 
 # 올리기 전 확인
+- 2026-11-24 15:4x firemap-write(발행 날) — 대조 출처 전부 다시 엶
+- 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/RSP · https://query1.finance.yahoo.com/v8/finance/chart/SPY · https://www.invesco.com/us/en/etf/sp-500-equal-weight-rsp.html · https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy · https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7488500000 · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7360750004 · https://blog.naver.com/annalife_/224486045247 (모두 11/24)
+- 기준일: 2026-11-23 종가(미국) · 국내 기준가격 2026.11.24 · SPY 보유 종목 2026-11-20
+- 바뀐 것: 기준일 11/20→11/23(SPY 11/23 하루 +4.7%) · 상장 뒤 연평균 RSP 11.0→11.1%·SPY 10.9→11.1% · 올해 RSP 9.6→12.4%·SPY 1.9→6.7% · 1년 보유 시작일 5,678→5,679(비율 44% 그대로) · 국내 1년 488500 7.78→4.96%·360750 1.78→-2.80% · SPY 상위 10개 36.9→36.4%(11/20자) · 보수·리밸런싱·하락장·연도별·보유 기간 비율 그대로
+- 새로 찾은 것: 23년 통째 연평균이 11/23 반등으로 둘 다 11.1% — 누적은 SPY +1105%가 RSP +1098%를 다시 앞섬(11/20엔 RSP 앞섬) · 거래일마다 사서 1~10년 보유 시 동일가중 앞선 비율 44~46% · 2008년 회복 43달 vs 58달
+- 조사 뒤 공표: data/release_calendar.json — 가격 매일, RSP·SPY 12월 분배(12월 셋째 주 전후) · 488500 분기 리밸런싱 12월
+
+# 올리기 전 확인(11/22 조사 날 기록)
 - 2026-11-22 13:5x firemap-write-b(조사·작성 날, 비축 — 발행 회차가 야후·운용사 페이지 다시 받아 그날 종가·기준가격으로 갱신)
 - 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/RSP · https://query1.finance.yahoo.com/v8/finance/chart/SPY · https://www.invesco.com/us/en/etf/sp-500-equal-weight-rsp.html · https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy · https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7488500000 · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7360750004 · https://blog.naver.com/annalife_/224486045247 (모두 11/22)
 - 기준일: 2026-11-20 종가(미국) · 국내 기준가격 2026.11.20 · SPY 보유 종목 2026-11-19

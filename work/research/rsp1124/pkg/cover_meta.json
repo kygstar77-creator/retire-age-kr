@@ -1,7 +1,7 @@
 {
  "type": "chart",
- "source": "야후 파이낸스 chart API RSP·SPY 일별 수정 종가(11/22 받음)로 보유 기간별 앞선 비율 직접 계산, calc_out.txt",
- "made_at": "2026-11-22",
+ "source": "야후 파이낸스 chart API RSP·SPY 일별 수정 종가(11/24 받음)로 보유 기간별 앞선 비율 직접 계산, calc_out.txt",
+ "made_at": "2026-11-24",
  "by": "research/rsp1124/mkimg.py",
  "out": "img/00.png",
  "topic": "S&P500 동일가중",

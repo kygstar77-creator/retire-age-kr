@@ -10,7 +10,7 @@ fm.fontManager.addfont(F + r'\pd500.ttf'); fm.fontManager.addfont(F + r'\pd700.t
 plt.rcParams['font.family'] = fm.FontProperties(fname=F + r'\pd500.ttf').get_name()
 def Bs(n): return fm.FontProperties(fname=F + r'\pd700.ttf', size=n)
 INK, SUBC, ORG, NAVY, GRY = '#111827', '#6B7280', '#EA580C', '#1E3A5F', '#94A3B8'
-SRC = '야후 파이낸스 일별 수정 종가 RSP·SPY(11/22 받음) · 세전·분배금 재투자·달러 · 파이어맵 계산'
+SRC = '야후 파이낸스 일별 수정 종가 RSP·SPY(11/24 받음) · 세전·분배금 재투자·달러 · 파이어맵 계산'
 TOPIC_PX, NUM_PX = 54, 40
 BG = '#4A1D2E'
 # 00 표지
@@ -25,10 +25,10 @@ for i, v in enumerate(pct):
     ax.text(i, v - 2, f'{v}%', ha='center', va='top', fontproperties=Bs(NUM_PX), color='white')
     ax.text(i, -2, lab[i] + ' 보유', ha='center', va='top', fontproperties=Bs(20), color='white')
 ax.set_ylim(0, 62); ax.set_xlim(-0.6, 3.6); ax.axis('off')
-fig.text(0.07, 0.045, '2003.5~2026.11.20 거래일마다 시작 · 분배금 재투자 · 세전', fontsize=17, color='#FED7AA')
+fig.text(0.07, 0.045, '2003.5~2026.11.23 거래일마다 시작 · 분배금 재투자 · 세전', fontsize=17, color='#FED7AA')
 fig.savefig('pkg/img/00.png', dpi=100, facecolor=fig.get_facecolor()); plt.close(fig)
-json.dump({'type': 'chart', 'source': '야후 파이낸스 chart API RSP·SPY 일별 수정 종가(11/22 받음)로 보유 기간별 앞선 비율 직접 계산, calc_out.txt',
-           'made_at': '2026-11-22', 'by': 'research/rsp1124/mkimg.py', 'out': 'img/00.png', 'topic': 'S&P500 동일가중', 'num': '44%·45%·45%·46%',
+json.dump({'type': 'chart', 'source': '야후 파이낸스 chart API RSP·SPY 일별 수정 종가(11/24 받음)로 보유 기간별 앞선 비율 직접 계산, calc_out.txt',
+           'made_at': '2026-11-24', 'by': 'research/rsp1124/mkimg.py', 'out': 'img/00.png', 'topic': 'S&P500 동일가중', 'num': '44%·45%·45%·46%',
            'topic_px': TOPIC_PX, 'num_px': NUM_PX, 'follows': '경쟁 5 read_sijang/224473157319 SPY·VOO vs RSP 비교 표지(표·숫자) + 경쟁 3 neighbormrbear 비교 인포그래픽'},
           open('pkg/cover_meta.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 def frame(fig, title, sub):

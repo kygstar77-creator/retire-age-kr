@@ -10,7 +10,7 @@ import os, sys, re
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, '..', 'K-1-shots'))
 from k1boards import (W, H, INK, GREY, OR, FADE, KRAFT, F_B, F_M, F_X, font, canvas, T, TF, source, obj,
-                      hand_ellipse, hand_under, hand_check, hand_arrow, hatch_bar, bars)
+                      hand_ellipse, hand_under, hand_check, hand_arrow, hatch_bar, bars, linechart)
 from PIL import Image, ImageDraw, ImageFilter
 
 sys.stdout.reconfigure(encoding='utf-8')
@@ -219,6 +219,126 @@ def sq1_summary(im):        # 정리 표
     T(d, (cx[0], y), '15년 SCHD 세후', 54, INK, F_B, 'rm')
     T(d, ((cx[1] + cx[3]) // 2, y), f'직접 {TAX15[0]:.1f}억 · 국내 상장 {TAX15[1]:.1f}억', 70, INK, F_X)
     source(d, '야후 파이낸스·Schwab·Invesco·한국은행·법제처 · 계산·비교 자료이며 매수·매도 권유가 아닙니다')
+
+# ── 11/24 남은 4장: 월말 시리즈는 calc_mix·calc_dca·calc_krw를 그 폴더에서 불러 같은 식으로 다시 돌리고, 끝값을 calc 출력과 assert ──
+def _calcs():
+    import io, contextlib, importlib
+    cwd = os.getcwd(); os.chdir(EP); sys.path.insert(0, EP)
+    try:
+        with open(os.devnull, 'w', encoding='utf-8') as _nul, contextlib.redirect_stdout(_nul):
+            cm = importlib.import_module('calc_mix'); cd = importlib.import_module('calc_dca'); ck = importlib.import_module('calc_krw')
+    finally:
+        os.chdir(cwd)
+    return cm, cd, ck
+CM, CD, CK = _calcs()
+
+def path(w, start=(2011, 10), end=(2026, 10)):
+    """calc_mix.run과 같은 걸음(월말·매년 10월 말 비율 맞춤) — 달마다 평가액(1억=1.0)."""
+    ms = [m for m in CM.months if start <= m <= end]; a, b = w, 1 - w; out = [(ms[0], 1.0)]
+    for p, m in zip(ms, ms[1:]):
+        a *= CM.S[m] / CM.S[p]; b *= CM.Q[m] / CM.Q[p]; v = a + b; out.append((m, v))
+        if m[1] == 10: a, b = v * w, v * (1 - w)
+    assert abs(out[-1][1] - CM.run(w, start, end)[0]) < 1e-9
+    return out
+
+def ddown(vals):
+    pk = vals[0]; r = []
+    for v in vals: pk = max(pk, v); r.append(v / pk - 1)
+    return r
+
+@board
+def sq1_line5(im):          # 15년 선 셋(왼쪽 작게) → 마지막 5년 잘라 크게(오른쪽) · 반반과 나스닥100만 거의 겹침
+    d = ImageDraw.Draw(im); TF(d, (W // 2, 95), '5년 전에 넣었다면', 100, INK, F_X)
+    L = {w: path(w) for w in (1.0, 0.5, 0.0)}
+    assert [round(L[w][-1][1], 2) for w in (1.0, 0.5, 0.0)] == [MIX[100]['end'], MIX[50]['end'], MIX[0]['end']]
+    R = {w: path(w, (2021, 10)) for w in (1.0, 0.5, 0.0)}
+    assert [round(R[w][-1][1], 2) for w in (1.0, 0.5, 0.0)] == [R5[100], R5[50], R5[0]]
+    gap_man = round((R[0.0][-1][1] - R[0.5][-1][1]) * 1e4); assert gap_man in range(255, 272), gap_man   # 자막 '약 263만원'
+    bx = (170, 300, 720, 760)
+    ser = [[v for _, v in L[w]] for w in (1.0, 0.5, 0.0)]
+    n = len(ser[0]); i5 = [m for m, _ in L[1.0]].index((2021, 10))
+    X, Y = linechart(im, ser, bx, 0, 16, [KRAFT, INK, GREY], [4, 5, 4], [(0, '2011'), (n - 1, '2026')], yfmt='{:.0f}억', yticks=(1, 8, 16))
+    d = ImageDraw.Draw(im)
+    xx = X(i5); yy = bx[1]
+    while yy < bx[3]: d.line([(xx, yy), (xx, min(yy + 20, bx[3]))], fill=OR, width=4); yy += 34
+    T(d, ((X(i5) + bx[2]) // 2, bx[1] - 34), '마지막 5년', 40, OR, F_B)
+    T(d, ((bx[0] + bx[2]) // 2, 840), '15년', 56, GREY, F_B)
+    hand_arrow(d, (bx[2] + 50, 530), (bx[2] + 190, 530), INK, 7)
+    bx2 = (960, 260, 1420, 860)
+    ser2 = [[v for _, v in R[w]] for w in (1.0, 0.5, 0.0)]; n2 = len(ser2[0])
+    X2, Y2 = linechart(im, ser2, bx2, 0.6, 2.0, [KRAFT, OR, INK], [6, 9, 6], [(0, '2021.10'), (n2 - 1, '2026.10')], yfmt='{:.0f}억', yticks=(1, 2))
+    d = ImageDraw.Draw(im)
+    e1, e5, e0 = R[1.0][-1][1], R[0.5][-1][1], R[0.0][-1][1]
+    yl = Y2(e5)   # 이름 셋은 끝점 옆에 70px 간격으로(겹침 방지) — 위 나스닥100만 · 가운데 반반 · 아래 SCHD만
+    for (v, nm, col, f, sz), yy in zip(((e0, NAMES[2], INK, F_B, 44), (e5, NAMES[1], OR, F_X, 52), (e1, NAMES[0], INK, F_B, 44)), (yl - 80, yl, yl + 80)):
+        T(d, (bx2[2] + 30, yy), f'{nm} {v:.2f}억', sz, col, f, 'lm')
+    T(d, ((bx2[0] + bx2[2]) // 2 + 100, 960), '반반과 나스닥100만, 차이 약 263만원', 60, INK, F_X)
+    source(d, '2011-10월 말(왼쪽)·2021-10월 말(오른쪽) → 2026-10월 말 · 1억 · 달러 기준 · 분배 재투자 · 매년 10월 말 비율 맞춤 · 야후 파이낸스 · calc_mix')
+
+@board
+def sq1_dca(im):            # 매달 100만원 × 180번 → 끝값 셋
+    d = ImageDraw.Draw(im); TF(d, (W // 2, 95), '매달 100만원씩 15년 (180번)', 92, INK, F_X)
+    res = {w: CD.dca(w, (2011, 10)) for w in (1.0, 0.5, 0.0)}
+    assert all(abs(res[w][1] - 180) < 1e-9 for w in res)
+    v = {w: round(res[w][0] / 100, 2) for w in res}; assert [v[1.0], v[0.5], v[0.0]] == [5.34, 7.14, 8.81], v
+    import random; rnd = random.Random(180)
+    x0, y0 = 316, 205
+    for k in range(180):
+        yr, mo = divmod(k, 12); x = x0 + yr * 86 + mo * 6.2; j = rnd.uniform(-2, 2)
+        d.line([(x + j, y0), (x - j, y0 + 44)], fill=GREY, width=3)
+    T(d, (W // 2, 300), '넣은 돈 모두 1억 8천만원', 50, GREY, F_B)
+    bars(im, [('넣은 돈', 1.8, FADE, '1.8억', GREY), (NAMES[0], v[1.0], KRAFT, eok(v[1.0]), INK),
+              (NAMES[1], v[0.5], KRAFT, eok(v[0.5]), INK), (NAMES[2], v[0.0], OR, eok(v[0.0]), OR)],
+         base_y=880, top_y=470, bw=220, gap=170, nsize=96, seed=101, vmax=9.0)
+    source(d, '매달 말 100만원 · 2011-10월 말 → 2026-10월 말 평가 · 환율 고정 · 세금 뺌 안 함 · 야후 파이낸스 수정 종가 · calc_dca')
+
+@board
+def sq1_fx(im):             # 환율 선 하나 — 처음 1,105원 · 끝 1,335원
+    d = ImageDraw.Draw(im); TF(d, (W // 2, 100), '원/달러 환율 15년', 100, INK, F_X)
+    ms = [m for m in CM.months if (2011, 10) <= m <= (2026, 10)]
+    fx = [CK.me[m][1] for m in ms]
+    assert (CK.me[ms[0]][0], round(fx[0], 1)) == ('20111031', 1104.5) and (CK.me[ms[-1]][0], round(fx[-1], 1)) == ('20261030', 1335.3)
+    up = fx[-1] / fx[0] - 1; assert 0.20 < up < 0.21
+    bx = (470, 250, 1450, 840); n = len(fx)
+    xl = [(i, f'{m[0]}') for i, m in enumerate(ms) if m[1] == 10 and m[0] in (2011, 2016, 2021, 2026)]
+    X, Y = linechart(im, [fx], bx, 1000, 1500, [INK], [6], xl, yfmt='{:,.0f}', yticks=())
+    d = ImageDraw.Draw(im)
+    r5 = lambda v: f'{int(v + 0.5):,}원'   # 1,104.5 → 1,105원(대본 97행 '1,105원' — 반올림, 은행가 반올림 아님)
+    assert r5(fx[0]) == '1,105원' and r5(fx[-1]) == '1,335원'
+    for i, col, lab, anc, dx in ((0, INK, r5(fx[0]), 'rm', -36), (n - 1, OR, r5(fx[-1]), 'lm', 36)):
+        x, y = X(i), Y(fx[i]); d.ellipse((x - 16, y - 16, x + 16, y + 16), fill=col)
+        T(d, (x + dx, y), lab, 96, col, F_X, anc)
+    xe, ye = X(n - 1), Y(fx[-1]); hand_ellipse(d, (xe + 10, ye - 80, xe + 450, ye + 80), seed=111)
+    T(d, (W // 2, 960), '15년 사이 20% 넘게 올랐다', 64, INK, F_X)
+    source(d, '월말 원/달러 매매기준율 · 2011-10-31 1,104.5원 → 2026-10-30 1,335.3원 · 한국은행 ECOS 731Y001')
+
+@board
+def sq1_valley2(im):        # 반반 골짜기 둘 — 달러로 센 낙폭 / 원화로 센 낙폭
+    d = ImageDraw.Draw(im); TF(d, (W // 2, 95), '반반, 가장 크게 빠진 폭', 96, INK, F_X)
+    P = path(0.5); ms = [m for m, _ in P]; usd = [v for _, v in P]
+    fx0 = CK.me[ms[0]][1]; krw = [v * CK.me[m][1] / fx0 for m, v in P]
+    assert round(krw[-1], 2) == KRW15[50]
+    du, dk = ddown(usd), ddown(krw)
+    iu, ik = min(range(len(du)), key=du.__getitem__), min(range(len(dk)), key=dk.__getitem__)
+    assert (round(du[iu] * 100, 1), ms[iu]) == (-24.0, (2022, 9)), (du[iu], ms[iu])
+    assert (round(dk[ik] * 100, 1), ms[ik]) == (-13.6, (2020, 3)), (dk[ik], ms[ik])
+    assert '반반 −13.6%(2020-01→03)' in _sc and '−24.0%' in _sc
+    n = len(ms); xl = [(i, str(m[0])) for i, m in enumerate(ms) if m[1] == 10 and m[0] in (2011, 2026)]
+    for k, (bx, dd, i0, col, head, lab) in enumerate((
+            ((170, 300, 890, 760), du, iu, KRAFT, '달러로 세면', '−24%'),
+            ((1080, 300, 1800, 760), dk, ik, OR, '원화로 세면', '−14%'))):
+        X, Y = linechart(im, [[x * 100 for x in dd]], bx, -30, 0, [INK], [4], xl, yfmt='{:.0f}%', yticks=(-30, -15, 0))
+        poly = [(X(i), Y(v * 100)) for i, v in enumerate(dd)] + [(X(n - 1), Y(0)), (X(0), Y(0))]
+        ov = Image.new('RGBA', (W, H), (0, 0, 0, 0)); ImageDraw.Draw(ov).polygon(poly, fill=col + (150,))
+        im.paste(ov, (0, 0), ov); d = ImageDraw.Draw(im)
+        d.line([(X(i), Y(v * 100)) for i, v in enumerate(dd)], fill=INK, width=4, joint='curve')
+        d.line([(bx[0], Y(0)), (bx[2], Y(0))], fill=INK, width=4)
+        T(d, ((bx[0] + bx[2]) // 2, 235), head, 64, INK, F_X)
+        x, y = X(i0), Y(dd[i0] * 100)
+        T(d, (x, 860), lab, 110, OR if col == OR else INK, F_X)
+        T(d, (x, 950), f'{ms[i0][0]}년 {ms[i0][1]}월', 44, GREY, F_B)
+        hand_arrow(d, (x, 800), (x, y + 16), OR if col == OR else INK, 5)
+    source(d, '반반(SCHD 50%·QQQ 50%) 2011-10월 말 → 2026-10월 말 · 월말 평가액 × 월말 매매기준율(한국은행 ECOS) · 야후 파이낸스 · calc_krw')
 
 def main(names):
     os.makedirs(OUT, exist_ok=True)

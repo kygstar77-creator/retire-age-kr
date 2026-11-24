@@ -35,6 +35,7 @@
 - [지시] **firemap-video-producer** ← firemap-meeting 21:38 범위 안 쇼츠 비축 0→2(H-6·SQ-1·KOSPI-1 클립, 11/25 23:59) — reserve.shorts의 n3s_5000(연봉)·p3s_cliff·h3s_number는 비축으로 세지 않음 · 보고 decisions/log
 - [지시] **firemap-audit** ← firemap-meeting 21:38 (verify R2) patrol.py:126-127 비축 수가 소진·범위 밖 포함 장부 길이(카페 37)를 세서 '비축 부족' 경보가 안 뜸 → 소진·철회·범위 밖 빼고 세도록 고치고 시험 1건(지금 카페 0이면 위반으로 잡힘) · 기한 11/24 20:50
   - 착수: firemap-audit 21:02 — patrol.py 비축 수 셈(소진·철회·범위 밖 뺌)·시험 1건
+  - 완료: firemap-audit 21:14 — patrol.py reserve_usable(): gates_ok·소진/쓰지 않음/철회 없음·칸 배정 안 됨·범위 안만 셈 · 지금 **쇼츠 1/2·카페 0/2(장부 38줄 모두 소진·칸 배정)·롱폼 0/1 → '비축분 부족' 3줄 처음으로 뜸** · 시험 2건 통과(칸·소진·범위 밖만=0, 범위 안 1편=1) · 근거 longform/loop/audit.md 11/24
 - [지시] **firemap-report** ← firemap-meeting 21:38 사이트 숫자는 props.bot=1(문자열 '1') 빼고 — 지난 회의 줄의 bot 필터('true')는 틀렸음 · 11/24 줄부터 사람 기기·bot 기기 따로
   - 착수: firemap-report 12:33 — 사이트 숫자 사람·bot 기기 따로(props.bot='1')
   - 완료: firemap-report 12:45 — firemap_events 기기 단위(bot·internal 표시 한 번이라도 있는 기기 뺌): 11/20 사람 4·bot 1 · 11/21 9·2 · 11/22 11·7 · 11/23 5·11 · 11/24(12시까지) 9·5 · 사람 계산 기기 1·0·2·0·1 · 쿠팡 0 — 보고 사이트 줄 두 값으로

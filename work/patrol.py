@@ -5,6 +5,24 @@ import os, re, glob, json, datetime, subprocess, sys
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__)); R = os.path.join(HERE, 'research')
 now = datetime.datetime.now()
+
+# 비축으로 셀 수 있는 편: 관문 통과(gates_ok) · 최근 상태에 소진/쓰지 않음/철회/비축 아님 없음 · 어떤 칸(slots)에도 안 들어감 ·
+# 범위 안(11/19 사장님 통계 결정: 배당·지수·부동산만 — 연봉 축·'범위 밖' 표시는 뺌).
+_RES_GONE = ('소진', '쓰지 않음', '철회', '비축 아님', '쓰지 말')
+_RES_OUT = ('범위 밖', '연봉 축')
+_RES_IN = ('배당', '지수', '부동산', '아파트', 'ETF', '코스피', '나스닥', 'S&P', '다우', '리츠', 'KOSPI')
+def reserve_usable(S, k):
+    used = {x.get('item') for x in S.get('slots', []) if not x.get('skip')}
+    out = []
+    for x in S.get('reserve', {}).get(k, []):
+        if not isinstance(x, dict) or not x.get('gates_ok'): continue
+        st = str(x.get('status', '')); head = st.split('|')[0][:60]
+        if any(w in head for w in _RES_GONE) or x.get('item') in used: continue
+        scope = ' '.join(str(x.get(f, '')) for f in ('genre', 'title', 'status'))
+        if any(w in scope for w in _RES_OUT): continue
+        if k == 'cafe' and not any(w in scope for w in _RES_IN): continue
+        out.append(x.get('item'))
+    return out
 bad = []
 
 # 1. 카페 대기 묶음(naverpost pending = 아직 안 나간 것만): 보류 안 걸린 것은 경쟁 조사·편집 통과가 있어야 한다
@@ -123,8 +141,10 @@ try:
         if x['kind'] == 'long' and not x.get('skip'): _ld[x['at'][:10]] = _ld.get(x['at'][:10], 0) + 1
     for d_, n_ in _ld.items():
         if n_ > 1: bad.append(f'롱폼 하루 1편 초과: {d_} {n_}칸')
+    # 11/24 회의(verify R2): 장부 길이(카페 38)를 세서 '비축 부족'이 한 번도 안 떴다. 쓸 수 있는 편만 센다.
     for k, n in S.get('reserve_min', {}).items():
-        if len(S.get('reserve', {}).get(k, [])) < n: bad.append(f'비축분 부족: {k} {len(S["reserve"].get(k, []))}/{n} — 관문 통과한 예비 편')
+        ok_ = reserve_usable(S, k)
+        if len(ok_) < n: bad.append(f'비축분 부족: {k} {len(ok_)}/{n} (장부 {len(S.get("reserve", {}).get(k, []))}줄 중 소진·철회·칸 배정·범위 밖·관문 전 뺌) — 관문 통과한 범위 안 예비 편')
     for l in SLOT_SOON: print('곧 관문 기한:', l)
 except Exception as e:
     bad.append(f'slots.json 못 읽음: {e}')

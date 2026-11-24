@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 chart API SCHD 일별 수정 종가(배당 재투자·분할 반영) 2011-10-20~2026-11-23, 거래일마다 산 경우 보유 기간별 손해 비율 — calc_out.txt 파이어맵 직접 계산",
+ "made_at": "2026-11-24",
+ "by": "research/schdhold1126/mkimg.py",
+ "out": "img/00.png",
+ "topic": "SCHD 오래 들면",
+ "num": "4년부터 손해 0번",
+ "topic_px": 58,
+ "num_px": 44,
+ "follows": "우리 잘된 글 spx10y1122(15.9회/일) 표지 꼴 — 흰 바탕·검은 큰 제목·빨간 숫자 한 줄·기간별 막대"
+}

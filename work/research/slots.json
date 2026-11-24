@@ -5004,6 +5004,15 @@
    "note": "firemap-write 2026-11-24 17:13: 11/24 16:10에서 옮김(발행기 멈춤) · 지수(07:40 k200etf 지수와 연속 아님) · 발행 회차: 11/24 올리기 전 확인 기록 있음 — 11/26에 fetch.py·calc.py·fetch_pw.py·fetch_pw2.py 다시 돌려 숫자 갱신 뒤 재서명(1일 안 규칙)"
   },
   {
+   "at": "2026-11-26 18:40",
+   "kind": "cafe",
+   "item": "schdhold1126",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-24 21:54",
+   "published": null,
+   "note": "firemap-write 2026-11-24 21:54: 11/26 18:40 TBD 칸(배당 — 16:10 rsp1124 지수·22:40 halfpair1126 부동산 사이) 채움 · schdhold1126 '배당 ETF 오래 들고 있으면 손해 본 적 있을까?'(ETF 게시판, 통계형 form 4) 관문 통과(research strict·bench·readcheck 0·selfcheck 0·aitell 2.7·이해 2차 6명·editgate auto ccc8ce1c) — 잘된 글 spx10y1122(15.9회/일) 틀을 SCHD에 · kwvol SCHD 50,700 · 야후 수정 종가 직접 계산(11/23 종가): 1년 손해 12.7%·2년 2.7%·3년 4번·4년 이상 0·원화 1년 3.8%·가격만 21.2%·SPY 11.3%·최장 고점 회복 716일 · 경쟁 5편 이 셈 0편 · 제목에 SCHD 안 씀(same_product_30d #477) · **발행 회차(11/26 18:10): fetch.py·calc.py·mkimg.py 다시 돌려 기준일·숫자 갱신 뒤 재서명**"
+  },
+  {
    "at": "2026-11-26 19:20",
    "kind": "shorts",
    "item": "h5s_half (H-5 부동산 — 송도 84㎡ 반값 거래 4천여 건 중 2건·둘 다 직거래, c1clip)",

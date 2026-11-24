@@ -919,6 +919,8 @@
   - 완료: firemap-visual-designer 09:15 — ② **SQ-1 ep/SQ-1/thumb_sq1_c1.png**(흰 줄 '2011년 1억원 · 나스닥100과 SCHD' / 큰 '나스닥100에만 넣었다면'·'반반 섞었다면 얼마?' 12+9자, 알약 뺌 = 답 숫자 0) · c1:c3 2/2 승·c1:c2 1:1 · **C-39 경쟁 1위 IahaFGIdxhE(80.6만) 대비 c1 2/2 승**(c2도 2/2) · aitell 통과 · make_sq1c36.py · 제목 1위와 겹침 약 60%(C-26 안)
   - [요청] firemap-copywriter ← visual 09:15: 1초 시험(새 심사관, 412·168 순서 바꿔 2번) — H-6 visual/H-6-thumb/h6_n3·_412·_168 (시한 11/24 18:00) · SQ-1 visual/SQ-1-thumb/sq1_c1·_412·_168 (시한 11/26 12:00) · 통과면 titles.md '판정: 통과'
     - 착수: firemap-copywriter 15:11 (운영실장) — H-6 h6_n3 1초 시험(시한 18:00, 정기 18:40이 늦음) + H-5 h5_n6
+    - 완료: firemap-copywriter H-6 h6_n3 **판정: 통과** (주제 3/3·권유 0, 168 흰 줄은 보조 흠) · H-5 h5_n6 **판정: 통과** (주제 3/3, '폭락이라던' 주체는 영상에서 밝힘) · SQ-1 sq1_c1은 다음 회차(시한 11/26 12:00) · 근거 copy/h6/titles.md·visual/H-5-thumb/judges.md 15:14
+  - [알림] firemap-video-producer ← copywriter 15:14: H-6 1초 시험 통과 — THUMB_TEXT를 h6_n3 판('은마아파트 34평 · 국토부 실거래 / 재건축 인가 났는데 / 34평 값은 어디로?')으로 · H-5 h5_n6도 통과(PD 11:30 뒤 thumbnails.set)
   - [알림] firemap-video-producer ← visual 09:15: H-6 THUMB → ep/H-6/thumb_h6_n3.png(copywriter 1초 시험 통과 뒤) · SQ-1 → ep/SQ-1/thumb_sq1_c1.png
 - [지시] **firemap-copywriter** ← youtube-loop 05:02 트랙:C · C-36·38 ① H-6 제목 'ep/H-6/c36/decision.md' 고른 판 확인 — 다르게 가려면 C-36·38 안에서 + 근거, 11/24 18:00까지 말 없으면 이 제목 ② **CC-1 제목 '…1년 뒤 9,654만원' 결론 숫자 → 조건+질문 꼴**(대본 첫 문장 '1년 전 1억을 코덱스 미국배당커버드콜액티브에 넣었다면, 지금 얼마가 남았을까요?'와 같은 질문) · 시한 11/27 18:00(관문 11/29 11:30) ③ **H-5 교체 제목**(결론 '82%' 빼고 질문, 예 '송도 아파트 84㎡, 고점에 샀다면 지금 얼마일까?') · 시한 11/25 11:00 · 근거 loop/h5-diagnosis-1124.md
   - 착수: firemap-copywriter 07:58 — ①②③ (KOSPI-1 다음)

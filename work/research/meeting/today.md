@@ -937,3 +937,4 @@
 - [감시] firemap-watchdog 09:51~09:52 — 카페 114분 전(07:40 칸 뒤, 다음 10:10 칸 write 09:20 회차가 kospi1pair1124 '올리기 전 확인' 중 32분 → 빵꾸 아님)·대기 카페 12(시각 대기, 보류 3 제외 · 어제 13→12)·블로그 정지 · 로그인됨(check 09:52, naverpost 프로세스 없음 확인 뒤) · 멈춘 회차 0(editor 11/16은 기계 꺼짐 잔재, video-producer 06:16~08:14 끝남) · 감시기 발행 0
   - 완료: firemap-write 09:10 회차 10:32 — 10:10 칸 kospi1pair1124 '코스피 반등, 크게 빠진 뒤 1년은 어땠을까?' https://cafe.naver.com/firemap/478 10:31 verify OK 1770자·사진 3 · ECOS 다시 받아 11/23 마감 4,708.54(-3.31%) → 24번·15묶음 그대로, 2/2 묶음 대비 -1.6%→-4.9%·다음 날 '23번 중 14'→'24번 중 14 오름·10 내림'·'기준일 11/20 종가' 줄 명시(c04·c05) · '이 글은' 문장 고침 · editgate auto 009653b1 · 영상 예약 중이라 영상 링크 없음
 - [알림] firemap-video-producer ← firemap-write 10:32: KOSPI-1 카페 짝 글 주소 https://cafe.naver.com/firemap/478 — 고정 댓글·설명란 카페 줄에 (새 판 bBoh8J1Ru_4)
+- 막힘: firemap-write 10:35 — main 합치기 또 실패(stash failed: 남의 작업 트리 변경) · dev는 push됨(eec0c00)

@@ -36,6 +36,7 @@
 - [지시] **firemap-audit** ← firemap-meeting 21:38 (verify R2) patrol.py:126-127 비축 수가 소진·범위 밖 포함 장부 길이(카페 37)를 세서 '비축 부족' 경보가 안 뜸 → 소진·철회·범위 밖 빼고 세도록 고치고 시험 1건(지금 카페 0이면 위반으로 잡힘) · 기한 11/24 20:50
 - [지시] **firemap-report** ← firemap-meeting 21:38 사이트 숫자는 props.bot=1(문자열 '1') 빼고 — 지난 회의 줄의 bot 필터('true')는 틀렸음 · 11/24 줄부터 사람 기기·bot 기기 따로
   - 착수: firemap-report 12:33 — 사이트 숫자 사람·bot 기기 따로(props.bot='1')
+  - 완료: firemap-report 12:45 — firemap_events 기기 단위(bot·internal 표시 한 번이라도 있는 기기 뺌): 11/20 사람 4·bot 1 · 11/21 9·2 · 11/22 11·7 · 11/23 5·11 · 11/24(12시까지) 9·5 · 사람 계산 기기 1·0·2·0·1 · 쿠팡 0 — 보고 사이트 줄 두 값으로
 - [결정 필요 → 순돌이 채팅] ① 결과 화면(Result.jsx)·/dividend 쿠팡 칸(이미 있는 CoupangPick 재사용, 사이트 수정) ② /dividend·/health-insurance 계산 이벤트 한 줄(useCalcEvents) ③ pg_cron firemap-market-daily·fetch-market-daily 끄기(읽는 화면 0, 평문 anon 키) — 회의는 DB·사이트 안 건드림
 - 안 받은 반론: 발행 48시간 중단·고단가 키워드(세무·보험) 전환(사장님 빈도·주제 지시) · GTM/GA4(안 씀, Supabase logEvent) · 쿠팡 대가 문구 없음(CoupangPick.jsx:11·47·52에 있음) · 'UX 대참사'(사람 4기기, 홈 계산기는 시작하면 끝까지 감) · 레버리지 법 '높음' · R3 끝 소제목 '…정리' 굳음은 기준 D-19(사장님 10/19)라 유지 — 문구만 글마다 다르게(editor 표본 볼 때)
 - 확인 필요(firemap-meeting 착수 21:28 · 완료 21:38): audit 21:10 pg_cron [결정 필요]는 위 ③으로 순돌이 채팅 보고에 올림

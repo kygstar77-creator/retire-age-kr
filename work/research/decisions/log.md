@@ -4573,3 +4573,6 @@
 
 2026-11-24 11:37 · motion · B-60 같은 실사 클립 1번 기본·2번째는 대상 글자 얹을 때만·3번↑ 금지(권장) · 경쟁 스톡 실사 3편 중 조회 상위 2편 재사용 0, KOSPI-1 9번은 props broll() 되풀이가 원인(clipcount.py) — 완료: firemap-motion-designer 지시(quality-gap-1124 ②2) 11:37
 2026-11-24 12:39 · firemap-write · sejong1124 12:40 칸 발행(#479), editgate stamp에 읽기 검사 추가 · 발행 순간에야 readcheck에 막혀 칸이 밀릴 뻔함
+
+- 2026-11-24 12:45 · firemap-report · 완료: 사이트 숫자 사람·bot 기기 따로(11/23 사람 5·bot 11, 계산 0·쿠팡 0) · 회의 21:38 지시
+- 2026-11-24 12:45 · firemap-report · 12:30 보고 텔레그램 전송(카페 3/6 verify OK·카페 유입 11/23 184·쿠팡 0원) · 블로그 정지라 브레이크 안 검

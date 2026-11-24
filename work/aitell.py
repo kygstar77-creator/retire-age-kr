@@ -58,6 +58,9 @@ def skip_blocks(text):
     return '\n'.join(out), k
 
 
+A97_SHAPE = re.compile(r'(?<![가-힣])(왜|이유|사정)[^\n.!]{0,40}?(자료|원문|기록|칸|공시)[에엔은는이가도]?\s?(?:[가-힣]{1,4}\s)?(없|나오지\s?않|나와\s?있지\s?않|적혀\s?있지\s?않)')
+
+
 def score(text, skip_list=False):
     """점수와 걸린 곳 목록. 점수는 1,000자당(짧은 글은 원점수). skip_list면 목록·법 문구 줄은 끝맺음 반복에서 뺀다."""
     if skip_list:
@@ -76,6 +79,10 @@ def score(text, skip_list=False):
     for w in KO_EXPLAIN:
         c = text.count(w)
         if c: pts += 2 * c; hits.append(f'설명조 "{w}" ×{c}')
+    # A97·A108 꼴(11/25 editor, 근거 cardshorts/shorts-gap-1125.md): '왜·이유·사정'을 꺼내고 '자료·원문·칸에 없다'로 닫기.
+    # 문구 사전('이유가 적혀 있지 않')만으로는 h2s_jamsil·h2s_banpo·h5s_half 세 줄이 0.0이었다. 사전 말과 겹치는 곳은 세지 않는다.
+    a97 = [m.group(0) for m in A97_SHAPE.finditer(text) if '적혀 있지 않' not in m.group(0)]
+    if a97: pts += 3 * len(a97); hits.append(f'A97 꼴(왜→자료에 없음) ×{len(a97)} — "{a97[0][-40:]}"')
     # 문단 맺음 틀: 문단 마지막 문장이 같은 맺음 말로 끝나는 게 두 번 넘으면
     paras = [p for p in re.split(r'\n\s*\n', text) if p.strip()]
     closes = collections.Counter()

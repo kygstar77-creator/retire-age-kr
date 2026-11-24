@@ -67,3 +67,10 @@ assert aitell.scope_check(d2)[0] == '안쪽' and aitell.main(['scope', d2]) == 0
 open(os.path.join(d2, 'title.txt'), 'w', encoding='utf-8').write('금 1천만원 길별 결과')
 assert aitell.scope_check(d2)[0] == '경계' and aitell.scope_check(d2)[1]
 print('scope OK')
+# A97·A108 꼴(11/25 editor): '왜·이유·사정' 뒤 '자료·원문·칸에 없다'로 닫기 — 쇼츠 세 줄이 문구 사전으로는 0.0이었다
+for t in ['그럼 왜일까요? 값이 왜 이렇게 매겨졌는지 적은 정부 원문은 없습니다.',
+          '층과 날짜는 있지만, 그 값을 낸 사정은 신고 자료에 칸이 없죠.',
+          '직거래가 왜 쌌는지는 자료에 없어요.']:
+    assert any('A97 꼴' in h for h in aitell.score(t)[1]), (t, aitell.score(t))
+assert not any('A97 꼴' in h for h in aitell.score('이유는 간단해요. 금리가 올랐거든요. 자료에 없는 건 빼고 봤어요.')[1])
+print('A97 shape ok')

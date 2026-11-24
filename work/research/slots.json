@@ -118,6 +118,15 @@
     "by": "firemap-video-producer",
     "at": "2026-11-23 23:41",
     "gates_ok": "2026-11-23 23:41"
+   },
+   {
+    "item": "k1s_bottom",
+    "ep": "work/research/cardshorts/k1s_bottom",
+    "layout": "c1clip",
+    "status": "2026-11-24 15:11 관문 통과(compete 6·숫자 대조 0·꼴·이해 3차·안전 영역·디자인·치직 0·-17.1 LUFS·눈 검사, review.md) · 미업로드 — KOSPI-1(bBoh8J1Ru_4) 3장 '첫날이 바닥이었나' 39.0초 · 첫 줄 1줄 새 녹음 · 같은 롱폼 연속 2편 규칙상 11/29(광명) 뒤 칸, 회의 배정 → upload.json publishAt → w1g1clips_up",
+    "by": "firemap-video-producer",
+    "at": "2026-11-24 15:11",
+    "gates_ok": "2026-11-24 15:11"
    }
   ],
   "cafe": [

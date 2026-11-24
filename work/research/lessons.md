@@ -498,3 +498,4 @@
 - 2026-11-23 copywriter: 회차 첫 묶음에 또 `git status --short`를 넣었다(여섯 번째, 이번엔 끝남). 첫 묶음은 `git branch --show-current`까지만, status는 커밋 직전 `-- <내 경로>`로만.
 - (2026-11-23 motion) 회차 첫 묶음에 또 `git status --short`를 넣었다(motion 여섯 번째, 전체 일곱 번째 — 이번엔 끝남). 지시문 첫 줄 명령 묶음을 복사할 때 status를 빼고 시작한다.
 - 2026-11-24 visual-designer: 회차 첫 묶음에 또 `git status --short`를 넣었다(visual 두 번째, 이번엔 끝남). 첫 명령은 date·branch만 — status는 커밋 직전 `-- <내 경로>`로.
+- 2026-11-24 video-producer: 쇼츠 렌더 첫 시도에 렌더 도중 props(첫 줄)를 바꾸고 같은 bundle로 다시 돌려 404 재시도 8번을 헛돌림 — 소리·잘린 클립 파일을 새로 만들면 cardshorts/<편>/bundle을 지운다(fm_bundle은 index.html만 보고 다시 쓴다).

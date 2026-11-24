@@ -1,0 +1,18 @@
+{
+ "name": "k1s_bottom",
+ "ep": "KOSPI-1",
+ "from_long": "bBoh8J1Ru_4",
+ "mp4": "work/video/out/k1s_bottom_c1_ds.mp4",
+ "publishAt": "",
+ "publish_plan": "11/24 14:1x PD: 비축(쇼츠 범위 안 비축 0, reserve_min 2) · KOSPI-1 3장 · 11/25 k1s_recover(4장)·11/28 k1s_split(6장)과 다른 질문 · 같은 롱폼 연속 2편까지라 11/29(광명) 뒤 칸 · 칸은 회의 배정 뒤 publishAt",
+ "title": "코스피 폭락 첫날이 바닥이었을까? 15번 세어 봤다 #shorts",
+ "description": "전체 계산: https://youtu.be/bBoh8J1Ru_4\n\n1995년부터 코스피가 하루 5% 넘게 빠진 때를 15번 셌어요. 며칠씩 몰려 온 날은 처음 빠진 날(첫날) 하나로 셌고, 올해 것은 1년이 안 지나 뺐어요.\n15번 중 14번은 첫날 종가보다 1년 안에 더 내려간 날이 있었고, 그 14번의 '더 내려간 폭'을 줄 세운 가운데 값은 12% 정도예요. 1997년 10월 외환위기 때는 첫날 종가보다 51.0% 아래까지, 안 내려간 한 번은 2020년 3월 코로나 때였어요.\n딱 1년 뒤에는 15번 중 10번이 첫날 종가보다 높았고(그 10번의 가운데 19% 정도), 5번은 낮았어요: 1997년 10월 -44.9% · 2000년 1월 -43.4% · 2007년 8월 -11.7% · 2002년 6월 -2.1% · 1999년 6월 -1.2%.\n지수 값만 센 지난 기록(배당 뺌)이고, 사거나 팔라는 권유나 앞날 전망이 아닙니다.\n\n출처: 한국은행 ECOS 코스피 일별 종가(원자료 한국거래소, 1995-01-03~2026-11-20, 2026-11-23 내려받음) · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — K · Oleg Gamulinskii · Pavel Danilyuk · Thirdman\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #코스피 #코스피폭락",
+ "tags": "코스피,코스피 폭락,코스피 바닥,폭락장,지수투자",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ },
+ "cover": "work/research/cardshorts/k1s_bottom/cover_1124.png",
+ "synth_insert_echo": true
+}

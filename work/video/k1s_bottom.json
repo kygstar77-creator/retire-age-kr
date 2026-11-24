@@ -1,0 +1,277 @@
+{
+ "fps": 30,
+ "name": "k1s_bottom",
+ "v": 1,
+ "look": "live",
+ "question": [
+  "코스피 하루 -5% 빠진 첫날",
+  "바닥이었을까?"
+ ],
+ "hot": "바닥",
+ "answer": {
+  "label": "1995~2025 하루 5% 넘게 빠진 날 15번(석 달 안쪽으로 이어진 날은 한 번으로, 올해 묶음 뺌)",
+  "items": [
+   "14번은 1년 안에 더 내려감",
+   "1년 뒤엔 10번 첫날보다 높음"
+  ],
+  "arrow": false,
+  "note": "더 내려간 폭 가운데 12% 정도 · 1997년 10월은 첫날의 절반 아래까지"
+ },
+ "base": "한국은행 ECOS 코스피 일별 종가(원자료 한국거래소, 1995-01-03~2026-11-20, 2026-11-23 내려받음) · 1년 안 최저·1년 뒤 = 빠진 날 종가 대비 · 파이어맵 계산",
+ "long": "bBoh8J1Ru_4",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "첫날이 바닥?",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "-5% 빠진 첫날 종가",
+      "1년 안 더 내려갔나?",
+      "",
+      48,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "코스피가 하루 5% 급락한 뒤, 더 내려간 날이 있었을까요?",
+     "audio": "audio/k1s/62a48f33869e3b18.wav",
+     "frames": 107
+    }
+   ],
+   "frames": 107
+  },
+  {
+   "kind": "vs",
+   "label": "더 내려갔다",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "1년 지난 15번 중",
+      "14번 더 내려감",
+      "",
+      24,
+      "ink"
+     ],
+     [
+      "첫날 종가보다 더",
+      "가운데 12% 정도",
+      "",
+      140,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 2,
+     "text": "열다섯 번 중 열네 번은 있었습니다.",
+     "audio": "audio/kospi-1/ce7cf8e7474ff2ec.wav",
+     "frames": 80
+    },
+    {
+     "n": 3,
+     "text": "더 내려간 폭을 크기대로 줄 세우면, 한가운데가 12% 정도였어요.",
+     "audio": "audio/kospi-1/2bfbdd25b2ba7c31.wav",
+     "frames": 121
+    }
+   ],
+   "frames": 201
+  },
+  {
+   "kind": "vs",
+   "label": "가장 깊게·한 번",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "1997년 외환위기",
+      "첫날 종가보다 -51.0%",
+      "",
+      48,
+      "ink"
+     ],
+     [
+      "안 내려간 1번",
+      "2020년 3월 코로나",
+      "",
+      153,
+      "ink"
+     ],
+     [
+      "첫날이 바닥이었던 적",
+      "거의 없음",
+      "",
+      253,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "외환위기 때는 1년 안에 한때 첫날의 절반 아래까지 내려갔고요.",
+     "audio": "audio/kospi-1/5e28ec960af5b93f.wav",
+     "frames": 120
+    },
+    {
+     "n": 5,
+     "text": "안 내려간 한 번은 2020년 3월, 코로나 때였어요.",
+     "audio": "audio/kospi-1/af55d36e5084a4ad.wav",
+     "frames": 84
+    },
+    {
+     "n": 6,
+     "text": "그러니까 첫날이 가장 낮은 날이었던 적은 거의 없었습니다.",
+     "audio": "audio/kospi-1/f6c6219a340ca68c.wav",
+     "frames": 98
+    }
+   ],
+   "frames": 302
+  },
+  {
+   "kind": "vs",
+   "label": "1년 뒤엔",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "1년 뒤 첫날 종가보다",
+      "15번 중 10번 높음",
+      "",
+      101,
+      "ink"
+     ],
+     [
+      "오른 10번 가운데",
+      "19% 정도 높음",
+      "",
+      208,
+      "ink"
+     ],
+     [
+      "나머지 5번(1년 뒤)",
+      "첫날보다 낮음",
+      "",
+      304,
+      "ink"
+     ],
+     [
+      "가장 나빴던 1997년",
+      "1년 뒤 -44.9%",
+      "",
+      421,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 7,
+     "text": "그럼 1년이 지난 뒤엔 어땠을까요?",
+     "audio": "audio/kospi-1/6053cd65c9c850c9.wav",
+     "frames": 67
+    },
+    {
+     "n": 8,
+     "text": "열다섯 번 중 열 번은 첫날보다 올라 있었어요.",
+     "audio": "audio/kospi-1/c2d8fc260c3557dd.wav",
+     "frames": 86
+    },
+    {
+     "n": 9,
+     "text": "오른 폭도 줄 세우면, 한가운데가 19% 정도였습니다.",
+     "audio": "audio/kospi-1/7629d8008cc38bbe.wav",
+     "frames": 110
+    },
+    {
+     "n": 10,
+     "text": "나머지 다섯 번은 1년 뒤에도 첫날보다 낮았어요.",
+     "audio": "audio/kospi-1/c722a511b100c034.wav",
+     "frames": 103
+    },
+    {
+     "n": 11,
+     "text": "더 내려갔다가 1년 뒤엔 오른 경우가 많았지만, 그렇지 않은 때도 분명히 있었어요.",
+     "audio": "audio/kospi-1/7ae463e76e4409b0.wav",
+     "frames": 158
+    }
+   ],
+   "frames": 560
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/kospi1/cut/8495394_0_r107.mp4",
+   "from": 0,
+   "frames": 107,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/5224014_3_r80.mp4",
+   "from": 107,
+   "frames": 80,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/6186015_2_r121.mp4",
+   "from": 187,
+   "frames": 121,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/8495394_4_r120.mp4",
+   "from": 308,
+   "frames": 120,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/3945008_18_r84.mp4",
+   "from": 428,
+   "frames": 84,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/6186015_8_r98.mp4",
+   "from": 512,
+   "frames": 98,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/5224014_10_r67.mp4",
+   "from": 610,
+   "frames": 67,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/8495394_12_r86.mp4",
+   "from": 677,
+   "frames": 86,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/3945008_10_r110.mp4",
+   "from": 763,
+   "frames": 110,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/5224014_14_r103.mp4",
+   "from": 873,
+   "frames": 103,
+   "start": 0
+  },
+  {
+   "src": "bg/kospi1/cut/6186015_0_r194.mp4",
+   "from": 976,
+   "frames": 194,
+   "start": 0
+  }
+ ],
+ "credits": "K · Oleg Gamulinskii · Pavel Danilyuk · Thirdman (Pexels License)"
+}

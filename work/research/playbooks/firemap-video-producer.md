@@ -366,3 +366,5 @@
 - 11/24 H-6: --chirp-short가 -11.8로 모자라면 deesser i=0.8:m=0.7 — i를 0.85 넘게 올리면 쉿소리 틀이 10개 밑으로 사라져 measure가 None(판정 못 함). deess 뒤 음량 맞춤(×1.4)이 말 첫소리를 clickscan 문턱 위로 올려 '치직 의심'을 새로 만들 수 있다 — 통렌더 원본과 10ms rms 꼴을 비교하고 1초 듣기로 click_ok.
 - 11/24 KOSPI-1: 예약 영상의 화면 일부·앞 인사를 고칠 땐 통렌더 말고 '바뀐 토막만 렌더 → 공개본 화면에 갈아 끼우고 앞을 trim(소리 그대로)' → 새 판 --replace 업로드·옛 판 예약만 풂·쇼츠 설명 링크 relink.py. Remotion ffmpeg는 축소판(trim·setpts 없음) → imageio 전체판. 앞을 자르면 8분 바닥 다시 잴 것(끝 숨 컷 멈춤으로 채움). 편집 서명은 PD가 대신 못 찍음 — editor 근무 시각(06:50·16:50) 맞춰 요청.
 - 11/24 H-6: 인사 장면 하나를 통째로 빼는 건 props에서 scenes[0]만 떼고(a[1:]==b로 확인) 렌더본은 trim=start_frame=N·atrim 같은 길이로 자르면 끝 — 통렌더·다시 녹음 없음, screen_text는 장면 번호만 당겨지므로 독립 editor 검수로 1분. 챕터 시각·click_ok 시각도 같이 당긴다(h6meta).
+- 11/24 k1s_bottom: 클립 사본(k1rclip→k1bclip)은 cardshorts/<편>/bundle을 다시 쓴다 — 새 첫 줄 wav·새 cut mp4를 만든 뒤면 **bundle을 지우고** 렌더(안 지우면 404로 8번 재시도 뒤 PART_FAIL). 이해 시험 1차에서 3명 다 '가운데 12%가 무엇 대비'를 물으면 말 대신 칸 이름표에 기준('첫날 종가보다 더')을 쓰면 새 녹음 없이 풀린다.
+- 11/24 SQ-1: 인사 줄을 뺀 뒤 길이를 props 단계(sq1props --check)에서 먼저 재 보니 7.74분 — 8분 바닥은 렌더 전에 잡는다(말 보강은 loop, 채우기 금지).

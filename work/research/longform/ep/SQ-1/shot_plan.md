@@ -39,7 +39,7 @@
 |---|---|---|---|---|---|---|---|
 | 0. 여는 말 | 1억을 셋으로 나눠 넣었다면 | [실사] 아침 식탁 노트·펜·계산기 근접, 얼굴 없음 | #14 | Pexels 'notebook calculator coffee table' | bg/sq1/stock/5466772.mp4 | shotcmp/r01.jpg | 같음(새 심사관 A) |
 | 0. 여는 말 | SCHD만·반반·나스닥100만 15년 뒤 | [판] 막대 셋 '?' → 말 닿을 때 차례로 열림(#2 큰 숫자 비교를 막대로) | #2·#10 | Python 판(sq1boards.py) | bg/sq1/board/sq1_open3.png | shotcmp/r02.jpg | 나음(A) |
-| 1. 나스닥100은 어떻게 갈아 끼우나 | 장 머리 | [실사] 저녁 빌딩 유리에 번진 전광판 불빛, 글자 흐림 | #16 | Pexels 'city building glass night lights' | bg/sq1/stock/40806780.mp4 | shotcmp/r03.jpg | 같음(A) |
+| 1. 나스닥100은 어떻게 갈아 끼우나 | 장 머리 | [실사] 저녁 빌딩 유리에 번진 전광판 불빛, 글자 흐림 | #16 | Pexels 'city building glass night lights' | bg/sq1/stock/40806780.mp4 | shotcmp/r03.jpg | 나음(11/24 새 심사관 D — 왼쪽 #16 &t=880 달리기로 다시 캡처; 메모 '전광판'은 화면에 없고 저녁 사무실 창) |
 | 1. 나스닥100은 어떻게 갈아 끼우나 | 해마다 12월 한 번 | [판] 달력 한 장, 12월 주황 동그라미 | #11 | Python 판(sq1boards.py) | bg/sq1/board/sq1_cal12.png | shotcmp/r04.jpg | 같음(A) |
 | 1. 나스닥100은 어떻게 갈아 끼우나 | 한 회사 24% 넘으면 20%로 | [판] 솟는 막대가 선에 걸려 잘림 | #11 | Python 판(sq1boards.py) | bg/sq1/board/sq1_cap20.png | shotcmp/r05.jpg | 같음(A) |
 | 2. SCHD는 무엇을 담나 | 장 머리 | [실사] 우편함 봉투를 꺼내는 손 근접 | #14·#15 | Pexels 'hand taking letter from mailbox' | bg/sq1/stock/6851679.mp4 | shotcmp/r06.jpg | 나음(새 심사관 C, 2차 — 1차 39863170 못함) |
@@ -59,5 +59,5 @@
 | 6. 직접 사나, 국내 상장으로 사나 | 15년 한 번에 팔면 세후 | [판] 막대 둘 | #17 | Python 판(sq1boards.py) | bg/sq1/board/sq1_tax15.png | shotcmp/r20.jpg | 나음(B) |
 | 6. 직접 사나, 국내 상장으로 사나 | 5년이면 국내 상장이 조금 더 | [판] 5년 막대 둘 '+366만원' | #17 | Python 판(sq1boards.py) | bg/sq1/board/sq1_tax5.png | shotcmp/r21.jpg | 나음(B) |
 | 7. 함정 | 함정 셋 | [판] 함정 셋 카드 | #22 | Python 판(sq1boards.py) | bg/sq1/board/sq1_traps3.png | shotcmp/r22.jpg | 같음(B) |
-| 8. 끝 | 정리 | [표] 정리 표(#21 '핵심 세 가지'를 표로) | #21·#18 | Python 판(sq1boards.py) | bg/sq1/board/sq1_summary.png | shotcmp/r23.jpg | 같음(B — 5년 줄 주황이 반반, 값은 나스닥100이 더 큼 → 헷갈림 지적 → loop 11/24: 반반 칸 주황 빼고 5년 줄 옆 주황 작은 글 '나스닥100과 263만원 차이', visual 다시) |
-| 8. 끝 | 숨 쉴 3초 | [실사] 창가 화분 위로 번지는 아침 햇빛 | #16 | Pexels 'window plant morning sunlight' | bg/sq1/stock/7578510.mp4 | shotcmp/r24.jpg | 못함(C — 어둡고 미국 교외 집, 1차 31206180 분무기 손) 다시 |
+| 8. 끝 | 정리 | [표] 정리 표(#21 '핵심 세 가지'를 표로) | #21·#18 | Python 판(sq1boards.py) | bg/sq1/board/sq1_summary.png | shotcmp/r23.jpg | 나음(11/24 새 심사관 F — 반반 칸 주황 뺌·5년 줄 1.655/1.816/1.843억·두 칸 아래 주황 '반반과 나스닥100만, 차이 약 263만원'·세후 줄 SCHD 칸만·분배금 '1억·세전'; 앞 판 D·E 못함 2번: 주어 없음·1.82/1.84로는 200만원으로 보임·세후 줄이 세 칸에 걸침) |
+| 8. 끝 | 숨 쉴 3초 | [실사] 창가 화분 위로 번지는 아침 햇빛 | #16 | Pexels 'window plant morning sunlight' | bg/sq1/stock/7578510.mp4 | shotcmp/r24.jpg | 못함(C, 11/24 D도 못함 — 왼쪽 #16 &t=880로 다시 캡처해도: 창턱 화분 없음·어두운 구석의 한낮 정원·창틀이 화면을 가름, 1차 31206180 분무기 손) 다시 |

@@ -207,17 +207,21 @@ def sq1_summary(im):        # 정리 표
     for x, h in zip(cx[1:], NAMES): T(d, (x, 230), h, 52, GREY)
     d.line([(200, 275), (1780, 275)], fill=INK, width=4)
     rows = (('15년 1억', [eok(MIX[p]['end']) for p in (100, 50, 0)]),
-            ('최근 5년 1억', [eok(R5[p]) for p in (100, 50, 0)]),
+            ('최근 5년 1억', [f'{path(w, (2021, 10))[-1][1]:.3f}억' for w in (1.0, 0.5, 0.0)]),   # 11/24 셋째 자리 — 1.82·1.84로는 차이가 200만원으로 보임(심사관)
             ('2022년 한 해', [f"{round(MIX[p]['y22'])}%".replace('-', '−') for p in (100, 50, 0)]),
-            ('한 해 분배금(세전)', [f'{x}만원' for x in DIST]))
+            ('한 해 분배금(1억·세전)', [f'{x}만원' for x in DIST]))
     for i, (k, vals) in enumerate(rows):
         y = 360 + i * 140
         T(d, (cx[0], y), k, 54, INK, F_B, 'rm')
-        for j, v in enumerate(vals): T(d, (cx[j + 1], y), v, 70, OR if (i == 1 and j == 1) else INK, F_X)
-        d.line([(200, y + 70), (1780, y + 70)], fill=LINE, width=2)
+        for j, v in enumerate(vals): T(d, (cx[j + 1], y), v, 70, INK, F_X)   # 11/24 loop: 반반 칸 주황 뺌(값이 더 큰 나스닥100과 헷갈림)
+        if i == 1:   # 5년 줄 옆 주황 작은 글 — 차이는 월말 경로로 다시 계산(sq1_line5와 같은 식)
+            gap = round((path(0.0, (2021, 10))[-1][1] - path(0.5, (2021, 10))[-1][1]) * 1e4); assert gap == 263, gap
+            T(d, ((cx[2] + cx[3]) // 2, y + 62), f'반반과 나스닥100만, 차이 약 {gap}만원', 40, OR, F_B)   # 두 칸 사이 아래(sq1_line5와 같은 말) — 심사관 2: 주어 없으면 무엇과의 차이인지 모름
+        d.line([(200, y + (88 if i == 1 else 70)), (1780, y + (88 if i == 1 else 70))], fill=LINE, width=2)
     y = 360 + 4 * 140
-    T(d, (cx[0], y), '15년 SCHD 세후', 54, INK, F_B, 'rm')
-    T(d, ((cx[1] + cx[3]) // 2, y), f'직접 {TAX15[0]:.1f}억 · 국내 상장 {TAX15[1]:.1f}억', 70, INK, F_X)
+    T(d, (cx[0], y), 'SCHD만 · 15년 세후', 54, INK, F_B, 'rm')
+    T(d, (cx[1], y - 28), f'직접 {TAX15[0]:.1f}억', 46, INK, F_X); T(d, (cx[1], y + 30), f'국내 상장 {TAX15[1]:.1f}억', 46, INK, F_X)   # SCHD 칸 아래만(심사관: 세 칸에 걸치면 남의 값으로 읽힘)
+    for x in cx[2:]: T(d, (x, y), '—', 60, GREY, F_B)
     source(d, '야후 파이낸스·Schwab·Invesco·한국은행·법제처 · 계산·비교 자료이며 매수·매도 권유가 아닙니다')
 
 # ── 11/24 남은 4장: 월말 시리즈는 calc_mix·calc_dca·calc_krw를 그 폴더에서 불러 같은 식으로 다시 돌리고, 끝값을 calc 출력과 assert ──

@@ -32,12 +32,12 @@ assert all(b[0] - a_[0] >= 10 for a_, b in zip(chapters, chapters[1:])), chapter
 fmt = lambda f: f"{int(f / fps) // 60}:{int(f / fps) % 60:02d}"
 CH = '\n'.join(f"{fmt(st)} {h}" for st, h in zip(starts, heads))
 
-FIRST2 = ["국토부 실거래 기준 은마아파트 84㎡ 가운데 값 — 2025년 10~12월 계약 42.80억(3건) → 2026년 10~11월 계약 34.30억(9건), 해제 거래 뺌.",
-          "하락의 거의 절반은 7월 사업시행인가 전에 이미 와 있었고, 9~10월 두 달에 1년 거래 75건 중 35건이 몰렸어요. 전세·월세 계약 신고, 분담금·재초환(조합원 평균 예정액 4억 6천만원, 감면 전)·이주까지 국토교통부·강남구·법제처 원문으로 정리했습니다."]
+FIRST2 = ["국토부 실거래 기준 은마아파트 84㎡ 가운데 값 — 2025년 10~12월 계약 42.80억(3건) → 2026년 10~11월 계약 34.50억(10건), 해제 거래 뺌.",
+          "하락의 거의 절반은 7월 사업시행인가 전에 이미 와 있었고, 9~10월 두 달에 1년 거래 76건 중 34건이 몰렸어요. 전세·월세 계약 신고, 분담금·재초환(조합원 평균 예정액 4억 6천만원, 감면 전)·이주까지 국토교통부·강남구·법제처 원문으로 정리했습니다."]
 DIS = '은마아파트를 사거나 팔라는 뜻이 아닙니다. 지난 실거래 값과 공개된 제도만 정리했습니다.'
 tpl = '\n'.join(FIRST2) + '\n' + DIS + '''
 
-은마 1년 실거래 75건 전체 표(카페): {CAFE}
+은마 1년 실거래 76건 전체 표(카페): {CAFE}
 파이어맵: https://firemap.kr/?utm_source=youtube&utm_medium=description&utm_campaign=h-6
 직접 보기: 국토교통부 실거래가 공개시스템 https://rt.molit.go.kr → 아파트 → 서울 강남구 대치동 은마 → 면적·기간
 
@@ -64,20 +64,20 @@ m.update({
     'title': TITLES[0], 'title_by': 'youtube-loop 2026-11-24 05:02 c36/decision.md(C-36·C-38) — copywriter 11/24 18:00 확인 대기', 'title_candidates': TITLES,
     'thumb_text_top': THUMB_TOP, 'thumb_text': THUMB_TEXT, 'thumb': THUMB,
     'thumb_status': '11/24 18:2x PD: h6_n3 (copywriter 15:14 1초 시험 통과, A101 상대 시점 없음, 제목과 통째 겹침 아님 C-26) — C-39 경쟁 짝 비교 c36/c39_n3_*',
-    'desc_first2': FIRST2, 'desc_first2_src': 'copywriter titles.md 설명 첫 줄(11/20 18:55 가운데 값) + script 0·3·4·5장(인가 전 절반·35/75건·4억 6천 감면 전)',
+    'desc_first2': FIRST2, 'desc_first2_src': 'copywriter titles.md 설명 첫 줄(11/20 18:55 가운데 값) + script 0·3·4·5장(인가 전 절반·34/76건·4억 6천 감면 전) · 11/25 PD: loop 올리기 전 확인 값(국토부 11/25 받음)으로',
     'tags': ['은마아파트', '은마아파트 재건축', '은마아파트 실거래가', '재초환', '대치동 아파트'],
     'desc_tpl': tpl, 'desc': desc, 'chapter_titles': heads, 'chapters': chapters,
     'chapters_note': f'video/h6.json 장 카드 시작 프레임(11/23 PD h6meta.py) — props 길이 {round(a / fps, 1)}초',
-    'cafe_first': "대본 8장 '설명란에 링크한 파이어맵 카페 글에 75건 표' → 카페 짝 글을 공개 같은 날 영상보다 먼저(11/26 07:40·10:10 칸) — write·회의가 칸 배정",
+    'cafe_first': "대본 8장 '설명란에 링크한 파이어맵 카페 글에 76건 표' → 카페 짝 글을 공개 같은 날 영상보다 먼저(11/26 07:40·10:10 칸) — write·회의가 칸 배정",
     'voice': f"Chirp 3 HD Charon {V.get('speakingRate')} · {V.get('done')}줄 · {V.get('seconds')}초 · 11/22 93·114행 재녹음(editor df67b678)",
     'missing': V.get('missing', 0),
     'publishAt': '2026-11-26T11:30:00+09:00', 'privacy': 'private', 'privacy_note': '예약 공개(private+publishAt) — 정해진 시각에 공개로 바뀜',
     'paid': False, 'coupang': None, 'synthetic': True, 'veo': False,
     'synthetic_note': 'AI 음성 내레이션 → containsSyntheticMedia True. AI 생성 그림 없음(판은 국토부 값으로 그림, 실사는 Pexels)',
     'answers': {
-        'q1_바꿔끼우기': "아니오 — 국토부 매매 75건·전월세 896건을 평형별·월별로 직접 세어 '가운데 값 −8억 5천, 그중 절반은 인가 전'·'9~10월 35건 몰림 vs 강남구 전체는 평균보다 적음'·'전월세 신고 164→20건'을 갈랐다(calc·calc2·calc3·gangnam_count_1122). 경쟁 5편 중 실거래 전부로 센 편 0(toc_compare).",
+        'q1_바꿔끼우기': "아니오 — 국토부 매매 76건·전월세 893건을 평형별·월별로 직접 세어 '가운데 값 −8억 3천, 그중 절반은 인가 전'·'9~10월 34건 몰림 vs 강남구 전체는 평균보다 적음'·'전월세 신고 162→20건'을 갈랐다(calc·calc2·calc3·gangnam_count_1125 — 11/25 다시 받음). 경쟁 5편 중 실거래 전부로 센 편 0(toc_compare).",
         'q2_연달아보기': '예 — 앞 편 11/24 KOSPI-1(지수)·뒤 편 11/28 SQ-1(배당ETF)과 축이 다름. 부동산 앞 편 H-5(송도)는 11/22로 이틀 사이에 지수 한 편.',
-        'q3_약속이행': "예 — 제목 '34평 실거래 1년 새 8억 넘게'는 0장 3~5행에서 바로 답(42.80→34.30억, 8억 5천)하고, '인가 났는데'는 0장 7행 '하락의 거의 절반은 인가 전'과 2장이 받친다.",
+        'q3_약속이행': "예 — 제목 '1년 전에 샀다면 지금 얼마일까?'는 0장에서 바로 답(42.80→34.50억, 8억 3천 빠짐)하고, 썸네일 '재건축 인가 났는데 / 34평 값은 어디로?'는 0장 '하락의 거의 절반은 인가 전'과 2장 인가 선(48%)이 받친다.",
         'q4_조언으로들리나': "아니오 — 설명 면책 줄·끝 자막 '계산·비교 자료이며 매수·매도 권유가 아닙니다'. 할 일은 내 평형 가운데 값을 직접 세 보기·재초환 평균을 내 몫으로 읽지 않기(제도 확인)뿐. '지금 살 때냐'(Q6)는 답하지 않음.",
         'q5_사람의몫': "예 — '매물 5배 ≠ 팔린 건수'·'재초환 평균 4억 6천 ≠ 내 몫(보유기간 감경)'·'분담금 두 보도가 다름, 조합 문서 미확인'은 흔한 말을 원자료로 가른 우리 판단."},
     'endscreen': {'how': 'Studio 최종 화면 — 업로드 뒤', 'status': '미정'},
@@ -85,7 +85,7 @@ m.update({
     'video': os.path.join(VID, 'out', 'h6_c37.mp4').replace('\\', '/'),   # 11/24 10:3x PD: h6_dsl1124.mp4 앞 119프레임(인사 장면, C-37) 잘라 냄·-17.0 LUFS 그대로 · 그 전 11/24 PD: 통렌더 h6.mp4 → deesser i=0.8:m=0.7 + loudnorm(-12.1dB·-17.0 LUFS)
     'click_ok': [189.4],   # 11/24 10:3x PD: 인사 3.97초 잘라 낸 뒤 193.4 → 189.4
     'click_ok_note': "11/24 05:2x PD: 193.4초 = scenes.30 '은마는 그 여섯 곳 중에서도 가장 많이 빠졌고요'의 '가장' 첫소리(쉼 뒤). 통렌더 h6.mp4엔 안 잡히고 음량 맞춤(×1.42) 뒤 잡힘 — 10ms rms 꼴 같음(788→3838 ↔ 1132→5447)·4kHz 위 0%. 제미나이 3.6-flash 1초 듣기 '가장 많이 빠졌고요 / 판정: 말소리'(check/click1934_gemini.log)",
-    'todo': '11/23 PD: meta 첫 판 · 남은 것: 썸네일 3차(copywriter) · editor 설명란 desc_1123 서명 · scorecard · 11/25 올리기 전 확인(youtube-loop: 75건·31.45억·11월 막대) · bench_check · cafe_url · gate·예약'})
+    'todo': '11/25 PD 06:2x: 올리기 전 확인 값(76건·34.50억·23곳)으로 FIRST2·답·판 데이터 고침 · 남은 것: editor 재서명(말 9줄·화면 글자·설명란) → 9줄 녹음 → 그 토막 렌더 → screen·bgcheck·bench 대조 → cafe_url → gate·예약 11/26 11:30'})
 json.dump(m, open(MP, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 open(os.path.join(EP, 'desc_1123.txt'), 'w', encoding='utf-8').write(m['title'] + '\n\n' + desc + '\n')
 print(CH); print(f'설명 {len(desc)}자 · 실사 출처 {len(credits)}줄 · missing {m["missing"]} · 제목 {len(m["title"])}자')

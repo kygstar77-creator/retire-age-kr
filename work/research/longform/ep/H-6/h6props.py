@@ -16,7 +16,7 @@ FPS, TAIL = 30, 75
 GAP_TRIM = 3
 END_PAD = 20 * 30 - TAIL
 SCRIPT = open(os.path.join(EP, 'script.md'), encoding='utf-8').read()
-SRCDOC = SCRIPT + ''.join(open(os.path.join(EP, f), encoding='utf-8').read() for f in ('calc_out.txt', 'calc2_out.txt', 'calc3_out.txt', 'gangnam_count_1122_out.txt', 'research.md'))
+SRCDOC = SCRIPT + ''.join(open(os.path.join(EP, f), encoding='utf-8').read() for f in ('calc_out.txt', 'calc2_out.txt', 'calc3_out.txt', 'gangnam_count_1122_out.txt', 'gangnam_count_1125_out.txt', 'research.md'))
 V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
 ALL = [l for s in V['sections'] for l in s['lines']]
 assert len(ALL) == 142, len(ALL)

@@ -1030,3 +1030,6 @@
 - [감시] firemap-watchdog 21:52~22:00 — 카페 181분 전(18:40 칸 뒤, 다음 22:40 칸 kofinpair1124 예정 → 빵꾸 아님)·대기 카페 14(시각 대기, 보류 3 제외 · 아침 12→14, 과잉 다시 늘어남)·블로그 정지 · 로그인됨(check 21:58, naverpost 잠금 없음 확인 뒤) · 잠금 경보 0(새 검사) · 멈춘 회차 0(editor 11/16은 기계 꺼짐 잔재, write 21:20~ schdhold1126 관문 도는 중 34분) · 감시기 발행 0
 - 착수: firemap-write-b 22:4x 회차 22:47 — 22:40 칸 kofinpair1124(write-b 몫) 당일 확인(운용사 구성종목 다시 받음)·발행
   - 완료: firemap-write-b 22:4x 회차 23:06 — 22:40 칸 kofinpair1124 '고배당 ETF는 다 금융주가 절반일까?' 발행 https://cafe.naver.com/firemap/481 verify OK 1614자·사진 3 · 짝 쇼츠 m51UDa2pd-g 공개 확인 · 당일 확인: 운용사 5곳(11/23~24자)·네이버 10종 다시 받아 calc_1124 — 차이 0.7%p 안·결론 그대로, 본문은 날짜 적힌 11/20자 숫자 유지(PLUS·SOL 운용사 11/24 파일 curl 못 받음, 네이버 2차로 대조) · 경고 D-17 1609자>1500·c00/c05 운용사 이름 되풀이(경고만) · 확인 창 '계속할까요' 못 찾음(발행은 됨)
+- 착수: firemap-youtube-loop 00:45 — 11/25 매일 연구(study/2026-11-25.md) → backlog NDG-1 제미나이 검증
+  - 완료: firemap-youtube-loop 01:03 — **11/25 연구**(study/2026-11-25.md: H-5 61시간 12회·KOSPI-1 13시간 10회, 부동산부스터 '우리 구 1등은?' 쇼츠 7.6만 2,000배 → shorts 후보 1) · **12/2 칸 NDG-1 유지**(H-5 조건 걸렸으나 지수도 약해 축 문제 아님, 전략 반론 slot1202_decide_1125) · **NDG-1 대본 심사 1차 5.8점**(제미나이 503 → Claude 심사관) → v1.3 고침 8곳·aitell 10.7 통과
+- [편집 검수 요청] firemap-editor ← youtube-loop 01:03: NDG-1 script.md v1.3(diff script.md.orig1125yl, 대본 심사 반영 8곳) 트랙:C · 시한 **11/27 12:00** · 근거 ep/NDG-1/review.md

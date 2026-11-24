@@ -125,6 +125,20 @@ def power_state():
     if crashes: out['last_crash'] = ', '.join(crashes)
     return out
 
+LOCK_ALERT_MIN = 60   # 2026-11-24 회의 지시(레드팀 위험3): naverpost가 16:00에 멈춰 72분 동안 아무도 못 봤다.
+                      # 정상 보유는 칸 안 jitter 최대 52분(naverpost.py 56줄) + 발행 몇 분 → 60분 넘으면 멈춤으로 본다.
+
+def lock_alert(lock_path, now=None, alive=None):
+    """naverpost 브라우저 잠금이 LOCK_ALERT_MIN분 넘게 쥐어져 있으면 경보 문장, 아니면 None."""
+    if not os.path.exists(lock_path): return None
+    now = time.time() if now is None else now
+    age = (now - os.path.getmtime(lock_path)) / 60
+    if age <= LOCK_ALERT_MIN: return None
+    try: owner = open(lock_path, encoding='utf-8').read().strip()
+    except Exception: owner = ''
+    st = '' if alive is None else (' · 주인 살아 있음' if alive(owner) else ' · 주인 죽음')
+    return f'naverpost 잠금 {age:.0f}분째(PID {owner or "?"}{st}) — 발행이 멈췄을 수 있다(기준 {LOCK_ALERT_MIN}분)'
+
 def main():
     import naverpost as N
     check_only = '--check' in sys.argv
@@ -160,6 +174,11 @@ def main():
     for k in sorted(stopped):
         rec['note'].append(f'{k} 정지 중(research/STOP_{k}) — 빵꾸·재고로 보지 않는다')
         capped.setdefault(k, (0, 0))
+
+    # 0.5) 잠금 나이 — 발행 프로세스가 잠금을 쥔 채 멈췄나(2026-11-24 16:00 72분 멈춤을 아무도 못 본 일)
+    la = lock_alert(N.LOCK, alive=N._alive)
+    rec['lock_min'] = round((time.time() - os.path.getmtime(N.LOCK)) / 60) if os.path.exists(N.LOCK) else None
+    if la: rec['alert'].append(la)
 
     # 1) 언제 마지막으로 올라갔나 — 실제 네이버에서 잰다(우리 기록이 아니라)
     for kind in ('blog', 'cafe'):
@@ -348,7 +367,11 @@ def main():
 
     rec['sec'] = int(time.time() - t0)
     log = load(LOG, []) or []; log.append(rec)
-    json.dump(log[-400:], open(LOG, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    # 11/15 watchdog: 임시 파일에 다 쓴 뒤 바꿔 끼운다 — 중간에 끊겨도 로그가 잘리지 않게(11/11 잘림)
+    _tmp = LOG + '.tmp'
+    with open(_tmp, 'w', encoding='utf-8') as _f:
+        json.dump(log[-400:], _f, ensure_ascii=False, indent=1)
+    os.replace(_tmp, LOG)
 
     print(f"[감시 {rec['at']}] 블로그 {rec['late']['blog']}분 전 / 카페 {rec['late']['cafe']}분 전 · 대기 블로그 {rec['stock']['blog']} 카페 {rec['stock']['cafe']}")
     for a in rec['alert']: print('  ! ' + a)

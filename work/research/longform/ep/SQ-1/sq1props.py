@@ -20,21 +20,22 @@ SRCDOC = SCRIPT + ''.join(open(os.path.join(EP, f), encoding='utf-8').read() for
                           ('calc_mix_out_1112.txt', 'calc_krw_out_1120.txt', 'calc_tax_out_1121b.txt', 'calc_dca_out_1120.txt', 'research.md'))
 V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
 ALL = [l for s in V['sections'] for l in s['lines']]
-assert len(ALL) == 117, len(ALL)
-assert ALL[0]['text'].startswith('안녕하세요'), ALL[0]['text']   # C-37 — 쓰지 않는 줄
+assert len(ALL) == 122, len(ALL)   # 11/24 18시 PD: v1.7 새 줄 6개(59·74·85·86·101·112, editor cd3317c4) — make가 인사 줄 없는 script대로 다시 짜 voice 0번 = 첫 질문(인사 소리 없음)
 assert abs(V.get('speakingRate', 0) - 1.1) < 1e-9 and V['voice'] == 'ko-KR-Chirp3-HD-Charon'
 SAY = [re.sub(r'^-\s*', '', s).strip() for s in SCRIPT.split('\n') if s.startswith('- ')]
-assert len(SAY) == 116, len(SAY)
+assert len(SAY) == 122, len(SAY)
 HEADS = [re.sub(r'^\[?\d+\.\s*|\]$', '', h).strip() for h in re.findall(r'^## (.+)$', SCRIPT, re.M)]
 assert len(HEADS) == 9 and HEADS[1].startswith('나스닥100') and HEADS[8] == '끝', HEADS
 HEADS[8] = '정리'
 
 MISSING = []
-stale = [i for i in range(1, len(ALL)) if ALL[i]['text'].strip() != SAY[i - 1]]
+stale = [i for i in range(len(ALL)) if ALL[i]['text'].strip() != SAY[i]]
 if stale: MISSING.append(f'녹음이 script.md와 다른 줄 {len(stale)}개 — 재녹음 먼저: ' + ','.join(map(str, stale)))
 
 CRF = os.path.join(PUB, 'bg', 'sq1', 'stock', 'credits.json')
 CR = {str(c['id']): c for c in json.load(open(CRF, encoding='utf-8'))} if os.path.exists(CRF) else {}
+for c in CR.values():   # visual credits.json은 file이 'id.mp4'(폴더 없음) — public 기준 경로로
+    if not c['file'].startswith('bg/'): c['file'] = 'bg/sq1/stock/' + c['file']
 # shot_plan '장면 계획' 실사 구상 → Pexels id (visual이 고르면 여기 적는다)
 ROLE = {
     'NOTE': 5466772,      # 아침 식탁 노트·펜·계산기 근접, 얼굴 없음 (여는 말·계산 조건 줄)
@@ -65,7 +66,6 @@ USED = set()
 
 
 def L(i):
-    assert i != 0, '0번 인사는 C-37로 뺌'
     assert i not in USED, ('두 번 씀', i); USED.add(i)
     l = ALL[i]
     if not (l.get('audio') and os.path.exists(os.path.join(PUB, l['audio']))): MISSING.append(f'소리 파일 없음 {i}')
@@ -104,37 +104,37 @@ def broll(role, idx, say=None, frm=None):
 
 scenes = []
 # 0 여는 말 (1~10) — 답 숫자는 판 sq1_open3 하나에만
-scenes += [broll('NOTE', [1], '어디가 더 불었을까'), board('sq1_open3', [2, 3, 4, 5]), broll('NOTE', [6], '넣은 때를 바꾸면'),
-           broll('FX', [7, 8], '원화로 다시 세면'), broll('FOLDERS', [9, 10], '세금을 떼면')]
+scenes += [broll('NOTE', [0], '어디가 더 불었을까'), board('sq1_open3', [1, 2, 3, 4]), broll('NOTE', [5], '넣은 때를 바꾸면'),
+           broll('FX', [6, 7], '원화로 다시 세면'), broll('FOLDERS', [8, 9], '세금을 떼면')]
 # 1 나스닥100은 어떻게 갈아 끼우나 (11~20)
-scenes += [ask(1, [11, 12]), broll('CITY', [13, 14], '금융회사는 빼고'), board('sq1_cal12', [15, 16]), broll('CITY', [17], '갑자기 커지면'), board('sq1_cap20', [18, 19, 20])]
+scenes += [ask(1, [10, 11]), broll('CITY', [12, 13], '금융회사는 빼고'), board('sq1_cal12', [14, 15]), broll('CITY', [16], '갑자기 커지면'), board('sq1_cap20', [17, 18, 19])]
 # 2 SCHD는 무엇을 담나 (21~31)
-scenes += [ask(2, [21]), board('sq1_sieve4', [22, 23, 24, 25]), broll('MAIL', [26, 27, 28, 29], '위에서부터 담아요'), board('sq1_fee2', [30, 31])]
+scenes += [ask(2, [20]), board('sq1_sieve4', [21, 22, 23, 24]), broll('MAIL', [25, 26, 27, 28], '위에서부터 담아요'), board('sq1_fee2', [29, 30])]
 # 3 섞는 비율별 지난 15년과 5년 (32~52)
-scenes += [ask(3, [32]), broll('NOTE', [33], '비율을 나눠 셌어요'), board('sq1_mix5', [34, 35, 36]), broll('CITY', [37], '더 깊이 빠질 때'),
-           board('sq1_y2022', [38]), broll('NOTE', [39], '넣은 때를 바꾸면'), board('sq1_line5', [40, 41, 42, 43, 44]),
-           broll('MAIL', [45, 46, 47], '어디서 자르느냐'), board('sq1_dca', [48, 49, 50, 51, 52])]
+scenes += [ask(3, [31]), broll('NOTE', [32], '비율을 나눠 셌어요'), board('sq1_mix5', [33, 34, 35]), broll('CITY', [36], '더 깊이 빠질 때'),
+           board('sq1_y2022', [37]), broll('NOTE', [38], '넣은 때를 바꾸면'), board('sq1_line5', [39, 40, 41, 42, 43]),
+           broll('MAIL', [44, 45, 46], '어디서 자르느냐'), board('sq1_dca', [47, 48, 49, 50, 51])]
 # 4 원화로 다시 보면 (53~67)
-scenes += [ask(4, [53, 54]), board('sq1_fx', [55, 56, 57]), broll('FX', [58, 59], '환율이 오른 몫'),
+scenes += [ask(4, [52, 53]), board('sq1_fx', [54, 55, 56]), broll('FX', [57, 58, 59], '환율이 오른 몫'),
            board('sq1_valley2', [60, 61, 62, 63, 64]), broll('CITY', [65, 66, 67], '지난 환율 이야기')]
 # 5 매달 들어오는 돈 (68~75)
-scenes += [ask(5, [68]), broll('PASSBOOK', [69, 70], '나눠 주는 배당'), board('sq1_dist3', [71, 72, 73]), broll('PASSBOOK', [74, 75], '생활비로 쓰신다면')]
+scenes += [ask(5, [68]), broll('PASSBOOK', [69, 70], '나눠 주는 배당'), board('sq1_dist3', [71, 72, 73, 74]), broll('PASSBOOK', [75, 76], '생활비로 쓰신다면')]
 # 6 직접 사나, 국내 상장으로 사나 (76~100)
-scenes += [ask(6, [76]), broll('FOLDERS', [77], '두 갈래 세금'), board('sq1_tax2way', [78, 79, 80, 81]), broll('FOLDERS', [82, 83], '금융소득이란'),
-           broll('NOTE', [84, 85, 86], '이렇게 쳤어요'), board('sq1_tax15', [87, 88, 89, 90]), broll('FOLDERS', [91], '늘 낫지는 않아요'),
-           board('sq1_tax5', [92, 93, 94, 95]), broll('MAIL', [96, 97], '직접 받은 배당'), broll('FOLDERS', [98, 99, 100], '내 계좌부터')]
+scenes += [ask(6, [77]), broll('FOLDERS', [78], '두 갈래 세금'), board('sq1_tax2way', [79, 80, 81, 82]), broll('FOLDERS', [83, 84], '금융소득이란'), broll('PASSBOOK', [85, 86], '연금은 따로 셈'),   # 85·86 = v1.7 새 줄(연금은 2천만원 셈 밖)
+           broll('NOTE', [87, 88, 89], '이렇게 쳤어요'), board('sq1_tax15', [90, 91, 92, 93]), broll('FOLDERS', [94], '늘 낫지는 않아요'),
+           board('sq1_tax5', [95, 96, 97, 98]), broll('MAIL', [99, 100, 101], '직접 받은 배당'), broll('FOLDERS', [102, 103, 104], '내 계좌부터')]
 # 7 함정 (101~110)
-scenes += [ask(7, [101]), board('sq1_traps3', [102, 103, 104, 105]), broll('NOTE', [106, 107], '따라가는 지수 이름'), board('sq1_traps3', [108, 109, 110])]
+scenes += [ask(7, [105]), board('sq1_traps3', [106, 107, 108, 109]), broll('NOTE', [110, 111, 112], '따라가는 지수 이름'), board('sq1_traps3', [113, 114, 115])]
 # 8 정리 (111~116) — 끝 줄 앞 숨 쉴 실사는 PLANT 끝 그림 위 END_PAD
-scenes += [ask(8, [111]), board('sq1_summary', [112, 113, 114]), broll('CITY', [115], '전체 표는 카페에')]
+scenes += [ask(8, [116]), board('sq1_summary', [117, 118, 119]), broll('CITY', [120], '전체 표는 카페에')]
 END_PIC = 'bg/sq1/stock/plant_last.jpg'
 pc = cid_of('PLANT')
-scenes += [S('pic', [116], pic=END_PIC, license=f"Pexels {pc} 무료({CR[pc]['author']})" if pc in CR else '', baked=True, zoom=[1.0, 1.10], cx=50, cy=50)]
+scenes += [S('pic', [121], pic=END_PIC, license=f"Pexels {pc} 무료({CR[pc]['author']})" if pc in CR else '', baked=True, zoom=[1.0, 1.10], cx=50, cy=50)]
 if pc not in CR: MISSING.append('실사 PLANT(끝 그림 — visual)')
 scenes[-1]['frames'] += END_PAD
 scenes[-1]['lines'].append({'text': '', 'audio': None, 'frames': END_PAD, 'cap': None, 'i': None})
 
-assert USED == set(range(1, len(ALL))), ('안 쓴 줄', [i for i in range(1, len(ALL)) if i not in USED])
+assert USED == set(range(len(ALL))), ('안 쓴 줄', [i for i in range(len(ALL)) if i not in USED])
 order = [l['i'] for s in scenes for l in s['lines'] if l['i'] is not None]; assert order == sorted(order), '줄 순서'
 for s in scenes: assert s['kind'] != 'broll' or not re.search(r'\d', s['data']['say'] or ''), ('실사 say 숫자', s['data']['say'])
 for s in scenes: assert s['kind'] != 'broll' or len(s['data']['say'] or '') <= 18, ('say 18자 넘음', s['data']['say'])

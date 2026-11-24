@@ -368,3 +368,4 @@
 - 11/24 H-6: 인사 장면 하나를 통째로 빼는 건 props에서 scenes[0]만 떼고(a[1:]==b로 확인) 렌더본은 trim=start_frame=N·atrim 같은 길이로 자르면 끝 — 통렌더·다시 녹음 없음, screen_text는 장면 번호만 당겨지므로 독립 editor 검수로 1분. 챕터 시각·click_ok 시각도 같이 당긴다(h6meta).
 - 11/24 k1s_bottom: 클립 사본(k1rclip→k1bclip)은 cardshorts/<편>/bundle을 다시 쓴다 — 새 첫 줄 wav·새 cut mp4를 만든 뒤면 **bundle을 지우고** 렌더(안 지우면 404로 8번 재시도 뒤 PART_FAIL). 이해 시험 1차에서 3명 다 '가운데 12%가 무엇 대비'를 물으면 말 대신 칸 이름표에 기준('첫날 종가보다 더')을 쓰면 새 녹음 없이 풀린다.
 - 11/24 SQ-1: 인사 줄을 뺀 뒤 길이를 props 단계(sq1props --check)에서 먼저 재 보니 7.74분 — 8분 바닥은 렌더 전에 잡는다(말 보강은 loop, 채우기 금지).
+- 2026-11-24 PD: lfvoice make는 script.md 대로 voice.json을 다시 짠다 — 인사 줄을 script에서 지운 편은 새 줄 받을 때 voice 0번이 첫 질문으로 바뀌니 props의 '0번 인사 뺌' 오프셋(SAY[i-1], range(1,…))을 같이 고칠 것(SQ-1). AI 짝 비교는 숫자 상자 썸네일을 고르는 쏠림이 있어 출발 값 숫자를 더해도 이기지 않았다(H-6 p1 1/8·p2 2/8).

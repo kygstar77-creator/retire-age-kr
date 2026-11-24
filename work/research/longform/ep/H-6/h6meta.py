@@ -16,8 +16,8 @@ m = json.load(open(MP, encoding='utf-8')) if os.path.exists(MP) else {}
 # 11/24 05:1x PD: youtube-loop 05:02 [지시] C-36(결론 숫자 금지)·C-38 — 제목·썸네일 글 = c36/decision.md 판(copywriter 11/24 18:00까지 말 없으면 확정)
 #   옛 제목 '은마아파트 재건축 인가 났는데, 34평 실거래는 1년 새 8억 넘게 내렸다'(결론 숫자) · 옛 썸네일 a3 '은마 34평 42억 8천이 / 1년 뒤 34억 3천으로'
 TITLES = ['은마아파트 34평, 1년 전에 샀다면 지금 얼마일까?']
-THUMB = os.path.join(EP, 'thumb_h6_a3.png')   # 자리 — visual 새 판(11/24 18:00) 나오면 그 파일로. a3는 결론 숫자라 C-36에 걸려 그대로 올리지 않음
-THUMB_TOP, THUMB_TEXT = '은마아파트 34평 · 국토부 실거래', '1년 전에 샀다면 / 지금은 얼마일까?'
+THUMB = os.path.join(EP, 'thumb_h6_n3.png')   # 자리 — visual 새 판(11/24 18:00) 나오면 그 파일로. a3는 결론 숫자라 C-36에 걸려 그대로 올리지 않음
+THUMB_TOP, THUMB_TEXT = '은마아파트 34평 · 국토부 실거래', '재건축 인가 났는데 / 34평 값은 어디로?'
 
 heads = ['여는 말', '은마는 지금 어디까지', '1년 실거래, 평형별', '거래는 언제 몰렸나', '세 가지 숙제',
          '세입자 계약 신고', '누구라면', '함정과 직접 확인', '정리']   # script.md ## 제목
@@ -63,7 +63,7 @@ m.update({
     'ep': 'H-6', 'series': '부동산 — 재건축 실거래',
     'title': TITLES[0], 'title_by': 'youtube-loop 2026-11-24 05:02 c36/decision.md(C-36·C-38) — copywriter 11/24 18:00 확인 대기', 'title_candidates': TITLES,
     'thumb_text_top': THUMB_TOP, 'thumb_text': THUMB_TEXT, 'thumb': THUMB,
-    'thumb_status': '11/24 05:1x PD: 자리(a3, 결론 숫자라 C-36 위반) — visual 새 판(1년 전에 샀다면 / 지금은 얼마일까?)·C-39 짝 비교 11/24 18:00 뒤 THUMB 바꿈',
+    'thumb_status': '11/24 18:2x PD: h6_n3 (copywriter 15:14 1초 시험 통과, A101 상대 시점 없음, 제목과 통째 겹침 아님 C-26) — C-39 경쟁 짝 비교 c36/c39_n3_*',
     'desc_first2': FIRST2, 'desc_first2_src': 'copywriter titles.md 설명 첫 줄(11/20 18:55 가운데 값) + script 0·3·4·5장(인가 전 절반·35/75건·4억 6천 감면 전)',
     'tags': ['은마아파트', '은마아파트 재건축', '은마아파트 실거래가', '재초환', '대치동 아파트'],
     'desc_tpl': tpl, 'desc': desc, 'chapter_titles': heads, 'chapters': chapters,

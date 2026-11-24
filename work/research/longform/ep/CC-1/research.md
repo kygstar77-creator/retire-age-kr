@@ -100,3 +100,6 @@
 | 댓글 중 계좌 이야기 | 상위 70줄 중 17줄(24%) | 말 '네 개 중 하나꼴' | raw/comments_q_1122.txt · Q1 https://www.youtube.com/watch?v=yXQ-EMTEQ-k&lc=Ugwxu8rNphH0QOjuL2F4AaABAg · Q4 https://www.youtube.com/watch?v=amc8B8SxwgY&lc=UgxE189kNw5pkxpwodl4AaABAg (2차 — 댓글 셈은 우리 셈) |
 | 1년 끝날 2026-06-05·2024-12-06 (2차) | 35.8% vs 44.7%(차 8.9%p) · 35.2% vs 32.5% | 말 '일반형이 9%포인트 정도 앞섰고요'·'커버드콜이 조금 앞섰지만, 둘의 차이는 크지 않았습니다' · 자막(7장) 원값 | cc1_windows_out_1122 · S4 https://query1.finance.yahoo.com/v8/finance/chart/441640.KS |
 | 1년 다시 넣음 vs 받아 씀 | KODEX 9,580만 < 9,654만 | 말 '다시 넣은 쪽이 오히려 덜 남은 해도 있었으니' | cc1_calc_out_1122 · S1 https://m.samsungfund.com/api/v1/kodex/divid-info.do?id=2ETFH4 · S2 https://m.samsungfund.com/api/v1/kodex/product-earning/2ETFH4.do?srchTerm=0 |
+| 분배 기준일(11/24 v1.3 더함) | 매월 15일 | 말 '매달 15일을 기준일로' | S2 https://m.samsungfund.com/etf/product/view.do?id=2ETFH4 |
+| 2천만원 이하 신고(11/24 v1.3 더함) | 분리과세 — 원천징수로 끝 | 말 '2천만원 이하면 따로 신고할 일은 없어요' | S7 https://www.law.go.kr/법령/소득세법/제14조 |
+| TIGER 총보수(11/24 v1.3 더함) | 연 0.01%(2026-11-13) | 말 0.01% · 자막 원값 | SQ-1 S9 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7458730009 |

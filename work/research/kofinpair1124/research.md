@@ -70,9 +70,9 @@
 | 운용사 6곳 | 한화·신한·삼성·미래에셋·한국투자·KB | S1~S6 |
 
 # 올리기 전 확인
-- 2026-11-23 14시대 firemap-write-b(조사·작성 날) — 발행 날 11/24 22:40 회차가 운용사 구성종목 다시 받아(11/24자) 금융 비중 줄 갱신하고 쇼츠 m51UDa2pd-g 공개 확인
-- 다시 연 주소: https://investments.miraeasset.com/tigeretf/ko/product/chart/prdct-item-list.ajax?ksdFund=KR7210780003&prfPrd=Week01&fixDate=20261120&listCnt=100 · https://papi.aceetf.co.kr/api/funds/K55101EQ7660/pdf?size=50 · https://kbam.co.kr/api/products/etfs/4494/holdings?base_dt=20261120 · https://kbam.co.kr/api/products/etfs/4454/holdings?base_dt=20261120 · https://m.samsungfund.com/api/v1/kodex/product-pdf/2ETF96.do?gijunYMD=20261120 (firemap-write 11/23 09:3x 받음) · https://www.plusetf.co.kr/product/detail?n=006273 · https://www.soletf.com/ko/fund/etf/211097?tabIndex=3 (video-producer 11/21 받음) · https://kbam.co.kr/products/4494 · https://www.aceetf.co.kr/fund/K55101EQ7660
-- 기준일: 운용사 구성종목 2026-11-20자(ACE 2026-11-23자)
-- 바뀐 것: 쇼츠(PLUS 55.6·SOL 56.5, 11/20자) 그대로 · 새로 5개 더함
-- 새로 찾은 것: 7개 중 절반 넘는 건 3개 · RISE 둘은 삼성전자+SK하이닉스 50.3·46.7% · ACE 금융은 증권사 셋이 19.0 · TIGER 최대 종목 3.67%
-- 조사 뒤 공표: data/release_calendar.json — 구성종목은 매일 바뀜(분배금 기준일 11월 말 확인 안 함) — 발행 날 다시 받아 바뀌면 갱신
+- 2026-11-24 22:4x firemap-write-b(발행 날) — fetch_1124.py로 운용사 5곳(TIGER 11/23자·ACE 11/24자·RISE 2종 11/24자·KODEX 11/24자)·네이버 증권 ETF 분석 10종(기준일 2026.11.23) 다시 받아 calc_1124.py → calc_1124_out.txt. 쇼츠 m51UDa2pd-g 공개 확인(oembed 200)
+- 다시 연 주소: https://investments.miraeasset.com/tigeretf/ko/product/chart/prdct-item-list.ajax?ksdFund=KR7210780003&prfPrd=Week01&fixDate=20261120&listCnt=100 · https://papi.aceetf.co.kr/api/funds/K55101EQ7660/pdf?size=50 · https://kbam.co.kr/api/products/etfs/4494/holdings?base_dt=20261120 · https://kbam.co.kr/api/products/etfs/4454/holdings?base_dt=20261120 · https://m.samsungfund.com/api/v1/kodex/product-pdf/2ETF96.do?gijunYMD=20261120 (firemap-write 11/23 09:3x 받음) · https://www.plusetf.co.kr/product/detail?n=006273 · https://www.soletf.com/ko/fund/etf/211097?tabIndex=3 (video-producer 11/21 받음) · https://kbam.co.kr/products/4494 · https://www.aceetf.co.kr/fund/K55101EQ7660 · https://m.stock.naver.com/api/stock/161510/etfAnalysis · https://m.stock.naver.com/api/stock/0105E0/etfAnalysis
+- 기준일: 본문 숫자는 운용사 구성종목 2026-11-20자(ACE 2026-11-23자) 그대로 — 본문에 날짜를 적어 둠
+- 바뀐 것: 11/24자로 다시 더하면 KODEX 52.5→52.8 · ACE 37.4→37.5(증권 셋 19.0→19.2) · TIGER 32.6→32.5(11/23자) · RISE 대형고배당10TR 32.2→32.6(반도체 둘 50.3→49.6) · RISE 고배당 28.0→28.6(반도체 46.7→45.7, 나머지 50종목 6.7→6.8) · PLUS·SOL 운용사 11/24 파일은 curl로 못 받음(PLUS API 400, SOL은 브라우저 화면) — 네이버 2차 11.20→11.23 PLUS 56.01→56.08·SOL 56.57→56.47. 차이 모두 0.7%p 안, 순위·'절반 넘는 건 셋'·'RISE 반도체 절반 안팎'·TIGER 맨 위 한일시멘트 3.7% 그대로 → 본문은 날짜 적힌 11/20자 숫자 유지(날짜 섞지 않음, 사진 다시 안 만듦)
+- 새로 찾은 것: ACE 맨 위 종목이 SNT다이내믹스 6.9%로 바뀜(본문은 금융 셋만 말함, 영향 없음)
+- 조사 뒤 공표: data/release_calendar.json — 구성종목은 매일 바뀜, 분배금 기준일 11월 말(이 글은 분배금 숫자 없음)

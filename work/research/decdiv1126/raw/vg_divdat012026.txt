@@ -1,0 +1,3393 @@
+2026 dividend 
+schedule 
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+0-3 Month Treasury Bill ETF 922040845 VBIL 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+500 Index Admiral™ Shares 922908710 VFIAX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+500 Index Institutional Select Shares 922908348 VFFSX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+500 Index Investor Shares 922908108 VFINX 3/26/26 3/27/26 3/30/26
+6/25/26 6/26/26 6/29/26
+9/25/26 9/28/26 9/29/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+1
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+2
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Advice Select Dividend Growth Admiral Shares 921946752 VADGX 6/23/26 6/24/26 6/25/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Advice Select Global Value Admiral Shares 921946778 VAGVX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Advice Select International Growth Admiral 
+Shares
+921946760 VAIGX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Baillie Gifford Global Positive Impact Stock 
+Investor Shares
+92205M408 VBPIX 03/27/26 03/30/26 03/31/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Balanced Index Admiral Shares 921931200 VBIAX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Balanced Index Institutional Shares 921931309 VBAIX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Balanced Index Investor Shares 921931101 VBINX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+California Intermediate-Term Tax-Exempt 
+Admiral Shares1
+922021407 VCADX 12/22/26 12/23/26 12/24/26
+California Intermediate-Term Tax-Exempt 
+Investor Shares1
+922021308 VCAIX 12/22/26 12/23/26 12/24/26
+California Long-Term Tax-Exempt Admiral Shares 1 922021506 VCLAX 12/22/26 12/23/26 12/24/26
+California Long-Term Tax-Exempt Investor Shares 1 922021100 VCITX 12/22/26 12/23/26 12/24/26
+California Municipal Money Market 1 922021209 VCTXX 12/22/26 12/23/26 12/24/26
+California Tax-Exempt Bond ETF 922021605 VTEC 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+3
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/23/26 12/23/26 12/28/26
+12/30/26 12/30/26 01/04/27
+Capital Opportunity Admiral Shares 922038500 VHCAX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Capital Opportunity Investor Shares 922038302 VHCOX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Cash Reserves Federal Money Market1 922906508 VMRXX 12/22/26 12/23/26 12/24/26
+Commodity Strategy Admiral Shares 921939708 VCMDX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Communication Services ETF 92204A884 VOX 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/16/26 12/16/26 12/18/26
+12/30/26 12/30/26 01/04/27
+Communication Services Index Admiral Shares 92204A777 VTCAX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Consumer Discretionary ETF 92204A108 VCR 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/16/26 12/16/26 12/18/26
+12/30/26 12/30/26 01/04/27
+Consumer Discretionary Index Admiral Shares 92204A868 VCDAX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Consumer Staples ETF 92204A207 VDC 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+12/16/26 12/16/26 12/18/26
+12/30/26 12/30/26 01/04/27
+Consumer Staples Index Admiral Shares 92204A850 VCSAX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Core Bond ETF 922020748 VCRB 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Core Bond Admiral Shares 922020839 VCOBX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Core Bond Investor Shares 922020847 VCORX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+4
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+5
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Core-Plus Bond ETF 922020755 VPLS 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Core-Plus Bond Admiral Shares 922020789 VCPAX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Core-Plus Bond Investor Shares 922020797 VCPIX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+6
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Core-Plus Bond Index ETF 921913869 BNDP 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Core Tax-Exempt Bond ETF 922907712 VCRM 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Developed Markets ex-US Value Index ETF 921910675 VDV 06/18/26 06/18/26 06/23/26
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+7
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Developed Markets ex-US Growth Index ETF 921910667 VDG 06/18/26 06/18/26 06/23/26
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+Developed Markets Index Admiral Shares 921943809 VTMGX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Developed Markets Index Institutional Shares 921943882 VTMNX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Developed Markets Index Institutional Plus Shares 92206J206 VDIPX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Developed Markets Index Investor Shares 92206J107 VDVIX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Diversified Equity Investor Shares 921939401 VDEQX 12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Dividend Appreciation ETF 921908844 VIG 03/27/26 03/27/26 03/31/26
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+Dividend Appreciation Index Admiral Shares 921908828 VDADX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Dividend Growth Investor Shares 921908604 VDIGX 03/27/26 03/30/26 03/31/26
+06/25/26 06/26/26 06/29/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+8
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Emerging Markets Bond Admiral Shares 922020813 VEGBX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Emerging Markets Bond Investor Shares 922020821 VEMBX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Emerging Markets ex-China ETF 921910683 VEXC 03/20/26 03/20/26 03/24/26
+06/18/26 06/18/26 06/23/26
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+Emerging Markets Government Bond ETF 921946885 VWOB 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+9
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Emerging Markets Government Bond Index 
+Admiral Shares
+921946802 VGAVX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Emerging Markets Government Bond Index 
+Institutional Shares
+921946703 VGIVX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Emerging Markets Select Stock Investor Shares 921939500 VMMSX 12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+10
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Emerging Markets Stock Index Admiral Shares 922042841 VEMAX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Emerging Markets Stock Index Institutional Shares 922042601 VEMIX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Emerging Markets Stock Index Institutional  
+Plus Shares
+922042650 VEMRX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Emerging Markets Stock Index Investor Shares 922042304 VEIEX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Energy Admiral Shares 921908802 VGELX 03/27/26 03/30/26 03/31/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Energy Investor Shares 921908109 VGENX 03/27/26 03/30/26 03/31/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Energy ETF 92204A306 VDE 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/16/26 12/16/26 12/18/26
+12/30/26 12/30/26 01/04/27
+Energy Index Admiral Shares 92204A843 VENAX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+11
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Equity Income Admiral Shares 921921300 VEIRX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Equity Income Investor Shares 921921102 VEIPX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+ESG International Stock ETF 921910725 VSGX 03/20/26 03/20/26 03/24/26
+06/18/26 06/18/26 06/23/26
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+ESG U.S. Corporate Bond ETF 921910691 VCEB 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+ESG U.S. Stock ETF 921910733 ESGV 03/20/26 03/20/26 03/24/26
+06/18/26 06/18/26 06/23/26
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+European Stock Index Admiral Shares 922042809 VEUSX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+12
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+European Stock Index Institutional Shares 922042502 VESIX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+European Stock Index Institutional Plus Shares 922042627 VEUPX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+European Stock Index Investor Shares 922042205 VEURX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Explorer™ Admiral Shares 921926200 VEXRX 12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Explorer Investor Shares 921926101 VEXPX 12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Explorer Value™ Investor Shares 92206C748 VEVFX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Extended Duration Treasury ETF 921910709 EDV 04/01/26 04/01/26 04/06/26
+07/01/26 07/01/26 07/06/26
+10/01/26 10/01/26 10/05/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Extended Duration Treasury Index Institutional 
+Shares
+921910881 VEDTX 03/31/26 04/01/26 04/02/26
+06/30/26 07/01/26 07/02/26
+09/30/26 10/01/26 10/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Extended Duration Treasury Index Institutional 
+Plus Shares
+921910808 VEDIX 03/31/26 04/01/26 04/02/26
+06/30/26 07/01/26 07/02/26
+09/30/26 10/01/26 10/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Extended Market ETF 922908652 VXF 03/24/26 03/24/26 03/26/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+13
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+Extended Market Index Admiral Shares 922908694 VEXAX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Extended Market Index Institutional Shares 922908884 VIEIX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Extended Market Index Institutional Plus Shares 922908371 VEMPX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Extended Market Index Investor Shares 922908207 VEXMX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Federal Money Market1 922906300 VMFXX 12/22/26 12/23/26 12/24/26
+Financials ETF 92204A405 VFH 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/16/26 12/16/26 12/18/26
+12/30/26 12/30/26 01/04/27
+Financials Index Admiral Shares 92204A835 VFAIX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+14
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+FTSE All-World ex-US ETF 922042775 VEU 03/20/26 03/20/26 03/24/26
+06/18/26 06/18/26 06/23/26
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+FTSE All-World ex-US Index Admiral Shares 921937736 VFWAX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+FTSE All-World ex-US Index Institutional Shares 922042783 VFWSX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+FTSE All-World ex-US Index Institutional Plus 
+Shares
+922042635 VFWPX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+FTSE All-World ex-US Small-Cap ETF 922042718 VSS 03/20/26 03/20/26 03/24/26
+06/18/26 06/18/26 06/23/26
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+FTSE All-World ex-US Small-Cap Index  
+Admiral Shares
+922042593 VFSAX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+FTSE All-World ex-US Small-Cap Index 
+Institutional Shares
+922042726 VFSNX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+15
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+FTSE Developed Markets ETF 921943858 VEA 03/20/26 03/20/26 03/24/26
+06/18/26 06/18/26 06/23/26
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+FTSE Emerging Markets ETF 922042858 VWO 03/20/26 03/20/26 03/24/26
+06/18/26 06/18/26 06/23/26
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+FTSE Europe ETF 922042874 VGK 03/20/26 03/20/26 03/24/26
+06/18/26 06/18/26 06/23/26
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+FTSE Pacific ETF 922042866 VPL 03/20/26 03/20/26 03/24/26
+06/18/26 06/18/26 06/23/26
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+FTSE Social Index Admiral Shares 921910717 VFTAX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+FTSE Social Index Institutional Shares 921910402 VFTNX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Global Capital Cycles Investor Shares 921908208 VGPMX 03/27/26 03/30/26 03/31/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Global Credit Bond Admiral Shares 92203J852 VGCAX 03/31/26 04/01/26 04/02/26
+06/30/26 07/01/26 07/02/26
+09/30/26 10/01/26 10/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+16
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Global Credit Bond Investor Shares 92203J860 VGCIX 03/31/26 04/01/26 04/02/26
+06/30/26 07/01/26 07/02/26
+09/30/26 10/01/26 10/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Global Environmental Opportunities Stock 
+Admiral Shares
+921939880 VEOAX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Global Environmental Opportunities Stock 
+Investor Shares
+921939807 VEOIX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Global Equity Investor Shares 922038203 VHGEX 12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Global ESG Select Stock Admiral Shares 921908794 VESGX 03/27/26 03/30/26 03/31/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Global ESG Select Stock Investor Shares 921908810 VEIGX 03/27/26 03/30/26 03/31/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Global ex-U.S. Real Estate ETF 922042676 VNQI 12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/4/27
+Global ex-U.S. Real Estate Index Admiral Shares 922042668 VGRLX 12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Global ex-U.S. Real Estate Index Institutional 
+Shares
+922042684 VGRNX 12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Global Minimum Volatility Admiral Shares 921946869 VMNVX 12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Global Minimum Volatility Investor Shares 921946877 VMVFX 12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Global Wellesley® Income Admiral Shares 921910741 VGYAX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Global Wellesley Income Investor Shares 921910758 VGWIX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+17
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Global Wellington™ Admiral Shares 921910766 VGWAX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Global Wellington Investor Shares 921910774 VGWLX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+GNMA Admiral Shares 1 922031794 VFIJX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+GNMA Investor Shares 1 922031307 VFIIX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Government Securities Active ETF 922020714 VGVT 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Growth and Income Admiral Shares 921913208 VGIAX 06/23/26 06/24/26 06/25/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Growth and Income Investor Shares 921913109 VQNPX 06/23/26 06/24/26 06/25/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Growth ETF 922908736 VUG 03/27/26 03/27/26 03/31/26
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/22/26 12/22/26 12/24/26
+12/30/26 12/30/26 01/04/27
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+18
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Growth Index Admiral Shares 922908660 VIGAX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Growth Index Institutional Shares 922908868 VIGIX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Growth Index Investor Shares 922908504 VIGRX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Health Care Admiral Shares 921908885 VGHAX 03/27/26 03/30/26 03/31/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Health Care Investor Shares 921908307 VGHCX 03/27/26 03/30/26 03/31/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Health Care ETF 92204A504 VHT 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/16/26 12/16/26 12/18/26
+12/30/26 12/30/26 01/04/27
+Health Care Index Admiral Shares 92204A827 VHCIX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+High Dividend Yield ETF 921946406 VYM 03/20/26 03/20/26 03/24/26
+06/18/26 06/18/26 06/23/26
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+High Dividend Yield Index Admiral Shares 921946786 VHYAX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+19
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+High-Yield Active ETF 922031687 VGHY 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+High-Yield Corporate Admiral Shares 1 922031760 VWEAX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+High-Yield Corporate Investor Shares 1 922031208 VWEHX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+High-Yield Tax-Exempt Admiral Shares 1 922907845 VWALX 12/22/26 12/23/26 12/24/26
+High-Yield Tax-Exempt Investor Shares 1 922907407 VWAHX 12/22/26 12/23/26 12/24/26
+Industrials ETF 92204A603 VIS 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/16/26 12/16/26 12/18/26
+12/30/26 12/30/26 01/04/27
+Industrials Index Admiral Shares 92204A819 VINAX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Inflation-Protected Securities Admiral Shares 922031737 VAIPX 03/31/26 04/01/26 04/02/26
+06/30/26 07/01/26 07/02/26
+09/30/26 10/01/26 10/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+20
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Inflation-Protected Securities Institutional Shares 922031745 VIPIX 03/31/26 04/01/26 04/02/26
+06/30/26 07/01/26 07/02/26
+09/30/26 10/01/26 10/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Inflation-Protected Securities Investor Shares 922031869 VIPSX 03/31/26 04/01/26 04/02/26
+06/30/26 07/01/26 07/02/26
+09/30/26 10/01/26 10/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Information Technology ETF 92204A702 VGT 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/16/26 12/16/26 12/18/26
+12/30/26 12/30/26 01/04/27
+Information Technology Index Admiral Shares 92204A793 VITAX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Institutional Index Institutional Shares 922040100 VINIX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Institutional Index Institutional Plus Shares 922040209 VIIIX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Institutional Intermediate-Term Bond 
+Investor Shares
+922020854 VIITX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+21
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Institutional Short-Term Bond 922020862 VISTX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Institutional Total Stock Market Index  
+Institutional Shares
+922040308 VITNX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Institutional Total Stock Market Index  
+Institutional Plus Shares
+922040407 VITPX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Intermediate-Term Bond ETF 1 921937819 BIV 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+22
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+06/01/26 06/01/26 06/03/26
+Intermediate-Term Bond Index Admiral Shares 1 921937801 VBILX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+Intermediate-Term Bond Index 
+Institutional Shares 1
+921937884 VBIMX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+Intermediate-Term Bond Index Institutional  
+Plus Shares1
+921937751 VBIUX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+Intermediate-Term Bond Index Investor Shares 1 921937306 VBIIX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+Intermediate-Term Corporate Bond ETF 92206C870 VCIT 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Intermediate-Term Corporate Bond Index 
+Admiral Shares
+92206C854 VICSX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+23
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Intermediate-Term Corporate Bond Index 
+Institutional Shares
+92206C862 VICBX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Intermediate-Term Investment-Grade  
+Admiral Shares1
+922031810 VFIDX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Intermediate-Term Investment-Grade  
+Investor Shares1
+922031885 VFICX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Intermediate-Term Tax-Exempt Bond ETF 922907738 VTEI 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Intermediate-Term Tax-Exempt Admiral Shares1 922907878 VWIUX 12/22/26 12/23/26 12/24/26
+Intermediate-Term Tax-Exempt Investor Shares 1 922907209 VWITX 12/22/26 12/23/26 12/24/26
+Intermediate-Term Treasury Admiral Shares 1 922031828 VFIUX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+24
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Intermediate-Term Treasury Investor Shares 1 922031802 VFITX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Intermediate-Term Treasury ETF 92206C706 VGIT 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Intermediate-Term Treasury Index Admiral Shares 92206C888 VSIGX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Intermediate-Term Treasury Index Institutional 
+Shares
+92206C805 VIIGX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+25
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+International Core Stock Admiral Shares 922038880 VZICX 12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+International Core Stock Investor Shares 922038807 VWICX 12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+International Dividend Appreciation ETF 921946810 VIGI 03/20/26 03/20/26 03/24/26
+06/18/26 06/18/26 06/23/26
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+International Dividend Appreciation Index  
+Admiral Shares
+921946844 VIAAX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+International Dividend Growth Investor Shares 921946729 VIDGX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+International Explorer Investor Shares 921946208 VINEX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+International Growth Admiral Shares 921910501 VWILX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+International Growth Investor Shares 921910204 VWIGX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+International High Dividend Yield ETF 921946794 VYMI 03/20/26 03/20/26 03/24/26
+06/18/26 06/18/26 06/23/26
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+International High Dividend Yield Index  
+Admiral Shares
+921946828 VIHAX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+26
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+International Value Investor Shares 921939203 VTRIX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Large-Cap ETF 922908637 VV 03/27/26 03/27/26 03/31/26
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/22/26 12/22/26 12/24/26
+12/30/26 12/30/26 01/04/27
+Large-Cap Index Admiral Shares 922908579 VLCAX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Large-Cap Index Institutional Shares 922908561 VLISX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Large-Cap Index Investor Shares 922908587 VLACX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+LifeStrategy® Conservative Growth 921909305 VSCGX 03/27/26 03/30/26 03/31/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+LifeStrategy Growth 921909503 VASGX 06/25/26 06/26/26 06/29/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+LifeStrategy Income 921909206 VASIX 03/27/26 03/30/26 03/31/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+LifeStrategy Moderate Growth 921909404 VSMGX 06/25/26 06/26/26 06/29/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+27
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Limited-Term Tax-Exempt Admiral Shares1 922907886 VMLUX 12/22/26 12/23/26 12/24/26
+Limited-Term Tax-Exempt Investor Shares1 922907704 VMLTX 12/22/26 12/23/26 12/24/26
+Long-Term Bond ETF1 921937793 BLV 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+Long-Term Bond Index Admiral Shares 1 921937652 VBLAX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+Long-Term Bond Index Institutional Shares 1 921937876 VBLLX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+Long-Term Bond Index Institutional Plus Shares 1 921937744 VBLIX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+Long-Term Corporate Bond ETF 92206C813 VCLT 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Long-Term Corporate Bond Index Admiral Shares 92206C789 VLTCX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+28
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Long-Term Corporate Bond Index 
+Institutional Shares
+92206C797 VLCIX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Long-Term Investment-Grade Admiral Shares 1 922031778 VWETX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Long-Term Investment-Grade Investor Shares 1 922031109 VWESX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Long-Term Tax-Exempt Admiral Shares1 922907860 VWLUX 12/22/26 12/23/26 12/24/26
+Long-Term Tax-Exempt Investor Shares1 922907308 VWLTX 12/22/26 12/23/26 12/24/26
+Long-Term Tax-Exempt Bond ETF 922907688 VTEL 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+29
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Long-Term Treasury Admiral Shares1 922031786 VUSUX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Long-Term Treasury Investor Shares1 922031505 VUSTX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Long-Term Treasury ETF 92206C847 VGLT 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Long-Term Treasury Index Admiral Shares 92206C821 VLGSX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+30
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Long-Term Treasury Index Institutional Shares 92206C839 VLGIX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Market Liquidity Fund 92202X209 NA 12/22/26 12/23/26 12/24/26
+Market Neutral Institutional Shares 92205G203 VMNIX 03/27/26 03/30/26 03/31/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Market Neutral Investor Shares 92205G104 VMNFX 03/27/26 03/30/26 03/31/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Massachusetts Tax-Exempt Investor Shares 1 92204X108 VMATX 12/22/26 12/23/26 12/24/26
+Materials ETF 92204A801 VAW 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/16/26 12/16/26 12/18/26
+12/30/26 12/30/26 01/04/27
+Materials Index Admiral Shares 92204A785 VMIAX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Mega Cap ETF 921910873 MGC 03/27/26 03/27/26 03/31/26
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/22/26 12/22/26 12/24/26
+12/30/26 12/30/26 01/04/27
+Mega Cap Index Institutional Shares 921910857 VMCTX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+31
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Mega Cap Growth ETF 921910816 MGK 03/27/26 03/27/26 03/31/26
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/22/26 12/22/26 12/24/26
+12/30/26 12/30/26 01/04/27
+Mega Cap Growth Index Institutional Shares 921910782 VMGAX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Mega Cap Value ETF 921910840 MGV 03/27/26 03/27/26 03/31/26
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/22/26 12/22/26 12/24/26
+12/30/26 12/30/26 01/04/27
+Mega Cap Value Index Institutional Shares 921910824 VMVLX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Mid-Cap Growth Investor Shares 921946307 VMGRX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Mid-Cap ETF 922908629 VO 03/27/26 03/27/26 03/31/26
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/22/26 12/22/26 12/24/26
+12/30/26 12/30/26 01/04/27
+Mid-Cap Index Admiral Shares 922908645 VIMAX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Mid-Cap Index Institutional Shares 922908835 VMCIX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+32
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Mid-Cap Index Institutional Plus Shares 922908389 VMCPX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Mid-Cap Index Investor Shares 922908843 VIMSX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Mid-Cap Growth ETF 922908538 VOT 03/27/26 03/27/26 03/31/26
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/22/26 12/22/26 12/24/26
+12/30/26 12/30/26 01/04/27
+Mid-Cap Growth Index Admiral Shares 921937728 VMGMX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Mid-Cap Growth Index Investor Shares 922908546 VMGIX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Mid-Cap Value ETF 922908512 VOE 03/27/26 03/27/26 03/31/26
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/22/26 12/22/26 12/24/26
+12/30/26 12/30/26 01/04/27
+Mid-Cap Value Index Admiral Shares 921937694 VMVAX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Mid-Cap Value Index Investor Shares 922908520 VMVIX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+33
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Mortgage-Backed Securities ETF 92206C771 VMBS 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Mortgage-Backed Securities Index Admiral Shares 92206C755 VMBSX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Mortgage-Backed Securities Index Institutional 
+Shares
+92206C763 VMBIX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+34
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Multi-Sector Income Bond Admiral Shares 922020763 VMSAX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Multi-Sector Income Bond Investor Shares 922020771 VMSIX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Vanguard Multi-Sector Income Bond ETF 922020722 VGMS 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+35
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Municipal Low Duration Fund 92202X308 NA 12/22/26 12/23/26 12/24/26
+Municipal Money Market 1 922907506 VMSXX 12/22/26 12/23/26 12/24/26
+New Jersey Long-Term Tax-Exempt 
+Admiral Shares1
+92204F305 VNJUX 12/22/26 12/23/26 12/24/26
+New Jersey Long-Term Tax-Exempt Investor 
+Shares1
+92204F206 VNJTX 12/22/26 12/23/26 12/24/26
+New York Long-Term Tax-Exempt Admiral Shares1 92204H301 VNYUX 12/22/26 12/23/26 12/24/26
+New York Long-Term Tax-Exempt Investor Shares1 92204H103 VNYTX 12/22/26 12/23/26 12/24/26
+New York Municipal Money Market1 92204H202 VYFXX 12/22/26 12/23/26 12/24/26
+New York Tax-Exempt Bond ETF 92204H400 MUNY 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/23/26 12/23/26 12/28/26
+12/30/26 12/30/26 01/04/27
+Ohio Long-Term Tax-Exempt Investor Shares1 921929204 VOHIX 12/22/26 12/23/26 12/24/26
+Pacific Stock Index Admiral Shares 922042700 VPADX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Pacific Stock Index Institutional Shares 922042403 VPKIX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+36
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Pacific Stock Index Investor Shares 922042106 VPACX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Pennsylvania Long-Term Tax-Exempt 
+Admiral Shares1
+92204L302 VPALX 12/22/26 12/23/26 12/24/26
+Pennsylvania Long-Term Tax-Exempt 
+Investor Shares1
+92204L104 VPAIX 12/22/26 12/23/26 12/24/26
+PRIMECAP Admiral Shares 921936209 VPMAX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+PRIMECAP Investor Shares 921936100 VPMCX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+PRIMECAP Core Investor Shares 921921508 VPCCX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Real Estate ETF 922908553 VNQ 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+Real Estate Index Admiral Shares 921908877 VGSLX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Real Estate Index Institutional Shares 921908869 VGSNX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Real Estate Index Investor Shares 921908703 VGSIX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Real Estate II Index Institutional Plus Shares 922031695 VRTPX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+37
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Russell 1000 ETF 92206C730 VONE 03/24/26 03/24/26 03/26/26
+06/18/26 06/18/26 06/23/26
+09/23/26 09/23/26 09/25/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+Russell 1000 Index Institutional Shares 92206C722 VRNIX 03/23/26 03/24/26 03/25/26
+06/17/26 06/18/26 06/22/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Russell 1000 Growth ETF 92206C680 VONG 03/24/26 03/24/26 03/26/26
+06/18/26 06/18/26 06/23/26
+09/23/26 09/23/26 09/25/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+Russell 1000 Growth Index Institutional Shares 92206C672 VRGWX 03/23/26 03/24/26 03/25/26
+06/17/26 06/18/26 06/22/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Russell 1000 Value ETF 92206C714 VONV 03/24/26 03/24/26 03/26/26
+06/18/26 06/18/26 06/23/26
+09/23/26 09/23/26 09/25/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+Russell 1000 Value Index Institutional Shares 92206C698 VRVIX 03/23/26 03/24/26 03/25/26
+06/17/26 06/18/26 06/22/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Russell 2000 ETF 92206C664 VTWO 03/24/26 03/24/26 03/26/26
+06/18/26 06/18/26 06/23/26
+09/23/26 09/23/26 09/25/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+Russell 2000 Index Institutional Shares 92206C656 VRTIX 03/23/26 03/24/26 03/25/26
+06/17/26 06/18/26 06/22/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+38
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Russell 2000 Growth ETF 92206C623 VTWG 03/24/26 03/24/26 03/26/26
+06/18/26 06/18/26 06/23/26
+09/23/26 09/23/26 09/25/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+Russell 2000 Growth Index Institutional Shares 92206C615 VRTGX 03/23/26 03/24/26 03/25/26
+06/17/26 06/18/26 06/22/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Russell 2000 Value ETF 92206C649 VTWV 03/24/26 03/24/26 03/26/26
+06/18/26 06/18/26 06/23/26
+09/23/26 09/23/26 09/25/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+Russell 2000 Value Index Institutional Shares 92206C631 VRTVX 03/23/26 03/24/26 03/25/26
+06/17/26 06/18/26 06/22/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Russell 3000 ETF 92206C599 VTHR 03/24/26 03/24/26 03/26/26
+06/18/26 06/18/26 06/23/26
+09/23/26 09/23/26 09/25/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+Russell 3000 Index Institutional Shares 92206C581 VRTTX 03/23/26 03/24/26 03/25/26
+06/17/26 06/18/26 06/22/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+S&P 500 ETF 922908363 VOO 03/27/26 03/27/26 03/31/26
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+39
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+S&P 500 Growth ETF 921932505 VOOG 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+S&P 500 Growth Index Institutional Shares 921932604 VSPGX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+S&P 500 Value ETF 921932703 VOOV 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+S&P 500 Value Index Institutional Shares 921932802 VSPVX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+S&P Mid-Cap 400 ETF 921932885 IVOO 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+S&P Mid-Cap 400 Index Institutional Shares 921932877 VSPMX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+S&P Mid-Cap 400 Growth ETF 921932869 IVOG 12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+S&P Mid-Cap 400 Growth Index Institutional 
+Shares
+921932851 VMFGX 12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+S&P Mid-Cap 400 Value ETF 921932844 IVOV 12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+40
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+S&P Mid-Cap 400 Value Index Institutional Shares 921932836 VMFVX 12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+S&P Small-Cap 600 ETF 921932828 VIOO 12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+S&P Small-Cap 600 Index Institutional Shares 921932810 VSMSX 12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+S&P Small-Cap 600 Growth ETF 921932794 VIOG 12/30/26 12/30/26 1/4/27
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+S&P Small-Cap 600 Value ETF 921932778 VIOV 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/21/26 12/21/26 12/23/26
+12/30/26 12/30/26 01/04/27
+S&P Small-Cap 600 Value Index 
+Institutional Shares
+921932760 VSMVX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/18/26 12/21/26 12/22/26
+12/29/26 12/30/26 12/31/26
+Selected Value Investor Shares 921946109 VASVX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Short Duration Bond ETF 922020730 VSDB 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+41
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Short Duration Tax-Exempt Bond ETF 922907696 VSDM 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Short-Term Bond ETF1 921937827 BSV 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+Short-Term Bond Index Admiral Shares 1 921937702 VBIRX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+Short-Term Bond Index Institutional Shares 1 921937777 VBITX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+Short-Term Bond Index Institutional Plus Shares 1 921937769 VBIPX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+Short-Term Bond Index Investor Shares 1 921937207 VBISX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+Short-Term Corporate Bond ETF 92206C409 VCSH 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+42
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Short-Term Corporate Bond Index Admiral Shares 92206C607 VSCSX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Short-Term Corporate Bond Index Institutional 
+Shares
+92206C508 VSTBX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Short-Term Federal Admiral Shares1 922031844 VSGDX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+43
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Short-Term Federal Investor Shares1 922031604 VSGBX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Short-Term Inflation-Protected Securities ETF 922020805 VTIP 04/01/26 04/01/26 04/06/26
+07/01/26 07/01/26 07/06/26
+10/01/26 10/01/26 10/05/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Short-Term Inflation-Protected Securities Index 
+Admiral Shares
+922020706 VTAPX 03/31/26 04/01/26 04/02/26
+06/30/26 07/01/26 07/02/26
+09/30/26 10/01/26 10/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Short-Term Inflation-Protected Securities Index 
+Institutional Shares
+922020607 VTSPX 03/31/26 04/01/26 04/02/26
+06/30/26 07/01/26 07/02/26
+09/30/26 10/01/26 10/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Short-Term Inflation-Protected Securities Index 
+Investor Shares
+922020508 VTIPX 03/31/26 04/01/26 04/02/26
+06/30/26 07/01/26 07/02/26
+09/30/26 10/01/26 10/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Short-Term Investment-Grade Admiral Shares 1 922031836 VFSUX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Short-Term Investment-Grade Institutional 
+Shares1
+922031877 VFSIX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Short-Term Investment-Grade Investor Shares 1 922031406 VFSTX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Short-Term Tax-Exempt Bond ETF 921935870 VTES 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+44
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/23/26 12/23/26 12/28/26
+12/30/26 12/30/26 01/04/27
+Short-Term Treasury Admiral Shares1 922031851 VFIRX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Short-Term Treasury Investor Shares1 922031703 VFISX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Short-Term Treasury ETF 92206C102 VGSH 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Short-Term Treasury Index Admiral Shares 92206C300 VSBSX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+45
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Short-Term Treasury Index Institutional Shares 92206C201 VSBIX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Small-Cap ETF 922908751 VB 03/27/26 03/27/26 03/31/26
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/22/26 12/22/26 12/24/26
+12/30/26 12/30/26 01/04/27
+Small-Cap Index Admiral Shares 922908686 VSMAX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Small-Cap Index Institutional Shares 922908876 VSCIX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Small-Cap Index Institutional Plus Shares 922908397 VSCPX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Small-Cap Index Investor Shares 922908702 NAESX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+46
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Small-Cap Growth ETF 922908595 VBK 03/27/26 03/27/26 03/31/26
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/22/26 12/22/26 12/24/26
+12/30/26 12/30/26 01/04/27
+Small-Cap Growth Index Admiral Shares 921937710 VSGAX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Small-Cap Growth Index Institutional Shares 922908819 VSGIX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Small-Cap Growth Index Investor Shares 922908827 VISGX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Small-Cap Value ETF 922908611 VBR 03/27/26 03/27/26 03/31/26
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/22/26 12/22/26 12/24/26
+12/30/26 12/30/26 01/04/27
+Small-Cap Value Index Admiral Shares 921937686 VSIAX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Small-Cap Value Index Institutional Shares 922908785 VSIIX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Small-Cap Value Index Investor Shares 922908793 VISVX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+47
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+STAR® 921909107 VGSTX 06/25/26 06/26/26 06/29/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+STAR Core-Plus Bond Institutional Shares 921909735 VCPSX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Strategic Equity Investor Shares 922038104 VSEQX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Strategic Small-Cap Equity Investor Shares 922038609 VSTCX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Target Maturity 2027 Corporate Bond ETF 921938700 VBCA 05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Target Maturity 2028 Corporate Bond ETF 921938809 VBCB 05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+48
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Target Maturity 2029 Corporate Bond ETF 921938882 VBCC 05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Target Maturity 2030 Corporate Bond ETF 921938874 VBCD 05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Target Maturity 2031 Corporate Bond ETF 921938866 VBCE 05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Target Maturity 2032 Corporate Bond ETF 921938858 VBCF 05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+49
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Target Maturity 2033 Corporate Bond ETF 921938841 VBCG 05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Target Maturity 2034 Corporate Bond ETF 921938833 VBCH 05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Target Maturity 2035 Corporate Bond ETF 921938825 VBCI 05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+50
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Target Maturity 2036 Corporate Bond ETF 921938817 VBCJ 05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Target Retirement 2020 Investor Shares 92202E805 VTWNX 12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Target Retirement 2025 Investor Shares 92202E409 VTTVX 12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Target Retirement 2030 Investor Shares 92202E888 VTHRX 12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Target Retirement 2035 Investor Shares 92202E508 VTTHX 12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Target Retirement 2040 Investor Shares 92202E870 VFORX 12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Target Retirement 2045 Investor Shares 92202E607 VTIVX 12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Target Retirement 2050 Investor Shares 92202E862 VFIFX 12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Target Retirement 2055 Investor Shares 92202E847 VFFVX 12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Target Retirement 2060 Investor Shares 92202E839 VTTSX 12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Target Retirement 2065 Investor Shares 92202E680 VLXVX 12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Target Retirement 2070 Investor Shares 92202E664 VSVNX 12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Target Retirement Income 92202C102 VTINX 03/27/26 03/30/26 03/31/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+51
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Tax-Exempt Bond ETF 922907746 VTEB 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Tax-Exempt Bond Index Admiral Shares 922907753 VTEAX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Tax-Managed Balanced Admiral Shares 921943304 VTMFX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Tax-Managed Capital Appreciation Admiral Shares 921943866 VTCLX 03/23/26 03/24/26 03/25/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+52
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+06/17/26 06/18/26 06/22/26
+09/22/26 09/23/26 09/24/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Tax-Managed Capital Appreciation Institutional 
+Shares
+921943601 VTCIX 03/23/26 03/24/26 03/25/26
+06/17/26 06/18/26 06/22/26
+09/22/26 09/23/26 09/24/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Tax-Managed Small-Cap Admiral Shares 921943403 VTMSX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Tax-Managed Small-Cap Institutional Shares 921943502 VTSIX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Total Bond Market ETF1 921937835 BND 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+06/01/26 06/01/26 06/03/26
+Total Bond Market Index Admiral Shares 1 921937603 VBTLX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+Total Bond Market Index Institutional Shares 1 921937504 VBTIX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+53
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Total Bond Market Index Institutional Plus Shares 1 921937785 VBMPX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+Total Bond Market Index Institutional Select 
+Shares1
+921937660 VTBSX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+Total Bond Market Index Investor Shares 1 921937108 VBMFX 03/31/26 04/01/26 04/02/26
+12/16/26 12/17/26 12/18/26
+Total Bond Market II Index Institutional Shares 1 92203C204 VTBNX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Total Bond Market II Index Investor Shares 1 92203C105 VTBIX 03/31/26 04/01/26 04/02/26
+12/22/26 12/23/26 12/24/26
+Total Corporate Bond ETF 92206C573 VTC 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Total Inflation-Protected Securities ETF 922020698 VTP 04/01/26 04/01/26 04/06/26
+07/01/26 07/01/26 07/06/26
+10/01/26 10/01/26 10/05/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Total International Bond ETF 92203J407 BNDX 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+1 This fund distributes dividends daily, which are then paid monthly. The dates listed are for when capital gains would be paid, if applicable.
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+54
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Total International Bond Index Admiral Shares 92203J308 VTABX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Total International Bond Index Institutional Shares 92203J209 VTIFX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Total International Bond Index Investor Shares 92203J100 VTIBX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+55
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Total International Bond II Index Institutional 
+Shares
+92211J308 VTILX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Total International Bond II Index Investor Shares 92211J100 VTIIX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Total International Stock ETF 921909768 VXUS 03/20/26 03/20/26 03/24/26
+06/18/26 06/18/26 06/23/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+56
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+Total International Stock Index Admiral Shares 921909818 VTIAX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Total International Stock Index Institutional Shares 921909784 VTSNX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Total International Stock Index Institutional Plus 
+Shares
+921909776 VTPSX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Total International Stock Index Institutional  
+Select Shares
+921909743 VTISX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Total International Stock Index Investor Shares 921909602 VGTSX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Total Stock Market ETF 922908769 VTI 03/27/26 03/27/26 03/31/26
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/22/26 12/22/26 12/24/26
+12/30/26 12/30/26 01/04/27
+Total Stock Market Index Admiral Shares 922908728 VTSAX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+57
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Total Stock Market Index Institutional Shares 922908801 VITSX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Total Stock Market Index Institutional Plus Shares 922908355 VSMPX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Total Stock Market Index Institutional Select 
+Shares
+922908330 VSTSX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Total Stock Market Index Investor Shares 922908306 VTSMX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Total Treasury ETF 922020680 VTG 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Total World Bond ETF 92206C565 BNDW 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+58
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Total World Stock ETF 922042742 VT 03/20/26 03/20/26 03/24/26
+06/18/26 06/18/26 06/23/26
+09/18/26 09/18/26 09/22/26
+12/18/26 12/18/26 12/22/26
+12/30/26 12/30/26 01/04/27
+Total World Stock Index Admiral Shares 922042619 VTWAX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Total World Stock Index Institutional Shares 922042759 VTWIX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/17/26 12/18/26 12/21/26
+12/29/26 12/30/26 12/31/26
+Treasury Money Market 921932109 VUSXX 12/22/26 12/23/26 12/24/26
+Ultra-Short Bond ETF 92203C303 VUSB 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+59
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+Ultra-Short-Term Bond Admiral Shares 922031711 VUSFX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Ultra-Short-Term Bond Investor Shares 922031729 VUBFX 01/30/26 02/02/26 02/03/26
+02/27/26 03/02/26 03/03/26
+03/31/26 04/01/26 04/02/26
+04/30/26 05/01/26 05/04/26
+05/29/26 06/01/26 06/02/26
+06/30/26 07/01/26 07/02/26
+07/31/26 08/03/26 08/04/26
+08/31/26 09/01/26 09/02/26
+09/30/26 10/01/26 10/02/26
+10/30/26 11/02/26 11/03/26
+11/30/26 12/01/26 12/02/26
+12/16/26 12/17/26 12/18/26
+12/29/26 12/30/26 12/31/26
+Ultra-Short-Term Tax-Exempt Admiral Shares 922907803 VWSUX 12/22/26 12/23/26 12/24/26
+Ultra-Short-Term Tax-Exempt Investor Shares 922907100 VWSTX 12/22/26 12/23/26 12/24/26
+Ultra-Short Treasury ETF 922040852 VGUS 02/02/26 02/02/26 02/04/26
+03/02/26 03/02/26 03/04/26
+04/01/26 04/01/26 04/06/26
+05/01/26 05/01/26 05/05/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+60
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+06/01/26 06/01/26 06/03/26
+07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+U.S. Growth Admiral Shares 921910600 VWUAX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+U.S. Growth Investor Shares 921910105 VWUSX 12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+U.S. High-Yield Corporate Bond Index ETF 922020672 VCHY 07/01/26 07/01/26 07/06/26
+08/03/26 08/03/26 08/05/26
+09/01/26 09/01/26 09/03/26
+10/01/26 10/01/26 10/05/26
+11/02/26 11/02/26 11/04/26
+12/01/26 12/01/26 12/03/26
+12/17/26 12/17/26 12/21/26
+12/30/26 12/30/26 01/04/27
+U.S. Minimum Volatility ETF 921935409 VFMV 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/23/26 12/23/26 12/28/26
+12/30/26 12/30/26 01/04/27
+U.S. Momentum Factor ETF 921935508 VFMO 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/23/26 12/23/26 12/28/26
+12/30/26 12/30/26 01/04/27
+U.S. Multifactor ETF 921935607 VFMF 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/23/26 12/23/26 12/28/26
+12/30/26 12/30/26 01/04/27
+U.S. Multifactor Admiral Shares 921935888 VFMFX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+61
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+09/22/26 09/23/26 09/24/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+U.S. Quality Factor ETF 921935706 VFQY 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/23/26 12/23/26 12/28/26
+12/30/26 12/30/26 01/04/27
+U.S. Value Factor ETF 921935805 VFVA 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/23/26 12/23/26 12/28/26
+12/30/26 12/30/26 01/04/27
+Utilities ETF 92204A876 VPU 03/24/26 03/24/26 03/26/26
+06/24/26 06/24/26 06/26/26
+09/23/26 09/23/26 09/25/26
+12/16/26 12/16/26 12/18/26
+12/30/26 12/30/26 01/04/27
+Utilities Index Admiral Shares 92204A769 VUIAX 03/23/26 03/24/26 03/25/26
+06/23/26 06/24/26 06/25/26
+09/22/26 09/23/26 09/24/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Value ETF 922908744 VTV 03/27/26 03/27/26 03/31/26
+06/26/26 06/26/26 06/30/26
+09/28/26 09/28/26 09/30/26
+12/22/26 12/22/26 12/24/26
+12/30/26 12/30/26 01/04/27
+Value Index Admiral Shares 922908678 VVIAX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Value Index Institutional Shares 922908850 VIVIX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+62
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Value Index Investor Shares 922908405 VIVAX 03/26/26 03/27/26 03/30/26
+06/25/26 06/26/26 06/29/26
+09/25/26 09/28/26 09/29/26
+12/21/26 12/22/26 12/23/26
+12/29/26 12/30/26 12/31/26
+Wellesley Income Admiral Shares 921938205 VWIAX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Wellesley Income Investor Shares 921938106 VWINX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Wellington Admiral Shares 921935201 VWENX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Wellington Investor Shares 921935102 VWELX 03/19/26 03/20/26 03/23/26
+06/17/26 06/18/26 06/22/26
+09/17/26 09/18/26 09/21/26
+12/22/26 12/23/26 12/24/26
+12/29/26 12/30/26 12/31/26
+Wellington Dividend Growth Active ETF 921938403 VDIG 12/16/26 12/16/26 12/18/26
+12/30/26 12/30/26 01/04/27
+Wellington U.S. Growth Active ETF 921938502 VUSG 12/16/26 12/16/26 12/18/26
+12/30/26 12/30/26 01/04/27
+Wellington U.S. Value Active ETF 921938601 VUSV 12/16/26 12/16/26 12/18/26
+12/30/26 12/30/26 01/04/27
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+63
+ VANGUARD FUND CUSIP TICKER
+2026 
+RECORD 
+DATE
+2026 
+REINVEST 
+AND/OR  
+EX-DIVIDEND 
+DATE
+2026 
+PAYABLE 
+DATE
+Windsor™ Admiral Shares 922018403 VWNEX 06/17/26 06/18/26 06/22/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Windsor Investor Shares 922018106 VWNDX 06/17/26 06/18/26 06/22/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Windsor II Admiral Shares 922018304 VWNAX 06/17/26 06/18/26 06/22/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+Windsor II Investor Shares 922018205 VWNFX 06/17/26 06/18/26 06/22/26
+12/15/26 12/16/26 12/17/26
+12/29/26 12/30/26 12/31/26
+VVIF Balanced 921925400 NA 03/27/26 03/30/26 03/31/26
+VVIF Capital Growth 921925822 NA 03/27/26 03/30/26 03/31/26
+VVIF Conservative Allocation 921925798 NA 03/27/26 03/30/26 03/31/26
+VVIF Diversified Value 921925871 NA 03/27/26 03/30/26 03/31/26
+VVIF Equity Income 921925608 NA 03/27/26 03/30/26 03/31/26
+VVIF Equity Index 921925301 NA 03/27/26 03/30/26 03/31/26
+VVIF Global Bond Index 921925772 NA 03/27/26 03/30/26 03/31/26
+VVIF Growth 921925509 NA 03/27/26 03/30/26 03/31/26
+VVIF High Yield Bond 921925806 NA 03/27/26 03/30/26 03/31/26
+VVIF International 921925707 NA 03/27/26 03/30/26 03/31/26
+VVIF Mid-Cap Index 921925855 NA 03/27/26 03/30/26 03/31/26
+VVIF Moderate Allocation 921925780 NA 03/27/26 03/30/26 03/31/26
+VVIF Money Market 1 921925103 NA 03/27/26 03/30/26 03/31/26
+VVIF Real Estate Index 921925848 NA 03/27/26 03/30/26 03/31/26
+VVIF Short-Term Investment-Grade 921925863 NA 03/27/26 03/30/26 03/31/26
+VVIF Small Company Growth 921925889 NA 03/27/26 03/30/26 03/31/26
+VVIF Total Bond Market Index 921925202 NA 03/27/26 03/30/26 03/31/26
+VVIF Total International Stock Market Index 921925764 NA 03/27/26 03/30/26 03/31/26
+VVIF Total Stock Market Index 921925814 NA 03/27/26 03/30/26 03/31/26
+Please note: Vanguard funds have regularly scheduled December distributions for income and capital gains. An additional late-December distribution 
+may be made, if necessary, to address differences between estimated and actual taxable income and satisfy applicable distribution requirements.
+64
+For more information about Vanguard funds, visit vanguard.com to obtain 
+a prospectus or, if available, a summary prospectus. Investment objectives, 
+risks, charges, expenses, and other important information are contained in 
+the prospectus; read and consider it carefully before investing. 
+Vanguard ETF Shares are not redeemable with the issuing Fund other than 
+in very large aggregations worth millions of dollars. Instead, investors must 
+buy and sell Vanguard ETF Shares in the secondary market and hold those 
+shares in a brokerage account. In doing so, the investor may incur brokerage 
+commissions and may pay more than net asset value when buying and receive 
+less than net asset value when selling.
+This document is to be used for informational purposes only and is subject to change without 
+notice. Vanguard will not be held liable for inaccuracy or changes to this schedule. 
+For final distribution rates, check the fund profiles in the Investments area of our website after 
+the fund declaration date. 
+All investments are subject to risk, including the possible loss of the money you invest.
+CGS identifiers have been provided by CUSIP Global Services, managed on behalf of the 
+American Bankers Association by Standard & Poor’s Financial Services, LLC, and are not for 
+use or dissemination in a manner that would serve as a substitute for any CUSIP service. The 
+CUSIP Database, © 2026 American Bankers Association. “CUSIP” is a registered trademark of 
+the American Bankers Association. 
+© 2026 The Vanguard Group, Inc. 
+All rights reserved.
+Vanguard Marketing 
+Corporation, Distributor.
+DIVDAT 112026

@@ -4877,7 +4877,7 @@
    "item": "wytd1124",
    "owner": "firemap-write",
    "gates_ok": "2026-11-23 07:28",
-   "published": null,
+   "published": "https://cafe.naver.com/firemap/480 18:53 verify OK 1514자",
    "note": "firemap-write 2026-11-23 07:28: 운영실장 07:10 지시 — 장부에 없던 18:40 칸(지수, 관문 기한 11/24 12:40) 채움 · wytd1124 'S&P500 올해 수익률 원화로 다시 계산해 보니'(ETF 게시판) — kwvol S&P500 296,900·니케이225 69,510·세계증시 42,080 · 야후 종가(FRED·ECOS 대조)+한국은행 매매기준율 직접 계산: S&P500 +1.0%→원화 -6.4%·나스닥100 -8.1%·닛케이 +12.1%→+1.9%·유로스톡스50 +2.5%→-11.2%(꼴찌)·코스피 +15.6%(6월 22일 최고치 대비 -46.6%)·달러 7.3% 싸짐 · 경쟁 5편 가정 환율·S&P500 하나뿐, 다섯 지수 실제 원화 성적 0편 · 11/24 축 배당→지수(10:10 dow)→부동산→지수(16:10 rsp, 동일가중 장기)→지수(이 칸, 올해 원화)→배당 · research strict·bench·prepublish·compare·calc·sise·cover·disclaim·frame·readcheck 0·aitell 0.0·spoken·selfcheck 사실 0·crosscheck 사실 0(말투 3 반영)·이해 2차 6명(2차 검산 지적으로 환율 12/31 통일) · editgate auto 9797a0ff · 소제목 기본값 안 씀 · 발행 회차가 야후·ECOS 다시 받아 calc.py·올리기 전 확인 갱신(11/23 미국 종가 나오면 기준일 그날 정함)"
   },
   {
@@ -4967,6 +4967,15 @@
    "gates_ok": "2026-11-24 11:04",
    "published": null,
    "note": "firemap-write-b 2026-11-24 11:04: 장부에 없던 11/26 07:40 칸(지수 — 11/25 22:40 부동산 gmnew1125 다음, 같은 축 연속 아님) 채움 · k200etf1126 '코스피200 ETF 비교, 오래 들고 있었다면 남은 돈'(ETF 게시판) 관문 통과 — 잘된 글 1위 ndxetf1122(27.7회/일) 틀을 코스피200에 · kwvol 코덱스200 135,200·KODEX200 98,900·TIGER200 21,500 · 야후 일별 종가·분배 직접 계산(11/23 종가): 2011-10-20 1억 → TIGER 4억 1,597만·RISE 4억 1,098만·ACE 4억 770만·KODEX 4억 363만(차이 1,234만원, 세후 991만원), 해마다 폭 0.19~0.91%p, 현금으로 쓰면 RISE 1위, 최근 1년 분배금 TIGER 1,508·KODEX 845원 · 네이버 NAV 1·5·10년과 0.1%p 안 · 경쟁 상위 8편 이 셈 0편 · research_gate strict·bench·prepublish·compare·cover·disclaim·readcheck 0·selfcheck 사실 0·aitell 0.0·spoken·이해 2차 6명 통과·crosscheck 사실 1·말투 10 반영·editgate auto e32ce1c4 · 발행 회차: 야후 4종 다시 받아 calc.py·mkimg.py 다시 돌리고(11/24·25 종가) 바뀐 숫자 원고 반영 → readcheck·editgate 재서명"
+  },
+  {
+   "at": "2026-11-26 10:10",
+   "kind": "cafe",
+   "item": "decdiv1126",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-24 20:27",
+   "published": null,
+   "note": "firemap-write-b 2026-11-24 20:27: 11/26 10:10 TBD 칸(배당 — 07:40 k200etf 지수·12:40 rent100 부동산 사이) 채움 · decdiv1126 '미국 배당 ETF 12월 배당락일 언제까지 살까?'(ETF 게시판, 일정형 form 3) 관문 통과 — kwvol SCHD배당금 5,290·JEPI 7,920 · 운용사 원문 4곳(슈왑 7/28자·뱅가드·아이셰어즈 11/18자·JP모건) 12월 배당락: JEPI·JEPQ 1일·SCHD 9일(작년 10일, 제3자 사이트 12/10 엇갈림)·DGRO 15일·VYM 18일·VIG·VOO 21일 · 야후 직접 계산: 2025년 12월 몫 DGRO 30.8%·VYM 27.0·SCHD 26.6·VOO 25.1·VIG 24.8, JEPI·JEPQ 12월 배당락 두 번(17~18%) · 1만 달러 세후 SCHD 69~JEPQ 178달러 · 경쟁 5편(1위 VOO '예정'·총액 뺌) · research strict·bench·prepublish·cover·compare·calc·readcheck 0·selfcheck 0·aitell 6.6·spoken·crosscheck 사실 1(문장 뺌)·이해 2차 6명 통과·editgate auto b6001b74 · **발행 회차(11/26 10:10): 슈왑·뱅가드·아이셰어즈·JP모건 일정표 다시 받아 날짜 대조, JEPI·JEPQ 12/1 배당락은 지났거나 임박이 아님 확인(글은 11/26 발행이라 11/30 밤 장 안내 유효), 야후 다시 받아 calc.py·mkimg.py 다시 돌리고 바뀐 숫자 반영 뒤 재서명**"
   },
   {
    "at": "2026-11-26 11:30",

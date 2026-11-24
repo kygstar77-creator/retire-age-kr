@@ -1,0 +1,28 @@
+[오늘 찾은 것]
+- 2026-11-24 슈왑 2026 주식 ETF 분배 일정표(7/28자, raw/schwab_equity_sched2026.pdf·schwab_p1.png) — SCHD 묶음 Q4 배당락·기준일 12/9/26, 지급 12/14/26 · 'DECEMBER*' 추가 분배 12/30/26 배당락, 1/5/27 지급(필요할 때만) · 각주 '배당을 받으려면 배당락일 전에 매매해야' https://www.schwabassetmanagement.com/resource/schwab-equity-etfs-distribution-schedule-2026 (PDF https://bynder.schwab.com/m/15dbdbecf7339e7f/)
+- 2026-11-24 뱅가드 2026 배당 일정표(raw/vg_divdat012026.pdf) — VIG 12/21/26 기준·배당락, 12/23/26 지급 · VOO 같음 · VYM 12/18/26, 12/22/26 지급 · 세 ETF 모두 12/30/26 줄(1/4/27 지급, '필요하면 늦은 12월 추가 분배') https://investor.vanguard.com/content/dam/retail/us/en/pdfs/taxes/divdat-012026.pdf
+- 2026-11-24 아이셰어즈 2026-2028 분배 일정표(11/18자, raw/ish_sched.pdf) — DGRO 묶음 Q4 발표 14-Dec-26·배당락 15-Dec-26·지급 18-Dec-26, 'Potential Income Distribution for Excise Purposes' 배당락 30-Dec-26·지급 5-Jan-27 · 정의: 발표는 배당락 전 영업일 장 마감 뒤, 지급일은 펀드가 증권사에 돈을 보내는 날 https://www.ishares.com/us/literature/shareholder-letters/isharesandblackrocketfsdistributionschedule.pdf
+- 2026-11-24 JP모건 ETF 2026 배당 달력(raw/jpm_notice2026.pdf) — Group 1(JEPI·JEPQ) 12월 소득 분배 배당락·기준 12/1/2026·지급 12/3/2026, 12월 자본이득(있으면) 12/15/2026·12/17/2026 https://am.jpmorgan.com/content/dam/jpm-am-aem/americas/us/en/supplemental/income-distribution-rates/jpmorgan-etfs-2026-distribution-notice.pdf
+- 2026-11-24 뉴욕증권거래소 휴장일·거래시간(raw/nyse_hours.html) — 추수감사절 11/26(목) 휴장, 11/27(금) 오후 1시 조기 마감, 크리스마스 12/25(금) 휴장, 정규장 9:30~16:00 ET https://www.nyse.com/markets/hours-calendars
+- 2026-11-24 야후 파이낸스 chart API JEPI·JEPQ·SCHD·DGRO·VYM·VIG·VOO 3년 일별 종가·배당(raw/yahoo_*.json) https://query1.finance.yahoo.com/v8/finance/chart/SCHD?range=3y&interval=1d&events=div
+- 2026-11-24 웹 검색 'SCHD 12월 배당락일 2026' — 제3자 사이트끼리 12/9·12/10·12/28(추정)로 엇갈림(benzinga 한국판 12/10, wallstreethorizon 12/9) → 슈왑 원문 12/9만 씀 https://kr.benzinga.com/quote/SCHD/dividends
+- 2026-11-24 경쟁 블로그 few_economy(11/24) — VOO 날짜를 '예정'(Wall Street Horizon 인용)으로 적음. 뱅가드 원문 일정표에 12/21·12/23이 있음 https://blog.naver.com/few_economy/224477589614
+
+[계산 — calc.py → calc_out.txt]
+- 2025년 12월 배당(1주) ÷ 2025년 1년 합: DGRO 0.447/1.451 = 30.8% · VYM 0.947/3.501 = 27.0% · SCHD 0.278/1.047 = 26.6% · VOO 1.771/7.068 = 25.1% · VIG 0.884/3.558 = 24.8% · JEPQ (0.553+0.576)/6.123 = 18.4% · JEPI (0.371+0.427)/4.721 = 16.9%
+- JEPI·JEPQ 2025년 12월 배당락 두 번: 2025-12-01, 2025-12-31(야후) — 2026년 1월에는 배당락 없음(1월분이 12/31)
+- SCHD 2025년 12월 배당락 2025-12-10(야후) → 2026년 12/9
+- 11/23 종가: JEPI 55.90 · JEPQ 54.03 · SCHD 34.39 · DGRO 78.53 · VYM 156.86 · VIG 240.82 · VOO 663.91달러
+- 1만 달러 ÷ 11/23 종가 × 2025년 12월 1주당 배당 × 0.85(미국 원천징수 15%): JEPQ 177.6 · JEPI 121.3 · SCHD 68.7 · VYM 51.3 · DGRO 48.4 · VIG 31.2 · VOO 22.7달러
+- 2025 DGRO 분기: 12월 0.447이 네 번 중 최대(1년 1.451, 9월 0.369 → 3·6월 합 0.635)
+- 요일: 2026-11-30 월 · 12-01 화 · 12-08 화 · 12-09 수 · 12-15 화 · 12-18 금 · 12-21 월 · 12-25 금
+- 한국 시간: 미국 동부 표준시(11/1 서머타임 끝) 16:00 = 한국 다음 날 06:00 → 배당락일 새벽 6시
+- 글에 쓴 반올림·표기: JEPQ 177.6 → 약 178달러 · JEPI 121.3 → 약 121 · SCHD 68.7 → 약 69 · VYM 51.3 → 약 51 · DGRO 48.4 → 약 48 · VIG 31.2 → 약 31 · VOO 22.7 → 약 23달러
+- VOO 이름 'Vanguard S&P 500 ETF'(뱅가드 일정표 'S&P 500 ETF ... VOO', S2) → S&P500 지수를 따라감
+- 12/30 추가 분배 지급일 2027년 1월 초: 슈왑 1/5/27(2027-01-05) · 뱅가드 01/04/27(2027-01-04) · 아이셰어즈 5-Jan-27(2027-01-05)
+- 미국 정규장 9:30 ET = 한국 23:30(동부 표준시, +14시간) · 2026-11-30(월) 밤 23:30~12-01 06:00 · 12-08(화) 23:30~12-09 06:00 · 12-18(금) 23:30~12-19(토) 06:00
+- 서머타임 2026-11-01 끝 → 여름보다 한 시간 늦음(여름 정규장 한국 22:30~05:00)
+- JEPI·JEPQ 2026년 1월 배당락 없음(야후 2026년 기록 2/2부터 10번) — 1월 몫이 2025-12-31
+- S&P500 = 미국 큰 회사 500곳 지수(VOO 'S&P 500 ETF', S2)
+- 지난 글 배당락일 주가 https://cafe.naver.com/firemap/426 (exdiv1114)
+- 한국 마지막 장(배당락 전 미국 거래일 = 한국 그날 밤 23:30 개장): JEPI·JEPQ 11-30 · SCHD 12-08 · DGRO 12-14 · VYM 12-17 · VIG·VOO 12-18

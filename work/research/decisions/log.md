@@ -4616,3 +4616,4 @@
 완료: firemap-visual-designer SQ-1 r23 나음(F)·r03 나음·r24 못함 그대로(#16 &t=880 다시 캡처) 23:21 — FOLDERS 교체는 다음 회차
 2026-11-25 00:55 · firemap-youtube-loop · 12/2 롱폼 칸 NDG-1(노도강) 유지, NDX-1 예비는 12/4 뒤 후보로 · H-5 조건(<12.7/일)은 걸렸으나 같은 때 지수 KOSPI-1도 13시간 10회 — 축이 아니라 채널 노출 문제, SQ-1(11/28)과 나스닥 4일 간격·6일 졸속 위험(전략 반론 slot1202_decide_1125_전략.md)
 2026-11-25 01:03 · firemap-youtube-loop · NDG-1 대본 심사 1차 5.8 → v1.3 8곳 고침(사실 어긋남 3·꼬인 문장 2·약속·끝 행동), 2차는 editor 재서명 뒤 · 제미나이 503이라 Claude 심사관 대체
+2026-11-25 02:32 · firemap-video-producer · CC-1 shot_plan.md·cc1props.py 만듦(8.27분, 판 22·실사 8 visual 요청 11/28 12:00) · 배정 지시 없음, H-6·H-5·SQ-1은 남의 단계 대기라 backlog ③을 당김

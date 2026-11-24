@@ -1,4 +1,18 @@
 [오늘 찾은 것]
+2026-11-24 · 발행 회차 다시 받음: 야후 chart API ^GSPC 2026-11-23 7,237.17(11/20 6,910.39 → 하루 +4.73%) · ^NDX 11/23 26,746.10 · ^KS11 11/23 4,708.54 · ^STOXX50E 11/23 6,074.47 · ^SP500TR 11/23 16,256.40 · ^N225 11/23 휴장(근로감사의 날) → 마지막 11/20 56,436.65 · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC · https://query1.finance.yahoo.com/v8/finance/chart/%5EN225
+2026-11-24 · 한국은행 ECOS 802Y001 KOSPI지수 2026-11-23 4708.54 — 야후 값과 같음 · https://ecos.bok.or.kr/api/StatisticSearch/KEY/json/kr/1/3/802Y001/D/20261123/20261123/0001000
+2026-11-24 · 한국은행 ECOS 731Y001 매매기준율 2026-11-23: 원/미국달러 1337.3 · 원/100엔 842.95 · 원/유로 1467.69 · https://ecos.bok.or.kr/api/StatisticSearch/KEY/json/kr/1/5/731Y001/D/20261123/20261123/0000001
+
+[계산 — 2026-11-24 기준일 11/23으로 다시, calc.py → calc_out.txt (11/20 판은 calc_out_1120.txt)]
+S&P500 6,845.50(2025-12-31) → 7,237.17(2026-11-23) = +5.72% → 5.7% · 원화(1434.9→1337.3) -1.47% → 1.5% 손해 · 1달러어치 1.057달러 · 2026년 최고 10/6 7,818.93 대비 -7.44% → 7.4%
+나스닥100 25,249.85 → 26,746.10 = +5.93% → 5.9% · 원화 -1.28% → -1.3%
+S&P500 토탈리턴 15,220.45 → 16,256.40 = +6.81% → 6.8% · 원화 -0.46% → 0.5% 손해
+닛케이225 50,339.48(2025-12-30) → 56,436.65(11/20) = +12.11% → 12.1% · 원화(917.63→842.95) +2.99% → 3.0% · 6/25 최고 72,366.34 대비 -22.01% → 22.0%
+유로스톡스50 5,796.22(2025-12-30) → 6,074.47 = +4.80% → 4.8% · 원화(1685.72→1467.69) -8.75% → -8.8%
+코스피 4,214.17(2025-12-30) → 4,708.54 = +11.73% → 11.7% (원화 그대로) · 6/22 최고 9,114.55 대비 -48.34% → 48.3%
+환율 변화(2025-12-31→2026-11-23): 달러 1,434.9→1,337.3 -6.80% → 6.8% · 100엔 -8.14% → 8.1% · 유로 -12.93% → 12.9%
+
+[11/23 처음 조사 — 기준일 11/20]
 2026-11-23 · 야후 파이낸스 chart API 일봉 ^GSPC·^NDX·^KS11·^N225·^STOXX50E·^SP500TR(2025-12-01~2026-11-20, raw/*.json) · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC · https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX · https://query1.finance.yahoo.com/v8/finance/chart/%5EKS11 · https://query1.finance.yahoo.com/v8/finance/chart/%5EN225 · https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E · https://query1.finance.yahoo.com/v8/finance/chart/%5ESP500TR
 2026-11-23 · 세인트루이스 연준 FRED SP500 2025-12-31 6845.5 · 2026-11-19 7175.83 / NASDAQ100 2025-12-31 25249.85 / NIKKEI225 2025-12-30 50339.48 · 2026-11-20 56436.65 — 야후 값과 같음 · https://fred.stlouisfed.org/series/SP500 · https://fred.stlouisfed.org/series/NASDAQ100 · https://fred.stlouisfed.org/series/NIKKEI225
 2026-11-23 · 한국은행 ECOS 802Y001 KOSPI지수 2025-12-30 4214.17 · 2026-06-22 9114.55 · 2026-11-20 4869.96 — 야후 값과 같음 · https://ecos.bok.or.kr/api/StatisticSearch/KEY/json/kr/1/3/802Y001/D/20261120/20261120/0001000

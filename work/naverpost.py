@@ -55,7 +55,10 @@ def acquire_lock(wait_sec=900):
                 except Exception: owner = ''
                 # 2026-11-03 16:44: 주인이 살아 있으면 나이로 버리지 않는다. 카페 칸 안 jitter는 잠금을 쥔 채 최대 52분 쉬는데,
                 #   30분 규칙 때문에 check가 16:00부터 발행 대기 중이던 midtax1103(PID 987388)의 잠금을 지웠다. 나이 규칙은 주인을 모를 때만.
-                if not _alive(owner) or (not owner and time.time() - os.path.getmtime(LOCK) > 1800):
+                # 2026-11-24 18:20: 16:00 발행이 72분 멈춘 뒤 남긴 잠금(PID 297284)에 check가 15분 대기로 걸렸다.
+                #   정상 보유 최장 = 칸 안 jitter 52분 + 발행 20분쯤 → 2시간 넘은 잠금은 주인이 살아 보여도(멈춤·PID 재사용) 버린다.
+                age = time.time() - os.path.getmtime(LOCK)
+                if not _alive(owner) or (not owner and age > 1800) or age > 7200:
                     print(f'죽은 잠금 제거 (PID {owner or "?"})'); os.remove(LOCK)
             fd = os.open(LOCK, os.O_CREAT | os.O_EXCL | os.O_WRONLY); os.write(fd, str(os.getpid()).encode()); os.close(fd); return True
         except FileExistsError:

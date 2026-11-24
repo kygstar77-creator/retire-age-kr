@@ -17,10 +17,10 @@
 - toprank.txt('S&P500 환율 수익률' 블로그 상위 8, 11/23). 본문 5편 bench_raw. 1(winnerking) 환율 1,300원 가정 계산표, 2(spmj9) KODEX 미국S&P500 vs SPY 6개월, 3(todaybotaem) 환헤지·환노출 가정 10%, 4(sjxmfdl) 퇴직연금 환헤지 뉴스 요약, 5(joyuldrama) S&P500 10년 3.6배 vs 원화 4.2배. 다섯 지수 올해 실제 원화 성적·한국은행 매매기준율로 센 글 0편 → bench.md
 
 ## 질문
-1. 지수는 올랐는데 내 계좌는 왜 손해인가 — https://blog.naver.com/winnerking/224475984112 ('미국 지수는 올랐는데 내 계좌 수익률은 그만큼 오르지 않았더군요') → 답: 원화가 강해져 달러가 7.3% 싸짐, S&P500 +1.0%가 원화로 -6.4%
+1. 지수는 올랐는데 내 계좌는 왜 손해인가 — https://blog.naver.com/winnerking/224475984112 ('미국 지수는 올랐는데 내 계좌 수익률은 그만큼 오르지 않았더군요') → 답: 원화가 강해져 달러가 6.8% 싸짐, S&P500 +5.7%가 원화로 -1.5%(11/23 기준)
 2. 같은 S&P500 ETF인데 수익률이 왜 다른가 — https://blog.naver.com/sjxmfdl/224484285817 ('같은 S&P500 ETF인데 수익률 차이 발생') → 답: 환율 변화가 곱해짐(배당 넣은 토탈리턴도 달러 +2.0%·원화 -5.4%) — 환헤지 상품 비교는 이 글에서 안 다룸(한계)
 3. 국내 상장 S&P500이 SPY보다 더 빠진 이유 — https://blog.naver.com/spmj9/224478725687 ('KODEX 미국S&P500 … 8.31% 하락') → 답: 원화 환산 차이, 다섯 지수 모두 원화로 다시 셈
-4. 다른 나라 지수는 어땠나 — 연관검색어 세계증시 42,080·니케이225 69,510(kwvol 11/23, https://searchad.naver.com/) → 답: 원화로 플러스는 코스피 +15.6%·닛케이 +1.9%뿐, 유로스톡스50은 -11.2%로 꼴찌
+4. 다른 나라 지수는 어땠나 — 연관검색어 세계증시 42,080·니케이225 69,510(kwvol 11/23, https://searchad.naver.com/) → 답: 원화로 플러스는 코스피 +11.7%·닛케이 +3.0%뿐, 유로스톡스50은 -8.8%로 꼴찌(11/23 기준)
 
 ## 왜
 - 왜 원화로 손해인가: 원화 수익률 = (1+지수 수익률)×(끝 환율÷처음 환율)−1 — 달러 1,434.9→1,330.8원(S3)
@@ -50,17 +50,17 @@
 ## 대조
 | 글 값 | 원문 값 | 출처 |
 |---|---|---|
-| S&P500 +1.0% · 원화 -6.4% | 6,845.50 → 6,910.39 · ×1330.8/1434.9 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC · S2 https://fred.stlouisfed.org/series/SP500 · S3 |
-| 나스닥100 -0.9% · 원화 -8.1% | 25,249.85 → 25,028.98 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX · S2 https://fred.stlouisfed.org/series/NASDAQ100 |
-| 닛케이225 +12.1% · 원화 +1.9% | 50,339.48 → 56,436.65 · ×833.73/917.63 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5EN225 · S2 https://fred.stlouisfed.org/series/NIKKEI225 |
-| 유로스톡스50 +2.5% · 원화 -11.2% | 5,796.22 → 5,941.95 · ×1459.62/1685.72 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E · S3 https://ecos.bok.or.kr/ |
-| 코스피 +15.6% | 4,214.17 → 4,869.96 | S4 https://ecos.bok.or.kr/ · S1 https://query1.finance.yahoo.com/v8/finance/chart/%5EKS11 |
-| 달러 1,434.9 → 1,330.8원 · 7.3% 내림 · 엔 9.1% · 유로 13.4% | 1434.9·1330.8 · 917.63→833.73 · 1685.72→1459.62 | S3 https://ecos.bok.or.kr/ |
-| S&P500 토탈리턴 달러 +2.0% · 원화 -5.4% | 15,220.45 → 15,522.21 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5ESP500TR · S5 calc_out.txt |
-| S&P500 10월 6일 최고치보다 11.6% 낮음 · 11월 20일 하루 3.7% 하락 | 7,818.93 · 7,175.83(11/19) → 6,910.39 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC · S2 https://fred.stlouisfed.org/series/SP500 |
-| 코스피 6월 22일 9,114.55 · 46.6% 낮음 | 9114.55 · 4869.96 | S4 https://ecos.bok.or.kr/ · S1 https://query1.finance.yahoo.com/v8/finance/chart/%5EKS11 |
+| S&P500 +5.7% · 원화 -1.5% | 6,845.50 → 7,237.17(11/23) · ×1337.3/1434.9 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC · S2 https://fred.stlouisfed.org/series/SP500 · S3 |
+| 나스닥100 +5.9% · 원화 -1.3% | 25,249.85 → 26,746.10(11/23) | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX · https://api.nasdaq.com/api/quote/NDX/info?assetclass=index (11/23 26,746.10 +6.86% 같음) |
+| 닛케이225 +12.1% · 원화 +3.0% (11/23 일본 휴장 → 11/20 종가) | 50,339.48 → 56,436.65 · ×842.95/917.63 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5EN225 · S2 https://fred.stlouisfed.org/series/NIKKEI225 |
+| 유로스톡스50 +4.8% · 원화 -8.8% | 5,796.22 → 6,074.47(11/23) · ×1467.69/1685.72 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E · S3 https://ecos.bok.or.kr/ |
+| 코스피 +11.7% | 4,214.17 → 4,708.54(11/23) | S4 https://ecos.bok.or.kr/ · S1 https://query1.finance.yahoo.com/v8/finance/chart/%5EKS11 |
+| 달러 1,434.9 → 1,337.3원 · 6.8% 내림 · 엔 8.1% · 유로 12.9% | 1434.9·1337.3 · 917.63→842.95 · 1685.72→1467.69 (11/23) | S3 https://ecos.bok.or.kr/ |
+| S&P500 토탈리턴 달러 +6.8% · 원화 -0.5% | 15,220.45 → 16,256.40(11/23) | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5ESP500TR · S5 calc_out.txt |
+| S&P500 10월 6일 최고치보다 7.4% 낮음 · 11월 23일 하루 4.7% 오름 | 7,818.93 · 6,910.39(11/20) → 7,237.17(11/23) | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC · S2 https://fred.stlouisfed.org/series/SP500 |
+| 코스피 6월 22일 9,114.55 · 11월 23일 4,708.54 · 48.3% 낮음 | 9114.55 · 4708.54 | S4 https://ecos.bok.or.kr/ · S1 https://query1.finance.yahoo.com/v8/finance/chart/%5EKS11 |
 | 닛케이225 6월 25일 최고치보다 22.0% 낮음 | 72,366.34 → 56,436.65 | S1 https://query1.finance.yahoo.com/v8/finance/chart/%5EN225 |
-| 지수 변화에 환율 변화를 곱함 · 1달러어치가 1.01달러 | 1.0095×0.92745−1 = −6.38% | S5 calc_out.txt https://ecos.bok.or.kr/ |
+| 지수 변화에 환율 변화를 곱함 · 1달러어치가 1.057달러 | 1.0572×(1337.3/1434.9)−1 = −1.47% | S5 calc_out.txt https://ecos.bok.or.kr/ |
 | (H) 없는 환노출형은 환율 변화를 그대로 · 환헤지형은 환율 영향을 줄이도록 만든 상품(2차) | '환헤지형은 이러한 환율 영향을 줄이도록 설계'·'헤지 비용과 운용 차이' · KB자산운용 설명 (H) | 2차 https://blog.naver.com/todaybotaem/224471185033 · https://blog.naver.com/joyuldrama/224469529724 |
 
 # 올리기 전 확인
@@ -69,4 +69,10 @@
 - 기준일: 2026-11-20 종가·매매기준율
 - 바뀐 것: 처음 조사(11/23) — 기준일 2026-11-20 · S&P500 +1.0%·원화 -6.4%·달러 -7.3% · 발행 날 회차가 calc.py 다시 돌려 이 줄을 그날 숫자로 고친다(1일 안)
 - 새로 찾은 것: 다섯 지수 원화 순위 뒤바뀜(유로스톡스50 현지 3위 → 원화 꼴찌) · 코스피 6월 최고치 대비 -46.6% · 경쟁 글 다섯 지수 실제 원화 성적 0편
+- 조사 뒤 공표: data/release_calendar.json — 지수 종가 매 거래일, 매매기준율 매 영업일
+- 2026-11-24 18:3x firemap-write 발행 회차 — 야후(^GSPC·^NDX·^KS11·^N225·^STOXX50E·^SP500TR) 다시 받음(fetch.py), ECOS 731Y001 11/23 매매기준율·802Y001 KOSPI 11/23 다시 받음
+- 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC · https://query1.finance.yahoo.com/v8/finance/chart/%5ENDX · https://query1.finance.yahoo.com/v8/finance/chart/%5EKS11 · https://query1.finance.yahoo.com/v8/finance/chart/%5EN225 · https://query1.finance.yahoo.com/v8/finance/chart/%5ESTOXX50E · https://query1.finance.yahoo.com/v8/finance/chart/%5ESP500TR · https://ecos.bok.or.kr/ · https://fred.stlouisfed.org/series/SP500 · https://fred.stlouisfed.org/series/NASDAQ100 · https://fred.stlouisfed.org/series/NIKKEI225 · https://blog.naver.com/todaybotaem/224471185033 · https://blog.naver.com/joyuldrama/224469529724
+- 기준일: 2026-11-23 종가·매매기준율(닛케이225는 11/23 일본 휴장이라 11/20 종가)
+- 바뀐 것: 11/23 미국장 S&P500 하루 +4.7%(6,910.39→7,237.17)로 결론 숫자가 바뀜 → S&P500 달러 +1.0%→+5.7%·원화 -6.4%→-1.5% · 달러 1,330.8→1,337.3원(7.3%→6.8% 싸짐) · 코스피 +15.6%→+11.7%·최고 대비 46.6%→48.3% · 현지 1위가 코스피→닛케이225로 바뀌어 c03 '순위' 문단을 '유로스톡스50 현지 꼴찌→원화 꼴찌·닛케이 1→2등'으로 고침 · 그림 3장 다시(mkimg.py) · 11/20 판은 calc_out_1120.txt·pkg.bak1120
+- 새로 찾은 것: S&P500 11/23 하루 +4.7% · 11/23 일본 휴장(닛케이 마지막 11/20)
 - 조사 뒤 공표: data/release_calendar.json — 지수 종가 매 거래일, 매매기준율 매 영업일

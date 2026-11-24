@@ -42,6 +42,16 @@
     "url": null
    },
    "note": "16:10 칸 rsp1124 못 나감 — naverpost cafe 16:00:31 시작 뒤 72분 진척 없음(카페 목록 #479가 마지막) → 회차가 중단, 11/26 16:10으로 옮김(늦게 내면 18:40 wytd1124 간격·같은 날 S&P500 두 편). 올리기 전 확인 완료: 야후·인베스코·SSGA·미래에셋 다시 받아 6곳 숫자 갱신(기준일 11/23: 23년 연평균 둘 다 11.1%·올해 12.4 vs 6.7·국내 1년 4.96 vs -2.80·상위10 36.4%), readcheck 0·selfcheck 사실 0·aitell 2.2·editgate auto 586ca864. 출처 7곳 다시 엶. 교차검증: 11/22 crosscheck 그대로(숫자 갱신분은 selfcheck). 개선: main 합치기 — 작업 트리 더러움으로 3회차 연속 실패하던 것을 임시 worktree에서 merge해 dev·main push(f239481)."
+  },
+  {
+   "hour": 18,
+   "ts": "18:54",
+   "blog": null,
+   "cafe": {
+    "title": "S&P500 올해 수익률 원화로 다시 계산해 보니",
+    "url": "https://cafe.naver.com/firemap/480"
+   },
+   "note": "18:40 칸 wytd1124 · 발행 회차 다시 받음(야후 6지수·ECOS 매매기준율·KOSPI) → 11/23 S&P500 하루 +4.7%로 결론 바뀜: 기준일 11/20→11/23, 본문 숫자·순위 문단·그림 3장 다시, NDX 11/23은 나스닥 공식 API로 2번째 출처(FRED 아직 없음) · readcheck 0·selfcheck 사실 0·aitell spoken 통과·editgate auto 재서명 e01693de · verify OK 1514/1514자 사진 3/3 · 교차검증: 재실행 안 함(숫자만 갱신, selfcheck 대체) · 0-a 일감표 1번은 영상 담당이라 건너뜀 · 개선: naverpost 잠금 — 16:00 멈춘 발행의 죽은 잠금(PID 297284)에 check가 15분 대기 → 2시간 넘은 잠금은 버림 · 대기 묶음 새로 쓰기 못 함(재계산에 시간)"
   }
  ]
 }

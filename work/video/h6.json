@@ -5,39 +5,6 @@
    "kind": "broll",
    "lines": [
     {
-     "text": "안녕하세요, 파이어맵입니다. 오늘은 은마아파트 재건축 이야기입니다.",
-     "audio": "audio/h-6/ce721e25d296d259.wav",
-     "frames": 119,
-     "cap": null
-    }
-   ],
-   "frames": 119,
-   "data": {
-    "src": "bg/h6/stock/30975009.mp4",
-    "license": "Pexels 30975009 무료(Stephen Leonardi)",
-    "say": "은마아파트 재건축",
-    "side": "left",
-    "blur": [
-     {
-      "x": 20,
-      "y": 560,
-      "w": 210,
-      "h": 110
-     },
-     {
-      "x": 340,
-      "y": 800,
-      "w": 150,
-      "h": 90
-     }
-    ],
-    "from": 0
-   }
-  },
-  {
-   "kind": "broll",
-   "lines": [
-    {
      "text": "은마아파트 34평, 전용 84㎡ 실거래가 1년 사이 얼마나 내렸을까요?",
      "audio": "audio/h-6/c4ee2d0eae3082c3.wav",
      "frames": 146,

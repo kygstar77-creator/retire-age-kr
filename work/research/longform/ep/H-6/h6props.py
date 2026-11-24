@@ -163,6 +163,10 @@ scenes[-1]['lines'].append(silent(END_PAD))
 
 assert len(USED) == len(ALL), ('안 쓴 줄', [i for i in range(len(ALL)) if i not in USED])
 order = [l['i'] for s in scenes for l in s['lines'] if l['i'] is not None]; assert order == sorted(order), '줄 순서'
+# 11/24 10:2x PD(C-37, loop 05:02 지시 ①): script.md 첫 줄 인사 지움(editor dec54aa6) → 인사 장면 scenes.0(줄 0, 119프레임) 통째로 뺌.
+#   voice.json은 다시 녹음 안 함(142줄 그대로, 줄 0은 안 씀). 렌더본은 통렌더 대신 h6_dsl1124.mp4 앞 119프레임 잘라 냄(h6_c37.mp4).
+assert [l['i'] for l in scenes[0]['lines']] == [0] and ALL[0]['text'].startswith('안녕하세요'), scenes[0]['lines']
+scenes = scenes[1:]
 for s in scenes: assert s['kind'] != 'broll' or not re.search(r'\d', s['data']['say'] or ''), ('실사 say 숫자', s['data']['say'])
 for s in scenes: assert s['kind'] != 'broll' or len(s['data']['say'] or '') <= 18, ('say 18자 넘음', s['data']['say'])
 for a, b in zip(scenes, scenes[1:]):

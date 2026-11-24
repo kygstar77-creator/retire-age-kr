@@ -82,8 +82,8 @@ m.update({
         'q5_사람의몫': "예 — '매물 5배 ≠ 팔린 건수'·'재초환 평균 4억 6천 ≠ 내 몫(보유기간 감경)'·'분담금 두 보도가 다름, 조합 문서 미확인'은 흔한 말을 원자료로 가른 우리 판단."},
     'endscreen': {'how': 'Studio 최종 화면 — 업로드 뒤', 'status': '미정'},
     'made_by': 'firemap-video-producer', 'made_at': '2026-11-23',
-    'video': os.path.join(VID, 'out', 'h6_dsl1124.mp4').replace('\\', '/'),   # 11/24 PD: 통렌더 h6.mp4 → deesser i=0.8:m=0.7 + loudnorm(-12.1dB·-17.0 LUFS)
-    'click_ok': [193.4],
+    'video': os.path.join(VID, 'out', 'h6_c37.mp4').replace('\\', '/'),   # 11/24 10:3x PD: h6_dsl1124.mp4 앞 119프레임(인사 장면, C-37) 잘라 냄·-17.0 LUFS 그대로 · 그 전 11/24 PD: 통렌더 h6.mp4 → deesser i=0.8:m=0.7 + loudnorm(-12.1dB·-17.0 LUFS)
+    'click_ok': [189.4],   # 11/24 10:3x PD: 인사 3.97초 잘라 낸 뒤 193.4 → 189.4
     'click_ok_note': "11/24 05:2x PD: 193.4초 = scenes.30 '은마는 그 여섯 곳 중에서도 가장 많이 빠졌고요'의 '가장' 첫소리(쉼 뒤). 통렌더 h6.mp4엔 안 잡히고 음량 맞춤(×1.42) 뒤 잡힘 — 10ms rms 꼴 같음(788→3838 ↔ 1132→5447)·4kHz 위 0%. 제미나이 3.6-flash 1초 듣기 '가장 많이 빠졌고요 / 판정: 말소리'(check/click1934_gemini.log)",
     'todo': '11/23 PD: meta 첫 판 · 남은 것: 썸네일 3차(copywriter) · editor 설명란 desc_1123 서명 · scorecard · 11/25 올리기 전 확인(youtube-loop: 75건·31.45억·11월 막대) · bench_check · cafe_url · gate·예약'})
 json.dump(m, open(MP, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)

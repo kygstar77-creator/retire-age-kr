@@ -10,7 +10,7 @@ fm.fontManager.addfont(F + r'\pd500.ttf'); fm.fontManager.addfont(F + r'\pd700.t
 plt.rcParams['font.family'] = fm.FontProperties(fname=F + r'\pd500.ttf').get_name()
 def Bs(n): return fm.FontProperties(fname=F + r'\pd700.ttf', size=n)
 BLUE, INK, SUBC, ORG, GREY = '#1D4ED8', '#111827', '#6B7280', '#EA580C', '#94A3B8'
-SRC = '국토교통부 아파트 매매 실거래 · 경기 군포시 산본동(11/23 받음, 취소된 거래 뺌) · 파이어맵 계산'
+SRC = '국토교통부 아파트 매매 실거래 · 경기 군포시 산본동(11/25 받음, 취소된 거래 뺌) · 파이어맵 계산'
 TOPIC_PX, NUM_PX = 58, 44
 BG = '#831843'
 fig = plt.figure(figsize=(9, 9), dpi=100); fig.patch.set_facecolor(BG)
@@ -50,7 +50,7 @@ frame(fig, '넓이를 나눠도 선도지구가 더 올랐다', '같은 단지·
 fig.subplots_adjust(top=0.82, bottom=0.1, left=0.06, right=0.97); fig.savefig('pkg/img/01.png', dpi=100); plt.close(fig)
 # 02 2021년 하반기 대비
 fig, ax = plt.subplots(figsize=(9, 6.4), dpi=100)
-labs = ['선도지구 (13개 중 5개 넘음)', '나머지 오래된 단지 (57개 중 10개)', '1997년 이후 단지 (16개 중 4개)']; v = [-3.0, -11.8, -10.5]
+labs = ['선도지구 (13개 중 5개 넘음)', '나머지 오래된 단지 (57개 중 10개)', '1997년 이후 단지 (16개 중 4개)']; v = [-3.0, -11.8, -9.1]
 y = list(range(3))[::-1]
 ax.barh(y, v, color=['#FB923C', GREY, '#93C5FD'], height=0.55)
 for yy, xx in zip(y, v): ax.text(xx - 0.4, yy, f'약 {round(xx)}%', va='center', ha='right', fontproperties=Bs(22), color=INK)

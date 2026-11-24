@@ -8,6 +8,16 @@
    "blog": null,
    "cafe": null,
    "note": "발행 0 — 이 회차 몫 칸 없음(07:40 sanbon1123 write-b) · 비축 gwacheon1125 '과천 아파트 시세 1년, 평당가와 같은 집 비교' 관문 통과(자료조사: 국토부 실거래 API 과천 2,652건·경쟁 6편·법령 1·2차 출처 5 · 검증 경로 crosscheck(Gemini) 사실 2 중 반영 1·유지 1(조회 안내), 말투 15 중 반영 3 · selfcheck 사실 0 · 이해 2차 6명) · 광교 gwanggyo1125 짓고 hold(#449 중복) · 개선: lessons·playbook에 '후보 지역 이름으로 우리 제목 먼저 grep' 한 줄 · 로그인 check: 로그인됨"
+  },
+  {
+   "hour": 7,
+   "ts": "08:02",
+   "blog": null,
+   "cafe": {
+    "title": "산본 아파트 시세, 선도지구 6곳만 따로 세어 보니",
+    "url": "https://cafe.naver.com/firemap/482"
+   },
+   "note": "write-b 07:40 칸 sanbon1123(부동산) · 발행 날 국토부 군포 41410 다시 받음(202610 548·202611 234건) calc 대조: 7,601→7,619건·1,085건·11월 90건·1997 이후 고점 대비 -10.5→-9.1%(그림 02 다시), 핵심 숫자 그대로 · readcheck 0·aitell 4.8·spoken 통과·selfcheck 사실 0('84㎡' 면적 표기 facts 추가)·editgate auto 재서명 f66e997a · verify OK 1798/1798자 사진 3/3 · 경고: 본문 1798자>1500(D-17)·'올해' 연도 없음 2곳 · 개선: 없음"
   }
  ]
 }

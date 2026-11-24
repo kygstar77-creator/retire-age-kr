@@ -19,12 +19,17 @@ SCRIPT = open(os.path.join(EP, 'script.md'), encoding='utf-8').read()
 SRCDOC = SCRIPT + ''.join(open(os.path.join(EP, f), encoding='utf-8').read() for f in ('calc_out.txt', 'calc2_out.txt', 'calc3_out.txt', 'gangnam_count_1122_out.txt', 'gangnam_count_1125_out.txt', 'research.md'))
 V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
 ALL = [l for s in V['sections'] for l in s['lines']]
+# 11/25 PD: lfvoice make가 인사 줄 없는 script로 voice.json을 다시 지어 141줄이 됨 → 줄 번호를 그대로 두려고 0번 자리에 옛 인사 줄(check/voice.json.pre1123pd)을 채움. 그 장면은 아래에서 전처럼 통째로 뺀다.
+if len(ALL) == 141:
+    G = json.load(open(os.path.join(EP, 'check', 'voice.json.pre1123pd'), encoding='utf-8'))['sections'][0]['lines'][0]
+    assert G['text'].startswith('안녕하세요'), G['text']; ALL = [G] + ALL; GREET_PAD = 1
+else: GREET_PAD = 0
 assert len(ALL) == 142, len(ALL)
 assert abs(V.get('speakingRate', 0) - 1.1) < 1e-9 and V['voice'] == 'ko-KR-Chirp3-HD-Charon'
 HEADS = [re.sub(r'^\[?\d+\.\s*|\]$', '', h).strip() for h in re.findall(r'^## (.+)$', SCRIPT, re.M)]
 assert len(HEADS) == 9 and HEADS[1].startswith('은마는') and HEADS[8] == '정리', HEADS
 # 장 첫 줄이 녹음 구역 첫 줄과 같은지(장 카드가 엉뚱한 줄에 붙지 않게)
-FIRST = [sum(len(s['lines']) for s in V['sections'][:k]) for k in range(len(V['sections']))]
+FIRST = [0] + [GREET_PAD + sum(len(s['lines']) for s in V['sections'][:k]) for k in range(1, len(V['sections']))]
 assert FIRST == [0, 10, 23, 57, 69, 97, 107, 129, 138], FIRST
 
 MISSING = []

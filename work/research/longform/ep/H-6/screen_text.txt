@@ -7,7 +7,7 @@
 [scenes.0.data.say] 한 해 사이 얼마나?
 [scenes.0.data.side] left
 [scenes.1.lines.0.text] 거래를 값 순서로 줄 세워 한가운데 값으로 보면, 1년 전 43억 가까이였는데 요즘은 34억을 조금 넘어요.
-[scenes.1.lines.1.text] 8억 5천만원이 빠진 겁니다.
+[scenes.1.lines.1.text] 8억 3천만원이 빠진 겁니다.
 [scenes.1.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.2.lines.0.text] 신고된 실제 거래만 셌습니다. 호가나 매물 이야기는 넣지 않았어요.
 [scenes.2.data.license] Pexels 6964247 무료(Mikhail Nilov)
@@ -59,7 +59,7 @@
 [scenes.15.lines.0.text] 이제 값을 볼게요.
 [scenes.15.data.n] 2장
 [scenes.15.data.q] 1년 실거래, 평형별
-[scenes.16.lines.0.text] 국토교통부에 신고된 은마 매매는 지난 1년 동안 75건이었어요.
+[scenes.16.lines.0.text] 국토교통부에 신고된 은마 매매는 지난 1년 동안 76건이었어요.
 [scenes.16.lines.1.text] 계약이 취소돼 해제라고 적힌 거래는 뺐습니다.
 [scenes.16.lines.2.text] 그중 31평이 34평보다 두 배 가까이 많이 팔렸어요.
 [scenes.16.data.license] 파이어맵 자체 제작 판(출처는 판 안)
@@ -79,11 +79,11 @@
 [scenes.18.data.p.steps.0.text] 42.8억
 [scenes.18.data.p.steps.1.text] 38.8억
 [scenes.18.data.p.steps.2.text] 37.1억
-[scenes.18.data.p.steps.3.text] 34.3억
-[scenes.18.data.p.stepGap.text] −8.5억
+[scenes.18.data.p.steps.3.text] 34.5억
+[scenes.18.data.p.stepGap.text] −8.3억
 [scenes.18.data.p.mark.text] 사업시행인가 7/2
-[scenes.18.data.p.before.text] 인가 전 −4.0억 · 낙폭 8.5억 중 47%
-[scenes.18.data.title] 은마 84㎡ 실거래 26건
+[scenes.18.data.p.before.text] 인가 전 −4.0억 · 낙폭 8.3억 중 48%
+[scenes.18.data.title] 은마 84㎡ 실거래 27건
 [scenes.18.data.source] 국토교통부 실거래가 공개시스템 · 계약 2025.10~2026.11 · 해제 거래 뺌
 [scenes.18.data.chapter] 2. 1년 실거래
 [scenes.19.lines.0.text] 그런데 한 건끼리 비교하면, 어느 두 건을 붙이느냐에 따라 차이가 4억이 안 되게도 10억이 넘게도 보여요.
@@ -106,10 +106,10 @@
 [scenes.21.data.p.steps.0.text] 42.8억
 [scenes.21.data.p.steps.1.text] 38.8억
 [scenes.21.data.p.steps.2.text] 37.1억
-[scenes.21.data.p.steps.3.text] 34.3억
-[scenes.21.data.p.stepGap.text] −8.5억
+[scenes.21.data.p.steps.3.text] 34.5억
+[scenes.21.data.p.stepGap.text] −8.3억
 [scenes.21.data.p.mark.text] 사업시행인가 7/2
-[scenes.21.data.p.before.text] 인가 전 −4.0억 · 낙폭 8.5억 중 47%
+[scenes.21.data.p.before.text] 인가 전 −4.0억 · 낙폭 8.3억 중 48%
 [scenes.21.data.title] 은마 84㎡ 묶음별 가운데 값
 [scenes.21.data.source] 국토교통부 실거래가 공개시스템 · 계약 2025.10~2026.11 · 해제 거래 뺌
 [scenes.21.data.chapter] 2. 1년 실거래
@@ -131,10 +131,10 @@
 [scenes.24.data.p.steps.0.text] 42.8억
 [scenes.24.data.p.steps.1.text] 38.8억
 [scenes.24.data.p.steps.2.text] 37.1억
-[scenes.24.data.p.steps.3.text] 34.3억
-[scenes.24.data.p.stepGap.text] −8.5억
+[scenes.24.data.p.steps.3.text] 34.5억
+[scenes.24.data.p.stepGap.text] −8.3억
 [scenes.24.data.p.mark.text] 사업시행인가 7/2
-[scenes.24.data.p.before.text] 인가 전 −4.0억 · 낙폭 8.5억 중 47%
+[scenes.24.data.p.before.text] 인가 전 −4.0억 · 낙폭 8.3억 중 48%
 [scenes.24.data.title] 은마 84㎡ 인가 전과 뒤
 [scenes.24.data.source] 국토교통부 실거래가 공개시스템 · 계약 2025.10~2026.11 · 해제 거래 뺌
 [scenes.24.data.chapter] 2. 1년 실거래
@@ -147,8 +147,8 @@
 [scenes.26.data.say] 은마만 내렸을까?
 [scenes.26.data.side] left
 [scenes.27.lines.0.text] 같은 강남구에서 34평 크기 거래가 1년 전에도, 요즘에도 있는 단지를 다 찾아봤어요.
-[scenes.27.lines.1.text] 스물한 곳이었고, 그중 열네 곳이 내렸어요.
-[scenes.27.lines.2.text] 내린 폭 순서로 줄 세우면, 한가운데 단지는 5% 정도 내렸어요.
+[scenes.27.lines.1.text] 스물세 곳이었고, 그중 열여섯 곳이 내렸어요.
+[scenes.27.lines.2.text] 내린 폭 순서로 줄 세우면, 한가운데 단지는 6% 가까이 내렸어요.
 [scenes.27.lines.3.text] 은마는 20% 가까이 내려서, 두 번째로 많이 빠졌습니다.
 [scenes.27.data.part] gaps
 [scenes.27.data.p.seed] h6g
@@ -157,38 +157,40 @@
 [scenes.27.data.p.rows.2.name] 압구정동 현대14차(203,204,205,206동)
 [scenes.27.data.p.rows.3.name] 개포동 개포자이프레지던스
 [scenes.27.data.p.rows.4.name] 개포동 래미안블레스티지
-[scenes.27.data.p.rows.5.name] 개포동 디에이치아너힐즈
-[scenes.27.data.p.rows.6.name] 수서동 삼성
-[scenes.27.data.p.rows.7.name] 삼성동 현대힐스테이트2단지
-[scenes.27.data.p.rows.8.name] 논현동 동현아파트1~6
-[scenes.27.data.p.rows.9.name] 삼성동 롯데캐슬프레미어
-[scenes.27.data.p.rows.10.name] 개포동 개포래미안포레스트
+[scenes.27.data.p.rows.5.name] 논현동 쌍용
+[scenes.27.data.p.rows.6.name] 개포동 디에이치아너힐즈
+[scenes.27.data.p.rows.7.name] 수서동 삼성
+[scenes.27.data.p.rows.8.name] 청담동 청담린든그로브
+[scenes.27.data.p.rows.9.name] 삼성동 현대힐스테이트2단지
+[scenes.27.data.p.rows.10.name] 논현동 동현아파트1~6
 [scenes.27.data.p.rows.11.name] 도곡동 도곡렉슬
-[scenes.27.data.p.rows.12.name] 삼성동 삼성동힐스테이트1단지
-[scenes.27.data.p.rows.13.name] 도곡동 현대그린1
-[scenes.27.data.p.rows.14.name] 논현동 아크로힐스논현
-[scenes.27.data.p.rows.15.name] 논현동 신동아(22)
-[scenes.27.data.p.rows.16.name] 수서동 강남데시앙포레
-[scenes.27.data.p.rows.17.name] 삼성동 래미안삼성1차(105-0)
-[scenes.27.data.p.rows.18.name] 자곡동 강남자곡아이파크
-[scenes.27.data.p.rows.19.name] 자곡동 강남한양수자인(4단지)
-[scenes.27.data.p.rows.20.name] 자곡동 강남자곡힐스테이트
-[scenes.27.data.p.countText] 21곳
-[scenes.27.data.p.downText] 내림 14
+[scenes.27.data.p.rows.12.name] 삼성동 롯데캐슬프레미어
+[scenes.27.data.p.rows.13.name] 개포동 개포래미안포레스트
+[scenes.27.data.p.rows.14.name] 삼성동 삼성동힐스테이트1단지
+[scenes.27.data.p.rows.15.name] 도곡동 현대그린1
+[scenes.27.data.p.rows.16.name] 논현동 아크로힐스논현
+[scenes.27.data.p.rows.17.name] 논현동 신동아(22)
+[scenes.27.data.p.rows.18.name] 수서동 강남데시앙포레
+[scenes.27.data.p.rows.19.name] 삼성동 래미안삼성1차(105-0)
+[scenes.27.data.p.rows.20.name] 자곡동 강남자곡아이파크
+[scenes.27.data.p.rows.21.name] 자곡동 강남한양수자인(4단지)
+[scenes.27.data.p.rows.22.name] 자곡동 강남자곡힐스테이트
+[scenes.27.data.p.countText] 23곳
+[scenes.27.data.p.downText] 내림 16
 [scenes.27.data.p.upText] 오름 7
-[scenes.27.data.p.hiText] 은마 −19.9%
-[scenes.27.data.p.hiRank] 21곳 중 2번째 · 거래 3건 → 9건
-[scenes.27.data.p.midText] 가운데 단지 −5.0%
-[scenes.27.data.title] 강남구 34평 단지 21곳 · 1년 변화
-[scenes.27.data.source] 국토교통부 실거래 2026-11-19 받음 · 전용 80~86㎡ · 2025.10~12 ↔ 2026.10~11 가운데 값 · 해제·직거래 뺌 · 단지마다 거래 1~9건
+[scenes.27.data.p.hiText] 은마 −19.4%
+[scenes.27.data.p.hiRank] 23곳 중 2번째 · 거래 3건 → 10건
+[scenes.27.data.p.midText] 가운데 단지 −5.9%
+[scenes.27.data.title] 강남구 34평 단지 23곳 · 1년 변화
+[scenes.27.data.source] 국토교통부 실거래 2026-11-25 받음 · 전용 80~86㎡ · 2025.10~12 ↔ 2026.10~11 가운데 값 · 해제·직거래 뺌 · 단지마다 거래 1~10건
 [scenes.27.data.chapter] 2. 1년 실거래
 [scenes.28.lines.0.text] 다만 단지 대부분은 거래가 한두 건뿐이에요.
 [scenes.28.data.license] Pexels 7317305 무료(MART PRODUCTION)
 [scenes.28.data.say] 거래가 적은 단지들
 [scenes.28.data.side] left
-[scenes.29.lines.0.text] 1년 전과 요즘 모두 두 건 이상 팔린 여섯 곳만 추리면, 한가운데가 13% 가까이 내렸어요.
-[scenes.29.lines.1.text] 은마는 그 여섯 곳 중에서도 가장 많이 빠졌고요.
-[scenes.29.lines.2.text] 이 스물한 곳은 대체로 조금 내릴 때, 은마는 더 많이 내린 거예요.
+[scenes.29.lines.0.text] 1년 전과 요즘 모두 두 건 이상 팔린 여덟 곳만 추리면, 한가운데가 10% 정도 내렸어요.
+[scenes.29.lines.1.text] 은마는 그 여덟 곳 중에서도 가장 많이 빠졌고요.
+[scenes.29.lines.2.text] 이 스물세 곳은 대체로 조금 내릴 때, 은마는 더 많이 내린 거예요.
 [scenes.29.data.part] gaps
 [scenes.29.data.p.seed] h6g
 [scenes.29.data.p.rows.0.name] 대치동 한보미도맨션1
@@ -196,30 +198,32 @@
 [scenes.29.data.p.rows.2.name] 압구정동 현대14차(203,204,205,206동)
 [scenes.29.data.p.rows.3.name] 개포동 개포자이프레지던스
 [scenes.29.data.p.rows.4.name] 개포동 래미안블레스티지
-[scenes.29.data.p.rows.5.name] 개포동 디에이치아너힐즈
-[scenes.29.data.p.rows.6.name] 수서동 삼성
-[scenes.29.data.p.rows.7.name] 삼성동 현대힐스테이트2단지
-[scenes.29.data.p.rows.8.name] 논현동 동현아파트1~6
-[scenes.29.data.p.rows.9.name] 삼성동 롯데캐슬프레미어
-[scenes.29.data.p.rows.10.name] 개포동 개포래미안포레스트
+[scenes.29.data.p.rows.5.name] 논현동 쌍용
+[scenes.29.data.p.rows.6.name] 개포동 디에이치아너힐즈
+[scenes.29.data.p.rows.7.name] 수서동 삼성
+[scenes.29.data.p.rows.8.name] 청담동 청담린든그로브
+[scenes.29.data.p.rows.9.name] 삼성동 현대힐스테이트2단지
+[scenes.29.data.p.rows.10.name] 논현동 동현아파트1~6
 [scenes.29.data.p.rows.11.name] 도곡동 도곡렉슬
-[scenes.29.data.p.rows.12.name] 삼성동 삼성동힐스테이트1단지
-[scenes.29.data.p.rows.13.name] 도곡동 현대그린1
-[scenes.29.data.p.rows.14.name] 논현동 아크로힐스논현
-[scenes.29.data.p.rows.15.name] 논현동 신동아(22)
-[scenes.29.data.p.rows.16.name] 수서동 강남데시앙포레
-[scenes.29.data.p.rows.17.name] 삼성동 래미안삼성1차(105-0)
-[scenes.29.data.p.rows.18.name] 자곡동 강남자곡아이파크
-[scenes.29.data.p.rows.19.name] 자곡동 강남한양수자인(4단지)
-[scenes.29.data.p.rows.20.name] 자곡동 강남자곡힐스테이트
-[scenes.29.data.p.countText] 21곳
-[scenes.29.data.p.downText] 내림 14
+[scenes.29.data.p.rows.12.name] 삼성동 롯데캐슬프레미어
+[scenes.29.data.p.rows.13.name] 개포동 개포래미안포레스트
+[scenes.29.data.p.rows.14.name] 삼성동 삼성동힐스테이트1단지
+[scenes.29.data.p.rows.15.name] 도곡동 현대그린1
+[scenes.29.data.p.rows.16.name] 논현동 아크로힐스논현
+[scenes.29.data.p.rows.17.name] 논현동 신동아(22)
+[scenes.29.data.p.rows.18.name] 수서동 강남데시앙포레
+[scenes.29.data.p.rows.19.name] 삼성동 래미안삼성1차(105-0)
+[scenes.29.data.p.rows.20.name] 자곡동 강남자곡아이파크
+[scenes.29.data.p.rows.21.name] 자곡동 강남한양수자인(4단지)
+[scenes.29.data.p.rows.22.name] 자곡동 강남자곡힐스테이트
+[scenes.29.data.p.countText] 23곳
+[scenes.29.data.p.downText] 내림 16
 [scenes.29.data.p.upText] 오름 7
-[scenes.29.data.p.hiText] 은마 −19.9%
-[scenes.29.data.p.hiRank] 21곳 중 2번째 · 거래 3건 → 9건
-[scenes.29.data.p.midText] 가운데 단지 −5.0%
-[scenes.29.data.title] 강남구 34평 단지 21곳 · 1년 변화
-[scenes.29.data.source] 국토교통부 실거래 2026-11-19 받음 · 전용 80~86㎡ · 2025.10~12 ↔ 2026.10~11 가운데 값 · 해제·직거래 뺌 · 단지마다 거래 1~9건
+[scenes.29.data.p.hiText] 은마 −19.4%
+[scenes.29.data.p.hiRank] 23곳 중 2번째 · 거래 3건 → 10건
+[scenes.29.data.p.midText] 가운데 단지 −5.9%
+[scenes.29.data.title] 강남구 34평 단지 23곳 · 1년 변화
+[scenes.29.data.source] 국토교통부 실거래 2026-11-25 받음 · 전용 80~86㎡ · 2025.10~12 ↔ 2026.10~11 가운데 값 · 해제·직거래 뺌 · 단지마다 거래 1~10건
 [scenes.29.data.chapter] 2. 1년 실거래
 [scenes.30.lines.0.text] 왜 내렸는지는 이 자료에 나오지 않아요.
 [scenes.30.lines.1.text] 실거래 신고엔 값과 날짜, 층만 있고 이유는 적혀 있지 않거든요.
@@ -233,7 +237,7 @@
 [scenes.32.data.license] Pexels 38259259 무료(vignesh srivatsav)
 [scenes.32.data.say] 한 달에 몇 건씩
 [scenes.32.data.side] left
-[scenes.33.lines.0.text] 9월과 10월 두 달 동안 갑자기 서른다섯 건으로 늘었어요.
+[scenes.33.lines.0.text] 9월과 10월 두 달 동안 갑자기 서른네 건으로 늘었어요.
 [scenes.33.lines.1.text] 1년 거래의 거의 절반이 그 두 달에 몰린 겁니다.
 [scenes.33.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.34.lines.0.text] 같은 두 달, 강남구 아파트 매매 전체는 한 달 140건 정도로 1년 평균 215건보다 적었어요.
@@ -398,7 +402,7 @@
 [scenes.74.lines.0.text] 지난 실거래는 지난 일을 말해 줄 뿐이고, 재초환 평균은 내 몫을 말해 주지 않습니다.
 [scenes.74.data.n] 8장
 [scenes.74.data.q] 정리
-[scenes.75.lines.0.text] 설명란에 링크한 파이어맵 카페 글에 75건 표를 올려 뒀어요.
+[scenes.75.lines.0.text] 설명란에 링크한 파이어맵 카페 글에 76건 표를 올려 뒀어요.
 [scenes.75.lines.1.text] 거기서 내 평형 줄만 찾아 가운데 값을 한 번 세 보세요.
 [scenes.75.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.76.data.license] Pexels 38259256 무료(vignesh srivatsav)

@@ -196,7 +196,16 @@ for s in scenes:
             if d not in SRCDOC: bad.append((st[:40], d))
 assert not bad, bad
 
-json.dump({'fps': FPS, 'scenes': scenes, 'badge': ''}, open(os.path.join(VID, 'sq1.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+# 11/24 22시 PD: 상시 장 띠(benchmark-loop 11/24 ②2, SQ-1/motion.md 'PD 할 일', 장 이름 = 장 카드 q와 같은 HEADS) — 시작 = 장 카드(ask) 장면 첫 프레임, 0. 여는 말 없음, 전 구간 dark(틀 바탕이 어두움)
+STRIP = json.load(open(os.path.join(EP, 'sq1_strip.json'), encoding='utf-8'))['strip']
+_st, _a = [], 0
+for s in scenes:
+    if s['kind'] == 'ask': _st.append(_a)
+    _a += s['frames']
+_dk = [[0, _a + 999]]   # KOSPI1 틀은 장 카드(ask)도 어두운 바탕(still 11/24 22시: 회색 글자가 묻힘) → 전 구간 흰 글자
+assert len(_st) == 8, _st
+strip = {'chapters': [{'n': c, 'name': HEADS[c]} for c in range(1, 9)], 'starts': _st, 'total': 8, 'topic': None, 'side': 'right', 'dark': _dk, 'top': 3, 'fs': 20}   # 판(inset 0.80) 위 어두운 틈이 약 35px — 주제 줄 빼고 20px(still 4556: 24px+주제 줄은 밝은 판에 걸림)
+json.dump({'fps': FPS, 'scenes': scenes, 'badge': '', 'strip': strip}, open(os.path.join(VID, 'sq1.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 json.dump([{'id': n, 'file': CR[n]['file'], 'used': USEDBG[n], 'desc_line': CR[n].get('desc_line', '')} for n in sorted(USEDBG)],
           open(os.path.join(EP, 'bg_used.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 tsx = os.path.join(VID, 'src', 'SQ1.tsx')

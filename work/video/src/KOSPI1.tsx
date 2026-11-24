@@ -23,10 +23,11 @@ import {MeanPull} from './motion/MeanPull';
 import {PayBlocks} from './motion/PayBlocks';
 import {RaiseStairs} from './motion/RaiseStairs';
 import {SumRace} from './motion/SumRace';
+import {ChapterStrip, StripChapter} from './motion/ChapterStrip';
 
 type CLine = {text: string; audio: string | null; frames: number; cap?: string | null};
 type CScene = {kind: string; lines: CLine[]; frames: number; data: any};
-export type KOSPI1Props = {fps: number; scenes: CScene[]; boxOn?: number | null; boxOff?: number | null; boxFlip?: number; boxQ?: string; boxA?: string; boxLabel?: string; badge: string};
+export type KOSPI1Props = {fps: number; scenes: CScene[]; boxOn?: number | null; boxOff?: number | null; boxFlip?: number; boxQ?: string; boxA?: string; boxLabel?: string; badge: string; strip?: {chapters: StripChapter[]; starts: number[]; total: number; topic?: string | null; side?: 'right' | 'left'; dark: [number, number][]; top?: number; fs?: number}};
 export const kospi1Frames = (p: KOSPI1Props) => p.scenes.reduce((a, s) => a + s.frames, 0);
 
 const COL: Record<string, string> = {accent: T.accent, fall: T.fall, rise: T.rise, ink: T.ink};
@@ -323,6 +324,12 @@ const Push: React.FC<{n: number; to?: number; origin?: string; children: React.R
   return <AbsoluteFill style={{transform: `scale(${z})`, transformOrigin: origin}}>{children}</AbsoluteFill>;
 };
 
+// 11/24 PD(benchmark-loop 11/24 ②2·SQ-1/motion.md): props에 strip이 있을 때만 오른쪽 위 상시 장 띠. 실사·어두운 판 구간(dark)은 흰 글자. KOSPI-1 공개본 json엔 strip이 없어 그대로.
+const StripLayer: React.FC<{st: NonNullable<KOSPI1Props['strip']>}> = ({st}) => {
+  const f = useCurrentFrame();
+  const dark = st.dark.some(([a, b]) => f >= a && f < b);
+  return <ChapterStrip chapters={st.chapters} starts={st.starts} total={st.total} topic={st.topic ?? null} side={st.side ?? 'right'} dark={dark} top={st.top} fs={st.fs} />;
+};
 export const KOSPI1: React.FC<KOSPI1Props> = (p) => {
   useFont();
   let from = 0;
@@ -341,6 +348,7 @@ export const KOSPI1: React.FC<KOSPI1Props> = (p) => {
       })}
       <DuckedMusic lines={voiceLines(p)} />
       <FloorBox p={p} />
+      {p.strip ? <StripLayer st={p.strip} /> : null}
     </AbsoluteFill>
   );
 };

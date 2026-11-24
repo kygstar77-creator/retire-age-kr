@@ -52,9 +52,11 @@ def make(out, pic, ya, xa=0.5, zoom=1.0, band=235, tshade=(380, 210), targets=(0
     ty = 36
     d.text((X0, ty), TOP, font=f(ts, '700'), fill=WHITE, stroke_width=tsw, stroke_fill=INK); ty += int(ts * 1.30)
     # 알약: 주황 바탕 흰 글(답 숫자 아님 — 기준 시점 한 줄, copy v2)
-    ps = fit(d0, PILL, int(ts * pk), '700', maxw=int(W * 0.84)); pf = f(ps, '700'); tw = d.textlength(PILL, font=pf); px, py = 28, 12
-    d.rounded_rectangle((X0, ty, X0 + tw + 2 * px, ty + ps + 2 * py + 6), radius=(ps + 2 * py) // 2, fill=ORANGE)
-    d.text((X0 + px, ty + py - int(ps * 0.08)), PILL, font=pf, fill=WHITE)
+    ps = 0
+    if PILL:   # 11/24 visual: 알약 없는 판(C-36 무숫자판) 허용
+        ps = fit(d0, PILL, int(ts * pk), '700', maxw=int(W * 0.84)); pf = f(ps, '700'); tw = d.textlength(PILL, font=pf); px, py = 28, 12
+        d.rounded_rectangle((X0, ty, X0 + tw + 2 * px, ty + ps + 2 * py + 6), radius=(ps + 2 * py) // 2, fill=ORANGE)
+        d.text((X0 + px, ty + py - int(ps * 0.08)), PILL, font=pf, fill=WHITE)
     widths = []
     for k, (t, s) in enumerate(zip(BIG, sizes)):
         bb = d.textbbox((X0, y - int(s * 0.12)), t, font=f(s, 'black'), stroke_width=sw); widths.append((bb[2] - bb[0]) / W)

@@ -497,3 +497,4 @@
 - 2026-11-22 report: today.md에 완료 줄을 sed '/패턴/a\$L'로 넣으면 변수가 안 풀려 '$L' 글자만 남는다(11/21 회차 완료 줄도 이렇게 사라짐) — 줄 삽입은 python으로, 넣은 뒤 grep으로 확인.
 - 2026-11-23 copywriter: 회차 첫 묶음에 또 `git status --short`를 넣었다(여섯 번째, 이번엔 끝남). 첫 묶음은 `git branch --show-current`까지만, status는 커밋 직전 `-- <내 경로>`로만.
 - (2026-11-23 motion) 회차 첫 묶음에 또 `git status --short`를 넣었다(motion 여섯 번째, 전체 일곱 번째 — 이번엔 끝남). 지시문 첫 줄 명령 묶음을 복사할 때 status를 빼고 시작한다.
+- 2026-11-24 visual-designer: 회차 첫 묶음에 또 `git status --short`를 넣었다(visual 두 번째, 이번엔 끝남). 첫 명령은 date·branch만 — status는 커밋 직전 `-- <내 경로>`로.

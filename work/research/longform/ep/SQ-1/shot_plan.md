@@ -25,7 +25,7 @@
 | 13 | https://www.youtube.com/watch?v=ZYatUkqCZ8M&t=622 | 수페TV | '2026년 원달러 환율' 남색 면 그래프, 고점 빨간 점 → 끝까지 '−14.5%' 선 | 환율 선 | 2026-11-23 |
 | 14 | https://www.youtube.com/watch?v=ZYatUkqCZ8M&t=533 | 수페TV | 책상 위 달러 지폐를 세는 손 근접 실사, 얼굴 없음 | 손 실사 | 2026-11-23 |
 | 15 | https://www.youtube.com/watch?v=ZYatUkqCZ8M&t=711 | 수페TV | 키보드 위 손 근접 실사, 자막 한 줄만 | 손 실사 | 2026-11-23 |
-| 16 | https://www.youtube.com/watch?v=ZYatUkqCZ8M&t=860 | 수페TV | 길을 달리는 사람들 뒷모습 원경 실사(장기 투자 비유) | 비유 실사 | 2026-11-23 |
+| 16 | https://www.youtube.com/watch?v=ZYatUkqCZ8M&t=880 | 수페TV | 길을 달리는 사람들 뒷모습 원경 실사(장기 투자 비유 — 11/24 초 고침: 860~861은 앞 TAX 판, 스토리보드 9번 묶음 7·8칸 870~889초가 달리기) | 비유 실사 | 2026-11-23 |
 | 17 | https://www.youtube.com/watch?v=ZYatUkqCZ8M&t=830 | 수페TV | 'TAX' 아이콘 5년·10년 두 줄 — 직투 vs 연금저축 세금 숫자 둘 | 세금 두 갈래 | 2026-11-23 |
 | 18 | https://www.youtube.com/watch?v=CB6ibr4KEcc&t=88 | 똑재TV | '결론 두 개 먼저' — 초록 큰 숫자 카드 '8,400만원' + 옆 카드 '1/4 수준' | 결론 먼저 카드 | 2026-11-23 |
 | 19 | https://www.youtube.com/watch?v=CB6ibr4KEcc&t=206 | 똑재TV | 구간 세율 계단 막대 6%·15%·24%·35%·38%, 넘는 칸만 진하게 | 계단 막대 | 2026-11-23 |
@@ -59,5 +59,5 @@
 | 6. 직접 사나, 국내 상장으로 사나 | 15년 한 번에 팔면 세후 | [판] 막대 둘 | #17 | Python 판(sq1boards.py) | bg/sq1/board/sq1_tax15.png | shotcmp/r20.jpg | 나음(B) |
 | 6. 직접 사나, 국내 상장으로 사나 | 5년이면 국내 상장이 조금 더 | [판] 5년 막대 둘 '+366만원' | #17 | Python 판(sq1boards.py) | bg/sq1/board/sq1_tax5.png | shotcmp/r21.jpg | 나음(B) |
 | 7. 함정 | 함정 셋 | [판] 함정 셋 카드 | #22 | Python 판(sq1boards.py) | bg/sq1/board/sq1_traps3.png | shotcmp/r22.jpg | 같음(B) |
-| 8. 끝 | 정리 | [표] 정리 표(#21 '핵심 세 가지'를 표로) | #21·#18 | Python 판(sq1boards.py) | bg/sq1/board/sq1_summary.png | shotcmp/r23.jpg | 같음(B — 5년 줄 주황이 반반, 값은 나스닥100이 더 큼 → 헷갈림 지적) |
+| 8. 끝 | 정리 | [표] 정리 표(#21 '핵심 세 가지'를 표로) | #21·#18 | Python 판(sq1boards.py) | bg/sq1/board/sq1_summary.png | shotcmp/r23.jpg | 같음(B — 5년 줄 주황이 반반, 값은 나스닥100이 더 큼 → 헷갈림 지적 → loop 11/24: 반반 칸 주황 빼고 5년 줄 옆 주황 작은 글 '나스닥100과 263만원 차이', visual 다시) |
 | 8. 끝 | 숨 쉴 3초 | [실사] 창가 화분 위로 번지는 아침 햇빛 | #16 | Pexels 'window plant morning sunlight' | bg/sq1/stock/7578510.mp4 | shotcmp/r24.jpg | 못함(C — 어둡고 미국 교외 집, 1차 31206180 분무기 손) 다시 |

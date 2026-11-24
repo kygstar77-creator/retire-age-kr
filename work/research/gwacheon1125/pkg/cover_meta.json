@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 매매 실거래 API(경기 과천시 41290) 2025.6~10월 vs 2026.6~10월 계약 같은 집 중간값(calc_out.txt) · 평당가 1년 -1.5%는 래더프라이스 https://blog.naver.com/ladderprice/224484575044 (2차)",
+ "made_at": "2026-11-25",
+ "by": "research/gwacheon1125/mkimg.py",
+ "out": "img/00.png",
+ "topic": "과천 아파트 시세",
+ "num": "-1.5% / +7%",
+ "topic_px": 58,
+ "num_px": 44,
+ "follows": "경쟁 2 ladderprice/224484575044 동별 시세 표 · 5 team_12/224486930728 국평 비교 표"
+}

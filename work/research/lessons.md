@@ -501,3 +501,4 @@
 - 2026-11-24 visual-designer: 회차 첫 묶음에 또 `git status --short`를 넣었다(visual 두 번째, 이번엔 끝남). 첫 명령은 date·branch만 — status는 커밋 직전 `-- <내 경로>`로.
 - 2026-11-24 video-producer: 쇼츠 렌더 첫 시도에 렌더 도중 props(첫 줄)를 바꾸고 같은 bundle로 다시 돌려 404 재시도 8번을 헛돌림 — 소리·잘린 클립 파일을 새로 만들면 cardshorts/<편>/bundle을 지운다(fm_bundle은 index.html만 보고 다시 쓴다).
 - 2026-11-24 18:58 copywriter: 회차 첫 묶음에 또 `git status --short`를 넣었다(copywriter 일곱 번째, 이번엔 끝남). 지시문 '작업 장소' 줄을 보고 습관적으로 붙임 — 첫 명령은 date·branch·today grep만.
+- 2026-11-25 firemap-write: 비축 주제를 고를 때 kwvol 후보 이름으로 우리 카페 제목(work/research/*/pkg/title.txt)을 먼저 찾는다 — 광교를 짓고 나서야 selfcheck가 #449(6일 전)를 잡아 40분을 버렸다. 찾을 단어 목록에 후보 지역을 빠뜨리지 않는다.

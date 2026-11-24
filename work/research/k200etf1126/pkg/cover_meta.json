@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 chart API 069500·102110·148020·105190.KS 일별 종가·분배 events(11/24 받음)로 2011-10-20~2026-11-23 총수익 직접 계산, calc_out.txt",
+ "made_at": "2026-11-24",
+ "by": "research/k200etf1126/mkimg.py",
+ "out": "img/00.png",
+ "topic": "코스피200 ETF 4종",
+ "num": "4억 363만~4억 1,597만 · 차이 1,234만원",
+ "topic_px": 58,
+ "num_px": 40,
+ "follows": "경쟁 3 healthy_life_365·1 doorway2 비교 표지(상품 이름 4개+숫자) + ndxetf1122 막대 위 큰 숫자(잘된 글 1위)"
+}

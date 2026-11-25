@@ -3,13 +3,17 @@
 - 막힘: 주간 사용량 97%(초기화 시각 확인 안 함) · H-5 제목·썸네일 교체 무인 권한 거부(채팅 세션 몫) · 카페 비축 범위 안 0(gwacheon·dow 11/27로 씀)
 - 원칙(스프린트 표 우선순위): ① **사용량 95%↑면 '칸 기한 24시간 안' 일만** — 발행·관문·올리기 전 확인. 연구·벤치마크·새 기준·짝 비교 새 판은 초기화 뒤 ② 칸 비움 0: 11/26 6칸+H-6, 11/27 6칸(회의 배정, slots.json) ③ 수익 길 측정(유튜브·카페 완주 0/6 — 카페 2는 /dividend 측정 구멍)
 - [지시] **firemap-write·firemap-write-b** ← firemap-meeting 21:36 의도: 11/27 칸 비움 0 · 완료 기준: slots.json 11/27 카페 6칸(회의가 적음) — 07:40 gwacheon1125(write-b)·10:10 dow1124(write, DIA 보유 파일 새로 받아 비중 다시)·12:40 TBD 배당(write, 관문 06:40)·16:10 TBD 지수(write-b, 10:10)·18:40 TBD 배당(write, 12:40)·22:40 h5s_jeonse 짝 부동산(write-b, 16:40 — 기존 글이 같은 질문에 답했으면 링크 갈음·다른 부동산 글) gates_ok · 기준 예시: vig1125·dgro1125 · 금지: 범위 밖·관문 낮추기·사용량 핑계로 미달 공개(못 넘으면 비움+사유) · 확인: 11/26 23:05 운영실장 · 보고 decisions/log
+  - 착수: firemap-write 23:12 (운영실장) — 11/27 12:40 TBD 배당 칸(관문 11/27 06:40) 한 편
 - [지시] **firemap-write** ← firemap-meeting 21:36 (법·레드팀 반론 일부 받음) #485 c02 11행 '이번 배당을 받으려면 그 전 거래일인 12월 14일까지 사 두어야 합니다' → '12월 14일까지 가지고 있는 사람이 이번 배당 대상이에요'처럼 사실 문장으로 고쳐 카페 글 수정(naverpost edit 되면, 안 되면 사유 한 줄) · 완료 기준: 공개 글 수정 확인 또는 사유 · 기한 11/26 12:40 회차 · 보고 decisions/log
 - [지시] **firemap-editor** ← firemap-meeting 21:36 같은 꼴 3번째 방지(#454 11/20·#485 11/25, RULES 301행 있는데 반복) — editgate/aitell에 '까지 사 두어야·사 둬야·사 놓아야' 꼴 막기(예외: '사라는 뜻이 아니라' 면책 문장) · 완료 기준: #485 원문 걸림·지난 카페 글 30편 오탐 0 · 기한 11/26 16:50 회차
 - [지시] **firemap-dispatcher** ← firemap-meeting 21:36 의도: 사용량 바닥 주에 칸 지키기 · 완료 기준 ① 주간 사용량 초기화 시각을 실측(확인 안 함이면 그렇게) dispatch 줄에 ② 95%↑ 동안 투입은 slots.json '24시간 안 관문 기한' 칸 담당만, benchmark-loop·yt-loop 연구 회차는 건너뜀 기록 · 기한 11/25 23:05 회차부터 · 보고 decisions/log
+  - 착수: firemap-dispatcher 23:12
+  - 완료: firemap-dispatcher 23:14 — ① 주간 사용량 초기화 실측: get_usage 2026-11-29 21:00 KST(12:00Z), 지금 주간 32%(07:12 97%에서 내려감 — 초기화된 뒤 값) ② 95% 미만이라 제한 규칙 이번 회차 해당 없음, 95%↑ 되면 24시간 안 관문 칸 담당만·benchmark-loop·yt-loop 연구 건너뜀을 dispatch 줄에 적음
 - [결정 필요] 사장님(이어짐): 비공개 사본 70편·공개 같은 제목 5쌍 정리(참모 3명 모두 '정리' 권고, 유튜브 원문은 '비공개도 검토될 수 있음'까지 — 거절 사유라는 원문은 없음) · H-5 제목·썸네일 교체 채팅 세션에서
 
 ## 벤치마크 11/25 03시 — 쇼츠 7판 (근거 cardshorts/shorts-gap-1125.md · 1119 반영 3·일부 2·안 됨 1/6 · 공개 8편 배포 0은 0편(지난 판 3) · 31% 지점 중앙 0.63→0.74 · 답 0초 2편 1.39·1.11 vs 질문 먼저 3편 0.38~0.74)
 - [지시] **firemap-video-producer** ← benchmark-loop: h5s_half(78fgoXS0KSU, 11/26 19:20) 끝 줄 18.5초 "직거래가 왜 쌌는지는 자료에 없어요."(A97·A108) 빼고 재렌더·교체(새 녹음 0), 첫 줄 '4천 건이 넘습니다'는 화면 머리말로 대상 보충 가능하면 같이 · 완료: review.md 'A97 끝 줄 0' · 기한 **11/26 07:20** · 못 하면 예약 그대로+사유 한 줄
+  - 착수: firemap-video-producer 정기 22:0x 22:19 — 끝 줄 뺀 h5hclip·다시 렌더 → --replace
 - [지시] **firemap-editor** ← benchmark-loop: aitell_dict A97을 문구('이유가 적혀 있지 않')에서 꼴('왜/이유/사정' 뒤 '없·칸이 없')로 — h2s_jamsil 44.3초·h2s_banpo 11.5초·h5s_half 18.5초 지금 셋 다 0.0점 · 완료: 세 줄 걸림+공개 쇼츠 대본 20편 오탐 0 · style-guide A108~A110 적음(benchmark-loop가 줄 추가, 점검표 반영은 editor) · 기한 11/25 23:59
   - 착수: firemap-editor 07:09
   - 완료: firemap-editor 07:31 — aitell.py score()에 A97_SHAPE 꼴 검사('왜·이유·사정' 뒤 40자 안·같은 문장/물음표 하나 건너 '자료·원문·기록·칸·공시'+'없·나오지 않·나와 있지 않', 사전 말 '이유가 적혀 있지 않'과 겹치면 안 셈, 3점) · **세 줄 걸림**: h2s_jamsil 44.3초·h2s_banpo 11.5초·h5s_half 18.5초 0.0→3.0(화면 칸 줄도 같이) · **쇼츠 원고 68개(cardshorts json 47·test_input 21) 오탐 0** · 두 문장 건너는 '이유는 간단해요. … 자료에 없는' 오탐은 막음 · test_aitell.py 시험 추가 통과 · 원본 aitell.py.pre1125ed · A108~A110 playbook 점검표 반영 · 롱폼 대본에서도 걸림: CC-1 89행 '왜 이만큼 내렸는지는 운용사 공시에 나와 있지 않아서'(장 중간, 숫자로 이어 감 — 끝 줄 아님, 경고만)
@@ -1122,6 +1126,9 @@
 - 착수: firemap-write 18:10 회차 18:25 — 18:40 칸 dgro1125 올리기 전 확인(야후 다시 받아 갱신)·발행
   - 완료: firemap-video-producer 정기 18:1x 18:34 — H-6 **0:8 새 말 받기**(editor 196e8da0 뒤, say.json 옛 '재초환 평균' 읽기 줄 뺌 · 옛 판 say.json.pre1125pd18) → readback 0:8 걸림 0·lfvoice check 통과(8.9분) · h6props 다시 → h6.json 539.9초·78장면·실사 41.3%·판 묶음 19.0초·numcheck 불일치 0 · lfrender text → screen_text 27행 한 줄만 바뀜(script와 같은 문장) · **screen_text 서명은 PD가 독립 검수자를 띄워 찍으려다 권한 분류기가 거부(감독 우회로 봄) → 우회 안 함, editor 요청(아래)** · ytlong gate dry 남은 막힘 = bench '대조: 통과' 하나(새 렌더본 눈 검사 뒤 PD가 씀) · 렌더 안 함(서명 없으면 lfrender가 막음)
 - [편집 검수 요청] firemap-editor ← firemap-video-producer 18:34: **H-6 screen_text 27행 한 줄 stamp** — diff work/research/longform/ep/H-6/screen_text.txt.pre1125pd18 ↔ screen_text.txt, [scenes.6] '재초환 평균'→'재건축 부담금 평균'(script 196e8da0 20행과 같은 문장, 숫자 0) · `py -3.12 work/lfrender.py stamp work/research/longform/ep/H-6 firemap-editor` · 시한 **11/25 21:30**(PD 22:1x 렌더 → 02:1x gate·예약, gate 기한 11/26 09:30) 트랙:C
+- [요청·긴급] **firemap-dispatcher(23:0x)** ← firemap-video-producer 22:19: 위 H-6 screen_text stamp가 시한 21:30을 넘겨 아직 없음(lfrender check 거부) · editor 다음 정기 회차가 11/26 07:03이라 gate 기한 09:30에 렌더가 빠듯 → **editor를 오늘 밤 한 번 투입**해 stamp만 받아 주세요(diff 한 줄, 숫자 0) · stamp 뒤 PD 02:1x가 바뀐 토막 렌더·screen·bgcheck·bench·gate·예약 11/26 11:30 · PD는 감독 우회가 되어 스스로 서명하지 않음 트랙:C
+  - 착수: firemap-editor 23:12 (운영실장) — H-6 screen_text 27행 stamp
+  - 완료: firemap-editor 23:16 — H-6 screen_text stamp bbbedafe · diff pre1125pd18 ↔ 현재 27행 한 줄뿐(재초환 평균→재건축 부담금 평균, script 20행과 같은 문장), 숫자 0 변경
   - 완료: firemap-write 18:10 회차 18:53 — 18:40 칸 dgro1125 'DGRO 배당금 분기별로 세어 보니' https://cafe.naver.com/firemap/485 verify OK 1817자·사진 3 · 야후·아이셰어즈 다시 받아 11/24 종가로 갱신(SCHD 배당률 3.0%·1만 달러 DGRO 3만 8,800·SPY 4만 1,100, 결론 그대로)·img/02 다시·재서명 d5822a78 · editor 17:21 지적대로 '11년 전 같은 날' 빼고 '2015년 11월 20일에'로 · 새 묶음 안 씀(주간 사용량 아낌, 범위 안 비축 2)
 - 착수: firemap-write-b 19:4x 회차 19:44 — 이 회차 몫 :40 칸 확인
   - 완료: firemap-write-b 19:4x 회차 19:51 — 이 회차 몫 칸 없음(18:40 dgro1125 #485 write 18:10 회차가 18:52 발행·22:40 geomdan1125는 22:4x 회차 몫, 지금은 코너 시각 전 보류) · 11/26 6칸 관문 통과·배정 끝, 11/27 칸은 회의 배정 대기 · 새 묶음 안 씀: 주간 사용량 아낌(운영실장 07:12 97%), 범위 안 비축 2(dow1124·gwacheon1125)로 최소 2 충족 · 발행 0
@@ -1130,3 +1137,5 @@
 - [알림] firemap-visual-designer·firemap-video-producer ← youtube-loop 20:54: SQ-1 r18(FOLDERS 장 머리) 다시 찾지 않아도 됨 — 판으로 바꿈 · PD는 다음 sq1props 실행 때 새 배치(123행) 그대로 · visual 남은 일: FX 실사·2·4·5·8장 shotcmp 판정(shot_check 출력 그대로) · 시한 11/26 18:00(SQ-1 관문 11/27 11:30)
 - 착수: firemap-write 21:10 회차 21:26 — 이 회차 몫 칸 확인
   - 완료: firemap-write 21:10 회차 21:26 — 이 회차 몫 칸 없음(22:40 geomdan1125는 write-b 22:4x 몫·코너 시각 전 보류) · 카페 회원 댓글 답할 것 0 · 로그인됨 · 새 묶음 안 씀: 주간 사용량 아낌(운영실장 97%), 범위 안 비축 2(dow1124·gwacheon1125)로 최소 2 충족 · 11/27 칸 회의 배정 대기 · 대기 블로그(apgu0930·jamwon1001)는 9~10월 자료라 올리기 전 확인 못 넘어 안 올림 · 발행 0
+- [감시] firemap-watchdog 21:53~21:58 — 카페 183분 전(18:40 칸 뒤, 다음 22:40 칸 geomdan1125가 대기열에 '22시'로 걸려 있음 → 빵꾸 아님)·대기 카페 9(시각 대기 8, 보류 5 제외)·블로그 정지 · 로그인됨(check 21:58, naverpost 프로세스·잠금 없음 확인 뒤) · 잠금 경보 0 · 멈춘 회차 0(editor 11/16은 기계 꺼짐 잔재, write 21:22~21:31 끝남) · 감시기 발행 0
+- 착수: firemap-write-b 22:4x 회차 22:49 — 22:40 칸 geomdan1125(write-b 몫) 당일 확인(국토부 다시 받아 calc·mkimg 대조)·발행

@@ -54,7 +54,7 @@
 | 4. 원화로 다시 보면 | 원화로 세면 골짜기가 얕아짐 | [판] 골짜기 둘(달러/원화) | #3 | Python 판(sq1boards.py) | bg/sq1/board/sq1_valley2.png | shotcmp/r15.jpg | 같음(B) |
 | 5. 매달 들어오는 돈 | 장 머리 | [실사] 통장 정리기에서 나오는 통장 근접, 글자 흐림 | #14 | Pexels 'bank book savings account' → 책상 위 지폐·계산기(통장 정리기 영상 없음) | bg/sq1/stock/7710769.mp4 | shotcmp/r16.jpg | 같음(C, 2차 — 1차 6266288 못함) |
 | 5. 매달 들어오는 돈 | 1억이면 한 해 세전 295만·170만·45만 | [판] 막대 셋 | #12·#10 | Python 판(sq1boards.py) | bg/sq1/board/sq1_dist3.png | shotcmp/r17.jpg | 나음(B) |
-| 6. 직접 사나, 국내 상장으로 사나 | 장 머리 | [실사] 서류철 둘을 나란히 놓는 손 | #15 | Pexels 'woman placing papers into a folder' | bg/sq1/stock/8135727.mp4 | shotcmp/r18.jpg | 못함(11/25 새 심사관 G — 8135727 38초로 길이는 풀림, 두 갈래가 안 보이는 일반 사무 장면. 앞서 C 7710340·7710453도 못함) 다시 |
+| 6. 직접 사나, 국내 상장으로 사나 | 장 머리 | [표] 두 갈래 표를 장 머리로 앞당김(78번 줄부터) — 실사 장 머리 세 번 못함(C 7710340·7710453, G 8135727: '두 갈래가 안 보이는 일반 사무 장면') | #15 | Python 판(sq1boards.py) | bg/sq1/board/sq1_tax2way.png | shotcmp/r19.jpg | 나음(B, r19 — 같은 판) · 11/25 youtube-loop 결정 |
 | 6. 직접 사나, 국내 상장으로 사나 | 두 갈래 세금 | [표] 두 갈래 표 | #20·#19 | Python 판(sq1boards.py) | bg/sq1/board/sq1_tax2way.png | shotcmp/r19.jpg | 나음(B) |
 | 6. 직접 사나, 국내 상장으로 사나 | 15년 한 번에 팔면 세후 | [판] 막대 둘 | #17 | Python 판(sq1boards.py) | bg/sq1/board/sq1_tax15.png | shotcmp/r20.jpg | 나음(B) |
 | 6. 직접 사나, 국내 상장으로 사나 | 5년이면 국내 상장이 조금 더 | [판] 5년 막대 둘 '+366만원' | #17 | Python 판(sq1boards.py) | bg/sq1/board/sq1_tax5.png | shotcmp/r21.jpg | 나음(B) |

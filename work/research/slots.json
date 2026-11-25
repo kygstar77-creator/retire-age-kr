@@ -5028,7 +5028,7 @@
    "item": "h5s_half (H-5 부동산 — 송도 84㎡ 반값 거래 4천여 건 중 2건·둘 다 직거래, c1clip)",
    "owner": "firemap-video-producer",
    "gates_ok": "2026-11-20 23:11",
-   "note": "firemap-video-producer 2026-11-20 23:11: 예약 https://youtu.be/78fgoXS0KSU publishAt 11/26 19:20(from_long 3dzKukPP3ac H-5 3장, 21.8초, 새 녹음 0) — compete 7·숫자 대조 26개 0·11/20 실거래 다시 셈 같은 값·꼴·이해 3차 9명·안전 영역·디자인 100%·치직 0·눈 검사 2차·A-49 2.6초 · yt_pair: 78fgoXS0KSU · 카페 짝 글 요청(write) | firemap-video-producer 2026-11-18 23:24: 예약 https://youtu.be/_M2EzhE3ZEI publishAt 11/26 19:20(from_long DUv-5juhohQ JT-1 3장, 44.2초) — compete 7·숫자 대조 59개 0·꼴 통과·이해 2차 6명·안전 영역(열쇠고리 글자 컷 바꿈)·디자인 100%·치직 0 · 근거 cardshorts/jt1s_even/review.md | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(jt1s_even (JT-1 주택연금 93세, c1clip) _M2Ezh) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
+   "note": "firemap-video-producer 2026-11-25 23:49: v2 교체 https://youtu.be/DBoURCupFrU (같은 publishAt 11/26 19:20, 끝 줄 A97 뺌·19.7초·새 녹음 0, 옛 78fgoXS0KSU 예약 풂·비공개 유지) | firemap-video-producer 2026-11-20 23:11: 예약 https://youtu.be/78fgoXS0KSU publishAt 11/26 19:20(from_long 3dzKukPP3ac H-5 3장, 21.8초, 새 녹음 0) — compete 7·숫자 대조 26개 0·11/20 실거래 다시 셈 같은 값·꼴·이해 3차 9명·안전 영역·디자인 100%·치직 0·눈 검사 2차·A-49 2.6초 · yt_pair: 78fgoXS0KSU · 카페 짝 글 요청(write) | firemap-video-producer 2026-11-18 23:24: 예약 https://youtu.be/_M2EzhE3ZEI publishAt 11/26 19:20(from_long DUv-5juhohQ JT-1 3장, 44.2초) — compete 7·숫자 대조 59개 0·꼴 통과·이해 2차 6명·안전 영역(열쇠고리 글자 컷 바꿈)·디자인 100%·치직 0 · 근거 cardshorts/jt1s_even/review.md | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다 배당이랑 부동산만·배당+지수\" — 범위 밖(jt1s_even (JT-1 주택연금 93세, c1clip) _M2Ezh) 철회, 유튜브 예약 해제·비공개 유지(삭제 안 함)"
   },
   {
    "at": "2026-11-26 22:40",
@@ -5061,11 +5061,11 @@
   {
    "at": "2026-11-27 12:40",
    "kind": "cafe",
-   "item": "TBD 배당",
+   "item": "jepivix1127",
    "owner": "firemap-write",
-   "gates_ok": null,
+   "gates_ok": "2026-11-26 00:27",
    "published": null,
-   "note": "firemap-meeting 2026-11-25 21:4x 배정 · 배당 새 글, 관문 기한 06:40"
+   "note": "firemap-write 2026-11-26 00:27: 11/27 12:40 TBD 배당 칸 채움 · jepivix1127 'JEPI 분배금, 변동성 커지면 정말 늘어날까?'(ETF 게시판, 통계형 form 4) 관문 통과 — kwvol JEPI 8,070 · 야후 JEPI 분배 77번×^VIX 직접 계산(11/24 종가): 직전 달 VIX 20 이상 29번 연 10.3%·15~20 38번 7.7%·15 미만 10번 7.1%(중간값), 예외 29번 중 5번, 2022 1주 6.36 vs 2024 4.22달러, 분배 재투자 JEPI 1.9배·SPY 2.7배 · 원리 SEC 497K(2026-10-20)·Cboe VIX 정의 · 경쟁 8편 이 셈 0편(7위가 '앞으로 볼 것'으로 남김) · research strict·bench·prepublish·compare·cover·calc·disclaim·readcheck 0·selfcheck 사실 0·aitell 7.8·spoken·crosscheck 사실 2 반영·4 유지·이해 2차 6명 통과·editgate auto 2e42b7e3 · **발행 회차(11/27 12:10): fetch.py·calc.py·mkimg.py 다시 돌려 11/26 종가로 갱신, 12월 분배 발표돼 있으면 c05 '발표 전' 줄 고친 뒤 readcheck·재서명** | firemap-meeting 2026-11-25 21:4x 배정 · 배당 새 글, 관문 기한 06:40"
   },
   {
    "at": "2026-11-27 16:10",

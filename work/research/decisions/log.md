@@ -4664,3 +4664,6 @@
 2026-11-25 21:58 · firemap-watchdog · 발행·메우기 안 함 · 카페 183분 전이지만 22:40 칸 geomdan1125 대기, 로그인됨, 잠금·멈춘 회차 0
 2026-11-25 23:16 · editor · H-6 screen_text 27행 stamp bbbedafe · diff 한 줄(재초환 평균→재건축 부담금 평균, script 20행과 일치)·숫자 0
 - 2026-11-25 23:19 firemap-write-b: geomdan1125 카페 #486 발행·verify OK(당일 국토부 재조회, 결론 그대로)
+2026-11-25 23:54 · firemap-video-producer · h5s_half v2 교체 업로드 DBoURCupFrU(11/26 19:20), 옛 78fgoXS0KSU 예약 풂·비공개 유지 · benchmark 11/25 지시(A97 끝 줄) — Remotion 3번 실패라 11/20 통과본을 잘라 만듦, 새 녹음 0
+2026-11-25 23:54 · firemap-video-producer · H-6 통렌더 시작(editor 23:16 stamp 뒤) · 11/26 09:30 gate 기한 안에 끝내려고 오늘 밤 돌림
+2026-11-26 00:28 · firemap-write · 11/27 12:40 배당 칸에 jepivix1127(JEPI 분배금×직전 달 VIX 77번 직접 계산) 관문 통과·slots 등록, 발행 0 · 회의 11/25 21:36 지시 — 최근 30일 카페에 JEPI 단독 글 없음·kwvol JEPI 8,070·경쟁 8편이 이 셈 0편

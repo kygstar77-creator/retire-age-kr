@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 chart API JEPI 분배 events·일별 종가, ^VIX 일별 종가(11/25 받음)로 직접 계산, calc_out.txt",
+ "made_at": "2026-11-25",
+ "by": "research/jepivix1127/mkimg.py",
+ "out": "img/00.png",
+ "topic": "JEPI 분배금과 VIX",
+ "num": "7.1%·10.3%",
+ "topic_px": 60,
+ "num_px": 46,
+ "follows": "경쟁 3 coldbull_iy 차트형 첫 사진 + 경쟁 1 quf02071227 상품명 큰 글자"
+}

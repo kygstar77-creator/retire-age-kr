@@ -9,7 +9,7 @@ fm.fontManager.addfont(F + r'\pd500.ttf'); fm.fontManager.addfont(F + r'\pd700.t
 plt.rcParams['font.family'] = fm.FontProperties(fname=F + r'\pd500.ttf').get_name()
 def Bs(n): return fm.FontProperties(fname=F + r'\pd700.ttf', size=n)
 INK, SUBC, ORG, NAVY, GRY = '#111827', '#6B7280', '#EA580C', '#1E3A5F', '#94A3B8'
-SRC = '야후 파이낸스 일별 수정 종가 QQQ·QLD·TQQQ(11/23 받음) · 세전·분배금 재투자·달러 · 파이어맵 계산'
+SRC = '야후 파이낸스 일별 수정 종가 QQQ·QLD·TQQQ(11/25 받음) · 세전·분배금 재투자·달러 · 파이어맵 계산'
 exec(open('calc.py', encoding='utf-8').read().split('def common')[0])   # Q, L, T, pct
 def common(*ds):
     s = set(ds[0]); [s := s & set(x) for x in ds[1:]]; return sorted(s)
@@ -27,13 +27,17 @@ lab = ['QQQ\n지수', 'QLD\n2배', 'TQQQ\n3배']; col = ['#E5E7EB', '#FDBA74', O
 ax.bar(range(3), ytd, color=col, width=0.6)
 ax.axhline(0, color='white', lw=2)
 for i, v in enumerate(ytd):
-    ax.text(i, v - 0.8, f'{v:.1f}%', ha='center', va='top', fontproperties=Bs(NUM_PX), color='white')
-    ax.text(i, 1.0, lab[i], ha='center', va='bottom', fontproperties=Bs(22), color='white')
-ax.set_ylim(-30, 7); ax.set_xlim(-0.6, 2.6); ax.axis('off')
+    if v >= 0:
+        ax.text(i, v + 0.5, f'+{v:.1f}%', ha='center', va='bottom', fontproperties=Bs(NUM_PX), color='white')
+        ax.text(i, -0.6, lab[i], ha='center', va='top', fontproperties=Bs(22), color='white')
+    else:
+        ax.text(i, v - 0.5, f'{v:.1f}%', ha='center', va='top', fontproperties=Bs(NUM_PX), color='white')
+        ax.text(i, 0.6, lab[i], ha='center', va='bottom', fontproperties=Bs(22), color='white')
+ax.set_ylim(min(ytd) - 7, max(max(ytd), 0) + 6); ax.set_xlim(-0.6, 2.6); ax.axis('off')
 fig.text(0.07, 0.045, '야후 일별 수정 종가 · 분배금 재투자 · 세전 · 달러', fontsize=17, color='#99F6E4')
 fig.savefig('pkg/img/00.png', dpi=100, facecolor=fig.get_facecolor()); plt.close(fig)
-json.dump({'type': 'chart', 'source': '야후 파이낸스 chart API QQQ·QLD·TQQQ 일별 수정 종가(11/23 받음)로 올해 수익률 직접 계산, calc_out.txt',
-           'made_at': '2026-11-23', 'by': 'research/lev1125/mkimg.py', 'out': 'img/00.png', 'topic': '나스닥100 레버리지',
+json.dump({'type': 'chart', 'source': '야후 파이낸스 chart API QQQ·QLD·TQQQ 일별 수정 종가(11/25 받음)로 올해 수익률 직접 계산, calc_out.txt',
+           'made_at': '2026-11-25', 'by': 'research/lev1125/mkimg.py', 'out': 'img/00.png', 'topic': '나스닥100 레버리지',
            'num': '·'.join(f'{v:.1f}%' for v in ytd), 'topic_px': TOPIC_PX, 'num_px': NUM_PX,
            'follows': '경쟁 3 yunsdaq/224471815686 기간별 수익률 막대 차트 표지 + 경쟁 6 todayisgood2/224481195777 QQQ vs TQQQ 비교 그림'},
           open('pkg/cover_meta.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
@@ -66,7 +70,7 @@ a2.set_yticks([2, 1, 0]); a2.set_yticklabels(['QQQ', 'QLD', 'TQQQ'], fontpropert
 a2.set_title('2021년 고점을\n되찾기까지 걸린 날', fontproperties=Bs(15), color=INK)
 for ax_ in (a1, a2):
     for s_ in ('top', 'right', 'left', 'bottom'): ax_.spines[s_].set_visible(False)
-frame(fig, '제자리 1년, 그리고 회복까지', 'TQQQ 상장(2010) 뒤 사는 날 3,969번 중 QQQ 제자리 370번 · QLD는 상장(2006) 뒤 502번')
+frame(fig, '제자리 1년, 그리고 회복까지', 'TQQQ 상장(2010) 뒤 사는 날 3,971번 중 QQQ 제자리 370번 · QLD는 상장(2006) 뒤 502번')
 fig.subplots_adjust(top=0.72, bottom=0.13, left=0.06, right=0.97, wspace=0.35); fig.savefig('pkg/img/02.png', dpi=100); plt.close(fig)
 from PIL import Image
 import sys; sys.path.insert(0, r'C:\Users\강영준\Documents\GitHub\retire-age-kr\work')

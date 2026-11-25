@@ -1,4 +1,5 @@
 [오늘 찾은 것]
+2026-11-25 · 야후 파이낸스 chart API QQQ·QLD·TQQQ 다시 받음(마지막 2026-11-24 QQQ 638.1·QLD 69.07·TQQQ 46.19) · calc.py 다시 → calc_out.txt 갱신 · https://query1.finance.yahoo.com/v8/finance/chart/TQQQ
 2026-11-23 · 야후 파이낸스 chart API QQQ·QLD·TQQQ 일별 수정 종가(분배 재투자·분할 반영) 2000-01-03(QLD 2006-06-21·TQQQ 2010-02-11)~2026-11-20 새로 받음 · raw/QQQ.json·QLD.json·TQQQ.json · https://query1.finance.yahoo.com/v8/finance/chart/QQQ · https://query1.finance.yahoo.com/v8/finance/chart/QLD · https://query1.finance.yahoo.com/v8/finance/chart/TQQQ
 2026-11-23 · 프로셰어즈 QLD 상품 페이지: "QLD seeks daily investment results, before fees and expenses, that correspond to two times (2x) the daily performance of the Nasdaq-100 Index" · Inception 6/19/06 · Gross 0.96% · Net Expense Ratio 0.89% · NAV 11/20/2026 $63.25 · raw/proshares_qld.html · https://www.proshares.com/our-etfs/leveraged-and-inverse/qld
 2026-11-23 · 프로셰어즈 TQQQ 상품 페이지: "three times (3x) the daily performance of the Nasdaq-100 Index" · Inception 2/9/10 · Gross 0.94% · Net Expense Ratio 0.78% · "For any holding period other than a day, your return may be higher or lower than the Daily Target" · "Smaller index gains/losses and higher index volatility contribute to returns worse than the Daily Target" · raw/proshares_tqqq.html · https://www.proshares.com/our-etfs/leveraged-and-inverse/tqqq
@@ -6,16 +7,16 @@
 2026-11-23 · 금융위원회 7/24 보도자료: 3천만원·현금만 인정은 '단일종목 레버리지 상품 한정'(QLD·TQQQ 같은 지수 레버리지는 1천만원 그대로) · raw/fsc_87403.html · https://www.fsc.go.kr/po010102/87403
 2026-11-23 · toprank 'TQQQ 장기투자' 블로그 탭 상위 8편 · 본문 6편 bench_raw · toprank.txt
 
-[계산 — calc.py → calc_out.txt, 야후 수정 종가(분배 재투자·세전·달러·보수 빠진 가격), 기준일 2026-11-20]
-올해(2025-12-31 종가→2026-11-20): QQQ -0.6% · QLD -9.7% · TQQQ -21.4%
+[계산 — calc.py → calc_out.txt, 야후 수정 종가(분배 재투자·세전·달러·보수 빠진 가격), 기준일 2026-11-24]
+올해(2025-12-31 종가→2026-11-24): QQQ 4.2% · QLD -1.8% · TQQQ -11.9%
 6/2→10/6: QQQ +2.0% · QLD +0.3% · TQQQ -3.0% · 그 사이 거래일 87일 중 QQQ 하루 2% 넘게 움직인 날 10일
-올해 고점: QQQ 2026-10-06 · QLD 2026-10-06 · TQQQ 2026-06-02 → 11/20 QQQ -19.9% · QLD -37.0% · TQQQ -52.6%
-1년(252거래일) 시작일: TQQQ 3,969개 중 QQQ 위아래 5% 안 370개 → TQQQ 가운데 -11.0% · 손실 336개(91%) · 가장 나쁨 -40.1%
+올해 고점: QQQ 2026-10-06 · QLD 2026-10-06 · TQQQ 2026-06-02 → 11/24 QQQ -16.0% · QLD -31.5% · TQQQ -46.8%
+1년(252거래일) 시작일: TQQQ 3,971개 중 QQQ 위아래 5% 안 370개 → TQQQ 가운데 -11.0% · 손실 336개(91%) · 가장 나쁨 -40.1%
 QLD 4,886개 중 502개 → QLD 가운데 -4.5% · 손실 382개(76%)
 QQQ ±1% 76개(TQQQ 기간) → TQQQ 76개 모두 손실 · 가운데 -13.3%
 QQQ +20% 넘게 2,160개(TQQQ 기간) → 가운데 QQQ 29.8% · TQQQ 89.9%
 2021 고점(QQQ 2021-12-27, QLD·TQQQ 2021-11-19): 바닥 QQQ -35.1%(2022-11-03) · QLD -63.7% · TQQQ -81.7%(2022-12-28)
 QQQ 회복 2023-12-13 716일 · 그날 QLD -19.6%·TQQQ -44.0% · QLD 회복 2024-05-24 917일 · TQQQ 회복 2024-12-04 1,111일
-2010-02-11~2026-11-20: 1억 → QQQ 16.1억 · QLD 77.4억 · TQQQ 200.8억(약 201억)
+2010-02-11~2026-11-24: 1억 → QQQ 16.9억(약 17억) · QLD 84.2억 · TQQQ 225.1억(약 225억)
 QLD 상장 뒤 20년 = 2006-06~2026-11 · TQQQ 16년 = 2010-02~2026-11
 예시 계산(원리): 100×1.10×0.90=99(-1%) · 3배 100×1.30×0.70=91(-9%) — 운용사 문장(S3)의 뜻을 보이는 산수, 실제 가격 아님

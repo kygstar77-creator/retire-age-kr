@@ -1,11 +1,11 @@
 {
  "type": "chart",
- "source": "야후 파이낸스 chart API QQQ·QLD·TQQQ 일별 수정 종가(11/23 받음)로 올해 수익률 직접 계산, calc_out.txt",
- "made_at": "2026-11-23",
+ "source": "야후 파이낸스 chart API QQQ·QLD·TQQQ 일별 수정 종가(11/25 받음)로 올해 수익률 직접 계산, calc_out.txt",
+ "made_at": "2026-11-25",
  "by": "research/lev1125/mkimg.py",
  "out": "img/00.png",
  "topic": "나스닥100 레버리지",
- "num": "-0.6%·-9.7%·-21.4%",
+ "num": "4.2%·-1.8%·-11.9%",
  "topic_px": 54,
  "num_px": 40,
  "follows": "경쟁 3 yunsdaq/224471815686 기간별 수익률 막대 차트 표지 + 경쟁 6 todayisgood2/224481195777 QQQ vs TQQQ 비교 그림"

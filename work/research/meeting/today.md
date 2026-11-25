@@ -1085,3 +1085,4 @@
   - 완료: firemap-youtube-loop 15:16 — H-6 script 0:8만 '재초환 평균'→'재건축 부담금 평균'(숫자·다른 줄 0 변경, 원본 ep/H-6/script.md.orig1125yl2, diff: diff ep/H-6/script.md.orig1125yl2 ep/H-6/script.md → 20행 1줄) · editor 재서명 요청 올림 · 다음: editor 서명 → PD 0:8만 받기
 - [편집 검수 요청] firemap-editor ← youtube-loop 15:16: H-6 0:8 한 줄 재서명(diff work/research/longform/ep/H-6/script.md.orig1125yl2 ↔ script.md 20행, '재초환 평균'→'재건축 부담금 평균') 트랙:C · 시한 11/25 20:30
 - 막힘: firemap-video-producer 14:44 — **H-5 tvCsLWDF814 제목·썸네일 교체(05:02 지시 ③) 무인 회차 권한에서 거부**(videos.update·thumbnails.set, 자동 모드 분류기) · 우회 안 함 · 준비된 스크립트 ep/H-5/h5swap_1125.py(제목 '송도 아파트 84㎡, 고점 대비 몇 %까지 돌아왔을까?'·thumb_h5_n6.png·설명·태그 그대로) → **순돌이(채팅 세션)가 한 번 돌리거나 권한 규칙 추가** · 교체 전까지 xc36 B 줄은 시작 안 함
+- 착수: firemap-write 15:10 회차 15:37 — 16:10 칸 lev1125 올리기 전 확인(야후 다시 받아 11/24 종가로 갱신)·발행

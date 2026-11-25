@@ -53,17 +53,17 @@
 ## 대조
 | 글 값 | 원문 값 | 출처 |
 |---|---|---|
-| 올해 QQQ -0.6% · QLD -9.7% · TQQQ -21.4% | -0.6 · -9.7 · -21.4 | S1·S6 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/QQQ |
+| 2026년 QQQ 4.2% · QLD -1.8% · TQQQ -11.9% (11/24 종가) | 4.2 · -1.8 · -11.9 | S1·S6 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/QQQ |
 | 6/2→10/6 QQQ +2.0% · TQQQ -3.0% · QLD +0.3% · 2% 넘는 날 10일 | 2.0 · -3.0 · 0.3 · 10 | S1·S6 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/TQQQ |
 | 10월 6일 QQQ 올해 최고 · TQQQ 올해 최고 6월 2일 | 2026-10-06 · 2026-06-02 | S1·S6 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/TQQQ |
-| 사는 날 3,969번 중 370번 · TQQQ 가운데 -11.0% · 손실 91% | 3969 · 370 · -11.0 · 91 | S1·S6 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/TQQQ |
+| 사는 날 3,971번 중 370번 · TQQQ 가운데 -11.0% · 손실 91% | 3971 · 370 · -11.0 · 91 | S1·S6 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/TQQQ |
 | QLD 가운데 -4.5% · 손실 76% | -4.5 · 76 | S1·S6 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/QLD |
 | ±1% 76번 전부 손실 · 가운데 -13.3% | 76/76 · -13.3 | S1·S6 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/TQQQ |
 | +20% 넘은 경우 QQQ 29.8% · TQQQ 89.9% | 29.8 · 89.9 | S1·S6 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/QQQ |
 | 2021 고점 뒤 QQQ -35.1% · QLD -63.7% · TQQQ -81.7% | 같음 | S1·S6 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/QLD |
 | QQQ 716일 · 그날 TQQQ -44.0% · TQQQ 1,111일 · QLD 917일 | 같음 | S1·S6 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/TQQQ |
-| 1억 → QQQ 약 16억 · TQQQ 약 201억 | 16.1 · 200.8 | S1·S6 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/QQQ |
-| 올해 고점 대비 QQQ -19.9% · TQQQ -52.6% | 같음 | S1·S6 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/TQQQ |
+| 1억 → QQQ 약 17억 · TQQQ 약 225억 (11/24 종가) | 16.9 · 225.1 | S1·S6 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/QQQ |
+| 올해 고점 대비 QQQ -16.0% · TQQQ -46.8% (11/24 종가) | 같음 | S1·S6 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/TQQQ |
 | QLD 상장 뒤 20년 · TQQQ 16년 | 2006-06-19 · 2010-02-09 상장 | S2 https://www.proshares.com/our-etfs/leveraged-and-inverse/qld · S3 https://www.proshares.com/our-etfs/leveraged-and-inverse/tqqq |
 | 하루 2배·3배 · 하루보다 오래면 높거나 낮을 수 · 오르내림 크면 나빠짐 | 2x/3x daily · higher or lower · higher index volatility … worse | S2 https://www.proshares.com/our-etfs/leveraged-and-inverse/qld · S3 https://www.proshares.com/our-etfs/leveraged-and-inverse/tqqq |
 | 예시 100→110→99 · 3배 130→91 (지수 -1%·3배 -9%) | 100×1.1×0.9=99 · 100×1.3×0.7=91 | 직접 산수 · S3 원리 https://www.proshares.com/our-etfs/leveraged-and-inverse/tqqq |
@@ -72,9 +72,9 @@
 | 상위 8편 모두 2주 전 이후 글 | 11/23 두 편·1일 전 두 편·1주 전·2주 전 세 편 | toprank.txt https://blog.naver.com/flyfreedom29/224486541790 |
 
 # 올리기 전 확인
-- 2026-11-23 16:5x firemap-write-b(조사·작성 날, 칸 11/25 16:10 — 발행 회차가 야후·프로셰어즈 다시 받아 그날 종가로 calc.py 다시, 바뀐 숫자 본문 갱신·재서명)
-- 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/QQQ · https://query1.finance.yahoo.com/v8/finance/chart/QLD · https://query1.finance.yahoo.com/v8/finance/chart/TQQQ · https://www.proshares.com/our-etfs/leveraged-and-inverse/qld · https://www.proshares.com/our-etfs/leveraged-and-inverse/tqqq · https://www.korea.kr/briefing/actuallyView.do?newsId=148967174 · https://www.fsc.go.kr/po010102/87403 · https://blog.naver.com/flyfreedom29/224486541790 · https://blog.naver.com/yunsdaq/224471815686 (모두 11/23)
-- 기준일: 2026-11-20 종가(미국)
-- 바뀐 것: 처음 조사(11/23) — 기준일 2026-11-20 · 올해 QQQ -0.6%·QLD -9.7%·TQQQ -21.4% · 올해 고점 대비 -19.9%·-52.6% · 발행 날 회차가 calc.py 다시 돌려 이 줄을 그날 숫자로 고친다(1일 안)
-- 새로 찾은 것: QQQ 1년 제자리 370번 중 TQQQ 손실 91% · 6/2→10/6 지수 +2.0%에 TQQQ -3.0% · 경쟁 글 이 셈 0편
+- 2026-11-25 15:2x firemap-write(발행 날, 칸 11/25 16:10) — 야후 QQQ·QLD·TQQQ 다시 받아 calc.py 다시, 바뀐 숫자 본문·그림·사실표 갱신·재서명
+- 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/QQQ · https://query1.finance.yahoo.com/v8/finance/chart/QLD · https://query1.finance.yahoo.com/v8/finance/chart/TQQQ (11/25 15:26 받음) · 프로셰어즈·금융위 주소(https://www.proshares.com/our-etfs/leveraged-and-inverse/qld · https://www.proshares.com/our-etfs/leveraged-and-inverse/tqqq · https://www.korea.kr/briefing/actuallyView.do?newsId=148967174 · https://www.fsc.go.kr/po010102/87403)는 배수·보수·사전교육 문구라 가격과 무관, 11/23 확인 그대로
+- 기준일: 2026-11-24 종가(미국)
+- 바뀐 것: 기준일 11/20→11/24 · 2026년 QQQ -0.6%→+4.2%·QLD -9.7%→-1.8%·TQQQ -21.4%→-11.9% · 올해 고점 대비 QQQ -19.9%→-16.0%·TQQQ -52.6%→-46.8% · 1억 QQQ 약 16억→17억·TQQQ 약 201억→225억 · 1년 시작일 3,969→3,971(제자리 370·손실 91% 그대로) · 첫 문장 '거의 그대로'→'조금 올랐는데'
+- 새로 찾은 것: 11/21~11/24 사이 QQQ 608.45→638.1(+4.9%), 지수가 오른 사흘에도 TQQQ 2026년 수익은 마이너스로 남음
 - 조사 뒤 공표: data/release_calendar.json — 가격 매일, QLD·TQQQ 분기 분배(12월)

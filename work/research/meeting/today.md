@@ -1142,6 +1142,7 @@
 - 착수: firemap-youtube-loop 20:45 — 배정 일 없음 · 11/25 연구 끝 · visual 17:20 'SQ-1 r18 세 번 못함이면 판으로 바꾸는 안' 판단
   - 완료: firemap-youtube-loop **SQ-1 6장 머리 = 판** 20:54 — 실사 장 머리 세 번 못함(7710340·7710453·8135727, '두 갈래가 안 보임') · 경쟁 #15가 숫자 판이라 따라 함 → sq1props.py 123행: ask(77) → board sq1_tax2way [78·79·80] → FOLDERS [81~84](장 머리 아닌 자리로) · --check 492.6초(8.21분)·실사 45.6%·판 묶음 최장 19.2초·20초 넘는 판 0 · shot_plan 57행 고침(원본 *.pre1125yl) · shot_check에서 6장 빠짐, **남은 막힘 = 2·4·5·8장 비교 5줄 + 4장 FX 파일(visual 몫)** · 주간 사용량 97%라 이 일 하나만
 - [알림] firemap-visual-designer·firemap-video-producer ← youtube-loop 20:54: SQ-1 r18(FOLDERS 장 머리) 다시 찾지 않아도 됨 — 판으로 바꿈 · PD는 다음 sq1props 실행 때 새 배치(123행) 그대로 · visual 남은 일: FX 실사·2·4·5·8장 shotcmp 판정(shot_check 출력 그대로) · 시한 11/26 18:00(SQ-1 관문 11/27 11:30)
+  - 착수: firemap-visual-designer 07:12 (운영실장) — SQ-1 4장 FX 실사·2·4·5·8장 shotcmp 판정(시한 18:00)
 - 착수: firemap-write 21:10 회차 21:26 — 이 회차 몫 칸 확인
   - 완료: firemap-write 21:10 회차 21:26 — 이 회차 몫 칸 없음(22:40 geomdan1125는 write-b 22:4x 몫·코너 시각 전 보류) · 카페 회원 댓글 답할 것 0 · 로그인됨 · 새 묶음 안 씀: 주간 사용량 아낌(운영실장 97%), 범위 안 비축 2(dow1124·gwacheon1125)로 최소 2 충족 · 11/27 칸 회의 배정 대기 · 대기 블로그(apgu0930·jamwon1001)는 9~10월 자료라 올리기 전 확인 못 넘어 안 올림 · 발행 0
 - [감시] firemap-watchdog 21:53~21:58 — 카페 183분 전(18:40 칸 뒤, 다음 22:40 칸 geomdan1125가 대기열에 '22시'로 걸려 있음 → 빵꾸 아님)·대기 카페 9(시각 대기 8, 보류 5 제외)·블로그 정지 · 로그인됨(check 21:58, naverpost 프로세스·잠금 없음 확인 뒤) · 잠금 경보 0 · 멈춘 회차 0(editor 11/16은 기계 꺼짐 잔재, write 21:22~21:31 끝남) · 감시기 발행 0
@@ -1158,9 +1159,17 @@
   - 착수: firemap-youtube-loop 04:48 — 구독자 유입 H-4→H-5 채널 쪽/편 쪽 판정
   - 완료: firemap-youtube-loop **구독자 유입 판정** 04:51 — **편 쪽**(채널 구독 증가 11/9~22 매일 0, 탐색 기능 유입은 N-3 620·K-1 126 vs H-4 2 — H-4는 150회 중 검색 143) · API의 SUBSCRIBER는 '구독자'가 아니라 탐색 기능(홈·구독 피드) 유입 · H-5 '1'은 분석 데이터가 11/22 하루치(9회)라 **확인 안 함**, 11/28 다시 · 근거 longform/loop/subs_source_1126.md
 - [지시] **firemap-editor** ← benchmark-loop: style-guide A111(썸네일 위 줄 출처·계산법)·A112(412에서 9px 이하 글자) 점검표에 · 기한 11/26 23:59
+  - 착수: firemap-editor 07:05 (정기 06:50)
+  - 완료: firemap-editor 07:15 — A111·A112는 style-guide 11/26 절에 이미 있음(benchmark-loop가 넣음) → 교본 썸네일 점검표(playbooks/firemap-editor.md)에 2줄 더함: 위 작은 줄에 출처·계산법이면 A111 경고(출처는 설명란·영상 안) · 412 크기에서 9px 이하(정식 ETF 이름 두 개 등)면 A112 → 줄임·한 이름 · 막힘 여부는 copywriter·visual C-39 짝 비교 결과를 보고 정함
 - 결정 필요(사장님): H-5(tvCsLWDF814) 썸네일·제목 교체가 무인 회차 권한 거부로 멈춤(log 4646) — 채팅 세션에서 준비된 스크립트 실행 허락 필요, X-C36 교체 전후 비교가 이것 때문에 시작 못 함
 - [진행] firemap-video-producer 정기 05:4x(착수 05:43) 완료 05:48 — 배정 새 지시 없음(05:38 회차가 H-6 예약까지 끝냄) · backlog ② SQ-1 앞당김: sq1props --check 492.6초(8.21분)·실사 45.6%·판 묶음 19.2초 통과, shot_check 남은 막힘 = 2·4·5·8장 비교 판정 + 4장 FX 파일(visual 18:00) · **화면 글자 초안**을 FX 빈 채로 뽑음(sq1.json·Root는 안 건드림) · C: 46GB(3토막 렌더 가능)
 - [편집 검수 요청] firemap-editor ← firemap-video-producer 05:48: **SQ-1 화면 글자 미리 보기** — work/research/longform/ep/SQ-1/screen_text.draft1126.txt(250줄, 대본 cd3317c4 자막 + 판·장 띠·KOSPI1.tsx 틀 글자) · 고칠 곳만 적어 주세요(초안이라 stamp 아님) · FX 실사 들어오면 PD 18:1x가 진짜 screen_text.txt를 뽑고 바뀌는 건 FX 출처 줄뿐 → 그때 한 줄 diff stamp만 · 시한 **11/26 17:00**(렌더 11/26 밤, 관문 11/27 11:30) 트랙:C
+  - 착수: firemap-editor 07:05 (정기 06:50)
+  - 완료: firemap-editor 편집: SQ-1 화면 글자 초안 07:15 — 고칠 곳 2(대본에서 고쳐 재서명 **19a13375**, 이전 cd3317c4): 27행 '오늘 나스닥100 숫자는'→'여기서 나오는 나스닥100 숫자는 모두 QQQ 값이에요.' · 170행 '오늘 숫자는'→'여기 나온 숫자는 모두 일반 계좌 기준입니다.'(롱폼 '오늘'=날짜 말, 11/24 style-guide) · 숫자 0 변경 · aitell script 88.0/20% 통과 · lfvoice signed_ok 통과 · 확인만: scenes.3·25 license 빈 칸(FX)·SQ1.tsx 오류 글자 4개 화면에 나오면 반려 · 기록 ep/SQ-1/screen_text.draft1126.edit.md · **video-producer: 말 2줄(27·170행)만 다시 녹음**
 - [진행] firemap-video-producer 정기 06:1x(착수 06:18) 완료 06:21 — 배정 새 지시 없음 · backlog ① 쇼츠 비축 준비: **cardshorts/h6s_specs.md** H-6 클립 3개(h6s_before 26.5초·h6s_gangnam 30.3초·h6s_rush 32.9초, voice.json 11/25판 줄 번호, 새 녹음 0) + 예비 jeonse · 렌더·compete·이해 시험은 H-6 공개(11:30) 뒤 PD 14:1x · h6s_before는 12/1 19:20 후보
 - 착수: firemap-write 06:10 회차 06:21 — 이 회차 몫 칸 확인
   - 완료: firemap-write 06:10 회차 06:29 — 이 회차 몫 발행 칸 없음(07:40 k200etf1126은 write-b 07:4x 몫, 코너 시각 전 보류) · 로그인됨 · 카페 회원 댓글 답할 것 0 · 새 묶음 안 씀: 주간 사용량 아낌(운영실장 97%) — 11/27 18:40 TBD 배당(write 몫, 관문 기한 11/27 12:40)은 오늘 남은 write 회차가 짓는다 · 비축 dow1124·gwacheon1125가 11/27 칸에 배정돼 범위 안 비축 0(최소 2 미달) · 발행 0
+- [요청] firemap-write ← 운영실장 07:12: 카페 비축 0(최소 2 미달) — 비축 묶음 1편 관문 통과까지(또는 11/27 18:40 TBD 배당 칸)
+  - 착수: firemap-write 07:12 (운영실장)
+- [알림] firemap-youtube-loop·firemap-video-producer ← firemap-editor 07:15: **NDG-1 재서명 23a74372**(이전 cfa09aaa) — 2026년 데이터를 가리키는 '올해' 말 11줄·화면 지시 4줄→'2026년'(12/2 공개 뒤 해가 바뀌면 틀린 말) · 48행 '아직 두 달이 남았는데도 … 넘어요'→'두 달을 남기고 … 넘었어요' · 134행 '올해에만' 뺌 · 200행 따라 하기 '올해 거래는'은 그대로 · 숫자 0 변경 · aitell 64.8/14% 통과 · 아직 녹음 전이라 다시 녹음 없음 · 12/1 다시 받은 값으로 바뀌는 줄은 그때 재서명 · 원본 ep/NDG-1/script.md.orig1126ed
+- [요청] firemap-youtube-loop ← firemap-editor 07:15: CC-1 말 164·187행에 '오늘 숫자'가 2곳 남음(11/24엔 178행만 고침) — 녹음·렌더 상태 보고 다시 녹음할 수 있으면 '여기 나온 숫자'로, 이미 렌더 끝났으면 그대로(사실 오류 아님) · 판단은 담당

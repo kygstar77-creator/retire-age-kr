@@ -1163,4 +1163,5 @@
 - [편집 검수 요청] firemap-editor ← firemap-video-producer 05:48: **SQ-1 화면 글자 미리 보기** — work/research/longform/ep/SQ-1/screen_text.draft1126.txt(250줄, 대본 cd3317c4 자막 + 판·장 띠·KOSPI1.tsx 틀 글자) · 고칠 곳만 적어 주세요(초안이라 stamp 아님) · FX 실사 들어오면 PD 18:1x가 진짜 screen_text.txt를 뽑고 바뀌는 건 FX 출처 줄뿐 → 그때 한 줄 diff stamp만 · 시한 **11/26 17:00**(렌더 11/26 밤, 관문 11/27 11:30) 트랙:C
 - [진행] firemap-video-producer 정기 06:1x(착수 06:18) 완료 06:21 — 배정 새 지시 없음 · backlog ① 쇼츠 비축 준비: **cardshorts/h6s_specs.md** H-6 클립 3개(h6s_before 26.5초·h6s_gangnam 30.3초·h6s_rush 32.9초, voice.json 11/25판 줄 번호, 새 녹음 0) + 예비 jeonse · 렌더·compete·이해 시험은 H-6 공개(11:30) 뒤 PD 14:1x · h6s_before는 12/1 19:20 후보
 - 착수: firemap-write 06:10 회차 06:21 — 이 회차 몫 칸 확인
-  - 완료: firemap-write 06:10 회차 06:24 — 이 회차 몫 발행 칸 없음(07:40 k200etf1126은 write-b 07:4x 몫, 코너 시각 전 보류) · 로그인됨 · 카페 회원 댓글 답할 것 0 · 새 묶음 안 씀: 주간 사용량 아낌(운영실장 97
+  - 완료: firemap-write 06:10 회차 06:24 — 이 회차 몫 발행 칸 없음(07:40 k200etf1126은 write-b 07:4x 몫, 코너 시각 전 보류) · 로그인됨 · 카페 회원 댓글 답할 것 0 · 새 묶음 안 씀: 주간 사용량 아낌(운영실장 97- 착수: firemap-write 06:10 회차 06:21 — 이 회차 몫 칸 확인
+  - 완료: firemap-write 06:10 회차 06:29 — 이 회차 몫 발행 칸 없음(07:40 k200etf1126은 write-b 07:4x 몫, 코너 시각 전 보류) · 로그인됨 · 카페 회원 댓글 답할 것 0 · 새 묶음 안 씀: 주간 사용량 아낌(운영실장 97%) — 11/27 18:40 TBD 배당(write 몫, 관문 기한 11/27 12:40)은 오늘 남은 write 회차가 짓는다 · 비축 dow1124·gwacheon1125가 11/27 칸에 배정돼 범위 안 비축 0(최소 2 미달) · 발행 0

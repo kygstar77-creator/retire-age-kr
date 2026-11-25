@@ -1,60 +1,18 @@
 {
- "date": "2026-11-25",
+ "date": "2026-11-26",
  "runs": [
   {
    "hour": 6,
-   "ts": "07:18",
-   "who": "firemap-write",
-   "blog": null,
-   "cafe": null,
-   "note": "발행 0 — 이 회차 몫 칸 없음(07:40 sanbon1123 write-b) · 비축 gwacheon1125 '과천 아파트 시세 1년, 평당가와 같은 집 비교' 관문 통과(자료조사: 국토부 실거래 API 과천 2,652건·경쟁 6편·법령 1·2차 출처 5 · 검증 경로 crosscheck(Gemini) 사실 2 중 반영 1·유지 1(조회 안내), 말투 15 중 반영 3 · selfcheck 사실 0 · 이해 2차 6명) · 광교 gwanggyo1125 짓고 hold(#449 중복) · 개선: lessons·playbook에 '후보 지역 이름으로 우리 제목 먼저 grep' 한 줄 · 로그인 check: 로그인됨"
-  },
-  {
-   "hour": 7,
-   "ts": "08:02",
-   "blog": null,
-   "cafe": {
-    "title": "산본 아파트 시세, 선도지구 6곳만 따로 세어 보니",
-    "url": "https://cafe.naver.com/firemap/482"
+   "ts": "06:29",
+   "blog": {
+    "title": null,
+    "url": null
    },
-   "note": "write-b 07:40 칸 sanbon1123(부동산) · 발행 날 국토부 군포 41410 다시 받음(202610 548·202611 234건) calc 대조: 7,601→7,619건·1,085건·11월 90건·1997 이후 고점 대비 -10.5→-9.1%(그림 02 다시), 핵심 숫자 그대로 · readcheck 0·aitell 4.8·spoken 통과·selfcheck 사실 0('84㎡' 면적 표기 facts 추가)·editgate auto 재서명 f66e997a · verify OK 1798/1798자 사진 3/3 · 경고: 본문 1798자>1500(D-17)·'올해' 연도 없음 2곳 · 개선: 없음"
-  },
-  {
-   "hour": 12,
-   "ts": "13:00",
-   "blog": null,
    "cafe": {
-    "title": "VIG 배당, 10년 들면 얼마나 늘었을까?",
-    "url": "https://cafe.naver.com/firemap/483"
+    "title": null,
+    "url": null
    },
-   "note": "발행 날 확인: 야후 VIG·VYM·SPY 다시 받아 11/24 종가로 갱신 · readcheck 0·selfcheck 사실 0·spoken 통과·prepublish_check [] · verify OK 1740자·사진 3 · 확인 창 대기 타임아웃 났으나 발행됨 · 개선: 없음(사용량 97%로 아낌)"
-  },
-  {
-   "hour": 15,
-   "ts": "16:28",
-   "blog": null,
-   "cafe": {
-    "title": "나스닥100 제자리일 때 QLD·TQQQ는 얼마였을까?",
-    "url": "https://cafe.naver.com/firemap/484"
-   },
-   "note": "lev1125 올리기 전 확인(야후 11/24 종가 다시 받음, 숫자 6곳·그림 갱신) · readcheck 0·selfcheck 사실 0·aitell 0.0 · verify OK 1946자·사진 3 · 확인 창 처리 실패 경고 있었으나 글 정상 · 개선: mkimg.py 표지가 양수 막대도 그리게"
-  },
-  {
-   "hour": 18,
-   "ts": "18:53",
-   "blog": null,
-   "cafe": {
-    "title": "DGRO 배당금 분기별로 세어 보니",
-    "url": "https://cafe.naver.com/firemap/485"
-   },
-   "note": "18:40 칸 dgro1125 · 올리기 전 확인: 아이셰어즈 페이지·야후 4종 다시 받아 11/24 종가로 갱신(SCHD 배당률 3.1→3.0%, 1만 달러 DGRO 38,800·SCHD 38,600·VIG 37,800·SPY 41,100, 배당 기록·낙폭·결론 그대로) · readcheck 0(숫자 연달은 문장 2건 고침)·selfcheck 사실 0·spoken 통과·재서명 d5822a78 · verify OK 1817자·사진 3 · 교차검증은 작성 때(11/23) crosscheck 사실 1 반영 · 블로그 0(상한) · 개선: 없음(경고 '올해' 연도 없이·D-17 1817자 기록만)"
-  },
-  {
-   "hour": 21,
-   "ts": "21:26",
-   "blog": null,
-   "cafe": null,
-   "note": "이 회차 몫 카페 칸 없음(22:40 write-b) · 비축 2 충족 · 주간 사용량 아껴 새 묶음 안 씀 · 개선: 없음"
+   "note": "이 회차 몫 칸 없음(07:40 write-b) · 로그인됨 · 댓글 0 · 새 묶음 안 씀(주간 사용량 97%) · 개선: 없음"
   }
  ]
 }

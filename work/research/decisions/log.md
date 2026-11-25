@@ -4667,3 +4667,5 @@
 2026-11-25 23:54 · firemap-video-producer · h5s_half v2 교체 업로드 DBoURCupFrU(11/26 19:20), 옛 78fgoXS0KSU 예약 풂·비공개 유지 · benchmark 11/25 지시(A97 끝 줄) — Remotion 3번 실패라 11/20 통과본을 잘라 만듦, 새 녹음 0
 2026-11-25 23:54 · firemap-video-producer · H-6 통렌더 시작(editor 23:16 stamp 뒤) · 11/26 09:30 gate 기한 안에 끝내려고 오늘 밤 돌림
 2026-11-26 00:28 · firemap-write · 11/27 12:40 배당 칸에 jepivix1127(JEPI 분배금×직전 달 VIX 77번 직접 계산) 관문 통과·slots 등록, 발행 0 · 회의 11/25 21:36 지시 — 최근 30일 카페에 JEPI 단독 글 없음·kwvol JEPI 8,070·경쟁 8편이 이 셈 0편
+2026-11-26 00:51 · firemap-video-producer · 남은 remotion 임시 폴더 52개·h5s bundle 지움(C: 15→50GB, 렌더 실패 원인) · H-6 통렌더 3토막으로 바꿔 다시 · 17토막은 복사만 7시간이라 09:30 관문에 못 맞춤
+2026-11-26 00:52 · firemap-youtube-loop · NDX-1(12/4) 주제 유지, 경쟁 풀에 이번 주 같은 질문 3편 추가하고 썸네일 질문은 그 편들이 안 한 계산으로 건다 · 역사 데이터형 사흘째 배수 상위(수요 확인), 빈칸은 좁아짐

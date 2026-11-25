@@ -469,7 +469,7 @@
     "pkg": "work/research/dow1124/pkg",
     "title": "다우지수 비중, 왜 골드만삭스가 엔비디아보다 클까?",
     "genre": "지수",
-    "status": "2026-11-23 16:46 소진 — 11/25 10:10 칸 배정(write-b) | 2026-11-23 12:35 비축 — 11/24 10:10 칸을 KOSPI-1 짝 글에 내주고 비축으로(관문 통과 11/22 23:25·editor 11/23 07:08 재서명 25de37b3) · 칸에 넣을 때 slot.txt 새로 · 발행 날 올리기 전 확인(State Street 보유 파일·야후) 다시",
+    "status": "2026-11-25 21:4x 11/27 10:10 칸 재배정(11/25 10:10 칸 빔) | 2026-11-23 16:46 소진 — 11/25 10:10 칸 배정(write-b) | 2026-11-23 12:35 비축 — 11/24 10:10 칸을 KOSPI-1 짝 글에 내주고 비축으로(관문 통과 11/22 23:25·editor 11/23 07:08 재서명 25de37b3) · 칸에 넣을 때 slot.txt 새로 · 발행 날 올리기 전 확인(State Street 보유 파일·야후) 다시",
     "by": "firemap-write",
     "at": "2026-11-23 12:35",
     "gates_ok": "2026-11-22 23:25"
@@ -489,7 +489,7 @@
     "pkg": "work/research/gwacheon1125/pkg",
     "title": "과천 아파트 시세 1년, 평당가와 같은 집 비교",
     "genre": "부동산(아파트 매매) — 범위 안",
-    "status": "2026-11-25 07:16 관문 통과 비축(write) — kwvol 과천아파트 5,300(후보 7곳 2위, 1위 광교는 #449와 겹쳐 gwanggyo1125 보류)·우리 제목 '과천' 0편 · 국토부 과천 매매 2,652건 직접 계산: 같은 집 1년 +6.7%(33가지 중 29) vs 래더프라이스 평당가 -1.5% · 반기 매매 596→189→165건·주공 81→4건 · 2021년 하반기 대비 18가지 모두 넘음 +21.6% · 경쟁 6편 같은 집 비교 0편 · crosscheck 사실 1 반영·이해 2차 6명·editgate auto 3a7011b0 · slot.txt 없음(회의가 칸) · 발행 회차: fetch.py·calc.py·mkimg.py 다시 돌려 숫자 대조 뒤 재서명",
+    "status": "2026-11-25 21:4x 소진 — 11/27 07:40 칸 배정(회의) | 2026-11-25 07:16 관문 통과 비축(write) — kwvol 과천아파트 5,300(후보 7곳 2위, 1위 광교는 #449와 겹쳐 gwanggyo1125 보류)·우리 제목 '과천' 0편 · 국토부 과천 매매 2,652건 직접 계산: 같은 집 1년 +6.7%(33가지 중 29) vs 래더프라이스 평당가 -1.5% · 반기 매매 596→189→165건·주공 81→4건 · 2021년 하반기 대비 18가지 모두 넘음 +21.6% · 경쟁 6편 같은 집 비교 0편 · crosscheck 사실 1 반영·이해 2차 6명·editgate auto 3a7011b0 · slot.txt 없음(회의가 칸) · 발행 회차: fetch.py·calc.py·mkimg.py 다시 돌려 숫자 대조 뒤 재서명",
     "by": "firemap-write",
     "at": "2026-11-25 07:16",
     "gates_ok": "2026-11-25 07:16"
@@ -4949,7 +4949,7 @@
    "item": "dgro1125",
    "owner": "firemap-write",
    "gates_ok": "2026-11-23 21:37",
-   "published": null,
+   "published": "https://cafe.naver.com/firemap/485 18:52 verify OK 1817자",
    "note": "firemap-write 2026-11-23 21:37: 11/25 18:40 배당 TBD 채움 · dgro1125 'DGRO 배당금 분기별로 세어 보니'(ETF 게시판, 배당) 관문 통과(research_gate strict·bench·readcheck 0·selfcheck 사실 0·aitell 3.6·spoken 통과·이해 2차 6명 통과·crosscheck 사실 1 반영 10년→11년·editgate auto 560ba070) · kwvol DGRO 2,290(범위 안 배당 ETF 미작성 1위) · 아이셰어즈 원문+야후로 분기 배당 38번 중 4번 1년 전보다 감소, 가장 많이 준 달 9월 5·12월 4, 12/15 배당락·12/18 지급(11/18 일정표) · 같은 날 12:40 vig1125와 꼴 다름(form 4·보라 표지)"
   },
   {
@@ -5041,12 +5041,66 @@
    "pair": "h5s_half"
   },
   {
+   "at": "2026-11-27 07:40",
+   "kind": "cafe",
+   "item": "gwacheon1125",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-25 07:16",
+   "published": null,
+   "note": "firemap-meeting 2026-11-25 21:4x 배정 · 부동산 비축(과천) · 발행 날 국토부 다시 받아 대조"
+  },
+  {
+   "at": "2026-11-27 10:10",
+   "kind": "cafe",
+   "item": "dow1124",
+   "owner": "firemap-write",
+   "gates_ok": "2026-11-22 23:25",
+   "published": null,
+   "note": "firemap-meeting 2026-11-25 21:4x 배정 · 지수 비축(11/25 10:10 칸 빔으로 미발행) · DIA 보유 파일 새로 받아 비중 다시 계산, 바뀌면 재서명"
+  },
+  {
+   "at": "2026-11-27 12:40",
+   "kind": "cafe",
+   "item": "TBD 배당",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-25 21:4x 배정 · 배당 새 글, 관문 기한 06:40"
+  },
+  {
+   "at": "2026-11-27 16:10",
+   "kind": "cafe",
+   "item": "TBD 지수",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-25 21:4x 배정 · 지수 새 글, 관문 기한 10:10"
+  },
+  {
+   "at": "2026-11-27 18:40",
+   "kind": "cafe",
+   "item": "TBD 배당",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-25 21:4x 배정 · 배당 새 글, 관문 기한 12:40"
+  },
+  {
    "at": "2026-11-27 19:20",
    "kind": "shorts",
    "item": "h5s_jeonse (H-5 4장 송도 84㎡ 전세가율 38곳 가운데 57%·39~70%) — fg25cKGhAso 예약",
    "owner": "firemap-video-producer",
    "gates_ok": "2026-11-21 19:34",
    "note": "yt_pair: fg25cKGhAso (from_long tvCsLWDF814) · PD 11/21 19:34 예약 — 관문 전부(review.md·understand.md 3차) · 옛 note: firemap-youtube-loop 2026-11-19: 뉴스 숫자 칸 주 2칸(benchmark-loop 지시 4판째, shorts-gap-1119 N4) 첫 칸 · 사실표 youtube-loop(국세청 2026 고지 보도자료 공표 뒤 원문만 — 11/19 기준 공표 확인 안 됨) → copywriter 첫 줄 → editor → PD · 관문 기한 11/27 07:20 · 근거 cardshorts/news1127_jongbu/plan.md · 못 맞추면 비축분 | 순돌이 2026-11-19 16:5x: 사장님 \"카페·유튜브 다"
+  },
+  {
+   "at": "2026-11-27 22:40",
+   "kind": "cafe",
+   "item": "TBD h5s_jeonse 짝(부동산)",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-25 21:4x 배정 · yt_pair: h5s_jeonse(fg25cKGhAso 19:20) · 송도 84㎡ 전세가율 질문 하나만 · 기존 글이 같은 질문에 이미 답하면 링크로 갈음하고 다른 부동산 글 · 관문 기한 16:40"
   },
   {
    "at": "2026-11-28 11:30",

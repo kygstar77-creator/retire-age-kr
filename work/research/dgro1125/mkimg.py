@@ -9,7 +9,7 @@ fm.fontManager.addfont(F + r'\pd500.ttf'); fm.fontManager.addfont(F + r'\pd700.t
 plt.rcParams['font.family'] = fm.FontProperties(fname=F + r'\pd500.ttf').get_name()
 def Bs(n): return fm.FontProperties(fname=F + r'\pd700.ttf', size=n)
 INK, SUBC, ORG, NAVY, GRY = '#111827', '#6B7280', '#EA580C', '#1E3A5F', '#94A3B8'
-SRC = '아이셰어즈 DGRO 배당 기록 · 야후 파이낸스 일별 종가·배당(11/23 받음) · 파이어맵 계산'
+SRC = '아이셰어즈 DGRO 배당 기록 · 야후 파이낸스 일별 종가·배당(11/25 받음) · 파이어맵 계산'
 r = json.load(open('raw/DGRO.json'))['chart']['result'][0]
 dv = sorted((D.datetime.fromtimestamp(int(k), D.UTC).date(), v['amount']) for k, v in r['events']['dividends'].items())
 q = {}
@@ -48,9 +48,9 @@ b = ax.bar([str(y) for y in ys], [ann[y] for y in ys], color=[ORG if y in (2017,
 for x, y in zip(b, ys): ax.text(x.get_x() + x.get_width() / 2, ann[y] + 0.02, f'{ann[y]:.3f}', ha='center', fontsize=12, color=INK)
 ax.spines[['top', 'right', 'left']].set_visible(False); ax.set_yticks([]); ax.tick_params(labelsize=12)
 fig.savefig('pkg/img/01.png', dpi=100); plt.close(fig)
-v = [('DGRO', 37828), ('SCHD', 37511), ('VIG', 36823), ('SPY', 39422)]
+v = [('DGRO', 38783), ('SCHD', 38561), ('VIG', 37826), ('SPY', 41077)]
 fig = plt.figure(figsize=(9, 6), dpi=100); fig.patch.set_facecolor('white')
-frame(fig, '1만 달러, 11년 뒤', '2015.11.20에 넣고 배당은 다시 샀다면 · 2026.11.20 종가 기준(달러, 세전)')
+frame(fig, '1만 달러, 11년 뒤', '2015.11.20에 넣고 배당은 다시 샀다면 · 2026.11.24 종가 기준(달러, 세전)')
 ax = fig.add_axes([0.08, 0.12, 0.88, 0.7])
 b = ax.bar([n for n, _ in v], [x for _, x in v], color=[ORG, NAVY, NAVY, GRY])
 for x, (n, val) in zip(b, v): ax.text(x.get_x() + x.get_width() / 2, val + 500, f'약 {round(val, -2):,.0f}', ha='center', fontsize=14, color=INK)

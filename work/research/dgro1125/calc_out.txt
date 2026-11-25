@@ -1,4 +1,8 @@
-DGRO last 2026-11-20 77.26000213623047
+C:\Users\강영준\Documents\GitHub\retire-age-kr\work\research\dgro1125\calc.py:4: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
+  ts=[D.datetime.utcfromtimestamp(x).date() for x in r['timestamp']]
+C:\Users\강영준\Documents\GitHub\retire-age-kr\work\research\dgro1125\calc.py:6: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
+  dv=sorted((D.datetime.utcfromtimestamp(int(k)).date(),v['amount']) for k,v in r['events']['dividends'].items())
+DGRO last 2026-11-24 79.20999908447266
 2015 03/25:0.168 06/24:0.169 09/25:0.163 12/24:0.136 12/29:0.011 sum 0.647 dec share 21% biggest 6
 2016 06/21:0.171 09/26:0.175 12/21:0.152 sum 0.498 dec share 31% biggest 9
 2017 03/24:0.161 06/27:0.186 09/26:0.165 12/19:0.194 sum 0.706 dec share 27% biggest 12
@@ -12,23 +16,23 @@ DGRO last 2026-11-20 77.26000213623047
 2025 03/18:0.311 06/16:0.324 09/16:0.369 12/16:0.447 sum 1.451 dec share 31% biggest 12
 2026 03/17:0.331 06/15:0.331 09/15:0.385 sum 1.047  biggest 9
 
-DGRO 2026-11-20 close 77.26 ttm 1.4940 yield 1.93%  2015 0.647 2025 1.451 x2.24 cagr 8.4% cut-years [2016]
-  10y from 2015-11-20 26.20: total 278.3% price 194.9% YOC 5.70% 10k->37,828
+DGRO 2026-11-24 close 79.21 ttm 1.4940 yield 1.89%  2015 0.647 2025 1.451 x2.24 cagr 8.4% cut-years [2016]
+  10y from 2015-11-20 26.20: total 287.8% price 202.3% YOC 5.70% 10k->38,783
   MDD since 2021 -19.3%
 
-SCHD 2026-11-20 close 33.94 ttm 1.0550 yield 3.11%  2015 0.382 2025 1.047 x2.74 cagr 10.6% cut-years []
-  10y from 2015-11-20 13.03: total 275.1% price 160.5% YOC 8.10% 10k->37,511
+SCHD 2026-11-24 close 34.89 ttm 1.0550 yield 3.02%  2015 0.382 2025 1.047 x2.74 cagr 10.6% cut-years []
+  10y from 2015-11-20 13.03: total 285.6% price 167.8% YOC 8.10% 10k->38,561
   MDD since 2021 -16.8%
 
-VIG 2026-11-20 close 235.69 ttm 3.6460 yield 1.55%  2015 1.819 2025 3.558 x1.96 cagr 6.9% cut-years []
-  10y from 2015-11-20 78.94: total 268.2% price 198.6% YOC 4.62% 10k->36,823
+VIG 2026-11-24 close 242.11 ttm 3.6460 yield 1.51%  2015 1.819 2025 3.558 x1.96 cagr 6.9% cut-years []
+  10y from 2015-11-20 78.94: total 278.3% price 206.7% YOC 4.62% 10k->37,826
   MDD since 2021 -20.4%
 
-SPY 2026-11-20 close 689.81 ttm 7.5830 yield 1.10%  2015 4.206 2025 7.281 x1.73 cagr 5.6% cut-years []
-  10y from 2015-11-20 209.31: total 294.2% price 229.6% YOC 3.62% 10k->39,422
+SPY 2026-11-24 close 718.78 ttm 7.5830 yield 1.05%  2015 4.206 2025 7.281 x1.73 cagr 5.6% cut-years []
+  10y from 2015-11-20 209.31: total 310.8% price 243.4% YOC 3.62% 10k->41,077
   MDD since 2021 -24.5%
 
 --- 2017->2025 annual, 1y total
-DGRO 2017 0.706 2025 1.451 x2.06 cagr 9.4%  1y total 17.4% counts 4 4
-SCHD 2017 0.449 2025 1.047 x2.33 cagr 11.2%  1y total 32.0% counts 4 4
-VIG 2017 1.919 2025 3.558 x1.85 cagr 8.0%  1y total 12.4% counts 4 4
+DGRO 2017 0.706 2025 1.451 x2.06 cagr 9.4%  1y total 20.3% counts 4 4
+SCHD 2017 0.449 2025 1.047 x2.33 cagr 11.2%  1y total 35.7% counts 4 4
+VIG 2017 1.919 2025 3.558 x1.85 cagr 8.0%  1y total 15.5% counts 4 4

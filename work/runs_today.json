@@ -38,6 +38,16 @@
     "url": "https://cafe.naver.com/firemap/484"
    },
    "note": "lev1125 올리기 전 확인(야후 11/24 종가 다시 받음, 숫자 6곳·그림 갱신) · readcheck 0·selfcheck 사실 0·aitell 0.0 · verify OK 1946자·사진 3 · 확인 창 처리 실패 경고 있었으나 글 정상 · 개선: mkimg.py 표지가 양수 막대도 그리게"
+  },
+  {
+   "hour": 18,
+   "ts": "18:53",
+   "blog": null,
+   "cafe": {
+    "title": "DGRO 배당금 분기별로 세어 보니",
+    "url": "https://cafe.naver.com/firemap/485"
+   },
+   "note": "18:40 칸 dgro1125 · 올리기 전 확인: 아이셰어즈 페이지·야후 4종 다시 받아 11/24 종가로 갱신(SCHD 배당률 3.1→3.0%, 1만 달러 DGRO 38,800·SCHD 38,600·VIG 37,800·SPY 41,100, 배당 기록·낙폭·결론 그대로) · readcheck 0(숫자 연달은 문장 2건 고침)·selfcheck 사실 0·spoken 통과·재서명 d5822a78 · verify OK 1817자·사진 3 · 교차검증은 작성 때(11/23) crosscheck 사실 1 반영 · 블로그 0(상한) · 개선: 없음(경고 '올해' 연도 없이·D-17 1817자 기록만)"
   }
  ]
 }

@@ -52,16 +52,19 @@
 | 2014년 6월 설정 · 총보수 0.08% · 390개 · 금융 19%·헬스케어·정보기술 17%씩 | 2014-06-10 · 0.08% · 390(11/20) · 19.35·17.47·17.05%(11/19) | S1 https://www.ishares.com/us/products/264623/ishares-core-dividend-growth-etf |
 | 올해 3월 0.331·6월 0.331·9월 0.385달러, 작년 12월 0.447달러 | 0.331063 · 0.330603 · 0.384996 · 0.447036 | S1 https://www.ishares.com/us/products/264623/ishares-core-dividend-growth-etf |
 | 12월 14일 발표·15일 배당락·18일 지급 | 14-Dec-26 · 15-Dec-26 · 18-Dec-26 | S2 https://www.ishares.com/us/literature/shareholder-letters/isharesandblackrocketfsdistributionschedule.pdf |
-| 지금 배당률 DGRO 1.9%·SCHD 3.1%·VIG 1.5%대 | 1.93 · 3.11 · 1.55(최근 12달 배당 ÷ 11/20 종가) | S3·S4 https://query1.finance.yahoo.com/v8/finance/chart/DGRO |
+| 지금 배당률 DGRO 1.9%·SCHD 3.0%·VIG 1.5%대 | 1.89 · 3.02 · 1.51(최근 12달 배당 ÷ 11/24 종가) | S3·S4 https://query1.finance.yahoo.com/v8/finance/chart/DGRO |
 | 38번 중 4번 감소 · 2017-09 0.165(0.175) · 2021-09 0.250(0.261) · 2022-06 0.235(0.261) · 2025-09 0.369(0.403) | 같음 | S3·S4 https://query1.finance.yahoo.com/v8/finance/chart/DGRO |
 | 1년 배당 0.706→1.451달러, 2배 조금 넘게·해마다 9% 정도 | 2.06배 · 9.4% | S3·S4 https://query1.finance.yahoo.com/v8/finance/chart/DGRO |
 | 가장 많이 준 달 9월 5번·12월 4번 | 같음 | S3·S4 https://query1.finance.yahoo.com/v8/finance/chart/DGRO |
 | 1~3분기 합 1.047달러, 작년보다 4% 정도 | 1.047 vs 1.004(+4.3%) | S3·S4 https://query1.finance.yahoo.com/v8/finance/chart/DGRO |
-| 1만 달러 → 약 3만 7,800·3만 7,500·3만 6,800·3만 9,400달러 | 37,828 · 37,511 · 36,823 · 39,422 | S3·S4 https://query1.finance.yahoo.com/v8/finance/chart/SPY |
+| 1만 달러 → 약 3만 8,800·3만 8,600·3만 7,800·4만 1,100달러 | 38,783 · 38,561 · 37,826 · 41,077(11/24) | S3·S4 https://query1.finance.yahoo.com/v8/finance/chart/SPY |
 | 최대 낙폭 19.3%·16.8%·20.4% | -19.3 · -16.8 · -20.4 | S3·S4 https://query1.finance.yahoo.com/v8/finance/chart/SCHD |
 
 # 올리기 전 확인
 - 2026-11-23 21:2x 작성 시 S1·S2·S3 다시 받음. 발행 회차(11/25)가 다시 열어 적을 것
 기준일: 2026-11-20 미국 종가
 바뀐 것: 없음(작성일)
+- 2026-11-25 18:3x 발행 회차: S1(아이셰어즈 페이지)·S3(야후 4종) 다시 받음(fetch.py), S2 일정표 12/14·15·18 그대로
+기준일: 2026-11-24 미국 종가
+바뀐 것: 기준일 11/20→11/24 · 배당률 SCHD 3.11→3.02%(DGRO 1.89·VIG 1.51) · 1만 달러 DGRO 37,828→38,783·SCHD 37,511→38,561·VIG 36,823→37,826·SPY 39,422→41,077 · 배당 기록·낙폭은 그대로, 결론 그대로
 새로 찾은 것: 아이셰어즈 일정표 11/18자 4분기 12/15 배당락

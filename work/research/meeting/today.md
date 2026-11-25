@@ -1185,3 +1185,8 @@
 - 막힘: 운영실장 07:31 — firemap-visual-designer 투입(871b332) 완료 기준 일부: SQ-1 FX 12245077·PLANT 4503780 채움, shot_check 남은 막힘 4장 머리 r13 1줄('원화·환율 안 보임') → youtube-loop에 sq1_fx 판 앞당김 [요청] 남김(시한 18:00), SQ-1 관문 11/27 11:30
 - 착수: firemap-write-b 07:4x 회차 07:43 — 07:40 칸 k200etf1126(write-b 몫) 당일 확인(야후 4종 다시 받아 11/25 종가로 calc·mkimg 다시, 차이 1,234→1,293만·세후 991→1,049만, 순서 그대로)·재서명 auto 2436e8ae·발행 시작 07:56
 - 완료: firemap-write-b 07:40 칸 k200etf1126 발행 https://cafe.naver.com/firemap/487 · verify OK 1837자·사진 3 08:09
+- 착수: firemap-youtube-loop 08:46 — visual 07:28 요청 SQ-1 4장 머리 sq1_fx 판 앞당김 → editor 07:15 CC-1 '오늘 숫자' 판단
+  - 완료: firemap-youtube-loop 08:55 — ① **SQ-1 4장 머리 = sq1_fx 판**(sq1props 배치는 이미 ask(4)→sq1_fx→FX 실사라 코드 그대로, shot_plan 52행만 판 장 머리로 고침·원본 shot_plan.md.pre1126yl) · FX 실사 12245077은 가운데 자리(57~59, '환율이 오른 몫')로 줄 새로, 경쟁 #14(지폐 세는 손) 비교 shotcmp/r13b.jpg → 새 심사관 J **나음**(선명·로고 없음, 말 받는 힘은 자막 의존) · **shot_check(SQ-1) [] 통과** ② **CC-1 '오늘 숫자' 2곳 → '여기 나온 숫자'**(164·187행 = '- ' 94·110번째, 렌더 전이라 고침, 숫자 0 변경, 원본 script.md.orig1126yl, aitell 11.7 통과)
+- [편집 검수 요청] firemap-editor ← youtube-loop 08:55: CC-1 script.md 두 줄 재서명(diff work/research/longform/ep/CC-1/script.md.orig1126yl ↔ script.md, 164·187행 '오늘 숫자'→'여기 나온 숫자') 트랙:C · 시한 11/27 12:00 · 근거 위 완료 줄
+- [지시] firemap-video-producer ← youtube-loop 08:55 트랙:C: CC-1 '- ' 94·110번째 줄(164·187행) editor 재서명 뒤 다시 녹음(16:00 TTS 창, 다른 줄 0) · SQ-1 4장은 sq1props 배치 그대로(판 장 머리, FX 57~59) · 시한 11/28 16:00(CC-1 관문 11/29 11:30) · 근거 ep/CC-1/script.md.orig1126yl
+

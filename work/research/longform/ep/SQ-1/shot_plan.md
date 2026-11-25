@@ -49,8 +49,9 @@
 | 3. 섞는 비율별 지난 15년과 5년 | 2022년 한 해 | [판] 막대 셋 아래로 | #3·#10 | Python 판(sq1boards.py) | bg/sq1/board/sq1_y2022.png | shotcmp/r10.jpg | 나음(A) |
 | 3. 섞는 비율별 지난 15년과 5년 | 최근 5년은 거의 같음 | [판] 선 다섯 15년 → 오른쪽 5년 확대 | #4 | Python 판(sq1boards.py) | bg/sq1/board/sq1_line5.png | shotcmp/r11.jpg | 같음(A) |
 | 3. 섞는 비율별 지난 15년과 5년 | 매달 100만원씩 15년 | [표] 쌓이는 막대 180번 · 끝값 셋 | #5·#23 | Python 판(sq1boards.py) | bg/sq1/board/sq1_dca.png | shotcmp/r12.jpg | 나음(A) |
-| 4. 원화로 다시 보면 | 장 머리 | [실사] 탁자에 겹쳐 깔린 달러 지폐 근접, 천천히 옆으로(얼굴 없음 — 환율 전광판 영상은 Pexels에 코인·EURUSD뿐이라 '달러로 가진 돈' 실물로) | #13 | Pexels 'dollar and won' | bg/sq1/stock/12245077.mp4 | shotcmp/r13.jpg | 못함(11/26 새 심사관 H — 달러 실물만 보이고 '원화·환율'이 안 보임, 경쟁 #13은 환율 선+−14.5%로 바로 알림; 앞서 환율판 영상 없음) 다시 — 6장처럼 sq1_fx 판 앞당김 안을 youtube-loop에 |
+| 4. 원화로 다시 보면 | 장 머리 | [판] 환율 선 판을 장 머리로(ask 바로 뒤 54번 줄부터, 코드 배치 그대로) — 실사 장 머리 r13 못함(H: '원화·환율이 안 보임', 경쟁 #13은 환율 선) · 6장처럼 판이 장 머리 | #13 | Python 판(sq1boards.py) | bg/sq1/board/sq1_fx.png | shotcmp/r14.jpg | 나음(B, r14 — 같은 판) · 11/26 youtube-loop 결정 |
 | 4. 원화로 다시 보면 | 환율 1,105원 → 1,335원 | [판] 환율 선 하나, 처음·끝 점 | #7·#13 | Python 판(sq1boards.py) | bg/sq1/board/sq1_fx.png | shotcmp/r14.jpg | 나음(새 심사관 B) |
+| 4. 원화로 다시 보면 | QQQ만 16억·3억 가까이가 환율 몫(57~59번 줄, 환율 선 판 바로 뒤) | [실사] 탁자에 겹쳐 깔린 달러 지폐 근접, 천천히 옆으로(얼굴 없음) — 장 머리에서 가운데로 옮김, 자막 '환율이 오른 몫' | #14 | Pexels 'dollar and won' | bg/sq1/stock/12245077.mp4 | shotcmp/r13b.jpg | 나음(11/26 새 심사관 J — 선명·꽉 찬 구도, 로고·워터마크 없음; 말 받는 힘은 자막에 기대 경쟁 #14와 비슷) |
 | 4. 원화로 다시 보면 | 원화로 세면 골짜기가 얕아짐 | [판] 골짜기 둘(달러/원화) | #3 | Python 판(sq1boards.py) | bg/sq1/board/sq1_valley2.png | shotcmp/r15.jpg | 같음(B) |
 | 5. 매달 들어오는 돈 | 장 머리 | [실사] 통장 정리기에서 나오는 통장 근접, 글자 흐림 | #14 | Pexels 'bank book savings account' → 책상 위 지폐·계산기(통장 정리기 영상 없음) | bg/sq1/stock/7710769.mp4 | shotcmp/r16.jpg | 같음(C, 2차 — 1차 6266288은 탈락) |
 | 5. 매달 들어오는 돈 | 1억이면 한 해 세전 295만·170만·45만 | [판] 막대 셋 | #12·#10 | Python 판(sq1boards.py) | bg/sq1/board/sq1_dist3.png | shotcmp/r17.jpg | 나음(B) |

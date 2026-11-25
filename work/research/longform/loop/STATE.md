@@ -1,3 +1,4 @@
+2026-11-26 04:51 · 구독자 유입 판정(benchmark 지시) = 편 쪽, H-5는 데이터 하루치라 확인 안 함 · 판단: API SUBSCRIBER=탐색 기능, 채널 구독 증가 매일 0 · 다음: 11/28 H-5 7일치 재측정, NDX-1 toc_compare·analysis.md, NDG-1 editor 서명 대기
 2026-11-26 00:52 · 11/26 매일 연구 · NDX-1 경쟁 풀 3편 추가 · 사용량 97%라 이 일만 · 다음: NDX-1 toc_compare·analysis.md, NDG-1 이해 시험
 2026-11-25 20:54 · SQ-1 6장 머리 실사→판(sq1props 123행·shot_plan 57행, shot_check 6장 풀림) · 판단: 실사 세 번 못함·경쟁 #15 판·판 묶음 19.2초 · 다음: visual FX·2·4·5·8장 판정 확인, NDG-1 editor 서명 뒤 PD 넘김, NDX-1 분석 관문(12/3 11:30 기한)
 [PD] H-6 0:8 받기 통과(readback·check)·h6.json 539.9초·screen_text 27행 새 판 — 서명은 editor 요청(PD 투입 서명 권한 거부), 렌더는 서명 뒤 22:1x · gate 남은 막힘 bench 대조 하나 · 롱폼 업로드 0 2026-11-25 18:34

@@ -82,8 +82,8 @@ m.update({
         'q5_사람의몫': "예 — '매물 5배 ≠ 팔린 건수'·'재초환 평균 4억 6천 ≠ 내 몫(보유기간 감경)'·'분담금 두 보도가 다름, 조합 문서 미확인'은 흔한 말을 원자료로 가른 우리 판단."},
     'endscreen': {'how': 'Studio 최종 화면 — 업로드 뒤', 'status': '미정'},
     'made_by': 'firemap-video-producer', 'made_at': '2026-11-23',
-    'video': os.path.join(VID, 'out', 'h6_c37.mp4').replace('\\', '/'),   # 11/24 10:3x PD: h6_dsl1124.mp4 앞 119프레임(인사 장면, C-37) 잘라 냄·-17.0 LUFS 그대로 · 그 전 11/24 PD: 통렌더 h6.mp4 → deesser i=0.8:m=0.7 + loudnorm(-12.1dB·-17.0 LUFS)
-    'click_ok': [189.4],   # 11/24 10:3x PD: 인사 3.97초 잘라 낸 뒤 193.4 → 189.4
+    'video': os.path.join(VID, 'out', 'h6_dsl1125.mp4').replace('\\', '/'),   # 11/26 05:2x PD: 11/25 바뀐 숫자·0:8 새 말 통렌더(3토막) → deess --chirp-short(-12.1dB·-17.0 LUFS), 인사 줄은 voice에서 빠져 자를 것 없음 · 옛 11/24 10:3x PD: h6_dsl1124.mp4 앞 119프레임(인사 장면, C-37) 잘라 냄·-17.0 LUFS 그대로 · 그 전 11/24 PD: 통렌더 h6.mp4 → deesser i=0.8:m=0.7 + loudnorm(-12.1dB·-17.0 LUFS)
+    'click_ok': [],   # 11/26 PD: h6_dsl1125 clickscan 치직 0 → 예외 필요 없음 · 옛 [189.4] 11/24 10:3x PD: 인사 3.97초 잘라 낸 뒤 193.4 → 189.4
     'click_ok_note': "11/24 05:2x PD: 193.4초 = scenes.30 '은마는 그 여섯 곳 중에서도 가장 많이 빠졌고요'의 '가장' 첫소리(쉼 뒤). 통렌더 h6.mp4엔 안 잡히고 음량 맞춤(×1.42) 뒤 잡힘 — 10ms rms 꼴 같음(788→3838 ↔ 1132→5447)·4kHz 위 0%. 제미나이 3.6-flash 1초 듣기 '가장 많이 빠졌고요 / 판정: 말소리'(check/click1934_gemini.log)",
     'todo': '11/25 PD 06:2x: 올리기 전 확인 값(76건·34.50억·23곳)으로 FIRST2·답·판 데이터 고침 · 남은 것: editor 재서명(말 9줄·화면 글자·설명란) → 9줄 녹음 → 그 토막 렌더 → screen·bgcheck·bench 대조 → cafe_url → gate·예약 11/26 11:30'})
 json.dump(m, open(MP, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)

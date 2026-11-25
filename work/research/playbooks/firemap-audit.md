@@ -73,3 +73,4 @@
 - 2026-11-22 21:11: 11/21에 RSS 채널 pubDate를 글 시각으로 읽어 '정지 중 새 글' 오보를 회의에 올렸다(교본에 두 번 적어 놓고도). 새 글 판정 = item pubDate + 글 화면(m.blog PostView) 날짜 두 곳이 같을 때만. · 사이트 위험은 '받는 코드'가 아니라 '그 값을 읽는 화면'까지 grep해서 판정(firemap_market은 받기만 하고 읽는 곳 0).
 - 2026-11-23: 회의 문장의 'A job이 실패·B job에 비밀값'도 실물로 다시 잰다 — 이번엔 두 job이 뒤바뀌어 있었음. 비밀값은 값 대신 불리언·JWT role만 뽑아 판정(anon이면 공개 키).
 - 2026-11-24 21:14: 미국 지수 '어제 종가'는 FRED·나스닥 historical에 하루 늦게 들어온다 — 나스닥 공식 /api/quote/NDX/info의 lastSalePrice·lastTradeTimestamp로 바로 대조된다(SPX는 이 API에 없음). 장부 '개수' 경보는 길이가 아니라 상태·칸 배정까지 걸러 세야 한다(카페 38줄인데 쓸 수 있는 건 0).
+- 2026-11-25: law.go.kr 조문은 web-fetch로 빈 껍데기만 온다 — 내장 브라우저로 열고 javascript_tool로 document.body.innerText에서 '제N조(' 위치를 잘라 읽는다. FRED는 curl이 멈추고 브라우저도 막힘 → 미국 ETF 1차 대조는 운용사 공식 화면(아이셰어즈 배당표는 innerText 'Ex-Date' 뒤)으로.

@@ -1,3 +1,9 @@
+## 2026-11-25 17:21 · 정기 16:50 회차(17:05 시작) — H-6 0:8 재서명 · H-6 screen_text stamp · NDG-1 v1.3 서명 · 표본 2
+- H-6 script 0:8 '재초환 평균'→'재건축 부담금 평균'만, 재서명 196e8da0 · aitell 72.5/19% 통과 · humanlike AI 말 0
+- H-6 screen_text.txt stamp f37e6a19 · 숫자 줄 전부 11/25 calc와 일치 · 27행 0:8은 대본보다 옛 말 → PD 다시 뽑으면 재stamp
+- NDG-1 v1.3 서명 cfa09aaa · aitell 52.6→54.7/1,000단어(문장 수 줄어서)·2개↑ 8→10% · humanlike AI 말 0→0 · 고침 4('끝에는' 위치 틀림·'안에서 이미'·한 문장 두 줄 쪼갬·정밀 숫자 '10억 5천') · '남짓'은 not_spoken에 걸려 '조금 넘었는데요'로
+- 표본 vig1125·lev1125(발행분) 반려 0 · vig1125 '10년'/'11년' 기간 섞임 → write 알림
+- 원본 H-6 script.md.orig1125yl2(loop)·NDG-1 script.md.orig1125ed · 이전 서명 *.edit.json.pre1125ed(2)
 ## 2026-11-25 07:31 · 정기 06:50 회차(07:05 시작) — A97 꼴 검사 · A106·A107 점검 · 표본 2
 - work/aitell.py: A97_SHAPE 추가 — h2s_jamsil·h2s_banpo·h5s_half 끝 줄 aitell 0.0→3.0 · 쇼츠 원고 68개 오탐 0 · test_aitell 통과
 - gwacheon1125/pkg c01·c02: aitell 0.0→0.0 · '비교 기준은 이렇습니다.'→'비교 기준', '약 7% 올랐고 모두 올랐어요'→'모두 올랐고, 중간값은 약 7%예요' · 재서명 750f6c93 (CRLF 유지)

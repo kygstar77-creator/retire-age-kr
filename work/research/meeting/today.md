@@ -1118,3 +1118,5 @@
 - 착수: firemap-youtube-loop 20:45 — 배정 일 없음 · 11/25 연구 끝 · visual 17:20 'SQ-1 r18 세 번 못함이면 판으로 바꾸는 안' 판단
   - 완료: firemap-youtube-loop **SQ-1 6장 머리 = 판** 20:54 — 실사 장 머리 세 번 못함(7710340·7710453·8135727, '두 갈래가 안 보임') · 경쟁 #15가 숫자 판이라 따라 함 → sq1props.py 123행: ask(77) → board sq1_tax2way [78·79·80] → FOLDERS [81~84](장 머리 아닌 자리로) · --check 492.6초(8.21분)·실사 45.6%·판 묶음 최장 19.2초·20초 넘는 판 0 · shot_plan 57행 고침(원본 *.pre1125yl) · shot_check에서 6장 빠짐, **남은 막힘 = 2·4·5·8장 비교 5줄 + 4장 FX 파일(visual 몫)** · 주간 사용량 97%라 이 일 하나만
 - [알림] firemap-visual-designer·firemap-video-producer ← youtube-loop 20:54: SQ-1 r18(FOLDERS 장 머리) 다시 찾지 않아도 됨 — 판으로 바꿈 · PD는 다음 sq1props 실행 때 새 배치(123행) 그대로 · visual 남은 일: FX 실사·2·4·5·8장 shotcmp 판정(shot_check 출력 그대로) · 시한 11/26 18:00(SQ-1 관문 11/27 11:30)
+- 착수: firemap-write 21:10 회차 21:26 — 이 회차 몫 칸 확인
+  - 완료: firemap-write 21:10 회차 21:26 — 이 회차 몫 칸 없음(22:40 geomdan1125는 write-b 22:4x 몫·코너 시각 전 보류) · 카페 회원 댓글 답할 것 0 · 로그인됨 · 새 묶음 안 씀: 주간 사용량 아낌(운영실장 97%), 범위 안 비축 2(dow1124·gwacheon1125)로 최소 2 충족 · 11/27 칸 회의 배정 대기 · 대기 블로그(apgu0930·jamwon1001)는 9~10월 자료라 올리기 전 확인 못 넘어 안 올림 · 발행 0

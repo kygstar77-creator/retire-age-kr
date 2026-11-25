@@ -42,22 +42,22 @@
 | 1. 나스닥100은 어떻게 갈아 끼우나 | 장 머리 | [실사] 저녁 빌딩 유리에 번진 전광판 불빛, 글자 흐림 | #16 | Pexels 'city building glass night lights' | bg/sq1/stock/40806780.mp4 | shotcmp/r03.jpg | 나음(11/24 새 심사관 D — 왼쪽 #16 &t=880 달리기로 다시 캡처; 메모 '전광판'은 화면에 없고 저녁 사무실 창) |
 | 1. 나스닥100은 어떻게 갈아 끼우나 | 해마다 12월 한 번 | [판] 달력 한 장, 12월 주황 동그라미 | #11 | Python 판(sq1boards.py) | bg/sq1/board/sq1_cal12.png | shotcmp/r04.jpg | 같음(A) |
 | 1. 나스닥100은 어떻게 갈아 끼우나 | 한 회사 24% 넘으면 20%로 | [판] 솟는 막대가 선에 걸려 잘림 | #11 | Python 판(sq1boards.py) | bg/sq1/board/sq1_cap20.png | shotcmp/r05.jpg | 같음(A) |
-| 2. SCHD는 무엇을 담나 | 장 머리 | [실사] 우편함 봉투를 꺼내는 손 근접 | #14·#15 | Pexels 'hand taking letter from mailbox' | bg/sq1/stock/6851679.mp4 | shotcmp/r06.jpg | 나음(새 심사관 C, 2차 — 1차 39863170 못함) |
+| 2. SCHD는 무엇을 담나 | 장 머리 | [실사] 우편함 봉투를 꺼내는 손 근접 | #14·#15 | Pexels 'hand taking letter from mailbox' | bg/sq1/stock/6851679.mp4 | shotcmp/r06.jpg | 나음(새 심사관 C, 2차 — 1차 39863170은 탈락) |
 | 2. SCHD는 무엇을 담나 | 네 지표로 거름 → 100개 | [판] 체 넷 아래로 떨어지는 100개(#11 '25 IN' 그림 설명 꼴) | #11 | Python 판(sq1boards.py) | bg/sq1/board/sq1_sieve4.png | shotcmp/r07.jpg | 같음(A) |
 | 2. SCHD는 무엇을 담나 | 보수 0.06% vs 0.18% | [판] 두 상품 카드 나란히 | #1 | Python 판(sq1boards.py) | bg/sq1/board/sq1_fee2.png | shotcmp/r08.jpg | 나음(A) |
 | 3. 섞는 비율별 지난 15년과 5년 | 다섯 비율 × 15년 | [표] 다섯 줄 표 한 줄씩 열림 | #2·#20 | Python 판(sq1boards.py) | bg/sq1/board/sq1_mix5.png | shotcmp/r09.jpg | 나음(A) |
 | 3. 섞는 비율별 지난 15년과 5년 | 2022년 한 해 | [판] 막대 셋 아래로 | #3·#10 | Python 판(sq1boards.py) | bg/sq1/board/sq1_y2022.png | shotcmp/r10.jpg | 나음(A) |
 | 3. 섞는 비율별 지난 15년과 5년 | 최근 5년은 거의 같음 | [판] 선 다섯 15년 → 오른쪽 5년 확대 | #4 | Python 판(sq1boards.py) | bg/sq1/board/sq1_line5.png | shotcmp/r11.jpg | 같음(A) |
 | 3. 섞는 비율별 지난 15년과 5년 | 매달 100만원씩 15년 | [표] 쌓이는 막대 180번 · 끝값 셋 | #5·#23 | Python 판(sq1boards.py) | bg/sq1/board/sq1_dca.png | shotcmp/r12.jpg | 나음(A) |
-| 4. 원화로 다시 보면 | 장 머리 | [실사] 환율 전광판 빛이 번진 유리, 숫자 흐림 | #13 | Pexels 'exchange rate board blur' | | | |
+| 4. 원화로 다시 보면 | 장 머리 | [실사] 탁자에 겹쳐 깔린 달러 지폐 근접, 천천히 옆으로(얼굴 없음 — 환율 전광판 영상은 Pexels에 코인·EURUSD뿐이라 '달러로 가진 돈' 실물로) | #13 | Pexels 'dollar and won' | bg/sq1/stock/12245077.mp4 | shotcmp/r13.jpg | 못함(11/26 새 심사관 H — 달러 실물만 보이고 '원화·환율'이 안 보임, 경쟁 #13은 환율 선+−14.5%로 바로 알림; 앞서 환율판 영상 없음) 다시 — 6장처럼 sq1_fx 판 앞당김 안을 youtube-loop에 |
 | 4. 원화로 다시 보면 | 환율 1,105원 → 1,335원 | [판] 환율 선 하나, 처음·끝 점 | #7·#13 | Python 판(sq1boards.py) | bg/sq1/board/sq1_fx.png | shotcmp/r14.jpg | 나음(새 심사관 B) |
 | 4. 원화로 다시 보면 | 원화로 세면 골짜기가 얕아짐 | [판] 골짜기 둘(달러/원화) | #3 | Python 판(sq1boards.py) | bg/sq1/board/sq1_valley2.png | shotcmp/r15.jpg | 같음(B) |
-| 5. 매달 들어오는 돈 | 장 머리 | [실사] 통장 정리기에서 나오는 통장 근접, 글자 흐림 | #14 | Pexels 'bank book savings account' → 책상 위 지폐·계산기(통장 정리기 영상 없음) | bg/sq1/stock/7710769.mp4 | shotcmp/r16.jpg | 같음(C, 2차 — 1차 6266288 못함) |
+| 5. 매달 들어오는 돈 | 장 머리 | [실사] 통장 정리기에서 나오는 통장 근접, 글자 흐림 | #14 | Pexels 'bank book savings account' → 책상 위 지폐·계산기(통장 정리기 영상 없음) | bg/sq1/stock/7710769.mp4 | shotcmp/r16.jpg | 같음(C, 2차 — 1차 6266288은 탈락) |
 | 5. 매달 들어오는 돈 | 1억이면 한 해 세전 295만·170만·45만 | [판] 막대 셋 | #12·#10 | Python 판(sq1boards.py) | bg/sq1/board/sq1_dist3.png | shotcmp/r17.jpg | 나음(B) |
 | 6. 직접 사나, 국내 상장으로 사나 | 장 머리 | [표] 두 갈래 표를 장 머리로 앞당김(78번 줄부터) — 실사 장 머리 세 번 못함(C 7710340·7710453, G 8135727: '두 갈래가 안 보이는 일반 사무 장면') | #15 | Python 판(sq1boards.py) | bg/sq1/board/sq1_tax2way.png | shotcmp/r19.jpg | 나음(B, r19 — 같은 판) · 11/25 youtube-loop 결정 |
 | 6. 직접 사나, 국내 상장으로 사나 | 두 갈래 세금 | [표] 두 갈래 표 | #20·#19 | Python 판(sq1boards.py) | bg/sq1/board/sq1_tax2way.png | shotcmp/r19.jpg | 나음(B) |
 | 6. 직접 사나, 국내 상장으로 사나 | 15년 한 번에 팔면 세후 | [판] 막대 둘 | #17 | Python 판(sq1boards.py) | bg/sq1/board/sq1_tax15.png | shotcmp/r20.jpg | 나음(B) |
 | 6. 직접 사나, 국내 상장으로 사나 | 5년이면 국내 상장이 조금 더 | [판] 5년 막대 둘 '+366만원' | #17 | Python 판(sq1boards.py) | bg/sq1/board/sq1_tax5.png | shotcmp/r21.jpg | 나음(B) |
 | 7. 함정 | 함정 셋 | [판] 함정 셋 카드 | #22 | Python 판(sq1boards.py) | bg/sq1/board/sq1_traps3.png | shotcmp/r22.jpg | 같음(B) |
-| 8. 끝 | 정리 | [표] 정리 표(#21 '핵심 세 가지'를 표로) | #21·#18 | Python 판(sq1boards.py) | bg/sq1/board/sq1_summary.png | shotcmp/r23.jpg | 나음(11/24 새 심사관 F — 반반 칸 주황 뺌·5년 줄 1.655/1.816/1.843억·두 칸 아래 주황 '반반과 나스닥100만, 차이 약 263만원'·세후 줄 SCHD 칸만·분배금 '1억·세전'; 앞 판 D·E 못함 2번: 주어 없음·1.82/1.84로는 200만원으로 보임·세후 줄이 세 칸에 걸침) |
-| 8. 끝 | 숨 쉴 3초 | [실사] 창가 화분 위로 번지는 아침 햇빛 | #16 | Pexels 'window plant morning sunlight' | bg/sq1/stock/7578510.mp4 | shotcmp/r24.jpg | 못함(C, 11/24 D도 못함 — 왼쪽 #16 &t=880로 다시 캡처해도: 창턱 화분 없음·어두운 구석의 한낮 정원·창틀이 화면을 가름, 1차 31206180 분무기 손) 다시 |
+| 8. 끝 | 정리 | [표] 정리 표(#21 '핵심 세 가지'를 표로) | #21·#18 | Python 판(sq1boards.py) | bg/sq1/board/sq1_summary.png | shotcmp/r23.jpg | 나음(11/24 새 심사관 F — 반반 칸 주황 뺌·5년 줄 1.655/1.816/1.843억·두 칸 아래 주황 '반반과 나스닥100만, 차이 약 263만원'·세후 줄 SCHD 칸만·분배금 '1억·세전'; 앞 판 D·E 탈락 2번: 주어 없음·1.82/1.84로는 200만원으로 보임·세후 줄이 세 칸에 걸침) |
+| 8. 끝 | 숨 쉴 3초 | [실사] 밝은 창턱에 줄지은 화분들, 창빛(멈춘 그림 plant_last.jpg) | #16 | Pexels 'plant on windowsill morning sunlight' | bg/sq1/stock/4503780.mp4 | shotcmp/r24.jpg | 나음(11/26 새 심사관 I — 밝은 창가·화분·책, 구상·끝 자리와 맞고 손·얼굴·글자 없음; 앞 클립 7578510은 C·D 2번 탈락: 창턱 화분 없음·어두운 한낮 정원, 1차 31206180 분무기 손) |

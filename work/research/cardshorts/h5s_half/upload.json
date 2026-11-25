@@ -6,7 +6,7 @@
  "publishAt": "2026-11-26T19:20:00+09:00",
  "publish_plan": "11/20 22:3x PD: 11/26 19:20 TBD 칸(관문 기한 11/26 07:20) — 회의 11/20 21:5x '부동산 먼저·11/26은 H-6(은마)과 같은 날이라 은마 금지' · H-5(11/22 공개)와 나흘 띄움 · 11/23 h2s_banpo(부동산)·11/24 de1s_kofin(배당)·11/25 h4s_new15(부동산)와 다른 질문(반값 거래가 어떤 거래였나) · H-6 롱폼(같은 날 11:30, 은마 분담금)과 다른 단지·질문",
  "title": "송도 아파트 반값 거래, 4천 건 중 2건이었고 둘 다 직거래 #shorts",
- "description": "전체 계산: https://youtu.be/tvCsLWDF814 (송도 아파트 84㎡ 실거래 전부 세어 보니 지금 값은 고점의 82%)\n\n송도동 33개 단지 84㎡대 아파트 거래 4천여 건(2022년 7월~2026년 10월)을 다 세어 보니, 그 단지 값이 가장 비쌌던 2021~22년 보통 값의 절반 이하로 팔린 거래는 2건이었고 둘 다 중개사 없이 한 직거래였어요.\n고점의 60% 아래로 넓혀도 27건, 그중 21건이 직거래였죠. 직거래는 전체 거래의 3% 정도인데 싼 거래 쪽에 몰려 있었어요. 직거래가 왜 쌌는지는 신고 자료에 나오지 않아요. 지나간 거래를 센 숫자이고, 사거나 팔라는 권유가 아닙니다.\n\n출처: 국토교통부 아파트 매매 실거래(송도동 84㎡대, 해제·공공기관 매수 제외, 2026-11-20 다시 받아 같은 값 확인) · 고점 = 단지별 2021.07~2022.06 거래의 보통 값 · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — Gije Cho · Jueon Kim 김주언 · Nurlan Hasanov · RDNE Stock project\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #송도아파트 #송도실거래가",
+ "description": "전체 계산: https://youtu.be/tvCsLWDF814 (송도 아파트 84㎡ 실거래 전부 세어 보니 지금 값은 고점의 82%)\n\n송도동 33개 단지 84㎡대 아파트 거래 4천여 건(2022년 7월~2026년 10월)을 다 세어 보니, 그 단지 값이 가장 비쌌던 2021~22년 보통 값의 절반 이하로 팔린 거래는 2건이었고 둘 다 중개사 없이 한 직거래였어요.\n고점의 60% 아래로 넓혀도 27건, 그중 21건이 직거래였죠. 직거래는 전체 거래의 3% 정도인데 싼 거래 쪽에 몰려 있었어요. 지나간 거래를 센 숫자이고, 사거나 팔라는 권유가 아닙니다.\n\n출처: 국토교통부 아파트 매매 실거래(송도동 84㎡대, 해제·공공기관 매수 제외, 2026-11-20 다시 받아 같은 값 확인) · 고점 = 단지별 2021.07~2022.06 거래의 보통 값 · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — Gije Cho · Jueon Kim 김주언 · Nurlan Hasanov · RDNE Stock project\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #송도아파트 #송도실거래가",
  "tags": "송도 아파트,송도 아파트 실거래가,송도 반값,송도 집값,아파트 직거래",
  "layout": "c1clip",
  "look": "live",
@@ -17,13 +17,25 @@
  "synth_insert_echo": true,
  "synth_update_echo": true,
  "cover_set": true,
- "id": "78fgoXS0KSU",
- "uploaded_at": "2026-11-20 23:11:26",
+ "id": "DBoURCupFrU",
+ "uploaded_at": "2026-11-25 23:49:15",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-11-26T10:20:00Z",
   "embeddable": true,
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
- }
+ },
+ "v": 2,
+ "v2_note": "11/25 PD: benchmark 11/25 지시 — 끝 줄 18.5초 \"직거래가 왜 쌌는지는 자료에 없어요.\"(A97·A108) 뺀 판, 새 녹음 0 · 설명란 같은 문장도 뺌",
+ "replaced": [
+  {
+   "id": "78fgoXS0KSU",
+   "unscheduled_at": "2026-11-25 23:49:15",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  }
+ ]
 }

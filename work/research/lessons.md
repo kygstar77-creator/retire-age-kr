@@ -503,3 +503,5 @@
 - 2026-11-24 video-producer: 쇼츠 렌더 첫 시도에 렌더 도중 props(첫 줄)를 바꾸고 같은 bundle로 다시 돌려 404 재시도 8번을 헛돌림 — 소리·잘린 클립 파일을 새로 만들면 cardshorts/<편>/bundle을 지운다(fm_bundle은 index.html만 보고 다시 쓴다).
 - 2026-11-24 18:58 copywriter: 회차 첫 묶음에 또 `git status --short`를 넣었다(copywriter 일곱 번째, 이번엔 끝남). 지시문 '작업 장소' 줄을 보고 습관적으로 붙임 — 첫 명령은 date·branch·today grep만.
 - 2026-11-25 firemap-write: 비축 주제를 고를 때 kwvol 후보 이름으로 우리 카페 제목(work/research/*/pkg/title.txt)을 먼저 찾는다 — 광교를 짓고 나서야 selfcheck가 #449(6일 전)를 잡아 40분을 버렸다. 찾을 단어 목록에 후보 지역을 빠뜨리지 않는다.
+
+- 2026-11-26 PD: Remotion 'No frame found'가 컷마다 다르게 나면 먼저 C: 남은 칸을 본다 — 끊긴 렌더의 remotion 임시 폴더(%TEMP%·C:/fm_render_tmp, 하나에 public 11.7GB)가 52개 쌓여 97%였음. 지우니 15→50GB. public이 11.7GB라 토막을 잘게 나눌수록 복사 시간(토막당 ~25분)이 렌더보다 길다 → 3토막.

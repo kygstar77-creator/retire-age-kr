@@ -4940,7 +4940,7 @@
    "item": "lev1125",
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-23 17:04",
-   "published": null,
+   "published": "https://cafe.naver.com/firemap/484 16:24 verify OK 1946자",
    "note": "firemap-write-b 2026-11-23 17:04: 관문 통과 lev1125 '나스닥100 제자리일 때 QLD·TQQQ는 얼마였을까?'(지수, ETF 게시판) — kwvol QLD 76,900·TQQQ 56,900·우리 카페 제목 0편 · 야후 수정 종가 직접 계산: 올해 QQQ -0.6%·QLD -9.7%·TQQQ -21.4% · 6/2→10/6 QQQ +2.0%·TQQQ -3.0% · QQQ 1년 제자리 370번 중 TQQQ 손실 91%(±1% 76번 전부) · 2021 고점 회복 716·917·1,111일 · 프로셰어즈 원문·금융위 해명(해외 레버리지 신규 기본예탁금 1천만원·사전교육) · 경쟁 6편 이 셈 0편 · research strict·bench·prepublish·compare·calc·sise·cover·disclaim·readcheck 0·aitell 0.0·spoken·selfcheck 사실 0·crosscheck 사실 2/3·말투 5/8 반영·이해 2차 6명 통과·editgate auto 55dae3e3 · 같은 날 게시판 안내 2칸(dow1124·이 글) 다 씀 — 12:40·18:40 배당 칸은 다른 안내로 · **발행 회차: 야후 다시 받아 calc.py·mkimg.py 다시(11/24 종가) — 올해·고점 대비·6/2→10/6 이후 숫자 바뀌면 본문·research '바뀐 것:' 고치고 재서명** | firemap-write-b 2026-11-23 16:46: 운영실장 11/23 15:10 지시 — 11/25 6칸 배정 · 축 순서 부동산(07:40)→지수(10:10)→배당(12:40)→지수(16:10)→배당(18:40)→부동산(22:40 h4s_new15 짝) · 같은 축 연속 없음·부동산 2칸 · 11/24 끝 칸 배당(22:40 kofinpair)→11/25 첫 칸 부동산 · 관문 기한 = 칸 6시간 전 · 못 넘으면 비움(범위 밖·미달 공개 금지) · 쉼표 제목 2/6 · 관문 기한 11/25 10:10 · 11/24 rsp(동일가중)·wytd(올해 원화)·kospi1pair·10:10 dow와 각도 겹치지 않게 · 제목 첫 어절 '나스닥100'·'S&P500'·'코스피' 검색어"
   },
   {
@@ -5096,6 +5096,14 @@
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
    "note": "firemap-youtube-loop 2026-11-25 00:55: H-5 조건 걸렸지만 KOSPI-1(지수)도 13시간 10회라 축 문제 아님 → NDG-1 유지, 전략 반론 받음(longform/loop/slot1202_decide_1125.md) | firemap-youtube-loop 2026-11-22 21:0x: 통계로 정함 longform/loop/slot1202_compare.md(경쟁 11/06~16 정반대 주장·우리 '맞나?' 꼴 20.7/일·재탕 0) · 전략 참모 고쳐서 → 11/25 H-5 하루당 < 12.7이면 배당 후보로 바꿈 · 관문 기한 12/1 11:30"
+  },
+  {
+   "at": "2026-12-04 11:30",
+   "kind": "long",
+   "item": "NDX-1(지수 — 나스닥100 고점에서 샀다면 회복까지 며칠, 1986년부터 -10% 넘은 35번 전부, ep/NDX-1)",
+   "owner": "firemap-youtube-loop",
+   "gates_ok": null,
+   "note": "firemap-youtube-loop 2026-11-25 17:0x: 통계로 정함 longform/loop/slot1204_compare.md(+전략 반론) — 배당이 하루당·경쟁 배수는 위지만 쓸 꼴이 모두 재탕(mkAxQPGaDqc·SQ-1·CC-1), 나스닥100 kwvol 309,600·11/20 -19.8% · 관문 기한 12/3 11:30"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외",

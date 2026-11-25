@@ -13,3 +13,6 @@ S.BIG = ['나스닥100에만 vs 반반', '15년 뒤 누가 더 남았나?']; chk
 S.make('sq1_c2.png', 'chart_point_5833757.jpg', 0.2, **dict(KW, top=TOP))
 S.BIG = ['나스닥100에만 vs 반반', '더 크게 빠진 쪽은?']; chk()   # 영상 4장 낙폭 물음(남은 궁금증 '-28%는 언제')
 S.make('sq1_c3.png', 'chart_point_5833757.jpg', 0.2, **dict(KW, top=TOP))
+# c1b (copywriter 11/24 18:58): 둘째 줄만 'SCHD랑 반반이면 얼마?' — 168에서 SCHD가 큰 글에 보이게
+S.BIG = ['나스닥100에만 넣었다면', 'SCHD랑 반반이면 얼마?']; chk()
+S.make('sq1_c1b.png', 'chart_point_5833757.jpg', 0.2, **dict(KW, top=TOP))

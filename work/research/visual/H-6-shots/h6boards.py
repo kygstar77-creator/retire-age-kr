@@ -1,6 +1,6 @@
 """H-6 장면 판 — visual-designer 2026-11-22. H-5·KOSPI-1 판과 같은 꼴·같은 부품(k1boards):
 구겨진 종이 바탕 · 펜 빗금 막대(hatch_bar) · 주황 #FF5A00은 그 화면의 답 하나 · 손 동그라미·밑줄 · 상자·카드 판 없음.
-숫자는 ep/H-6 calc_out·calc2_out(국토부 실거래 11/19 받음)과 script.md v1.6(editor 95a5c935) 화면·자막 줄 값만.
+숫자는 ep/H-6 calc_out·calc2_out(국토부 실거래 11/25 받음 — 11/25 visual: 76건·84㎡ 27·10~11 34.50억 10건으로 다시)과 script.md v1.6(editor 95a5c935) 화면·자막 줄 값만.
 거래·월별 건수는 calc 출력 파일을 그대로 읽고 assert(옮겨 적지 않음). 보도·법 숫자는 script.md 자막 줄과 글자 그대로 대조.
 판은 '답이 열린 마지막 모습' — '?' → 열림은 PD가 Remotion에서. 파일 이름은 shot_plan.md 장면 계획 '파일' 칸 그대로.
 사용: py -3.12 h6boards.py [이름 ...]   (없으면 전부) → work/video/public/bg/h6/board/<이름>.png
@@ -18,7 +18,7 @@ EP = os.path.join(WORK, 'research', 'longform', 'ep', 'H-6')
 OUT = os.path.join(WORK, 'video', 'public', 'bg', 'h6', 'board')
 LINE = (206, 198, 186)
 rd = lambda fn: open(os.path.join(EP, fn), encoding='utf-8').read()
-SRC_RT = '국토교통부 아파트 매매 실거래 · 은마 · 2026-11-19 받음 · 해제 거래 뺌'
+SRC_RT = '국토교통부 아파트 매매 실거래 · 은마 · 2026-11-25 받음 · 해제 거래 뺌'
 
 # ── calc 출력에서 그대로 읽기 ─────────────────────────────────────────
 _c1, _c2, _sc = rd('calc_out.txt'), rd('calc2_out.txt'), rd('script.md')
@@ -29,13 +29,13 @@ DEAL77 = [(dt, float(v), int(fl)) for dt, v, fl in re.findall(r'(\d{4}\.\d\d\.\d
 MON = [(m, int(n)) for m, n in re.findall(r'(\d{4}\.\d\d) (\d+)', _sec('## 월별 건수'))]
 RENT = [(m, int(n)) for m, n in re.findall(r'(\d{4}\.\d\d) (\d+)', _sec('## 전월세'))]
 GRP = {(a, p): (int(n), float(v)) for a, p, n, v in re.findall(r'(\d\d)㎡ (\S+): (\d+)건 가운데 ([\d.]+)억', _c2)}
-assert len(DEAL84) == 26 and len(DEAL77) == 49 and '# 은마 매매 75건(해제 6건 뺌)' in _c1
-assert len(MON) == 14 and sum(n for _, n in MON) == 75 and dict(MON)['2026.09'] + dict(MON)['2026.10'] == 35
-assert len(RENT) == 13 and sum(n for _, n in RENT) == 896 and dict(RENT)['2025.12'] == 164 and dict(RENT)['2026.09'] == 20 and dict(RENT)['2025.10'] == 92
-assert GRP[('84', '2025.10~12')] == (3, 42.80) and GRP[('84', '2026.01~06')] == (8, 38.83) and GRP[('84', '2026.07~09')] == (6, 37.08) and GRP[('84', '2026.10~11')] == (9, 34.30)
+assert len(DEAL84) == 27 and len(DEAL77) == 49 and '# 은마 매매 76건(해제 7건 뺌)' in _c1
+assert len(MON) == 14 and sum(n for _, n in MON) == 76 and dict(MON)['2026.09'] + dict(MON)['2026.10'] == 34 and dict(MON)['2026.10'] == 22 and dict(MON)['2026.11'] == 4
+assert len(RENT) == 13 and sum(n for _, n in RENT) == 893 and dict(RENT)['2025.12'] == 162 and dict(RENT)['2026.09'] == 20 and dict(RENT)['2025.10'] == 92
+assert GRP[('84', '2025.10~12')] == (3, 42.80) and GRP[('84', '2026.01~06')] == (8, 38.83) and GRP[('84', '2026.07~09')] == (6, 37.08) and GRP[('84', '2026.10~11')] == (10, 34.50)
 assert GRP[('77', '2025.10~12')] == (8, 37.38) and GRP[('77', '2026.01~06')] == (9, 34.80) and GRP[('77', '2026.10~11')] == (16, 31.45)
 RECENT9 = [v for dt, v, _ in DEAL84 if dt >= '2026.10']
-assert len(RECENT9) == 9 and st.median(RECENT9) == 34.30 and (min(RECENT9), max(RECENT9)) == (33.00, 35.30)
+assert len(RECENT9) == 10 and st.median(RECENT9) == 34.50 and (min(RECENT9), max(RECENT9)) == (33.00, 36.00)
 CHARGE = 46334   # 만원 — 강남구 보도자료 2026-11-10(script 146행 자막)
 assert '1인당 평균 4억 6,334만원' in _sc and '4,326명' in _sc
 def man(v):      # 41701 → '4억 1,701만'
@@ -61,15 +61,15 @@ def dashed_v(d, x, y0, y1, color=GREY, w=4, seg=16):
 
 # ── 0. 여는 말 ───────────────────────────────────────────────────────
 @board
-def open85(im):            # '1년 사이 ?억' → 8억 5천만원
+def open85(im):            # '1년 사이 ?억' → 8억 3천만원 (11/25 값)
     d = ImageDraw.Draw(im)
     T(d, (W // 2, 170), '은마아파트 34평(전용 84㎡) · 가운데 값', 64, GREY, F_B)
     T(d, (W // 2, 400), '1년 사이', 150, INK, F_X)
-    T(d, (W // 2, 640), '8억 5천만원', 230, OR, F_X)
+    T(d, (W // 2, 640), '8억 3천만원', 230, OR, F_X)
     hand_ellipse(d, (290, 490, 1630, 800), seed=11)
-    a, b = GRP[('84', '2025.10~12')][1], GRP[('84', '2026.10~11')][1]; assert round(a - b, 2) == 8.50
-    T(d, (W // 2, 905), '42억 8천  →  34억 3천', 96, INK, F_X)
-    source(d, SRC_RT + ' · 2025.10~12 계약 3건 → 2026.10~11 계약 9건')
+    a, b = GRP[('84', '2025.10~12')][1], GRP[('84', '2026.10~11')][1]; assert round(a - b, 2) == 8.30
+    T(d, (W // 2, 905), '42억 8천  →  34억 5천', 96, INK, F_X)
+    source(d, SRC_RT + ' · 2025.10~12 계약 3건 → 2026.10~11 계약 10건')
 
 # ── 1. 은마는 지금 어디까지 ─────────────────────────────────────────
 @board
@@ -113,8 +113,8 @@ def plan49(im):            # 새 단지 계획
 # ── 2. 1년 실거래, 평형별 ───────────────────────────────────────────
 @board
 def count75(im):           # 75건 = 77㎡ 49 · 84㎡ 26
-    d = ImageDraw.Draw(im); TF(d, (W // 2, 120), '지난 1년 매매 75건', 120, INK, F_X)
-    T(d, (W // 2, 230), '2025.10~2026.11 계약 · 해제 6건 뺌', 56, GREY, F_B)
+    d = ImageDraw.Draw(im); TF(d, (W // 2, 120), f'지난 1년 매매 {len(DEAL77) + len(DEAL84)}건', 120, INK, F_X)
+    T(d, (W // 2, 230), '2025.10~2026.11 계약 · 해제 7건 뺌', 56, GREY, F_B)
     base, top, bw = 880, 440, 300; vmax = 49
     for i, (lab, sub, n) in enumerate((('31평', '전용 77㎡', len(DEAL77)), ('34평', '전용 84㎡', len(DEAL84)))):
         x = 560 + i * 520; yt = base - (base - top) * n / vmax; c = OR if i == 0 else INK
@@ -155,7 +155,7 @@ def pairs(im, k=2):        # 84㎡ 26건 점 · 한 장에 한 쌍만 선(11/22 
         cur = i == k; yy = 330 + i * 190
         T(d, (1330, yy), lab, 52 if cur else 40, INK if cur else GREY, F_B, 'lm')
         T(d, (1330, yy + 80), f'−{gap:.1f}억', 120 if cur else 64, OR if cur else GREY, F_X, 'lm')
-    source(d, SRC_RT + ' · 전용 84㎡ 26건 · 점 하나 = 한 건 · 세로 32억부터')
+    source(d, SRC_RT + ' · 전용 84㎡ 27건 · 점 하나 = 한 건 · 세로 32억부터')
 
 @board
 def pairs_1(im): pairs(im, 0)
@@ -204,8 +204,9 @@ def monthbars(im, rows, hi, partial, vmax, title, seed, lab_hi, note_x=None):
 @board
 def monthly(im):           # 월별 매매 14개 — 10월 주황, 11월 덜 들어옴
     d = monthbars(im, MON, '2026.10', '2026.11', 24, '은마 매매 · 달마다 몇 건?', 50, ('2026.09', '2025.10', '2026.08'))
-    T(d, (560, 420), '9~10월 35건', 96, OR, F_X)
-    T(d, (560, 520), '1년 75건의 47%', 56, INK, F_B)
+    n910, nall = dict(MON)['2026.09'] + dict(MON)['2026.10'], sum(n for _, n in MON); assert round(100 * n910 / nall) == 45
+    T(d, (560, 420), f'9~10월 {n910}건', 96, OR, F_X)
+    T(d, (560, 520), f'1년 {nall}건의 {round(100 * n910 / nall)}%', 56, INK, F_B)
     source(d, SRC_RT + ' · 31평·34평 · 계약일부터 30일 안 신고 — 11월은 아직 덜 들어옴')
 
 # ── 4. 세 가지 숙제 ─────────────────────────────────────────────────
@@ -268,9 +269,9 @@ def move(im):              # ③ 이주 · 공식 일정 없음
 @board
 def rent(im):              # 전월세 신고 13개월 — 9월 주황, 10월 덜 들어옴
     d = monthbars(im, RENT, '2026.09', '2026.10', 170, '은마 전세·월세 신고 · 달마다', 100, ('2025.12', '2025.10', '2026.08'))
-    T(d, (1545, 360), '164 → 20', 100, OR, F_X)
+    T(d, (1545, 360), f"{dict(RENT)['2025.12']} → {dict(RENT)['2026.09']}", 100, OR, F_X)
     T(d, (1545, 455), '가장 많던 12월 → 9월', 44, INK, F_B)
-    source(d, '국토교통부 전월세 실거래 · 은마 전세+월세 896건 · 2026-11-19 받음 · 10월은 아직 덜 들어옴')
+    source(d, '국토교통부 전월세 실거래 · 은마 전세+월세 893건 · 2026-11-25 받음 · 10월은 아직 덜 들어옴')
 
 # ── 6. 누구라면 ─────────────────────────────────────────────────────
 @board
@@ -298,10 +299,10 @@ def cash(im):              # 분양신청 안 하면 → 90일 협의 → 60일 
     source(d, '도시정비법 제73조① 손실보상 협의 90일 이내 · ② 불성립 시 60일 이내 수용재결 신청 또는 매도청구소송')
 
 @board
-def recent9(im):           # 84㎡ 요즘 9건 — 가운데 34.30억, 33.00~35.30
-    d = ImageDraw.Draw(im); TF(d, (W // 2, 110), '34평 요즘 거래 9건', 110, INK, F_X)
+def recent9(im):           # 84㎡ 요즘 10건 — 가운데 34.50억, 33.00~36.00 (11/25 값, 파일 이름은 PD 장면 그대로 recent9)
+    d = ImageDraw.Draw(im); TF(d, (W // 2, 110), f'34평 요즘 거래 {len(RECENT9)}건', 110, INK, F_X)
     T(d, (W // 2, 220), '2026.10~11 계약', 56, GREY, F_B)
-    v0, v1, x0, x1, y = 32.5, 36.0, 220, 1700, 720
+    v0, v1, x0, x1, y = 32.5, 36.5, 220, 1700, 720
     X = lambda v: x0 + (x1 - x0) * (v - v0) / (v1 - v0)
     d.line([(x0, y), (x1, y)], fill=GREY, width=4)
     for v in (33, 34, 35, 36): d.line([(X(v), y - 14), (X(v), y + 14)], fill=GREY, width=4); T(d, (X(v), y + 60), f'{v}억', 42, GREY, F_B)
@@ -311,9 +312,10 @@ def recent9(im):           # 84㎡ 요즘 9건 — 가운데 34.30억, 33.00~35.
         d.ellipse((cx - 22, cy - 22, cx + 22, cy + 22), fill=INK)
     med = st.median(RECENT9); mx = X(med)
     dashed_v(d, mx, 380, y, OR, 6)
-    T(d, (mx, 330), '가운데 34.30억', 96, OR, F_X)
-    hand_under(d, X(33.0), X(35.3), y + 120, color=INK, seed=111)
-    T(d, (X(34.15), y + 180), '33.00억 ~ 35.30억', 60, INK, F_X)
+    T(d, (mx, 330), f'가운데 {med:.2f}억', 96, OR, F_X)
+    lo, hi = min(RECENT9), max(RECENT9)
+    hand_under(d, X(lo), X(hi), y + 120, color=INK, seed=111)
+    T(d, (X((lo + hi) / 2), y + 180), f'{lo:.2f}억 ~ {hi:.2f}억', 60, INK, F_X)
     source(d, SRC_RT + ' · 전용 84㎡ · 점 하나 = 한 건 · 10/31 하루 5건')
 
 # ── 7. 함정과 직접 확인 ─────────────────────────────────────────────
@@ -365,14 +367,14 @@ def rt4(im):               # 실거래가 공개시스템 따라 하기 넷
 def summary(im):           # 정리 표 5줄
     d = ImageDraw.Draw(im); T(d, (W // 2, 110), '은마 한 장 정리', 116, INK, F_X)
     a, mid, b = GRP[('84', '2025.10~12')][1], GRP[('84', '2026.01~06')][1], GRP[('84', '2026.10~11')][1]
-    assert round(a - b, 2) == 8.50 and round(a - mid, 2) == 3.97
-    rows = (('34평 1년 새', '8억 5천 내림'), ('그중 인가 전에', '4억 가까이 내림'), ('9~10월 두 달', '35건 팔림 (1년 75건)'),
+    assert round(a - b, 2) == 8.30 and round(a - mid, 2) == 3.97
+    rows = (('34평 1년 새', '8억 3천 내림'), ('그중 인가 전에', '4억 가까이 내림'), ('9~10월 두 달', '34건 팔림 (1년 76건)'),
             ('전월세 신고', '1년 전 92건 → 9월 20건'), ('재건축 부담금', '평균 4억 6천 (감면 전)'))   # 11/22 심사 못함: 명사형이라 뜻이 안 읽힘 → 서술형
     for i, (k, v) in enumerate(rows):
         y = 280 + i * 140
         T(d, (720, y), k, 58, INK if i == 0 else GREY, F_B, 'rm'); T(d, (780, y), v, 80, OR if i == 0 else INK, F_X, 'lm')
         if i < 4: d.line([(200, y + 70), (1760, y + 70)], fill=LINE, width=2)
-    source(d, '국토교통부 실거래(2026-11-19)·강남구 보도자료 · 계산·비교 자료이며 매수·매도 권유가 아닙니다')
+    source(d, '국토교통부 실거래(2026-11-25)·강남구 보도자료 · 계산·비교 자료이며 매수·매도 권유가 아닙니다')
 
 def main(names):
     os.makedirs(OUT, exist_ok=True)

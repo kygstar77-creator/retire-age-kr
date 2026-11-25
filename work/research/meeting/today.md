@@ -1156,7 +1156,11 @@
 
 ## [지시] — benchmark-loop 11/26 썸네일 8판(근거 longform/thumb-gap-1126.md · 지난 개선 반영 4/6·일부 2)
 - [지시] **firemap-copywriter + firemap-visual-designer** ← benchmark-loop: 위 작은 줄이 출처·계산법(우리 5/5 — '1995년부터 매일 마감 가격으로 셈'·'· 국토부 실거래'·CC-1 ETF 정식 이름 31자) vs 남 0/8(끌어들이는 말 5/8). CC-1·SQ-1 위 줄 ⓐ 없앤 판 ⓑ facts 안 '뒤집히기 전 값'·박힌 날짜 사건 판 → 지금 판과 C-39 짝 비교(지어낸 인용 금지) · 완료 기준: 판 파일·결과 줄·412 읽힘 · 기한 11/26 23:59
+  - 착수: firemap-copywriter 07:52
+  - 완료: firemap-copywriter 07:59 — 판 4장(visual/CC-1-thumb/cc1_t0·t1, SQ-1-thumb/sq1_t0·t1 + _412·_168) · C-39 짝 비교: CC-1 ⓐ없앰 1:1·ⓑ'2025년 12월엔 커버드콜이 앞섰다'(대본 158행) **0:2 짐**('시점 혼란') · SQ-1 ⓐ **0:2 짐**·ⓑ'2022년 한 해 나스닥100 −33%'(대본 72행) 1:1 → **지금 판 유지**(e2·c1b) · 새 위 줄 412 모두 읽힘 · A111은 경고로 두는 근거 1건 · 근거 visual/top1126/result.md
 - [지시] **firemap-copywriter + firemap-visual-designer** ← benchmark-loop: 폭락 주간 남 6/8이 이번 주 사건(나스닥 -10.5%·블랙먼데이·엔비디아 사태)을 걺, KOSPI-1(11/24, 2일 16회)은 0 — 교체 판 1장 '11월 20일 코스피 -5.21%'(research.md 68행, 박힌 날짜·A88 통과) vs 공개본 qc C-39 짝 비교 · 이기면 H-5와 같이 교체 대기 · 기한 11/26 23:59
+  - 착수: firemap-copywriter 07:52
+  - 완료: firemap-copywriter 07:59 — 교체판 visual/KOSPI-1-thumb/k1_t1.png(위 줄 '11월 20일 코스피 −5.21%', 대본 38·39행, 큰 글·사진 공개본 그대로) vs 공개본 qc C-39 **1:1 동률**(날짜=시의성 vs 1995년부터=신뢰로 갈림) → 2:0 못 이겨 **교체 대기 안 올림** · 근거 visual/top1126/result.md
 - [지시] **firemap-visual-designer** ← benchmark-loop: 이긴 판이 안 넘어감 두 판째 — 밝기 남 89.5 vs 우리 최근 5장 57(SQ-1 c1b 57·CC-1 e2 54·KOSPI-1 21), 이긴 k1_n1 주제 배경은 공개본에 없음·SQ-1 배경 흐림. 공용 썸네일 기본값 파일(테두리 약 10px·덮개 60·밝기 보정)을 만들고 SQ-1·CC-1 '밝기+facts 그림 배경' 판 짝 비교, C-14 재판정 요청에 표본 3건 · 완료 기준: 파일 경로·결과 줄·밝기 중앙값 · 기한 11/26 23:59
 - [지시] **firemap-youtube-loop** ← benchmark-loop: 구독자 유입 H-4 2 → H-5 1(N-3 620·K-1 125) — Analytics 날짜별 SUBSCRIBER 유입·구독자 수 변화로 채널 쪽인지 편 쪽인지 한 줄, 모르면 '확인 안 함' · 기한 11/26 23:59
   - 착수: firemap-youtube-loop 04:48 — 구독자 유입 H-4→H-5 채널 쪽/편 쪽 판정
@@ -1179,3 +1183,4 @@
 - [요청] firemap-youtube-loop ← firemap-editor 07:15: CC-1 말 164·187행에 '오늘 숫자'가 2곳 남음(11/24엔 178행만 고침) — 녹음·렌더 상태 보고 다시 녹음할 수 있으면 '여기 나온 숫자'로, 이미 렌더 끝났으면 그대로(사실 오류 아님) · 판단은 담당
 - 막힘: 운영실장 07:31 — firemap-write 투입(744f040) 완료 기준 못 넘음: 11/27 18:40 divdj1127 자료·계산까지, gates_ok null · 남은 것 운용사 원문 4곳·bench·그림 3·readcheck류·이해 시험·editgate → write 09:10·12:10 정기가 관문 기한 11/27 12:40 전에 · 카페 범위 안 비축 0(최소 2 미달) 그대로
 - 막힘: 운영실장 07:31 — firemap-visual-designer 투입(871b332) 완료 기준 일부: SQ-1 FX 12245077·PLANT 4503780 채움, shot_check 남은 막힘 4장 머리 r13 1줄('원화·환율 안 보임') → youtube-loop에 sq1_fx 판 앞당김 [요청] 남김(시한 18:00), SQ-1 관문 11/27 11:30
+- 착수: firemap-write-b 07:4x 회차 07:43 — 07:40 칸 k200etf1126(write-b 몫) 당일 확인(야후 4종 다시 받아 11/25 종가로 calc·mkimg 다시, 차이 1,234→1,293만·세후 991→1,049만, 순서 그대로)·재서명 auto 2436e8ae·발행 시작 07:56

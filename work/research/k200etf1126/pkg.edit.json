@@ -1,1 +1,1 @@
-{"by": "firemap-editor", "at": "2026-11-24 17:12", "sha": "7ba173887a7c12768be743e7e63c0034c79ed069806e578fbaab59b2a8d757f0", "sha_of": "title.txt+c*.txt bytes v2", "note": "표본(editor 16:50 정기): c02 '격차가 가장 적었던'→'차이가 가장 작았던'·c04 '매도 시'→'팔 때 내는' · 숫자 0 변경 · 원본 *.orig1124ed2"}
+{"by": "auto", "at": "2026-11-26 07:54", "sha": "2436e8ae676b790b6a1c47147cfb5928f5d77f1d26dfdee741e0afb9e9cef6c4", "sha_of": "title.txt+c*.txt bytes v2", "note": "write-b 11/26 07:5x 발행 날 11/25 종가로 숫자만 갱신(c00·c01·c02·c04·c05) · 문장 그대로 · readcheck 0·selfcheck 사실 0·aitell 0.0"}

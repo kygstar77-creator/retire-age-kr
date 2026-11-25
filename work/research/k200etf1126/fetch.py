@@ -11,6 +11,6 @@ for t in T:
     print(t,'첫',j['timestamp'][0],'수',len(j['timestamp']),'분배',len(j.get('events',{}).get('dividends',{})))
     try:
         n=urllib.request.urlopen(urllib.request.Request(f'https://m.stock.naver.com/api/stock/{t}/etfAnalysis',headers=UA),timeout=30).read()
-        open(f'raw/naver_etfan_{t}_1124.json','wb').write(n)
+        open(f'raw/naver_etfan_{t}_1126.json','wb').write(n)
         nj=json.loads(n); print('  naver', {k:nj.get(k) for k in ('listedDate','totalFee','dividendPerShareTtm','etfBaseIndex','dividendMonthThisYear')})
     except Exception as e: print('  naver fail',e)

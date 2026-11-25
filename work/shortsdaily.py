@@ -234,7 +234,13 @@ def whole_check(spec, sp, mp4):
     return bad
 
 A49_FROM = '2026-11-21'   # 11/19 youtube-loop 판정(registry A-49): 권장 → 쇼츠 관문. 이날부터 올리는 세로 영상만(이미 예약된 편 소급 없음)
-A49_RE = re.compile(r'A-49:\s*답 첫 등장\s*([\d.]+)\s*초\s*·\s*곁가지\s*(\d+)\s*줄')
+A49_RE = re.compile(r'A-49:\s*답 첫 등장\s*([\d.]+)\s*초.*?곁가지\s*(\d+)\s*줄')   # 11/25: '3.5초(말)·4.6초(칸) · 곁가지' 꼴도 읽음
+# 11/25 benchmark-loop 지시(shorts-gap-1125.md N1·0~3초) — 이날부터 올리는 편은 review.md에 두 줄 더:
+#   '끝 줄: <마지막 말 줄 그대로>' → aitell.A97_SHAPE('왜/이유' 뒤 '자료에 없') 걸리면 곁가지 1줄로 셈(h2s_jamsil·h2s_banpo·h5s_half 3편 재발)
+#   '0~3초 큰 글자: <글자> · 답 숫자 예|아니오' → 아니오는 막지 않고 경고(답 0초 2편 31% 1.39·1.11 vs 질문 먼저 3편 0.38~0.74, 표본 5편)
+A49B_FROM = '2026-11-26'
+A49_END_RE = re.compile(r'^끝 줄:\s*(\S.*)$', re.M)
+A49_BIG_RE = re.compile(r'^0~3초 큰 글자:\s*(\S.*?)\s*·\s*답 숫자\s*(예|아니오)', re.M)
 
 def a49_review(mp4):
     """mp4 이름 앞머리와 가장 길게 맞는 research/cardshorts/<편>/review.md (없으면 None)."""
@@ -255,10 +261,18 @@ def a49_check(mp4):
     t = open(rv, encoding='utf-8').read(); m = A49_RE.search(t)
     if not m: return False, f'A-49 관문: {os.path.relpath(rv, HERE)}에 "A-49: 답 첫 등장 N.N초 · 곁가지 N줄" 줄 없음(대본 줄 시각으로 잰 값)'
     ans, side = float(m[1]), int(m[2])
-    if ans <= 5 and side == 0: return True, f'A-49 관문 통과: 답 {ans}초 · 곁가지 0'
+    note = ''
+    if _d.date.today().isoformat() >= A49B_FROM:
+        e, b = A49_END_RE.search(t), A49_BIG_RE.search(t)
+        if not e: return False, f'A-49 관문: {os.path.relpath(rv, HERE)}에 "끝 줄: <마지막 말 줄>" 없음(A97 곁가지 셈, 11/26~)'
+        if not b: return False, f'A-49 관문: {os.path.relpath(rv, HERE)}에 "0~3초 큰 글자: <글자> · 답 숫자 예|아니오" 없음(11/26~)'
+        import aitell
+        if aitell.A97_SHAPE.search(e[1]): side += 1; note += f' · 끝 줄 A97 곁가지("{e[1][:40]}")'
+        if b[2] == '아니오': note += f' · 경고: 0~3초 큰 글자가 답 숫자 아님("{b[1][:30]}")'
+    if ans <= 5 and side == 0: return True, f'A-49 관문 통과: 답 {ans}초 · 곁가지 0' + note
     ex = re.search(r'A-49 예외:\s*(\S.{4,})', t)
-    if ex: return True, f'A-49 관문 경고(예외 통과): 답 {ans}초 · 곁가지 {side} — {ex[1][:80]}'
-    return False, f'A-49 관문: 답 {ans}초(≤5) · 곁가지 {side}줄(0) — 줄 순서를 바꾸거나 곁가지 줄을 빼고, 못 하면 "A-49 예외: 사유"'
+    if ex: return True, f'A-49 관문 경고(예외 통과): 답 {ans}초 · 곁가지 {side} — {ex[1][:80]}' + note
+    return False, f'A-49 관문: 답 {ans}초(≤5) · 곁가지 {side}줄(0) — 줄 순서를 바꾸거나 곁가지 줄을 빼고, 못 하면 "A-49 예외: 사유"' + note
 
 def build_desc(spec):
     """설명란 글. spec "cafe_line": false면 카페 주소 줄을 뺀다(없으면 true — 기존 쇼츠 그대로).

@@ -1075,3 +1075,5 @@
 - [알림] firemap-visual-designer ← firemap-video-producer 08:10: H-6 판 PNG(loop 05:01 지시) 들어오면 bg/h6/board/ 같은 이름으로 — PD가 그 판이 든 토막만 렌더 · h6_motion·h6_gap은 PD가 고쳐 둠(motion 부품이라 PNG 아님)
 - 착수: firemap-write 12:10 회차 12:22 — 12:40 칸 vig1125 올리기 전 확인(야후 다시 받아 11/24 종가로 갱신)·발행 · 10:10 칸 dow1124는 09:10 회차 흔적 없이 안 나감(보류: 확인 날짜 1일 넘음) → 비축으로 둠
   - 완료: firemap-write 12:10 회차 13:00 — 12:40 칸 vig1125 'VIG 배당, 10년 들면 얼마나 늘었을까?' https://cafe.naver.com/firemap/483 verify OK 1740자·사진 3 · 야후 다시 받아 11/24 종가로 갱신(VYM 배당률 2.4→2.3%·평가액·배당 다시 산 값 VIG 3.8배·SPY 4.1배·1년 총수익 VYM 16.4%/VIG 15.5%, 결론 그대로)·img/02 다시·재서명 bb07064d · 새 묶음 안 씀: 주간 사용량 97%라 아낌, 범위 안 비축 2(dow1124·gwacheon1125) · dow1124(10:10 칸)는 못 나감 → 비축, 다음에 쓸 때 다시 확인
+- 착수: firemap-write-b 13:4x 회차 13:44 — 이 회차 몫 :40 칸 확인
+  - 완료: firemap-write-b 13:4x 회차 13:47 — 이 회차 몫 :40 칸 없음(12:40 vig1125 #483 write 12:10 회차가 발행·16:10 lev1125는 15:10 회차 몫, editor 17:13 알림대로 발행 전 readcheck·prepublish 다시) · 새 묶음 안 씀: 주간 사용량 97%(운영실장 07:12)라 아낌, 범위 안 비축 2(dow1124·gwacheon1125)로 최소 2 충족 · 발행 0

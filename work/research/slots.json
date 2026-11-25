@@ -4975,7 +4975,7 @@
    "item": "k200etf1126",
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-24 11:04",
-   "published": null,
+   "published": "https://cafe.naver.com/firemap/487 08:07 verify OK 1837자",
    "note": "firemap-write-b 2026-11-24 11:04: 장부에 없던 11/26 07:40 칸(지수 — 11/25 22:40 부동산 gmnew1125 다음, 같은 축 연속 아님) 채움 · k200etf1126 '코스피200 ETF 비교, 오래 들고 있었다면 남은 돈'(ETF 게시판) 관문 통과 — 잘된 글 1위 ndxetf1122(27.7회/일) 틀을 코스피200에 · kwvol 코덱스200 135,200·KODEX200 98,900·TIGER200 21,500 · 야후 일별 종가·분배 직접 계산(11/23 종가): 2011-10-20 1억 → TIGER 4억 1,597만·RISE 4억 1,098만·ACE 4억 770만·KODEX 4억 363만(차이 1,234만원, 세후 991만원), 해마다 폭 0.19~0.91%p, 현금으로 쓰면 RISE 1위, 최근 1년 분배금 TIGER 1,508·KODEX 845원 · 네이버 NAV 1·5·10년과 0.1%p 안 · 경쟁 상위 8편 이 셈 0편 · research_gate strict·bench·prepublish·compare·cover·disclaim·readcheck 0·selfcheck 사실 0·aitell 0.0·spoken·이해 2차 6명 통과·crosscheck 사실 1·말투 10 반영·editgate auto e32ce1c4 · 발행 회차: 야후 4종 다시 받아 calc.py·mkimg.py 다시 돌리고(11/24·25 종가) 바뀐 숫자 원고 반영 → readcheck·editgate 재서명"
   },
   {

@@ -119,12 +119,12 @@
    "lines": [
     {
      "text": "조합원 앞에는 큰 숙제도 셋 있습니다. 새 집을 받으려 더 내는 분담금, 나라가 거둬 가는 재초환, 그리고 이주예요.",
-     "audio": "audio/h-6/6083d7031e2b3a66.wav",
-     "frames": 204,
+     "audio": "audio/h-6/aeddd638e83134a3.wav",
+     "frames": 195,
      "cap": null
     }
    ],
-   "frames": 204,
+   "frames": 195,
    "data": {
     "pic": "bg/h6/board/cards3.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -143,13 +143,13 @@
    "kind": "broll",
    "lines": [
     {
-     "text": "끝까지 보시면, 내 평형 값을 직접 세는 법과 재초환 평균을 내 몫으로 잘못 읽지 않는 법을 가져가실 수 있어요.",
-     "audio": "audio/h-6/b24049159a4bb7cb.wav",
-     "frames": 194,
+     "text": "끝까지 보시면, 내 평형 값을 직접 세는 법과 재건축 부담금 평균을 내 몫으로 잘못 읽지 않는 법을 가져가실 수 있어요.",
+     "audio": "audio/h-6/56c6d1f33e0db2e8.wav",
+     "frames": 199,
      "cap": null
     }
    ],
-   "frames": 194,
+   "frames": 199,
    "data": {
     "src": "bg/h5/stock/6611954.mp4",
     "license": "Pexels 6611954 무료(Tima Miroshnichenko)",
@@ -1613,7 +1613,7 @@
     {
      "text": "은마는 그 여덟 곳 중에서도 가장 많이 빠졌고요.",
      "audio": "audio/h-6/b68c6a06bc2b4814.wav",
-     "frames": 73,
+     "frames": 85,
      "cap": null
     },
     {
@@ -1623,7 +1623,7 @@
      "cap": null
     }
    ],
-   "frames": 351,
+   "frames": 363,
    "data": {
     "part": "gaps",
     "p": {

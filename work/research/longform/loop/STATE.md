@@ -1,3 +1,4 @@
+[PD] SQ-1 화면 글자 초안 ep/SQ-1/screen_text.draft1126.txt(250줄, FX 실사 자리 출처 칸만 빈 채) → editor 미리 검수 요청 · 배치 --check 492.6초·실사 45.6%·판 묶음 19.2초 통과 · 남은 막힘 FX 실사·2·4·5·8장 비교 판정(visual 11/26 18:00) · C: 남은 46GB · 롱폼 업로드 0 2026-11-26 05:48
 [PD] H-6 예약 https://youtu.be/YE6FXSezHXc (11/26 11:30) — editor 23:16 stamp 뒤 3토막 통렌더 h6_dsl1125.mp4 539.9초·화면 5.0초·bgcheck·쉿소리·치직 0·눈 검사 11장·bench 통과·gate 통과·합성 True · h5s_half v2 https://youtu.be/DBoURCupFrU (11/26 19:20, 끝 줄 A97 뺌, 옛 78fgoXS0KSU 예약 풂) · C: 97%가 렌더 실패 원인 → remotion 임시 52개 지움(15→50GB) · 고정 대기: YE6FXSezHXc(첫 댓글 11:30~12:00) · 롱폼 업로드 1 2026-11-26 05:38
 2026-11-26 04:51 · 구독자 유입 판정(benchmark 지시) = 편 쪽, H-5는 데이터 하루치라 확인 안 함 · 판단: API SUBSCRIBER=탐색 기능, 채널 구독 증가 매일 0 · 다음: 11/28 H-5 7일치 재측정, NDX-1 toc_compare·analysis.md, NDG-1 editor 서명 대기
 2026-11-26 00:52 · 11/26 매일 연구 · NDX-1 경쟁 풀 3편 추가 · 사용량 97%라 이 일만 · 다음: NDX-1 toc_compare·analysis.md, NDG-1 이해 시험

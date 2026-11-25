@@ -1,0 +1,250 @@
+# 화면 글자 — SQ-1 (lfrender.py text가 만듦. 여기를 고치지 말고 대본·props·tsx를 고친 뒤 다시 뽑는다)
+# 그래프 제목·부제·출처·자막(lines.text)·막대 이름·코드에 박힌 글자. 썸네일 문구는 그림이라 안 들어간다.
+
+## props: video/sq1.json
+[scenes.0.lines.0.text] 15년 전에 1억을 넣었다면, 나스닥100과 SCHD 중 어디가 얼마나 더 불어났을까요?
+[scenes.0.data.license] Pexels 5466772 무료(olia danilevich)
+[scenes.0.data.say] 어디가 더 불었을까
+[scenes.0.data.side] left
+[scenes.1.lines.0.text] 먼저 환율은 빼고 달러로만 셀게요.
+[scenes.1.lines.1.text] 그러면 SCHD에만 넣은 1억은 7억 가까이 됐어요.
+[scenes.1.lines.2.text] 나스닥100에만 넣었다면 13억이 넘었고요.
+[scenes.1.lines.3.text] 반씩 나눠 넣었다면 그 사이, 10억 정도였습니다.
+[scenes.1.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.2.lines.0.text] 그런데 5년 전에 넣었다면, 반반과 나스닥100에만 넣은 쪽의 차이가 거의 사라집니다.
+[scenes.2.data.license] Pexels 5466772 무료(olia danilevich)
+[scenes.2.data.say] 넣은 때를 바꾸면
+[scenes.2.data.side] left
+[scenes.3.lines.0.text] 원화로 다시 세면, 나스닥100에만 넣은 1억은 16억이 넘어요.
+[scenes.3.lines.1.text] 반반은 12억쯤이고요, 둘 다 환율이 오른 몫까지 들어간 값이에요.
+[scenes.3.data.say] 원화로 다시 세면
+[scenes.3.data.side] left
+[scenes.4.lines.0.text] 세금을 떼면 또 달라지고요.
+[scenes.4.lines.1.text] 끝까지 보시면, 같은 1억이라도 미국 상품을 직접 샀느냐, 국내 상장 상품을 샀느냐에 따라 3억 넘게 갈린 경우도 숫자로 보실 수 있어요.
+[scenes.4.data.license] Pexels 8135727 무료(kaboompics)
+[scenes.4.data.say] 세금을 떼면
+[scenes.4.data.side] left
+[scenes.5.lines.0.text] 먼저 두 상품 안에 무엇이 들었는지부터 볼게요.
+[scenes.5.lines.1.text] 나스닥100은 보통 QQQ라는 미국 ETF로 사요. 오늘 나스닥100 숫자는 모두 이 QQQ 값이에요.
+[scenes.5.data.n] 1장
+[scenes.5.data.q] 나스닥100은 어떻게 갈아 끼우나
+[scenes.6.lines.0.text] 나스닥100은 나스닥에 상장된 회사 가운데, 은행 같은 금융회사를 빼고 큰 회사 100곳을 담는 지수예요.
+[scenes.6.lines.1.text] 회사가 클수록 많이 담습니다.
+[scenes.6.data.license] Pexels 40806780 무료(정규송 Nui MALAMA)
+[scenes.6.data.say] 금융회사는 빼고
+[scenes.6.data.side] left
+[scenes.7.lines.0.text] 명단은 해마다 12월에 한 번 바뀌어요.
+[scenes.7.lines.1.text] 원래 있던 회사는 순위가 조금 밀려도 바로 빠지지는 않고요.
+[scenes.7.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.8.lines.0.text] 밖에 있던 회사가 갑자기 아주 커지면 12월을 안 기다리고 들어올 수도 있어요.
+[scenes.8.data.license] Pexels 40806780 무료(정규송 Nui MALAMA)
+[scenes.8.data.say] 갑자기 커지면
+[scenes.8.data.side] left
+[scenes.9.lines.0.text] 반대로 한 회사가 너무 커지면 무게를 깎아요.
+[scenes.9.lines.1.text] 한 회사 비중이 지수 전체의 24%를 넘으면 20%로 줄이는 식이에요.
+[scenes.9.lines.2.text] 그래서 큰 회사 몇 곳의 값이 지수를 크게 움직입니다.
+[scenes.9.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.10.lines.0.text] SCHD는 고르는 방식이 완전히 다릅니다.
+[scenes.10.data.n] 2장
+[scenes.10.data.q] SCHD는 무엇을 담나
+[scenes.11.lines.0.text] 먼저 10년 연속 배당을 준 회사 가운데, 배당률이 위쪽 절반인 회사만 남겨요.
+[scenes.11.lines.1.text] 배당률이 낮은 회사는 이 단계에서 빠져요.
+[scenes.11.lines.2.text] 그다음 네 가지 점수로 줄을 세웁니다.
+[scenes.11.lines.3.text] 빚에 비해 현금을 잘 버는지, 가진 돈으로 이익을 잘 내는지.
+[scenes.11.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.12.lines.0.text] 그리고 배당률과, 배당을 늘려 온 속도예요.
+[scenes.12.lines.1.text] 위에서부터 100곳을 담아요.
+[scenes.12.lines.2.text] 한 회사나 한 업종에 너무 몰리지 않게 막아 두었고요.
+[scenes.12.lines.3.text] 명단은 해마다 3월에 바뀝니다.
+[scenes.12.data.license] Pexels 6851679 무료(cottonbro studio)
+[scenes.12.data.say] 위에서부터 담아요
+[scenes.12.data.side] left
+[scenes.13.lines.0.text] 운용 보수는 1억이면 한 해 SCHD가 6만원, 나스닥100을 따라가는 QQQ가 18만원 정도예요.
+[scenes.13.lines.1.text] 하나는 큰 회사를, 하나는 배당을 꾸준히 주는 회사를 담는 셈이죠.
+[scenes.13.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.14.lines.0.text] 그럼 한쪽만 살지, 둘을 섞을지.
+[scenes.14.data.n] 3장
+[scenes.14.data.q] 섞는 비율별 지난 15년과 5년
+[scenes.15.lines.0.text] 이 질문에 답하려고 섞는 비율을 여러 가지로 나눠 지난 15년을 다시 셌습니다.
+[scenes.15.data.license] Pexels 5466772 무료(olia danilevich)
+[scenes.15.data.say] 비율을 나눠 셌어요
+[scenes.15.data.side] left
+[scenes.16.lines.0.text] 한쪽이 더 오르면 비율이 틀어지죠. 그래서 해마다 한 번, 일부를 팔고 사서 처음 비율로 되돌렸다고 쳤어요.
+[scenes.16.lines.1.text] 계산을 그렇게 했다는 뜻이고, 꼭 그렇게 하셔야 한다는 말은 아니에요.
+[scenes.16.lines.2.text] QQQ를 많이 섞을수록 끝값이 커졌어요.
+[scenes.16.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.17.lines.0.text] 대신 크게 빠질 때도 더 깊이 빠졌습니다.
+[scenes.17.data.license] Pexels 40806780 무료(정규송 Nui MALAMA)
+[scenes.17.data.say] 더 깊이 빠질 때
+[scenes.17.data.side] left
+[scenes.18.lines.0.text] 2022년 한 해만 보면 QQQ는 3분의 1이 빠졌는데, SCHD만 들고 있었다면 조금 빠지는 데 그쳤어요.
+[scenes.18.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.19.lines.0.text] 이번엔 같은 돈을 5년 전에 넣었다고 쳐 볼게요.
+[scenes.19.data.license] Pexels 5466772 무료(olia danilevich)
+[scenes.19.data.say] 넣은 때를 바꾸면
+[scenes.19.data.side] left
+[scenes.20.lines.0.text] 반반도 QQQ만도 두 배 가까이로 불었어요.
+[scenes.20.lines.1.text] 둘의 차이는 300만원이 안 돼요.
+[scenes.20.lines.2.text] 거의 같죠.
+[scenes.20.lines.3.text] 그런데 가장 크게 빠진 폭은 QQQ만 쪽이 훨씬 깊었습니다.
+[scenes.20.lines.4.text] 이 5년 안에 크게 빠진 2022년이 들어 있거든요.
+[scenes.20.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.21.lines.0.text] 'SCHD는 수익이 약하다'는 말은 긴 기간으로 보면 맞아요.
+[scenes.21.lines.1.text] 최근 5년만 보면, 반반이 수익은 거의 같고 덜 흔들렸어요. 그 기간이 그랬다는 이야기예요.
+[scenes.21.lines.2.text] 어디서 자르느냐가 답을 바꿉니다.
+[scenes.21.data.license] Pexels 6851679 무료(cottonbro studio)
+[scenes.21.data.say] 어디서 자르느냐
+[scenes.21.data.side] left
+[scenes.22.lines.0.text] 같은 15년 동안, 한 번에 넣지 않고 매달 백만원씩 나눠 넣었다면 어땠을까요?
+[scenes.22.lines.1.text] 넣은 돈은 모두 1억 8천만원이에요.
+[scenes.22.lines.2.text] QQQ만 넣은 쪽이 8억 8천만원 정도로 가장 컸습니다.
+[scenes.22.lines.3.text] SCHD만은 5억 3천만원 정도였고요.
+[scenes.22.lines.4.text] 반반은 7억 정도로 그 사이였어요.
+[scenes.22.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.23.lines.0.text] 여기까지는 달러로만 셌어요.
+[scenes.23.lines.1.text] 우리는 원화로 사니까, 환율을 넣어 다시 봤습니다.
+[scenes.23.data.n] 4장
+[scenes.23.data.q] 원화로 다시 보면
+[scenes.24.lines.0.text] 15년 사이 달러 값이 원화로 20% 넘게 올랐어요.
+[scenes.24.lines.1.text] 달러 값이 오르면, 같은 달러 자산도 원화로 바꿀 때 더 많아지죠.
+[scenes.24.lines.2.text] 그만큼 원화로 센 끝값은 더 커졌습니다.
+[scenes.24.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.25.lines.0.text] QQQ만 넣었다면 16억이 넘어요.
+[scenes.25.lines.1.text] 그중 3억 가까이가 환율 몫이었고요.
+[scenes.25.lines.2.text] 거꾸로 넣은 날보다 환율이 내려 있으면, 원화로는 그만큼 줄어요.
+[scenes.25.data.say] 환율이 오른 몫
+[scenes.25.data.side] left
+[scenes.26.lines.0.text] 흔들린 폭도 원화로 세면 달라져요.
+[scenes.26.lines.1.text] 반반은 달러로 세면 가장 크게 24% 빠졌어요.
+[scenes.26.lines.2.text] 원화로 세면 가장 크게 빠진 건 2020년 초였고, 그 폭도 14% 정도로 줄었어요.
+[scenes.26.lines.3.text] 2022년엔 달러로 크게 빠지는 동안, 환율이 1,185원에서 1,435원까지 올라 있었어요.
+[scenes.26.lines.4.text] 그래서 원화로 보면 덜 빠진 거예요.
+[scenes.26.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.27.lines.0.text] QQQ만은 2021년 말부터 1년 사이, 원화로 세도 28% 가까이 빠졌어요.
+[scenes.27.lines.1.text] 달러로 센 3분의 1보다는 작지만요.
+[scenes.27.lines.2.text] 지난 환율이 그렇게 움직였다는 이야기예요.
+[scenes.27.data.license] Pexels 40806780 무료(정규송 Nui MALAMA)
+[scenes.27.data.say] 지난 환율 이야기
+[scenes.27.data.side] left
+[scenes.28.lines.0.text] 노후에는 끝값보다, 해마다 손에 들어오는 돈이 더 궁금하실 거예요.
+[scenes.28.data.n] 5장
+[scenes.28.data.q] 매달 들어오는 돈
+[scenes.29.lines.0.text] ETF가 나눠 주는 배당을 분배금이라고 해요.
+[scenes.29.lines.1.text] 지금 1억을 넣는다면 얼마가 나올지, 최근 분배금으로 계산해 봤습니다.
+[scenes.29.data.license] Pexels 7710769 무료(kaboompics)
+[scenes.29.data.say] 나눠 주는 배당
+[scenes.29.data.side] left
+[scenes.30.lines.0.text] 1억이면 SCHD는 한 해, 세금 떼기 전 300만원 가까이 나와요.
+[scenes.30.lines.1.text] QQQ는 50만원이 안 됩니다.
+[scenes.30.lines.2.text] 반반이면 그 중간, 170만원 정도고요.
+[scenes.30.lines.3.text] 직접 산 미국 상품은 분배금이 달러로 들어와서, 원화로는 받는 날 환율에 따라 달라져요.
+[scenes.30.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.31.lines.0.text] 국내에 상장된 같은 지수 상품은 매달이나 석 달마다 나눠 주는 것도 있습니다.
+[scenes.31.lines.1.text] 생활비로 쓰실 거라면, 나눠 받는 돈으로 쓸지 조금씩 팔아서 쓸지가 먼저 정할 일이에요.
+[scenes.31.data.license] Pexels 7710769 무료(kaboompics)
+[scenes.31.data.say] 생활비로 쓰신다면
+[scenes.31.data.side] left
+[scenes.32.lines.0.text] 이제 세금 이야기로 넘어갈게요. 차이가 가장 크게 벌어지는 곳이 바로 여기거든요.
+[scenes.32.data.n] 6장
+[scenes.32.data.q] 직접 사나, 국내 상장으로 사나
+[scenes.33.lines.0.text] 같은 지수라도 미국 상품을 직접 사느냐, 국내에 상장된 상품을 사느냐에 따라 세금 매기는 법이 달라요.
+[scenes.33.lines.1.text] 미국 상품을 직접 사서 팔면, 차익에서 한 해 250만원을 빼고 22%를 냅니다.
+[scenes.33.lines.2.text] 다른 소득과 섞지 않고 따로 끝나요.
+[scenes.33.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.34.lines.0.text] 국내 상장 해외 ETF는 팔아서 남긴 돈도 배당소득으로 칩니다.
+[scenes.34.lines.1.text] 세법이 이 상품은 그렇게 정해 두었어요.
+[scenes.34.lines.2.text] 금융소득은 예금 이자와 배당을 합친 돈이에요.
+[scenes.34.lines.3.text] 한 해 금융소득이 2천만원을 넘으면, 넘는 몫은 월급이나 사업소득 같은 다른 소득과 합쳐 세금을 다시 셈해요. 세율이 더 높아질 수 있습니다.
+[scenes.34.data.license] Pexels 8135727 무료(kaboompics)
+[scenes.34.data.say] 금융소득이란
+[scenes.34.data.side] left
+[scenes.35.lines.0.text] 국민연금 같은 연금은 이 2천만원을 셀 때 넣지 않아요.
+[scenes.35.lines.1.text] 연금은 2천만원이 넘었을 때 함께 합쳐지는 다른 소득 쪽에 들어가요.
+[scenes.35.data.license] Pexels 7710769 무료(kaboompics)
+[scenes.35.data.say] 연금은 따로 셈
+[scenes.35.data.side] left
+[scenes.36.lines.0.text] 15년 전 1억을 SCHD에 넣고 올해 한 번에 팔았다고 쳐 볼게요.
+[scenes.36.lines.1.text] 다른 소득은 없다고 쳤어요.
+[scenes.36.lines.2.text] 국내 상장 상품도 같은 지수로 움직였고, 지금 세법이 15년 내내 그대로였다고 쳤고요.
+[scenes.36.data.license] Pexels 5466772 무료(olia danilevich)
+[scenes.36.data.say] 이렇게 쳤어요
+[scenes.36.data.side] left
+[scenes.37.lines.0.text] 직접 샀다면 세금을 떼고 6억 5천만원 정도 남습니다.
+[scenes.37.lines.1.text] 국내 상장이었다면 5억 6천만원 정도예요.
+[scenes.37.lines.2.text] 판 해에 차익이 한꺼번에 배당소득이 되면서, 그해 세금만 2억이 넘게 나오거든요.
+[scenes.37.lines.3.text] QQQ만 넣었다면 이 차이가 3억 넘게 벌어져요.
+[scenes.37.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.38.lines.0.text] 그렇다고 직접 사는 쪽이 늘 낫지는 않습니다.
+[scenes.38.data.license] Pexels 8135727 무료(kaboompics)
+[scenes.38.data.say] 늘 낫지는 않아요
+[scenes.38.data.side] left
+[scenes.39.lines.0.text] 5년만 들고 있었다면, 다른 소득이 없을 때 오히려 국내 상장이 조금 더 남았어요.
+[scenes.39.lines.1.text] 다른 소득이 한 해 5천만원이면, 다시 직접 산 쪽이 조금 더 남았고요.
+[scenes.39.lines.2.text] 짧게 들면 차익이 작아 차이도 작고, 내 다른 소득에 따라 방향이 바뀐다는 뜻이에요.
+[scenes.39.lines.3.text] 오래 들고 한 번에 팔수록 국내 상장 쪽 세금이 커지는 구조예요.
+[scenes.39.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.40.lines.0.text] 직접 산 미국 상품에서 받은 배당도, 한 해 금융소득을 셀 때는 같이 더합니다.
+[scenes.40.lines.1.text] 다만 그 배당엔 미국이 세금 15%를 먼저 떼어 가서, 받을 때 국내에서 또 떼지는 않아요.
+[scenes.40.lines.2.text] 앞에서 본 300만원 가까운 SCHD 분배금은, 손에 들어올 땐 250만원 정도로 줄어요.
+[scenes.40.data.license] Pexels 6851679 무료(cottonbro studio)
+[scenes.40.data.say] 직접 받은 배당
+[scenes.40.data.side] left
+[scenes.41.lines.0.text] 연금저축이나 ISA 안에서는 국내 상장 상품만 살 수 있고, 세금 매기는 법도 달라요. 오늘 숫자는 일반 계좌 기준입니다.
+[scenes.41.lines.1.text] 건강보험료도 따로 따져 보셔야 하고요.
+[scenes.41.lines.2.text] 그래서 숫자를 보기 전에, 내 계좌가 일반 계좌인지 연금저축이나 ISA인지부터 확인하세요.
+[scenes.41.data.license] Pexels 8135727 무료(kaboompics)
+[scenes.41.data.say] 내 계좌부터
+[scenes.41.data.side] left
+[scenes.42.lines.0.text] 이 숫자를 볼 때 걸리기 쉬운 함정이 셋 있어요.
+[scenes.42.data.n] 7장
+[scenes.42.data.q] 함정
+[scenes.43.lines.0.text] 하나, 지난 값을 앞으로의 값으로 읽는 것.
+[scenes.43.lines.1.text] 같은 상품도 5년으로 자르면 답이 달랐죠.
+[scenes.43.lines.2.text] 둘, 이름만 보고 고르는 것.
+[scenes.43.lines.3.text] 'QQQ와 SCHD를 합쳤다'고 소개된 상품을 열어 보면, 나스닥100 커버드콜 상품인 경우가 있었어요.
+[scenes.43.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.44.lines.0.text] 이름은 비슷해도 따라가는 지수와 방식이 다른 상품이에요. 커버드콜은 월요일 편에서 따로 다룹니다.
+[scenes.44.lines.1.text] 운용사 홈페이지의 상품 설명서에서 따라가는 지수 이름을 먼저 보세요.
+[scenes.44.lines.2.text] SCHD와 같은 지수를 따라가는 상품이면, 기초지수 칸에 다우존스 미국 배당 100이라고 적혀 있어요.
+[scenes.44.data.license] Pexels 5466772 무료(olia danilevich)
+[scenes.44.data.say] 따라가는 지수 이름
+[scenes.44.data.side] left
+[scenes.45.lines.0.text] 셋, 국내 상장 상품을 일반 계좌에서 오래 모아 한 해에 다 파는 것.
+[scenes.45.lines.1.text] 그해 금융소득이 2천만원을 훌쩍 넘을 수 있어요.
+[scenes.45.lines.2.text] 팔기 전에 그해 금융소득을 먼저 계산해 보세요. 넘으면 회사원이라도 다음 해 5월에 종합소득세 신고를 하셔야 합니다.
+[scenes.45.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.46.lines.0.text] 15년으로 보면 나스닥100이 크게 앞섰고, 최근 5년으로 보면 반반이 거의 따라왔어요.
+[scenes.46.data.n] 8장
+[scenes.46.data.q] 정리
+[scenes.47.lines.0.text] 지난 값은 앞날을 말해 주지 않습니다.
+[scenes.47.lines.1.text] 같은 지수라도, 안에 무엇이 들었고 어디서 샀느냐가 답을 바꿉니다.
+[scenes.47.lines.2.text] 세금은 일반 계좌에서 오래 들고 한 번에 팔수록, 국내 상장 쪽이 크게 불리했어요. 짧게 들면 반대인 경우도 있었고요.
+[scenes.47.data.license] 파이어맵 자체 제작 판(출처는 판 안)
+[scenes.48.lines.0.text] 비율별 전체 표는 파이어맵 카페에 올려 두었어요. 궁금한 비율의 줄을 한번 찾아보세요.
+[scenes.48.data.license] Pexels 40806780 무료(정규송 Nui MALAMA)
+[scenes.48.data.say] 전체 표는 카페에
+[scenes.48.data.side] left
+[scenes.49.lines.0.text] 월요일 오전 11시 반에는 배당 커버드콜 ETF 이야기입니다. 그때 뵙겠습니다.
+[scenes.49.data.license] Pexels 7578510 무료(Kindel Media)
+[strip.chapters.0.name] 나스닥100은 어떻게 갈아 끼우나
+[strip.chapters.1.name] SCHD는 무엇을 담나
+[strip.chapters.2.name] 섞는 비율별 지난 15년과 5년
+[strip.chapters.3.name] 원화로 다시 보면
+[strip.chapters.4.name] 매달 들어오는 돈
+[strip.chapters.5.name] 직접 사나, 국내 상장으로 사나
+[strip.chapters.6.name] 함정
+[strip.chapters.7.name] 정리
+[strip.side] right
+
+## 화면 코드: video/src/SQ1.tsx (KOSPI1.tsx 그대로, 아직 안 만듦)
+[SQ1.tsx] 달러로
+[SQ1.tsx] 1달러 값
+[SQ1.tsx] 원화로
+[SQ1.tsx] live: license 칸 비었음
+[SQ1.tsx] live: say에 숫자 금지
+[SQ1.tsx] 파이어맵
+[SQ1.tsx] 파이어맵
+[SQ1.tsx] 파이어맵
+[SQ1.tsx] pic: license 칸 비었음
+[SQ1.tsx] 파이어맵
+[SQ1.tsx] PD 글꼴

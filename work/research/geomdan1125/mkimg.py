@@ -10,7 +10,7 @@ fm.fontManager.addfont(F + r'\pd500.ttf'); fm.fontManager.addfont(F + r'\pd700.t
 plt.rcParams['font.family'] = fm.FontProperties(fname=F + r'\pd500.ttf').get_name()
 def Bs(n): return fm.FontProperties(fname=F + r'\pd700.ttf', size=n)
 BLUE, INK, SUBC, ORG, GRAY = '#1D4ED8', '#111827', '#6B7280', '#EA580C', '#94A3B8'
-SRC = '국토교통부 아파트 매매 실거래 · 인천 검단(당하·원당·마전·불로·왕길동 등, 11/24 받음, 취소된 거래 뺌) · 파이어맵 계산'
+SRC = '국토교통부 아파트 매매 실거래 · 인천 검단(당하·원당·마전·불로·왕길동 등, 11/25 받음, 취소된 거래 뺌) · 파이어맵 계산'
 TOPIC_PX, NUM_PX = 58, 44
 fig = plt.figure(figsize=(9, 9), dpi=100); fig.patch.set_facecolor('#0F3D3E')
 fig.text(0.07, 0.86, '검단 아파트 시세', fontproperties=Bs(TOPIC_PX), color='white')
@@ -52,7 +52,7 @@ fig, ax = plt.subplots(figsize=(9, 6.4), dpi=100)
 xs = [str(y) + chr(10) + h for y in range(2020, 2027) for h in ('상', '하')]
 allp = [2.58, 2.64, 3.25, 3.95, 3.85, 3.70, 3.20, 3.37, 3.50, 3.60, 3.50, 4.73, 5.00, 5.10]
 old = [2.58, 2.64, 3.25, 3.95, 3.80, 3.20, 3.04, 3.15, 3.15, 3.18, 3.20, 3.25, 3.20, 3.15]
-new = [None, None, None, None, None, 4.37, 4.50, 5.90, 6.00, 6.50, 6.10, 6.03, 6.20, 5.98]
+new = [None, None, None, None, None, 4.37, 4.50, 5.90, 6.00, 6.50, 6.10, 6.03, 6.20, 5.99]
 ax.plot(range(14), old, color=GRAY, lw=3, marker='o', label='오래된 단지')
 ax.plot(range(5, 14), new[5:], color=BLUE, lw=3, marker='o', label='새 단지(2019년 이후 준공)')
 ax.plot(range(14), allp, color=ORG, lw=2.5, ls='--', marker='s', label='검단 전체')

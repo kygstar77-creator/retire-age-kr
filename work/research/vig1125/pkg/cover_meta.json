@@ -1,6 +1,6 @@
 {
  "type": "chart",
- "source": "야후 파이낸스 chart API VIG·VYM 일별 종가·배당 events(11/23 받음)로 직접 계산, calc_out.txt",
+ "source": "야후 파이낸스 chart API VIG·VYM 일별 종가·배당 events(11/25 받음)로 직접 계산, calc_out.txt",
  "made_at": "2026-11-23",
  "by": "research/vig1125/mkimg.py",
  "out": "img/00.png",

@@ -1,4 +1,5 @@
 [오늘 찾은 것]
+- 2026-11-25 야후 파이낸스 chart API VIG·VYM·SPY 다시 받음(발행 날 확인) — 마지막 종가 2026-11-24 VIG 242.11·VYM 157.32·SPY 718.78달러, 배당 기록 변화 없음 https://query1.finance.yahoo.com/v8/finance/chart/VIG
 - 2026-11-23 야후 파이낸스 chart API VIG·VYM·DGRO·SCHD·SPY 2010~ 일별 종가·배당(raw/*.json) — 마지막 종가 2026-11-20 VIG 235.69·VYM 153.87·SPY 689.81달러 https://query1.finance.yahoo.com/v8/finance/chart/VIG
 - 2026-11-23 뱅가드 상품 정보 API — 정식 이름 Vanguard Dividend Appreciation ETF(longName) · VIG 설정 2006-04-21·총보수 0.04%(2026-05-28 기준), VYM 설정 2006-11-10·총보수 0.04%(2026-02-27 기준), 분기 배당, VIG 9월 0.9295달러(기준일 9/28), VYM 9월 0.8869달러 https://investor.vanguard.com/vmf/api/VIG/profile · https://investor.vanguard.com/vmf/api/VIG/distribution
 - 2026-11-23 S&P DJI 배당성장 지수 방법론 — 10년 연속 배당 증가, 배당률 상위 25% 제외(수익률 함정 회피) https://spglobal.com/spdji/zh/documents/methodologies/methodology-sp-dividend-growers-index-series.pdf
@@ -25,3 +26,10 @@
 - 총보수 0.04% × 1,000만원 = 4,000원
 - SPY 10000×3.942 = 39,420 → 약 3만 9,400달러(39400, 9400), 약 3.9배 · VIG 3.682 → 약 3.7배 · VYM 3.153 → 약 3.2배
 - 최근 1년 = 2025-11-21~2026-11-20 배당 합(VIG 3.646·VYM 3.676)
+
+[2026-11-25 발행 날 다시 계산 — 기준일 2026-11-24 종가, 글은 이 값을 씀]
+- 최근 1년 배당 ÷ 11/24 종가: VIG 3.646/242.11 = 1.51% → 1.5% · VYM 3.676/157.32 = 2.34% → 2.3%
+- 1만 달러 평가액(배당 안 삼): VIG 30,670 → 약 3만 700달러(30700, 700) · VYM 23,081 → 약 2만 3,100달러(23100, 3100) · 받은 배당 3,703·4,865 그대로
+- 총수익(adjclose): VIG 278.3% → 10000×3.783 = 37,830 → 약 3만 7,800달러(37800, 7800), 약 3.8배 · VYM 222.3% → 32,230 → 약 3만 2,200달러(32200, 2200), 약 3.2배 · SPY 310.8% → 41,080 → 약 4만 1,100달러(41100, 1100), 약 4.1배
+- 1년 총수익(2025-11-20~2026-11-24): VIG 15.5% · VYM 16.4%
+- 산 값 대비 지금 배당 VIG 4.62%·VYM 5.39%, 최대 낙폭 VIG -20.4%·VYM -15.8% 그대로

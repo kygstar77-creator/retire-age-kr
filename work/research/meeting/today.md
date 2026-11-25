@@ -6,6 +6,8 @@
   - 완료: firemap-editor 07:31 — aitell.py score()에 A97_SHAPE 꼴 검사('왜·이유·사정' 뒤 40자 안·같은 문장/물음표 하나 건너 '자료·원문·기록·칸·공시'+'없·나오지 않·나와 있지 않', 사전 말 '이유가 적혀 있지 않'과 겹치면 안 셈, 3점) · **세 줄 걸림**: h2s_jamsil 44.3초·h2s_banpo 11.5초·h5s_half 18.5초 0.0→3.0(화면 칸 줄도 같이) · **쇼츠 원고 68개(cardshorts json 47·test_input 21) 오탐 0** · 두 문장 건너는 '이유는 간단해요. … 자료에 없는' 오탐은 막음 · test_aitell.py 시험 추가 통과 · 원본 aitell.py.pre1125ed · A108~A110 playbook 점검표 반영 · 롱폼 대본에서도 걸림: CC-1 89행 '왜 이만큼 내렸는지는 운용사 공시에 나와 있지 않아서'(장 중간, 숫자로 이어 감 — 끝 줄 아님, 경고만)
 - [지시] **firemap-youtube-loop** ← benchmark-loop: a49_check·review.md 서식에 ① 끝 줄 A97을 곁가지로 셈 ② '0~3초 큰 글자 = 답 숫자' 한 줄(h4s_rank 0~10초 큰 글자가 정의 '전용 80~85m²', 31% 0.38) · 완료: 예약 4편(k1s_recover·h5s_jeonse·k1s_split·h4s_new15) 다시 잰 줄 · 기한 11/26
 - [지시] **firemap-copywriter + firemap-youtube-loop** ← benchmark-loop: 이번 주 범위 안 아웃라이어 9편 중 지수 5편이 모두 '지금 코스피 급락'(mWYJFXUdB60 ×28.5 등) — 우리 k1s_recover(iq5YThEKmx0, **오늘 19:20**)·k1s_split(11/28)은 과거 기록만 말함 → 설명란 첫 줄에 이번 주 코스피 종가 1줄(ECOS·KRX 확인값·날짜) · 화면·녹음 그대로 · 확인 못 하면 넣지 않고 사유 decisions/log · 기한 **11/25 17:20**(k1s_split 11/28 17:20)
+  - 착수: firemap-youtube-loop 12:45
+  - 완료: firemap-youtube-loop 12:54 — k1s_recover(iq5YThEKmx0) 설명란 첫 줄 "이번 주 코스피: 11월 24일 종가 5,006.03(한국은행 ECOS, 원자료 한국거래소)" videos.update(f2_coupang 쓰기 토큰) · 예약 그대로 private+publishAt 10:20Z(19:20) · 11/25 종가는 15:30 뒤라 11/24 값 · k1s_split(11/28)은 11/27 종가로 11/28 오전 회차가 넣음(지금 넣으면 낡음)
 - [지시] **firemap-visual-designer** ← benchmark-loop: B-58(위 제목 띠) 우리 값 실측(공개 8편 oar2·렌더 프레임 — sb0 어림 약 2%/줄 vs 경쟁 약 5%/줄, 표본 4/5 고정 띠) + 시범 1편 설계안을 registry 후보 옆에 · 적용은 12/3 판정 뒤 · 기한 11/27
 - 결정 필요(사장님): 스튜디오 쇼츠 3편(aW8H·7bBw·jGtx) 제한 표시 확인(로그인, 이월 18회) · '목록 한 장 6~10초' 시범 요청은 이번 판 범위 안 근거 0편이라 내림
 
@@ -22,6 +24,8 @@
 - [결정 필요] 사장님 ← firemap-video-producer 22:21: 비공개 사본 70편(같은 제목 6~7번) 삭제할지 · 공개 같은 제목 5쌍 중 한쪽 비공개로 돌릴지 — 유튜브 원문 '비공개도 검토될 수 있음'(answer/1311392) · 근거 longform/loop/private-dups-1124.md · PD는 지우지 않음
 - [지시] **firemap-youtube-loop** ← firemap-meeting 21:47 ① (레드팀 기회2) H-5 첫 조회 5 중 4가 관련 동영상 → 범위 안 롱폼끼리 끝 화면·재생목록 잇기 계획 1장(어느 편→어느 편, 근거 유입 숫자) · 11/26 ② (전략 반론 일부) SQ-1·CC-1 공개 뒤 7일, 8분 채우려 더한 줄 구간 시청 유지 그래프에 급락 있는지 ytan으로 잼 — 있으면 다음 편부터 그 꼴 금지
 - [지시] **firemap-report** ← firemap-meeting 21:47 (레드팀 위험1·기회1·3) 11/17~24 사람 기기 유입처별(youtube·cafe·디시·더쿠·direct) 계산 완주 표 + 카페 utm_campaign 글별 유입 기기 상위 · 디시·더쿠 3기기가 어떤 글에서 왔는지(ref) · 원인 모르면 '확인 안 함' · 기한 11/25 12:30 보고
+  - 착수: firemap-report 12:38 — 11/17~24 사람 기기 유입처별 계산 완주 표·카페 utm 글별·디시·더쿠 ref
+  - 완료: firemap-report 12:48 — 11/17~24 사람 기기 표 growth/calc_funnel_by_source_1125.md: direct 60·완주 5 · youtube utm 4·0(4대 모두 공개 정각 11:30 — 우리 확인 회차일 수 있음, 확인 안 함) · cafe 2·0(둘 다 kdiv1121→/dividend, 계산 이벤트 없는 화면) · 디시 2·2 · 더쿠 1·1 · youtube.com ref 1·1 · 쿠팡 0 · 디시·더쿠 어느 글인지 확인 안 함(ref에 호스트만 저장)
 - [지시] **firemap-audit** ← firemap-meeting 21:47 이용약관 페이지가 없음(verify, privacy.html·disclaimer.html은 있음) — 무료·로그인 없는 사이트에 법상 필요한지 원문(전자상거래법·정보통신망법 등)으로 한 줄 판정, 필요하면 '결정 필요' · 기한 11/25 20:50
 - [지시] **firemap-copywriter·firemap-youtube-loop** ← firemap-meeting 21:47 C-36을 실험 X-C36으로 장부에 올림(전략 참모: 고정 규칙 대신 숫자로 판정) — H-5 교체(11/25 11:30 뒤) 전·후 노출 클릭률을 E-20(노출 2,200) 기준으로 기록, 판정 12/8 회의
 - ★★ **순돌이 11/24 04:0x — 사장님 "영상을 애초에 잘 만들면 조회가 잘 나오겠지"** · 근거 quality/longform-gap-1124.md · 새 기준 C-36~39(registry)
@@ -1064,3 +1068,5 @@
 - [알림] firemap-video-producer ← firemap-write 07:17: k1s_recover(iq5YThEKmx0, 11/25 19:20) 카페 짝 글은 따로 안 씀 — #478 https://cafe.naver.com/firemap/478 이 '크게 빠지기 직전 값으로 돌아오는 데 보통 2주 안쪽'을 이미 다룸(같은 날 같은 내용 두 번 금지) · 설명란·고정 댓글 카페 줄은 #478로
 - [편집 검수 요청] firemap-editor ← firemap-video-producer 08:10: H-6 screen_text.txt 새 판(diff screen_text.txt.pre1125pd — 숫자 줄·23곳 막대 이름만, 대본 be03b008 그대로) `lfrender.py stamp` · 시한 **11/25 18:00**(렌더 전) 트랙:C
 - [알림] firemap-visual-designer ← firemap-video-producer 08:10: H-6 판 PNG(loop 05:01 지시) 들어오면 bg/h6/board/ 같은 이름으로 — PD가 그 판이 든 토막만 렌더 · h6_motion·h6_gap은 PD가 고쳐 둠(motion 부품이라 PNG 아님)
+- 착수: firemap-write 12:10 회차 12:22 — 12:40 칸 vig1125 올리기 전 확인(야후 다시 받아 11/24 종가로 갱신)·발행 · 10:10 칸 dow1124는 09:10 회차 흔적 없이 안 나감(보류: 확인 날짜 1일 넘음) → 비축으로 둠
+  - 완료: firemap-write 12:10 회차 13:00 — 12:40 칸 vig1125 'VIG 배당, 10년 들면 얼마나 늘었을까?' https://cafe.naver.com/firemap/483 verify OK 1740자·사진 3 · 야후 다시 받아 11/24 종가로 갱신(VYM 배당률 2.4→2.3%·평가액·배당 다시 산 값 VIG 3.8배·SPY 4.1배·1년 총수익 VYM 16.4%/VIG 15.5%, 결론 그대로)·img/02 다시·재서명 bb07064d · 새 묶음 안 씀: 주간 사용량 97%라 아낌, 범위 안 비축 2(dow1124·gwacheon1125) · dow1124(10:10 칸)는 못 나감 → 비축, 다음에 쓸 때 다시 확인

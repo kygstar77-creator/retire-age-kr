@@ -32,8 +32,8 @@
 - 10년 뒤 총액이 목표면 VIG 총수익이 더 높았다(같은 기간 SPY는 둘 다보다 높음)
 
 ## 누구라면
-- 은퇴 뒤 매달 배당으로 생활비 쓰는 사람: 지금 배당률 VYM 2.4% vs VIG 1.5%, 10년 뒤에도 VYM 산 값 대비 배당이 높았음
-- 10년 넘게 모을 사람: 배당 재투자 총수익 VIG 268% vs VYM 215%
+- 은퇴 뒤 매달 배당으로 생활비 쓰는 사람: 지금 배당률 VYM 2.3% vs VIG 1.5%, 10년 뒤에도 VYM 산 값 대비 배당이 높았음
+- 10년 넘게 모을 사람: 배당 재투자 총수익 VIG 278% vs VYM 222%
 - 하락이 무서운 사람: 2021년 이후 최대 낙폭 VIG 20.4% vs VYM 15.8%
 
 ## 함정
@@ -50,14 +50,14 @@
 ## 대조
 | 글 값 | 원문 값 | 출처 |
 |---|---|---|
-| 지금 배당률 VIG 1.5%·VYM 2.4% | 1.55% · 2.39%(최근 1년 배당 ÷ 11/20 종가) | S1·S5 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/VIG |
-| 2015년 11월 20일 매수 · 11/20 종가 | 78.94 · 68.16 / 235.69 · 153.87 | S1 https://query1.finance.yahoo.com/v8/finance/chart/VIG |
+| 지금 배당률 VIG 1.5%·VYM 2.3% | 1.51% · 2.34%(최근 1년 배당 ÷ 11/24 종가) | S1·S5 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/VIG |
+| 2015년 11월 20일 매수 · 11/24 종가 | 78.94 · 68.16 / 242.11 · 157.32 | S1 https://query1.finance.yahoo.com/v8/finance/chart/VIG |
 | 1주당 연 배당 1.82→3.56 · 2.15→3.50, 약 2배·1.6배, 해마다 7%·5%쯤 | 1.819→3.558(1.96배, 6.9%) · 2.149→3.501(1.63배, 5.0%) | S1·S5 https://query1.finance.yahoo.com/v8/finance/chart/VIG |
 | 산 값 대비 지금 배당 VIG 4.6%·VYM 5.4% | 4.62 · 5.39 | S1·S5 https://query1.finance.yahoo.com/v8/finance/chart/VIG |
 | 2015년 배당률 VIG 2.3%·VYM 3.2%쯤 | 2.30 · 3.15 | S1·S5 https://query1.finance.yahoo.com/v8/finance/chart/VIG |
-| 1만 달러 → 배당 약 3,700·4,900, 평가액 약 2만 9,900·2만 2,600달러 | 3,703 · 4,865 · 29,857 · 22,575 | S1·S5 https://query1.finance.yahoo.com/v8/finance/chart/VIG |
-| 10년 총수익 VIG 268%·VYM 215%·SPY 294% | 268.2 · 215.3 · 294.2 | S1·S5 https://query1.finance.yahoo.com/v8/finance/chart/SPY |
-| 1년 총수익 VYM 13.9%·VIG 12.4% | 13.9 · 12.4 | S1·S5 https://query1.finance.yahoo.com/v8/finance/chart/VIG |
+| 1만 달러 → 배당 약 3,700·4,900, 평가액 약 3만 700·2만 3,100달러 | 3,703 · 4,865 · 30,670 · 23,081 | S1·S5 https://query1.finance.yahoo.com/v8/finance/chart/VIG |
+| 11년 총수익 VIG 278%·VYM 222%·SPY 311% | 278.3 · 222.3 · 310.8 | S1·S5 https://query1.finance.yahoo.com/v8/finance/chart/SPY |
+| 1년 총수익 VYM 16.4%·VIG 15.5% | 16.4 · 15.5 | S1·S5 https://query1.finance.yahoo.com/v8/finance/chart/VIG |
 | 최대 낙폭 VIG 20.4%·VYM 15.8%(2021년 이후) | -20.4 · -15.8 | S1·S5 https://query1.finance.yahoo.com/v8/finance/chart/VIG |
 | 2020년 1주당 배당 줄지 않음 | VIG 2.134→2.297 · VYM 2.842→2.906 | S1 https://query1.finance.yahoo.com/v8/finance/chart/VIG |
 | 2006년 출시 · 총보수 0.04%(둘 다) | 2006-04-21 · 0.0400 / VYM 0.0400 | S2 https://investor.vanguard.com/vmf/api/VIG/profile |
@@ -66,9 +66,9 @@
 | 기술 업종 26%쯤, 6월 말 | IT 약 26%(2026-06-30) | S4 https://workplace.vanguard.com/iippdf/pdfs/FS920R.pdf |
 
 # 올리기 전 확인
-- 2026-11-23 18:4x firemap-write(조사·작성 날 — 발행 날 11/25 12:40 칸 회차가 야후 다시 받아 11/24 미국 종가로 숫자 갱신)
-- 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/VIG (11/23) · https://query1.finance.yahoo.com/v8/finance/chart/VYM (11/23) · https://query1.finance.yahoo.com/v8/finance/chart/SPY (11/23) · https://investor.vanguard.com/vmf/api/VIG/profile (11/23) · https://investor.vanguard.com/vmf/api/VIG/distribution (11/23) · https://investor.vanguard.com/vmf/api/VYM/profile (11/23) · https://spglobal.com/spdji/zh/documents/methodologies/methodology-sp-dividend-growers-index-series.pdf (11/23 검색) · https://workplace.vanguard.com/iippdf/pdfs/FS920R.pdf (11/23 검색)
-- 기준일: 2026-11-20 미국 종가
-- 바뀐 것: 처음 조사(11/23) — 기준일 2026-11-20 종가, VIG 235.69·VYM 153.87달러 · 발행 날 회차가 새 종가로 다시 계산
-- 새로 찾은 것: 10년 전 산 값 대비 지금 배당 VIG 4.6% vs VYM 5.4% — 배당이 2배 늘어도 고배당을 못 앞섬 · 총수익은 VIG 268% vs VYM 215% · 경쟁 상위 8편 중 이 계산 0편
+- 2026-11-25 12:3x firemap-write(발행 날 12:10 회차) — 야후 VIG·VYM·DGRO·SCHD·SPY 다시 받아 calc.py·mkimg.py 다시 돌림(calc_out.prev1125 ↔ calc_out.txt)
+- 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/VIG (11/25) · https://query1.finance.yahoo.com/v8/finance/chart/VYM (11/25) · https://query1.finance.yahoo.com/v8/finance/chart/SPY (11/25) · https://investor.vanguard.com/vmf/api/VIG/profile (11/23, 총보수·이름 — 바뀔 일 없는 값) · https://investor.vanguard.com/vmf/api/VIG/distribution (11/23, 야후 배당 기록 11/25 변화 없음으로 대조) · https://investor.vanguard.com/vmf/api/VYM/profile (11/23) · https://spglobal.com/spdji/zh/documents/methodologies/methodology-sp-dividend-growers-index-series.pdf (11/23) · https://workplace.vanguard.com/iippdf/pdfs/FS920R.pdf (11/23) · https://blog.naver.com/gogofree2030/224468892712 (11/25 다시 엶, 질문 출처 그대로 살아 있음)
+- 기준일: 2026-11-24 미국 종가
+- 바뀐 것: 기준일 11/20→11/24 · VIG 235.69→242.11·VYM 153.87→157.32달러 · VYM 배당률 2.4→2.3% · 1만 달러 평가액 VIG 2만 9,900→3만 700·VYM 2만 2,600→2만 3,100 · 배당 다시 산 값 VIG 3.7→3.8배·SPY 3.9→4.1배(VYM 3.2배 그대로) · 1년 총수익 VYM 13.9→16.4%·VIG 12.4→15.5%(VYM 앞섬 그대로) · 결론(산 값 대비 배당 VYM 앞섬, 총수익 VIG 앞섬, SPY 최고) 그대로 · 배당 기록 새로 나온 것 없음
+- 새로 찾은 것: 11/24 종가로 다시 셈 — SPY가 11/20~24 +4.2% 올라 SPY와 VIG 차이 3.7배 대 3.9배 → 3.8배 대 4.1배로 벌어짐
 - 조사 뒤 공표: data/release_calendar.json — 가격 매일, VIG·VYM 12월 배당(12월 하순) 전 발행

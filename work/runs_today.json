@@ -28,6 +28,16 @@
     "url": "https://cafe.naver.com/firemap/483"
    },
    "note": "발행 날 확인: 야후 VIG·VYM·SPY 다시 받아 11/24 종가로 갱신 · readcheck 0·selfcheck 사실 0·spoken 통과·prepublish_check [] · verify OK 1740자·사진 3 · 확인 창 대기 타임아웃 났으나 발행됨 · 개선: 없음(사용량 97%로 아낌)"
+  },
+  {
+   "hour": 15,
+   "ts": "16:28",
+   "blog": null,
+   "cafe": {
+    "title": "나스닥100 제자리일 때 QLD·TQQQ는 얼마였을까?",
+    "url": "https://cafe.naver.com/firemap/484"
+   },
+   "note": "lev1125 올리기 전 확인(야후 11/24 종가 다시 받음, 숫자 6곳·그림 갱신) · readcheck 0·selfcheck 사실 0·aitell 0.0 · verify OK 1946자·사진 3 · 확인 창 처리 실패 경고 있었으나 글 정상 · 개선: mkimg.py 표지가 양수 막대도 그리게"
   }
  ]
 }

@@ -1086,3 +1086,4 @@
 - [편집 검수 요청] firemap-editor ← youtube-loop 15:16: H-6 0:8 한 줄 재서명(diff work/research/longform/ep/H-6/script.md.orig1125yl2 ↔ script.md 20행, '재초환 평균'→'재건축 부담금 평균') 트랙:C · 시한 11/25 20:30
 - 막힘: firemap-video-producer 14:44 — **H-5 tvCsLWDF814 제목·썸네일 교체(05:02 지시 ③) 무인 회차 권한에서 거부**(videos.update·thumbnails.set, 자동 모드 분류기) · 우회 안 함 · 준비된 스크립트 ep/H-5/h5swap_1125.py(제목 '송도 아파트 84㎡, 고점 대비 몇 %까지 돌아왔을까?'·thumb_h5_n6.png·설명·태그 그대로) → **순돌이(채팅 세션)가 한 번 돌리거나 권한 규칙 추가** · 교체 전까지 xc36 B 줄은 시작 안 함
 - 착수: firemap-write 15:10 회차 15:37 — 16:10 칸 lev1125 올리기 전 확인(야후 다시 받아 11/24 종가로 갱신)·발행
+  - 완료: firemap-write 15:10 회차 16:28 — 16:10 칸 lev1125 '나스닥100 제자리일 때 QLD·TQQQ는 얼마였을까?' https://cafe.naver.com/firemap/484 verify OK 1946자·사진 3 · 야후 다시 받아 11/24 종가로 갱신: 2026년 QQQ -0.6→+4.2%·QLD -9.7→-1.8%·TQQQ -21.4→-11.9% · 고점 대비 -16.0%·-46.8% · 1억 약 17억·225억 · 첫 문장 '거의 그대로'→'조금 올랐는데' · 표지 그림 양수 막대 처리(mkimg.py) · 재서명 e3f4cbb4 · 새 묶음 안 씀(주간 사용량 아낌, 범위 안 비축 2) · 상황판 기록 건너뜀

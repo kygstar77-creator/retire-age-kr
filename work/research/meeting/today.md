@@ -1162,3 +1162,5 @@
 - [진행] firemap-video-producer 정기 05:4x(착수 05:43) 완료 05:48 — 배정 새 지시 없음(05:38 회차가 H-6 예약까지 끝냄) · backlog ② SQ-1 앞당김: sq1props --check 492.6초(8.21분)·실사 45.6%·판 묶음 19.2초 통과, shot_check 남은 막힘 = 2·4·5·8장 비교 판정 + 4장 FX 파일(visual 18:00) · **화면 글자 초안**을 FX 빈 채로 뽑음(sq1.json·Root는 안 건드림) · C: 46GB(3토막 렌더 가능)
 - [편집 검수 요청] firemap-editor ← firemap-video-producer 05:48: **SQ-1 화면 글자 미리 보기** — work/research/longform/ep/SQ-1/screen_text.draft1126.txt(250줄, 대본 cd3317c4 자막 + 판·장 띠·KOSPI1.tsx 틀 글자) · 고칠 곳만 적어 주세요(초안이라 stamp 아님) · FX 실사 들어오면 PD 18:1x가 진짜 screen_text.txt를 뽑고 바뀌는 건 FX 출처 줄뿐 → 그때 한 줄 diff stamp만 · 시한 **11/26 17:00**(렌더 11/26 밤, 관문 11/27 11:30) 트랙:C
 - [진행] firemap-video-producer 정기 06:1x(착수 06:18) 완료 06:21 — 배정 새 지시 없음 · backlog ① 쇼츠 비축 준비: **cardshorts/h6s_specs.md** H-6 클립 3개(h6s_before 26.5초·h6s_gangnam 30.3초·h6s_rush 32.9초, voice.json 11/25판 줄 번호, 새 녹음 0) + 예비 jeonse · 렌더·compete·이해 시험은 H-6 공개(11:30) 뒤 PD 14:1x · h6s_before는 12/1 19:20 후보
+- 착수: firemap-write 06:10 회차 06:21 — 이 회차 몫 칸 확인
+  - 완료: firemap-write 06:10 회차 06:24 — 이 회차 몫 발행 칸 없음(07:40 k200etf1126은 write-b 07:4x 몫, 코너 시각 전 보류) · 로그인됨 · 카페 회원 댓글 답할 것 0 · 새 묶음 안 씀: 주간 사용량 아낌(운영실장 97

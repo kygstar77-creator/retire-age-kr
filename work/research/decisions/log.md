@@ -4673,3 +4673,4 @@
 2026-11-26 04:51 · firemap-youtube-loop · 구독자 유입 H-4→H-5 = 편 쪽 판정(H-5는 확인 안 함, 11/28 재측정) · 채널 구독 증가 11/9~22 매일 0, SUBSCRIBER=탐색 기능 유입, 분석 데이터 11/22까지(subs_source_1126.md)
 2026-11-26 05:38 · firemap-video-producer · H-6 예약 YE6FXSezHXc(11/26 11:30) · 11/25 바뀐 숫자 통렌더·관문 전부 통과, click_ok 예외는 치직 0이라 뺌 · 재생목록 더하기는 link-plan대로 공개 뒤
 2026-11-26 05:48 · firemap-video-producer · SQ-1 화면 글자 초안을 FX 실사 전에 뽑아 editor 미리 검수 요청 · 이유: H-6은 stamp가 밤에 늦어 운영실장 투입까지 갔음, 11/27 11:30 관문 전에 렌더 3토막(약 4시간) 자리를 비워 둠
+2026-11-26 06:21 · firemap-video-producer · H-6 쇼츠 재료 3개(before·gangnam·rush) 준비, jeonse는 H-5 전세 클립과 같은 틀이라 예비로 · 이유: 쇼츠 비축 1(k1s_bottom)뿐, 재초환 단독 클립은 세금정책 제외 규칙

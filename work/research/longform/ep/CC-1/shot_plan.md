@@ -38,60 +38,60 @@
 # 장면 계획
 | 장 | 대본 줄(요지) | 구상 | 따라 한 경쟁 장면 # | 도구 | 파일 | 비교 그림 | 품질 판정 |
 |---|---|---|---|---|---|---|---|
-| 0. 여는 말 | 1년 전 1억, 지금 얼마 남았을까 (voice 0) | [실사] 식탁 위 통장 두 권을 한 권씩 펼치는 손, 얼굴 없음 | #18 | Pexels 'bank book hands table' | bg/cc1/stock/PASSBOOK2 (visual) | shotcmp/r01.jpg | (새 심사관) |
+| 0. 여는 말 | 1년 전 1억, 지금 얼마 남았을까 (voice 0) | [실사] 식탁 위 통장 두 권을 한 권씩 펼치는 손, 얼굴 없음 | #18 | Pexels 'bank book hands table' | bg/cc1/stock/6197178.mp4 (PASSBOOK2) | shotcmp/r01.jpg | (새 심사관) |
 | 0. 여는 말 | 9천6백만 vs 1억 2천만 (1·2) | [판] 통장 두 장 '커버드콜 ?'·'일반형 ?' → 말 닿을 때 차례로 열림, 차이 주황 | #1·#9 | Python 판(cc1boards.py) | bg/cc1/board/cc1_open2.png | shotcmp/r02.jpg | (새 심사관) |
-| 0. 여는 말 | 분배금만 보면 커버드콜 (3) | [실사] 월말 가계부에 적는 손 | #19 | Pexels 'writing household ledger' | bg/cc1/stock/LEDGER (visual) | shotcmp/r03.jpg | (새 심사관) |
-| 0. 여는 말 | 끝날을 어디로 잡느냐 (4·5) | [실사] 안개 속 길 표지판이 천천히 드러남, 글자 흐림 | #24 | Pexels 'road sign fog' | bg/cc1/stock/FOG (visual) | shotcmp/r04.jpg | (새 심사관) |
+| 0. 여는 말 | 분배금만 보면 커버드콜 (3) | [실사] 월말 가계부에 적는 손 | #19 | Pexels 'writing household ledger' | bg/cc1/stock/5466768.mp4 (LEDGER) | shotcmp/r03.jpg | (새 심사관) |
+| 0. 여는 말 | 끝날을 어디로 잡느냐 (4·5) | [실사] 안개 속 길 표지판이 천천히 드러남, 글자 흐림 | #24 | Pexels 'road sign fog' | bg/cc1/stock/34942921.mp4 (FOG) | shotcmp/r04.jpg | (새 심사관) |
 | 1. 이 상품은 어떻게 분배금을 만드나 | 장 카드 (6) | 장 카드 '1장' + 질문 | #17 | Remotion ask(KOSPI1 틀) | work/video/src/KOSPI1.tsx | shotcmp/r05.jpg | (새 심사관) |
-| 1. 이 상품은 어떻게 분배금을 만드나 | 살 권리를 팔고 돈을 받음 (7·8) | [실사] 과수원에서 상자를 건네는 손·계약서, 얼굴 없음(미리 파는 약속 비유) | #15·#16 | Pexels 'orchard harvest hands crate' | bg/cc1/stock/ORCHARD (visual) | shotcmp/r06.jpg | (새 심사관) |
+| 1. 이 상품은 어떻게 분배금을 만드나 | 살 권리를 팔고 돈을 받음 (7·8) | [실사] 과수원에서 상자를 건네는 손·계약서, 얼굴 없음(미리 파는 약속 비유) | #15·#16 | Pexels 'orchard harvest hands crate' | bg/cc1/stock/19666849.mp4 (ORCHARD) | shotcmp/r06.jpg | (새 심사관) |
 | 1. 이 상품은 어떻게 분배금을 만드나 | 오를 때 위가 막힘 (9·10) | [판] 선 하나가 오르다 천장 선에 닿아 평평 · 아래 동전 '대신 매달 받는 돈' | #20 | Python 판(cc1boards.py) | bg/cc1/board/cc1_cap.png | shotcmp/r07.jpg | (새 심사관) |
-| 1. 이 상품은 어떻게 분배금을 만드나 | 운용사가 양을 조절 (11) | [실사] ORCHARD 다른 구간 | #15 | Pexels(같은 클립) | bg/cc1/stock/ORCHARD (visual) | shotcmp/r08.jpg | (새 심사관) |
+| 1. 이 상품은 어떻게 분배금을 만드나 | 운용사가 양을 조절 (11) | [실사] ORCHARD 다른 구간 | #15 | Pexels(같은 클립) | bg/cc1/stock/19666849.mp4 (ORCHARD) | shotcmp/r08.jpg | (새 심사관) |
 | 1. 이 상품은 어떻게 분배금을 만드나 | 기준일 15일·두 상품 다름 (12~14) | [판] 이름표 둘 '커버드콜: 배당주 + 옵션 팖'·'일반형: 배당주만', 아래 작은 글 기준일·총보수 | #17·#1 | Python 판(cc1boards.py) | bg/cc1/board/cc1_two.png | shotcmp/r09.jpg | (새 심사관) |
 | 2. 최근 1년, 같은 날 1억 | 장 카드 (15) | 장 카드 '2장' | #13 | Remotion ask | work/video/src/KOSPI1.tsx | shotcmp/r10.jpg | (새 심사관) |
-| 2. 최근 1년, 같은 날 1억 | 한 달도 빠짐없이 (16) | [실사] 달력을 한 장씩 넘기는 손, 창밖 계절 | #19 | Pexels 'flipping calendar pages hand' | bg/cc1/stock/CALENDAR (visual) | shotcmp/r11.jpg | (새 심사관) |
+| 2. 최근 1년, 같은 날 1억 | 한 달도 빠짐없이 (16) | [실사] 달력을 한 장씩 넘기는 손, 창밖 계절 | #19 | Pexels 'flipping calendar pages hand' | bg/cc1/stock/8134590.mp4 (CALENDAR) | shotcmp/r11.jpg | (새 심사관) |
 | 2. 최근 1년, 같은 날 1억 | 커버드콜 통장 (17·18) | [판] 통장 — 왼쪽 '받은 분배금' 동전 12번 쌓임 · 오른쪽 '남은 평가액' | #1·#25 | Python 판(cc1boards.py) | bg/cc1/board/cc1_acct_cc.png | shotcmp/r12.jpg | (새 심사관) |
 | 2. 최근 1년, 같은 날 1억 | 일반형 통장 (19·20) | [판] 같은 꼴, 동전 낮고 평가액 칸 큼 | #1 | Python 판(cc1boards.py) | bg/cc1/board/cc1_acct_dj.png | shotcmp/r13.jpg | (새 심사관) |
 | 2. 최근 1년, 같은 날 1억 | 차이 2천만원 넘음 (21) | [판] 합계 막대 둘, 차이 자리 '?' → 열림 | #1·#9 | Python 판(cc1boards.py) | bg/cc1/board/cc1_gap.png | shotcmp/r14.jpg | (새 심사관) |
-| 2. 최근 1년, 같은 날 1억 | 분배율 9%인데 못 미침 (22·23) | [실사] LEDGER 다른 구간 | #19 | Pexels(같은 클립) | bg/cc1/stock/LEDGER (visual) | shotcmp/r15.jpg | (새 심사관) |
+| 2. 최근 1년, 같은 날 1억 | 분배율 9%인데 못 미침 (22·23) | [실사] LEDGER 다른 구간 | #19 | Pexels(같은 클립) | bg/cc1/stock/5466768.mp4 (LEDGER) | shotcmp/r15.jpg | (새 심사관) |
 | 2. 최근 1년, 같은 날 1억 | 분배율 말고 총수익 (24·25) | [판] 두 칸 '분배율 9.37%' vs '1년 남은 돈 −3.5%', 손 동그라미는 총수익 쪽 | #4·#2 | Python 판(cc1boards.py) | bg/cc1/board/cc1_yield.png | shotcmp/r16.jpg | (새 심사관) |
 | 3. 더 길게 보면 | 장 카드 (26) | 장 카드 '3장' | #13 | Remotion ask | work/video/src/KOSPI1.tsx | shotcmp/r17.jpg | (새 심사관) |
-| 3. 더 길게 보면 | 2023년 6월로 돌아가면 (27) | [실사] 서랍 속 오래된 통장 묶음을 꺼내는 손, 바랜 색 | #18 | Pexels 'old drawer documents hands' + 바랜 색 | bg/cc1/stock/DRAWER (visual) | shotcmp/r18.jpg | (새 심사관) |
+| 3. 더 길게 보면 | 2023년 6월로 돌아가면 (27) | [실사] 서랍 속 오래된 통장 묶음을 꺼내는 손, 바랜 색 | #18 | Pexels 'old drawer documents hands' + 바랜 색 | bg/cc1/stock/6550666.mp4 (DRAWER) | shotcmp/r18.jpg | (새 심사관) |
 | 3. 더 길게 보면 | 둘 다 늘었지만 일반형이 더 (28~30) | [판] 막대 둘 '?' 차례로 열림, 분배금 몫·평가액 몫 두 색 | #9·#22 | Python 판(cc1boards.py) | bg/cc1/board/cc1_long2.png | shotcmp/r19.jpg | (새 심사관) |
-| 3. 더 길게 보면 | 상장한 날부터 (31) | [실사] DRAWER 다른 구간 | #18 | Pexels(같은 클립) | bg/cc1/stock/DRAWER (visual) | shotcmp/r20.jpg | (새 심사관) |
+| 3. 더 길게 보면 | 상장한 날부터 (31) | [실사] DRAWER 다른 구간 | #18 | Pexels(같은 클립) | bg/cc1/stock/6550666.mp4 (DRAWER) | shotcmp/r20.jpg | (새 심사관) |
 | 3. 더 길게 보면 | 가격만 vs 분배 포함 (32~36) | [판] 두 칸 '가격만 +11.7%' · '분배금 포함 +45.0%' + 아래 '한 주 3,934원 = 상장가의 39%' | #2·#4 | Python 판(cc1boards.py) | bg/cc1/board/cc1_since.png | shotcmp/r21.jpg | (새 심사관) |
-| 3. 더 길게 보면 | 다시 사들였다면 (37) | [실사] 계산기 두드리는 손(LEDGER 다른 구간) | #19 | Pexels(같은 클립) | bg/cc1/stock/LEDGER (visual) | shotcmp/r22.jpg | (새 심사관) |
+| 3. 더 길게 보면 | 다시 사들였다면 (37) | [실사] 계산기 두드리는 손(LEDGER 다른 구간) | #19 | Pexels(같은 클립) | bg/cc1/stock/5466768.mp4 (LEDGER) | shotcmp/r22.jpg | (새 심사관) |
 | 3. 더 길게 보면 | 해마다 다른 분배금 (38·39) | [판] 연도 막대 5개(2022 석 달~2026), 막대 위 값 | #25 | Python 판(cc1boards.py) | bg/cc1/board/cc1_divyear.png | shotcmp/r23.jpg | (새 심사관) |
 | 4. 분배금은 많았는데 왜 덜 남았나 | 장 카드 (40) | 장 카드 '4장' | #12 | Remotion ask | work/video/src/KOSPI1.tsx | shotcmp/r24.jpg | (새 심사관) |
 | 4. 분배금은 많았는데 왜 덜 남았나 | 커버드콜 한 주 (41~43) | [판] 계단 내려감 12,605 → 11,170 + 옆 동전 '분배 1,181' | #4 | Python 판(cc1boards.py) | bg/cc1/board/cc1_step_cc.png | shotcmp/r25.jpg | (새 심사관) |
 | 4. 분배금은 많았는데 왜 덜 남았나 | 일반형 한 주 (44·45) | [판] 계단 올라감 12,615 → 14,505 + 동전 '분배 439' | #4 | Python 판(cc1boards.py) | bg/cc1/board/cc1_step_dj.png | shotcmp/r26.jpg | (새 심사관) |
-| 4. 분배금은 많았는데 왜 덜 남았나 | 이유는 공시에 없음·덜 빠진다는 말 (46~48) | [실사] 저울 한쪽에 동전을 하나씩 얹는 손 | #20 | Pexels 'balance scale coins hand' | bg/cc1/stock/SCALE (visual) | shotcmp/r27.jpg | (새 심사관) |
+| 4. 분배금은 많았는데 왜 덜 남았나 | 이유는 공시에 없음·덜 빠진다는 말 (46~48) | [실사] 저울 한쪽에 동전을 하나씩 얹는 손 | #20 | Pexels 'balance scale coins hand' | bg/cc1/stock/8661806.mp4 (SCALE) | shotcmp/r27.jpg | (새 심사관) |
 | 4. 분배금은 많았는데 왜 덜 남았나 | 1년 최대 낙폭 (49) | [판] 골짜기 둘 깊이 '?' → 열림 −15.1% vs −11.9%, 바닥 손 동그라미 | #5·#11 | Python 판(cc1boards.py) | bg/cc1/board/cc1_dd.png | shotcmp/r28.jpg | (새 심사관) |
 | 4. 분배금은 많았는데 왜 덜 남았나 | 긴 기간 낙폭 (50·51) | [판] 골짜기 둘(2023-06~) −13.3% vs −12.6%, 아래 가격만 −19.3% vs −14.1% | #5 | Python 판(cc1boards.py) | bg/cc1/board/cc1_dd_long.png | shotcmp/r29.jpg | (새 심사관) |
-| 4. 분배금은 많았는데 왜 덜 남았나 | 원금이 녹느냐 (52·53) | [실사] SCALE 다른 구간 | #20 | Pexels(같은 클립) | bg/cc1/stock/SCALE (visual) | shotcmp/r30.jpg | (새 심사관) |
+| 4. 분배금은 많았는데 왜 덜 남았나 | 원금이 녹느냐 (52·53) | [실사] SCALE 다른 구간 | #20 | Pexels(같은 클립) | bg/cc1/stock/8661806.mp4 (SCALE) | shotcmp/r30.jpg | (새 심사관) |
 | 5. 매달 얼마 들어왔나 · 받아 씀 vs 다시 넣음 | 장 카드 (54) | 장 카드 '5장' | #12 | Remotion ask | work/video/src/KOSPI1.tsx | shotcmp/r31.jpg | (새 심사관) |
 | 5. 매달 얼마 들어왔나 · 받아 씀 vs 다시 넣음 | 매달 60만원대 vs 3분의 1 (55~58) | [판] 막대 12개(2025-12~2026-11) 두 줄, 커버드콜 높게 | #25 | Python 판(cc1boards.py) | bg/cc1/board/cc1_month12.png | shotcmp/r32.jpg | (새 심사관) |
-| 5. 매달 얼마 들어왔나 · 받아 씀 vs 다시 넣음 | 고르게 들어온 돈 (59) | [실사] LEDGER 다른 구간 | #19 | Pexels(같은 클립) | bg/cc1/stock/LEDGER (visual) | shotcmp/r33.jpg | (새 심사관) |
+| 5. 매달 얼마 들어왔나 · 받아 씀 vs 다시 넣음 | 고르게 들어온 돈 (59) | [실사] LEDGER 다른 구간 | #19 | Pexels(같은 클립) | bg/cc1/stock/5466768.mp4 (LEDGER) | shotcmp/r33.jpg | (새 심사관) |
 | 5. 매달 얼마 들어왔나 · 받아 씀 vs 다시 넣음 | 가장 많은 달·적은 달 (60·61) | [판] cc1_month12 다가가기(가장 많은 달·적은 달 손 동그라미) | #11 | Python 판(cc1boards.py) | bg/cc1/board/cc1_month12.png | shotcmp/r34.jpg | (새 심사관) |
-| 5. 매달 얼마 들어왔나 · 받아 씀 vs 다시 넣음 | 생활비로 쓰신다면 (62) | [실사] PASSBOOK2 다른 구간 | #18 | Pexels(같은 클립) | bg/cc1/stock/PASSBOOK2 (visual) | shotcmp/r35.jpg | (새 심사관) |
+| 5. 매달 얼마 들어왔나 · 받아 씀 vs 다시 넣음 | 생활비로 쓰신다면 (62) | [실사] PASSBOOK2 다른 구간 | #18 | Pexels(같은 클립) | bg/cc1/stock/6197178.mp4 (PASSBOOK2) | shotcmp/r35.jpg | (새 심사관) |
 | 5. 매달 얼마 들어왔나 · 받아 씀 vs 다시 넣음 | 받아 씀 vs 다시 넣음 (63~66, 68·69) | [판] 갈림길 — 왼쪽 '받아 씀' · 오른쪽 '다시 넣음' 끝값 둘 열림 | #2 | Python 판(cc1boards.py) | bg/cc1/board/cc1_reinvest.png | shotcmp/r36.jpg | (새 심사관) |
-| 5. 매달 얼마 들어왔나 · 받아 씀 vs 다시 넣음 | 더 길게 늘리면 (67) | [실사] CALENDAR 다른 구간 | #19 | Pexels(같은 클립) | bg/cc1/stock/CALENDAR (visual) | shotcmp/r37.jpg | (새 심사관) |
+| 5. 매달 얼마 들어왔나 · 받아 씀 vs 다시 넣음 | 더 길게 늘리면 (67) | [실사] CALENDAR 다른 구간 | #19 | Pexels(같은 클립) | bg/cc1/stock/8134590.mp4 (CALENDAR) | shotcmp/r37.jpg | (새 심사관) |
 | 6. 세금 한 장 | 장 카드 (70) | 장 카드 '6장' | #14 | Remotion ask | work/video/src/KOSPI1.tsx | shotcmp/r38.jpg | (새 심사관) |
 | 6. 세금 한 장 | 1억이면 140만 vs 50만 (71~73) | [판] 식 한 줄 '분배금 × 15.4%' → 두 열 144.3만 vs 53.6만 | #14·#21 | Python 판(cc1boards.py) | bg/cc1/board/cc1_tax.png | shotcmp/r39.jpg | (새 심사관) |
-| 6. 세금 한 장 | 분배금 전부는 아님 (74·75) | [실사] PASSBOOK2 다른 구간 | #18 | Pexels(같은 클립) | bg/cc1/stock/PASSBOOK2 (visual) | shotcmp/r40.jpg | (새 심사관) |
-| 6. 세금 한 장 | 이자·배당 합 2천만원 (76·77) | [실사] LEDGER 다른 구간 | #19 | Pexels(같은 클립) | bg/cc1/stock/LEDGER (visual) | shotcmp/r41.jpg | (새 심사관) |
+| 6. 세금 한 장 | 분배금 전부는 아님 (74·75) | [실사] PASSBOOK2 다른 구간 | #18 | Pexels(같은 클립) | bg/cc1/stock/6197178.mp4 (PASSBOOK2) | shotcmp/r40.jpg | (새 심사관) |
+| 6. 세금 한 장 | 이자·배당 합 2천만원 (76·77) | [실사] LEDGER 다른 구간 | #19 | Pexels(같은 클립) | bg/cc1/stock/5466768.mp4 (LEDGER) | shotcmp/r41.jpg | (새 심사관) |
 | 6. 세금 한 장 | 2억 1천만원부터 닿음 (78~80) | [판] 눈금자 — '한 해 분배금 2천만원' 주황 선, 커버드콜 2억 1,300만·일반형 5억 7,500만 | #7·#21 | Python 판(cc1boards.py) | bg/cc1/board/cc1_ruler.png | shotcmp/r42.jpg | (새 심사관) |
-| 6. 세금 한 장 | 다른 배당이 있으면 더 일찍 (81·82) | [실사] DRAWER 다른 구간 | #18 | Pexels(같은 클립) | bg/cc1/stock/DRAWER (visual) | shotcmp/r43.jpg | (새 심사관) |
-| 6. 세금 한 장 | ISA·IRP는 계산 밖 (83~85) | [실사] PASSBOOK2 다른 구간 | #18 | Pexels(같은 클립) | bg/cc1/stock/PASSBOOK2 (visual) | shotcmp/r44.jpg | (새 심사관) |
+| 6. 세금 한 장 | 다른 배당이 있으면 더 일찍 (81·82) | [실사] DRAWER 다른 구간 | #18 | Pexels(같은 클립) | bg/cc1/stock/6550666.mp4 (DRAWER) | shotcmp/r43.jpg | (새 심사관) |
+| 6. 세금 한 장 | ISA·IRP는 계산 밖 (83~85) | [실사] PASSBOOK2 다른 구간 | #18 | Pexels(같은 클립) | bg/cc1/stock/6197178.mp4 (PASSBOOK2) | shotcmp/r44.jpg | (새 심사관) |
 | 7. 함정 | 장 카드 (86) | 장 카드 '7장' | #8 | Remotion ask | work/video/src/KOSPI1.tsx | shotcmp/r45.jpg | (새 심사관) |
-| 7. 함정 | 어디서 자르느냐 (87) | [실사] FOG 다른 구간 | #24 | Pexels(같은 클립) | bg/cc1/stock/FOG (visual) | shotcmp/r46.jpg | (새 심사관) |
+| 7. 함정 | 어디서 자르느냐 (87) | [실사] FOG 다른 구간 | #24 | Pexels(같은 클립) | bg/cc1/stock/34942921.mp4 (FOG) | shotcmp/r46.jpg | (새 심사관) |
 | 7. 함정 | 끝날 6개 (88~92) | [움직이는 판] 끝날 6줄 — 말한 순서(25년 12월→26년 11월→26년 6월→24년 12월)대로 '?'에서 양쪽 막대가 자라며 열림·앞선 쪽 손 체크, 92에 남은 두 줄·'커버드콜 4 · 일반형 2' | #3 | Remotion EndFlip(motion, work/video/src/motion/EndFlip.tsx) | motion_preview/cc1_ends.mp4 | shotcmp/r47.jpg | 나음(새 심사관 3명 Agent 7·7·6, 11/26 motion — 고친 뒤 판) |
-| 7. 함정 | 한 장면일 뿐 (92·93) | [실사] FOG 다른 구간 | #24 | Pexels(같은 클립) | bg/cc1/stock/FOG (visual) | shotcmp/r48.jpg | (새 심사관) |
+| 7. 함정 | 한 장면일 뿐 (92·93) | [실사] FOG 다른 구간 | #24 | Pexels(같은 클립) | bg/cc1/stock/34942921.mp4 (FOG) | shotcmp/r48.jpg | (새 심사관) |
 | 7. 함정 | 포털 차트 vs 실제 종가 (94~97) | [판] 같은 날 가격 두 개 '차트 1만 1,520원'·'종가 1만 2,605원' 사이 '?' | #13·#11 | Python 판(cc1boards.py) | bg/cc1/board/cc1_chart2.png | shotcmp/r49.jpg | (새 심사관) |
-| 7. 함정 | 한쪽으로만 세기 (98·99) | [실사] LEDGER 다른 구간 | #19 | Pexels(같은 클립) | bg/cc1/stock/LEDGER (visual) | shotcmp/r50.jpg | (새 심사관) |
-| 7. 함정 | 액티브라 바뀔 수 있음 (100·101) | [실사] ORCHARD 다른 구간 | #15 | Pexels(같은 클립) | bg/cc1/stock/ORCHARD (visual) | shotcmp/r51.jpg | (새 심사관) |
+| 7. 함정 | 한쪽으로만 세기 (98·99) | [실사] LEDGER 다른 구간 | #19 | Pexels(같은 클립) | bg/cc1/stock/5466768.mp4 (LEDGER) | shotcmp/r50.jpg | (새 심사관) |
+| 7. 함정 | 액티브라 바뀔 수 있음 (100·101) | [실사] ORCHARD 다른 구간 | #15 | Pexels(같은 클립) | bg/cc1/stock/19666849.mp4 (ORCHARD) | shotcmp/r51.jpg | (새 심사관) |
 | 7. 함정 | 총보수 0.19% vs 0.01% (102~104) | [판] 두 칸 총보수, '이미 가격에 빠짐' 한 줄 | #8 | Python 판(cc1boards.py) | bg/cc1/board/cc1_fee.png | shotcmp/r52.jpg | (새 심사관) |
 | 8. 끝 | 장 카드 (105) | 장 카드 '8장 정리' | #6 | Remotion ask | work/video/src/KOSPI1.tsx | shotcmp/r53.jpg | (새 심사관) |
 | 8. 끝 | 정리 표 (106~110) | [표] 다섯 줄 정리 — 1년·같은 시작일·매달·낙폭·끝날 4:2 | #6 | Python 판(cc1boards.py) | bg/cc1/board/cc1_summary.png | shotcmp/r54.jpg | (새 심사관) |
-| 8. 끝 | 받는 돈과 남는 돈 (111) | [실사] 창가 식탁 통장 두 권 위로 오후 햇빛, 3초 이상 숨 | #23 | Pexels 'window sunlight table notebook' | bg/cc1/stock/WINDOW (visual) | shotcmp/r55.jpg | (새 심사관) |
-| 8. 끝 | 계산기 안내·구독 (112·113) | [실사] LEDGER 다른 구간 | #19 | Pexels(같은 클립) | bg/cc1/stock/LEDGER (visual) | shotcmp/r56.jpg | (새 심사관) |
+| 8. 끝 | 받는 돈과 남는 돈 (111) | [실사] 창가 식탁 통장 두 권 위로 오후 햇빛, 3초 이상 숨 | #23 | Pexels 'window sunlight table notebook' | bg/cc1/stock/6374411.mp4 (WINDOW) | shotcmp/r55.jpg | (새 심사관) |
+| 8. 끝 | 계산기 안내·구독 (112·113) | [실사] LEDGER 다른 구간 | #19 | Pexels(같은 클립) | bg/cc1/stock/5466768.mp4 (LEDGER) | shotcmp/r56.jpg | (새 심사관) |
 | 8. 끝 | 다음 편 안내 + 최종 화면 20초 (114) | WINDOW 끝 그림 위 천천히 다가가기 | #23 | ffmpeg 끝 프레임 | bg/cc1/stock/window_last.jpg | shotcmp/r57.jpg | (새 심사관) |

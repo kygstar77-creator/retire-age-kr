@@ -84,7 +84,7 @@
 | 6. 세금 한 장 | ISA·IRP는 계산 밖 (83~85) | [실사] PASSBOOK2 다른 구간 | #18 | Pexels(같은 클립) | bg/cc1/stock/PASSBOOK2 (visual) | shotcmp/r44.jpg | (새 심사관) |
 | 7. 함정 | 장 카드 (86) | 장 카드 '7장' | #8 | Remotion ask | work/video/src/KOSPI1.tsx | shotcmp/r45.jpg | (새 심사관) |
 | 7. 함정 | 어디서 자르느냐 (87) | [실사] FOG 다른 구간 | #24 | Pexels(같은 클립) | bg/cc1/stock/FOG (visual) | shotcmp/r46.jpg | (새 심사관) |
-| 7. 함정 | 끝날 6개 (88~91) | [판] 끝날 6줄 — 날짜마다 '앞선 쪽' 칸이 차례로 열림 | #3 | Python 판(cc1boards.py) | bg/cc1/board/cc1_ends6.png | shotcmp/r47.jpg | (새 심사관) |
+| 7. 함정 | 끝날 6개 (88~92) | [움직이는 판] 끝날 6줄 — 말한 순서(25년 12월→26년 11월→26년 6월→24년 12월)대로 '?'에서 양쪽 막대가 자라며 열림·앞선 쪽 손 체크, 92에 남은 두 줄·'커버드콜 4 · 일반형 2' | #3 | Remotion EndFlip(motion, work/video/src/motion/EndFlip.tsx) | motion_preview/cc1_ends.mp4 | shotcmp/r47.jpg | 나음(새 심사관 3명 Agent 7·7·6, 11/26 motion — 고친 뒤 판) |
 | 7. 함정 | 한 장면일 뿐 (92·93) | [실사] FOG 다른 구간 | #24 | Pexels(같은 클립) | bg/cc1/stock/FOG (visual) | shotcmp/r48.jpg | (새 심사관) |
 | 7. 함정 | 포털 차트 vs 실제 종가 (94~97) | [판] 같은 날 가격 두 개 '차트 1만 1,520원'·'종가 1만 2,605원' 사이 '?' | #13·#11 | Python 판(cc1boards.py) | bg/cc1/board/cc1_chart2.png | shotcmp/r49.jpg | (새 심사관) |
 | 7. 함정 | 한쪽으로만 세기 (98·99) | [실사] LEDGER 다른 구간 | #19 | Pexels(같은 클립) | bg/cc1/stock/LEDGER (visual) | shotcmp/r50.jpg | (새 심사관) |

@@ -505,3 +505,4 @@
 - 2026-11-25 firemap-write: 비축 주제를 고를 때 kwvol 후보 이름으로 우리 카페 제목(work/research/*/pkg/title.txt)을 먼저 찾는다 — 광교를 짓고 나서야 selfcheck가 #449(6일 전)를 잡아 40분을 버렸다. 찾을 단어 목록에 후보 지역을 빠뜨리지 않는다.
 
 - 2026-11-26 PD: Remotion 'No frame found'가 컷마다 다르게 나면 먼저 C: 남은 칸을 본다 — 끊긴 렌더의 remotion 임시 폴더(%TEMP%·C:/fm_render_tmp, 하나에 public 11.7GB)가 52개 쌓여 97%였음. 지우니 15→50GB. public이 11.7GB라 토막을 잘게 나눌수록 복사 시간(토막당 ~25분)이 렌더보다 길다 → 3토막.
+- (2026-11-26 motion) 회차 첫 묶음에 또 `git status --short`를 넣었다(motion 일곱 번째, 이번엔 끝남). 그리고 남의 props 스크립트(sq1props.py)를 `--help`로 불렀더니 인자를 안 받는 스크립트라 그대로 돌아 sq1.json을 다시 씀(같은 내용, 무해) — 처음 보는 py는 head로 쓰는 법부터 읽는다.

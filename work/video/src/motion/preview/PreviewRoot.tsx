@@ -5,6 +5,7 @@ import {ZoomOutOpen, ZoomOutOpenProps} from '../ZoomOutOpen';
 import type {RScene} from '../../R1';
 import {DealDots, type DealDotsProps} from '../DealDots';
 import {GapBars, type GapBarsProps} from '../GapBars';
+import {EndFlip, type EndFlipProps} from '../EndFlip';
 import {ReverseAsk, ReverseAskProps} from '../ReverseAsk';
 import {BuyDateOpen, BuyDateOpenProps} from '../BuyDateOpen';
 import {WaterfallPieces, WaterfallPiecesProps} from '../WaterfallPieces';
@@ -193,6 +194,8 @@ const CapFitTest: React.FC<{title: string; source: string; lines: TallyLine[]}> 
 type P20 = {deals: V3S<Omit<DealDotsProps, 'beats'>>};
 type P21 = {gap: V3S<Omit<GapBarsProps, 'beats'>>};
 const H6Gap: React.FC<P21> = ({gap}) => v3Frame(gap, <GapBars {...gap.data} beats={tallyStarts(gap.lines)} />);
+type P22 = {ends: V3S<Omit<EndFlipProps, 'beats'>>};
+const CC1Ends: React.FC<P22> = ({ends}) => v3Frame(ends, <EndFlip {...ends.data} beats={tallyStarts(ends.lines)} />);
 const H6Deals: React.FC<P20> = ({deals}) => v3Frame(deals, <DealDots {...deals.data} beats={tallyStarts(deals.lines)} />);
 
 export const PreviewRoot: React.FC = () => (
@@ -260,6 +263,9 @@ export const PreviewRoot: React.FC = () => (
   <Composition id="H6Gap" component={H6Gap as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P21).gap.frames})} />
+  <Composition id="CC1Ends" component={CC1Ends as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P22).ends.frames})} />
   <Composition id="CapFitTest" component={CapFitTest as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => ({durationInFrames: ((props as unknown as {lines: TallyLine[]}).lines).reduce((a, l) => a + l.frames, 0)})} />

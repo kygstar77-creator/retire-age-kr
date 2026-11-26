@@ -171,3 +171,9 @@
 - ① 0선 + 막대가 위→아래로 자람 ② 'N곳' 찍기 ③ 내림·오름 색 갈라짐 + 수 ④ 가운데 값 세로 점선·밑줄 ⑤ 그 단지 주황·끝 동그라미·순위·거래 건수 ⑥ 그 단지 막대 중 가운데 값 몫을 회색으로 덮어 넘친 몫만 주황.
 - 규칙: 막대 두께 18px 이하(bgcheck ⑥ 852폭 16px 문턱) · 눈금은 글자만, 세로 눈금 선 없음 · 이름표는 주인공·가운데 둘만 · 다가가기 크게 하지 않음(제목·출처 줄에 닿음) · 주황 위 주황 화살은 안 보임.
 - 예: research/longform/ep/H-6/motion_preview/h6gapprops.py(calc3_out assert) · h6gaprender.py. 반복 방지: seed로 색 갈라지는 순서.
+
+## 끝날 바꾸면 뒤집힘(EndFlip) 쓰는 법 — '기간을 어디서 자르느냐' 같은 줄별 짝 비교(2026-11-26, CC-1 7장)
+1. 재료 JSON: `seed·names[A,B]·rows[{date,a,b}](시간순)·order(말한 순서의 줄 번호)·restAt·tallyAt(박자, 소수=그 줄 안 비율)·tallyText·unit·max·end`. 예: `research/longform/ep/CC-1/motion_preview/endflipprops.py`(calc 출력·대본 자막 assert).
+2. 미리보기: `py -3.12 research/longform/ep/CC-1/motion_preview/endflip_render.py`(작은 public — 글꼴·종이만 복사, Root CC1Ends) → mp4·스틸·motioncheck·U5.
+3. 규칙: 줄은 말한 순서로 열림(시간순 아님) · 앞선 쪽 = 진한 막대+체크, 진 쪽 = 옅은 막대 · 주황은 지금 줄 체크, 끝엔 세기 글자 하나 · 세기는 그 말이 나오는 줄 박자에(앞 줄 자막과 겹치면 다른 뜻으로 읽힘) · 0에 가까운 값도 막대 6px.
+4. 정지 방지: 늘 1.00→1.03 + 줄 묶음이 지금 줄 쪽으로 아래 방향 0~34px 옮겨 감(이것 없으면 막대 한 줄만으론 U5 4% 못 넘어 7초). 머리글은 제자리. 편마다 seed로 가운데 칸 폭·막대 두께·옆 흐름 방향.

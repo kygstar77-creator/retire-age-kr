@@ -6,3 +6,4 @@
 - 미리보기(still, 렌더 없음): motion_preview/strip_chapter.png · 진입점 work/video/src/strip_sq1_index.ts(공용 Root 안 건드림). 화면 글자는 장 제목·대본 58행 한 줄뿐, 숫자 0.
 - PD 할 일: SQ-1 편 tsx 맨 위에 <ChapterStrip chapters starts total=8 side='right' topic …/>, 실사 장면 dark. TallyFrame chapter 칸은 비운다. 0장 여는 말엔 띠 없음.
 - 숫자 밀도(B-59 안 넣음): 3장 다섯 줄 표는 '한 줄씩 열림'이 대본에 있음 — 한 판이 14초 넘게 서면 줄 열림 사이에 다가가기(1.00→1.03)로 U5 8초 지킴.
+- 11/26 motion: 3장 다섯 줄 표 포함 판 16장 U5 시뮬(PIL, inset·zoom 그대로) 최장 4.0초·끝 사진 2.0초 → 움직임 더 넣지 않음. '한 줄씩 열림'은 판 PNG가 한 장이라 없음(visual 판 판정 '나음' 그대로).

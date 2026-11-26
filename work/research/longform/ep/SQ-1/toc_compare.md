@@ -60,9 +60,14 @@
 | 0 여는 말 | 0:00 | 고정 첫 줄 + "1억을 나스닥100에만, SCHD에만, 반반 넣었다면 15년 뒤 얼마였을까요?" → 13.56억·6.77억·10.10억(달러 기준, 분배 재투자) · 기간을 바꾸면 답이 바뀐다는 약속 한 줄 | https://www.youtube.com/watch?v=MPooDiIP2N4 (첫 장 '가장 많이 받은 질문' → 백테스트 결과, 4.31배) · kwvol 나스닥100 281,800 |
 | 1 나스닥100은 어떻게 갈아 끼우나 | 0:50 | 12월 정기 교체(75위 먼저·101~125위 조건부)·빠른 편입(상위 40 안)·비중 상한(24%→20%, 4.5% 넘는 합 48%→40%) · 지금 상위 몇 종목 무게 | https://www.youtube.com/watch?v=IahaFGIdxhE (00:26, 10.07배) · https://www.youtube.com/watch?v=Qi3oWAmT9N8 (5:00 규칙 변경) |
 | 2 SCHD는 무엇을 담나 | 2:30 | 배당 10년 연속 → 네 지표 순위 상위 100 · 3월 교체 · 한 종목 4%·한 업종 25% · 보수 0.06% · 두 지수 교체 달이 다름 | https://www.youtube.com/watch?v=_G3C_oVh2SU (02:20 SCHD 구조, 12.37배) |
-| 3 섞는 비율별 지난 15년·5년 | 4:00 | 100/70/50/30/0 × 15년 끝값·연평균·최대 낙폭 · 최근 5년은 반반 1.82억 vs 나스닥100만 1.84억 · 2022년 한 해 값 · 매달 100만원씩 15년이면 5.3억·7.1억·8.8억(calc_dca_out_1120) | https://www.youtube.com/watch?v=MPooDiIP2N4&t=176 (10년 백테스트) · https://www.youtube.com/watch?v=AKV7ZfGORDg&t=660 (5:5 시뮬레이션) |
+| 3 섞는 비율별 지난 15년과 5년 | 4:00 | 100/70/50/30/0 × 15년 끝값·연평균·최대 낙폭 · 최근 5년은 반반 1.82억 vs 나스닥100만 1.84억 · 2022년 한 해 값 · 매달 100만원씩 15년이면 5.3억·7.1억·8.8억(calc_dca_out_1120) | https://www.youtube.com/watch?v=MPooDiIP2N4&t=176 (10년 백테스트) · https://www.youtube.com/watch?v=AKV7ZfGORDg&t=660 (5:5 시뮬레이션) |
 | 4 원화로 다시 보면 | 6:30 | 15년 환율 1,104.5→1,335.3원 · 원화 끝값 16.39억·12.21억·8.18억 · 원화 최대 낙폭 나스닥100만 -27.9% vs 반반 -13.6% | https://www.youtube.com/watch?v=AKV7ZfGORDg&t=48 (원화 체감 괴리) · https://www.youtube.com/watch?v=ZYatUkqCZ8M&t=600 (환율이 수익을 깎음) |
 | 5 매달 들어오는 돈 | 8:00 | 최근 분배 4회 ÷ 값: SCHD 2.95%·QQQ 0.45% → 1억이면 세전 연 약 295만·170만·45만원 · 국내 상장은 월·분기 분배(S8·S9) | https://www.youtube.com/watch?v=XpbnvNMADlg (00:34 필요한 금액) · https://www.youtube.com/watch?v=CB6ibr4KEcc (분배금 실제, 4.26배) |
-| 6 어느 계좌로 사나 | 9:30 | 국내 상장: 분배·매매차익 모두 배당소득 14%(+지방세 확인 중)·연 2,000만원 넘으면 종합과세 / 해외 직투: 양도 20%·연 250만원 공제 · 같은 1억 세후 차이(calc_tax, 다음 회차) | https://www.youtube.com/watch?v=IahaFGIdxhE&t=686 (계좌 고르는 법) · https://www.youtube.com/watch?v=rqm4TI-df28&t=567 (ISA) |
+| 6 직접 사나, 국내 상장으로 사나 | 9:30 | 국내 상장: 분배·매매차익 모두 배당소득 14%(+지방세 확인 중)·연 2,000만원 넘으면 종합과세 / 해외 직투: 양도 20%·연 250만원 공제 · 같은 1억 세후 차이(calc_tax, 다음 회차) | https://www.youtube.com/watch?v=IahaFGIdxhE&t=686 (계좌 고르는 법) · https://www.youtube.com/watch?v=rqm4TI-df28&t=567 (ISA) |
 | 7 함정 | 11:00 | 지난 값 ≠ 앞날(기간 자르기) · 'QQQ+SCHD 합친 ETF'라는 이름의 실체 · 상위 몇 종목 쏠림 | https://www.youtube.com/watch?v=3frDPEtcfTk&t=502 (조심할 한 가지) · https://www.youtube.com/watch?v=XpbnvNMADlg&t=558 |
 | 8 끝 | 12:00 | 위 '끝맺음 우리' 그대로 | https://www.youtube.com/watch?v=D4n2AjX04N0&t=728 |
+
+# 경쟁 비교 3줄 (PD 2026-11-26 — review.md '경쟁보다 나은 점'·toc 표본 16편에서)
+- 경쟁이 잘하는 것: 대담·사람 얼굴로 친근하게, '지금 봐야 할 이유'(그 주 시황)를 첫 30초에 걸고, 섞기(백테스트)·계좌·환율을 한 편에 묶어 말한다(16편 중 섞기 5·계좌 7·환율 4).
+- 우리가 따라갈 것: 질문으로 열고 답 숫자를 첫 15초 안에, 장마다 '그래서 무엇을 보나' 한 줄, 끝에 정리 표 한 장.
+- 우리가 다르게 할 것: 예상 수익률·전망 없이 지난 값만, 비율 다섯 칸 × 15년·5년 × 달러·원화·세후를 원자료(QQQ·SCHD 수정 종가·ECOS·법 조문)로 직접 셈 — 경쟁 16편 중 0편.

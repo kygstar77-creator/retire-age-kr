@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 매매·전월세 실거래 API(인천 연수구 28185 송도동) 2026-07~11 계약 전용 80~86㎡, 단지 39곳 순수전세 가운데 값 ÷ 매매 가운데 값, calc_out_1126.txt §B — 파이어맵 직접 계산",
+ "made_at": "2026-11-26",
+ "by": "research/jeonse38_1127/mkimg.py",
+ "out": "img/00.png",
+ "topic": "송도 84㎡ 전세가율",
+ "num": "가운데 57%",
+ "topic_px": 54,
+ "num_px": 40,
+ "follows": "경쟁 1 realbestlog/224427924941(입주 시기별 표)·2 songdo-life/224474951053 실거래 표·차트"
+}

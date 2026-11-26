@@ -23,8 +23,8 @@ YTD return at NAV
 as of 10/31/2026
 15.35%
 SEC 30-day yield
-as of 11/20/2026
-1.57%
+as of 11/24/2026
+1.56%
 
 Instruction: Change of selection promptly shifts the focus to a matching heading further down, on the same page.
 
@@ -75,9 +75,9 @@ Exchange
 NYSE ARCA
 Inception date
 04/24/2003
-Market value (as of 11/20/2026)
-$98.53B
-# of holdings (as of 11/23/2026)
+Market value (as of 11/24/2026)
+$100.7B
+# of holdings (as of 11/24/2026)
 505
 Management fee
 0.20%
@@ -238,7 +238,7 @@ An investor cannot invest directly in an index. The results assume that no cash 
 
 Portfolio
 Holdings
-as of 11/20/2026
+as of 11/24/2026
 Export data
 holdings.
 Ticker
@@ -256,101 +256,71 @@ CUSIP
 Market value
 
 
-PTC
-	
-PTC Inc
-	
-1,578,927.00
-	
-0.31%
-	
-Common Stock
-	
-69370C100
-	
-$308,048,657.70
-
-
 MRNA
 	
 Moderna Inc
 	
-1,500,504.00
+1,487,168.00
 	
-0.30%
+0.34%
 	
 Common Stock
 	
 60770K107
 	
-$292,598,280
+$338,152,259.84
+
+
+PTC
+	
+PTC Inc
+	
+1,564,638.00
+	
+0.30%
+	
+Common Stock
+	
+69370C100
+	
+$306,669,048
 
 
 IDXX
 	
 IDEXX Laboratories Inc
 	
-395,158.00
+391,694.00
 	
-0.27%
+0.28%
 	
 Common Stock
 	
 45168D104
 	
-$267,209,791.18
+$278,917,463.52
 
 
 MTD
 	
 Mettler-Toledo International Inc
 	
-157,798.00
+156,499.00
 	
-0.27%
+0.26%
 	
 Common Stock
 	
 592688105
 	
-$263,030,330.24
-
-
-HAS
-	
-Hasbro Inc
-	
-2,287,321.00
-	
-0.26%
-	
-Common Stock
-	
-418056107
-	
-$257,117,753.61
-
-
-TSN
-	
-Tyson Foods Inc
-	
-3,933,579.00
-	
-0.26%
-	
-Common Stock
-	
-902494103
-	
-$256,154,664.48
+$266,674,296
 
 
 ACN
 	
 Accenture PLC
 	
-1,157,803.00
+1,147,411.00
 	
 0.26%
 	
@@ -358,52 +328,82 @@ Common Stock
 	
 G1151C101
 	
-$256,071,289.51
+$266,566,523.52
+
+
+DLTR
+	
+Dollar Tree Inc
+	
+1,703,571.00
+	
+0.26%
+	
+Common Stock
+	
+256746108
+	
+$263,457,255.15
+
+
+BIIB
+	
+Biogen Inc
+	
+957,234.00
+	
+0.26%
+	
+Common Stock
+	
+09062X103
+	
+$257,601,241.74
+
+
+HAS
+	
+Hasbro Inc
+	
+2,266,537.00
+	
+0.25%
+	
+Common Stock
+	
+418056107
+	
+$254,396,112.88
+
+
+A
+	
+Agilent Technologies Inc
+	
+1,392,963.00
+	
+0.25%
+	
+Common Stock
+	
+00846U101
+	
+$255,636,569.76
 
 
 GEHC
 	
 GE HealthCare Technologies Inc
 	
-3,122,936.00
+3,094,358.00
 	
-0.26%
+0.25%
 	
 Common Stock
 	
 36266G107
 	
-$251,833,559.04
-
-
-VLTO
-	
-Veralto Corp
-	
-2,148,767.00
-	
-0.25%
-	
-Common Stock
-	
-92338C103
-	
-$250,610,695.21
-
-
-MAR
-	
-Marriott International Inc/MD
-	
-613,815.00
-	
-0.25%
-	
-Common Stock
-	
-571903202
-	
-$249,601,731.60
+$255,346,422.16
 Showing 1 to 10 of 508
 View all
 
@@ -416,36 +416,36 @@ Prices
 Fund prices
 Price history
 Fund prices
-as of 11/23/2026
+as of 11/25/2026
 Bid/Ask prem/disc
-$0.16
+$0.06
 Bid/Ask prem/disc
-0.08%
+0.03%
 Bid/Ask midpoint
-$207.56
-Open (as of 11/23/2026)
-$212.33
+$213.97
+Open (as of 11/25/2026)
+$211.81
 Shares outstanding
-475.09M
+470.76M
 NAV at market close
-$207.40
+$213.91
 30-Day avg trading volume
-11,011,207
+11,788,125
 Previous Day trading volume
-12,679,015
+13,706,222
 Median bid/ask spread
 0.00%
 Closing price
-$207.44
+$213.96
 Yields & Distributions
 Yields
-as of 11/20/2026
+as of 11/24/2026
 30 day SEC yield
-1.57%
+1.56%
 12 month distribution rate
-1.53%
-Distribution rate
-1.53%
+1.49%
+Distribution rate (as of 11/25/2026)
+1.49%
 30 day SEC unsubsidized yield
 --
 Distributions

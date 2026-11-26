@@ -15,17 +15,17 @@ SRC = f'야후 파이낸스 일별 종가·분배({ES}까지) · 운용사 상�
 R = [('KODEX', 1.3748), ('TIGER', 1.3681), ('ACE', 1.3653), ('SOL', 1.3645)]
 def won(v): m = round(v * 1e4); return f'{m//10000}억\n{m%10000:,}만'
 vals = [v for _, v in R]; gap = round((max(vals) - min(vals)) * 1e4)
-fig = plt.figure(figsize=(9, 9), dpi=100); fig.patch.set_facecolor('#0F2A44')
+fig = plt.figure(figsize=(9, 9), dpi=100); fig.patch.set_facecolor('#0E4A43')
 fig.text(0.07, 0.86, '미국배당다우존스 ETF 4종', fontproperties=Bs(50), color='white')
 fig.text(0.07, 0.785, '2024년 8월 13일 1억원씩 넣었다면', fontproperties=Bs(32), color='#FED7AA')
-ax = fig.add_axes([0.06, 0.17, 0.88, 0.55]); ax.set_facecolor('#0F2A44')
+ax = fig.add_axes([0.06, 0.17, 0.88, 0.55]); ax.set_facecolor('#0E4A43')
 ax.bar(range(4), vals, color=['#FB923C', '#94A3B8', '#94A3B8', '#94A3B8'], width=0.62)
 for i, (n, v) in enumerate(R):
     ax.text(i, v + 0.03, won(v), ha='center', va='bottom', fontproperties=Bs(28 if i else 30), color='white', linespacing=1.1)
     ax.text(i, -0.03, n, ha='center', va='top', fontproperties=Bs(26), color='white')
 ax.set_ylim(-0.2, 1.75); ax.set_xlim(-0.6, 3.6); ax.axis('off')
 fig.text(0.07, 0.1, f'네 곳 차이 {gap:,}만원', fontproperties=Bs(30), color='white')
-fig.text(0.07, 0.045, f'{ES} 종가 · 받은 분배금으로 다시 산 값 · 세금 떼기 전', fontsize=17, color='#FED7AA')
+fig.text(0.07, 0.045, f'{ES} 종가 · 받은 분배금으로 더 산 값 · 세금 떼기 전', fontsize=17, color='#FED7AA')
 fig.savefig('pkg/img/00.png', dpi=100, facecolor=fig.get_facecolor()); plt.close(fig)
 json.dump({'type': 'chart', 'source': '야후 파이낸스 chart API 402970·446720·458730·489250.KS 일별 종가·분배 events(11/26 받음)로 2024-08-13~2026-11-25 총수익 직접 계산, calc_out.txt',
            'made_at': str(D.date.today()), 'by': 'research/divdj1127/mkimg.py', 'out': 'img/00.png', 'topic': '미국배당다우존스 ETF 4종',

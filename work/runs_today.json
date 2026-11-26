@@ -55,6 +55,19 @@
     "url": "https://cafe.naver.com/firemap/489"
    },
    "note": "12:40 칸 rent100_1126 · 첫 발행 12:36 직전 카페 57분 전이라 120분 규칙에 막힘 → 우회 없이 13:33 백그라운드 재시도 · verify OK 1907/1907자·사진 3/3 · 경고: D-17 본문 1907자>1500·c03↔c05 84㎡ 되풀이 · 확인 창 8초 시간초과(발행 정상) · 11/27 18:40 칸 divdj1127 패키지·그림 3장·readcheck 0·aitell spoken·selfcheck 사실 0·crosscheck 사실 3 모두 반영(말투 검사는 시간초과, selfcheck 말투 0으로 대신) · 남은 관문: research 질문 칸·이해 시험·bench·서명 · 막힘: #485 정정 editor_ok 없음, H-6 짝 글 미착수 · 개선: playbook에 120분 규칙 걸리면 백그라운드 재예약(우회 금지) 교훈"
+  },
+  {
+   "hour": 15,
+   "ts": "16:32",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "S&P500 동일가중 ETF, 오래 들면 이겼을까?",
+    "url": "https://cafe.naver.com/firemap/490"
+   },
+   "note": "16:10 칸 rsp1124 발행(16:3x, 발행기 대기 뒤) verify OK 2026/2026자·사진 3/3 · 올리기 전 확인: 야후 RSP·SPY·488500·360750, 인베스코, SSGA 보유 xlsx(11/24자), 미래에셋 2곳 다시 받음(출처 7곳) — 숫자 7곳 갱신, readcheck 0·selfcheck 사실 0·aitell 2.2·spoken 통과, 재서명 auto f6b4ce77 · 교차검증은 11/22 묶음 때 crosscheck 끝(이번 회차 숫자 갱신만) · 블로그 없음(하루 상한·블로그 대기 없음 방침) · divdj1127(11/27 18:40) 관문 통과 gates_ok: 이해 시험 2차 6명·bench 사진 비교·compare·표지 청록·계산기 줄, 서명 aea7dd85 · 개선: 표지를 같은 날 나간 글 옆에 두고 꼴이 겹치는지 서명 전에 본다(교본에 적음) · 0-a 일감표(selfloop)는 시간 때문에 돌리지 않음"
   }
  ]
 }

@@ -72,6 +72,14 @@
 | 상위 8편 모두 이번 달(11월) 글 | 8/8 (11.22·1일 전·2일 전·2주 전) | toprank.txt(네이버 블로그 탭 11/22) https://blog.naver.com/annalife_/224486045247 |
 
 # 올리기 전 확인
+- 2026-11-26 15:2x firemap-write(발행 날) — 대조 출처 전부 다시 엶
+- 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/RSP · https://query1.finance.yahoo.com/v8/finance/chart/SPY · https://www.invesco.com/us/en/etf/sp-500-equal-weight-rsp.html · https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy · https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7488500000 · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7360750004 · https://blog.naver.com/annalife_/224486045247 (모두 11/26)
+- 기준일: 2026-11-25 종가(미국) · 국내 기준가격 2026.11.26 · SPY 보유 종목 2026-11-24
+- 바뀐 것: 기준일 11/23→11/25 · 상장 뒤 연평균 RSP 11.1→11.2%·SPY 11.1% 그대로(누적 RSP +1114%가 SPY +1095%를 다시 앞섬) · 올해 RSP 12.4→14.0%·SPY 6.7→5.9% · 1년 보유 시작일 5,679→5,681(비율 44% 그대로) · 국내 1년 488500 4.96→5.77%·360750 -2.80→-1.21% · SPY 상위 10개 36.4→37.0%(11/24자) · 보수·리밸런싱·하락장·연도별·보유 기간 비율 그대로
+- 새로 찾은 것: 이틀 새 23년 누적 앞선 쪽이 또 바뀜(11/20 RSP·11/23 SPY·11/25 RSP) — 본문은 '거의 같았다'로 두어 그대로 맞음
+- 조사 뒤 공표: data/release_calendar.json — 가격 매일, RSP·SPY 12월 분배(12월 셋째 주 전후) · 488500 분기 리밸런싱 12월
+
+# 올리기 전 확인(11/24 기록)
 - 2026-11-24 15:4x firemap-write(발행 날) — 대조 출처 전부 다시 엶
 - 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/RSP · https://query1.finance.yahoo.com/v8/finance/chart/SPY · https://www.invesco.com/us/en/etf/sp-500-equal-weight-rsp.html · https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-sp-500-etf-trust-spy · https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7488500000 · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7360750004 · https://blog.naver.com/annalife_/224486045247 (모두 11/24)
 - 기준일: 2026-11-23 종가(미국) · 국내 기준가격 2026.11.24 · SPY 보유 종목 2026-11-20

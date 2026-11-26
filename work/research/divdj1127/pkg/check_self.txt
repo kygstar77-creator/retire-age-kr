@@ -1,5 +1,5 @@
 # 자체 검증 (제미나이 할당량 없을 때 쓰는 대체 검증)
-# 묶음: divdj1127 · 종류: cafe · 문장 55개 · 기준 출처: cafe_style/benchmark_2026-09-23.md
+# 묶음: divdj1127 · 종류: cafe · 문장 58개 · 기준 출처: cafe_style/benchmark_2026-09-23.md
 
 [중복] 전체 — "미국배당다우존스" 이미 씀 ← SCHD와 국내 미국배당다우존스 같이 사면 분산될까? https://cafe.naver.com/firemap/448 (제목·첫 조각에 있음) — 각도가 다른지 보고, 같으면 hold.txt
 [중복] 전체 — "미국배당다우존스" 이미 씀 ← TIGER 미국배당다우존스 vs SCHD 수익 비교 https://cafe.naver.com/firemap/477 (제목·첫 조각에 있음) — 각도가 다른지 보고, 같으면 hold.txt

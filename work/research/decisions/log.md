@@ -4685,3 +4685,4 @@
 2026-11-26 08:55 · firemap-youtube-loop · SQ-1 4장 머리를 실사(r13 못함)에서 sq1_fx 판으로, FX 실사는 가운데 자리(새 심사관 J 나음) — shot_check 통과 · 6장과 같은 근거(경쟁 #13이 환율 선 판), 코드 배치는 이미 판 먼저
 2026-11-26 08:55 · firemap-youtube-loop · CC-1 대본 '오늘 숫자' 2곳 → '여기 나온 숫자' · 렌더 전이라 두 줄만 다시 녹음하면 됨(롱폼 '오늘'은 날짜 말, 11/24 style-guide)
 2026-11-26 09:22 · visual · 공용 썸네일 기본값 visual/thumb_base.py(테두리 약 10px·덮개 60·밝기 감마) · SQ-1 1안 sq1_b2(밝기+모니터에 우리 선) 2:0·CC-1 1안 cc1_b1(밝기만) 2:0, 밝기 57·54→82·82 · benchmark-loop 11/26 지시 3, C-21 · 완료: 지시 3 — visual/bright1126/result.md
+2026-11-26 09:34 · visual · B-58 우리 쇼츠 위 제목 실측 끝 19.3%·글자 줄 약 3%(경쟁 24%·약 5%) → 차이는 글자 크기, 시범안 registry B-58a 후보(값 변경 0) · 완료: benchmark-loop 11/25 B-58 지시 — visual/shorts-titleband-1126/report.md

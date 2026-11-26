@@ -6,6 +6,8 @@
   - 착수: firemap-write 23:12 (운영실장) — 11/27 12:40 TBD 배당 칸(관문 11/27 06:40) 한 편
   - 완료: firemap-write 00:28 — 11/27 12:40 TBD 배당 칸 → jepivix1127 'JEPI 분배금, 변동성 커지면 정말 늘어날까?' 관문 통과·slots gates_ok 적음(editgate auto 2e42b7e3) · 야후 JEPI 분배 77번×^VIX 직접 계산: 직전 달 VIX 20 이상 연 10.3%·15 미만 7.1%(예외 29번 중 5번)·분배 재투자 JEPI 1.9배 vs SPY 2.7배 · 이해 2차 6명·crosscheck 사실 2 반영 · 발행 0 · **발행 회차(11/27 12:10): fetch·calc·mkimg 다시 돌려 11/26 종가 갱신·12월 분배 발표 확인 뒤 재서명**
 - [지시] **firemap-write** ← firemap-meeting 21:36 (법·레드팀 반론 일부 받음) #485 c02 11행 '이번 배당을 받으려면 그 전 거래일인 12월 14일까지 사 두어야 합니다' → '12월 14일까지 가지고 있는 사람이 이번 배당 대상이에요'처럼 사실 문장으로 고쳐 카페 글 수정(naverpost edit 되면, 안 되면 사유 한 줄) · 완료 기준: 공개 글 수정 확인 또는 사유 · 기한 11/26 12:40 회차 · 보고 decisions/log
+  - 착수: firemap-write 09:26
+  - [편집 검수 요청] #485 정정 · 담당 firemap-editor · work/research/editor/2026-11-26/cafe/485.txt (대조표 work/research/_cafe_edit/485/preview.md, 숫자 134개 동일·한 문장만: '그래서 그 전 거래일인 12월 14일까지 가지고 있는 사람이 이번 배당 대상이에요.') · edit-ok 주면 write가 --apply · 공개 글 수정이라 예정 시각 11/26 12:40 회차
 - [지시] **firemap-editor** ← firemap-meeting 21:36 같은 꼴 3번째 방지(#454 11/20·#485 11/25, RULES 301행 있는데 반복) — editgate/aitell에 '까지 사 두어야·사 둬야·사 놓아야' 꼴 막기(예외: '사라는 뜻이 아니라' 면책 문장) · 완료 기준: #485 원문 걸림·지난 카페 글 30편 오탐 0 · 기한 11/26 16:50 회차
 - [지시] **firemap-dispatcher** ← firemap-meeting 21:36 의도: 사용량 바닥 주에 칸 지키기 · 완료 기준 ① 주간 사용량 초기화 시각을 실측(확인 안 함이면 그렇게) dispatch 줄에 ② 95%↑ 동안 투입은 slots.json '24시간 안 관문 기한' 칸 담당만, benchmark-loop·yt-loop 연구 회차는 건너뜀 기록 · 기한 11/25 23:05 회차부터 · 보고 decisions/log
   - 착수: firemap-dispatcher 23:12
@@ -26,6 +28,8 @@
   - 착수: firemap-youtube-loop 12:45
   - 완료: firemap-youtube-loop 12:54 — k1s_recover(iq5YThEKmx0) 설명란 첫 줄 "이번 주 코스피: 11월 24일 종가 5,006.03(한국은행 ECOS, 원자료 한국거래소)" videos.update(f2_coupang 쓰기 토큰) · 예약 그대로 private+publishAt 10:20Z(19:20) · 11/25 종가는 15:30 뒤라 11/24 값 · k1s_split(11/28)은 11/27 종가로 11/28 오전 회차가 넣음(지금 넣으면 낡음)
 - [지시] **firemap-visual-designer** ← benchmark-loop: B-58(위 제목 띠) 우리 값 실측(공개 8편 oar2·렌더 프레임 — sb0 어림 약 2%/줄 vs 경쟁 약 5%/줄, 표본 4/5 고정 띠) + 시범 1편 설계안을 registry 후보 옆에 · 적용은 12/3 판정 뒤 · 기한 11/27
+  - 착수: firemap-visual-designer 09:24
+  - 완료: firemap-visual-designer 09:34 — 우리 공개 8편 oar2 픽셀 실측: 위 제목 시작 12.4~12.7% 고정·**끝 중앙 19.3%**(15.9~20.5)·**글자 줄 높이 중앙 약 3.0%**(jamsil·banpo 1.7%)·색 띠 0/8 · 렌더 2편 0초~끝 고정 확인 → 경쟁(끝 24%·약 5%/줄)과 차이는 끝 높이보다 **글자 크기** · 시범안(글자 약 100px·줄 간격 5.8%·끝 22~24%·그라데이션, 상자 아님) 목업 visual/shorts-titleband-1126/mock_b58.png · registry **B-58a** 후보 줄(값 변경 0, 적용 12/3 판정 뒤) · 근거 visual/shorts-titleband-1126/report.md
 - 결정 필요(사장님): 스튜디오 쇼츠 3편(aW8H·7bBw·jGtx) 제한 표시 확인(로그인, 이월 18회) · '목록 한 장 6~10초' 시범 요청은 이번 판 범위 안 근거 0편이라 내림
 
 ## ★ 정기 회의 11/24(21:29~21:47) — 공개 11/24 **6**(롱폼 KOSPI-1 bBoh8J1Ru_4·카페 #477~#480·쇼츠 de1s_kofin, 22:40 kofinpair1124 예정) · **16:10 칸 빔**(naverpost 72분 멈춤·잠금 → rsp1124 11/26로) · 11월 수익 **0원**(쿠팡 report 12:45) **뒤처짐** · 사이트 사람 15기기·계산 완주 1·쿠팡 0(bot 6기기 뺌) · 근거 meeting/2026-11-24-decisions.md·verify.md·_전략·_사용자·_법·missed-q_전략·missed-q_redteam

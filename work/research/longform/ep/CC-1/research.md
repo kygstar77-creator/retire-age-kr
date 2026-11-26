@@ -103,3 +103,4 @@
 | 분배 기준일(11/24 v1.3 더함) | 매월 15일 | 말 '매달 15일을 기준일로' | S2 https://m.samsungfund.com/etf/product/view.do?id=2ETFH4 |
 | 2천만원 이하 신고(11/24 v1.3 더함) | 분리과세 — 원천징수로 끝 | 말 '2천만원 이하면 따로 신고할 일은 없어요' | S7 https://www.law.go.kr/법령/소득세법/제14조 |
 | TIGER 총보수(11/24 v1.3 더함) | 연 0.01%(2026-11-13) | 말 0.01% · 자막 원값 | SQ-1 S9 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7458730009 |
+| KODEX 1년 최저 종가(11/26 v1.3 심사 때 더함) | 2026-11-20 1만 1,170원(2025-11-20~2026-11-20 중 가장 낮음, 시작 1만 2,605원) | 말 '1년 중 가장 낮던 날'(16행)·'최근 1년 중 가장 낮던 날'(185행 — 2023-06-20부터 센 기간 전체로는 2023-11-20 9,595원이 더 낮아 '최근 1년'을 붙임) · 자막 22행 | S4 https://query1.finance.yahoo.com/v8/finance/chart/441640.KS (raw/441640.KS_chart·recent_20261122.json, 2차) · S1 삼성 product-earning 종가와 0원 차이(cmp_px_out_1122.txt) |

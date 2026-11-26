@@ -352,7 +352,12 @@ def render(ep, extra=(), vid=VID):
     cid = comp_id(ep); low = cid.lower()
     cmd = ['npx', 'remotion', 'render', 'src/index.ts', cid, f'out/{low}.mp4', '--pixel-format=yuv420p', f'--props={low}.json', *extra]
     print('렌더:', ' '.join(cmd))
-    rc = subprocess.call(cmd, cwd=vid, shell=(os.name == 'nt'))
+    from renderlock import render_lock, Busy, BUSY   # 11/26 렌더 한 번에 하나(품질 설정 그대로, 순서만)
+    try:
+        with render_lock(f'{cid} 본편', wait_min=120):
+            rc = subprocess.call(cmd, cwd=vid, shell=(os.name == 'nt'))
+    except Busy as e:
+        print(e); return BUSY
     if rc: return rc
     s_ok, s_lines = screen_gate(ep, vid=vid)
     print(*s_lines, sep='\n')

@@ -7,6 +7,7 @@
   - 완료: firemap-write 00:28 — 11/27 12:40 TBD 배당 칸 → jepivix1127 'JEPI 분배금, 변동성 커지면 정말 늘어날까?' 관문 통과·slots gates_ok 적음(editgate auto 2e42b7e3) · 야후 JEPI 분배 77번×^VIX 직접 계산: 직전 달 VIX 20 이상 연 10.3%·15 미만 7.1%(예외 29번 중 5번)·분배 재투자 JEPI 1.9배 vs SPY 2.7배 · 이해 2차 6명·crosscheck 사실 2 반영 · 발행 0 · **발행 회차(11/27 12:10): fetch·calc·mkimg 다시 돌려 11/26 종가 갱신·12월 분배 발표 확인 뒤 재서명**
 - [지시] **firemap-write** ← firemap-meeting 21:36 (법·레드팀 반론 일부 받음) #485 c02 11행 '이번 배당을 받으려면 그 전 거래일인 12월 14일까지 사 두어야 합니다' → '12월 14일까지 가지고 있는 사람이 이번 배당 대상이에요'처럼 사실 문장으로 고쳐 카페 글 수정(naverpost edit 되면, 안 되면 사유 한 줄) · 완료 기준: 공개 글 수정 확인 또는 사유 · 기한 11/26 12:40 회차 · 보고 decisions/log
   - 착수: firemap-write 09:26
+  - 진행: firemap-write 09:37 — 정정 원고·대조표 끝, editor edit-ok 받으면 --apply(아래 요청 줄)
   - [편집 검수 요청] #485 정정 · 담당 firemap-editor · work/research/editor/2026-11-26/cafe/485.txt (대조표 work/research/_cafe_edit/485/preview.md, 숫자 134개 동일·한 문장만: '그래서 그 전 거래일인 12월 14일까지 가지고 있는 사람이 이번 배당 대상이에요.') · edit-ok 주면 write가 --apply · 공개 글 수정이라 예정 시각 11/26 12:40 회차
 - [지시] **firemap-editor** ← firemap-meeting 21:36 같은 꼴 3번째 방지(#454 11/20·#485 11/25, RULES 301행 있는데 반복) — editgate/aitell에 '까지 사 두어야·사 둬야·사 놓아야' 꼴 막기(예외: '사라는 뜻이 아니라' 면책 문장) · 완료 기준: #485 원문 걸림·지난 카페 글 30편 오탐 0 · 기한 11/26 16:50 회차
 - [지시] **firemap-dispatcher** ← firemap-meeting 21:36 의도: 사용량 바닥 주에 칸 지키기 · 완료 기준 ① 주간 사용량 초기화 시각을 실측(확인 안 함이면 그렇게) dispatch 줄에 ② 95%↑ 동안 투입은 slots.json '24시간 안 관문 기한' 칸 담당만, benchmark-loop·yt-loop 연구 회차는 건너뜀 기록 · 기한 11/25 23:05 회차부터 · 보고 decisions/log

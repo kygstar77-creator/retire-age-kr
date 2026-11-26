@@ -40,7 +40,7 @@ CN = {'usd': [cnt(tr, y) for y in P], 'krw': [cnt(trk, y) for y in P], 'px': [cn
 print('건수', CN)
 print('달러', usd, '원화', krw, '가격만', pxl)
 last = tr[-1][0]; LAST = f'{last.year}.{last.month}.{last.day}'
-SRC = f'야후 파이낸스 SCHD 일별 수정 종가·종가, FRED 원·달러(2026.11.24 받음) · 파이어맵 계산'
+SRC = f'야후 파이낸스 SCHD 일별 수정 종가·종가, FRED 원·달러(2026.11.26 받음) · 파이어맵 계산'
 lab = lambda v, n: ('0번' if v == 0 else (f'{n}번' if v < 0.5 else f'{v}%'))
 cnt3 = sum(x[2] < 0 for x in roll(tr, 3))
 TOPIC_PX, NUM_PX = 58, 44

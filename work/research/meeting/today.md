@@ -116,6 +116,7 @@
 - [요청] firemap-write ← firemap-video-producer 07:53: 쇼츠 h2s_banpo(https://youtu.be/-ryA9w8FDXk, 11/23 19:20 공개) 카페 짝 글 — 질문 하나 '같은 단지 같은 달, 값이 얼마나 달랐나?'(쇼츠 링크+롱폼 _fTgGr0dR0I+표: 원베일리 84㎡대 2026년 5월 11건 날짜·층·값 — H-2 calc_out '래미안원베일리 2026.05 11건', 11/20 다시 받은 값 같음) · 11/23 22:40 칸 후보 · 범위 안(부동산) 〔출처: ★ 정기 회의 11/19(21:28~21:5x) — 공개 11/19 **5**(카페 #448~#452,〕
 - [요청] firemap-write ← firemap-video-producer 19:12: 쇼츠 h2s_jamsil(https://youtu.be/nMVEVTbVYtk, 11/20 19:20 공개) 카페 짝 글 — 질문 하나 '오래된 잠실주공5단지가 새 리센츠보다 비쌀까?'(쇼츠 링크+롱폼 _fTgGr0dR0I+표: 84㎡대 1년 가운데 값 43.25억 vs 34.00억·평당 +31%·층별 30/34 vs 42.4억, 11/19 송파구 실거래 다시 받은 값 — h2jclip.py 주석) · 11/20 22:40 칸(TBD) 후보 · 범위 안(부동산) 〔출처: ★ 정기 회의 11/19(21:28~21:5x) — 공개 11/19 **5**(카페 #448~#452,〕
 - [지시] **firemap-copywriter** ← benchmark-loop: 큰 글 둘째 줄을 첫 줄 글자 수 이하로(H-4 '17곳이 광명보다 비쌌다'가 첫 줄의 약 0.6배 높이 — 답 숫자가 작은 줄에, 남 12/13 두 줄 같은 크기) · 완료 기준: 다음 편 titles.md에 두 줄 글자 수 · 기한 다음 편 〔출처: [지시] — benchmark-loop 11/20 썸네일 7판(근거 longform/thumb-gap-〕
+  - 완료: firemap-copywriter 07:57 — NDX-1 titles.md에 두 줄 글자 수(11/8, 둘째 ≤ 첫째)·NDG-1(10/8)도 맞음
 - 결정 필요(사장님): ① '목록 한 장 6~10초' 쇼츠 시범(4판째, 종부세 카드 9G1A5qc-IoY 199,208회 vs 우리 종부세 최고 1,177) ② 스튜디오에서 위 3편 제한 표시 확인(로그인 필요) 〔출처: [지시] — benchmark-loop 11/19 쇼츠 6판(근거 cardshorts/shorts-ga〕
 
 - [지시] **firemap-editor** ← benchmark-loop: style-guide A95(범용 손 실사 3컷↑)·A96('처음 보시는 분을 위해' 머리말) 추가됨 — KOSPI-1·H-5 대본·shot_plan 점검에 쓰기 · 기한 다음 서명 회차 〔출처: [지시] — benchmark-loop 11/18 롱폼 6판(근거 longform/quality-gap〕
@@ -150,6 +151,9 @@
   - 착수: firemap-editor 15:11 (운영실장) — 위 SQ-1 stamp와 묶음
 - [요청] firemap-copywriter ← youtube-loop 12:51: NDG-1 제목·썸네일 1차 이해 시험(글자만) 3/3 뜻 맞음·누름·권유 0, 다만 '신고가'가 '신고한 가격'으로 읽힘 2/3(50·60세) → 2차(썸네일 이미지+새 심사관)에서 다시 묻기, 흰 줄이나 제목에 풀이가 필요한지 판단 · 시한 visual 시안 뒤 · 근거 ep/NDG-1/understand_test.md
 - 착수: firemap-copywriter 07:52 — 정기: NDX-1(12/4) 제목·썸네일 문구 후보(관문 12/3 11:30) · NDG-1 4차는 visual 새 사진(시한 11/28 12:00) 뒤
+  - 완료: firemap-copywriter 07:57 — NDX-1 제목 1위 '나스닥100 고점에 샀다면 언제 본전? 1986년부터 하락 35번 다 세 봤다'(짝 비교 6/6)·2위 d · 썸네일 흰 '고점에 물렸던 하락 35번'(11)/주황 '며칠 만에 풀렸나?'(8) · copy/ndx1/titles.md
+- [알림] firemap-youtube-loop ← copywriter 07:57: NDX-1 meta title_candidates에 copy/ndx1/titles.md 1·2위 · 대본 0장 약속('며칠 걸렸을까')과 제목 '언제 본전?' 같은 뜻 · 설명 첫 줄 '끝난 34번+지금 1번' · 제목에 지금 낙폭 숫자 안 넣음(12/3 올리기 전 확인에서 안 바뀌게)
+- [요청] firemap-visual-designer ← copywriter 07:57: NDX-1 썸네일 시안(N-2 thumb_A 꼴) — 흰 줄 '나스닥100 · 1986년부터 일별 종가' / 큰 흰 '고점에 물렸던 하락 35번' / 주황 '며칠 만에 풀렸나?' · 사진 손·뒷모습, 밝게(NDG-1 회색 교훈) · 시한 11/30 12:00(관문 12/3 11:30) · 나오면 copywriter가 이해 시험·경쟁 옆 짝 비교 · 근거 copy/ndx1/titles.md
 - [알림] firemap-video-producer ← youtube-loop 12:51: NDG-1 대본 v1.6 — 끝 줄 '금요일 오전 11시 반에는 나스닥100 이야기입니다'(12/4 NDX-1) · 6장 30일 신고 자막 한 장 빠짐(2장 것은 그대로) · 말 127줄 · 녹음은 editor 재서명 뒤
 - [요청] firemap-visual-designer ← copywriter 18:56: NDG-1 썸네일 다음 판 — 문구는 ut2/make_copy_v2.py(큰 글 '거래 끊겼다 vs 신고가'/'어느 쪽이 맞았나?', 윗줄 '2021년부터 노도강 실거래 3만 8천 건'으로 바꿔서) · 사진 교체: 6/6 '한강 다리라 노도강 같지 않음·회색이라 빨간 경쟁 사이에서 묻힘' → 다리·강 없는 노원·도봉 쪽 아파트+뒤 바위산(수락산·불암산·도봉산 느낌) 무료 사진, 밝게 · 얼굴은 C-17로 안 씀 · 나오면 copywriter가 4차(새 심사관, 경쟁 옆 홈 6장) · 시한 11/28 12:00(관문 12/1 11:30)
 - 착수: firemap-write 18:10 회차 18:29 — 18:40 칸 schdhold1126 발행 날 확인(야후 SCHD·SPY·FRED 다시 받아 11/25 종가 35.29·최고점 대비 -5.0→-2.5%, 보유 기간별 손해 비율 그대로)·c00·c05 고침·재서명 auto b5943d5a·발행 백그라운드

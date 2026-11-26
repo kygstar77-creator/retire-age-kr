@@ -571,6 +571,24 @@ def assert_check(text):
     return out
 
 
+# 11/26 editor(회의 11/25 21:36 지시, RULES 309행 · #454 11/20·#485 dgro1125 11/25·decdiv1126 11/26 세 번째): 배당 기준일 안내에
+#   '○일까지 사 두어야·사 둬야·사 놓아야' 꼴은 매수 시점으로 읽힌다 → '○일까지 갖고 있던 사람이 받는다'처럼 받는 조건으로. 예외: '사라는 뜻이 아니라' 면책 문장.
+BUYBY_RE = re.compile(r'(?:사|매수해|사서)\s*(?:두어야|둬야|두셔야|놓아야|놔야)'
+                      r'|(?:까지|전에|전날|전\s*거래일)[^.?!\n]{0,25}?(?:사\s*(?:두면|둬|두시|놓으|놔)|사야\s*(?:받|하|해|합))')   # 11/26 editor: #488 '전 거래일 … 사 두면 돼요'·'전에 사야 한다'도 같은 꼴(기한+사기)
+BUYBY_EXCEPT = re.compile(r'사라는\s*(?:뜻|말|얘기|이야기)[이은는가]?\s*아니')
+BUYBY_FROM = '2026-11-27'   # 이 날 칸부터 막음. 그 전(이미 나간 글 포함)은 경고만 — 공개 글 소급 금지
+
+
+def buyby_check(text):
+    """'사 두어야' 꼴 문장 [(말, 문장)]."""
+    out = []
+    for snt in sentences(text):
+        if BUYBY_EXCEPT.search(snt): continue
+        m = BUYBY_RE.search(snt)
+        if m: out.append((m.group(0), snt.strip()[:60]))
+    return out
+
+
 def repeat_check(pkg):
     """카페 묶음 본문에서 거의 같은 문장이 두 번 나온 곳(끝 '한눈에 정리' 조각은 뺌). 경고만 — 기준 근거 조사 전이라 막지 않는다.
     10/20~21 editor 표본 6건 중 5건이 이 되풀이였다(h1helio1021 '8건을 한꺼번에…16%쯤 낮았' c00·c03, divdrop1020·h2cafe1019 등)."""
@@ -670,6 +688,10 @@ def gate_pkg(pkg):
         if day0 < OPEN_FROM:
             for e in opening_check(pkg): print('[경고]', e)
         for e in repeat_check(pkg): print('[경고·되풀이]', e)
+        bb2 = buyby_check(text)
+        msg2 = ["'%s' — %s → '○일까지 갖고 있던 사람이 받아요'처럼 받는 조건으로(RULES 309)" % (w, x) for w, x in bb2]
+        if bb2 and day0 >= BUYBY_FROM: return False, '매수 시점으로 읽히는 말 — ' + '; '.join(msg2[:3]), msg2
+        for e in msg2: print('[경고·11/27 칸부터 막음]', e)
         c3b, c3w = cafe3_check(pkg)
         for e in c3w: print('[경고]', e)
         if c3b and day0 >= CAFE3_FROM: return False, '카페 원고 — ' + '; '.join(c3b[:3]), c3b
@@ -905,6 +927,7 @@ def script_check(text):
         bad.append(f'이상한 단위 "{m.group(0)}" — 할·푼·리 대신 %·"10명 중 1명", 억은 "20억"·"23억 8천만원"처럼')
     # A-26: 단정·보장 표현(법 조항 빌려 씀) — 대본도 막는다
     for w, x in assert_check(text): bad.append(f'단정·보장 표현 "{w}" — {x}')
+    for w, x in buyby_check(text): bad.append(f'매수 시점으로 읽히는 말 "{w}" — {x} → 「갖고 있던 사람이 받는다」처럼(RULES 309)')
     # A-20 보탬(경고): 비율을 말로 할 때는 "10명 중 1명" 꼴(CDC 위험 소통·Galesic·Gigerenzer 2009) — 막지 않음
     pc = len(re.findall(r'\d+(?:\.\d+)?\s*%|퍼센트', text))
     if pc >= 5: print(f'[경고] 말에 % {pc}번 — 비율은 "10명 중 1명"처럼 자연 빈도로, 비교할 땐 분모를 같게(A-20)')

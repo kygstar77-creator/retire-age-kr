@@ -74,3 +74,12 @@ for t in ['그럼 왜일까요? 값이 왜 이렇게 매겨졌는지 적은 정�
     assert any('A97 꼴' in h for h in aitell.score(t)[1]), (t, aitell.score(t))
 assert not any('A97 꼴' in h for h in aitell.score('이유는 간단해요. 금리가 올랐거든요. 자료에 없는 건 빼고 봤어요.')[1])
 print('A97 shape ok')
+# BUYBY(11/26 editor, 회의 11/25 지시·RULES 309): 배당 기준일 '○일까지 사 두어야' 꼴 — #485·#488 걸림, 면책 문장·일반 '사 두었' 안 걸림
+for t in ['그래서 이번 배당을 받으려면 그 전 거래일인 12월 14일까지 사 두어야 합니다.',
+          '배당락일이 12월 1일이라 그 전날 미국 장에서 사 둬야 받아요.',
+          '그래서 배당락일 바로 전 거래일, 미국 장이 끝나기 전까지 사 두면 돼요.']:
+    assert aitell.buyby_check(t), t
+for t in ['지금 사라는 뜻이 아니라, 12월 14일까지 사 두어야 받는다는 일정 이야기예요.',
+          '12월 14일 장 마감 때 갖고 있던 사람이 받아요.', '작년에 우산을 사 두었어요.', '집을 사야 할까요?']:
+    assert not aitell.buyby_check(t), t
+print('buyby ok')

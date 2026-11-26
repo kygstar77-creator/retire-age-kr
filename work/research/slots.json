@@ -136,6 +136,15 @@
     "by": "firemap-video-producer",
     "at": "2026-11-26 12:31",
     "gates_ok": "2026-11-26 12:31"
+   },
+   {
+    "item": "h6s_gangnam",
+    "ep": "work/research/cardshorts/h6s_gangnam",
+    "layout": "c1clip",
+    "status": "2026-11-26 15:22 관문 통과(compete 6·숫자 대조 0·꼴·이해 3차·안전 영역·디자인·치직 0·−17.0 LUFS·눈 검사 2차·A-49 답 0.2초, review.md) · 미업로드 — H-6 YE6FXSezHXc 2장 '강남 34평 23곳 중 16곳 내림, 은마 −19.4% 2번째' 35.8초, 첫 줄 새 녹음 1줄 · mp4 work/video/out/h6s_gangnam_c1_ds.mp4 · h6s_before와 같은 롱폼이라 둘이 이어 붙으면 앞뒤는 다른 롱폼",
+    "by": "firemap-video-producer",
+    "at": "2026-11-26 15:22",
+    "gates_ok": "2026-11-26 15:22"
    }
   ],
   "cafe": [

@@ -4711,3 +4711,6 @@
 2026-11-26 14:34 · firemap-write-b · 11/27 16:10 TBD 지수 칸에 ndxrecon1127 '나스닥100 종목은 매년 몇 개씩 바뀌었을까?' 관문 통과·gates_ok(editgate auto 2e61b223) · 이유: 회의 11/25 배정(write-b, 기한 11/27 10:10), kwvol 나스닥100지수 6,630·경쟁 5편 중 7년 발표문 센 글 0편, 나스닥 5/1 규칙 변경이 최근 상위 글 주제
 2026-11-26 14:34 · firemap-write-b · 이 회차 발행 0 — 오늘 write-b 몫 :40 칸(07:40·10:10·12:40) 모두 발행됨(#487~#489), 18:40·22:40은 firemap-write 몫
 2026-11-26 15:14 · editor · 결정 · SQ-1 screen_text stamp 82eb5cbf, NDG-1 script v1.6 재서명 e7b8f51f — 차이 전수 대조·숫자 변경 0
+2026-11-26 15:22 · firemap-video-producer · h5s_jeonse(11/27)·k1s_split(11/28) 0.2초 정의·조건 칸 → 답 칸 바꾸기(youtube-loop 13:17 ② 선택)는 안 함 · 이유: 둘 다 예약본이라 바꾸면 새 업로드+옛 예약 풀기로 비공개 사본이 또 생김(사장님 결정 대기 '비공개 사본 70편'), h5s_jeonse 정의 칸은 이해 1차 '전세가율 뜻' 걸림을 풀려고 넣은 칸, 근거는 표본 5편이라 경고 수준
+2026-11-26 15:22 · firemap-video-producer · 쇼츠 비축 h6s_gangnam 관문 통과(H-6 2장 강남 34평 23곳·은마 2번째, 35.8초, 첫 줄 새 녹음 1줄·이해 3차·눈 검사 2차) → slots reserve.shorts · 이유: 유효 비축 k1s_bottom·h6s_before 2편뿐(n3s_5000 등은 회의가 세지 않음) — 11/30·12/1 칸에 하나 쓰면 바로 최소선 밑
+2026-11-26 15:22 · firemap-video-producer · SQ-1 editor 15:13 stamp 확인 → lfrender check 통과 → 3토막 통렌더 시작(ep/SQ-1/check/render_parts_1126.sh, H-6 꼴) · 이유: 관문 기한 11/27 11:30, H-6 3토막 약 4시간

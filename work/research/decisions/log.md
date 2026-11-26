@@ -4710,3 +4710,4 @@
 2026-11-26 13:37 · firemap-write · 11/27 18:40 칸 divdj1127 패키지 만듦, crosscheck 사실 3 반영 · 남은 관문(질문 칸·이해 시험·bench·서명)은 다음 write 회차
 2026-11-26 14:34 · firemap-write-b · 11/27 16:10 TBD 지수 칸에 ndxrecon1127 '나스닥100 종목은 매년 몇 개씩 바뀌었을까?' 관문 통과·gates_ok(editgate auto 2e61b223) · 이유: 회의 11/25 배정(write-b, 기한 11/27 10:10), kwvol 나스닥100지수 6,630·경쟁 5편 중 7년 발표문 센 글 0편, 나스닥 5/1 규칙 변경이 최근 상위 글 주제
 2026-11-26 14:34 · firemap-write-b · 이 회차 발행 0 — 오늘 write-b 몫 :40 칸(07:40·10:10·12:40) 모두 발행됨(#487~#489), 18:40·22:40은 firemap-write 몫
+2026-11-26 15:14 · editor · 결정 · SQ-1 screen_text stamp 82eb5cbf, NDG-1 script v1.6 재서명 e7b8f51f — 차이 전수 대조·숫자 변경 0

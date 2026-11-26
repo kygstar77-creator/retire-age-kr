@@ -5054,7 +5054,7 @@
    "item": "halfpair1126",
    "owner": "firemap-write",
    "gates_ok": "2026-11-24 06:44",
-   "published": null,
+   "published": "https://cafe.naver.com/firemap/492 22:24 verify OK 1835자",
    "note": "firemap-write 2026-11-24 06:44: PD 11/23 23:11 요청 — 쇼츠 h5s_half(78fgoXS0KSU, 11/26 19:20) 짝 글 '송도 아파트 실거래가 반값 거래는 직거래 2건뿐'(부동산 게시판) 관문 통과 · kwvol 송도아파트 15,970·송도더샵센트럴시티 7,580 · 국토부 연수구 11/24 06:24 다시 받음: 84㎡대 4,297건 중 고점 절반 이하 2건 둘 다 직거래·60% 이하 27건 중 직거래 21건·직거래 3.0% · 새 사실: 직거래 123건 같은 단지·같은 달 중개 대비 중앙 94%·금호어울림 3.30억 vs 같은 달 10층 6.60억 · 특수관계 저가 양도 세법 원문 4개 · research_gate strict·bench·prepublish·cover·readcheck 0·aitell 1.2·selfcheck 사실 0·crosscheck(Gemini) 4건 중 반영 2·유지 2·이해 2차 6명·editgate auto c870d813 · 영상 공개(19:20) 뒤에만 · 발행 날 실거래 다시 받기(올리기 전 확인) · 11/26 다른 칸은 회의가 배정 · yt_pair: h5s_half",
    "pair": "h5s_half"
   },
@@ -5125,9 +5125,9 @@
    "kind": "cafe",
    "item": "h6pair1128",
    "owner": "firemap-write-b",
-   "gates_ok": null,
+   "gates_ok": "2026-11-26 23:01",
    "published": null,
-   "note": "firemap-meeting 2026-11-26 21:33 배정 · 부동산 — H-6 은마 카페 짝 글(영상 YE6FXSezHXc 11/26 공개, 재료 ep/H-6/cafe.md·calc3_out, 사장님 10/11 롱폼 1편=카페 1편) · 발행 날 국토부 다시 받아 대조 · 관문 기한 11/28 01:40",
+   "note": "firemap-write-b 2026-11-26 23:01: H-6 짝 글 h6pair1128 '은마아파트 시세 실거래 77건 전부 모아 보니'(부동산 게시판, 통계형 form 4) 관문 통과 — kwvol 은마아파트 78,700·은마아파트시세 3,010 · 국토부 강남구 매매·전월세 11/26 22:4x 다시 받아 77건(영상 75건 뒤 늦은 신고 2건)·84㎡ 42.80→34.50억(−8.30억)·77㎡ −5.875억·인가 전 몫 47.9%·5층 이상 −7.80억·9~10월 35건·강남구 80~86㎡ 23곳 −5.9% 속 은마 둘째·전세 84㎡ 8→7억·부담금 예정액 강남구 1차 · #335(신축 비교)와 각도 다름 · research strict·bench(사진 비교 3)·compare·readcheck 0·selfcheck 사실 0·aitell 1.5·이해 2차 6명 권유 0·표지 차트(갈색) · auto 533b7748 · 발행 회차: 11/28 당일 fetch.py·calc.py·mkimg.py 다시(숫자 바뀌면 c0*·facts·research 대조·재서명) | firemap-meeting 2026-11-26 21:33 배정 · 부동산 — H-6 은마 카페 짝 글(영상 YE6FXSezHXc 11/26 공개, 재료 ep/H-6/cafe.md·calc3_out, 사장님 10/11 롱폼 1편=카페 1편) · 발행 날 국토부 다시 받아 대조 · 관문 기한 11/28 01:40",
    "pair": "yt_pair: YE6FXSezHXc"
   },
   {

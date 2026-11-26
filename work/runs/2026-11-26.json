@@ -1,0 +1,49 @@
+{
+ "date": "2026-11-26",
+ "runs": [
+  {
+   "hour": 6,
+   "ts": "06:29",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "이 회차 몫 칸 없음(07:40 write-b) · 로그인됨 · 댓글 0 · 새 묶음 안 씀(주간 사용량 97%) · 개선: 없음"
+  },
+  {
+   "hour": 7,
+   "ts": "08:09",
+   "blog": null,
+   "cafe": {
+    "title": "코스피200 ETF 비교, 오래 들고 있었다면 남은 돈",
+    "url": "https://cafe.naver.com/firemap/487"
+   },
+   "note": "write-b 07:40 칸 k200etf1126 · 발행 날 야후 4종 다시 받아 11/25 종가로 calc·mkimg 다시(차이 1,234→1,293만·세후 991→1,049만, 순서 그대로) · 출처 7곳 다시 열기 200 · readcheck 0·selfcheck 사실 0·aitell 0.0·editgate auto 2436e8ae · verify OK 1837/1837자·사진 3/3 · 확인 창 '계속할까요' 8초 타임아웃 경고(발행은 됨) · 개선: 없음"
+  },
+  {
+   "hour": 9,
+   "ts": "09:37",
+   "blog": null,
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "발행 0(이번 회차 몫 칸 없음: 10:10 decdiv1126은 write-b, 다음 write 칸 16:10 rsp1124) · #485 정정 원고·dry 대조표(숫자 134개 동일, '사 두어야'→'가지고 있는 사람이 이번 배당 대상') → editor edit-ok 요청 · divdj1127(11/27 18:40) 운용사 원문 S3~S6(SOL·TIGER·KODEX 공식, ACE 2차 2곳) · bench.md 경쟁 5편·포화 · 회원 댓글 0 · 로그인됨 · 개선: divdj1127/fetch_pw.py(운용사 JS 페이지 Playwright로 글자 받기, TIGER ksdFund 끝자리는 ISIN 검사숫자로 계산 — 틀리면 빈 페이지)"
+  },
+  {
+   "hour": 10,
+   "ts": "11:31",
+   "task": "write-b",
+   "blog": null,
+   "cafe": {
+    "title": "미국 배당 ETF 12월 배당락일 언제까지 살까?",
+    "url": "https://cafe.naver.com/firemap/488"
+   },
+   "note": "10:10 칸 decdiv1126(write-b 몫, 늦게 냄 — 10:10 맡을 회차 없음) · 올리기 전 확인: 운용사 일정표 4곳 다시 받음(바이트 같음)·야후 7종 11/25 종가로 1만 달러 세후 SCHD 69→67·JEPQ 178→182 반영·JEPI·JEPQ 12월 금액 발표 전 확인 · 관문 readcheck 0·selfcheck 사실 0·aitell 5.5·spoken·research strict·bench·prepublish(당일)·cover·disclaim·calc·compare·editgate auto e1775876 · 교차검증 11/24 crosscheck(사실 1 반영) — 이번엔 숫자만 바뀌어 selfcheck로 대조 · verify OK 2361/2361자·사진 3/3 · 12:40 칸 rent100_1126 국토부 11/26 다시 받아 숫자 갱신·재서명 290e3f0d(발행은 12:1x write) · 개선: decdiv1126 calc.py·mkimg.py가 마지막 날 막대 종가가 비면(야후 늦게 채움) meta 정규장 종가를 쓰게 고침 · 발행기 '계속할까요' 확인 창 8초 시간초과 났지만 발행·verify 정상"
+  }
+ ]
+}

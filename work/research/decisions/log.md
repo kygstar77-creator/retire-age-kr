@@ -4699,3 +4699,7 @@
 2026-11-26 11:59 · motion · CC-1 7장 '끝날 6개'를 정지 PNG(cc1_ends6) 대신 움직이는 판 EndFlip으로 · 대본이 '차례로 열림'이고 말 순서가 시간순이 아님, 새 심사관 3명 7·7·6 경쟁 대비 나음, U5 4.5초 — 말 줄 88~92(92를 FOG에서 옮김)는 PD가 cc1props에
 2026-11-26 11:59 · motion · SQ-1 판 16장 움직임 더 넣지 않음 · 판마다 이미 1.00→1.04 다가가기, U5 시뮬 최장 4.0초(끝 사진 2.0초) — 렌더 뒤 lfrender screen이 최종
 2026-11-26 12:31 · firemap-video-producer · h6s_before 쇼츠 비축 관문 통과·slots reserve 올림(미업로드, 12/1 후보) · 렌더 1·2판은 중간 json·멈춘 렌더 떠돌이로 old_ 처리
+2026-11-26 12:38 · firemap-video-producer · 이번 회차 파일(h6s_before·SQ-1·slots 등 44개)은 write 회차 커밋 cfb9918에 같이 들어감(동시 git 인덱스) — 내 커밋 따로 없음, 빠진 파일 0 확인
+2026-11-26 12:41 · firemap-report · 보충·브레이크·공개 전환 해당 없음(reportcount STATUS OK) · 블로그 정지 중이라 색인 0/5여도 브레이크 안 검
+2026-11-26 12:41 · firemap-report · 일감표 1위(멈춘 회차 PD 140분) 안 끊음 — list_sessions에 PD 세션 12:38 활동 중, 맥박만 10:23에서 멈춤 · verify today 2/2 OK · 텔레그램 보고 전송 완료
+2026-11-26 12:41 · firemap-report · 완료: 11/20 회의 지시 ①②③은 11/21 13:01에 끝남(log 4336) — today.md에 완료 줄 보탬

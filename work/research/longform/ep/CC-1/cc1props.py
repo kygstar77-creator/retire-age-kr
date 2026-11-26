@@ -136,7 +136,8 @@ scenes += [ask(6, [70]), board('cc1_tax', [71, 72, 73]), broll('PASSBOOK2', [74,
 scenes += [ask(7, [86]), broll('FOG', [87], '어디서 자르느냐'), mo('ends', [88, 89, 90, 91, 92]), broll('FOG', [93], '한 장면일 뿐'),
            board('cc1_chart2', [94, 95, 96, 97]), broll('LEDGER', [98, 99], '한쪽 가격으로만'), broll('ORCHARD', [100, 101], '바뀔 수 있어요'), board('cc1_fee', [102, 103, 104])]
 # 8 정리 (105~114) — 끝 줄 앞 숨 쉴 실사 WINDOW, 끝 그림 위 END_PAD
-scenes += [ask(8, [105]), board('cc1_summary', [106, 107, 108, 109, 110]), broll('WINDOW', [111], '받는 돈과 남는 돈'), broll('LEDGER', [112, 113], '직접 세어 보세요')]
+# 11/27 02시 PD: 185행 말이 길어져 정리 판 20.5초 → 108(일반 계좌) 줄을 실사로 끊음(판 20초 규칙)
+scenes += [ask(8, [105]), board('cc1_summary', [106, 107]), broll('PASSBOOK2', [108], '일반 계좌라면'), board('cc1_summary', [109, 110], z=(1.04, 1.08)), broll('WINDOW', [111], '받는 돈과 남는 돈'), broll('LEDGER', [112, 113], '직접 세어 보세요')]
 END_PIC = 'bg/cc1/stock/window_last.jpg'
 pc = cid_of('WINDOW')
 scenes += [S('pic', [114], pic=END_PIC, license=f"Pexels {pc} 무료({CR[pc]['author']})" if pc in CR else '', baked=True, zoom=[1.0, 1.10], cx=50, cy=50)]

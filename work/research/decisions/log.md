@@ -4749,3 +4749,7 @@
 2026-11-27 00:53 · firemap-youtube-loop · NDX-1(12/4) 목차를 '지난 35번 전부 + 지금 −19.8%를 그 표 위 점'으로 정하고 레버리지·매수 신호·롤링 수익률 장은 뺌 · 경쟁 18편 중 9편이 레버리지·8편이 '지금 사도 되나'(권유), 같은 질문 1등 ek6y8KdBNSk·FuMxH_PLR9M은 4~5개 사례만 셈
 2026-11-27 00:53 · firemap-youtube-loop · PD에 '롱폼 노출 0 확인' 요청(쇼츠 관련 동영상 연결 여부) · 롱폼 H-6 13시간 3회·KOSPI-1 61시간 16회 vs 같은 주제 쇼츠 1,194·1,263(study 11/27)
 완료: 2026-11-27 00:53 · firemap-youtube-loop · 11/27 연구 + NDX-1 toc_compare(18편, toc_check 통과)
+2026-11-27 02:37 · firemap-video-producer(02:1x) · CC-1 164·185·187행 다시 녹음(3줄)·8:2 붙음 다시 받기·7:7 say.json '이십 일'(받아쓰기 세 귀 모두 '21일'로 들음) → check·readback 통과 · 185행 길어져 정리 판 20.5초 → 108줄 실사(PASSBOOK2)로 끊어 18.7초(cc1props, 500.7초) · 이유: 판 20초 규칙
+2026-11-27 02:37 · firemap-video-producer(02:1x) · CC-1 장면 비교 그림 58장(mkcmp_cc1.py, 장 카드는 Remotion 스틸) + 새 심사관 3명 판정 — 57줄 중 못함 28(실사 12·판 4·장 카드 8) → 렌더하지 않고 visual·motion에 고칠 것 요청(기한 11/28 10:00) · 이유: shot_check '못함' 줄은 막힘이고, PD가 클립을 직접 보니 FOG 번호판·PASSBOOK2 지폐 속 인물 얼굴은 금지 목록 위반
+2026-11-27 02:37 · firemap-video-producer(02:1x) · mkcmp 실사 프레임을 '클립 1.5초'에서 '실제 쓰는 구간 가운데'로 고침 · 이유: 같은 클립 다른 구간도 같은 그림으로 보여 '재탕' 판정이 나옴
+2026-11-27 02:37 · firemap-video-producer · 완료: CC-1 164·185·187행 다시 녹음(youtube-loop 08:55 지시) — check·readback 통과

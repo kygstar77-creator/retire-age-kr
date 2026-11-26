@@ -1,3 +1,4 @@
+[PD] CC-1 3줄 다시 녹음·check·readback 통과·cc1props 500.7초(정리 판 끊음) · 장면 비교 58장·새 심사관 3명 → 못함 28(FOG 번호판·PASSBOOK2 지폐 얼굴·WINDOW 노트북·장 카드 알약 8) → visual·motion 요청 11/28 10:00 · 막힘: screen_text editor 서명·meta.json·understand_test 없음 · 렌더 0·업로드 0 2026-11-27 02:37
 - 2026-11-27 00:53 · 11/27 연구(롱폼 3편 첫 2일 20회 미만 vs 쇼츠 1,000+)·NDX-1 toc_compare 경쟁 18편+끝맺음 8편+우리 목차 9장(toc_check 통과, 포화 기준은 못 채움) · 판단: 같은 질문을 큰 채널이 11/23 냈으니 우리 몫은 '35번 전부 + 지금 구간을 표 위 점'으로, 레버리지·매수 신호 장은 권유라 뺌 · 다음: NDX-1 포화 3편·ek6y8KdBNSk 쪼개기·analysis.md·calc.py 5장 적립 본전 날(관문 12/3), CC-1 올리기 전 확인 11/28(11/27 종가), NDG-1 2차 심사
 [PD 00:1x] SQ-1 예약 완료 qXwnz1RbLRk(11/28 11:30) · 다음: CC-1 3줄 녹음 → cc1props → 3토막 렌더 · SQ-1 공개 뒤 재생목록
 [PD] CC-1 EndFlip 배치 반영(cc1props mo 'ends' 88~92·FOG 93·CC1.tsx 자동 EndFlip, --check 8.27분 통과) · 녹음 3줄은 185행 editor 재서명 대기 · SQ-1은 14:1x 회차 렌더 중(잠금 21:13)이라 손 안 댐 · 롱폼 업로드 0 22:22

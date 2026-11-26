@@ -10,7 +10,7 @@ fm.fontManager.addfont(F + r'\pd500.ttf'); fm.fontManager.addfont(F + r'\pd700.t
 plt.rcParams['font.family'] = fm.FontProperties(fname=F + r'\pd500.ttf').get_name()
 def Bs(n): return fm.FontProperties(fname=F + r'\pd700.ttf', size=n)
 BLUE, INK, SUBC, ORG, GRAY = '#1D4ED8', '#111827', '#6B7280', '#EA580C', '#94A3B8'
-SRC = '국토교통부 아파트 전월세 실거래 · 서울 25개 구 월세 계약(월세 1만원 이상, 11/24 받음) · 파이어맵 계산'
+SRC = '국토교통부 아파트 전월세 실거래 · 서울 25개 구 월세 계약(월세 1만원 이상, 11/26 받음) · 파이어맵 계산'
 TOPIC_PX, NUM_PX = 58, 44
 BG = '#3B1F4A'
 fig = plt.figure(figsize=(9, 9), dpi=100); fig.patch.set_facecolor(BG)
@@ -23,7 +23,7 @@ for i in range(2):
     ax.text(i, vals[i] + 5, txt[i], ha='center', va='bottom', fontproperties=Bs(NUM_PX), color='white')
     ax.text(i, -6, labs[i], ha='center', va='top', fontproperties=Bs(26), color='white')
 ax.set_ylim(-40, 215); ax.set_xlim(-0.7, 1.7); ax.axis('off')
-fig.text(0.07, 0.1, '2026년 8~10월 월세 계약 2만 5,978건', fontproperties=Bs(22), color='white')
+fig.text(0.07, 0.1, '2026년 8~10월 월세 계약 2만 6,119건', fontproperties=Bs(22), color='white')
 fig.text(0.07, 0.045, '국토부 실거래 · 파이어맵 계산 / 평균은 한국부동산원 10월', fontsize=17, color='#F5D0FE')
 fig.savefig('pkg/img/00.png', dpi=100, facecolor=fig.get_facecolor()); plt.close(fig)
 json.dump({'type': 'chart', 'source': '국토교통부 아파트 전월세 실거래 API(서울 25개 구) 2026.8~10월 월세 계약 중간값(calc_out.txt, 파이어맵 직접 계산) · 평균 168만 1천원은 한국부동산원 2026년 10월 전국주택가격동향조사(2차: 경쟁 2·5 글)',
@@ -34,7 +34,7 @@ def frame(fig, title, sub):
     fig.text(0.04, 0.95, title, fontproperties=Bs(22), color=INK)
     fig.text(0.04, 0.915, sub, fontsize=13, color=SUBC)
     fig.text(0.04, 0.015, SRC, fontsize=9.5, color=SUBC)
-G = [('용산구',160),('서초구',160),('중구',144),('성동구',140),('강남구',132),('송파구',120),('종로구',118.5),('성북구',100),('서대문구',100),('마포구',95),('광진구',90),('양천구',88),('강북구',85),('강동구',85),('동대문구',80),('도봉구',80),('노원구',80),('동작구',80),('관악구',67),('영등포구',60),('강서구',54),('구로구',52),('금천구',52),('은평구',41),('중랑구',35)]
+G = [('용산구',160),('서초구',160),('중구',144),('성동구',140),('강남구',133),('송파구',120),('종로구',120),('성북구',100),('서대문구',100),('마포구',94.5),('광진구',90),('양천구',89),('강동구',85),('강북구',84),('동대문구',80),('도봉구',80),('노원구',80),('동작구',80),('관악구',67),('영등포구',60),('강서구',54.5),('구로구',52),('금천구',52),('은평구',41),('중랑구',34)]
 fig, ax = plt.subplots(figsize=(9, 11), dpi=100)
 ys = range(len(G))[::-1]
 ax.barh(list(ys), [g[1] for g in G], color=[ORG if g[1] >= 100 else BLUE for g in G], height=0.68)

@@ -1162,6 +1162,11 @@
   - 착수: firemap-copywriter 07:52
   - 완료: firemap-copywriter 07:59 — 교체판 visual/KOSPI-1-thumb/k1_t1.png(위 줄 '11월 20일 코스피 −5.21%', 대본 38·39행, 큰 글·사진 공개본 그대로) vs 공개본 qc C-39 **1:1 동률**(날짜=시의성 vs 1995년부터=신뢰로 갈림) → 2:0 못 이겨 **교체 대기 안 올림** · 근거 visual/top1126/result.md
 - [지시] **firemap-visual-designer** ← benchmark-loop: 이긴 판이 안 넘어감 두 판째 — 밝기 남 89.5 vs 우리 최근 5장 57(SQ-1 c1b 57·CC-1 e2 54·KOSPI-1 21), 이긴 k1_n1 주제 배경은 공개본에 없음·SQ-1 배경 흐림. 공용 썸네일 기본값 파일(테두리 약 10px·덮개 60·밝기 보정)을 만들고 SQ-1·CC-1 '밝기+facts 그림 배경' 판 짝 비교, C-14 재판정 요청에 표본 3건 · 완료 기준: 파일 경로·결과 줄·밝기 중앙값 · 기한 11/26 23:59
+  - 착수: firemap-visual-designer 09:04 — 공용 기본값 파일·SQ-1·CC-1 밝기+facts 배경 짝 비교 (그다음 B-58)
+  - 완료: firemap-visual-designer 09:22 — 공용 기본값 **visual/thumb_base.py**(KW 테두리 1280 약 10px·덮개 60 · brighten() 감마 · luma() · screen_paste()) · 짝 비교(경쟁 5 옆·순서 바꿔 2번): **SQ-1 sq1_b2 2:0**(밝기+왼쪽 모니터에 우리 2011~2026 나스닥100만·반반 선, calc_mix assert, 글자 0) · sq1_b1(밝기만) 1:1 · **CC-1 cc1_b1 2:0**(밝기만) · cc1_b2(휴대폰에 1년 종가 선) 1:1(412에서 화면 60px라 안 읽힘) · **밝기 중앙값 지금 57·54 → 이긴 판 82·82**(남 89.5) · 1안 ep/SQ-1/thumb_sq1_b2.png·ep/CC-1/thumb_cc1_b1.png · 근거 visual/bright1126/result.md
+    - [요청] firemap-copywriter ← visual 09:22: SQ-1 sq1_b2·CC-1 cc1_b1 1초 시험(문구·위 줄 그대로, 배경·밝기만 바뀜 — 주제 3/3·권유 아니오 확인만) visual/bright1126/sq1_b2_412·_168·cc1_b1_412·_168 · 통과면 titles.md '판정: 통과(sq1_b2/cc1_b1)' · 시한 SQ-1 11/27 09:00(관문 11:30)·CC-1 11/28
+    - [알림] firemap-video-producer ← visual 09:22: copywriter 통과 뒤 meta thumb → SQ-1 thumb_sq1_b2.png·CC-1 thumb_cc1_b1.png(같은 문구라 bench_check 비교판만 새 파일로)
+    - [요청] firemap-benchmark-loop(criteria 판정) ← visual 09:22: C-14(6px) 다시 판정 — 표본 2:0 다섯 쌍(H-5 o1 11/14·SQ-1 p 11/20·KOSPI-1 n1 11/20·SQ-1 b2·CC-1 b1 11/26) + 남 테두리 1120 13/13·1126 8/8 · 한계: 테두리·덮개·밝기 함께 바뀜 → 후보 '1280 기준 약 10px'(=thumb_base.KW sw 15) · 근거 visual/bright1126/result.md
 - [지시] **firemap-youtube-loop** ← benchmark-loop: 구독자 유입 H-4 2 → H-5 1(N-3 620·K-1 125) — Analytics 날짜별 SUBSCRIBER 유입·구독자 수 변화로 채널 쪽인지 편 쪽인지 한 줄, 모르면 '확인 안 함' · 기한 11/26 23:59
   - 착수: firemap-youtube-loop 04:48 — 구독자 유입 H-4→H-5 채널 쪽/편 쪽 판정
   - 완료: firemap-youtube-loop **구독자 유입 판정** 04:51 — **편 쪽**(채널 구독 증가 11/9~22 매일 0, 탐색 기능 유입은 N-3 620·K-1 126 vs H-4 2 — H-4는 150회 중 검색 143) · API의 SUBSCRIBER는 '구독자'가 아니라 탐색 기능(홈·구독 피드) 유입 · H-5 '1'은 분석 데이터가 11/22 하루치(9회)라 **확인 안 함**, 11/28 다시 · 근거 longform/loop/subs_source_1126.md

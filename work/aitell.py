@@ -589,6 +589,66 @@ def buyby_check(text):
     return out
 
 
+# 11/27 editor(benchmark-loop 11/27 [지시], 근거 growth/cafe-gap-1127.md · style-guide A114·A115) — 카페 세 가지.
+#   ① 끝 독자 질문: 본문 마지막 6줄 안(끝 ※·자료·계산·면책 줄 빼고 센다)에 '…세요?/…쪽이세요?/…계세요?' 줄 — 지시만으로 4편 다시 나옴(473·478·483·485). 11/28 칸부터 막음
+#   ② A114 남의 말로 여는 첫 문장 '…다는 말, (요즘) 자주 듣죠/보이죠·말을 많이 하죠·기사, 자주 보이죠?' — 33편 중 6(465·467·478·481·489·491). 경고(남의 글 주소 있으면 뺌)
+#   ③ 2주 안 공개 카페 제목과 끝 6어절이 같음 — 467↔491 '들고 있으면 손해 본 적 있을까?'. 경고
+ENDQ_FROM = '2026-11-28'
+ENDQ_TAIL = 6
+ENDQ_RE = re.compile(r'세요[^.!?\n]*[?？]\s*$')
+ENDQ_SKIP = re.compile(r'^\s*(?:※|\*|자료|계산|출처|#|Q[.:]|Q\d|[·\-|>]|https?:)')
+ENDQ_TAILNOTE = re.compile(r'^\s*(?:※|자료|계산|출처)|(?:권유|뜻|얘기|말)[이은는가]?\s*아니|정보예요|정보입니다')
+A114_RE = re.compile(r'(?:말|기사|얘기|이야기|소리)\s*(?:[,을이도은]\s*)*(?:요즘\s*|이제\s*|또\s*)?(?:자주|많이|꼭|종종|부쩍|흔히)\s*[가-힣]*?(?:죠|지요)\s*[?？]?')
+TAIL_DAYS = 14
+
+
+def endq_check(pkg):
+    """끝 독자 질문 줄 [줄]."""
+    _, files = pkg_text(pkg)
+    lines = []
+    for f in files:
+        lines += [l.strip() for l in open(f, encoding='utf-8').read().splitlines() if l.strip()]
+    while lines and ENDQ_TAILNOTE.search(lines[-1]): lines.pop()   # 끝 ※·자료·면책 줄은 세지 않는다
+    return [l[:70] for l in lines[-ENDQ_TAIL:] if ENDQ_RE.search(l) and not ENDQ_SKIP.match(l)]
+
+
+def a114_check(pkg):
+    """첫 문장이 남의 말로 여는 꼴이면 [(말, 문장)]. 글에 남의 카페·지식iN·뉴스·댓글 주소가 있으면 뺀다(A53과 같음)."""
+    text, files = pkg_text(pkg)
+    if not files or A53_SRC.search(text): return []
+    body = open(files[0], encoding='utf-8').read()
+    ss = [x for x in sentences(body) if x.strip() and not x.strip().startswith(('#', '■', '**'))]
+    if not ss: return []
+    m = A114_RE.search(ss[0])
+    return [(m.group(0), ss[0].strip()[:60])] if m else []
+
+
+def _tail_words(title, n=ENDQ_TAIL):
+    w = re.sub(r'[?？!.,·…"\'“”]', ' ', title).split()
+    return tuple(w[-n:]) if len(w) >= n else ()
+
+
+def title_tail_check(pkg, days=TAIL_DAYS):
+    """2주 안 공개 카페 제목과 끝 6어절이 같은 것 [(item, 제목)]."""
+    import glob, time
+    tp = os.path.join(pkg, 'title.txt')
+    if not os.path.exists(tp): return []
+    me = _tail_words(open(tp, encoding='utf-8').read().strip())
+    if not me: return []
+    root = os.path.dirname(os.path.abspath(__file__)); ex = os.path.normcase(os.path.abspath(pkg)); cut = time.time() - days * 86400
+    out = []
+    for f in glob.glob(os.path.join(root, 'research', '*', 'pkg', 'published.txt')):
+        d = os.path.dirname(f)
+        if os.path.normcase(d) == ex or os.path.getmtime(f) < cut: continue
+        try:
+            if 'cafe.naver.com' not in open(f, encoding='utf-8').read(): continue
+            t = open(os.path.join(d, 'title.txt'), encoding='utf-8').read().strip()
+        except OSError:
+            continue
+        if _tail_words(t) == me: out.append((os.path.basename(os.path.dirname(d)), t))
+    return out
+
+
 def repeat_check(pkg):
     """카페 묶음 본문에서 거의 같은 문장이 두 번 나온 곳(끝 '한눈에 정리' 조각은 뺌). 경고만 — 기준 근거 조사 전이라 막지 않는다.
     10/20~21 editor 표본 6건 중 5건이 이 되풀이였다(h1helio1021 '8건을 한꺼번에…16%쯤 낮았' c00·c03, divdrop1020·h2cafe1019 등)."""
@@ -692,6 +752,11 @@ def gate_pkg(pkg):
         msg2 = ["'%s' — %s → '○일까지 갖고 있던 사람이 받아요'처럼 받는 조건으로(RULES 309)" % (w, x) for w, x in bb2]
         if bb2 and day0 >= BUYBY_FROM: return False, '매수 시점으로 읽히는 말 — ' + '; '.join(msg2[:3]), msg2
         for e in msg2: print('[경고·11/27 칸부터 막음]', e)
+        eq = endq_check(pkg)
+        if eq and day0 >= ENDQ_FROM: return False, '끝 독자 질문 줄(11/27 지시, 473·478·483·485) — ' + '; '.join(f'"{x}"' for x in eq[:2]) + ' → 지우고 사실·자료 줄로 끝낸다', eq
+        for e in eq: print('[경고·11/28 칸부터 막음] 끝 독자 질문 줄:', e)
+        for w, x in a114_check(pkg): print(f"[경고·A114] 첫 문장이 남의 말로 연다 '{w}': {x} — 첫 문장은 그 글 답 숫자로(남의 말은 주소와 함께)")
+        for i, t in title_tail_check(pkg): print(f'[경고·제목 뼈대] 2주 안 공개 {i} "{t}"와 끝 6어절이 같다 — 다른 뼈대로')
         c3b, c3w = cafe3_check(pkg)
         for e in c3w: print('[경고]', e)
         if c3b and day0 >= CAFE3_FROM: return False, '카페 원고 — ' + '; '.join(c3b[:3]), c3b
@@ -1068,6 +1133,15 @@ def main(a):
             print(f'{p} — 막을 것 {len(b)} · 경고 {len(w)}')
             for x in b: print('   [막음]', x)
             for x in w: print('   [경고]', x)
+        return 5 if tot else 0
+    if a[0] == 'cafe1127':   # 11/27: 끝 독자 질문(11/28 칸부터 막음)·A114 첫 문장·2주 안 제목 끝 6어절(경고) — 날짜 상관없이 다 보인다
+        tot = 0
+        for p in a[1:]:
+            eq, ab, tt = endq_check(p), a114_check(p), title_tail_check(p); tot += len(eq)
+            print(f'{p} — 끝 질문 {len(eq)} · A114 {len(ab)} · 제목 뼈대 {len(tt)}')
+            for x in eq: print('   [막음] 끝 독자 질문:', x)
+            for w, x in ab: print(f"   [경고] A114 '{w}': {x}")
+            for i, t in tt: print(f'   [경고] 제목 끝 6어절 = {i} "{t}"')
         return 5 if tot else 0
     if a[0] == 'scope':
         sc, why = scope_check(a[1])

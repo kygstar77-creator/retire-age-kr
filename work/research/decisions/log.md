@@ -4755,3 +4755,6 @@
 2026-11-27 02:37 · firemap-video-producer · 완료: CC-1 164·185·187행 다시 녹음(youtube-loop 08:55 지시) — check·readback 통과
 2026-11-27 03:4x · firemap-benchmark-loop · 카페 9판 · 1121 반영 3·일부 1·안 됨 2/6(막기 붙은 ㉥㉦·D-19·법 캡처 반영, 끝 독자 질문 write 칸 4편 다시) · #460~492 3일 넘은 묶음 조회 중앙 5.5→10.5·1→35, 10회↑ 3→14/33, 댓글 0/33, 회원 5 · 새: 실험 노트 꼴 시범 2편(ttokjae 7,307), 첫 문장 남의 말 A114 6/33, '~였죠' A115 · '~죠 한 글 1번' 기준 철회(근거 없음) → editor(막기)·write·write-b·visual 배정, 결정 필요 1 (growth/cafe-gap-1127.md)
 2026-11-27 04:50 · firemap-youtube-loop · NDX-1 analysis.md 완료·toc 포화 24편으로 닫음·5장 원화 셈 넣기로 · 댓글 물음 '원화로는 30%'에 답할 1차 자료(FRED DEXKOUS) 확보, 2008년은 닷컴 골짜기 안이라 표에 따로 없음을 3장·함정에 — 경쟁 8번 '2008 35개월'과 세는 법 다름
+2026-11-27 07:03 · firemap-video-producer(06:1x) · NDG-1(12/2) 목소리 첫 녹음 127줄 — editor v1.6 서명(e7b8f51f) 확인, check 통과(다시 받기 36줄), readback 6줄 남음 · 이유: 관문 12/1 11:30, 대본 서명 끝났고 CC-1은 visual·motion·editor 대기라 다음 편을 앞당김
+2026-11-27 07:03 · firemap-video-producer(06:1x) · NDG-1 5:7·4:19·6:7 다시 받지 않고 말 바꾸기 요청 · 이유: 5:7 잇지/잊지는 소리가 같아 받기로 못 풂, 4:19는 2번 같은 오독
+2026-11-27 07:03 · firemap-video-producer(06:1x) · 쇼츠 관련 동영상 확인 못 함(Data API에 칸 없음·내장 브라우저 studio 로그인 없음) → 채팅 세션 몫 · CC-1 understand_test 없음 → youtube-loop 요청(11/28 18:00)

@@ -47,6 +47,7 @@ tpl = '\n'.join(FIRST2) + '\n' + DIS + '''
 · 국내 상장 상품 보수·분배: TIGER 미국나스닥100(133690)·TIGER 미국배당다우존스(458730) 미래에셋자산운용 상품 페이지(2026-11-13)
 · 해외 주식 양도소득 20%(+지방 2%)·기본공제 250만원: 소득세법 제94조·제103조·제104조, 지방세법 제103조의3 https://www.law.go.kr/법령/소득세법/제104조
 · 국내 상장 해외 ETF 이익 = 배당소득 15.4%·금융소득 2천만원 넘으면 종합과세: 소득세법 제17조·제14조·제62조, 시행령 제26조의2 https://www.law.go.kr/법령/소득세법시행령/제26조의2
+· 국내 상장 상품 분배금의 원천징수 15.4%는 펀드가 미국에서 이미 낸 세금만큼 빼고 뗍니다(소득세법 제129조) — 계산도 그렇게 했어요
 · 미국 배당 제한세율 15%: 국세청 조세조약 제한세율표 · 소득세법 제129조
 {STOCK}
 계산 가정: 2011-10-31 1억 넣고 2026-10-30까지 · 월말 값 · 매년 10월 말 비율 되돌림 · 분배 재투자 · 수수료 뺌 안 함 · 세후는 일반 계좌·한 번에 판 경우
@@ -79,8 +80,9 @@ m.update({
     'endscreen': {'how': 'Studio 최종 화면 — 업로드 뒤', 'status': '미정 — link-plan-1125.md 짝 표대로(채팅 세션 몫)'},
     'made_by': 'firemap-video-producer', 'made_at': '2026-11-26',
     'video': os.path.join(VID, 'out', 'sq1_dsl1126.mp4').replace('\\', '/'),   # 11/26 15:2x PD: editor 15:13 stamp 뒤 3토막 통렌더(check/render_parts_1126.sh) → trim_concat → deess --chirp-short
-    'click_ok': [],
-    'todo': '11/26 PD: 통렌더 끝 → screen·bgcheck·눈 검사·bench → youtube-loop 올리기 전 확인(research.md) → cafe_url → gate·예약 11/28 11:30 · 재생목록 PLMpE1OMAC7pM(지수) 공개 뒤'})
+    'click_ok': [415.64],
+    'click_ok_note': "11/26 18:4x PD: sq1_dsl1126.mp4 415.64초 치직 의심 = 8장 문장 wav dc7741c2('QQQ와 SCHD를 합쳤다'고 소개된 상품을 열어 보면, 나스닥100 커버드콜…, clickscan 0) 3.71초 지점 말소리. 렌더 소리와 파형 상관: 디에서 전 sq1.mp4 줄 0.997·자리 0.999, 디에서 뒤 줄 0.991·자리 0.976 → 원본 말소리, 잡음 아님",
+    'todo': '11/26 18:4x PD: 통렌더 끝·screen·bgcheck·치직 1(말소리)·첫 60초 눈 검사 통과 — youtube-loop 올리기 전 확인 11/26 끝 · 남은 것 cafe_url → gate·예약 11/28 11:30 · (옛 todo) 통렌더 끝 → screen·bgcheck·눈 검사·bench → youtube-loop 올리기 전 확인(research.md) → cafe_url → gate·예약 11/28 11:30 · 재생목록 PLMpE1OMAC7pM(지수) 공개 뒤'})
 json.dump(m, open(MP, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 open(os.path.join(EP, 'desc_1126.txt'), 'w', encoding='utf-8').write(m['title'] + '\n\n' + desc + '\n')
 print(CH); print(f'설명 {len(desc)}자 · 실사 출처 {len(credits)}줄 · missing {m["missing"]} · 제목 {len(m["title"])}자')

@@ -56,21 +56,19 @@
  {
   "at": "0:3",
   "text": "나스닥100에만 넣었다면 13억이 넘었고요.",
-  "say": "나스닥 백에만 넣었다면 십삼억이 넘었고요.",
-  "audio": "audio/sq-1/32ee9f071d7e75e6.wav",
+  "say": "나스닥 [pause short] 백에만 넣었다면 십삼억이 넘었고요.",
+  "audio": "audio/sq-1/7d92e5ea7ac4a869.wav",
   "heard": [
-   "났습니다. 빼기만 넣었다면 13억이 넘었고요.",
-   "나스덕백에만 넣었다면 13억이 넘었고요.",
-   "라스닥 배게만 나왔다면 13억이 넘었고요."
+   "나스닥 백에만 넣었다면 13억이 넘었고요.",
+   "나스닥 100에만 넣었다면 13억이 넘었고요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "whisper-small",
-   "gemini-3.5-transcribe"
+   "whisper-small"
   ],
-  "sim": 0.9,
-  "pair": 0.67,
-  "flag": "숫자 합의오독(0.67/0.90 나스닥에→났습니다뻬기/덕벡)"
+  "sim": 1.0,
+  "pair": 0.97,
+  "flag": ""
  },
  {
   "at": "0:4",
@@ -1556,17 +1554,16 @@
   "say": "십오년 전 일억을 슈드에 넣고 올해 한 번에 팔았다고 쳐 볼게요.",
   "audio": "audio/sq-1/ad54ec0dec63d4b4.wav",
   "heard": [
-   "15년 전 1억을 슈드에 넣고 올해 한 번에 팔아 쳐볼게요.",
-   null
+   "15년 전 1억을 슈드에 넣고 올해 한 번에 팔았다고 쳐볼게요.",
+   "15년 전 1억을 슈드해놓고 올해 한 번에 팔았다고 쳐볼게요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.89,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 1.0,
+  "pair": 0.9,
+  "flag": ""
  },
  {
   "at": "6:11",
@@ -1575,16 +1572,15 @@
   "audio": "audio/sq-1/df47ef12a25ccfd6.wav",
   "heard": [
    "다른 소득은 없다고 쳤어요.",
-   null
+   "다른 소득은 없다고 쳤어요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "6:12",
@@ -1593,16 +1589,15 @@
   "audio": "audio/sq-1/d98e7997e7fd6845.wav",
   "heard": [
    "국내 상장 상품도 같은 지수로 움직였고 지금 세법이 15년 내내 그대로였다고 쳤고요.",
-   null
+   "국내 상장 상품도 같은 짓으로 움직였고 지금 새법이 15년 내내 그대로였다고 쳤고요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.94,
+  "flag": ""
  },
  {
   "at": "6:13",
@@ -1611,16 +1606,17 @@
   "audio": "audio/sq-1/ef6e5fe74a0c9f3f.wav",
   "heard": [
    "직접 샀다면 세금을 떼고 6억 5천만 원 정도 남습니다.",
-   null
+   "직접 샀다면 세금을 떼고 6.5천만 원 정도 남습니다.",
+   "직접 샀다면 세금을 떼고 6억 5천만 원 정도 남습니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small",
+   "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.97,
+  "flag": ""
  },
  {
   "at": "6:14",
@@ -1628,17 +1624,16 @@
   "say": "국내 상장이었다면 오억 육천만원 정도예요.",
   "audio": "audio/sq-1/7054106ab3f935c0.wav",
   "heard": [
-   "국내 상장이었다면 5억 6천만 원 정도에요.",
-   null
+   "국내 상장이었다면 5억 6,000만 원 정도예요.",
+   "국내 상장이었다면 5억 6천만 원 정도예요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.97,
+  "flag": ""
  },
  {
   "at": "6:15",
@@ -1663,17 +1658,16 @@
   "say": "큐큐큐만 넣었다면 이 차이가 삼억 넘게 벌어져요.",
   "audio": "audio/sq-1/1e65b9ede00a5afa.wav",
   "heard": [
-   "qq만 넣었다면 이 차이가 3억 넘게 벌어져요.",
-   null
+   "큐큐큐만 넣었다면 이 차이가 3억 넘게 벌어져요.",
+   "QQQ만 넣었다면 이 차이가 3억 넘게 벌어져요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.91,
+  "flag": ""
  },
  {
   "at": "6:17",
@@ -1682,16 +1676,15 @@
   "audio": "audio/sq-1/bdaa1c1da17aac12.wav",
   "heard": [
    "그렇다고 직접 사는 쪽이 늘 낫지는 않습니다.",
-   null
+   "그렇다고 직접 사는 쪽이 늘 낮지는 않습니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.94,
+  "flag": ""
  },
  {
   "at": "6:18",
@@ -1716,17 +1709,16 @@
   "say": "다른 소득이 한 해 오천만원이면, 다시 직접 산 쪽이 조금 더 남았고요.",
   "audio": "audio/sq-1/35142127dcad2284.wav",
   "heard": [
-   "다른 소득이 하네, 5,000만 원이면 다시 직접 산 쪽이 조금 더 남았고요.",
-   null
+   "다른 소득이 하네, 5,000만 원이면 다시 직접 산쪽이 조금 더 남았고요.",
+   "다른 소득이 한 해 5천만 원이면 다시 직접 산 쪽이 조금 더 남았고요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.9,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 1.0,
+  "pair": 0.9,
+  "flag": ""
  },
  {
   "at": "6:20",
@@ -1734,17 +1726,16 @@
   "say": "짧게 들면 차익이 작아 차이도 작고, 내 다른 소득에 따라 방향이 바뀐다는 뜻이에요.",
   "audio": "audio/sq-1/fcc806427194c556.wav",
   "heard": [
-   "짧게 들면 차액이 작아 차해도 작고 내 다른 소득에 따라 방향이 바뀐다는 뜻이에요.",
-   null
+   "짧게 들면 차액이 작아 차이도 작고 내 다른 소득의 방향이 바뀐다는 뜻이에요.",
+   "짧게 들면 차익이 작아 차이도 작고 내 다른 소득의 방향이 바뀐다는 뜻이에요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 0.97,
+  "pair": 0.97,
+  "flag": ""
  },
  {
   "at": "6:21",
@@ -1752,17 +1743,16 @@
   "say": "오래 들고 한 번에 팔수록 국내 상장 쪽 세금이 커지는 구조예요.",
   "audio": "audio/sq-1/5d9ccef98f9381c4.wav",
   "heard": [
-   "오래 들고 한 번에 팔수록 국내 상장 쪽 세금이 커지는 구조예요.",
-   null
+   "오래 들고 한 번에 팔수록 국내 상장 쪽 세금이",
+   "오래 들고 한 번에 팔수록 국내 상장 쪽 세금이 커지는 구조예요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.84,
+  "flag": ""
  },
  {
   "at": "6:22",
@@ -1787,17 +1777,16 @@
   "say": "다만 그 배당엔 미국이 세금 십오퍼센트를 먼저 떼어 가서, 받을 때 국내에서 또 떼지는 않아요.",
   "audio": "audio/sq-1/4b99ea9986608728.wav",
   "heard": [
-   "다만 그 배당은 미국이 세금 15%를 먼저 떼어가서 받을 때 국내에서 또 떼지는 않아요.",
-   null
+   "다만 그 배당엔 미국이 세금 15%를 먼저 떼어가서 받을 때 국내에서 또 떼지는 않아요.",
+   "다만 그 배당에는 미국이 세금 15%를 먼저 떼어가서 받을 때 국내에서 또 떼지는 않아요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 1.0,
+  "pair": 0.95,
+  "flag": ""
  },
  {
   "at": "6:24",
@@ -1823,16 +1812,15 @@
   "audio": "audio/sq-1/8212d97f88fc723a.wav",
   "heard": [
    "연금저축이나 ISA 안에서는 국내 상장 상품만 살 수 있고, 세금 매기는 법도 달라요. 여기 나오는 숫자는 모두 일반 계좌 기준입니다.",
-   null
+   "연금 조축이나 ISA 안에서는 국내 상장 상품만 살 수 있고 세금 매기는 법도 달라요. 여기 나온 숫자는 모두 일반 계좌 기준입니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
-  "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "sim": 0.98,
+  "pair": 0.95,
+  "flag": ""
  },
  {
   "at": "6:26",
@@ -1841,16 +1829,15 @@
   "audio": "audio/sq-1/0b371d7f056661f5.wav",
   "heard": [
    "건강보험료도 따로 따져보셔야 하고요.",
-   null
+   "건강보험료도 따로 따져보셔야 하고요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "6:27",
@@ -1859,16 +1846,15 @@
   "audio": "audio/sq-1/16c5255eef85ec0b.wav",
   "heard": [
    "그래서 숫자를 보기 전에 내 계좌가 일반 계좌인지 연금 저축이나 ISA인지부터 확인하세요.",
-   null
+   "그래서 숫자를 보기 전에 내 계좌가 일반 계좌인지 연금저축이나 ISA인지부터 확인하세요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 1.0,
+  "flag": ""
  },
  {
   "at": "7:0",
@@ -1944,18 +1930,18 @@
   "say": "'큐큐큐와 슈드를 합쳤다'고 소개된 상품을 열어 보면, 나스닥 백 커버드콜 상품인 경우가 있었어요.",
   "audio": "audio/sq-1/dc7741c28a4780c3.wav",
   "heard": [
-   "QQQ 합쳤다고 소개된 상품을 열어보면 나스닥 100 커버드 콜 상품인 경우가 있었어요.",
-   "QQQ와 슈드를 합쳤다고 소개된 상품을 열어보면 나스딱 백 커버드 콜 상품인 경우가 있었어요.",
-   "QQQ와 슈드를 합쳤다고 소개된 상품을 열어보면 나스닥 백 커버드 콜 상품인 경우가 있었어요."
+   "QQQ아 슈드업 쳐다고 소개된 상품을 열어보면 나스닥 100 커버드 콜 상품인 경우가 있었어요.",
+   "QQQ와 슈드를 합쳤다고 소개된 상품을 열어보면 라스틱백 커버드콜 상품인 경우가 있었어요.",
+   "QQQ가 슈트랍 쳤다고 소개된 상품을 열어보면 나스닥 100 커버드콜 상품인 경우가 있었어요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "whisper-small",
    "gemini-3.5-transcribe"
   ],
-  "sim": 0.99,
-  "pair": 0.92,
-  "flag": "숫자"
+  "sim": 0.93,
+  "pair": 0.82,
+  "flag": ""
  },
  {
   "at": "7:5",
@@ -2016,17 +2002,16 @@
   "say": "셋, 국내 상장 상품을 일반 계좌에서 오래 모아 한 해에 다 파는 것.",
   "audio": "audio/sq-1/22139c3a20161db8.wav",
   "heard": [
-   "셋, 국내 상장 상품을 일반 계좌에서 오래 모아 한 해에 다 파는 것.",
-   null
+   "셋, 국내 상장 상품을 일반 계좌에서 오래 모아 한해에 다 파는 것.",
+   "셋, 국내 상장 상품을 일반 계좌에서 오래 모아 한 해에 답하는 것."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.92,
+  "flag": ""
  },
  {
   "at": "7:9",
@@ -2035,16 +2020,15 @@
   "audio": "audio/sq-1/9143428847e4970e.wav",
   "heard": [
    "그해 금융소득이 2천만 원을 훌쩍 넘을 수 있어요.",
-   null
+   "그 해에 금융소득이 2천만 원을 훌쩍 넘을 수 있어요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "whisper-small"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
-  "batch2": true
+  "pair": 0.97,
+  "flag": ""
  },
  {
   "at": "7:10",
@@ -2052,7 +2036,7 @@
   "say": "팔기 전에 그 해 금융소득을 먼저 계산해 보세요. [pause short] 넘으면 회사원이라도 다음 해 오월에 종합소득세 신고를 하셔야 합니다.",
   "audio": "audio/sq-1/3c6fa458f654121c.wav",
   "heard": [
-   "8기 전에 그해 금융 소득을 먼저 계산해 보세요. 넘으면 회사원이 라도 다음에 5월에 종합소득세 신고를 하셔야 합니다.",
+   "퇴직 전에 그 해 금융 소득을 먼저 계산해 보세요. 넘으면 회사원이라도 다음 해 5월에 종합 소득세 신고를 하셔야 합니다.",
    "팔기 전에 그해 금융소득을 먼저 계산해 보세요. 넘으면 회사원이라도 다음에 5월에 종합소득세 신고를 하셔야 합니다."
   ],
   "models": [
@@ -2060,8 +2044,8 @@
    "whisper-small"
   ],
   "sim": 0.98,
-  "pair": 0.99,
-  "flag": "합의오독(0.99/0.98 헤→에/에)"
+  "pair": 0.94,
+  "flag": ""
  },
  {
   "at": "8:0",

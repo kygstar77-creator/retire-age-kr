@@ -11,6 +11,9 @@
 - 다른 렌더가 돌면 30초마다 보며 기다린다. --wait(기본 60분) 넘으면 렌더하지 않고 종료코드 75 — 다음 회차에 다시.
 - --min-free GB(미리보기에 2.5 권장): 잠금을 잡은 뒤 빈 메모리가 그 아래면 늘 때까지 같은 기한 안에서 기다린다.
   본편(lfrender)은 메모리로 기다리지 않는다 — 공개 기한이 먼저.
+- 잠금을 잡은 동안 이 프로세스 우선순위를 '보통 아래'로 낮춘다(11/26 총무 실측: ffmpeg가 CPU 49% → 다른 일 밀림).
+  Windows는 '보통 아래' 부모의 자식(npx→node→ffmpeg·크롬)이 같은 등급을 물려받는다. 결과 파일은 똑같고,
+  다른 일이 CPU를 쓸 때만 양보해 느려진다. 잠금을 놓으면 원래대로.
 """
 import contextlib, ctypes, datetime, json, os, subprocess, sys, time
 
@@ -31,6 +34,16 @@ def free_mem_gb():
     m = M(); m.l = ctypes.sizeof(M)
     ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(m))
     return m.avail / 1e9
+
+
+def set_priority(cls):
+    """0x4000 BELOW_NORMAL · 0x20 NORMAL. 실패해도 렌더는 그대로 돈다."""
+    if os.name != 'nt': return
+    with contextlib.suppress(Exception):
+        k = ctypes.windll.kernel32
+        k.GetCurrentProcess.restype = ctypes.c_void_p
+        k.SetPriorityClass.argtypes = [ctypes.c_void_p, ctypes.c_ulong]
+        k.SetPriorityClass(k.GetCurrentProcess(), cls)
 
 
 def alive(pid):
@@ -76,6 +89,7 @@ def render_lock(label, wait_min=60, min_free_gb=0):
         if time.time() > end:
             raise Busy(f"{wait_min}분 기다려도 '{h.get('label')}' 렌더가 안 끝남 — 이번엔 렌더하지 않음")
         time.sleep(30)
+    set_priority(0x4000)
     try:
         while min_free_gb and free_mem_gb() < min_free_gb:
             if time.time() > end:
@@ -84,11 +98,14 @@ def render_lock(label, wait_min=60, min_free_gb=0):
             time.sleep(30)
         yield
     finally:
+        set_priority(0x20)
         with contextlib.suppress(OSError):
             if json.load(open(LOCK, encoding='utf-8')).get('pid') == os.getpid(): os.remove(LOCK)
 
 
 def main(a):
+    with contextlib.suppress(Exception):   # cp949 콘솔에서 '—' 출력이 죽어 75 대신 1로 끝나던 것 막음
+        sys.stdout.reconfigure(errors='replace'); sys.stderr.reconfigure(errors='replace')
     if '--' not in a: print(__doc__); return 2
     i = a.index('--'); opt, cmd = a[:i], a[i + 1:]
     wait = int(opt[opt.index('--wait') + 1]) if '--wait' in opt else 60

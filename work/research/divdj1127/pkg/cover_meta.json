@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 chart API 402970·446720·458730·489250.KS 일별 종가·분배 events(11/26 받음)로 2024-08-13~2026-11-25 총수익 직접 계산, calc_out.txt",
+ "made_at": "2026-11-26",
+ "by": "research/divdj1127/mkimg.py",
+ "out": "img/00.png",
+ "topic": "미국배당다우존스 ETF 4종",
+ "num": "1억 3,645만~1억 3,748만 · 차이 103만원",
+ "topic_px": 50,
+ "num_px": 30,
+ "follows": "경쟁 1 kjckyl4632 4종 비교 표지(상품 이름 4개+숫자) + k200etf1126·ndxetf1122 막대 위 큰 숫자"
+}

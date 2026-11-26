@@ -1,0 +1,16 @@
+{
+ "name": "h6s_before",
+ "ep": "H-6",
+ "from_long": "YE6FXSezHXc",
+ "mp4": "work/video/out/h6s_before_c1_ds.mp4",
+ "publishAt": null,
+ "publish_plan": "11/26 PD: 비축 — H-6 롱폼(11/26 11:30 공개) 뒤 · h6s_specs.md #1 · 12/1 19:20 후보(11/27 h5s_jeonse·11/28 k1s_split·11/29 h4s_new15 다음, 11/30은 CC-1 공개일) · 회의 배정 뒤 publishAt",
+ "title": "은마아파트 34평 실거래가, 1년 사이 얼마나 내렸을까? #shorts",
+ "description": "전체 계산: https://youtu.be/YE6FXSezHXc\n\n국토부 실거래 기준 은마아파트 84㎡(34평) 가운데 값은 2025년 10~12월 계약 3건 42.80억 → 2026년 10~11월 계약 10건 34.50억, 8억 3천만원 내렸어요. 그중 4억 가까이(2026년 1~6월 계약 8건 가운데 값 38.83억)는 7월 재건축 사업시행인가 전에 이미 내려 있었어요.\n\n은마아파트를 사거나 팔라는 뜻이 아닙니다. 지난 실거래 값만 정리했습니다.\n\n자료: 국토교통부 아파트 매매 실거래(대치동 은마, 2025.10~2026.11 계약, 해제 제외, 2026-11-25 받음) · 파이어맵 계산\n배경 영상: Jueon Kim 김주언 · Lucas Park · vignesh srivatsav (Pexels License)\nAI 음성 내레이션",
+ "tags": "은마아파트,은마아파트 실거래가,재건축,강남 아파트,아파트 실거래가",
+ "layout": "c1clip",
+ "look": "live",
+ "title_review": {
+  "understand": "understand.md"
+ }
+}

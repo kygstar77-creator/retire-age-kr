@@ -1,0 +1,1539 @@
+{
+ "fps": 30,
+ "scenes": [
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "15년 전에 1억을 넣었다면, 나스닥100과 SCHD 중 어디가 얼마나 더 불어났을까요?",
+     "audio": "audio/sq-1/13382e86d5f5b774.wav",
+     "frames": 144,
+     "cap": null
+    }
+   ],
+   "frames": 144,
+   "data": {
+    "src": "bg/sq1/stock/5466772.mp4",
+    "license": "Pexels 5466772 무료(olia danilevich)",
+    "say": "어디가 더 불었을까",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "먼저 환율은 빼고 달러로만 셀게요.",
+     "audio": "audio/sq-1/a2125b9e96c38536.wav",
+     "frames": 85,
+     "cap": null
+    },
+    {
+     "text": "그러면 SCHD에만 넣은 1억은 7억 가까이 됐어요.",
+     "audio": "audio/sq-1/436a6cb0fdc84ea4.wav",
+     "frames": 90,
+     "cap": null
+    },
+    {
+     "text": "나스닥100에만 넣었다면 13억이 넘었고요.",
+     "audio": "audio/sq-1/32ee9f071d7e75e6.wav",
+     "frames": 72,
+     "cap": null
+    },
+    {
+     "text": "반씩 나눠 넣었다면 그 사이, 10억 정도였습니다.",
+     "audio": "audio/sq-1/a9541c8eaf748c0b.wav",
+     "frames": 84,
+     "cap": null
+    }
+   ],
+   "frames": 331,
+   "data": {
+    "pic": "bg/sq1/board/sq1_open3.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그런데 5년 전에 넣었다면, 반반과 나스닥100에만 넣은 쪽의 차이가 거의 사라집니다.",
+     "audio": "audio/sq-1/d284ff4a657f030a.wav",
+     "frames": 152,
+     "cap": null
+    }
+   ],
+   "frames": 152,
+   "data": {
+    "src": "bg/sq1/stock/5466772.mp4",
+    "license": "Pexels 5466772 무료(olia danilevich)",
+    "say": "넣은 때를 바꾸면",
+    "side": "left",
+    "from": 90
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "원화로 다시 세면, 나스닥100에만 넣은 1억은 16억이 넘어요.",
+     "audio": "audio/sq-1/545b54067114d47c.wav",
+     "frames": 111,
+     "cap": null
+    },
+    {
+     "text": "반반은 12억쯤이고요, 둘 다 환율이 오른 몫까지 들어간 값이에요.",
+     "audio": "audio/sq-1/254361682c2cd8bf.wav",
+     "frames": 111,
+     "cap": null
+    }
+   ],
+   "frames": 222,
+   "data": {
+    "src": "bg/sq1/stock/12245077.mp4",
+    "license": "Pexels 12245077 무료(Uzeyir Mehdiyev)",
+    "say": "원화로 다시 세면",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "세금을 떼면 또 달라지고요.",
+     "audio": "audio/sq-1/f2c30437310b81e5.wav",
+     "frames": 53,
+     "cap": null
+    },
+    {
+     "text": "끝까지 보시면, 같은 1억이라도 미국 상품을 직접 샀느냐, 국내 상장 상품을 샀느냐에 따라 3억 넘게 갈린 경우도 숫자로 보실 수 있어요.",
+     "audio": "audio/sq-1/3e01f7dc0445231d.wav",
+     "frames": 335,
+     "cap": null
+    }
+   ],
+   "frames": 388,
+   "data": {
+    "src": "bg/sq1/stock/8135727.mp4",
+    "license": "Pexels 8135727 무료(kaboompics)",
+    "say": "세금을 떼면",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "먼저 두 상품 안에 무엇이 들었는지부터 볼게요.",
+     "audio": "audio/sq-1/cc68320c7ce88e49.wav",
+     "frames": 84,
+     "cap": null
+    },
+    {
+     "text": "나스닥100은 보통 QQQ라는 미국 ETF로 사요. 여기서 나오는 나스닥100 숫자는 모두 QQQ 값이에요.",
+     "audio": "audio/sq-1/fa47e92780c04c38.wav",
+     "frames": 188,
+     "cap": null
+    }
+   ],
+   "frames": 272,
+   "data": {
+    "n": "1장",
+    "q": "나스닥100은 어떻게 갈아 끼우나"
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "나스닥100은 나스닥에 상장된 회사 가운데, 은행 같은 금융회사를 빼고 큰 회사 100곳을 담는 지수예요.",
+     "audio": "audio/sq-1/6fc0526a7f25030a.wav",
+     "frames": 187,
+     "cap": null
+    },
+    {
+     "text": "회사가 클수록 많이 담습니다.",
+     "audio": "audio/sq-1/d9b103584c8833f9.wav",
+     "frames": 59,
+     "cap": null
+    }
+   ],
+   "frames": 246,
+   "data": {
+    "src": "bg/sq1/stock/40806780.mp4",
+    "license": "Pexels 40806780 무료(정규송 Nui MALAMA)",
+    "say": "금융회사는 빼고",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "명단은 해마다 12월에 한 번 바뀌어요.",
+     "audio": "audio/sq-1/a994936427f76e98.wav",
+     "frames": 78,
+     "cap": null
+    },
+    {
+     "text": "원래 있던 회사는 순위가 조금 밀려도 바로 빠지지는 않고요.",
+     "audio": "audio/sq-1/4072c12f6ee92be7.wav",
+     "frames": 92,
+     "cap": null
+    }
+   ],
+   "frames": 170,
+   "data": {
+    "pic": "bg/sq1/board/sq1_cal12.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "밖에 있던 회사가 갑자기 아주 커지면 12월을 안 기다리고 들어올 수도 있어요.",
+     "audio": "audio/sq-1/53d76283874c847b.wav",
+     "frames": 132,
+     "cap": null
+    }
+   ],
+   "frames": 132,
+   "data": {
+    "src": "bg/sq1/stock/40806780.mp4",
+    "license": "Pexels 40806780 무료(정규송 Nui MALAMA)",
+    "say": "갑자기 커지면",
+    "side": "left",
+    "from": 90
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "반대로 한 회사가 너무 커지면 무게를 깎아요.",
+     "audio": "audio/sq-1/14518462531eceae.wav",
+     "frames": 102,
+     "cap": null
+    },
+    {
+     "text": "한 회사 비중이 지수 전체의 24%를 넘으면 20%로 줄이는 식이에요.",
+     "audio": "audio/sq-1/b3eed34d36969d6f.wav",
+     "frames": 137,
+     "cap": null
+    },
+    {
+     "text": "그래서 큰 회사 몇 곳의 값이 지수를 크게 움직입니다.",
+     "audio": "audio/sq-1/349865e74294ed44.wav",
+     "frames": 109,
+     "cap": null
+    }
+   ],
+   "frames": 348,
+   "data": {
+    "pic": "bg/sq1/board/sq1_cap20.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "SCHD는 고르는 방식이 완전히 다릅니다.",
+     "audio": "audio/sq-1/41022dc40a6e0bb3.wav",
+     "frames": 68,
+     "cap": null
+    }
+   ],
+   "frames": 68,
+   "data": {
+    "n": "2장",
+    "q": "SCHD는 무엇을 담나"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "먼저 10년 연속 배당을 준 회사 가운데, 배당률이 위쪽 절반인 회사만 남겨요.",
+     "audio": "audio/sq-1/005d2c053de70c74.wav",
+     "frames": 146,
+     "cap": null
+    },
+    {
+     "text": "배당률이 낮은 회사는 이 단계에서 빠져요.",
+     "audio": "audio/sq-1/3c69f9ad7d4d7c2f.wav",
+     "frames": 80,
+     "cap": null
+    },
+    {
+     "text": "그다음 네 가지 점수로 줄을 세웁니다.",
+     "audio": "audio/sq-1/0e62112d7b1ac842.wav",
+     "frames": 74,
+     "cap": null
+    },
+    {
+     "text": "빚에 비해 현금을 잘 버는지, 가진 돈으로 이익을 잘 내는지.",
+     "audio": "audio/sq-1/43353ee676600242.wav",
+     "frames": 107,
+     "cap": null
+    }
+   ],
+   "frames": 407,
+   "data": {
+    "pic": "bg/sq1/board/sq1_sieve4.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그리고 배당률과, 배당을 늘려 온 속도예요.",
+     "audio": "audio/sq-1/0aae0c651572b2de.wav",
+     "frames": 73,
+     "cap": null
+    },
+    {
+     "text": "위에서부터 100곳을 담아요.",
+     "audio": "audio/sq-1/55b6131cce4c1b61.wav",
+     "frames": 45,
+     "cap": null
+    },
+    {
+     "text": "한 회사나 한 업종에 너무 몰리지 않게 막아 두었고요.",
+     "audio": "audio/sq-1/0e3489b765b8d70b.wav",
+     "frames": 106,
+     "cap": null
+    },
+    {
+     "text": "명단은 해마다 3월에 바뀝니다.",
+     "audio": "audio/sq-1/904f7e54f39d88d0.wav",
+     "frames": 67,
+     "cap": null
+    }
+   ],
+   "frames": 291,
+   "data": {
+    "src": "bg/sq1/stock/6851679.mp4",
+    "license": "Pexels 6851679 무료(cottonbro studio)",
+    "say": "위에서부터 담아요",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "운용 보수는 1억이면 한 해 SCHD가 6만원, 나스닥100을 따라가는 QQQ가 18만원 정도예요.",
+     "audio": "audio/sq-1/9e9e520f0ca9008f.wav",
+     "frames": 165,
+     "cap": null
+    },
+    {
+     "text": "하나는 큰 회사를, 하나는 배당을 꾸준히 주는 회사를 담는 셈이죠.",
+     "audio": "audio/sq-1/c7f444ce6c08201a.wav",
+     "frames": 137,
+     "cap": null
+    }
+   ],
+   "frames": 302,
+   "data": {
+    "pic": "bg/sq1/board/sq1_fee2.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "그럼 한쪽만 살지, 둘을 섞을지.",
+     "audio": "audio/sq-1/ba1bcdfb2ba2fcfa.wav",
+     "frames": 58,
+     "cap": null
+    }
+   ],
+   "frames": 58,
+   "data": {
+    "n": "3장",
+    "q": "섞는 비율별 지난 15년과 5년"
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "이 질문에 답하려고 섞는 비율을 여러 가지로 나눠 지난 15년을 다시 셌습니다.",
+     "audio": "audio/sq-1/d57693a03a7ee050.wav",
+     "frames": 137,
+     "cap": null
+    }
+   ],
+   "frames": 137,
+   "data": {
+    "src": "bg/sq1/stock/5466772.mp4",
+    "license": "Pexels 5466772 무료(olia danilevich)",
+    "say": "비율을 나눠 셌어요",
+    "side": "left",
+    "from": 180
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "한쪽이 더 오르면 비율이 틀어지죠. 그래서 해마다 한 번, 일부를 팔고 사서 처음 비율로 되돌렸다고 쳤어요.",
+     "audio": "audio/sq-1/5c620873b7e8f759.wav",
+     "frames": 203,
+     "cap": null
+    },
+    {
+     "text": "계산을 그렇게 했다는 뜻이고, 꼭 그렇게 하셔야 한다는 말은 아니에요.",
+     "audio": "audio/sq-1/b829c5487f2845cb.wav",
+     "frames": 120,
+     "cap": null
+    },
+    {
+     "text": "QQQ를 많이 섞을수록 끝값이 커졌어요.",
+     "audio": "audio/sq-1/e38ae60a92289948.wav",
+     "frames": 80,
+     "cap": null
+    }
+   ],
+   "frames": 403,
+   "data": {
+    "pic": "bg/sq1/board/sq1_mix5.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "대신 크게 빠질 때도 더 깊이 빠졌습니다.",
+     "audio": "audio/sq-1/bc668baa23aed3fa.wav",
+     "frames": 84,
+     "cap": null
+    }
+   ],
+   "frames": 84,
+   "data": {
+    "src": "bg/sq1/stock/40806780.mp4",
+    "license": "Pexels 40806780 무료(정규송 Nui MALAMA)",
+    "say": "더 깊이 빠질 때",
+    "side": "left",
+    "from": 180
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "2022년 한 해만 보면 QQQ는 3분의 1이 빠졌는데, SCHD만 들고 있었다면 조금 빠지는 데 그쳤어요.",
+     "audio": "audio/sq-1/a0d9295faa096106.wav",
+     "frames": 192,
+     "cap": null
+    }
+   ],
+   "frames": 192,
+   "data": {
+    "pic": "bg/sq1/board/sq1_y2022.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "이번엔 같은 돈을 5년 전에 넣었다고 쳐 볼게요.",
+     "audio": "audio/sq-1/3cfad291d67b0aa8.wav",
+     "frames": 81,
+     "cap": null
+    }
+   ],
+   "frames": 81,
+   "data": {
+    "src": "bg/sq1/stock/5466772.mp4",
+    "license": "Pexels 5466772 무료(olia danilevich)",
+    "say": "넣은 때를 바꾸면",
+    "side": "left",
+    "from": 270
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "반반도 QQQ만도 두 배 가까이로 불었어요.",
+     "audio": "audio/sq-1/fd281b03f9afbd09.wav",
+     "frames": 77,
+     "cap": null
+    },
+    {
+     "text": "둘의 차이는 300만원이 안 돼요.",
+     "audio": "audio/sq-1/b762927b148fecbb.wav",
+     "frames": 62,
+     "cap": null
+    },
+    {
+     "text": "거의 같죠.",
+     "audio": "audio/sq-1/7d83ff447712141f.wav",
+     "frames": 23,
+     "cap": null
+    },
+    {
+     "text": "그런데 가장 크게 빠진 폭은 QQQ만 쪽이 훨씬 깊었습니다.",
+     "audio": "audio/sq-1/2e09fe10d35c4684.wav",
+     "frames": 116,
+     "cap": null
+    },
+    {
+     "text": "이 5년 안에 크게 빠진 2022년이 들어 있거든요.",
+     "audio": "audio/sq-1/0464da1bfa399656.wav",
+     "frames": 116,
+     "cap": null
+    }
+   ],
+   "frames": 394,
+   "data": {
+    "pic": "bg/sq1/board/sq1_line5.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "'SCHD는 수익이 약하다'는 말은 긴 기간으로 보면 맞아요.",
+     "audio": "audio/sq-1/0ffbff22b367a7c2.wav",
+     "frames": 119,
+     "cap": null
+    },
+    {
+     "text": "최근 5년만 보면, 반반이 수익은 거의 같고 덜 흔들렸어요. 그 기간이 그랬다는 이야기예요.",
+     "audio": "audio/sq-1/df9d7ecd2373ce07.wav",
+     "frames": 183,
+     "cap": null
+    },
+    {
+     "text": "어디서 자르느냐가 답을 바꿉니다.",
+     "audio": "audio/sq-1/6141e4bba2f6f5c6.wav",
+     "frames": 66,
+     "cap": null
+    }
+   ],
+   "frames": 368,
+   "data": {
+    "src": "bg/sq1/stock/6851679.mp4",
+    "license": "Pexels 6851679 무료(cottonbro studio)",
+    "say": "어디서 자르느냐",
+    "side": "left",
+    "from": 90
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "같은 15년 동안, 한 번에 넣지 않고 매달 백만원씩 나눠 넣었다면 어땠을까요?",
+     "audio": "audio/sq-1/445ae67a4fef6e82.wav",
+     "frames": 138,
+     "cap": null
+    },
+    {
+     "text": "넣은 돈은 모두 1억 8천만원이에요.",
+     "audio": "audio/sq-1/4d087cba83c88697.wav",
+     "frames": 73,
+     "cap": null
+    },
+    {
+     "text": "QQQ만 넣은 쪽이 8억 8천만원 정도로 가장 컸습니다.",
+     "audio": "audio/sq-1/cc7d9eeedb8066a8.wav",
+     "frames": 113,
+     "cap": null
+    },
+    {
+     "text": "SCHD만은 5억 3천만원 정도였고요.",
+     "audio": "audio/sq-1/7eaaa6244bb017fe.wav",
+     "frames": 89,
+     "cap": null
+    },
+    {
+     "text": "반반은 7억 정도로 그 사이였어요.",
+     "audio": "audio/sq-1/4a10fdd2e548b42d.wav",
+     "frames": 57,
+     "cap": null
+    }
+   ],
+   "frames": 470,
+   "data": {
+    "pic": "bg/sq1/board/sq1_dca.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "여기까지는 달러로만 셌어요.",
+     "audio": "audio/sq-1/9e354a4c9ced877c.wav",
+     "frames": 55,
+     "cap": null
+    },
+    {
+     "text": "우리는 원화로 사니까, 환율을 넣어 다시 봤습니다.",
+     "audio": "audio/sq-1/776247b2ec33da69.wav",
+     "frames": 83,
+     "cap": null
+    }
+   ],
+   "frames": 138,
+   "data": {
+    "n": "4장",
+    "q": "원화로 다시 보면"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "15년 사이 달러 값이 원화로 20% 넘게 올랐어요.",
+     "audio": "audio/sq-1/313ff0b56a2a671b.wav",
+     "frames": 110,
+     "cap": null
+    },
+    {
+     "text": "달러 값이 오르면, 같은 달러 자산도 원화로 바꿀 때 더 많아지죠.",
+     "audio": "audio/sq-1/64b3bc4d2c6ae8c4.wav",
+     "frames": 114,
+     "cap": null
+    },
+    {
+     "text": "그만큼 원화로 센 끝값은 더 커졌습니다.",
+     "audio": "audio/sq-1/85972756239b9e8c.wav",
+     "frames": 98,
+     "cap": null
+    }
+   ],
+   "frames": 322,
+   "data": {
+    "pic": "bg/sq1/board/sq1_fx.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "QQQ만 넣었다면 16억이 넘어요.",
+     "audio": "audio/sq-1/4af271a0bcf6864c.wav",
+     "frames": 77,
+     "cap": null
+    },
+    {
+     "text": "그중 3억 가까이가 환율 몫이었고요.",
+     "audio": "audio/sq-1/2b9ba8c58e6d6168.wav",
+     "frames": 62,
+     "cap": null
+    },
+    {
+     "text": "거꾸로 넣은 날보다 환율이 내려 있으면, 원화로는 그만큼 줄어요.",
+     "audio": "audio/sq-1/ea490a4eb02a551b.wav",
+     "frames": 123,
+     "cap": null
+    }
+   ],
+   "frames": 262,
+   "data": {
+    "src": "bg/sq1/stock/12245077.mp4",
+    "license": "Pexels 12245077 무료(Uzeyir Mehdiyev)",
+    "say": "환율이 오른 몫",
+    "side": "left",
+    "from": 90
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "흔들린 폭도 원화로 세면 달라져요.",
+     "audio": "audio/sq-1/0113aae5cca78a7e.wav",
+     "frames": 66,
+     "cap": null
+    },
+    {
+     "text": "반반은 달러로 세면 가장 크게 24% 빠졌어요.",
+     "audio": "audio/sq-1/baf1cbbb0d2d5979.wav",
+     "frames": 94,
+     "cap": null
+    },
+    {
+     "text": "원화로 세면 가장 크게 빠진 건 2020년 초였고, 그 폭도 14% 정도로 줄었어요.",
+     "audio": "audio/sq-1/ef72edb20313f033.wav",
+     "frames": 168,
+     "cap": null
+    },
+    {
+     "text": "2022년엔 달러로 크게 빠지는 동안, 환율이 1,185원에서 1,435원까지 올라 있었어요.",
+     "audio": "audio/sq-1/0f6770a9c0e820b6.wav",
+     "frames": 178,
+     "cap": null
+    },
+    {
+     "text": "그래서 원화로 보면 덜 빠진 거예요.",
+     "audio": "audio/sq-1/e6549a71a96ee5f9.wav",
+     "frames": 71,
+     "cap": null
+    }
+   ],
+   "frames": 577,
+   "data": {
+    "pic": "bg/sq1/board/sq1_valley2.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "QQQ만은 2021년 말부터 1년 사이, 원화로 세도 28% 가까이 빠졌어요.",
+     "audio": "audio/sq-1/a5dc9672914a17f4.wav",
+     "frames": 167,
+     "cap": null
+    },
+    {
+     "text": "달러로 센 3분의 1보다는 작지만요.",
+     "audio": "audio/sq-1/97d2a8d91aea6f5f.wav",
+     "frames": 67,
+     "cap": null
+    },
+    {
+     "text": "지난 환율이 그렇게 움직였다는 이야기예요.",
+     "audio": "audio/sq-1/535b875123c761da.wav",
+     "frames": 78,
+     "cap": null
+    }
+   ],
+   "frames": 312,
+   "data": {
+    "src": "bg/sq1/stock/40806780.mp4",
+    "license": "Pexels 40806780 무료(정규송 Nui MALAMA)",
+    "say": "지난 환율 이야기",
+    "side": "left",
+    "from": 62
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "노후에는 끝값보다, 해마다 손에 들어오는 돈이 더 궁금하실 거예요.",
+     "audio": "audio/sq-1/097f33764e883728.wav",
+     "frames": 113,
+     "cap": null
+    }
+   ],
+   "frames": 113,
+   "data": {
+    "n": "5장",
+    "q": "매달 들어오는 돈"
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "ETF가 나눠 주는 배당을 분배금이라고 해요.",
+     "audio": "audio/sq-1/def25f5ed169373a.wav",
+     "frames": 86,
+     "cap": null
+    },
+    {
+     "text": "지금 1억을 넣는다면 얼마가 나올지, 최근 분배금으로 계산해 봤습니다.",
+     "audio": "audio/sq-1/8ed75a7cc5ac8e54.wav",
+     "frames": 111,
+     "cap": null
+    }
+   ],
+   "frames": 197,
+   "data": {
+    "src": "bg/sq1/stock/7710769.mp4",
+    "license": "Pexels 7710769 무료(kaboompics)",
+    "say": "나눠 주는 배당",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "1억이면 SCHD는 한 해, 세금 떼기 전 300만원 가까이 나와요.",
+     "audio": "audio/sq-1/7e154aa59cf7f46c.wav",
+     "frames": 103,
+     "cap": null
+    },
+    {
+     "text": "QQQ는 50만원이 안 됩니다.",
+     "audio": "audio/sq-1/b26fb61c6c69fb89.wav",
+     "frames": 76,
+     "cap": null
+    },
+    {
+     "text": "반반이면 그 중간, 170만원 정도고요.",
+     "audio": "audio/sq-1/baf6d7134562f7ef.wav",
+     "frames": 91,
+     "cap": null
+    },
+    {
+     "text": "직접 산 미국 상품은 분배금이 달러로 들어와서, 원화로는 받는 날 환율에 따라 달라져요.",
+     "audio": "audio/sq-1/6aa2e9f64f0050fa.wav",
+     "frames": 160,
+     "cap": null
+    }
+   ],
+   "frames": 430,
+   "data": {
+    "pic": "bg/sq1/board/sq1_dist3.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "국내에 상장된 같은 지수 상품은 매달이나 석 달마다 나눠 주는 것도 있습니다.",
+     "audio": "audio/sq-1/12a8403d4a5d16c5.wav",
+     "frames": 129,
+     "cap": null
+    },
+    {
+     "text": "생활비로 쓰실 거라면, 나눠 받는 돈으로 쓸지 조금씩 팔아서 쓸지가 먼저 정할 일이에요.",
+     "audio": "audio/sq-1/5b65b667f2431d24.wav",
+     "frames": 173,
+     "cap": null
+    }
+   ],
+   "frames": 302,
+   "data": {
+    "src": "bg/sq1/stock/7710769.mp4",
+    "license": "Pexels 7710769 무료(kaboompics)",
+    "say": "생활비로 쓰신다면",
+    "side": "left",
+    "from": 18
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "이제 세금 이야기로 넘어갈게요. 차이가 가장 크게 벌어지는 곳이 바로 여기거든요.",
+     "audio": "audio/sq-1/876316e0e0e8a751.wav",
+     "frames": 141,
+     "cap": null
+    }
+   ],
+   "frames": 141,
+   "data": {
+    "n": "6장",
+    "q": "직접 사나, 국내 상장으로 사나"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "같은 지수라도 미국 상품을 직접 사느냐, 국내에 상장된 상품을 사느냐에 따라 세금 매기는 법이 달라요.",
+     "audio": "audio/sq-1/17e56d53f40dddf6.wav",
+     "frames": 193,
+     "cap": null
+    },
+    {
+     "text": "미국 상품을 직접 사서 팔면, 차익에서 한 해 250만원을 빼고 22%를 냅니다.",
+     "audio": "audio/sq-1/35dabd5cd3b4af0e.wav",
+     "frames": 172,
+     "cap": null
+    },
+    {
+     "text": "다른 소득과 섞지 않고 따로 끝나요.",
+     "audio": "audio/sq-1/3c1cebdc76e2a884.wav",
+     "frames": 69,
+     "cap": null
+    }
+   ],
+   "frames": 434,
+   "data": {
+    "pic": "bg/sq1/board/sq1_tax2way.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "국내 상장 해외 ETF는 팔아서 남긴 돈도 배당소득으로 칩니다.",
+     "audio": "audio/sq-1/ccd4689c1389392c.wav",
+     "frames": 112,
+     "cap": null
+    },
+    {
+     "text": "세법이 이 상품은 그렇게 정해 두었어요.",
+     "audio": "audio/sq-1/91af59060639aeee.wav",
+     "frames": 76,
+     "cap": null
+    },
+    {
+     "text": "금융소득은 예금 이자와 배당을 합친 돈이에요.",
+     "audio": "audio/sq-1/6a77a8f04eefcddd.wav",
+     "frames": 102,
+     "cap": null
+    },
+    {
+     "text": "한 해 금융소득이 2천만원을 넘으면, 넘는 몫은 월급이나 사업소득 같은 다른 소득과 합쳐 세금을 다시 셈해요. 세율이 더 높아질 수 있습니다.",
+     "audio": "audio/sq-1/795d04fdb4f6400f.wav",
+     "frames": 275,
+     "cap": null
+    }
+   ],
+   "frames": 565,
+   "data": {
+    "src": "bg/sq1/stock/8135727.mp4",
+    "license": "Pexels 8135727 무료(kaboompics)",
+    "say": "금융소득이란",
+    "side": "left",
+    "from": 90
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "국민연금 같은 연금은 이 2천만원을 셀 때 넣지 않아요.",
+     "audio": "audio/sq-1/8371f6a1359ffeef.wav",
+     "frames": 128,
+     "cap": null
+    },
+    {
+     "text": "연금은 2천만원이 넘었을 때 함께 합쳐지는 다른 소득 쪽에 들어가요.",
+     "audio": "audio/sq-1/31d68444db6dd0f1.wav",
+     "frames": 129,
+     "cap": null
+    }
+   ],
+   "frames": 257,
+   "data": {
+    "src": "bg/sq1/stock/7710769.mp4",
+    "license": "Pexels 7710769 무료(kaboompics)",
+    "say": "연금은 따로 셈",
+    "side": "left",
+    "from": 63
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "15년 전 1억을 SCHD에 넣고 올해 한 번에 팔았다고 쳐 볼게요.",
+     "audio": "audio/sq-1/ad54ec0dec63d4b4.wav",
+     "frames": 106,
+     "cap": null
+    },
+    {
+     "text": "다른 소득은 없다고 쳤어요.",
+     "audio": "audio/sq-1/df47ef12a25ccfd6.wav",
+     "frames": 46,
+     "cap": null
+    },
+    {
+     "text": "국내 상장 상품도 같은 지수로 움직였고, 지금 세법이 15년 내내 그대로였다고 쳤고요.",
+     "audio": "audio/sq-1/d98e7997e7fd6845.wav",
+     "frames": 153,
+     "cap": null
+    }
+   ],
+   "frames": 305,
+   "data": {
+    "src": "bg/sq1/stock/5466772.mp4",
+    "license": "Pexels 5466772 무료(olia danilevich)",
+    "say": "이렇게 쳤어요",
+    "side": "left",
+    "from": 274
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "직접 샀다면 세금을 떼고 6억 5천만원 정도 남습니다.",
+     "audio": "audio/sq-1/ef6e5fe74a0c9f3f.wav",
+     "frames": 94,
+     "cap": null
+    },
+    {
+     "text": "국내 상장이었다면 5억 6천만원 정도예요.",
+     "audio": "audio/sq-1/7054106ab3f935c0.wav",
+     "frames": 85,
+     "cap": null
+    },
+    {
+     "text": "판 해에 차익이 한꺼번에 배당소득이 되면서, 그해 세금만 2억이 넘게 나오거든요.",
+     "audio": "audio/sq-1/90b629947e58fdc7.wav",
+     "frames": 137,
+     "cap": null
+    },
+    {
+     "text": "QQQ만 넣었다면 이 차이가 3억 넘게 벌어져요.",
+     "audio": "audio/sq-1/1e65b9ede00a5afa.wav",
+     "frames": 90,
+     "cap": null
+    }
+   ],
+   "frames": 406,
+   "data": {
+    "pic": "bg/sq1/board/sq1_tax15.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "그렇다고 직접 사는 쪽이 늘 낫지는 않습니다.",
+     "audio": "audio/sq-1/bdaa1c1da17aac12.wav",
+     "frames": 93,
+     "cap": null
+    }
+   ],
+   "frames": 93,
+   "data": {
+    "src": "bg/sq1/stock/8135727.mp4",
+    "license": "Pexels 8135727 무료(kaboompics)",
+    "say": "늘 낫지는 않아요",
+    "side": "left",
+    "from": 180
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "5년만 들고 있었다면, 다른 소득이 없을 때 오히려 국내 상장이 조금 더 남았어요.",
+     "audio": "audio/sq-1/c59e48cabe7a934f.wav",
+     "frames": 152,
+     "cap": null
+    },
+    {
+     "text": "다른 소득이 한 해 5천만원이면, 다시 직접 산 쪽이 조금 더 남았고요.",
+     "audio": "audio/sq-1/35142127dcad2284.wav",
+     "frames": 135,
+     "cap": null
+    },
+    {
+     "text": "짧게 들면 차익이 작아 차이도 작고, 내 다른 소득에 따라 방향이 바뀐다는 뜻이에요.",
+     "audio": "audio/sq-1/fcc806427194c556.wav",
+     "frames": 161,
+     "cap": null
+    },
+    {
+     "text": "오래 들고 한 번에 팔수록 국내 상장 쪽 세금이 커지는 구조예요.",
+     "audio": "audio/sq-1/5d9ccef98f9381c4.wav",
+     "frames": 112,
+     "cap": null
+    }
+   ],
+   "frames": 560,
+   "data": {
+    "pic": "bg/sq1/board/sq1_tax5.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "직접 산 미국 상품에서 받은 배당도, 한 해 금융소득을 셀 때는 같이 더합니다.",
+     "audio": "audio/sq-1/7cc2b99d7615d808.wav",
+     "frames": 141,
+     "cap": null
+    },
+    {
+     "text": "다만 그 배당엔 미국이 세금 15%를 먼저 떼어 가서, 받을 때 국내에서 또 떼지는 않아요.",
+     "audio": "audio/sq-1/4b99ea9986608728.wav",
+     "frames": 172,
+     "cap": null
+    },
+    {
+     "text": "앞에서 본 300만원 가까운 SCHD 분배금은, 손에 들어올 땐 250만원 정도로 줄어요.",
+     "audio": "audio/sq-1/088c0e68058c371c.wav",
+     "frames": 153,
+     "cap": null
+    }
+   ],
+   "frames": 466,
+   "data": {
+    "src": "bg/sq1/stock/6851679.mp4",
+    "license": "Pexels 6851679 무료(cottonbro studio)",
+    "say": "직접 받은 배당",
+    "side": "left",
+    "from": 180
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "연금저축이나 ISA 안에서는 국내 상장 상품만 살 수 있고, 세금 매기는 법도 달라요. 여기 나온 숫자는 모두 일반 계좌 기준입니다.",
+     "audio": "audio/sq-1/8212d97f88fc723a.wav",
+     "frames": 255,
+     "cap": null
+    },
+    {
+     "text": "건강보험료도 따로 따져 보셔야 하고요.",
+     "audio": "audio/sq-1/0b371d7f056661f5.wav",
+     "frames": 68,
+     "cap": null
+    },
+    {
+     "text": "그래서 숫자를 보기 전에, 내 계좌가 일반 계좌인지 연금저축이나 ISA인지부터 확인하세요.",
+     "audio": "audio/sq-1/16c5255eef85ec0b.wav",
+     "frames": 173,
+     "cap": null
+    }
+   ],
+   "frames": 496,
+   "data": {
+    "src": "bg/sq1/stock/8135727.mp4",
+    "license": "Pexels 8135727 무료(kaboompics)",
+    "say": "내 계좌부터",
+    "side": "left",
+    "from": 270
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "이 숫자를 볼 때 걸리기 쉬운 함정이 셋 있어요.",
+     "audio": "audio/sq-1/552d926f7b0b4b44.wav",
+     "frames": 103,
+     "cap": null
+    }
+   ],
+   "frames": 103,
+   "data": {
+    "n": "7장",
+    "q": "함정"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "하나, 지난 값을 앞으로의 값으로 읽는 것.",
+     "audio": "audio/sq-1/5357ea35785da946.wav",
+     "frames": 82,
+     "cap": null
+    },
+    {
+     "text": "같은 상품도 5년으로 자르면 답이 달랐죠.",
+     "audio": "audio/sq-1/23dba1dbd450bf45.wav",
+     "frames": 73,
+     "cap": null
+    },
+    {
+     "text": "둘, 이름만 보고 고르는 것.",
+     "audio": "audio/sq-1/a8fed18505a749fb.wav",
+     "frames": 56,
+     "cap": null
+    },
+    {
+     "text": "'QQQ와 SCHD를 합쳤다'고 소개된 상품을 열어 보면, 나스닥100 커버드콜 상품인 경우가 있었어요.",
+     "audio": "audio/sq-1/dc7741c28a4780c3.wav",
+     "frames": 179,
+     "cap": null
+    }
+   ],
+   "frames": 390,
+   "data": {
+    "pic": "bg/sq1/board/sq1_traps3.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "이름은 비슷해도 따라가는 지수와 방식이 다른 상품이에요. 커버드콜은 월요일 편에서 따로 다룹니다.",
+     "audio": "audio/sq-1/57b87218abfa0158.wav",
+     "frames": 163,
+     "cap": null
+    },
+    {
+     "text": "운용사 홈페이지의 상품 설명서에서 따라가는 지수 이름을 먼저 보세요.",
+     "audio": "audio/sq-1/82488f691a64f47d.wav",
+     "frames": 112,
+     "cap": null
+    },
+    {
+     "text": "SCHD와 같은 지수를 따라가는 상품이면, 기초지수 칸에 다우존스 미국 배당 100이라고 적혀 있어요.",
+     "audio": "audio/sq-1/d81523b0655f311d.wav",
+     "frames": 153,
+     "cap": null
+    }
+   ],
+   "frames": 428,
+   "data": {
+    "src": "bg/sq1/stock/5466772.mp4",
+    "license": "Pexels 5466772 무료(olia danilevich)",
+    "say": "따라가는 지수 이름",
+    "side": "left",
+    "from": 151
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "셋, 국내 상장 상품을 일반 계좌에서 오래 모아 한 해에 다 파는 것.",
+     "audio": "audio/sq-1/22139c3a20161db8.wav",
+     "frames": 140,
+     "cap": null
+    },
+    {
+     "text": "그해 금융소득이 2천만원을 훌쩍 넘을 수 있어요.",
+     "audio": "audio/sq-1/9143428847e4970e.wav",
+     "frames": 104,
+     "cap": null
+    },
+    {
+     "text": "팔기 전에 그해 금융소득을 먼저 계산해 보세요. 넘으면 회사원이라도 다음 해 5월에 종합소득세 신고를 하셔야 합니다.",
+     "audio": "audio/sq-1/3c6fa458f654121c.wav",
+     "frames": 190,
+     "cap": null
+    }
+   ],
+   "frames": 434,
+   "data": {
+    "pic": "bg/sq1/board/sq1_traps3.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "ask",
+   "lines": [
+    {
+     "text": "15년으로 보면 나스닥100이 크게 앞섰고, 최근 5년으로 보면 반반이 거의 따라왔어요.",
+     "audio": "audio/sq-1/0974144c6fb2835b.wav",
+     "frames": 161,
+     "cap": null
+    }
+   ],
+   "frames": 161,
+   "data": {
+    "n": "8장",
+    "q": "정리"
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "지난 값은 앞날을 말해 주지 않습니다.",
+     "audio": "audio/sq-1/248a878400a117e4.wav",
+     "frames": 62,
+     "cap": null
+    },
+    {
+     "text": "같은 지수라도, 안에 무엇이 들었고 어디서 샀느냐가 답을 바꿉니다.",
+     "audio": "audio/sq-1/7aa11e7a2ae291e4.wav",
+     "frames": 113,
+     "cap": null
+    },
+    {
+     "text": "세금은 일반 계좌에서 오래 들고 한 번에 팔수록, 국내 상장 쪽이 크게 불리했어요. 짧게 들면 반대인 경우도 있었고요.",
+     "audio": "audio/sq-1/61d07dd293e5aea1.wav",
+     "frames": 178,
+     "cap": null
+    }
+   ],
+   "frames": 353,
+   "data": {
+    "pic": "bg/sq1/board/sq1_summary.png",
+    "license": "파이어맵 자체 제작 판(출처는 판 안)",
+    "baked": true,
+    "inset": 0.8,
+    "dark": true,
+    "zoom": [
+     1.0,
+     1.04
+    ],
+    "cx": 50,
+    "cy": 45
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
+    {
+     "text": "비율별 전체 표는 파이어맵 카페에 올려 두었어요. 궁금한 비율의 줄을 한번 찾아보세요.",
+     "audio": "audio/sq-1/2d8f010d064dd3a8.wav",
+     "frames": 162,
+     "cap": null
+    }
+   ],
+   "frames": 162,
+   "data": {
+    "src": "bg/sq1/stock/40806780.mp4",
+    "license": "Pexels 40806780 무료(정규송 Nui MALAMA)",
+    "say": "전체 표는 카페에",
+    "side": "left",
+    "from": 213
+   }
+  },
+  {
+   "kind": "pic",
+   "lines": [
+    {
+     "text": "월요일 오전 11시 반에는 배당 커버드콜 ETF 이야기입니다. 그때 뵙겠습니다.",
+     "audio": "audio/sq-1/4d8b929d2242c6a5.wav",
+     "frames": 138,
+     "cap": null
+    },
+    {
+     "text": "",
+     "audio": null,
+     "frames": 525,
+     "cap": null
+    }
+   ],
+   "frames": 738,
+   "data": {
+    "pic": "bg/sq1/stock/plant_last.jpg",
+    "license": "Pexels 4503780 무료(cottonbro studio)",
+    "baked": true,
+    "zoom": [
+     1.0,
+     1.1
+    ],
+    "cx": 50,
+    "cy": 50
+   }
+  }
+ ],
+ "badge": "",
+ "strip": {
+  "chapters": [
+   {
+    "n": 1,
+    "name": "나스닥100은 어떻게 갈아 끼우나"
+   },
+   {
+    "n": 2,
+    "name": "SCHD는 무엇을 담나"
+   },
+   {
+    "n": 3,
+    "name": "섞는 비율별 지난 15년과 5년"
+   },
+   {
+    "n": 4,
+    "name": "원화로 다시 보면"
+   },
+   {
+    "n": 5,
+    "name": "매달 들어오는 돈"
+   },
+   {
+    "n": 6,
+    "name": "직접 사나, 국내 상장으로 사나"
+   },
+   {
+    "n": 7,
+    "name": "함정"
+   },
+   {
+    "n": 8,
+    "name": "정리"
+   }
+  ],
+  "starts": [
+   1237,
+   2405,
+   3473,
+   5660,
+   7271,
+   8313,
+   12036,
+   13391
+  ],
+  "total": 8,
+  "topic": null,
+  "side": "right",
+  "dark": [
+   [
+    0,
+    15804
+   ]
+  ],
+  "top": 3,
+  "fs": 20
+ }
+}

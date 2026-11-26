@@ -53,7 +53,7 @@
 
 ## 한계
 - 올해 12월 1주당 금액은 미발표 — 작년 금액으로만 셈
-- 1만 달러 계산은 11/23 종가·2025년 12월 금액·미국 원천징수 15%만 — 환율·국내 세금·수수료 안 넣음
+- 1만 달러 계산은 11/25 종가·2025년 12월 금액·미국 원천징수 15%만 — 환율·국내 세금·수수료 안 넣음
 - 국내 증권사 주간·프리마켓 체결이 어느 미국 거래일로 잡히는지는 증권사마다 달라 확인 안 함 — 글은 정규장 기준
 - 12/30 추가 분배는 '필요할 때만'이라 나올지 모름
 - 일정은 운용사가 바꿀 수 있음(S1·S4 각주)
@@ -74,9 +74,17 @@
 | 12월 몫 DGRO 30.8%·VYM 27.0%·SCHD 26.6%·VOO 25.1%·VIG 24.8%, JEPI·JEPQ 17~18% | 30.8 · 27.0 · 26.6 · 25.1 · 24.8 · 16.9 · 18.4 | S6 S7 |
 | DGRO 2025년 12월 0.447달러, 네 번 중 최대 | 0.447 (1년 1.451) | S6 S7 |
 | JEPI·JEPQ 2025년 12월 배당락 1일·31일 | 2025-12-01 · 2025-12-31 | S6 |
-| 1만 달러 세후 JEPQ 178·JEPI 121·SCHD 69·VYM 51·DGRO 48·VIG 31·VOO 23달러 | 177.6 · 121.3 · 68.7 · 51.3 · 48.4 · 31.2 · 22.7 | S6 S7 |
+| 1만 달러 세후 JEPQ 182·JEPI 121·SCHD 67·VYM 51·DGRO 48·VIG 31·VOO 23달러 | 182.0 · 121.0 · 67.0 · 50.8 · 47.7 · 30.9 · 22.8(11/25 종가) | S6 S7 |
 
 # 올리기 전 확인
+- 2026-11-26 11:08 firemap-write-b(발행 날 — 10:10 칸, 늦게 냄). 11/24 첫 기록은 아래 '이전'에 남김
+- 다시 연 주소(11/26 전부 다시 받음): https://bynder.schwab.com/m/15dbdbecf7339e7f/ (슈왑 2026 주식 ETF 일정표 PDF — 11/24 받은 파일과 바이트까지 같음) · https://investor.vanguard.com/content/dam/retail/us/en/pdfs/taxes/divdat-012026.pdf (같음) · https://www.ishares.com/us/literature/shareholder-letters/isharesandblackrocketfsdistributionschedule.pdf (같음) · https://am.jpmorgan.com/content/dam/jpm-am-aem/americas/us/en/supplemental/income-distribution-rates/jpmorgan-etfs-2026-distribution-notice.pdf (같음) · https://query1.finance.yahoo.com/v8/finance/chart/SCHD?range=3y&interval=1d&events=div (7종 다시 받음, 11/25 정규장 종가) · https://api.nasdaq.com/api/quote/JEPQ/dividends (12월 분배 발표 아직 없음 — 마지막 11/02 0.53922)
+- 기준일: 운용사 일정표 2026-11-26 확인, 종가 2026-11-25 미국 종가(11/26 추수감사절 휴장), 배당 금액 2025년 기록
+- 바뀐 것: 12월 배당락·지급 날짜 그대로(JEPI·JEPQ 12/1·SCHD 12/9·DGRO 12/15·VYM 12/18·VIG·VOO 12/21) · 종가 11/23→11/25(SCHD 34.39→35.29·JEPQ 54.03→52.72달러) · 1만 달러 세후 작년 12월 분배 SCHD 69→67달러·JEPQ 178→182달러, 나머지(JEPI 121·VYM 51·DGRO 48·VIG 31·VOO 23) 그대로 · 12월 몫 %(DGRO 30.8 등) 그대로
+- 새로 찾은 것: JEPI·JEPQ 12월 분배금은 11/26 기준 아직 발표 전(나스닥 기록 11월분까지) — 글의 '올해 금액은 아직 안 정해졌어요'가 그대로 맞음 · 11/30(월) 미국 장이 JEPI·JEPQ 마지막 날이라 발행일(11/26) 기준 아직 살 수 있는 날짜
+- 조사 뒤 공표: 운용사 12월 금액은 배당락 전 영업일 발표(아이셰어즈 일정표) — 발행 뒤 나옴
+
+## 이전(11/24)
 - 2026-11-24 20:1x 작성하며 S1~S6 모두 받음: https://www.schwabassetmanagement.com/resource/schwab-equity-etfs-distribution-schedule-2026 https://bynder.schwab.com/m/15dbdbecf7339e7f/ https://investor.vanguard.com/content/dam/retail/us/en/pdfs/taxes/divdat-012026.pdf https://www.ishares.com/us/literature/shareholder-letters/isharesandblackrocketfsdistributionschedule.pdf https://am.jpmorgan.com/content/dam/jpm-am-aem/americas/us/en/supplemental/income-distribution-rates/jpmorgan-etfs-2026-distribution-notice.pdf https://www.nyse.com/markets/hours-calendars https://query1.finance.yahoo.com/v8/finance/chart/SCHD?range=3y&interval=1d&events=div
 - 발행 회차(11/26)가 다시 열어 날짜·종가 확인하고 적을 것
 기준일: 운용사 일정표 2026-11-24 확인, 종가 2026-11-23 미국 종가, 배당 금액 2025년 기록

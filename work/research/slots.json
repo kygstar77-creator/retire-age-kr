@@ -4984,8 +4984,8 @@
    "item": "decdiv1126",
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-24 20:27",
-   "published": null,
-   "note": "firemap-write-b 2026-11-24 20:27: 11/26 10:10 TBD 칸(배당 — 07:40 k200etf 지수·12:40 rent100 부동산 사이) 채움 · decdiv1126 '미국 배당 ETF 12월 배당락일 언제까지 살까?'(ETF 게시판, 일정형 form 3) 관문 통과 — kwvol SCHD배당금 5,290·JEPI 7,920 · 운용사 원문 4곳(슈왑 7/28자·뱅가드·아이셰어즈 11/18자·JP모건) 12월 배당락: JEPI·JEPQ 1일·SCHD 9일(작년 10일, 제3자 사이트 12/10 엇갈림)·DGRO 15일·VYM 18일·VIG·VOO 21일 · 야후 직접 계산: 2025년 12월 몫 DGRO 30.8%·VYM 27.0·SCHD 26.6·VOO 25.1·VIG 24.8, JEPI·JEPQ 12월 배당락 두 번(17~18%) · 1만 달러 세후 SCHD 69~JEPQ 178달러 · 경쟁 5편(1위 VOO '예정'·총액 뺌) · research strict·bench·prepublish·cover·compare·calc·readcheck 0·selfcheck 0·aitell 6.6·spoken·crosscheck 사실 1(문장 뺌)·이해 2차 6명 통과·editgate auto b6001b74 · **발행 회차(11/26 10:10): 슈왑·뱅가드·아이셰어즈·JP모건 일정표 다시 받아 날짜 대조, JEPI·JEPQ 12/1 배당락은 지났거나 임박이 아님 확인(글은 11/26 발행이라 11/30 밤 장 안내 유효), 야후 다시 받아 calc.py·mkimg.py 다시 돌리고 바뀐 숫자 반영 뒤 재서명**"
+   "published": "https://cafe.naver.com/firemap/488 11:31 verify OK 2361자",
+   "note": "firemap-write-b 2026-11-26 11:31: 발행 #488 verify OK 2361자·사진 3 — 일정표 4곳 바이트 같음·11/25 종가 SCHD 67·JEPQ 182 재서명 e1775876 | firemap-write-b 2026-11-24 20:27: 11/26 10:10 TBD 칸(배당 — 07:40 k200etf 지수·12:40 rent100 부동산 사이) 채움 · decdiv1126 '미국 배당 ETF 12월 배당락일 언제까지 살까?'(ETF 게시판, 일정형 form 3) 관문 통과 — kwvol SCHD배당금 5,290·JEPI 7,920 · 운용사 원문 4곳(슈왑 7/28자·뱅가드·아이셰어즈 11/18자·JP모건) 12월 배당락: JEPI·JEPQ 1일·SCHD 9일(작년 10일, 제3자 사이트 12/10 엇갈림)·DGRO 15일·VYM 18일·VIG·VOO 21일 · 야후 직접 계산: 2025년 12월 몫 DGRO 30.8%·VYM 27.0·SCHD 26.6·VOO 25.1·VIG 24.8, JEPI·JEPQ 12월 배당락 두 번(17~18%) · 1만 달러 세후 SCHD 69~JEPQ 178달러 · 경쟁 5편(1위 VOO '예정'·총액 뺌) · research strict·bench·prepublish·cover·compare·calc·readcheck 0·selfcheck 0·aitell 6.6·spoken·crosscheck 사실 1(문장 뺌)·이해 2차 6명 통과·editgate auto b6001b74 · **발행 회차(11/26 10:10): 슈왑·뱅가드·아이셰어즈·JP모건 일정표 다시 받아 날짜 대조, JEPI·JEPQ 12/1 배당락은 지났거나 임박이 아님 확인(글은 11/26 발행이라 11/30 밤 장 안내 유효), 야후 다시 받아 calc.py·mkimg.py 다시 돌리고 바뀐 숫자 반영 뒤 재서명**"
   },
   {
    "at": "2026-11-26 11:30",
@@ -5002,7 +5002,7 @@
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-24 17:11",
    "published": null,
-   "note": "firemap-write-b 2026-11-24 17:11: 11/26 12:40 TBD 칸(부동산 — 07:40 k200etf1126 지수 다음) 채움 · rent100_1126 '서울 아파트 월세 평균 168만원, 실거래 중간은?'(부동산 게시판) 관문 통과(research_gate strict·bench·readcheck 0·selfcheck 0·이해 2차 6명·editgate auto d605ff09) — kwvol 월세 27,670·서울월세 7,470·서울아파트월세 4,080 · 국토부 서울 25개 구 전월세 직접 계산: 2026.8~10 월세 계약 2만 5,978건 중간 80만원(1년 전 80)·100만원 이상 42.4%(44.4)·84㎡ 안팎 150→158·구별 용산·서초 160~중랑 35 · 경쟁 7편 실거래 중간값 0편 · **발행 회차: 국토부 2026년 8~10월 다시 받아(fetch.py) calc.py·mkimg.py 다시 돌리고 바뀐 숫자 반영 뒤 재서명**"
+   "note": "firemap-write-b 2026-11-26 10:56: 올리기 전 확인 끝 — 국토부 11/26 10:46 다시 받아 26,119건·42.5%·강남 133·종로 120·중랑 34 등 반영, 그림 다시, 재서명 auto 290e3f0d · 12:40 발행만 남음 | firemap-write-b 2026-11-24 17:11: 11/26 12:40 TBD 칸(부동산 — 07:40 k200etf1126 지수 다음) 채움 · rent100_1126 '서울 아파트 월세 평균 168만원, 실거래 중간은?'(부동산 게시판) 관문 통과(research_gate strict·bench·readcheck 0·selfcheck 0·이해 2차 6명·editgate auto d605ff09) — kwvol 월세 27,670·서울월세 7,470·서울아파트월세 4,080 · 국토부 서울 25개 구 전월세 직접 계산: 2026.8~10 월세 계약 2만 5,978건 중간 80만원(1년 전 80)·100만원 이상 42.4%(44.4)·84㎡ 안팎 150→158·구별 용산·서초 160~중랑 35 · 경쟁 7편 실거래 중간값 0편 · **발행 회차: 국토부 2026년 8~10월 다시 받아(fetch.py) calc.py·mkimg.py 다시 돌리고 바뀐 숫자 반영 뒤 재서명**"
   },
   {
    "at": "2026-11-26 16:10",

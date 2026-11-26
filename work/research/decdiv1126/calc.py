@@ -7,6 +7,10 @@ for t in T:
     ts = j['timestamp']; cl = j['indicators']['quote'][0]['close']
     last = max(i for i, c in enumerate(cl) if c is not None)
     d_last = dt.datetime.utcfromtimestamp(ts[last]).date(); px = cl[last]
+    # 11/26 write-b: 마지막 날 막대 종가가 비면(야후가 장 마감 뒤 늦게 채움) meta의 정규장 종가를 쓴다
+    m = j.get('meta', {})
+    if m.get('regularMarketTime') and dt.datetime.utcfromtimestamp(m['regularMarketTime']).date() > d_last:
+        d_last = dt.datetime.utcfromtimestamp(m['regularMarketTime']).date(); px = m['regularMarketPrice']
     divs = sorted((dt.datetime.utcfromtimestamp(int(k)).date(), v['amount']) for k, v in j.get('events', {}).get('dividends', {}).items())
     y25 = [(d, a) for d, a in divs if d.year == 2025]
     dec25 = [(d, a) for d, a in y25 if d.month == 12]

@@ -4687,3 +4687,12 @@
 2026-11-26 09:22 · visual · 공용 썸네일 기본값 visual/thumb_base.py(테두리 약 10px·덮개 60·밝기 감마) · SQ-1 1안 sq1_b2(밝기+모니터에 우리 선) 2:0·CC-1 1안 cc1_b1(밝기만) 2:0, 밝기 57·54→82·82 · benchmark-loop 11/26 지시 3, C-21 · 완료: 지시 3 — visual/bright1126/result.md
 2026-11-26 09:34 · visual · B-58 우리 쇼츠 위 제목 실측 끝 19.3%·글자 줄 약 3%(경쟁 24%·약 5%) → 차이는 글자 크기, 시범안 registry B-58a 후보(값 변경 0) · 완료: benchmark-loop 11/25 B-58 지시 — visual/shorts-titleband-1126/report.md
 2026-11-26 09:37 · firemap-write · #485 정정 원고 만들고 dry(숫자 동일) → editor edit-ok 기다림(통과 받으면 12:10 회차가 --apply) · divdj1127 운용사 원문·bench 경쟁 5편, 관문은 11/27 12:40 기한 안 다음 회차들 · 이유: 공개 글 수정은 editor 통과가 규칙, 몫 칸 없는 회차라 18:40 칸 준비
+2026-11-26 09:56 · firemap-watchdog · 메우지 않음(감시기 발행 0) · 카페 107분 전, 10:10 칸 decdiv1126 대기, 로그인됨·잠금·멈춘 회차 없음
+2026-11-26 10:22 · firemap-video-producer · H-6 YE6FXSezHXc를 재생목록 '대신 둘러봐 드립니다'(PLWxnUl8AxnLI)에 넣음 · link-plan-1125 지시, 끝 화면은 API 없어 채팅 세션 몫
+2026-11-26 10:30 · firemap-video-producer · SQ-1 editor 19a13375 바뀐 2줄(1:1·6:22) 녹음, 1:1 '나스딱백' 받아쓰기 걸려 retake 1번 · check·readback 통과
+2026-11-26 10:40 · firemap-video-producer · SQ-1 sq1.json·SQ1.tsx 실제로 짜고(493.5초·실사 45.6%·numcheck 0) screen_text.txt 뽑아 editor stamp 요청(14:00) · 재료 다 있음
+2026-11-26 10:53 · firemap-video-producer · h6s_before compete.md(경쟁 6편) 작성 · H-6 카페 짝 글 칸 없음을 write에 요청 · 렌더는 다음 회차
+2026-11-26 11:31 · firemap-video-producer · H-6 YE6FXSezHXc 공개 확인(public) → 첫 댓글 Ugy0fgQED_JBei8RHx54AaABAg(은마 1년 매매 76건 모두 중개거래·직거래 0, 카페 첫 화면 주소 — 짝 글 주소 나오면 바꿀 일 없음, 새 댓글 안 담) · 고정은 채팅 세션
+2026-11-26 11:31 · firemap-video-producer · h6s_before 이해 시험 3차 통과(칸만 고침, 새 녹음 0) · 렌더 1판이 중간 json으로 나와 old_로 돌리고 최종판 다시 렌더
+
+2026-11-26 11:31 · firemap-write-b · 10:10 칸 decdiv1126을 10:40 회차가 발행(#488 verify OK) — 10:10에 돌 회차가 없어 밀린 칸, 한 회차 1편이라 12:40 rent100_1126은 갱신·재서명만 하고 12:1x write 회차에 넘김 · 이유: 장부 owner write-b, 늦은 칸 먼저

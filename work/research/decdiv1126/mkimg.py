@@ -12,7 +12,7 @@ INK, SUBC, ORG, NAVY, GRY = '#111827', '#6B7280', '#EA580C', '#1E3A5F', '#94A3B8
 T = ['JEPI', 'JEPQ', 'SCHD', 'DGRO', 'VYM', 'VIG', 'VOO']
 def yh(t):
     r = json.load(open(f'raw/yahoo_{t}.json', encoding='utf-8'))['chart']['result'][0]
-    cl = r['indicators']['quote'][0]['close']; px = [c for c in cl if c is not None][-1]
+    cl = r['indicators']['quote'][0]['close']; px = r.get('meta', {}).get('regularMarketPrice') or [c for c in cl if c is not None][-1]  # 11/26: 마지막 날 막대가 비면 meta 정규장 종가
     dv = sorted((D.datetime.fromtimestamp(int(k), D.UTC).date(), v['amount']) for k, v in r['events']['dividends'].items())
     y = sum(a for d, a in dv if d.year == 2025); dec = sum(a for d, a in dv if d.year == 2025 and d.month == 12)
     return px, y, dec
@@ -39,7 +39,7 @@ json.dump({'type': 'chart', 'source': '슈왑 2026 주식 ETF 분배 일정표(7
            'made_at': '2026-11-24', 'by': 'research/decdiv1126/mkimg.py', 'out': 'img/00.png', 'topic': '12월 배당락일', 'num': '가장 빠른 날 12월 1일',
            'topic_px': TOPIC_PX, 'num_px': NUM_PX - 12, 'follows': '경쟁 1 few_economy/224477589614 12월 배당 달력 표지 + dgro1125 차트형 표지'},
           open('pkg/cover_meta.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-SRC = '야후 파이낸스 배당 기록·11/23 종가(11/24 받음) · 파이어맵 계산'
+SRC = '야후 파이낸스 배당 기록·11/25 종가(11/26 받음) · 파이어맵 계산'
 def frame(fig, title, sub):
     fig.text(0.04, 0.93, title, fontproperties=Bs(22), color=INK); fig.text(0.04, 0.88, sub, fontsize=13.5, color=SUBC)
     fig.text(0.04, 0.025, SRC, fontsize=10, color=SUBC)
@@ -55,7 +55,7 @@ ax.spines[['top', 'right', 'bottom']].set_visible(False); ax.set_xticks([]); ax.
 fig.savefig('pkg/img/01.png', dpi=100); plt.close(fig)
 order2 = sorted(T, key=lambda t: 10000 / V[t][0] * V[t][2])
 fig = plt.figure(figsize=(9, 6), dpi=100); fig.patch.set_facecolor('white')
-frame(fig, '1만 달러어치라면 12월 배당 얼마', '11/23 종가로 산 주식 수 × 2025년 12월 1주당 배당 · 미국 세금 15% 뗀 뒤(달러)')
+frame(fig, '1만 달러어치라면 12월 배당 얼마', '11/25 종가로 산 주식 수 × 2025년 12월 1주당 배당 · 미국 세금 15% 뗀 뒤(달러)')
 ax = fig.add_axes([0.12, 0.1, 0.84, 0.72])
 vals = [10000 / V[t][0] * V[t][2] * 0.85 for t in order2]
 b = ax.barh(order2, vals, color=[GRY if t in ('JEPI', 'JEPQ') else NAVY for t in order2])

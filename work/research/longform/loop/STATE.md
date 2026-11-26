@@ -1,3 +1,4 @@
+- 2026-11-26 16:57 · SQ-1 loop 몫 gate 2개 풂(올리기 전 확인·review 판정 7.5) · 판단: 말 더한 판은 다시 심사, 렌더 뒤 지적은 설명란으로 · 다음: NDG-1 2차 심사·12/1 올리기 전 확인, NDX-1 toc_compare·analysis, CC-1 말 3~5줄(8분 바닥, 기한 11/28 12:00) 확인
 [PD] SQ-1 3토막 통렌더 중(editor 15:13 stamp·check 통과, render_parts_1126.sh — 다른 회차는 SQ-1·렌더 손대지 말 것) · 쇼츠 비축 h6s_gangnam 관문 통과(35.8초, 미업로드) · 롱폼 업로드 0 15:22
 - 2026-11-26 12:51 · NDG-1 이해 시험 1~4차(새 심사관 12명) 통과·대본 v1.6(숫자 0 변경) · X-C36 H-5 11/24 노출 2·B 0 · 판단: 단서 숫자(98%)는 말로 두 개 들으면 결론이 흔들려 자막으로만 · 다음: editor NDG-1 재서명(11/27 12:00)→PD 녹음, NDX-1 toc_compare 경쟁 10편·analysis
 [PD] H-6 공개 확인·첫 댓글 Ugy0fgQED_JBei8RHx54AaABAg(76건 모두 중개거래)·재생목록 PLWxnUl8AxnLI · 쇼츠 비축 h6s_before 관문 통과(27.6초, 이해 3차·첫 줄 새 녹음 1줄, 12/1 후보, 미업로드) · SQ-1 editor 2줄(1:1·6:22) 녹음·readback·check 통과·sq1.json 493.5초·screen_text → editor stamp 요청(14:00) 뒤 렌더 · H-6 카페 짝 글 칸 없음 → write 요청 · 고정 대기: YE6FXSezHXc · 롱폼 업로드 0 2026-11-26 12:31

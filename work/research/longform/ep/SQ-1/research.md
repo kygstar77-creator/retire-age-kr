@@ -90,3 +90,16 @@
 | 5년 SCHD 세후(다른 소득 0) | 직투 1.70억·국내 상장 1.74억(−366만원) | 국내 상장이 3백만원 남짓 많음 | calc_tax_out_1121b · S11 https://www.law.go.kr/법령/소득세법/제129조 |
 | SCHD 직투 분배 세후(1억·세전 295만원, 11/24 v1.7 더함) | 295만 × (1 − 0.15) ≈ 251만원, 국내 추가 0 | 250만원 정도 | S15 https://www.nts.go.kr/nts/na/ntt/selectNttInfo.do?mi=2516&nttSn=1293238 · https://www.law.go.kr/법령/소득세법/제129조 |
 | 2천만원 기준에 연금 넣나(Q4, 11/24 v1.7 더함) | 이자·배당만 셈, 넘으면 다른 종합소득(연금소득 포함)과 합산 | 연금은 2천만원 셀 때 안 넣음 | S12 https://www.law.go.kr/법령/소득세법/제14조 · https://www.law.go.kr/법령/소득세법/제62조 |
+| 커버드콜 섞은 상품 사례(183행, 11/26 더함) | 1등 영상 제목 'QQQ+SCHD' 상품 = 나스닥100 데일리 커버드콜(자막) | 'QQQ와 SCHD를 합쳤다'고 소개된 상품이 커버드콜인 경우 | 2차 — https://www.youtube.com/watch?v=XpbnvNMADlg (breakdown/XpbnvNMADlg_transcript.txt) · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7133690008 (기초지수 칸 확인 방법) |
+
+# 올리기 전 확인
+확인일 2026-11-26(youtube-loop 16:4x~17:xx) · 공개 11/28 11:30 · 관문 11/27 11:30 · 다음 확인: 11/27 관문 때 gate가 이 날짜(1일 안)로 통과
+- 운용사: QQQ NAV 9/30 1년 23.75%·5년 16.31%·10년 20.89% 그대로(10/28 글) https://www.invesco.com/qqq-etf/en/etf-insights/qqq-quarterly-outlook.html · SCHD 운용사 페이지 403(막힘) https://www.schwabassetmanagement.com/products/schd → 야후로 대신: 11/25 종가 SCHD 35.29·QQQ 633.93, 분기 분배 행(12/10·3/25·6/24·9/23) https://finance.yahoo.com/quote/SCHD/history · https://finance.yahoo.com/quote/QQQ/history
+- 국내 상장: TIGER 미국나스닥100 총보수 연 0.0068%·분기(1·4·7·10월) 그대로 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7133690008 · TIGER 미국배당다우존스 연 0.01%·매월 그대로 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7458730009 (두 쪽 기준일 2026.11.26)
+- 환율: https://ecos.bok.or.kr/ 열림(본문은 앱 화면이라 글자로 못 읽음) — 쓴 값은 2011-10-31·2026-10-30 월말 확정값이라 바뀌지 않음
+- 법령 12조(국가법령정보센터 웹, raw/law1126/ ↔ raw/law1121/ 본문 비교 12개 모두 같음): 소득세법 [시행 2026. 7. 1. 법률 제21221호] 제14조·제17조·제55조·제57조·제62조·제104조·제129조 https://www.law.go.kr/법령/소득세법/제14조 · https://www.law.go.kr/법령/소득세법/제17조 · https://www.law.go.kr/법령/소득세법/제55조 · https://www.law.go.kr/법령/소득세법/제57조 · https://www.law.go.kr/법령/소득세법/제62조 · https://www.law.go.kr/법령/소득세법/제104조 · https://www.law.go.kr/법령/소득세법/제129조 · 시행령 [시행 2026. 10. 1. 대통령령 제36737호] 제26조의2·제27조의3 https://www.law.go.kr/법령/소득세법시행령/제26조의2 · https://www.law.go.kr/법령/소득세법시행령/제27조의3 · 지방세법 [시행 2026. 7. 1.] 제92조·제103조의3·제103조의13 https://www.law.go.kr/법령/지방세법/제92조 · https://www.law.go.kr/법령/지방세법/제103조의3 · https://www.law.go.kr/법령/지방세법/제103조의13
+- 경쟁 사례: 1등 영상 그대로 공개·조회 233,206(11/26 videos.list) https://www.youtube.com/watch?v=XpbnvNMADlg
+- 조세조약: 국세청 제한세율표 글(2021.02.09, 첨부 xlsx — raw/law1121/nts_treaty_rates_2021_02.xlsx 미국 배당 15%) 그대로 열림 https://www.nts.go.kr/nts/na/ntt/selectNttInfo.do?mi=2516&nttSn=1293238
+- 기준일: 수익률·환율 = 2026-10 월말 종가·월말 매매기준율(10/30) · 운용사 NAV = 9/30 · 총보수 = 11/26 운용사 페이지 · 세법 = 2026-11-26 현행(소득세법 7/1·시행령 10/1 시행분)
+- 바뀐 것: 없음 — 쓴 숫자는 모두 10월 말 확정값, 법령 12조 본문 11/21과 같음, 조사(11/21) 뒤 공표 일정(release_calendar) 끼인 것 없음
+- 새로 찾은 것: 대본 다시 심사(v1.7) 레드팀 — 국내 상장 ETF 분배금 원천징수는 미국에서 뗀 세금만큼 빼고 뗌(제129조, calc_tax 가정 2와 같음)인데 151행 자막 '원천징수 15.4%'만 보면 이중으로 떼는 것처럼 읽힘 → 설명란 한 줄로 풀기(PD·editor에 요청) · 11월 세법 개정 통과 소식은 법령 현행본 머리에 없음(국회 통과 뒤 공포 전 법은 확인 안 함)

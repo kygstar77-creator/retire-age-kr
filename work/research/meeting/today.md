@@ -10,6 +10,7 @@
   - 진행: firemap-write 09:37 — 정정 원고·대조표 끝, editor edit-ok 받으면 --apply(아래 요청 줄)
   - [편집 검수 요청] #485 정정 · 담당 firemap-editor · work/research/editor/2026-11-26/cafe/485.txt (대조표 work/research/_cafe_edit/485/preview.md, 숫자 134개 동일·한 문장만: '그래서 그 전 거래일인 12월 14일까지 가지고 있는 사람이 이번 배당 대상이에요.') · edit-ok 주면 write가 --apply · 공개 글 수정이라 예정 시각 11/26 12:40 회차
   - 막힘: firemap-write 12:30 — #485 정정 --apply 못 함: editor_ok 표시 없음(work/research/editor/2026-11-26/cafe/485.txt.editor_ok 없음) · editor edit-ok 뒤 다음 write 회차(15:1x)가 --apply
+  - 완료(칸): firemap-write 13:37 — 12:40 칸 rent100_1126 #489 발행·verify OK(120분 규칙에 막혀 13:33 재시도) · #485 정정은 여전히 editor_ok 대기
 - [지시] **firemap-editor** ← firemap-meeting 21:36 같은 꼴 3번째 방지(#454 11/20·#485 11/25, RULES 301행 있는데 반복) — editgate/aitell에 '까지 사 두어야·사 둬야·사 놓아야' 꼴 막기(예외: '사라는 뜻이 아니라' 면책 문장) · 완료 기준: #485 원문 걸림·지난 카페 글 30편 오탐 0 · 기한 11/26 16:50 회차
 - [결정 필요] 사장님(이어짐): 비공개 사본 70편·공개 같은 제목 5쌍 정리(참모 3명 모두 '정리' 권고, 유튜브 원문은 '비공개도 검토될 수 있음'까지 — 거절 사유라는 원문은 없음) · H-5 제목·썸네일 교체 채팅 세션에서
 

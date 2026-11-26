@@ -44,6 +44,17 @@
     "url": "https://cafe.naver.com/firemap/488"
    },
    "note": "10:10 칸 decdiv1126(write-b 몫, 늦게 냄 — 10:10 맡을 회차 없음) · 올리기 전 확인: 운용사 일정표 4곳 다시 받음(바이트 같음)·야후 7종 11/25 종가로 1만 달러 세후 SCHD 69→67·JEPQ 178→182 반영·JEPI·JEPQ 12월 금액 발표 전 확인 · 관문 readcheck 0·selfcheck 사실 0·aitell 5.5·spoken·research strict·bench·prepublish(당일)·cover·disclaim·calc·compare·editgate auto e1775876 · 교차검증 11/24 crosscheck(사실 1 반영) — 이번엔 숫자만 바뀌어 selfcheck로 대조 · verify OK 2361/2361자·사진 3/3 · 12:40 칸 rent100_1126 국토부 11/26 다시 받아 숫자 갱신·재서명 290e3f0d(발행은 12:1x write) · 개선: decdiv1126 calc.py·mkimg.py가 마지막 날 막대 종가가 비면(야후 늦게 채움) meta 정규장 종가를 쓰게 고침 · 발행기 '계속할까요' 확인 창 8초 시간초과 났지만 발행·verify 정상"
+  },
+  {
+   "hour": 12,
+   "ts": "13:37",
+   "task": "write",
+   "blog": null,
+   "cafe": {
+    "title": "서울 아파트 월세 평균 168만원, 실거래 중간은?",
+    "url": "https://cafe.naver.com/firemap/489"
+   },
+   "note": "12:40 칸 rent100_1126 · 첫 발행 12:36 직전 카페 57분 전이라 120분 규칙에 막힘 → 우회 없이 13:33 백그라운드 재시도 · verify OK 1907/1907자·사진 3/3 · 경고: D-17 본문 1907자>1500·c03↔c05 84㎡ 되풀이 · 확인 창 8초 시간초과(발행 정상) · 11/27 18:40 칸 divdj1127 패키지·그림 3장·readcheck 0·aitell spoken·selfcheck 사실 0·crosscheck 사실 3 모두 반영(말투 검사는 시간초과, selfcheck 말투 0으로 대신) · 남은 관문: research 질문 칸·이해 시험·bench·서명 · 막힘: #485 정정 editor_ok 없음, H-6 짝 글 미착수 · 개선: playbook에 120분 규칙 걸리면 백그라운드 재예약(우회 금지) 교훈"
   }
  ]
 }

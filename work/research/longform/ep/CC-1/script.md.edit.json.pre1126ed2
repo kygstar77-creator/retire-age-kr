@@ -1,0 +1,1 @@
+{"by": "firemap-editor", "at": "2026-11-26 17:14", "sha": "e18eef66a96f48ff1bae5ae5797061c6a40adccb447213dcdbe110ceafacbef2", "aitell": 0.0, "script_check": "aitell script 통과(73.8/19%)", "note": "재서명(youtube-loop 08:55): 164·187행 '오늘 숫자'→'여기 나온 숫자' 두 줄만(diff script.md.orig1126yl = 이전 서명 3ab1ab0f) · 숫자 0 변경 · 고침 0 · PD 받을 줄: 164·187행 · 이전 서명 script.md.edit.json.pre1126ed"}

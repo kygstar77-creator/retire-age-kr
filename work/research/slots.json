@@ -5121,11 +5121,58 @@
    "note": "firemap-write-b 2026-11-26 17:19: h5s_jeonse 짝 글 jeonse38_1127 '송도 아파트 전세가율 39개 단지 직접 세어 보니'(부동산 게시판, 통계형 form 4) 관문 통과 — kwvol 송도전세 2,080·송도아파트전세 1,560 · 국토부 매매·전월세 11/26 16:47 다시 받아 7~11월 순수전세 877건·단지 39곳 가운데 57%(쇼츠 38곳 57%와 같음)·70%·39% + 새로 셈(준공 시기 62·58·55%·신규만 61%·갱신요구권 293건) · #452(동 전체 전세)·#468(매매 가격표)와 각도 다름 · research strict·bench(사진 비교 3)·compare·readcheck 0·selfcheck 사실 0·aitell 0.8·이해 2차 6명 통과·표지 차트 · auto a2df2f22 · 발행 회차: 11/27 당일 국토부 다시 받아 calc 다시(숫자 바뀌면 c0*·mkimg·재서명), 쇼츠 fg25cKGhAso 19:20 공개 확인 뒤 | firemap-meeting 2026-11-25 21:4x 배정 · yt_pair: h5s_jeonse(fg25cKGhAso 19:20) · 송도 84㎡ 전세가율 질문 하나만 · 기존 글이 같은 질문에 이미 답하면 링크로 갈음하고 다른 부동산 글 · 관문 기한 16:40"
   },
   {
+   "at": "2026-11-28 07:40",
+   "kind": "cafe",
+   "item": "h6pair1128",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-26 21:33 배정 · 부동산 — H-6 은마 카페 짝 글(영상 YE6FXSezHXc 11/26 공개, 재료 ep/H-6/cafe.md·calc3_out, 사장님 10/11 롱폼 1편=카페 1편) · 발행 날 국토부 다시 받아 대조 · 관문 기한 11/28 01:40",
+   "pair": "yt_pair: YE6FXSezHXc"
+  },
+  {
+   "at": "2026-11-28 10:10",
+   "kind": "cafe",
+   "item": "sq1pair1128",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-26 21:33 배정 · 지수·배당 — SQ-1(11/28 11:30 공개) 긴 글: 비율 100·70·50·30·0% × 15·10·5년 달러·원화 끝값·낙폭+세후 표(youtube-loop 11/22 13:01 알림, 재료 ep/SQ-1/cafe.md) · 영상 끝 말 '카페에' 약속이라 공개 전 발행 · 공개 뒤 영상 주소 넣기 · 관문 기한 11/28 04:10",
+   "pair": "yt_pair: SQ-1"
+  },
+  {
    "at": "2026-11-28 11:30",
    "kind": "long",
    "item": "TBD-ETF(SCHD vs 나스닥100 비교 1순위)",
    "owner": "firemap-youtube-loop",
    "note": "firemap-youtube-loop 2026-11-12 04:50: 배당ETF·지수 축으로 정함(topic_stats_1112.md) — 우리 배당ETF·지수 6편 중앙 460·SCHD 편 3편 811 · kwvol 나스닥100 274,700·SCHD 53,500 · 경쟁 배수 나스닥100 4.03(10)·SCHD 2.04(10) · 전략 참모 반론 받아 비교 각도 1순위, D-ETF-1 재탕 확인 뒤 각도 확정(11/20까지) | firemap-meeting 2026-11-08 21:3x: 장르 안건(agenda-2026-11-09-longform-genre.md) 받아들임 — X-LF-GENRE(부동산2·정책2·경제주식1·연봉노후1/12일, 같은 장르 연속 금지) · 후보 A·B(정책)는 12월 칸을 장르 표대로 11/22 회의가 넣음 | 순돌이 11/12 01:3x 사장님 11/11 \"이미 만들었다고 올리지 말자 · 뭐든 결정할 때 추측하지 말고 통계를 보고\" → 세금정책·국민연금 주제는 우리 롱폼 중앙 20(5편)이라 뺌"
+  },
+  {
+   "at": "2026-11-28 12:40",
+   "kind": "cafe",
+   "item": "TBD-배당",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-26 21:33 배정 · 배당 새 글 — 11/26·27 배당 글(decdiv·schdhold·jepivix·divdj)과 상품 겹치지 않게, kwvol 값 note에 · '사 두' 꼴 금지(buyby_check) · 관문 기한 11/28 06:40 · 발행은 12:10 write 회차(칸 앞에 깨는 회차), 글 짓기는 write-b 13:40·16:40 회차가 11/27에 먼저 해도 됨"
+  },
+  {
+   "at": "2026-11-28 16:10",
+   "kind": "cafe",
+   "item": "TBD-부동산",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-26 21:33 배정 · 부동산 새 글(국토부 실거래·R-ONE 원표 1차만, #489 168만처럼 2차 출처만인 숫자 금지) · 관문 기한 11/28 10:10"
+  },
+  {
+   "at": "2026-11-28 18:40",
+   "kind": "cafe",
+   "item": "TBD-배당",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-26 21:33 배정 · 배당 또는 지수(22:40 k1split 지수라 배당 권함) · 관문 기한 11/28 12:40"
   },
   {
    "at": "2026-11-28 19:20",

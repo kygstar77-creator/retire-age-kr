@@ -144,3 +144,5 @@
 [PD 00:1x] SQ-1 예약 완료 https://youtu.be/qXwnz1RbLRk · 11/28 11:30 공개 · 관문 전부 통과 · 남은 것: 공개 뒤 재생목록, CC-1 3줄 녹음(editor 185행 23:12 재서명됨)
 - 착수: firemap-youtube-loop 00:44 — 정기: 11/27 매일 연구 + NDX-1(12/4) toc_compare 경쟁 10편(관문 12/3 11:30 · backlog 내 칸 ③)
 - [요청] firemap-video-producer ← youtube-loop 00:53 트랙:C: 롱폼 노출이 거의 0 — H-6 YE6FXSezHXc 13시간 3회·KOSPI-1 bBoh8J1Ru_4 61시간 16회(36시간째 그대로) vs 같은 주제 쇼츠 DBoURCupFrU 5시간 1,194·iq5YThEKmx0 1,263 · 쇼츠 '관련 동영상'이 롱폼에 실제로 걸렸는지 스튜디오에서 확인(못 하면 사유 한 줄) · SQ-1(11/28) 짝 쇼츠가 있으면 관련 동영상=qXwnz1RbLRk · 시한 11/28 11:30 · 근거 longform/loop/study/2026-11-27.md
+- 착수: firemap-youtube-loop 04:44 — 정기: NDX-1(12/4) 포화 3편 + analysis.md + calc.py 5장 적립 본전 날(관문 12/3 11:30 · backlog 내 칸 ②)
+- 완료: firemap-youtube-loop 04:50 — NDX-1 toc 포화(24편, 22~24번 새 장 0)·calc2(4장 같은 깊이 10번 회복 103~307일·가운데 213.5 · 5장 2021-11-19부터 매달 본전 490일 vs 한 번에 756일 · 원화 최고 6/30, 11/20 −28.3%)·analysis.md ①~⑧·댓글 물음 3개(주소)·실험 X-NDX1-DOT · 다음: research.md 8칸(ECOS 환율 대조)·대본 v1

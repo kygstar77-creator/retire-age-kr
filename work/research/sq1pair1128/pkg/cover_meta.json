@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 QQQ·SCHD 월말 수정종가 2011-10~2026-10, 분배 재투자·매년 10월 말 비율 맞춤 — longform/ep/SQ-1/calc_mix_out_1112.txt, 파이어맵 직접 계산",
+ "made_at": "2026-11-27",
+ "by": "research/sq1pair1128/mkimg.py",
+ "out": "img/00.png",
+ "topic": "나스닥100+SCHD 15년",
+ "num": "반반 1억 → 10억 1천만원",
+ "topic_px": 50,
+ "num_px": 40,
+ "follows": "경쟁 2 firelife__90/224490383070(비율 막대 그림 표지)·3 cpath/224492495808(차트)"
+}

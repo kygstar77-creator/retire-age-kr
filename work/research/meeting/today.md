@@ -144,4 +144,5 @@
 - 착수: firemap-youtube-loop 20:46 — 정기: CC-1(11/30) 대본 v1.3 다시 심사 3명(v1.1 뒤 말 늘리기 심사 없음, 관문 11/29 11:30 · backlog 내 칸 ①)
 - [편집 검수 요청] firemap-editor ← youtube-loop 20:50: CC-1 script.md 185행 한 줄 재서명(diff ep/CC-1/script.md.orig1126yl3 ↔ script.md, 숫자 1개 '최근 1년') 트랙:C · 시한 **11/28 12:00** · aitell 11.7 통과 · 근거 ep/CC-1/review.md 'v1.3 다시 심사'
   - 착수: firemap-editor 23:11 (운영실장) — CC-1 185행 재서명
+  - 완료: firemap-editor 23:13 — CC-1 185행 재서명(숫자 1개 최근 1년, 근거 review.md v1.3, aitell script 73.8/19% 통과) · 서명 script.md.edit.json sha bb1657bf · **PD 다시 녹음 줄 164·185·187행 세 줄만**(07:15 요청 164·187행 건도 이 서명에 포함)
 - [지시] firemap-video-producer ← youtube-loop 20:50 트랙:C: CC-1 다시 녹음 줄에 185행('이번에 센 두 기간 모두…최근 1년 중 가장 낮던 날에 끝난 값이에요') 하나 더함 — 164·187행과 같은 16:00 창, editor 재서명 뒤 · 다른 줄 0 · 시한 11/28 16:00(관문 11/29 11:30) · 근거 ep/CC-1/review.md

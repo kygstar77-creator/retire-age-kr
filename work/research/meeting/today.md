@@ -8,6 +8,8 @@
 - [결정 필요] 사장님(이어짐): 비공개 사본 70편·공개 같은 제목 5쌍 정리(참모 3명 모두 '정리' 권고, 유튜브 원문은 '비공개도 검토될 수 있음'까지 — 거절 사유라는 원문은 없음) · H-5 제목·썸네일 교체 채팅 세션에서
 
 - [요청] **firemap-write-b** ← firemap-editor 17:22: **#488 decdiv1126(11/26 10:10 공개) '사 둬야' 꼴 세 번째**(#454·#485 뒤, RULES 309) — 정정안 work/research/editor/2026-11-26/cafe/488/(title·c00·c01·c06, 원본 *.orig.txt, changes.md) · 고친 곳 5: 제목 '언제까지 살까?'→'날짜 정리'·'사 둬야 받아요'·'사야 하는 이유'·'사 두면 돼요'·'까지 사야 받아요' → '끝날 때 갖고 있던 사람이 받아요' · 숫자·날짜 0 변경 · aitell 2.2→2.2·buyby 4→0 · 카페 글 수정 흐름으로 적용 판단은 담당 · 11/27 칸부터 aitell gate가 이 꼴을 막음
+  - 착수: firemap-write-b 19:45
+  - 완료: firemap-write-b 19:45 — 본문 4곳 정정 원고 work/research/editor/2026-11-26/cafe/488.txt dry 통과(숫자 139개 동일·글자 2361→2376·사진 3 그대로, 대조표 _cafe_edit/488/preview.md) · 제목은 cafeedit가 안 바꿈(본문만) — 제목 정정은 남음 · [편집 검수 요청] firemap-editor: `py -3.12 work/naverpost.py edit-ok work/research/editor/2026-11-26/cafe/488.txt firemap-editor` 뒤 다음 write·write-b 회차가 --apply
 - [알림] firemap-write·firemap-write-b ← firemap-editor 17:22: 표본(auto 지난 12시간 5편 중 2) — decdiv1126 반려(위 요청) · divdj1127(11/27 18:40) c01 소제목 '지금 남은 돈'→'11월 25일 평가금액' 재서명 6e1fefde(원본 c01.txt.orig1126ed) · 숫자 0 변경 · 제목 31자 경고(D-23)는 담당 판단 · SQ-1 설명란 129조 한 줄은 desc_1126.txt에 아직 없음(PD 판단 뒤 서명)
 
 ## 벤치마크 11/25 03시 — 쇼츠 7판 (근거 cardshorts/shorts-gap-1125.md · 1119 반영 3·일부 2·안 됨 1/6 · 공개 8편 배포 0은 0편(지난 판 3) · 31% 지점 중앙 0.63→0.74 · 답 0초 2편 1.39·1.11 vs 질문 먼저 3편 0.38~0.74)
@@ -127,9 +129,6 @@
 - [알림] firemap-video-producer ← youtube-loop 12:51: NDG-1 대본 v1.6 — 끝 줄 '금요일 오전 11시 반에는 나스닥100 이야기입니다'(12/4 NDX-1) · 6장 30일 신고 자막 한 장 빠짐(2장 것은 그대로) · 말 127줄 · 녹음은 editor 재서명 뒤
 - [알림] firemap-write ← firemap-write-b 17:10: 오늘 22:40 칸 halfpair1126 c05 영상 주소 2개가 안 열림 — '관련 영상 78fgoXS0KSU'(PD 11/25 23:49 v2 DBoURCupFrU로 교체, 옛 것 예약 풂·비공개)·'전체 영상 3dzKukPP3ac'(oEmbed 403, 공개본은 tvCsLWDF814 200) · 11/26 17:10 oEmbed 확인 · 발행 전 c05 두 줄을 https://youtu.be/DBoURCupFrU(19:20 공개 뒤)·https://youtu.be/tvCsLWDF814 로 바꾸고 재서명(같은 내용 facts.txt '짝 쇼츠' 줄도)
 
-- [요청] firemap-copywriter ← visual 17:27: NDG-1 썸네일 시안 3장(work/research/visual/NDG-1-thumb/ndg1_a·b·c.png, 문구 11/25 C-36 1위 그대로·thumb_base KW·밝기 129/109/111) · 짝 비교 3쌍(b↔a·c↔a·c↔b) 모두 1:1(자리 편향, 판정 못 함) → 추천 a(북쪽 바위산+아파트, 흐림 칸 없음) · compare.png(경쟁 5장 옆): 경쟁은 빨강·위기 얼굴·노원구 간판, 우리는 차분 — 2차 이해 시험·C-39 경쟁 옆 짝 비교 때 이 약점 같이 물어 주세요 · 시한 11/28 12:00(관문 12/1 11:30)
-  - 착수: firemap-copywriter 18:51
-  - 완료: firemap-copywriter 18:56 — 2차·3차 이해 시험(새 심사관 6명): 뜻 6/6·신고가 6/6·권유 0 · 큰 흰 줄 '같은 주 정반대 뉴스'→**'거래 끊겼다 vs 신고가'**(3/3 '무엇이 반대인지 없음' 고침, thumbpair 경쟁 옆 2/2 승) · 윗줄 '2021년부터 노도강 실거래 3만 8천 건' · C-39 경쟁 옆 첫째 1/6로 **아직 미통과**(6/6 '회색·노도강 같지 않은 사진') · 근거 visual/NDG-1-thumb/ut2/, copy/ndg1/titles.md
 - [요청] firemap-visual-designer ← copywriter 18:56: NDG-1 썸네일 다음 판 — 문구는 ut2/make_copy_v2.py(큰 글 '거래 끊겼다 vs 신고가'/'어느 쪽이 맞았나?', 윗줄 '2021년부터 노도강 실거래 3만 8천 건'으로 바꿔서) · 사진 교체: 6/6 '한강 다리라 노도강 같지 않음·회색이라 빨간 경쟁 사이에서 묻힘' → 다리·강 없는 노원·도봉 쪽 아파트+뒤 바위산(수락산·불암산·도봉산 느낌) 무료 사진, 밝게 · 얼굴은 C-17로 안 씀 · 나오면 copywriter가 4차(새 심사관, 경쟁 옆 홈 6장) · 시한 11/28 12:00(관문 12/1 11:30)
 - 착수: firemap-write 18:10 회차 18:29 — 18:40 칸 schdhold1126 발행 날 확인(야후 SCHD·SPY·FRED 다시 받아 11/25 종가 35.29·최고점 대비 -5.0→-2.5%, 보유 기간별 손해 비율 그대로)·c00·c05 고침·재서명 auto b5943d5a·발행 백그라운드
-- 완료: firemap-write 18:10 회차 — schdhold1126 카페 #491 https://cafe.naver.com/firemap/491 verify OK 2023자·사진 3 18:51
+- 완료: firemap-write-b 20:03 회차(19:42~) — 몫 칸 없음(18:40 #491 발행됨·22:40 halfpair1126은 22:4x 회차) → ① #488 정정 dry(위) ② 11/28 22:40 카페 칸(지수, 쇼츠 k1s_split 짝 글) k1split1128 관문 통과·slots 적음 — 범위 안 비축 0→1(회의 11/24 지시 ③ 0→2 중 1) · 11/28 나머지 5칸 장부에 없음 → 21:15 회의 배정

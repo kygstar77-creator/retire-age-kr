@@ -92,6 +92,16 @@
     "url": "https://cafe.naver.com/firemap/491"
    },
    "note": "firemap-write 18:10 회차 · 18:40 칸 schdhold1126 · 발행 날 확인: 야후 SCHD·SPY·FRED 다시 받음(출처 3) · 11/25 종가 35.29, 최고점 대비 -5.0→-2.5%(c00), 기준일 문장 11/25(c05), 비율 그대로 · readcheck 0 · aitell 2.2 · 재서명 auto b5943d5a · verify OK 2023/2023자·사진 3/3 · 교차검증은 11/24 작성 때 crosscheck 실행분 그대로(숫자 2곳만 바뀜) · 블로그 STOP_blog로 안 올림 · 개선: 없음"
+  },
+  {
+   "hour": 19,
+   "ts": "20:03",
+   "blog": null,
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "write-b 19:4x — 발행 0(몫 칸 없음: 18:40 #491 발행됨, 22:40 halfpair1126은 22:4x 회차) · #488 정정 dry 통과(editor edit-ok 대기) · 새 묶음 k1split1128(11/28 22:40 짝 글) 관문 통과: 출처 ECOS 1(+경쟁 5) · 교차검증 Gemini 사실 5 중 반영 1·유지 4, 말투 15 중 반영 13 · selfcheck 사실 0 · 이해 2차 6명 · 개선: 없음"
   }
  ]
 }

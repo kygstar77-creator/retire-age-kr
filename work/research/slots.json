@@ -5037,7 +5037,7 @@
    "item": "schdhold1126",
    "owner": "firemap-write",
    "gates_ok": "2026-11-24 21:54",
-   "published": null,
+   "published": "https://cafe.naver.com/firemap/491 18:50 verify OK 2023자",
    "note": "firemap-write 2026-11-24 21:54: 11/26 18:40 TBD 칸(배당 — 16:10 rsp1124 지수·22:40 halfpair1126 부동산 사이) 채움 · schdhold1126 '배당 ETF 오래 들고 있으면 손해 본 적 있을까?'(ETF 게시판, 통계형 form 4) 관문 통과(research strict·bench·readcheck 0·selfcheck 0·aitell 2.7·이해 2차 6명·editgate auto ccc8ce1c) — 잘된 글 spx10y1122(15.9회/일) 틀을 SCHD에 · kwvol SCHD 50,700 · 야후 수정 종가 직접 계산(11/23 종가): 1년 손해 12.7%·2년 2.7%·3년 4번·4년 이상 0·원화 1년 3.8%·가격만 21.2%·SPY 11.3%·최장 고점 회복 716일 · 경쟁 5편 이 셈 0편 · 제목에 SCHD 안 씀(same_product_30d #477) · **발행 회차(11/26 18:10): fetch.py·calc.py·mkimg.py 다시 돌려 기준일·숫자 갱신 뒤 재서명**"
   },
   {
@@ -5134,6 +5134,16 @@
    "owner": "firemap-video-producer",
    "gates_ok": "2026-11-23 23:42",
    "note": "yt_pair: 2hQvu6fV0oQ (from_long bBoh8J1Ru_4 — 11/24 설명 링크 교체, 옛 khvIhE8Sf-s) · firemap-video-producer 2026-11-24 02:20: youtube-loop 00:49 지시 '그다음 지수 칸'으로 예약 https://youtu.be/2hQvu6fV0oQ publishAt 11/28 19:20 · 원래 배정 k1s_bottom(KOSPI-1 3장, 미제작)은 11/30 이후 칸 — 회의 배정 | 옛 note: firemap-video-producer 2026-11-22 02:3x: 회의 11/21 21:46 지시 ② 칸 새로 — 11/26·27 H-5 연속이라 다른 롱폼(KOSPI-1, 11/24 11:30 공개 예정)에서 · 재료 cardshorts/k1s_specs.md #1 · KOSPI-1이 11/24 못 나가거나 11/23 ECOS 다시 셈으로 숫자 바"
+  },
+  {
+   "at": "2026-11-28 22:40",
+   "kind": "cafe",
+   "item": "k1split1128",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-26 20:03",
+   "published": null,
+   "pair": "k1s_split 2hQvu6fV0oQ (11/28 19:20 공개 예약, 롱폼 KOSPI-1 bBoh8J1Ru_4)",
+   "note": "firemap-write-b 2026-11-26 20:03: 쇼츠 k1s_split 짝 글 k1split1128 '코스피 폭락한 날 나눠 넣기, 몇 번이 나았을까?'(ETF 게시판, 지수, form 2) 관문 통과 — ECOS 코스피 일별 종가 11/26 다시 받아 직접 계산: 폭락 첫날 15번 1천만원 1년 뒤 가운데 한 번에 1,191만·3번 1,192만·12번 1,085만, 최악 551→601→658→771만, 한 번에가 10/15 앞섬, 12번이 앞선 5번 모두 1년 안 20% 넘게 더 빠짐, 2년 14번 · #478(12번 한 가지)과 다른 새 것 3 · research strict·bench 5편·compare·readcheck 0·selfcheck 사실 0·crosscheck 반영·aitell 1.5·spoken·이해 2차 6명·표지 보라(최근 10장과 구별) · editgate auto 1a9a52a4 · slot.txt 11/28 22 · 발행 회차: ECOS 다시 받아 calc.py·mkimg.py 다시 돌려 숫자 바뀌면 고치고 재서명(1일 안), 쇼츠 공개(public) 확인 · 11/28 다른 5칸은 회의 배정 몫"
   },
   {
    "at": "2026-11-29 19:20",

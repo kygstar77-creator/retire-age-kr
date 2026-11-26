@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "한국은행 ECOS 802Y001/0001000 코스피 일별 종가(raw/kospi_daily_ecos_1126.json)로 calc.py가 센 1년 뒤 값, calc_out.txt",
+ "made_at": "2026-11-26",
+ "by": "research/k1split1128/mkimg.py",
+ "out": "img/00.png",
+ "topic": "코스피 폭락한 날 1천만원",
+ "num": "나눈 횟수별 1년 뒤 가장 나빴을 때~가장 좋았을 때",
+ "topic_px": 54,
+ "num_px": 36,
+ "follows": "경쟁 1 divfree 첫 그림(정액분할 표) · 경쟁 3 mirandbfk12 글자 카드(한 번에 살까 나눠서 살까) + 우리 잘된 글 k200etf1126·ndxetf1122 막대 차트 표지"
+}

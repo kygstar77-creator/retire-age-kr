@@ -1,0 +1,34 @@
+{
+ "top": "노도강 아파트 · 국토부 실거래 3만 8천 건",
+ "big": [
+  "같은 주 정반대 뉴스",
+  "어느 쪽이 맞았나?"
+ ],
+ "license": "https://www.pexels.com/license/",
+ "items": [
+  {
+   "file": "ndg1_a.png",
+   "photo": "31728574",
+   "page": "https://www.pexels.com/photo/31728574/",
+   "desc": "강 건너 아파트 단지와 뒤 바위산(북쪽 산 느낌) · 다리",
+   "gamma": 1.0,
+   "luma": 129.0
+  },
+  {
+   "file": "ndg1_b.png",
+   "photo": "19848427",
+   "page": "https://www.pexels.com/photo/district-of-modern-residential-skyscrapers-19848427/",
+   "desc": "산 위에서 본 안개 낀 아파트 단지들",
+   "gamma": 1.0,
+   "luma": 109.0
+  },
+  {
+   "file": "ndg1_c.png",
+   "photo": "41136598",
+   "page": "https://www.pexels.com/ko-kr/photo/41136598/",
+   "desc": "아래에서 올려다본 고층 아파트 두 동·은행나무",
+   "gamma": 1.0,
+   "luma": 111.0
+  }
+ ]
+}

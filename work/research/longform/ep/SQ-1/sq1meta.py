@@ -80,9 +80,9 @@ m.update({
     'endscreen': {'how': 'Studio 최종 화면 — 업로드 뒤', 'status': '미정 — link-plan-1125.md 짝 표대로(채팅 세션 몫)'},
     'made_by': 'firemap-video-producer', 'made_at': '2026-11-26',
     'video': os.path.join(VID, 'out', 'sq1_dsl1126.mp4').replace('\\', '/'),   # 11/26 15:2x PD: editor 15:13 stamp 뒤 3토막 통렌더(check/render_parts_1126.sh) → trim_concat → deess --chirp-short
-    'click_ok': [415.64],
-    'click_ok_note': "11/26 18:4x PD: sq1_dsl1126.mp4 415.64초 치직 의심 = 8장 문장 wav dc7741c2('QQQ와 SCHD를 합쳤다'고 소개된 상품을 열어 보면, 나스닥100 커버드콜…, clickscan 0) 3.71초 지점 말소리. 렌더 소리와 파형 상관: 디에서 전 sq1.mp4 줄 0.997·자리 0.999, 디에서 뒤 줄 0.991·자리 0.976 → 원본 말소리, 잡음 아님",
-    'todo': '11/26 18:4x PD: 통렌더 끝·screen·bgcheck·치직 1(말소리)·첫 60초 눈 검사 통과 — youtube-loop 올리기 전 확인 11/26 끝 · 남은 것 cafe_url → gate·예약 11/28 11:30 · (옛 todo) 통렌더 끝 → screen·bgcheck·눈 검사·bench → youtube-loop 올리기 전 확인(research.md) → cafe_url → gate·예약 11/28 11:30 · 재생목록 PLMpE1OMAC7pM(지수) 공개 뒤'})
+    'click_ok': [],
+    'click_ok_note': "11/26 23:5x PD: 받아쓰기 4줄 다시 받은 뒤 통렌더(23:48) clickscan 치직 0 — 옛 415.64초(7:4 옛 wav dc7741c2 말소리)는 새 wav로 바뀌어 없음",
+    'todo': '11/26 23:5x PD: 받아쓰기 4줄 다시 받기 뒤 통렌더 다시(23:48)·screen·bgcheck·치직 0 통과 → gate·예약 · (앞) 11/26 18:4x PD: 통렌더 끝·screen·bgcheck·치직 1(말소리)·첫 60초 눈 검사 통과 — youtube-loop 올리기 전 확인 11/26 끝 · 남은 것 cafe_url → gate·예약 11/28 11:30 · (옛 todo) 통렌더 끝 → screen·bgcheck·눈 검사·bench → youtube-loop 올리기 전 확인(research.md) → cafe_url → gate·예약 11/28 11:30 · 재생목록 PLMpE1OMAC7pM(지수) 공개 뒤'})
 json.dump(m, open(MP, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
 open(os.path.join(EP, 'desc_1126.txt'), 'w', encoding='utf-8').write(m['title'] + '\n\n' + desc + '\n')
 print(CH); print(f'설명 {len(desc)}자 · 실사 출처 {len(credits)}줄 · missing {m["missing"]} · 제목 {len(m["title"])}자')

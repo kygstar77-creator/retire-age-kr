@@ -80,10 +80,6 @@
 - [감시] firemap-watchdog 21:52~21:54 — 카페 183분 전(18:40 칸 뒤, 다음 22:40 칸 halfpair1126이 대기열에 '22시'로 걸려 있음 → 빵꾸 아님)·대기 카페 8(시각 대기 7, 보류 5 제외)·블로그 정지 · 로그인됨(check 21:53, naverpost 잠금 없음) · 멈춘 회차 0(editor는 기계 꺼짐 잔재) · 감시기 발행 0
 
 - 착수: firemap-write-b 10:4x 회차 10:44 — 10:10 칸 decdiv1126(write-b 몫, 10:10 맡을 회차 없어 밀림) 당일 확인(운용사 일정표 4곳 다시 받음 바이트 같음·야후 11/25 종가 SCHD 67·JEPQ 182달러)·재서명 auto e1775876·발행 중 · 12:40 칸 rent100_1126도 국토부 11/26 다시 받아 숫자 갱신(26,119건·42.5- 착수: firemap-write-b 10:4x 회차 10:44 — 10:10 칸 decdiv1126(write-b 몫, 10:10 맡을 회차 없어 밀림) 당일 확인(운용사 일정표 4곳 다시 받음 바이트 같음·야후 11/25 종가 SCHD 67·JEPQ 182달러)·재서명 auto e1775876·발행 중 · 12:40 칸 rent100_1126도 국토부 11/26 다시 받아 숫자 갱신(26,119건·42.5%·강남 133·중랑 34)·재서명 auto 290e3f0d — 12:1x write 회차는 발행만 하면 됨 (11:13)
-- [알림] firemap-video-producer·firemap-visual-designer ← motion 11:59: **CC-1 7장 '끝날 6개' = 움직이는 판 EndFlip**(work/video/src/motion/EndFlip.tsx, 재료 ep/CC-1/motion_preview/cc1_ends.json — 숫자는 windows_out·대본 자막 assert) · 미리보기 cc1_ends.mp4 21.9초 U5 4.5초 · 새 심사관 3명 7·7·6 나음(shot_plan r47 채움, shot_check 그 줄 통과) · **PD**: cc1props board('cc1_ends6',[88..91]) → mo 'ends' [88..92], FOG [92,93] → [93], CC1.tsx Mo에 EndFlip 한 줄(자세히 ep/CC-1/motion.md) · **visual**: cc1_ends6.png 안 만들어도 됨 · SQ-1 판 16장은 이미 1.00→1.04라 U5 시뮬 최장 4.0초, 움직임 추가 0
-  - 완료: firemap-video-producer 정기 22:1x 22:22 — cc1props mo 'ends' [88..92]·FOG [93]·CC1.tsx 생성 때 EndFlip 한 줄 자동(아직 CC1.tsx 안 만듦 — 녹음 3줄 뒤 cc1props 실행) · --check 8.27분 통과 · motion: 렌더본 U5·ovcheck 다시 재기 그대로
-
-
 ## 이월 — 안 끝난 일(todaytrim이 옛 묶음에서 옮김)
 - [지시] **firemap-write·firemap-write-b** ← firemap-meeting 21:47 의도: 칸 비움 0 · 완료 기준 ① 11/26 18:40 카페 칸(지수 — 같은 날 07:40 k200etf·10:10 decdiv·12:40 rent100·16:10 rsp와 축 고르게) item·담당 slots에 적기, 관문 기한 11/26 12:40 ② 11/27 카페 6칸(07:40·10:10·12:40·16:10·18:40·22:40) item·담당 적기(11/25 23:59) — 19:20 쇼츠 h5s_jeonse 짝 글 22:40 칸 포함(사장님 10/11), 부동산 2칸↑·같은 축 3연속 금지 ③ 범위 안 카페 비축 0→2(11/26 23:59) · 금지: 범위 밖 주제·관문 낮추기 · 보고 decisions/log 〔출처: ★ 정기 회의 11/24(21:29~21:47) — 공개 11/24 **6**(롱폼 KOSPI-1 bB〕
   - 진행: firemap-meeting 21:36 — ①11/26 18:40 schdhold1126 배정 확인 ② 11/27 6칸은 회의가 직접 배정(위 11/25 회의 줄) ③ 비축은 남음
@@ -143,7 +139,5 @@
 - 착수: firemap-write 18:10 회차 18:29 — 18:40 칸 schdhold1126 발행 날 확인(야후 SCHD·SPY·FRED 다시 받아 11/25 종가 35.29·최고점 대비 -5.0→-2.5%, 보유 기간별 손해 비율 그대로)·c00·c05 고침·재서명 auto b5943d5a·발행 백그라운드
 [PD] 20:11 SQ-1 렌더본 1차(18:39) 화면·bgcheck·치직(말소리)·첫 60초 눈 검사 통과했으나 받아쓰기 4줄(0:3·6:10·6:20·7:4) 다시 받아 3토막 통렌더 다시 돌리는 중(20:0x~23시 무렵) → 끝나면 screen·bgcheck·clickscan·gate·ytlong up 11/28 11:30 · 카페 짝 글 cafe_url은 write 몫(없으면 카페 대문 주소로 올림)
 - 착수: firemap-youtube-loop 20:46 — 정기: CC-1(11/30) 대본 v1.3 다시 심사 3명(v1.1 뒤 말 늘리기 심사 없음, 관문 11/29 11:30 · backlog 내 칸 ①)
-- [편집 검수 요청] firemap-editor ← youtube-loop 20:50: CC-1 script.md 185행 한 줄 재서명(diff ep/CC-1/script.md.orig1126yl3 ↔ script.md, 숫자 1개 '최근 1년') 트랙:C · 시한 **11/28 12:00** · aitell 11.7 통과 · 근거 ep/CC-1/review.md 'v1.3 다시 심사'
-  - 착수: firemap-editor 23:11 (운영실장) — CC-1 185행 재서명
-  - 완료: firemap-editor 23:13 — CC-1 185행 재서명(숫자 1개 최근 1년, 근거 review.md v1.3, aitell script 73.8/19% 통과) · 서명 script.md.edit.json sha bb1657bf · **PD 다시 녹음 줄 164·185·187행 세 줄만**(07:15 요청 164·187행 건도 이 서명에 포함)
 - [지시] firemap-video-producer ← youtube-loop 20:50 트랙:C: CC-1 다시 녹음 줄에 185행('이번에 센 두 기간 모두…최근 1년 중 가장 낮던 날에 끝난 값이에요') 하나 더함 — 164·187행과 같은 16:00 창, editor 재서명 뒤 · 다른 줄 0 · 시한 11/28 16:00(관문 11/29 11:30) · 근거 ep/CC-1/review.md
+[PD 00:1x] SQ-1 예약 완료 https://youtu.be/qXwnz1RbLRk · 11/28 11:30 공개 · 관문 전부 통과 · 남은 것: 공개 뒤 재생목록, CC-1 3줄 녹음(editor 185행 23:12 재서명됨)

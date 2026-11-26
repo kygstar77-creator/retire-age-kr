@@ -1,0 +1,238 @@
+Nasdaq-100 Index® 
+Methodology Changes
+Frequently Asked Questions
+As company share structures evolve and more investment products track major benchmarks, 
+it is increasingly important that index methodologies remain clear, predictable, and practical 
+to implement. Nasdaq Global Indexes recently completed a public consultation on potential 
+enhancements to the Nasdaq-100 methodology as part of its standard index governance process, 
+helping ensure the index remains transparent and investable for global market participants and 
+continues to meet its stated objective of measuring the performance of 100 of the largest Nasdaq-
+listed non-financial companies.
+Nasdaq Global Indexes
+May 2026
+indexes.nasdaq.com 2
+Table of Contents
+Timing  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+Q: What changes will take effect on May 1st, and which will be implemented at the quarterly review on June 22nd?  . . . . . . . . 3
+1 . Calculation of Market Capitalization for Eligibility Purposes  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+Q: What are unlisted shares?  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+Q: How are unlisted shares valued if they do not trade?  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+Q: How will this impact current constituents?  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+Q: How are American Depository Receipts (“ADRs”) evaluated?  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+2 . Fast Entry for New Nasdaq Listed Large Companies  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+Q: Is fast entry a common practice among index providers?  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+Q: What is the purpose of modifying the liquidity and seasoning requirements?  
+Could this change result in the inclusion of illiquid securities in the index?  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+Q: Are only IPOs and switches eligible for fast entry? What about companies that are  
+not new listings and have quickly risen through the ranks?  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+Q: How does the weight interpolation process work?  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+3 . Inclusion and Weighting of Securities with Low Float  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+Q: What is the rationale behind the adjustment to market capitalizations for companies  
+with floats less than 33 .3% and how does it affect the weighting?   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+Q: How would this have looked compared to the existing methodology?  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+Q: Will this result in indexers being required to purchase more shares than are available in the market?  . . . . . . . . . . . . . . . . . . . 6
+4 . Removal of the Minimum 10% Float Requirement  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+Q: Why was the 10% float requirement removed?   . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+5 . Replacement of the “10 Basis Point Rule”  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+Q: Would the same companies be affected by the 10 basis point rule as by the quarterly review?  . . . . . . . . . . . . . . . . . . . . . . . . 7
+Q: What is the reasoning for prioritizing rank-based removal rather than weight-based removal?  . . . . . . . . . . . . . . . . . . . . . . . . 7
+6 . Cessation of Intra-quarter TSO Adjustments  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+Q: Do these occur frequently enough to justify quarterly versus intra-quarter adjustments?  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+indexes.nasdaq.com 3
+Timing
+Q: What changes will take effect on May 1st, and which will be implemented at the quarterly review on June 22nd?
+A: Starting May 1st, fast entry candidates ranked in the top 40 and meeting all applicable eligibility criteria may be added to the 
+index after 15 trading days, subject to the 3x float cap where applicable. For all other members, the low float adjustment will take 
+effect at the June 22nd quarterly review, when floats are reviewed and weights are adjusted accordingly.
+The 10 basis point rule and intra-quarter TSO adjustments will end on May 1st. At the June quarterly review, ranking market 
+capitalization will be calculated using total (listed and unlisted) shares, and the “10 basis point rule” will be replaced by a quarterly 
+review process that removes or replaces companies ranked outside of the top 125. 
+1. Calculation of Market Capitalization for Eligibility Purposes
+The Nasdaq-100® is designed to represent the top 100 non-financial companies listed on Nasdaq, capturing the market’s leading 
+innovators and industry leaders. As corporate and share class structures evolve, it is increasingly likely that large companies will 
+have significant portions of their market capitalization represented by unlisted shares. To ensure that the 100 largest companies 
+continue to qualify for inclusion in the index, both listed and unlisted shares classes need to be considered for inclusion.
+Q: What are unlisted shares?
+A: While most public companies have a single share class, dual- or multi-class structures are common, with some classes unlisted 
+and typically held by founders, families, or holding companies – often with enhanced voting rights. Including these unlisted shares 
+in total market value calculations provides a more accurate view of a company’s size, economic impact, and significance.
+Q: How are unlisted shares valued if they do not trade?
+A: Although unlisted shares generally lack a market price, they usually represent the same economic interest as listed shares and 
+can be valued similarly. Unlisted shares are often convertible into listed shares, making their value equivalent upon conversion. 
+Standard practice among index providers, which Nasdaq aligns with, is to value unlisted shares at the market price of the listed 
+class.
+Q: How will this impact current constituents?
+A: Impact is expected to be minimal, as most current index constituents have only one share class. For companies with unlisted 
+share classes, including these shares may increase total market capitalization for eligibility and ranking, but will not affect index 
+weighting.
+Q: How are American Depository Receipts (“ADRs”) evaluated?
+A: If an ADR is a company’s primary global listing (with no underlying shares listed or available for trading elsewhere), it will be 
+treated like a non-ADR: the full market capitalization is used for eligibility and ranking, but only the value of listed depositary shares 
+counts for weighting. 
+For non-primary ADRs (where the primary listing is on a foreign market), only the value of listed depositary shares is used for both 
+eligibility/ranking and weighting; foreign-listed and unlisted shares are excluded.
+indexes.nasdaq.com 4
+2. Fast Entry for New Nasdaq Listed Large Companies
+Private companies are remaining private for longer periods, resulting in greater maturity at the time of going public. Increased 
+transparency, improved data integrity, and enhanced analyst coverage have contributed to this trend. Developments in private 
+markets, including greater accessibility and liquidity, have led to fewer companies entering the public market and an increase in 
+the number of large private firms. To continue representing the top 100 largest companies, the Nasdaq-100® must adapt to this 
+changing environment. 
+Q: Is fast entry a common practice among index providers?
+A: Fast entry is a common, but not universal, design feature in many index methodologies, allowing newly eligible securities 
+like IPOs to be added outside the regular reconstitution cycle. This approach is often used to enhance representativeness and 
+completeness.
+Q: What is the purpose of modifying the liquidity and seasoning requirements? Could this change result in the inclusion 
+of illiquid securities in the index?
+A: Most indexes require a liquidity threshold for new constituents, often as a minimum share count or average daily trading value. 
+For the Nasdaq-100®, securities must have a three-month average daily traded value of at least $5 million. Since only very large 
+companies – typically with full market capitalizations over $100 billion as of March 2026 – would have qualified for fast entry, they 
+are expected to easily and quickly meet this requirement. However, an average daily traded value of at least $5 million from the 
+time of listing will still be required for fast entry candidates.
+Many indexes have included seasoning requirements to ensure that traditional IPOs undergo price discovery and stabilization 
+before being included. These requirements were originally intended to prevent small or little-known companies from entering too 
+soon. However, there is now a trend toward IPOs being larger and more mature than in the past. Companies expected to meet the 
+fast entry threshold are likely to be among the world’s most significant and well-known firms. High investor interest and trading 
+volumes should accelerate price discovery, further supporting a shorter seasoning period. Note that the seasoning period for 
+companies outside of the Top 40 remains at three months.
+Q: Are only IPOs and switches eligible for fast entry? What about companies that are not new listings and have quickly 
+risen through the ranks?
+A: To ensure the index includes the 100 largest companies promptly, any company that ranks in the top 40, has at least 7 days of 
+trading by the quarterly reference date, and meets all other eligibility criteria will be eligible for inclusion at each quarterly review.
+Q: How does the weight interpolation process work?
+A: A linear interpolation process is employed in order to preserve rank order, based on modified market capitalization within the 
+index. The weights of ad-hoc additions have historically been determined using this process, although a detailed description was 
+not previously included in the methodology. The following provides an example of the interpolation process:
+• Company C is being added to the index.
+• Company A, with a modified market capitalization of x0 and a weight of y0, 
+is the next smallest company by modified market capitalization.
+• Company B, with a modified market capitalization of x1 and a weight of y1, is 
+the next largest company by modified market capitalization.
+• Given the modified market capitalization of Company C, denoted as x, its 
+corresponding index weight can be determined.
+• y=y0+(x-x0) 
+y1-y0
+x1-x0
+indexes.nasdaq.com 5
+3. Inclusion and Weighting of Securities with Low Float
+Unlike many other indexes, the Nasdaq-100® uses listed market capitalization for weighting rather than float-adjusted market 
+capitalization for weights. This approach ensures the index remains focused on the largest and most influential companies on 
+Nasdaq, without overemphasizing public float, and continues to reflect the evolving landscape of the market. By basing weights on 
+listed shares and introducing a float adjustment cap – while removing the previous minimum float – the index allows top companies 
+to enter at meaningful, yet investable, weights.
+Q: What is the rationale behind the adjustment to market capitalizations for companies with floats less than 33.3% and 
+how does it affect the weighting? 
+A: The Nasdaq-100® has always used market capitalization weighting, not float adjusted market capitalization weighting as seen in 
+some other benchmarks. Since float is a subset of market capitalization, each index member is already represented at a multiple 
+of its float. For fully floating securities, float and market capitalization are equal, resulting in a multiple of 1x. For securities at the 
+previous 10% float minimum eligibility criterion, the multiple was 10x. 
+Implementing the 3x float cap will limit a company’s weight to the lesser of its eligible listed market value or three times its 
+eligible float market value. 
+Explaining this cap in another way, the same 3x float cap will be applied to securities up to and including when a company has a 
+float of 33.3%. Once the float is higher than 33.3%, full listed market capitalization will be used for weighting purposes.
+Here are some examples to further illustrate this cap:
+1. For a company with 5% float, this cap would restrict its weighting to (5%x3=) 15% of its listed market value.
+2. For a company with 19% float, this cap would restrict its weighting to (19%x3=) 57% of its listed market value. 
+3. For a company with 21% float, this cap would restrict its weighting to (21%x3=) 63% of its listed market value.
+The intent of this proposal is to limit index weights as a multiple of float, not to increase them.
+indexes.nasdaq.com 6
+Q: How would this have looked compared to the existing methodology?
+A: The charts below visually explain the difference in float restrictions, and how the proposed approach addresses existing 
+shortcomings. 
+June 24, 2024, to April 30, 2026: 10% Minimum Float
+In June 2024, a 10% minimum float rule for inclusion was introduced into the Nasdaq-100®. This can be seen on the chart on the 
+left with 10% float marked by the yellow dotted line. Before this rule, all securities entered the index at their full listed market value, 
+as shown by the extended, dotted blue line.
+This rule created abrupt inclusion/exclusion and “revolving door” issues for floats near 10% and still allows low-float stocks to be 
+fully weighted, which may not support index investability as AUM grows.
+Effective May 1, 2026: Capped at 3x Float
+Moving to the chart on the right shows the updated methodology through the new green line: index weighting is now capped at 3 
+times a security’s free float (down from 5x in the original consultation). Securities with float above 33.3% are weighted using their 
+full, eligible listed market capitalization; those with floats below 33.3% are weighted proportionally less, sometimes much lower. 
+This more thoughtful and nuanced approach addresses the shortcomings of the prior methodology:
+• Companies will not be excluded solely for low float and can be included at meaningful, but reduced, weights.
+• Instead of abrupt all-or-none inclusion, low-float securities’ weights will gradually increase as more float becomes available.
+• The 3x limit imposes a more conservative restriction than had previously been in place.
+Q: Will this result in indexers being required to purchase more shares than are available in the market?
+A: No. The 3x float multiple serves as an essential safeguard to make sure that demand by indexers is held to a manageable 
+portion of the shares available. The following outlines an example.
+Consider a hypothetical company that recently went public with a $1 trillion market capitalization. Assume that all the shares are 
+listed. 
+1. In the IPO, 6% of the shares were floated, and have a value of $60 billion.
+2. For index weighting purposes, the company’s weight will be determined according to the lesser of $1 trillion or 3 times the $60 
+billion of float, which is $180 billion.
+3. As of March 2026, $180 billion equated to a weight of about 1% in the Nasdaq-100 Index.
+4. If Nasdaq-100 Index tracking products collectively have $600 billion in assets, indexers would need to purchase about 1% of 
+that amount, or $6 billion.
+5. This $6 billion demand represents 0.6% of the company’s total market capitalization and 10% of the available float, not 300% of 
+the float.
+Data vis color
+order on dark 
+background
+Data vis color
+order on light
+background
+0
+3
+6
+9
+12
+15
+18
+21
+24
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Market 
+Cap as a 
+Multiple of 
+Float
+Free Float Percentage
+Market Cap as a Multiple of Float
+June 24, 2024 to April 30, 2026 – 10% Minimum Float
+0
+3
+6
+9
+12
+15
+18
+21
+24
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Market 
+Cap as a 
+Multiple 
+of Float
+Free Float Percentage
+Market Cap as a Multiple of Float
+Effective May 1, 2026 – Capped at 3x Float
+indexes.nasdaq.com 7
+Disclaimer:
+Nasdaq® is a trademark of Nasdaq, Inc. The information contained above is provided for informational and educational purposes only, and nothing contained herein should be construed as 
+investment advice, either on behalf of a particular security or an overall investment strategy. Neither Nasdaq, Inc. nor any of its affiliates makes any recommendation to buy or sell any security 
+or any representation about the financial condition of any company. Statements regarding Nasdaq-listed companies or Nasdaq proprietary indexes are not guarantees of future performance. 
+Actual results may differ materially from those expressed or implied. Past performance is not indicative of future results. Investors should undertake their own due diligence and carefully 
+evaluate companies before investing. ADVICE FROM A SECURITIES PROFESSIONAL IS STRONGLY ADVISED.
+© 2026. Nasdaq, Inc. All Rights Reserved. 
+4. Removal of the Minimum 10% Float Requirement
+Q: Why was the 10% float requirement removed? 
+A: The update for Inclusion and Weighting of Securities with Low Float renders the minimum float requirement obsolete.
+5. Replacement of the “10 Basis Point Rule”
+With these changes, systemizing processes and managing turnover remain priorities. To keep the index transparent and replicable, 
+we have consolidated intra-quarter total shares outstanding (“TSO”) updates and ad-hoc turnover from the 10 basis point rule 
+into quarterly reviews. This approach ensures more systematic, timely top 100 exposure and reduces the need for frequent intra-
+quarter portfolio adjustments.
+Q: Would the same companies be affected by the 10 basis point rule as by the quarterly review?
+A: Historical turnover from the quarterly review would have closely mirrored the 10 basis point rule, and the same companies would 
+have typically been affected. Moving to a quarterly review eliminates these ad-hoc adjustments to smaller companies and ensures 
+those removals occur only at scheduled quarterly events.
+Q: What is the reasoning for prioritizing rank-based removal rather than weight-based removal?
+A: A rank-based approach adapts to market changes and aligns with other rank-based index rules, while maintaining a consistent 
+top 100 focus – instead of excluding companies based on a fixed percentage cutoff. 
+6. Cessation of Intra-quarter TSO Adjustments
+Q: Do these occur frequently enough to justify quarterly versus intra-quarter adjustments?
+A: Ad-hoc intra-quarter TSO updates can disrupt passive portfolios by increasing turnover, market impact, and operational risk, 
+even for minor changes. Because the index uses modified market capitalization weighting, these updates cannot perfectly align 
+index weights with market capitalization.
+Although few updates have occurred historically, stakeholders have raised concerns that the costs and risks often outweigh the 
+benefits.

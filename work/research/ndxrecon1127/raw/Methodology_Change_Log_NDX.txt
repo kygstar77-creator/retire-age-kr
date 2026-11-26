@@ -1,0 +1,1066 @@
+1 
+INDEX METHODOLOGY CHANGE LOG  |  © Copyright 2026, Nasdaq, Inc. All Rights Reserved.  
+ 
+ 
+ 
+ 
+ 
+ 
+NASDAQ- 100 INDEX® 
+NDX® 
+M E T H O D O L O G Y C H A N G E L O G 
+Effective 
+Date 
+Methodology 
+Section 
+Previous Updated 
+5/1/2026 Security Eligibility 
+Criteria:  
+Security Types 
+-- 
+ 
+“The Index classifies eligible ADRs into two 
+distinct types defined below: 
+• “Primary ADR”: An ADR that 
+serves as a company’s primary 
+global listing (i.e., the underlying 
+shares are not listed or available 
+for trading elsewhere).  
+• “Non-Primary ADR”: A more 
+traditional ADR (i.e., the 
+underlying shares, rather than 
+the ADR, serve as the primary 
+global listing and are listed on a 
+foreign market).  
+Both types of ADRs are eligible for index 
+inclusion, although the calculation of 
+market capitalization for each varies, as 
+described in the Market Capitalization 
+Determination section.” 
+5/1/2026 
+ 
+Security Eligibility 
+Criteria:  
+Listing Exchanges 
+To be eligible for index inclusion, a 
+company’s primary US listing must be 
+listed exclusively on the Nasdaq Global 
+Select Market or the Nasdaq Global 
+Market. 
+A company must be primarily listed on a 
+US Nasdaq-affiliated exchange.1  
+1 Excludes the Nasdaq Capital Market. 
+5/1/2026 
+ 
+Security Eligibility 
+Criteria:  
+Market 
+Capitalization 
+There is no minimum or maximum market 
+capitalization criterion, although the 
+security selection process is based in part 
+There is no minimum or maximum market 
+capitalization criterion. 
+The constituent selection process and 
+weighting process are based in part on a 
+INDEX METHODOLOGY  CHANGE LOG  
+2 
+INDEX METHODOLOGY CHANGE LOG  |  © Copyright 2026, Nasdaq, Inc. All Rights Reserved.  
+ 
+ 
+Effective 
+Date 
+Methodology 
+Section 
+Previous Updated 
+on a ranking of companies by market 
+capitalization. 
+"For constituent selection and weighting 
+purposes, the market capitalization of 
+each company is the combined market 
+capitalization of all eligible share classes. 
+Unless otherwise noted, unlisted share 
+classes are ineligible and will not be 
+considered in the calculation of a 
+company's market capitalization." — 
+[Previously in "Security Eligibility Criteria: 
+Multiple Classes of Securities" subsection.] 
+"For inclusion purposes, the market 
+capitalization of an ADR will normally be 
+determined based on the depositary 
+shares outstanding, as reported by the 
+depositary banks. This means that a non-
+US company represented by an ADR may 
+be considered for inclusion in the Index at 
+less than its full global market 
+capitalization. Notwithstanding the 
+foregoing, an ADR that serves as a 
+company's primary global listing (i.e., the 
+underlying shares are not listed or 
+available for trading elsewhere) will be 
+considered for inclusion based on its full 
+global market capitalization, in the same 
+manner as a direct listing." — [Previously 
+in “Constituent Selection: Constituent 
+Selection Process subsection.] 
+ranking of companies by market 
+capitalization. 
+Market Capitalization Determination 
+For the purpose of constituent selection, 
+each company’s Full Market Capitalization 
+is considered, and is determined as 
+follows: 
+• For direct (non-ADR) listings and 
+companies represented by Primary 
+ADRs (defined above), Full Market 
+Capitalization includes both listed 
+and unlisted shares. 
+• For companies represented by Non-
+Primary ADRs (defined above), Full 
+Market Capitalization is the total 
+value of the depositary shares listed, 
+as reported by the depositary banks. 
+Foreign-listed underlying shares and 
+unlisted shares are not included. 
+For any company represented by more 
+than one security, the company’s Full 
+Market Capitalization is the combined Full 
+Market Capitalization of those securities. 
+Modified Market Capitalization 
+Determination 
+For the purpose of weight calculations, 
+Modified Market Capitalization will be 
+utilized. Only the market capitalization of 
+eligible listed share classes will be 
+considered. Foreign-listed and unlisted 
+shares are disregarded. In addition, in 
+order to preserve investability for low-
+float securities, each low-float security’s 
+Total Shares Outstanding (“TSO”) will be 
+capped at three times the number of its 
+free-floating shares. Modified Market 
+Capitalization is therefore determined as 
+follows: 
+• For direct (non-ADR) listings, 
+Modified Market Capitalization is 
+determined using the security’s price 
+along with the lesser of the reported 
+3 
+INDEX METHODOLOGY CHANGE LOG  |  © Copyright 2026, Nasdaq, Inc. All Rights Reserved.  
+ 
+ 
+Effective 
+Date 
+Methodology 
+Section 
+Previous Updated 
+TSO, or three times the number of 
+free-floating shares. 
+• For Primary or Non-Primary ADRs, 
+Modified Market Capitalization is 
+determined using the security’s price 
+along with the lesser of the listed 
+ADR shares reported by the 
+depositary banks, or three times the 
+number of free-floating ADR shares. 
+For any company represented by more 
+than one security, the company’s 
+Modified Market Capitalization is the 
+combined Modified Market Capitalization 
+of those securities. 
+2 To be eligible. the security must have an 
+ADVT of at least $5 million (USD) from its 
+first trading day through and including the 
+applicable reference date, rather than the 
+standard three-month measurement 
+period. 
+5/1/2026 
+ 
+Security Eligibility 
+Criteria:  
+Fast Entry 
+-- 
+ 
+A security that is not already an index 
+constituent may be added to the Index on 
+an expedited basis ("Fast Entry") if its Full 
+Market Capitalization ranks within the top 
+40 current index constituents.  Such an 
+addition will follow the Weight 
+Interpolation Process described within the 
+March, June, and September Rebalance 
+section.  A Fast Entry inclusion will not 
+require the removal of another security, 
+and may temporarily increase the 
+constituent count to more than 100. 
+For an Initial Public Offering (“IPO”): 
+• The company will be ranked and 
+evaluated as of the end of its 
+seventh trading day (“IPO 
+Reference Date”) on an eligible 
+exchange and must satisfy all 
+applicable Security Eligibility 
+Criteria2 as of that date, other 
+than the seasoning requirement. 
+• Typically, such a security will be 
+added to the Index after 15 
+trading days, with 
+4 
+INDEX METHODOLOGY CHANGE LOG  |  © Copyright 2026, Nasdaq, Inc. All Rights Reserved.  
+ 
+ 
+Effective 
+Date 
+Methodology 
+Section 
+Previous Updated 
+announcement to occur after 
+the close of business on its tenth 
+trading day. 
+• Where the 15th trading day falls 
+within the same calendar month 
+as a scheduled index 
+reconstitution or rebalance, the 
+following adjustment applies:  
+o If the security’s 
+seventh trading day 
+falls on or before the 
+Reconstitution or 
+Rebalance Reference 
+Date, then the security 
+will be added to the 
+Index as part of the 
+reconstitution or 
+rebalance, otherwise 
+o The security will be 
+added to the Index no 
+sooner than five 
+trading days after the 
+Reconstitution or 
+Rebalance Effective 
+Date. 
+For a company that has recently switched 
+its listing to an eligible exchange: 
+• The company will normally be 
+ranked and evaluated as of the 
+end of its seventh trading day on 
+the eligible exchange and must 
+satisfy all applicable Security 
+Eligibility Criteria2 as of that 
+date. 
+• Typically, such a security will be 
+added to the Index after 15 
+trading days on the eligible 
+exchange with announcement 
+to occur after the close of 
+business on its tenth trading 
+day. 
+• Where the 15th trading day falls 
+within the same calendar month 
+as a scheduled index 
+reconstitution or rebalance, the 
+following adjustment applies:  
+5 
+INDEX METHODOLOGY CHANGE LOG  |  © Copyright 2026, Nasdaq, Inc. All Rights Reserved.  
+ 
+ 
+Effective 
+Date 
+Methodology 
+Section 
+Previous Updated 
+o If the security’s first 
+day of trading on the 
+eligible exchange falls 
+on or before the 
+Reconstitution or 
+Rebalance Reference 
+Date, then the security 
+will be added to the 
+Index as part of the 
+reconstitution or 
+rebalance, otherwise 
+o The security will be 
+added to the Index no 
+sooner than five 
+trading days after the 
+Reconstitution or 
+Rebalance Effective 
+Date. 
+For a company that was already listed on 
+an eligible exchange, and has moved up 
+the ranks into the top 40 of current index 
+constituents: 
+• The security will be ranked and 
+evaluated as of the 
+Reconstitution or Rebalance 
+Reference Date and must satisfy 
+all applicable Security Eligibility 
+Criteria2 as of that date, other 
+than the seasoning requirement. 
+• Such a security will be added to 
+the Index as part of the 
+reconstitution or rebalance. 
+2 To be eligible the security must have an 
+ADVT of at least $5 million (USD) from its 
+first trading day through and including the 
+applicable reference date, rather than the 
+standard three-month measurement 
+period. 
+5/1/2026 
+ 
+Security Eligibility 
+Criteria:  
+Float 
+A security must have a free float of at 
+least 10%. 
+ 
+There is no minimum free float criterion, 
+although the Modified Market 
+Capitalization used for weighting purposes 
+imposes a limitation on the weight of low-
+float securities. 
+6 
+INDEX METHODOLOGY CHANGE LOG  |  © Copyright 2026, Nasdaq, Inc. All Rights Reserved.  
+ 
+ 
+Effective 
+Date 
+Methodology 
+Section 
+Previous Updated 
+5/1/2026 March, June, and 
+September 
+Rebalance 
+-- 
+ 
+“A Rebalance is conducted in March, June, 
+and September.  
+Index Shares for each security are 
+adjusted by the percentage change in that 
+security’s TSO since the previous TSO 
+update. The Index Shares of any low-float 
+securities are also adjusted to reflect 
+changes.  
+After the TSO and float-based adjustments 
+are complete, all eligible companies are 
+ranked based on Full Market 
+Capitalization, as of the applicable 
+Rebalance Reference Date.  
+Index constituents ranked by Full Market 
+Capitalization outside the top 125 will be 
+removed from the Index based on: 
+1. The lowest ranked company 
+outside the top 125 is removed 
+first. 
+2. If the resulting number of 
+constituents is less than 100, the 
+removed company will be 
+replaced by the company with 
+the largest Full Market 
+Capitalization that meets all 
+Security Eligibility Criteria. 
+After all index constituents ranked outside 
+of the top 125 have been removed from 
+the Index and replaced, any additional 
+remaining companies ranked within the 
+top 40 of Full Market Capitalization of 
+current index constituents, that were not 
+added in Step 2 above, will be added to 
+the Index without requiring additional 
+removals. This may temporarily increase 
+the constituent count to more than 100. 
+Securities added to the Index as part of 
+the Rebalance will have their initial 
+weights determined according to the 
+Weight Interpolation Process described 
+below. 
+Weight Interpolation Process 
+7 
+INDEX METHODOLOGY CHANGE LOG  |  © Copyright 2026, Nasdaq, Inc. All Rights Reserved.  
+ 
+ 
+Effective 
+Date 
+Methodology 
+Section 
+Previous Updated 
+In order to preserve the rank order of 
+constituents, weights (and corresponding 
+Index shares) for securities added as intra-
+quarter replacements, or as part of the 
+March, June, and September Rebalance, 
+will be determined using a linear 
+interpolation between the next largest 
+and next smallest index constituents. This 
+interpolation will be based on Modified 
+Market Capitalization ranking.  
+Note:  In some cases, the next largest and 
+next smallest securities may not 
+correspond to the next largest and next 
+smallest weights in the Index.” 
+5/1/2026 
+ 
+Index 
+Maintenance: 
+Deletion Policy 
+ 
+Failure to maintain a weight of at least 
+0.10% for two consecutive month-ends.1 
+1 Any company that fails to maintain a 
+weight of at least 0.10% for two 
+consecutive month-ends will be removed 
+if it is also ranked outside of the top 100 
+eligible companies by market 
+capitalization as of the most recent 
+month-end.   
+-- 
+ 
+5/1/2026 
+ 
+Index 
+Maintenance: 
+Deletion Policy 
+For a security added to the Index as the 
+result of a spin-off event, failure to 
+establish a weight of at least 0.10% at the 
+end of its second day of regular-way 
+trading as an index constituent. 
+ 
+For a security added to the Index as the 
+result of a spin-off event, failure to 
+establish a Full Market Capitalization 
+ranked within the top 125 index-eligible 
+companies at the end of its second day of 
+regular-way trading as an index 
+constituent. 
+5/1/2026 
+ 
+Index 
+Maintenance: 
+Replacement 
+Policy 
+ 
+Other than at the Index Reconstitution, 
+except for spin-offs, additions to the Index 
+occur only when there is a deletion that 
+requires replacement. The company with 
+the largest market capitalization that 
+meets all eligibility criteria as of the prior 
+month-end, and which is not already an 
+index constituent, will replace the deleted 
+company.  
+For companies represented by more than 
+one share class, the company will only be 
+considered deleted when all its share 
+classes have been removed from the 
+Other than at the Index Reconstitution 
+and quarterly Rebalances, or as the result 
+of a spin-off or Fast Entry event, additions 
+to the Index occur only when there is a 
+deletion that causes the count of the 
+index constituents to fall below 100, and 
+therefore requires replacement. In such 
+cases, the company with the largest Full 
+Market Capitalization that meets all 
+eligibility criteria as of the prior month-
+end, and which is not already an index 
+constituent, will replace the deleted 
+company. The replacement company will 
+follow the Weight Interpolation Process 
+8 
+INDEX METHODOLOGY CHANGE LOG  |  © Copyright 2026, Nasdaq, Inc. All Rights Reserved.  
+ 
+ 
+Effective 
+Date 
+Methodology 
+Section 
+Previous Updated 
+Index. If a security is removed, but other 
+securities representing the same company 
+remain in the Index, a replacement event 
+will not be triggered. 
+A security that was added to the Index as 
+the result of a spin-off event, and then 
+removed before the next Reconstitution, 
+will not be replaced. 
+For pending deletions set to occur soon 
+after a Reconstitution and/or Rebalance 
+Effective Date, the removal may be 
+accelerated to occur in conjunction with 
+the Reconstitution and/or Rebalance 
+event. 
+ 
+described within the March, June, and 
+September Rebalance section. 
+For companies represented by more than 
+one share class, the company will only be 
+considered deleted when all of its share 
+classes have been removed from the 
+Index. If a security is removed, but other 
+securities representing the same company 
+remain in the Index, a replacement event 
+will not be triggered. 
+A security that was added to the Index as 
+the result of a spin-off event, and then 
+removed before the next Reconstitution, 
+will not be replaced unless the removal 
+results in the number of index 
+constituents falling below 100 
+For pending deletions set to occur soon 
+after a Reconstitution and/or Rebalance 
+Effective Date, the removal may be 
+accelerated to occur in conjunction with 
+the Reconstitution and/or Rebalance 
+event. 
+5/1/2026 
+ 
+Index 
+Maintenance: 
+Index Share 
+Adjustments 
+For handling of changes in TSO greater 
+than or equal to 10.0% arising from other 
+corporate events, please refer to Nasdaq 
+Corporate Actions and Events Manual – 
+Equities. 
+Other than as a direct result of corporate 
+actions, the Index does not normally 
+experience share adjustments between 
+scheduled index reconstitution and 
+rebalancing events. 
+6/24/2024 Security Eligibility 
+Criteria:  
+Eligible Security 
+Types 
+Eligible security types generally include 
+American Depositary Receipts (ADRs), 
+common stocks, ordinary shares, and 
+tracking stocks.  
+Companies organized as Real Estate 
+Investment Trusts (“REITs”) are not 
+eligible for index inclusion.  
+If the security is a depositary receipt 
+representing a security of a non-U.S. 
+issuer, then references to the “issuer” are 
+references to the underlying security and 
+the total shares outstanding is the actual 
+depositary shares outstanding as reported 
+by the depositary banks. 
+Eligible security types include common 
+stocks, tracking stocks, and American 
+Depositary Receipts (“ADRs”) including 
+New York Registry Shares. 
+Real Estate Investment Trusts (“REITs”), 
+Special Purpose Acquisition Companies 
+(“SPACs”), and “when-issued” securities 
+are not eligible. 
+[Further references to depositary receipts 
+have been moved to the Constituent 
+Selection Process and Constituent 
+Weighting Process sections.] 
+9 
+INDEX METHODOLOGY CHANGE LOG  |  © Copyright 2026, Nasdaq, Inc. All Rights Reserved.  
+ 
+ 
+Effective 
+Date 
+Methodology 
+Section 
+Previous Updated 
+6/24/2024 Security Eligibility 
+Criteria:  
+Geographic 
+Eligibility 
+If the issuer of the security is organized 
+under the laws of a jurisdiction outside 
+the U.S., then such security must have 
+listed options on a registered options 
+market in the U.S. or be eligible for listed-
+options trading on a registered options 
+market in the U.S. 
+-- 
+ 
+6/24/2024 Security Eligibility 
+Criteria:  
+Liquidity 
+Eligibility  
+Each security must have a minimum 
+average daily trading volume of 200,000 
+shares (measured over the three calendar 
+months ending with the month that 
+includes the Reconstitution Reference 
+Date).  
+A security must have a three-month 
+average daily traded value of at least $5 
+million (USD). 
+6/24/2024 Security Eligibility 
+Criteria:  
+Float Eligibility 
+Criteria 
+There is no float eligibility criterion. 
+ 
+A security must have a free float of at 
+least 10%. 
+ 
+6/24/2024 Constituent 
+Selection:  
+Constituent 
+Selection Process 
+A Reconstitution is conducted on an 
+annual basis, at which time all eligible 
+Issuers, ranked by market capitalization, 
+are considered for Index inclusion based 
+on the following order of criteria. 
+ • The top 75 ranked Issuers will be 
+selected for inclusion in the Index.  
+ • Any other Issuers that were already 
+members of the Index as of the 
+Reconstitution Reference Date and are 
+ranked within the top 100 are also 
+selected for inclusion in the Index.  
+ • In the event that fewer than 100 issuers 
+pass the first two criteria, the remaining 
+positions will first be filled, in rank order, 
+by issuers currently in the index ranked in 
+positions 101-125 that were ranked in the 
+top 100 at the previous Reconstitution or 
+replacement-or spin-off-issuers added 
+since the previous Reconstitution. In the 
+event that fewer than 100 issuers pass the 
+first three criteria, the remaining positions 
+will be filled, in rank order, by any issuers 
+ranked in the top 100 that were not 
+A Reconstitution is conducted on an 
+annual basis, at which time all eligible 
+companies are ranked based on market 
+capitalization, as of the Reconstitution 
+Reference Date.   
+The market capitalization of each 
+company is the combined market 
+capitalization of all eligible share classes. 
+For inclusion purposes, the market 
+capitalization of an ADR will normally be 
+determined based on the depositary 
+shares outstanding, as reported by the 
+depositary banks. This means that a non-
+US company represented by an ADR may 
+be considered for inclusion in the Index at 
+less than its full global market 
+capitalization. Notwithstanding the 
+foregoing, an ADR that serves as a 
+company’s primary global listing (i.e., the 
+underlying shares are not listed or 
+available for trading elsewhere) will be 
+considered for inclusion based on its full 
+global market capitalization, in the same 
+manner as a direct listing. 
+10 
+INDEX METHODOLOGY CHANGE LOG  |  © Copyright 2026, Nasdaq, Inc. All Rights Reserved.  
+ 
+ 
+Effective 
+Date 
+Methodology 
+Section 
+Previous Updated 
+already members of the Index as of the 
+Reference Date. 
+Once ranked, companies are selected for 
+index inclusion based on the following 
+order of criteria: 
+1. The top 75 ranked companies are 
+selected for inclusion in the Index. 
+2. Any other companies that were 
+members of the Index as of the 
+Reconstitution Reference Date and 
+are ranked within the top 100 ranked 
+companies are also selected for 
+inclusion in the Index. 
+3. If fewer than 100 companies are 
+selected based on the first two 
+criteria, then the remaining positions 
+will first be filled, in rank order, by 
+companies currently in the Index as 
+of the Reconstitution Reference Date, 
+which are ranked in positions 101-
+125, as long as they were: 
+a. ranked in the top 100 as of the 
+reference date of the previous 
+Reconstitution, or 
+b. added as a replacement since the 
+previous Reconstitution, or 
+c. added as the result of a spinoff 
+event since the previous 
+Reconstitution. 
+If fewer than 100 companies are selected 
+based on the first three criteria, the 
+remaining positions will be filled, in rank 
+order, by any companies ranked in the top 
+100 that were not already members of the 
+Index as of the Reconstitution Reference 
+Date. 
+6/24/2024 Constituent 
+Weighting:  
+Constituent 
+Weighting 
+Process 
+Quarterly Weight Adjustment 
+NDX’s quarterly weight adjustment 
+employs a two-stage weight adjustment 
+scheme according to issuer-level 
+constraints. 
+Index constituents initial weights are 
+determined using up to two calculations 
+of market capitalization: TSO-derived 
+The quarterly weight process uses 
+company-level weights, which are derived 
+using the price and Total Shares 
+Outstanding (“TSO”) of each security, as of 
+the Rebalance Reference Date. For any 
+company represented by more than one 
+eligible share class, the company weight is 
+the combined weight of the eligible 
+securities representing its share classes. 
+11 
+INDEX METHODOLOGY CHANGE LOG  |  © Copyright 2026, Nasdaq, Inc. All Rights Reserved.  
+ 
+ 
+Effective 
+Date 
+Methodology 
+Section 
+Previous Updated 
+market capitalization and Index Share-
+derived market capitalization. TSO-derived 
+market capitalization is defined as a 
+security’s Last Sale Price times its Total 
+Shares Outstanding. Index Share-derived 
+market capitalization is defined as a 
+security’s Last Sale Price times its updated 
+Index Shares as of the prior month end. 
+Both TSO-derived and Index Share-derived 
+market capitalizations can be used to 
+calculate TSO-derived and Index Share-
+derived initial index weights by dividing 
+each index constituents (TSO- or Index 
+Share-derived) market capitalization by 
+the aggregate (TSO- or Index Share-
+derived) market capitalization of all index 
+constituents.  
+When the Rebalance coincides with the 
+Reconstitution, only TSO-derived initial 
+weights are used. When the Rebalance 
+does not coincide with the Reconstitution, 
+Index Share-derived initial weights are 
+used when doing so results in no weight 
+adjustment; otherwise, TSO-derived 
+weights are used in both stages of the 
+weight adjustment procedure. Issuer 
+weights are the aggregated weights of the 
+issuers’ respective index constituents. 
+Stage 1 
+If no initial issuer weight exceeds 24%, 
+initial weights are used as Stage 1 weights; 
+otherwise, initial weights are adjusted to 
+meet the following Stage 1 constraint, 
+producing the Stage 1 weights: 
+• No issuer weight may exceed 20% of the 
+Index. 
+Stage 2 
+If the aggregate weight of the subset of 
+issuers whose Stage 1 weights exceed 
+4.5% does not exceed 48%, Stage 1 
+weights are used as final weights; 
+otherwise, Stage 1 weights are adjusted to 
+meet the following Stage 2 constraint, 
+producing the final weights: 
+All ADR securities selected for index 
+inclusion will have their weights assigned 
+according to the market capitalization of 
+the depositary shares outstanding, as 
+reported by the depositary banks. 
+Quarterly Update 
+For quarterly rebalances in March, June, 
+and September, Index Shares for each 
+security are adjusted by the percentage 
+change in that company’s TSO since the 
+previous TSO update. Following those 
+adjustments, the resulting company 
+weights are evaluated based on two 
+constraints: 
+• No company’s weight may exceed 24%. 
+• The aggregate weight of the companies 
+whose weights exceed 4.5% may not 
+exceed 48%. 
+If neither constraint is violated, then no 
+further adjustments are made, and the 
+quarterly constituent weighting process is 
+complete. 
+Only in cases where either or both of the 
+constraints above are violated, or when 
+the quarterly rebalance coincides with the 
+annual Reconstitution (i.e., December), 
+quarterly weight adjustments are made 
+according to a two-stage adjustment 
+process described below. This process 
+uses the price and TSO of each security, as 
+of the Rebalance Reference Date, to 
+derive the initial company-level weights. 
+Stage 1 Adjustment 
+If no company’s initial weight exceeds 
+24% of the Index, initial weights are used 
+as Stage 1 weights without adjustment. 
+Otherwise, initial weights are adjusted 
+such that no company’s weight may 
+exceed 20% of the Index. 
+Stage 2 Adjustment 
+If the aggregate weight of the companies 
+whose Stage 1 weights exceed 4.5% does 
+not exceed 48%, Stage 1 weights are used 
+12 
+INDEX METHODOLOGY CHANGE LOG  |  © Copyright 2026, Nasdaq, Inc. All Rights Reserved.  
+ 
+ 
+Effective 
+Date 
+Methodology 
+Section 
+Previous Updated 
+• The aggregate weight of the subset of 
+issuers whose Stage 1 weights exceed 
+4.5% is set to 40%. 
+Annual Weight Adjustment 
+NDX’s annual weight adjustment employs 
+a two-stage weight adjustment scheme 
+according to security-level constraints.  
+Index constituents initial weights are 
+determined via the quarterly weight 
+adjustment procedure.  
+Stage 1 
+If no initial security weight exceeds 15%, 
+initial weights are used as Stage 1 weights; 
+otherwise, initial weights are adjusted to 
+meet the following Stage 1 constraint, 
+producing the Stage 1 weights: 
+• No security weight may exceed 14% of 
+the Index. 
+Stage 2 
+If the aggregate weight of the subset of 
+index constituents with the five largest 
+market capitalizations is less than 40%, 
+Stage 1 weights are used as final weights; 
+otherwise, Stage 1 weights are adjusted to 
+meet the following constraints, producing 
+the final weights: 
+• The aggregate weight of the subset of 
+index constituents with the five largest 
+market capitalizations is set to 38.5%. 
+• No security with a market capitalization 
+outside the largest five may have a final 
+index weight exceeding the lesser of 4.4% 
+or the final index weight of the index 
+constituent ranked fifth by market 
+capitalization. 
+For additional information about index 
+weighting, see Nasdaq Index Weight 
+Adjustment Guidelines. 
+ 
+as the final weights. Otherwise, Stage 1 
+weights are adjusted such that: 
+• The aggregate weight of the companies 
+whose Stage 1 weights exceeded 4.5% is 
+set to 40%. 
+• Companies with Stage 1 weights below 
+4.5% may also have their weights adjusted 
+to preserve the initial rank order of all 
+companies. 
+If the two-stage process results in a 
+violation of the weighting constraints as 
+previously detailed in the Quarterly 
+update section, then the process is 
+repeated until the company weights meet 
+the constraints. 
+Annual Weight Adjustment 
+The annual Reconstitution employs an 
+additional two-stage weight adjustment 
+using security-level constraints. For any 
+company with more than one eligible 
+share class, the securities representing 
+those share classes are considered 
+separately. 
+Final security weights from the quarterly 
+weight adjustment are used as the initial 
+security weights for the annual weight 
+adjustment process.  
+Stage 1 Adjustment 
+If no security’s initial weight exceeds 15%, 
+initial weights are used as Stage 1 weights.  
+Otherwise, initial weights are adjusted 
+such that no security’s weight may exceed 
+14% of the Index. 
+Stage 2 Adjustment 
+If the aggregate weight of the securities 
+with the five largest Stage 1 weights does 
+not exceed 40%, Stage 1 weights are used 
+as final weights. Otherwise, Stage 1 
+weights are adjusted such that: 
+• The aggregate weight of the securities 
+with the five largest Stage 1 weights is set 
+to 38.5%. 
+13 
+INDEX METHODOLOGY CHANGE LOG  |  © Copyright 2026, Nasdaq, Inc. All Rights Reserved.  
+ 
+ 
+Effective 
+Date 
+Methodology 
+Section 
+Previous Updated 
+• In order to preserve the initial rank 
+order of the securities, the final index 
+weight of any security outside the five 
+largest will be capped at the lesser of 4.4% 
+or the weight of the fifth largest security. 
+If the two-stage process results in a 
+violation of the weighting constraints as 
+previously detailed in the Annual weight 
+adjustment section, then the process is 
+repeated until the security weights meet 
+the constraints. 
+For additional information about index 
+weighting, see Nasdaq Index Weight 
+Adjustment Guidelines. 
+6/24/2024 Index Calendar:  
+Reconstitution & 
+Rebalancing 
+Schedule:  
+Reconstitution 
+Reference Dates 
+The Security Eligibility Criteria are applied 
+using market data as of the end of 
+October and total shares outstanding as of 
+the end of November. 
+Last trading day of November. 
+5/28/2021 Security Eligibility 
+Criteria:  
+Seasoning 
+Eligibility 
+-- 
+ 
+A security that was added to the Index as 
+the result of a spin-off event will be 
+exempt from the seasoning requirement. 
+5/28/2021 Constituent 
+Weighting:  
+Constituent 
+Selection Process 
+In the event that fewer than 100 issuers 
+pass the first two criteria, the remaining 
+positions will first be filled, in rank order, 
+by current index constiuents that were in 
+the top 100 at the previous Reconstitution 
+but are ranked in positions 101-125 in the 
+current Reconstitution. 
+In the event that fewer than 100 issuers 
+pass the first two criteria, the remaining 
+positions will first be filled, in rank order, 
+by issuers currently in the Index ranked in 
+positions 101-125 that were ranked in the 
+top 100 at the previous Reconstitution or 
+replacement- or spin-off-issuers added 
+since the previous Reconstitution. 
+5/28/2021 Index 
+Maintenance: 
+Deletion Policy 
+-- 
+ 
+If a security that was added to the Index 
+as the result of a spin-off event has an 
+adjusted market capitalization below 
+0.10% of the aggregate adjusted market 
+capitalization of the Index at the end of its 
+second day of regular way trading as an 
+index constituent. 
+14 
+INDEX METHODOLOGY CHANGE LOG  |  © Copyright 2026, Nasdaq, Inc. All Rights Reserved.  
+ 
+ 
+Effective 
+Date 
+Methodology 
+Section 
+Previous Updated 
+5/28/2021 Index 
+Maintenance: 
+Deletion Policy 
+-- 
+ 
+Securities that are added as a result of a 
+spin-off may be deleted as soon as 
+practicable after being added to the Index. 
+This may occur when Nasdaq determines 
+that a security is ineligible for inclusion 
+because of reasons such as ineligible 
+exchange, security type, industry, or 
+adjusted market capitalization. Securities 
+that are added as a result of a spin-off 
+may be maintained in the Index until a 
+later date and then removed, for example 
+if a spin-off security has liquidity 
+characteristics that diverge materially 
+from the Security Eligibility Criteria and 
+could affect the integrity of the Index. 
+5/28/2021 Index 
+Maintenance: 
+Replacement 
+Policy 
+-- Issuers that are added as a result of a spin-
+off are not replaced until after they have 
+been included in a Reconstitution. 
+5/28/2021 Index 
+Maintenance: 
+Corporate Action 
+Exceptions 
+Spin-offs 
+If the parent is an index constituent and 
+there is a when-issued market for the 
+spinco, the price of the parent is adjusted 
+downward for the value of the spinco.  
+The value of the spinco is calculated as the 
+spin-off ratio multiplied by the when-
+issued Last Sales Price (“LSP”) of the 
+spinco.  There is no adjustment to the 
+Index Shares of the parent.  This will result 
+in a divisor adjustment.  The spinco is not 
+added to the Index. 
+If there is no when-issued market for the 
+spinco, then no price or Index Share 
+adjustment is made to the index 
+constituent.  The spinco is not added to 
+the Index. 
+-- 
+ 
+Contact Information  
+For questions regarding this methodology change log or the Nasdaq-100 Index® methodology, please 
+contact the Nasdaq Index Client Services team at indexservices@nasdaq.com. Additional index 
+information is available at https://indexes.nasdaqomx.com/.  
+15 
+INDEX METHODOLOGY CHANGE LOG  |  © Copyright 2026, Nasdaq, Inc. All Rights Reserved.  
+ 
+ 
+DISCLAIMER 
+Nasdaq may, from time to time, exercise reasonable discretion as it deems appropriate in order to 
+ensure index integrity, including but not limited to, quantitative inclusion criteria. Nasdaq may also, due 
+to special circumstances, if deemed essential, apply discretionary adjustments to ensure and maintain 
+the high quality of the index construction and calculation. Nasdaq does not guarantee that any Index 
+accurately reflects future market performance.  
+Neither Nasdaq, Inc., its third-party providers, nor any of their respective affiliates (collectively 
+“Corporations”) make any recommendation to buy or sell any security or any representation about the 
+financial condition of any company. Investors should undertake their own due diligence and carefully 
+evaluate companies before investing. The information contained herein is provided for informational 
+and educational purposes only, and nothing contained herein should be construed as investment advice, 
+either on behalf of a particular security or an overall investment strategy. ADVICE FROM A SECURITIES 
+PROFESSIONAL IS STRONGLY ADVISED. 
+ 

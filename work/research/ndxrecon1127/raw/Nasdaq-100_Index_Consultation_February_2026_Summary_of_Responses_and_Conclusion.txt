@@ -1,0 +1,216 @@
+ 
+ 
+ 
+Questions should be directed to Nasdaq Global Indexes via email at IndexServices@Nasdaq.com 
+ 
+General Communication: This content contains non-sensitive information 
+ 
+Nasdaq-100 Index® Consultation – February 2026 
+Summary of Responses and Conclusion 
+ 
+Nasdaq has concluded its consultation regarding proposed enhancements and updates to the 
+Nasdaq-100 Index® methodology. Thank you to those who participated. 
+ 
+The proposed enhancements and updates were designed to ensure that the Nasdaq-100 Index® 
+remains timely and representative of the market it measures, consistent with its objective of 
+tracking the 100 largest non-financial companies listed on Nasdaq, while preserving replicability 
+for passive managers. In addition, the proposals were designed to limit minor ad hoc index 
+changes by incorporating such adjustments into scheduled quarterly rebalance events. These 
+quarterly reviews are designed to ensure that the Index regularly continues to reflect prevailing 
+market conditions and remains transparent and investable. 
+ 
+The response was robust, receiving feedback from a broad spectrum of industry professionals 
+(e.g. asset managers, passive portfolio managers), individual investors, and other stakeholders.  
+ 
+Summary of Responses 
+ 
+Proposal 1, Calculation of Market Cap for Eligibility Purposes: 
+Proposal Description: Include both listed and unlisted shares when calculating market 
+capitalization for ranking and inclusion, ensuring that evolving corporate share structures do 
+not exclude the largest companies from index eligibility. This will only affect eligibility and not 
+weighting, which remains based on listed market capitalization. 
+Submission Response Summary: A majority of respondents were supportive of the proposed 
+change. One described the proposal as striking “…a pragmatic balance, as issuer capital 
+structures evolve, without mechanically inflating tradable exposure in index weights.” 
+A small number of respondents indicated that they did not view a change as necessary or 
+opposed the proposal without further elaboration.   
+ 
+Proposal 2, “Fast Entry” for New Nasdaq Listed Large Companies: 
+Proposal Description: Currently new constituents can only be added at reconstitution or as 
+replacements, which leads to large newly listed companies often being delayed from index 
+inclusion, creating a gap between investor expectations and index market representation. “Fast 
+Entry” reduces that gap and allows for more timely market representation. 
+ 
+ 
+ 
+Questions should be directed to Nasdaq Global Indexes via email at IndexServices@Nasdaq.com 
+ 
+General Communication: This content contains non-sensitive information 
+Submission Response Summary: Industry professionals, including asset managers and 
+institutional passive portfolio managers, were mostly supportive of the Fast Entry proposal and 
+proposed timing, indicating that it would be expected to promote “a more accurate and timely 
+representation of the investable market.”  Some respondents expressed the view that a more 
+conservative timeframe might be preferable, while others expressed a preference for an even 
+faster inclusion, citing other indexes with timelines in the five- to ten-day range. 
+Several individual investors, in nearly identically worded submissions, expressed opposition to 
+the proposed change. Their comments cited concerns that a reduced seasoning period might 
+reduce price discovery for IPOs and could direct passive investment flows to unproven or 
+overvalued securities. 
+A few additional respondents raised concerns and questions about how and whether the Fast 
+Entry provision might be applied to the related indexes listed in the appendix to the 
+consultation.  It was noted that many of these indexes apply separate policies for the timing of 
+index additions and replacements, and that many follow a quarterly schedule rather than 
+implementing intra-quarter ad hoc events. 
+ 
+Proposal 3, Inclusion and Weighting of Securities with Low Float: 
+Proposal Description: Currently the index is a modified market‑capitalization index with a 
+minimum free‑float requirement of 10%. Under the current methodology, once a security 
+crosses the minimum free-float requirement, the index weighting is based on the full market 
+cap of eligible listed shares.  As assets grow, this minimum free-float requirement may 
+challenge replicability and liquidity, while raising it could widen the gap between investor 
+expectations and index representation. To balance these objectives, a float factor adjustment 
+was proposed to limit the index weighting for low float securities by introducing a graduated 
+scale, thereby increasing the free float required for full market‑capitalization weighting in the 
+index. 
+Submission Response Summary: Responses from institutional investors, such as asset managers 
+and portfolio managers, largely expressed support for the low float security weight adjustment. 
+One respondent wrote that “…the mechanism aims to mitigate replicability and capacity risks 
+while avoiding an overly blunt eligibility screen that could exclude certain corporate 
+structures.” Another noted that “This approach will appropriately balance the value of including 
+low float companies without artificially harming indexers and tradability.”  Other respondents 
+indicated that they valued the gradual “phase in” of newly available float, rather than an abrupt 
+all-or-none inclusion.   
+The low float security weight adjustment proposal also elicited comments that suggested a 
+degree of misunderstanding and confusion regarding the intent of the proposal.  Some 
+responses expressed concern that index demand could exceed the available float, along with a 
+ 
+ 
+ 
+Questions should be directed to Nasdaq Global Indexes via email at IndexServices@Nasdaq.com 
+ 
+General Communication: This content contains non-sensitive information 
+suggestion that rejecting the proposal would “maintain a link between index weight and 
+tradeable liquidity.”  For low-float securities, no such link currently exists in the index, and the 
+proposal is intended to establish one.  
+Some respondents, in their analysis of the impact, appeared to assume that the index is 
+currently free-float-weighted; however, this does not reflect the current methodology.  As 
+noted in the consultation, “… index constituents are currently represented at the full market 
+capitalization of eligible listed share classes, without regard to free float 
+considerations.”  Accordingly, the proposed low float security weight adjustment (not to 
+exceed full listed market capitalization) would represent a more conservative weighting 
+approach than the one currently in place, rather than a more aggressive one.   
+Some respondents indicated that a lower float weight adjustment could appropriately limit the 
+weight of low float securities and also suggested that the proposed adjustment be reduced. 
+Some respondents raised questions about how and whether this provision might be applied to 
+related indexes, noting that many of them apply their own independent weighting approaches. 
+ 
+Proposal 4, Removal of the Minimum 10% Float Requirement: 
+Proposal Description: Given the introduction of the float factor mechanism to limit exposure to 
+low float companies in the index further beyond the 10% float minimum, the proposal was to 
+remove the corresponding minimum.  
+Submission Response Summary: Respondents generally expressed support for removing the 
+minimum 10% float requirement. 
+Many of the same respondents who supported the low-float security weight adjustment also 
+indicated that the minimum float requirement would no longer be necessary. 
+ 
+Proposal 5, Replacement of the “10 Basis Point Rule”: 
+Proposal Description: The current methodology prescribes that “Any company that fails to 
+maintain a weight of at least 0.10% for two consecutive month-ends will be removed if it is also 
+ranked outside of the top 100 eligible companies by market capitalization as of the most recent 
+month-end.” This often results in ad‑hoc changes and, as such, the proposal was a quarterly, 
+rank‑based process that removes and replaces securities ranked outside the top 125 at 
+scheduled rebalances, improving predictability, market representativeness and reducing 
+intra‑quarter turnover for investors. 
+ 
+ 
+ 
+Questions should be directed to Nasdaq Global Indexes via email at IndexServices@Nasdaq.com 
+ 
+General Communication: This content contains non-sensitive information 
+Submission Response Summary: Feedback from industry professionals was supportive, with 
+respondents indicating a preference for the shift from ad hoc adjustments to scheduled 
+quarterly events.  
+ 
+Proposal 6, Cessation of Intra-quarter TSO Adjustments:  
+Proposal Description: The current methodology permits ad‑hoc index share updates for TSO 
+changes exceeding 10% intra-quarter. The proposal eliminated ad‑hoc TSO adjustments and 
+proposed implementing accumulated changes only at scheduled quarterly rebalances alongside 
+other trading activity, increasing predictability. 
+Submission Response Summary: Feedback from industry professionals was supportive, with 
+respondents indicating a preference for scheduled quarterly events over ad hoc updates. One 
+respondent noted that “Implementing TSO and float updates only during scheduled quarterly 
+rebalances and the annual reconstitution provides a cleaner, more predictable ruleset without 
+materially compromising index accuracy.” 
+ 
+Conclusion  
+Following the review and evaluation of the consultation submissions, Nasdaq has revised the 
+approach with the following methodology updates for the Nasdaq-100 Index®: 
+• Proposal 1, Calculation of Market Cap for Eligibility Purposes, will be adopted as 
+proposed. 
+• Proposal 2, “Fast Entry” for New Nasdaq Listed Large Companies, will be adopted with 
+the following modification: 
+o Inclusion will normally be effective after the 15th day of trading, with appropriate 
+notice, although this timeline may be extended in cases where Fast Entry 
+inclusion could interfere with a scheduled rebalance or reconstitution Please go 
+to the Nasdaq-100 Index® methodology effective May 1st, 2026, for the detailed 
+explanation of timing. 
+• Proposal 3, Inclusion and Weighting of Securities with Low Float, will be adopted with 
+the following modification: 
+o The low-float security weight adjustment will be decreased from five times to 
+three times. 
+o Free float values will be updated as of each Rebalance Reference date. Resulting 
+index share changes will be implemented in conjunction with scheduled 
+quarterly rebalances. 
+ 
+ 
+ 
+Questions should be directed to Nasdaq Global Indexes via email at IndexServices@Nasdaq.com 
+ 
+General Communication: This content contains non-sensitive information 
+• Proposal 4, Removal of the Minimum 10% Float Requirement, will be adopted as 
+proposed. 
+• Proposal 5, Replacement of the “10 Basis Point Rule”, will be adopted as proposed. 
+• Proposal 6, Cessation of Intra-quarter TSO Adjustments, will be adopted as proposed. 
+ 
+Documentation Updates  
+Edits reflecting these changes have been made to the Nasdaq-100 Index® methodology 
+document posted on Nasdaq’s Global Index Watch (“GIW”) website. The updated methodology 
+will become effective on May 1, 2026, although most updates aren’t expected to result in 
+constituent or weight changes until the next scheduled Rebalance, effective on June 22, 2026.  
+Note that any corresponding methodology updates for the below Related Indexes will be 
+published as any changes are incorporated. All related indexes will continue to follow their 
+current methodologies on Nasdaq’s Global Index Watch (“GIW”) website. 
+Appendix: Related Indexes 
+Index Symbol Index Name 
+XND Nasdaq-100 Micro™ Index 
+NQX Nasdaq-100 Reduced Value™ Index 
+MNX1 Nasdaq-100 Mini™ Index 
+NDXMEGA Nasdaq-100 Mega™ Index 
+NDXMEGA2 Nasdaq-100 Mega 2.0™ Index 
+NDX30 Nasdaq-100 Top 30™ Index 
+NDX70 Nasdaq-100 ex Top 30™ Index 
+NDX30U Nasdaq-100 Top 30 UCITS™ Index 
+NDX70U Nasdaq-100 ex Top 30 UCITS™ Index 
+NDXE Nasdaq-100 Equal Weighted™ Index 
+NDXSE Nasdaq-100 Select Equal Weight™ Index 
+NDXEG Nasdaq-100 Enhanced Growth™ Index 
+NDXX Nasdaq-100 Ex-Tech Sector™ Index 
+NDXT Nasdaq-100 Technology Sector™ Index 
+NDXTMC Nasdaq-100 Technology Sector Market-Cap Weighted™ Index 
+NDXT10 Nasdaq-100 Technology Sector Adjusted Market-Cap Weighted™ Index 
+NDXESG Nasdaq-100 ESG™ Index 
+NDXSES Nasdaq- 100 Sustainable ESG Select™ Index 
+NDXLV Nasdaq-100 Low Volatility™ Index 
+NDXHB Nasdaq-100 High Beta™ Index 
+ 
+ 
+ 
+Questions should be directed to Nasdaq Global Indexes via email at IndexServices@Nasdaq.com 
+ 
+General Communication: This content contains non-sensitive information 
+NDXDWA Nasdaq-100 Dorsey Wright Momentum™ Index 
+NGX Nasdaq Next Generation 100™ Index 
+NGXESG Nasdaq Next Generation 100 ESG™ Index 
+NXTQ Nasdaq Q-50™ Index 
+NCX Nasdaq Innovators Completion Cap™ Index 
+ 

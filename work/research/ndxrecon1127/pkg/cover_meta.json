@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "나스닥 Annual Changes to the Nasdaq-100 Index 발표문 2019~2025(raw/pr20xx.html)에서 count.py로 센 12월 새로 넣은 회사 수, count_out.txt",
+ "made_at": "2026-11-26",
+ "by": "research/ndxrecon1127/mkimg.py",
+ "out": "img/00.png",
+ "topic": "나스닥100 종목 교체",
+ "num": "7년 39개 · 해마다 6개(2024년 3개)",
+ "topic_px": 58,
+ "num_px": 40,
+ "follows": "경쟁 2 whitecoffee0528 대표 썸네일(글자 카드+핵심 숫자 3주) · 경쟁 3 sovbks 표지(나스닥100선물 글자) + 우리 잘된 글 ndxetf1122·k200etf1126 막대 위 큰 숫자 차트 표지"
+}

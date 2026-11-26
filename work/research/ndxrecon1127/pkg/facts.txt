@@ -1,0 +1,24 @@
+[오늘 찾은 것]
+2026-11-26 · 나스닥 'Annual Changes to the Nasdaq-100 Index' 2025-12-12 발표문: 6개 넣음(ALNY·FER·INSM·MPWR·STX·WDC)·6개 뺌(BIIB·CDW·GFS·LULU·ON·TTD), 2025-12-22(월) 장 전 적용, 'reconstituted each year in December, timed to coincide with the quadruple witch expiration Friday' · QQQ 'seeks to deliver investment results that, before expenses, correspond to the performance of the Nasdaq-100' · raw/pr2025.html · https://www.nasdaq.com/press-release/annual-changes-nasdaq-100-indexr-2025-12-13
+2026-11-26 · 같은 꼴 발표문 2019~2024 6건 새로 받음(raw/pr2019~2024.html) — 넣은 수 6·6·6·6·6·3 · 발표일 12-13·12-11·12-10·12-09·12-08·12-13 · 적용 12-23·12-21·12-20·12-19·12-18·12-23(모두 월) · https://www.nasdaq.com/press-release/annual-changes-to-the-nasdaq-100-index-2019-12-13 외 count_out.txt
+2026-11-26 · 나스닥 '2025 Nasdaq-100 Reconstitution and Performance Highlights'(2026년 1월): 네 단계 선정(상위 75·100위 안 기존·101~125위 기존·100위 안 새 회사) · 2021~2025 91.6%가 1·2단계 · 'Over the past decade, December has typically seen about six additions and deletions' · 2025 편입 6곳 모두 그해 50% 이상 상승, TTD -67.7%·LULU -45.7% · 2025년 말 상위 10개 52% · raw/hl202601.pdf · https://indexes.nasdaqomx.com/docs/202601%20NDX%20Reconstitution%20and%20Performance%20Highlights.pdf
+2026-11-26 · 나스닥 'Nasdaq-100 Index Methodology Changes FAQ'(2026년 5월): 5/1부터 상위 40위 빠른 편입 15거래일 · 40위 밖은 석 달 그대로 · 6/22 분기 심사부터 125위 밖 제거(10bp 규칙 대체) · raw/2026_May_NDX_Changes_FAQ.pdf · https://indexes.nasdaqomx.com/docs/2026_May_NDX_Changes_FAQ.pdf
+2026-11-26 · 나스닥 Methodology Change Log NDX: 5/1/2026 'March, June, and September Rebalance' 절 신설, 125위 밖 제거 · 'Typically, such a security will be added to the Index after 15 trading days' · raw/Methodology_Change_Log_NDX.pdf · https://indexes.nasdaqomx.com/docs/Methodology_Change_Log_NDX.pdf
+2026-11-26 · (2차) 'Nasdaq-100 Index June 2026 Quarterly Changes' GlobeNewswire 2026-06-11 사본 2곳: 5개 넣음(ALAB·CRWV·NBIS·RKLB·TER)·5개 뺌(CHTR·CTSH·INSM·VRSK·ZS), 6/22(월) 장 전 적용 · raw/jun_finviz.html https://finviz.com/news/361357/nasdaq-100-index-june-2026-quarterly-changes · raw/jun_mondo.html https://mondovisione.com/news/nasdaq-100-index-june-2026-quarterly-changes-2026612/
+2026-11-26 · (2차) 스페이스X 6/12 상장·7/7 나스닥100 편입(빠른 편입 첫 사례) — 알자지라 2026-07-07 https://aljazeera.com/economy/2026/7/7/spacex-shares-slide-as-it-joins-the-tech-heavy-nasdaq-100 · RTTNews https://www.rttnews.com/3663388/spacex-joins-nasdaq-100-less-than-a-month-after-going-public.aspx?type=ipo · 경쟁 whitecoffee0528도 6/12 상장·7/7 편입
+2026-11-26 · 미래에셋자산운용 TIGER 미국나스닥100(133690) 상품 정보: 벤치마크 NASDAQ 100 · 상장일 2010-10-18 · raw/tiger_133690_1126.html · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7133690008
+
+[사실표]
+1. 12월 정기 교체 새로 넣은 수 2019 6 · 2020 6 · 2021 6 · 2022 6 · 2023 6 · 2024 3 · 2025 6 → 7번 합 39[계산 count.py]
+2. 발표 = 12월 둘째 금요일(13·11·10·9·8·13·12일), 적용 = 셋째 금요일 다음 월요일(23·21·20·19·18·23·22일) — 7번 모두
+3. 2026년 12월 금요일 4·11·18일 → 둘째 11일, 셋째 18일, 다음 월요일 21일[계산] · 발표문 시각 오후 8시(미국 동부, 2025·2024) → 한국 토요일 오전 10시
+4. 선정 4단계: 상위 75 → 100위 안 기존 → 101~125위 기존(직전 교체 때 100위 안이었거나 그 뒤 들어온 회사) → 100위 안 새 회사 · 2021~2025 91.6%가 1·2단계
+5. 지난 10년 12월 보통 6개쯤 넣고 뺌(나스닥 문장)
+6. 2025 편입 6곳 그해 총수익 모두 50% 이상(WDC 283.8·STX 225.2·ALNY 69.0·FER 56.3·MPWR 54.4·INSM 152.1%) · 제외 TTD -67.7%·LULU -45.7%(글: 68%·46% 내림, 반올림)
+7. 들고 남: CDW 2019 들어옴·2021 빠짐·2023 들어옴·2025 빠짐 · LCID 2021 들어옴·2023 빠짐 · ZS 2021 들어옴·2026-06 빠짐 · INSM 2025-12 들어옴·2026-06 빠짐 · SPLK 2019 들어옴·2022 빠짐·2023 들어옴 · MTCH 2020 들어옴·2022 빠짐 · GFS 2022 들어옴·2025 빠짐
+8. 2026-05-01 빠른 편입: 지수 회사 중 40위 안, 15거래일 뒤(보통) · 그 밖은 석 달 · 3·6·9월 분기 심사에서 125위 밖 제거
+9. 2026-06 분기 심사 5 넣고 5 뺌, 6/22 적용(2차 2곳)
+10. 스페이스X 6/12 상장 · 7/7 편입(2차 보도)
+11. 2025년 말 상위 10개 52%
+12. 나스닥100 = 나스닥 상장 비금융(non-financial) 대형 100개(S1·S2) · CDW 업종 ICB Computer Hardware(S2 표) · 40위 밖 새 상장사 석 달 대기 그대로(S3 'seasoning period for companies outside of the Top 40 remains at three months') · 지수 명단이 바뀌면 지수 ETF가 새 명단대로 사서 맞춤(알자지라 S8 'index funds and ETFs tied to the Nasdaq-100 will need to buy shares')
+13. QQQ 비용 전 지수 성과를 따르는 것이 목표 · TIGER 미국나스닥100 벤치마크 NASDAQ 100

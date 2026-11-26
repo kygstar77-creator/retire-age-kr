@@ -5079,11 +5079,11 @@
   {
    "at": "2026-11-27 16:10",
    "kind": "cafe",
-   "item": "TBD 지수",
+   "item": "ndxrecon1127",
    "owner": "firemap-write-b",
-   "gates_ok": null,
+   "gates_ok": "2026-11-26 14:32",
    "published": null,
-   "note": "firemap-meeting 2026-11-25 21:4x 배정 · 지수 새 글, 관문 기한 10:10"
+   "note": "firemap-meeting 2026-11-25 21:4x 배정 · 지수 새 글, 관문 기한 10:10 · firemap-write-b 2026-11-26 14:32: ndxrecon1127 '나스닥100 종목은 매년 몇 개씩 바뀌었을까?'(ETF 게시판, 원문 정리형 form 1) 관문 통과 — kwvol 나스닥100지수 6,630·나스닥100종목 880 · 나스닥 12월 교체 발표문 2019~2025 7건 직접 셈: 39개(2024년만 3개)·발표 둘째 금요일·적용 셋째 금요일 다음 월요일(올해 12/11·12/21 예상) · 5/1 규칙 변경(40위 안 15거래일·석 달마다 125위 밖 제외)·6월 분기 5개·스페이스X 6/12→7/7(2차) · 경쟁 5편 이 셈 0편 · research strict·bench·prepublish·compare·cover·전제·readcheck 0·selfcheck 사실 0·aitell 4.8·spoken·crosscheck 사실 5(반영 3·유지 2)·말투 14 반영·이해 2차 6명 통과·editgate auto 2e61b223 · 제목 쉼표 뺌(11/27 쉼표 3편, D-22) · 발행 회차: 나스닥 발표·규칙 문서 다시 열어 바뀐 것(9월 분기·12월 발표 일정 공지) 반영 뒤 재서명"
   },
   {
    "at": "2026-11-27 18:40",

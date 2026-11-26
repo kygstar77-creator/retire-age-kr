@@ -1,0 +1,632 @@
+ 
+www.nasdaq.com/solutions/global
+ -
+ indexes  
+ 1 
+M
+I 
+ 
+2025 Nasdaq
+ -
+ 100
+ ® 
+Reconstitution  
+and 
+Performance  
+Highlights  
+ 
+David Tsoi
+ , CFA, CAIA, FRM, CESGA, CAMS
+ , 
+Head of  
+Index Research
+ , APAC  
+ 
+The 
+ Nasdaq
+ -
+ 100 (NDX
+ ®
+) 
+annual reconstitution 
+ took effect  
+before the market open
+ ed  
+on Dec
+ ember  
+22
+ , 2025
+ . 
+Th
+ e 
+2025 reconstitution  
+introduce
+ d 
+six additions to the index
+ : 
+Western Digital (WDC)
+ , 
+Seagate Technology (STX)
+ , 
+Alnylam Pharmaceuticals (ALNY)
+ , 
+Ferrovial (FER)
+ , 
+Monolithic Power Systems (MPWR)  
+and 
+ Insmed (INSM)
+ . 
+ 
+What is the Nasdaq
+ -
+ 100?  
+ 
+ Tracks the performance of 100 of the largest non
+ -
+ financial companies (according to ICB 
+Industry  
+classification
+ ) listed on the Nasdaq Stock Market
+ ®
+. 
+ 
+ 
+ A fully systematic, rule
+ -
+ based index  
+— 
+u
+nlike the S&P 500, index additions are not subject to 
+committee approval.  
+ 
+ 
+ Employs a modified market
+ -
+ cap  
+weighting scheme, with quarterly rebalances and an annual 
+reconstitution in December.  
+ 
+ 
+ Tracked by ETPs with 
+ over  
+US$
+ 6
+4
+ 0 billion of AUM across 18 exchanges in major international 
+markets, within a broader global ecosystem of mutual funds, futures, options, annuities and 
+structured products.  
+Source:  
+Nasdaq Global Indexes
+ . 
+As of December 31, 2025.  
+ 
+How does the annual reconstitution work?  
+To remain an accurate reflection of the markets they track, indexes undergo periodic reconstitution to align 
+with evolving market dynamics.  
+The Nasdaq
+ -
+ 100 is reconstituted each December, 
+ strategically scheduled to 
+coincide with the  
+quadruple witch
+ ing
+ 1 
+day  
+of the quarter.  
+ 
+ 
+ 
+1) 
+ Select t
+ he top 75 non
+ -
+ financial Nasdaq
+ -
+ listed companies by market cap
+ italization
+ . 
+2)  
+ Retain 
+ current  
+constituents ranked 
+ within  
+the top 100.  
+3)  
+ Fill remaining slots, in rank order, with 
+ existing  
+constituents ranked 101
+ –
+125 if they were (i) 
+ in the 
+ top 100 
+at the prior reconstitution or (ii) added after the last reconstitution.  
+4)  
+ If 
+vacancies persist
+ , 
+include  
+non
+ -
+ constituents ranked in the top 100, in rank order.  
+Note: 
+ Steps 3 and 4 apply only if fewer than 100 names are selected after the previous steps.  
+ 
+For the 
+ complete  
+index methodology, please visit our 
+ website
+ . 
+ 
+1 
+Quadruple witching occurs on the third Friday of March, June, September  
+and December, when 
+ single
+ -
+ stock futures, stock index 
+futures, stock index options and single
+ -
+ stock options  
+expire simultaneously.  
+December options expirations are typically the biggest of 
+the year
+ . 
+Nasdaq Global Indexes  
+January  
+202
+ 6  
+
+ 
+ 
+Nasdaq Global Indexes  
+www.nasdaq.com/solutions/global
+ -
+ indexes  
+ 2 
+ 
+Source:  
+Nasdaq Global Indexes
+ . 
+ 
+From 2021 to 2025, an average of 91.6% of co
+ mpanies  
+were selected at Steps 1 and 2, 5.8% at Step 3, and 
+2.6% at Step 4.  
+ 
+Which companies were added and 
+ removed  
+during the 2025 reconstitution?  
+Additions in 2025 Reconstitution  
+ 
+Source:  
+Nasdaq Global Indexes, Bloomberg
+ . 
+As of December 31, 2025.  
+ 
+The Nasdaq‑100 added six new constituents in the 2025 reconstitution, representing nearly US$300 billion in 
+combined market cap.  
+Each newcomer posted gains of at least 50% 
+ last  
+year, with Western Digital 
+ and 
+Seagate 
+ both climbing more than 200%.  
+ 
+Removals in 2025 Reconstitution  
+ 
+Source:  
+Nasdaq Global Indexes, Bloomberg
+ . 
+As of December 31, 2025.  
+ 
+To maintain the index at 100 co
+ mpanies
+ , six 
+ existing  
+members 
+ have  
+be
+ en  
+removed. Notably, 
+ the largest 
+deletion, Biogen, with a market cap of US$26 billion, grew over the past year but not enough to retain its 
+spot
+ . Shares of The Trade Desk and Lululemon, with 2025 declines of 68% and 46%, respectively, rank as the 
+two weakest performers in the Nasdaq‑100 by percentage loss.  
+ 
+Over the past decade, December has typically seen about six additions and deletions. By that measure, 2025 
+appears broadly in line with historical norms.  
+75
+ 75
+ 75
+ 75
+ 75
+17
+ 14
+ 16
+ 20
+ 16
+8
+ 6
+ 3
+ 5
+ 7
+5
+ 6
+ 2
+0
+20
+40
+60
+80
+100
+2021
+ 2022
+ 2023
+ 2024
+ 2025
+Number of Constituents Selected at Each Nasdaq
+ -
+ 100 Reconstitution Step
+Step 1
+ Step 2
+ Step 3
+ Step 4
+Company Name (Ticker)
+ 2025 Total 
+Return
+Market Cap 
+(US$ bn)
+ ICB Subsector
+Western Digital (WDC)
+ 283.8%
+ 58.9
+ Computer Hardware
+Seagate (STX)
+ 225.2%
+ 58.8
+ Computer Hardware
+Alnylam (ALNY)
+ 69.0%
+ 52.5
+ Biotechnology
+Ferrovial (FER)
+ 56.3%
+ 47.4
+ Construction
+MPS (MPWR)
+ 54.4%
+ 43.4
+ Semiconductors
+Insmed (INSM)
+ 152.1%
+ 37.1
+ Biotechnology
+Company Name (Ticker)
+ 2025 Total 
+Return
+Market Cap 
+(US$ bn)
+ ICB Subsector
+Biogen (BIIB)
+ 15.1%
+ 25.8
+ Biotechnology
+Lululemon (LULU)
+ -45.7%
+ 24.4
+ Clothing & Accessories
+ON Semiconductor (ON)
+ -14.1%
+ 21.8
+ Semiconductors
+GlobalFoundries (GFS)
+ -18.6%
+ 19.4
+ Semiconductors
+The Trade Desk (TTD)
+ -67.7%
+ 18.4
+ Media Agencies
+CDW (CDW)
+ -20.6%
+ 17.7
+ Computer Hardware
+ 
+ 
+Nasdaq Global Indexes  
+www.nasdaq.com/solutions/global
+ -
+ indexes  
+ 3  
+Why do off
+ -
+ cycle constituent changes occur?  
+Certain indexes, especially those with fixed company counts in their names, such as the Nasdaq‑100 and S&P 
+500, can also add or remove constituents at ad hoc times during the year.  
+Off
+ -
+ cycle additions to the Nasdaq
+ -
+ 100 
+generally occur as a result of off
+ -
+ cycle deletions. The primary exception is when securities enter the index due to 
+corporate actions, such as spin
+ -
+ offs. Removal criteria include:  
+• 
+ Delisting, liquidating or 
+ cessation of operations
+ . 
+• 
+ Transfer to a
+ nother  
+exchange  
+(other than the Nasdaq Global Select Market o
+ r 
+the Nasdaq Global Market)
+ . 
+• 
+ Reclassification as an ineligible security type or as a Financial company  
+(according to ICB classifications).  
+• 
+ Failure to maintain a minimum weight of 0.10% for two consecutive month
+ -
+ ends
+ . 
+ 
+When a security is removed (excluding spin
+ -
+ offs), it is replaced by the Nasdaq
+ -
+ listed company with the largest 
+market capitalization that meets all eligibility requirements.  
+ 
+O
+ff
+-
+ cycle additions and deletions in 2025  
+Effective Date  
+ Deletion  
+ Addition  
+ Reason  
+May 19, 2025  
+ Mongo DB (MDB)  
+ Shopify (SHOP)  
+ Failing to maintain 
+ a 
+0.10%  
+weight  
+for two 
+consecutive months
+ . 
+July 28, 2025  
+ ANSYS (ANSS)  
+ Thompson 
+Reuters (TRI)  
+ ANSYS was acquired by Synopsys
+ . 
+Added: October 20, 2025  
+Removed: November 10, 2025  
+ Solstice (SOLS)  
+ Solstice (SOLS)  
+Solstice was added as a result of a spin
+ -
+off but was later removed for failing to 
+maintain the minimum weight of 0.10%.  
+Source:  
+Nasdaq Global Indexes.  
+ 
+Thomson Reuters (TRI)  
+and 
+ Shopify (SHOP)  
+transferred  
+their U.S. listings from the New York Stock Exchange to 
+Nasdaq in February and March of last year, respectively.  
+Both later joined the Nasdaq‑100 in 2025 as off‑cycle 
+additions. 
+ O
+ver the past 10 years, 
+ the index has averaged roughly three off‑cycle inclusions and deletions 
+annually.  
+ 
+How did the Nasdaq
+ -
+ 100 perform in 2025?  
+  
+Source: Nasdaq Global Indexes, Bloomberg. As of 
+ December 
+ 31
+, 202
+ 5
+. 
+ 
+The Nasdaq‑100 delivered a 21% total return in 2025, 
+ topping  
+the S&P 500 by 3 percentage points. Over the past 
+18 years, its cumulative return was 2.4 times that of 
+ the S&P 500  
+(1,342% vs. 560%), or 45% higher on an 
+annualized basis (16.0% vs. 11.1% CAGR). The Nasdaq‑100 has beaten the S&P 500 in 14 of the past 18 calendar 
+years,  
+delivering a nearly 30‑percentage‑point advantage in standout years such as 2009, 2020 and 2023. This 
+translates to a robust 78% win rate versus the S&P 500 during that period.  
+ 
+-20%
+-15%
+-10%
+-5%
+0%
+5%
+10%
+15%
+20%
+25%
+Jan
+ Feb
+ Mar
+ Apr
+ May
+ Jun
+ Jul
+ Aug
+ Sep
+ Oct
+ Nov
+ Dec
+2025 Total Returns
+Nasdaq-100
+ S&P 500
+18%
+21%
+55%
+49%
+55%
+26%
+18%
+26%
+-60%
+-40%
+-20%
+0%
+20%
+40%
+60%
+ Annual Total Returns
+Nasdaq-100
+ S&P 500
+ 
+ 
+Nasdaq Global Indexes  
+www.nasdaq.com/solutions/global
+ -
+ indexes  
+ 4  
+  
+Source: Nasdaq Global Indexes
+ , FactSet
+ . As of 
+ December 31
+ , 202
+ 5. 
+The weights of Class A and C shares of Alphabet are combined.  
+ 
+Eight of the world’s ten largest public companies are represented in the Nasdaq‑100. By year‑end 2025, th
+ e 
+top 
+ten securities comprised 52% of index weight and delivered an average total return of 35% over the past year. All 
+posted positive returns, with Palantir Technologies, Alphabet and Broadcom exceeding 50%. Across the broader 
+index, Micron (240%), Warner  
+Bros. Discovery (173%) and Lam Research (139%) were the strongest performers  
+last year
+ . With an average weight of 61%, the Technology sector drove 88
+ % of the index’s total return in 2025, led 
+by Alphabet, Nvidia and Broadcom as the top contributors.  
+ 
+U.S. growth is expected to remain resilient despite lingering geopolitical and trade risks. Continued fiscal and 
+monetary support, coupled with record capital investment in AI adoption, underpins the cycle’s extension. 2026 
+may offer further proof of AI’s 
+ transformative impact, though benefits will be unevenly distributed. The broadening 
+productivity boost from AI adoption is also a constructive tailwind.  
+ 
+Conclusion  
+ 
+Indexes require periodic reconstitutions to stay aligned with their stated objectives.  
+The Nasdaq‑100 added six 
+new constituents in the 2025 reconstitution, each posting gains of at least 50% last year. The index delivered a 
+21% total return in 2025, outperforming the S&P 500 by 3 percentage points and sustaining a 78% win rate versus 
+the S&
+ P 500 over the past 18 calendar years.  
+Looking ahead, 2026 could reinforce AI’s transformative role in 
+productivity, while U.S. growth is expected to remain resilient, supported by policy measures and record AI 
+investment.  
+ 
+ 
+ 
+ 
+ 
+ 
+9.1%
+8.0%
+7.2%
+7.0%
+4.9%
+4.0%
+3.9%
+3.3%
+2.2%
+2.2%
+48.3%
+Weights of Top 10 Securities in 
+Nasdaq
+ -
+ 100
+Nvidia
+Apple
+Microsoft
+Alphabet
+Amazon
+Tesla
+Meta Platforms
+Broadcom
+Palantir
+Technologies
+Netflix
+38.9%
+9.0%
+15.6%
+66.0%
+5.2%
+11.4%
+13.1%
+50.6%
+135.0%
+5.2%
+Nvidia
+Apple
+Microsoft
+Alphabet (Class A)
+Amazon
+Tesla
+Meta Platforms
+Broadcom
+Palantir Technologies
+Netflix
+2025 Total Return of Top 10 
+Securities in Nasdaq
+ -
+ 100
+Disclaimer:  
+Nasdaq
+ ®
+, 
+Nasdaq
+ -
+ 100
+ ®
+, 
+Nasdaq
+ -
+ 100 Index
+ ® 
+and NDX
+ ® 
+are  
+registered trademark
+ s  
+of Nasdaq, Inc. The information 
+contained above is provided for informational and educational purposes only, and nothing contained herein should be 
+construed as investment advice, either on behalf of a particular security or an overall investment strategy
+ . Neither 
+Nasdaq, Inc. nor any of its affiliates makes any recommendation to buy or sell any security or any representation 
+about the financial condition of any company. Statements regarding Nasdaq
+ -
+ listed companies or Nasdaq proprietary 
+indexes are not gua
+ rantees of future performance. Actual results may differ materially from those expressed or 
+implied. Past performance is not indicative of future results. Investors should undertake their own due diligence and 
+carefully evaluate companies before investing.  
+ADVICE FROM A SECURITIES PROFESSIONAL IS STRONGLY ADVISED.  
+© 202
+ 6
+. Nasdaq, Inc. All Rights Reserved.  

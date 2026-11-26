@@ -1,0 +1,22 @@
+2019 | 발표 Dec. 13, 2019 | 적용 Monday, December 23, 2019 | 넣음 6 ['ANSS', 'CDW', 'CPRT', 'CSGP', 'SGEN', 'SPLK'] | 뺌 6 ['HAS', 'HSIC', 'JBHT', 'MYL', 'NLOK', 'WYNN']
+2020 | 발표 Dec. 11, 2020 | 적용 Monday, December 21, 2020 | 넣음 6 ['AEP', 'MRVL', 'MTCH', 'OKTA', 'PTON', 'TEAM'] | 뺌 6 ['BMRN', 'CTXS', 'EXPE', 'LBTYA', 'TTWO', 'ULTA']
+2021 | 발표 Dec. 10, 2021 | 적용 Monday, December 20, 2021 | 넣음 6 ['ABNB', 'FTNT', 'PANW', 'LCID', 'ZS', 'DDOG'] | 뺌 6 ['CDW', 'FOXA', 'CERN', 'CHKP', 'INCY']
+2022 | 발표 Dec. 09, 2022 | 적용 Monday, December 19, 2022 | 넣음 6 ['CSGP', 'RIVN', 'WBD', 'GFS', 'BKR', 'FANG'] | 뺌 7 ['VRSN', 'SWKS', 'SPLK', 'BIDU', 'MTCH', 'DOCU', 'NTES']
+2023 | 발표 Dec. 08, 2023 | 적용 Monday, December 18, 2023 | 넣음 6 ['CDW', 'CCEP', 'DASH', 'MDB', 'ROP', 'SPLK'] | 뺌 6 ['ALGN', 'EBAY', 'ENPH', 'JD', 'LCID', 'ZM']
+2024 | 발표 Dec. 13, 2024 | 적용 Monday, December 23, 2024 | 넣음 3 ['PLTR', 'MSTR', 'AXON'] | 뺌 3 ['ILMN', 'SMCI', 'MRNA']
+2025 | 발표 Dec. 12, 2025 | 적용 Monday, December 22, 2025 | 넣음 6 ['ALNY', 'FER', 'INSM', 'MPWR', 'STX', 'WDC'] | 뺌 6 ['BIIB', 'CDW', 'GFS', 'LULU', 'ON', 'TTD']
+2026-06 | 발표 June 11, 2026 | 적용 Monday, June 22, 2026 | 넣음 5 ['ALAB', 'CRWV', 'NBIS', 'RKLB', 'TER'] | 뺌 5 ['CHTR', 'CTSH', 'INSM', 'VRSK', 'ZS']
+
+12월 정기 교체 2019~2025 7번: 넣음 합 39 · 뺌 합 40 · 평균 넣음 5.6
+
+두 번 넘게 나온 회사:
+  CDW 2019 들어옴 · 2021 빠짐 · 2023 들어옴 · 2025 빠짐
+  CSGP 2019 들어옴 · 2022 들어옴
+  SPLK 2019 들어옴 · 2022 빠짐 · 2023 들어옴
+  MTCH 2020 들어옴 · 2022 빠짐
+  LCID 2021 들어옴 · 2023 빠짐
+  ZS 2021 들어옴 · 2026-06 빠짐
+  GFS 2022 들어옴 · 2025 빠짐
+  INSM 2025 들어옴 · 2026-06 빠짐
+
+2026-12 금요일: [datetime.date(2026, 12, 4), datetime.date(2026, 12, 11), datetime.date(2026, 12, 18)] → 둘째 2026-12-11 셋째 2026-12-18 다음 월요일 2026-12-21

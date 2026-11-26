@@ -102,6 +102,19 @@
     "url": null
    },
    "note": "write-b 19:4x — 발행 0(몫 칸 없음: 18:40 #491 발행됨, 22:40 halfpair1126은 22:4x 회차) · #488 정정 dry 통과(editor edit-ok 대기) · 새 묶음 k1split1128(11/28 22:40 짝 글) 관문 통과: 출처 ECOS 1(+경쟁 5) · 교차검증 Gemini 사실 5 중 반영 1·유지 4, 말투 15 중 반영 13 · selfcheck 사실 0 · 이해 2차 6명 · 개선: 없음"
+  },
+  {
+   "hour": 21,
+   "ts": "22:25",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "송도 아파트 실거래가 반값 거래는 직거래 2건뿐",
+    "url": "https://cafe.naver.com/firemap/492"
+   },
+   "note": "22:40 칸 halfpair1126 발행 22:25(#492) · verify OK 1835/1835자·사진 3/3 · 발행 날 재확인: 국토부 실거래 다시 받아 4,297→4,348건·직거래 3.0→3.1% 등 갱신(결론 숫자 그대로), 영상 주소 2개 공개본(DBoURCupFrU·tvCsLWDF814)으로 교체, auto 재서명 d7a1e698 · readcheck 0·selfcheck 사실 0 · 블로그: 하루 상한·이번 회차 안 씀 · 개선: 없음(확인 창 TimeoutError는 발행 성공이라 그대로)"
   }
  ]
 }

@@ -85,6 +85,17 @@ def board(f, idx, z=(1.0, 1.04)):
     return S('pic', idx, pic=f'bg/cc1/board/{f}.png', license='파이어맵 자체 제작 판(출처는 판 안)', baked=True, inset=0.80, dark=True, zoom=list(z), cx=50, cy=45)
 
 
+# 11/26 22시 PD: 7장 '끝날 6개' = 움직이는 판 EndFlip(motion 11:59, ep/CC-1/motion.md) — 숫자는 cc1_ends.json(endflipprops.py가 자막·windows_out과 assert)
+MO = json.load(open(os.path.join(EP, 'motion_preview', 'cc1_ends.json'), encoding='utf-8'))
+
+
+def mo(key, idx):
+    m = MO[key]; p = json.loads(json.dumps(m['data']))
+    s = S('mo', idx, part=key, p=p, title=m['title'], sub=m['sub'], source=m['source'], chapter=m['chapter'])
+    p['end'] = s['frames']
+    return s
+
+
 USEDBG = {}
 
 
@@ -122,7 +133,7 @@ scenes += [ask(5, [54]), board('cc1_month12', [55, 56, 57, 58]), broll('LEDGER',
 scenes += [ask(6, [70]), board('cc1_tax', [71, 72, 73]), broll('PASSBOOK2', [74, 75], '분배금 전부는 아니에요'), broll('LEDGER', [76, 77], '이자와 배당을 합쳐'),
            board('cc1_ruler', [78, 79, 80]), broll('DRAWER', [81, 82], '다른 배당이 있으면'), broll('PASSBOOK2', [83, 84, 85], '계좌마다 다른 셈')]
 # 7 함정 (86~104)
-scenes += [ask(7, [86]), broll('FOG', [87], '어디서 자르느냐'), board('cc1_ends6', [88, 89, 90, 91]), broll('FOG', [92, 93], '한 장면일 뿐'),
+scenes += [ask(7, [86]), broll('FOG', [87], '어디서 자르느냐'), mo('ends', [88, 89, 90, 91, 92]), broll('FOG', [93], '한 장면일 뿐'),
            board('cc1_chart2', [94, 95, 96, 97]), broll('LEDGER', [98, 99], '한쪽 가격으로만'), broll('ORCHARD', [100, 101], '바뀔 수 있어요'), board('cc1_fee', [102, 103, 104])]
 # 8 정리 (105~114) — 끝 줄 앞 숨 쉴 실사 WINDOW, 끝 그림 위 END_PAD
 scenes += [ask(8, [105]), board('cc1_summary', [106, 107, 108, 109, 110]), broll('WINDOW', [111], '받는 돈과 남는 돈'), broll('LEDGER', [112, 113], '직접 세어 보세요')]
@@ -209,6 +220,9 @@ json.dump([{'id': n, 'file': CR[n]['file'], 'used': USEDBG[n], 'desc_line': CR[n
 tsx = os.path.join(VID, 'src', 'CC1.tsx')
 if not os.path.exists(tsx):
     src = open(os.path.join(VID, 'src', 'KOSPI1.tsx'), encoding='utf-8').read()
+    src = src.replace("import {SumRace} from './motion/SumRace';", "import {SumRace} from './motion/SumRace';\nimport {EndFlip} from './motion/EndFlip';", 1)
+    src = src.replace("{d.part === 'race' || d.part === 'gap' ?", "{d.part === 'ends' ? <EndFlip {...d.p} beats={B} /> : d.part === 'race' || d.part === 'gap' ?", 1)
+    assert 'EndFlip {...d.p}' in src and "from './motion/EndFlip'" in src, 'CC1.tsx EndFlip 붙이기 실패'
     src = src.replace('KOSPI1Props', 'CC1Props').replace('kospi1Frames', 'cc1Frames').replace('export const KOSPI1', 'export const CC1')
     open(tsx, 'w', encoding='utf-8').write('// CC-1(커버드콜 vs 일반 배당 ETF) 롱폼 화면 — 11/25 PD: KOSPI1.tsx 그대로(이름만). props work/video/cc1.json ← ep/CC-1/cc1props.py\n' + src)
 root = os.path.join(VID, 'src', 'Root.tsx'); r = open(root, encoding='utf-8').read()

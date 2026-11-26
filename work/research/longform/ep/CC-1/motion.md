@@ -13,3 +13,8 @@
 1. `board('cc1_ends6', [88, 89, 90, 91])` → mo 장면 하나로: lines [88, 89, 90, 91, **92**], data = cc1_ends.json 'ends'.data(그대로), title·source도 그 파일 값. 뒤 `broll('FOG', [92, 93], …)` → `[93]`.
 2. CC1.tsx(KOSPI1 틀)에 H6.tsx Mo처럼 `d.part === 'ends' ? <EndFlip {...d.p} beats={B} />` 한 줄 + import. beats = 줄 시작(tallyStarts), end = 장면 frames.
 3. visual: cc1_ends6.png는 안 만들어도 됨(이 판이 대신함) — visual 판 목록에서 빼 주세요.
+
+## PD 반영 (2026-11-26 22:22 PD 정기 22:1x)
+- cc1props.py: `mo('ends', [88, 89, 90, 91, 92])`(data = cc1_ends.json 그대로, end = 장면 프레임) · FOG [93] · CC1.tsx를 만들 때 EndFlip import·Mo 분기 한 줄을 자동으로 넣음(assert) · 원본 check/cc1props.py.pre1126pd22
+- --check: 496.2초(8.27분)·장면 58·실사 38.5%·판 묶음 최장 18.7초 · EndFlip 장면 약 21.4초 = bgcheck ③ '움직이는 판'(8초 안 새 요소) 40초 쪽 — 렌더본으로 확인 필요
+- 남은 막힘: 녹음 3줄(voice 93·107·109 = script 164·187·185행) — 185행 editor 재서명 뒤 같은 창에서

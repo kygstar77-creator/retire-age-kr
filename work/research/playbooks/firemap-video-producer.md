@@ -382,3 +382,4 @@
 - 11/26 PD: TaskStop으로 렌더 bash를 멈춰도 npx remotion 자식은 계속 돈다 — 끝에 fm_bundle_done이 새 회차의 bundle을 지워 404·'composition 없음'으로 8번 실패. 멈춘 렌더는 Get-CimInstance로 remotion 프로세스가 없는지 보고, out/ 결과물 시각이 멈춘 뒤면 old_로 돌린 뒤 다시 돈다
 - 11/26 h6s_gangnam: 이해 시험이 고치라는 칸을 늘리다 보면 칸 글이 길어져 화면에서 작아지고 손 동그라미와 겹친다 — 칸 값은 짧게(약 12자), 금액·건수 같은 덧말은 설명란으로 · 칸 고친 뒤엔 렌더 전에 json만 고치고, 이미 도는 렌더는 바로 끊는다(옛 칸으로 20분 낭비)
 - 11/26 18:1x: beat.py '지난 회차가 끝을 못 찍고 죽었다'는 세션이 죽었다는 뜻이 아니다 — 예산 60분만 넘긴 회차가 살아서 같은 편 readback·meta를 다시 돌렸다. 맡기 전에 .owner뿐 아니라 Get-CimInstance로 그 편 이름이 든 python·node 프로세스와 ep 폴더 파일 시각(최근 30분)을 먼저 본다 · 3.5-flash 하루 한도면 readback은 --batch 말고 줄마다(둘째 귀 whisper로 넘어감)
+- 11/26 22시: motion 부품을 props에 넣을 때 '판 묶음 19.5초' 셈은 pic만 센다 — mo 장면(21초)은 bgcheck ③ '움직이는 판 40초' 쪽이라 렌더본으로 따로 확인할 것. 틀(.tsx)이 아직 없으면 생성 코드에 부품 분기를 assert로 넣어 두면 잊지 않는다.

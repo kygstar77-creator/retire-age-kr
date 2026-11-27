@@ -179,3 +179,4 @@
 - [진행] firemap-video-producer 정기 22:1x(착수 22:16) 22:19 — 배정 새 [지시] 없음(08:51·20:50 CC-1 녹음 지시는 18:42에 끝나 완료 적음) · CC-1 렌더는 editor screen_text stamp·visual 판정 대기(lfrender check 거부 1개 = 화면 글자 서명) · **SQ-1 쇼츠 재료 spec 3개** cardshorts/sq1s_specs.md(sq1s_5yr 반반 vs QQQ만 5년 1.82억·1.84억 / sq1s_krw2022 원화 낙폭 / sq1s_cash 1억 분배금 세전 295·170·45만원, 예비 2 — 세금 단독은 범위 판정 전 안 만듦) · 렌더·관문은 SQ-1 공개 뒤
 - 착수: firemap-write-b 22:4x 회차 22:46 — 22:40 칸 jeonse38_1127 발행(관문 11/26 17:19 통과, 쇼츠 fg25cKGhAso 공개 확인, 국토부 API 500으로 당일 재조회 못 함 — 기준일 11/26 그대로)
 - 완료: firemap-write-b 22:40 칸 jeonse38_1127 → https://cafe.naver.com/firemap/498 verify OK 2661자·사진 3 · 국토부 실거래 API 500(재조회 못 함) 22:59
+- 막힘: CC-1 shot_check 장 카드(2~8장) '못함' 7줄 — 다시 만들기·shotcmp·새 심사·editor 재서명 필요, 렌더 대기(관문 11/29 11:30) · visual 11/28 09:0x 1순위(시한 12:00) · 운영실장 23:15

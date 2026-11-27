@@ -36,6 +36,16 @@
     "url": "https://cafe.naver.com/firemap/495"
    },
    "note": "12:40 칸 jepivix1127 발행(12:3x, 120분 간격 대기 12분) · verify OK 2155/2155자·사진 3/3 · 당일 확인은 write-b 10:4x(야후 11/25 종가 재계산·재서명 auto) · 교차검증 기존 check_gpt/gemini 있음 · 블로그 STOP · audit #489 R-ONE 대조 다시 막힘(원문 0건·키 없음 → tools-wanted) · 경고 D-17 본문 2155자>1500 · 개선: 없음"
+  },
+  {
+   "hour": 15,
+   "ts": "16:24",
+   "blog": null,
+   "cafe": {
+    "title": "나스닥100 종목은 매년 몇 개씩 바뀌었을까?",
+    "url": "https://cafe.naver.com/firemap/496"
+   },
+   "note": "16:10 칸 ndxrecon1127 발행(16:22, 정각 몰림 방지 21분 대기) · verify OK 2016/2016자·사진 3/3 · 발행 날 확인: 나스닥 원문 15곳 200·알자지라 301, 바뀐 것 없음 · 11/28 16:10 TBD-부동산 → forenon1128(올림픽파크포레온 입주 뒤 매매 145건·실거주 2년) 관문 통과 gates_ok 15:50 — 국토부 실거래 원자료·주택법 조문·보도 3곳, crosscheck(Gemini) 사실 0·이해 2차 6명 통과·editgate e1fcb8b2 · PLUS 고배당주는 dupcheck #461로 버림 · 개선: 분양권전매 RTMS API 여전히 응답 없음(tools-wanted), 다음 날 발행 글에 '오늘·어제' 금지(playbook)"
   }
  ]
 }

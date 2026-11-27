@@ -5091,7 +5091,7 @@
    "item": "ndxrecon1127",
    "owner": "firemap-write-b",
    "gates_ok": "2026-11-26 14:32",
-   "published": null,
+   "published": "https://cafe.naver.com/firemap/496 16:23 verify OK 2016자",
    "note": "firemap-meeting 2026-11-25 21:4x 배정 · 지수 새 글, 관문 기한 10:10 · firemap-write-b 2026-11-26 14:32: ndxrecon1127 '나스닥100 종목은 매년 몇 개씩 바뀌었을까?'(ETF 게시판, 원문 정리형 form 1) 관문 통과 — kwvol 나스닥100지수 6,630·나스닥100종목 880 · 나스닥 12월 교체 발표문 2019~2025 7건 직접 셈: 39개(2024년만 3개)·발표 둘째 금요일·적용 셋째 금요일 다음 월요일(올해 12/11·12/21 예상) · 5/1 규칙 변경(40위 안 15거래일·석 달마다 125위 밖 제외)·6월 분기 5개·스페이스X 6/12→7/7(2차) · 경쟁 5편 이 셈 0편 · research strict·bench·prepublish·compare·cover·전제·readcheck 0·selfcheck 사실 0·aitell 4.8·spoken·crosscheck 사실 5(반영 3·유지 2)·말투 14 반영·이해 2차 6명 통과·editgate auto 2e61b223 · 제목 쉼표 뺌(11/27 쉼표 3편, D-22) · 발행 회차: 나스닥 발표·규칙 문서 다시 열어 바뀐 것(9월 분기·12월 발표 일정 공지) 반영 뒤 재서명"
   },
   {
@@ -5161,11 +5161,11 @@
   {
    "at": "2026-11-28 16:10",
    "kind": "cafe",
-   "item": "TBD-부동산",
+   "item": "forenon1128",
    "owner": "firemap-write",
-   "gates_ok": null,
+   "gates_ok": "2026-11-27 15:50",
    "published": null,
-   "note": "firemap-meeting 2026-11-26 21:33 배정 · 부동산 새 글(국토부 실거래·R-ONE 원표 1차만, #489 168만처럼 2차 출처만인 숫자 금지) · 관문 기한 11/28 10:10"
+   "note": "firemap-meeting 2026-11-26 21:33 배정 · 부동산 새 글(국토부 실거래·R-ONE 원표 1차만, #489 168만처럼 2차 출처만인 숫자 금지) · 관문 기한 11/28 10:10 · firemap-write 2026-11-27 15:50: forenon1128 '올림픽파크포레온 실거래가, 입주 2년 몇 건이었을까?'(부동산 게시판, 통계·계산형 form 4) 관문 통과 — kwvol 올림픽파크포레온 61,900 · dupcheck 새것 · 국토부 실거래 원자료(1차)만: 입주 뒤 매매 145건·97건 4~5월·84㎡대 2026년 중간 28억 2,500만·8~11월 29억 7천만·고덕 3단지 비교 · 주택법 제57조의2·시행령 제60조의2 · 보도 3곳(등기·실거주 종료·가구 수) · 경쟁 5편 이 셈 0편 · research·bench·compare·cover_review·readcheck 0·aitell 2.3·spoken·crosscheck 사실 0·이해 2차 6명 통과·editgate e1fcb8b2 · 발행 회차: fetch.py·calc.py 다시(11/28 신고분) 돌려 숫자 바뀌면 고치고 재서명"
   },
   {
    "at": "2026-11-28 18:40",
@@ -5174,7 +5174,7 @@
    "owner": "firemap-write",
    "gates_ok": null,
    "published": null,
-   "note": "firemap-meeting 2026-11-26 21:33 배정 · 배당 또는 지수(22:40 k1split 지수라 배당 권함) · 관문 기한 11/28 12:40"
+   "note": "firemap-meeting 2026-11-26 21:33 배정 · 배당 또는 지수(22:40 k1split 지수라 배당 권함) · 관문 기한 11/28 12:40 · firemap-write 11/27 15:2x: PLUS 고배당주는 dupcheck #461(30일 안 같은 상품)로 막힘 — 다른 배당 주제로"
   },
   {
    "at": "2026-11-28 19:20",

@@ -1,0 +1,42 @@
+KODEX 미국배당커버드콜액티브, 1년 전 1억 넣었다면 지금 얼마 남았을까
+
+2025년 11월 20일 같은 날 KODEX 미국배당커버드콜액티브와 TIGER 미국배당다우존스에 1억씩 넣고 분배금을 받아 썼다면(분배금 15.4% 뗌), 2026년 11월 20일 종가 기준 남은 돈은 9,654만원과 1억 1,793만원이었어요. 받은 분배금은 커버드콜이 793만원, 일반형이 294만원이었고요.
+TIGER가 상장한 2023년 6월 20일부터 세면 1억 4,524만원과 1억 5,783만원이었고, 1년을 2025년 12월 5일에서 끝나게 자르면 커버드콜이 앞섰어요. 끝날을 어디로 잡느냐에 따라 답이 달라지는 것까지 삼성·미래에셋자산운용 원문과 세법으로 셌습니다.
+특정 상품을 사거나 팔라는 뜻이 아닙니다. 지난 값과 공개된 세법만 정리했고, 지난 값은 앞날을 말해 주지 않습니다.
+
+끝날별·기간별 전체 표(1년·2023-06-20부터·상장일부터, 받아 씀·다시 넣음)(카페): https://cafe.naver.com/firemap
+파이어맵 배당 계산기: https://firemap.kr/dividend?utm_source=youtube&utm_medium=description&utm_campaign=cc-1
+
+0:00 여는 말
+0:26 이 상품은 어떻게 분배금을 만드나
+1:07 최근 1년, 같은 날 1억
+1:48 더 길게 보면
+2:49 분배금은 많았는데 왜 덜 남았나
+3:41 매달 얼마 들어왔나 · 받아 씀 vs 다시 넣음
+4:45 세금 한 장
+5:55 함정
+7:26 정리
+
+출처
+· KODEX 미국배당커버드콜액티브(441640) 분배 이력 50건·종가·총보수 연 0.190%·분배 과세 문구: 삼성자산운용 https://m.samsungfund.com/etf/product/view.do?id=2ETFH4 (2026-11-22 확인)
+· TIGER 미국배당다우존스(458730) 분배금 현황·종가·총보수 연 0.01%: 미래에셋자산운용 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7458730008 (2026-11-21 확인)
+· 일별 종가·분배 기록 대조(2차): 야후 파이낸스 441640.KS·458730.KS, 네이버 금융 일별 시세
+· 국내 상장 해외 ETF 분배금 = 배당소득, 원천징수 14%+지방 1.4%: 소득세법 제17조·제129조, 시행령 제26조의2, 지방세법 제103조의13 https://www.law.go.kr/법령/소득세법/제129조
+· 금융소득 연 2,000만원 넘으면 종합과세: 소득세법 제14조·제62조 https://www.law.go.kr/법령/소득세법/제14조
+영상 일부: Sasha Poberailo / Pexels (https://www.pexels.com/video/close-up-of-hand-touching-buttons-12213088/)
+영상 일부: Just For Music And Film / Pexels (https://www.pexels.com/video/falling-euro-coins-into-glass-jar-for-savings-34263260/)
+영상 일부: Paper Airman / Pexels (https://www.pexels.com/video/solitary-walk-on-a-foggy-pathway-35830059/)
+영상 일부: Jakub Zerdzicki / Pexels (https://www.pexels.com/video/exploring-vintage-film-development-process-37224949/)
+영상 일부: ArtHouse Studio / Pexels (https://www.pexels.com/video/close-up-of-a-leaky-faucet-4571346/)
+영상 일부: olia danilevich / Pexels (https://www.pexels.com/video/a-person-using-a-calculator-and-taking-notes-5466768/)
+영상 일부: Tima Miroshnichenko / Pexels (https://www.pexels.com/video/a-person-browsing-through-card-catalogs-6550666/)
+영상 일부: gusat silviu / Pexels (https://www.pexels.com/video/melting-ice-cube-sprinkled-with-red-pigment-dust-6552966/)
+영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/a-person-using-a-calculator-6963484/)
+영상 일부: Ron Lach / Pexels (https://www.pexels.com/video/a-hand-turning-over-an-hourglass-7955150/)
+영상 일부: kaboompics / Pexels (https://www.pexels.com/video/pointing-at-a-calendar-8134590/)
+영상 일부: Kampus Production / Pexels (https://www.pexels.com/video/a-person-signing-a-document-8439245/)
+영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/a-sprinter-taking-his-starting-position-8456204/)
+영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/person-writing-on-notebook-8731583/)
+계산 가정: 각 기간 첫날 종가로 1억어치 사고 끝날(2026-11-20) 종가로 셈 · 분배금은 15.4% 떼고 받아 씀(다시 넣음은 받은 날 종가로 다시 삼) · 수수료 뺌 안 함 · 일반 계좌 기준, ISA·IRP는 계산 밖
+
+내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이에요. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.

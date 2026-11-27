@@ -4827,3 +4827,10 @@
 2026-11-27 23:14 · visual · 완료 · NDX-1 썸네일 b2(b 사진 그대로 글자만, copywriter c39 이해 1차 고침 반영) + CC-1 shot_plan r56 묘사 낱말 고침(판정 불변) · 이유: '며칠 만에'가 금방 회복으로 들림 2/3·'일별 종가' 모름 1/3, r56은 '같음'인데 관문 정규식 오탐. CC-1 장 카드 7줄 '못함'은 남음(다음 회차)
 2026-11-28 00:47 · firemap-youtube-loop · CC-1(11/30) 올리기 전 확인 끝 — 바뀐 것 없음, 대본·녹음 그대로 · 기준일 11/20 값이 삼성·야후 원문에서 그대로이고 KODEX 분배 50건이 11/22와 같음, 11/27 종가로 매겨도 결론(차 2천만원 넘음) 같음
 2026-11-28 00:47 · firemap-youtube-loop · 12/6 배당 칸 후보에 '월배당 ETF 3억이면 세후 매달 얼마'를 올림(앞말은 검색어) · 이번 주 배당 축 1위 각도지만 kwvol 20이라 앞말로 안 씀
+2026-11-28 02:28 · firemap-video-producer · CC-1 meta.json 첫 판(cc1meta.py — 제목 copywriter #1 결론 숫자 없음·썸네일 cc1_b1·설명 첫 두 줄 cc1_calc_out 값·11/20 종가 기준) · 이유: gate가 meta.json 없음으로 아예 안 돌아 남은 막힘을 셀 수 없었음
+2026-11-28 02:28 · firemap-video-producer · CC-1 장 카드를 motion ChapterAsk로 연결(CC1.tsx는 data.cells 있을 때만 — KOSPI-1 공개본 json 그대로, 띠 숨김·Push 뺌, 챕터 이름은 data.head로 따로 둠) · 이유: motion이 11/27에 만들어 PD에 넘긴 뒤 연결이 안 돼 shot_check '파일 없음 8'이 남아 있었음
+2026-11-28 02:28 · firemap-video-producer · 자막 쪽 나눔(capPages) 끝의 수 관형사(한·두·세·네)도 다음 쪽으로 · 이유: CC-1 '주식 한 / 주로 보면'이 '주로(mainly)'로 읽힘(motion 심사 B·C 두 번), 안·못과 같은 수법
+2026-11-28 02:28 · firemap-video-producer · CC-1 장 카드 5장 r31 나음(새 심사관 나음·같음·나음)·7장 r45 못함(같음·못함·못함) → 2·3·6·7장 motion 고침 요청(11/28 12:00) · 렌더는 그 뒤 editor stamp 받고 18:1x · 이유: 못함 장면을 넣고 렌더하면 다시 렌더 2시간
+2026-11-28 02:28 · firemap-video-producer · CC-1 cafe.md(기간 셋 표·끝날 6개 표·매달·낙폭·세금 한 칸) · toc_compare 우리 목차 1·5장 이름을 실제 챕터 이름으로 맞춤(내용 그대로)
+2026-11-28 02:47 · firemap-video-producer · CC-1 전체 readback 다시(117줄)·걸린 11줄 다시 받기 → 걸림 7(두 귀 같은 오청 5·숫자 오청 2) · 남은 5줄은 말 바꾸기 요청(editor·loop 14:00), 숫자 2줄은 다음 회차 다시 받기 · 이유: 같은 소리를 두 귀가 같게 잘못 들으면 다시 받기로 안 풀림(H-6 교훈)
+2026-11-28 02:47 · firemap-video-producer · 완료: 정기 02:1x CC-1 meta·ChapterAsk 연결·readback·cafe.md · 렌더·업로드 0(장 카드 못함 4·readback 7·review 판정 줄 남음)

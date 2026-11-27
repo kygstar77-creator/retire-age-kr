@@ -84,7 +84,12 @@ def S(kind, idx, **data):
     return {'kind': kind, 'lines': ls, 'frames': sum(l['frames'] for l in ls), 'data': data}
 
 
-def ask(ch, idx): return S('ask', idx, n=f'{ch}장', q=HEADS[ch])
+ASK = json.load(open(os.path.join(EP, 'motion_preview', 'cc1_asks.json'), encoding='utf-8'))['asks']   # 11/28 PD: motion ChapterAsk 글(askprops.py가 script.md와 assert)
+
+
+def ask(ch, idx):
+    s = S('ask', idx, **ASK[str(ch)]); s['data']['n'] = f'{ch}장'; s['data']['head'] = HEADS[ch]; s['data']['end'] = s['frames']
+    return s
 
 
 def board(f, idx, z=(1.0, 1.04)):
@@ -222,7 +227,8 @@ for s in scenes:
     _a += s['frames']
 _dk = [[0, _a + 999]]
 assert len(_st) == 8, _st
-strip = {'chapters': [{'n': c, 'name': HEADS[c]} for c in range(1, 9)], 'starts': _st, 'total': 8, 'topic': None, 'side': 'right', 'dark': _dk, 'top': 3, 'fs': 20}
+_hd = [[a - 15, a + s['frames']] for a, s in zip(_st, [x for x in scenes if x['kind'] == 'ask'])]   # 11/28 PD: ChapterAsk 구간(띠링 먼저 뜨는 12프레임 포함) 띠 숨김
+strip = {'chapters': [{'n': c, 'name': HEADS[c]} for c in range(1, 9)], 'starts': _st, 'total': 8, 'topic': None, 'side': 'right', 'dark': _dk, 'hide': _hd, 'top': 3, 'fs': 20}
 json.dump({'fps': FPS, 'scenes': scenes, 'badge': '', 'strip': strip}, open(os.path.join(VID, 'cc1.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 json.dump([{'id': n, 'file': CR[n]['file'], 'used': USEDBG[n], 'desc_line': CR[n].get('desc_line', '')} for n in sorted(USEDBG)],
           open(os.path.join(EP, 'bg_used.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

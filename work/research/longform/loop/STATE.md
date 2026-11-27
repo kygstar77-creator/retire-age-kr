@@ -1,3 +1,4 @@
+[PD] CC-1 meta.json·ChapterAsk 장 카드 연결·자막 쪼개짐 고침·cafe.md·readback 117줄(걸림 7) · 남은 막힘 장 카드 2·3·6·7(motion 12:00)·말 5줄(editor 14:00)·review 판정 줄(loop)·렌더 18:1x · 롱폼 업로드 0 2026-11-28 02:47
 [PD] SQ-1 쇼츠 재료 spec 3개(cardshorts/sq1s_specs.md)+예비 2 · CC-1 렌더는 editor stamp·visual 판정 대기 · 롱폼 업로드 0 2026-11-27 22:19
 - 2026-11-28 00:47 · 11/28 매일 연구(study/2026-11-28.md — H-6 37시간 42·KOSPI-1 사흘째 16 고정, 배당 축 '3억이면' 각도 추천형·검색 20) + CC-1 올리기 전 확인(research.md '# 올리기 전 확인', 기준일 11/20 값 운용사·야후 그대로, KODEX 분배 50건 같음, 바뀐 것 없음 — prepublish strict·research strict 통과, 11/27 종가로 다시 매겨도 차 2,264만으로 말 그대로 맞음) · 판단: 대본을 11/20에 못 박아 두어 다시 녹음 0, 11/27 값은 고정 댓글·설명란 후보로 copywriter에 넘김 · 다음: 롱폼 트래픽 소스(ytanalytics)로 노출 끊김 확인, 12/6 배당 칸 주제 week 문서, NDX-1 이해 시험(editor 재서명 뒤)
 [PD] CC-1 v1.6 바뀐 8줄 녹음·readback 0·check 통과·cc1props 117줄 맞춤(--check 507.8초 통과, cc1.json) · 남은 막힘: screen_text editor stamp(요청 11/28 14:00)·visual·motion 못함 28장(11/28 10:00)·meta.json · 렌더 0·롱폼 업로드 0 2026-11-27 18:42

@@ -19,8 +19,13 @@
 [scenes.3.data.say] 끝을 어디로 잡느냐
 [scenes.3.data.side] left
 [scenes.4.lines.0.text] 댓글에 실제로 올라온 질문은 이거였어요. 커버드콜과 일반형, 두 상품은 무엇이 다를까요?
-[scenes.4.data.n] 1장
 [scenes.4.data.q] 이 상품은 어떻게 분배금을 만드나
+[scenes.4.data.cells.0] 커버드콜
+[scenes.4.data.cells.1] 일반형
+[scenes.4.data.foot] 배당 + ? = 분배금
+[scenes.4.data.seed] cc1ask1
+[scenes.4.data.n] 1장
+[scenes.4.data.head] 이 상품은 어떻게 분배금을 만드나
 [scenes.5.lines.0.text] 커버드콜은 주식을 들고 있으면서, 그 주식을 정해진 가격에 살 권리를 남에게 팔고 돈을 받는 방식이에요.
 [scenes.5.data.license] Pexels 8439245 무료(Kampus Production)
 [scenes.5.data.say] 살 권리를 미리 팔고
@@ -41,8 +46,14 @@
 [scenes.9.lines.2.text] 두 상품을 같은 날 놓고 보면, 받은 돈과 남은 돈이 어떻게 갈렸는지 보입니다.
 [scenes.9.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.10.lines.0.text] 2025년 11월 20일에 두 상품에 1억씩 넣고, 분배금은 받아서 따로 모았다고 해 볼게요.
-[scenes.10.data.n] 2장
 [scenes.10.data.q] 최근 1년, 같은 날 1억
+[scenes.10.data.top] 2025년 11월 20일 · 두 상품에 1억씩
+[scenes.10.data.cells.0] 커버드콜?
+[scenes.10.data.cells.1] 일반형?
+[scenes.10.data.foot] 분배금 + 평가액
+[scenes.10.data.seed] cc1ask2
+[scenes.10.data.n] 2장
+[scenes.10.data.head] 최근 1년, 같은 날 1억
 [scenes.11.lines.0.text] 커버드콜은 한 달도 빠짐없이 분배금이 들어왔어요.
 [scenes.11.data.license] Pexels 8134590 무료(kaboompics)
 [scenes.11.data.say] 한 달도 빠짐없이
@@ -64,8 +75,13 @@
 [scenes.16.lines.1.text] 분배율은 받은 돈만 세고, 그사이 가격이 내린 만큼은 세지 않거든요.
 [scenes.16.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.17.lines.0.text] 1년은 짧다는 분도 계시죠. 그래서 더 길게도 세어 봤습니다.
+[scenes.17.data.q] 2023년 6월부터
+[scenes.17.data.top] 더 길게 보면 · 같은 날 1억씩
+[scenes.17.data.cells.0] 받은 분배금?
+[scenes.17.data.cells.1] 남은 돈?
+[scenes.17.data.seed] cc1ask3
 [scenes.17.data.n] 3장
-[scenes.17.data.q] 더 길게 보면
+[scenes.17.data.head] 더 길게 보면
 [scenes.18.lines.0.text] 일반형이 상장한 2023년 6월로 돌아가 같은 날 1억씩 넣었다면 어땠을까요.
 [scenes.18.data.license] Pexels 6550666 무료(Tima Miroshnichenko)
 [scenes.18.data.say] 그때로 돌아가면
@@ -92,8 +108,13 @@
 [scenes.23.lines.1.text] 그러니 한 해 분배율을 정해진 숫자처럼 놓고 계산하면 틀릴 수 있어요.
 [scenes.23.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.24.lines.0.text] 그럼 최근 1년엔 왜 덜 남았을까요. 주식 한 주로 보면 금방 보입니다.
-[scenes.24.data.n] 4장
 [scenes.24.data.q] 분배금은 많았는데 왜 덜 남았나
+[scenes.24.data.top] 주식 한 주로 보면
+[scenes.24.data.cells.0] 한 주 가격?
+[scenes.24.data.cells.1] 받은 분배금?
+[scenes.24.data.seed] cc1ask4
+[scenes.24.data.n] 4장
+[scenes.24.data.head] 분배금은 많았는데 왜 덜 남았나
 [scenes.25.lines.0.text] 커버드콜 한 주 가격은 그사이 1,400원쯤 내렸어요.
 [scenes.25.lines.1.text] 같은 기간 받은 분배금은 세금을 떼기 전에도 그보다 적었고요.
 [scenes.25.lines.2.text] 받은 돈으로 내린 가격을 다 메우지 못한 거죠.
@@ -118,8 +139,13 @@
 [scenes.30.data.say] 원금이 녹을까
 [scenes.30.data.side] left
 [scenes.31.lines.0.text] 그래도 커버드콜을 찾는 이유는 매달 들어오는 돈이죠.
+[scenes.31.data.q] 매달 얼마 들어왔나
+[scenes.31.data.top] 1억을 넣었다면 · 세금 떼고
+[scenes.31.data.cells.0] 커버드콜?
+[scenes.31.data.cells.1] 일반형?
+[scenes.31.data.seed] cc1ask5
 [scenes.31.data.n] 5장
-[scenes.31.data.q] 매달 얼마 들어왔나 · 받아 씀 vs 다시 넣음
+[scenes.31.data.head] 매달 얼마 들어왔나 · 받아 씀 vs 다시 넣음
 [scenes.32.lines.0.text] 1억을 넣었다면, 커버드콜은 세금 떼고 매달 60만원대가 들어왔어요.
 [scenes.32.lines.1.text] 일반형은 그 3분의 1 정도였고요.
 [scenes.32.lines.2.text] 다만 한 주 분배금은 늘 같지 않았어요.
@@ -149,8 +175,13 @@
 [scenes.38.lines.1.text] 받아 쓰든 다시 넣든, 우리가 센 두 기간 모두 일반형이 더 남았던 겁니다.
 [scenes.38.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.39.lines.0.text] 국내에 상장된 해외 ETF 분배금은 배당소득이라, 받을 때 15.4%를 먼저 뗍니다.
+[scenes.39.data.q] 세금은 들어올 때 이미 떼고
+[scenes.39.data.top] 1억이면 · 분배금 × 15.4%
+[scenes.39.data.cells.0] 커버드콜?
+[scenes.39.data.cells.1] 일반형?
+[scenes.39.data.seed] cc1ask6
 [scenes.39.data.n] 6장
-[scenes.39.data.q] 세금 한 장
+[scenes.39.data.head] 세금 한 장
 [scenes.40.lines.0.text] 1억이면 커버드콜은 세금으로만 140만원 넘게 떼였어요.
 [scenes.40.lines.1.text] 같은 1억이어도 일반형은 50만원대였고요.
 [scenes.40.lines.2.text] 이 세금은 들어올 때 이미 떼고 주니까, 한 해 금융소득이 2천만원 이하면 따로 신고할 일은 없어요.
@@ -181,8 +212,14 @@
 [scenes.45.data.say] 계좌마다 다른 셈
 [scenes.45.data.side] left
 [scenes.46.lines.0.text] 끝으로 조심할 곳이 세 군데 있어요.
-[scenes.46.data.n] 7장
 [scenes.46.data.q] 함정
+[scenes.46.data.cells.0] 기간을 어디서 자르느냐
+[scenes.46.data.cells.1] 앱 차트에 나오는 가격
+[scenes.46.data.cells.2] 액티브 상품
+[scenes.46.data.layout] col
+[scenes.46.data.seed] cc1ask7
+[scenes.46.data.n] 7장
+[scenes.46.data.head] 함정
 [scenes.47.lines.0.text] 기간을 어디서 자르느냐에 따라 답이 뒤집힌다는 것, 알고 계셨나요?
 [scenes.47.lines.1.text] 이번엔 넣는 날과 끝날을 같이 옮겨 가며, 늘 1년씩 세어 봤어요.
 [scenes.47.data.license] Pexels 35830059 무료(Paper Airman)
@@ -234,8 +271,13 @@
 [scenes.53.lines.2.text] 앞에서 본 두 상품 숫자는 이 보수가 이미 빠진 가격으로 센 거예요.
 [scenes.53.data.license] 파이어맵 자체 제작 판(출처는 판 안)
 [scenes.54.lines.0.text] 매달 꺼내 쓸 돈이 필요한지, 오래 쌓아 둘 돈인지에 따라 봐야 할 숫자가 달라집니다.
-[scenes.54.data.n] 8장
 [scenes.54.data.q] 정리
+[scenes.54.data.cells.0] 매달 꺼내 쓸 돈 → 매달 들어온 돈
+[scenes.54.data.cells.1] 오래 쌓아 둘 돈 → 남은 돈
+[scenes.54.data.layout] col
+[scenes.54.data.seed] cc1ask8
+[scenes.54.data.n] 8장
+[scenes.54.data.head] 정리
 [scenes.55.lines.0.text] 매달 들어온 돈은 커버드콜이 세 배 가까이 많았어요.
 [scenes.55.lines.1.text] 이번에 센 두 기간 모두 남은 돈은 일반형이 많았지만, 끝날을 앞당기면 커버드콜이 앞선 때도 많았어요.
 [scenes.55.data.license] 파이어맵 자체 제작 판(출처는 판 안)

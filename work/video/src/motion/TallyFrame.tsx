@@ -86,7 +86,7 @@ export const capPages = (text: string): CaptionPage[] => {
   // 10/25 J-1 746초: '…조금 나오고, 안 / 사는 집은 한꺼번에' — 쪽 끝 부정 부사(안·못)는 다음 쪽으로 넘긴다(뒤 쪽만 보면 뜻이 뒤집힘)
   for (let k = 0; k < pages.length - 1; k++) {
     const p = pages[k];
-    if (p.last > p.first && /^(안|못)$/.test(words[p.last])) {
+    if (p.last > p.first && /^(안|못|한|두|세|네)$/.test(words[p.last])) {   // 11/28 PD CC-1: '주식 한 / 주로 보면'이 '주로(mainly)'로 읽힘(motion 심사 B·C) — 수 관형사도 다음 쪽으로
       const n = pages[k + 1];
       pages[k] = {first: p.first, last: p.last - 1, text: words.slice(p.first, p.last).join(' ')};
       pages[k + 1] = {first: p.last, last: n.last, text: words.slice(p.last, n.last + 1).join(' ')};

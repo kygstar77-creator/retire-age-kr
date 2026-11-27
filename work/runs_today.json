@@ -59,6 +59,19 @@
     "url": "https://cafe.naver.com/firemap/497"
    },
    "note": "18:40 칸 divdj1127. 발행 날 확인: 출처 9곳 다시 엶(모두 200), 야후·네이버 4종 재수신 — 11/25 기준 calc 재현 diff 0, 11/27 종가로도 1위 KODEX·꼴찌 SOL 같음(차이 107만), 순자산 11/26 기준으로 c03 고침(TIGER 46,758억·ACE 10,071억). 교차검증 기존 check_gpt/check_self 유지(사실 0). aitell gate 1.3 통과·재서명 auto f730ab57. verify OK 1734/1734자·사진 3/3. 블로그: 쉬는 날·하루 상한 규칙으로 없음. 개선: 발행 날 확인 절차(같은 기준일 재현+최신 종가 순위 대조)를 교본에 적음. 카페 비축 0(기준 2) — backlog 1순위로 올림"
+  },
+  {
+   "hour": 21,
+   "ts": "21:38",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "발행 없음: 이번 시각 카페 칸 없음(22:40 jeonse38_1127은 22:40 회차 몫·관문 통과), 블로그 쉬는 날 · 로그인됨 · 비축 ndxcc1129 자료조사·계산(출처 원문 S1~S5: 야후·네이버·TIGER 공식 표 2·삼성 공식 API·funetf) · 교차검증·verify 해당 없음(조각 전) · 개선: 야후 분배 events가 달을 빠뜨림(486290·494300 2025-03, 441680 2023-09) → 국내 ETF 분배는 운용사 원문 표(TIGER '분배금 지급현황'·삼성 m.samsungfund.com/api/v1/kodex/divid-info.do?id=<상품id>)로 받는 fetch_off.py 틀 만듦"
   }
  ]
 }

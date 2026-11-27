@@ -43,7 +43,9 @@ def cmp():
         m = re.search(r'장 카드 \((\d+)\)', r[1])   # 11/27 PD: 장 카드 줄은 Remotion 스틸(stills_1127.sh)
         ch = {6: 1, 15: 2, 26: 3, 40: 4, 54: 5, 70: 6, 86: 7, 105: 8}.get(int(m.group(1))) if m else None
         if ch: fs = [os.path.join(HERE, 'stills', f'ask_{ch}.png')]
-        if 'window_last' in r[5]: fs = [os.path.join(HERE, 'stills', 'ask_end.png')]
+        if 'window_last' in r[5]:   # 11/27 visual: 끝 그림을 바꾸면 Remotion 스틸이 옛것 — 새 jpg가 더 새로우면 그걸로
+            se, wl = os.path.join(HERE, 'stills', 'ask_end.png'), os.path.join(PUB, 'bg', 'cc1', 'stock', 'window_last.jpg')
+            fs = [se if os.path.exists(se) and os.path.getmtime(se) > os.path.getmtime(wl) else wl]
         if 'EndFlip' in r[4]: print('건너뜀(이미 있음)', i); continue
         if not all(os.path.exists(x) for x in fs): print('파일 없음', i, r[5]); continue
         imgs = []

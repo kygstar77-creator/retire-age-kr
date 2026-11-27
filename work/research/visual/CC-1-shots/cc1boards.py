@@ -142,13 +142,14 @@ def cc1_two(im):            # 이름표 둘 — 커버드콜: 배당주 + 옵션
 def _acct(im, title, r, nm, months_vals, coin_col, seed):
     d = ImageDraw.Draw(im); TF(d, (W // 2, 110), title, 92, INK, F_X)
     vmax = max(T1['평가액만원'], K1['평가액만원']); base, top_y = 800, 330
-    # 왼쪽: 받은 분배금 — 동전 12개, 한 개 높이 = 그 달 세후 분배금(1억 기준, 두 판 같은 눈금 0.5px/만원)
-    y = base; rnd = random.Random(seed)
+    # 왼쪽: 받은 분배금 — 동전 12개 쌓기, 높이 = 오른쪽 막대와 같은 눈금(만원당 px, 11/27 visual 고침 — 전엔 0.5px/만원이라 비율 틀림)
+    sc = (base - top_y) / vmax; y = base; rnd = random.Random(seed)
     for i, v in enumerate(months_vals):
-        hh = v * 0.5; j = rnd.uniform(-5, 5)
-        d.ellipse((520 - 120 + j, y - hh - 12, 520 + 120 + j, y - hh + 12), outline=coin_col, width=5)
-        d.line([(400 + j, y - hh), (400 + j, y)], fill=coin_col, width=5); d.line([(640 + j, y - hh), (640 + j, y)], fill=coin_col, width=5)
+        hh = v * sc; j = rnd.uniform(-4, 4)
+        d.ellipse((520 - 120 + j, y - hh - 10, 520 + 120 + j, y - hh + 10), fill=(236, 226, 208), outline=coin_col, width=4)
         y -= hh
+    d.ellipse((400, base - 10, 640, base + 10), outline=coin_col, width=4)
+    assert abs((base - y) - r['받은분배금_세후만원'] * sc) < 8, (base - y, r['받은분배금_세후만원'] * sc)
     T(d, (520, y - 80), man(r['받은분배금_세후만원']), 90, INK, F_X)
     T(d, (520, base + 60), '받은 분배금 (12번)', 50)
     # 오른쪽: 남은 평가액 막대
@@ -275,8 +276,8 @@ def _valleys(im, title, kv, tv, ksub, tsub, note=None, seed=121, circle=False):
         xb, yb = valley(im, bx, v, 20, col, seed=seed + k); d = ImageDraw.Draw(im)
         T(d, ((bx[0] + bx[2]) // 2, 240), nm, 64, INK, F_X)
         T(d, (xb, yb + 90), pct(v).replace('+', ''), 110, OR if col == OR else INK, F_X)
-        T(d, (xb, yb + 170), sub, 38, GREY, F_B)
-        if col == OR and circle: hand_ellipse(d, (xb - 210, yb + 30, xb + 210, yb + 210), seed=seed + 9)
+        T(d, (xb, yb + 205 if circle else yb + 170), sub, 38, GREY, F_B)
+        if col == OR and circle: hand_under(d, xb - 230, xb + 230, yb + 160, seed=seed + 9)   # 11/27 2차: 동그라미가 글자에 걸림(심사관 D) → 밑줄
     if note: T(d, (W // 2, 950), note, 54, INK, F_X)
 
 @board
@@ -284,14 +285,14 @@ def cc1_dd(im):             # 1년 최대 낙폭(분배 더한 합계) −15.1% 
     k, t = DD[('KODEX', '2025-11-20')], DD[('TIGER', '2025-11-20')]
     _valleys(im, '최근 1년, 가장 많이 빠졌을 때', k[0], t[0], f'{k[1][2:]} → {k[2][2:]}', f'{t[1][2:]} → {t[2][2:]}', circle=True)
     d = ImageDraw.Draw(im)
-    source(d, '분배금을 더한 합계 기준 · 가격만 KODEX −19.3% · TIGER −12.8% · cc1_calc_out_1122')
+    source(d, '분배금을 더한 합계 기준 · 가격만 KODEX −19.3% · TIGER −12.8% · 삼성·미래에셋자산운용 공시로 계산')
 
 @board
 def cc1_dd_long(im):        # 2023-06-20부터 −13.3% vs −12.6%, 아래 가격만 −19.3% vs −14.1%
     k, t = DD[('KODEX', '2023-06-20')], DD[('TIGER', '2023-06-20')]
     _valleys(im, '2023년 6월부터, 가장 많이 빠졌을 때', k[0], t[0], f'{k[1][2:]} → {k[2][2:]}', f'{t[1][2:]} → {t[2][2:]}',
              note=f'가격만 보면 {pct(k[3]).replace("+", "")} vs {pct(t[3]).replace("+", "")}', seed=141)
-    source(ImageDraw.Draw(im), '2023-06-20 → 2026-11-20 · 분배금을 더한 합계 기준 · cc1_calc_out_1122')
+    source(ImageDraw.Draw(im), '2023-06-20 → 2026-11-20 · 분배금을 더한 합계 기준 · 삼성·미래에셋자산운용 공시로 계산')
 
 # ── 5. 매달 얼마 들어왔나 ───────────────────────────────────────────
 @board
@@ -326,7 +327,7 @@ def cc1_reinvest(im):       # 갈림길 — 받아 씀 vs 다시 넣음, 끝값 
         if i < 2: d.line([(160, y + 72), (1760, y + 72)], fill=LINE, width=2)
     hand_ellipse(d, (cx[2] - 260, 490 + 300 - 66, cx[2] + 260, 490 + 300 + 66), seed=181)
     T(d, (W // 2, 960), '두 기간 모두 남은 돈은 일반형이 더 많았다', 60, INK, F_X)
-    source(d, '다시 넣음 = 분배금 세후로 그날 종가에 되삼 · 최근 1년 TIGER 받아 씀 1억 1,793만 · 다시 넣음 1억 1,798만 · cc1_calc_out_1122')
+    source(d, '다시 넣음 = 분배금 세후로 그날 종가에 되삼 · 최근 1년 TIGER 받아 씀 1억 1,793만 · 다시 넣음 1억 1,798만 · 삼성·미래에셋자산운용 공시로 계산')
 
 # ── 6. 세금 한 장 ───────────────────────────────────────────────────
 @board
@@ -354,7 +355,7 @@ def cc1_ruler(im):          # 눈금자 — 한 해 분배금 2천만원에 닿�
         d.line([(X(v), y - 24), (X(v), y + 24)], fill=INK, width=5); T(d, (X(v), y + 70), f'{v // 10000}억', 44, GREY, F_B)
     for v in range(5000, vmax, 10000): d.line([(X(v), y - 12), (X(v), y + 12)], fill=GREY, width=3)
     for v, nm, col, dy in ((pk, '커버드콜', OR, -1), (pt, '일반형', INK, -1)):
-        x = X(v); d.line([(x, y - 200), (x, y + 30)], fill=col, width=8)
+        x = X(v); d.line([(x, y - 150), (x, y + 30)], fill=col, width=8)
         T(d, (x, y - 300), nm, 60, INK, F_X); T(d, (x, y - 235), '약 ' + man(round(v / 100) * 100), 64, col, F_X)
     T(d, (W // 2, 860), '이자·다른 배당이 있으면 더 일찍 닿는다', 60, INK, F_X)
     source(d, '세전 분배금 2,000만원 닿는 원금 · 이번 1년 분배율 KODEX 9.37% · TIGER 3.48% · 다른 이자·배당 없을 때 · 소득세법 제14조·제62조')
@@ -365,7 +366,7 @@ def cc1_chart2(im):         # 같은 날 가격 둘 — 포털 차트 1만 1,520
     d = ImageDraw.Draw(im); TF(d, (W // 2, 120), '2025년 11월 20일, 같은 날 가격 둘', 92, INK, F_X)
     for x, h, v, sub, col in ((560, '포털 차트', 11520, '분배금만큼 지난 값을 낮춘 값', INK), (1360, '운용사 종가', K1['시작가'], '그날 실제로 사고판 값', OR)):
         T(d, (x, 330), h, 80, INK, F_X); T(d, (x, 560), won(v), 140, col, F_X); T(d, (x, 720), sub, 46, GREY, F_B)
-    hand_ellipse(d, (1360 - 370, 470, 1360 + 370, 650), seed=201)
+    hand_under(d, 1360 - 340, 1360 + 340, 655, seed=201)
     d.line([(W // 2, 280), (W // 2, 780)], fill=LINE, width=3)
     T(d, (W // 2, 900), '수익률을 셀 때는 한쪽 가격으로만', 70, INK, F_X)
     source(d, '네이버 금융 일별 시세(분배 반영 수정 값) · 삼성자산운용 상품 화면 수익률 표(2026-11-22 확인)')

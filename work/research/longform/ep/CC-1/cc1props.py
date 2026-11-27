@@ -36,14 +36,21 @@ for c in CR.values():   # visual credits.json은 file이 'id.mp4'(폴더 없음)
     if not c['file'].startswith('bg/'): c['file'] = 'bg/cc1/stock/' + c['file']
 # shot_plan '장면 계획' 실사 구상 → Pexels id (visual이 고르면 여기 적는다)
 ROLE = {   # 같은 클립을 여러 번 쓰면 다른 구간(3초씩 밀림) — 길이 모자람은 --check '실사 모자람'이 잰다
-    'PASSBOOK2': 6197178,  # 식탁 위 통장 두 권을 한 권씩 펼치는 손, 얼굴 없음 (여는 말·5장·6장 계좌 줄) — 경쟁 #18
+    'PASSBOOK2': 8731583,  # 나무 식탁 위 손글씨 공책을 펼친 손, 얼굴 없음 (여는 말·5장·6장 계좌 줄) — 경쟁 #18 · 11/27 visual 교체(옛 6197178 지폐 인물)
     'LEDGER': 5466768,     # 월말 가계부에 적는 손·계산기 두드리는 손 (여러 곳) — 경쟁 #19
-    'FOG': 34942921,        # 안개 속 길 표지판, 글자 흐림 (여는 말 끝·7장) — 경쟁 #24
-    'ORCHARD': 19666849,    # 과수원에서 상자·계약서를 건네는 손, 얼굴 없음 (1장 콜옵션 비유·7장 액티브) — 경쟁 #15·#16
+    'FOG': 35830059,        # 안개 속 흙길, 표지판·글자 없음 (여는 말 끝·7장) — 경쟁 #24 · 11/27 visual 교체(옛 34942921 표지판·번호판)
+    'ORCHARD': 8439245,     # 서류에 서명하는 나이 든 손, 얼굴 없음 (1장 '살 권리를 팔고') — 경쟁 #15·#16 · 11/27 visual 2차(사과 손은 뜻 약함)
     'CALENDAR': 8134590,   # 달력을 한 장씩 넘기는 손 (2장 머리·5장) — 경쟁 #19
     'DRAWER': 6550666,     # 서랍 속 오래된 통장 묶음을 꺼내는 손, 바랜 색 (3장 머리·6장) — 경쟁 #18
-    'SCALE': 8661806,      # 저울 한쪽에 동전을 얹는 손 (4장) — 경쟁 #20
-    'WINDOW': 6374411,     # 창가 식탁 통장 두 권 위 오후 햇빛, 사람 없음 (끝 숨 쉴 3초·끝 그림) — 경쟁 #23
+    'SCALE': 7955150,      # 모래가 천천히 빠지는 모래시계와 손 (4장 '덜 빠진다') — 경쟁 #20 · 11/27 visual 2차(저울은 뜻 약함)
+    'MELT': 6552966,       # 녹아내리는 얼음덩이 (4장 '원금이 녹을까') — 경쟁 #20 · 11/27 visual
+    'FRAME': 37224949,     # 필름 여러 칸 중 한 칸을 돋보기로 보는 손 (7장 '한 장면일 뿐') — 경쟁 #24 · 11/27 visual 3차(2021 달력 뺌)
+    'DRIP': 4571346, # 수도꼭지에서 물방울만 똑, 사람 없음 (2장 '분배율 9%인데 못 미침') — 11/27 visual(동전 쌓임은 반대 뜻이라 심사 H 못함)
+    'START': 8456204, # 육상 트랙 출발선에 선 발, 얼굴 없음 (3장 '상장한 날부터') — 경쟁 #18 · 11/27 visual(DRAWER 재탕 뺌)
+    'CALC': 6963484, # 계산기를 두드리는 두 손, 얼굴 없음 (3장 '다시 사들였다면') — 경쟁 #19 · 11/27 visual(LEDGER 재탕 뺌)
+    'MIXER': 12213088,     # 여러 손잡이 중 하나를 옮기는 손 (7장 '바뀔 수 있어요') — 경쟁 #15 · 11/27 visual
+    'JAR': 34263260,       # 빈 유리병에 동전이 떨어짐 (8장 '받는 돈과 남는 돈') — 경쟁 #23 · 11/27 visual
+    'WINDOW': 30763459,     # 햇빛 드는 창가 식탁·찻잔, 사람 없음 (끝 숨 쉴 3초·끝 그림) — 경쟁 #23 · 11/27 visual 교체(옛 6374411 노트북)
 }
 HAVE = {}
 
@@ -116,16 +123,16 @@ scenes = []
 # 0 여는 말 (voice 0~5) — 답 숫자는 판 cc1_open2 하나에만
 scenes += [broll('PASSBOOK2', [0], '얼마가 남았을까'), board('cc1_open2', [1, 2]), broll('LEDGER', [3], '분배금만 놓고 보면'), broll('FOG', [4, 5], '끝을 어디로 잡느냐')]
 # 1 이 상품은 어떻게 분배금을 만드나 (6~14)
-scenes += [ask(1, [6]), broll('ORCHARD', [7, 8], '살 권리를 미리 팔고'), board('cc1_cap', [9, 10]), broll('ORCHARD', [11], '파는 양을 조절해요'), board('cc1_two', [12, 13, 14])]
+scenes += [ask(1, [6]), broll('ORCHARD', [7, 8], '살 권리를 미리 팔고'), board('cc1_cap', [9, 10]), broll('MIXER', [11], '파는 양을 조절해요'), board('cc1_two', [12, 13, 14])]
 # 2 최근 1년, 같은 날 1억 (15~25)
 scenes += [ask(2, [15]), broll('CALENDAR', [16], '한 달도 빠짐없이'), board('cc1_acct_cc', [17, 18]), board('cc1_acct_dj', [19, 20]), board('cc1_gap', [21]),
-           broll('LEDGER', [22, 23], '분배율은 높았는데'), board('cc1_yield', [24, 25])]
+           broll('DRIP', [22, 23], '분배율은 높았는데'), board('cc1_yield', [24, 25])]
 # 3 더 길게 보면 (26~39)
-scenes += [ask(3, [26]), broll('DRAWER', [27], '그때로 돌아가면'), board('cc1_long2', [28, 29, 30]), broll('DRAWER', [31], '상장한 날부터'),
-           board('cc1_since', [32, 33, 34, 35, 36]), broll('LEDGER', [37], '다시 사들였다면'), board('cc1_divyear', [38, 39])]
+scenes += [ask(3, [26]), broll('DRAWER', [27], '그때로 돌아가면'), board('cc1_long2', [28, 29, 30]), broll('START', [31], '상장한 날부터'),
+           board('cc1_since', [32, 33, 34, 35, 36]), broll('CALC', [37], '다시 사들였다면'), board('cc1_divyear', [38, 39])]
 # 4 분배금은 많았는데 왜 덜 남았나 (40~53)
 scenes += [ask(4, [40]), board('cc1_step_cc', [41, 42, 43]), board('cc1_step_dj', [44, 45]), broll('SCALE', [46, 47, 48], '덜 빠진다는 말'),
-           board('cc1_dd', [49]), board('cc1_dd_long', [50, 51]), broll('SCALE', [52, 53], '원금이 녹을까')]
+           board('cc1_dd', [49]), board('cc1_dd_long', [50, 51]), broll('MELT', [52, 53], '원금이 녹을까')]
 # 5 매달 얼마 들어왔나 · 받아 씀 vs 다시 넣음 (54~69)
 scenes += [ask(5, [54]), board('cc1_month12', [55, 56, 57, 58]), broll('LEDGER', [59], '고르게 들어온 돈'), board('cc1_month12', [60, 61], z=(1.04, 1.10)),
            broll('PASSBOOK2', [62], '생활비로 쓰신다면'), board('cc1_reinvest', [63, 64, 65, 66]), broll('CALENDAR', [67], '더 길게 늘리면'), board('cc1_reinvest', [68, 69], z=(1.04, 1.08))]
@@ -133,11 +140,11 @@ scenes += [ask(5, [54]), board('cc1_month12', [55, 56, 57, 58]), broll('LEDGER',
 scenes += [ask(6, [70]), board('cc1_tax', [71, 72, 73]), broll('PASSBOOK2', [74, 75], '분배금 전부는 아니에요'), broll('LEDGER', [76, 77], '이자와 배당을 합쳐'),
            board('cc1_ruler', [78, 79, 80]), broll('DRAWER', [81, 82], '다른 배당이 있으면'), broll('PASSBOOK2', [83, 84, 85], '계좌마다 다른 셈')]
 # 7 함정 (86~104)
-scenes += [ask(7, [86]), broll('FOG', [87], '어디서 자르느냐'), mo('ends', [88, 89, 90, 91, 92]), broll('FOG', [93], '한 장면일 뿐'),
-           board('cc1_chart2', [94, 95, 96, 97]), broll('LEDGER', [98, 99], '한쪽 가격으로만'), broll('ORCHARD', [100, 101], '바뀔 수 있어요'), board('cc1_fee', [102, 103, 104])]
+scenes += [ask(7, [86]), broll('FOG', [87], '어디서 자르느냐'), mo('ends', [88, 89, 90, 91, 92]), broll('FRAME', [93], '한 장면일 뿐'),
+           board('cc1_chart2', [94, 95, 96, 97]), broll('LEDGER', [98, 99], '한쪽 가격으로만'), broll('MIXER', [100, 101], '바뀔 수 있어요'), board('cc1_fee', [102, 103, 104])]
 # 8 정리 (105~114) — 끝 줄 앞 숨 쉴 실사 WINDOW, 끝 그림 위 END_PAD
 # 11/27 02시 PD: 185행 말이 길어져 정리 판 20.5초 → 108(일반 계좌) 줄을 실사로 끊음(판 20초 규칙)
-scenes += [ask(8, [105]), board('cc1_summary', [106, 107]), broll('PASSBOOK2', [108], '일반 계좌라면'), board('cc1_summary', [109, 110], z=(1.04, 1.08)), broll('WINDOW', [111], '받는 돈과 남는 돈'), broll('LEDGER', [112, 113], '직접 세어 보세요')]
+scenes += [ask(8, [105]), board('cc1_summary', [106, 107]), broll('PASSBOOK2', [108], '일반 계좌라면'), board('cc1_summary', [109, 110], z=(1.04, 1.08)), broll('JAR', [111], '받는 돈과 남는 돈'), broll('LEDGER', [112, 113], '직접 세어 보세요')]
 END_PIC = 'bg/cc1/stock/window_last.jpg'
 pc = cid_of('WINDOW')
 scenes += [S('pic', [114], pic=END_PIC, license=f"Pexels {pc} 무료({CR[pc]['author']})" if pc in CR else '', baked=True, zoom=[1.0, 1.10], cx=50, cy=50)]

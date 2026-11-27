@@ -16,7 +16,7 @@ with sync_playwright() as p:
             print(k, 'goto', repr(e)[:80])
         pg.wait_for_timeout(3000)
         t = re.sub(r'\s+', ' ', pg.inner_text('body'))
-        open(f'raw/{k}_pw_1126.txt', 'w', encoding='utf-8').write(pg.url + '\n' + t)
+        open(f'raw/{k}_pw_1127.txt', 'w', encoding='utf-8').write(pg.url + '\n' + t)
         print('==', k, pg.url, len(t))
         for w in ['총보수', '기준일', '분배금 지급']:
             m = re.search(w, t)

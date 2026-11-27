@@ -46,6 +46,19 @@
     "url": "https://cafe.naver.com/firemap/496"
    },
    "note": "16:10 칸 ndxrecon1127 발행(16:22, 정각 몰림 방지 21분 대기) · verify OK 2016/2016자·사진 3/3 · 발행 날 확인: 나스닥 원문 15곳 200·알자지라 301, 바뀐 것 없음 · 11/28 16:10 TBD-부동산 → forenon1128(올림픽파크포레온 입주 뒤 매매 145건·실거주 2년) 관문 통과 gates_ok 15:50 — 국토부 실거래 원자료·주택법 조문·보도 3곳, crosscheck(Gemini) 사실 0·이해 2차 6명 통과·editgate e1fcb8b2 · PLUS 고배당주는 dupcheck #461로 버림 · 개선: 분양권전매 RTMS API 여전히 응답 없음(tools-wanted), 다음 날 발행 글에 '오늘·어제' 금지(playbook)"
+  },
+  {
+   "hour": 18,
+   "ts": "18:28",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "미국배당다우존스 ETF 네 곳에 같은 날 1억 넣은 결과",
+    "url": "https://cafe.naver.com/firemap/497"
+   },
+   "note": "18:40 칸 divdj1127. 발행 날 확인: 출처 9곳 다시 엶(모두 200), 야후·네이버 4종 재수신 — 11/25 기준 calc 재현 diff 0, 11/27 종가로도 1위 KODEX·꼴찌 SOL 같음(차이 107만), 순자산 11/26 기준으로 c03 고침(TIGER 46,758억·ACE 10,071억). 교차검증 기존 check_gpt/check_self 유지(사실 0). aitell gate 1.3 통과·재서명 auto f730ab57. verify OK 1734/1734자·사진 3/3. 블로그: 쉬는 날·하루 상한 규칙으로 없음. 개선: 발행 날 확인 절차(같은 기준일 재현+최신 종가 순위 대조)를 교본에 적음. 카페 비축 0(기준 2) — backlog 1순위로 올림"
   }
  ]
 }

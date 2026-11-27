@@ -69,7 +69,14 @@
 | 2025년 TIGER 2.35·ACE 1.52% · 폭 0.83%p · 2026년 19%대 · 0.50%p | 연도별 표 | S1 calc_out.txt '해마다' |
 | ACE 2021-10-21 1억 → 1억 7,418만 | 1.7418억 | S1 calc_out.txt |
 | 총보수 0.01%·KODEX 0.0099% · 1억 1년 9,900원 | 0.01·0.01·0.01·0.0099 · '연간 9,900원' | S3 https://www.soletf.com/ko/fund/etf/210942 · S4 미래에셋 · S5 https://www.samsungfund.com/etf/product/view.do?id=2ETFN9 · ACE 2차 S2·S6 |
-| TIGER 순자산 4조 5,799억 · ACE 9,959억 | 45,799억 · 9,959억 | S4 · 2차 S6 https://www.funetf.co.kr/product/etf/view/KR7402970008 + S2 |
+| TIGER 순자산 4조 6,758억 · ACE 1조 71억(11/26 기준) | 46,758억 · 10,071억(2026.11.26 기준) | S4 · 2차 S6 https://www.funetf.co.kr/product/etf/view/KR7402970008 + S2 |
 | 기준일 SOL·TIGER 마지막 영업일 · KODEX 15일 · ACE 월중 | 원문 문구 | S3·S4·S5 · ACE 2차 S6·S2 |
 | 1년 분배율 2.96~2.99% | 445·406·439·380원 ÷ 15,050·13,580·14,850·12,750 | S1 calc_out.txt |
 | 15.4% · 세후 1억 3,593만·3,493만 · 101만원 | 100분의 14 · 100분의 10 · 1.3593·1.3493 | https://www.law.go.kr/법령/소득세법/제129조 · https://www.law.go.kr/법령/지방세법/제103조의13 · S1 calc_out '세후' |
+
+# 올리기 전 확인
+- 2026-11-27 18:22 firemap-write(발행 날) — 대조 칸 주소 다시 엶(모두 200): https://query1.finance.yahoo.com/v8/finance/chart/458730.KS · https://m.stock.naver.com/api/stock/489250/etfAnalysis · https://m.stock.naver.com/api/stock/458730/etfAnalysis · https://www.soletf.com/ko/fund/etf/210942 · https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7458730009 · https://www.samsungfund.com/etf/product/view.do?id=2ETFN9 · https://www.funetf.co.kr/product/etf/view/KR7402970008 · https://www.law.go.kr/법령/소득세법/제129조 · https://www.law.go.kr/법령/지방세법/제103조의13 — 야후 4종·네이버 4종 fetch.py로 다시 받음, TIGER·ACE는 fetch_pw.py(raw/*_pw_1127.txt)
+- 기준일: 계산 2026-11-25 종가(본문 그대로 '11월 25일 종가로') · 순자산 2026-11-26 기준 · 보수·지급기준일은 11/27 상품 페이지
+- 바뀐 것: 11/25 종가로 calc.py 다시 돌림 — calc_out과 한 글자도 안 바뀜(raw1127/calc_1125_again.txt). 순자산 TIGER 45,799억→46,758억, ACE 9,959억→10,071억(11/26 기준) → c03 고침. 총보수 0.01%·0.0099%, SOL 지급기준일 마지막 영업일 그대로. 11/25 뒤 새 분배 없음(분배 횟수 26·27·27·27 그대로)
+- 새로 찾은 것: 11/27 종가(15,235·13,705·14,990·12,870)로 세면 2024-08-13 1억 → KODEX 1억 3,877만·SOL 1억 3,770만, 차이 107만원 — 1위·꼴찌는 같고 ACE(1억 3,820만)가 TIGER(1억 3,810만)를 앞섬. 본문은 11/25 기준이라 안 넣음 · ACE 최근 1년 수익률 21.58%(funetf, 본문 안 넣음)
+- 조사 뒤 공표: 없음(11월 말 분배 SOL·TIGER 지급기준일 11/28 — 발행 뒤)

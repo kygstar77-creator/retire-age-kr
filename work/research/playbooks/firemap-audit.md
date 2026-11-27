@@ -75,3 +75,4 @@
 - 2026-11-24 21:14: 미국 지수 '어제 종가'는 FRED·나스닥 historical에 하루 늦게 들어온다 — 나스닥 공식 /api/quote/NDX/info의 lastSalePrice·lastTradeTimestamp로 바로 대조된다(SPX는 이 API에 없음). 장부 '개수' 경보는 길이가 아니라 상태·칸 배정까지 걸러 세야 한다(카페 38줄인데 쓸 수 있는 건 0).
 - 2026-11-25: law.go.kr 조문은 web-fetch로 빈 껍데기만 온다 — 내장 브라우저로 열고 javascript_tool로 document.body.innerText에서 '제N조(' 위치를 잘라 읽는다. FRED는 curl이 멈추고 브라우저도 막힘 → 미국 ETF 1차 대조는 운용사 공식 화면(아이셰어즈 배당표는 innerText 'Ex-Date' 뒤)으로.
 - 2026-11-26: 말로 적은 RULES 규칙이 다음 글에서 또 어겨지면 경미를 되풀이하지 말고 관문 코드(낱말 경고)로 막아 달라고 요청한다. 제목 숫자는 research.md '한계' 칸부터 읽으면 2차뿐인 값을 바로 찾는다.
+- 2026-11-27: 국내 ETF 종가 대조는 m.stock.naver.com/api/stock/<코드>/price(공식 일별 종가)로 — fchart siseJson은 분배 반영 수정주가라 과거·최근 값 모두 원값과 다르다(TIGER 11/25 14,820 vs 실제 14,850). 대조 자료가 계산과 다르면 자료 쪽 성격(수정주가?)부터 의심한다.

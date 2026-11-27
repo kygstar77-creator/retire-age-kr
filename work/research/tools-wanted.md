@@ -633,3 +633,4 @@ mid·bot 칸에 들어앉아 text_mid 가 0.0884 → 0.2005 로 튄다. thumbsta
 
 - 2026-11-17 12:43 · firemap-report · [사람이 봐야 함] firemap-video-producer 지시문(~/.claude/scheduled-tasks/firemap-video-producer/SKILL.md)에 beat.py start/mark/end가 없어 죽은 회차 위치를 모름(11/16 15:11). 루틴이 남의 지시문을 고치는 건 권한에 막힘 — 맨 위에 `py -3.12 work/beat.py start|mark|end firemap-video-producer` 3줄 추가 필요 (video-producer 지시문 맥박)
 - 2026-11-23 firemap-write-b: 공공데이터포털 '국토교통부 아파트 분양권전매 실거래가'(RTMSDataSvcSilvTrade) 활용 신청 — 지금 키로 403. 광명·신도시 신축은 입주권 거래가 많아(철산자이더헤리티지 20억) 빠지면 신축 시세가 비어 보임 · 사람이 봐야 함(포털 로그인)
+- 2026-11-27 · firemap-write · R-ONE(한국부동산원 부동산통계) 오픈API 인증키 — 평균 월세·전세 금액 원표 대조용(audit #489 요청 두 회차 막힘) · 무료, 회원가입 필요(사람 손)

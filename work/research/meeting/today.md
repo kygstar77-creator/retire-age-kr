@@ -7,6 +7,7 @@
 - 원칙(스프린트 표 우선순위): ① **칸 담당 = 그 칸 바로 앞에 깨는 회차**(07:40 write-b·10:10 write·12:40 write·16:10 write·18:40 write·22:40 write-b, 준비는 누구든) — 한 칸이 늦으면 120분 규칙이 다음 칸까지 민다 ② 돈 길: 범위 안 카페 글 끝에 계산기 '/' utm 링크(11/23 회의 log 4534 결정, 오늘 6편 중 사이트 링크 1편·그것도 이벤트 없는 /dividend) ③ 롱폼·쇼츠 짝 글은 회의가 칸 배정 때 먼저 넣는다
 - [지시] **firemap-editor** ← firemap-meeting 21:43 #485·#488 정정 원고 edit-ok 판단(11/27 06:50 회차 안) — 제목 '언제까지 살까?' 꼴도 같이 봄(verify) · write·write-b가 그 뒤 --apply
 - [지시] **firemap-report** ← firemap-meeting 21:43 11/27 12:33 보고에 '카페 글 중 사이트 링크 있는 편 수/공개 편 수'와 utm=cafe 세션·계산 완주 한 줄 · 이유: 링크가 없으면 완주 0은 계산기 탓인지 길 탓인지 못 가림
+  - 착수: firemap-report 12:34
 - 결정 필요(사장님, 이어짐): 비공개 사본 70편·공개 같은 제목 5쌍 정리 · H-5 제목·썸네일 교체 채팅 세션에서 · 계산 이벤트 없는 /dividend에 이벤트 달기(사이트 개발 금지 10/6이라 사장님 허락 필요)
 
 ## [진행] firemap-write 09:10 회차 착수 09:20 — 10:10 kdiv1121 발행 날 종가·분배금 다시 받기 → 발행
@@ -25,6 +26,7 @@
 
 - [요청] **firemap-write** ← firemap-audit 21:08 ① #489 rent100 '부동산원 10월 평균 168만 1천원'을 R-ONE 원표로 대조(지금 2차 2곳뿐) — 다르면 카페 글 정정 · ② 발행 전 검사(관문 코드)에 '사 두|사 둬|사야 받' 낱말 경고 — 배당락 글에 같은 꼴 세 번째(#454·#485·#488, RULES 309행 말로는 안 지켜짐) · 근거 audit.md 11/26 · 기한 11/27
   - 착수·일부 완료: firemap-write 09:28 — ② 이미 됨(editor 11/26 17:22 aitell buyby_check '사 두어야·까지 사 두면·사야 받' 11/27 칸부터 막음 — 낱말 그대로 덮음) · ① 막힘: 부동산원 10월 평균 월세 168만 1천원 원표 못 엶(웹 검색 기사 15건에 금액 없음·R-ONE 표 조회 키 없음) → 정정 안 함, 다음 write 회차가 R-ONE '아파트 평균 월세가격' 표 직접 조회
+  - 막힘: firemap-write 12:1x 회차 12:22 — ① 다시 찾음: 웹 검색 2번(부동산원 10월 보도자료·평균 월세) 원문·금액 0건, R-ONE 조회 키 없음 → 정정 안 함 · R-ONE 오픈API 키(무료, 회원가입 필요)를 tools-wanted에 올림
 - [알림] firemap-copywriter·firemap-video-producer ← firemap-audit 21:08 H-5 tvCsLWDF814 제목 C-36 교체 11/26 21시에도 미반영('…고점의 82%')
 - [확인 필요] firemap-audit 21:14 → firemap-meeting: 블로그 STOP_blog 켜진 채 RSS에 11/21 21:04 새 글 「도곡동 아파트 실거래가, 평당 가장 비싼 단지는 타워팰리스일까?」(blog.naver.com/kygstar7777/224426534410) · 저장소·로그·scheduled-tasks 흔적 0 → 누가 올렸는지 확인 안 함(사장님 손 발행이면 문제 없음, 무인 발행이면 STOP_blog 위반·네이버 자동화 정책) · **닫음: 21:10 firemap-audit — 오보(9/30 01:14 글, 채널 pubDate 오독)**
 - [요청] **firemap-write-b** ← firemap-audit 21:10 santa1123(11/23 18:40) c05 자료 줄에 '최근 10년 12월 등락은 나스닥 공식 시세와 대조(10해 같음)' 한 줄 보태기 · 근거 audit.md 11/22 · 기한 발행 전
@@ -76,9 +78,6 @@
 
 - 착수: firemap-write-b 10:4x 회차 10:44 — 10:10 칸 decdiv1126(write-b 몫, 10:10 맡을 회차 없어 밀림) 당일 확인(운용사 일정표 4곳 다시 받음 바이트 같음·야후 11/25 종가 SCHD 67·JEPQ 182달러)·재서명 auto e1775876·발행 중 · 12:40 칸 rent100_1126도 국토부 11/26 다시 받아 숫자 갱신(26,119건·42.5- 착수: firemap-write-b 10:4x 회차 10:44 — 10:10 칸 decdiv1126(write-b 몫, 10:10 맡을 회차 없어 밀림) 당일 확인(운용사 일정표 4곳 다시 받음 바이트 같음·야후 11/25 종가 SCHD 67·JEPQ 182달러)·재서명 auto e1775876·발행 중 · 12:40 칸 rent100_1126도 국토부 11/26 다시 받아 숫자 갱신(26,119건·42.5%·강남 133·중랑 34)·재서명 auto 290e3f0d — 12:1x write 회차는 발행만 하면 됨 (11:13)
 - [요청] firemap-video-producer ← visual 09:22: CC-1 cc1props.py — ① `assert len(SAY) == 115`가 대본 v1.6(117줄)에 걸려 --check 실패(내 몫 아님, 줄 번호 밀림까지 PD가 맞춰 주세요) ② ROLE 바뀜: KNOB·COINS 뺌, MIXER·MELT·FRAME·JAR·DRIP·START·CALC 더함, 장면 줄 [11]·[22,23]·[31]·[37]·[52,53]·[93]·[100,101]·[111] 바뀜(파일 주석) ③ credits.json 쓴 것/버린 것 표시 끝 · 고친 뒤 --check 한 번 · 시한 11/28 12:00
-- [요청] **firemap-motion-designer** ← firemap-video-producer 02:37: CC-1 장 카드 8장(KOSPI1 틀 ask) 새 심사관 C **8/8 못함** — 검은 빈 화면에 주황 알약 'N장'+제목 한 줄, 오른쪽 위 꼬리표 읽히지 않음(클로드 티 목록 '알약 꼬리표·장 번호' 그대로) · 경쟁(#12 '걱정은 크게 세 가지' 번호 셋+손 동그라미)은 그 장이 무엇을 재는지 단서가 화면에 있음 · 비교 그림 ep/CC-1/shotcmp/r10·r17·r24·r31·r38·r45·r53.jpg, judge visual/CC-1-shots/judge_c.json · 알약 빼고 장 질문+단서 한 줄(종이 결) 틀을 CC-1부터 — 기한 **11/28 10:00** · r58 끝 그림은 visual 요청(WINDOW)과 같이 · 참고: r58 경쟁 #23 캡처(c23 hDHVtwBMUzs 809초)가 표 설명('강가 길 뒷모습')과 다른 막대 장면 — 초 확인 필요
-  - 착수: firemap-motion-designer 11:26
-  - 완료: firemap-motion-designer 11:59 — 새 부품 ChapterAsk(종이 결·기준 줄·질문·단서 칸 '?'·손 동그라미 하나, 알약·장 번호 없음) · 글자 전부 script.md에서(askprops assert) · 미리보기 ep/CC-1/motion_preview/cc1_asks.mp4·board_asks.png · 비교 shotcmp/r*_ask1127.jpg · 새 심사관 4차 6.5·5.5·7(평균 6.3) · 약한 장 6장·3장은 내일 motion이 다시 · **PD: cc1props ask()·CC1.tsx Ask 바꿈·ask 구간 ChapterStrip 끄기·4장 자막 줄 나눔(ep/CC-1/motion.md 'PD 할 일')**
 ## 이월 — 안 끝난 일(todaytrim이 옛 묶음에서 옮김)
 - [결정 필요] 사장님(이어짐): 비공개 사본 70편·공개 같은 제목 5쌍 정리(참모 3명 모두 '정리' 권고, 유튜브 원문은 '비공개도 검토될 수 있음'까지 — 거절 사유라는 원문은 없음) · H-5 제목·썸네일 교체 채팅 세션에서 〔출처: ★ 정기 회의 11/25(21:18~21:36) — 공개 11/25 **5**(카페 #482~#485·〕
 
@@ -155,3 +154,4 @@
   - 막힘: firemap-video-producer 정기 10:1x 11:08 — CC-1 script.md v1.6(08:50)에 editor 재서명 없음(edit.json 11/26 23:12) → 녹음 못 함. scenes.28 자막은 cc1props가 voice.json 말로 다시 뽑으니 녹음 뒤 자동, 7장 EndFlip은 판에 6줄 다 있음 — 녹음 뒤 mo(ends) 번호를 새 줄(158·165) 만큼 밀어 확인
 - [알림] firemap-copywriter ← youtube-loop 08:51: CC-1 이해 시험 9/9 '제목은 KODEX 하나, 썸네일은 vs TIGER'로 잠깐 헷갈림(뜻 틀린 사람 0) · 설명 첫 줄에 'TIGER 미국배당다우존스와 같은 날 1억씩'이 앞에 오게 해 주세요 · 제목 그대로
 - [진행] firemap-video-producer 정기 10:1x(착수 10:17) 11:08 — **NDG-1 목소리 끝**: editor 07:07 바뀐 3줄 받기 + 전체 받아쓰기 걸린 17줄 다시 받기(say.json 7줄 읽는 법만: 50곳→오십 곳·1만→일만·78곳→칠십팔 곳 등, 대본 글자 0 변경) → check 통과·readback 127줄 걸림 0(ytlong C-readback 통과) · 쉼 비율 14.5%(렌더본 관문 12%) 주의 · 다음: NDG-1 props·shot_plan 비교·화면 글자 서명·렌더(관문 12/1 11:30) · CC-1은 editor v1.6 재서명 대기
+- 완료: firemap-write 12:1x 회차 12:37 — 12:40 칸 jepivix1127 #495 발행·verify OK 2155자·사진 3

@@ -26,6 +26,16 @@
     "url": "https://cafe.naver.com/firemap/494"
    },
    "note": "10:10 칸 dow1124(비축) 발행 날 확인: DIA·SPY 보유(11/24)·야후 30종목·^DJI·^GSPC 다시 받아 숫자 갱신(출처 7곳 다시 엶) · 교차검증 crosscheck(Gemini): 사실 1건 반영('약 5만 19포인트')·확인불가 6(원문은 직접 받음), 말투 6건 중 반영 2·유지 4(같은 문장 3·'오늘 바로 알려드릴게요' 예고 문장 금지 1) · selfcheck 사실 0 · verify OK 1416/1416자·사진 3/3 · 블로그 STOP(정지 중) · 개선: 플레이북에 calc 캐시·D 날짜 함정 한 줄 · audit ① #489 168만 원표 대조 못 함(막힘)"
+  },
+  {
+   "hour": 12,
+   "ts": "12:37",
+   "blog": null,
+   "cafe": {
+    "title": "JEPI 분배금, 변동성 커지면 정말 늘어날까?",
+    "url": "https://cafe.naver.com/firemap/495"
+   },
+   "note": "12:40 칸 jepivix1127 발행(12:3x, 120분 간격 대기 12분) · verify OK 2155/2155자·사진 3/3 · 당일 확인은 write-b 10:4x(야후 11/25 종가 재계산·재서명 auto) · 교차검증 기존 check_gpt/gemini 있음 · 블로그 STOP · audit #489 R-ONE 대조 다시 막힘(원문 0건·키 없음 → tools-wanted) · 경고 D-17 본문 2155자>1500 · 개선: 없음"
   }
  ]
 }

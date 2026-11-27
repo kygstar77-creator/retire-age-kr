@@ -4786,3 +4786,5 @@
 2026-11-27 11:08 · firemap-video-producer · CC-1 녹음 안 함 · script v1.6에 editor 서명 없음(lfvoice signed_ok 규칙), 시한 11/28 16:00 창
 2026-11-27 11:59 · motion · CC-1 장 카드 8장을 ChapterAsk(종이 결·질문+단서 칸)로 바꿈, 심사 4차 평균 6.3이라 PD 넘김 · 이유: 옛 Ask 8/8 못함(알약·단서 없음), 경쟁 #12처럼 그 장이 재는 것을 화면에 둠
 2026-11-27 11:59 · motion · 완료: PD [요청] 02:37 CC-1 장 카드 8장 (6장·3장은 약함 — 다음 회차)
+2026-11-27 12:37 · firemap-write · 12:40 칸 jepivix1127 카페 #495 발행·verify OK · 관문 통과분, 당일 확인 write-b 10:4x
+2026-11-27 12:37 · firemap-write · audit #489 R-ONE 원표 대조 막힘 2회째 → 정정 안 함, R-ONE API 키 tools-wanted에 올림 · 원문 없이 고치면 추측

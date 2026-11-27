@@ -177,3 +177,8 @@
 2. 미리보기: `py -3.12 research/longform/ep/CC-1/motion_preview/endflip_render.py`(작은 public — 글꼴·종이만 복사, Root CC1Ends) → mp4·스틸·motioncheck·U5.
 3. 규칙: 줄은 말한 순서로 열림(시간순 아님) · 앞선 쪽 = 진한 막대+체크, 진 쪽 = 옅은 막대 · 주황은 지금 줄 체크, 끝엔 세기 글자 하나 · 세기는 그 말이 나오는 줄 박자에(앞 줄 자막과 겹치면 다른 뜻으로 읽힘) · 0에 가까운 값도 막대 6px.
 4. 정지 방지: 늘 1.00→1.03 + 줄 묶음이 지금 줄 쪽으로 아래 방향 0~34px 옮겨 감(이것 없으면 막대 한 줄만으론 U5 4% 못 넘어 7초). 머리글은 제자리. 편마다 seed로 가운데 칸 폭·막대 두께·옆 흐름 방향.
+
+## ChapterAsk — 장 카드(2026-11-27, CC-1)
+- 종이 결 위 기준 한 줄 · 장 질문 · 단서 칸 2~3개('?') · 식 한 줄. 알약·장 번호 없음. props {seed, q, top?, cells?, mark?, foot?, layout?: 'row'|'col', end}.
+- 편 스크립트가 글자를 script.md와 assert(예: ep/CC-1/motion_preview/askprops.py). data.n('N장')은 띠링 감지용으로 두되 그리지 않는다.
+- 반복 방지: seed가 들어오기(써지듯/찍기)를 바꾼다. 편마다 칸 수·식·세로 쌓기를 다르게.

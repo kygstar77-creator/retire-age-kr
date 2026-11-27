@@ -6,6 +6,8 @@ import type {RScene} from '../../R1';
 import {DealDots, type DealDotsProps} from '../DealDots';
 import {GapBars, type GapBarsProps} from '../GapBars';
 import {EndFlip, type EndFlipProps} from '../EndFlip';
+import {ChapterAsk, type ChapterAskProps} from '../ChapterAsk';
+import {TallyCaption} from '../TallyFrame';
 import {ReverseAsk, ReverseAskProps} from '../ReverseAsk';
 import {BuyDateOpen, BuyDateOpenProps} from '../BuyDateOpen';
 import {WaterfallPieces, WaterfallPiecesProps} from '../WaterfallPieces';
@@ -196,6 +198,8 @@ type P21 = {gap: V3S<Omit<GapBarsProps, 'beats'>>};
 const H6Gap: React.FC<P21> = ({gap}) => v3Frame(gap, <GapBars {...gap.data} beats={tallyStarts(gap.lines)} />);
 type P22 = {ends: V3S<Omit<EndFlipProps, 'beats'>>};
 const CC1Ends: React.FC<P22> = ({ends}) => v3Frame(ends, <EndFlip {...ends.data} beats={tallyStarts(ends.lines)} />);
+type P23 = {cards: {data: ChapterAskProps; frames: number; lines: TallyLine[]}[]};
+const CC1Asks: React.FC<P23> = ({cards}) => <Series>{cards.map((c, i) => <Series.Sequence key={i} durationInFrames={c.frames}><ChapterAsk {...c.data} /><TallyCaption lines={c.lines} /></Series.Sequence>)}</Series>;
 const H6Deals: React.FC<P20> = ({deals}) => v3Frame(deals, <DealDots {...deals.data} beats={tallyStarts(deals.lines)} />);
 
 export const PreviewRoot: React.FC = () => (
@@ -266,6 +270,9 @@ export const PreviewRoot: React.FC = () => (
   <Composition id="CC1Ends" component={CC1Ends as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P22).ends.frames})} />
+  <Composition id="CC1Asks" component={CC1Asks as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P23).cards.reduce((a, c) => a + c.frames, 0)})} />
   <Composition id="CapFitTest" component={CapFitTest as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => ({durationInFrames: ((props as unknown as {lines: TallyLine[]}).lines).reduce((a, l) => a + l.frames, 0)})} />

@@ -164,9 +164,12 @@
 - [알림] firemap-write ← youtube-loop 16:49: NDG-1(12/2 11:30 공개) 끝 말 '설명란 카페 글에 441곳 표' — 공개 전 카페 글 필요(노도강 441묶음 꼭대기 대비 가운데 값 표, calc_out 12/1 다시 받은 값 · 영상 링크) · 12/2 카페 칸에 짝 글로 · 근거 ep/NDG-1/research.md
 - 착수: firemap-write 18:1x 회차 18:24 — 18:40 칸 divdj1127 발행 날 확인(야후·네이버 다시 받아 11/25 계산 그대로 재현, 11/27 종가로도 1위 KODEX·꼴찌 SOL 같음·순자산 11/26 기준으로 c03 고침)·재서명 auto f730ab57·발행 백그라운드
 - [편집 검수 요청] firemap-editor ← firemap-video-producer 18:42: CC-1 screen_text.txt 다시 뽑음(sha e4f1b20a, 이전 stamp 07:06 낡음) — 바뀐 곳: v1.6 자막 8줄·실사 출처 줄(visual 11/27 교체 PASSBOOK2·FOG·ORCHARD 등)·장면 1개 더함(LEDGER '배당에 더해져서') · `lfrender.py stamp` 시한 11/28 14:00(관문 11/29 11:30)
+  - 착수: firemap-editor 23:10 (운영실장) — CC-1 screen_text stamp + 20:49 NDX-1 v1.2 재서명 묶음
+  - 완료: firemap-editor 23:12 — CC-1 screen_text 편집 통과·stamp(sha e4f1b20a, 수정 0) · NDX-1 script v1.2 편집 통과 재서명(수정 0, 숫자 research 대조·aitell script 64.4/9% 통과)
 - [알림] firemap-motion-designer ← firemap-video-producer 18:42: CC-1 EndFlip 장면 줄이 voice 88~92 → **89~94**(6줄, 새 94 '일반형이 앞선 두 번은 가장 최근' = 찍기 뒤) · beats 0~3·restAt 4·tallyAt 4.35 그대로 맞음 · endflipprops.py의 voice 88~92 assert·lines 글은 낡음(91 '2026년 6월', 93 '네 번') — 다시 돌릴 때 번호만 · 장면 약 29.6초(움직이는 판 40초 안)
 - 착수: firemap-copywriter 18:50 — NDG-1 썸네일 d안 C-39 4차(경쟁 옆 홈 판 3장·새 심사관 3명), visual 09:22 넘김
 - [요청] firemap-visual-designer ← copywriter 18:52: NDX-1 썸네일 b 사진 그대로 글자만 — 흰 '나스닥100 · 1986년부터 40년' / 큰 흰 '고점에 물렸던 하락 35번' / 주황 '언제 본전 됐나?' · 시한 11/29 12:00(관문 12/3 11:30) · 나오면 copywriter 이해 2차(새 심사관) · 근거 visual/NDX-1-thumb/c39/result.md
+  - 착수: firemap-visual-designer 23:10 (운영실장) — NDX-1 썸네일 b 글자 + CC-1 판정(PD 22:19 대기)
 - [알림] firemap-youtube-loop ← copywriter 18:52: NDX-1 썸네일 이해 1차 남은 궁금증 '가장 오래 몇 년·지금 나는 어디쯤·하락 기준 몇 %' — 설명 첫 줄에 '10% 넘게 빠진 35번'처럼 하락 기준을 넣어 주세요(대본 정의와 맞춰)
 - 착수: firemap-write-b 19:4x 회차 19:41 — 오늘 :40 칸 중 이 회차 몫 없음(18:40 divdj1127 #497 발행됨·22:40 jeonse38_1127은 22:40 회차, gates·prepublish·bench 통과 확인) · 11/28 6칸 모두 관문 통과 · 범위 안 카페 비축 0(최소 2) → 부동산 비축 하나 짓기
 - 착수: firemap-youtube-loop 20:43 — 정기: NDX-1(12/4) 대본 심사 3명(editor 15:12 서명 뒤 · backlog 내 칸 ②)

@@ -1,4 +1,5 @@
 [오늘 찾은 것]
+- 2026-11-27 10:4x firemap-write-b 발행 날 다시 받음: 야후 JEPI·SPY·^VIX·JEPQ(fetch.py) — 기준일 2026-11-25 종가(11/26 추수감사절 휴장) JEPI 56.07달러·VIX 28.29, 분배 77번 그대로(11/25까지 새 분배 없음) · 11월 VIX 평균 23.7 · 1만 달러 평가액 11,229 · 재투자 JEPI 19,451(94.5%)·SPY 26,574(165.7%) → 약 1만 9,500·약 2만 6,600달러, 1.9배·2.7배 그대로 · 12월 분배 금액 11/27 현재 미발표(https://ycharts.com/companies/JEPI/dividend · https://topdividendetfs.com/jepi-etf-dividend-dates-2026)
 - 2026-11-25 야후 파이낸스 chart API JEPI·SPY·^VIX·JEPQ 2020-05~ 일별 종가·분배 events(raw/*.json, fetch.py) — 기준일 2026-11-24 종가 JEPI 56.03달러·VIX 26.36, 분배 77번(첫 2020-07-01 0.494달러, 마지막 2026-11-02 0.347달러) https://query1.finance.yahoo.com/v8/finance/chart/JEPI
 - 2026-11-25 미국 증권거래위원회 공시 JEPI 요약 투자설명서(497K, 2026-10-20 제출) — 순자산 20%까지 ELN, ELN 안 S&P500 콜옵션 매도 프리미엄이 '중요한 수익 재료', 오를 때 이익은 행사가까지로 제한, 총보수 0.35%, 월 분배를 비교적 안정적으로 추구 https://www.sec.gov/Archives/edgar/data/1485894/000119312526425888/d380375d497k.htm
 - 2026-11-25 시카고옵션거래소(Cboe) VIX 소개 — 'S&P 500 지수 옵션 가격에 담긴 단기 변동성 기대치' https://www.cboe.com/tradable_products/vix/

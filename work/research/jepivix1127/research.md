@@ -75,3 +75,9 @@
 - 바뀐 것: 처음 작성 — 바뀐 값 없음. 발행 회차(11/27 12:10)에 fetch.py·calc.py·mkimg.py 다시 돌려 11/26 종가로 갱신, 12월 분배 금액이 발표돼 있으면 c05 '발표 전' 줄 고침
 - 새로 찾은 것: 11월 VIX 평균 23.4(11/24까지)로 올해 3월 25.6 다음 — 11/25 장중 31.7은 종가가 아니라 안 씀
 - 조사 뒤 공표: data/release_calendar.json — JEPI 12월 분배 금액 발표(12/1 배당락 전) → 발행 회차에서 확인
+- 2026-11-27 10:4x firemap-write-b(발행 날, 12:40 칸) — fetch.py·calc.py·mkimg.py 다시 돌림
+- 다시 연 주소: https://query1.finance.yahoo.com/v8/finance/chart/JEPI (11/27) · https://query1.finance.yahoo.com/v8/finance/chart/SPY (11/27) · https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX (11/27) · https://www.sec.gov/Archives/edgar/data/1485894/000119312526425888/d380375d497k.htm (11/27) · https://www.cboe.com/tradable_products/vix/ (11/27) · https://www.cboe.com/insights/posts/week-of-11-9-2026-no-contagion-yet-equity-vol-spikes-macro-vol-fades (11/27) · https://ycharts.com/companies/JEPI/dividend (11/27)
+- 기준일: 2026-11-25 미국 종가(11/26 추수감사절 휴장)
+- 바뀐 것: 기준일 11/24→11/25 · 재투자 평가액 JEPI 19,440→19,451달러(약 1만 9,400→1만 9,500)·SPY 26,650→26,574달러(약 2만 6,700→2만 6,600) · 11월 VIX 평균 23.4→23.7(본문엔 안 씀) · 분배 77번·묶음 중간값 10.3%·7.7%·7.1%·예외 5번·1.9배·2.7배 그대로 · c04·c05('11월 27일 현재')·c06 기준일, 그림 3장 날짜 줄 고침
+- 새로 찾은 것: JEPI 12월 분배 금액 11/27 현재 미발표(ycharts 마지막 11/2 0.3468달러) — c05 '발표 전' 줄 유지
+- 조사 뒤 공표: JEPI 12월 분배 금액 발표(12/1 배당락 전 예상) — 발행 뒤라 이 글엔 안 들어감

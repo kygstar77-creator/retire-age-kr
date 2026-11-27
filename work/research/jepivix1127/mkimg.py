@@ -10,8 +10,8 @@ fm.fontManager.addfont(F + r'\pd500.ttf'); fm.fontManager.addfont(F + r'\pd700.t
 plt.rcParams['font.family'] = fm.FontProperties(fname=F + r'\pd500.ttf').get_name()
 def Bs(n): return fm.FontProperties(fname=F + r'\pd700.ttf', size=n)
 INK, SUBC, ORG, NAVY, GRY = '#111827', '#6B7280', '#EA580C', '#1E3A5F', '#94A3B8'
-CUT = D.date(2026, 11, 24)
-SRC = '야후 파이낸스 JEPI 분배 기록·VIX 일별 종가(11/25 받음) · 파이어맵 계산'
+CUT = D.date(2026, 11, 25)
+SRC = '야후 파이낸스 JEPI 분배 기록·VIX 일별 종가(11/27 받음) · 파이어맵 계산'
 def load(t):
     r = json.load(open(f'raw/{t}.json'))['chart']['result'][0]
     ts = [D.datetime.utcfromtimestamp(x).date() for x in r['timestamp']]; q = r['indicators']['quote'][0]['close']
@@ -39,10 +39,10 @@ for i, (val, lab, col) in enumerate([(med[2], 'VIX 15 미만', GRY), (med[0], 'V
     ax.text(i, val + 0.3, f'{val}%', ha='center', fontproperties=Bs(NUM_PX), color='white')
     ax.text(i, -0.5, lab, ha='center', va='top', fontproperties=Bs(26), color='white')
 ax.set_ylim(-2.5, 13.5); ax.set_xlim(-0.6, 1.6); ax.axis('off')
-fig.text(0.07, 0.045, '분배 77번의 묶음별 중간값 · 달러 · 세전 · 2026.11.24까지', fontsize=17, color='#CBD5E1')
+fig.text(0.07, 0.045, '분배 77번의 묶음별 중간값 · 달러 · 세전 · 2026.11.25까지', fontsize=17, color='#CBD5E1')
 fig.savefig('pkg/img/00.png', dpi=100, facecolor=fig.get_facecolor()); plt.close(fig)
-json.dump({'type': 'chart', 'source': '야후 파이낸스 chart API JEPI 분배 events·일별 종가, ^VIX 일별 종가(11/25 받음)로 직접 계산, calc_out.txt',
-           'made_at': '2026-11-25', 'by': 'research/jepivix1127/mkimg.py', 'out': 'img/00.png', 'topic': 'JEPI 분배금과 VIX', 'num': f'{med[2]}%·{med[0]}%',
+json.dump({'type': 'chart', 'source': '야후 파이낸스 chart API JEPI 분배 events·일별 종가, ^VIX 일별 종가(11/27 받음)로 직접 계산, calc_out.txt',
+           'made_at': '2026-11-27', 'by': 'research/jepivix1127/mkimg.py', 'out': 'img/00.png', 'topic': 'JEPI 분배금과 VIX', 'num': f'{med[2]}%·{med[0]}%',
            'topic_px': TOPIC_PX, 'num_px': NUM_PX, 'follows': '경쟁 3 coldbull_iy 차트형 첫 사진 + 경쟁 1 quf02071227 상품명 큰 글자'},
           open('pkg/cover_meta.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 def frame(fig, title, sub):

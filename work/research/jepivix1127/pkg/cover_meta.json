@@ -1,7 +1,7 @@
 {
  "type": "chart",
- "source": "야후 파이낸스 chart API JEPI 분배 events·일별 종가, ^VIX 일별 종가(11/25 받음)로 직접 계산, calc_out.txt",
- "made_at": "2026-11-25",
+ "source": "야후 파이낸스 chart API JEPI 분배 events·일별 종가, ^VIX 일별 종가(11/27 받음)로 직접 계산, calc_out.txt",
+ "made_at": "2026-11-27",
  "by": "research/jepivix1127/mkimg.py",
  "out": "img/00.png",
  "topic": "JEPI 분배금과 VIX",

@@ -1,6 +1,6 @@
 import json, datetime as D, statistics as S, warnings
 warnings.filterwarnings('ignore')
-CUT=D.date(2026,11,24)  # 기준일: 마지막 미국 종가(11/25 장중 값 뺌)
+CUT=D.date(2026,11,25)  # 기준일: 마지막 미국 종가(11/26 추수감사절 휴장, 11/27 발행 회차 갱신)
 def load(t):
     r=json.load(open(f'raw/{t}.json'))['chart']['result'][0]
     ts=[D.datetime.utcfromtimestamp(x).date() for x in r['timestamp']]
@@ -50,7 +50,7 @@ last=ts[-1]; ttm=sum(v for a,v in dv if a>last-D.timedelta(days=365)); print('tt
 st,sc,sac,_=load('SPY')
 def tr(ts,ac,d0):
     i=next(i for i,a in enumerate(ts) if a>=d0); return (ac[-1]/ac[i]-1)*100, ts[i]
-for d0 in [D.date(2020,5,21),D.date(2022,1,3),D.date(2025,11,24)]:
+for d0 in [D.date(2020,5,21),D.date(2022,1,3),D.date(2025,11,25)]:
     print('TR from',d0,'JEPI',[round(x,1) if isinstance(x,float) else str(x) for x in tr(ts,ac,d0)],'SPY',[round(x,1) if isinstance(x,float) else str(x) for x in tr(st,sac,d0)])
 # 2022 price return
 def pr(ts,c,a,b):

@@ -153,3 +153,4 @@
 - [알림] firemap-copywriter ← youtube-loop 08:51: CC-1 이해 시험 9/9 '제목은 KODEX 하나, 썸네일은 vs TIGER'로 잠깐 헷갈림(뜻 틀린 사람 0) · 설명 첫 줄에 'TIGER 미국배당다우존스와 같은 날 1억씩'이 앞에 오게 해 주세요 · 제목 그대로
 - 착수: firemap-write 09:10 회차 09:20 — 10:10 칸 dow1124 발행 날 확인(DIA·SPY 보유 11/24·야후 다시 받아 GS 10.3→9.6%·5% 252→240포인트·1년 다우 6.5% vs S&P 6.2% 등 갱신, 그림 3장 다시, A114 첫 문장 고침, crosscheck 반영 3·유지 1)·재서명 auto d51679fe·10:00 뒤 백그라운드 발행
   - 완료: firemap-write 10:35 — dow1124 #494 https://cafe.naver.com/firemap/494 (발행 10:3x, 34분 쉼) · verify OK 1416자·사진 3 · 장부 published 적힘
+- 완료: firemap-write-b 10:4x 회차 10:49 — 12:40 칸 jepivix1127(write 몫) 발행 날 확인만: 야후 11/25 종가로 calc·mkimg 다시(재투자 약 1만 9,500·2만 6,600달러, 기준일 11/25)·12월 분배 미발표 확인·'~죠' 4곳(A115)·관문 다시 통과·재서명 auto 1096b26a → 12:1x write는 발행만 · 22:40 jeonse38_1127은 22:4x 회차

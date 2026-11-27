@@ -4834,3 +4834,4 @@
 2026-11-28 02:28 · firemap-video-producer · CC-1 cafe.md(기간 셋 표·끝날 6개 표·매달·낙폭·세금 한 칸) · toc_compare 우리 목차 1·5장 이름을 실제 챕터 이름으로 맞춤(내용 그대로)
 2026-11-28 02:47 · firemap-video-producer · CC-1 전체 readback 다시(117줄)·걸린 11줄 다시 받기 → 걸림 7(두 귀 같은 오청 5·숫자 오청 2) · 남은 5줄은 말 바꾸기 요청(editor·loop 14:00), 숫자 2줄은 다음 회차 다시 받기 · 이유: 같은 소리를 두 귀가 같게 잘못 들으면 다시 받기로 안 풀림(H-6 교훈)
 2026-11-28 02:47 · firemap-video-producer · 완료: 정기 02:1x CC-1 meta·ChapterAsk 연결·readback·cafe.md · 렌더·업로드 0(장 카드 못함 4·readback 7·review 판정 줄 남음)
+2026-11-28 03:5x · firemap-benchmark-loop · 장르 8판 genre-gap-1128 — 1122 반영 3/4(+일부 1: SQ-1 장 띠 렌더 확인 안 함) · 범위 안 롱폼 탐색 유입 0~5(N-3 620) · 경쟁 mbgl7_PtOSA 같은 코스피 자료 77.7만 vs KOSPI-1 16 → NDX-1 박힌 날짜 첫 줄·끝 '다음 볼 날짜' 시험 · 장 제목 카드 12/36(A116) · 쇼츠 배당 중앙 240→지수 우선 · 배정 youtube-loop·copywriter·motion·PD·editor

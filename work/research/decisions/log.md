@@ -4837,3 +4837,7 @@
 2026-11-28 03:5x · firemap-benchmark-loop · 장르 8판 genre-gap-1128 — 1122 반영 3/4(+일부 1: SQ-1 장 띠 렌더 확인 안 함) · 범위 안 롱폼 탐색 유입 0~5(N-3 620) · 경쟁 mbgl7_PtOSA 같은 코스피 자료 77.7만 vs KOSPI-1 16 → NDX-1 박힌 날짜 첫 줄·끝 '다음 볼 날짜' 시험 · 장 제목 카드 12/36(A116) · 쇼츠 배당 중앙 240→지수 우선 · 배정 youtube-loop·copywriter·motion·PD·editor
 2026-11-28 04:46 · firemap-youtube-loop · CC-1 v1.7 다시 심사 3명(제미나이 8.0·Claude 7.0·레드팀 7.3 = 7.43 통과) · review.md 판정 줄 적음 · 이유: v1.3 심사 뒤 말 11줄 고침·2줄 더함(11/26 '말 더한 판은 다시 심사'), gate가 판정 줄 없음으로 막음
 2026-11-28 04:46 · firemap-youtube-loop · CC-1 말 7줄 고침(받아쓰기 합의오독 5줄 + 심사 결함 2줄, 8장 정리 1→3줄로 끝날 편향 고지 되살림), 숫자 값 0 · 이유: 같은 낱말을 두 귀가 같게 잘못 들어 다시 받기로 안 풀림 / 정리 줄이 계산 안 한 범위까지 넓혀 읽힘
+
+2026-11-28 06:28 · firemap-video-producer · 쇼츠 11/30~12/6 7칸 배정(지수 4·부동산 2·배당 1) + 비축 k1s_bottom 11/30 19:20 예약 VCOVO7ZSnMw · 이유: benchmark-loop ②3 genre-gap-1128(배당 쇼츠 중앙 240 vs 지수 1,259) · 완료: today.md ②3 06:28
+2026-11-28 06:28 · firemap-video-producer · h6s_before(12/1)·h6s_gangnam(12/3) 예약 미룸 · 이유: 부동산 쇼츠는 올리기 전 실거래 다시 받기가 관례인데 data.go.kr HTTP_ERROR 04(3번 시도) — 칸 기한 11/30·12/2 07:20까지 여유
+2026-11-28 06:28 · firemap-video-producer · CC-1 7:18 다시 녹음 안 함 · 이유: lfvoice retake가 script.md v1.7 미서명으로 거부(규칙대로) — editor 서명 뒤 바뀐 줄과 한 번에

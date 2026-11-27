@@ -1,68 +1,9 @@
 {
- "date": "2026-11-27",
+ "date": "2026-11-28",
  "runs": [
   {
    "hour": 6,
-   "ts": "07:51",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "과천 아파트 시세 1년, 평당가와 같은 집 비교",
-    "url": "https://cafe.naver.com/firemap/493"
-   },
-   "note": "07:40 칸 gwacheon1125 발행 날 재확인: 국토부 실거래 2026-06~11 다시 받아 calc 재계산(11월 계약 7→8·전체 2,652→2,653, 핵심 숫자 그대로) · c00·c04·c05 기준일·건수 고침 · auto 재서명 7346cac3 · verify OK 1586/1586자·사진 3/3 · 블로그: 새벽 시간대·오늘 블로그 쉬는 날 · 교차검증은 11/25 작성 회차 것(숫자 변경 없음) · 개선: 없음(확인 창 TimeoutError 났지만 발행 성공)"
-  },
-  {
-   "hour": 9,
-   "ts": "10:35",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "다우지수 비중, 왜 골드만삭스가 엔비디아보다 클까?",
-    "url": "https://cafe.naver.com/firemap/494"
-   },
-   "note": "10:10 칸 dow1124(비축) 발행 날 확인: DIA·SPY 보유(11/24)·야후 30종목·^DJI·^GSPC 다시 받아 숫자 갱신(출처 7곳 다시 엶) · 교차검증 crosscheck(Gemini): 사실 1건 반영('약 5만 19포인트')·확인불가 6(원문은 직접 받음), 말투 6건 중 반영 2·유지 4(같은 문장 3·'오늘 바로 알려드릴게요' 예고 문장 금지 1) · selfcheck 사실 0 · verify OK 1416/1416자·사진 3/3 · 블로그 STOP(정지 중) · 개선: 플레이북에 calc 캐시·D 날짜 함정 한 줄 · audit ① #489 168만 원표 대조 못 함(막힘)"
-  },
-  {
-   "hour": 12,
-   "ts": "12:37",
-   "blog": null,
-   "cafe": {
-    "title": "JEPI 분배금, 변동성 커지면 정말 늘어날까?",
-    "url": "https://cafe.naver.com/firemap/495"
-   },
-   "note": "12:40 칸 jepivix1127 발행(12:3x, 120분 간격 대기 12분) · verify OK 2155/2155자·사진 3/3 · 당일 확인은 write-b 10:4x(야후 11/25 종가 재계산·재서명 auto) · 교차검증 기존 check_gpt/gemini 있음 · 블로그 STOP · audit #489 R-ONE 대조 다시 막힘(원문 0건·키 없음 → tools-wanted) · 경고 D-17 본문 2155자>1500 · 개선: 없음"
-  },
-  {
-   "hour": 15,
-   "ts": "16:24",
-   "blog": null,
-   "cafe": {
-    "title": "나스닥100 종목은 매년 몇 개씩 바뀌었을까?",
-    "url": "https://cafe.naver.com/firemap/496"
-   },
-   "note": "16:10 칸 ndxrecon1127 발행(16:22, 정각 몰림 방지 21분 대기) · verify OK 2016/2016자·사진 3/3 · 발행 날 확인: 나스닥 원문 15곳 200·알자지라 301, 바뀐 것 없음 · 11/28 16:10 TBD-부동산 → forenon1128(올림픽파크포레온 입주 뒤 매매 145건·실거주 2년) 관문 통과 gates_ok 15:50 — 국토부 실거래 원자료·주택법 조문·보도 3곳, crosscheck(Gemini) 사실 0·이해 2차 6명 통과·editgate e1fcb8b2 · PLUS 고배당주는 dupcheck #461로 버림 · 개선: 분양권전매 RTMS API 여전히 응답 없음(tools-wanted), 다음 날 발행 글에 '오늘·어제' 금지(playbook)"
-  },
-  {
-   "hour": 18,
-   "ts": "18:28",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "미국배당다우존스 ETF 네 곳에 같은 날 1억 넣은 결과",
-    "url": "https://cafe.naver.com/firemap/497"
-   },
-   "note": "18:40 칸 divdj1127. 발행 날 확인: 출처 9곳 다시 엶(모두 200), 야후·네이버 4종 재수신 — 11/25 기준 calc 재현 diff 0, 11/27 종가로도 1위 KODEX·꼴찌 SOL 같음(차이 107만), 순자산 11/26 기준으로 c03 고침(TIGER 46,758억·ACE 10,071억). 교차검증 기존 check_gpt/check_self 유지(사실 0). aitell gate 1.3 통과·재서명 auto f730ab57. verify OK 1734/1734자·사진 3/3. 블로그: 쉬는 날·하루 상한 규칙으로 없음. 개선: 발행 날 확인 절차(같은 기준일 재현+최신 종가 순위 대조)를 교본에 적음. 카페 비축 0(기준 2) — backlog 1순위로 올림"
-  },
-  {
-   "hour": 21,
-   "ts": "21:38",
+   "ts": "06:44",
    "blog": {
     "title": null,
     "url": null
@@ -71,17 +12,7 @@
     "title": null,
     "url": null
    },
-   "note": "발행 없음: 이번 시각 카페 칸 없음(22:40 jeonse38_1127은 22:40 회차 몫·관문 통과), 블로그 쉬는 날 · 로그인됨 · 비축 ndxcc1129 자료조사·계산(출처 원문 S1~S5: 야후·네이버·TIGER 공식 표 2·삼성 공식 API·funetf) · 교차검증·verify 해당 없음(조각 전) · 개선: 야후 분배 events가 달을 빠뜨림(486290·494300 2025-03, 441680 2023-09) → 국내 ETF 분배는 운용사 원문 표(TIGER '분배금 지급현황'·삼성 m.samsungfund.com/api/v1/kodex/divid-info.do?id=<상품id>)로 받는 fetch_off.py 틀 만듦"
-  },
-  {
-   "hour": 22,
-   "ts": "22:59",
-   "task": "firemap-write-b",
-   "cafe": {
-    "title": "송도 아파트 전세가율 39개 단지 직접 세어 보니",
-    "url": "https://cafe.naver.com/firemap/498"
-   },
-   "note": "22:40 칸 jeonse38_1127(쇼츠 fg25cKGhAso 짝 글) · 관문 11/26 17:19 통과·편집 해시 일치 · 발행 당일 법령·데이터 안내 다시 열기 200, 국토부 실거래 API 22:42·22:44 HTTP 500으로 재조회 못 함(기준일 11/26 16:47 그대로) · verify OK 2661/2661자·사진 3/3 · 확인 창 처리 시간 초과 경고(발행은 됨) · D-17 본문 2,658자 경고 · 개선: 없음"
+   "note": "발행 없음(06시 칸 없음) · 11/29 12:40 칸 plusdiv1128 묶음 완성 — 출처 원문 2곳(한화·삼성)+2차 2곳(야후·네이버 종가 11/24~27 대조 일치)+소득세법, crosscheck Gemini 대조 6건 중 3건 반영(배당락일·4,000만 가까이·해석 문장), selfcheck 사실 0, 이해 2차 6명 다시 말하기 6/6·권유 0"
   }
  ]
 }

@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 chart API 161510.KS·069500.KS 일별 종가·분배 events(11/28 받음, 네이버페이 증권 종가와 대조)로 2016-12~2026-11 매달 100만원 적립 직접 계산, calc_out.txt",
+ "made_at": "2026-11-28",
+ "by": "research/plusdiv1128/mkimg.py",
+ "out": "img/00.png",
+ "topic": "PLUS 고배당주 10년 적립",
+ "num": "2억 9,005만 · 2억 5,013만 (넣은 돈 1억 2,000만)",
+ "topic_px": 48,
+ "num_px": 34,
+ "follows": "경쟁 3 wisefather1113 표지(PLUS vs 코스피200 숫자 비교 표) + 경쟁 7 stock_nomad 적립식 회차 카드 + hidiv1128 막대 위 큰 숫자"
+}

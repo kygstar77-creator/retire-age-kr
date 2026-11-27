@@ -18,10 +18,10 @@ SRCDOC = SCRIPT + ''.join(open(os.path.join(EP, f), encoding='utf-8').read() for
                           ('cc1_calc_out_1122.txt', 'cc1_windows_out_1122.txt', 'cmp_div_out_1122.txt', 'cmp_px_out_1122.txt', 'research.md'))
 V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
 ALL = [l for s in V['sections'] for l in s['lines']]
-assert len(ALL) == 115, len(ALL)   # v1.3 (11/24 youtube-loop 4줄 더함, editor 3ab1ab0f)
+assert len(ALL) == 117, len(ALL)   # v1.6 (11/27 이해 시험 2줄 더함 88·94, editor 577ce117) · 11/27 18시 PD
 assert abs(V.get('speakingRate', 0) - 1.1) < 1e-9 and V['voice'] == 'ko-KR-Chirp3-HD-Charon'
 SAY = [re.sub(r'^-\s*', '', s).strip() for s in SCRIPT.split('\n') if s.startswith('- ')]
-assert len(SAY) == 115, len(SAY)
+assert len(SAY) == 117, len(SAY)
 HEADS = [re.sub(r'^\[?\d+\.\s*|\]$', '', h).strip() for h in re.findall(r'^## (.+)$', SCRIPT, re.M)]
 assert len(HEADS) == 9 and HEADS[1].startswith('이 상품은') and HEADS[8] == '끝', HEADS
 HEADS[8] = '정리'
@@ -123,7 +123,8 @@ scenes = []
 # 0 여는 말 (voice 0~5) — 답 숫자는 판 cc1_open2 하나에만
 scenes += [broll('PASSBOOK2', [0], '얼마가 남았을까'), board('cc1_open2', [1, 2]), broll('LEDGER', [3], '분배금만 놓고 보면'), broll('FOG', [4, 5], '끝을 어디로 잡느냐')]
 # 1 이 상품은 어떻게 분배금을 만드나 (6~14)
-scenes += [ask(1, [6]), broll('ORCHARD', [7, 8], '살 권리를 미리 팔고'), board('cc1_cap', [9, 10]), broll('MIXER', [11], '파는 양을 조절해요'), board('cc1_two', [12, 13, 14])]
+# 11/27 18시 PD: visual 2차 ORCHARD 8439245는 6.8초라 [7,8] 9.1초가 모자람 → 8은 LEDGER
+scenes += [ask(1, [6]), broll('ORCHARD', [7], '살 권리를 미리 팔고'), broll('LEDGER', [8], '배당에 더해져서'), board('cc1_cap', [9, 10]), broll('MIXER', [11], '파는 양을 조절해요'), board('cc1_two', [12, 13, 14])]
 # 2 최근 1년, 같은 날 1억 (15~25)
 scenes += [ask(2, [15]), broll('CALENDAR', [16], '한 달도 빠짐없이'), board('cc1_acct_cc', [17, 18]), board('cc1_acct_dj', [19, 20]), board('cc1_gap', [21]),
            broll('DRIP', [22, 23], '분배율은 높았는데'), board('cc1_yield', [24, 25])]
@@ -139,15 +140,15 @@ scenes += [ask(5, [54]), board('cc1_month12', [55, 56, 57, 58]), broll('LEDGER',
 # 6 세금 한 장 (70~85)
 scenes += [ask(6, [70]), board('cc1_tax', [71, 72, 73]), broll('PASSBOOK2', [74, 75], '분배금 전부는 아니에요'), broll('LEDGER', [76, 77], '이자와 배당을 합쳐'),
            board('cc1_ruler', [78, 79, 80]), broll('DRAWER', [81, 82], '다른 배당이 있으면'), broll('PASSBOOK2', [83, 84, 85], '계좌마다 다른 셈')]
-# 7 함정 (86~104)
-scenes += [ask(7, [86]), broll('FOG', [87], '어디서 자르느냐'), mo('ends', [88, 89, 90, 91, 92]), broll('FRAME', [93], '한 장면일 뿐'),
-           board('cc1_chart2', [94, 95, 96, 97]), broll('LEDGER', [98, 99], '한쪽 가격으로만'), broll('MIXER', [100, 101], '바뀔 수 있어요'), board('cc1_fee', [102, 103, 104])]
-# 8 정리 (105~114) — 끝 줄 앞 숨 쉴 실사 WINDOW, 끝 그림 위 END_PAD
+# 7 함정 (86~106) — 11/27 18시 PD: v1.6 새 88(넣는 날·끝날 같이 옮김)은 FOG에, 새 94(일반형 앞선 두 번=최근)는 EndFlip 'cc 4·일반 2' 찍힌 뒤에 — beats 0~3=89~92 그대로라 cc1_ends.json 손 안 댐
+scenes += [ask(7, [86]), broll('FOG', [87, 88], '어디서 자르느냐'), mo('ends', [89, 90, 91, 92, 93, 94]), broll('FRAME', [95], '한 장면일 뿐'),
+           board('cc1_chart2', [96, 97, 98, 99]), broll('LEDGER', [100, 101], '한쪽 가격으로만'), broll('MIXER', [102, 103], '바뀔 수 있어요'), board('cc1_fee', [104, 105, 106])]
+# 8 정리 (107~116) — 끝 줄 앞 숨 쉴 실사 WINDOW, 끝 그림 위 END_PAD
 # 11/27 02시 PD: 185행 말이 길어져 정리 판 20.5초 → 108(일반 계좌) 줄을 실사로 끊음(판 20초 규칙)
-scenes += [ask(8, [105]), board('cc1_summary', [106, 107]), broll('PASSBOOK2', [108], '일반 계좌라면'), board('cc1_summary', [109, 110], z=(1.04, 1.08)), broll('JAR', [111], '받는 돈과 남는 돈'), broll('LEDGER', [112, 113], '직접 세어 보세요')]
+scenes += [ask(8, [107]), board('cc1_summary', [108, 109]), broll('PASSBOOK2', [110], '일반 계좌라면'), board('cc1_summary', [111, 112], z=(1.04, 1.08)), broll('JAR', [113], '받는 돈과 남는 돈'), broll('LEDGER', [114, 115], '직접 세어 보세요')]
 END_PIC = 'bg/cc1/stock/window_last.jpg'
 pc = cid_of('WINDOW')
-scenes += [S('pic', [114], pic=END_PIC, license=f"Pexels {pc} 무료({CR[pc]['author']})" if pc in CR else '', baked=True, zoom=[1.0, 1.10], cx=50, cy=50)]
+scenes += [S('pic', [116], pic=END_PIC, license=f"Pexels {pc} 무료({CR[pc]['author']})" if pc in CR else '', baked=True, zoom=[1.0, 1.10], cx=50, cy=50)]
 if pc not in CR: MISSING.append('실사 WINDOW(끝 그림 — visual)')
 scenes[-1]['frames'] += END_PAD
 scenes[-1]['lines'].append({'text': '', 'audio': None, 'frames': END_PAD, 'cap': None, 'i': None})

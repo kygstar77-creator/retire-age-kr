@@ -13,8 +13,8 @@
    ],
    "frames": 160,
    "data": {
-    "src": "bg/cc1/stock/6197178.mp4",
-    "license": "Pexels 6197178 무료(Please donation)",
+    "src": "bg/cc1/stock/8731583.mp4",
+    "license": "Pexels 8731583 무료(Mikhail Nilov)",
     "say": "얼마가 남았을까",
     "side": "left",
     "from": 0
@@ -74,9 +74,9 @@
    "kind": "broll",
    "lines": [
     {
-     "text": "다만 이 숫자는 커버드콜 가격이 1년 중 가장 낮던 날에 끊은 거예요.",
-     "audio": "audio/cc-1/f9b2d63c7d3a3fde.wav",
-     "frames": 124,
+     "text": "다만 끝날로 잡은 그날이, 마침 커버드콜 가격이 1년 중 가장 낮던 날이었어요.",
+     "audio": "audio/cc-1/707eadcc9c972e7b.wav",
+     "frames": 142,
      "cap": null
     },
     {
@@ -86,10 +86,10 @@
      "cap": null
     }
    ],
-   "frames": 238,
+   "frames": 256,
    "data": {
-    "src": "bg/cc1/stock/34942921.mp4",
-    "license": "Pexels 34942921 무료(Talha Uğuz)",
+    "src": "bg/cc1/stock/35830059.mp4",
+    "license": "Pexels 35830059 무료(Paper Airman)",
     "say": "끝을 어디로 잡느냐",
     "side": "left",
     "from": 0
@@ -119,7 +119,20 @@
      "audio": "audio/cc-1/4876d4f777acdc2b.wav",
      "frames": 167,
      "cap": null
-    },
+    }
+   ],
+   "frames": 167,
+   "data": {
+    "src": "bg/cc1/stock/8439245.mp4",
+    "license": "Pexels 8439245 무료(Kampus Production)",
+    "say": "살 권리를 미리 팔고",
+    "side": "left",
+    "from": 0
+   }
+  },
+  {
+   "kind": "broll",
+   "lines": [
     {
      "text": "그렇게 받은 돈이 배당에 더해져서 분배금이 됩니다.",
      "audio": "audio/cc-1/19cc167a8d9e1332.wav",
@@ -127,13 +140,13 @@
      "cap": null
     }
    ],
-   "frames": 273,
+   "frames": 106,
    "data": {
-    "src": "bg/cc1/stock/19666849.mp4",
-    "license": "Pexels 19666849 무료(Everett Bumstead)",
-    "say": "살 권리를 미리 팔고",
+    "src": "bg/cc1/stock/5466768.mp4",
+    "license": "Pexels 5466768 무료(olia danilevich)",
+    "say": "배당에 더해져서",
     "side": "left",
-    "from": 0
+    "from": 90
    }
   },
   {
@@ -179,11 +192,11 @@
    ],
    "frames": 146,
    "data": {
-    "src": "bg/cc1/stock/19666849.mp4",
-    "license": "Pexels 19666849 무료(Everett Bumstead)",
+    "src": "bg/cc1/stock/12213088.mp4",
+    "license": "Pexels 12213088 무료(Sasha Poberailo)",
     "say": "파는 양을 조절해요",
     "side": "left",
-    "from": 90
+    "from": 0
    }
   },
   {
@@ -363,11 +376,11 @@
    ],
    "frames": 194,
    "data": {
-    "src": "bg/cc1/stock/5466768.mp4",
-    "license": "Pexels 5466768 무료(olia danilevich)",
+    "src": "bg/cc1/stock/4571346.mp4",
+    "license": "Pexels 4571346 무료(ArtHouse Studio)",
     "say": "분배율은 높았는데",
     "side": "left",
-    "from": 90
+    "from": 0
    }
   },
   {
@@ -485,11 +498,11 @@
    ],
    "frames": 147,
    "data": {
-    "src": "bg/cc1/stock/6550666.mp4",
-    "license": "Pexels 6550666 무료(Tima Miroshnichenko)",
+    "src": "bg/cc1/stock/8456204.mp4",
+    "license": "Pexels 8456204 무료(Mikhail Nilov)",
     "say": "상장한 날부터",
     "side": "left",
-    "from": 90
+    "from": 0
    }
   },
   {
@@ -545,19 +558,19 @@
    "kind": "broll",
    "lines": [
     {
-     "text": "분배금이 들어올 때마다 다시 사들였다면 1억 5천만원에 조금 못 미쳤고요.",
-     "audio": "audio/cc-1/0e9fbbd7d600d2c9.wav",
-     "frames": 134,
+     "text": "분배금을 받을 때마다 다시 사들였어도 거의 같아서, 1억 5천만원에 조금 못 미쳤고요.",
+     "audio": "audio/cc-1/d282a99e8dcf7ba5.wav",
+     "frames": 159,
      "cap": null
     }
    ],
-   "frames": 134,
+   "frames": 159,
    "data": {
-    "src": "bg/cc1/stock/5466768.mp4",
-    "license": "Pexels 5466768 무료(olia danilevich)",
+    "src": "bg/cc1/stock/6963484.mp4",
+    "license": "Pexels 6963484 무료(Mikhail Nilov)",
     "say": "다시 사들였다면",
     "side": "left",
-    "from": 180
+    "from": 0
    }
   },
   {
@@ -699,8 +712,8 @@
    ],
    "frames": 291,
    "data": {
-    "src": "bg/cc1/stock/8661806.mp4",
-    "license": "Pexels 8661806 무료(Adrian Frentescu)",
+    "src": "bg/cc1/stock/7955150.mp4",
+    "license": "Pexels 7955150 무료(Ron Lach)",
     "say": "덜 빠진다는 말",
     "side": "left",
     "from": 0
@@ -741,13 +754,13 @@
      "cap": null
     },
     {
-     "text": "가격만 보면 커버드콜이 19% 넘게, 일반형은 14%쯤 빠졌고요.",
-     "audio": "audio/cc-1/ef89b7568f317642.wav",
-     "frames": 143,
+     "text": "가격만 보면 커버드콜 쪽이 더 깊게 빠졌고요.",
+     "audio": "audio/cc-1/e1029c66bbd586b4.wav",
+     "frames": 89,
      "cap": null
     }
    ],
-   "frames": 337,
+   "frames": 283,
    "data": {
     "pic": "bg/cc1/board/cc1_dd_long.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -780,11 +793,11 @@
    ],
    "frames": 201,
    "data": {
-    "src": "bg/cc1/stock/8661806.mp4",
-    "license": "Pexels 8661806 무료(Adrian Frentescu)",
+    "src": "bg/cc1/stock/6552966.mp4",
+    "license": "Pexels 6552966 무료(gusat silviu)",
     "say": "원금이 녹을까",
     "side": "left",
-    "from": 90
+    "from": 0
    }
   },
   {
@@ -862,7 +875,7 @@
     "license": "Pexels 5466768 무료(olia danilevich)",
     "say": "고르게 들어온 돈",
     "side": "left",
-    "from": 270
+    "from": 180
    }
   },
   {
@@ -908,8 +921,8 @@
    ],
    "frames": 181,
    "data": {
-    "src": "bg/cc1/stock/6197178.mp4",
-    "license": "Pexels 6197178 무료(Please donation)",
+    "src": "bg/cc1/stock/8731583.mp4",
+    "license": "Pexels 8731583 무료(Mikhail Nilov)",
     "say": "생활비로 쓰신다면",
     "side": "left",
     "from": 90
@@ -1079,11 +1092,11 @@
    ],
    "frames": 275,
    "data": {
-    "src": "bg/cc1/stock/6197178.mp4",
-    "license": "Pexels 6197178 무료(Please donation)",
+    "src": "bg/cc1/stock/8731583.mp4",
+    "license": "Pexels 8731583 무료(Mikhail Nilov)",
     "say": "분배금 전부는 아니에요",
     "side": "left",
-    "from": 180
+    "from": 166
    }
   },
   {
@@ -1108,7 +1121,7 @@
     "license": "Pexels 5466768 무료(olia danilevich)",
     "say": "이자와 배당을 합쳐",
     "side": "left",
-    "from": 360
+    "from": 270
    }
   },
   {
@@ -1170,7 +1183,7 @@
     "license": "Pexels 6550666 무료(Tima Miroshnichenko)",
     "say": "다른 배당이 있으면",
     "side": "left",
-    "from": 180
+    "from": 90
    }
   },
   {
@@ -1197,11 +1210,11 @@
    ],
    "frames": 431,
    "data": {
-    "src": "bg/cc1/stock/6197178.mp4",
-    "license": "Pexels 6197178 무료(Please donation)",
+    "src": "bg/cc1/stock/8731583.mp4",
+    "license": "Pexels 8731583 무료(Mikhail Nilov)",
     "say": "계좌마다 다른 셈",
     "side": "left",
-    "from": 270
+    "from": 9
    }
   },
   {
@@ -1228,12 +1241,18 @@
      "audio": "audio/cc-1/4fdb716167ec4c0d.wav",
      "frames": 101,
      "cap": null
+    },
+    {
+     "text": "이번엔 넣는 날과 끝날을 같이 옮겨 가며, 늘 1년씩 세어 봤어요.",
+     "audio": "audio/cc-1/f408f3cd9534566d.wav",
+     "frames": 131,
+     "cap": null
     }
    ],
-   "frames": 101,
+   "frames": 232,
    "data": {
-    "src": "bg/cc1/stock/34942921.mp4",
-    "license": "Pexels 34942921 무료(Talha Uğuz)",
+    "src": "bg/cc1/stock/35830059.mp4",
+    "license": "Pexels 35830059 무료(Paper Airman)",
     "say": "어디서 자르느냐",
     "side": "left",
     "from": 90
@@ -1255,9 +1274,9 @@
      "cap": null
     },
     {
-     "text": "같은 해 6월에 끝냈다면 둘 다 크게 올랐지만, 일반형이 9%포인트 정도 앞섰고요.",
-     "audio": "audio/cc-1/bccecdfe02510278.wav",
-     "frames": 141,
+     "text": "2026년 6월에 끝냈다면 둘 다 크게 올랐지만, 일반형이 9%포인트 정도 앞섰고요.",
+     "audio": "audio/cc-1/7ad42c4b0f371614.wav",
+     "frames": 159,
      "cap": null
     },
     {
@@ -1267,13 +1286,19 @@
      "cap": null
     },
     {
-     "text": "끝날을 여섯 번 바꿔 보니, 커버드콜이 앞선 때가 더 많았어요.",
-     "audio": "audio/cc-1/58e4481786d83b0d.wav",
-     "frames": 105,
+     "text": "끝날을 여섯 번 바꿔 보니, 커버드콜이 앞선 때가 네 번이었어요.",
+     "audio": "audio/cc-1/055d78bc5e4f94c0.wav",
+     "frames": 116,
+     "cap": null
+    },
+    {
+     "text": "일반형이 앞선 두 번은, 가장 최근에 끝낸 두 번이었고요.",
+     "audio": "audio/cc-1/866f424f0880fee8.wav",
+     "frames": 104,
      "cap": null
     }
    ],
-   "frames": 657,
+   "frames": 790,
    "data": {
     "part": "ends",
     "p": {
@@ -1328,7 +1353,7 @@
      ],
      "unit": "%",
      "max": 48,
-     "end": 657
+     "end": 790
     },
     "title": "기간을 어디서 자르느냐 · 1년 총수익",
     "sub": null,
@@ -1348,11 +1373,11 @@
    ],
    "frames": 203,
    "data": {
-    "src": "bg/cc1/stock/34942921.mp4",
-    "license": "Pexels 34942921 무료(Talha Uğuz)",
+    "src": "bg/cc1/stock/37224949.mp4",
+    "license": "Pexels 37224949 무료(Jakub Zerdzicki)",
     "say": "한 장면일 뿐",
     "side": "left",
-    "from": 180
+    "from": 0
    }
   },
   {
@@ -1420,7 +1445,7 @@
     "license": "Pexels 5466768 무료(olia danilevich)",
     "say": "한쪽 가격으로만",
     "side": "left",
-    "from": 450
+    "from": 360
    }
   },
   {
@@ -1441,11 +1466,11 @@
    ],
    "frames": 294,
    "data": {
-    "src": "bg/cc1/stock/19666849.mp4",
-    "license": "Pexels 19666849 무료(Everett Bumstead)",
+    "src": "bg/cc1/stock/12213088.mp4",
+    "license": "Pexels 12213088 무료(Sasha Poberailo)",
     "say": "바뀔 수 있어요",
     "side": "left",
-    "from": 180
+    "from": 0
    }
   },
   {
@@ -1511,13 +1536,13 @@
      "cap": null
     },
     {
-     "text": "이번에 센 두 기간 모두 남은 돈은 일반형이 많았지만, 둘 다 커버드콜이 최근 1년 중 가장 낮던 날에 끝난 값이에요.",
-     "audio": "audio/cc-1/363158371ce60493.wav",
-     "frames": 213,
+     "text": "이번에 센 두 기간 모두 남은 돈은 일반형이 많았지만, 끝날을 앞당기면 커버드콜이 앞선 때도 많았어요.",
+     "audio": "audio/cc-1/d4d8ec05c7f78c0c.wav",
+     "frames": 172,
      "cap": null
     }
    ],
-   "frames": 306,
+   "frames": 265,
    "data": {
     "pic": "bg/cc1/board/cc1_summary.png",
     "license": "파이어맵 자체 제작 판(출처는 판 안)",
@@ -1544,11 +1569,11 @@
    ],
    "frames": 119,
    "data": {
-    "src": "bg/cc1/stock/6197178.mp4",
-    "license": "Pexels 6197178 무료(Please donation)",
+    "src": "bg/cc1/stock/8731583.mp4",
+    "license": "Pexels 8731583 무료(Mikhail Nilov)",
     "say": "일반 계좌라면",
     "side": "left",
-    "from": 360
+    "from": 322
    }
   },
   {
@@ -1594,8 +1619,8 @@
    ],
    "frames": 100,
    "data": {
-    "src": "bg/cc1/stock/6374411.mp4",
-    "license": "Pexels 6374411 무료(KATRIN  BOLOVTSOVA)",
+    "src": "bg/cc1/stock/34263260.mp4",
+    "license": "Pexels 34263260 무료(Just For Music And Film)",
     "say": "받는 돈과 남는 돈",
     "side": "left",
     "from": 0
@@ -1645,7 +1670,7 @@
    "frames": 717,
    "data": {
     "pic": "bg/cc1/stock/window_last.jpg",
-    "license": "Pexels 6374411 무료(KATRIN  BOLOVTSOVA)",
+    "license": "Pexels 30763459 무료(Frank Litschel)",
     "baked": true,
     "zoom": [
      1.0,
@@ -1693,14 +1718,14 @@
    }
   ],
   "starts": [
-   790,
-   1992,
-   3237,
-   5049,
-   6641,
-   8565,
-   10689,
-   13129
+   808,
+   2010,
+   3255,
+   5092,
+   6630,
+   8554,
+   10678,
+   13382
   ],
   "total": 8,
   "topic": null,
@@ -1708,7 +1733,7 @@
   "dark": [
    [
     0,
-    16020
+    16232
    ]
   ],
   "top": 3,

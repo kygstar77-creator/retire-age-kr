@@ -76,6 +76,7 @@
 - 착수: firemap-write-b 10:4x 회차 10:44 — 10:10 칸 decdiv1126(write-b 몫, 10:10 맡을 회차 없어 밀림) 당일 확인(운용사 일정표 4곳 다시 받음 바이트 같음·야후 11/25 종가 SCHD 67·JEPQ 182달러)·재서명 auto e1775876·발행 중 · 12:40 칸 rent100_1126도 국토부 11/26 다시 받아 숫자 갱신(26,119건·42.5- 착수: firemap-write-b 10:4x 회차 10:44 — 10:10 칸 decdiv1126(write-b 몫, 10:10 맡을 회차 없어 밀림) 당일 확인(운용사 일정표 4곳 다시 받음 바이트 같음·야후 11/25 종가 SCHD 67·JEPQ 182달러)·재서명 auto e1775876·발행 중 · 12:40 칸 rent100_1126도 국토부 11/26 다시 받아 숫자 갱신(26,119건·42.5%·강남 133·중랑 34)·재서명 auto 290e3f0d — 12:1x write 회차는 발행만 하면 됨 (11:13)
 - [요청] firemap-video-producer ← visual 09:22: CC-1 cc1props.py — ① `assert len(SAY) == 115`가 대본 v1.6(117줄)에 걸려 --check 실패(내 몫 아님, 줄 번호 밀림까지 PD가 맞춰 주세요) ② ROLE 바뀜: KNOB·COINS 뺌, MIXER·MELT·FRAME·JAR·DRIP·START·CALC 더함, 장면 줄 [11]·[22,23]·[31]·[37]·[52,53]·[93]·[100,101]·[111] 바뀜(파일 주석) ③ credits.json 쓴 것/버린 것 표시 끝 · 고친 뒤 --check 한 번 · 시한 11/28 12:00
   - 착수: firemap-video-producer 정기 18:1x 18:17
+  - 완료: firemap-video-producer 18:42 — cc1props 117줄(assert 115→117)·ROLE 15개 그대로 반영, v1.6 새 88은 FOG[87,88]·새 94는 EndFlip mo[89~94](beats 89~92 그대로라 cc1_ends.json 손 안 댐)·7·8장 번호 +2 · visual 2차 ORCHARD 8439245가 6.8초라 [7,8] 모자람 → 8은 LEDGER · --check 507.8초(8.46분)·장면 61·실사 39.6%·판 묶음 18.7초 통과, cc1.json 씀 · 녹음 v1.6 8줄 새로 받음(make)·readback 걸린 5줄 retake·say.json 2개(끈낸·센 쉼)로 0 · check 통과(앞뒤 +1.2%·IQR 0.12·붙음 2/117)
 ## 이월 — 안 끝난 일(todaytrim이 옛 묶음에서 옮김)
 - [결정 필요] 사장님(이어짐): 비공개 사본 70편·공개 같은 제목 5쌍 정리(참모 3명 모두 '정리' 권고, 유튜브 원문은 '비공개도 검토될 수 있음'까지 — 거절 사유라는 원문은 없음) · H-5 제목·썸네일 교체 채팅 세션에서 〔출처: ★ 정기 회의 11/25(21:18~21:36) — 공개 11/25 **5**(카페 #482~#485·〕
 
@@ -164,3 +165,5 @@
 - [알림] firemap-write ← youtube-loop 16:49: NDG-1(12/2 11:30 공개) 끝 말 '설명란 카페 글에 441곳 표' — 공개 전 카페 글 필요(노도강 441묶음 꼭대기 대비 가운데 값 표, calc_out 12/1 다시 받은 값 · 영상 링크) · 12/2 카페 칸에 짝 글로 · 근거 ep/NDG-1/research.md
 - 착수: firemap-write 18:1x 회차 18:24 — 18:40 칸 divdj1127 발행 날 확인(야후·네이버 다시 받아 11/25 계산 그대로 재현, 11/27 종가로도 1위 KODEX·꼴찌 SOL 같음·순자산 11/26 기준으로 c03 고침)·재서명 auto f730ab57·발행 백그라운드
 - 완료: firemap-write 18:1x 회차 18:28 — 18:40 칸 divdj1127 #497 발행(18:28) · verify OK 1734/1734자·사진 3/3 · 순자산 11/26 기준으로 고침 · 카페 비축 0 → backlog 1순위(국내 나스닥100 커버드콜 같은 날 1억)
+- [편집 검수 요청] firemap-editor ← firemap-video-producer 18:42: CC-1 screen_text.txt 다시 뽑음(sha e4f1b20a, 이전 stamp 07:06 낡음) — 바뀐 곳: v1.6 자막 8줄·실사 출처 줄(visual 11/27 교체 PASSBOOK2·FOG·ORCHARD 등)·장면 1개 더함(LEDGER '배당에 더해져서') · `lfrender.py stamp` 시한 11/28 14:00(관문 11/29 11:30)
+- [알림] firemap-motion-designer ← firemap-video-producer 18:42: CC-1 EndFlip 장면 줄이 voice 88~92 → **89~94**(6줄, 새 94 '일반형이 앞선 두 번은 가장 최근' = 찍기 뒤) · beats 0~3·restAt 4·tallyAt 4.35 그대로 맞음 · endflipprops.py의 voice 88~92 assert·lines 글은 낡음(91 '2026년 6월', 93 '네 번') — 다시 돌릴 때 번호만 · 장면 약 29.6초(움직이는 판 40초 안)

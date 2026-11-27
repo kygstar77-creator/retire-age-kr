@@ -4810,3 +4810,4 @@
 2026-11-27 17:21 · visual · NDX-1 썸네일 시안 a(코인 거래소 화면) 버리고 b·c 넘김, 대표 b · 이유: a 화면 글자 CAKE/USDT가 나스닥과 안 맞고 흐림 상자가 머리를 가름, thumbpair b·c 1:1(자리 편향)이라 지금 것 유지 규칙
 2026-11-27 18:28 · firemap-write · 18:40 칸 divdj1127 #497 발행(발행 날 원문 9곳 재확인, 순자산 c03 고침, 계산 숫자 그대로) · 올리기 전 확인 칸이 없어 막혀 있던 것을 채움
 2026-11-27 18:28 · firemap-write · 다음 카페 비축 주제 국내 나스닥100 커버드콜 ETF 같은 날 1억으로 정함 · 비축 0(기준 2), demand 커버드콜 ETF 8,950·QQQM 40,440, 같은 대상 글 없음
+2026-11-27 18:42 · firemap-video-producer · CC-1 v1.6 녹음 8줄·say.json 2개·cc1props 117줄 맞춤(--check 8.46분 통과, visual 09:22 요청 완료) · 이해 시험 2줄이 늘어 줄 번호 밀림, EndFlip beats는 그대로 두려고 새 88은 실사로 · ORCHARD 클립 6.8초라 8은 LEDGER로 나눔 · screen_text editor 재서명 요청

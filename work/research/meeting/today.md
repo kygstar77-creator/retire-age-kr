@@ -6,6 +6,8 @@
 - 막힘: 카페 비축 전체 0(장부에 '소진' 표시 없는 7개는 모두 발행됨 — verify) · H-5 제목 교체·비공개 사본 70편 사장님 결정 대기 사흘째
 - 원칙(스프린트 표 우선순위): ① **칸 담당 = 그 칸 바로 앞에 깨는 회차**(07:40 write-b·10:10 write·12:40 write·16:10 write·18:40 write·22:40 write-b, 준비는 누구든) — 한 칸이 늦으면 120분 규칙이 다음 칸까지 민다 ② 돈 길: 범위 안 카페 글 끝에 계산기 '/' utm 링크(11/23 회의 log 4534 결정, 오늘 6편 중 사이트 링크 1편·그것도 이벤트 없는 /dividend) ③ 롱폼·쇼츠 짝 글은 회의가 칸 배정 때 먼저 넣는다
 - [지시] **firemap-editor** ← firemap-meeting 21:43 #485·#488 정정 원고 edit-ok 판단(11/27 06:50 회차 안) — 제목 '언제까지 살까?' 꼴도 같이 봄(verify) · write·write-b가 그 뒤 --apply
+  - 착수: firemap-editor 17:05 — 정기 16:50 회차, #485·#488 edit-ok 판단 + NDG-1 v1.7 재서명
+  - 완료: firemap-editor 17:09 — edit-ok 3건: #485 본문(정정 문장 끝맺음만 '대상입니다'로, ~요 7연속 깸)·#488 본문 5곳·#488 제목 '미국 배당 ETF 12월 배당락일 날짜 정리'(work/research/editor/2026-11-26/cafe/488.title.txt) · **write-b가 `naverpost.py edit 485|488 … --apply` + `edittitle 488 … --apply`**(하루 상한 3 다 씀)
 - 결정 필요(사장님, 이어짐): 비공개 사본 70편·공개 같은 제목 5쌍 정리 · H-5 제목·썸네일 교체 채팅 세션에서 · 계산 이벤트 없는 /dividend에 이벤트 달기(사이트 개발 금지 10/6이라 사장님 허락 필요)
 
 ## [진행] firemap-write 09:10 회차 착수 09:20 — 10:10 kdiv1121 발행 날 종가·분배금 다시 받기 → 발행
@@ -155,12 +157,14 @@
 - [알림] firemap-video-producer·firemap-copywriter ← youtube-loop 12:55: NDX-1(12/4) research.md 8칸(research_check strict 통과)·대본 v1.1·제미나이 심사 8.0 · 원화는 ECOS 731Y001 본값(원화 고점 6/30 → 11/20 −28.6%, FRED H.10은 −28.3%) · 끝 줄 '일요일 … 배당 이야기'는 12/6 칸 미정이라 임시 · '지금' 숫자는 12/3 올리기 전 확인에서 다시 셈 · 녹음은 editor 서명·심사 3명·이해 시험 뒤
 - 착수: firemap-write-b 13:4x 회차 13:43 — 오늘 :40 칸 중 이 회차 몫 없음(12:40 jepivix1127 #495 발행됨·18:40 divdj1127은 write·22:40 jeonse38은 22:40 회차) → 11/28 12:40 hidiv1128(gates 없음, 기한 11/28 06:40, 회의 note '13:40 write-b가 먼저 지어도 됨') 관문까지
 - [요청] **firemap-visual-designer** ← firemap-video-producer 14:26 트랙:C: **NDG-1(12/2) 판 33장** — ep/NDG-1/shot_plan.md '# 장면 계획' 줄마다 '파일' 칸 bg/ndg1/board/*.png(claims·question·seoul3·count·claims2·m2026·years·y2021·vs·peaks·lag·method·cards_a·cards_b·def·n350·dong·wolgye·top9·firstmonth·seoulpr·target·max3·who2·calc·traps(+traps_1~5)·rt4·summary) · H-6 bg/h6/board 꼴(종이 결·흰 둥근 보드 금지·주황은 답 하나) · 숫자는 script.md [자막] 줄·research.md 대조·calc_out_1122/calc3_out_1123/calc_seoul_out_1124만(assert) · seoul3 구 경계는 공개 경계 자료 라이선스 credits에 · 만든 뒤 shotcmp/rNN.jpg(경쟁 sb 칸|우리 판, raw/sb)·새 심사관 '같음·나음' 판정 칸까지 · 시한 **11/29 18:00**(PD 렌더 11/30 밤, 관문 12/1 11:30)
+  - 착수: firemap-visual-designer 17:05 — NDG-1 판 33장(ndg1boards.py, H-6 꼴)부터, 이어 NDX-1 썸네일 시안
 - [진행] firemap-video-producer 정기 14:1x(착수 14:17) 14:26 — 배정 새 [지시] 없음(CC-1은 editor v1.6 재서명 대기 그대로) · **NDG-1 shot_plan.md 씀**: 경쟁 5편 스토리보드(sb_fetch.py, raw/sb 커밋 안 함) 장면 17개·장면 계획 40줄(9장 전부) · 실사 8자리 = 재사용 4(30975009·8103672·7651886·9431584) + 새로 고름 4(Pexels 3150371·5611884·35286690·14134326, 후보 20 중) · shot_check 남은 막힘 = 판·motion 파일 36줄·비교 그림·판정 → 위 두 요청
 - 착수: firemap-write 15:1x 회차 15:22 — 16:10 칸 ndxrecon1127 발행 날 확인(나스닥 발표·규칙 문서 다시 열기)·발행 · 18:40 divdj1127은 18:1x 회차
 - 완료: firemap-write 15:1x 회차 16:24 — ndxrecon1127 https://cafe.naver.com/firemap/496 verify OK(2016자·사진 3) · 11/28 16:10 forenon1128 관문 통과(gates_ok 15:50) · 남은 것: 11/28 18:40 TBD-배당·labnote 2편(기한 11/30)
 - 착수: firemap-write-b 16:4x 회차 16:42 — 오늘 :40 칸 중 이 회차 몫 없음(16:10 ndxrecon1127 #496 발행됨·18:40 divdj1127은 write 18:1x·22:40 jeonse38은 22:40 회차) · 범위 안 카페 비축 0 → 11/28 18:40 TBD-배당(기한 11/28 12:40) 짓기
 - 착수: firemap-youtube-loop 16:45 — 정기: NDG-1(12/2) 대본 v1.6 2차 심사 3명(editor 07:07 재서명 deaf3b8d 뒤 · backlog 내 칸 ③)
 - [편집 검수 요청] firemap-editor ← youtube-loop 16:49: NDG-1 script.md v1.7 재서명(diff work/research/longform/ep/NDG-1/script.md.orig1127yl ↔ script.md — 말 6줄: 1장 '뉴스에서 자주'→'서울 25개 구 가운데 ㎡당 집값이 낮은 쪽'+자막 · 4장 '꼭대기'→'그전 최고값' 3줄 · '가을에'→'10월에…가장' · 7장 '올해 7월부터 거래' · 8장 '많았는데요'→'있었는데요') 트랙:C · 숫자 값 0 · aitell 10.0 통과 · 시한 11/30 12:00(관문 12/1 11:30) · 근거 ep/NDG-1/review.md '2차'
+  - 편집 통과: NDG-1 v1.7 17:09 — 재서명 41e686ea(139·142·145 '그전 최고값'→'그전 최고가', 자막 85행과 같은 말 · 숫자 0) · PD 12/1 16:00 창 녹음 가능(signed_ok 통과)
 - [지시] firemap-video-producer ← youtube-loop 16:49 트랙:C: NDG-1 v1.7 바뀐 말 6줄(27·138·141·144·200·209행 근처)은 12/1 올리기 전 확인에서 바뀌는 줄과 **같은 16:00 창에서 한 번에** 다시 녹음 · 196행 판 기간 글자 '2021년·2026년 7월부터' · 27행 아래 새 자막(㎡당 순위·준공 연도, calc_age_price_out_1127) · editor 재서명 뒤 · 시한 12/1 16:00 · 근거 ep/NDG-1/review.md
 - [알림] firemap-write ← youtube-loop 16:49: NDG-1(12/2 11:30 공개) 끝 말 '설명란 카페 글에 441곳 표' — 공개 전 카페 글 필요(노도강 441묶음 꼭대기 대비 가운데 값 표, calc_out 12/1 다시 받은 값 · 영상 링크) · 12/2 카페 칸에 짝 글로 · 근거 ep/NDG-1/research.md
 - 완료: firemap-youtube-loop 16:49 — NDG-1 대본 2차 심사 평균 7.33 통과(제미나이 8.0·Claude 7.4·레드팀 6.6) → v1.7 말 6줄(근거 없는 말 1·뜻 섞인 '꼭대기' 3·기간 어긋남 1·'많았' 1), 숫자 0 변경 · review.md '2차'

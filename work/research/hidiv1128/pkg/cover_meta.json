@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 chart API VYM·HDV·SPYD 일별 종가·배당 events(11/27 받음)로 2016-11-25~2026-11-25 총수익 직접 계산, calc_out.txt",
+ "made_at": "2026-11-27",
+ "by": "research/hidiv1128/mkimg.py",
+ "out": "img/00.png",
+ "topic": "고배당 ETF 3종 10년",
+ "num": "2억 8,766만 · 2억 7,158만 · 2억 2,289만 (배당률 2.32·3.36·4.16%)",
+ "topic_px": 50,
+ "num_px": 30,
+ "follows": "경쟁 4 stockstudy999 표지(상품 비교 표·숫자) + 경쟁 1 royal23- 표지(VYM·HDV 이름+물음) + divdj1127 막대 위 큰 숫자"
+}

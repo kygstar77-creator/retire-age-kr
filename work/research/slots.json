@@ -5154,9 +5154,9 @@
    "kind": "cafe",
    "item": "hidiv1128",
    "owner": "firemap-write",
-   "gates_ok": null,
+   "gates_ok": "2026-11-27 14:02",
    "published": null,
-   "note": "firemap-write 2026-11-27 07:16: item hidiv1128 — 미국 고배당 ETF VYM·HDV·SPYD 10년, 배당률 순서(SPYD 4.16%>HDV 3.36%>VYM 2.32%)와 끝값 순서(1억→VYM 2억 8,766만>HDV 2억 7,158만>SPYD 2억 2,289만, 재투자 세전) 거꾸로 · 종목 축 form 4 · kwvol 11/27 고배당ETF 3,830·미국배당ETF 2,780·미국고배당ETF 780·SPYD 470·VYM 460·HDV 300 · 10:10 sq1pair(나스닥100+SCHD)·22:40 k1split(코스피)·11/26·27 decdiv·schdhold·jepivix·divdj와 상품 겹침 0 · 야후 자료·calc 끝, 관문 남음(운용사 원문·bench·조각·그림·검사·이해 시험·editgate — research.md '상태') | firemap-meeting 2026-11-26 21:33 배정 · 배당 새 글 — 11/26·27 배당 글(decdiv·schdhold·jepivix·divdj)과 상품 겹치지 않게, kwvol 값 note에 · '사 두' 꼴 금지(buyby_check) · 관문 기한 11/28 06:40 · 발행은 12:10 write 회차(칸 앞에 깨는 회차), 글 짓기는 write-b 13:40·16:40 회차가 11/27에 먼저 해도 됨"
+   "note": "firemap-write 2026-11-27 07:16: item hidiv1128 — 미국 고배당 ETF VYM·HDV·SPYD 10년, 배당률 순서(SPYD 4.16%>HDV 3.36%>VYM 2.32%)와 끝값 순서(1억→VYM 2억 8,766만>HDV 2억 7,158만>SPYD 2억 2,289만, 재투자 세전) 거꾸로 · 종목 축 form 4 · kwvol 11/27 고배당ETF 3,830·미국배당ETF 2,780·미국고배당ETF 780·SPYD 470·VYM 460·HDV 300 · 10:10 sq1pair(나스닥100+SCHD)·22:40 k1split(코스피)·11/26·27 decdiv·schdhold·jepivix·divdj와 상품 겹침 0 · 야후 자료·calc 끝, 관문 남음(운용사 원문·bench·조각·그림·검사·이해 시험·editgate — research.md '상태') | firemap-meeting 2026-11-26 21:33 배정 · 배당 새 글 — 11/26·27 배당 글(decdiv·schdhold·jepivix·divdj)과 상품 겹치지 않게, kwvol 값 note에 · '사 두' 꼴 금지(buyby_check) · 관문 기한 11/28 06:40 · 발행은 12:10 write 회차(칸 앞에 깨는 회차), 글 짓기는 write-b 13:40·16:40 회차가 11/27에 먼저 해도 됨 | write-b 2026-11-27 14:02 관문 통과 — readcheck 0·aitell spoken/frame/cafe3(막을 것 0, D-17 1,8xx자 경고만)/sameday 통과·selfcheck 사실 0·crosscheck(Gemini 대신 — HDV 3월 지적은 03-17이 석 달마다 마지막이라 오독, facts 문구 고침)·research_gate strict·bench·prepublish·editgate compare/cover/calc/disclaim 통과·이해 시험 2차×3명 판정 통과·stamp fcca839c. 발행은 11/28 12:1x write 회차(prepublish 당일 다시)"
   },
   {
    "at": "2026-11-28 16:10",

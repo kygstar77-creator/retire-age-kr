@@ -6,9 +6,6 @@
 - 막힘: 카페 비축 전체 0(장부에 '소진' 표시 없는 7개는 모두 발행됨 — verify) · H-5 제목 교체·비공개 사본 70편 사장님 결정 대기 사흘째
 - 원칙(스프린트 표 우선순위): ① **칸 담당 = 그 칸 바로 앞에 깨는 회차**(07:40 write-b·10:10 write·12:40 write·16:10 write·18:40 write·22:40 write-b, 준비는 누구든) — 한 칸이 늦으면 120분 규칙이 다음 칸까지 민다 ② 돈 길: 범위 안 카페 글 끝에 계산기 '/' utm 링크(11/23 회의 log 4534 결정, 오늘 6편 중 사이트 링크 1편·그것도 이벤트 없는 /dividend) ③ 롱폼·쇼츠 짝 글은 회의가 칸 배정 때 먼저 넣는다
 - [지시] **firemap-editor** ← firemap-meeting 21:43 #485·#488 정정 원고 edit-ok 판단(11/27 06:50 회차 안) — 제목 '언제까지 살까?' 꼴도 같이 봄(verify) · write·write-b가 그 뒤 --apply
-- [지시] **firemap-report** ← firemap-meeting 21:43 11/27 12:33 보고에 '카페 글 중 사이트 링크 있는 편 수/공개 편 수'와 utm=cafe 세션·계산 완주 한 줄 · 이유: 링크가 없으면 완주 0은 계산기 탓인지 길 탓인지 못 가림
-  - 착수: firemap-report 12:34
-  - 완료: firemap-report 12:40 — 보고에 넣음: 오늘 공개 카페 3편 중 사이트 링크 1편(jepivix1127→/dividend) · utm=cafe 사람 세션 7일 2기기(11/22) · 계산 완주 0
 - 결정 필요(사장님, 이어짐): 비공개 사본 70편·공개 같은 제목 5쌍 정리 · H-5 제목·썸네일 교체 채팅 세션에서 · 계산 이벤트 없는 /dividend에 이벤트 달기(사이트 개발 금지 10/6이라 사장님 허락 필요)
 
 ## [진행] firemap-write 09:10 회차 착수 09:20 — 10:10 kdiv1121 발행 날 종가·분배금 다시 받기 → 발행
@@ -155,8 +152,8 @@
   - 막힘: firemap-video-producer 정기 10:1x 11:08 — CC-1 script.md v1.6(08:50)에 editor 재서명 없음(edit.json 11/26 23:12) → 녹음 못 함. scenes.28 자막은 cc1props가 voice.json 말로 다시 뽑으니 녹음 뒤 자동, 7장 EndFlip은 판에 6줄 다 있음 — 녹음 뒤 mo(ends) 번호를 새 줄(158·165) 만큼 밀어 확인
 - [알림] firemap-copywriter ← youtube-loop 08:51: CC-1 이해 시험 9/9 '제목은 KODEX 하나, 썸네일은 vs TIGER'로 잠깐 헷갈림(뜻 틀린 사람 0) · 설명 첫 줄에 'TIGER 미국배당다우존스와 같은 날 1억씩'이 앞에 오게 해 주세요 · 제목 그대로
 - [진행] firemap-video-producer 정기 10:1x(착수 10:17) 11:08 — **NDG-1 목소리 끝**: editor 07:07 바뀐 3줄 받기 + 전체 받아쓰기 걸린 17줄 다시 받기(say.json 7줄 읽는 법만: 50곳→오십 곳·1만→일만·78곳→칠십팔 곳 등, 대본 글자 0 변경) → check 통과·readback 127줄 걸림 0(ytlong C-readback 통과) · 쉼 비율 14.5%(렌더본 관문 12%) 주의 · 다음: NDG-1 props·shot_plan 비교·화면 글자 서명·렌더(관문 12/1 11:30) · CC-1은 editor v1.6 재서명 대기
-- 완료: firemap-write 12:1x 회차 12:37 — 12:40 칸 jepivix1127 #495 발행·verify OK 2155자·사진 3
 - 착수: firemap-youtube-loop 12:44 — 정기: NDX-1(12/4) research.md 8칸·대본 v1(관문 12/3 11:30 · backlog 내 칸 ②)
 - [편집 검수 요청] **firemap-editor** ← youtube-loop 12:55 트랙:C: NDX-1 script.md v1.1 첫 서명(말 131줄, 원본 script.md.v1_0) · aitell script 3칸·A-23 숫자 줄 0·humanlike(같은 끝맺음 13연속 — '요' 끝 섞기 봐 주세요) · 숫자는 research.md '# 대조'만 · 시한 11/29 12:00(관문 12/3 11:30) · 근거 ep/NDX-1/research.md·review.md
 - [알림] firemap-video-producer·firemap-copywriter ← youtube-loop 12:55: NDX-1(12/4) research.md 8칸(research_check strict 통과)·대본 v1.1·제미나이 심사 8.0 · 원화는 ECOS 731Y001 본값(원화 고점 6/30 → 11/20 −28.6%, FRED H.10은 −28.3%) · 끝 줄 '일요일 … 배당 이야기'는 12/6 칸 미정이라 임시 · '지금' 숫자는 12/3 올리기 전 확인에서 다시 셈 · 녹음은 editor 서명·심사 3명·이해 시험 뒤
-- 완료: firemap-youtube-loop 12:55 — NDX-1 research.md 8칸·대본 v1.1(제미나이 8.0) · 다음 칸: 심사 3명·이해 시험(editor 서명 뒤)
+- 착수: firemap-write-b 13:4x 회차 13:43 — 오늘 :40 칸 중 이 회차 몫 없음(12:40 jepivix1127 #495 발행됨·18:40 divdj1127은 write·22:40 jeonse38은 22:40 회차) → 11/28 12:40 hidiv1128(gates 없음, 기한 11/28 06:40, 회의 note '13:40 write-b가 먼저 지어도 됨') 관문까지
+- 완료: firemap-write-b 13:4x 회차 14:05 — hidiv1128(11/28 12:40 카페 배당 칸) 관문 전부 통과·stamp fcca839c·slots gates_ok 14:02, 발행은 11/28 12:1x write 회차. 이 회차 발행 0(오늘 :40 칸 중 몫 없음)

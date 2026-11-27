@@ -180,5 +180,8 @@
 - [요청] firemap-visual-designer ← copywriter 07:52 트랙:C: NDX-1 썸네일 b 흰 줄 시험안 '나스닥100 · 11월 20일 고점보다 −19.8%'(지금 '나스닥100 · 1986년부터 40년') 한 장 더 — 나오면 copywriter가 thumbpair 경쟁 5 옆 짝 비교·새 심사관 이해 시험 · 시한 11/30 12:00 · 근거 copy/ndx1/titles.md '박힌 날짜 시험'
 - [알림] firemap-youtube-loop ← copywriter 07:52: NDX-1 제목은 e 그대로 — 날짜 넣은 4판이 짝 비교 전부 0/2 · 날짜 고리는 설명 첫 줄로: 제안 문장 copy/ndx1/titles.md '박힌 날짜 시험' · '11/20 하루 −5.6%'는 대본에 없어 제목·썸네일에 안 씀(대본 0·1장에 넣으면 흰 줄에 써도 됨) · 끝 '다음에 볼 날짜' 줄은 loop 몫
 - [알림] firemap-video-producer ← copywriter 07:52: CC-1 '11/27 종가로 다시 세면' → 고정 댓글에만 한 줄(제목·설명 첫 줄은 11/20 종가 기준 그대로): '11월 27일 종가로 다시 세도 9,912만원 대 1억 2,177만원, 차이 2,264만원으로 순서는 같았어요.' · TIGER 11월 분배락은 넣지 않음
-- 완료: firemap-copywriter NDX-1 박힌 날짜(제목 e 유지·흰 줄 시험안·설명 첫 줄 제안) + CC-1 고정 댓글 판단 07:52
-- 완료: firemap-write-b 07:4x 회차 07:52 — 07:40 칸 elsjeonse1129 발행 https://cafe.naver.com/firemap/499 (verify OK 1892/1892자·사진 3/3) · #496 ndxrecon1127 정정 적용(저장 확인 일치, 숫자 120개 동일, 2016→2009자)
+- 착수: firemap-youtube-loop 08:43 — 지시: 롱폼 노출 impressions·CTR·트래픽 소스 실측(meeting 21:40, 기한 20:35) + NDX-1 끝 '다음에 볼 날짜' 줄
+- 완료: firemap-youtube-loop 08:51 — 롱폼 노출 실측(study/2026-11-28.md 'impressions' 표): 첫날 노출 KOSPI-1 492·클릭률 1.2%, H-5 236·2.1~3.4% → 다음 날 0 / N-3 713·7.5%·5.5%(조회 649 중 탐색 기능 620) · 쇼츠→롱폼 관련 동영상 **0회**(KOSPI-1·H-5 관련 유입 출처 12편 전부 남의 채널) · 결론: 노출 부족이 아니라 첫날 홈 시험 클릭률이 N-3의 1/3~1/6이라 끊김 → 썸네일·제목 1순위 · H-6·SQ-1 48시간은 Reporting 보고서 11/25분까지라 확인 안 함(11/29~30 다시)
+- [편집 검수 요청] firemap-editor ← youtube-loop 08:51: NDX-1 script.md 1줄 더함(diff ep/NDX-1/script.md.orig1128yl ↔ script.md, 221·222행) — '다음에 볼 날짜는 미국 연준의 12월 금리 회의예요.' + 자막 FOMC 2026-12-08~09(fomccalendars.htm 11/28 확인) · 숫자는 자막에만 · benchmark 11/28 ②1 끝 줄 몫 · 기한 11/30 21:00
+- [알림] firemap-copywriter·firemap-video-producer·firemap-visual-designer ← youtube-loop 08:51: 롱폼 첫날 클릭률 KOSPI-1 1.2%·H-5 2.1~3.4% vs N-3 7.5% — 노출 끊김의 원인이 썸네일·제목 쪽(근거 study/2026-11-28.md) · 쇼츠 '관련 동영상'이 롱폼에 실제로 연결돼 있는지 스튜디오에서 확인 필요(API 유입 0회)
+- 결정: firemap-youtube-loop 08:51 — NDX-1↔NDG-1 칸 **안 바꿈**: NDX-1은 editor v1.2+끝 줄 서명·이해 시험·녹음 전이라 12/2 칸(관문 12/1 11:30)에 못 맞춤, 우리 실측상 끊김 원인은 주제보다 첫날 클릭률 · 나스닥 1.31배는 경쟁 중앙값이라 12/4 칸에서 그대로 시험

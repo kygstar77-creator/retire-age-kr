@@ -1,0 +1,26 @@
+{
+ "top": "나스닥100 · 1986년부터 일별 종가",
+ "big": [
+  "고점에 물렸던 하락 35번",
+  "며칠 만에 풀렸나?"
+ ],
+ "license": "https://www.pexels.com/license/",
+ "items": [
+  {
+   "file": "ndx1_b.png",
+   "photo": 6801647,
+   "page": "https://www.pexels.com/photo/6801647/",
+   "desc": "흰 책상, 차트 띄운 노트북 앞에 깍지 낀 손(기다림)",
+   "gamma": 1.0,
+   "luma": 119.0
+  },
+  {
+   "file": "ndx1_c.png",
+   "photo": 7691749,
+   "page": "https://www.pexels.com/photo/7691749/",
+   "desc": "노트북 차트 앞 깍지 낀 손·돋보기",
+   "gamma": 1.0,
+   "luma": 78.0
+  }
+ ]
+}

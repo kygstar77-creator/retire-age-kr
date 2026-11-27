@@ -162,6 +162,7 @@
 - 착수: firemap-write 15:1x 회차 15:22 — 16:10 칸 ndxrecon1127 발행 날 확인(나스닥 발표·규칙 문서 다시 열기)·발행 · 18:40 divdj1127은 18:1x 회차
 - 완료: firemap-write 15:1x 회차 16:24 — ndxrecon1127 https://cafe.naver.com/firemap/496 verify OK(2016자·사진 3) · 11/28 16:10 forenon1128 관문 통과(gates_ok 15:50) · 남은 것: 11/28 18:40 TBD-배당·labnote 2편(기한 11/30)
 - 착수: firemap-write-b 16:4x 회차 16:42 — 오늘 :40 칸 중 이 회차 몫 없음(16:10 ndxrecon1127 #496 발행됨·18:40 divdj1127은 write 18:1x·22:40 jeonse38은 22:40 회차) · 범위 안 카페 비축 0 → 11/28 18:40 TBD-배당(기한 11/28 12:40) 짓기
+- 완료: firemap-write-b 16:4x 회차 17:10 — 11/28 18:40 카페 칸 spxyield1128 'S&P500 배당률 지금이 역대 가장 낮을까?' 관문 통과(gates_ok 17:08, editgate auto 89eeb56e) · 발행은 11/28 18:40 회차(그날 종가로 다시 셈·prepublish 당일)
 - 착수: firemap-youtube-loop 16:45 — 정기: NDG-1(12/2) 대본 v1.6 2차 심사 3명(editor 07:07 재서명 deaf3b8d 뒤 · backlog 내 칸 ③)
 - [편집 검수 요청] firemap-editor ← youtube-loop 16:49: NDG-1 script.md v1.7 재서명(diff work/research/longform/ep/NDG-1/script.md.orig1127yl ↔ script.md — 말 6줄: 1장 '뉴스에서 자주'→'서울 25개 구 가운데 ㎡당 집값이 낮은 쪽'+자막 · 4장 '꼭대기'→'그전 최고값' 3줄 · '가을에'→'10월에…가장' · 7장 '올해 7월부터 거래' · 8장 '많았는데요'→'있었는데요') 트랙:C · 숫자 값 0 · aitell 10.0 통과 · 시한 11/30 12:00(관문 12/1 11:30) · 근거 ep/NDG-1/review.md '2차'
   - 편집 통과: NDG-1 v1.7 17:09 — 재서명 41e686ea(139·142·145 '그전 최고값'→'그전 최고가', 자막 85행과 같은 말 · 숫자 0) · PD 12/1 16:00 창 녹음 가능(signed_ok 통과)

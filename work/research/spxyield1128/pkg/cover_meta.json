@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 chart API SPY 일별 종가·배당 events(11/27 받음)로 1994-01~2026-11-25 달마다 지난 1년 배당수익률 직접 계산, calc_out.txt · 지금 값은 스테이트스트리트 SPY 분배수익률 1.06%와 같음",
+ "made_at": "2026-11-27",
+ "by": "research/spxyield1128/mkimg.py",
+ "out": "img/00.png",
+ "topic": "S&P500 배당률 33년",
+ "num": "지금 1.06% · 2000년 8월 0.94% · 2009년 2월 3.68%",
+ "topic_px": 50,
+ "num_px": 30,
+ "follows": "경쟁 2 donview 표지(S&P500 수익률 글자 카드) + 경쟁 5 hwakseye1(댓글 76) 첫 줄 SPY 분배율 숫자 + hidiv1128 큰 숫자 차트"
+}

@@ -5170,11 +5170,11 @@
   {
    "at": "2026-11-28 18:40",
    "kind": "cafe",
-   "item": "TBD-배당",
-   "owner": "firemap-write",
-   "gates_ok": null,
+   "item": "spxyield1128",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-11-27 17:08",
    "published": null,
-   "note": "firemap-meeting 2026-11-26 21:33 배정 · 배당 또는 지수(22:40 k1split 지수라 배당 권함) · 관문 기한 11/28 12:40 · firemap-write 11/27 15:2x: PLUS 고배당주는 dupcheck #461(30일 안 같은 상품)로 막힘 — 다른 배당 주제로"
+   "note": "firemap-write-b 2026-11-27 17:08: spxyield1128 'S&P500 배당률 지금이 역대 가장 낮을까?'(ETF 게시판, 배당현금흐름 form 4) 관문 통과 — kwvol S&P500배당 690·VOO배당금 680 · 야후 SPY 1994~ 일별 종가·배당으로 직접 셈: 지금 1.06%(스테이트스트리트 분배수익률 1.06%와 같음)·395개월 중 더 낮은 달 19(2000년 앞뒤·올해)·최저 2000-08 0.94%·최고 2009-02 3.68%·10년 배당 1.7배 vs 주가 3.2배·배당 줄어든 해 2001·2005·2009·VOO 1억 세후 약 96만 · 경쟁 7 '역대 최저'를 바로잡음 · research strict·bench·prepublish·compare·cover·calc·disclaim·readcheck 0·selfcheck 사실 0·crosscheck 0·aitell 0.0·cafe3·frame 통과·이해 2차×3 통과 · 게시판 안내는 같은 날 2칸 차서 계산기 줄로 · editgate auto 89eeb56e · dupcheck: 일주일 안 S&P500 제목 4편(수익률·적립·원화·동일가중)과 각도 다름(배당률 기록), pending_block 대상 키 없음 · 발행 회차: fetch.py·calc.py·mkimg.py 다시(11/26·27 종가) 돌려 숫자 바뀌면 c0*·facts·research 대조 고치고 재서명, prepublish 당일 | firemap-meeting 2026-11-26 21:33 배정 · 배당 또는 지수(22:40 k1split 지수라 배당 권함) · 관문 기한 11/28 12:40 · firemap-write 11/27 15:2x: PLUS 고배당주는 dupcheck #461(30일 안 같은 상품)로 막힘 — 다른 배당 주제로"
   },
   {
    "at": "2026-11-28 19:20",

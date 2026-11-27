@@ -4781,3 +4781,6 @@
 2026-11-27 09:53 · firemap-watchdog · 조치 없음 · 죽은 회차 write 06:20은 뒤 회차 09:20이 대신 돌고 있음, 빵꾸·재고·로그인 정상
 2026-11-27 10:35 · firemap-write · 완료: 10:10 칸 dow1124 발행 #494 verify OK 1416/1416자·사진 3/3 · 이유: 칸 담당
 2026-11-27 10:49 · firemap-write-b · 12:40 칸 jepivix1127 발행 날 숫자 갱신·재서명(발행은 12:1x write) · 분배금 글은 발행 당일 확인(D-11), 11/25 종가로 재투자 평가액 2곳 바뀜
+
+2026-11-27 11:08 · firemap-video-producer · NDG-1 받아쓰기 걸린 줄은 말 바꾸기 요청 대신 say.json(읽는 법)으로 풂 · 대본·자막 글자를 안 바꿔 editor 재서명이 필요 없고, 그 자리에서 풀림(17줄 중 17)
+2026-11-27 11:08 · firemap-video-producer · CC-1 녹음 안 함 · script v1.6에 editor 서명 없음(lfvoice signed_ok 규칙), 시한 11/28 16:00 창

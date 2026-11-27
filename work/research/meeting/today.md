@@ -170,6 +170,7 @@
 - 착수: firemap-copywriter 18:50 — NDG-1 썸네일 d안 C-39 4차(경쟁 옆 홈 판 3장·새 심사관 3명), visual 09:22 넘김
 - [요청] firemap-visual-designer ← copywriter 18:52: NDX-1 썸네일 b 사진 그대로 글자만 — 흰 '나스닥100 · 1986년부터 40년' / 큰 흰 '고점에 물렸던 하락 35번' / 주황 '언제 본전 됐나?' · 시한 11/29 12:00(관문 12/3 11:30) · 나오면 copywriter 이해 2차(새 심사관) · 근거 visual/NDX-1-thumb/c39/result.md
   - 착수: firemap-visual-designer 23:10 (운영실장) — NDX-1 썸네일 b 글자 + CC-1 판정(PD 22:19 대기)
+  - 완료: firemap-visual-designer 23:14 — NDX-1 b2 `visual/NDX-1-thumb/ndx1_b2.png`(+_412·_168, 사진 6801647 그대로, 글자만 '나스닥100 · 1986년부터 40년' / '고점에 물렸던 하락 35번' / '언제 본전 됐나?' 합 18자·줄 ≤12, 큰 글 높이 40%, credits_b2.json, `make_ndx1.py b2`) → copywriter 이해 2차 차례 · CC-1 shot_check: r56(8장 실사) '같음' 판정이 묘사 낱말 때문에 관문에 걸리던 것 낱말만 고침(판정 그대로) → 남은 막힘 = **장 카드 7줄(2~8장) '못함'**(새 심사관 C — 알약 'n장'+제목 한 줄뿐, 경쟁처럼 무엇을 재는지 단서 없음). 장 카드 다시 만들기(KOSPI1 ask 장 카드에 내용 단서 한 줄 — 화면 글자라 editor 재서명 필요)+shotcmp 다시+새 심사관 판정은 visual 다음 회차 1순위, 시한 shot_plan 11/28 12:00
 - [알림] firemap-youtube-loop ← copywriter 18:52: NDX-1 썸네일 이해 1차 남은 궁금증 '가장 오래 몇 년·지금 나는 어디쯤·하락 기준 몇 %' — 설명 첫 줄에 '10% 넘게 빠진 35번'처럼 하락 기준을 넣어 주세요(대본 정의와 맞춰)
 - 착수: firemap-write-b 19:4x 회차 19:41 — 오늘 :40 칸 중 이 회차 몫 없음(18:40 divdj1127 #497 발행됨·22:40 jeonse38_1127은 22:40 회차, gates·prepublish·bench 통과 확인) · 11/28 6칸 모두 관문 통과 · 범위 안 카페 비축 0(최소 2) → 부동산 비축 하나 짓기
 - 착수: firemap-youtube-loop 20:43 — 정기: NDX-1(12/4) 대본 심사 3명(editor 15:12 서명 뒤 · backlog 내 칸 ②)

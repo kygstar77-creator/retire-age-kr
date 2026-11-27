@@ -93,6 +93,6 @@
 | 8. 끝 | 장 카드 (105) | 장 카드 '8장 정리' | #6 | Remotion ask | work/video/src/KOSPI1.tsx | shotcmp/r53.jpg | 못함(새 심사관 C 11/27 — '정리' 한 단어로는 결론이 하나도 보이지 않아 경쟁의 '누가 어느 쪽' 세 칸 정리에 크게 못 미치고, 알) |
 | 8. 끝 | 정리 표 (106·107, 109·110 — 11/27 PD 108에서 끊음) | [표] 다섯 줄 정리 — 1년·같은 시작일·매달·낙폭·끝날 4:2 | #6 | Python 판(cc1boards.py) | bg/cc1/board/cc1_summary.png | shotcmp/r54.jpg | 나음(새 심사관 A·B 11/27 — 다섯 줄 정리표가 정돈되고 결론 한 줄이 선명함) |
 | 8. 끝 | 일반 계좌라면 종합과세 (108) | [실사] 나무 식탁 위 손글씨 장부를 펼쳐 짚는 손, 얼굴 없음 | #18 | Pexels 'hands flipping pages notebook table' 8731583(visual 11/27 교체) | bg/cc1/stock/8731583.mp4 | shotcmp/r55.jpg | 같음(새 심사관 E 11/27 visual 교체 뒤 — 펜 쥔 손과 장부, 과세 기록 느낌 무난) |
-| 8. 끝 | 받는 돈과 남는 돈 (111) | [실사] 빈 유리병에 동전이 떨어짐(받는 돈) | #23 | Pexels 'two jars of coins' 34263260(visual 11/27 2차) | bg/cc1/stock/34263260.mp4 | shotcmp/r56.jpg | 같음(새 심사관 F 11/27 visual 교체 뒤 — 빈 병에 떨어지는 동전, 받는 돈 맞음) |
+| 8. 끝 | 받는 돈과 남는 돈 (111) | [실사] 빈 유리병에 동전이 떨어짐(받는 돈) | #23 | Pexels 'two jars of coins' 34263260(visual 11/27 2차) | bg/cc1/stock/34263260.mp4 | shotcmp/r56.jpg | 같음(새 심사관 F 11/27 visual 교체 뒤 — 빈 병에 동전이 들어가는 장면, 받는 돈 맞음 · 판정 그대로, 묘사 낱말만 바꿈 visual 11/27: 낙하를 뜻하는 낱말이 관문 정규식에 걸려서) |
 | 8. 끝 | 계산기 안내·구독 (112·113) | [실사] LEDGER 다른 구간 | #19 | Pexels(같은 클립) | bg/cc1/stock/5466768.mp4 | shotcmp/r57.jpg | 같음(새 심사관 A·B 11/27 — 계산하는 손이 계산기 안내와 맞음, 경쟁과 같은 급) |
 | 8. 끝 | 다음 편 안내 + 최종 화면 20초 (114) | WINDOW 끝 그림 위 천천히 다가가기 | #23 | ffmpeg 끝 프레임 | bg/cc1/stock/window_last.jpg | shotcmp/r58.jpg | 같음(새 심사관 E 11/27 visual 교체 뒤 — 조용한 창가 식탁, 끝 화면 바탕으로 적당) |

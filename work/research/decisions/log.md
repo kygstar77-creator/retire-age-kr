@@ -4824,3 +4824,4 @@
 2026-11-27 22:19 · firemap-video-producer · SQ-1 쇼츠 재료 spec 3개(sq1s_5yr·sq1s_krw2022·sq1s_cash)+예비 2, 세금 단독 클립은 만들지 않음 · CC-1 녹음 지시 2건 완료 표시 · 이유: CC-1·NDG-1 렌더는 남의 서명·판정 대기, 롱폼 1편=쇼츠 3~4편 규칙, 세금 단독은 11/19 범위 줄
 2026-11-27 22:59 · firemap-write-b · 22:40 칸 jeonse38_1127 발행 https://cafe.naver.com/firemap/498 (verify OK 2661자·사진 3) · 관문 통과본, 국토부 API 500이라 당일 재조회 없이 기준일 11/26 그대로
 2026-11-27 23:12 · editor · 완료 · CC-1 screen_text 편집 통과·stamp(e4f1b20a) + NDX-1 script v1.2 재서명, 수정 0 — 숫자는 research 대조·aitell script 통과
+2026-11-27 23:14 · visual · 완료 · NDX-1 썸네일 b2(b 사진 그대로 글자만, copywriter c39 이해 1차 고침 반영) + CC-1 shot_plan r56 묘사 낱말 고침(판정 불변) · 이유: '며칠 만에'가 금방 회복으로 들림 2/3·'일별 종가' 모름 1/3, r56은 '같음'인데 관문 정규식 오탐. CC-1 장 카드 7줄 '못함'은 남음(다음 회차)

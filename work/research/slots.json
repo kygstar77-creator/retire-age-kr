@@ -5205,6 +5205,51 @@
    "note": "firemap-write-b 2026-11-26 20:03: 쇼츠 k1s_split 짝 글 k1split1128 '코스피 폭락한 날 나눠 넣기, 몇 번이 나았을까?'(ETF 게시판, 지수, form 2) 관문 통과 — ECOS 코스피 일별 종가 11/26 다시 받아 직접 계산: 폭락 첫날 15번 1천만원 1년 뒤 가운데 한 번에 1,191만·3번 1,192만·12번 1,085만, 최악 551→601→658→771만, 한 번에가 10/15 앞섬, 12번이 앞선 5번 모두 1년 안 20% 넘게 더 빠짐, 2년 14번 · #478(12번 한 가지)과 다른 새 것 3 · research strict·bench 5편·compare·readcheck 0·selfcheck 사실 0·crosscheck 반영·aitell 1.5·spoken·이해 2차 6명·표지 보라(최근 10장과 구별) · editgate auto 1a9a52a4 · slot.txt 11/28 22 · 발행 회차: ECOS 다시 받아 calc.py·mkimg.py 다시 돌려 숫자 바뀌면 고치고 재서명(1일 안), 쇼츠 공개(public) 확인 · 11/28 다른 5칸은 회의 배정 몫"
   },
   {
+   "at": "2026-11-29 07:40",
+   "kind": "cafe",
+   "item": "elsjeonse1129",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-27 21:39: 부동산 — 비축 elsjeonse1129(11/27 20:05 관문 통과)를 칸으로. 발행 날 국토부 전월세 다시 받기"
+  },
+  {
+   "at": "2026-11-29 10:10",
+   "kind": "cafe",
+   "item": "TBD-지수",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-27 21:39: 지수 — 관문 기한 11/29 04:10. 11/28 sq1pair·spxyield·k1split과 상품 겹침 피함, kwvol·경쟁 배수로 고름"
+  },
+  {
+   "at": "2026-11-29 12:40",
+   "kind": "cafe",
+   "item": "TBD-배당",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-27 21:39: 배당 — 관문 기한 06:40. write 11/27 18:28 정한 '국내 나스닥100 커버드콜 ETF 같은 날 1억' 후보는 CC-1(11/30 커버드콜) 공개 전이라 피하고 다른 배당 대상"
+  },
+  {
+   "at": "2026-11-29 16:10",
+   "kind": "cafe",
+   "item": "TBD-부동산",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-27 21:39: 부동산 — 관문 기한 10:10. 국토부 실거래 1차 자료만, 11/28 forenon·11/29 elsjeonse·gmnew와 단지 겹침 금지"
+  },
+  {
+   "at": "2026-11-29 18:40",
+   "kind": "cafe",
+   "item": "TBD-지수배당",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "published": null,
+   "note": "firemap-meeting 2026-11-27 21:39: 지수 또는 배당 — 관문 기한 12:40. 칸 담당 = 18:10 write 회차(칸 앞에 깨는 회차, 회의 11/26 원칙)"
+  },
+  {
    "at": "2026-11-29 19:20",
    "kind": "shorts",
    "item": "h4s_new15 (H-4 부동산 셋째 클립 — '광명 15억'은 2019년 이후 새 단지 값, c1clip) — 11/25에서 옮김",

@@ -5,7 +5,7 @@
 
 | 직원 | 다음 일 1 | 다음 일 2 | 다음 일 3 |
 |---|---|---|---|
-| firemap-meeting | ① 11/26 21:15: 11/27 카페 6칸 gates_ok·11/28 칸(SQ-1 롱폼·k1s_split·카페 6) 배정 | ② #485 고침·editgate '사 두어야' 꼴 막기 확인 | ③ 사용량 초기화 뒤 X-C36·X-CAFE-CALC 판정 준비(측정 구멍 /dividend) |
+| firemap-meeting | ① 11/28 21:15: 11/29 카페 다섯 칸 gates_ok 확인·11/30 칸(CC-1 롱폼·짝 글 먼저) 배정 | ② 카페 글 끝 계산기 utm 링크 11/28·29 6/12 셈 + 롱폼 impressions 실측 판정 | ③ 사용량 초기화(11/29 21:00) 뒤 X-C36·X-CAFE-CALC 판정 준비·'Firemap daily growth' 사장님 결정 반영 |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | ① 비축 ndxcc1129(배당 — 국내 나스닥100 커버드콜 3종 같은 날 1억 세후) 관문까지: bench.md(bench_raw 5편 받음)·질문 3개 주소·조각 c00~·그림 3장·readcheck·aitell spoken·selfcheck·crosscheck·이해 시험·cover·editgate → slots reserve 줄·gates_ok (research.md 상태 칸, 차별점: 원문 과세표준 0원 8/25번 vs 경쟁 #4 '전액 15.4%') · ② 11/28 10:10 sq1pair1128·12:40 hidiv1128 발행 날 시세 다시 받아 '올리기 전 확인'(divdj처럼 원래 기준일 diff 0 + 최신 종가 순위만) · ③ 12/2 NDG-1 짝 글(노도강 441묶음 표, youtube-loop 16:49 알림 — calc_out 12/1 다시 받은 값) 칸 배정 확인·초안 |
 | firemap-write-b | ⓐ 범위 안 비축 하나 더(최소 2 — rsp1124 하나 채움): 배당 축 — 적립식(매달 사기)으로 RSP vs SPY 23년(rsp1124 이해 시험 남은 궁금증 '적립식이면?' 1/6, 야후 수정 종가 그대로) · ⓑ 부동산 축 비축 하나 더(11/27 elsjeonse1129 잠실엘스 새 계약 vs 갱신으로 1/2) — 같은 송파 대단지 리센츠·트리지움 새 계약/갱신 차이(fetch 원본 elsjeonse1129/raw 재사용, 이해 시험 남은 궁금증 '다른 단지는?' 2/6), 제목 뼈대는 '~얼마 더 냈을까?' 빼고 · ⓒ 범위 밖 옛 항목(연말정산·증여세·기준시가·전환율 판)은 11/19 주제 범위 뒤 쉬어 둠 — 범위 안으로 각도 바꿀 수 있는 것만 다시 |

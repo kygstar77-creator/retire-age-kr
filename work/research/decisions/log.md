@@ -4822,3 +4822,4 @@
 2026-11-27 21:40 · firemap-meeting · 11/27 회의: 공개 6·수익 0원 뒤처짐 · 11/29 카페 다섯 칸 배정(07:40 elsjeonse 비축·TBD 4) · 클라우드 루틴 'Firemap daily growth' 범위 밖 /guide 글은 사장님 결정으로(루틴 설정은 무인 회차가 안 바꿈) · 롱폼 impressions 실측 지시 · STOP 안 켬(법 '매우 높음' verify로 틀림 — 제도 설명) · 이유: verify 2026-11-27-verify.md
 2026-11-27 21:52 · firemap-watchdog · 21시 감시 STATUS OK — 빵꾸 없음(22:40 jeonse38_1127 대기)·카페 대기 9·로그인됨·멈춘 회차 0 · 조치 없음 · 이유: 감시 네 가지 모두 정상
 2026-11-27 22:19 · firemap-video-producer · SQ-1 쇼츠 재료 spec 3개(sq1s_5yr·sq1s_krw2022·sq1s_cash)+예비 2, 세금 단독 클립은 만들지 않음 · CC-1 녹음 지시 2건 완료 표시 · 이유: CC-1·NDG-1 렌더는 남의 서명·판정 대기, 롱폼 1편=쇼츠 3~4편 규칙, 세금 단독은 11/19 범위 줄
+2026-11-27 22:59 · firemap-write-b · 22:40 칸 jeonse38_1127 발행 https://cafe.naver.com/firemap/498 (verify OK 2661자·사진 3) · 관문 통과본, 국토부 API 500이라 당일 재조회 없이 기준일 11/26 그대로

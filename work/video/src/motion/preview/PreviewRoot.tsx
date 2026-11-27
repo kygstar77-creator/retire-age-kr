@@ -4,6 +4,7 @@ import {TallyFrame, TallyLine} from '../TallyFrame';
 import {ZoomOutOpen, ZoomOutOpenProps} from '../ZoomOutOpen';
 import type {RScene} from '../../R1';
 import {DealDots, type DealDotsProps} from '../DealDots';
+import {BundleDots, type BundleDotsProps} from '../BundleDots';
 import {GapBars, type GapBarsProps} from '../GapBars';
 import {EndFlip, type EndFlipProps} from '../EndFlip';
 import {ChapterAsk, type ChapterAskProps} from '../ChapterAsk';
@@ -202,8 +203,15 @@ type P23 = {cards: {data: ChapterAskProps; frames: number; lines: TallyLine[]}[]
 const CC1Asks: React.FC<P23> = ({cards}) => <Series>{cards.map((c, i) => <Series.Sequence key={i} durationInFrames={c.frames}><ChapterAsk {...c.data} /><TallyCaption lines={c.lines} /></Series.Sequence>)}</Series>;
 const H6Deals: React.FC<P20> = ({deals}) => v3Frame(deals, <DealDots {...deals.data} beats={tallyStarts(deals.lines)} />);
 
+// NDG-1 3장 묶음 점 그림(11/27 motion) — 재료 ep/NDG-1/motion_preview/ndg1_dots.json(ndg1props.py)
+type P24 = {dots: V3S<Omit<BundleDotsProps, 'beats'>>};
+const NDG1Dots: React.FC<P24> = ({dots}) => v3Frame(dots, <BundleDots {...dots.data} beats={tallyStarts(dots.lines)} />);
+
 export const PreviewRoot: React.FC = () => (
   <>
+  <Composition id="NDG1Dots" component={NDG1Dots as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P24).dots.frames})} />
   <Composition id="OpenZoom" component={OpenZoom as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P).scene.frames})} />

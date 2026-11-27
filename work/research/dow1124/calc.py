@@ -6,7 +6,7 @@ def rows(f):
     return [r for r in ws.iter_rows(values_only=True) if r and r[1] and r[4] is not None and r[1]!='-' and r[0]!='Name']
 dia=rows("raw/dia_holdings.xlsx"); spy={r[1]:r[4] for r in rows("raw/spy_holdings.xlsx")}
 print("DIA 종목 수",len(dia),"주식 수 같은지",len({r[6] for r in dia})==1, dia[0][6])
-D=dt.date(2026,11,19)
+D=dt.date(2026,11,24)
 def close(t,day=D):
     fn=f"raw/q_{t}.json"
     if not os.path.exists(fn):
@@ -18,7 +18,7 @@ def close(t,day=D):
         if d==day: return c
 px={r[1]:close(r[1]) for r in dia}
 dji=close("^DJI"); s=sum(px.values()); div=s/dji
-print("11/19 다우",round(dji,2),"30종목 주가 합",round(s,2),"나눗수(계산)",round(div,6),"1달러 = 지수",round(1/div,2),"포인트")
+print(D,"다우",round(dji,2),"30종목 주가 합",round(s,2),"나눗수(계산)",round(div,6),"1달러 = 지수",round(1/div,2),"포인트")
 tot=sum(px.values())
 print("종목 | DIA비중 | 주가비중(계산) | SPY비중 | 주가 | 5%오르면 다우 포인트")
 for r in sorted(dia,key=lambda r:-r[4]):

@@ -1,29 +1,14 @@
-[gemini-3.5-flash-lite 2026-11-22 23:23 — OpenAI 키 없어 Gemini가 사실 대조]
-1. 
-- 원문 문장: S&P500은 회사 덩치만큼 담습니다.
-- 문제: 사실표에 없는 내용 추가 (시가총액 가중 방식에 대한 설명이 사실표에 없음)
-- 근거: 사실표에는 SPY 보유 종목의 비중 숫자만 있고 S&P500이 시가총액 가중 방식이라는 설명은 없다.
-- 고친 문장: S&P500을 따라가는 ETF인 SPY의 보유 종목 파일로 같은 회사를 맞대 보면 차이가 크게 나요.
+[gemini-3.5-flash-lite 2026-11-27 09:26 — OpenAI 키 없어 Gemini가 사실 대조]
+1. 틀림 — 원문 문장: 다우지수는 30종목 주가를 더한 뒤 제수라는 숫자로 나눠 계산해요. 제수가 1보다 작은 0.17쯤이라 나누면 오히려 숫자가 커집니다. 11월 24일 30종목 종가를 더하면 8,416달러였고, 다우지수는 5만 19포인트였습니다. · 문제: 사실표의 다우 지수는 '50,018.7'인데 '5만 19포인트'로 틀리게 적었습니다. · 근거: [계산 11/27] 11/24 다우 50,018.7 · 고친 문장: 11월 24일 30종목 종가를 더하면 8,416달러였고, 다우지수는 5만 18.7포인트였습니다.
 
-2. 
-- 원문 문장: 이 다섯 곳 중 S&P500 비중 상위 10위 안에 드는 회사는 마이크로소프트 하나뿐이에요.
-- 문제: 사실표와 다르게 옮긴 것 (또는 사실표에 없는 내용 추가)
-- 근거: 사실표 SPY 상위 10위 항목은 'AAPL·MSFT·NVDA·AMZN·AVGO·GOOGL·META·GOOG·LLY·BRK.B'로 마이크로소프트 외에 애플(AAPL) 등도 포함되나, 사실표 데이터만으로는 다우 상위 5곳(골드만삭스, 캐터필러, 마이크로소프트, 암젠, 비자) 중 마이크로소프트 외의 순위를 정확히 대조하기 어렵다.
-- 고친 문장: (확인 불가 또는 해당 문장 삭제)
+2. 확인 불가 — 사실표에 적힌 출처 중 웹 URL 및 법령명(해당 없음) 대조 결과:
+- https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-dia.xlsx : 확인 불가
+- https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx : 확인 불가
+- https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI : 확인 불가
+- https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-dow-jones-industrial-average-etf-trust-dia : 확인 불가
+- https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC : 확인 불가
+- https://www.invesco.com/us/en/etf/sp-500-equal-weight-rsp.html : 확인 불가
 
-3. 
-- 원문 문장: 다우를 따라가는 DIA의 보수는 연 0.16%예요.
-- 문제: 사실표에 없는 숫자(보수율) 추가
-- 근거: 사실표 'Gross Expense Ratio 0.16%'가 명시되어 있으나, 사실검증 지침상 본문의 해당 수치 언급은 사실표 텍스트에 직접 대조되지 않는 외부 정보의 성격을 가짐(단, 상품 페이지 정보이므로 사실표 내 존재함). 단 조건 누락이나 오해 소지 없음.
-
-**출처 대조 결과:**
-- 스테이트 스트리트 DIA 보유 종목 파일: 확인 가능 (`https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-dia.xlsx`)
-- 스테이트 스트리트 SPY 보유 종목 파일: 확인 가능 (`https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx`)
-- 스테이트 스트리트 DIA 상품 페이지: 확인 가능 (`https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-dow-jones-industrial-average-etf-trust-dia`)
-- 야후 파이낸스 chart API (^DJI, ^GSPC): 확인 가능 (`https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI`, `https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC`)
-- S&P 다우존스 지수 방법론 PDF: 확인 불가 ("못 엶"이라고 사실표에 기재됨)
-- toprank 블로그 상위 8편: 확인 불가
-
-**AI가 쓴 것 같은 어색한 문장:**
-- "11월 19일 기준 다우지수에서 비중이 가장 큰 회사는 골드만삭스로 10.3%였습니다." (문장 구조가 기계적임)
-- "주식 수가 같으니 1주 가격이 비싼 회사가 비중도 커집니다."
+AI가 쓴 것 같은 어색한 문장:
+- 뉴스에서 "다우 500포인트 하락"이라고 할 때, 그 숫자를 움직이는 힘도 회사마다 이만큼 달라요.
+- S&P500 ETF를 가졌다면 그 안에 다우 30종목이 이만큼 들어 있어요.

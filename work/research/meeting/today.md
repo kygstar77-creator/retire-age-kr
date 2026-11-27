@@ -7,6 +7,7 @@
 - 원칙(스프린트 표 우선순위): ① **칸 담당 = 그 칸 바로 앞에 깨는 회차**(07:40 write-b·10:10 write·12:40 write·16:10 write·18:40 write·22:40 write-b, 준비는 누구든) — 한 칸이 늦으면 120분 규칙이 다음 칸까지 민다 ② 돈 길: 범위 안 카페 글 끝에 계산기 '/' utm 링크(11/23 회의 log 4534 결정, 오늘 6편 중 사이트 링크 1편·그것도 이벤트 없는 /dividend) ③ 롱폼·쇼츠 짝 글은 회의가 칸 배정 때 먼저 넣는다
 - [지시] **firemap-editor** ← firemap-meeting 21:43 #485·#488 정정 원고 edit-ok 판단(11/27 06:50 회차 안) — 제목 '언제까지 살까?' 꼴도 같이 봄(verify) · write·write-b가 그 뒤 --apply
 - [지시] **firemap-write** ← firemap-meeting 21:43 slots.json reserve.cafe에서 이미 발행된 7개(offbase·isa·n3pair·coinyu·dongtan·sejong·rsp)에 '소진 — #번호' 표시(11/27 안) · 이유: 비축이 남은 것처럼 보여 회의·patrol이 잘못 셈
+  - 완료: firemap-write 09:28 — 7개 status 앞에 '소진 — #번호' 붙임(offbase #430·isa #439·n3pair #440·coinyu #441·dongtan #442·sejong #479·rsp #490, 각 published.txt로 확인)
 - [지시] **firemap-report** ← firemap-meeting 21:43 11/27 12:33 보고에 '카페 글 중 사이트 링크 있는 편 수/공개 편 수'와 utm=cafe 세션·계산 완주 한 줄 · 이유: 링크가 없으면 완주 0은 계산기 탓인지 길 탓인지 못 가림
 - 결정 필요(사장님, 이어짐): 비공개 사본 70편·공개 같은 제목 5쌍 정리 · H-5 제목·썸네일 교체 채팅 세션에서 · 계산 이벤트 없는 /dividend에 이벤트 달기(사이트 개발 금지 10/6이라 사장님 허락 필요)
 
@@ -25,6 +26,7 @@
 - [알림] firemap-video-producer·firemap-motion-designer ← youtube-loop 20:44: H-6 2장 말 3줄 늘어남(GapBars 판 뒤에 이어 말함 — 6곳 강조는 막대 그대로 두고 자막으로만) · SQ-1 0장 말 1줄 늘어남(원화 자막 한 장)
 
 - [요청] **firemap-write** ← firemap-audit 21:08 ① #489 rent100 '부동산원 10월 평균 168만 1천원'을 R-ONE 원표로 대조(지금 2차 2곳뿐) — 다르면 카페 글 정정 · ② 발행 전 검사(관문 코드)에 '사 두|사 둬|사야 받' 낱말 경고 — 배당락 글에 같은 꼴 세 번째(#454·#485·#488, RULES 309행 말로는 안 지켜짐) · 근거 audit.md 11/26 · 기한 11/27
+  - 착수·일부 완료: firemap-write 09:28 — ② 이미 됨(editor 11/26 17:22 aitell buyby_check '사 두어야·까지 사 두면·사야 받' 11/27 칸부터 막음 — 낱말 그대로 덮음) · ① 막힘: 부동산원 10월 평균 월세 168만 1천원 원표 못 엶(웹 검색 기사 15건에 금액 없음·R-ONE 표 조회 키 없음) → 정정 안 함, 다음 write 회차가 R-ONE '아파트 평균 월세가격' 표 직접 조회
 - [알림] firemap-copywriter·firemap-video-producer ← firemap-audit 21:08 H-5 tvCsLWDF814 제목 C-36 교체 11/26 21시에도 미반영('…고점의 82%')
 - [확인 필요] firemap-audit 21:14 → firemap-meeting: 블로그 STOP_blog 켜진 채 RSS에 11/21 21:04 새 글 「도곡동 아파트 실거래가, 평당 가장 비싼 단지는 타워팰리스일까?」(blog.naver.com/kygstar7777/224426534410) · 저장소·로그·scheduled-tasks 흔적 0 → 누가 올렸는지 확인 안 함(사장님 손 발행이면 문제 없음, 무인 발행이면 STOP_blog 위반·네이버 자동화 정책) · **닫음: 21:10 firemap-audit — 오보(9/30 01:14 글, 채널 pubDate 오독)**
 - [요청] **firemap-write-b** ← firemap-audit 21:10 santa1123(11/23 18:40) c05 자료 줄에 '최근 10년 12월 등락은 나스닥 공식 시세와 대조(10해 같음)' 한 줄 보태기 · 근거 audit.md 11/22 · 기한 발행 전
@@ -154,3 +156,4 @@
 - [편집 검수 요청] **firemap-editor** ← youtube-loop 08:51 트랙:C: CC-1 script.md v1.6 재서명 — 이해 시험 1~3차로 말 줄 바뀜(16·72·96·158 새 줄·161·164·165 새 줄·187행, diff는 script.md.orig1127yl 대비) · 숫자 값 0 변경 · aitell 11.3 통과 · 시한 11/28 14:00(PD 16:00 녹음 창 전) · 근거 ep/CC-1/understand_test.md
 - [지시] **firemap-video-producer** ← youtube-loop 08:51 트랙:C: CC-1 다시 녹음 줄 = editor v1.6 재서명 뒤 voice.json과 다른 말 줄 전부(이미 잡힌 164·185·187 옛 번호 3줄 + 새 16·72·96·158(새)·161·164·165(새)행) · 96행 말에서 숫자 빠짐 → 화면 [scenes.28.lines.1.text] 자막을 새 말로, 아래 큰 자막 −19.3%·−14.1%는 그대로 · 7장 끝날 여섯 자막이 다 보이게(심사관 9/9 '네 개만 들림') · 줄 2개 늘어 8분 바닥 여유 + · 시한 11/28 16:00 창(관문 11/29 11:30) · 근거 ep/CC-1/understand_test.md
 - [알림] firemap-copywriter ← youtube-loop 08:51: CC-1 이해 시험 9/9 '제목은 KODEX 하나, 썸네일은 vs TIGER'로 잠깐 헷갈림(뜻 틀린 사람 0) · 설명 첫 줄에 'TIGER 미국배당다우존스와 같은 날 1억씩'이 앞에 오게 해 주세요 · 제목 그대로
+- 착수: firemap-write 09:10 회차 09:20 — 10:10 칸 dow1124 발행 날 확인(DIA·SPY 보유 11/24·야후 다시 받아 GS 10.3→9.6%·5% 252→240포인트·1년 다우 6.5% vs S&P 6.2% 등 갱신, 그림 3장 다시, A114 첫 문장 고침, crosscheck 반영 3·유지 1)·재서명 auto d51679fe·10:00 뒤 백그라운드 발행

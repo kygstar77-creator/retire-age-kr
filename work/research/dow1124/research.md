@@ -19,9 +19,9 @@
 
 ## 질문
 1. 다우는 왜 비싼 주식 비중이 큰가 — https://blog.naver.com/joaijoa1/224473009068 ('주가 비싼 종목이 높은 비중을 차지하는 이유') → 답: 30종목을 같은 주식 수(526만 2,145주)로 담음, 1주 값이 비중
-2. 다우·나스닥·S&P500 차이가 뭔가 — https://blog.naver.com/mike1353/224480798676 ('나스닥·S&P500·다우 차이') → 답: 같은 회사도 다우 비중과 S&P500 비중이 뒤집힘(GS 10.3% vs 0.4%, NVDA 1.8% vs 5.7%)
-3. 다우 몇 포인트 하락이 얼마나 큰가 — https://blog.naver.com/awesomekim83/224464225519 ('다우는 어떻게 계산하나요?') → 답: 1달러 = 약 5.94포인트, GS 5% = 252포인트, NVDA 5% = 43포인트
-4. 다우 30종목만으로 시장 전체를 보여 주나 — https://blog.naver.com/rachel57942/224472993939 ('미국 증시 전체를 설명하기에 부족한 부분') → 답: 30종목은 S&P500 안에서 38.5%, 1년 가격 등락 다우 5.2% vs 5.7%
+2. 다우·나스닥·S&P500 차이가 뭔가 — https://blog.naver.com/mike1353/224480798676 ('나스닥·S&P500·다우 차이') → 답: 같은 회사도 다우 비중과 S&P500 비중이 뒤집힘(GS 9.6% vs 0.4%, NVDA 1.8% vs 6.0%)
+3. 다우 몇 포인트 하락이 얼마나 큰가 — https://blog.naver.com/awesomekim83/224464225519 ('다우는 어떻게 계산하나요?') → 답: 1달러 = 약 5.94포인트, GS 5% = 240포인트, NVDA 5% = 46포인트
+4. 다우 30종목만으로 시장 전체를 보여 주나 — https://blog.naver.com/rachel57942/224472993939 ('미국 증시 전체를 설명하기에 부족한 부분') → 답: 30종목은 S&P500 안에서 39.1%, 1년 가격 등락 다우 6.5% vs 6.2%
 
 ## 왜
 - 왜 GS가 1위인가: 주식 수가 같아 1주 값(847.53달러)이 30종목 중 가장 비쌈(S1·S4) — 원문(S3) "price-weighted"
@@ -36,11 +36,11 @@
 ## 누구라면
 - 뉴스로 미국 증시만 보는 사람: '다우 하락 = 내 S&P500 ETF 하락'이 아님 — 비중이 다름
 - 엔비디아·애플 비중 때문에 지수 ETF를 고르는 사람: 다우에선 두 회사 비중이 작음(1.8%·4.2%)
-- 이미 S&P500 ETF를 가진 사람: 다우 30종목이 그 안에 38.5% 들어 있음
+- 이미 S&P500 ETF를 가진 사람: 다우 30종목이 그 안에 39.1% 들어 있음
 
 ## 함정
 - '다우 = 미국 대표 30대 기업 시가총액 순'이라는 오해 — 비중 1위는 시총이 아니라 주가(골드만삭스)
-- 같은 5% 상승이라도 지수 영향은 6배 가까이 차이(252 vs 43포인트)
+- 같은 5% 상승이라도 지수 영향은 5배 넘게 차이(240 vs 46포인트)
 - 액면분할하면 같은 회사라도 다우 비중이 줆
 
 ## 한계
@@ -52,23 +52,23 @@
 ## 대조
 | 글 값 | 원문 값 | 출처 |
 |---|---|---|
-| 30종목 같은 주식 수 526만 2,145주 | Shares Held 5,262,145(30줄 같음) | S1 https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-dia.xlsx |
-| 골드만삭스 10.3% · 엔비디아 1.8% · 나이키 0.4% · 캐터필러 6.5% · 마이크로소프트 6.0% · 애플 4.2% · 아마존 3.1% | 10.245 · 1.765 · 0.415 · 6.496 · 6.024 · 4.221 · 3.111 | S1 https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-dia.xlsx |
-| S&P500 골드만삭스 0.4% · 캐터필러 0.4% · 마이크로소프트 6.0% · 애플 8.2% · 아마존 4.1% · 엔비디아 5.7% | 0.40 · 0.40 · 5.97 · 8.22 · 4.08 · 5.70 | S2 https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx |
-| 다우 30종목 S&P500 안 비중 합 38.5% · 상위 5곳 중 S&P500 상위 10위는 마이크로소프트 하나 | 38.5 · MSFT만 | S2·S5 calc_out.txt https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx |
+| 30종목 같은 주식 수 523만 2,475주 | Shares Held 5,232,475(30줄 같음, 11/24) | S1 https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-dia.xlsx |
+| 골드만삭스 9.6% · 엔비디아 1.8% · 나이키 0.4% · 캐터필러 6.4% · 마이크로소프트 5.9% · 애플 4.2% · 아마존 3.0% | 9.571 · 1.845 · 0.42 · 6.419 · 5.891 · 4.2 · 3.0(11/24) | S1 https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-dia.xlsx |
+| S&P500 골드만삭스 0.4% · 캐터필러 0.4% · 마이크로소프트 5.9% · 애플 8.3% · 아마존 4.0% · 엔비디아 6.0% | 0.38 · 0.40 · 5.92 · 8.31 · 3.98 · 6.05(11/24) | S2 https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx |
+| 다우 30종목 S&P500 안 비중 합 39.1% · 상위 5곳 중 S&P500 상위 10위는 마이크로소프트 하나 | 39.1 · MSFT만 | S2·S5 calc_out.txt https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx |
 | S&P500은 회사 덩치(시가총액)만큼 담음 · 500여 곳 | "market-cap-weighted S&P 500 Index" · SPY 종목 줄 504 | S6 https://www.invesco.com/us/en/etf/sp-500-equal-weight-rsp.html · S2 |
 | 주가 가중 지수 | "price-weighted index of 30 component common stocks" | S3 https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-dow-jones-industrial-average-etf-trust-dia |
 | DIA 보수 연 0.16% | Gross Expense Ratio 0.16% | S3 https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-dow-jones-industrial-average-etf-trust-dia |
-| 1주 약 848달러 · 146달러 · 34달러 | 847.53 · 145.98 · 34.33 | S4 https://query1.finance.yahoo.com/v8/finance/chart/GS |
-| 30종목 종가 합 8,260달러 · 다우 4만 9,097 · 1달러 = 약 5.94포인트 | 8,260.49 · 49,097.06 · 1÷0.168248 = 5.94 | S4·S5 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI |
-| 5% 상승 GS 252 · MSFT 148 · NVDA 43포인트 · 6배 가까이 | 252 · 148 · 43 · 5.9 | S5 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI |
-| 상위 5곳 합 32.9% | 32.9 | S1·S5 https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-dia.xlsx |
-| 1년 다우 5.2% · S&P500 5.7%(11/20 종가) | +5.2 · +5.7 | S4·S5 https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC |
+| 1주 약 806달러 · 155달러 · 36달러 | 806.02 · 155.38 · 35.75(11/24) | S4 https://query1.finance.yahoo.com/v8/finance/chart/GS |
+| 30종목 종가 합 8,416달러 · 다우 5만 19포인트 · 1달러 = 약 5.94포인트 | 8,415.56 · 50,018.7 · 1÷0.168248 = 5.94 | S4·S5 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI |
+| 5% 상승 GS 240 · MSFT 147 · NVDA 46포인트 · 5배 넘게 | 240 · 147 · 46 · 5.2 | S5 calc_out.txt https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI |
+| 상위 5곳 합 32.5% | 32.5 | S1·S5 https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-dia.xlsx |
+| 1년 다우 6.5% · S&P500 6.2%(11/25 종가) | +6.5 · +6.2 | S4·S5 https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC |
 
 # 올리기 전 확인
-- 2026-11-22 23:1x firemap-write(조사·작성 날 — 발행 회차가 DIA·SPY 보유 파일·야후 종가 다시 받아 그날 값으로 갱신)
-- 다시 연 주소: https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-dia.xlsx · https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx · https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-dow-jones-industrial-average-etf-trust-dia · https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC · https://query1.finance.yahoo.com/v8/finance/chart/GS · https://www.invesco.com/us/en/etf/sp-500-equal-weight-rsp.html (모두 11/22)
-- 기준일: 2026-11-19 보유 종목·종가 · 1년 등락 2026-11-20 종가
-- 바뀐 것: 처음 조사(11/22) — 기준일 2026-11-19 · GS 10.3%·NVDA 1.8%·1달러 5.94포인트 · 발행 날 회차가 calc.py 다시 돌려 이 줄을 그날 숫자로 고친다(1일 안)
-- 새로 찾은 것: DIA 30종목 주식 수 모두 같음(526만 2,145주) · 같은 5%에 GS 252 vs NVDA 43포인트 · 경쟁 글 실제 비중 센 것 0편
-- 조사 뒤 공표: data/release_calendar.json — 보유 종목 매일 갱신, 다우 구성 종목 변경은 공지 시
+- 2026-11-27 09:4x firemap-write(발행 날) — DIA·SPY 보유 파일·야후 30종목·^DJI·^GSPC 다시 받아 calc.py(D=11/24) 다시 돌림
+- 다시 연 주소: https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-dia.xlsx · https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx · https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-dow-jones-industrial-average-etf-trust-dia · https://www.invesco.com/us/en/etf/sp-500-equal-weight-rsp.html · https://query1.finance.yahoo.com/v8/finance/chart/GS · https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI · https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC
+- 기준일: 2026-11-24 보유 종목·종가 · 1년 등락 2026-11-25 종가(11/26 휴장)
+- 바뀐 것: 11/19→11/24 — GS 10.3→9.6%·NVDA 1.8% 그대로(S&P500 5.7→6.0%)·1주 GS 848→806·NVDA 146→155달러·주식 수 526만 2,145→523만 2,475주·5% 상승 GS 252→240·NVDA 43→46포인트(6배 가까이→5배 넘게)·상위 5곳 32.9→32.5%·S&P500 안 다우 30종목 38.5→39.1%·1년 다우 5.2→6.5%·S&P500 5.7→6.2%(이제 다우가 앞섬)·1달러 5.94포인트 그대로 · 본문·그림 3장 모두 고침
+- 새로 찾은 것: 닷새 사이 GS 주가가 5% 빠지며 비중 0.7%p 줄었는데 순서(1위 GS·꼴찌 NKE)는 그대로 · 1년 등락 순서가 뒤집힘(다우 6.5% > S&P500 6.2%)
+- 조사 뒤 공표: data/release_calendar.json — 보유 종목 매일 갱신, 다우 구성 종목 변경 공지 11/22 뒤 없음(확인 안 함 — S&P DJI 공지 페이지 403)

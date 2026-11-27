@@ -1,4 +1,18 @@
 [오늘 찾은 것]
+2026-11-27 · State Street DIA 보유 종목 파일 다시 받음(As of 24-Nov-2026): 30종목 Shares Held 5,232,475 모두 같음 · 비중 GS 9.570647·CAT 6.419417·MSFT 5.891026·AMGN 5.63·V 4.95 … NVDA 1.844975 · NKE 0.42 · raw/dia_holdings.xlsx · https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-dia.xlsx
+2026-11-27 · State Street SPY 보유 종목 파일 다시 받음(As of 24-Nov-2026): GS 0.38·CAT 0.40·MSFT 5.92·AAPL 8.31·AMZN 3.98·NVDA 6.05 · 상위 10 AAPL·NVDA·MSFT·AMZN·GOOGL·AVGO·GOOG·META·LLY·TSLA · raw/spy_holdings.xlsx · https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx
+2026-11-27 · 야후 chart API 30종목·^DJI 11/24 종가 다시 받음(raw/q_*.json), ^DJI·^GSPC 2년(마지막 11/25 — 11/26 추수감사절 휴장) · https://query1.finance.yahoo.com/v8/finance/chart/%5EDJI
+
+[계산 11/27 — calc.py(D=11/24) → calc_out.txt]
+11/24 다우 50,018.7 · 30종목 종가 합 8,415.56달러(약 8,416달러) · 제수 0.168248 · 1달러 = 5.94포인트
+5% 오르면: GS 240 · CAT 161 · MSFT 147 · AMGN 141 · V 124 · AAPL 105 · NVDA 46 · NKE 11 포인트 · GS/NVDA 240/46 = 5.2배
+종가 11/24: GS 806.02 · NVDA 155.38 · NKE 35.75
+다우 상위 5 비중 합 32.5% · SPY 안 다우 30종목 비중 합 39.1%
+1년(2025-11-25~2026-11-25) 가격: 다우 +6.5% · S&P500 +6.2%
+반올림(본문 값): GS 9.6% · CAT 6.4% · MSFT 5.9%(SPY 5.92 → 5.9%) · AAPL 4.2%(SPY 8.3%) · AMZN 3.0%(SPY 4.0%) · NVDA 1.8%(SPY 6.0%) · NKE 0.4% · 1주 약 806·155·36달러
+다우 상위 5(GS·CAT·MSFT·AMGN·V) 중 SPY 상위 10 안은 MSFT 하나(GS 0.38·CAT 0.40·AMGN 0.41·V 1.14)
+
+[11/22 처음 조사 — 아래는 11/19 기준 옛 값, 본문에 안 씀]
 2026-11-22 · State Street DIA 보유 종목 파일(As of 19-Nov-2026): 30종목 모두 Shares Held 5,262,145 · 비중 GS 10.245464·CAT 6.496059·MSFT 6.023757·AMGN 5.274263·V 4.862645 … NVDA 1.764696 · NKE 0.415002 · raw/dia_holdings.xlsx · https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-dia.xlsx
 2026-11-22 · State Street SPY 보유 종목 파일(As of 19-Nov-2026): GS 0.40·CAT 0.40·MSFT 5.97·AAPL 8.22·AMZN 4.08·NVDA 5.70 · 상위 10 AAPL·MSFT·NVDA·AMZN·AVGO·GOOGL·META·GOOG·LLY·BRK.B · raw/spy_holdings.xlsx · https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spy.xlsx
 2026-11-22 · State Street DIA 상품 페이지: Gross Expense Ratio 0.16% · Inception Date Jan 14 1998 · Number of Holdings 30 · "The DJIA is a price-weighted index of 30 component common stocks" · raw/ssga_dia.txt · https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-dow-jones-industrial-average-etf-trust-dia

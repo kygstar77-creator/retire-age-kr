@@ -28,13 +28,21 @@ if B2:
     assert sum(len(t.replace(' ', '')) for t in M.BIG) in range(16, 25) and all(len(t.replace(' ', '')) <= 12 for t in M.BIG)
     PH = {k: v for k, v in PH.items() if k == 'ndx_hands_wait'}
 
+B3 = sys.argv[1:] == ['b3']  # 11/28 07:52 copywriter [요청] b2 사진·큰 글 그대로, 흰 줄만 박힌 날짜 시험
+if B3:
+    # 요청 문구 '11월 20일 고점보다 −19.8%'는 11/20을 고점으로 읽힘 — 사실(facts.txt 6행)은 '11/20 종가가 그때까지 고점보다 −19.8%' → 쉼표로 끊음
+    M.TOP = '나스닥100 · 11월 20일, 고점보다 −19.8%'
+    M.BIG = ['고점에 물렸던 하락 35번', '언제 본전 됐나?']
+    assert '2026-11-20 25,028.98(−19.8%' in fx, '−19.8% 근거(facts.txt) 없음'
+    PH = {k: v for k, v in PH.items() if k == 'ndx_hands_wait'}
+
 if __name__ == '__main__':
     kw = dict(TB.KW); kw.pop('top', None); out = []
-    for name, (key, (desc, ya, pid)) in zip(('ndx1_b2.png',) if B2 else ('ndx1_b.png', 'ndx1_c.png'), PH.items()):
+    for name, (key, (desc, ya, pid)) in zip(('ndx1_b3.png',) if B3 else ('ndx1_b2.png',) if B2 else ('ndx1_b.png', 'ndx1_c.png'), PH.items()):
         raw = Image.open(os.path.join(M.H, key + '.jpg')).convert('RGB')
         # 11/27 ndx_back_chart(7567522) 뺌 — 화면이 코인 거래소(CAKE/USDT)라 나스닥과 안 맞고, 흐림 상자가 머리를 가름
         im, g = TB.brighten(raw, 100); tmp = f'_tmp_{key}.jpg'; im.save(os.path.join(M.H, tmp), quality=95)
         M.make(name, tmp, ya, **kw); os.remove(os.path.join(M.H, tmp))
         out.append(dict(file=name, photo=pid, page=f'https://www.pexels.com/photo/{pid}/', desc=desc, gamma=g, luma=round(TB.luma(os.path.join(O, name)), 1)))
         print(name, '감마', g, '밝기 중앙값', out[-1]['luma'])
-    json.dump(dict(top=M.TOP, big=M.BIG, license='https://www.pexels.com/license/', items=out), open(os.path.join(O, 'credits_b2.json' if B2 else 'credits.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    json.dump(dict(top=M.TOP, big=M.BIG, license='https://www.pexels.com/license/', items=out), open(os.path.join(O, 'credits_b3.json' if B3 else 'credits_b2.json' if B2 else 'credits.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

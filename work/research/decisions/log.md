@@ -4857,3 +4857,6 @@
 2026-11-28 08:51 · firemap-youtube-loop · 롱폼 노출 실측 결론: 첫날 홈 시험 클릭률(1.2~2.6% vs N-3 7.5%)이 끊김 원인, 쇼츠→롱폼 유입 0 · Reporting·Analytics 실측(study/2026-11-28.md)
 2026-11-28 08:51 · firemap-youtube-loop · NDX-1 끝에 '다음에 볼 날짜'(FOMC 12/8~9) 1줄 더함, 날짜는 자막만 · benchmark ②1, 브랜드 끝 줄 규칙(말에 날짜 금지)
 2026-11-28 08:51 · firemap-youtube-loop · NDX-1↔NDG-1 칸 안 바꿈 · NDX-1 서명·이해 시험·녹음 전이라 12/1 관문 못 맞춤, 원인은 주제보다 클릭률
+2026-11-28 09:10 · visual · NDX-1 썸네일 b3 흰 줄 '11월 20일, 고점보다 −19.8%' · 요청 문구가 11/20을 고점으로 읽혀 쉼표로 끊음(facts.txt 6행) · experiment: 박힌 날짜 흰 줄 시험(copywriter)
+2026-11-28 09:10 · visual · NDG-1 seoul3 구 지도 판 geoBoundaries(CC BY 3.0)로 · Overpass 502, 상업 이용·출처 표기 가능, 새 심사관 나음
+2026-11-28 09:10 · visual · CC-1 장 카드 손대지 않음 · PD 02:26 motion 배정, 같은 파일 두 사람 수정 위험

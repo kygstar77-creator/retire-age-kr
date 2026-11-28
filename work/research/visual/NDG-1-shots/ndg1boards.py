@@ -3,7 +3,7 @@
 숫자는 ep/NDG-1 calc_out_1122.txt·calc3_out_1123.txt·calc_seoul_out_1124.txt와 script.md v1.7 [자막]·(화면) 줄 값만.
 calc 출력 파일을 그대로 읽고 assert(옮겨 적지 않음). 보도·법 글은 script.md와 글자 그대로 대조.
 판은 '답이 열린 마지막 모습' — '?' → 열림은 PD가 Remotion에서. 파일 이름은 shot_plan.md 장면 계획 '파일' 칸 그대로.
-seoul3(구 지도)는 공개 경계 자료 라이선스 확인 뒤 따로(이 파일에 없음).
+seoul3(구 지도) — 경계 geoBoundaries KOR ADM2(gbOpen, CC BY 3.0, 출처 citypopulation.de) osm/kor_adm2.geojson(11/28 받음), 자체 그림.
 사용: py -3.12 ndg1boards.py [이름 ...]   (없으면 전부) → work/video/public/bg/ndg1/board/<이름>.png
 """
 import os, sys, re, ast
@@ -360,6 +360,51 @@ def max3(im):              # 구별 2026년 가장 비싼 거래 — 20억 넘�
     T(d, (W // 2, 215), '20억 넘는 거래 0건', 96, OR, F_X)
     d.line([(260, base), (1700, base)], fill=GREY, width=4)
     source(d, SRC_RT + ' · 2026년 신고분 · 막대는 0억부터')
+
+# ── 1. 서울 25개 구 윤곽 — 세 구만 주황(11/28) ─────────────────────────
+GU25 = ['Dobong-gu', 'Dongdaemun-gu', 'Dongjak-gu', 'Eunpyeong-gu', 'Gangbuk-gu', 'Gangdong-gu', 'Gangnam-gu', 'Gangseo-gu',
+        'Geumcheon-gu', 'Guro-gu', 'Gwanak-gu', 'Gwangjin-gu', 'Jongno-gu', 'Jung-gu [Central District]', 'Jungnang-gu', 'Mapo-gu',
+        'Nowon-gu', 'Seocho-gu', 'Seodaemun-gu', 'Seongbuk-gu', 'Seongdong-gu', 'Songpa-gu', 'Yangcheon-gu', 'Yeongdeungpo-gu', 'Yongsan-gu']
+NDG = {'Nowon-gu': '노원', 'Dobong-gu': '도봉', 'Gangbuk-gu': '강북'}
+
+@board
+def seoul3(im):
+    import json, math
+    gj = json.load(open(os.path.join(HERE, 'osm', 'kor_adm2.geojson'), encoding='utf-8'))
+    F = {f['properties']['shapeName']: f['geometry'] for f in gj['features'] if f['properties']['shapeName'] in GU25}
+    # 같은 이름 구가 다른 시(인천 중구·동구 등)에도 있으면 서울 범위 안 것만
+    F = {}
+    for f in gj['features']:
+        n = f['properties']['shapeName']
+        if n not in GU25: continue
+        g = f['geometry']; c = g['coordinates']
+        rings = [c[0]] if g['type'] == 'Polygon' else [p[0] for p in c]
+        lon = sum(x for r in rings for x, _ in r) / sum(len(r) for r in rings); lat = sum(y for r in rings for _, y in r) / sum(len(r) for r in rings)
+        if 126.76 < lon < 127.19 and 37.42 < lat < 37.71: F[n] = rings
+    assert sorted(F) == sorted(GU25), sorted(set(GU25) - set(F))
+    pts = [p for rs in F.values() for r in rs for p in r]
+    k = math.cos(math.radians(37.56))
+    x0, x1 = min(p[0] for p in pts) * k, max(p[0] for p in pts) * k; y0, y1 = min(p[1] for p in pts), max(p[1] for p in pts)
+    bx, by, bw, bh = 300, 90, 1320, 860; sc = min(bw / (x1 - x0), bh / (y1 - y0))
+    ox = bx + (bw - (x1 - x0) * sc) / 2; oy = by + (bh - (y1 - y0) * sc) / 2
+    P = lambda q: (ox + (q[0] * k - x0) * sc, oy + (y1 - q[1]) * sc)
+    d = ImageDraw.Draw(im)
+    for n, rs in F.items():                 # 회색 먼저, 세 구는 위에
+        if n in NDG: continue
+        for r in rs: d.polygon([P(q) for q in r], fill=(226, 219, 205), outline=GREY, width=3)
+    for n in NDG:
+        for r in F[n]: d.polygon([P(q) for q in r], fill=OR, outline=INK, width=5)
+    def cen(r):                             # 면적 무게중심
+        q = [P(t) for t in r]; a = cx = cy = 0
+        for (x0_, y0_), (x1_, y1_) in zip(q, q[1:] + q[:1]):
+            c = x0_ * y1_ - x1_ * y0_; a += c; cx += (x0_ + x1_) * c; cy += (y0_ + y1_) * c
+        return cx / (3 * a), cy / (3 * a)
+    LAB = {'Gangbuk-gu': (-330, 60, 'rm'), 'Dobong-gu': (-330, -90, 'rm'), 'Nowon-gu': (300, 0, 'lm')}
+    for n, ko in NDG.items():
+        cx, cy = cen(max(F[n], key=len)); dx, dy, an = LAB[n]; lx, ly = cx + dx, cy + dy
+        d.line([(cx, cy), (lx + (24 if an == 'rm' else -24), ly)], fill=INK, width=5); d.ellipse((cx - 9, cy - 9, cx + 9, cy + 9), fill=INK)
+        T(d, (lx, ly), ko, 96, INK, F_X, an)
+    source(d, '구 경계: geoBoundaries KOR ADM2 (CC BY 3.0, citypopulation.de) · 단순화한 윤곽')
 
 # ── 6. 누구라면 ─────────────────────────────────────────────────────
 @board

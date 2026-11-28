@@ -1,0 +1,12 @@
+{
+ "type": "chart",
+ "source": "야후 파이낸스 chart API 133690.KS·448300.KS 수정종가(네이버 증권 siseJson 수정주가와 대조) 2025-12-30→2026-11-27 직접 계산, calc2_out.txt",
+ "made_at": "2026-11-28 09:48",
+ "by": "research/krndx1129/mkimg.py",
+ "out": "img/00.png",
+ "topic": "국내상장 나스닥100",
+ "num": "9,783만원 · 1억 324만원 (넣은 돈 1억)",
+ "topic_px": 50,
+ "num_px": 34,
+ "follows": "경쟁 1 healthy_life_365·6 whduddnd49 표지(환노출 vs 환헤지 두 상품 비교) + plusdiv1128 막대 위 큰 숫자"
+}

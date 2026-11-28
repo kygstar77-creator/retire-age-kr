@@ -1,9 +1,5 @@
-C:\Users\강영준\Documents\GitHub\retire-age-kr\work\research\sq1pair1128\fetch.py:11: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
-  ts = [datetime.datetime.utcfromtimestamp(x).date().isoformat() for x in r['timestamp']]
-C:\Users\강영준\Documents\GitHub\retire-age-kr\work\research\sq1pair1128\fetch.py:14: DeprecationWarning: datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, datetime.UTC).
-  out[t] = dict(ts=ts, adj=adj, close=cl, divs={datetime.datetime.utcfromtimestamp(int(k)).date().isoformat(): v['amount'] for k, v in divs.items()})
-QQQ 10/30 690.49 → 2026-11-25 633.93 수정종가 변화 -8.19% 분배 {}
-SCHD 10/30 35.78 → 2026-11-25 35.29 수정종가 변화 -1.37% 분배 {}
-15년 달러 기준 SCHD 100%: 10/30 6.77억 → 2026-11-25 6.68억 (10/30 비율 그대로, 리밸런싱 없음)
-15년 달러 기준 SCHD 50%: 10/30 10.10억 → 2026-11-25 9.62억 (10/30 비율 그대로, 리밸런싱 없음)
-15년 달러 기준 SCHD 0%: 10/30 13.56억 → 2026-11-25 12.45억 (10/30 비율 그대로, 리밸런싱 없음)
+QQQ 10/30 690.49 → 2026-11-27 650.99 수정종가 변화 -5.72% 분배 {}
+SCHD 10/30 35.78 → 2026-11-27 35.67 수정종가 변화 -0.31% 분배 {}
+15년 달러 기준 SCHD 100%: 10/30 6.77억 → 2026-11-27 6.75억 (10/30 비율 그대로, 리밸런싱 없음)
+15년 달러 기준 SCHD 50%: 10/30 10.10억 → 2026-11-27 9.80억 (10/30 비율 그대로, 리밸런싱 없음)
+15년 달러 기준 SCHD 0%: 10/30 13.56억 → 2026-11-27 12.78억 (10/30 비율 그대로, 리밸런싱 없음)
